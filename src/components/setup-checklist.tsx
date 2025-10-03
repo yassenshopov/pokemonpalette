@@ -37,9 +37,44 @@ export function SetupChecklist() {
   // Check if Clerk keys and SEO are configured
   useEffect(() => {
     const checkClerkConfig = () => {
-      const hasPublishableKey = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
-      const hasSecretKey = !!process.env.CLERK_SECRET_KEY;
-      const clerkCompleted = hasPublishableKey && hasSecretKey;
+      // Check if Clerk is actually working by looking for Clerk elements or users
+      let clerkCompleted = false;
+
+      if (typeof window !== "undefined") {
+        // Check if ClerkProvider is wrapping the app by looking for Clerk-specific elements
+        const clerkElements = document.querySelectorAll("[data-clerk]");
+        const hasClerkElements = clerkElements.length > 0;
+
+        // Also check if user profile is showing (indicates Clerk is working)
+        const userProfile =
+          document.querySelector("[data-clerk-user]") ||
+          document.querySelector(".clerk-user-button") ||
+          document.querySelector('[class*="clerk"]');
+
+        // Check for environment variable (only available client-side if NEXT_PUBLIC_)
+        const hasPublicKey = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+        // More comprehensive Clerk detection
+        const hasClerkLibrary = !!(window as any).Clerk;
+        const clerkScript = document.querySelector('script[src*="clerk"]');
+
+        // If Clerk library is loaded OR we have elements OR public key OR user profile
+        clerkCompleted =
+          hasClerkLibrary ||
+          clerkElements.length > 0 ||
+          !!clerkScript ||
+          !!userProfile;
+
+        console.log("Clerk Check:", {
+          hasClerkLibrary,
+          clerkScript: !!clerkScript,
+          hasClerkElements,
+          hasPublicKey,
+          userProfile: !!userProfile,
+          clerkElements: clerkElements.length,
+          clerkCompleted,
+        });
+      }
 
       // Check SEO completion only if in browser
       let seoCompleted = true;
@@ -68,6 +103,15 @@ export function SetupChecklist() {
         );
 
         seoCompleted = !hasTemplateValues;
+
+        // Debug logging
+        console.log("Setup Checklist Debug:", {
+          clerkCompleted,
+          seoCompleted,
+          pageTitle,
+          metaDescription,
+          hasTemplateValues,
+        });
       }
 
       // Update items based on current state
@@ -84,11 +128,24 @@ export function SetupChecklist() {
       );
 
       // Show checklist if any required items are incomplete
-      setIsVisible(!clerkCompleted || !seoCompleted);
+      const shouldShow = !clerkCompleted || !seoCompleted;
+      console.log("Should show checklist:", shouldShow, {
+        clerkCompleted,
+        seoCompleted,
+      });
+      setIsVisible(shouldShow);
     };
 
+    // Check immediately
     checkClerkConfig();
-  }, []); // Run once on mount only
+
+    // Set up interval to check periodically (every 5 seconds - less aggressive)
+    const intervalId = setInterval(checkClerkConfig, 5000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []); // Run once on mount
 
   const copyEnvTemplate = () => {
     const envTemplate = `# Clerk Authentication
