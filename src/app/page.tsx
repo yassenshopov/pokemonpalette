@@ -1,7 +1,6 @@
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
