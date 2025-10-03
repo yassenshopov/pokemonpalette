@@ -55,7 +55,8 @@ export function SetupChecklist() {
         const hasPublicKey = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
         // More comprehensive Clerk detection
-        const hasClerkLibrary = !!(window as any).Clerk;
+        const hasClerkLibrary = !!(window as unknown as { Clerk?: unknown })
+          .Clerk;
         const clerkScript = document.querySelector('script[src*="clerk"]');
 
         // If Clerk library is loaded OR we have elements OR public key OR user profile
@@ -262,7 +263,7 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/`;
                                   <li>
                                     Replace{" "}
                                     <code className="bg-gray-200 dark:bg-gray-700 px-1 py-0.5 rounded">
-                                      "[TEMPLATE]"
+                                      &ldquo;[TEMPLATE]&rdquo;
                                     </code>{" "}
                                     values with your actual:
                                     <ul className="ml-4 mt-1 text-xs space-y-1 list-disc">

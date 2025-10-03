@@ -21,16 +21,36 @@ interface UserProfileProps {
   isCollapsed?: boolean;
 }
 
+interface ClerkUserData {
+  id: string;
+  firstName: string | null;
+  lastName: string | null;
+  fullName: string | null;
+  imageUrl: string;
+  primaryEmailAddress: {
+    emailAddress: string;
+  } | null;
+}
+
 export function UserProfile({ isCollapsed = false }: UserProfileProps) {
   // Safely get Clerk hook with error handling
-  let user: any = null;
+  let user: ClerkUserData | null = null;
   let isLoaded = false;
 
   try {
     const clerkData = useUser();
-    user = clerkData.user;
+    user = clerkData.user
+      ? {
+          id: clerkData.user.id,
+          firstName: clerkData.user.firstName,
+          lastName: clerkData.user.lastName,
+          fullName: clerkData.user.fullName,
+          imageUrl: clerkData.user.imageUrl,
+          primaryEmailAddress: clerkData.user.primaryEmailAddress,
+        }
+      : null;
     isLoaded = clerkData.isLoaded;
-  } catch (error) {
+  } catch {
     // If Clerk isn't available, show disabled state
     return (
       <div className="p-2">
@@ -110,8 +130,8 @@ export function UserProfile({ isCollapsed = false }: UserProfileProps) {
                   alt={user.fullName || "User"}
                 />
                 <AvatarFallback className="text-xs">
-                  {user.firstName?.[0]}
-                  {user.lastName?.[0]}
+                  {user.firstName?.[0] || ""}
+                  {user.lastName?.[0] || ""}
                 </AvatarFallback>
               </Avatar>
             ) : (
@@ -122,8 +142,8 @@ export function UserProfile({ isCollapsed = false }: UserProfileProps) {
                     alt={user.fullName || "User"}
                   />
                   <AvatarFallback>
-                    {user.firstName?.[0]}
-                    {user.lastName?.[0]}
+                    {user.firstName?.[0] || ""}
+                    {user.lastName?.[0] || ""}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1 text-left min-w-0">
@@ -131,7 +151,7 @@ export function UserProfile({ isCollapsed = false }: UserProfileProps) {
                     {user.fullName || "User"}
                   </p>
                   <p className="text-xs text-muted-foreground truncate">
-                    {user.primaryEmailAddress?.emailAddress}
+                    {user.primaryEmailAddress?.emailAddress || ""}
                   </p>
                 </div>
               </div>
