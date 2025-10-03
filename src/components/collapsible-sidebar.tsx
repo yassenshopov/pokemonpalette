@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { UserProfile } from "@/components/user-profile";
+import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
 
 export function CollapsibleSidebar() {
@@ -115,7 +115,7 @@ export function CollapsibleSidebar() {
 
             {/* Footer */}
             <div className="border-t">
-              <UserProfile />
+              <UserProfileWrapper />
               <div className="p-4 pt-2">
                 <p className="text-xs text-muted-foreground">
                   Starter Yeast v0.1.0
@@ -192,7 +192,7 @@ export function CollapsibleSidebar() {
 
           {/* Footer */}
           <div className="border-t">
-            <UserProfile isCollapsed={isCollapsed} />
+            <UserProfileWrapper isCollapsed={isCollapsed} />
             {!isCollapsed && (
               <div className="p-4 pt-2">
                 <p className="text-xs text-muted-foreground">

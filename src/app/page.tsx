@@ -1,4 +1,5 @@
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
+import { SetupChecklist } from "@/components/setup-checklist";
 import {
   Card,
   CardDescription,
@@ -26,6 +27,9 @@ export default function Home() {
       <CollapsibleSidebar />
       <div className="flex-1 overflow-auto">
         <div className="container mx-auto px-6 py-8 max-w-6xl">
+          {/* Setup Checklist */}
+          <SetupChecklist />
+
           {/* Hero Section */}
           <div className="text-center mb-12 pt-16">
             <div className="flex items-center justify-center mb-6">

@@ -22,7 +22,39 @@ interface UserProfileProps {
 }
 
 export function UserProfile({ isCollapsed = false }: UserProfileProps) {
-  const { user, isLoaded } = useUser();
+  // Safely get Clerk hook with error handling
+  let user: any = null;
+  let isLoaded = false;
+
+  try {
+    const clerkData = useUser();
+    user = clerkData.user;
+    isLoaded = clerkData.isLoaded;
+  } catch (error) {
+    // If Clerk isn't available, show disabled state
+    return (
+      <div className="p-2">
+        <Button
+          variant="outline"
+          size="sm"
+          disabled
+          className={`bg-muted text-muted-foreground ${
+            isCollapsed ? "w-8 h-8 p-0" : "w-full"
+          }`}
+          title="Authentication not configured. Please set up Clerk API keys."
+        >
+          {isCollapsed ? (
+            <User className="h-4 w-4" />
+          ) : (
+            <>
+              <User className="h-4 w-4 mr-2" />
+              Auth Disabled
+            </>
+          )}
+        </Button>
+      </div>
+    );
+  }
 
   if (!isLoaded) {
     return (
