@@ -235,7 +235,6 @@ function ChartTooltipContent({
                   item?.value !== undefined &&
                   item?.value !== null &&
                   item.name ? (
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter(
                       item.value as any,
                       item.name,
