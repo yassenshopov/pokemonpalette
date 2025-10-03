@@ -129,10 +129,9 @@ function ChartTooltipContent({
       dataKey?: string;
       name?: string;
       color?: string;
-      payload?: {
-        fill?: string;
-        [key: string]: unknown;
-      };
+      payload?: unknown;
+      value?: unknown;
+      type?: string;
       [key: string]: unknown;
     }>;
     label?: string;
@@ -155,7 +154,7 @@ function ChartTooltipContent({
     if (labelFormatter) {
       return (
         <div className={cn("font-medium", labelClassName)}>
-          {labelFormatter(value, payload)}
+          {labelFormatter(value, payload as Array<{ [key: string]: unknown }>)}
         </div>
       );
     }
@@ -191,21 +190,38 @@ function ChartTooltipContent({
       {!nestLabel ? tooltipLabel : null}
       <div className="grid gap-1.5">
         {payload
-          .filter((item) => item.type !== "none")
+          .filter((item: { type?: string }) => item.type !== "none")
           .map(
             (
               item: {
-                payload?: { fill?: string };
+                payload?: unknown;
                 color?: string;
                 dataKey?: string;
                 name?: string;
+                value?: unknown;
+                type?: string;
                 [key: string]: unknown;
               },
-              index
+              index: number
             ) => {
               const key = `${nameKey || item.name || item.dataKey || "value"}`;
               const itemConfig = getPayloadConfigFromPayload(config, item, key);
-              const indicatorColor = color || item.payload?.fill || item.color;
+
+              // Safely extract fill color from payload
+              const getPayloadFill = (payload: unknown): string | undefined => {
+                if (
+                  typeof payload === "object" &&
+                  payload !== null &&
+                  "fill" in payload
+                ) {
+                  const fillValue = (payload as { fill?: string }).fill;
+                  return typeof fillValue === "string" ? fillValue : undefined;
+                }
+                return undefined;
+              };
+
+              const indicatorColor =
+                color || getPayloadFill(item.payload) || item.color;
 
               return (
                 <div
@@ -215,8 +231,18 @@ function ChartTooltipContent({
                     indicator === "dot" && "items-center"
                   )}
                 >
-                  {formatter && item?.value !== undefined && item.name ? (
-                    formatter(item.value, item.name, item, index, item.payload)
+                  {formatter &&
+                  item?.value !== undefined &&
+                  item?.value !== null &&
+                  item.name ? (
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    formatter(
+                      item.value as any,
+                      item.name,
+                      item as any,
+                      index,
+                      item.payload as any
+                    )
                   ) : (
                     <>
                       {itemConfig?.icon ? (
@@ -255,9 +281,11 @@ function ChartTooltipContent({
                             {itemConfig?.label || item.name}
                           </span>
                         </div>
-                        {item.value && (
+                        {item.value !== undefined && item.value !== null && (
                           <span className="text-foreground font-mono font-medium tabular-nums">
-                            {item.value.toLocaleString()}
+                            {typeof item.value === "number"
+                              ? item.value.toLocaleString()
+                              : String(item.value)}
                           </span>
                         )}
                       </div>
@@ -285,6 +313,7 @@ function ChartLegendContent({
     type?: string;
     dataKey?: string;
     color?: string;
+    value?: unknown;
     [key: string]: unknown;
   }>;
   verticalAlign?: "top" | "bottom" | "middle";
@@ -312,6 +341,8 @@ function ChartLegendContent({
           (item: {
             dataKey?: string;
             type?: string;
+            color?: string;
+            value?: unknown;
             [key: string]: unknown;
           }) => {
             const key = `${nameKey || item.dataKey || "value"}`;
@@ -319,7 +350,7 @@ function ChartLegendContent({
 
             return (
               <div
-                key={item.value}
+                key={String(item.value || item.dataKey || item.type)}
                 className={cn(
                   "[&>svg]:text-muted-foreground flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3"
                 )}
