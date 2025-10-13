@@ -33,6 +33,15 @@ export function SetupChecklist() {
 
   const [isVisible, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  // Check localStorage for dismissed state
+  useEffect(() => {
+    const dismissed = localStorage.getItem("setup-checklist-dismissed");
+    if (dismissed === "true") {
+      setIsDismissed(true);
+    }
+  }, []);
 
   // Check if Clerk keys and SEO are configured
   useEffect(() => {
@@ -175,11 +184,16 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/`;
     }
   };
 
+  const handleDontShowAgain = () => {
+    localStorage.setItem("setup-checklist-dismissed", "true");
+    setIsDismissed(true);
+  };
+
   const allCompleted = items.every(
     (item) => !item.isRequired || item.isCompleted
   );
 
-  if (!isVisible || allCompleted) {
+  if (!isVisible || allCompleted || isDismissed) {
     return null;
   }
 
@@ -320,6 +334,17 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/`;
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleDontShowAgain}
+            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          >
+            Don't show again
+          </Button>
         </div>
       </div>
     </div>

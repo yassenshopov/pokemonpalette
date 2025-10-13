@@ -32,83 +32,93 @@ export default function Home() {
           <SetupChecklist />
 
           {/* Hero Section */}
-          <div className="text-center mb-12 pt-16">
-            <div className="flex items-center justify-center mb-6">
-              <FlaskConical className="h-16 w-16 text-primary mr-4" />
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent font-heading">
-                Starter Yeast
-              </h1>
-            </div>
-            <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
-              The perfect fermentation starter for your Next.js applications. A
-              modern boilerplate with all the ingredients you need to build
-              amazing web apps.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <a
-                href="https://nextjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-              >
+          <div className="text-center mb-12 pt-16 relative">
+            <div className="absolute inset-0 -top-8 -bottom-8 bg-[radial-gradient(circle_at_1px_1px,rgb(156,163,175)_1px,transparent_0)] bg-[length:20px_20px] opacity-20"></div>
+            <div className="relative z-10">
+              <div className="flex items-center justify-center mb-6">
                 <Image
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-                  alt="Next.js"
-                  width={16}
+                  src="/logo.png"
+                  alt="Starter Yeast logo"
+                  width={64}
                   height={16}
-                  className="h-4 w-4 mr-2"
+                  className="mr-4 dark:invert"
                   unoptimized
                 />
-                Next.js 15
-              </a>
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-              >
-                <Image
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-                  alt="Tailwind CSS"
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 mr-2"
-                  unoptimized
-                />
-                Tailwind CSS
-              </a>
-              <a
-                href="https://ui.shadcn.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-              >
-                <Image
-                  src="https://avatars.githubusercontent.com/u/139895814?v=4"
-                  alt="shadcn/ui"
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 mr-2 rounded-sm"
-                  unoptimized
-                />
-                shadcn/ui
-              </a>
-              <a
-                href="https://clerk.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-              >
-                <Image
-                  src="https://ph-files.imgix.net/297bc3d4-bd2e-4eaa-8fb6-a289cf61ea91.png?auto=format"
-                  alt="Clerk Auth"
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 mr-2"
-                  unoptimized
-                />
-                Clerk Auth
-              </a>
+                <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent font-heading">
+                  Starter Yeast
+                </h1>
+              </div>
+              <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
+                The perfect fermentation starter for your Next.js applications.
+                A modern boilerplate with all the ingredients you need to build
+                amazing web apps.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                <a
+                  href="https://nextjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+                >
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+                    alt="Next.js"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 mr-2"
+                    unoptimized
+                  />
+                  Next.js 15
+                </a>
+                <a
+                  href="https://tailwindcss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+                >
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                    alt="Tailwind CSS"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 mr-2"
+                    unoptimized
+                  />
+                  Tailwind CSS
+                </a>
+                <a
+                  href="https://ui.shadcn.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+                >
+                  <Image
+                    src="https://avatars.githubusercontent.com/u/139895814?v=4"
+                    alt="shadcn/ui"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 mr-2 rounded-sm"
+                    unoptimized
+                  />
+                  shadcn/ui
+                </a>
+                <a
+                  href="https://clerk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+                >
+                  <Image
+                    src="https://ph-files.imgix.net/297bc3d4-bd2e-4eaa-8fb6-a289cf61ea91.png?auto=format"
+                    alt="Clerk Auth"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 mr-2"
+                    unoptimized
+                  />
+                  Clerk Auth
+                </a>
+              </div>
             </div>
           </div>
 
@@ -118,7 +128,9 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center space-x-2">
                   <FlaskConical className="h-5 w-5 text-primary" />
-                  <CardTitle>Rapid Development</CardTitle>
+                  <CardTitle className="font-heading">
+                    Rapid Development
+                  </CardTitle>
                 </div>
                 <CardDescription>
                   Pre-configured with all the essential tools and components you
@@ -131,7 +143,7 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center space-x-2">
                   <Sparkles className="h-5 w-5 text-primary" />
-                  <CardTitle>Modern Stack</CardTitle>
+                  <CardTitle className="font-heading">Modern Stack</CardTitle>
                 </div>
                 <CardDescription>
                   Built with the latest versions of Next.js, Tailwind CSS, and
@@ -144,7 +156,9 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center space-x-2">
                   <Layers className="h-5 w-5 text-primary" />
-                  <CardTitle>Component Library</CardTitle>
+                  <CardTitle className="font-heading">
+                    Component Library
+                  </CardTitle>
                 </div>
                 <CardDescription>
                   Includes all shadcn/ui components pre-installed and ready to
@@ -157,7 +171,9 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center space-x-2">
                   <Shield className="h-5 w-5 text-primary" />
-                  <CardTitle>Authentication Ready</CardTitle>
+                  <CardTitle className="font-heading">
+                    Authentication Ready
+                  </CardTitle>
                 </div>
                 <CardDescription>
                   Clerk integration for secure user authentication and
@@ -170,7 +186,7 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center space-x-2">
                   <Palette className="h-5 w-5 text-primary" />
-                  <CardTitle>Dark Mode</CardTitle>
+                  <CardTitle className="font-heading">Dark Mode</CardTitle>
                 </div>
                 <CardDescription>
                   Built-in dark mode support with smooth transitions and system
@@ -183,7 +199,7 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center space-x-2">
                   <Zap className="h-5 w-5 text-primary" />
-                  <CardTitle>Mobile First</CardTitle>
+                  <CardTitle className="font-heading">Mobile First</CardTitle>
                 </div>
                 <CardDescription>
                   Responsive design with mobile-optimized sidebar and
@@ -197,7 +213,9 @@ export default function Home() {
 
           {/* Getting Started */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">Ready to Start Baking?</h2>
+            <h2 className="text-3xl font-bold mb-4 font-heading">
+              Ready to Start Baking?
+            </h2>
             <p className="text-muted-foreground mb-6">
               Clone this repository and begin building your next amazing
               application.

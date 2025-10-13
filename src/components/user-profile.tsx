@@ -5,6 +5,7 @@ import {
   SignInButton,
   SignOutButton,
   UserButton,
+  useClerk,
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -33,6 +34,8 @@ interface ClerkUserData {
 }
 
 export function UserProfile({ isCollapsed = false }: UserProfileProps) {
+  const { openUserProfile } = useClerk();
+
   // Safely get Clerk hook with error handling
   let user: ClerkUserData | null = null;
   let isLoaded = false;
@@ -160,20 +163,14 @@ export function UserProfile({ isCollapsed = false }: UserProfileProps) {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
           <DropdownMenuItem asChild>
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonPopoverCard: "shadow-lg",
-                  userButtonPopoverActions: "p-0",
-                  userButtonPopoverActionButton: "hover:bg-muted",
-                },
-              }}
+            <Button
+              variant="ghost"
+              className="w-full justify-start p-2 h-auto"
+              onClick={() => openUserProfile()}
             >
-              <div className="flex items-center w-full">
-                <Settings className="h-4 w-4 mr-2" />
-                Settings
-              </div>
-            </UserButton>
+              <Settings className="h-4 w-4 mr-2" />
+              Manage Account
+            </Button>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>

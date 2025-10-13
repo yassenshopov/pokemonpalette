@@ -91,8 +91,8 @@ export function CollapsibleSidebar() {
                 <Image
                   src="/logo.png"
                   alt="Starter Yeast logo"
-                  width={80}
-                  height={20}
+                  width={48}
+                  height={12}
                   className="dark:invert"
                   unoptimized
                 />
@@ -158,7 +158,7 @@ export function CollapsibleSidebar() {
                 unoptimized
               />
               {!isCollapsed && (
-                <span className="text-lg font-semibold text-foreground font-sans">
+                <span className="text-lg font-semibold text-foreground font-heading">
                   StarterYeast
                 </span>
               )}
