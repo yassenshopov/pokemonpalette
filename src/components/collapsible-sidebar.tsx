@@ -151,10 +151,15 @@ export function CollapsibleSidebar() {
               <Image
                 src="/logo.png"
                 alt="Starter Yeast logo"
-                width={isCollapsed ? 32 : 80}
-                height={isCollapsed ? 32 : 20}
+                width={isCollapsed ? 28 : 36}
+                height={isCollapsed ? 28 : 9}
                 className="dark:invert"
               />
+              {!isCollapsed && (
+                <span className="text-lg font-semibold text-foreground font-sans">
+                  StarterYeast
+                </span>
+              )}
             </Link>
 
             {/* Collapse/Expand Button */}

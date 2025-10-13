@@ -34,7 +34,7 @@ export default function Home() {
           <div className="text-center mb-12 pt-16">
             <div className="flex items-center justify-center mb-6">
               <FlaskConical className="h-16 w-16 text-primary mr-4" />
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent font-heading">
                 Starter Yeast
               </h1>
             </div>
@@ -43,23 +43,59 @@ export default function Home() {
               modern boilerplate with all the ingredients you need to build
               amazing web apps.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Badge variant="secondary" className="text-sm px-3 py-1">
-                <Code className="h-3 w-3 mr-1" />
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <a
+                href="https://nextjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+                  alt="Next.js"
+                  className="h-4 w-4 mr-2"
+                />
                 Next.js 15
-              </Badge>
-              <Badge variant="secondary" className="text-sm px-3 py-1">
-                <Zap className="h-3 w-3 mr-1" />
+              </a>
+              <a
+                href="https://tailwindcss.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                  alt="Tailwind CSS"
+                  className="h-4 w-4 mr-2"
+                />
                 Tailwind CSS
-              </Badge>
-              <Badge variant="secondary" className="text-sm px-3 py-1">
-                <Palette className="h-3 w-3 mr-1" />
+              </a>
+              <a
+                href="https://ui.shadcn.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/139895814?v=4"
+                  alt="shadcn/ui"
+                  className="h-4 w-4 mr-2 rounded-sm"
+                />
                 shadcn/ui
-              </Badge>
-              <Badge variant="secondary" className="text-sm px-3 py-1">
-                <Shield className="h-3 w-3 mr-1" />
+              </a>
+              <a
+                href="https://clerk.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+              >
+                <img
+                  src="https://ph-files.imgix.net/297bc3d4-bd2e-4eaa-8fb6-a289cf61ea91.png?auto=format"
+                  alt="Clerk Auth"
+                  className="h-4 w-4 mr-2"
+                />
                 Clerk Auth
-              </Badge>
+              </a>
             </div>
           </div>
 
