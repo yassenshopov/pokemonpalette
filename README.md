@@ -38,7 +38,7 @@ This boilerplate comes pre-configured with all the essential tools and component
    npm install
    ```
 
-3. **Set up environment variables**
+3. **Set up environment variables (Optional)**
 
    ```bash
    cp .env.example .env.local
@@ -50,6 +50,8 @@ This boilerplate comes pre-configured with all the essential tools and component
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key_here
    CLERK_SECRET_KEY=your_secret_key_here
    ```
+
+   > **Note:** Clerk authentication is optional. The app will work without it, but authentication features will be disabled. You can set up Clerk later by following the [Clerk setup guide](https://clerk.com/docs/quickstarts/nextjs).
 
 4. **Start the development server**
 
