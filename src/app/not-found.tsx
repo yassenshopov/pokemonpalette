@@ -22,7 +22,7 @@ export default function NotFound() {
       {/* Message */}
       <div className="text-center max-w-md mb-8">
         <h1 className="text-2xl font-bold text-foreground mb-4">
-          Uh oh. That page doesn't exist.
+          Uh oh. That page doesn&apos;t exist.
         </h1>
         <p className="text-muted-foreground">
           Head to our{" "}
