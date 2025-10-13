@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id              String    @id
+  email           String?
+  firstName       String?   @map("first_name")
+  lastName        String?   @map("last_name")
+  imageUrl        String?   @map("image_url")
+  createdAt       DateTime? @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime? @map("updated_at") @db.Timestamptz(6)
+  isdeleted       Boolean?  @default(false)
+  notionDatabases Json[]    @default([]) @map("notion_databases")
+  isDeleted       Boolean?  @default(false) @map("isDeleted")
+
+  @@map("users")
+}
+
+model DailyTracking {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId      String   @map("user_id")
+  date        DateTime @db.Date
+  mood        Int?
+  energyLevel Int?     @map("energy_level")
+  notes       String?
+  createdAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
+
+  @@unique([userId, date])
+  @@index([date], map: "idx_daily_tracking_date")
+  @@index([userId], map: "idx_daily_tracking_user_id")
+  @@map("daily_tracking")
+}
+
+model StravaCredentials {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId       String   @unique @map("user_id")
+  accessToken  String   @map("access_token")
+  refreshToken String   @map("refresh_token")
+  expiresAt    DateTime @map("expires_at") @db.Timestamptz(6)
+  createdAt    DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
+
+  @@index([userId], map: "idx_strava_credentials_user_id")
+  @@map("strava_credentials")
+}
+
+model UserPreferences {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @unique @map("user_id")
+  timezone  String?  @default("UTC")
+  createdAt DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
+
+  @@index([userId], map: "idx_user_preferences_user_id")
+  @@map("user_preferences")
+}

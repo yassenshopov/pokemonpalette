@@ -12,6 +12,8 @@ This boilerplate comes pre-configured with all the essential tools and component
 - **🎨 Tailwind CSS 4** - Utility-first CSS framework
 - **🧩 shadcn/ui** - Beautiful, accessible component library
 - **🔐 Clerk** - Complete authentication solution
+- **🗄️ Supabase** - PostgreSQL database with real-time features
+- **🔧 Prisma** - Type-safe database ORM with schema management
 - **🌙 Dark Mode** - Built-in theme switching
 - **📱 Mobile First** - Responsive design with collapsible sidebar
 - **⚙️ TypeScript** - Type-safe development
@@ -51,15 +53,35 @@ This boilerplate comes pre-configured with all the essential tools and component
    CLERK_SECRET_KEY=your_secret_key_here
    ```
 
+4. **Set up Supabase and Prisma (Optional)**
+
+   ```bash
+   cp supabase.env.example .env.local
+   ```
+
+   Add your Supabase credentials to `.env.local`:
+
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   DATABASE_URL=postgresql://postgres:password@host:port/database
+   ```
+
+   Then generate Prisma client:
+
+   ```bash
+   npx prisma generate
+   ```
+
    > **Note:** Clerk authentication is optional. The app will work without it, but authentication features will be disabled. You can set up Clerk later by following the [Clerk setup guide](https://clerk.com/docs/quickstarts/nextjs).
 
-4. **Start the development server**
+5. **Start the development server**
 
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+6. **Open your browser**
    Navigate to [http://localhost:350](http://localhost:350) 🧪
 
 > **Why port 350?** Just like the perfect temperature for yeast fermentation (350°F), this port ensures optimal development conditions!

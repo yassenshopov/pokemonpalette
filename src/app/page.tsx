@@ -18,6 +18,8 @@ import {
   ExternalLink,
   Sparkles,
   Layers,
+  Database,
+  Code,
 } from "lucide-react";
 
 export default function Home() {
@@ -116,6 +118,38 @@ export default function Home() {
                   />
                   Clerk Auth
                 </a>
+                <a
+                  href="https://supabase.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+                >
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+                    alt="Supabase"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 mr-2"
+                    unoptimized
+                  />
+                  Supabase
+                </a>
+                <a
+                  href="https://prisma.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
+                >
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg"
+                    alt="Prisma"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 mr-2"
+                    unoptimized
+                  />
+                  Prisma
+                </a>
               </div>
             </div>
           </div>
@@ -176,6 +210,36 @@ export default function Home() {
                 <CardDescription>
                   Clerk integration for secure user authentication and
                   management out of the box.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="transition-all">
+              <CardHeader>
+                <div className="flex items-center space-x-2">
+                  <Database className="h-5 w-5 text-primary" />
+                  <CardTitle className="font-heading">
+                    Database & Backend
+                  </CardTitle>
+                </div>
+                <CardDescription>
+                  Supabase integration for PostgreSQL database, real-time
+                  subscriptions, and serverless functions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="transition-all">
+              <CardHeader>
+                <div className="flex items-center space-x-2">
+                  <Code className="h-5 w-5 text-primary" />
+                  <CardTitle className="font-heading">
+                    Type-Safe Database
+                  </CardTitle>
+                </div>
+                <CardDescription>
+                  Prisma ORM with full TypeScript support, schema management,
+                  and automatic type generation.
                 </CardDescription>
               </CardHeader>
             </Card>

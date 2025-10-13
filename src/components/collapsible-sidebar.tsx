@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, X, Home } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
@@ -106,10 +106,24 @@ export function CollapsibleSidebar() {
 
             {/* Sidebar Content */}
             <div className="flex-1 p-4">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Appearance</span>
-                  <ThemeToggle />
+              <div className="space-y-6">
+                {/* Navigation */}
+                <div className="space-y-2">
+                  <Link
+                    href="/"
+                    className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <Home className="h-4 w-4" />
+                    <span>Home</span>
+                  </Link>
+                </div>
+
+                {/* Appearance */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Appearance</span>
+                    <ThemeToggle />
+                  </div>
                 </div>
               </div>
             </div>
@@ -181,18 +195,42 @@ export function CollapsibleSidebar() {
 
           {/* Sidebar Content */}
           <div className="flex-1 p-4">
-            <div className="space-y-4">
+            <div className="space-y-6">
               {isCollapsed ? (
                 <div className="flex flex-col items-center space-y-4">
+                  <div className="flex flex-col items-center space-y-2">
+                    <Link
+                      href="/"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      <Home className="h-4 w-4" />
+                    </Link>
+                  </div>
                   <div className="flex flex-col items-center">
                     <ThemeToggle />
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">Appearance</span>
-                  <ThemeToggle />
-                </div>
+                <>
+                  {/* Navigation */}
+                  <div className="space-y-2">
+                    <Link
+                      href="/"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      <Home className="h-4 w-4" />
+                      <span>Home</span>
+                    </Link>
+                  </div>
+
+                  {/* Appearance */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Appearance</span>
+                      <ThemeToggle />
+                    </div>
+                  </div>
+                </>
               )}
             </div>
           </div>
