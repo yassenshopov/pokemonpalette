@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { User, LogOut, Settings } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface UserProfileProps {
   isCollapsed?: boolean;
@@ -27,51 +28,9 @@ interface ClerkUserData {
   } | null;
 }
 
-export function UserProfile({ isCollapsed = false }: UserProfileProps) {
+function UserProfileClient({ isCollapsed = false }: UserProfileProps) {
+  const { user, isLoaded } = useUser();
   const { openUserProfile } = useClerk();
-
-  // Safely get Clerk hook with error handling
-  let user: ClerkUserData | null = null;
-  let isLoaded = false;
-
-  try {
-    const clerkData = useUser();
-    user = clerkData.user
-      ? {
-          id: clerkData.user.id,
-          firstName: clerkData.user.firstName,
-          lastName: clerkData.user.lastName,
-          fullName: clerkData.user.fullName,
-          imageUrl: clerkData.user.imageUrl,
-          primaryEmailAddress: clerkData.user.primaryEmailAddress,
-        }
-      : null;
-    isLoaded = clerkData.isLoaded;
-  } catch {
-    // If Clerk isn't available, show disabled state
-    return (
-      <div className="p-2">
-        <Button
-          variant="outline"
-          size="sm"
-          disabled
-          className={`bg-muted text-muted-foreground ${
-            isCollapsed ? "w-8 h-8 p-0" : "w-full"
-          }`}
-          title="Authentication not configured. Please set up Clerk API keys."
-        >
-          {isCollapsed ? (
-            <User className="h-4 w-4" />
-          ) : (
-            <>
-              <User className="h-4 w-4 mr-2" />
-              Auth Disabled
-            </>
-          )}
-        </Button>
-      </div>
-    );
-  }
 
   if (!isLoaded) {
     return (
@@ -179,4 +138,26 @@ export function UserProfile({ isCollapsed = false }: UserProfileProps) {
       </DropdownMenu>
     </div>
   );
+}
+
+export function UserProfile({ isCollapsed = false }: UserProfileProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div
+        className={`flex items-center ${
+          isCollapsed ? "justify-center p-2" : "p-2"
+        }`}
+      >
+        <div className="h-8 w-8 rounded-full bg-muted animate-pulse" />
+      </div>
+    );
+  }
+
+  return <UserProfileClient isCollapsed={isCollapsed} />;
 }
