@@ -17,38 +17,10 @@ interface UserProfileProps {
   isCollapsed?: boolean;
 }
 
-function UserProfileClient({ isCollapsed = false }: UserProfileProps) {
-  // Always call hooks first (React rules)
+// Component that handles Clerk hooks - only rendered when Clerk is available
+function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
   const { user, isLoaded } = useUser();
   const { openUserProfile } = useClerk();
-
-  // Check if Clerk is available after calling hooks
-  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
-
-  if (!publishableKey) {
-    return (
-      <div className="p-2">
-        <Button
-          variant="outline"
-          size="sm"
-          disabled
-          className={`bg-muted text-muted-foreground ${
-            isCollapsed ? "w-8 h-8 p-0" : "w-full"
-          }`}
-          title="Authentication not configured. Please set up Clerk API keys."
-        >
-          {isCollapsed ? (
-            <User className="h-4 w-4" />
-          ) : (
-            <>
-              <User className="h-4 w-4 mr-2" />
-              Auth Disabled
-            </>
-          )}
-        </Button>
-      </div>
-    );
-  }
 
   if (!isLoaded) {
     return (
@@ -156,6 +128,40 @@ function UserProfileClient({ isCollapsed = false }: UserProfileProps) {
       </DropdownMenu>
     </div>
   );
+}
+
+// Main component that checks for Clerk availability
+function UserProfileClient({ isCollapsed = false }: UserProfileProps) {
+  // Check if Clerk is available first
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  if (!publishableKey) {
+    return (
+      <div className="p-2">
+        <Button
+          variant="outline"
+          size="sm"
+          disabled
+          className={`bg-muted text-muted-foreground ${
+            isCollapsed ? "w-8 h-8 p-0" : "w-full"
+          }`}
+          title="Authentication not configured. Please set up Clerk API keys."
+        >
+          {isCollapsed ? (
+            <User className="h-4 w-4" />
+          ) : (
+            <>
+              <User className="h-4 w-4 mr-2" />
+              Auth Disabled
+            </>
+          )}
+        </Button>
+      </div>
+    );
+  }
+
+  // Only render ClerkUserProfile if Clerk is available
+  return <ClerkUserProfile isCollapsed={isCollapsed} />;
 }
 
 export function UserProfile({ isCollapsed = false }: UserProfileProps) {
