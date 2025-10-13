@@ -343,7 +343,7 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/`;
             onClick={handleDontShowAgain}
             className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
           >
-            Don't show again
+            Don&apos;t show again
           </Button>
         </div>
       </div>
