@@ -94,6 +94,7 @@ export function CollapsibleSidebar() {
                   width={80}
                   height={20}
                   className="dark:invert"
+                  unoptimized
                 />
               </Link>
 
@@ -154,6 +155,7 @@ export function CollapsibleSidebar() {
                 width={isCollapsed ? 28 : 36}
                 height={isCollapsed ? 28 : 9}
                 className="dark:invert"
+                unoptimized
               />
               {!isCollapsed && (
                 <span className="text-lg font-semibold text-foreground font-sans">

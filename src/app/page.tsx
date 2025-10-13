@@ -1,5 +1,6 @@
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { SetupChecklist } from "@/components/setup-checklist";
+import Image from "next/image";
 import {
   Card,
   CardDescription,
@@ -50,10 +51,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
               >
-                <img
+                <Image
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
                   alt="Next.js"
+                  width={16}
+                  height={16}
                   className="h-4 w-4 mr-2"
+                  unoptimized
                 />
                 Next.js 15
               </a>
@@ -63,10 +67,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
               >
-                <img
+                <Image
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
                   alt="Tailwind CSS"
+                  width={16}
+                  height={16}
                   className="h-4 w-4 mr-2"
+                  unoptimized
                 />
                 Tailwind CSS
               </a>
@@ -76,10 +83,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
               >
-                <img
+                <Image
                   src="https://avatars.githubusercontent.com/u/139895814?v=4"
                   alt="shadcn/ui"
+                  width={16}
+                  height={16}
                   className="h-4 w-4 mr-2 rounded-sm"
+                  unoptimized
                 />
                 shadcn/ui
               </a>
@@ -89,10 +99,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground transition-colors duration-200 shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
               >
-                <img
+                <Image
                   src="https://ph-files.imgix.net/297bc3d4-bd2e-4eaa-8fb6-a289cf61ea91.png?auto=format"
                   alt="Clerk Auth"
+                  width={16}
+                  height={16}
                   className="h-4 w-4 mr-2"
+                  unoptimized
                 />
                 Clerk Auth
               </a>
