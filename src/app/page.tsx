@@ -1,6 +1,10 @@
+"use client";
+
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { SetupChecklist } from "@/components/setup-checklist";
+import { AnimatedTechStack } from "@/components/animated-tech-stack";
 import Image from "next/image";
+import { useState } from "react";
 import {
   Card,
   CardDescription,
@@ -20,9 +24,42 @@ import {
   Layers,
   Database,
   Code,
+  Copy,
+  Check,
 } from "lucide-react";
 
 export default function Home() {
+  const [copiedStates, setCopiedStates] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+
+  const copyToClipboard = async (text: string, promptId: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedStates((prev) => ({ ...prev, [promptId]: true }));
+      setTimeout(() => {
+        setCopiedStates((prev) => ({ ...prev, [promptId]: false }));
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+
+  const prompts = [
+    {
+      id: "brand",
+      title: "Brand & Identity",
+      text: `# Customize the branding and visual identity
+Replace "Starter Yeast" with my brand name "[YOUR_BRAND]" and update the color scheme to match my brand colors: [PRIMARY_COLOR], [SECONDARY_COLOR]. Update the logo, favicon, and any brand references throughout the app.`,
+    },
+    {
+      id: "homepage",
+      title: "Custom Landing Page",
+      text: `# Replace the homepage with my custom landing page
+Create a new homepage for my [APP_TYPE] application. Include sections for [HERO_SECTION], [FEATURES_SECTION], [ABOUT_SECTION], and [CTA_SECTION]. Use modern design principles with proper spacing, typography, and responsive layout. Replace the current boilerplate content with my specific messaging and value propositions.`,
+    },
+  ];
+
   return (
     <div className="flex h-screen">
       <CollapsibleSidebar />
@@ -36,120 +73,17 @@ export default function Home() {
             <div className="absolute inset-0 -top-8 -bottom-8 bg-[radial-gradient(circle_at_1px_1px,rgb(156,163,175)_1px,transparent_0)] bg-[length:20px_20px] opacity-20"></div>
             <div className="relative z-10">
               <div className="flex items-center justify-center mb-6">
-                <Image
-                  src="/logo.png"
-                  alt="Starter Yeast logo"
-                  width={64}
-                  height={16}
-                  className="mr-4 dark:invert"
-                  unoptimized
-                />
                 <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent font-heading">
                   Starter Yeast
                 </h1>
               </div>
-              <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <p className="text-base sm:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
                 The perfect fermentation starter for your Next.js applications.
                 A modern boilerplate with all the ingredients you need to build
                 amazing web apps.
               </p>
-              <div className="flex flex-wrap justify-center gap-3 mb-8">
-                <a
-                  href="https://nextjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-                >
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-                    alt="Next.js"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-2"
-                    unoptimized
-                  />
-                  Next.js 15
-                </a>
-                <a
-                  href="https://tailwindcss.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-                >
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-                    alt="Tailwind CSS"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-2"
-                    unoptimized
-                  />
-                  Tailwind CSS
-                </a>
-                <a
-                  href="https://ui.shadcn.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-                >
-                  <Image
-                    src="https://avatars.githubusercontent.com/u/139895814?v=4"
-                    alt="shadcn/ui"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-2 rounded-sm"
-                    unoptimized
-                  />
-                  shadcn/ui
-                </a>
-                <a
-                  href="https://clerk.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-                >
-                  <Image
-                    src="https://ph-files.imgix.net/297bc3d4-bd2e-4eaa-8fb6-a289cf61ea91.png?auto=format"
-                    alt="Clerk Auth"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-2"
-                    unoptimized
-                  />
-                  Clerk Auth
-                </a>
-                <a
-                  href="https://supabase.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-                >
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
-                    alt="Supabase"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-2"
-                    unoptimized
-                  />
-                  Supabase
-                </a>
-                <a
-                  href="https://prisma.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm px-4 py-2 rounded-lg bg-card border-2 border-gray-600 text-foreground font-semibold hover:bg-accent hover:text-accent-foreground shadow-[2px_2px_0px_0px_rgb(75,85,99)] hover:shadow-[1px_1px_0px_0px_rgb(75,85,99)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-200"
-                >
-                  <Image
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg"
-                    alt="Prisma"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-2"
-                    unoptimized
-                  />
-                  Prisma
-                </a>
+              <div className="mb-8">
+                <AnimatedTechStack />
               </div>
             </div>
           </div>
@@ -273,24 +207,46 @@ export default function Home() {
 
           <Separator className="my-8" />
 
-          {/* Getting Started */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4 font-heading">
-              Ready to Start Baking?
+          {/* AI Customization Prompts */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-6 font-heading text-center">
+              Customize with AI
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Clone this repository and begin building your next amazing
-              application.
+            <p className="text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
+              Use these prompts in your favorite AI assistant to transform this
+              boilerplate into your unique application.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2">
-                <Github className="h-4 w-4" />
-                View on GitHub
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2">
-                <ExternalLink className="h-4 w-4" />
-                Documentation
-              </Button>
+
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {prompts.map((prompt, index) => (
+                <Card key={prompt.id} className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
+                      {index + 1}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold mb-2">{prompt.title}</h3>
+                      <div className="bg-muted p-4 rounded-lg font-mono text-sm overflow-x-auto relative">
+                        <pre className="whitespace-pre-wrap">{prompt.text}</pre>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="absolute top-2 right-2 h-8 w-8 p-0"
+                          onClick={() =>
+                            copyToClipboard(prompt.text, prompt.id)
+                          }
+                        >
+                          {copiedStates[prompt.id] ? (
+                            <Check className="h-4 w-4 text-green-600" />
+                          ) : (
+                            <Copy className="h-4 w-4" />
+                          )}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
 
