@@ -3,6 +3,7 @@
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { SetupChecklist } from "@/components/setup-checklist";
 import { AnimatedTechStack } from "@/components/animated-tech-stack";
+import { Footer } from "@/components/footer";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -251,9 +252,7 @@ Create a new homepage for my [APP_TYPE] application. Include sections for [HERO_
           </div>
 
           {/* Footer */}
-          <footer className="text-center text-sm text-muted-foreground pt-8 border-t">
-            <p>PokémonPalette v0.1.0 • Built with ❤️ for developers</p>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>
