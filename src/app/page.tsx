@@ -4,7 +4,6 @@ import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { SetupChecklist } from "@/components/setup-checklist";
 import { AnimatedTechStack } from "@/components/animated-tech-stack";
 import { Footer } from "@/components/footer";
-import Image from "next/image";
 import { useState } from "react";
 import {
   Card,
@@ -19,8 +18,6 @@ import {
   Zap,
   Palette,
   Shield,
-  Github,
-  ExternalLink,
   Sparkles,
   Layers,
   Database,

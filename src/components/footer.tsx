@@ -23,7 +23,7 @@ export function Footer() {
               design tool for artists, designers, and Pokemon fans.
             </p>
             <p className="text-xs text-muted-foreground/70">
-              Not affiliated with 'The Pokémon Company' or Nintendo.
+              Not affiliated with &apos;The Pokémon Company&apos; or Nintendo.
             </p>
           </div>
 
