@@ -1,0 +1,69 @@
+{
+  "id": 25,
+  "name": "Pikachu",
+  "species": "Mouse Pokémon",
+  "type": ["Electric"],
+  "height": 0.4,
+  "weight": 6.0,
+  "abilities": ["Static", "Lightning Rod"],
+  "baseStats": {
+    "hp": 35,
+    "attack": 55,
+    "defense": 40,
+    "specialAttack": 50,
+    "specialDefense": 50,
+    "speed": 90
+  },
+  "description": "When it releases pent-up energy in a burst, the electric power is equal to a lightning bolt.",
+  "colorPalette": {
+    "primary": "#F8D030",
+    "secondary": "#F08030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": ["#FFD700", "#FFA500", "#FFE4B5"]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png"
+  },
+  "evolution": {
+    "stage": 2,
+    "evolvesFrom": 172,
+    "evolvesTo": 26,
+    "evolutionMethod": "stone",
+    "evolutionItem": "Thunder Stone"
+  },
+  "moves": [
+    {
+      "name": "Thunder Shock",
+      "type": "Electric",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "category": "Special"
+    },
+    {
+      "name": "Quick Attack",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "category": "Physical",
+      "priority": 1
+    },
+    {
+      "name": "Thunderbolt",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "category": "Special"
+    }
+  ],
+  "habitat": "Forest",
+  "generation": 1,
+  "rarity": "Common"
+}

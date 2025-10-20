@@ -1,0 +1,67 @@
+{
+  "id": 150,
+  "name": "Mewtwo",
+  "species": "Genetic Pokémon",
+  "type": ["Psychic"],
+  "height": 2.0,
+  "weight": 122.0,
+  "abilities": ["Pressure", "Unnerve"],
+  "baseStats": {
+    "hp": 106,
+    "attack": 110,
+    "defense": 90,
+    "specialAttack": 154,
+    "specialDefense": 90,
+    "speed": 130
+  },
+  "description": "A Pokémon created by recombining Mew's genes. It's said to have the most savage heart among Pokémon.",
+  "colorPalette": {
+    "primary": "#A040A0",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#2C2C2C",
+    "text": "#F8F8F8",
+    "highlights": ["#DDA0DD", "#EE82EE", "#DA70D6"]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/150.png"
+  },
+  "evolution": {
+    "stage": 1,
+    "evolvesFrom": null,
+    "evolvesTo": null,
+    "evolutionMethod": null
+  },
+  "moves": [
+    {
+      "name": "Psychic",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "category": "Special"
+    },
+    {
+      "name": "Confusion",
+      "type": "Psychic",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 25,
+      "category": "Special"
+    },
+    {
+      "name": "Recover",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "category": "Status"
+    }
+  ],
+  "habitat": "Cave",
+  "generation": 1,
+  "rarity": "Legendary"
+}

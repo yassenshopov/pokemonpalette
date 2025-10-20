@@ -1,0 +1,67 @@
+{
+  "id": 1,
+  "name": "Bulbasaur",
+  "species": "Seed Pokémon",
+  "type": ["Grass", "Poison"],
+  "height": 0.7,
+  "weight": 6.9,
+  "abilities": ["Overgrow", "Chlorophyll"],
+  "baseStats": {
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "specialAttack": 65,
+    "specialDefense": 65,
+    "speed": 45
+  },
+  "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
+  "colorPalette": {
+    "primary": "#78C850",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": ["#90EE90", "#98FB98", "#8FBC8F"]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"
+  },
+  "evolution": {
+    "stage": 1,
+    "evolvesTo": 2,
+    "evolutionMethod": "level",
+    "evolutionLevel": 16
+  },
+  "moves": [
+    {
+      "name": "Tackle",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "category": "Physical"
+    },
+    {
+      "name": "Vine Whip",
+      "type": "Grass",
+      "power": 45,
+      "accuracy": 100,
+      "pp": 25,
+      "category": "Physical"
+    },
+    {
+      "name": "Poison Powder",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 75,
+      "pp": 35,
+      "category": "Status"
+    }
+  ],
+  "habitat": "Grassland",
+  "generation": 1,
+  "rarity": "Common"
+}

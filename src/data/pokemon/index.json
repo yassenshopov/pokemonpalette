@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "species": "Seed Pokémon",
+    "type": ["Grass", "Poison"],
+    "generation": 1,
+    "rarity": "Common"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "species": "Mouse Pokémon",
+    "type": ["Electric"],
+    "generation": 1,
+    "rarity": "Common"
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "species": "Genetic Pokémon",
+    "type": ["Psychic"],
+    "generation": 1,
+    "rarity": "Legendary"
+  }
+]
