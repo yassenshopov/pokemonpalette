@@ -50,7 +50,7 @@ export default function Home() {
       id: "brand",
       title: "Brand & Identity",
       text: `# Customize the branding and visual identity
-Replace "Starter Yeast" with my brand name "[YOUR_BRAND]" and update the color scheme to match my brand colors: [PRIMARY_COLOR], [SECONDARY_COLOR]. Update the logo, favicon, and any brand references throughout the app.`,
+Replace "PokémonPalette" with my brand name "[YOUR_BRAND]" and update the color scheme to match my brand colors: [PRIMARY_COLOR], [SECONDARY_COLOR]. Update the logo, favicon, and any brand references throughout the app.`,
     },
     {
       id: "homepage",
@@ -74,7 +74,7 @@ Create a new homepage for my [APP_TYPE] application. Include sections for [HERO_
             <div className="relative z-10">
               <div className="flex items-center justify-center mb-6">
                 <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent font-heading">
-                  Starter Yeast
+                  PokémonPalette
                 </h1>
               </div>
               <p className="text-base sm:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
@@ -252,7 +252,7 @@ Create a new homepage for my [APP_TYPE] application. Include sections for [HERO_
 
           {/* Footer */}
           <footer className="text-center text-sm text-muted-foreground pt-8 border-t">
-            <p>Starter Yeast v0.1.0 • Built with ❤️ for developers</p>
+            <p>PokémonPalette v0.1.0 • Built with ❤️ for developers</p>
           </footer>
         </div>
       </div>

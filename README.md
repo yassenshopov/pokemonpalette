@@ -1,8 +1,8 @@
-# 🍞 Starter Yeast
+# 🎨 PokémonPalette
 
-> The perfect fermentation starter for your Next.js applications
+> The perfect palette for your Next.js applications
 
-A modern, production-ready boilerplate that combines the best ingredients for building amazing web applications. Just like yeast transforms simple ingredients into delicious bread, Starter Yeast transforms your development process into something extraordinary.
+A modern, production-ready boilerplate that combines the best ingredients for building amazing web applications. Just like a palette transforms colors into beautiful art, PokémonPalette transforms your development process into something extraordinary.
 
 ## 🌟 What's Included
 
@@ -30,8 +30,8 @@ This boilerplate comes pre-configured with all the essential tools and component
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/starter-yeast.git
-   cd starter-yeast
+   git clone https://github.com/your-username/pokemonpalette.git
+   cd pokemonpalette
    ```
 
 2. **Install dependencies**
@@ -89,7 +89,7 @@ This boilerplate comes pre-configured with all the essential tools and component
 ## 🏗️ Project Structure
 
 ```
-starter-yeast/
+pokemonpalette/
 ├── src/
 │   ├── app/                 # Next.js App Router
 │   │   ├── globals.css     # Global styles & theme variables
@@ -248,12 +248,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/your-username/starter-yeast/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/starter-yeast/discussions)
-- **Documentation**: [Wiki](https://github.com/your-username/starter-yeast/wiki)
+- **Issues**: [GitHub Issues](https://github.com/your-username/pokemonpalette/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/your-username/pokemonpalette/discussions)
+- **Documentation**: [Wiki](https://github.com/your-username/pokemonpalette/wiki)
 
 ---
 
-**Happy Baking! 🍞**
+**Happy Creating! 🎨**
 
-_Starter Yeast v0.1.0 • Built with ❤️ for developers_
+_PokémonPalette v0.1.0 • Built with ❤️ for developers_

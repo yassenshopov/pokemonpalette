@@ -90,7 +90,7 @@ export function CollapsibleSidebar() {
               <Link href="/" className="flex items-center space-x-2">
                 <Image
                   src="/logo.png"
-                  alt="Starter Yeast logo"
+                  alt="PokémonPalette logo"
                   width={48}
                   height={12}
                   className="dark:invert"
@@ -133,7 +133,7 @@ export function CollapsibleSidebar() {
               <UserProfileWrapper />
               <div className="p-4 pt-2">
                 <p className="text-xs text-muted-foreground">
-                  Starter Yeast v0.1.0
+                  PokémonPalette v0.1.0
                 </p>
               </div>
             </div>
@@ -165,7 +165,7 @@ export function CollapsibleSidebar() {
             <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/logo.png"
-                alt="Starter Yeast logo"
+                alt="PokémonPalette logo"
                 width={isCollapsed ? 28 : 36}
                 height={isCollapsed ? 28 : 9}
                 className="dark:invert"
@@ -173,7 +173,7 @@ export function CollapsibleSidebar() {
               />
               {!isCollapsed && (
                 <span className="text-lg font-semibold text-foreground font-heading">
-                  StarterYeast
+                  PokémonPalette
                 </span>
               )}
             </Link>
@@ -241,7 +241,7 @@ export function CollapsibleSidebar() {
             {!isCollapsed && (
               <div className="p-4 pt-2">
                 <p className="text-xs text-muted-foreground">
-                  Starter Yeast v0.1.0
+                  PokémonPalette v0.1.0
                 </p>
               </div>
             )}
