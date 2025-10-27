@@ -399,7 +399,7 @@ export function PokemonExpandedView({
                           {evo.details && evo.details.length > 0 && (
                             <div className="text-xs text-muted-foreground mt-1 space-y-0.5">
                               {evo.details.map(
-                                (detail: EvolutionDetail, dIdx) => (
+                                (detail: EvolutionDetail, dIdx: number) => (
                                   <div key={dIdx}>
                                     {detail.min_level && (
                                       <span>Lv.{detail.min_level} </span>
