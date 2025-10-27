@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Pokemon } from "@/types/pokemon";
 import { getPokemonById } from "@/lib/pokemon";
+import { extractColorsFromImage } from "@/lib/color-extractor";
 import Image from "next/image";
 import { LoaderOverlay } from "@/components/loader-overlay";
 
@@ -14,11 +15,15 @@ interface PokemonHeroProps {
 export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
+  const [currentImageSrc, setCurrentImageSrc] = useState<string | null>(null);
+  const [extractedColors, setExtractedColors] = useState<string[]>([]);
 
   useEffect(() => {
     if (pokemonId) {
       const startTime = Date.now();
       setLoading(true);
+      setImageLoading(true);
       getPokemonById(pokemonId)
         .then((data) => {
           setPokemon(data);
@@ -34,17 +39,56 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
             setLoading(false);
           }
         });
+    } else {
+      setPokemon(null);
+      setCurrentImageSrc(null);
     }
   }, [pokemonId]);
 
-  // Get colors from pokemon data
+  // Update image src when pokemon or shiny state changes
+  useEffect(() => {
+    if (
+      pokemon &&
+      typeof pokemon.artwork === "object" &&
+      "official" in pokemon.artwork
+    ) {
+      const newSrc = isShiny
+        ? pokemon.artwork.official.replace(
+            "/other/official-artwork/",
+            "/other/official-artwork/shiny/"
+          )
+        : pokemon.artwork.official;
+
+      if (newSrc !== currentImageSrc) {
+        setImageLoading(true);
+        setCurrentImageSrc(newSrc);
+      }
+    }
+  }, [pokemon, isShiny]);
+
+  // Extract colors from the official artwork when image src changes
+  useEffect(() => {
+    if (currentImageSrc && !imageLoading) {
+      extractColorsFromImage(currentImageSrc, 2)
+        .then((colors) => {
+          setExtractedColors(colors);
+        })
+        .catch((error) => {
+          console.error("Failed to extract colors:", error);
+          // Fallback to default colors
+          setExtractedColors([]);
+        });
+    }
+  }, [currentImageSrc, imageLoading]);
+
+  // Get colors - use extracted colors if available, fallback to pokemon data
   const colors = pokemon?.colorPalette;
-  const primaryColor = colors?.primary || "#94a3b8";
-  const secondaryColor = colors?.secondary || "#94a3b8";
-  const highlightColors = colors?.highlights?.slice(0, 2) || [
-    primaryColor,
-    secondaryColor,
-  ];
+  const primaryColor = extractedColors[0] || colors?.primary || "#94a3b8";
+  const secondaryColor = extractedColors[1] || colors?.secondary || "#94a3b8";
+  const highlightColors =
+    extractedColors.length >= 2
+      ? extractedColors
+      : colors?.highlights?.slice(0, 2) || [primaryColor, secondaryColor];
 
   return (
     <div
@@ -87,31 +131,30 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
             Your website - inspired by colours
           </h1>
           <p className="text-lg text-muted-foreground">
-            This website allows you to enter a Pokemon's name (or simply its
-            number in the Pokedex), and its top 3 colours will be extracted.
+            This website allows you to enter a Pokemon&apos;s name (or simply
+            its number in the Pokedex), and its top 3 colours will be extracted.
           </p>
         </div>
 
         {/* Right: Pokemon image */}
         {pokemon && !loading ? (
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative">
             {typeof pokemon.artwork === "object" &&
-            "official" in pokemon.artwork ? (
-              <Image
-                src={
-                  isShiny
-                    ? pokemon.artwork.official.replace(
-                        "/other/official-artwork/",
-                        "/other/official-artwork/shiny/"
-                      )
-                    : pokemon.artwork.official
-                }
-                alt={pokemon.name}
-                width={150}
-                height={150}
-                className="w-auto h-auto"
-                unoptimized
-              />
+            "official" in pokemon.artwork &&
+            currentImageSrc ? (
+              <div className="relative">
+                <Image
+                  src={currentImageSrc}
+                  alt={pokemon.name}
+                  width={150}
+                  height={150}
+                  className={`w-auto h-auto transition-opacity duration-500 ${
+                    imageLoading ? "opacity-0" : "opacity-100"
+                  }`}
+                  onLoad={() => setImageLoading(false)}
+                  unoptimized
+                />
+              </div>
             ) : null}
           </div>
         ) : null}

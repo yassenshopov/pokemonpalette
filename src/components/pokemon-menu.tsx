@@ -6,6 +6,7 @@ import {
   getPokemonById,
   getPokemonMetadataByName,
 } from "@/lib/pokemon";
+import { extractColorsFromImage } from "@/lib/color-extractor";
 import { Pokemon } from "@/types/pokemon";
 import Image from "next/image";
 import { LoaderOverlay } from "@/components/loader-overlay";
@@ -104,6 +105,7 @@ export function PokemonMenu({
   const [loading, setLoading] = useState(false);
   const [colorFormat, setColorFormat] = useState<"hex" | "hsl" | "rgb">("hex");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [extractedColors, setExtractedColors] = useState<string[]>([]);
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
@@ -127,7 +129,50 @@ export function PokemonMenu({
           }
         });
     }
-  }, [selectedPokemon]);
+  }, [selectedPokemon, onPokemonSelect]);
+
+  // Extract colors from sprite when pokemonData changes
+  useEffect(() => {
+    if (pokemonData) {
+      const spriteUrl = getSpriteUrl(pokemonData, isShiny);
+      if (spriteUrl) {
+        const extractedKey = `${pokemonData.id}-${isShiny}`;
+        extractColorsFromImage(spriteUrl, 3)
+          .then((colors) => {
+            setExtractedColors(colors);
+            // Also update the pokemonData's colorPalette with extracted colors
+            if (pokemonData && colors.length > 0) {
+              // Only update if colors actually changed to avoid infinite loop
+              const newPalette = {
+                ...pokemonData.colorPalette,
+                primary: colors[0] || pokemonData.colorPalette.primary,
+                secondary: colors[1] || pokemonData.colorPalette.secondary,
+                accent: colors[2] || pokemonData.colorPalette.accent,
+                highlights: colors,
+              };
+
+              // Check if colors are different to avoid infinite update
+              if (
+                JSON.stringify(newPalette.highlights) !==
+                JSON.stringify(pokemonData.colorPalette.highlights)
+              ) {
+                setPokemonData({
+                  ...pokemonData,
+                  colorPalette: newPalette,
+                });
+              }
+            }
+          })
+          .catch((error) => {
+            console.error("Failed to extract colors:", error);
+            // Fallback to default colors if extraction fails
+            setExtractedColors(
+              pokemonData.colorPalette?.highlights?.slice(0, 3) || []
+            );
+          });
+      }
+    }
+  }, [pokemonData?.id, isShiny]); // Only depend on id and isShiny to avoid infinite loop
 
   const handleSelect = (pokemonId: number) => {
     setSelectedPokemon(pokemonId);
@@ -161,26 +206,32 @@ export function PokemonMenu({
     }
   };
 
+  // Helper function to get sprite URL
+  const getSpriteUrl = (pokemon: Pokemon, shiny: boolean): string | null => {
+    if (typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
+      // Use the 2D sprite (front) for color extraction
+      if (shiny && pokemon.artwork.shiny) {
+        return pokemon.artwork.shiny;
+      }
+      return pokemon.artwork.front || null;
+    }
+    return null;
+  };
+
   return (
     <div className="h-full p-8 flex flex-col items-center justify-start gap-6 relative w-full">
       <LoaderOverlay loading={loading} text="Loading Pokemon..." />
 
       {/* Sprite image */}
       {pokemonData && (
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 mt-8">
           <div className="relative">
-            {typeof pokemonData.artwork === "object" &&
-            "front" in pokemonData.artwork &&
-            pokemonData.artwork.front ? (
+            {getSpriteUrl(pokemonData, isShiny) ? (
               <Image
-                src={
-                  isShiny && pokemonData.artwork.shiny
-                    ? pokemonData.artwork.shiny
-                    : pokemonData.artwork.front
-                }
+                src={getSpriteUrl(pokemonData, isShiny)!}
                 alt={pokemonData.name}
-                width={200}
-                height={200}
+                width={400}
+                height={400}
                 className="w-auto h-auto"
                 style={{ imageRendering: "pixelated" }}
                 unoptimized
@@ -194,10 +245,14 @@ export function PokemonMenu({
               }`}
               title="Toggle Shiny"
               style={{
-                color: pokemonData.colorPalette?.primary,
+                color: extractedColors[0] || pokemonData.colorPalette?.primary,
                 backgroundColor: isShiny
-                  ? pokemonData.colorPalette?.primary + "80"
-                  : pokemonData.colorPalette?.primary + "20",
+                  ? (extractedColors[0] ||
+                      pokemonData.colorPalette?.primary ||
+                      "#000") + "80"
+                  : (extractedColors[0] ||
+                      pokemonData.colorPalette?.primary ||
+                      "#000") + "20",
               }}
             >
               <Sparkles className="w-4 h-4" />
@@ -305,45 +360,46 @@ export function PokemonMenu({
               </Select>
             </div>
 
-            {pokemonData.colorPalette?.highlights
-              ?.slice(0, 3)
-              .map((color, index) => (
-                <div
-                  key={index}
-                  className="w-full h-16 rounded-md p-3 flex items-center justify-between border gap-2"
-                  style={{ backgroundColor: color }}
+            {(extractedColors.length > 0
+              ? extractedColors
+              : pokemonData.colorPalette?.highlights?.slice(0, 3) || []
+            ).map((color, index) => (
+              <div
+                key={index}
+                className="w-full h-16 rounded-md p-3 flex items-center justify-between border gap-2"
+                style={{ backgroundColor: color }}
+              >
+                <span
+                  ref={(el) => {
+                    if (el) colorTextRefs.current[index] = el;
+                  }}
+                  className={`text-xs font-mono ${getTextColor(
+                    color
+                  )} transition-all duration-300 ${
+                    isAnimating
+                      ? "scale-105 opacity-0"
+                      : "scale-100 opacity-100"
+                  }`}
                 >
-                  <span
-                    ref={(el) => {
-                      if (el) colorTextRefs.current[index] = el;
-                    }}
-                    className={`text-xs font-mono ${getTextColor(
-                      color
-                    )} transition-all duration-300 ${
-                      isAnimating
-                        ? "scale-105 opacity-0"
-                        : "scale-100 opacity-100"
-                    }`}
+                  {convertColor(color, colorFormat)}
+                </span>
+                <button className="p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors">
+                  <svg
+                    className={`w-4 h-4 ${getTextColor(color)}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    {convertColor(color, colorFormat)}
-                  </span>
-                  <button className="p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors">
-                    <svg
-                      className={`w-4 h-4 ${getTextColor(color)}`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ))}
           </TabsContent>
 
           <TabsContent value="forms" className="mt-4 space-y-4">
@@ -419,11 +475,15 @@ export function PokemonMenu({
                                       isSelected
                                         ? {
                                             borderColor:
-                                              pokemonData.colorPalette
-                                                ?.primary + "80",
+                                              (extractedColors[0] ||
+                                                pokemonData.colorPalette
+                                                  ?.primary ||
+                                                "#000") + "80",
                                             backgroundColor:
-                                              pokemonData.colorPalette
-                                                ?.primary + "15",
+                                              (extractedColors[0] ||
+                                                pokemonData.colorPalette
+                                                  ?.primary ||
+                                                "#000") + "15",
                                           }
                                         : {}
                                     }
@@ -524,9 +584,13 @@ export function PokemonMenu({
                           isSelected
                             ? {
                                 borderColor:
-                                  pokemonData.colorPalette?.primary + "40",
+                                  (extractedColors[0] ||
+                                    pokemonData.colorPalette?.primary ||
+                                    "#000") + "40",
                                 backgroundColor:
-                                  pokemonData.colorPalette?.primary + "10",
+                                  (extractedColors[0] ||
+                                    pokemonData.colorPalette?.primary ||
+                                    "#000") + "10",
                               }
                             : {}
                         }
