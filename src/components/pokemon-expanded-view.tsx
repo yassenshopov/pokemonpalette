@@ -99,14 +99,14 @@ export function PokemonExpandedView({
         "front_shiny" in pokemon.artwork &&
         pokemon.artwork.front_shiny
       ) {
-        return pokemon.artwork.front_shiny;
+        return pokemon.artwork.front_shiny as string;
       }
       if (
         type === "back" &&
         "back_shiny" in pokemon.artwork &&
         pokemon.artwork.back_shiny
       ) {
-        return pokemon.artwork.back_shiny;
+        return pokemon.artwork.back_shiny as string;
       }
 
       // Otherwise, inject '/shiny' into the URL path
