@@ -136,7 +136,6 @@ export function PokemonMenu({
     if (pokemonData) {
       const spriteUrl = getSpriteUrl(pokemonData, isShiny);
       if (spriteUrl) {
-        const extractedKey = `${pokemonData.id}-${isShiny}`;
         extractColorsFromImage(spriteUrl, 3)
           .then((colors) => {
             setExtractedColors(colors);
@@ -156,10 +155,12 @@ export function PokemonMenu({
                 JSON.stringify(newPalette.highlights) !==
                 JSON.stringify(pokemonData.colorPalette.highlights)
               ) {
-                setPokemonData({
-                  ...pokemonData,
-                  colorPalette: newPalette,
-                });
+                if (pokemonData) {
+                  setPokemonData({
+                    ...pokemonData,
+                    colorPalette: newPalette,
+                  });
+                }
               }
             }
           })

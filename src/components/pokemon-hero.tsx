@@ -68,18 +68,23 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
 
   // Extract colors from the official artwork when image src changes
   useEffect(() => {
-    if (currentImageSrc && !imageLoading) {
-      extractColorsFromImage(currentImageSrc, 2)
-        .then((colors) => {
-          setExtractedColors(colors);
-        })
-        .catch((error) => {
-          console.error("Failed to extract colors:", error);
-          // Fallback to default colors
-          setExtractedColors([]);
-        });
+    if (currentImageSrc) {
+      // Small delay to ensure image is loaded
+      const timer = setTimeout(() => {
+        extractColorsFromImage(currentImageSrc, 2)
+          .then((colors) => {
+            setExtractedColors(colors);
+          })
+          .catch((error) => {
+            console.error("Failed to extract colors:", error);
+            // Fallback to default colors
+            setExtractedColors([]);
+          });
+      }, 100);
+
+      return () => clearTimeout(timer);
     }
-  }, [currentImageSrc, imageLoading]);
+  }, [currentImageSrc]);
 
   // Get colors - use extracted colors if available, fallback to pokemon data
   const colors = pokemon?.colorPalette;
@@ -100,6 +105,7 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
                      radial-gradient(circle at 25% 80%, ${
                        highlightColors[1] || secondaryColor
                      }33 0%, transparent 55%)`,
+        transition: "background 1s ease-in-out",
       }}
     >
       <style

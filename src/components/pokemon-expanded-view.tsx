@@ -65,7 +65,7 @@ export function PokemonExpandedView({
   };
 
   // Get sprite URL based on shiny state and selected variety
-  const getSpriteUrl = (type: "front" | "back" | "official") => {
+  const getSpriteUrl = (type: "front" | "back" | "official"): string | null => {
     if (type === "official") {
       // If a variety is selected, use that variety's artwork
       const pokemonId = selectedVarietyId ?? pokemon.id;
