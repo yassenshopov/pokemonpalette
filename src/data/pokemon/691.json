@@ -1,0 +1,316 @@
+{
+  "id": 691,
+  "name": "Dragalge",
+  "species": "Mock Kelp Pok\u00e9mon",
+  "type": [
+    "Poison",
+    "Dragon"
+  ],
+  "typeDetails": [
+    {
+      "name": "Poison",
+      "slot": 1
+    },
+    {
+      "name": "Dragon",
+      "slot": 2
+    }
+  ],
+  "height": 1.8,
+  "weight": 81.5,
+  "abilities": [
+    {
+      "name": "Poison point",
+      "url": "https://pokeapi.co/api/v2/ability/38/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Poison touch",
+      "url": "https://pokeapi.co/api/v2/ability/143/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Adaptability",
+      "url": "https://pokeapi.co/api/v2/ability/91/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 75,
+    "defense": 90,
+    "specialAttack": 97,
+    "specialDefense": 123,
+    "speed": 44
+  },
+  "description": "Their poison is strong enough to eat through the hull of a tanker, and they spit it indiscriminately at anything that enters their territory.",
+  "flavorTexts": [
+    {
+      "text": "Their poison is strong enough to eat through the hull of a tanker, and they spit it indiscriminately at anything that enters their territory.",
+      "version": "x"
+    },
+    {
+      "text": "Tales are told of ships that wander into seas where Dragalge live, never to return.",
+      "version": "y"
+    },
+    {
+      "text": "Their poison is strong enough to eat through the hull of a tanker, and they spit it indiscriminately at anything that enters their territory.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "Tales are told of ships that wander into seas where Dragalge live, never to return.",
+      "version": "alpha-sapphire"
+    },
+    {
+      "text": "This vicious Pok\u00e9mon sprays a poisonous liquid on opponents that come near. For whatever reason, it gets along really well with Dhelmise.",
+      "version": "ultra-sun"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A040A0",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A040A0",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/691.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/691.png",
+    "back": null,
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/691.png",
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Skrelp",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Dragalge",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 48,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tail Whip",
+      "url": "https://pokeapi.co/api/v2/move/39/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Acid",
+      "url": "https://pokeapi.co/api/v2/move/51/",
+      "type": "Poison",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Water Gun",
+      "url": "https://pokeapi.co/api/v2/move/55/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder",
+      "url": "https://pokeapi.co/api/v2/move/87/",
+      "type": "Electric",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Smokescreen",
+      "url": "https://pokeapi.co/api/v2/move/108/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Haze",
+      "url": "https://pokeapi.co/api/v2/move/114/",
+      "type": "Ice",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Waterfall",
+      "url": "https://pokeapi.co/api/v2/move/127/",
+      "type": "Water",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 173,
+  "order": 826,
+  "isDefault": true,
+  "captureRate": 55,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Dragalge",
+      "raw_name": "dragalge",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/691.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/691.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Dragalge",
+      "raw_name": "dragalge",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/691/",
+      "type": ""
+    },
+    {
+      "name": "Dragalge mega",
+      "raw_name": "dragalge-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10299/",
+      "type": "Mega"
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/691.ogg",
+    "legacy": null
+  }
+}

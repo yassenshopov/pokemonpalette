@@ -1,0 +1,307 @@
+{
+  "id": 633,
+  "name": "Deino",
+  "species": "Irate Pok\u00e9mon",
+  "type": [
+    "Dark",
+    "Dragon"
+  ],
+  "typeDetails": [
+    {
+      "name": "Dark",
+      "slot": 1
+    },
+    {
+      "name": "Dragon",
+      "slot": 2
+    }
+  ],
+  "height": 0.8,
+  "weight": 17.3,
+  "abilities": [
+    {
+      "name": "Hustle",
+      "url": "https://pokeapi.co/api/v2/ability/55/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 52,
+    "attack": 65,
+    "defense": 50,
+    "specialAttack": 45,
+    "specialDefense": 50,
+    "speed": 38
+  },
+  "description": "It tends to bite everything, and it is not a picky eater. Approaching it carelessly is dangerous.",
+  "flavorTexts": [
+    {
+      "text": "It tends to bite everything, and it is not a picky eater. Approaching it carelessly is dangerous.",
+      "version": "black"
+    },
+    {
+      "text": "They cannot see, so they tackle and bite to learn about their surroundings. Their bodies are covered in wounds.",
+      "version": "white"
+    },
+    {
+      "text": "Lacking sight, it\u2019s unaware of its surroundings, so it bumps into things and eats anything that moves.",
+      "version": "black-2"
+    },
+    {
+      "text": "Lacking sight, it\u2019s unaware of its surroundings, so it bumps into things and eats anything that moves.",
+      "version": "white-2"
+    },
+    {
+      "text": "They cannot see, so they tackle and bite to learn about their surroundings. Their bodies are covered in wounds.",
+      "version": "x"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/633.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/633.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/633.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/633.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/633.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Deino",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Zweilous",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 50,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Hydreigon",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 64,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Slam",
+      "url": "https://pokeapi.co/api/v2/move/21/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 75,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Dragon Rage",
+      "url": "https://pokeapi.co/api/v2/move/82/",
+      "type": "Dragon",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Screech",
+      "url": "https://pokeapi.co/api/v2/move/103/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 85,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Focus Energy",
+      "url": "https://pokeapi.co/api/v2/move/116/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Rest",
+      "url": "https://pokeapi.co/api/v2/move/156/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 60,
+  "order": 756,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 35,
+  "growthRate": "slow",
+  "hatchCounter": 40,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Deino",
+      "raw_name": "deino",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/633.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/633.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/633.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/633.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Deino",
+      "raw_name": "deino",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/633/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/633.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/633.ogg"
+  }
+}

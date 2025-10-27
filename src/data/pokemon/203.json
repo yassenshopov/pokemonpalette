@@ -1,0 +1,313 @@
+{
+  "id": 203,
+  "name": "Girafarig",
+  "species": "Long Neck Pok\u00e9mon",
+  "type": [
+    "Normal",
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    },
+    {
+      "name": "Psychic",
+      "slot": 2
+    }
+  ],
+  "height": 1.5,
+  "weight": 41.5,
+  "abilities": [
+    {
+      "name": "Inner focus",
+      "url": "https://pokeapi.co/api/v2/ability/39/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Early bird",
+      "url": "https://pokeapi.co/api/v2/ability/48/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Sap sipper",
+      "url": "https://pokeapi.co/api/v2/ability/157/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 65,
+    "specialAttack": 90,
+    "specialDefense": 65,
+    "speed": 85
+  },
+  "description": "Its tail has a small brain of its own. Beware! If you get close, it may react to your scent and bite.",
+  "flavorTexts": [
+    {
+      "text": "Its tail has a small brain of its own. Beware! If you get close, it may react to your scent and bite.",
+      "version": "gold"
+    },
+    {
+      "text": "Its tail, which also contains a small brain, may bite on its own if it notices an alluring smell.",
+      "version": "silver"
+    },
+    {
+      "text": "When it is in danger, its tail uses some sort of mysterious powers to drive away the enemy.",
+      "version": "crystal"
+    },
+    {
+      "text": "GIRAFARIG\u2019s rear head also has a brain, but it is small. The rear head attacks in response to smells and sounds. Approaching this POK\u00e9MON from behind can cause the rear head to suddenly lash out and bite.",
+      "version": "ruby"
+    },
+    {
+      "text": "GIRAFARIG\u2019s rear head contains a tiny brain that is too small for thinking. However, the rear head doesn\u2019t need to sleep, so it can keep watch over its surroundings 24 hours a day.",
+      "version": "sapphire"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/203.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/203.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/203.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/203.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/203.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/203.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/203.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/203.png"
+  },
+  "evolution": [
+    {
+      "name": "Girafarig",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Farigiraf",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Razor Wind",
+      "url": "https://pokeapi.co/api/v2/move/13/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Stomp",
+      "url": "https://pokeapi.co/api/v2/move/23/",
+      "type": "Normal",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Kick",
+      "url": "https://pokeapi.co/api/v2/move/24/",
+      "type": "Fighting",
+      "power": 30,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psybeam",
+      "url": "https://pokeapi.co/api/v2/move/60/",
+      "type": "Psychic",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Low Kick",
+      "url": "https://pokeapi.co/api/v2/move/67/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Grassland",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 159,
+  "order": 300,
+  "isDefault": true,
+  "captureRate": 60,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Girafarig",
+      "raw_name": "girafarig",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/203.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/203.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/203.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/203.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/203.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Girafarig",
+      "raw_name": "girafarig",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/203/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Persim Berry",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/203.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/203.ogg"
+  }
+}

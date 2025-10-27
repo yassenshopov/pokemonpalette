@@ -1,0 +1,334 @@
+{
+  "id": 6,
+  "name": "Charizard",
+  "species": "Flame Pok\u00e9mon",
+  "type": [
+    "Fire",
+    "Flying"
+  ],
+  "typeDetails": [
+    {
+      "name": "Fire",
+      "slot": 1
+    },
+    {
+      "name": "Flying",
+      "slot": 2
+    }
+  ],
+  "height": 1.7,
+  "weight": 90.5,
+  "abilities": [
+    {
+      "name": "Blaze",
+      "url": "https://pokeapi.co/api/v2/ability/66/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Solar power",
+      "url": "https://pokeapi.co/api/v2/ability/94/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 78,
+    "attack": 84,
+    "defense": 78,
+    "specialAttack": 109,
+    "specialDefense": 85,
+    "speed": 100
+  },
+  "description": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
+  "flavorTexts": [
+    {
+      "text": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
+      "version": "red"
+    },
+    {
+      "text": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
+      "version": "blue"
+    },
+    {
+      "text": "When expelling a blast of super hot fire, the red flame at the tip of its tail burns more intensely.",
+      "version": "yellow"
+    },
+    {
+      "text": "If CHARIZARD be\u00ad comes furious, the flame at the tip of its tail flares up in a whitish- blue color.",
+      "version": "gold"
+    },
+    {
+      "text": "Breathing intense, hot flames, it can melt almost any\u00ad thing. Its breath inflicts terrible pain on enemies.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F08030",
+    "secondary": "#6890F0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F08030",
+      "#6890F0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/6.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Charmander",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Charmeleon",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 16,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Charizard",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 36,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fire Punch",
+      "url": "https://pokeapi.co/api/v2/move/7/",
+      "type": "Fire",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Scratch",
+      "url": "https://pokeapi.co/api/v2/move/10/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Wing Attack",
+      "url": "https://pokeapi.co/api/v2/move/17/",
+      "type": "Flying",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fly",
+      "url": "https://pokeapi.co/api/v2/move/19/",
+      "type": "Flying",
+      "power": 90,
+      "accuracy": 95,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Leer",
+      "url": "https://pokeapi.co/api/v2/move/43/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Mountain",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 240,
+  "order": 7,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 1,
+  "forms": [
+    {
+      "name": "Charizard",
+      "raw_name": "charizard",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/6.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Charizard",
+      "raw_name": "charizard",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "type": ""
+    },
+    {
+      "name": "Charizard mega x",
+      "raw_name": "charizard-mega-x",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10034/",
+      "type": "Mega"
+    },
+    {
+      "name": "Charizard mega y",
+      "raw_name": "charizard-mega-y",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10035/",
+      "type": "Mega"
+    },
+    {
+      "name": "Charizard gmax",
+      "raw_name": "charizard-gmax",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10196/",
+      "type": "Gigantamax"
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/6.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/6.ogg"
+  }
+}

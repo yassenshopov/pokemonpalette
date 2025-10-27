@@ -1,0 +1,293 @@
+{
+  "id": 311,
+  "name": "Plusle",
+  "species": "Cheering Pok\u00e9mon",
+  "type": [
+    "Electric"
+  ],
+  "typeDetails": [
+    {
+      "name": "Electric",
+      "slot": 1
+    }
+  ],
+  "height": 0.4,
+  "weight": 4.2,
+  "abilities": [
+    {
+      "name": "Plus",
+      "url": "https://pokeapi.co/api/v2/ability/57/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Lightning rod",
+      "url": "https://pokeapi.co/api/v2/ability/31/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 50,
+    "defense": 40,
+    "specialAttack": 85,
+    "specialDefense": 75,
+    "speed": 95
+  },
+  "description": "PLUSLE always acts as a cheerleader for its partners. Whenever a teammate puts out a good effort in battle, this POK\u00e9MON shorts out its body to create the crackling noises of sparks to show its joy.",
+  "flavorTexts": [
+    {
+      "text": "PLUSLE always acts as a cheerleader for its partners. Whenever a teammate puts out a good effort in battle, this POK\u00e9MON shorts out its body to create the crackling noises of sparks to show its joy.",
+      "version": "ruby"
+    },
+    {
+      "text": "When PLUSLE is cheering on its partner, it flashes with electric sparks from all over its body. If its partner loses, this POK\u00e9MON cries loudly.",
+      "version": "sapphire"
+    },
+    {
+      "text": "It has the trait of cheering on its fellow POK\u00e9MON. By shorting out the electricity it releases from its paws, it creates pom-poms for cheering.",
+      "version": "emerald"
+    },
+    {
+      "text": "It cheers on partners while scattering sparks from its body. It climbs telephone poles to absorb electricity.",
+      "version": "firered"
+    },
+    {
+      "text": "It cheers on partners while scattering sparks from its body. It climbs telephone poles to absorb electricity.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F8D030",
+    "secondary": "#F08030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F8D030",
+      "#F08030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/311.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/311.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/311.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/311.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Plusle",
+      "level": 1,
+      "details": []
+    }
+  ],
+  "moves": [
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Sing",
+      "url": "https://pokeapi.co/api/v2/move/47/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    },
+    {
+      "name": "Seismic Toss",
+      "url": "https://pokeapi.co/api/v2/move/69/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thunder",
+      "url": "https://pokeapi.co/api/v2/move/87/",
+      "type": "Electric",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Agility",
+      "url": "https://pokeapi.co/api/v2/move/97/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Grassland",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 142,
+  "order": 419,
+  "isDefault": true,
+  "captureRate": 200,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Plusle",
+      "raw_name": "plusle",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/311.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/311.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/311.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Plusle",
+      "raw_name": "plusle",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/311/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Cell Battery",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/311.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/311.ogg"
+  }
+}

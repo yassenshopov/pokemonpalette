@@ -1,0 +1,277 @@
+{
+  "id": 840,
+  "name": "Applin",
+  "species": "Apple Core Pok\u00e9mon",
+  "type": [
+    "Grass",
+    "Dragon"
+  ],
+  "typeDetails": [
+    {
+      "name": "Grass",
+      "slot": 1
+    },
+    {
+      "name": "Dragon",
+      "slot": 2
+    }
+  ],
+  "height": 0.2,
+  "weight": 0.5,
+  "abilities": [
+    {
+      "name": "Ripen",
+      "url": "https://pokeapi.co/api/v2/ability/247/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Gluttony",
+      "url": "https://pokeapi.co/api/v2/ability/82/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Bulletproof",
+      "url": "https://pokeapi.co/api/v2/ability/171/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 40,
+    "defense": 80,
+    "specialAttack": 40,
+    "specialDefense": 40,
+    "speed": 20
+  },
+  "description": "It spends its entire life inside an apple. It hides from its natural enemies, bird Pok\u00e9mon, by pretending it\u2019s just an apple and nothing more.",
+  "flavorTexts": [
+    {
+      "text": "It spends its entire life inside an apple. It hides from its natural enemies, bird Pok\u00e9mon, by pretending it\u2019s just an apple and nothing more.",
+      "version": "sword"
+    },
+    {
+      "text": "As soon as it\u2019s born, it burrows into an apple. Not only does the apple serve as its food source, but the flavor of the fruit determines its evolution.",
+      "version": "shield"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#78C850",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/840.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/840.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/840.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/840.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/840.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Applin",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Flapple",
+      "level": 2,
+      "details": [
+        {
+          "item": "tart apple",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Appletun",
+      "level": 2,
+      "details": [
+        {
+          "item": "sweet apple",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Dipplin",
+      "level": 2,
+      "details": []
+    },
+    {
+      "name": "Hydrapple",
+      "level": 3,
+      "details": []
+    }
+  ],
+  "moves": [
+    {
+      "name": "Withdraw",
+      "url": "https://pokeapi.co/api/v2/move/110/",
+      "type": "Water",
+      "power": null,
+      "accuracy": null,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Defense Curl",
+      "url": "https://pokeapi.co/api/v2/move/111/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Rollout",
+      "url": "https://pokeapi.co/api/v2/move/205/",
+      "type": "Rock",
+      "power": 30,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Attract",
+      "url": "https://pokeapi.co/api/v2/move/213/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Recycle",
+      "url": "https://pokeapi.co/api/v2/move/278/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Astonish",
+      "url": "https://pokeapi.co/api/v2/move/310/",
+      "type": "Ghost",
+      "power": 30,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sucker Punch",
+      "url": "https://pokeapi.co/api/v2/move/389/",
+      "type": "Dark",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 1
+    },
+    {
+      "name": "Draco Meteor",
+      "url": "https://pokeapi.co/api/v2/move/434/",
+      "type": "Dragon",
+      "power": 130,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Grassy Glide",
+      "url": "https://pokeapi.co/api/v2/move/803/",
+      "type": "Grass",
+      "power": 55,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tera Blast",
+      "url": "https://pokeapi.co/api/v2/move/851/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Pounce",
+      "url": "https://pokeapi.co/api/v2/move/884/",
+      "type": "Bug",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 52,
+  "order": 1021,
+  "isDefault": true,
+  "captureRate": 255,
+  "baseHappiness": 50,
+  "growthRate": "slow then very fast",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Applin",
+      "raw_name": "applin",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/840.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/840.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/840.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/840.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Applin",
+      "raw_name": "applin",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/840/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/840.ogg",
+    "legacy": null
+  }
+}

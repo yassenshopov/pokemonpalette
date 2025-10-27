@@ -1,0 +1,557 @@
+{
+  "id": 665,
+  "name": "Spewpa",
+  "species": "Scatterdust Pok\u00e9mon",
+  "type": [
+    "Bug"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    }
+  ],
+  "height": 0.3,
+  "weight": 8.4,
+  "abilities": [
+    {
+      "name": "Shed skin",
+      "url": "https://pokeapi.co/api/v2/ability/61/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Friend guard",
+      "url": "https://pokeapi.co/api/v2/ability/132/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 22,
+    "defense": 60,
+    "specialAttack": 27,
+    "specialDefense": 30,
+    "speed": 29
+  },
+  "description": "It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.",
+  "flavorTexts": [
+    {
+      "text": "It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.",
+      "version": "x"
+    },
+    {
+      "text": "The beaks of bird Pok\u00e9mon can\u2019t begin to scratch its stalwart body. To defend itself, it spews powder.",
+      "version": "y"
+    },
+    {
+      "text": "It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "The beaks of bird Pok\u00e9mon can\u2019t begin to scratch its stalwart body. To defend itself, it spews powder.",
+      "version": "alpha-sapphire"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/665.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/665.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/665.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/665.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Scatterbug",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Spewpa",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 9,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Vivillon",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 12,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Harden",
+      "url": "https://pokeapi.co/api/v2/move/106/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Protect",
+      "url": "https://pokeapi.co/api/v2/move/182/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 4
+    },
+    {
+      "name": "Iron Defense",
+      "url": "https://pokeapi.co/api/v2/move/334/",
+      "type": "Steel",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Bug Bite",
+      "url": "https://pokeapi.co/api/v2/move/450/",
+      "type": "Bug",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Struggle Bug",
+      "url": "https://pokeapi.co/api/v2/move/522/",
+      "type": "Bug",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Electroweb",
+      "url": "https://pokeapi.co/api/v2/move/527/",
+      "type": "Electric",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Tera Blast",
+      "url": "https://pokeapi.co/api/v2/move/851/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Pounce",
+      "url": "https://pokeapi.co/api/v2/move/884/",
+      "type": "Bug",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 75,
+  "order": 797,
+  "isDefault": true,
+  "captureRate": 120,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Spewpa icy snow",
+      "raw_name": "spewpa-icy-snow",
+      "form_name": "icy-snow",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/665.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/665.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/665.png",
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa polar",
+      "raw_name": "spewpa-polar",
+      "form_name": "polar",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa tundra",
+      "raw_name": "spewpa-tundra",
+      "form_name": "tundra",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa continental",
+      "raw_name": "spewpa-continental",
+      "form_name": "continental",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa garden",
+      "raw_name": "spewpa-garden",
+      "form_name": "garden",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa elegant",
+      "raw_name": "spewpa-elegant",
+      "form_name": "elegant",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa meadow",
+      "raw_name": "spewpa-meadow",
+      "form_name": "meadow",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa modern",
+      "raw_name": "spewpa-modern",
+      "form_name": "modern",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa marine",
+      "raw_name": "spewpa-marine",
+      "form_name": "marine",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa archipelago",
+      "raw_name": "spewpa-archipelago",
+      "form_name": "archipelago",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa high plains",
+      "raw_name": "spewpa-high-plains",
+      "form_name": "high-plains",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa sandstorm",
+      "raw_name": "spewpa-sandstorm",
+      "form_name": "sandstorm",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa river",
+      "raw_name": "spewpa-river",
+      "form_name": "river",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa monsoon",
+      "raw_name": "spewpa-monsoon",
+      "form_name": "monsoon",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa savanna",
+      "raw_name": "spewpa-savanna",
+      "form_name": "savanna",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa sun",
+      "raw_name": "spewpa-sun",
+      "form_name": "sun",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa ocean",
+      "raw_name": "spewpa-ocean",
+      "form_name": "ocean",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa jungle",
+      "raw_name": "spewpa-jungle",
+      "form_name": "jungle",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa fancy",
+      "raw_name": "spewpa-fancy",
+      "form_name": "fancy",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Spewpa poke ball",
+      "raw_name": "spewpa-poke-ball",
+      "form_name": "poke-ball",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": null,
+        "back_default": null,
+        "front_shiny": null,
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Spewpa",
+      "raw_name": "spewpa",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/665/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/665.ogg",
+    "legacy": null
+  }
+}

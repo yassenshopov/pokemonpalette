@@ -1,0 +1,319 @@
+{
+  "id": 464,
+  "name": "Rhyperior",
+  "species": "Drill Pok\u00e9mon",
+  "type": [
+    "Ground",
+    "Rock"
+  ],
+  "typeDetails": [
+    {
+      "name": "Ground",
+      "slot": 1
+    },
+    {
+      "name": "Rock",
+      "slot": 2
+    }
+  ],
+  "height": 2.4,
+  "weight": 282.8,
+  "abilities": [
+    {
+      "name": "Lightning rod",
+      "url": "https://pokeapi.co/api/v2/ability/31/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Solid rock",
+      "url": "https://pokeapi.co/api/v2/ability/116/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Reckless",
+      "url": "https://pokeapi.co/api/v2/ability/120/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 115,
+    "attack": 140,
+    "defense": 130,
+    "specialAttack": 55,
+    "specialDefense": 55,
+    "speed": 40
+  },
+  "description": "It puts rocks in holes in its palms and uses its muscles to shoot them. GEODUDE are shot at rare times.",
+  "flavorTexts": [
+    {
+      "text": "It puts rocks in holes in its palms and uses its muscles to shoot them. GEODUDE are shot at rare times.",
+      "version": "diamond"
+    },
+    {
+      "text": "It puts rocks in holes in its palms and uses its muscles to shoot them. GEODUDE are shot at rare times.",
+      "version": "pearl"
+    },
+    {
+      "text": "It can launch a rock held in its hand like a missile by tightening then expanding muscles instantly.",
+      "version": "platinum"
+    },
+    {
+      "text": "From holes in its palms, it fires out GEODUDE. Its carapace  can withstand volcanic eruptions.",
+      "version": "heartgold"
+    },
+    {
+      "text": "From holes in its palms, it fires out GEODUDE. Its carapace  can withstand volcanic eruptions.",
+      "version": "soulsilver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#E0C068",
+    "secondary": "#B8A038",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#E0C068",
+      "#B8A038",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/464.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/464.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/464.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/464.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/464.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/464.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/464.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/464.png"
+  },
+  "evolution": [
+    {
+      "name": "Rhyhorn",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Rhydon",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 42,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Rhyperior",
+      "level": 3,
+      "details": [
+        {
+          "held_item": "protector",
+          "trigger": "trade"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Pay Day",
+      "url": "https://pokeapi.co/api/v2/move/6/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fire Punch",
+      "url": "https://pokeapi.co/api/v2/move/7/",
+      "type": "Fire",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ice Punch",
+      "url": "https://pokeapi.co/api/v2/move/8/",
+      "type": "Ice",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Stomp",
+      "url": "https://pokeapi.co/api/v2/move/23/",
+      "type": "Normal",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Horn Attack",
+      "url": "https://pokeapi.co/api/v2/move/30/",
+      "type": "Normal",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fury Attack",
+      "url": "https://pokeapi.co/api/v2/move/31/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Horn Drill",
+      "url": "https://pokeapi.co/api/v2/move/32/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 30,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 241,
+  "order": 178,
+  "isDefault": true,
+  "captureRate": 30,
+  "baseHappiness": 70,
+  "growthRate": "slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Rhyperior",
+      "raw_name": "rhyperior",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/464.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/464.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/464.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/464.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/464.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Rhyperior",
+      "raw_name": "rhyperior",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/464/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/464.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/464.ogg"
+  }
+}

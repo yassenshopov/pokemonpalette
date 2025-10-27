@@ -1,0 +1,292 @@
+{
+  "id": 429,
+  "name": "Mismagius",
+  "species": "Magical Pok\u00e9mon",
+  "type": [
+    "Ghost"
+  ],
+  "typeDetails": [
+    {
+      "name": "Ghost",
+      "slot": 1
+    }
+  ],
+  "height": 0.9,
+  "weight": 4.4,
+  "abilities": [
+    {
+      "name": "Levitate",
+      "url": "https://pokeapi.co/api/v2/ability/26/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 60,
+    "defense": 60,
+    "specialAttack": 105,
+    "specialDefense": 105,
+    "speed": 105
+  },
+  "description": "Its cries sound like incantations. Those hearing it are tormented by headaches and hallucinations.",
+  "flavorTexts": [
+    {
+      "text": "Its cries sound like incantations. Those hearing it are tormented by headaches and hallucinations.",
+      "version": "diamond"
+    },
+    {
+      "text": "It chants incantations. While they usually torment targets, some chants bring happiness.",
+      "version": "pearl"
+    },
+    {
+      "text": "Its cry sounds like an incantation. It is said the cry may rarely be imbued with happiness-giving power.",
+      "version": "platinum"
+    },
+    {
+      "text": "Its cries sound like incantations to torment the foe. It appears where you least expect it.",
+      "version": "heartgold"
+    },
+    {
+      "text": "Its cries sound like incantations to torment the foe. It appears where you least expect it.",
+      "version": "soulsilver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/429.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/429.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/429.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/429.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/429.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Misdreavus",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Mismagius",
+      "level": 2,
+      "details": [
+        {
+          "item": "dusk stone",
+          "trigger": "use item"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psybeam",
+      "url": "https://pokeapi.co/api/v2/move/60/",
+      "type": "Psychic",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thunder",
+      "url": "https://pokeapi.co/api/v2/move/87/",
+      "type": "Electric",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confusion",
+      "url": "https://pokeapi.co/api/v2/move/93/",
+      "type": "Psychic",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hypnosis",
+      "url": "https://pokeapi.co/api/v2/move/95/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": 60,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Night Shade",
+      "url": "https://pokeapi.co/api/v2/move/101/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confuse Ray",
+      "url": "https://pokeapi.co/api/v2/move/109/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Swift",
+      "url": "https://pokeapi.co/api/v2/move/129/",
+      "type": "Normal",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 173,
+  "order": 296,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 35,
+  "growthRate": "fast",
+  "hatchCounter": 25,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Mismagius",
+      "raw_name": "mismagius",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/429.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/429.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/429.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/429.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Mismagius",
+      "raw_name": "mismagius",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/429/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/429.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/429.ogg"
+  }
+}

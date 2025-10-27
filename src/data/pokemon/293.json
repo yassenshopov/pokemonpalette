@@ -1,0 +1,313 @@
+{
+  "id": 293,
+  "name": "Whismur",
+  "species": "Whisper Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 0.6,
+  "weight": 16.3,
+  "abilities": [
+    {
+      "name": "Soundproof",
+      "url": "https://pokeapi.co/api/v2/ability/43/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Rattled",
+      "url": "https://pokeapi.co/api/v2/ability/155/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 64,
+    "attack": 51,
+    "defense": 23,
+    "specialAttack": 51,
+    "specialDefense": 23,
+    "speed": 28
+  },
+  "description": "Normally, WHISMUR\u2019s voice is very quiet - it is barely audible even if one is paying close attention. However, if this POK\u00e9MON senses danger, it starts crying at an earsplitting volume.",
+  "flavorTexts": [
+    {
+      "text": "Normally, WHISMUR\u2019s voice is very quiet - it is barely audible even if one is paying close attention. However, if this POK\u00e9MON senses danger, it starts crying at an earsplitting volume.",
+      "version": "ruby"
+    },
+    {
+      "text": "WHISMUR is very timid. If it starts to cry loudly, it becomes startled by its own crying and cries even harder. When it finally stops crying, the POK\u00e9MON goes to sleep, all tired out.",
+      "version": "sapphire"
+    },
+    {
+      "text": "Its cries equal a jet plane in volume. It inhales through its ear canals. Because of this system, it can cry continually without having to catch its breath.",
+      "version": "emerald"
+    },
+    {
+      "text": "It usually murmurs, but starts crying loudly if it senses danger. It stops when its ear covers are shut.",
+      "version": "firered"
+    },
+    {
+      "text": "It usually murmurs, but starts crying loudly if it senses danger. It stops when its ear covers are shut.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/293.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/293.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/293.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/293.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Whismur",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Loudred",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 20,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Exploud",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 40,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "https://pokeapi.co/api/v2/move/1/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fire Punch",
+      "url": "https://pokeapi.co/api/v2/move/7/",
+      "type": "Fire",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ice Punch",
+      "url": "https://pokeapi.co/api/v2/move/8/",
+      "type": "Ice",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Whirlwind",
+      "url": "https://pokeapi.co/api/v2/move/18/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Stomp",
+      "url": "https://pokeapi.co/api/v2/move/23/",
+      "type": "Normal",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Supersonic",
+      "url": "https://pokeapi.co/api/v2/move/48/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Cave",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 48,
+  "order": 396,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Whismur",
+      "raw_name": "whismur",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/293.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/293.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/293.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Whismur",
+      "raw_name": "whismur",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/293/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Chesto Berry",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/293.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/293.ogg"
+  }
+}

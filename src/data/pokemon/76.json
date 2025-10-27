@@ -1,0 +1,334 @@
+{
+  "id": 76,
+  "name": "Golem",
+  "species": "Megaton Pok\u00e9mon",
+  "type": [
+    "Rock",
+    "Ground"
+  ],
+  "typeDetails": [
+    {
+      "name": "Rock",
+      "slot": 1
+    },
+    {
+      "name": "Ground",
+      "slot": 2
+    }
+  ],
+  "height": 1.4,
+  "weight": 300.0,
+  "abilities": [
+    {
+      "name": "Rock head",
+      "url": "https://pokeapi.co/api/v2/ability/69/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Sturdy",
+      "url": "https://pokeapi.co/api/v2/ability/5/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Sand veil",
+      "url": "https://pokeapi.co/api/v2/ability/8/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 120,
+    "defense": 130,
+    "specialAttack": 55,
+    "specialDefense": 65,
+    "speed": 45
+  },
+  "description": "Its boulder-like body is extremely hard. It can easily withstand dynamite blasts without damage.",
+  "flavorTexts": [
+    {
+      "text": "Its boulder-like body is extremely hard. It can easily withstand dynamite blasts without damage.",
+      "version": "red"
+    },
+    {
+      "text": "Its boulder-like body is extremely hard. It can easily withstand dynamite blasts without damage.",
+      "version": "blue"
+    },
+    {
+      "text": "Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it's exposed to air.",
+      "version": "yellow"
+    },
+    {
+      "text": "It sheds its skin once a year. The discarded shell immediately hard\u00ad ens and crumbles away.",
+      "version": "gold"
+    },
+    {
+      "text": "It is capable of blowing itself up. It uses this explosive force to jump from mountain to mountain.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#B8A038",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#B8A038",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/76.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/76.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/76.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Geodude",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Graveler",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 25,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Golem",
+      "level": 3,
+      "details": [
+        {
+          "trigger": "trade"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fire Punch",
+      "url": "https://pokeapi.co/api/v2/move/7/",
+      "type": "Fire",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sand Attack",
+      "url": "https://pokeapi.co/api/v2/move/28/",
+      "type": "Ground",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Submission",
+      "url": "https://pokeapi.co/api/v2/move/66/",
+      "type": "Fighting",
+      "power": 80,
+      "accuracy": 80,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    }
+  ],
+  "habitat": "Mountain",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 223,
+  "order": 119,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Golem",
+      "raw_name": "golem",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/76.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/76.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/76.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Golem",
+      "raw_name": "golem",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/76/",
+      "type": ""
+    },
+    {
+      "name": "Golem alola",
+      "raw_name": "golem-alola",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10111/",
+      "type": "Alolan"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Everstone",
+      "rarity": 5
+    },
+    {
+      "name": "Hard Stone",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/76.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/76.ogg"
+  }
+}

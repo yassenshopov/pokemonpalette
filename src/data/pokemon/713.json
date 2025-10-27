@@ -1,0 +1,311 @@
+{
+  "id": 713,
+  "name": "Avalugg",
+  "species": "Iceberg Pok\u00e9mon",
+  "type": [
+    "Ice"
+  ],
+  "typeDetails": [
+    {
+      "name": "Ice",
+      "slot": 1
+    }
+  ],
+  "height": 2.0,
+  "weight": 505.0,
+  "abilities": [
+    {
+      "name": "Own tempo",
+      "url": "https://pokeapi.co/api/v2/ability/20/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Ice body",
+      "url": "https://pokeapi.co/api/v2/ability/115/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Sturdy",
+      "url": "https://pokeapi.co/api/v2/ability/5/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 95,
+    "attack": 117,
+    "defense": 184,
+    "specialAttack": 44,
+    "specialDefense": 46,
+    "speed": 28
+  },
+  "description": "Its ice-covered body is as hard as steel. Its cumbersome frame crushes anything that stands in its way.",
+  "flavorTexts": [
+    {
+      "text": "Its ice-covered body is as hard as steel. Its cumbersome frame crushes anything that stands in its way.",
+      "version": "x"
+    },
+    {
+      "text": "The way several Bergmite huddle on its back makes it look like an aircraft carrier made of ice.",
+      "version": "y"
+    },
+    {
+      "text": "Its ice-covered body is as hard as steel. Its cumbersome frame crushes anything that stands in its way.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "The way several Bergmite huddle on its back makes it look like an aircraft carrier made of ice.",
+      "version": "alpha-sapphire"
+    },
+    {
+      "text": "At high latitudes, this Pok\u00e9mon can be found with clusters of Bergmite on its back as it swims among the icebergs.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png",
+    "back": null,
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/713.png",
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Bergmite",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Avalugg",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 37,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Blizzard",
+      "url": "https://pokeapi.co/api/v2/move/59/",
+      "type": "Ice",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Earthquake",
+      "url": "https://pokeapi.co/api/v2/move/89/",
+      "type": "Ground",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 180,
+  "order": 853,
+  "isDefault": true,
+  "captureRate": 55,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Avalugg",
+      "raw_name": "avalugg",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/713.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Avalugg",
+      "raw_name": "avalugg",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/713/",
+      "type": ""
+    },
+    {
+      "name": "Avalugg hisui",
+      "raw_name": "avalugg-hisui",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10243/",
+      "type": "Hisuian"
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/713.ogg",
+    "legacy": null
+  }
+}

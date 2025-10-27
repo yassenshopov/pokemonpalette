@@ -1,0 +1,299 @@
+{
+  "id": 314,
+  "name": "Illumise",
+  "species": "Firefly Pok\u00e9mon",
+  "type": [
+    "Bug"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    }
+  ],
+  "height": 0.6,
+  "weight": 17.7,
+  "abilities": [
+    {
+      "name": "Oblivious",
+      "url": "https://pokeapi.co/api/v2/ability/12/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Tinted lens",
+      "url": "https://pokeapi.co/api/v2/ability/110/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Prankster",
+      "url": "https://pokeapi.co/api/v2/ability/158/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 47,
+    "defense": 75,
+    "specialAttack": 73,
+    "specialDefense": 85,
+    "speed": 85
+  },
+  "description": "With its sweet aroma, it guides Volbeat to draw signs with light in the night sky.",
+  "flavorTexts": [
+    {
+      "text": "With its sweet aroma, it guides Volbeat to draw signs with light in the night sky.",
+      "version": "black"
+    },
+    {
+      "text": "ILLUMISE attracts a swarm of VOLBEAT using a sweet fragrance. Once the VOLBEAT have gathered, this POK\u00e9MON leads the lit-up swarm in drawing geometric designs on the canvas of the night sky.",
+      "version": "ruby"
+    },
+    {
+      "text": "ILLUMISE leads a flight of illuminated VOLBEAT to draw signs in the night sky. This POK\u00e9MON is said to earn greater respect from its peers by composing more complex designs in the sky.",
+      "version": "sapphire"
+    },
+    {
+      "text": "A nocturnal POK\u00e9MON that becomes active upon nightfall. It leads a VOLBEAT swarm to draw patterns in the night sky. Over 200 different patterns have been confirmed.",
+      "version": "emerald"
+    },
+    {
+      "text": "It guides VOLBEAT to draw signs in night skies. There are scientists that study the patterns it creates.",
+      "version": "firered"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/314.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/314.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/314.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/314.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Illumise",
+      "level": 1,
+      "details": []
+    }
+  ],
+  "moves": [
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ice Punch",
+      "url": "https://pokeapi.co/api/v2/move/8/",
+      "type": "Ice",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    },
+    {
+      "name": "Seismic Toss",
+      "url": "https://pokeapi.co/api/v2/move/69/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growth",
+      "url": "https://pokeapi.co/api/v2/move/74/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "String Shot",
+      "url": "https://pokeapi.co/api/v2/move/81/",
+      "type": "Bug",
+      "power": null,
+      "accuracy": 95,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Forest",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 151,
+  "order": 422,
+  "isDefault": true,
+  "captureRate": 150,
+  "baseHappiness": 70,
+  "growthRate": "fast then very slow",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 8,
+  "forms": [
+    {
+      "name": "Illumise",
+      "raw_name": "illumise",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/314.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/314.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/314.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Illumise",
+      "raw_name": "illumise",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/314/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Bright Powder",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/314.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/314.ogg"
+  }
+}

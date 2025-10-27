@@ -1,0 +1,318 @@
+{
+  "id": 170,
+  "name": "Chinchou",
+  "species": "Angler Pok\u00e9mon",
+  "type": [
+    "Water",
+    "Electric"
+  ],
+  "typeDetails": [
+    {
+      "name": "Water",
+      "slot": 1
+    },
+    {
+      "name": "Electric",
+      "slot": 2
+    }
+  ],
+  "height": 0.5,
+  "weight": 12.0,
+  "abilities": [
+    {
+      "name": "Volt absorb",
+      "url": "https://pokeapi.co/api/v2/ability/10/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Illuminate",
+      "url": "https://pokeapi.co/api/v2/ability/35/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Water absorb",
+      "url": "https://pokeapi.co/api/v2/ability/11/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 38,
+    "defense": 38,
+    "specialAttack": 56,
+    "specialDefense": 56,
+    "speed": 67
+  },
+  "description": "Chinchou blink their shining antennae at one another to claim their respective turf.",
+  "flavorTexts": [
+    {
+      "text": "Chinchou blink their shining antennae at one another to claim their respective turf.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "It shoots positive and negative elec\u00ad tricity between the tips of its two antennae and zaps its enemies.",
+      "version": "gold"
+    },
+    {
+      "text": "On the dark ocean floor, its only means of communi\u00ad cation is its constantly flash\u00ad ing lights.",
+      "version": "silver"
+    },
+    {
+      "text": "Its antennae, whi\u00ad ch evolved from a fin, have both po\u00ad sitive and neg\u00ad ative charges flo\u00ad wing through them.",
+      "version": "crystal"
+    },
+    {
+      "text": "CHINCHOU lets loose positive and negative electrical charges from its two antennas to make its prey faint. This POK\u00e9MON flashes its electric lights to exchange signals with others.",
+      "version": "ruby"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#6890F0",
+    "secondary": "#F08030",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#6890F0",
+      "#F08030",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/170.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/170.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/170.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/170.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Chinchou",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Lanturn",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 27,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Supersonic",
+      "url": "https://pokeapi.co/api/v2/move/48/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Mist",
+      "url": "https://pokeapi.co/api/v2/move/54/",
+      "type": "Ice",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Water Gun",
+      "url": "https://pokeapi.co/api/v2/move/55/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Blizzard",
+      "url": "https://pokeapi.co/api/v2/move/59/",
+      "type": "Ice",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Psybeam",
+      "url": "https://pokeapi.co/api/v2/move/60/",
+      "type": "Psychic",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Bubble Beam",
+      "url": "https://pokeapi.co/api/v2/move/61/",
+      "type": "Water",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thunder",
+      "url": "https://pokeapi.co/api/v2/move/87/",
+      "type": "Electric",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Sea",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 66,
+  "order": 266,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 70,
+  "growthRate": "slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Chinchou",
+      "raw_name": "chinchou",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/170.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/170.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/170.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Chinchou",
+      "raw_name": "chinchou",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/170/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Yellow Shard",
+      "rarity": 5
+    },
+    {
+      "name": "Deep Sea Scale",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/170.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/170.ogg"
+  }
+}

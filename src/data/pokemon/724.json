@@ -1,0 +1,320 @@
+{
+  "id": 724,
+  "name": "Decidueye",
+  "species": "Arrow Quill Pok\u00e9mon",
+  "type": [
+    "Grass",
+    "Ghost"
+  ],
+  "typeDetails": [
+    {
+      "name": "Grass",
+      "slot": 1
+    },
+    {
+      "name": "Ghost",
+      "slot": 2
+    }
+  ],
+  "height": 1.6,
+  "weight": 36.6,
+  "abilities": [
+    {
+      "name": "Overgrow",
+      "url": "https://pokeapi.co/api/v2/ability/65/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Long reach",
+      "url": "https://pokeapi.co/api/v2/ability/203/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 78,
+    "attack": 107,
+    "defense": 75,
+    "specialAttack": 100,
+    "specialDefense": 100,
+    "speed": 70
+  },
+  "description": "It fires arrow quills from its wings with such precision, they can pierce a pebble at distances over a hundred yards.",
+  "flavorTexts": [
+    {
+      "text": "It fires arrow quills from its wings with such precision, they can pierce a pebble at distances over a hundred yards.",
+      "version": "sun"
+    },
+    {
+      "text": "Although basically cool and cautious, when it\u2019s caught by surprise, it\u2019s seized by panic.",
+      "version": "moon"
+    },
+    {
+      "text": "It nocks its arrow quills and shoots them at opponents. When it simply can\u2019t afford to miss, it tugs the vine on its head to improve its focus.",
+      "version": "ultra-sun"
+    },
+    {
+      "text": "Decidueye can nock and fire an arrow at an enemy in a tenth of a second, so its battles are decided in the blink of an eye.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "As if wielding a bow, it launches the arrow quills hidden among the feathers of its wings. Decidueye\u2019s shots never miss.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#78C850",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/724.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/724.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/724.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/724.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Rowlet",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Dartrix",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 17,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Decidueye",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 34,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Fury Attack",
+      "url": "https://pokeapi.co/api/v2/move/31/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Peck",
+      "url": "https://pokeapi.co/api/v2/move/64/",
+      "type": "Flying",
+      "power": 35,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Low Kick",
+      "url": "https://pokeapi.co/api/v2/move/67/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Razor Leaf",
+      "url": "https://pokeapi.co/api/v2/move/75/",
+      "type": "Grass",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Night Shade",
+      "url": "https://pokeapi.co/api/v2/move/101/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confuse Ray",
+      "url": "https://pokeapi.co/api/v2/move/109/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Light Screen",
+      "url": "https://pokeapi.co/api/v2/move/113/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 239,
+  "order": 870,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 1,
+  "forms": [
+    {
+      "name": "Decidueye",
+      "raw_name": "decidueye",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/724.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/724.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/724.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/724.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Decidueye",
+      "raw_name": "decidueye",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/724/",
+      "type": ""
+    },
+    {
+      "name": "Decidueye hisui",
+      "raw_name": "decidueye-hisui",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10244/",
+      "type": "Hisuian"
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/724.ogg",
+    "legacy": null
+  }
+}

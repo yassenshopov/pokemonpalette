@@ -1,0 +1,309 @@
+{
+  "id": 138,
+  "name": "Omanyte",
+  "species": "Spiral Pok\u00e9mon",
+  "type": [
+    "Rock",
+    "Water"
+  ],
+  "typeDetails": [
+    {
+      "name": "Rock",
+      "slot": 1
+    },
+    {
+      "name": "Water",
+      "slot": 2
+    }
+  ],
+  "height": 0.4,
+  "weight": 7.5,
+  "abilities": [
+    {
+      "name": "Swift swim",
+      "url": "https://pokeapi.co/api/v2/ability/33/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Shell armor",
+      "url": "https://pokeapi.co/api/v2/ability/75/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Weak armor",
+      "url": "https://pokeapi.co/api/v2/ability/133/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 35,
+    "attack": 40,
+    "defense": 100,
+    "specialAttack": 90,
+    "specialDefense": 55,
+    "speed": 35
+  },
+  "description": "Although long extinct, in rare cases, it can be genetically resurrected from fossils.",
+  "flavorTexts": [
+    {
+      "text": "Although long extinct, in rare cases, it can be genetically resurrected from fossils.",
+      "version": "red"
+    },
+    {
+      "text": "Although long extinct, in rare cases, it can be genetically resurrected from fossils.",
+      "version": "blue"
+    },
+    {
+      "text": "An ancient POK\u00e9MON that was recovered from a fossil. It swims by cleverly twisting its 10 tentacles about.",
+      "version": "yellow"
+    },
+    {
+      "text": "Revived from an ancient fossil, this POK\u00e9MON uses air stored in its shell to sink and rise in water.",
+      "version": "gold"
+    },
+    {
+      "text": "This POK\u00e9MON from ancient times is said to have navi\u00ad gated the sea by adeptly twisting its 10 tentacles.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#B8A038",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#B8A038",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/138.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/138.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/138.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/138.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Omanyte",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Omastar",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 40,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Bind",
+      "url": "https://pokeapi.co/api/v2/move/20/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Slam",
+      "url": "https://pokeapi.co/api/v2/move/21/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 75,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sand Attack",
+      "url": "https://pokeapi.co/api/v2/move/28/",
+      "type": "Ground",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Horn Attack",
+      "url": "https://pokeapi.co/api/v2/move/30/",
+      "type": "Normal",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Leer",
+      "url": "https://pokeapi.co/api/v2/move/43/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Supersonic",
+      "url": "https://pokeapi.co/api/v2/move/48/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Water Gun",
+      "url": "https://pokeapi.co/api/v2/move/55/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Sea",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 71,
+  "order": 228,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 30,
+  "hasGenderDifferences": false,
+  "genderRate": 1,
+  "forms": [
+    {
+      "name": "Omanyte",
+      "raw_name": "omanyte",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/138.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/138.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/138.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Omanyte",
+      "raw_name": "omanyte",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/138/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/138.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/138.ogg"
+  }
+}

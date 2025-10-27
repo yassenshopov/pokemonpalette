@@ -1,0 +1,406 @@
+{
+  "id": 133,
+  "name": "Eevee",
+  "species": "Evolution Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 0.3,
+  "weight": 6.5,
+  "abilities": [
+    {
+      "name": "Run away",
+      "url": "https://pokeapi.co/api/v2/ability/50/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Adaptability",
+      "url": "https://pokeapi.co/api/v2/ability/91/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Anticipation",
+      "url": "https://pokeapi.co/api/v2/ability/107/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 55,
+    "defense": 50,
+    "specialAttack": 45,
+    "specialDefense": 65,
+    "speed": 55
+  },
+  "description": "Its genetic code is irregular. It may mutate if it is exposed to radiation from element STONEs.",
+  "flavorTexts": [
+    {
+      "text": "Its genetic code is irregular. It may mutate if it is exposed to radiation from element STONEs.",
+      "version": "red"
+    },
+    {
+      "text": "Its genetic code is irregular. It may mutate if it is exposed to radiation from element STONEs.",
+      "version": "blue"
+    },
+    {
+      "text": "Its genetic code is unstable, so it could evolve in a variety of ways. There are only a few alive.",
+      "version": "yellow"
+    },
+    {
+      "text": "It has the ability to alter the com\u00ad position of its body to suit its surrounding envi\u00ad ronment.",
+      "version": "gold"
+    },
+    {
+      "text": "Its irregularly configured DNA is affected by its surroundings. It evolves if its en\u00ad vironment changes.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/133.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/133.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/133.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/133.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/133.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/133.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/133.png"
+  },
+  "evolution": [
+    {
+      "name": "Eevee",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Vaporeon",
+      "level": 2,
+      "details": [
+        {
+          "item": "water stone",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Jolteon",
+      "level": 2,
+      "details": [
+        {
+          "item": "thunder stone",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Flareon",
+      "level": 2,
+      "details": [
+        {
+          "item": "fire stone",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Espeon",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Umbreon",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Leafeon",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        },
+        {
+          "trigger": "level up"
+        },
+        {
+          "trigger": "level up"
+        },
+        {
+          "item": "leaf stone",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Glaceon",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        },
+        {
+          "trigger": "level up"
+        },
+        {
+          "trigger": "level up"
+        },
+        {
+          "item": "ice stone",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Sylveon",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        },
+        {
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pay Day",
+      "url": "https://pokeapi.co/api/v2/move/6/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Kick",
+      "url": "https://pokeapi.co/api/v2/move/24/",
+      "type": "Fighting",
+      "power": 30,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sand Attack",
+      "url": "https://pokeapi.co/api/v2/move/28/",
+      "type": "Ground",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tail Whip",
+      "url": "https://pokeapi.co/api/v2/move/39/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Dig",
+      "url": "https://pokeapi.co/api/v2/move/91/",
+      "type": "Ground",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Quick Attack",
+      "url": "https://pokeapi.co/api/v2/move/98/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 1
+    }
+  ],
+  "habitat": "Urban",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 65,
+  "order": 215,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 35,
+  "hasGenderDifferences": true,
+  "genderRate": 1,
+  "forms": [
+    {
+      "name": "Eevee",
+      "raw_name": "eevee",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/133.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/133.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/133.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/133.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/133.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Eevee",
+      "raw_name": "eevee",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/133/",
+      "type": ""
+    },
+    {
+      "name": "Eevee starter",
+      "raw_name": "eevee-starter",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10159/",
+      "type": ""
+    },
+    {
+      "name": "Eevee gmax",
+      "raw_name": "eevee-gmax",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10205/",
+      "type": "Gigantamax"
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/133.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/133.ogg"
+  }
+}

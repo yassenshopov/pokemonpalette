@@ -1,0 +1,334 @@
+{
+  "id": 263,
+  "name": "Zigzagoon",
+  "species": "Tiny Raccoon Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 0.4,
+  "weight": 17.5,
+  "abilities": [
+    {
+      "name": "Pickup",
+      "url": "https://pokeapi.co/api/v2/ability/53/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Gluttony",
+      "url": "https://pokeapi.co/api/v2/ability/82/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Quick feet",
+      "url": "https://pokeapi.co/api/v2/ability/95/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 38,
+    "attack": 30,
+    "defense": 41,
+    "specialAttack": 30,
+    "specialDefense": 41,
+    "speed": 60
+  },
+  "description": "ZIGZAGOON restlessly wanders everywhere at all times. This POK\u00e9MON does so because it is very curious. It becomes interested in anything that it happens to see.",
+  "flavorTexts": [
+    {
+      "text": "ZIGZAGOON restlessly wanders everywhere at all times. This POK\u00e9MON does so because it is very curious. It becomes interested in anything that it happens to see.",
+      "version": "ruby"
+    },
+    {
+      "text": "The hair on ZIGZAGOON\u2019s back is  bristly. It rubs the hard back hair against trees to leave its territorial markings. This POK\u00e9MON may play dead to fool foes in battle.",
+      "version": "sapphire"
+    },
+    {
+      "text": "Rubbing its nose against the ground, it always wanders about back and forth in search of something. It is distinguished by the zigzag footprints it leaves.",
+      "version": "emerald"
+    },
+    {
+      "text": "A POK\u00e9MON with abundant curiosity. It shows an interest in everything, so it always zigs and zags.",
+      "version": "firered"
+    },
+    {
+      "text": "A POK\u00e9MON with abundant curiosity. It shows an interest in everything, so it always zigs and zags.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/263.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/263.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/263.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/263.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Zigzagoon",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Linoone",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 20,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Obstagoon",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 35,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sand Attack",
+      "url": "https://pokeapi.co/api/v2/move/28/",
+      "type": "Ground",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tail Whip",
+      "url": "https://pokeapi.co/api/v2/move/39/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Pin Missile",
+      "url": "https://pokeapi.co/api/v2/move/42/",
+      "type": "Bug",
+      "power": 25,
+      "accuracy": 95,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Blizzard",
+      "url": "https://pokeapi.co/api/v2/move/59/",
+      "type": "Ice",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Grassland",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 56,
+  "order": 361,
+  "isDefault": true,
+  "captureRate": 255,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Zigzagoon",
+      "raw_name": "zigzagoon",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/263.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/263.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/263.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Zigzagoon",
+      "raw_name": "zigzagoon",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/263/",
+      "type": ""
+    },
+    {
+      "name": "Zigzagoon galar",
+      "raw_name": "zigzagoon-galar",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10174/",
+      "type": "Galarian"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Potion",
+      "rarity": 50
+    },
+    {
+      "name": "Revive",
+      "rarity": 5
+    },
+    {
+      "name": "Oran Berry",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/263.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/263.ogg"
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "id": 445,
+  "name": "Garchomp",
+  "species": "Mach Pok\u00e9mon",
+  "type": [
+    "Dragon",
+    "Ground"
+  ],
+  "typeDetails": [
+    {
+      "name": "Dragon",
+      "slot": 1
+    },
+    {
+      "name": "Ground",
+      "slot": 2
+    }
+  ],
+  "height": 1.9,
+  "weight": 95.0,
+  "abilities": [
+    {
+      "name": "Sand veil",
+      "url": "https://pokeapi.co/api/v2/ability/8/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Rough skin",
+      "url": "https://pokeapi.co/api/v2/ability/24/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 108,
+    "attack": 130,
+    "defense": 95,
+    "specialAttack": 80,
+    "specialDefense": 85,
+    "speed": 102
+  },
+  "description": "When it folds up its body and extends its wings, it looks like a jet plane. It flies at sonic speed.",
+  "flavorTexts": [
+    {
+      "text": "When it folds up its body and extends its wings, it looks like a jet plane. It flies at sonic speed.",
+      "version": "diamond"
+    },
+    {
+      "text": "It flies at speeds equal to a jet fighter plane. It never allows its prey to escape.",
+      "version": "pearl"
+    },
+    {
+      "text": "It is said that when one runs at high speed, its wings create blades of wind that can fell nearby trees.",
+      "version": "platinum"
+    },
+    {
+      "text": "Its body is covered in fine scales that reduce drag, enabling it to fly at high speeds.",
+      "version": "heartgold"
+    },
+    {
+      "text": "Its body is covered in fine scales that reduce drag, enabling it to fly at high speeds.",
+      "version": "soulsilver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/445.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/445.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/445.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/445.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/445.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/445.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/445.png"
+  },
+  "evolution": [
+    {
+      "name": "Gible",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Gabite",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 24,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Garchomp",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 48,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sand Attack",
+      "url": "https://pokeapi.co/api/v2/move/28/",
+      "type": "Ground",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Dragon Rage",
+      "url": "https://pokeapi.co/api/v2/move/82/",
+      "type": "Dragon",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 270,
+  "order": 570,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "slow",
+  "hatchCounter": 40,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Garchomp",
+      "raw_name": "garchomp",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/445.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/445.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/445.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/445.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/445.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Garchomp",
+      "raw_name": "garchomp",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/445/",
+      "type": ""
+    },
+    {
+      "name": "Garchomp mega",
+      "raw_name": "garchomp-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10058/",
+      "type": "Mega"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Haban Berry",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/445.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/445.ogg"
+  }
+}

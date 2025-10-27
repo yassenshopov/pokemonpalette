@@ -1,0 +1,309 @@
+{
+  "id": 667,
+  "name": "Litleo",
+  "species": "Lion Cub Pok\u00e9mon",
+  "type": [
+    "Fire",
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Fire",
+      "slot": 1
+    },
+    {
+      "name": "Normal",
+      "slot": 2
+    }
+  ],
+  "height": 0.6,
+  "weight": 13.5,
+  "abilities": [
+    {
+      "name": "Rivalry",
+      "url": "https://pokeapi.co/api/v2/ability/79/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Unnerve",
+      "url": "https://pokeapi.co/api/v2/ability/127/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Moxie",
+      "url": "https://pokeapi.co/api/v2/ability/153/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 62,
+    "attack": 50,
+    "defense": 58,
+    "specialAttack": 73,
+    "specialDefense": 54,
+    "speed": 72
+  },
+  "description": "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
+  "flavorTexts": [
+    {
+      "text": "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
+      "version": "x"
+    },
+    {
+      "text": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pok\u00e9mon are quick to fight.",
+      "version": "y"
+    },
+    {
+      "text": "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pok\u00e9mon are quick to fight.",
+      "version": "alpha-sapphire"
+    },
+    {
+      "text": "When they\u2019re young, they live with a pride. Once they\u2019re able to hunt prey on their own, they\u2019re kicked out and have to make their own way.",
+      "version": "ultra-sun"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F08030",
+    "secondary": "#6890F0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F08030",
+      "#6890F0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/667.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/667.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/667.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/667.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Litleo",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Pyroar",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 35,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Leer",
+      "url": "https://pokeapi.co/api/v2/move/43/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Ember",
+      "url": "https://pokeapi.co/api/v2/move/52/",
+      "type": "Fire",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Fire Spin",
+      "url": "https://pokeapi.co/api/v2/move/83/",
+      "type": "Fire",
+      "power": 35,
+      "accuracy": 85,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Dig",
+      "url": "https://pokeapi.co/api/v2/move/91/",
+      "type": "Ground",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 74,
+  "order": 799,
+  "isDefault": true,
+  "captureRate": 220,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 7,
+  "forms": [
+    {
+      "name": "Litleo",
+      "raw_name": "litleo",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/667.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/667.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/667.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Litleo",
+      "raw_name": "litleo",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/667/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/667.ogg",
+    "legacy": null
+  }
+}

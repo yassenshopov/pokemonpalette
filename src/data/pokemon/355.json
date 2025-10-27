@@ -1,0 +1,317 @@
+{
+  "id": 355,
+  "name": "Duskull",
+  "species": "Requiem Pok\u00e9mon",
+  "type": [
+    "Ghost"
+  ],
+  "typeDetails": [
+    {
+      "name": "Ghost",
+      "slot": 1
+    }
+  ],
+  "height": 0.8,
+  "weight": 15.0,
+  "abilities": [
+    {
+      "name": "Levitate",
+      "url": "https://pokeapi.co/api/v2/ability/26/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Frisk",
+      "url": "https://pokeapi.co/api/v2/ability/119/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 20,
+    "attack": 40,
+    "defense": 90,
+    "specialAttack": 30,
+    "specialDefense": 90,
+    "speed": 25
+  },
+  "description": "DUSKULL can pass through any wall no matter how thick it may be. Once this POK\u00e9MON chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
+  "flavorTexts": [
+    {
+      "text": "DUSKULL can pass through any wall no matter how thick it may be. Once this POK\u00e9MON chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
+      "version": "ruby"
+    },
+    {
+      "text": "DUSKULL wanders lost among the deep darkness of midnight. There is an oft- told admonishment given to misbehaving children that this POK\u00e9MON will spirit away bad children who earn scoldings from their mothers.",
+      "version": "sapphire"
+    },
+    {
+      "text": "A glare from its single scarlet eye makes even burly grown-ups freeze in utter fear. It is a nocturnal POK\u00e9MON that roams about under the cloak of darkness.",
+      "version": "emerald"
+    },
+    {
+      "text": "Making itself invisible, it silently sneaks up to prey. It has the ability to slip through thick walls.",
+      "version": "firered"
+    },
+    {
+      "text": "Making itself invisible, it silently sneaks up to prey. It has the ability to slip through thick walls.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/355.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/355.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/355.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/355.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Duskull",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Dusclops",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 37,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Dusknoir",
+      "level": 3,
+      "details": [
+        {
+          "held_item": "reaper cloth",
+          "trigger": "trade"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Leer",
+      "url": "https://pokeapi.co/api/v2/move/43/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Disable",
+      "url": "https://pokeapi.co/api/v2/move/50/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Blizzard",
+      "url": "https://pokeapi.co/api/v2/move/59/",
+      "type": "Ice",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Absorb",
+      "url": "https://pokeapi.co/api/v2/move/71/",
+      "type": "Grass",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Night Shade",
+      "url": "https://pokeapi.co/api/v2/move/101/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Mimic",
+      "url": "https://pokeapi.co/api/v2/move/102/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confuse Ray",
+      "url": "https://pokeapi.co/api/v2/move/109/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Haze",
+      "url": "https://pokeapi.co/api/v2/move/114/",
+      "type": "Ice",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Forest",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 59,
+  "order": 472,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 35,
+  "growthRate": "fast",
+  "hatchCounter": 25,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Duskull",
+      "raw_name": "duskull",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/355.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/355.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/355.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Duskull",
+      "raw_name": "duskull",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/355/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Kasib Berry",
+      "rarity": 5
+    },
+    {
+      "name": "Spell Tag",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/355.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/355.ogg"
+  }
+}

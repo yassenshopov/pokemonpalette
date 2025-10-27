@@ -1,0 +1,304 @@
+{
+  "id": 341,
+  "name": "Corphish",
+  "species": "Ruffian Pok\u00e9mon",
+  "type": [
+    "Water"
+  ],
+  "typeDetails": [
+    {
+      "name": "Water",
+      "slot": 1
+    }
+  ],
+  "height": 0.6,
+  "weight": 11.5,
+  "abilities": [
+    {
+      "name": "Hyper cutter",
+      "url": "https://pokeapi.co/api/v2/ability/52/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Shell armor",
+      "url": "https://pokeapi.co/api/v2/ability/75/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Adaptability",
+      "url": "https://pokeapi.co/api/v2/ability/91/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 43,
+    "attack": 80,
+    "defense": 65,
+    "specialAttack": 50,
+    "specialDefense": 35,
+    "speed": 35
+  },
+  "description": "Its hardy vitality enables it to adapt to any environment. Its pincers will never release prey.",
+  "flavorTexts": [
+    {
+      "text": "Its hardy vitality enables it to adapt to any environment. Its pincers will never release prey.",
+      "version": "pearl"
+    },
+    {
+      "text": "CORPHISH were originally foreign POK\u00e9MON that were imported as pets. They eventually turned up in the wild. This POK\u00e9MON is very hardy and has greatly increased its population.",
+      "version": "ruby"
+    },
+    {
+      "text": "CORPHISH catches prey with its sharp claws. It has no likes or dislikes when it comes to food - it will eat anything. This POK\u00e9MON has no trouble living in filthy water.",
+      "version": "sapphire"
+    },
+    {
+      "text": "Once it grips prey with its large pincers, it will never let go, no matter what. It is a hardy POK\u00e9MON that can thrive in any environment.",
+      "version": "emerald"
+    },
+    {
+      "text": "It came from overseas. It is a very hardy creature that will quickly proliferate, even in polluted streams.",
+      "version": "firered"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#6890F0",
+    "secondary": "#F08030",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#6890F0",
+      "#F08030",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/341.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/341.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/341.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/341.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Corphish",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Crawdaunt",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 30,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Vice Grip",
+      "url": "https://pokeapi.co/api/v2/move/11/",
+      "type": "Normal",
+      "power": 55,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Guillotine",
+      "url": "https://pokeapi.co/api/v2/move/12/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 30,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Leer",
+      "url": "https://pokeapi.co/api/v2/move/43/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Water Gun",
+      "url": "https://pokeapi.co/api/v2/move/55/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Blizzard",
+      "url": "https://pokeapi.co/api/v2/move/59/",
+      "type": "Ice",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Bubble Beam",
+      "url": "https://pokeapi.co/api/v2/move/61/",
+      "type": "Water",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    }
+  ],
+  "habitat": "Waters-edge",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 62,
+  "order": 454,
+  "isDefault": true,
+  "captureRate": 205,
+  "baseHappiness": 70,
+  "growthRate": "fast then very slow",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Corphish",
+      "raw_name": "corphish",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/341.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/341.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/341.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Corphish",
+      "raw_name": "corphish",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/341/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/341.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/341.ogg"
+  }
+}

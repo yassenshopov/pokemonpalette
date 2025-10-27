@@ -1,0 +1,304 @@
+{
+  "id": 509,
+  "name": "Purrloin",
+  "species": "Devious Pok\u00e9mon",
+  "type": [
+    "Dark"
+  ],
+  "typeDetails": [
+    {
+      "name": "Dark",
+      "slot": 1
+    }
+  ],
+  "height": 0.4,
+  "weight": 10.1,
+  "abilities": [
+    {
+      "name": "Limber",
+      "url": "https://pokeapi.co/api/v2/ability/7/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Unburden",
+      "url": "https://pokeapi.co/api/v2/ability/84/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Prankster",
+      "url": "https://pokeapi.co/api/v2/ability/158/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 41,
+    "attack": 50,
+    "defense": 37,
+    "specialAttack": 50,
+    "specialDefense": 37,
+    "speed": 66
+  },
+  "description": "They steal from people for fun, but their victims can\u2019t help but forgive them. Their deceptively cute act is perfect.",
+  "flavorTexts": [
+    {
+      "text": "They steal from people for fun, but their victims can\u2019t help but forgive them. Their deceptively cute act is perfect.",
+      "version": "black"
+    },
+    {
+      "text": "Its cute act is a ruse. When victims let down their guard, they find their items taken. It attacks with sharp claws.",
+      "version": "white"
+    },
+    {
+      "text": "Their cute act is a ruse. They trick people and steal their valuables just to see the looks on their faces.",
+      "version": "black-2"
+    },
+    {
+      "text": "Their cute act is a ruse. They trick people and steal their valuables just to see the looks on their faces.",
+      "version": "white-2"
+    },
+    {
+      "text": "Its cute act is a ruse. When victims let down their guard, they find their items taken. It attacks with sharp claws.",
+      "version": "x"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/509.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/509.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/509.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/509.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/509.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Purrloin",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Liepard",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 20,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pay Day",
+      "url": "https://pokeapi.co/api/v2/move/6/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Scratch",
+      "url": "https://pokeapi.co/api/v2/move/10/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Sand Attack",
+      "url": "https://pokeapi.co/api/v2/move/28/",
+      "type": "Ground",
+      "power": null,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Quick Attack",
+      "url": "https://pokeapi.co/api/v2/move/98/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 1
+    },
+    {
+      "name": "Screech",
+      "url": "https://pokeapi.co/api/v2/move/103/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 85,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Swift",
+      "url": "https://pokeapi.co/api/v2/move/129/",
+      "type": "Normal",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Dream Eater",
+      "url": "https://pokeapi.co/api/v2/move/138/",
+      "type": "Psychic",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Fury Swipes",
+      "url": "https://pokeapi.co/api/v2/move/154/",
+      "type": "Normal",
+      "power": 18,
+      "accuracy": 80,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Rest",
+      "url": "https://pokeapi.co/api/v2/move/156/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Slash",
+      "url": "https://pokeapi.co/api/v2/move/163/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 56,
+  "order": 624,
+  "isDefault": true,
+  "captureRate": 255,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Purrloin",
+      "raw_name": "purrloin",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/509.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/509.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/509.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/509.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Purrloin",
+      "raw_name": "purrloin",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/509/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/509.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/509.ogg"
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "id": 208,
+  "name": "Steelix",
+  "species": "Iron Snake Pok\u00e9mon",
+  "type": [
+    "Steel",
+    "Ground"
+  ],
+  "typeDetails": [
+    {
+      "name": "Steel",
+      "slot": 1
+    },
+    {
+      "name": "Ground",
+      "slot": 2
+    }
+  ],
+  "height": 9.2,
+  "weight": 400.0,
+  "abilities": [
+    {
+      "name": "Rock head",
+      "url": "https://pokeapi.co/api/v2/ability/69/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Sturdy",
+      "url": "https://pokeapi.co/api/v2/ability/5/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Sheer force",
+      "url": "https://pokeapi.co/api/v2/ability/125/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 200,
+    "specialAttack": 55,
+    "specialDefense": 65,
+    "speed": 30
+  },
+  "description": "It is thought its body transformed as a result of iron accumulating internally from swallowing soil.",
+  "flavorTexts": [
+    {
+      "text": "It is thought its body transformed as a result of iron accumulating internally from swallowing soil.",
+      "version": "black"
+    },
+    {
+      "text": "Its body has been compressed deep under the ground. As a result, it is even harder than a diamond.",
+      "version": "gold"
+    },
+    {
+      "text": "It is said that if an ONIX lives for over 100 years, its composition changes to become diamond-like.",
+      "version": "silver"
+    },
+    {
+      "text": "The many small metal particles that cover this POK\u00e9MON's body reflect bright light well.",
+      "version": "crystal"
+    },
+    {
+      "text": "STEELIX lives even further underground than ONIX. This POK\u00e9MON is known to dig towards the earth\u2019s core. There are records of this POK\u00e9MON reaching a depth of over six-tenths of a mile underground.",
+      "version": "ruby"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/208.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/208.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/208.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/208.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/208.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/208.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/208.png"
+  },
+  "evolution": [
+    {
+      "name": "Onix",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Steelix",
+      "level": 2,
+      "details": [
+        {
+          "held_item": "metal coat",
+          "trigger": "trade"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bind",
+      "url": "https://pokeapi.co/api/v2/move/20/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Slam",
+      "url": "https://pokeapi.co/api/v2/move/21/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 75,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Rock Throw",
+      "url": "https://pokeapi.co/api/v2/move/88/",
+      "type": "Rock",
+      "power": 50,
+      "accuracy": 90,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Earthquake",
+      "url": "https://pokeapi.co/api/v2/move/89/",
+      "type": "Ground",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Dig",
+      "url": "https://pokeapi.co/api/v2/move/91/",
+      "type": "Ground",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Rage",
+      "url": "https://pokeapi.co/api/v2/move/99/",
+      "type": "Normal",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Cave",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 179,
+  "order": 152,
+  "isDefault": true,
+  "captureRate": 25,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 25,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Steelix",
+      "raw_name": "steelix",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/208.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/208.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/208.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/208.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/208.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Steelix",
+      "raw_name": "steelix",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/208/",
+      "type": ""
+    },
+    {
+      "name": "Steelix mega",
+      "raw_name": "steelix-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10072/",
+      "type": "Mega"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Metal Coat",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/208.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/208.ogg"
+  }
+}

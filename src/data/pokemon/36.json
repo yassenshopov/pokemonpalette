@@ -1,0 +1,333 @@
+{
+  "id": 36,
+  "name": "Clefable",
+  "species": "Fairy Pok\u00e9mon",
+  "type": [
+    "Fairy"
+  ],
+  "typeDetails": [
+    {
+      "name": "Fairy",
+      "slot": 1
+    }
+  ],
+  "height": 1.3,
+  "weight": 40.0,
+  "abilities": [
+    {
+      "name": "Cute charm",
+      "url": "https://pokeapi.co/api/v2/ability/56/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Magic guard",
+      "url": "https://pokeapi.co/api/v2/ability/98/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Unaware",
+      "url": "https://pokeapi.co/api/v2/ability/109/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 95,
+    "attack": 70,
+    "defense": 73,
+    "specialAttack": 95,
+    "specialDefense": 90,
+    "speed": 60
+  },
+  "description": "A timid fairy POK\u00e9MON that is rarely seen. It will run and hide the moment it senses people.",
+  "flavorTexts": [
+    {
+      "text": "A timid fairy POK\u00e9MON that is rarely seen. It will run and hide the moment it senses people.",
+      "version": "red"
+    },
+    {
+      "text": "A timid fairy POK\u00e9MON that is rarely seen. It will run and hide the moment it senses people.",
+      "version": "blue"
+    },
+    {
+      "text": "They appear to be very protective of their own world. It is a kind of fairy, rarely seen by people.",
+      "version": "yellow"
+    },
+    {
+      "text": "With its acute hearing, it can pick up sounds from far away. It usually hides in quiet places.",
+      "version": "gold"
+    },
+    {
+      "text": "Its very sensitive ears lets it dis\u00ad tinguish distant sounds. As a re\u00ad sult, it prefers quiet places.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/36.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/36.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/36.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Cleffa",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Clefairy",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Clefable",
+      "level": 3,
+      "details": [
+        {
+          "item": "moon stone",
+          "trigger": "use item"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "https://pokeapi.co/api/v2/move/1/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Slap",
+      "url": "https://pokeapi.co/api/v2/move/3/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Punch",
+      "url": "https://pokeapi.co/api/v2/move/5/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fire Punch",
+      "url": "https://pokeapi.co/api/v2/move/7/",
+      "type": "Fire",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ice Punch",
+      "url": "https://pokeapi.co/api/v2/move/8/",
+      "type": "Ice",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Kick",
+      "url": "https://pokeapi.co/api/v2/move/25/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 75,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Sing",
+      "url": "https://pokeapi.co/api/v2/move/47/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Mountain",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 217,
+  "order": 65,
+  "isDefault": true,
+  "captureRate": 25,
+  "baseHappiness": 140,
+  "growthRate": "fast",
+  "hatchCounter": 10,
+  "hasGenderDifferences": false,
+  "genderRate": 6,
+  "forms": [
+    {
+      "name": "Clefable",
+      "raw_name": "clefable",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/36.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/36.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/36.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Clefable",
+      "raw_name": "clefable",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/36/",
+      "type": ""
+    },
+    {
+      "name": "Clefable mega",
+      "raw_name": "clefable-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10278/",
+      "type": "Mega"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Moon Stone",
+      "rarity": 5
+    },
+    {
+      "name": "Leppa Berry",
+      "rarity": 50
+    },
+    {
+      "name": "Comet Shard",
+      "rarity": 1
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/36.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/36.ogg"
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "id": 15,
+  "name": "Beedrill",
+  "species": "Poison Bee Pok\u00e9mon",
+  "type": [
+    "Bug",
+    "Poison"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    },
+    {
+      "name": "Poison",
+      "slot": 2
+    }
+  ],
+  "height": 1.0,
+  "weight": 29.5,
+  "abilities": [
+    {
+      "name": "Swarm",
+      "url": "https://pokeapi.co/api/v2/ability/68/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Sniper",
+      "url": "https://pokeapi.co/api/v2/ability/97/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 90,
+    "defense": 40,
+    "specialAttack": 45,
+    "specialDefense": 80,
+    "speed": 75
+  },
+  "description": "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
+  "flavorTexts": [
+    {
+      "text": "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
+      "version": "x"
+    },
+    {
+      "text": "Flies at high speed and attacks using its large venomous stingers on its forelegs and tail.",
+      "version": "red"
+    },
+    {
+      "text": "Flies at high speed and attacks using its large venomous stingers on its forelegs and tail.",
+      "version": "blue"
+    },
+    {
+      "text": "It has 3 poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
+      "version": "yellow"
+    },
+    {
+      "text": "It can take down any opponent with its powerful poi\u00ad son stingers. It sometimes attacks in swarms.",
+      "version": "gold"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/15.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/15.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/15.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Weedle",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Kakuna",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 7,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Beedrill",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 10,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fury Attack",
+      "url": "https://pokeapi.co/api/v2/move/31/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Poison Sting",
+      "url": "https://pokeapi.co/api/v2/move/40/",
+      "type": "Poison",
+      "power": 15,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Twineedle",
+      "url": "https://pokeapi.co/api/v2/move/41/",
+      "type": "Bug",
+      "power": 25,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Pin Missile",
+      "url": "https://pokeapi.co/api/v2/move/42/",
+      "type": "Bug",
+      "power": 25,
+      "accuracy": 95,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Peck",
+      "url": "https://pokeapi.co/api/v2/move/64/",
+      "type": "Flying",
+      "power": 35,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Drain",
+      "url": "https://pokeapi.co/api/v2/move/72/",
+      "type": "Grass",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "String Shot",
+      "url": "https://pokeapi.co/api/v2/move/81/",
+      "type": "Bug",
+      "power": null,
+      "accuracy": 95,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Forest",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 178,
+  "order": 19,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Beedrill",
+      "raw_name": "beedrill",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/15.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/15.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/15.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Beedrill",
+      "raw_name": "beedrill",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/15/",
+      "type": ""
+    },
+    {
+      "name": "Beedrill mega",
+      "raw_name": "beedrill-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10090/",
+      "type": "Mega"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Poison Barb",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/15.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/15.ogg"
+  }
+}

@@ -1,0 +1,580 @@
+{
+  "id": 773,
+  "name": "Silvally",
+  "species": "Synthetic Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 2.3,
+  "weight": 100.5,
+  "abilities": [
+    {
+      "name": "Rks system",
+      "url": "https://pokeapi.co/api/v2/ability/225/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "specialAttack": 95,
+    "specialDefense": 95,
+    "speed": 95
+  },
+  "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
+  "flavorTexts": [
+    {
+      "text": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
+      "version": "sun"
+    },
+    {
+      "text": "Although its name was Type: Null at first, the boy who evolved it into this form gave it the name by which it is now known.",
+      "version": "moon"
+    },
+    {
+      "text": "This is its form once it has awakened and evolved. Freed from its heavy mask, its speed is greatly increased.",
+      "version": "ultra-sun"
+    },
+    {
+      "text": "Through the bond it formed with its Trainer, its will was strengthened, and it was able to destroy its control mask.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "A solid bond of trust between this Pok\u00e9mon and its Trainer awakened the strength hidden within Silvally. It can change its type at will.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/773.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/773.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773.png",
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Type-null",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Silvally",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Razor Wind",
+      "url": "https://pokeapi.co/api/v2/move/13/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Roar",
+      "url": "https://pokeapi.co/api/v2/move/46/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Rage",
+      "url": "https://pokeapi.co/api/v2/move/99/",
+      "type": "Normal",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Legendary",
+  "baseExperience": 257,
+  "order": 932,
+  "isDefault": true,
+  "captureRate": 3,
+  "baseHappiness": 0,
+  "growthRate": "slow",
+  "hatchCounter": 120,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [
+    {
+      "name": "Silvally normal",
+      "raw_name": "silvally-normal",
+      "form_name": "normal",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/773.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally fighting",
+      "raw_name": "silvally-fighting",
+      "form_name": "fighting",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-fighting.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-fighting.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally flying",
+      "raw_name": "silvally-flying",
+      "form_name": "flying",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-flying.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-flying.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally poison",
+      "raw_name": "silvally-poison",
+      "form_name": "poison",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-poison.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-poison.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally ground",
+      "raw_name": "silvally-ground",
+      "form_name": "ground",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-ground.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-ground.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally rock",
+      "raw_name": "silvally-rock",
+      "form_name": "rock",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-rock.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-rock.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally bug",
+      "raw_name": "silvally-bug",
+      "form_name": "bug",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-bug.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-bug.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally ghost",
+      "raw_name": "silvally-ghost",
+      "form_name": "ghost",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-ghost.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-ghost.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally steel",
+      "raw_name": "silvally-steel",
+      "form_name": "steel",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-steel.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-steel.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally fire",
+      "raw_name": "silvally-fire",
+      "form_name": "fire",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-fire.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-fire.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally water",
+      "raw_name": "silvally-water",
+      "form_name": "water",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-water.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-water.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally grass",
+      "raw_name": "silvally-grass",
+      "form_name": "grass",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-grass.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-grass.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally electric",
+      "raw_name": "silvally-electric",
+      "form_name": "electric",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-electric.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-electric.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally psychic",
+      "raw_name": "silvally-psychic",
+      "form_name": "psychic",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-psychic.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-psychic.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally ice",
+      "raw_name": "silvally-ice",
+      "form_name": "ice",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-ice.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-ice.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally dragon",
+      "raw_name": "silvally-dragon",
+      "form_name": "dragon",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-dragon.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-dragon.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally dark",
+      "raw_name": "silvally-dark",
+      "form_name": "dark",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-dark.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-dark.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Silvally fairy",
+      "raw_name": "silvally-fairy",
+      "form_name": "fairy",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773-fairy.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/773-fairy.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Silvally",
+      "raw_name": "silvally",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/773/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/773.ogg",
+    "legacy": null
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "id": 715,
+  "name": "Noivern",
+  "species": "Sound Wave Pok\u00e9mon",
+  "type": [
+    "Flying",
+    "Dragon"
+  ],
+  "typeDetails": [
+    {
+      "name": "Flying",
+      "slot": 1
+    },
+    {
+      "name": "Dragon",
+      "slot": 2
+    }
+  ],
+  "height": 1.5,
+  "weight": 85.0,
+  "abilities": [
+    {
+      "name": "Frisk",
+      "url": "https://pokeapi.co/api/v2/ability/119/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Infiltrator",
+      "url": "https://pokeapi.co/api/v2/ability/151/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Telepathy",
+      "url": "https://pokeapi.co/api/v2/ability/140/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 85,
+    "attack": 70,
+    "defense": 80,
+    "specialAttack": 97,
+    "specialDefense": 80,
+    "speed": 123
+  },
+  "description": "They fly around on moonless nights and attack careless prey. Nothing can beat them in a battle in the dark.",
+  "flavorTexts": [
+    {
+      "text": "They fly around on moonless nights and attack careless prey. Nothing can beat them in a battle in the dark.",
+      "version": "x"
+    },
+    {
+      "text": "The ultrasonic waves it emits from its ears can reduce a large boulder to pebbles. It swoops out of the dark to attack.",
+      "version": "y"
+    },
+    {
+      "text": "They fly around on moonless nights and attack careless prey. Nothing can beat them in a battle in the dark.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "The ultrasonic waves it emits from its ears can reduce a large boulder to pebbles. It swoops out of the dark to attack.",
+      "version": "alpha-sapphire"
+    },
+    {
+      "text": "Although it has a violent disposition, if you give it a nice ripe fruit that it loves, Noivern will suddenly become tame.",
+      "version": "ultra-sun"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A890F0",
+    "secondary": "#E0C068",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A890F0",
+      "#E0C068",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/715.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png",
+    "back": null,
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/715.png",
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Noibat",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Noivern",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 48,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Razor Wind",
+      "url": "https://pokeapi.co/api/v2/move/13/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Gust",
+      "url": "https://pokeapi.co/api/v2/move/16/",
+      "type": "Flying",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Wing Attack",
+      "url": "https://pokeapi.co/api/v2/move/17/",
+      "type": "Flying",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Whirlwind",
+      "url": "https://pokeapi.co/api/v2/move/18/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Fly",
+      "url": "https://pokeapi.co/api/v2/move/19/",
+      "type": "Flying",
+      "power": 90,
+      "accuracy": 95,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bite",
+      "url": "https://pokeapi.co/api/v2/move/44/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Supersonic",
+      "url": "https://pokeapi.co/api/v2/move/48/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Absorb",
+      "url": "https://pokeapi.co/api/v2/move/71/",
+      "type": "Grass",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 187,
+  "order": 855,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Noivern",
+      "raw_name": "noivern",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/715.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Noivern",
+      "raw_name": "noivern",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/715/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/715.ogg",
+    "legacy": null
+  }
+}

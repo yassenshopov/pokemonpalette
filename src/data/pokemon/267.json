@@ -1,0 +1,342 @@
+{
+  "id": 267,
+  "name": "Beautifly",
+  "species": "Butterfly Pok\u00e9mon",
+  "type": [
+    "Bug",
+    "Flying"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    },
+    {
+      "name": "Flying",
+      "slot": 2
+    }
+  ],
+  "height": 1.0,
+  "weight": 28.4,
+  "abilities": [
+    {
+      "name": "Swarm",
+      "url": "https://pokeapi.co/api/v2/ability/68/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Rivalry",
+      "url": "https://pokeapi.co/api/v2/ability/79/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 70,
+    "defense": 50,
+    "specialAttack": 100,
+    "specialDefense": 50,
+    "speed": 65
+  },
+  "description": "BEAUTIFLY\u2019s favorite food is the sweet pollen of flowers. If you want to see this POK\u00e9MON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
+  "flavorTexts": [
+    {
+      "text": "BEAUTIFLY\u2019s favorite food is the sweet pollen of flowers. If you want to see this POK\u00e9MON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
+      "version": "ruby"
+    },
+    {
+      "text": "BEAUTIFLY has a long mouth like a coiled needle, which is very convenient for collecting pollen from flowers. This POK\u00e9MON rides the spring winds as it flits around gathering pollen.",
+      "version": "sapphire"
+    },
+    {
+      "text": "Its colorfully patterned wings are its most prominent feature. It flies through flower-covered fields collecting pollen. It attacks ferociously when angered.",
+      "version": "emerald"
+    },
+    {
+      "text": "Despite its appearance, it has an aggressive nature. It attacks by jabbing with its long, thin mouth.",
+      "version": "firered"
+    },
+    {
+      "text": "Despite its appearance, it has an aggressive nature. It attacks by jabbing with its long, thin mouth.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/267.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/267.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/267.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/267.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/267.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/267.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/267.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/267.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/267.png"
+  },
+  "evolution": [
+    {
+      "name": "Wurmple",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Silcoon",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 7,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Beautifly",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 10,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Cascoon",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 7,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Dustox",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 10,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Gust",
+      "url": "https://pokeapi.co/api/v2/move/16/",
+      "type": "Flying",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Whirlwind",
+      "url": "https://pokeapi.co/api/v2/move/18/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Poison Sting",
+      "url": "https://pokeapi.co/api/v2/move/40/",
+      "type": "Poison",
+      "power": 15,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Absorb",
+      "url": "https://pokeapi.co/api/v2/move/71/",
+      "type": "Grass",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Mega Drain",
+      "url": "https://pokeapi.co/api/v2/move/72/",
+      "type": "Grass",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Stun Spore",
+      "url": "https://pokeapi.co/api/v2/move/78/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "String Shot",
+      "url": "https://pokeapi.co/api/v2/move/81/",
+      "type": "Bug",
+      "power": null,
+      "accuracy": 95,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Rage",
+      "url": "https://pokeapi.co/api/v2/move/99/",
+      "type": "Normal",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mimic",
+      "url": "https://pokeapi.co/api/v2/move/102/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Forest",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 178,
+  "order": 367,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 15,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Beautifly",
+      "raw_name": "beautifly",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/267.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/267.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/267.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/267.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/267.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/267.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Beautifly",
+      "raw_name": "beautifly",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/267/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Silver Powder",
+      "rarity": 5
+    },
+    {
+      "name": "Shed Shell",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/267.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/267.ogg"
+  }
+}

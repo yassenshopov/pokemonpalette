@@ -1,0 +1,303 @@
+{
+  "id": 753,
+  "name": "Fomantis",
+  "species": "Sickle Grass Pok\u00e9mon",
+  "type": [
+    "Grass"
+  ],
+  "typeDetails": [
+    {
+      "name": "Grass",
+      "slot": 1
+    }
+  ],
+  "height": 0.3,
+  "weight": 1.5,
+  "abilities": [
+    {
+      "name": "Leaf guard",
+      "url": "https://pokeapi.co/api/v2/ability/102/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Contrary",
+      "url": "https://pokeapi.co/api/v2/ability/126/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 55,
+    "defense": 35,
+    "specialAttack": 50,
+    "specialDefense": 35,
+    "speed": 35
+  },
+  "description": "During the day, it sleeps and soaks up light. When night falls, it walks around looking for a safer place to sleep.",
+  "flavorTexts": [
+    {
+      "text": "During the day, it sleeps and soaks up light. When night falls, it walks around looking for a safer place to sleep.",
+      "version": "sun"
+    },
+    {
+      "text": "They give off a sweet and refreshing scent. Cutiefly often gather near the tall grass where Fomantis are hiding.",
+      "version": "moon"
+    },
+    {
+      "text": "When the sun rises, Fomantis spreads its four leaves and bathes in the sunlight. The tip of its head has a pleasant aroma.",
+      "version": "ultra-sun"
+    },
+    {
+      "text": "It loves the sunshine. When it basks in the sunlight regularly, it grows up with vivid coloration.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "When bathed in sunlight, this Pok\u00e9mon emits a pleasantly sweet scent, which causes bug Pok\u00e9mon to gather around it.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#78C850",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/753.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/753.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/753.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/753.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/753.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Fomantis",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Lurantis",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 34,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growth",
+      "url": "https://pokeapi.co/api/v2/move/74/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Razor Leaf",
+      "url": "https://pokeapi.co/api/v2/move/75/",
+      "type": "Grass",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Leech Life",
+      "url": "https://pokeapi.co/api/v2/move/141/",
+      "type": "Bug",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Rest",
+      "url": "https://pokeapi.co/api/v2/move/156/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Slash",
+      "url": "https://pokeapi.co/api/v2/move/163/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Substitute",
+      "url": "https://pokeapi.co/api/v2/move/164/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Snore",
+      "url": "https://pokeapi.co/api/v2/move/173/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Protect",
+      "url": "https://pokeapi.co/api/v2/move/182/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 4
+    },
+    {
+      "name": "Giga Drain",
+      "url": "https://pokeapi.co/api/v2/move/202/",
+      "type": "Grass",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Endure",
+      "url": "https://pokeapi.co/api/v2/move/203/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 4
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 50,
+  "order": 910,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Fomantis",
+      "raw_name": "fomantis",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/753.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/753.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/753.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/753.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Fomantis",
+      "raw_name": "fomantis",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/753/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Miracle Seed",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/753.ogg",
+    "legacy": null
+  }
+}

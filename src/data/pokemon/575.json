@@ -1,0 +1,319 @@
+{
+  "id": 575,
+  "name": "Gothorita",
+  "species": "Manipulate Pok\u00e9mon",
+  "type": [
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Psychic",
+      "slot": 1
+    }
+  ],
+  "height": 0.7,
+  "weight": 18.0,
+  "abilities": [
+    {
+      "name": "Frisk",
+      "url": "https://pokeapi.co/api/v2/ability/119/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Competitive",
+      "url": "https://pokeapi.co/api/v2/ability/172/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Shadow tag",
+      "url": "https://pokeapi.co/api/v2/ability/23/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 45,
+    "defense": 70,
+    "specialAttack": 75,
+    "specialDefense": 85,
+    "speed": 55
+  },
+  "description": "They use hypnosis to control people and Pok\u00e9mon. Tales of Gothorita leading people astray are told in every corner.",
+  "flavorTexts": [
+    {
+      "text": "They use hypnosis to control people and Pok\u00e9mon. Tales of Gothorita leading people astray are told in every corner.",
+      "version": "black"
+    },
+    {
+      "text": "Starlight is the source of their power. At night, they mark star positions by using psychic power to float stones.",
+      "version": "white"
+    },
+    {
+      "text": "According to many old tales, it creates friends for itself by controlling sleeping children on starry nights.",
+      "version": "black-2"
+    },
+    {
+      "text": "According to many old tales, it creates friends for itself by controlling sleeping children on starry nights.",
+      "version": "white-2"
+    },
+    {
+      "text": "Starlight is the source of their power. At night, they mark star positions by using psychic power to float stones.",
+      "version": "x"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F85888",
+    "secondary": "#6890F0",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F85888",
+      "#6890F0",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/575.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/575.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/575.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/575.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/575.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Gothita",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Gothorita",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 32,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Gothitelle",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 41,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "https://pokeapi.co/api/v2/move/1/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Slap",
+      "url": "https://pokeapi.co/api/v2/move/3/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Psybeam",
+      "url": "https://pokeapi.co/api/v2/move/60/",
+      "type": "Psychic",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confusion",
+      "url": "https://pokeapi.co/api/v2/move/93/",
+      "type": "Psychic",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hypnosis",
+      "url": "https://pokeapi.co/api/v2/move/95/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": 60,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Light Screen",
+      "url": "https://pokeapi.co/api/v2/move/113/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Reflect",
+      "url": "https://pokeapi.co/api/v2/move/115/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Metronome",
+      "url": "https://pokeapi.co/api/v2/move/118/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Swift",
+      "url": "https://pokeapi.co/api/v2/move/129/",
+      "type": "Normal",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Dream Eater",
+      "url": "https://pokeapi.co/api/v2/move/138/",
+      "type": "Psychic",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 137,
+  "order": 697,
+  "isDefault": true,
+  "captureRate": 100,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 6,
+  "forms": [
+    {
+      "name": "Gothorita",
+      "raw_name": "gothorita",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/575.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/575.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/575.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/575.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Gothorita",
+      "raw_name": "gothorita",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/575/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Persim Berry",
+      "rarity": 50
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/575.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/575.ogg"
+  }
+}

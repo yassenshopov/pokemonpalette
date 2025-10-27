@@ -1,0 +1,329 @@
+{
+  "id": 222,
+  "name": "Corsola",
+  "species": "Coral Pok\u00e9mon",
+  "type": [
+    "Water",
+    "Rock"
+  ],
+  "typeDetails": [
+    {
+      "name": "Water",
+      "slot": 1
+    },
+    {
+      "name": "Rock",
+      "slot": 2
+    }
+  ],
+  "height": 0.6,
+  "weight": 5.0,
+  "abilities": [
+    {
+      "name": "Hustle",
+      "url": "https://pokeapi.co/api/v2/ability/55/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Natural cure",
+      "url": "https://pokeapi.co/api/v2/ability/30/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Regenerator",
+      "url": "https://pokeapi.co/api/v2/ability/144/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 55,
+    "defense": 95,
+    "specialAttack": 65,
+    "specialDefense": 95,
+    "speed": 35
+  },
+  "description": "It continuously sheds and grows. The tip of its head is prized as a treasure for its beauty.",
+  "flavorTexts": [
+    {
+      "text": "It continuously sheds and grows. The tip of its head is prized as a treasure for its beauty.",
+      "version": "gold"
+    },
+    {
+      "text": "In a south sea nation, the people live in communi\u00ad ties that are built on groups of these POK\u00e9MON.",
+      "version": "silver"
+    },
+    {
+      "text": "The points on its head absorb nutrients from clean water. They cannot survive in polluted water.",
+      "version": "crystal"
+    },
+    {
+      "text": "CORSOLA\u2019s branches glitter very beautifully in seven colors when they catch sunlight. If any branch breaks off, this POK\u00e9MON grows it back in just one night.",
+      "version": "ruby"
+    },
+    {
+      "text": "Clusters of CORSOLA congregate in warm seas where they serve as ideal hiding places for smaller POK\u00e9MON. When the water temperature falls, this POK\u00e9MON migrates to the southern seas.",
+      "version": "sapphire"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#6890F0",
+    "secondary": "#F08030",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#6890F0",
+      "#F08030",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/222.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/222.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/222.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/222.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/222.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Corsola",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Cursola",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 38,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mist",
+      "url": "https://pokeapi.co/api/v2/move/54/",
+      "type": "Ice",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Water Gun",
+      "url": "https://pokeapi.co/api/v2/move/55/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Blizzard",
+      "url": "https://pokeapi.co/api/v2/move/59/",
+      "type": "Ice",
+      "power": 110,
+      "accuracy": 70,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Bubble Beam",
+      "url": "https://pokeapi.co/api/v2/move/61/",
+      "type": "Water",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Earthquake",
+      "url": "https://pokeapi.co/api/v2/move/89/",
+      "type": "Ground",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Dig",
+      "url": "https://pokeapi.co/api/v2/move/91/",
+      "type": "Ground",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Sea",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 144,
+  "order": 321,
+  "isDefault": true,
+  "captureRate": 60,
+  "baseHappiness": 70,
+  "growthRate": "fast",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 6,
+  "forms": [
+    {
+      "name": "Corsola",
+      "raw_name": "corsola",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/222.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/222.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/222.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/222.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Corsola",
+      "raw_name": "corsola",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/222/",
+      "type": ""
+    },
+    {
+      "name": "Corsola galar",
+      "raw_name": "corsola-galar",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10173/",
+      "type": "Galarian"
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Red Shard",
+      "rarity": 5
+    },
+    {
+      "name": "Hard Stone",
+      "rarity": 5
+    },
+    {
+      "name": "Luminous Moss",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/222.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/222.ogg"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "id": 316,
+  "name": "Gulpin",
+  "species": "Stomach Pok\u00e9mon",
+  "type": [
+    "Poison"
+  ],
+  "typeDetails": [
+    {
+      "name": "Poison",
+      "slot": 1
+    }
+  ],
+  "height": 0.4,
+  "weight": 10.3,
+  "abilities": [
+    {
+      "name": "Liquid ooze",
+      "url": "https://pokeapi.co/api/v2/ability/64/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Sticky hold",
+      "url": "https://pokeapi.co/api/v2/ability/60/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Gluttony",
+      "url": "https://pokeapi.co/api/v2/ability/82/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 43,
+    "defense": 53,
+    "specialAttack": 43,
+    "specialDefense": 53,
+    "speed": 40
+  },
+  "description": "Virtually all of GULPIN\u2019s body is its stomach. As a result, it can swallow something its own size. This POK\u00e9MON\u2019s stomach contains a special fluid that digests anything.",
+  "flavorTexts": [
+    {
+      "text": "Virtually all of GULPIN\u2019s body is its stomach. As a result, it can swallow something its own size. This POK\u00e9MON\u2019s stomach contains a special fluid that digests anything.",
+      "version": "ruby"
+    },
+    {
+      "text": "Most of GULPIN\u2019s body is made up of its stomach - its heart and brain are very small in comparison. This POK\u00e9MON\u2019s stomach contains special enzymes that dissolve anything.",
+      "version": "sapphire"
+    },
+    {
+      "text": "This POK\u00e9MON\u2019s stomach fluid can even digest scrap iron. In one gulp, it can swallow something that is as large as itself.",
+      "version": "emerald"
+    },
+    {
+      "text": "There is nothing its stomach can\u2019t digest. While it is digesting, vile, overpowering gases are expelled.",
+      "version": "firered"
+    },
+    {
+      "text": "There is nothing its stomach can\u2019t digest. While it is digesting, vile, overpowering gases are expelled.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A040A0",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A040A0",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/316.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/316.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/316.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/316.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/316.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/316.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/316.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/316.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/316.png"
+  },
+  "evolution": [
+    {
+      "name": "Gulpin",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Swalot",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 26,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "https://pokeapi.co/api/v2/move/1/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Fire Punch",
+      "url": "https://pokeapi.co/api/v2/move/7/",
+      "type": "Fire",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ice Punch",
+      "url": "https://pokeapi.co/api/v2/move/8/",
+      "type": "Ice",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Punch",
+      "url": "https://pokeapi.co/api/v2/move/9/",
+      "type": "Electric",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ice Beam",
+      "url": "https://pokeapi.co/api/v2/move/58/",
+      "type": "Ice",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Grassland",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 60,
+  "order": 426,
+  "isDefault": true,
+  "captureRate": 225,
+  "baseHappiness": 70,
+  "growthRate": "fast then very slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Gulpin",
+      "raw_name": "gulpin",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/316.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/316.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/316.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/316.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/316.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/316.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Gulpin",
+      "raw_name": "gulpin",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/316/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Big Pearl",
+      "rarity": 5
+    },
+    {
+      "name": "Oran Berry",
+      "rarity": 5
+    },
+    {
+      "name": "Sitrus Berry",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/316.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/316.ogg"
+  }
+}

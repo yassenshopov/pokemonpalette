@@ -1,0 +1,309 @@
+{
+  "id": 690,
+  "name": "Skrelp",
+  "species": "Mock Kelp Pok\u00e9mon",
+  "type": [
+    "Poison",
+    "Water"
+  ],
+  "typeDetails": [
+    {
+      "name": "Poison",
+      "slot": 1
+    },
+    {
+      "name": "Water",
+      "slot": 2
+    }
+  ],
+  "height": 0.5,
+  "weight": 7.3,
+  "abilities": [
+    {
+      "name": "Poison point",
+      "url": "https://pokeapi.co/api/v2/ability/38/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Poison touch",
+      "url": "https://pokeapi.co/api/v2/ability/143/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Adaptability",
+      "url": "https://pokeapi.co/api/v2/ability/91/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 60,
+    "defense": 60,
+    "specialAttack": 60,
+    "specialDefense": 60,
+    "speed": 30
+  },
+  "description": "Camouflaged as rotten kelp, they spray liquid poison on prey that approaches unawares and then finish it off.",
+  "flavorTexts": [
+    {
+      "text": "Camouflaged as rotten kelp, they spray liquid poison on prey that approaches unawares and then finish it off.",
+      "version": "x"
+    },
+    {
+      "text": "It looks just like rotten kelp. It hides from foes while storing up power for its evolution.",
+      "version": "y"
+    },
+    {
+      "text": "Camouflaged as rotten kelp, they spray liquid poison on prey that approaches unawares and then finish it off.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "It looks just like rotten kelp. It hides from foes while storing up power for its evolution.",
+      "version": "alpha-sapphire"
+    },
+    {
+      "text": "It vanishes into seaweed and remains perfectly still to avoid attacks from large Pok\u00e9mon. Rotten seaweed is its main food source.",
+      "version": "ultra-sun"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A040A0",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A040A0",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/690.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/690.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/690.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/690.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Skrelp",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Dragalge",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 48,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tail Whip",
+      "url": "https://pokeapi.co/api/v2/move/39/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Acid",
+      "url": "https://pokeapi.co/api/v2/move/51/",
+      "type": "Poison",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Water Gun",
+      "url": "https://pokeapi.co/api/v2/move/55/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hydro Pump",
+      "url": "https://pokeapi.co/api/v2/move/56/",
+      "type": "Water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Surf",
+      "url": "https://pokeapi.co/api/v2/move/57/",
+      "type": "Water",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunderbolt",
+      "url": "https://pokeapi.co/api/v2/move/85/",
+      "type": "Electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Smokescreen",
+      "url": "https://pokeapi.co/api/v2/move/108/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Haze",
+      "url": "https://pokeapi.co/api/v2/move/114/",
+      "type": "Ice",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Waterfall",
+      "url": "https://pokeapi.co/api/v2/move/127/",
+      "type": "Water",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bubble",
+      "url": "https://pokeapi.co/api/v2/move/145/",
+      "type": "Water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Acid Armor",
+      "url": "https://pokeapi.co/api/v2/move/151/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 64,
+  "order": 825,
+  "isDefault": true,
+  "captureRate": 225,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Skrelp",
+      "raw_name": "skrelp",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/690.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/690.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/690.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Skrelp",
+      "raw_name": "skrelp",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/690/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/690.ogg",
+    "legacy": null
+  }
+}

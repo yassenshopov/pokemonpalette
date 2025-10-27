@@ -1,0 +1,309 @@
+{
+  "id": 219,
+  "name": "Magcargo",
+  "species": "Lava Pok\u00e9mon",
+  "type": [
+    "Fire",
+    "Rock"
+  ],
+  "typeDetails": [
+    {
+      "name": "Fire",
+      "slot": 1
+    },
+    {
+      "name": "Rock",
+      "slot": 2
+    }
+  ],
+  "height": 0.8,
+  "weight": 55.0,
+  "abilities": [
+    {
+      "name": "Magma armor",
+      "url": "https://pokeapi.co/api/v2/ability/40/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Flame body",
+      "url": "https://pokeapi.co/api/v2/ability/49/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Weak armor",
+      "url": "https://pokeapi.co/api/v2/ability/133/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 50,
+    "defense": 120,
+    "specialAttack": 90,
+    "specialDefense": 80,
+    "speed": 30
+  },
+  "description": "The shell on its back is just skin that has cooled and hardened. It breaks easily with a slight touch.",
+  "flavorTexts": [
+    {
+      "text": "The shell on its back is just skin that has cooled and hardened. It breaks easily with a slight touch.",
+      "version": "gold"
+    },
+    {
+      "text": "Its brittle shell occasionally spouts intense flames that cir\u00ad culate throughout its body.",
+      "version": "silver"
+    },
+    {
+      "text": "Its body is as hot as lava and is always billowing. Flames will occasionally burst from its shell.",
+      "version": "crystal"
+    },
+    {
+      "text": "MAGCARGO\u2019s shell is actually its skin that hardened as a result of cooling. Its shell is very brittle and fragile - just touching it causes it to crumble apart. This POK\u00e9MON returns to its original size by dipping itself in magma.",
+      "version": "ruby"
+    },
+    {
+      "text": "MAGCARGO\u2019s body temperature is approximately 18,000 degrees F. Water is vaporized on contact. If this POK\u00e9MON is caught in the rain, the raindrops instantly turn into steam, cloaking the area in a thick fog.",
+      "version": "sapphire"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F08030",
+    "secondary": "#6890F0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F08030",
+      "#6890F0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/219.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/219.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/219.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/219.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Slugma",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Magcargo",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 38,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ember",
+      "url": "https://pokeapi.co/api/v2/move/52/",
+      "type": "Fire",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Fire Spin",
+      "url": "https://pokeapi.co/api/v2/move/83/",
+      "type": "Fire",
+      "power": 35,
+      "accuracy": 85,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Rock Throw",
+      "url": "https://pokeapi.co/api/v2/move/88/",
+      "type": "Rock",
+      "power": 50,
+      "accuracy": 90,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Earthquake",
+      "url": "https://pokeapi.co/api/v2/move/89/",
+      "type": "Ground",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Mimic",
+      "url": "https://pokeapi.co/api/v2/move/102/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Recover",
+      "url": "https://pokeapi.co/api/v2/move/105/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Mountain",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 151,
+  "order": 317,
+  "isDefault": true,
+  "captureRate": 75,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Magcargo",
+      "raw_name": "magcargo",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/219.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/219.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/219.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Magcargo",
+      "raw_name": "magcargo",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/219/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/219.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/219.ogg"
+  }
+}

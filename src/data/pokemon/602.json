@@ -1,0 +1,232 @@
+{
+  "id": 602,
+  "name": "Tynamo",
+  "species": "EleFish Pok\u00e9mon",
+  "type": [
+    "Electric"
+  ],
+  "typeDetails": [
+    {
+      "name": "Electric",
+      "slot": 1
+    }
+  ],
+  "height": 0.2,
+  "weight": 0.3,
+  "abilities": [
+    {
+      "name": "Levitate",
+      "url": "https://pokeapi.co/api/v2/ability/26/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 35,
+    "attack": 55,
+    "defense": 40,
+    "specialAttack": 45,
+    "specialDefense": 40,
+    "speed": 60
+  },
+  "description": "While one alone doesn\u2019t have much power, a chain of many Tynamo can be as powerful as lightning.",
+  "flavorTexts": [
+    {
+      "text": "While one alone doesn\u2019t have much power, a chain of many Tynamo can be as powerful as lightning.",
+      "version": "black"
+    },
+    {
+      "text": "These Pok\u00e9mon move in schools. They have an electricity-generating organ, so they discharge electricity if in danger.",
+      "version": "white"
+    },
+    {
+      "text": "One alone can emit only a trickle of electricity, so a group of them gathers to unleash a powerful electric shock.",
+      "version": "black-2"
+    },
+    {
+      "text": "One alone can emit only a trickle of electricity, so a group of them gathers to unleash a powerful electric shock.",
+      "version": "white-2"
+    },
+    {
+      "text": "While one alone doesn\u2019t have much power, a chain of many Tynamo can be as powerful as lightning.",
+      "version": "x"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F8D030",
+    "secondary": "#F08030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F8D030",
+      "#F08030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/602.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/602.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/602.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/602.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/602.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Tynamo",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Eelektrik",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 39,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Eelektross",
+      "level": 3,
+      "details": [
+        {
+          "item": "thunder stone",
+          "trigger": "use item"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Spark",
+      "url": "https://pokeapi.co/api/v2/move/209/",
+      "type": "Electric",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Charge",
+      "url": "https://pokeapi.co/api/v2/move/268/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Knock Off",
+      "url": "https://pokeapi.co/api/v2/move/282/",
+      "type": "Dark",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Magnet Rise",
+      "url": "https://pokeapi.co/api/v2/move/393/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Charge Beam",
+      "url": "https://pokeapi.co/api/v2/move/451/",
+      "type": "Electric",
+      "power": 50,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Tera Blast",
+      "url": "https://pokeapi.co/api/v2/move/851/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 55,
+  "order": 724,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 70,
+  "growthRate": "slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Tynamo",
+      "raw_name": "tynamo",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/602.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/602.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/602.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/602.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Tynamo",
+      "raw_name": "tynamo",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/602/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/602.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/602.ogg"
+  }
+}

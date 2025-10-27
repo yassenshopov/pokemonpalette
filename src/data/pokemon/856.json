@@ -1,0 +1,302 @@
+{
+  "id": 856,
+  "name": "Hatenna",
+  "species": "Calm Pok\u00e9mon",
+  "type": [
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Psychic",
+      "slot": 1
+    }
+  ],
+  "height": 0.4,
+  "weight": 3.4,
+  "abilities": [
+    {
+      "name": "Healer",
+      "url": "https://pokeapi.co/api/v2/ability/131/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Anticipation",
+      "url": "https://pokeapi.co/api/v2/ability/107/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Magic bounce",
+      "url": "https://pokeapi.co/api/v2/ability/156/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 42,
+    "attack": 30,
+    "defense": 45,
+    "specialAttack": 56,
+    "specialDefense": 53,
+    "speed": 39
+  },
+  "description": "Via the protrusion on its head, it senses other creatures\u2019 emotions. If you don\u2019t have a calm disposition, it will never warm up to you.",
+  "flavorTexts": [
+    {
+      "text": "Via the protrusion on its head, it senses other creatures\u2019 emotions. If you don\u2019t have a calm disposition, it will never warm up to you.",
+      "version": "sword"
+    },
+    {
+      "text": "If this Pok\u00e9mon senses a strong emotion, it will run away as fast as it can. It prefers areas without people.",
+      "version": "shield"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F85888",
+    "secondary": "#6890F0",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F85888",
+      "#6890F0",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/856.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/856.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/856.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/856.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/856.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Hatenna",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Hattrem",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 32,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Hatterene",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 42,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Psybeam",
+      "url": "https://pokeapi.co/api/v2/move/60/",
+      "type": "Psychic",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confusion",
+      "url": "https://pokeapi.co/api/v2/move/93/",
+      "type": "Psychic",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Light Screen",
+      "url": "https://pokeapi.co/api/v2/move/113/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Reflect",
+      "url": "https://pokeapi.co/api/v2/move/115/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Metronome",
+      "url": "https://pokeapi.co/api/v2/move/118/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Swift",
+      "url": "https://pokeapi.co/api/v2/move/129/",
+      "type": "Normal",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Rest",
+      "url": "https://pokeapi.co/api/v2/move/156/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Substitute",
+      "url": "https://pokeapi.co/api/v2/move/164/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Snore",
+      "url": "https://pokeapi.co/api/v2/move/173/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Protect",
+      "url": "https://pokeapi.co/api/v2/move/182/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 4
+    },
+    {
+      "name": "Giga Drain",
+      "url": "https://pokeapi.co/api/v2/move/202/",
+      "type": "Grass",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Endure",
+      "url": "https://pokeapi.co/api/v2/move/203/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 4
+    },
+    {
+      "name": "Charm",
+      "url": "https://pokeapi.co/api/v2/move/204/",
+      "type": "Fairy",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 53,
+  "order": 1040,
+  "isDefault": true,
+  "captureRate": 235,
+  "baseHappiness": 50,
+  "growthRate": "slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 8,
+  "forms": [
+    {
+      "name": "Hatenna",
+      "raw_name": "hatenna",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/856.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/856.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/856.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/856.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Hatenna",
+      "raw_name": "hatenna",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/856/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/856.ogg",
+    "legacy": null
+  }
+}

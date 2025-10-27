@@ -1,0 +1,326 @@
+{
+  "id": 440,
+  "name": "Happiny",
+  "species": "Playhouse Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 0.6,
+  "weight": 24.4,
+  "abilities": [
+    {
+      "name": "Natural cure",
+      "url": "https://pokeapi.co/api/v2/ability/30/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Serene grace",
+      "url": "https://pokeapi.co/api/v2/ability/32/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Friend guard",
+      "url": "https://pokeapi.co/api/v2/ability/132/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 100,
+    "attack": 5,
+    "defense": 5,
+    "specialAttack": 15,
+    "specialDefense": 65,
+    "speed": 30
+  },
+  "description": "It loves round white things. It carries an egg-shaped rock in imitation of CHANSEY.",
+  "flavorTexts": [
+    {
+      "text": "It loves round white things. It carries an egg-shaped rock in imitation of CHANSEY.",
+      "version": "diamond"
+    },
+    {
+      "text": "It carries a round, egg-shaped rock in its belly pouch and gives the rock to its friends.",
+      "version": "pearl"
+    },
+    {
+      "text": "It likes to carry around a small rock. It may wander around others\u2019 feet and cause them to stumble.",
+      "version": "platinum"
+    },
+    {
+      "text": "It carefully carries a round, white rock that it thinks is an egg. It\u2019s bothered by how curly its hair looks.",
+      "version": "heartgold"
+    },
+    {
+      "text": "It carefully carries a round, white rock that it thinks is an egg. It\u2019s bothered by how curly its hair looks.",
+      "version": "soulsilver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/440.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/440.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/440.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/440.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/440.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Happiny",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Chansey",
+      "level": 2,
+      "details": [
+        {
+          "held_item": "oval stone",
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Blissey",
+      "level": 3,
+      "details": [
+        {
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Pound",
+      "url": "https://pokeapi.co/api/v2/move/1/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Flamethrower",
+      "url": "https://pokeapi.co/api/v2/move/53/",
+      "type": "Fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    },
+    {
+      "name": "Seismic Toss",
+      "url": "https://pokeapi.co/api/v2/move/69/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Minimize",
+      "url": "https://pokeapi.co/api/v2/move/107/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Defense Curl",
+      "url": "https://pokeapi.co/api/v2/move/111/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Baby",
+  "baseExperience": 110,
+  "order": 179,
+  "isDefault": true,
+  "captureRate": 130,
+  "baseHappiness": 140,
+  "growthRate": "fast",
+  "hatchCounter": 40,
+  "hasGenderDifferences": false,
+  "genderRate": 8,
+  "forms": [
+    {
+      "name": "Happiny",
+      "raw_name": "happiny",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/440.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/440.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/440.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/440.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Happiny",
+      "raw_name": "happiny",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/440/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Oval Stone",
+      "rarity": 50
+    },
+    {
+      "name": "Lucky Egg",
+      "rarity": 5
+    },
+    {
+      "name": "Lucky Punch",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/440.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/440.ogg"
+  }
+}

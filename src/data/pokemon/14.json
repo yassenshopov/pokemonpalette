@@ -1,0 +1,207 @@
+{
+  "id": 14,
+  "name": "Kakuna",
+  "species": "Cocoon Pok\u00e9mon",
+  "type": [
+    "Bug",
+    "Poison"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    },
+    {
+      "name": "Poison",
+      "slot": 2
+    }
+  ],
+  "height": 0.6,
+  "weight": 10.0,
+  "abilities": [
+    {
+      "name": "Shed skin",
+      "url": "https://pokeapi.co/api/v2/ability/61/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 25,
+    "defense": 50,
+    "specialAttack": 25,
+    "specialDefense": 25,
+    "speed": 35
+  },
+  "description": "Almost incapable of moving, this POK\u00e9MON can only harden its shell to protect itself from predators.",
+  "flavorTexts": [
+    {
+      "text": "Almost incapable of moving, this POK\u00e9MON can only harden its shell to protect itself from predators.",
+      "version": "red"
+    },
+    {
+      "text": "Almost incapable of moving, this POK\u00e9MON can only harden its shell to protect itself from predators.",
+      "version": "blue"
+    },
+    {
+      "text": "Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.",
+      "version": "yellow"
+    },
+    {
+      "text": "Although it is a cocoon, it can move a little. It can extend its poison barb if it is attacked.",
+      "version": "gold"
+    },
+    {
+      "text": "From this form, it will grow into an adult. As its body becomes soft\u00ad er, the external shell hardens.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Weedle",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Kakuna",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 7,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Beedrill",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 10,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "String Shot",
+      "url": "https://pokeapi.co/api/v2/move/81/",
+      "type": "Bug",
+      "power": null,
+      "accuracy": 95,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Harden",
+      "url": "https://pokeapi.co/api/v2/move/106/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Iron Defense",
+      "url": "https://pokeapi.co/api/v2/move/334/",
+      "type": "Steel",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Bug Bite",
+      "url": "https://pokeapi.co/api/v2/move/450/",
+      "type": "Bug",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Electroweb",
+      "url": "https://pokeapi.co/api/v2/move/527/",
+      "type": "Electric",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Forest",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 72,
+  "order": 18,
+  "isDefault": true,
+  "captureRate": 120,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Kakuna",
+      "raw_name": "kakuna",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/14.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Kakuna",
+      "raw_name": "kakuna",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/14/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg"
+  }
+}

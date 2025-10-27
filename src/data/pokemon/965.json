@@ -1,0 +1,291 @@
+{
+  "id": 965,
+  "name": "Varoom",
+  "species": "Single-Cyl Pok\u00e9mon",
+  "type": [
+    "Steel",
+    "Poison"
+  ],
+  "typeDetails": [
+    {
+      "name": "Steel",
+      "slot": 1
+    },
+    {
+      "name": "Poison",
+      "slot": 2
+    }
+  ],
+  "height": 1.0,
+  "weight": 35.0,
+  "abilities": [
+    {
+      "name": "Overcoat",
+      "url": "https://pokeapi.co/api/v2/ability/142/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Slow start",
+      "url": "https://pokeapi.co/api/v2/ability/112/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 70,
+    "defense": 63,
+    "specialAttack": 30,
+    "specialDefense": 45,
+    "speed": 47
+  },
+  "description": "It is said that this Pok\u00e9mon was born when an unknown poison Pok\u00e9mon entered and inspirited an engine left at a scrap-processing factory.",
+  "flavorTexts": [
+    {
+      "text": "It is said that this Pok\u00e9mon was born when an unknown poison Pok\u00e9mon entered and inspirited an engine left at a scrap-processing factory.",
+      "version": "scarlet"
+    },
+    {
+      "text": "The steel section is Varoom\u2019s actual body. This Pok\u00e9mon clings to rocks and converts the minerals within into energy to fuel its activities.",
+      "version": "violet"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/965.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/965.png",
+    "back": null,
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/965.png",
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Varoom",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Revavroom",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 40,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Screech",
+      "url": "https://pokeapi.co/api/v2/move/103/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 85,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Haze",
+      "url": "https://pokeapi.co/api/v2/move/114/",
+      "type": "Ice",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Self Destruct",
+      "url": "https://pokeapi.co/api/v2/move/120/",
+      "type": "Normal",
+      "power": 200,
+      "accuracy": 100,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Lick",
+      "url": "https://pokeapi.co/api/v2/move/122/",
+      "type": "Ghost",
+      "power": 30,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Smog",
+      "url": "https://pokeapi.co/api/v2/move/123/",
+      "type": "Poison",
+      "power": 30,
+      "accuracy": 70,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Sludge",
+      "url": "https://pokeapi.co/api/v2/move/124/",
+      "type": "Poison",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Poison Gas",
+      "url": "https://pokeapi.co/api/v2/move/139/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Substitute",
+      "url": "https://pokeapi.co/api/v2/move/164/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thief",
+      "url": "https://pokeapi.co/api/v2/move/168/",
+      "type": "Dark",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Curse",
+      "url": "https://pokeapi.co/api/v2/move/174/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 60,
+  "order": 942,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 50,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Varoom",
+      "raw_name": "varoom",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/965.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/965.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Varoom",
+      "raw_name": "varoom",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/965/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/965.ogg",
+    "legacy": null
+  }
+}

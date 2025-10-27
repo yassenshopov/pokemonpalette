@@ -1,0 +1,318 @@
+{
+  "id": 755,
+  "name": "Morelull",
+  "species": "Illuminating Pok\u00e9mon",
+  "type": [
+    "Grass",
+    "Fairy"
+  ],
+  "typeDetails": [
+    {
+      "name": "Grass",
+      "slot": 1
+    },
+    {
+      "name": "Fairy",
+      "slot": 2
+    }
+  ],
+  "height": 0.2,
+  "weight": 1.5,
+  "abilities": [
+    {
+      "name": "Illuminate",
+      "url": "https://pokeapi.co/api/v2/ability/35/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Effect spore",
+      "url": "https://pokeapi.co/api/v2/ability/27/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Rain dish",
+      "url": "https://pokeapi.co/api/v2/ability/44/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 35,
+    "defense": 55,
+    "specialAttack": 65,
+    "specialDefense": 75,
+    "speed": 15
+  },
+  "description": "It scatters spores that flicker and glow. Anyone seeing these lights falls into a deep slumber.",
+  "flavorTexts": [
+    {
+      "text": "It scatters spores that flicker and glow. Anyone seeing these lights falls into a deep slumber.",
+      "version": "sun"
+    },
+    {
+      "text": "As it drowses the day away, it nourishes itself by sucking from tree roots. It wakens at the fall of night, wandering off in search of a new tree.",
+      "version": "moon"
+    },
+    {
+      "text": "It scatters its shining spores around itself. Even though they\u2019re dangerous, nighttime tours of forests where Morelull live are popular.",
+      "version": "ultra-sun"
+    },
+    {
+      "text": "It likes damp dark places. When night falls, the spores filling the caps of its mushrooms glow.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "Pok\u00e9mon living in the forest eat the delicious caps on Morelull\u2019s head. The caps regrow overnight.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#78C850",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/755.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/755.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/755.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/755.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/755.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Morelull",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Shiinotic",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 24,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Absorb",
+      "url": "https://pokeapi.co/api/v2/move/71/",
+      "type": "Grass",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Mega Drain",
+      "url": "https://pokeapi.co/api/v2/move/72/",
+      "type": "Grass",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Leech Seed",
+      "url": "https://pokeapi.co/api/v2/move/73/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Growth",
+      "url": "https://pokeapi.co/api/v2/move/74/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Poison Powder",
+      "url": "https://pokeapi.co/api/v2/move/77/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 75,
+      "pp": 35,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Stun Spore",
+      "url": "https://pokeapi.co/api/v2/move/78/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Sleep Powder",
+      "url": "https://pokeapi.co/api/v2/move/79/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Thunder Wave",
+      "url": "https://pokeapi.co/api/v2/move/86/",
+      "type": "Electric",
+      "power": null,
+      "accuracy": 90,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confuse Ray",
+      "url": "https://pokeapi.co/api/v2/move/109/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Light Screen",
+      "url": "https://pokeapi.co/api/v2/move/113/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Amnesia",
+      "url": "https://pokeapi.co/api/v2/move/133/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Dream Eater",
+      "url": "https://pokeapi.co/api/v2/move/138/",
+      "type": "Psychic",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 57,
+  "order": 913,
+  "isDefault": true,
+  "captureRate": 190,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Morelull",
+      "raw_name": "morelull",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/755.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/755.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/755.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/755.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Morelull",
+      "raw_name": "morelull",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/755/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Tiny Mushroom",
+      "rarity": 50
+    },
+    {
+      "name": "Big Mushroom",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/755.ogg",
+    "legacy": null
+  }
+}

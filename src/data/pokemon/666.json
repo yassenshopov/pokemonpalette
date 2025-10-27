@@ -1,0 +1,638 @@
+{
+  "id": 666,
+  "name": "Vivillon",
+  "species": "Scale Pok\u00e9mon",
+  "type": [
+    "Bug",
+    "Flying"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    },
+    {
+      "name": "Flying",
+      "slot": 2
+    }
+  ],
+  "height": 1.2,
+  "weight": 17.0,
+  "abilities": [
+    {
+      "name": "Shield dust",
+      "url": "https://pokeapi.co/api/v2/ability/19/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Compound eyes",
+      "url": "https://pokeapi.co/api/v2/ability/14/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Friend guard",
+      "url": "https://pokeapi.co/api/v2/ability/132/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 52,
+    "defense": 50,
+    "specialAttack": 90,
+    "specialDefense": 50,
+    "speed": 89
+  },
+  "description": "Vivillon with many different patterns are found all over the world. These patterns are affected by the climate of their habitat.",
+  "flavorTexts": [
+    {
+      "text": "Vivillon with many different patterns are found all over the world. These patterns are affected by the climate of their habitat.",
+      "version": "x"
+    },
+    {
+      "text": "The patterns on this Pok\u00e9mon\u2019s wings depend on the climate and topography of its habitat. It scatters colorful scales.",
+      "version": "y"
+    },
+    {
+      "text": "Vivillon with many different patterns are found all over the world. These patterns are affected by the climate of their habitat.",
+      "version": "omega-ruby"
+    },
+    {
+      "text": "The patterns on this Pok\u00e9mon\u2019s wings depend on the climate and topography of its habitat. It scatters colorful scales.",
+      "version": "alpha-sapphire"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/666.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png",
+    "back": null,
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666.png",
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Scatterbug",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Spewpa",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 9,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Vivillon",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 12,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Gust",
+      "url": "https://pokeapi.co/api/v2/move/16/",
+      "type": "Flying",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Supersonic",
+      "url": "https://pokeapi.co/api/v2/move/48/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 55,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psybeam",
+      "url": "https://pokeapi.co/api/v2/move/60/",
+      "type": "Psychic",
+      "power": 65,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Poison Powder",
+      "url": "https://pokeapi.co/api/v2/move/77/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 75,
+      "pp": 35,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Stun Spore",
+      "url": "https://pokeapi.co/api/v2/move/78/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Sleep Powder",
+      "url": "https://pokeapi.co/api/v2/move/79/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Toxic",
+      "url": "https://pokeapi.co/api/v2/move/92/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Double Team",
+      "url": "https://pokeapi.co/api/v2/move/104/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Confuse Ray",
+      "url": "https://pokeapi.co/api/v2/move/109/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Light Screen",
+      "url": "https://pokeapi.co/api/v2/move/113/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Swift",
+      "url": "https://pokeapi.co/api/v2/move/129/",
+      "type": "Normal",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Dream Eater",
+      "url": "https://pokeapi.co/api/v2/move/138/",
+      "type": "Psychic",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 185,
+  "order": 798,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 15,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Vivillon meadow",
+      "raw_name": "vivillon-meadow",
+      "form_name": "meadow",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon icy snow",
+      "raw_name": "vivillon-icy-snow",
+      "form_name": "icy-snow",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-icy-snow.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-icy-snow.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon polar",
+      "raw_name": "vivillon-polar",
+      "form_name": "polar",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-polar.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-polar.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon tundra",
+      "raw_name": "vivillon-tundra",
+      "form_name": "tundra",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-tundra.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-tundra.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon continental",
+      "raw_name": "vivillon-continental",
+      "form_name": "continental",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-continental.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-continental.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon garden",
+      "raw_name": "vivillon-garden",
+      "form_name": "garden",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-garden.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-garden.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon elegant",
+      "raw_name": "vivillon-elegant",
+      "form_name": "elegant",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-elegant.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-elegant.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon modern",
+      "raw_name": "vivillon-modern",
+      "form_name": "modern",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-modern.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-modern.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon marine",
+      "raw_name": "vivillon-marine",
+      "form_name": "marine",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-marine.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-marine.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon archipelago",
+      "raw_name": "vivillon-archipelago",
+      "form_name": "archipelago",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-archipelago.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-archipelago.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon high plains",
+      "raw_name": "vivillon-high-plains",
+      "form_name": "high-plains",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-high-plains.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-high-plains.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon sandstorm",
+      "raw_name": "vivillon-sandstorm",
+      "form_name": "sandstorm",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-sandstorm.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-sandstorm.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon river",
+      "raw_name": "vivillon-river",
+      "form_name": "river",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-river.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-river.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon monsoon",
+      "raw_name": "vivillon-monsoon",
+      "form_name": "monsoon",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-monsoon.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-monsoon.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon savanna",
+      "raw_name": "vivillon-savanna",
+      "form_name": "savanna",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-savanna.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-savanna.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon sun",
+      "raw_name": "vivillon-sun",
+      "form_name": "sun",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-sun.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-sun.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon ocean",
+      "raw_name": "vivillon-ocean",
+      "form_name": "ocean",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-ocean.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-ocean.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon jungle",
+      "raw_name": "vivillon-jungle",
+      "form_name": "jungle",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-jungle.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-jungle.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon fancy",
+      "raw_name": "vivillon-fancy",
+      "form_name": "fancy",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-fancy.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-fancy.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Vivillon poke ball",
+      "raw_name": "vivillon-poke-ball",
+      "form_name": "poke-ball",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666-poke-ball.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666-poke-ball.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Vivillon",
+      "raw_name": "vivillon",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/666/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/666.ogg",
+    "legacy": null
+  }
+}

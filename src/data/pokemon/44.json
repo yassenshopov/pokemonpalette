@@ -1,0 +1,328 @@
+{
+  "id": 44,
+  "name": "Gloom",
+  "species": "Weed Pok\u00e9mon",
+  "type": [
+    "Grass",
+    "Poison"
+  ],
+  "typeDetails": [
+    {
+      "name": "Grass",
+      "slot": 1
+    },
+    {
+      "name": "Poison",
+      "slot": 2
+    }
+  ],
+  "height": 0.8,
+  "weight": 8.6,
+  "abilities": [
+    {
+      "name": "Chlorophyll",
+      "url": "https://pokeapi.co/api/v2/ability/34/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Stench",
+      "url": "https://pokeapi.co/api/v2/ability/1/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 65,
+    "defense": 70,
+    "specialAttack": 85,
+    "specialDefense": 75,
+    "speed": 40
+  },
+  "description": "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.",
+  "flavorTexts": [
+    {
+      "text": "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.",
+      "version": "red"
+    },
+    {
+      "text": "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.",
+      "version": "blue"
+    },
+    {
+      "text": "Smells incredibly foul! However, around 1 out of 1,000 people enjoy sniffing its nose- bending stink.",
+      "version": "yellow"
+    },
+    {
+      "text": "What appears to be drool is actually sweet honey. It is very sticky and clings stubbornly if touched.",
+      "version": "gold"
+    },
+    {
+      "text": "It secretes a sticky, drool-like honey. Although sweet, it smells too repulsive to get very close.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#78C850",
+    "secondary": "#A040A0",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/44.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/44.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/44.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/44.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/44.png",
+    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/44.png",
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/44.png",
+    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/44.png"
+  },
+  "evolution": [
+    {
+      "name": "Oddish",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Gloom",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 21,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Vileplume",
+      "level": 3,
+      "details": [
+        {
+          "item": "leaf stone",
+          "trigger": "use item"
+        }
+      ]
+    },
+    {
+      "name": "Bellossom",
+      "level": 3,
+      "details": [
+        {
+          "item": "sun stone",
+          "trigger": "use item"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Acid",
+      "url": "https://pokeapi.co/api/v2/move/51/",
+      "type": "Poison",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Absorb",
+      "url": "https://pokeapi.co/api/v2/move/71/",
+      "type": "Grass",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Mega Drain",
+      "url": "https://pokeapi.co/api/v2/move/72/",
+      "type": "Grass",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Leech Seed",
+      "url": "https://pokeapi.co/api/v2/move/73/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Growth",
+      "url": "https://pokeapi.co/api/v2/move/74/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Razor Leaf",
+      "url": "https://pokeapi.co/api/v2/move/75/",
+      "type": "Grass",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 25,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Poison Powder",
+      "url": "https://pokeapi.co/api/v2/move/77/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": 75,
+      "pp": 35,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Stun Spore",
+      "url": "https://pokeapi.co/api/v2/move/78/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Sleep Powder",
+      "url": "https://pokeapi.co/api/v2/move/79/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 75,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Grassland",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 138,
+  "order": 77,
+  "isDefault": true,
+  "captureRate": 120,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": true,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Gloom",
+      "raw_name": "gloom",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/44.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/44.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/44.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/44.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/44.png"
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Gloom",
+      "raw_name": "gloom",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/44/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Absorb Bulb",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/44.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/44.ogg"
+  }
+}

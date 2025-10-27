@@ -1,0 +1,182 @@
+{
+  "id": 789,
+  "name": "Cosmog",
+  "species": "Nebula Pok\u00e9mon",
+  "type": [
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Psychic",
+      "slot": 1
+    }
+  ],
+  "height": 0.2,
+  "weight": 0.1,
+  "abilities": [
+    {
+      "name": "Unaware",
+      "url": "https://pokeapi.co/api/v2/ability/109/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 43,
+    "attack": 29,
+    "defense": 31,
+    "specialAttack": 29,
+    "specialDefense": 31,
+    "speed": 37
+  },
+  "description": "Its body is gaseous and frail. It slowly grows as it collects dust from the atmosphere.",
+  "flavorTexts": [
+    {
+      "text": "Its body is gaseous and frail. It slowly grows as it collects dust from the atmosphere.",
+      "version": "sun"
+    },
+    {
+      "text": "In ages past, it was called the child of the stars. It\u2019s said to be a Pok\u00e9mon from another world, but no specific details are known.",
+      "version": "moon"
+    },
+    {
+      "text": "Even though its helpless, gaseous body can be blown away by the slightest breeze, it doesn\u2019t seem to care.",
+      "version": "ultra-sun"
+    },
+    {
+      "text": "Whether or not it\u2019s a Pok\u00e9mon from this world is a mystery. When it\u2019s in a jam, it warps away to a safe place to hide.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "This Pok\u00e9mon came from another universe. Its gaseous body is so light that even a gentle breeze can blow it away.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F85888",
+    "secondary": "#6890F0",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F85888",
+      "#6890F0",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/789.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/789.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/789.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/789.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/789.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Cosmog",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Cosmoem",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 43,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Solgaleo",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 53,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Lunala",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 53,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Teleport",
+      "url": "https://pokeapi.co/api/v2/move/100/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Splash",
+      "url": "https://pokeapi.co/api/v2/move/150/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Legendary",
+  "baseExperience": 40,
+  "order": 966,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 0,
+  "growthRate": "slow",
+  "hatchCounter": 120,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [
+    {
+      "name": "Cosmog",
+      "raw_name": "cosmog",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/789.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/789.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/789.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/789.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Cosmog",
+      "raw_name": "cosmog",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/789/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/789.ogg",
+    "legacy": null
+  }
+}

@@ -1,11 +1,37 @@
 {
   "id": 1,
   "name": "Bulbasaur",
-  "species": "Seed Pokémon",
-  "type": ["Grass", "Poison"],
+  "species": "Seed Pok\u00e9mon",
+  "type": [
+    "Grass",
+    "Poison"
+  ],
+  "typeDetails": [
+    {
+      "name": "Grass",
+      "slot": 1
+    },
+    {
+      "name": "Poison",
+      "slot": 2
+    }
+  ],
   "height": 0.7,
   "weight": 6.9,
-  "abilities": ["Overgrow", "Chlorophyll"],
+  "abilities": [
+    {
+      "name": "Overgrow",
+      "url": "https://pokeapi.co/api/v2/ability/65/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Chlorophyll",
+      "url": "https://pokeapi.co/api/v2/ability/34/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
   "baseStats": {
     "hp": 45,
     "attack": 49,
@@ -14,54 +40,274 @@
     "specialDefense": 65,
     "speed": 45
   },
-  "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
+  "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
+  "flavorTexts": [
+    {
+      "text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
+      "version": "red"
+    },
+    {
+      "text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
+      "version": "blue"
+    },
+    {
+      "text": "It can go for days without eating a single morsel. In the bulb on its back, it stores energy.",
+      "version": "yellow"
+    },
+    {
+      "text": "The seed on its back is filled with nutrients. The seed grows steadily larger as its body grows.",
+      "version": "gold"
+    },
+    {
+      "text": "It carries a seed on its back right from birth. As it grows older, the seed also grows larger.",
+      "version": "silver"
+    }
+  ],
   "colorPalette": {
     "primary": "#78C850",
     "secondary": "#A040A0",
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#90EE90", "#98FB98", "#8FBC8F"]
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
     "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
   },
-  "evolution": {
-    "stage": 1,
-    "evolvesTo": 2,
-    "evolutionMethod": "level",
-    "evolutionLevel": 16
-  },
+  "evolution": [
+    {
+      "name": "Bulbasaur",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Ivysaur",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 16,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Venusaur",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 32,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
   "moves": [
     {
-      "name": "Tackle",
+      "name": "Razor Wind",
+      "url": "https://pokeapi.co/api/v2/move/13/",
       "type": "Normal",
-      "power": 40,
+      "power": 80,
       "accuracy": 100,
-      "pp": 35,
-      "category": "Physical"
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Swords Dance",
+      "url": "https://pokeapi.co/api/v2/move/14/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Cut",
+      "url": "https://pokeapi.co/api/v2/move/15/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 95,
+      "pp": 30,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Bind",
+      "url": "https://pokeapi.co/api/v2/move/20/",
+      "type": "Normal",
+      "power": 15,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
     },
     {
       "name": "Vine Whip",
+      "url": "https://pokeapi.co/api/v2/move/22/",
       "type": "Grass",
       "power": 45,
       "accuracy": 100,
       "pp": 25,
-      "category": "Physical"
+      "damage_class": "physical",
+      "priority": 0
     },
     {
-      "name": "Poison Powder",
-      "type": "Poison",
-      "power": null,
-      "accuracy": 75,
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
       "pp": 35,
-      "category": "Status"
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Body Slam",
+      "url": "https://pokeapi.co/api/v2/move/34/",
+      "type": "Normal",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Double Edge",
+      "url": "https://pokeapi.co/api/v2/move/38/",
+      "type": "Normal",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Growl",
+      "url": "https://pokeapi.co/api/v2/move/45/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Strength",
+      "url": "https://pokeapi.co/api/v2/move/70/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Mega Drain",
+      "url": "https://pokeapi.co/api/v2/move/72/",
+      "type": "Grass",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Leech Seed",
+      "url": "https://pokeapi.co/api/v2/move/73/",
+      "type": "Grass",
+      "power": null,
+      "accuracy": 90,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Growth",
+      "url": "https://pokeapi.co/api/v2/move/74/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
     }
   ],
   "habitat": "Grassland",
   "generation": 1,
-  "rarity": "Common"
+  "rarity": "Common",
+  "baseExperience": 64,
+  "order": 1,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 1,
+  "forms": [
+    {
+      "name": "Bulbasaur",
+      "raw_name": "bulbasaur",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Bulbasaur",
+      "raw_name": "bulbasaur",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/1.ogg"
+  }
 }

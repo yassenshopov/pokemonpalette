@@ -1,0 +1,182 @@
+{
+  "id": 790,
+  "name": "Cosmoem",
+  "species": "Protostar Pok\u00e9mon",
+  "type": [
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Psychic",
+      "slot": 1
+    }
+  ],
+  "height": 0.1,
+  "weight": 999.9,
+  "abilities": [
+    {
+      "name": "Sturdy",
+      "url": "https://pokeapi.co/api/v2/ability/5/",
+      "is_hidden": false,
+      "slot": 1
+    }
+  ],
+  "baseStats": {
+    "hp": 43,
+    "attack": 29,
+    "defense": 131,
+    "specialAttack": 29,
+    "specialDefense": 131,
+    "speed": 37
+  },
+  "description": "Motionless as if dead, its body is faintly warm to the touch. In the distant past, it was called the cocoon of the stars.",
+  "flavorTexts": [
+    {
+      "text": "Motionless as if dead, its body is faintly warm to the touch. In the distant past, it was called the cocoon of the stars.",
+      "version": "sun"
+    },
+    {
+      "text": "There\u2019s something accumulating around the black core within its hard shell. People think this Pok\u00e9mon may come from another world.",
+      "version": "moon"
+    },
+    {
+      "text": "The king who ruled Alola in times of antiquity called it the \u201ccocoon of the stars\u201d and built an altar to worship it.",
+      "version": "ultra-sun"
+    },
+    {
+      "text": "As it absorbs light, Cosmoem continues to grow. Its golden shell is surprisingly solid.",
+      "version": "ultra-moon"
+    },
+    {
+      "text": "The absorption of starlight fuels this Pok\u00e9mon\u2019s growth. The shell that encases it is harder than any known material.",
+      "version": "sword"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F85888",
+    "secondary": "#6890F0",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F85888",
+      "#6890F0",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/790.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/790.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/790.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/790.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/790.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Cosmog",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Cosmoem",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 43,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Solgaleo",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 53,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Lunala",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 53,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Teleport",
+      "url": "https://pokeapi.co/api/v2/move/100/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": -6
+    },
+    {
+      "name": "Cosmic Power",
+      "url": "https://pokeapi.co/api/v2/move/322/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Legendary",
+  "baseExperience": 140,
+  "order": 967,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 0,
+  "growthRate": "slow",
+  "hatchCounter": 120,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [
+    {
+      "name": "Cosmoem",
+      "raw_name": "cosmoem",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/790.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/790.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/790.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/790.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Cosmoem",
+      "raw_name": "cosmoem",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/790/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/790.ogg",
+    "legacy": null
+  }
+}

@@ -1,0 +1,1346 @@
+{
+  "id": 869,
+  "name": "Alcremie",
+  "species": "Cream Pok\u00e9mon",
+  "type": [
+    "Fairy"
+  ],
+  "typeDetails": [
+    {
+      "name": "Fairy",
+      "slot": 1
+    }
+  ],
+  "height": 0.3,
+  "weight": 0.5,
+  "abilities": [
+    {
+      "name": "Sweet veil",
+      "url": "https://pokeapi.co/api/v2/ability/175/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Aroma veil",
+      "url": "https://pokeapi.co/api/v2/ability/165/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 60,
+    "defense": 75,
+    "specialAttack": 110,
+    "specialDefense": 121,
+    "speed": 64
+  },
+  "description": "When it trusts a Trainer, it will treat them to berries it\u2019s decorated with cream.",
+  "flavorTexts": [
+    {
+      "text": "When it trusts a Trainer, it will treat them to berries it\u2019s decorated with cream.",
+      "version": "sword"
+    },
+    {
+      "text": "When Alcremie is content, the cream it secretes from its hands becomes sweeter and richer.",
+      "version": "shield"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/869.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/869.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/869.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Milcery",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Alcremie",
+      "level": 2,
+      "details": [
+        {
+          "trigger": "spin"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Hyper Beam",
+      "url": "https://pokeapi.co/api/v2/move/63/",
+      "type": "Normal",
+      "power": 150,
+      "accuracy": 90,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Solar Beam",
+      "url": "https://pokeapi.co/api/v2/move/76/",
+      "type": "Grass",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Psychic",
+      "url": "https://pokeapi.co/api/v2/move/94/",
+      "type": "Psychic",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Recover",
+      "url": "https://pokeapi.co/api/v2/move/105/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Light Screen",
+      "url": "https://pokeapi.co/api/v2/move/113/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 30,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Metronome",
+      "url": "https://pokeapi.co/api/v2/move/118/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Acid Armor",
+      "url": "https://pokeapi.co/api/v2/move/151/",
+      "type": "Poison",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Rest",
+      "url": "https://pokeapi.co/api/v2/move/156/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Tri Attack",
+      "url": "https://pokeapi.co/api/v2/move/161/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Substitute",
+      "url": "https://pokeapi.co/api/v2/move/164/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Snore",
+      "url": "https://pokeapi.co/api/v2/move/173/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Protect",
+      "url": "https://pokeapi.co/api/v2/move/182/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 4
+    },
+    {
+      "name": "Sweet Kiss",
+      "url": "https://pokeapi.co/api/v2/move/186/",
+      "type": "Fairy",
+      "power": null,
+      "accuracy": 75,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Giga Drain",
+      "url": "https://pokeapi.co/api/v2/move/202/",
+      "type": "Grass",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 173,
+  "order": 1053,
+  "isDefault": true,
+  "captureRate": 100,
+  "baseHappiness": 50,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 8,
+  "forms": [
+    {
+      "name": "Alcremie vanilla cream strawberry sweet",
+      "raw_name": "alcremie-vanilla-cream-strawberry-sweet",
+      "form_name": "vanilla-cream-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/869.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/869.png",
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream strawberry sweet",
+      "raw_name": "alcremie-ruby-cream-strawberry-sweet",
+      "form_name": "ruby-cream-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream strawberry sweet",
+      "raw_name": "alcremie-matcha-cream-strawberry-sweet",
+      "form_name": "matcha-cream-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream strawberry sweet",
+      "raw_name": "alcremie-mint-cream-strawberry-sweet",
+      "form_name": "mint-cream-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream strawberry sweet",
+      "raw_name": "alcremie-lemon-cream-strawberry-sweet",
+      "form_name": "lemon-cream-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream strawberry sweet",
+      "raw_name": "alcremie-salted-cream-strawberry-sweet",
+      "form_name": "salted-cream-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl strawberry sweet",
+      "raw_name": "alcremie-ruby-swirl-strawberry-sweet",
+      "form_name": "ruby-swirl-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl strawberry sweet",
+      "raw_name": "alcremie-caramel-swirl-strawberry-sweet",
+      "form_name": "caramel-swirl-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl strawberry sweet",
+      "raw_name": "alcremie-rainbow-swirl-strawberry-sweet",
+      "form_name": "rainbow-swirl-strawberry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-strawberry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-strawberry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie vanilla cream berry sweet",
+      "raw_name": "alcremie-vanilla-cream-berry-sweet",
+      "form_name": "vanilla-cream-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-vanilla-cream-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-vanilla-cream-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream berry sweet",
+      "raw_name": "alcremie-ruby-cream-berry-sweet",
+      "form_name": "ruby-cream-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream berry sweet",
+      "raw_name": "alcremie-matcha-cream-berry-sweet",
+      "form_name": "matcha-cream-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream berry sweet",
+      "raw_name": "alcremie-mint-cream-berry-sweet",
+      "form_name": "mint-cream-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream berry sweet",
+      "raw_name": "alcremie-lemon-cream-berry-sweet",
+      "form_name": "lemon-cream-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream berry sweet",
+      "raw_name": "alcremie-salted-cream-berry-sweet",
+      "form_name": "salted-cream-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl berry sweet",
+      "raw_name": "alcremie-ruby-swirl-berry-sweet",
+      "form_name": "ruby-swirl-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl berry sweet",
+      "raw_name": "alcremie-caramel-swirl-berry-sweet",
+      "form_name": "caramel-swirl-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl berry sweet",
+      "raw_name": "alcremie-rainbow-swirl-berry-sweet",
+      "form_name": "rainbow-swirl-berry-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-berry-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-berry-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie vanilla cream love sweet",
+      "raw_name": "alcremie-vanilla-cream-love-sweet",
+      "form_name": "vanilla-cream-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-vanilla-cream-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-vanilla-cream-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream love sweet",
+      "raw_name": "alcremie-ruby-cream-love-sweet",
+      "form_name": "ruby-cream-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream love sweet",
+      "raw_name": "alcremie-matcha-cream-love-sweet",
+      "form_name": "matcha-cream-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream love sweet",
+      "raw_name": "alcremie-mint-cream-love-sweet",
+      "form_name": "mint-cream-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream love sweet",
+      "raw_name": "alcremie-lemon-cream-love-sweet",
+      "form_name": "lemon-cream-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream love sweet",
+      "raw_name": "alcremie-salted-cream-love-sweet",
+      "form_name": "salted-cream-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl love sweet",
+      "raw_name": "alcremie-ruby-swirl-love-sweet",
+      "form_name": "ruby-swirl-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl love sweet",
+      "raw_name": "alcremie-caramel-swirl-love-sweet",
+      "form_name": "caramel-swirl-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl love sweet",
+      "raw_name": "alcremie-rainbow-swirl-love-sweet",
+      "form_name": "rainbow-swirl-love-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-love-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-love-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie vanilla cream star sweet",
+      "raw_name": "alcremie-vanilla-cream-star-sweet",
+      "form_name": "vanilla-cream-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-vanilla-cream-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-vanilla-cream-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream star sweet",
+      "raw_name": "alcremie-ruby-cream-star-sweet",
+      "form_name": "ruby-cream-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream star sweet",
+      "raw_name": "alcremie-matcha-cream-star-sweet",
+      "form_name": "matcha-cream-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream star sweet",
+      "raw_name": "alcremie-mint-cream-star-sweet",
+      "form_name": "mint-cream-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream star sweet",
+      "raw_name": "alcremie-lemon-cream-star-sweet",
+      "form_name": "lemon-cream-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream star sweet",
+      "raw_name": "alcremie-salted-cream-star-sweet",
+      "form_name": "salted-cream-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl star sweet",
+      "raw_name": "alcremie-ruby-swirl-star-sweet",
+      "form_name": "ruby-swirl-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl star sweet",
+      "raw_name": "alcremie-caramel-swirl-star-sweet",
+      "form_name": "caramel-swirl-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl star sweet",
+      "raw_name": "alcremie-rainbow-swirl-star-sweet",
+      "form_name": "rainbow-swirl-star-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-star-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-star-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie vanilla cream clover sweet",
+      "raw_name": "alcremie-vanilla-cream-clover-sweet",
+      "form_name": "vanilla-cream-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-vanilla-cream-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-vanilla-cream-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream clover sweet",
+      "raw_name": "alcremie-ruby-cream-clover-sweet",
+      "form_name": "ruby-cream-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream clover sweet",
+      "raw_name": "alcremie-matcha-cream-clover-sweet",
+      "form_name": "matcha-cream-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream clover sweet",
+      "raw_name": "alcremie-mint-cream-clover-sweet",
+      "form_name": "mint-cream-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream clover sweet",
+      "raw_name": "alcremie-lemon-cream-clover-sweet",
+      "form_name": "lemon-cream-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream clover sweet",
+      "raw_name": "alcremie-salted-cream-clover-sweet",
+      "form_name": "salted-cream-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl clover sweet",
+      "raw_name": "alcremie-ruby-swirl-clover-sweet",
+      "form_name": "ruby-swirl-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl clover sweet",
+      "raw_name": "alcremie-caramel-swirl-clover-sweet",
+      "form_name": "caramel-swirl-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl clover sweet",
+      "raw_name": "alcremie-rainbow-swirl-clover-sweet",
+      "form_name": "rainbow-swirl-clover-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-clover-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-clover-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie vanilla cream flower sweet",
+      "raw_name": "alcremie-vanilla-cream-flower-sweet",
+      "form_name": "vanilla-cream-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-vanilla-cream-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-vanilla-cream-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream flower sweet",
+      "raw_name": "alcremie-ruby-cream-flower-sweet",
+      "form_name": "ruby-cream-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream flower sweet",
+      "raw_name": "alcremie-matcha-cream-flower-sweet",
+      "form_name": "matcha-cream-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream flower sweet",
+      "raw_name": "alcremie-mint-cream-flower-sweet",
+      "form_name": "mint-cream-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream flower sweet",
+      "raw_name": "alcremie-lemon-cream-flower-sweet",
+      "form_name": "lemon-cream-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream flower sweet",
+      "raw_name": "alcremie-salted-cream-flower-sweet",
+      "form_name": "salted-cream-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl flower sweet",
+      "raw_name": "alcremie-ruby-swirl-flower-sweet",
+      "form_name": "ruby-swirl-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl flower sweet",
+      "raw_name": "alcremie-caramel-swirl-flower-sweet",
+      "form_name": "caramel-swirl-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl flower sweet",
+      "raw_name": "alcremie-rainbow-swirl-flower-sweet",
+      "form_name": "rainbow-swirl-flower-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-flower-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-flower-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie vanilla cream ribbon sweet",
+      "raw_name": "alcremie-vanilla-cream-ribbon-sweet",
+      "form_name": "vanilla-cream-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-vanilla-cream-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-vanilla-cream-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby cream ribbon sweet",
+      "raw_name": "alcremie-ruby-cream-ribbon-sweet",
+      "form_name": "ruby-cream-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-cream-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-cream-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie matcha cream ribbon sweet",
+      "raw_name": "alcremie-matcha-cream-ribbon-sweet",
+      "form_name": "matcha-cream-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-matcha-cream-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-matcha-cream-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie mint cream ribbon sweet",
+      "raw_name": "alcremie-mint-cream-ribbon-sweet",
+      "form_name": "mint-cream-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-mint-cream-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-mint-cream-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie lemon cream ribbon sweet",
+      "raw_name": "alcremie-lemon-cream-ribbon-sweet",
+      "form_name": "lemon-cream-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-lemon-cream-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-lemon-cream-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie salted cream ribbon sweet",
+      "raw_name": "alcremie-salted-cream-ribbon-sweet",
+      "form_name": "salted-cream-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-salted-cream-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-salted-cream-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie ruby swirl ribbon sweet",
+      "raw_name": "alcremie-ruby-swirl-ribbon-sweet",
+      "form_name": "ruby-swirl-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-ruby-swirl-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-ruby-swirl-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie caramel swirl ribbon sweet",
+      "raw_name": "alcremie-caramel-swirl-ribbon-sweet",
+      "form_name": "caramel-swirl-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-caramel-swirl-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-caramel-swirl-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    },
+    {
+      "name": "Alcremie rainbow swirl ribbon sweet",
+      "raw_name": "alcremie-rainbow-swirl-ribbon-sweet",
+      "form_name": "rainbow-swirl-ribbon-sweet",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": false,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869-rainbow-swirl-ribbon-sweet.png",
+        "back_default": null,
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869-rainbow-swirl-ribbon-sweet.png",
+        "back_shiny": null,
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Alcremie",
+      "raw_name": "alcremie",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/869/",
+      "type": ""
+    },
+    {
+      "name": "Alcremie gmax",
+      "raw_name": "alcremie-gmax",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10223/",
+      "type": "Gigantamax"
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/869.ogg",
+    "legacy": null
+  }
+}

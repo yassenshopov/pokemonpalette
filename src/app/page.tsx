@@ -4,6 +4,7 @@ import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { SetupChecklist } from "@/components/setup-checklist";
 import { AnimatedTechStack } from "@/components/animated-tech-stack";
 import { Footer } from "@/components/footer";
+import { PokemonTestComponent } from "@/components/pokemon-test-component";
 import { useState } from "react";
 import {
   Card,
@@ -205,47 +206,9 @@ Create a new homepage for my [APP_TYPE] application. Include sections for [HERO_
 
           <Separator className="my-8" />
 
-          {/* AI Customization Prompts */}
+          {/* Pokemon Test Component */}
           <div className="mb-8">
-            <h2 className="text-3xl font-bold mb-6 font-heading text-center">
-              Customize with AI
-            </h2>
-            <p className="text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
-              Use these prompts in your favorite AI assistant to transform this
-              boilerplate into your unique application.
-            </p>
-
-            <div className="space-y-4 max-w-4xl mx-auto">
-              {prompts.map((prompt, index) => (
-                <Card key={prompt.id} className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
-                      {index + 1}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold mb-2">{prompt.title}</h3>
-                      <div className="bg-muted p-4 rounded-lg font-mono text-sm overflow-x-auto relative">
-                        <pre className="whitespace-pre-wrap">{prompt.text}</pre>
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          className="absolute top-2 right-2 h-8 w-8 p-0"
-                          onClick={() =>
-                            copyToClipboard(prompt.text, prompt.id)
-                          }
-                        >
-                          {copiedStates[prompt.id] ? (
-                            <Check className="h-4 w-4 text-green-600" />
-                          ) : (
-                            <Copy className="h-4 w-4" />
-                          )}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
+            <PokemonTestComponent />
           </div>
 
           {/* Footer */}

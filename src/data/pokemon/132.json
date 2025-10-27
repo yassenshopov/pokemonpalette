@@ -1,0 +1,157 @@
+{
+  "id": 132,
+  "name": "Ditto",
+  "species": "Transform Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 0.3,
+  "weight": 4.0,
+  "abilities": [
+    {
+      "name": "Limber",
+      "url": "https://pokeapi.co/api/v2/ability/7/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Imposter",
+      "url": "https://pokeapi.co/api/v2/ability/150/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 48,
+    "attack": 48,
+    "defense": 48,
+    "specialAttack": 48,
+    "specialDefense": 48,
+    "speed": 48
+  },
+  "description": "Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.",
+  "flavorTexts": [
+    {
+      "text": "Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.",
+      "version": "red"
+    },
+    {
+      "text": "Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.",
+      "version": "blue"
+    },
+    {
+      "text": "When it spots an enemy, its body transfigures into an almost perfect copy of its oppo\u00ad nent.",
+      "version": "yellow"
+    },
+    {
+      "text": "It can transform into anything. When it sleeps, it changes into a stone to avoid being attacked.",
+      "version": "gold"
+    },
+    {
+      "text": "Its transformation ability is per\u00ad fect. However, if made to laugh, it can't maintain its disguise.",
+      "version": "silver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/132.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Ditto",
+      "level": 1,
+      "details": []
+    }
+  ],
+  "moves": [
+    {
+      "name": "Transform",
+      "url": "https://pokeapi.co/api/v2/move/144/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Urban",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 101,
+  "order": 214,
+  "isDefault": true,
+  "captureRate": 35,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [
+    {
+      "name": "Ditto",
+      "raw_name": "ditto",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/132.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Ditto",
+      "raw_name": "ditto",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/132/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Metal Powder",
+      "rarity": 5
+    },
+    {
+      "name": "Quick Powder",
+      "rarity": 50
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/132.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/132.ogg"
+  }
+}

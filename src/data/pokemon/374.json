@@ -1,0 +1,248 @@
+{
+  "id": 374,
+  "name": "Beldum",
+  "species": "Iron Ball Pok\u00e9mon",
+  "type": [
+    "Steel",
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Steel",
+      "slot": 1
+    },
+    {
+      "name": "Psychic",
+      "slot": 2
+    }
+  ],
+  "height": 0.6,
+  "weight": 95.2,
+  "abilities": [
+    {
+      "name": "Clear body",
+      "url": "https://pokeapi.co/api/v2/ability/29/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Light metal",
+      "url": "https://pokeapi.co/api/v2/ability/135/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 55,
+    "defense": 80,
+    "specialAttack": 35,
+    "specialDefense": 60,
+    "speed": 30
+  },
+  "description": "Instead of blood, a powerful magnetic force courses throughout BELDUM\u2019s body. This POK\u00e9MON communicates with others by sending controlled pulses of magnetism.",
+  "flavorTexts": [
+    {
+      "text": "Instead of blood, a powerful magnetic force courses throughout BELDUM\u2019s body. This POK\u00e9MON communicates with others by sending controlled pulses of magnetism.",
+      "version": "ruby"
+    },
+    {
+      "text": "BELDUM keeps itself floating by generating a magnetic force that repels earth\u2019s natural magnetism. When it sleeps, this POK\u00e9MON anchors itself to a cliff using the hooks on its rear.",
+      "version": "sapphire"
+    },
+    {
+      "text": "When BELDUM gather in a swarm, they move in perfect unison as if they were but one POK\u00e9MON. They communicate with each other using brain waves.",
+      "version": "emerald"
+    },
+    {
+      "text": "It uses magnetic waves to converse with its kind. All the cells in its body are magnetic.",
+      "version": "firered"
+    },
+    {
+      "text": "It uses magnetic waves to converse with its kind. All the cells in its body are magnetic.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/374.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/374.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/374.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/374.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Beldum",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Metang",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 20,
+          "trigger": "level up"
+        }
+      ]
+    },
+    {
+      "name": "Metagross",
+      "level": 3,
+      "details": [
+        {
+          "min_level": 45,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/29/",
+      "type": "Normal",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Tackle",
+      "url": "https://pokeapi.co/api/v2/move/33/",
+      "type": "Normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Take Down",
+      "url": "https://pokeapi.co/api/v2/move/36/",
+      "type": "Normal",
+      "power": 90,
+      "accuracy": 85,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Iron Defense",
+      "url": "https://pokeapi.co/api/v2/move/334/",
+      "type": "Steel",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Zen Headbutt",
+      "url": "https://pokeapi.co/api/v2/move/428/",
+      "type": "Psychic",
+      "power": 80,
+      "accuracy": 90,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Iron Head",
+      "url": "https://pokeapi.co/api/v2/move/442/",
+      "type": "Steel",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Steel Beam",
+      "url": "https://pokeapi.co/api/v2/move/796/",
+      "type": "Steel",
+      "power": 140,
+      "accuracy": 95,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Tera Blast",
+      "url": "https://pokeapi.co/api/v2/move/851/",
+      "type": "Normal",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    }
+  ],
+  "habitat": "Rough-terrain",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 60,
+  "order": 496,
+  "isDefault": true,
+  "captureRate": 3,
+  "baseHappiness": 35,
+  "growthRate": "slow",
+  "hatchCounter": 40,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [
+    {
+      "name": "Beldum",
+      "raw_name": "beldum",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/374.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/374.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/374.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Beldum",
+      "raw_name": "beldum",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/374/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Metal Coat",
+      "rarity": 5
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/374.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/374.ogg"
+  }
+}

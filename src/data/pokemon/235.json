@@ -1,0 +1,154 @@
+{
+  "id": 235,
+  "name": "Smeargle",
+  "species": "Painter Pok\u00e9mon",
+  "type": [
+    "Normal"
+  ],
+  "typeDetails": [
+    {
+      "name": "Normal",
+      "slot": 1
+    }
+  ],
+  "height": 1.2,
+  "weight": 58.0,
+  "abilities": [
+    {
+      "name": "Own tempo",
+      "url": "https://pokeapi.co/api/v2/ability/20/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Technician",
+      "url": "https://pokeapi.co/api/v2/ability/101/",
+      "is_hidden": false,
+      "slot": 2
+    },
+    {
+      "name": "Moody",
+      "url": "https://pokeapi.co/api/v2/ability/141/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 20,
+    "defense": 35,
+    "specialAttack": 20,
+    "specialDefense": 45,
+    "speed": 75
+  },
+  "description": "A special fluid oozes from the tip of its tail. It paints the fluid everywhere to mark its territory.",
+  "flavorTexts": [
+    {
+      "text": "A special fluid oozes from the tip of its tail. It paints the fluid everywhere to mark its territory.",
+      "version": "gold"
+    },
+    {
+      "text": "Once it becomes an adult, it has a tendency to let its comrades plant footprints on its back.",
+      "version": "silver"
+    },
+    {
+      "text": "The color of the mysterious fluid secreted from its tail is predeter\u00ad mined for each SMEARGLE.",
+      "version": "crystal"
+    },
+    {
+      "text": "SMEARGLE marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this POK\u00e9MON have been found.",
+      "version": "ruby"
+    },
+    {
+      "text": "SMEARGLE marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this POK\u00e9MON have been found.",
+      "version": "sapphire"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8A878",
+    "secondary": "#F8D030",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/235.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/235.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/235.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/235.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/235.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Smeargle",
+      "level": 1,
+      "details": []
+    }
+  ],
+  "moves": [
+    {
+      "name": "Sketch",
+      "url": "https://pokeapi.co/api/v2/move/166/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 1,
+      "damage_class": "status",
+      "priority": 0
+    }
+  ],
+  "habitat": "Urban",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 88,
+  "order": 335,
+  "isDefault": true,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "fast",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Smeargle",
+      "raw_name": "smeargle",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/235.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/235.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/235.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/235.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Smeargle",
+      "raw_name": "smeargle",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/235/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/235.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/235.ogg"
+  }
+}

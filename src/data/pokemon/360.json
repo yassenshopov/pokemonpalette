@@ -1,0 +1,228 @@
+{
+  "id": 360,
+  "name": "Wynaut",
+  "species": "Bright Pok\u00e9mon",
+  "type": [
+    "Psychic"
+  ],
+  "typeDetails": [
+    {
+      "name": "Psychic",
+      "slot": 1
+    }
+  ],
+  "height": 0.6,
+  "weight": 14.0,
+  "abilities": [
+    {
+      "name": "Shadow tag",
+      "url": "https://pokeapi.co/api/v2/ability/23/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Telepathy",
+      "url": "https://pokeapi.co/api/v2/ability/140/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 95,
+    "attack": 23,
+    "defense": 48,
+    "specialAttack": 23,
+    "specialDefense": 48,
+    "speed": 23
+  },
+  "description": "WYNAUT can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this POK\u00e9MON will be slapping the ground with its tail.",
+  "flavorTexts": [
+    {
+      "text": "WYNAUT can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this POK\u00e9MON will be slapping the ground with its tail.",
+      "version": "ruby"
+    },
+    {
+      "text": "WYNAUT gather on moonlit nights to play by squeezing up against each other. By being squeezed, this POK\u00e9MON gains endurance and is trained to dole out powerful counterattacks.",
+      "version": "sapphire"
+    },
+    {
+      "text": "A WYNAUT loves to eat sweet fruits. It cleverly picks fruits using its earlike arms. They gather in fruit gardens, drawn by the fragrance.",
+      "version": "emerald"
+    },
+    {
+      "text": "It tends to move in a pack with others. They cluster in a tight group to sleep in a cave.",
+      "version": "firered"
+    },
+    {
+      "text": "It tends to move in a pack with others. They cluster in a tight group to sleep in a cave.",
+      "version": "leafgreen"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#F85888",
+    "secondary": "#6890F0",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#F85888",
+      "#6890F0",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/360.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/360.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/360.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/360.png",
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Wynaut",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Wobbuffet",
+      "level": 2,
+      "details": [
+        {
+          "min_level": 15,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Counter",
+      "url": "https://pokeapi.co/api/v2/move/68/",
+      "type": "Fighting",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": -5
+    },
+    {
+      "name": "Amnesia",
+      "url": "https://pokeapi.co/api/v2/move/133/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Splash",
+      "url": "https://pokeapi.co/api/v2/move/150/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Destiny Bond",
+      "url": "https://pokeapi.co/api/v2/move/194/",
+      "type": "Ghost",
+      "power": null,
+      "accuracy": null,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Charm",
+      "url": "https://pokeapi.co/api/v2/move/204/",
+      "type": "Fairy",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Safeguard",
+      "url": "https://pokeapi.co/api/v2/move/219/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 25,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Encore",
+      "url": "https://pokeapi.co/api/v2/move/227/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 5,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Mirror Coat",
+      "url": "https://pokeapi.co/api/v2/move/243/",
+      "type": "Psychic",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": -5
+    }
+  ],
+  "habitat": "Cave",
+  "generation": 1,
+  "rarity": "Baby",
+  "baseExperience": 52,
+  "order": 298,
+  "isDefault": true,
+  "captureRate": 125,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": 4,
+  "forms": [
+    {
+      "name": "Wynaut",
+      "raw_name": "wynaut",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/360.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/360.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/360.png",
+        "front_female": null,
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Wynaut",
+      "raw_name": "wynaut",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/360/",
+      "type": ""
+    }
+  ],
+  "heldItems": [],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/360.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/360.ogg"
+  }
+}

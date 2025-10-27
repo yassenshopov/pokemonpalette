@@ -1,0 +1,309 @@
+{
+  "id": 415,
+  "name": "Combee",
+  "species": "Tiny Bee Pok\u00e9mon",
+  "type": [
+    "Bug",
+    "Flying"
+  ],
+  "typeDetails": [
+    {
+      "name": "Bug",
+      "slot": 1
+    },
+    {
+      "name": "Flying",
+      "slot": 2
+    }
+  ],
+  "height": 0.3,
+  "weight": 5.5,
+  "abilities": [
+    {
+      "name": "Honey gather",
+      "url": "https://pokeapi.co/api/v2/ability/118/",
+      "is_hidden": false,
+      "slot": 1
+    },
+    {
+      "name": "Hustle",
+      "url": "https://pokeapi.co/api/v2/ability/55/",
+      "is_hidden": true,
+      "slot": 3
+    }
+  ],
+  "baseStats": {
+    "hp": 30,
+    "attack": 30,
+    "defense": 42,
+    "specialAttack": 30,
+    "specialDefense": 42,
+    "speed": 70
+  },
+  "description": "A Pok\u00e9mon formed by three others. It busily carries sweet floral honey to VESPIQUEN.",
+  "flavorTexts": [
+    {
+      "text": "A Pok\u00e9mon formed by three others. It busily carries sweet floral honey to VESPIQUEN.",
+      "version": "diamond"
+    },
+    {
+      "text": "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
+      "version": "pearl"
+    },
+    {
+      "text": "The trio is together from birth. It constantly gathers honey from flowers to please VESPIQUEN.",
+      "version": "platinum"
+    },
+    {
+      "text": "At night, COMBEE sleep in a group of about a thousand, packed closely together in a lump.",
+      "version": "heartgold"
+    },
+    {
+      "text": "At night, COMBEE sleep in a group of about a thousand, packed closely together in a lump.",
+      "version": "soulsilver"
+    }
+  ],
+  "colorPalette": {
+    "primary": "#A8B820",
+    "secondary": "#78C850",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/415.png",
+    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png",
+    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/415.png",
+    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/415.png",
+    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/415.png",
+    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/415.png",
+    "back_female": null,
+    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/415.png",
+    "back_shiny_female": null
+  },
+  "evolution": [
+    {
+      "name": "Combee",
+      "level": 1,
+      "details": []
+    },
+    {
+      "name": "Vespiquen",
+      "level": 2,
+      "details": [
+        {
+          "gender": 1,
+          "min_level": 21,
+          "trigger": "level up"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "name": "Gust",
+      "url": "https://pokeapi.co/api/v2/move/16/",
+      "type": "Flying",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "String Shot",
+      "url": "https://pokeapi.co/api/v2/move/81/",
+      "type": "Bug",
+      "power": null,
+      "accuracy": 95,
+      "pp": 40,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Swift",
+      "url": "https://pokeapi.co/api/v2/move/129/",
+      "type": "Normal",
+      "power": 60,
+      "accuracy": null,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Snore",
+      "url": "https://pokeapi.co/api/v2/move/173/",
+      "type": "Normal",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Mud Slap",
+      "url": "https://pokeapi.co/api/v2/move/189/",
+      "type": "Ground",
+      "power": 20,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Sleep Talk",
+      "url": "https://pokeapi.co/api/v2/move/214/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": null,
+      "pp": 10,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Sweet Scent",
+      "url": "https://pokeapi.co/api/v2/move/230/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Endeavor",
+      "url": "https://pokeapi.co/api/v2/move/283/",
+      "type": "Normal",
+      "power": null,
+      "accuracy": 100,
+      "pp": 5,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Air Cutter",
+      "url": "https://pokeapi.co/api/v2/move/314/",
+      "type": "Flying",
+      "power": 60,
+      "accuracy": 95,
+      "pp": 25,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Tailwind",
+      "url": "https://pokeapi.co/api/v2/move/366/",
+      "type": "Flying",
+      "power": null,
+      "accuracy": null,
+      "pp": 15,
+      "damage_class": "status",
+      "priority": 0
+    },
+    {
+      "name": "Bug Buzz",
+      "url": "https://pokeapi.co/api/v2/move/405/",
+      "type": "Bug",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Bug Bite",
+      "url": "https://pokeapi.co/api/v2/move/450/",
+      "type": "Bug",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "physical",
+      "priority": 0
+    },
+    {
+      "name": "Ominous Wind",
+      "url": "https://pokeapi.co/api/v2/move/466/",
+      "type": "Ghost",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 5,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Struggle Bug",
+      "url": "https://pokeapi.co/api/v2/move/522/",
+      "type": "Bug",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 20,
+      "damage_class": "special",
+      "priority": 0
+    },
+    {
+      "name": "Lunge",
+      "url": "https://pokeapi.co/api/v2/move/679/",
+      "type": "Bug",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "damage_class": "physical",
+      "priority": 0
+    }
+  ],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": 49,
+  "order": 546,
+  "isDefault": true,
+  "captureRate": 120,
+  "baseHappiness": 70,
+  "growthRate": "medium slow",
+  "hatchCounter": 15,
+  "hasGenderDifferences": true,
+  "genderRate": 1,
+  "forms": [
+    {
+      "name": "Combee",
+      "raw_name": "combee",
+      "form_name": "",
+      "is_mega": false,
+      "is_gigantamax": false,
+      "is_battle_only": false,
+      "is_default": true,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png",
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/415.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/415.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/415.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/415.png",
+        "back_female": null
+      }
+    }
+  ],
+  "varieties": [
+    {
+      "name": "Combee",
+      "raw_name": "combee",
+      "is_default": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/415/",
+      "type": ""
+    }
+  ],
+  "heldItems": [
+    {
+      "name": "Honey",
+      "rarity": 100
+    }
+  ],
+  "cries": {
+    "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/415.ogg",
+    "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/415.ogg"
+  }
+}
