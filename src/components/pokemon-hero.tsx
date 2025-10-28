@@ -143,27 +143,27 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
         </div>
 
         {/* Right: Pokemon image */}
-        {pokemon && !loading ? (
-          <div className="flex-shrink-0 relative">
-            {typeof pokemon.artwork === "object" &&
-            "official" in pokemon.artwork &&
-            currentImageSrc ? (
-              <div className="relative">
-                <Image
-                  src={currentImageSrc}
-                  alt={pokemon.name}
-                  width={150}
-                  height={150}
-                  className={`w-auto h-auto transition-opacity duration-500 ${
-                    imageLoading ? "opacity-0" : "opacity-100"
-                  }`}
-                  onLoad={() => setImageLoading(false)}
-                  unoptimized
-                />
-              </div>
-            ) : null}
-          </div>
-        ) : null}
+        <div className="flex-shrink-0 relative w-[300px] h-[300px]">
+          {pokemon &&
+          !loading &&
+          typeof pokemon.artwork === "object" &&
+          "official" in pokemon.artwork &&
+          currentImageSrc ? (
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src={currentImageSrc}
+                alt={pokemon.name}
+                width={300}
+                height={300}
+                className={`object-contain transition-opacity duration-500 ${
+                  imageLoading ? "opacity-0" : "opacity-100"
+                }`}
+                onLoad={() => setImageLoading(false)}
+                unoptimized
+              />
+            </div>
+          ) : null}
+        </div>
       </div>
 
       {!pokemon && !loading && (
