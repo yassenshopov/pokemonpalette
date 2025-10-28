@@ -111,7 +111,13 @@ export interface PokemonEvolution {
   stage?: number;
   evolvesFrom?: number;
   evolvesTo?: number;
-  evolutionMethod?: string;
+  evolutionMethod?:
+    | "level"
+    | "stone"
+    | "trade"
+    | "friendship"
+    | "item"
+    | "other";
   evolutionLevel?: number;
   evolutionItem?: string;
   generation?: number;
@@ -142,21 +148,6 @@ export interface PokemonArtwork {
   front: string;
   back: string;
   shiny: string;
-}
-
-export interface PokemonEvolution {
-  stage: number;
-  evolvesFrom?: number;
-  evolvesTo?: number;
-  evolutionMethod?:
-    | "level"
-    | "stone"
-    | "trade"
-    | "friendship"
-    | "item"
-    | "other";
-  evolutionLevel?: number;
-  evolutionItem?: string;
 }
 
 export interface Pokemon {
