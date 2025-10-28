@@ -90,12 +90,14 @@ interface PokemonMenuProps {
   onPokemonSelect?: (pokemonId: number) => void;
   isShiny: boolean;
   onShinyToggle: (isShiny: boolean) => void;
+  onColorsExtracted?: (colors: string[]) => void;
 }
 
 export function PokemonMenu({
   onPokemonSelect,
   isShiny,
   onShinyToggle,
+  onColorsExtracted,
 }: PokemonMenuProps) {
   const pokemonList = getAllPokemonMetadata();
   const [selectedPokemon, setSelectedPokemon] = useState<number | null>(
@@ -136,18 +138,21 @@ export function PokemonMenu({
     if (pokemonData) {
       const spriteUrl = getSpriteUrl(pokemonData, isShiny);
       if (spriteUrl) {
-        extractColorsFromImage(spriteUrl, 3)
+        extractColorsFromImage(spriteUrl, 6)
           .then((colors) => {
-            setExtractedColors(colors);
+            const top3Colors = colors.slice(0, 3);
+            setExtractedColors(top3Colors);
+            // Pass all 6 colors to the callback
+            onColorsExtracted?.(colors);
             // Also update the pokemonData's colorPalette with extracted colors
-            if (pokemonData && colors.length > 0) {
+            if (pokemonData && top3Colors.length > 0) {
               // Only update if colors actually changed to avoid infinite loop
               const newPalette = {
                 ...pokemonData.colorPalette,
-                primary: colors[0] || pokemonData.colorPalette.primary,
-                secondary: colors[1] || pokemonData.colorPalette.secondary,
-                accent: colors[2] || pokemonData.colorPalette.accent,
-                highlights: colors,
+                primary: top3Colors[0] || pokemonData.colorPalette.primary,
+                secondary: top3Colors[1] || pokemonData.colorPalette.secondary,
+                accent: top3Colors[2] || pokemonData.colorPalette.accent,
+                highlights: top3Colors,
               };
 
               // Check if colors are different to avoid infinite update
@@ -167,9 +172,10 @@ export function PokemonMenu({
           .catch((error) => {
             console.error("Failed to extract colors:", error);
             // Fallback to default colors if extraction fails
-            setExtractedColors(
-              pokemonData.colorPalette?.highlights?.slice(0, 3) || []
-            );
+            const fallbackColors =
+              pokemonData.colorPalette?.highlights?.slice(0, 3) || [];
+            setExtractedColors(fallbackColors);
+            onColorsExtracted?.(fallbackColors);
           });
       }
     }
@@ -350,7 +356,7 @@ export function PokemonMenu({
                   }, 150);
                 }}
               >
-                <SelectTrigger className="w-20">
+                <SelectTrigger className="w-20 shadow-none cursor-pointer">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

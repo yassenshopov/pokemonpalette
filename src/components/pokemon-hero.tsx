@@ -10,9 +10,16 @@ import { LoaderOverlay } from "@/components/loader-overlay";
 interface PokemonHeroProps {
   pokemonId?: number | null;
   isShiny?: boolean;
+  onImageSrcChange?: (imageSrc: string | null) => void;
+  colors?: string[];
 }
 
-export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
+export function PokemonHero({
+  pokemonId,
+  isShiny = false,
+  onImageSrcChange,
+  colors,
+}: PokemonHeroProps) {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
@@ -62,7 +69,10 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
       if (newSrc !== currentImageSrc) {
         setImageLoading(true);
         setCurrentImageSrc(newSrc);
+        onImageSrcChange?.(newSrc);
       }
+    } else {
+      onImageSrcChange?.(null);
     }
   }, [pokemon, isShiny]);
 
@@ -86,25 +96,22 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
     }
   }, [currentImageSrc]);
 
-  // Get colors - use extracted colors if available, fallback to pokemon data
-  const colors = pokemon?.colorPalette;
-  const primaryColor = extractedColors[0] || colors?.primary || "#94a3b8";
-  const secondaryColor = extractedColors[1] || colors?.secondary || "#94a3b8";
+  // Get colors - use passed colors from pokemon menu (source of truth)
+  const colorPalette = pokemon?.colorPalette;
+  const primaryColor = colors?.[0] || colorPalette?.primary || "#94a3b8";
+  const secondaryColor = colors?.[1] || colorPalette?.secondary || "#94a3b8";
   const highlightColors =
-    extractedColors.length >= 2
-      ? extractedColors
-      : colors?.highlights?.slice(0, 2) || [primaryColor, secondaryColor];
+    colors && colors.length >= 2
+      ? colors.slice(0, 2)
+      : colorPalette?.highlights?.slice(0, 2) || [primaryColor, secondaryColor];
 
   return (
     <div
-      className="h-[600px] py-24 px-12 flex items-center justify-center relative overflow-hidden animated-gradient"
+      className="min-h-[600px] py-24 px-12 flex items-center justify-center relative overflow-hidden animated-gradient"
       style={{
-        background: `radial-gradient(circle at 80% 20%, ${
+        background: `radial-gradient(circle at top right, ${
           highlightColors[0] || primaryColor
-        }50 0%, transparent 60%),
-                     radial-gradient(circle at 25% 80%, ${
-                       highlightColors[1] || secondaryColor
-                     }33 0%, transparent 55%)`,
+        }70 0%, transparent 60%)`,
         transition: "background 1s ease-in-out",
       }}
     >
@@ -113,12 +120,10 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
           __html: `
         @keyframes gradient-shift {
           0%, 100% { 
-            background-position: 70% 10%, 30% 85%;
-            background-size: 160% 160%, 120% 120%;
+            background-size: 120% 120%;
           }
           50% { 
-            background-position: 90% 30%, 15% 75%;
-            background-size: 220% 220%, 180% 180%;
+            background-size: 200% 200%;
           }
         }
         .animated-gradient {
@@ -134,7 +139,21 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
         {/* Left: Hero text */}
         <div className="max-w-2xl">
           <h1 className="text-5xl font-bold font-heading mb-4">
-            Your website - inspired by colours
+            {pokemon ? (
+              <>
+                Your website - inspired by{" "}
+                <span
+                  className="capitalize bg-clip-text text-transparent block mt-1"
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${primaryColor}, #202020)`,
+                  }}
+                >
+                  {pokemon.name}
+                </span>
+              </>
+            ) : (
+              "Your website - inspired by colours"
+            )}
           </h1>
           <p className="text-lg text-muted-foreground">
             This website allows you to enter a Pokemon&apos;s name (or simply
@@ -143,7 +162,7 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
         </div>
 
         {/* Right: Pokemon image */}
-        <div className="flex-shrink-0 relative w-[300px] h-[300px]">
+        <div className="flex-shrink-0 relative w-[450px] h-[450px]">
           {pokemon &&
           !loading &&
           typeof pokemon.artwork === "object" &&
@@ -153,8 +172,8 @@ export function PokemonHero({ pokemonId, isShiny = false }: PokemonHeroProps) {
               <Image
                 src={currentImageSrc}
                 alt={pokemon.name}
-                width={300}
-                height={300}
+                width={450}
+                height={450}
                 className={`object-contain transition-opacity duration-500 ${
                   imageLoading ? "opacity-0" : "opacity-100"
                 }`}
