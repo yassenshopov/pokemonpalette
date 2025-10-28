@@ -164,7 +164,9 @@ export function PokemonSearch({
           {suggestions.map((pokemon, index) => (
             <button
               key={pokemon.id}
-              ref={(el) => (itemRefs.current[index] = el)}
+              ref={(el) => {
+                itemRefs.current[index] = el;
+              }}
               onClick={() => handleSelect(pokemon.id)}
               className={`w-full flex items-center gap-3 p-3 transition-colors text-left cursor-pointer ${
                 index === selectedIndex ? "bg-accent" : "hover:bg-accent"
