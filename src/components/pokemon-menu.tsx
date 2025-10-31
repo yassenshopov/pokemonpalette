@@ -34,6 +34,7 @@ import {
   Lock,
   Unlock,
 } from "lucide-react";
+import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "text-white" | "text-black" => {
@@ -112,7 +113,7 @@ export function PokemonMenu({
 }: PokemonMenuProps) {
   const pokemonList = getAllPokemonMetadata();
   const [selectedPokemon, setSelectedPokemon] = useState<number | null>(
-    pokemonList[0]?.id || null
+    DEFAULT_POKEMON_ID
   );
   const [pokemonData, setPokemonData] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
@@ -154,9 +155,12 @@ export function PokemonMenu({
     if (pokemonData) {
       const spriteUrl = getSpriteUrl(pokemonData, isShiny);
       if (spriteUrl) {
-        extractColorsFromImage(spriteUrl, 6)
+        extractColorsFromImage(spriteUrl, POKEMON_CONSTANTS.COLORS_TO_EXTRACT)
           .then((colors) => {
-            const top3Colors = colors.slice(0, 3);
+            const top3Colors = colors.slice(
+              0,
+              POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+            );
 
             // Preserve locked colors and only update unlocked ones
             setExtractedColors((prevColors) => {
@@ -220,7 +224,10 @@ export function PokemonMenu({
             console.error("Failed to extract colors:", error);
             // Fallback to default colors if extraction fails
             const fallbackColors =
-              pokemonData.colorPalette?.highlights?.slice(0, 3) || [];
+              pokemonData.colorPalette?.highlights?.slice(
+                0,
+                POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+              ) || [];
             setExtractedColors(fallbackColors);
             onColorsExtracted?.(fallbackColors);
           });
@@ -501,7 +508,10 @@ export function PokemonMenu({
 
             {(extractedColors.length > 0
               ? extractedColors
-              : pokemonData.colorPalette?.highlights?.slice(0, 3) || []
+              : pokemonData.colorPalette?.highlights?.slice(
+                  0,
+                  POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+                ) || []
             ).map((color, index) => {
               const isLocked = lockedColors[index] || false;
               return (

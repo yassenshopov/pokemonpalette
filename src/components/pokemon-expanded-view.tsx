@@ -508,7 +508,23 @@ export function PokemonExpandedView({
                       </span>
                       <Badge variant="secondary">{value}</Badge>
                     </div>
-                    <Progress value={(value / 200) * 100} className="h-3" />
+                    <div className="relative">
+                      <Progress 
+                        value={(value / 200) * 100} 
+                        className="h-3"
+                        style={{
+                          backgroundColor: pokemon.colorPalette.primary + "20",
+                        }}
+                      />
+                      {/* Custom progress indicator overlay */}
+                      <div 
+                        className="absolute top-0 left-0 h-full rounded-full transition-all"
+                        style={{
+                          backgroundColor: pokemon.colorPalette.primary,
+                          width: `${(value / 200) * 100}%`,
+                        }}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>

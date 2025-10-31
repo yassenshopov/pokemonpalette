@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
+import { POKEMON_CONSTANTS } from "@/constants/pokemon";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "text-white" | "text-black" => {
@@ -311,7 +312,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                     .replace('Special Attack', 'Sp. Atk')
                     .replace('Special Defense', 'Sp. Def');
                   
-                  const maxStat = 255; // Maximum possible base stat
+                  const maxStat = POKEMON_CONSTANTS.MAX_BASE_STAT;
                   const percentage = (value / maxStat) * 100;
                   
                   return (
@@ -320,13 +321,23 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                         <span className="text-sm font-medium">{displayName}</span>
                         <span className="text-sm font-bold">{value}</span>
                       </div>
-                      <Progress 
-                        value={percentage} 
-                        className="h-2"
-                        style={{
-                          backgroundColor: primaryColor + "20",
-                        }}
-                      />
+                      <div className="relative">
+                        <Progress 
+                          value={percentage} 
+                          className="h-2"
+                          style={{
+                            backgroundColor: primaryColor + "20",
+                          }}
+                        />
+                        {/* Custom progress indicator overlay */}
+                        <div 
+                          className="absolute top-0 left-0 h-full rounded-full transition-all"
+                          style={{
+                            backgroundColor: primaryColor,
+                            width: `${percentage}%`,
+                          }}
+                        />
+                      </div>
                     </div>
                   );
                 })}

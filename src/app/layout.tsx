@@ -25,38 +25,48 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-actual-domain.com"), // [TEMPLATE] Replace with your actual domain
-  title: "[TEMPLATE] Your App Name - Update Me",
+  metadataBase: new URL("https://pokemonpalette.vercel.app"),
+  title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites | Color Generator Tool",
   description:
-    "[TEMPLATE] Update this description to describe your application. This appears in search engine results and social media previews.",
+    "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors, create custom palettes, and discover the perfect color schemes for your design projects. Browse all 1000+ Pokémon with shiny variants.",
   keywords: [
-    "[TEMPLATE]",
-    "your",
-    "app",
-    "keywords",
-    "here",
-    "replace",
-    "these",
-    "with",
-    "actual",
-    "keywords",
+    "pokemon",
+    "color palette",
+    "color extraction",
+    "design tools",
+    "pokemon colors",
+    "sprite colors",
+    "color generator",
+    "palette generator",
+    "pokemon sprites",
+    "shiny pokemon",
+    "color picker",
+    "hex colors",
+    "rgb colors",
+    "hsl colors",
+    "web design",
+    "graphic design",
+    "pokemon art",
+    "color schemes",
+    "pokemon palette",
+    "digital art tools",
   ],
   authors: [
     {
-      name: "[TEMPLATE] Your Name",
-      url: "https://update-this-url.com",
+      name: "Yassen Shopov",
+      url: "https://github.com/yassenshopov",
     },
   ],
-  creator: "[TEMPLATE] Your Name",
-  publisher: "[TEMPLATE] Your Company/Organization",
+  creator: "Yassen Shopov",
+  publisher: "PokémonPalette",
 
   // OpenGraph metadata for social media sharing
   openGraph: {
-    title: "[TEMPLATE] Your App Name",
+    title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites",
     description:
-      "[TEMPLATE] Update this description for social media previews.",
-    url: "https://your-actual-domain.com",
-    siteName: "[TEMPLATE] Your App Name",
+      "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors and create custom palettes for your design projects.",
+    url: "https://pokemonpalette.vercel.app",
+    siteName: "PokémonPalette",
     locale: "en_US",
     type: "website",
     images: [
@@ -64,7 +74,7 @@ export const metadata: Metadata = {
         url: "/og-image.png", // Replace with your actual image
         width: 1200,
         height: 630,
-        alt: "[TEMPLATE] Your App Name",
+        alt: "PokémonPalette - Color Palette Generator for Pokémon Sprites",
       },
     ],
   },
@@ -72,10 +82,10 @@ export const metadata: Metadata = {
   // Twitter Card metadata
   twitter: {
     card: "summary_large_image",
-    title: "[TEMPLATE] Your App Name",
-    description: "[TEMPLATE] Update this description for Twitter previews.",
+    title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites",
+    description: "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors and create custom palettes for design projects.",
     images: ["/twitter-image.png"], // Replace with your actual image
-    creator: "@yourtwitterhandle", // Replace with your Twitter handle
+    creator: "@yassenshopov", // Replace with your Twitter handle
   },
 
   // Additional metadata
@@ -101,11 +111,11 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest", // Create and replace with your manifest file
 
   // Verification for search engines (optional)
-  verification: {
-    google: "[TEMPLATE] Add your Google Search Console verification code",
-    yandex: "[TEMPLATE] Add your Yandex verification code if needed",
-    yahoo: "[TEMPLATE] Add your Yahoo verification code if needed",
-  },
+  // verification: {
+  //   google: "Add your Google Search Console verification code",
+  //   yandex: "Add your Yandex verification code if needed", 
+  //   yahoo: "Add your Yahoo verification code if needed",
+  // },
 };
 
 export default function RootLayout({

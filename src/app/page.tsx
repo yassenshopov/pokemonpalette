@@ -5,10 +5,10 @@ import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
-import { SupportersDisplay } from "@/components/supporters-display";
 import { PokemonCard } from "@/components/pokemon-card";
 import { ColorShowcase } from "@/components/color-showcase";
 import { Footer } from "@/components/footer";
+import { CoffeeCTA } from "@/components/coffee-cta";
 
 export default function Home() {
   const [selectedPokemonId, setSelectedPokemonId] = useState<number | null>(
@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <div className="flex h-screen">
+      <CoffeeCTA primaryColor={pokemonColors[0]} />
       <CollapsibleSidebar />
       <div className="flex-1 flex h-full overflow-hidden">
         {/* Left 1/4 - Pokemon Menu */}
@@ -45,10 +46,6 @@ export default function Home() {
           {pokemonColors.length > 0 && (
             <>
               <PokemonPaletteDisplay colors={pokemonColors} />
-              <SupportersDisplay 
-                primaryColor={pokemonColors[0]} 
-                secondaryColor={pokemonColors[1] || pokemonColors[0]} 
-              />
               <PokemonCard
                 pokemonId={selectedPokemonId}
                 isShiny={isShiny}
