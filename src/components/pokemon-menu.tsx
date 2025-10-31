@@ -23,6 +23,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { ColorPickerDialog } from "@/components/color-picker-dialog";
+import { EvolutionChain } from "@/components/evolution-chain";
 import {
   Shuffle,
   ChevronDown,
@@ -96,124 +97,6 @@ const convertColor = (hex: string, format: "hex" | "hsl" | "rgb"): string => {
   return `hsl(${h}, ${s}%, ${l}%)`;
 };
 
-// Helper function to validate and normalize color input
-const validateAndNormalizeColor = (
-  input: string,
-  format: "hex" | "hsl" | "rgb"
-): string | null => {
-  const trimmed = input.trim();
-
-  if (format === "hex") {
-    // Handle hex colors
-    const hexMatch = trimmed.match(/^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/);
-    if (hexMatch) {
-      let hex = hexMatch[1];
-      if (hex.length === 3) {
-        // Convert 3-digit hex to 6-digit
-        hex = hex
-          .split("")
-          .map((char) => char + char)
-          .join("");
-      }
-      return `#${hex.toUpperCase()}`;
-    }
-  } else if (format === "rgb") {
-    // Handle RGB colors
-    const rgbMatch = trimmed.match(
-      /^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i
-    );
-    if (rgbMatch) {
-      const [, r, g, b] = rgbMatch;
-      const rNum = parseInt(r);
-      const gNum = parseInt(g);
-      const bNum = parseInt(b);
-
-      if (
-        rNum >= 0 &&
-        rNum <= 255 &&
-        gNum >= 0 &&
-        gNum <= 255 &&
-        bNum >= 0 &&
-        bNum <= 255
-      ) {
-        // Convert to hex for internal storage
-        const toHex = (n: number) =>
-          n.toString(16).padStart(2, "0").toUpperCase();
-        return `#${toHex(rNum)}${toHex(gNum)}${toHex(bNum)}`;
-      }
-    }
-  } else if (format === "hsl") {
-    // Handle HSL colors
-    const hslMatch = trimmed.match(
-      /^hsl\s*\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)$/i
-    );
-    if (hslMatch) {
-      const [, h, s, l] = hslMatch;
-      const hNum = parseInt(h);
-      const sNum = parseInt(s);
-      const lNum = parseInt(l);
-
-      if (
-        hNum >= 0 &&
-        hNum <= 360 &&
-        sNum >= 0 &&
-        sNum <= 100 &&
-        lNum >= 0 &&
-        lNum <= 100
-      ) {
-        // Convert HSL to hex for internal storage
-        const hNorm = hNum / 360;
-        const sNorm = sNum / 100;
-        const lNorm = lNum / 100;
-
-        const c = (1 - Math.abs(2 * lNorm - 1)) * sNorm;
-        const x = c * (1 - Math.abs(((hNorm * 6) % 2) - 1));
-        const m = lNorm - c / 2;
-
-        let r = 0,
-          g = 0,
-          b = 0;
-
-        if (hNorm * 6 < 1) {
-          r = c;
-          g = x;
-          b = 0;
-        } else if (hNorm * 6 < 2) {
-          r = x;
-          g = c;
-          b = 0;
-        } else if (hNorm * 6 < 3) {
-          r = 0;
-          g = c;
-          b = x;
-        } else if (hNorm * 6 < 4) {
-          r = 0;
-          g = x;
-          b = c;
-        } else if (hNorm * 6 < 5) {
-          r = x;
-          g = 0;
-          b = c;
-        } else {
-          r = c;
-          g = 0;
-          b = x;
-        }
-
-        const rFinal = Math.round((r + m) * 255);
-        const gFinal = Math.round((g + m) * 255);
-        const bFinal = Math.round((b + m) * 255);
-
-        const toHex = (n: number) =>
-          n.toString(16).padStart(2, "0").toUpperCase();
-        return `#${toHex(rFinal)}${toHex(gFinal)}${toHex(bFinal)}`;
-      }
-    }
-  }
-
-  return null;
-};
-
 interface PokemonMenuProps {
   onPokemonSelect?: (pokemonId: number) => void;
   isShiny: boolean;
@@ -239,8 +122,6 @@ export function PokemonMenu({
   const [lockedColors, setLockedColors] = useState<boolean[]>([]);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
-  const [editingColor, setEditingColor] = useState<string>("");
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
   const [colorPickerIndex, setColorPickerIndex] = useState<number | null>(null);
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
@@ -440,7 +321,7 @@ export function PokemonMenu({
   };
 
   // Color picker handlers
-  const handleEditStart = (index: number, color: string) => {
+  const handleEditStart = (index: number) => {
     // Don't allow editing if color is locked
     if (lockedColors[index]) return;
 
@@ -455,11 +336,6 @@ export function PokemonMenu({
     newColors[colorPickerIndex] = newColor;
     setExtractedColors(newColors);
     onColorsExtracted?.(newColors);
-    setColorPickerIndex(null);
-  };
-
-  const handleColorPickerClose = () => {
-    setColorPickerOpen(false);
     setColorPickerIndex(null);
   };
 
@@ -691,7 +567,7 @@ export function PokemonMenu({
                       )}
                     </button>
                     <button
-                      onClick={() => handleEditStart(index, color)}
+                      onClick={() => handleEditStart(index)}
                       className={`p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors ${
                         isLocked
                           ? "opacity-50 cursor-not-allowed"
@@ -720,141 +596,13 @@ export function PokemonMenu({
                   <h3 className="text-sm font-semibold mb-3">
                     Evolution Chain
                   </h3>
-                  <div className="flex flex-col items-center gap-2 py-2">
-                    {(() => {
-                      // Group evolutions by level to detect branches
-                      const evosByLevel: {
-                        [level: number]: typeof pokemonData.evolution;
-                      } = {};
-                      pokemonData.evolution.forEach((evo) => {
-                        if (!evosByLevel[evo.level]) {
-                          evosByLevel[evo.level] = [];
-                        }
-                        evosByLevel[evo.level].push(evo);
-                      });
-
-                      const levels = Object.keys(evosByLevel)
-                        .map(Number)
-                        .sort((a, b) => a - b);
-
-                      return levels.flatMap((level, levelIndex) => {
-                        const evosAtLevel = evosByLevel[level];
-                        const isLastLevel = levelIndex === levels.length - 1;
-                        const isBranch = evosAtLevel.length > 1;
-
-                        return [
-                          // Evolution cards at this level - horizontal if branch
-                          <div
-                            key={`level-${level}`}
-                            className={`${
-                              isBranch
-                                ? "flex flex-wrap justify-center gap-2"
-                                : "flex justify-center"
-                            }`}
-                          >
-                            {evosAtLevel.map((evo, evoIndex) => {
-                              const evoMetadata = getPokemonMetadataByName(
-                                evo.name
-                              );
-                              const evoSprite = evoMetadata?.id
-                                ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                                    isShiny ? "shiny/" : ""
-                                  }${evoMetadata.id}.png`
-                                : null;
-                              const isSelected =
-                                evoMetadata?.id === selectedPokemon;
-
-                              return (
-                                <div
-                                  key={`${level}-${evoIndex}`}
-                                  className="flex flex-col items-center"
-                                >
-                                  {/* Evolution Pokemon */}
-                                  <button
-                                    onClick={() => {
-                                      if (evoMetadata) {
-                                        handleSelect(evoMetadata.id);
-                                      }
-                                    }}
-                                    className={`flex flex-col items-center gap-0.5 hover:opacity-80 transition-all cursor-pointer p-1 rounded ${
-                                      isSelected ? "ring-2" : ""
-                                    }`}
-                                    style={
-                                      isSelected
-                                        ? {
-                                            borderColor:
-                                              (extractedColors[0] ||
-                                                pokemonData.colorPalette
-                                                  ?.primary ||
-                                                "#000") + "80",
-                                            backgroundColor:
-                                              (extractedColors[0] ||
-                                                pokemonData.colorPalette
-                                                  ?.primary ||
-                                                "#000") + "15",
-                                          }
-                                        : {}
-                                    }
-                                  >
-                                    {evoSprite ? (
-                                      <Image
-                                        src={evoSprite}
-                                        alt={evo.name}
-                                        width={isBranch ? 48 : 64}
-                                        height={isBranch ? 48 : 64}
-                                        className={`${
-                                          isBranch ? "w-12 h-12" : "w-16 h-16"
-                                        } object-contain`}
-                                        style={{
-                                          imageRendering: "pixelated",
-                                        }}
-                                        unoptimized
-                                      />
-                                    ) : (
-                                      <div className="w-12 h-12 bg-muted rounded flex items-center justify-center text-xs">
-                                        ?
-                                      </div>
-                                    )}
-                                    <div
-                                      className={`flex items-center ${
-                                        isBranch
-                                          ? "flex-col gap-0"
-                                          : "flex-row gap-1"
-                                      }`}
-                                    >
-                                      <span
-                                        className={`${
-                                          isBranch ? "text-[10px]" : "text-xs"
-                                        } text-muted-foreground`}
-                                      >
-                                        #{evoMetadata?.id || "?"}
-                                      </span>
-                                      <span
-                                        className={`${
-                                          isBranch
-                                            ? "text-[10px] max-w-[60px]"
-                                            : "text-xs max-w-[80px]"
-                                        } font-medium text-center truncate`}
-                                      >
-                                        {evo.name}
-                                      </span>
-                                    </div>
-                                  </button>
-                                </div>
-                              );
-                            })}
-                          </div>,
-                          // Arrow between levels
-                          !isLastLevel && (
-                            <ChevronDown
-                              key={`arrow-${level}`}
-                              className="w-4 h-4"
-                            />
-                          ),
-                        ].filter(Boolean);
-                      });
-                    })()}
-                  </div>
+                  <EvolutionChain
+                    pokemonData={pokemonData}
+                    selectedPokemon={selectedPokemon}
+                    isShiny={isShiny}
+                    extractedColors={extractedColors}
+                    onPokemonSelect={handleSelect}
+                  />
                 </div>
               )}
 
