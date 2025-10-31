@@ -7,7 +7,7 @@ export const DEFAULT_POKEMON_ID = 60; // Poliwag
 
 // You can change this to any Pokemon ID you prefer:
 // 1 = Bulbasaur
-// 4 = Charmander  
+// 4 = Charmander
 // 7 = Squirtle
 // 25 = Pikachu
 // 60 = Poliwag
