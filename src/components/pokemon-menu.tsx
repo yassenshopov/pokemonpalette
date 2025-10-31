@@ -170,21 +170,19 @@ export function PokemonMenu({
             );
 
             // Preserve locked colors and only update unlocked ones
-            setExtractedColors((prevColors) => {
-              const newColors = [...prevColors];
-              top3Colors.forEach((color, index) => {
-                if (index < lockedColors.length && !lockedColors[index]) {
-                  newColors[index] = color;
-                } else if (index >= lockedColors.length) {
-                  newColors[index] = color;
-                }
-              });
-
-              // If we have fewer new colors than existing, keep the existing ones
-              const finalColors = newColors.length > 0 ? newColors : top3Colors;
-              onColorsExtracted?.(finalColors);
-              return finalColors;
+            const newColors = [...extractedColors];
+            top3Colors.forEach((color, index) => {
+              if (index < lockedColors.length && !lockedColors[index]) {
+                newColors[index] = color;
+              } else if (index >= lockedColors.length) {
+                newColors[index] = color;
+              }
             });
+
+            // If we have fewer new colors than existing, keep the existing ones
+            const finalColors = newColors.length > 0 ? newColors : top3Colors;
+            setExtractedColors(finalColors);
+            onColorsExtracted?.(finalColors);
 
             // Initialize lock states if not already set
             setLockedColors((prevLocked) => {

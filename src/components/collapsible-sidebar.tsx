@@ -54,6 +54,9 @@ export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
     const savedState = localStorage.getItem("sidebar-collapsed");
     if (savedState !== null) {
       setIsCollapsed(JSON.parse(savedState));
+    } else {
+      // Default to collapsed if no saved state
+      setIsCollapsed(true);
     }
   }, []);
 
@@ -113,7 +116,6 @@ export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
                   alt="PokémonPalette logo"
                   width={48}
                   height={12}
-                  className="dark:invert"
                   unoptimized
                 />
               </Link>
@@ -208,7 +210,6 @@ export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
                 alt="PokémonPalette logo"
                 width={isCollapsed ? 28 : 36}
                 height={isCollapsed ? 28 : 9}
-                className="dark:invert"
                 unoptimized
               />
               {!isCollapsed && (
