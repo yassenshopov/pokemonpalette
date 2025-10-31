@@ -33,6 +33,9 @@ import {
   Edit3,
   Lock,
   Unlock,
+  ChevronRight,
+  Menu,
+  Palette,
 } from "lucide-react";
 import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
 
@@ -103,6 +106,8 @@ interface PokemonMenuProps {
   isShiny: boolean;
   onShinyToggle: (isShiny: boolean) => void;
   onColorsExtracted?: (colors: string[]) => void;
+  isCollapsed?: boolean;
+  onToggleCollapse?: (collapsed: boolean) => void;
 }
 
 export function PokemonMenu({
@@ -110,6 +115,8 @@ export function PokemonMenu({
   isShiny,
   onShinyToggle,
   onColorsExtracted,
+  isCollapsed = false,
+  onToggleCollapse,
 }: PokemonMenuProps) {
   const pokemonList = getAllPokemonMetadata();
   const [selectedPokemon, setSelectedPokemon] = useState<number | null>(
@@ -367,9 +374,65 @@ export function PokemonMenu({
     return null;
   };
 
+  // Collapsed state for desktop
+  if (isCollapsed) {
+    return (
+      <div className="hidden md:flex items-start justify-center p-4">
+        <Button
+          onClick={() => onToggleCollapse?.(false)}
+          className="p-4 rounded-full border-2 transition-all duration-300 hover:scale-105 relative overflow-hidden w-16 h-16 cursor-pointer"
+          style={{
+            background: `linear-gradient(135deg, ${
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              "#6366f1"
+            }20 0%, ${
+              extractedColors[1] ||
+              pokemonData?.colorPalette?.secondary ||
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              "#8b5cf6"
+            }10 100%)`,
+            borderColor: `${
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              "#6366f1"
+            }40`,
+            color:
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              "#6366f1",
+          }}
+          title={
+            pokemonData
+              ? `Click to expand Pokemon menu\nCurrent: ${pokemonData.name}${
+                  isShiny ? " (Shiny)" : ""
+                }\n#${pokemonData.id.toString().padStart(3, "0")}`
+              : "Click to expand Pokemon menu"
+          }
+        >
+          <Palette className="w-6 h-6" />
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <div className="h-auto md:h-full p-4 md:p-8 flex flex-col items-center justify-start gap-4 md:gap-6 relative w-full">
       <LoaderOverlay loading={loading} text="Loading Pokemon..." />
+
+      {/* Collapse button - desktop only */}
+      {onToggleCollapse && (
+        <Button
+          onClick={() => onToggleCollapse(true)}
+          variant="ghost"
+          size="sm"
+          className="absolute top-2 right-2 md:flex hidden p-2 rounded-full hover:bg-accent"
+          title="Collapse Pokemon Menu"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </Button>
+      )}
 
       {/* Sprite image */}
       {pokemonData && (
