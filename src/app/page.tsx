@@ -6,6 +6,7 @@ import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
 import { SupportersDisplay } from "@/components/supporters-display";
+import { PokemonCard } from "@/components/pokemon-card";
 import { ColorShowcase } from "@/components/color-showcase";
 import { Footer } from "@/components/footer";
 
@@ -47,6 +48,11 @@ export default function Home() {
               <SupportersDisplay 
                 primaryColor={pokemonColors[0]} 
                 secondaryColor={pokemonColors[1] || pokemonColors[0]} 
+              />
+              <PokemonCard
+                pokemonId={selectedPokemonId}
+                isShiny={isShiny}
+                colors={pokemonColors}
               />
               <ColorShowcase
                 primaryColor={pokemonColors[0]}

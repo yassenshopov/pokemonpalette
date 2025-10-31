@@ -22,7 +22,17 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { Shuffle, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { ColorPickerDialog } from "@/components/color-picker-dialog";
+import {
+  Shuffle,
+  ChevronDown,
+  ChevronUp,
+  Sparkles,
+  GripVertical,
+  Edit3,
+  Lock,
+  Unlock,
+} from "lucide-react";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "text-white" | "text-black" => {
@@ -86,6 +96,124 @@ const convertColor = (hex: string, format: "hex" | "hsl" | "rgb"): string => {
   return `hsl(${h}, ${s}%, ${l}%)`;
 };
 
+// Helper function to validate and normalize color input
+const validateAndNormalizeColor = (
+  input: string,
+  format: "hex" | "hsl" | "rgb"
+): string | null => {
+  const trimmed = input.trim();
+
+  if (format === "hex") {
+    // Handle hex colors
+    const hexMatch = trimmed.match(/^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/);
+    if (hexMatch) {
+      let hex = hexMatch[1];
+      if (hex.length === 3) {
+        // Convert 3-digit hex to 6-digit
+        hex = hex
+          .split("")
+          .map((char) => char + char)
+          .join("");
+      }
+      return `#${hex.toUpperCase()}`;
+    }
+  } else if (format === "rgb") {
+    // Handle RGB colors
+    const rgbMatch = trimmed.match(
+      /^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i
+    );
+    if (rgbMatch) {
+      const [, r, g, b] = rgbMatch;
+      const rNum = parseInt(r);
+      const gNum = parseInt(g);
+      const bNum = parseInt(b);
+
+      if (
+        rNum >= 0 &&
+        rNum <= 255 &&
+        gNum >= 0 &&
+        gNum <= 255 &&
+        bNum >= 0 &&
+        bNum <= 255
+      ) {
+        // Convert to hex for internal storage
+        const toHex = (n: number) =>
+          n.toString(16).padStart(2, "0").toUpperCase();
+        return `#${toHex(rNum)}${toHex(gNum)}${toHex(bNum)}`;
+      }
+    }
+  } else if (format === "hsl") {
+    // Handle HSL colors
+    const hslMatch = trimmed.match(
+      /^hsl\s*\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)$/i
+    );
+    if (hslMatch) {
+      const [, h, s, l] = hslMatch;
+      const hNum = parseInt(h);
+      const sNum = parseInt(s);
+      const lNum = parseInt(l);
+
+      if (
+        hNum >= 0 &&
+        hNum <= 360 &&
+        sNum >= 0 &&
+        sNum <= 100 &&
+        lNum >= 0 &&
+        lNum <= 100
+      ) {
+        // Convert HSL to hex for internal storage
+        const hNorm = hNum / 360;
+        const sNorm = sNum / 100;
+        const lNorm = lNum / 100;
+
+        const c = (1 - Math.abs(2 * lNorm - 1)) * sNorm;
+        const x = c * (1 - Math.abs(((hNorm * 6) % 2) - 1));
+        const m = lNorm - c / 2;
+
+        let r = 0,
+          g = 0,
+          b = 0;
+
+        if (hNorm * 6 < 1) {
+          r = c;
+          g = x;
+          b = 0;
+        } else if (hNorm * 6 < 2) {
+          r = x;
+          g = c;
+          b = 0;
+        } else if (hNorm * 6 < 3) {
+          r = 0;
+          g = c;
+          b = x;
+        } else if (hNorm * 6 < 4) {
+          r = 0;
+          g = x;
+          b = c;
+        } else if (hNorm * 6 < 5) {
+          r = x;
+          g = 0;
+          b = c;
+        } else {
+          r = c;
+          g = 0;
+          b = x;
+        }
+
+        const rFinal = Math.round((r + m) * 255);
+        const gFinal = Math.round((g + m) * 255);
+        const bFinal = Math.round((b + m) * 255);
+
+        const toHex = (n: number) =>
+          n.toString(16).padStart(2, "0").toUpperCase();
+        return `#${toHex(rFinal)}${toHex(gFinal)}${toHex(bFinal)}`;
+      }
+    }
+  }
+
+  return null;
+};
+
 interface PokemonMenuProps {
   onPokemonSelect?: (pokemonId: number) => void;
   isShiny: boolean;
@@ -108,6 +236,13 @@ export function PokemonMenu({
   const [colorFormat, setColorFormat] = useState<"hex" | "hsl" | "rgb">("hex");
   const [isAnimating, setIsAnimating] = useState(false);
   const [extractedColors, setExtractedColors] = useState<string[]>([]);
+  const [lockedColors, setLockedColors] = useState<boolean[]>([]);
+  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editingColor, setEditingColor] = useState<string>("");
+  const [colorPickerOpen, setColorPickerOpen] = useState(false);
+  const [colorPickerIndex, setColorPickerIndex] = useState<number | null>(null);
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
@@ -141,9 +276,40 @@ export function PokemonMenu({
         extractColorsFromImage(spriteUrl, 6)
           .then((colors) => {
             const top3Colors = colors.slice(0, 3);
-            setExtractedColors(top3Colors);
-            // Pass all 6 colors to the callback
-            onColorsExtracted?.(colors);
+
+            // Preserve locked colors and only update unlocked ones
+            setExtractedColors((prevColors) => {
+              const newColors = [...prevColors];
+              top3Colors.forEach((color, index) => {
+                if (index < lockedColors.length && !lockedColors[index]) {
+                  newColors[index] = color;
+                } else if (index >= lockedColors.length) {
+                  newColors[index] = color;
+                }
+              });
+
+              // If we have fewer new colors than existing, keep the existing ones
+              const finalColors = newColors.length > 0 ? newColors : top3Colors;
+              onColorsExtracted?.(finalColors);
+              return finalColors;
+            });
+
+            // Initialize lock states if not already set
+            setLockedColors((prevLocked) => {
+              if (prevLocked.length === 0) {
+                return new Array(top3Colors.length).fill(false);
+              }
+              // Extend lock array if we have more colors now
+              if (prevLocked.length < top3Colors.length) {
+                return [
+                  ...prevLocked,
+                  ...new Array(top3Colors.length - prevLocked.length).fill(
+                    false
+                  ),
+                ];
+              }
+              return prevLocked;
+            });
             // Also update the pokemonData's colorPalette with extracted colors
             if (pokemonData && top3Colors.length > 0) {
               // Only update if colors actually changed to avoid infinite loop
@@ -211,6 +377,99 @@ export function PokemonMenu({
     if (selectedPokemon && selectedPokemon > 1) {
       handleSelect(selectedPokemon - 1);
     }
+  };
+
+  // Drag and drop handlers
+  const handleDragStart = (
+    e: React.DragEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    setDraggedIndex(index);
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/html", e.currentTarget.outerHTML);
+    (e.currentTarget as HTMLElement).style.opacity = "0.5";
+  };
+
+  const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+    (e.currentTarget as HTMLElement).style.opacity = "1";
+    setDraggedIndex(null);
+    setDragOverIndex(null);
+  };
+
+  const handleDragOver = (
+    e: React.DragEvent<HTMLDivElement>,
+    index: number
+  ) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    setDragOverIndex(index);
+  };
+
+  const handleDragLeave = () => {
+    setDragOverIndex(null);
+  };
+
+  const handleDrop = (
+    e: React.DragEvent<HTMLDivElement>,
+    dropIndex: number
+  ) => {
+    e.preventDefault();
+
+    if (draggedIndex === null || draggedIndex === dropIndex) {
+      setDragOverIndex(null);
+      return;
+    }
+
+    const newColors = [...extractedColors];
+    const newLocked = [...lockedColors];
+    const draggedColor = newColors[draggedIndex];
+    const draggedLock = newLocked[draggedIndex];
+
+    // Remove the dragged items
+    newColors.splice(draggedIndex, 1);
+    newLocked.splice(draggedIndex, 1);
+
+    // Insert at new position
+    newColors.splice(dropIndex, 0, draggedColor);
+    newLocked.splice(dropIndex, 0, draggedLock);
+
+    setExtractedColors(newColors);
+    setLockedColors(newLocked);
+    onColorsExtracted?.(newColors);
+    setDragOverIndex(null);
+  };
+
+  // Color picker handlers
+  const handleEditStart = (index: number, color: string) => {
+    // Don't allow editing if color is locked
+    if (lockedColors[index]) return;
+
+    setColorPickerIndex(index);
+    setColorPickerOpen(true);
+  };
+
+  const handleColorPickerChange = (newColor: string) => {
+    if (colorPickerIndex === null) return;
+
+    const newColors = [...extractedColors];
+    newColors[colorPickerIndex] = newColor;
+    setExtractedColors(newColors);
+    onColorsExtracted?.(newColors);
+    setColorPickerIndex(null);
+  };
+
+  const handleColorPickerClose = () => {
+    setColorPickerOpen(false);
+    setColorPickerIndex(null);
+  };
+
+  // Lock/unlock handlers
+  const handleToggleLock = (index: number) => {
+    setLockedColors((prev) => {
+      const newLocked = [...prev];
+      newLocked[index] = !newLocked[index];
+      return newLocked;
+    });
   };
 
   // Helper function to get sprite URL
@@ -338,10 +597,7 @@ export function PokemonMenu({
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent
-            value="palette"
-            className="mt-4 space-y-3 max-h-[400px] overflow-y-auto px-2"
-          >
+          <TabsContent value="palette" className="mt-4 space-y-3 px-2">
             {/* Format selector */}
             <div className="flex justify-end mb-2">
               <Select
@@ -370,43 +626,88 @@ export function PokemonMenu({
             {(extractedColors.length > 0
               ? extractedColors
               : pokemonData.colorPalette?.highlights?.slice(0, 3) || []
-            ).map((color, index) => (
-              <div
-                key={index}
-                className="w-full h-16 rounded-md p-3 flex items-center justify-between border gap-2"
-                style={{ backgroundColor: color }}
-              >
-                <span
-                  ref={(el) => {
-                    if (el) colorTextRefs.current[index] = el;
+            ).map((color, index) => {
+              const isLocked = lockedColors[index] || false;
+              return (
+                <div
+                  key={`${color}-${index}`}
+                  draggable={!isLocked}
+                  onDragStart={(e) => !isLocked && handleDragStart(e, index)}
+                  onDragEnd={handleDragEnd}
+                  onDragOver={(e) => handleDragOver(e, index)}
+                  onDragLeave={handleDragLeave}
+                  onDrop={(e) => handleDrop(e, index)}
+                  className={`w-full h-16 rounded-md p-3 flex items-center justify-between border gap-2 transition-all duration-200 ${
+                    !isLocked ? "cursor-move" : "cursor-default"
+                  } ${draggedIndex === index ? "scale-105 shadow-lg" : ""} ${
+                    dragOverIndex === index && draggedIndex !== index
+                      ? "scale-95 ring-2 ring-white/50"
+                      : ""
+                  } ${isLocked ? "ring-2" : ""}`}
+                  style={{
+                    backgroundColor: color,
+                    ...(isLocked && {
+                      borderColor: color + "80", // 50% opacity
+                      ringColor: color + "60", // 37.5% opacity
+                    }),
                   }}
-                  className={`text-xs font-mono ${getTextColor(
-                    color
-                  )} transition-all duration-300 ${
-                    isAnimating
-                      ? "scale-105 opacity-0"
-                      : "scale-100 opacity-100"
-                  }`}
+                  title={
+                    isLocked ? "Color is locked" : "Drag to reorder colors"
+                  }
                 >
-                  {convertColor(color, colorFormat)}
-                </span>
-                <button className="p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors">
-                  <svg
-                    className={`w-4 h-4 ${getTextColor(color)}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            ))}
+                  <div className="flex items-center gap-2 flex-1">
+                    {!isLocked && (
+                      <GripVertical
+                        className={`w-4 h-4 ${getTextColor(
+                          color
+                        )} opacity-60 hover:opacity-100 transition-opacity`}
+                      />
+                    )}
+                    <span
+                      ref={(el) => {
+                        if (el) colorTextRefs.current[index] = el;
+                      }}
+                      className={`text-xs font-mono ${getTextColor(
+                        color
+                      )} transition-all duration-300 ${
+                        isAnimating
+                          ? "scale-105 opacity-0"
+                          : "scale-100 opacity-100"
+                      }`}
+                    >
+                      {convertColor(color, colorFormat)}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => handleToggleLock(index)}
+                      className="p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors cursor-pointer"
+                      title={isLocked ? "Unlock color" : "Lock color"}
+                    >
+                      {isLocked ? (
+                        <Lock className={`w-4 h-4 ${getTextColor(color)}`} />
+                      ) : (
+                        <Unlock className={`w-4 h-4 ${getTextColor(color)}`} />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => handleEditStart(index, color)}
+                      className={`p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors ${
+                        isLocked
+                          ? "opacity-50 cursor-not-allowed"
+                          : "cursor-pointer"
+                      }`}
+                      title={
+                        isLocked ? "Cannot edit locked color" : "Edit color"
+                      }
+                      disabled={isLocked}
+                    >
+                      <Edit3 className={`w-4 h-4 ${getTextColor(color)}`} />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </TabsContent>
 
           <TabsContent value="forms" className="mt-4 space-y-4">
@@ -636,6 +937,19 @@ export function PokemonMenu({
           </TabsContent>
         </Tabs>
       )}
+
+      {/* Color Picker Dialog */}
+      <ColorPickerDialog
+        open={colorPickerOpen}
+        onOpenChange={setColorPickerOpen}
+        initialColor={
+          colorPickerIndex !== null
+            ? extractedColors[colorPickerIndex] || "#000000"
+            : "#000000"
+        }
+        onColorChange={handleColorPickerChange}
+        title="Edit Color"
+      />
     </div>
   );
 }
