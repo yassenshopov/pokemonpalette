@@ -51,6 +51,7 @@ This boilerplate comes pre-configured with all the essential tools and component
    ```env
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key_here
    CLERK_SECRET_KEY=your_secret_key_here
+   CLERK_WEBHOOK_SECRET=your_webhook_secret_here
    ```
 
 4. **Set up Supabase and Prisma (Optional)**
@@ -139,8 +140,19 @@ pokemonpalette/
 ## 🛠️ Available Scripts
 
 ```bash
-# Development server (port 350)
+# Development server (port 212)
 npm run dev
+
+# Development server with ngrok tunnel (for webhook testing)
+npm run dev:ngrok
+
+# Start ngrok tunnel only (if dev server is already running)
+npm run ngrok
+
+# Webhook testing utilities
+npm run webhook:info    # Show current webhook info
+npm run webhook:url     # Get webhook URL only
+npm run webhook:test    # Generate test curl command
 
 # Production build
 npm run build

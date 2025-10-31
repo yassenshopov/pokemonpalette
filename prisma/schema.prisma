@@ -9,16 +9,36 @@ datasource db {
 }
 
 model User {
-  id              String    @id
-  email           String?
-  firstName       String?   @map("first_name")
-  lastName        String?   @map("last_name")
-  imageUrl        String?   @map("image_url")
-  createdAt       DateTime? @map("created_at") @db.Timestamptz(6)
-  updatedAt       DateTime? @map("updated_at") @db.Timestamptz(6)
-  isdeleted       Boolean?  @default(false)
-  notionDatabases Json[]    @default([]) @map("notion_databases")
-  isDeleted       Boolean?  @default(false) @map("isDeleted")
+  id                         String    @id
+  email                      String?
+  firstName                  String?   @map("first_name")
+  lastName                   String?   @map("last_name")
+  username                   String?
+  imageUrl                   String?   @map("image_url")
+  profileImageUrl            String?   @map("profile_image_url")
+  hasImage                   Boolean   @default(false) @map("has_image")
+  primaryEmailAddressId      String?   @map("primary_email_address_id")
+  primaryPhoneNumberId       String?   @map("primary_phone_number_id")
+  banned                     Boolean   @default(false)
+  locked                     Boolean   @default(false)
+  backupCodeEnabled          Boolean   @default(false) @map("backup_code_enabled")
+  twoFactorEnabled           Boolean   @default(false) @map("two_factor_enabled")
+  totpEnabled                Boolean   @default(false) @map("totp_enabled")
+  passwordEnabled            Boolean   @default(false) @map("password_enabled")
+  createOrganizationEnabled  Boolean   @default(true) @map("create_organization_enabled")
+  deleteSelfEnabled          Boolean   @default(true) @map("delete_self_enabled")
+  lastActiveAt               DateTime? @map("last_active_at") @db.Timestamptz(6)
+  lastSignInAt               DateTime? @map("last_sign_in_at") @db.Timestamptz(6)
+  createdAt                  DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt                  DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  isDeleted                  Boolean   @default(false) @map("is_deleted")
+  emailAddresses             Json      @default("[]") @map("email_addresses") @db.JsonB
+  phoneNumbers               Json      @default("[]") @map("phone_numbers") @db.JsonB
+  externalAccounts           Json      @default("[]") @map("external_accounts") @db.JsonB
+  publicMetadata             Json      @default("{}") @map("public_metadata") @db.JsonB
+  privateMetadata            Json      @default("{}") @map("private_metadata") @db.JsonB
+  unsafeMetadata             Json      @default("{}") @map("unsafe_metadata") @db.JsonB
+  notionDatabases            Json      @default("[]") @map("notion_databases") @db.JsonB
 
   @@map("users")
 }

@@ -4,6 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 212",
+    "dev:ngrok": "node scripts/dev-with-ngrok.js",
+    "ngrok": "ngrok http 212",
+    "webhook:info": "node scripts/test-webhook.js info",
+    "webhook:url": "node scripts/test-webhook.js url",
+    "webhook:test": "node scripts/test-webhook.js curl",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
@@ -58,6 +63,7 @@
     "react-resizable-panels": "^3.0.6",
     "recharts": "^3.2.1",
     "sonner": "^2.0.7",
+    "svix": "^1.81.0",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
     "zod": "^4.1.11"
@@ -65,11 +71,12 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^20.19.24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "ngrok": "^5.0.0-beta.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

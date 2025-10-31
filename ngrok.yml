@@ -1,0 +1,24 @@
+# ngrok configuration file
+# Place your authtoken here if you have one (optional but recommended)
+# authtoken: your_ngrok_authtoken_here
+
+# Tunnel configurations
+tunnels:
+  pokemonpalette:
+    proto: http
+    addr: 212
+    # Optional: Use a custom subdomain (requires paid ngrok account)
+    # subdomain: your-custom-subdomain
+    
+    # Optional: Add basic auth for security
+    # auth: "username:password"
+    
+    # Optional: Add custom headers
+    # request_header:
+    #   add:
+    #     - "X-Custom-Header: development"
+
+# Global configuration
+web_addr: localhost:4040  # ngrok web interface
+log_level: info
+log_format: term
