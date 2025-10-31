@@ -10,7 +10,8 @@ export async function migrateExistingClerkUsers() {
     console.log("Starting migration of existing Clerk users...");
     
     // Get all users from Clerk
-    const clerkUsers = await clerkClient.users.getUserList({
+    const client = await clerkClient();
+    const clerkUsers = await client.users.getUserList({
       limit: 500, // Adjust as needed
     });
 

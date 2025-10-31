@@ -3,13 +3,14 @@
  */
 
 // Default Pokemon to show on first load
-export const DEFAULT_POKEMON_ID = 25; // Pikachu
+export const DEFAULT_POKEMON_ID = 60; // Poliwag
 
 // You can change this to any Pokemon ID you prefer:
 // 1 = Bulbasaur
 // 4 = Charmander  
 // 7 = Squirtle
 // 25 = Pikachu
+// 60 = Poliwag
 // 150 = Mewtwo
 // 151 = Mew
 // etc.

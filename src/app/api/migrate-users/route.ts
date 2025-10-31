@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { handleMigrationRequest } from "@/lib/migrate-users";
 
 /**
@@ -8,7 +8,7 @@ import { handleMigrationRequest } from "@/lib/migrate-users";
  * This should only be used once after setting up the webhook
  * Consider adding authentication/authorization for production use
  */
-export async function POST(req: NextRequest) {
+export async function POST() {
   try {
     // Optional: Add authentication check here
     // const { userId } = auth();
