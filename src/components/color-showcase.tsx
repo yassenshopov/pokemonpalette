@@ -22,11 +22,11 @@ export function ColorShowcase({
   secondaryColor,
 }: ColorShowcaseProps) {
   return (
-    <div className="w-full max-w-6xl mx-auto px-12 py-12">
-      <h2 className="text-2xl font-bold font-heading mb-8">Color Showcase</h2>
+    <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
+      <h2 className="text-xl md:text-2xl font-bold font-heading mb-6 md:mb-8">Color Showcase</h2>
 
-      {/* Bento Grid - 1/3 + 2/3, then 2/3 + 1/3 */}
-      <div className="grid grid-cols-3 gap-6">
+      {/* Bento Grid - 1/3 + 2/3, then 2/3 + 1/3 on desktop, stacked on mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {/* Row 1: Badges (1/3) */}
         <Card className="shadow-none">
           <CardHeader>
@@ -55,22 +55,22 @@ export function ColorShowcase({
         </Card>
 
         {/* Row 1: Buttons + Progress (2/3) */}
-        <Card className="shadow-none col-span-2">
+        <Card className="shadow-none md:col-span-2">
           <CardHeader>
-            <CardTitle>Interactive Elements</CardTitle>
-            <CardDescription>Buttons and progress indicators</CardDescription>
+            <CardTitle className="text-base md:text-lg">Interactive Elements</CardTitle>
+            <CardDescription className="text-sm">Buttons and progress indicators</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="flex flex-col gap-3">
+          <CardContent className="space-y-4 md:space-y-6">
+            <div className="flex flex-col gap-2 md:gap-3">
               <Button
-                className="shadow-none"
+                className="shadow-none text-sm md:text-base"
                 style={{ backgroundColor: primaryColor, color: "white" }}
               >
                 Primary Action
               </Button>
               <Button
                 variant="outline"
-                className="shadow-none"
+                className="shadow-none text-sm md:text-base"
                 style={{ borderColor: secondaryColor, color: secondaryColor }}
               >
                 Secondary Action
@@ -90,26 +90,26 @@ export function ColorShowcase({
 
         {/* Row 2: Stats (2/3) */}
         <Card
-          className="shadow-none col-span-2"
+          className="shadow-none md:col-span-2"
           style={{ borderColor: primaryColor }}
         >
           <CardHeader>
-            <CardTitle>Statistics</CardTitle>
-            <CardDescription>Analytics overview</CardDescription>
+            <CardTitle className="text-base md:text-lg">Statistics</CardTitle>
+            <CardDescription className="text-sm">Analytics overview</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-between">
               <div>
                 <p
-                  className="text-5xl font-bold"
+                  className="text-3xl md:text-5xl font-bold"
                   style={{ color: primaryColor }}
                 >
                   1,234
                 </p>
-                <p className="text-sm text-muted-foreground">Total views</p>
+                <p className="text-xs md:text-sm text-muted-foreground">Total views</p>
               </div>
               <TrendingUp
-                className="h-12 w-12"
+                className="h-8 w-8 md:h-12 md:w-12"
                 style={{ color: secondaryColor }}
               />
             </div>

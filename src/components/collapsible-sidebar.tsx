@@ -8,8 +8,28 @@ import { ChevronLeft, ChevronRight, Menu, X, Home } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
+import { Coffee } from "lucide-react";
 
-export function CollapsibleSidebar() {
+// Helper function to determine if text should be dark or light based on background
+const getTextColor = (hex: string): "text-white" | "text-black" => {
+  if (!hex) return "text-white";
+  const hexClean = hex.replace("#", "");
+  const r = parseInt(hexClean.substring(0, 2), 16);
+  const g = parseInt(hexClean.substring(2, 4), 16);
+  const b = parseInt(hexClean.substring(4, 6), 16);
+
+  // Calculate luminance
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Return white for dark colors, black for light colors
+  return luminance > 0.5 ? "text-black" : "text-white";
+};
+
+interface CollapsibleSidebarProps {
+  primaryColor?: string;
+}
+
+export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -131,7 +151,27 @@ export function CollapsibleSidebar() {
             {/* Footer */}
             <div className="border-t">
               <UserProfileWrapper />
-              <div className="p-4 pt-2">
+              <div className="p-4 pt-2 space-y-3">
+                {/* Coffee CTA */}
+                <a
+                  href="https://buymeacoffee.com/yassenshopov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button
+                    size="sm"
+                    className="w-full border-0 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{
+                      backgroundColor: primaryColor || "#f59e0b",
+                      color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
+                    }}
+                  >
+                    <Coffee className="w-4 h-4 mr-2" />
+                    Buy Me a Coffee
+                  </Button>
+                </a>
+                
                 <p className="text-xs text-muted-foreground">
                   PokémonPalette v0.1.0
                 </p>
@@ -209,6 +249,21 @@ export function CollapsibleSidebar() {
                   <div className="flex flex-col items-center">
                     <ThemeToggle />
                   </div>
+                  <div className="flex flex-col items-center">
+                    <a
+                      href="https://buymeacoffee.com/yassenshopov"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg transition-colors"
+                      style={{
+                        backgroundColor: primaryColor || "#f59e0b",
+                        color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
+                      }}
+                      title="Buy Me a Coffee"
+                    >
+                      <Coffee className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <>
@@ -239,7 +294,27 @@ export function CollapsibleSidebar() {
           <div className="border-t">
             <UserProfileWrapper isCollapsed={isCollapsed} />
             {!isCollapsed && (
-              <div className="p-4 pt-2">
+              <div className="p-4 pt-2 space-y-3">
+                {/* Coffee CTA */}
+                <a
+                  href="https://buymeacoffee.com/yassenshopov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button
+                    size="sm"
+                    className="w-full border-0 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{
+                      backgroundColor: primaryColor || "#f59e0b",
+                      color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
+                    }}
+                  >
+                    <Coffee className="w-4 h-4 mr-2" />
+                    Buy Me a Coffee
+                  </Button>
+                </a>
+                
                 <p className="text-xs text-muted-foreground">
                   PokémonPalette v0.1.0
                 </p>

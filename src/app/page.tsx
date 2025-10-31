@@ -19,24 +19,24 @@ export default function Home() {
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       <CoffeeCTA primaryColor={pokemonColors[0]} />
-      <CollapsibleSidebar />
-      <div className="flex-1 flex h-full overflow-hidden">
-        {/* Left 1/4 - Pokemon Menu */}
-        <div className="w-1/4 h-full flex">
+      <CollapsibleSidebar primaryColor={pokemonColors[0]} />
+      <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
+        {/* Pokemon Menu - Full width on mobile, 1/4 width on desktop */}
+        <div className="w-full md:w-1/4 h-auto md:h-full flex flex-col md:flex-row">
           <PokemonMenu
             onPokemonSelect={setSelectedPokemonId}
             isShiny={isShiny}
             onShinyToggle={setIsShiny}
             onColorsExtracted={setPokemonColors}
           />
-          {/* Vertical separator line */}
-          <div className="w-px bg-border flex-shrink-0" />
+          {/* Separator line - horizontal on mobile, vertical on desktop */}
+          <div className="h-px md:h-auto md:w-px bg-border flex-shrink-0" />
         </div>
 
-        {/* Right 3/4 - Hero/Example Page with Footer */}
-        <div className="w-3/4 flex flex-col h-full overflow-auto px-0">
+        {/* Hero/Example Page with Footer - Full width on mobile, 3/4 width on desktop */}
+        <div className="w-full md:w-3/4 flex flex-col h-auto md:h-full md:overflow-auto px-0">
           <PokemonHero
             pokemonId={selectedPokemonId}
             isShiny={isShiny}

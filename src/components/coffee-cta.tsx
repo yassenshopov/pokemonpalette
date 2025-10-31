@@ -25,7 +25,7 @@ export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
   const textColor = getTextColor(primaryColor);
   
   return (
-    <div className="fixed top-6 right-12 z-50">
+    <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-12 z-50">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -56,7 +56,7 @@ export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
       >
         <Button
           size="default"
-          className="border-2 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group px-4 py-2"
+          className="border-2 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group px-3 py-2 md:px-4"
           style={{
             backgroundColor: primaryColor,
             borderColor: primaryColor,
@@ -69,8 +69,8 @@ export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
           {/* Automatic shine animation overlay */}
           <div className="coffee-cta-auto-shine absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
           
-          <Coffee className="w-5 h-5 mr-2 transition-transform duration-300 hover:rotate-12 relative z-10" />
-          <span className="relative z-10">Buy Me a Coffee</span>
+          <Coffee className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 transition-transform duration-300 hover:rotate-12 relative z-10" />
+          <span className="relative z-10 text-sm md:text-base">Buy Me a Coffee</span>
         </Button>
       </a>
     </div>

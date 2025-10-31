@@ -368,12 +368,12 @@ export function PokemonMenu({
   };
 
   return (
-    <div className="h-full p-8 flex flex-col items-center justify-start gap-6 relative w-full">
+    <div className="h-auto md:h-full p-4 md:p-8 flex flex-col items-center justify-start gap-4 md:gap-6 relative w-full">
       <LoaderOverlay loading={loading} text="Loading Pokemon..." />
 
       {/* Sprite image */}
       {pokemonData && (
-        <div className="flex flex-col items-center gap-2 mt-8">
+        <div className="flex flex-col items-center gap-2 mt-4 md:mt-8">
           <div className="relative">
             {getSpriteUrl(pokemonData, isShiny) ? (
               <Image
@@ -381,7 +381,7 @@ export function PokemonMenu({
                 alt={pokemonData.name}
                 width={400}
                 height={400}
-                className="w-auto h-auto"
+                className="w-auto h-auto max-w-[200px] md:max-w-none"
                 style={{ imageRendering: "pixelated" }}
                 unoptimized
               />
@@ -470,17 +470,20 @@ export function PokemonMenu({
 
       {/* Palette and Forms Tabs */}
       {pokemonData && (
-        <Tabs defaultValue="palette" className="w-full mt-4">
+        <Tabs defaultValue="palette" className="w-full mt-2 md:mt-4">
           <TabsList className="w-full grid grid-cols-2">
-            <TabsTrigger value="palette" className="cursor-pointer">
+            <TabsTrigger value="palette" className="cursor-pointer text-sm">
               Palette
             </TabsTrigger>
-            <TabsTrigger value="forms" className="cursor-pointer">
+            <TabsTrigger value="forms" className="cursor-pointer text-sm">
               Forms/Related
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="palette" className="mt-4 space-y-3 px-2">
+          <TabsContent
+            value="palette"
+            className="mt-2 md:mt-4 space-y-2 md:space-y-3 px-1 md:px-2"
+          >
             {/* Format selector */}
             <div className="flex justify-end mb-2">
               <Select
@@ -523,7 +526,7 @@ export function PokemonMenu({
                   onDragOver={(e) => handleDragOver(e, index)}
                   onDragLeave={handleDragLeave}
                   onDrop={(e) => handleDrop(e, index)}
-                  className={`w-full h-16 rounded-md p-3 flex items-center justify-between border gap-2 transition-all duration-200 ${
+                  className={`w-full h-12 md:h-16 rounded-md p-2 md:p-3 flex items-center justify-between border gap-1 md:gap-2 transition-all duration-200 ${
                     !isLocked ? "cursor-move" : "cursor-default"
                   } ${draggedIndex === index ? "scale-105 shadow-lg" : ""} ${
                     dragOverIndex === index && draggedIndex !== index
@@ -596,14 +599,17 @@ export function PokemonMenu({
             })}
           </TabsContent>
 
-          <TabsContent value="forms" className="mt-4 space-y-4">
+          <TabsContent
+            value="forms"
+            className="mt-2 md:mt-4 space-y-2 md:space-y-4"
+          >
             {/* Evolution Chain */}
             {pokemonData.evolution &&
               Array.isArray(pokemonData.evolution) &&
               pokemonData.evolution.length > 0 && (
-                <div className="max-h-[450px] overflow-y-auto px-2">
-                  <Separator className="mb-3" />
-                  <h3 className="text-sm font-semibold mb-3">
+                <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
+                  <Separator className="mb-2 md:mb-3" />
+                  <h3 className="text-sm font-semibold mb-2 md:mb-3">
                     Evolution Chain
                   </h3>
                   <EvolutionChain
@@ -618,8 +624,8 @@ export function PokemonMenu({
 
             {/* Forms/Varieties */}
             {pokemonData.varieties && pokemonData.varieties.length > 1 && (
-              <div className="max-h-[450px] overflow-y-auto px-2">
-                <Separator className="mb-3" />
+              <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
+                <Separator className="mb-2 md:mb-3" />
                 <h3 className="text-sm font-semibold mb-2">Forms/Varieties</h3>
                 <div className="flex flex-col gap-2">
                   {pokemonData.varieties.map((variety, index) => {

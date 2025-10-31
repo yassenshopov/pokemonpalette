@@ -133,16 +133,16 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-12 py-12">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold font-heading">Color Palette</h2>
+    <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 md:mb-6 gap-3">
+        <h2 className="text-xl md:text-2xl font-bold font-heading">Color Palette</h2>
         <Select
           value={colorFormat}
           onValueChange={(value: "hex" | "hsl" | "rgb") =>
             setColorFormat(value)
           }
         >
-          <SelectTrigger className="w-[180px] shadow-none cursor-pointer">
+          <SelectTrigger className="w-[120px] sm:w-[180px] shadow-none cursor-pointer">
             <SelectValue placeholder="Format" />
           </SelectTrigger>
           <SelectContent>
@@ -153,7 +153,7 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
         </Select>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
         {colors.map((color, index) => {
           const colorValue = convertColor(color, colorFormat);
           return (
@@ -162,12 +162,12 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="w-full h-24 rounded-lg p-4 flex items-center justify-between cursor-pointer group"
+              className="w-full h-16 sm:h-20 md:h-24 rounded-lg p-3 md:p-4 flex items-center justify-between cursor-pointer group"
               style={{ backgroundColor: color }}
               onClick={() => handleCopy(colorValue, index)}
             >
               <span
-                className={`text-sm font-semibold ${getTextColor(
+                className={`text-xs sm:text-sm font-semibold ${getTextColor(
                   color
                 )} transition-all duration-200 ${
                   copiedIndex === index ? "scale-110" : ""

@@ -108,9 +108,9 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
   if (loading || !pokemon) {
     return (
-      <div className="w-full max-w-6xl mx-auto px-12 py-12">
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
         <div 
-          className="relative overflow-hidden rounded-2xl border p-8 transition-all duration-500 ease-out"
+          className="relative overflow-hidden rounded-2xl border p-4 md:p-8 transition-all duration-500 ease-out"
           style={{
             background: `linear-gradient(135deg, ${primaryColor}15 0%, ${secondaryColor}10 100%)`,
           }}
@@ -118,7 +118,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
           <div className="animate-pulse">
             <div className="h-8 bg-muted/30 rounded w-1/3 mb-4"></div>
             <div className="h-4 bg-muted/30 rounded w-2/3 mb-6"></div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
               <div className="space-y-4">
                 <div className="h-4 bg-muted/30 rounded w-1/4"></div>
                 <div className="space-y-2">
@@ -147,9 +147,9 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
   const officialArtwork = getOfficialArtwork(pokemon);
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-12 py-12">
+    <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
       <div 
-        className={`relative overflow-hidden rounded-2xl border p-8 transition-all duration-500 ease-out ${
+        className={`relative overflow-hidden rounded-2xl border p-4 md:p-8 transition-all duration-500 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
         style={{
@@ -158,13 +158,13 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
       >
         {/* Background silhouette - positioned on the right */}
         {officialArtwork && (
-          <div className="absolute top-0 right-0 w-80 h-full flex items-center justify-center opacity-5 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-40 md:w-80 h-full flex items-center justify-center opacity-5 pointer-events-none overflow-hidden">
             <Image
               src={officialArtwork}
               alt={`${pokemon.name} silhouette`}
               width={320}
               height={320}
-              className="w-80 h-80 object-contain"
+              className="w-40 h-40 md:w-80 md:h-80 object-contain"
               style={{ 
                 filter: 'brightness(0)',
               }}
@@ -176,11 +176,11 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
         {/* Content */}
         <div className="relative z-10">
           {/* Header */}
-          <div className="flex items-start justify-between mb-6">
+          <div className="flex flex-col sm:flex-row items-start justify-between mb-4 md:mb-6 gap-3">
             <div>
-              <div className="flex items-center gap-3 mb-2">
-                <h2 className="text-3xl font-bold font-heading">{pokemon.name}</h2>
-                <span className="text-lg text-muted-foreground">#{pokemon.id.toString().padStart(3, '0')}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold font-heading">{pokemon.name}</h2>
+                <span className="text-base md:text-lg text-muted-foreground">#{pokemon.id.toString().padStart(3, '0')}</span>
               </div>
               <p className="text-muted-foreground mb-4">
                 {pokemon.species.toLowerCase().startsWith("the") 
@@ -206,13 +206,13 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
             </div>
 
             {/* Action buttons */}
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               {pokemon.cries?.latest && (
                 <Button
                   onClick={isPlayingCry ? stopCry : playCry}
                   variant="outline"
                   size="sm"
-                  className="cursor-pointer"
+                  className="cursor-pointer w-full sm:w-auto"
                   style={{
                     borderColor: primaryColor + "40",
                     backgroundColor: isPlayingCry ? primaryColor + "20" : "transparent",
@@ -230,7 +230,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                 asChild
                 variant="outline"
                 size="sm"
-                className="cursor-pointer"
+                className="cursor-pointer w-full sm:w-auto"
                 style={{
                   borderColor: primaryColor + "40",
                 }}
@@ -247,22 +247,22 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
             {/* Left column - Flavor text and basic info */}
-            <div className={`space-y-6 transition-all duration-700 ease-out delay-100 ${
+            <div className={`space-y-4 md:space-y-6 transition-all duration-700 ease-out delay-100 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
             }`}>
               {/* Flavor text */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Pokédex Entry</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Pokédex Entry</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {pokemon.description}
                 </p>
               </div>
 
               {/* Physical characteristics */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Physical Traits</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Physical Traits</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col">
                     <span className="text-sm text-muted-foreground">Height</span>
@@ -277,7 +277,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
               {/* Abilities */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Abilities</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Abilities</h3>
                 <div className="space-y-2">
                   {Array.isArray(pokemon.abilities) && pokemon.abilities.map((ability, index) => (
                     <div key={index} className="flex items-center gap-2">
@@ -303,7 +303,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
             <div className={`transition-all duration-700 ease-out delay-200 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
             }`}>
-              <h3 className="text-lg font-semibold mb-3">Base Stats</h3>
+              <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Base Stats</h3>
               <div className="space-y-3">
                 {Object.entries(pokemon.baseStats).map(([statName, value]) => {
                   const displayName = statName

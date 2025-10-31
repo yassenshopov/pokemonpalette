@@ -107,7 +107,7 @@ export function PokemonHero({
 
   return (
     <div
-      className="min-h-[600px] py-24 px-12 flex items-center justify-center relative overflow-hidden animated-gradient"
+      className="min-h-[400px] md:min-h-[600px] py-12 md:py-24 px-4 md:px-12 flex items-center justify-center relative overflow-hidden animated-gradient"
       style={{
         background: `radial-gradient(circle at top right, ${
           highlightColors[0] || primaryColor
@@ -135,10 +135,10 @@ export function PokemonHero({
 
       <LoaderOverlay loading={loading} text="Loading..." />
 
-      <div className="flex gap-12 items-center relative z-10">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center relative z-10 text-center md:text-left">
         {/* Left: Hero text */}
         <div className="max-w-2xl">
-          <h1 className="text-5xl font-bold font-heading mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold font-heading mb-4">
             {pokemon ? (
               <>
                 Your website - inspired by{" "}
@@ -155,14 +155,14 @@ export function PokemonHero({
               "Your website - inspired by colours"
             )}
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base md:text-lg text-muted-foreground">
             This website allows you to enter a Pokemon&apos;s name (or simply
             its number in the Pokedex), and its top 3 colours will be extracted.
           </p>
         </div>
 
         {/* Right: Pokemon image */}
-        <div className="flex-shrink-0 relative w-[450px] h-[450px]">
+        <div className="flex-shrink-0 relative w-[250px] h-[250px] md:w-[450px] md:h-[450px]">
           {pokemon &&
           !loading &&
           typeof pokemon.artwork === "object" &&
@@ -174,7 +174,7 @@ export function PokemonHero({
                 alt={pokemon.name}
                 width={450}
                 height={450}
-                className={`object-contain transition-opacity duration-500 ${
+                className={`w-full h-full object-contain transition-opacity duration-500 ${
                   imageLoading ? "opacity-0" : "opacity-100"
                 }`}
                 onLoad={() => setImageLoading(false)}

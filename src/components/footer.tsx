@@ -7,16 +7,16 @@ import { Github, Twitter } from "lucide-react";
 export function Footer() {
   return (
     <footer className="w-full border-t">
-      <div className="w-full px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="w-full px-4 md:px-6 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Branding and Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <h3 className="text-xl font-bold text-foreground">
+            <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+              <h3 className="text-lg md:text-xl font-bold text-foreground">
                 Pokemon Palette
               </h3>
-              <span className="text-muted-foreground">|</span>
-              <span className="text-muted-foreground">2025</span>
+              <span className="text-muted-foreground hidden sm:inline">|</span>
+              <span className="text-muted-foreground text-sm">2025</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Generate beautiful color palettes from Pokemon artwork. Free
@@ -28,9 +28,9 @@ export function Footer() {
           </div>
 
           {/* Quick Links & Submit Design */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <div>
-              <h4 className="text-sm font-semibold text-foreground mb-3">
+              <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
                 Quick Links
               </h4>
               <ul className="space-y-2">
@@ -62,7 +62,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-foreground mb-3">
+              <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
                 Submit Design
               </h4>
               <ul className="space-y-2">
@@ -96,7 +96,7 @@ export function Footer() {
 
           {/* Help & Support */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
               Help & Support
             </h4>
             <ul className="space-y-2">
@@ -129,7 +129,7 @@ export function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
               Connect
             </h4>
             <div className="flex space-x-3 mb-4">
@@ -167,11 +167,11 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-6 md:my-8" />
 
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs md:text-sm text-muted-foreground">
             © 2025 Pokemon Palette by{" "}
             <span className="font-semibold">Yassen Shopov</span>. All rights
             reserved.
