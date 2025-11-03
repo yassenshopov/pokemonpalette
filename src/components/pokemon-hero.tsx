@@ -38,7 +38,9 @@ export function PokemonHero({
   const [extractedColors, setExtractedColors] = useState<string[]>([]);
   const [savingPalette, setSavingPalette] = useState(false);
   const [checkingExisting, setCheckingExisting] = useState(false);
-  const [existingPaletteId, setExistingPaletteId] = useState<string | null>(null);
+  const [existingPaletteId, setExistingPaletteId] = useState<string | null>(
+    null
+  );
   const { user, isLoaded } = useUser();
 
   useEffect(() => {
@@ -132,12 +134,14 @@ export function PokemonHero({
       if (response.ok && data.palettes) {
         // Get form name - handle both string[] and PokemonForm[] types
         const firstForm = pokemon.forms?.[0];
-        const formName = typeof firstForm === 'string' ? firstForm : firstForm?.name || null;
-        
-        const existing = data.palettes.find((p: any) => 
-          p.pokemon_id === pokemon.id && 
-          p.is_shiny === isShiny &&
-          (p.pokemon_form || null) === formName
+        const formName =
+          typeof firstForm === "string" ? firstForm : firstForm?.name || null;
+
+        const existing = data.palettes.find(
+          (p: any) =>
+            p.pokemon_id === pokemon.id &&
+            p.is_shiny === isShiny &&
+            (p.pokemon_form || null) === formName
         );
         setExistingPaletteId(existing ? existing.id : null);
       } else if (response.status === 503) {
@@ -181,7 +185,10 @@ export function PokemonHero({
     try {
       // Get form name - handle both string[] and PokemonForm[] types
       const firstForm = pokemon.forms?.[0];
-      const formName = typeof firstForm === 'string' ? firstForm : firstForm?.name || undefined;
+      const formName =
+        typeof firstForm === "string"
+          ? firstForm
+          : firstForm?.name || undefined;
 
       const paletteData = {
         pokemonId: pokemon.id,
@@ -208,7 +215,9 @@ export function PokemonHero({
         // Refresh existing palette check
         checkExistingPalette();
       } else if (response.status === 503) {
-        toast.error("Authentication service is currently unavailable. Please try again later.");
+        toast.error(
+          "Authentication service is currently unavailable. Please try again later."
+        );
       } else if (response.status === 401) {
         toast.error("Please sign in to save palettes");
       } else {
@@ -239,7 +248,9 @@ export function PokemonHero({
         toast.success("Palette removed successfully!");
         setExistingPaletteId(null);
       } else if (response.status === 503) {
-        toast.error("Authentication service is currently unavailable. Please try again later.");
+        toast.error(
+          "Authentication service is currently unavailable. Please try again later."
+        );
       } else if (response.status === 401) {
         toast.error("Please sign in to manage palettes");
       } else {
@@ -307,11 +318,13 @@ export function PokemonHero({
             This website allows you to enter a Pokemon&apos;s name (or simply
             its number in the Pokedex), and its top 3 colours will be extracted.
           </p>
-          
+
           {/* Save/Unsave Palette Button */}
           {pokemon && colors && colors.length > 0 && (
             <Button
-              onClick={existingPaletteId ? handleUnsavePalette : handleSavePalette}
+              onClick={
+                existingPaletteId ? handleUnsavePalette : handleSavePalette
+              }
               disabled={savingPalette || checkingExisting || !isLoaded}
               className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
               style={{
@@ -331,7 +344,11 @@ export function PokemonHero({
                 </>
               ) : (
                 <>
-                  <Heart className={`w-4 h-4 ${existingPaletteId ? "fill-current" : ""}`} />
+                  <Heart
+                    className={`w-4 h-4 ${
+                      existingPaletteId ? "fill-current" : ""
+                    }`}
+                  />
                   {existingPaletteId ? "Remove from Saved" : "Save Palette"}
                 </>
               )}
