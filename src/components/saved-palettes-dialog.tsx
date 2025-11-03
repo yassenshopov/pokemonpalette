@@ -176,7 +176,7 @@ export function SavedPalettesDialog({
               <Heart className="w-12 h-12 mx-auto mb-4 opacity-50" />
               <p className="text-lg font-medium mb-2">No saved palettes yet</p>
               <p className="text-sm">
-                Save your first palette by clicking the "Save Palette" button when viewing a Pokémon!
+                Save your first palette by clicking the &quot;Save Palette&quot; button when viewing a Pokémon!
               </p>
             </div>
           ) : (
