@@ -40,6 +40,9 @@ model User {
   unsafeMetadata             Json      @default("{}") @map("unsafe_metadata") @db.JsonB
   notionDatabases            Json      @default("[]") @map("notion_databases") @db.JsonB
 
+  // Relations
+  savedPalettes              SavedPalette[]
+
   @@map("users")
 }
 
@@ -81,4 +84,27 @@ model UserPreferences {
 
   @@index([userId], map: "idx_user_preferences_user_id")
   @@map("user_preferences")
+}
+
+model SavedPalette {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId      String   @map("user_id")
+  pokemonId   Int      @map("pokemon_id")
+  pokemonName String   @map("pokemon_name")
+  pokemonForm String?  @map("pokemon_form")
+  isShiny     Boolean  @default(false) @map("is_shiny")
+  colors      Json     @db.JsonB // Array of color hex values
+  imageUrl    String?  @map("image_url")
+  paletteName String?  @map("palette_name")
+  createdAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "idx_saved_palettes_user_id")
+  @@index([pokemonId], map: "idx_saved_palettes_pokemon_id")
+  @@index([createdAt], map: "idx_saved_palettes_created_at")
+  @@index([pokemonName], map: "idx_saved_palettes_pokemon_name")
+  @@map("saved_palettes")
 }

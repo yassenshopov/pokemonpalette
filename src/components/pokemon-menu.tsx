@@ -108,6 +108,7 @@ interface PokemonMenuProps {
   onColorsExtracted?: (colors: string[]) => void;
   isCollapsed?: boolean;
   onToggleCollapse?: (collapsed: boolean) => void;
+  selectedPokemonId?: number | null;
 }
 
 export function PokemonMenu({
@@ -117,10 +118,11 @@ export function PokemonMenu({
   onColorsExtracted,
   isCollapsed = false,
   onToggleCollapse,
+  selectedPokemonId,
 }: PokemonMenuProps) {
   const pokemonList = getAllPokemonMetadata();
   const [selectedPokemon, setSelectedPokemon] = useState<number | null>(
-    DEFAULT_POKEMON_ID
+    selectedPokemonId || DEFAULT_POKEMON_ID
   );
   const [pokemonData, setPokemonData] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
@@ -133,6 +135,16 @@ export function PokemonMenu({
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
   const [colorPickerIndex, setColorPickerIndex] = useState<number | null>(null);
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
+
+  // Sync selectedPokemonId prop with internal state
+  useEffect(() => {
+    if (
+      selectedPokemonId !== undefined &&
+      selectedPokemonId !== selectedPokemon
+    ) {
+      setSelectedPokemon(selectedPokemonId);
+    }
+  }, [selectedPokemonId]);
 
   useEffect(() => {
     if (selectedPokemon) {

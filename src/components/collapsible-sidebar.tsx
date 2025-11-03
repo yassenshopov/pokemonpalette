@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Menu, X, Home } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, X, Home, Heart } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
+import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 import { Coffee } from "lucide-react";
 
 // Helper function to determine if text should be dark or light based on background
@@ -27,9 +28,14 @@ const getTextColor = (hex: string): "text-white" | "text-black" => {
 
 interface CollapsibleSidebarProps {
   primaryColor?: string;
+  onPaletteLoad?: (palette: {
+    pokemonId: number;
+    isShiny: boolean;
+    colors: string[];
+  }) => void;
 }
 
-export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
+export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -242,10 +248,26 @@ export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
                   <div className="flex flex-col items-center space-y-2">
                     <Link
                       href="/"
-                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      title="Home"
                     >
                       <Home className="h-4 w-4" />
                     </Link>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <SavedPalettesDialog 
+                      onPaletteSelect={onPaletteLoad}
+                      trigger={
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                          title="Saved Palettes"
+                        >
+                          <Heart className="h-4 w-4" />
+                        </Button>
+                      }
+                    />
                   </div>
                   <div className="flex flex-col items-center">
                     <ThemeToggle />
@@ -255,7 +277,7 @@ export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
                       href="https://buymeacoffee.com/yassenshopov"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg transition-colors"
+                      className="p-2 rounded-lg transition-colors cursor-pointer"
                       style={{
                         backgroundColor: primaryColor || "#f59e0b",
                         color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
@@ -272,11 +294,23 @@ export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
                   <div className="space-y-2">
                     <Link
                       href="/"
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                     >
                       <Home className="h-4 w-4" />
                       <span>Home</span>
                     </Link>
+                    <SavedPalettesDialog 
+                      onPaletteSelect={onPaletteLoad}
+                      trigger={
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                        >
+                          <Heart className="h-4 w-4 mr-3" />
+                          <span>Saved Palettes</span>
+                        </Button>
+                      }
+                    />
                   </div>
 
                   {/* Appearance */}

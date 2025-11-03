@@ -19,6 +19,17 @@ export default function Home() {
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
   const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
 
+  // Handle loading a saved palette
+  const handlePaletteLoad = (palette: {
+    pokemonId: number;
+    isShiny: boolean;
+    colors: string[];
+  }) => {
+    setSelectedPokemonId(palette.pokemonId);
+    setIsShiny(palette.isShiny);
+    setPokemonColors(palette.colors);
+  };
+
   // Load Pokemon menu collapsed state from localStorage on mount
   useEffect(() => {
     const savedState = localStorage.getItem("pokemon-menu-collapsed");
@@ -35,7 +46,7 @@ export default function Home() {
   return (
     <div className="flex h-screen overflow-hidden">
       <CoffeeCTA primaryColor={pokemonColors[0]} />
-      <CollapsibleSidebar primaryColor={pokemonColors[0]} />
+      <CollapsibleSidebar primaryColor={pokemonColors[0]} onPaletteLoad={handlePaletteLoad} />
       <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
         {/* Pokemon Menu - Full width on mobile, collapsible on desktop */}
         <div className={`${
@@ -50,6 +61,7 @@ export default function Home() {
             onColorsExtracted={setPokemonColors}
             isCollapsed={isPokemonMenuCollapsed}
             onToggleCollapse={setIsPokemonMenuCollapsed}
+            selectedPokemonId={selectedPokemonId}
           />
           {/* Separator line - horizontal on mobile, vertical on desktop */}
           {!isPokemonMenuCollapsed && (
@@ -68,6 +80,7 @@ export default function Home() {
             isShiny={isShiny}
             onImageSrcChange={setCurrentImageSrc}
             colors={pokemonColors}
+            onPaletteLoad={handlePaletteLoad}
           />
           {pokemonColors.length > 0 && (
             <>
