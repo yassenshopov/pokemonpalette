@@ -130,10 +130,14 @@ export function PokemonHero({
       const data = await response.json();
 
       if (response.ok && data.palettes) {
+        // Get form name - handle both string[] and PokemonForm[] types
+        const firstForm = pokemon.forms?.[0];
+        const formName = typeof firstForm === 'string' ? firstForm : firstForm?.name || null;
+        
         const existing = data.palettes.find((p: any) => 
           p.pokemon_id === pokemon.id && 
           p.is_shiny === isShiny &&
-          (p.pokemon_form || null) === (pokemon.forms?.[0]?.name || null)
+          (p.pokemon_form || null) === formName
         );
         setExistingPaletteId(existing ? existing.id : null);
       } else if (response.status === 503) {
