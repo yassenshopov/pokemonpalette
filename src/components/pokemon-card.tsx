@@ -32,7 +32,11 @@ interface PokemonCardProps {
   colors?: string[];
 }
 
-export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: PokemonCardProps) {
+export function PokemonCard({
+  pokemonId,
+  isShiny = false,
+  colors = [],
+}: PokemonCardProps) {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
   const [isPlayingCry, setIsPlayingCry] = useState(false);
@@ -58,7 +62,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
   const playCry = () => {
     if (pokemon?.cries?.latest && !isPlayingCry) {
       setIsPlayingCry(true);
-      
+
       // Stop any currently playing audio
       if (audioRef.current) {
         audioRef.current.pause();
@@ -67,11 +71,11 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
       audioRef.current = new Audio(pokemon.cries.latest);
       audioRef.current.volume = 0.3; // Set volume to 30%
-      
+
       audioRef.current.onended = () => {
         setIsPlayingCry(false);
       };
-      
+
       audioRef.current.onerror = () => {
         setIsPlayingCry(false);
         console.error("Failed to play Pokémon cry");
@@ -93,7 +97,10 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
   };
 
   const getBulbapediaUrl = (pokemonName: string) => {
-    return `https://bulbapedia.bulbagarden.net/wiki/${pokemonName.replace(/\s+/g, '_')}_(Pokémon)`;
+    return `https://bulbapedia.bulbagarden.net/wiki/${pokemonName.replace(
+      /\s+/g,
+      "_"
+    )}_(Pokémon)`;
   };
 
   const getOfficialArtwork = (pokemon: Pokemon) => {
@@ -104,12 +111,13 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
   };
 
   const primaryColor = colors[0] || pokemon?.colorPalette?.primary || "#6366f1";
-  const secondaryColor = colors[1] || pokemon?.colorPalette?.secondary || "#8b5cf6";
+  const secondaryColor =
+    colors[1] || pokemon?.colorPalette?.secondary || "#8b5cf6";
 
   if (loading || !pokemon) {
     return (
       <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
-        <div 
+        <div
           className="relative overflow-hidden rounded-2xl border p-4 md:p-8 transition-all duration-500 ease-out"
           style={{
             background: `linear-gradient(135deg, ${primaryColor}15 0%, ${secondaryColor}10 100%)`,
@@ -148,9 +156,9 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
-      <div 
+      <div
         className={`relative overflow-hidden rounded-2xl border p-4 md:p-8 transition-all duration-500 ease-out ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
         style={{
           background: `linear-gradient(135deg, ${primaryColor}15 0%, ${secondaryColor}10 100%)`,
@@ -158,17 +166,20 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
       >
         {/* Background silhouette - positioned on the right */}
         {officialArtwork && (
-          <div className="absolute top-0 right-0 w-40 md:w-80 h-full flex items-center justify-center opacity-5 pointer-events-none overflow-hidden">
-            <Image
-              src={officialArtwork}
-              alt={`${pokemon.name} silhouette`}
-              width={320}
-              height={320}
-              className="w-40 h-40 md:w-80 md:h-80 object-contain"
-              style={{ 
-                filter: 'brightness(0)',
+          <div className="absolute top-0 right-0 w-40 md:w-80 h-full flex items-center justify-center opacity-10 pointer-events-none overflow-hidden">
+            <div
+              className="w-40 h-40 md:w-80 md:h-80"
+              style={{
+                backgroundColor: primaryColor,
+                maskImage: `url(${officialArtwork})`,
+                maskSize: "contain",
+                maskRepeat: "no-repeat",
+                maskPosition: "center",
+                WebkitMaskImage: `url(${officialArtwork})`,
+                WebkitMaskSize: "contain",
+                WebkitMaskRepeat: "no-repeat",
+                WebkitMaskPosition: "center",
               }}
-              unoptimized
             />
           </div>
         )}
@@ -179,15 +190,19 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
           <div className="flex flex-col sm:flex-row items-start justify-between mb-4 md:mb-6 gap-3">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                <h2 className="text-2xl md:text-3xl font-bold font-heading">{pokemon.name}</h2>
-                <span className="text-base md:text-lg text-muted-foreground">#{pokemon.id.toString().padStart(3, '0')}</span>
+                <h2 className="text-2xl md:text-3xl font-bold font-heading">
+                  {pokemon.name}
+                </h2>
+                <span className="text-base md:text-lg text-muted-foreground">
+                  #{pokemon.id.toString().padStart(3, "0")}
+                </span>
               </div>
               <p className="text-muted-foreground mb-4">
-                {pokemon.species.toLowerCase().startsWith("the") 
-                  ? pokemon.species 
+                {pokemon.species.toLowerCase().startsWith("the")
+                  ? pokemon.species
                   : `The ${pokemon.species}`}
               </p>
-              
+
               {/* Types */}
               <div className="flex gap-2 mb-4">
                 {pokemon.type.map((type, index) => (
@@ -195,8 +210,14 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                     key={type}
                     className="font-medium"
                     style={{
-                      backgroundColor: colors[index % colors.length] || primaryColor,
-                      color: getTextColor(colors[index % colors.length] || primaryColor) === "text-white" ? "#ffffff" : "#000000",
+                      backgroundColor:
+                        colors[index % colors.length] || primaryColor,
+                      color:
+                        getTextColor(
+                          colors[index % colors.length] || primaryColor
+                        ) === "text-white"
+                          ? "#ffffff"
+                          : "#000000",
                     }}
                   >
                     {type}
@@ -215,7 +236,9 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                   className="cursor-pointer w-full sm:w-auto"
                   style={{
                     borderColor: primaryColor + "40",
-                    backgroundColor: isPlayingCry ? primaryColor + "20" : "transparent",
+                    backgroundColor: isPlayingCry
+                      ? primaryColor + "20"
+                      : "transparent",
                   }}
                 >
                   {isPlayingCry ? (
@@ -225,7 +248,7 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                   )}
                 </Button>
               )}
-              
+
               <Button
                 asChild
                 variant="outline"
@@ -249,12 +272,18 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
             {/* Left column - Flavor text and basic info */}
-            <div className={`space-y-4 md:space-y-6 transition-all duration-700 ease-out delay-100 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-            }`}>
+            <div
+              className={`space-y-4 md:space-y-6 transition-all duration-700 ease-out delay-100 ${
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-4"
+              }`}
+            >
               {/* Flavor text */}
               <div>
-                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Pokédex Entry</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">
+                  Pokédex Entry
+                </h3>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {pokemon.description}
                 </p>
@@ -262,14 +291,20 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
               {/* Physical characteristics */}
               <div>
-                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Physical Traits</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">
+                  Physical Traits
+                </h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Height</span>
+                    <span className="text-sm text-muted-foreground">
+                      Height
+                    </span>
                     <span className="font-medium">{pokemon.height} m</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Weight</span>
+                    <span className="text-sm text-muted-foreground">
+                      Weight
+                    </span>
                     <span className="font-medium">{pokemon.weight} kg</span>
                   </div>
                 </div>
@@ -277,60 +312,85 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
 
               {/* Abilities */}
               <div>
-                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Abilities</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">
+                  Abilities
+                </h3>
                 <div className="space-y-2">
-                  {Array.isArray(pokemon.abilities) && pokemon.abilities.map((ability, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <Badge 
-                        className={`font-medium ${typeof ability === 'object' && ability.is_hidden ? 'opacity-70' : ''}`}
-                        style={{
-                          backgroundColor: colors[(index + pokemon.type.length) % colors.length] || secondaryColor,
-                          color: getTextColor(colors[(index + pokemon.type.length) % colors.length] || secondaryColor) === "text-white" ? "#ffffff" : "#000000",
-                        }}
-                      >
-                        {typeof ability === 'string' ? ability : ability.name}
-                        {typeof ability === 'object' && ability.is_hidden && (
-                          <span className="ml-1 text-xs">(Hidden)</span>
-                        )}
-                      </Badge>
-                    </div>
-                  ))}
+                  {Array.isArray(pokemon.abilities) &&
+                    pokemon.abilities.map((ability, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <Badge
+                          className={`font-medium ${
+                            typeof ability === "object" && ability.is_hidden
+                              ? "opacity-70"
+                              : ""
+                          }`}
+                          style={{
+                            backgroundColor:
+                              colors[
+                                (index + pokemon.type.length) % colors.length
+                              ] || secondaryColor,
+                            color:
+                              getTextColor(
+                                colors[
+                                  (index + pokemon.type.length) % colors.length
+                                ] || secondaryColor
+                              ) === "text-white"
+                                ? "#ffffff"
+                                : "#000000",
+                          }}
+                        >
+                          {typeof ability === "string" ? ability : ability.name}
+                          {typeof ability === "object" && ability.is_hidden && (
+                            <span className="ml-1 text-xs">(Hidden)</span>
+                          )}
+                        </Badge>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
 
             {/* Right column - Stats */}
-            <div className={`transition-all duration-700 ease-out delay-200 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-            }`}>
-              <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">Base Stats</h3>
+            <div
+              className={`transition-all duration-700 ease-out delay-200 ${
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-4"
+              }`}
+            >
+              <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">
+                Base Stats
+              </h3>
               <div className="space-y-3">
                 {Object.entries(pokemon.baseStats).map(([statName, value]) => {
                   const displayName = statName
-                    .replace(/([A-Z])/g, ' $1')
-                    .replace(/^./, str => str.toUpperCase())
-                    .replace('Special Attack', 'Sp. Atk')
-                    .replace('Special Defense', 'Sp. Def');
-                  
+                    .replace(/([A-Z])/g, " $1")
+                    .replace(/^./, (str) => str.toUpperCase())
+                    .replace("Special Attack", "Sp. Atk")
+                    .replace("Special Defense", "Sp. Def");
+
                   const maxStat = POKEMON_CONSTANTS.MAX_BASE_STAT;
                   const percentage = (value / maxStat) * 100;
-                  
+
                   return (
                     <div key={statName} className="space-y-1">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">{displayName}</span>
+                        <span className="text-sm font-medium">
+                          {displayName}
+                        </span>
                         <span className="text-sm font-bold">{value}</span>
                       </div>
                       <div className="relative">
-                        <Progress 
-                          value={percentage} 
+                        <Progress
+                          value={percentage}
                           className="h-2"
                           style={{
                             backgroundColor: primaryColor + "20",
                           }}
                         />
                         {/* Custom progress indicator overlay */}
-                        <div 
+                        <div
                           className="absolute top-0 left-0 h-full rounded-full transition-all"
                           style={{
                             backgroundColor: primaryColor,
@@ -341,13 +401,16 @@ export function PokemonCard({ pokemonId, isShiny = false, colors = [] }: Pokemon
                     </div>
                   );
                 })}
-                
+
                 {/* Total stats */}
                 <div className="pt-2 border-t">
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">Total</span>
                     <span className="font-bold">
-                      {Object.values(pokemon.baseStats).reduce((sum, stat) => sum + stat, 0)}
+                      {Object.values(pokemon.baseStats).reduce(
+                        (sum, stat) => sum + stat,
+                        0
+                      )}
                     </span>
                   </div>
                 </div>

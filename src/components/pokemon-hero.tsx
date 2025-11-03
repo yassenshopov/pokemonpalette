@@ -9,7 +9,7 @@ import { LoaderOverlay } from "@/components/loader-overlay";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
-import { Save, Heart } from "lucide-react";
+import { Save, Heart, Bookmark } from "lucide-react";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 
 interface PokemonHeroProps {
@@ -321,38 +321,62 @@ export function PokemonHero({
 
           {/* Save/Unsave Palette Button */}
           {pokemon && colors && colors.length > 0 && (
-            <Button
-              onClick={
-                existingPaletteId ? handleUnsavePalette : handleSavePalette
-              }
-              disabled={savingPalette || checkingExisting || !isLoaded}
-              className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
-              style={{
-                backgroundColor: existingPaletteId ? "#ef4444" : primaryColor,
-                color: "white",
-              }}
-            >
-              {savingPalette ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  {existingPaletteId ? "Removing..." : "Saving..."}
-                </>
-              ) : checkingExisting ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Checking...
-                </>
+            <>
+              {existingPaletteId ? (
+                <SavedPalettesDialog
+                  onPaletteSelect={onPaletteLoad}
+                  trigger={
+                    <Button
+                      disabled={checkingExisting || !isLoaded}
+                      className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
+                      style={{
+                        backgroundColor: primaryColor,
+                        color: "white",
+                      }}
+                    >
+                      {checkingExisting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          Checking...
+                        </>
+                      ) : (
+                        <>
+                          <Bookmark className="w-4 h-4 fill-current" />
+                          Saved in collection!
+                        </>
+                      )}
+                    </Button>
+                  }
+                />
               ) : (
-                <>
-                  <Heart
-                    className={`w-4 h-4 ${
-                      existingPaletteId ? "fill-current" : ""
-                    }`}
-                  />
-                  {existingPaletteId ? "Remove from Saved" : "Save Palette"}
-                </>
+                <Button
+                  onClick={handleSavePalette}
+                  disabled={savingPalette || checkingExisting || !isLoaded}
+                  className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
+                  style={{
+                    backgroundColor: primaryColor,
+                    color: "white",
+                  }}
+                >
+                  {savingPalette ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Saving...
+                    </>
+                  ) : checkingExisting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Checking...
+                    </>
+                  ) : (
+                    <>
+                      <Heart className="w-4 h-4" />
+                      Save Palette
+                    </>
+                  )}
+                </Button>
               )}
-            </Button>
+            </>
           )}
         </div>
 
