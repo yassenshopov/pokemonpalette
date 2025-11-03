@@ -20,6 +20,7 @@ export interface DailyGameAttemptData {
   attempts: number; // Number of attempts made (1-4)
   won: boolean;
   pokemonGuessed?: number; // The Pokemon ID they guessed (if won)
+  hintsUsed?: number; // Number of hints used (0-3)
 }
 
 // GET - Retrieve user's game attempts (with optional stats)
@@ -123,6 +124,7 @@ export async function POST(req: NextRequest) {
       attempts,
       won,
       pokemonGuessed,
+      hintsUsed = 0,
     } = body;
 
     // Validate required fields
@@ -160,6 +162,7 @@ export async function POST(req: NextRequest) {
           attempts: attempts,
           won: won,
           pokemon_guessed: pokemonGuessed || null,
+          hints_used: hintsUsed || 0,
           updated_at: new Date().toISOString(),
         })
         .eq("id", existingAttempt.id)
@@ -191,6 +194,7 @@ export async function POST(req: NextRequest) {
           attempts: attempts,
           won: won,
           pokemon_guessed: pokemonGuessed || null,
+          hints_used: hintsUsed || 0,
         })
         .select()
         .single();

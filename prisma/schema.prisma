@@ -120,6 +120,7 @@ model DailyGameAttempt {
   attempts        Int      // Number of attempts made (1-4)
   won             Boolean  @default(false) // Did they guess correctly?
   pokemonGuessed  Int?     @map("pokemon_guessed") // The Pokemon ID they guessed (if won)
+  hintsUsed       Int      @default(0) @map("hints_used") // Number of hints used (0-3)
   createdAt       DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
   updatedAt       DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
 

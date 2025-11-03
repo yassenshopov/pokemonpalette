@@ -11,12 +11,14 @@ interface PokemonSearchProps {
   pokemonList: PokemonMetadata[];
   selectedPokemon: number | null;
   onPokemonSelect: (pokemonId: number) => void;
+  isShiny?: boolean;
 }
 
 export function PokemonSearch({
   pokemonList,
   selectedPokemon,
   onPokemonSelect,
+  isShiny = false,
 }: PokemonSearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<PokemonMetadata[]>([]);
@@ -30,6 +32,11 @@ export function PokemonSearch({
     Record<number, string | null>
   >({});
 
+  // Clear sprite cache when isShiny changes
+  useEffect(() => {
+    setPokemonSprites({});
+  }, [isShiny]);
+
   useEffect(() => {
     const loadSprite = async (id: number) => {
       if (!pokemonSprites[id]) {
@@ -40,9 +47,17 @@ export function PokemonSearch({
             typeof pokemon.artwork === "object" &&
             "front" in pokemon.artwork
           ) {
+            // Use shiny sprite if isShiny is true and shiny artwork is available
+            let spriteUrl: string | null = null;
+            if (isShiny && "shiny" in pokemon.artwork && pokemon.artwork.shiny) {
+              spriteUrl = pokemon.artwork.shiny;
+            } else {
+              spriteUrl = pokemon.artwork.front || null;
+            }
+            
             setPokemonSprites((prev) => ({
               ...prev,
-              [id]: pokemon.artwork.front,
+              [id]: spriteUrl,
             }));
           }
         } catch (error) {
@@ -55,7 +70,7 @@ export function PokemonSearch({
     suggestions.forEach((pokemon) => {
       loadSprite(pokemon.id);
     });
-  }, [suggestions, pokemonSprites]);
+  }, [suggestions, pokemonSprites, isShiny]);
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
