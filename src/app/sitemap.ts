@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllPokemonMetadata } from "@/lib/pokemon";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://pokemonpalette.vercel.app";
+  const baseUrl = "https://www.pokemonpalette.com";
   const pokemon = getAllPokemonMetadata();
 
   // Home page

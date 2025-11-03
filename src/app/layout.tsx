@@ -26,7 +26,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pokemonpalette.vercel.app"),
+  metadataBase: new URL("https://www.pokemonpalette.com"),
   title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites | Color Generator Tool",
   description:
     "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors, create custom palettes, and discover the perfect color schemes for your design projects. Browse all 1000+ Pokémon with shiny variants.",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites",
     description:
       "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors and create custom palettes for your design projects.",
-    url: "https://pokemonpalette.vercel.app",
+    url: "https://www.pokemonpalette.com",
     siteName: "PokémonPalette",
     locale: "en_US",
     type: "website",
