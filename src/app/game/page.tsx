@@ -1399,11 +1399,10 @@ export default function GamePage() {
                       {/* Progress bar background */}
                       {hintCooldown > 0 && (
                         <div
-                          className="absolute -left-px -top-px -bottom-px bg-primary opacity-30 transition-all duration-1000 ease-linear rounded-l-md"
+                          className="absolute inset-y-0 left-0 bg-primary opacity-30 transition-all duration-1000 ease-linear"
                           style={{
-                            width: `calc(${
-                              ((5 - hintCooldown) / 5) * 100
-                            }% + 1px)`,
+                            width: `${((5 - hintCooldown) / 5) * 100}%`,
+                            borderRadius: "inherit",
                           }}
                         />
                       )}

@@ -45,14 +45,12 @@ export function GameResultDialog({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className={titleClassName}>{title}</DialogTitle>
-          <DialogDescription>
-            {targetPokemon && (
-              <p className="text-base mt-2">
-                The Pokemon was <strong>{targetPokemon.name}</strong>
-                {isShiny === true ? " (Shiny)" : ""}!
-              </p>
-            )}
-          </DialogDescription>
+          {targetPokemon && (
+            <DialogDescription className="text-base mt-2">
+              The Pokemon was <strong>{targetPokemon.name}</strong>
+              {isShiny === true ? " (Shiny)" : ""}!
+            </DialogDescription>
+          )}
         </DialogHeader>
         <DialogFooter className="flex-col sm:flex-row gap-2">
           {mode === "daily" && !user && (

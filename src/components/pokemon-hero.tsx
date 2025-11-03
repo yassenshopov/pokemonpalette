@@ -115,7 +115,11 @@ export function PokemonHero({
       const timer = setTimeout(() => {
         extractColorsFromImage(currentImageSrc, 2)
           .then((colors) => {
-            setExtractedColors(colors);
+            // Convert ColorWithFrequency[] to string[] if needed
+            const colorStrings = colors.map((c) =>
+              typeof c === "string" ? c : c.hex
+            );
+            setExtractedColors(colorStrings);
           })
           .catch((error) => {
             console.error("Failed to extract colors:", error);
