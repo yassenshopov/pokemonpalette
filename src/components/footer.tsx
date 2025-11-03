@@ -27,71 +27,37 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links & Submit Design */}
-          <div className="space-y-4 md:space-y-6">
-            <div>
-              <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
-                Quick Links
-              </h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/palette-generator"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Palette Generator
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/color-game"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Color Game
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/community"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Explore Community
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
-                Submit Design
-              </h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/design-challenges"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Design Challenges
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/design-blog"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Design Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/resources"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Resources
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-2 md:mb-3">
+              Quick Links
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Palette Generator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/game"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Color Game
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/community"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Explore Community
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Help & Support */}
@@ -102,15 +68,9 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/faq"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/report-issue"
+                  href="https://github.com/yassenshopov/pokemonpalette/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Report an Issue
@@ -118,10 +78,12 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/support-project"
+                  href="https://buymeacoffee.com/yassenshopov"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Support Project
+                  Buy Me a Coffee
                 </Link>
               </li>
             </ul>
@@ -134,13 +96,17 @@ export function Footer() {
             </h4>
             <div className="flex space-x-3 mb-4">
               <Link
-                href="https://twitter.com"
+                href="https://twitter.com/yassenshopov"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
-                href="https://github.com"
+                href="https://github.com/yassenshopov"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github className="h-5 w-5" />
@@ -149,7 +115,9 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/source-code"
+                  href="https://github.com/yassenshopov/pokemonpalette"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Source Code

@@ -42,6 +42,7 @@ model User {
 
   // Relations
   savedPalettes              SavedPalette[]
+  dailyGameAttempts          DailyGameAttempt[]
 
   @@map("users")
 }
@@ -107,4 +108,28 @@ model SavedPalette {
   @@index([createdAt], map: "idx_saved_palettes_created_at")
   @@index([pokemonName], map: "idx_saved_palettes_pokemon_name")
   @@map("saved_palettes")
+}
+
+model DailyGameAttempt {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId          String   @map("user_id")
+  date            DateTime @db.Date // The game date (not when they played)
+  targetPokemonId Int      @map("target_pokemon_id")
+  isShiny         Boolean  @default(false) @map("is_shiny")
+  guesses         Json     @db.JsonB // Array of Pokemon IDs guessed
+  attempts        Int      // Number of attempts made (1-4)
+  won             Boolean  @default(false) // Did they guess correctly?
+  pokemonGuessed  Int?     @map("pokemon_guessed") // The Pokemon ID they guessed (if won)
+  createdAt       DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date]) // One attempt per user per day
+  @@index([userId], map: "idx_daily_game_attempts_user_id")
+  @@index([date], map: "idx_daily_game_attempts_date")
+  @@index([won], map: "idx_daily_game_attempts_won")
+  @@index([createdAt], map: "idx_daily_game_attempts_created_at")
+  @@map("daily_game_attempts")
 }

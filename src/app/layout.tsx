@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -134,6 +135,8 @@ export default function RootLayout({
     children
   );
 
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -148,6 +151,22 @@ export default function RootLayout({
           {content}
           <Analytics />
         </ThemeProvider>
+        {ga4Id && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${ga4Id}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

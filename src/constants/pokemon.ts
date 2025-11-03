@@ -15,6 +15,9 @@ export const DEFAULT_POKEMON_ID = 60; // Poliwag
 // 151 = Mew
 // etc.
 
+// First daily game date - used for calculating game numbers
+export const FIRST_DAILY_GAME_DATE = new Date("2025-11-03");
+
 // Other Pokemon constants can be added here as needed
 export const POKEMON_CONSTANTS = {
   DEFAULT_ID: DEFAULT_POKEMON_ID,
