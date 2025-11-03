@@ -8,16 +8,23 @@ export interface ExtractedColor {
   frequency: number;
 }
 
+export interface ColorWithFrequency {
+  hex: string;
+  frequency: number;
+  percentage: number;
+}
+
 /**
  * Extract the top N dominant colors from an image
  * @param imageUrl - URL of the image to analyze
  * @param count - Number of colors to extract (default: 3)
- * @returns Promise with array of color hex codes
+ * @returns Promise with array of color hex codes (for backward compatibility) or ColorWithFrequency[]
  */
 export async function extractColorsFromImage(
   imageUrl: string,
-  count: number = 3
-): Promise<string[]> {
+  count: number = 3,
+  includeFrequencies: boolean = false
+): Promise<string[] | ColorWithFrequency[]> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -45,6 +52,7 @@ export async function extractColorsFromImage(
 
         // Map to store color frequencies
         const colorMap = new Map<string, number>();
+        let totalPixels = 0;
 
         // Sample every 4th pixel for performance
         for (let i = 0; i < pixels.length; i += 16) {
@@ -62,15 +70,25 @@ export async function extractColorsFromImage(
             .join("")}`;
 
           colorMap.set(hex, (colorMap.get(hex) || 0) + 1);
+          totalPixels++;
         }
 
         // Sort by frequency and get top colors
         const sortedColors = Array.from(colorMap.entries())
           .sort((a, b) => b[1] - a[1])
-          .slice(0, count)
-          .map(([hex]) => hex);
+          .slice(0, count);
 
-        resolve(sortedColors);
+        if (includeFrequencies) {
+          const colorsWithFreq: ColorWithFrequency[] = sortedColors.map(([hex, frequency]) => ({
+            hex,
+            frequency,
+            percentage: (frequency / totalPixels) * 100,
+          }));
+          resolve(colorsWithFreq);
+        } else {
+          const hexColors = sortedColors.map(([hex]) => hex);
+          resolve(hexColors);
+        }
       } catch (error) {
         reject(error);
       }

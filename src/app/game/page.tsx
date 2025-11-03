@@ -7,10 +7,11 @@ import {
   getPokemonById,
   getPokemonMetadataById,
 } from "@/lib/pokemon";
-import { extractColorsFromImage } from "@/lib/color-extractor";
+import { extractColorsFromImage, type ColorWithFrequency } from "@/lib/color-extractor";
 import { Pokemon } from "@/types/pokemon";
 import { PokemonSearch } from "@/components/pokemon-search";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LoaderOverlay } from "@/components/loader-overlay";
 import { POKEMON_CONSTANTS, FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
@@ -18,7 +19,7 @@ import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Trophy, Flame, TrendingUp, LogIn } from "lucide-react";
+import { Trophy, Flame, TrendingUp, LogIn, RefreshCw, Lightbulb, Flag } from "lucide-react";
 import { SignInButton } from "@clerk/nextjs";
 import Image from "next/image";
 
@@ -60,9 +61,11 @@ function getDailyShinyStatus(): boolean {
 
 // Calculate color similarity between two palettes
 function calculateSimilarity(
-  colors1: string[],
+  colors1: string[] | ColorWithFrequency[],
   colors2: string[]
 ): number {
+  // Convert ColorWithFrequency[] to string[] if needed
+  const color1Strings = colors1.map(c => typeof c === 'string' ? c : c.hex);
   if (colors1.length === 0 || colors2.length === 0) return 0;
 
   // Convert hex to RGB
@@ -123,7 +126,7 @@ export default function GamePage() {
   const [isShiny, setIsShiny] = useState<boolean | null>(null);
   const [targetPokemonId, setTargetPokemonId] = useState<number | null>(null);
   const [targetPokemon, setTargetPokemon] = useState<Pokemon | null>(null);
-  const [targetColors, setTargetColors] = useState<string[]>([]);
+  const [targetColors, setTargetColors] = useState<ColorWithFrequency[]>([]);
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const [attempts, setAttempts] = useState(0);
   const [status, setStatus] = useState<GameStatus>("playing");
@@ -141,6 +144,8 @@ export default function GamePage() {
   const [currentUserPosition, setCurrentUserPosition] = useState<number | null>(null);
   const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
   const [pendingAttempts, setPendingAttempts] = useState<any[]>([]);
+  const [checkingAuth, setCheckingAuth] = useState(true);
+  const [revealedHints, setRevealedHints] = useState<number[]>([]);
 
   const MAX_ATTEMPTS = 4;
   
@@ -151,10 +156,25 @@ export default function GamePage() {
     return Math.random() < 0.5;
   };
 
+  // Set checkingAuth based on mode
+  useEffect(() => {
+    if (mode !== "daily") {
+      setCheckingAuth(false);
+    } else {
+      // For daily mode, wait for auth check
+      setCheckingAuth(true);
+    }
+  }, [mode]);
+
   // Check if user has already played today's daily game
   useEffect(() => {
     const checkTodayAttempt = async () => {
       if (mode !== "daily") {
+        return;
+      }
+
+      // Wait for auth to be loaded before checking
+      if (!userLoaded) {
         return;
       }
 
@@ -183,8 +203,9 @@ export default function GamePage() {
                   try {
                     const colors = await extractColorsFromImage(
                       spriteUrl,
-                      POKEMON_CONSTANTS.COLORS_TO_EXTRACT
-                    );
+                      POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
+                      true
+                    ) as ColorWithFrequency[];
                     const topColors = colors.slice(0, POKEMON_CONSTANTS.PALETTE_COLORS_COUNT);
                     setTargetColors(topColors);
                     
@@ -216,7 +237,7 @@ export default function GamePage() {
                         pokemonId,
                         pokemonName: guessMetadata.name,
                         colors: guessColors,
-                        similarity: calculateSimilarity(topColors, guessColors),
+                        similarity: calculateSimilarity(topColors.map(c => c.hex), guessColors),
                         spriteUrl: guessSpriteUrl,
                       };
                     });
@@ -235,6 +256,7 @@ export default function GamePage() {
         } catch (error) {
           console.error("Error checking pending attempts:", error);
         }
+        setCheckingAuth(false);
         return;
       }
 
@@ -259,8 +281,9 @@ export default function GamePage() {
                 try {
                   const colors = await extractColorsFromImage(
                     spriteUrl,
-                    POKEMON_CONSTANTS.COLORS_TO_EXTRACT
-                  );
+                    POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
+                    true
+                  ) as ColorWithFrequency[];
                   const topColors = colors.slice(
                     0,
                     POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -273,7 +296,13 @@ export default function GamePage() {
                       0,
                       POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
                     ) || [];
-                  setTargetColors(fallbackColors);
+                  // Convert fallback colors to ColorWithFrequency format
+                  const fallbackWithFreq: ColorWithFrequency[] = fallbackColors.map((hex, idx) => ({
+                    hex,
+                    frequency: 100 - idx * 10, // Dummy frequencies for fallback
+                    percentage: (100 - idx * 10) / fallbackColors.length * 100,
+                  }));
+                  setTargetColors(fallbackWithFreq);
                 }
               }
 
@@ -329,7 +358,7 @@ export default function GamePage() {
                 if (prevColors.length > 0) {
                   const updatedGuesses = loadedGuesses.map((guess) => ({
                     ...guess,
-                    similarity: calculateSimilarity(prevColors, guess.colors),
+                    similarity: calculateSimilarity(prevColors.map(c => c.hex), guess.colors),
                   }));
                   setGuesses(updatedGuesses);
                 } else {
@@ -345,17 +374,26 @@ export default function GamePage() {
         }
       } catch (error) {
         console.error("Error checking today's attempt:", error);
+      } finally {
+        setCheckingAuth(false);
       }
     };
 
     checkTodayAttempt();
-  }, [mode, user?.id]);
+    // Reset hints when mode or Pokemon changes
+    setRevealedHints([]);
+  }, [mode, user?.id, userLoaded]);
 
   // Initialize game
   useEffect(() => {
     const initializeGame = async () => {
       // Skip initialization if already loaded from today's attempt (daily mode only)
       if (mode === "daily" && status !== "playing" && guesses.length > 0) {
+        return;
+      }
+
+      // Wait for auth check to complete before initializing
+      if (mode === "daily" && checkingAuth) {
         return;
       }
 
@@ -388,8 +426,9 @@ export default function GamePage() {
           try {
             const colors = await extractColorsFromImage(
               spriteUrl,
-              POKEMON_CONSTANTS.COLORS_TO_EXTRACT
-            );
+              POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
+              true
+            ) as ColorWithFrequency[];
             const topColors = colors.slice(
               0,
               POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -402,7 +441,13 @@ export default function GamePage() {
                 0,
                 POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
               ) || [];
-            setTargetColors(fallbackColors);
+            // Convert fallback colors to ColorWithFrequency format
+            const fallbackWithFreq: ColorWithFrequency[] = fallbackColors.map((hex, idx) => ({
+              hex,
+              frequency: 100 - idx * 10, // Dummy frequencies for fallback
+              percentage: (100 - idx * 10) / fallbackColors.length * 100,
+            }));
+            setTargetColors(fallbackWithFreq);
           }
         }
       }
@@ -427,12 +472,13 @@ export default function GamePage() {
         setGuesses([]);
         setAttempts(0);
         setStatus("playing");
+        setRevealedHints([]);
       }
       setLoading(false);
     };
 
     initializeGame();
-  }, [mode, pokemonList.length]);
+  }, [mode, pokemonList.length, checkingAuth]);
 
   // Fetch user stats and leaderboard for daily mode
   useEffect(() => {
@@ -525,7 +571,7 @@ export default function GamePage() {
       }
     }
 
-    const similarity = calculateSimilarity(targetColors, guessColors);
+    const similarity = calculateSimilarity(targetColors.map(c => c.hex), guessColors);
     const newGuess: Guess = {
       pokemonId,
       pokemonName: guessedMetadata.name,
@@ -719,6 +765,100 @@ export default function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]); // Only sync when user ID changes (signs in)
 
+  // Get generation from Pokemon ID (since JSON data has incorrect generation)
+  const getGenerationFromId = (id: number): number => {
+    if (id <= 151) return 1;
+    if (id <= 251) return 2;
+    if (id <= 386) return 3;
+    if (id <= 493) return 4;
+    if (id <= 649) return 5;
+    if (id <= 721) return 6;
+    if (id <= 809) return 7;
+    if (id <= 905) return 8;
+    if (id <= 1025) return 9;
+    return 1; // Default fallback
+  };
+
+  // Generate hints from Pokemon data
+  const generateHints = (pokemon: Pokemon): string[] => {
+    const hints: string[] = [];
+    
+    // Hint 1: Type
+    if (pokemon.type && pokemon.type.length > 0) {
+      const typeHint = pokemon.type.length === 1
+        ? `This Pokemon is a ${pokemon.type[0]} type.`
+        : `This Pokemon is a ${pokemon.type.join("/")} type.`;
+      hints.push(typeHint);
+    }
+    
+    // Hint 2: Generation or physical characteristic
+    // Use ID-based generation since JSON data has incorrect generation values
+    const generation = getGenerationFromId(pokemon.id);
+    if (generation) {
+      const genRoman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][generation - 1] || generation.toString();
+      hints.push(`This Pokemon was introduced in Generation ${genRoman}.`);
+    } else if (pokemon.height && pokemon.weight) {
+      const sizeCategory = pokemon.height < 0.5 ? "very small" : pokemon.height < 1.0 ? "small" : pokemon.height < 2.0 ? "medium-sized" : "large";
+      const weightCategory = pokemon.weight < 10 ? "light" : pokemon.weight < 50 ? "moderately heavy" : "heavy";
+      hints.push(`This Pokemon is ${sizeCategory} and ${weightCategory}, weighing ${pokemon.weight.toFixed(1)}kg and standing ${pokemon.height.toFixed(1)}m tall.`);
+    }
+    
+    // Hint 3: Ability or description
+    if (pokemon.abilities && pokemon.abilities.length > 0) {
+      const abilities = typeof pokemon.abilities[0] === "string" 
+        ? pokemon.abilities 
+        : (pokemon.abilities as any[]).filter((a: any) => !a.is_hidden).map((a: any) => a.name);
+      if (abilities.length > 0) {
+        const abilityHint = abilities.length === 1
+          ? `This Pokemon has the ability ${abilities[0]}.`
+          : `This Pokemon has abilities like ${abilities[0]}${abilities.length > 1 ? ` or ${abilities[1]}` : ""}.`;
+        hints.push(abilityHint);
+      } else {
+        // Fallback to description
+        if (pokemon.description) {
+          hints.push(pokemon.description);
+        }
+      }
+    } else if (pokemon.description) {
+      hints.push(pokemon.description);
+    }
+    
+    // Ensure we have at least 3 hints
+    while (hints.length < 3) {
+      if (pokemon.rarity) {
+        hints.push(`This Pokemon has a ${pokemon.rarity} rarity.`);
+      } else if (pokemon.habitat) {
+        hints.push(`This Pokemon can be found in ${pokemon.habitat} habitats.`);
+      } else {
+        hints.push("This Pokemon is a mystery!");
+      }
+    }
+    
+    return hints.slice(0, 3);
+  };
+
+  const showNextHint = () => {
+    if (!targetPokemon || revealedHints.length >= 3) return;
+    const nextHintIndex = revealedHints.length;
+    setRevealedHints([...revealedHints, nextHintIndex]);
+  };
+
+  const handleGiveUp = () => {
+    if (status !== "playing" || !targetPokemon) return;
+    
+    setStatus("lost");
+    
+    // Save attempt for daily mode only
+    if (mode === "daily") {
+      if (user) {
+        saveGameAttempt(false, undefined, guesses, attempts);
+      } else {
+        // Store in localStorage for signed-out users
+        storePendingAttempt(false, undefined, guesses, attempts);
+      }
+    }
+  };
+
   const resetGame = async () => {
     // Don't allow reset for daily mode if already completed
     if (mode === "daily" && status !== "playing") {
@@ -728,6 +868,7 @@ export default function GamePage() {
     setGuesses([]);
     setAttempts(0);
     setStatus("playing");
+    setRevealedHints([]);
     setLoading(true);
 
     // Randomly determine shiny status for this game
@@ -756,8 +897,9 @@ export default function GamePage() {
         try {
           const colors = await extractColorsFromImage(
             spriteUrl,
-            POKEMON_CONSTANTS.COLORS_TO_EXTRACT
-          );
+            POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
+            true
+          ) as ColorWithFrequency[];
           const topColors = colors.slice(
             0,
             POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -770,7 +912,13 @@ export default function GamePage() {
               0,
               POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
             ) || [];
-          setTargetColors(fallbackColors);
+          // Convert fallback colors to ColorWithFrequency format
+          const fallbackWithFreq: ColorWithFrequency[] = fallbackColors.map((hex, idx) => ({
+            hex,
+            frequency: 100 - idx * 10, // Dummy frequencies for fallback
+            percentage: (100 - idx * 10) / fallbackColors.length * 100,
+          }));
+          setTargetColors(fallbackWithFreq);
         }
       }
     }
@@ -780,10 +928,10 @@ export default function GamePage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      <CoffeeCTA primaryColor={targetColors[0]} />
-      <CollapsibleSidebar primaryColor={targetColors[0]} />
-      <div className="flex-1 flex flex-col h-full overflow-auto">
-        <LoaderOverlay loading={loading} text="Loading game..." />
+      <CoffeeCTA primaryColor={targetColors.length > 0 && targetColors[0]?.hex ? targetColors[0].hex : "#f59e0b"} />
+      <CollapsibleSidebar primaryColor={targetColors.length > 0 && targetColors[0]?.hex ? targetColors[0].hex : "#f59e0b"} />
+      <div className="flex-1 flex flex-col h-full overflow-auto relative">
+        <LoaderOverlay loading={checkingAuth || loading} text={checkingAuth ? "Checking authentication..." : "Loading game..."} />
 
         <div className="w-full max-w-4xl mx-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 md:gap-8 flex-1">
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
@@ -845,6 +993,18 @@ export default function GamePage() {
               </TabsTrigger>
             </TabsList>
           </Tabs>
+          {/* Refresh Button - Unlimited Mode Only */}
+          {mode === "unlimited" && (
+            <Button
+              onClick={resetGame}
+              variant="outline"
+              className="w-full sm:w-auto"
+              disabled={loading}
+            >
+              <RefreshCw className={`w-4 h-4 mr-2 ${loading ? "animate-spin" : ""}`} />
+              Get New Pokemon
+            </Button>
+          )}
         </div>
 
         {/* User Stats - Daily Mode Only */}
@@ -882,7 +1042,7 @@ export default function GamePage() {
 
         {/* Target Palette Display */}
         {targetColors.length > 0 && (
-          <div className="mb-6 p-4 rounded-lg border bg-card shadow-none">
+          <div className="mb-6 w-full max-w-6xl p-4 md:p-6 rounded-lg border bg-card shadow-none">
             <div className="flex items-center gap-2 mb-3">
               <h2 className="text-lg font-semibold">Target Palette</h2>
               {isShiny === true && (
@@ -891,19 +1051,67 @@ export default function GamePage() {
                 </span>
               )}
             </div>
-            <div className="flex gap-2 flex-wrap">
+            <div className="w-full flex gap-1 md:gap-2 h-16 md:h-20 rounded-md overflow-hidden border-2">
               {targetColors.map((color, index) => (
                 <div
                   key={index}
-                  className="h-16 w-16 md:h-20 md:w-20 rounded-md border-2 shadow-none"
-                  style={{ backgroundColor: color }}
-                  title={color}
+                  className="h-full flex items-center justify-center border-r last:border-r-0 border-border/50"
+                  style={{ 
+                    backgroundColor: color.hex,
+                    width: `${color.percentage}%`,
+                    minWidth: '2rem'
+                  }}
+                  title={`${color.hex} - ${color.percentage.toFixed(1)}%`}
                 />
               ))}
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              Attempts remaining: {MAX_ATTEMPTS - attempts}
-            </p>
+            
+            {/* Hints Display - Above the button */}
+            {status === "playing" && targetPokemon && revealedHints.length > 0 && (
+              <div className="mt-4 mb-2">
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                  {generateHints(targetPokemon).map((hint, index) => (
+                    <Badge
+                      key={index}
+                      variant={revealedHints.includes(index) ? "default" : "outline"}
+                      className={
+                        revealedHints.includes(index)
+                          ? ""
+                          : "opacity-50"
+                      }
+                    >
+                      {revealedHints.includes(index)
+                        ? hint
+                        : `Hint ${index + 1} ???`}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="flex items-center justify-between mt-2">
+              <p className="text-sm text-muted-foreground">
+                Attempts remaining: {MAX_ATTEMPTS - attempts}
+              </p>
+              {status === "playing" && targetPokemon && (
+                <Button
+                  onClick={showNextHint}
+                  variant="outline"
+                  size="sm"
+                  disabled={revealedHints.length >= 3}
+                  className="text-xs"
+                >
+                  <Lightbulb className="w-3 h-3 mr-1.5" />
+                  {revealedHints.length === 0 
+                    ? "Show me a hint" 
+                    : revealedHints.length === 1 
+                    ? "Show another hint" 
+                    : revealedHints.length === 2 
+                    ? "Show final hint" 
+                    : "All hints revealed"}
+                </Button>
+              )}
+            </div>
           </div>
         )}
 
@@ -985,6 +1193,16 @@ export default function GamePage() {
                 Analyzing guess...
               </p>
             )}
+            <div className="flex justify-center mt-4">
+              <Button
+                onClick={handleGiveUp}
+                variant="outline"
+                className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-300 dark:border-red-700"
+              >
+                <Flag className="w-4 h-4 mr-2" />
+                Give Up
+              </Button>
+            </div>
           </div>
         )}
 
