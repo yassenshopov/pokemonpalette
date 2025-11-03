@@ -176,7 +176,11 @@ export function PokemonMenu({
       if (spriteUrl) {
         extractColorsFromImage(spriteUrl, POKEMON_CONSTANTS.COLORS_TO_EXTRACT)
           .then((colors) => {
-            const top3Colors = colors.slice(
+            // Convert ColorWithFrequency[] to string[] if needed
+            const colorStrings = colors.map((c) =>
+              typeof c === "string" ? c : c.hex
+            );
+            const top3Colors = colorStrings.slice(
               0,
               POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
             );
