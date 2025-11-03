@@ -179,10 +179,14 @@ export function PokemonHero({
     setSavingPalette(true);
 
     try {
+      // Get form name - handle both string[] and PokemonForm[] types
+      const firstForm = pokemon.forms?.[0];
+      const formName = typeof firstForm === 'string' ? firstForm : firstForm?.name || undefined;
+
       const paletteData = {
         pokemonId: pokemon.id,
         pokemonName: pokemon.name,
-        pokemonForm: pokemon.forms?.[0]?.name || undefined,
+        pokemonForm: formName,
         isShiny,
         colors,
         imageUrl: currentImageSrc || undefined,
