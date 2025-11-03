@@ -23,19 +23,12 @@ import { POKEMON_CONSTANTS, FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Trophy,
-  Flame,
-  TrendingUp,
-  LogIn,
-  RefreshCw,
-  Lightbulb,
-  Flag,
-  Sparkles,
-  Search,
-} from "lucide-react";
+import { RefreshCw, Lightbulb, Flag, Sparkles, Search } from "lucide-react";
 import { GameResultDialog } from "@/components/game-result-dialog";
+import { UserStatsPanel } from "@/components/user-stats-panel";
+import { GameLeaderboard } from "@/components/game-leaderboard";
+import { GameDateHeader } from "@/components/game-date-header";
+import { GuessCard } from "@/components/guess-card";
 import Image from "next/image";
 
 type GameMode = "daily" | "unlimited";
@@ -1252,39 +1245,7 @@ export default function GamePage() {
           </h1>
 
           {/* Game Number and Date - Daily Mode Only */}
-          {mode === "daily" &&
-            (() => {
-              const today = new Date();
-              today.setHours(0, 0, 0, 0);
-              const startDate = new Date(FIRST_DAILY_GAME_DATE);
-              startDate.setHours(0, 0, 0, 0);
-              const daysDiff = Math.floor(
-                (today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
-              );
-              const gameNumber = daysDiff + 1;
-              const dateStr = today.toLocaleDateString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              });
-
-              return (
-                <div className="w-full mb-4 text-center">
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-foreground">
-                        Game #{gameNumber}
-                      </span>
-                    </div>
-                    <div className="hidden sm:block">•</div>
-                    <div className="flex items-center gap-2">
-                      <span>{dateStr}</span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })()}
+          <GameDateHeader mode={mode} />
 
           {/* Mode Selection */}
           <div className="w-full flex flex-col gap-4 mb-6">
@@ -1315,42 +1276,7 @@ export default function GamePage() {
 
           {/* User Stats - Daily Mode Only */}
           {mode === "daily" && userStats && (
-            <div className="mb-4 p-4 rounded-lg border bg-card">
-              <div className="flex items-center gap-4 flex-wrap">
-                <div className="flex items-center gap-2">
-                  <Flame className="w-5 h-5 text-orange-500" />
-                  <div>
-                    <p className="text-xs text-muted-foreground">
-                      Current Streak
-                    </p>
-                    <p className="text-lg font-bold">
-                      {userStats.currentStreak} days
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-blue-500" />
-                  <div>
-                    <p className="text-xs text-muted-foreground">Best Streak</p>
-                    <p className="text-lg font-bold">
-                      {userStats.longestStreak} days
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Trophy className="w-5 h-5 text-yellow-500" />
-                  <div>
-                    <p className="text-xs text-muted-foreground">Win Rate</p>
-                    <p className="text-lg font-bold">
-                      {userStats.totalGames > 0
-                        ? Math.round(userStats.winRate)
-                        : 0}
-                      %
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <UserStatsPanel userStats={userStats} />
           )}
 
           {/* Target Palette Display */}
@@ -1572,50 +1498,14 @@ export default function GamePage() {
                 {guesses.length > 0 ? (
                   <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto">
                     {guesses.map((guess, index) => (
-                      <div
+                      <GuessCard
                         key={index}
-                        ref={(el) => {
+                        guess={guess}
+                        index={index}
+                        onRef={(el) => {
                           guessRefs.current[index] = el;
                         }}
-                        className="flex items-center gap-4 p-3 rounded-lg border bg-card flex-shrink-0"
-                      >
-                        {/* Image - Leftmost */}
-                        {guess.spriteUrl && (
-                          <div className="relative flex-shrink-0">
-                            <Image
-                              src={guess.spriteUrl}
-                              alt={guess.pokemonName}
-                              width={64}
-                              height={64}
-                              className="w-16 h-16 object-contain"
-                              style={{ imageRendering: "pixelated" }}
-                              unoptimized
-                            />
-                          </div>
-                        )}
-
-                        {/* Name and Match % - Center */}
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-sm truncate">
-                            {guess.pokemonName}
-                          </h3>
-                          <span className="text-xs text-muted-foreground">
-                            {Math.round(guess.similarity * 100)}% match
-                          </span>
-                        </div>
-
-                        {/* Colors - Rightmost */}
-                        <div className="flex gap-1.5 items-center flex-shrink-0">
-                          {guess.colors.map((color, colorIndex) => (
-                            <div
-                              key={colorIndex}
-                              className="h-10 w-10 rounded-md border-2"
-                              style={{ backgroundColor: color }}
-                              title={color}
-                            />
-                          ))}
-                        </div>
-                      </div>
+                      />
                     ))}
                   </div>
                 ) : (
@@ -1648,110 +1538,12 @@ export default function GamePage() {
 
           {/* Leaderboard - Daily Mode Only */}
           {mode === "daily" && (
-            <div className="w-full mt-6">
-              <div className="p-4 rounded-lg border bg-card">
-                <div className="flex items-center gap-2 mb-4">
-                  <Trophy className="w-5 h-5 text-yellow-500" />
-                  <h2 className="text-lg font-semibold">Leaderboard</h2>
-                </div>
-
-                {loadingLeaderboard ? (
-                  <div className="text-center py-4 text-muted-foreground">
-                    Loading leaderboard...
-                  </div>
-                ) : leaderboard.length === 0 ? (
-                  <div className="text-center py-4 text-muted-foreground">
-                    No leaderboard data yet. Be the first to play!
-                  </div>
-                ) : (
-                  <div className="space-y-2">
-                    {leaderboard.map((entry, index) => {
-                      const isCurrentUser = user && entry.userId === user.id;
-                      const displayName =
-                        entry.username ||
-                        `${entry.firstName || ""} ${
-                          entry.lastName || ""
-                        }`.trim() ||
-                        "Anonymous";
-
-                      return (
-                        <div
-                          key={entry.userId}
-                          className={`flex items-center gap-3 p-3 rounded-md border transition-colors ${
-                            isCurrentUser
-                              ? "bg-primary/10 border-primary/30"
-                              : "bg-background"
-                          }`}
-                        >
-                          <div className="flex-shrink-0 w-8 text-center">
-                            <span
-                              className={`text-sm font-bold ${
-                                index === 0
-                                  ? "text-yellow-500"
-                                  : index === 1
-                                  ? "text-gray-400"
-                                  : index === 2
-                                  ? "text-orange-600"
-                                  : "text-muted-foreground"
-                              }`}
-                            >
-                              #{index + 1}
-                            </span>
-                          </div>
-                          <Avatar className="h-8 w-8">
-                            <AvatarImage
-                              src={entry.imageUrl || undefined}
-                              alt={displayName}
-                            />
-                            <AvatarFallback>
-                              {displayName.charAt(0).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="flex-1 min-w-0">
-                            <p
-                              className={`text-sm font-medium truncate ${
-                                isCurrentUser
-                                  ? "text-primary"
-                                  : "text-foreground"
-                              }`}
-                            >
-                              {displayName}
-                              {isCurrentUser && " (You)"}
-                            </p>
-                          </div>
-                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                            <div className="text-center">
-                              <div className="font-semibold text-foreground">
-                                {entry.currentStreak}
-                              </div>
-                              <div>Streak</div>
-                            </div>
-                            <div className="text-center">
-                              <div className="font-semibold text-foreground">
-                                {entry.winRate}%
-                              </div>
-                              <div>Win</div>
-                            </div>
-                            <div className="text-center">
-                              <div className="font-semibold text-foreground">
-                                {entry.totalWins}
-                              </div>
-                              <div>Wins</div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {currentUserPosition !== null && currentUserPosition > 10 && (
-                  <div className="mt-4 pt-4 border-t text-center text-sm text-muted-foreground">
-                    Your position: #{currentUserPosition}
-                  </div>
-                )}
-              </div>
-            </div>
+            <GameLeaderboard
+              leaderboard={leaderboard}
+              loading={loadingLeaderboard}
+              currentUserId={user?.id}
+              currentUserPosition={currentUserPosition}
+            />
           )}
         </div>
         <Footer />
