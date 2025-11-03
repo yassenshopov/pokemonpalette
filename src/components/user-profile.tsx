@@ -58,14 +58,14 @@ function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
   }
 
   return (
-    <div className="p-2">
+    <div className={`p-2 ${isCollapsed ? "flex justify-center" : ""}`}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
             className={`${
               isCollapsed
-                ? "w-8 h-8 p-0 justify-center"
+                ? "w-8 h-8 p-0 justify-center cursor-pointer"
                 : "w-full justify-start p-2 h-auto"
             }`}
           >

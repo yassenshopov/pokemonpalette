@@ -7,10 +7,25 @@ import { extractColorsFromImage } from "@/lib/color-extractor";
 import Image from "next/image";
 import { LoaderOverlay } from "@/components/loader-overlay";
 import { Button } from "@/components/ui/button";
-import { useUser } from "@clerk/nextjs";
+import { useUser, SignInButton } from "@clerk/nextjs";
 import { toast } from "sonner";
-import { Save, Heart, Bookmark } from "lucide-react";
+import { Save, Bookmark } from "lucide-react";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
+
+// Helper function to determine if text should be dark or light based on background
+const getTextColor = (hex: string): "#ffffff" | "#000000" => {
+  if (!hex) return "#ffffff";
+  const hexClean = hex.replace("#", "");
+  const r = parseInt(hexClean.substring(0, 2), 16);
+  const g = parseInt(hexClean.substring(2, 4), 16);
+  const b = parseInt(hexClean.substring(4, 6), 16);
+
+  // Calculate luminance
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Return white for dark colors, black for light colors
+  return luminance > 0.5 ? "#000000" : "#ffffff";
+};
 
 interface PokemonHeroProps {
   pokemonId?: number | null;
@@ -331,12 +346,18 @@ export function PokemonHero({
                       className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
                       style={{
                         backgroundColor: primaryColor,
-                        color: "white",
+                        color: getTextColor(primaryColor),
                       }}
                     >
                       {checkingExisting ? (
                         <>
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          <div
+                            className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"
+                            style={{
+                              borderColor: `${getTextColor(primaryColor)}40`,
+                              borderTopColor: getTextColor(primaryColor),
+                            }}
+                          />
                           Checking...
                         </>
                       ) : (
@@ -349,32 +370,77 @@ export function PokemonHero({
                   }
                 />
               ) : (
-                <Button
-                  onClick={handleSavePalette}
-                  disabled={savingPalette || checkingExisting || !isLoaded}
-                  className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
-                  style={{
-                    backgroundColor: primaryColor,
-                    color: "white",
-                  }}
-                >
-                  {savingPalette ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Saving...
-                    </>
-                  ) : checkingExisting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Checking...
-                    </>
+                <>
+                  {!user ? (
+                    <SignInButton mode="modal">
+                      <Button
+                        disabled={checkingExisting || !isLoaded}
+                        className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
+                        style={{
+                          backgroundColor: primaryColor,
+                          color: getTextColor(primaryColor),
+                        }}
+                      >
+                        {checkingExisting ? (
+                          <>
+                            <div
+                              className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"
+                              style={{
+                                borderColor: `${getTextColor(primaryColor)}40`,
+                                borderTopColor: getTextColor(primaryColor),
+                              }}
+                            />
+                            Checking...
+                          </>
+                        ) : (
+                          <>
+                            <Bookmark className="w-4 h-4" />
+                            Save Palette
+                          </>
+                        )}
+                      </Button>
+                    </SignInButton>
                   ) : (
-                    <>
-                      <Heart className="w-4 h-4" />
-                      Save Palette
-                    </>
+                    <Button
+                      onClick={handleSavePalette}
+                      disabled={savingPalette || checkingExisting || !isLoaded}
+                      className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
+                      style={{
+                        backgroundColor: primaryColor,
+                        color: getTextColor(primaryColor),
+                      }}
+                    >
+                      {savingPalette ? (
+                        <>
+                          <div
+                            className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"
+                            style={{
+                              borderColor: `${getTextColor(primaryColor)}40`,
+                              borderTopColor: getTextColor(primaryColor),
+                            }}
+                          />
+                          Saving...
+                        </>
+                      ) : checkingExisting ? (
+                        <>
+                          <div
+                            className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"
+                            style={{
+                              borderColor: `${getTextColor(primaryColor)}40`,
+                              borderTopColor: getTextColor(primaryColor),
+                            }}
+                          />
+                          Checking...
+                        </>
+                      ) : (
+                        <>
+                          <Bookmark className="w-4 h-4" />
+                          Save Palette
+                        </>
+                      )}
+                    </Button>
                   )}
-                </Button>
+                </>
               )}
             </>
           )}

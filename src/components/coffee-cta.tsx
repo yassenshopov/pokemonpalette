@@ -23,7 +23,7 @@ interface CoffeeCTAProps {
 
 export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
   const textColor = getTextColor(primaryColor);
-  
+
   return (
     <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-12 z-50">
       <style
@@ -65,12 +65,14 @@ export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
         >
           {/* Hover shine animation overlay */}
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          
+
           {/* Automatic shine animation overlay */}
           <div className="coffee-cta-auto-shine absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-          
+
           <Coffee className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 transition-transform duration-300 hover:rotate-12 relative z-10" />
-          <span className="relative z-10 text-sm md:text-base">Buy Me a Coffee</span>
+          <span className="relative z-10 text-sm md:text-base">
+            Buy Me a Coffee!
+          </span>
         </Button>
       </a>
     </div>

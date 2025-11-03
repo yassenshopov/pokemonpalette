@@ -33,17 +33,15 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
-import { 
-  X, 
-  Sparkles, 
-  Loader2,
-  Heart,
-  Search,
-  Filter
-} from "lucide-react";
+import { X, Sparkles, Loader2, Bookmark, Search, Filter } from "lucide-react";
 import Image from "next/image";
 import { getPokemonById } from "@/lib/pokemon";
 import { gsap } from "gsap";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "#ffffff" | "#000000" => {
@@ -78,11 +76,13 @@ interface SavedPalettesDialogProps {
     colors: string[];
   }) => void;
   trigger?: React.ReactNode;
+  isCollapsed?: boolean;
 }
 
-export function SavedPalettesDialog({ 
+export function SavedPalettesDialog({
   onPaletteSelect,
-  trigger 
+  trigger,
+  isCollapsed = false,
 }: SavedPalettesDialogProps) {
   const [open, setOpen] = useState(false);
   const [palettes, setPalettes] = useState<SavedPalette[]>([]);
@@ -91,7 +91,9 @@ export function SavedPalettesDialog({
   const [deleteDialogOpen, setDeleteDialogOpen] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterShiny, setFilterShiny] = useState<boolean | null>(null);
-  const [pokemonSprites, setPokemonSprites] = useState<Record<number, { normal: string | null; shiny: string | null }>>({});
+  const [pokemonSprites, setPokemonSprites] = useState<
+    Record<number, { normal: string | null; shiny: string | null }>
+  >({});
   const loadingIdsRef = useRef<Set<number>>(new Set());
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const dialogContentRef = useRef<HTMLDivElement>(null);
@@ -113,7 +115,9 @@ export function SavedPalettesDialog({
       if (response.ok) {
         setPalettes(data.palettes || []);
       } else if (response.status === 503) {
-        toast.error("Authentication service is currently unavailable. Please try again later.");
+        toast.error(
+          "Authentication service is currently unavailable. Please try again later."
+        );
       } else if (response.status === 401) {
         toast.error("Please sign in to view saved palettes");
       } else {
@@ -137,10 +141,12 @@ export function SavedPalettesDialog({
       const result = await response.json();
 
       if (response.ok) {
-        setPalettes(palettes.filter(p => p.id !== paletteId));
+        setPalettes(palettes.filter((p) => p.id !== paletteId));
         toast.success("Palette deleted successfully");
       } else if (response.status === 503) {
-        toast.error("Authentication service is currently unavailable. Please try again later.");
+        toast.error(
+          "Authentication service is currently unavailable. Please try again later."
+        );
       } else if (response.status === 401) {
         toast.error("Please sign in to delete palettes");
       } else {
@@ -172,15 +178,22 @@ export function SavedPalettesDialog({
         if (prev[id] || loadingIdsRef.current.has(id)) {
           return prev;
         }
-        
+
         loadingIdsRef.current.add(id);
-        
+
         // Load sprite asynchronously
         getPokemonById(id)
           .then((pokemon) => {
-            if (pokemon && typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
+            if (
+              pokemon &&
+              typeof pokemon.artwork === "object" &&
+              "front" in pokemon.artwork
+            ) {
               const normal = pokemon.artwork.front || null;
-              const shiny = "shiny" in pokemon.artwork && pokemon.artwork.shiny ? pokemon.artwork.shiny : null;
+              const shiny =
+                "shiny" in pokemon.artwork && pokemon.artwork.shiny
+                  ? pokemon.artwork.shiny
+                  : null;
               setPokemonSprites((prev) => ({
                 ...prev,
                 [id]: { normal, shiny },
@@ -192,7 +205,7 @@ export function SavedPalettesDialog({
             console.error(`Failed to load sprite for Pokemon ${id}:`, error);
             loadingIdsRef.current.delete(id);
           });
-        
+
         return prev;
       });
     };
@@ -210,7 +223,7 @@ export function SavedPalettesDialog({
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
         const nameMatch = palette.pokemon_name.toLowerCase().includes(query);
-        const hexMatch = palette.colors.some((color) => 
+        const hexMatch = palette.colors.some((color) =>
           color.toLowerCase().includes(query)
         );
         if (!nameMatch && !hexMatch) {
@@ -231,7 +244,7 @@ export function SavedPalettesDialog({
   const groupedPalettes = useMemo(() => {
     const now = new Date();
     const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-    
+
     const recent: SavedPalette[] = [];
     const grouped: Record<string, SavedPalette[]> = {};
     const dateMap: Record<string, Date> = {}; // Store Date objects for sorting
@@ -249,7 +262,7 @@ export function SavedPalettesDialog({
           month: "long",
           day: "numeric",
         });
-        
+
         if (!grouped[dateKey]) {
           grouped[dateKey] = [];
           // Store the Date object for sorting (normalize to start of day)
@@ -316,9 +329,35 @@ export function SavedPalettesDialog({
   }
 
   if (!user) {
+    // In collapsed mode, show just an icon with tooltip
+    if (isCollapsed) {
+      return (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              disabled
+              className="p-2 rounded-lg cursor-not-allowed opacity-50"
+            >
+              <Bookmark className="h-4 w-4" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="right">
+            <p>Sign in to view saved palettes</p>
+          </TooltipContent>
+        </Tooltip>
+      );
+    }
+
+    // In expanded mode, show full button with text
     return (
-      <Button variant="outline" disabled className="flex items-center gap-2 cursor-not-allowed">
-        <Heart className="w-4 h-4" />
+      <Button
+        variant="outline"
+        disabled
+        className="flex items-center gap-2 cursor-not-allowed"
+      >
+        <Bookmark className="w-4 h-4" />
         Sign in to view saved palettes
       </Button>
     );
@@ -328,20 +367,27 @@ export function SavedPalettesDialog({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {trigger || (
-          <Button variant="outline" className="flex items-center gap-2 cursor-pointer">
-            <Heart className="w-4 h-4" />
+          <Button
+            variant="outline"
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <Bookmark className="w-4 h-4" />
             Saved Palettes
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="max-w-7xl w-[90vw] max-h-[80vh]" ref={dialogContentRef}>
+      <DialogContent
+        className="!max-w-3xl w-[75vw] max-h-[80vh] sm:!max-w-3xl"
+        ref={dialogContentRef}
+      >
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Heart className="w-5 h-5" />
+            <Bookmark className="w-5 h-5" />
             Your Saved Palettes
           </DialogTitle>
           <DialogDescription>
-            Select a saved palette to load it, or delete palettes you no longer need.
+            Select a saved palette to load it, or delete palettes you no longer
+            need.
           </DialogDescription>
         </DialogHeader>
 
@@ -369,13 +415,17 @@ export function SavedPalettesDialog({
                 <DropdownMenuSeparator />
                 <DropdownMenuCheckboxItem
                   checked={filterShiny === true}
-                  onCheckedChange={(checked) => setFilterShiny(checked ? true : null)}
+                  onCheckedChange={(checked) =>
+                    setFilterShiny(checked ? true : null)
+                  }
                 >
                   Shiny
                 </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   checked={filterShiny === false}
-                  onCheckedChange={(checked) => setFilterShiny(checked ? false : null)}
+                  onCheckedChange={(checked) =>
+                    setFilterShiny(checked ? false : null)
+                  }
                 >
                   Normal
                 </DropdownMenuCheckboxItem>
@@ -406,16 +456,19 @@ export function SavedPalettesDialog({
             </div>
           ) : palettes.length === 0 ? (
             <div className="text-center py-8 text-muted-foreground">
-              <Heart className="w-12 h-12 mx-auto mb-4 opacity-50" />
+              <Bookmark className="w-12 h-12 mx-auto mb-4 opacity-50" />
               <p className="text-lg font-medium mb-2">No saved palettes yet</p>
               <p className="text-sm">
-                Save your first palette by clicking the &quot;Save Palette&quot; button when viewing a Pokémon!
+                Save your first palette by clicking the &quot;Save Palette&quot;
+                button when viewing a Pokémon!
               </p>
             </div>
           ) : filteredPalettes.length === 0 ? (
             <div className="text-center py-8 text-muted-foreground">
               <Filter className="w-12 h-12 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium mb-2">No palettes match your filters</p>
+              <p className="text-lg font-medium mb-2">
+                No palettes match your filters
+              </p>
               <p className="text-sm">
                 Try adjusting your search or filter criteria.
               </p>
@@ -425,153 +478,21 @@ export function SavedPalettesDialog({
               {/* Recent palettes (less than 1 day old) */}
               {groupedPalettes.recent.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-semibold text-muted-foreground mb-3 px-1">Recent</h3>
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-3 px-1">
+                    Recent
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {groupedPalettes.recent.map((palette, index) => {
                       const spriteData = pokemonSprites[palette.pokemon_id];
-                      const spriteUrl = palette.is_shiny 
+                      const spriteUrl = palette.is_shiny
                         ? spriteData?.shiny || spriteData?.normal || null
                         : spriteData?.normal || null;
-                      
+
                       return (
-                      <Card 
-                        key={palette.id} 
-                        ref={(el) => {
-                          cardsRef.current[index] = el;
-                        }}
-                        className="cursor-pointer hover:scale-105 transition-transform overflow-hidden pb-0 relative shadow-none"
-                        onClick={() => handleSelectPalette(palette)}
-                      >
-                  {/* Delete button - top right */}
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setDeleteDialogOpen(palette.id);
-                    }}
-                    disabled={deletingId === palette.id}
-                    className="absolute top-2 right-2 z-10 h-6 w-6 p-0 text-muted-foreground hover:text-destructive hover:bg-destructive/10 cursor-pointer"
-                  >
-                    {deletingId === palette.id ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      <X className="w-4 h-4" />
-                    )}
-                  </Button>
-
-                  <CardContent className="p-4 pb-0">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        {spriteUrl && (
-                          <div className="w-12 h-12 relative">
-                            <Image
-                              src={spriteUrl}
-                              alt={palette.pokemon_name}
-                              width={48}
-                              height={48}
-                              className="w-full h-full object-contain"
-                              style={{ imageRendering: "pixelated" }}
-                              unoptimized
-                            />
-                          </div>
-                        )}
-                        <div>
-                          <h3 className="font-semibold capitalize flex items-center gap-2">
-                            {palette.pokemon_name}
-                            {palette.is_shiny && (
-                              <Sparkles className="w-4 h-4 text-yellow-500" />
-                            )}
-                          </h3>
-                          {palette.pokemon_form && (
-                            <p className="text-sm text-muted-foreground capitalize">
-                              {palette.pokemon_form} form
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                  
-                  {/* Color palette preview - vertical stripes at bottom */}
-                  <div className="flex h-12 w-full">
-                    {palette.colors.map((color, index) => (
-                      <div
-                        key={index}
-                        className="flex-1"
-                        style={{ backgroundColor: color }}
-                        title={color}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Delete confirmation dialog */}
-                  <AlertDialog 
-                    open={deleteDialogOpen === palette.id} 
-                    onOpenChange={(open) => {
-                      if (!open) {
-                        setDeleteDialogOpen(null);
-                      }
-                    }}
-                  >
-                    <AlertDialogContent onClick={(e) => e.stopPropagation()}>
-                      <AlertDialogHeader>
-                        <AlertDialogTitle>Delete Palette?</AlertDialogTitle>
-                        <AlertDialogDescription>
-                          Are you sure you want to delete the {palette.pokemon_name} palette? This action cannot be undone.
-                        </AlertDialogDescription>
-                      </AlertDialogHeader>
-                      <AlertDialogFooter>
-                        <AlertDialogCancel>Cancel</AlertDialogCancel>
-                        <AlertDialogAction
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleDeletePalette(palette.id);
-                            setDeleteDialogOpen(null);
-                          }}
-                          style={{
-                            backgroundColor: palette.colors[0] || "#6366f1",
-                            color: getTextColor(palette.colors[0] || "#6366f1"),
-                          }}
-                          className="hover:opacity-90"
-                        >
-                          Delete
-                        </AlertDialogAction>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialog>
-                </Card>
-                );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* Grouped palettes by date (older than 1 day) */}
-              {groupedPalettes.sortedGroupKeys.map((dateKey, groupIndex) => {
-                const groupPalettes = groupedPalettes.grouped[dateKey];
-                const startIndex = groupedPalettes.recent.length + 
-                  groupedPalettes.sortedGroupKeys.slice(0, groupIndex).reduce((sum, key) => 
-                    sum + groupedPalettes.grouped[key].length, 0);
-
-                return (
-                  <div key={dateKey}>
-                    <h3 className="text-sm font-semibold text-muted-foreground mb-3 px-1">
-                      {dateKey}
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {groupPalettes.map((palette, index) => {
-                        const spriteData = pokemonSprites[palette.pokemon_id];
-                        const spriteUrl = palette.is_shiny 
-                          ? spriteData?.shiny || spriteData?.normal || null
-                          : spriteData?.normal || null;
-                        const cardIndex = startIndex + index;
-                        
-                        return (
-                        <Card 
-                          key={palette.id} 
+                        <Card
+                          key={palette.id}
                           ref={(el) => {
-                            cardsRef.current[cardIndex] = el;
+                            cardsRef.current[index] = el;
                           }}
                           className="cursor-pointer hover:scale-105 transition-transform overflow-hidden pb-0 relative shadow-none"
                           onClick={() => handleSelectPalette(palette)}
@@ -617,16 +538,17 @@ export function SavedPalettesDialog({
                                       <Sparkles className="w-4 h-4 text-yellow-500" />
                                     )}
                                   </h3>
-                                  {palette.pokemon_form && (
-                                    <p className="text-sm text-muted-foreground capitalize">
-                                      {palette.pokemon_form} form
-                                    </p>
-                                  )}
+                                  <p className="text-sm text-muted-foreground">
+                                    #
+                                    {palette.pokemon_id
+                                      .toString()
+                                      .padStart(3, "0")}
+                                  </p>
                                 </div>
                               </div>
                             </div>
                           </CardContent>
-                          
+
                           {/* Color palette preview - vertical stripes at bottom */}
                           <div className="flex h-12 w-full">
                             {palette.colors.map((color, index) => (
@@ -640,19 +562,25 @@ export function SavedPalettesDialog({
                           </div>
 
                           {/* Delete confirmation dialog */}
-                          <AlertDialog 
-                            open={deleteDialogOpen === palette.id} 
+                          <AlertDialog
+                            open={deleteDialogOpen === palette.id}
                             onOpenChange={(open) => {
                               if (!open) {
                                 setDeleteDialogOpen(null);
                               }
                             }}
                           >
-                            <AlertDialogContent onClick={(e) => e.stopPropagation()}>
+                            <AlertDialogContent
+                              onClick={(e) => e.stopPropagation()}
+                            >
                               <AlertDialogHeader>
-                                <AlertDialogTitle>Delete Palette?</AlertDialogTitle>
+                                <AlertDialogTitle>
+                                  Delete Palette?
+                                </AlertDialogTitle>
                                 <AlertDialogDescription>
-                                  Are you sure you want to delete the {palette.pokemon_name} palette? This action cannot be undone.
+                                  Are you sure you want to delete the{" "}
+                                  {palette.pokemon_name} palette? This action
+                                  cannot be undone.
                                 </AlertDialogDescription>
                               </AlertDialogHeader>
                               <AlertDialogFooter>
@@ -664,8 +592,11 @@ export function SavedPalettesDialog({
                                     setDeleteDialogOpen(null);
                                   }}
                                   style={{
-                                    backgroundColor: palette.colors[0] || "#6366f1",
-                                    color: getTextColor(palette.colors[0] || "#6366f1"),
+                                    backgroundColor:
+                                      palette.colors[0] || "#6366f1",
+                                    color: getTextColor(
+                                      palette.colors[0] || "#6366f1"
+                                    ),
                                   }}
                                   className="hover:opacity-90"
                                 >
@@ -675,6 +606,155 @@ export function SavedPalettesDialog({
                             </AlertDialogContent>
                           </AlertDialog>
                         </Card>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Grouped palettes by date (older than 1 day) */}
+              {groupedPalettes.sortedGroupKeys.map((dateKey, groupIndex) => {
+                const groupPalettes = groupedPalettes.grouped[dateKey];
+                const startIndex =
+                  groupedPalettes.recent.length +
+                  groupedPalettes.sortedGroupKeys
+                    .slice(0, groupIndex)
+                    .reduce(
+                      (sum, key) => sum + groupedPalettes.grouped[key].length,
+                      0
+                    );
+
+                return (
+                  <div key={dateKey}>
+                    <h3 className="text-sm font-semibold text-muted-foreground mb-3 px-1">
+                      {dateKey}
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {groupPalettes.map((palette, index) => {
+                        const spriteData = pokemonSprites[palette.pokemon_id];
+                        const spriteUrl = palette.is_shiny
+                          ? spriteData?.shiny || spriteData?.normal || null
+                          : spriteData?.normal || null;
+                        const cardIndex = startIndex + index;
+
+                        return (
+                          <Card
+                            key={palette.id}
+                            ref={(el) => {
+                              cardsRef.current[cardIndex] = el;
+                            }}
+                            className="cursor-pointer hover:scale-105 transition-transform overflow-hidden pb-0 relative shadow-none"
+                            onClick={() => handleSelectPalette(palette)}
+                          >
+                            {/* Delete button - top right */}
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setDeleteDialogOpen(palette.id);
+                              }}
+                              disabled={deletingId === palette.id}
+                              className="absolute top-2 right-2 z-10 h-6 w-6 p-0 text-muted-foreground hover:text-destructive hover:bg-destructive/10 cursor-pointer"
+                            >
+                              {deletingId === palette.id ? (
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                              ) : (
+                                <X className="w-4 h-4" />
+                              )}
+                            </Button>
+
+                            <CardContent className="p-4 pb-0">
+                              <div className="flex items-start justify-between mb-3">
+                                <div className="flex items-center gap-3">
+                                  {spriteUrl && (
+                                    <div className="w-12 h-12 relative">
+                                      <Image
+                                        src={spriteUrl}
+                                        alt={palette.pokemon_name}
+                                        width={48}
+                                        height={48}
+                                        className="w-full h-full object-contain"
+                                        style={{ imageRendering: "pixelated" }}
+                                        unoptimized
+                                      />
+                                    </div>
+                                  )}
+                                  <div>
+                                    <h3 className="font-semibold capitalize flex items-center gap-2">
+                                      {palette.pokemon_name}
+                                      {palette.is_shiny && (
+                                        <Sparkles className="w-4 h-4 text-yellow-500" />
+                                      )}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground">
+                                      #
+                                      {palette.pokemon_id
+                                        .toString()
+                                        .padStart(3, "0")}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </CardContent>
+
+                            {/* Color palette preview - vertical stripes at bottom */}
+                            <div className="flex h-12 w-full">
+                              {palette.colors.map((color, index) => (
+                                <div
+                                  key={index}
+                                  className="flex-1"
+                                  style={{ backgroundColor: color }}
+                                  title={color}
+                                />
+                              ))}
+                            </div>
+
+                            {/* Delete confirmation dialog */}
+                            <AlertDialog
+                              open={deleteDialogOpen === palette.id}
+                              onOpenChange={(open) => {
+                                if (!open) {
+                                  setDeleteDialogOpen(null);
+                                }
+                              }}
+                            >
+                              <AlertDialogContent
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>
+                                    Delete Palette?
+                                  </AlertDialogTitle>
+                                  <AlertDialogDescription>
+                                    Are you sure you want to delete the{" "}
+                                    {palette.pokemon_name} palette? This action
+                                    cannot be undone.
+                                  </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogAction
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleDeletePalette(palette.id);
+                                      setDeleteDialogOpen(null);
+                                    }}
+                                    style={{
+                                      backgroundColor:
+                                        palette.colors[0] || "#6366f1",
+                                      color: getTextColor(
+                                        palette.colors[0] || "#6366f1"
+                                      ),
+                                    }}
+                                    className="hover:opacity-90"
+                                  >
+                                    Delete
+                                  </AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          </Card>
                         );
                       })}
                     </div>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Menu, X, Home, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
@@ -257,6 +257,7 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                   <div className="flex flex-col items-center">
                     <SavedPalettesDialog 
                       onPaletteSelect={onPaletteLoad}
+                      isCollapsed={true}
                       trigger={
                         <Button
                           variant="ghost"
@@ -264,7 +265,7 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                           className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                           title="Saved Palettes"
                         >
-                          <Heart className="h-4 w-4" />
+                          <Bookmark className="h-4 w-4" />
                         </Button>
                       }
                     />
@@ -306,7 +307,7 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                           variant="ghost"
                           className="w-full justify-start px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                         >
-                          <Heart className="h-4 w-4 mr-3" />
+                          <Bookmark className="h-4 w-4 mr-3" />
                           <span>Saved Palettes</span>
                         </Button>
                       }
