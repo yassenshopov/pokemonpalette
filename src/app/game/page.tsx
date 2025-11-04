@@ -234,7 +234,7 @@ export default function GamePage() {
     }
 
     // Filter by generation
-    let filtered = allPokemonList.filter((pokemon) => {
+    const filtered = allPokemonList.filter((pokemon) => {
       const generation = getGenerationFromId(pokemon.id);
       return unlimitedSettings.selectedGenerations.includes(generation);
     });
