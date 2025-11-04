@@ -1031,25 +1031,34 @@ export default function GamePage() {
   const generateHints = (pokemon: Pokemon): string[] => {
     const hints: string[] = [];
 
-    // Hint 1: Type
+    // Hint 1: Mono type or dual type
     if (pokemon.type && pokemon.type.length > 0) {
       const typeHint =
         pokemon.type.length === 1
-          ? `This Pokemon is a ${pokemon.type[0]} type.`
-          : `This Pokemon is a ${pokemon.type.join("/")} type.`;
+          ? `This Pokemon is a mono-type Pokemon.`
+          : `This Pokemon is a dual-type Pokemon.`;
       hints.push(typeHint);
     }
 
-    // Hint 2: Generation or physical characteristic
-    // Use ID-based generation since JSON data has incorrect generation values
-    const generation = getGenerationFromId(pokemon.id);
-    if (generation) {
-      const genRoman =
-        ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][
-          generation - 1
-        ] || generation.toString();
-      hints.push(`This Pokemon was introduced in Generation ${genRoman}.`);
-    } else if (pokemon.height && pokemon.weight) {
+    // Hint 2: Generation (only if more than one generation is selected in unlimited mode)
+    const shouldShowGenerationHint =
+      mode === "daily" ||
+      (mode === "unlimited" &&
+        unlimitedSettings.selectedGenerations.length > 1);
+
+    if (shouldShowGenerationHint) {
+      const generation = getGenerationFromId(pokemon.id);
+      if (generation) {
+        const genRoman =
+          ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][
+            generation - 1
+          ] || generation.toString();
+        hints.push(`This Pokemon was introduced in Generation ${genRoman}.`);
+      }
+    }
+
+    // Hint 3: Physical characteristics or description
+    if (pokemon.height && pokemon.weight) {
       const sizeCategory =
         pokemon.height < 0.5
           ? "very small"
@@ -1069,30 +1078,6 @@ export default function GamePage() {
           1
         )}kg and standing ${pokemon.height.toFixed(1)}m tall.`
       );
-    }
-
-    // Hint 3: Ability or description
-    if (pokemon.abilities && pokemon.abilities.length > 0) {
-      const abilities =
-        typeof pokemon.abilities[0] === "string"
-          ? pokemon.abilities
-          : (pokemon.abilities as any[])
-              .filter((a: any) => !a.is_hidden)
-              .map((a: any) => a.name);
-      if (abilities.length > 0) {
-        const abilityHint =
-          abilities.length === 1
-            ? `This Pokemon has the ability ${abilities[0]}.`
-            : `This Pokemon has abilities like ${abilities[0]}${
-                abilities.length > 1 ? ` or ${abilities[1]}` : ""
-              }.`;
-        hints.push(abilityHint);
-      } else {
-        // Fallback to description
-        if (pokemon.description) {
-          hints.push(pokemon.description);
-        }
-      }
     } else if (pokemon.description) {
       hints.push(pokemon.description);
     }
@@ -1598,6 +1583,16 @@ export default function GamePage() {
               mode={mode}
               user={user}
               onResetGame={resetGame}
+              targetColors={targetColors}
+              unlimitedSettings={
+                mode === "unlimited" ? unlimitedSettings : undefined
+              }
+              onUnlimitedSettingsChange={
+                mode === "unlimited" ? setUnlimitedSettings : undefined
+              }
+              availableGenerations={
+                mode === "unlimited" ? availableGenerations : undefined
+              }
             />
           )}
 
@@ -1613,6 +1608,7 @@ export default function GamePage() {
                       selectedPokemon={null}
                       onPokemonSelect={handleGuess}
                       isShiny={isShiny === true}
+                      guessedPokemonIds={guesses.map((g) => g.pokemonId)}
                     />
                     {loadingGuess && (
                       <p className="text-sm text-muted-foreground mt-2">

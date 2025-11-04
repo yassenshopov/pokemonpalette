@@ -12,6 +12,7 @@ interface PokemonSearchProps {
   selectedPokemon: number | null;
   onPokemonSelect: (pokemonId: number) => void;
   isShiny?: boolean;
+  guessedPokemonIds?: number[];
 }
 
 export function PokemonSearch({
@@ -19,6 +20,7 @@ export function PokemonSearch({
   selectedPokemon,
   onPokemonSelect,
   isShiny = false,
+  guessedPokemonIds = [],
 }: PokemonSearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<PokemonMetadata[]>([]);
@@ -114,19 +116,42 @@ export function PokemonSearch({
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        setSelectedIndex((prev) =>
-          prev < suggestions.length - 1 ? prev + 1 : 0
-        );
+        setSelectedIndex((prev) => {
+          let next = prev < suggestions.length - 1 ? prev + 1 : 0;
+          // Skip disabled items
+          let attempts = 0;
+          while (
+            attempts < suggestions.length &&
+            guessedPokemonIds.includes(suggestions[next].id)
+          ) {
+            next = next < suggestions.length - 1 ? next + 1 : 0;
+            attempts++;
+          }
+          return next;
+        });
         break;
       case "ArrowUp":
         e.preventDefault();
-        setSelectedIndex((prev) =>
-          prev > 0 ? prev - 1 : suggestions.length - 1
-        );
+        setSelectedIndex((prev) => {
+          let next = prev > 0 ? prev - 1 : suggestions.length - 1;
+          // Skip disabled items
+          let attempts = 0;
+          while (
+            attempts < suggestions.length &&
+            guessedPokemonIds.includes(suggestions[next].id)
+          ) {
+            next = next > 0 ? next - 1 : suggestions.length - 1;
+            attempts++;
+          }
+          return next;
+        });
         break;
       case "Enter":
         e.preventDefault();
-        if (suggestions[selectedIndex]) {
+        if (
+          suggestions[selectedIndex] &&
+          !guessedPokemonIds.includes(suggestions[selectedIndex].id)
+        ) {
           handleSelect(suggestions[selectedIndex].id);
         }
         break;
@@ -138,8 +163,12 @@ export function PokemonSearch({
   };
 
   useEffect(() => {
-    setSelectedIndex(0);
-  }, [searchQuery]);
+    // Find first non-guessed Pokemon
+    const firstAvailable = suggestions.findIndex(
+      (p) => !guessedPokemonIds.includes(p.id)
+    );
+    setSelectedIndex(firstAvailable >= 0 ? firstAvailable : 0);
+  }, [searchQuery, suggestions, guessedPokemonIds]);
 
   // Sync search query with selected Pokemon
   useEffect(() => {
@@ -177,40 +206,53 @@ export function PokemonSearch({
 
       {showSuggestions && suggestions.length > 0 && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-popover border rounded-md max-h-[400px] overflow-y-auto z-50">
-          {suggestions.map((pokemon, index) => (
-            <button
-              key={pokemon.id}
-              ref={(el) => {
-                itemRefs.current[index] = el;
-              }}
-              onClick={() => handleSelect(pokemon.id)}
-              className={`w-full flex items-center gap-3 p-3 transition-colors text-left cursor-pointer ${
-                index === selectedIndex ? "bg-accent" : "hover:bg-accent"
-              }`}
-            >
-              {/* Sprite */}
-              {pokemonSprites[pokemon.id] ? (
-                <Image
-                  src={pokemonSprites[pokemon.id]!}
-                  alt={pokemon.name}
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 object-contain"
-                  unoptimized
-                />
-              ) : (
-                <div className="w-8 h-8 bg-muted animate-pulse rounded" />
-              )}
+          {suggestions.map((pokemon, index) => {
+            const isGuessed = guessedPokemonIds.includes(pokemon.id);
+            return (
+              <button
+                key={pokemon.id}
+                ref={(el) => {
+                  itemRefs.current[index] = el;
+                }}
+                onClick={() => !isGuessed && handleSelect(pokemon.id)}
+                disabled={isGuessed}
+                className={`w-full flex items-center gap-3 p-3 transition-colors text-left ${
+                  isGuessed
+                    ? "opacity-40 cursor-not-allowed"
+                    : "cursor-pointer hover:bg-accent"
+                } ${
+                  index === selectedIndex && !isGuessed ? "bg-accent" : ""
+                }`}
+              >
+                {/* Sprite */}
+                {pokemonSprites[pokemon.id] ? (
+                  <Image
+                    src={pokemonSprites[pokemon.id]!}
+                    alt={pokemon.name}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="w-8 h-8 bg-muted animate-pulse rounded" />
+                )}
 
-              {/* Number and Name */}
-              <div className="flex-1 flex items-center gap-2">
-                <span className="text-xs text-muted-foreground w-8">
-                  #{pokemon.id}
-                </span>
-                <span className="font-medium">{pokemon.name}</span>
-              </div>
-            </button>
-          ))}
+                {/* Number and Name */}
+                <div className="flex-1 flex items-center gap-2">
+                  <span className="text-xs text-muted-foreground w-8">
+                    #{pokemon.id}
+                  </span>
+                  <span className="font-medium">{pokemon.name}</span>
+                  {isGuessed && (
+                    <span className="text-xs text-muted-foreground ml-auto">
+                      (Already guessed)
+                    </span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
