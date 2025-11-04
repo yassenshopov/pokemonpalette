@@ -110,6 +110,7 @@ export function GameResultDialog({
         style={{
           minHeight: "400px",
         }}
+        showCloseButton={false}
       >
         {/* Color Bar Background - full dialog */}
         {targetColors.length > 0 && (

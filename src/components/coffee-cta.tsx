@@ -30,7 +30,7 @@ export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
   const textColor = getTextColor(primaryColor);
 
   return (
-    <div className="fixed top-4 left-4 md:top-6 md:left-auto md:right-12 z-50">
+    <div className="hidden md:block fixed top-4 left-4 md:top-6 md:left-auto md:right-12 z-50">
       <style
         dangerouslySetInnerHTML={{
           __html: `

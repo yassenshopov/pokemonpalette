@@ -38,6 +38,22 @@ import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
 import { AnimatedDotGrid } from "@/components/animated-dot-grid";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import Image from "next/image";
 
 type GameMode = "daily" | "unlimited";
@@ -195,6 +211,8 @@ export default function GamePage() {
   const [revealedHints, setRevealedHints] = useState<number[]>([]);
   const [hintCooldown, setHintCooldown] = useState(0); // Cooldown in seconds (0-5)
   const [showGameResultDialog, setShowGameResultDialog] = useState(false);
+  const [showSearchDialog, setShowSearchDialog] = useState(false);
+  const [showGiveUpDialog, setShowGiveUpDialog] = useState(false);
   const hintRefs = useRef<(HTMLDivElement | null)[]>([]);
   const guessRefs = useRef<(HTMLDivElement | null)[]>([]);
   const colorBarRef = useRef<HTMLDivElement | null>(null);
@@ -1197,6 +1215,7 @@ export default function GamePage() {
 
     setStatus("lost");
     setShowGameResultDialog(true);
+    setShowGiveUpDialog(false);
 
     // Save attempt for daily mode only
     if (mode === "daily") {
@@ -1219,6 +1238,11 @@ export default function GamePage() {
         );
       }
     }
+  };
+
+  const handleGuessWithDialog = (pokemonId: number) => {
+    handleGuess(pokemonId);
+    setShowSearchDialog(false);
   };
 
   const resetGame = async () => {
@@ -1332,9 +1356,9 @@ export default function GamePage() {
           text={checkingAuth ? "Checking authentication..." : "Loading game..."}
         />
 
-        <div className="w-full max-w-4xl mx-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 md:gap-8 flex-1 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 font-heading">
-            Pokemon Palette Guesser
+        <div className="w-full max-w-4xl mx-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 md:gap-8 flex-1 relative z-10 pt-8 md:pt-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 mt-8 md:mt-12 font-heading px-4 md:px-0">
+            {mode === "daily" ? "Daily Game" : "Unlimited Mode"}
           </h1>
 
           {/* Game Number, Date, and Mode Selection */}
@@ -1553,14 +1577,41 @@ export default function GamePage() {
                 <div className="flex justify-between items-center mt-4">
                   <div className="flex items-center gap-2">
                     {status === "playing" && (
-                      <Button
-                        onClick={handleGiveUp}
-                        variant="outline"
-                        className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-300 dark:border-red-700 cursor-pointer"
-                      >
-                        <Flag className="w-4 h-4 mr-2" />
-                        Give Up
-                      </Button>
+                      <>
+                        <Button
+                          onClick={() => setShowGiveUpDialog(true)}
+                          variant="outline"
+                          className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-300 dark:border-red-700 cursor-pointer"
+                        >
+                          <Flag className="w-4 h-4 mr-2" />
+                          Give Up
+                        </Button>
+                        <AlertDialog
+                          open={showGiveUpDialog}
+                          onOpenChange={setShowGiveUpDialog}
+                        >
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                              <AlertDialogDescription>
+                                Are you sure you want to give up? This will end
+                                the game and reveal the answer.
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel className="cursor-pointer">
+                                Cancel
+                              </AlertDialogCancel>
+                              <AlertDialogAction
+                                onClick={handleGiveUp}
+                                className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+                              >
+                                Give Up
+                              </AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
+                      </>
                     )}
                     {mode === "unlimited" && (
                       <UnlimitedModeSettingsDialog
@@ -1623,18 +1674,58 @@ export default function GamePage() {
               <div className="space-y-3 p-4 md:p-6">
                 {status === "playing" ? (
                   <>
-                    <PokemonSearch
-                      pokemonList={allPokemonList}
-                      selectedPokemon={null}
-                      onPokemonSelect={handleGuess}
-                      isShiny={isShiny === true}
-                      guessedPokemonIds={guesses.map((g) => g.pokemonId)}
-                      selectedGenerations={
-                        mode === "unlimited"
-                          ? unlimitedSettings.selectedGenerations
-                          : undefined
-                      }
-                    />
+                    {/* Desktop: Show search directly */}
+                    <div className="hidden lg:block">
+                      <PokemonSearch
+                        pokemonList={allPokemonList}
+                        selectedPokemon={null}
+                        onPokemonSelect={handleGuess}
+                        isShiny={isShiny === true}
+                        guessedPokemonIds={guesses.map((g) => g.pokemonId)}
+                        selectedGenerations={
+                          mode === "unlimited"
+                            ? unlimitedSettings.selectedGenerations
+                            : undefined
+                        }
+                      />
+                    </div>
+                    {/* Mobile: Show button to open dialog */}
+                    <div className="lg:hidden">
+                      <Button
+                        onClick={() => setShowSearchDialog(true)}
+                        className="w-full cursor-pointer"
+                        variant="outline"
+                      >
+                        <Search className="w-4 h-4 mr-2" />
+                        Search Pokemon
+                      </Button>
+                      <Dialog
+                        open={showSearchDialog}
+                        onOpenChange={setShowSearchDialog}
+                      >
+                        <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-lg">
+                          <DialogHeader>
+                            <DialogTitle>Search Pokemon</DialogTitle>
+                          </DialogHeader>
+                          <div className="mt-4">
+                            <PokemonSearch
+                              pokemonList={allPokemonList}
+                              selectedPokemon={null}
+                              onPokemonSelect={handleGuessWithDialog}
+                              isShiny={isShiny === true}
+                              guessedPokemonIds={guesses.map(
+                                (g) => g.pokemonId
+                              )}
+                              selectedGenerations={
+                                mode === "unlimited"
+                                  ? unlimitedSettings.selectedGenerations
+                                  : undefined
+                              }
+                            />
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
                     {loadingGuess && (
                       <p className="text-sm text-muted-foreground mt-2">
                         Analyzing guess...
