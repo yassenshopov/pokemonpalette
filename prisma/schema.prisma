@@ -32,6 +32,7 @@ model User {
   createdAt                  DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
   updatedAt                  DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
   isDeleted                  Boolean   @default(false) @map("is_deleted")
+  isAdmin                    Boolean   @default(false) @map("is_admin")
   emailAddresses             Json      @default("[]") @map("email_addresses") @db.JsonB
   phoneNumbers               Json      @default("[]") @map("phone_numbers") @db.JsonB
   externalAccounts           Json      @default("[]") @map("external_accounts") @db.JsonB
