@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark, Target } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
@@ -144,6 +144,13 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     <Home className="h-4 w-4" />
                     <span>Home</span>
                   </Link>
+                  <Link
+                    href="/game"
+                    className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <Target className="h-4 w-4" />
+                    <span>Game</span>
+                  </Link>
                 </div>
 
                 {/* Appearance */}
@@ -253,6 +260,13 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     >
                       <Home className="h-4 w-4" />
                     </Link>
+                    <Link
+                      href="/game"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      title="Game"
+                    >
+                      <Target className="h-4 w-4" />
+                    </Link>
                   </div>
                   <div className="flex flex-col items-center">
                     <SavedPalettesDialog 
@@ -299,6 +313,13 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     >
                       <Home className="h-4 w-4" />
                       <span>Home</span>
+                    </Link>
+                    <Link
+                      href="/game"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                    >
+                      <Target className="h-4 w-4" />
+                      <span>Game</span>
                     </Link>
                     <SavedPalettesDialog 
                       onPaletteSelect={onPaletteLoad}
