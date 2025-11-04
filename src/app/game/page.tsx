@@ -210,6 +210,7 @@ export default function GamePage() {
   const hintRefs = useRef<(HTMLDivElement | null)[]>([]);
   const guessRefs = useRef<(HTMLDivElement | null)[]>([]);
   const colorBarRef = useRef<HTMLDivElement | null>(null);
+  const generatedHintsRef = useRef<string[]>([]); // Store generated hints to maintain consistency
 
   const MAX_ATTEMPTS = 4;
 
@@ -547,6 +548,7 @@ export default function GamePage() {
     checkTodayAttempt();
     // Reset hints when mode or Pokemon changes
     setRevealedHints([]);
+    generatedHintsRef.current = [];
   }, [mode, user?.id, userLoaded]);
 
   // Initialize game
@@ -1037,20 +1039,67 @@ export default function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]); // Only sync when user ID changes (signs in)
 
-  // Generate hints from Pokemon data
+  // Generate diverse hints with varying specificity levels
   const generateHints = (pokemon: Pokemon): string[] => {
-    const hints: string[] = [];
+    const allHints: {
+      vague: string[];
+      medium: string[];
+      specific: string[];
+    } = {
+      vague: [],
+      medium: [],
+      specific: [],
+    };
 
-    // Hint 1: Mono type or dual type
+    // VAGUE HINTS (less revealing, broad categories)
+    // Type hint - vague
     if (pokemon.type && pokemon.type.length > 0) {
-      const typeHint =
+      allHints.vague.push(
         pokemon.type.length === 1
           ? `This Pokemon is a mono-type Pokemon.`
-          : `This Pokemon is a dual-type Pokemon.`;
-      hints.push(typeHint);
+          : `This Pokemon is a dual-type Pokemon.`
+      );
     }
 
-    // Hint 2: Generation (only if more than one generation is selected in unlimited mode)
+    // Rarity hint - vague
+    if (pokemon.rarity) {
+      allHints.vague.push(`This Pokemon has a ${pokemon.rarity} rarity.`);
+    }
+
+    // Evolution stage hint - vague
+    if (pokemon.evolution?.stage) {
+      const stage = pokemon.evolution.stage;
+      if (stage === 1) {
+        allHints.vague.push(`This Pokemon is a base-stage Pokemon.`);
+      } else if (stage === 2) {
+        allHints.vague.push(`This Pokemon is a middle-stage evolution.`);
+      } else {
+        allHints.vague.push(`This Pokemon is a final-stage evolution.`);
+      }
+    }
+
+    // Size category hint - vague
+    if (pokemon.height) {
+      if (pokemon.height < 0.5) {
+        allHints.vague.push(`This Pokemon is very small.`);
+      } else if (pokemon.height < 1.0) {
+        allHints.vague.push(`This Pokemon is small.`);
+      } else if (pokemon.height < 2.0) {
+        allHints.vague.push(`This Pokemon is medium-sized.`);
+      } else {
+        allHints.vague.push(`This Pokemon is large.`);
+      }
+    }
+
+    // Habitat hint - vague
+    if (pokemon.habitat) {
+      allHints.vague.push(
+        `This Pokemon can be found in ${pokemon.habitat} habitats.`
+      );
+    }
+
+    // MEDIUM HINTS (more specific, but still narrowing)
+    // Generation hint - medium
     const shouldShowGenerationHint =
       mode === "daily" ||
       (mode === "unlimited" &&
@@ -1063,11 +1112,92 @@ export default function GamePage() {
           ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][
             generation - 1
           ] || generation.toString();
-        hints.push(`This Pokemon was introduced in Generation ${genRoman}.`);
+        allHints.medium.push(
+          `This Pokemon was introduced in Generation ${genRoman}.`
+        );
       }
     }
 
-    // Hint 3: Physical characteristics or description
+    // Weight range hint - medium
+    if (pokemon.weight) {
+      if (pokemon.weight < 5) {
+        allHints.medium.push(
+          `This Pokemon is very light, weighing less than 5kg.`
+        );
+      } else if (pokemon.weight < 20) {
+        allHints.medium.push(
+          `This Pokemon is light, weighing between 5-20kg.`
+        );
+      } else if (pokemon.weight < 100) {
+        allHints.medium.push(
+          `This Pokemon is moderately heavy, weighing 20-100kg.`
+        );
+      } else {
+        allHints.medium.push(
+          `This Pokemon is very heavy, weighing over 100kg.`
+        );
+      }
+    }
+
+    // Base stats hint - medium
+    if (pokemon.baseStats) {
+      const stats = pokemon.baseStats;
+      const highestStat = Math.max(
+        stats.hp || 0,
+        stats.attack || 0,
+        stats.defense || 0,
+        stats.specialAttack || 0,
+        stats.specialDefense || 0,
+        stats.speed || 0
+      );
+      const highestStatName = Object.entries(stats).find(
+        ([_, value]) => value === highestStat
+      )?.[0];
+
+      if (highestStatName) {
+        const statDisplayName: Record<string, string> = {
+          hp: "HP",
+          attack: "Attack",
+          defense: "Defense",
+          specialAttack: "Special Attack",
+          specialDefense: "Special Defense",
+          speed: "Speed",
+        };
+        allHints.medium.push(
+          `This Pokemon's highest base stat is ${statDisplayName[highestStatName]}.`
+        );
+      }
+    }
+
+    // Ability count hint - medium
+    if (pokemon.abilities && Array.isArray(pokemon.abilities)) {
+      const abilityCount = pokemon.abilities.length;
+      if (abilityCount > 2) {
+        allHints.medium.push(
+          `This Pokemon has multiple abilities.`
+        );
+      }
+    }
+
+    // Capture rate hint - medium
+    if (pokemon.captureRate !== undefined) {
+      if (pokemon.captureRate < 45) {
+        allHints.medium.push(
+          `This Pokemon is very difficult to catch.`
+        );
+      } else if (pokemon.captureRate < 90) {
+        allHints.medium.push(
+          `This Pokemon has a moderate catch rate.`
+        );
+      } else {
+        allHints.medium.push(
+          `This Pokemon is relatively easy to catch.`
+        );
+      }
+    }
+
+    // SPECIFIC HINTS (most revealing, narrows it down significantly)
+    // Exact height and weight - specific
     if (pokemon.height && pokemon.weight) {
       const sizeCategory =
         pokemon.height < 0.5
@@ -1083,28 +1213,111 @@ export default function GamePage() {
           : pokemon.weight < 50
           ? "moderately heavy"
           : "heavy";
-      hints.push(
+      allHints.specific.push(
         `This Pokemon is ${sizeCategory} and ${weightCategory}, weighing ${pokemon.weight.toFixed(
           1
         )}kg and standing ${pokemon.height.toFixed(1)}m tall.`
       );
-    } else if (pokemon.description) {
-      hints.push(pokemon.description);
     }
 
-    // Ensure we have at least 3 hints
-    while (hints.length < 3) {
-      if (pokemon.rarity) {
-        hints.push(`This Pokemon has a ${pokemon.rarity} rarity.`);
-      } else if (pokemon.habitat) {
-        hints.push(`This Pokemon can be found in ${pokemon.habitat} habitats.`);
+    // Species category hint - specific
+    if (pokemon.species && pokemon.species !== "Pokémon") {
+      allHints.specific.push(
+        `This Pokemon is known as the ${pokemon.species} Pokemon.`
+      );
+    }
+
+    // Base experience hint - specific
+    if (pokemon.baseExperience) {
+      if (pokemon.baseExperience < 100) {
+        allHints.specific.push(
+          `This Pokemon gives relatively low base experience when defeated.`
+        );
+      } else if (pokemon.baseExperience < 200) {
+        allHints.specific.push(
+          `This Pokemon gives moderate base experience when defeated.`
+        );
       } else {
-        hints.push("This Pokemon is a mystery!");
+        allHints.specific.push(
+          `This Pokemon gives high base experience when defeated.`
+        );
       }
     }
 
-    return hints.slice(0, 3);
+    // Description/flavor text - specific (if available)
+    if (pokemon.description) {
+      // Only use description if it's not too revealing
+      const description = pokemon.description;
+      if (description.length < 200 && !description.toLowerCase().includes(pokemon.name.toLowerCase())) {
+        allHints.specific.push(description);
+      }
+    }
+
+    // Shuffle hints within each category
+    const shuffleArray = <T,>(array: T[]): T[] => {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    // Select one hint from each category, ensuring progression
+    const selectedHints: string[] = [];
+    
+    // First hint: vague (random selection)
+    if (allHints.vague.length > 0) {
+      const shuffledVague = shuffleArray(allHints.vague);
+      selectedHints.push(shuffledVague[0]);
+    }
+
+    // Second hint: medium (random selection)
+    if (allHints.medium.length > 0) {
+      const shuffledMedium = shuffleArray(allHints.medium);
+      selectedHints.push(shuffledMedium[0]);
+    }
+
+    // Third hint: specific (random selection)
+    if (allHints.specific.length > 0) {
+      const shuffledSpecific = shuffleArray(allHints.specific);
+      selectedHints.push(shuffledSpecific[0]);
+    }
+
+    // Fill remaining slots if needed
+    const allAvailable = [
+      ...shuffleArray(allHints.vague),
+      ...shuffleArray(allHints.medium),
+      ...shuffleArray(allHints.specific),
+    ];
+
+    while (selectedHints.length < 3 && allAvailable.length > 0) {
+      const hint = allAvailable.shift();
+      if (hint && !selectedHints.includes(hint)) {
+        selectedHints.push(hint);
+      }
+    }
+
+    // Ensure we have at least 3 hints
+    while (selectedHints.length < 3) {
+      selectedHints.push("This Pokemon is a mystery!");
+    }
+
+    return selectedHints.slice(0, 3);
   };
+
+  // Generate and store hints when target Pokemon, mode, or settings change
+  useEffect(() => {
+    if (targetPokemon) {
+      generatedHintsRef.current = generateHints(targetPokemon);
+    } else {
+      generatedHintsRef.current = [];
+    }
+    // Reset revealed hints when Pokemon or settings change
+    setRevealedHints([]);
+    setHintCooldown(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [targetPokemon, mode, unlimitedSettings]);
 
   const showNextHint = () => {
     if (!targetPokemon || revealedHints.length >= 3 || hintCooldown > 0) return;
@@ -1493,7 +1706,9 @@ export default function GamePage() {
                       revealedHints.length > 0 && (
                         <div className="flex flex-col gap-2 items-end">
                           {revealedHints.map((hintIndex) => {
-                            const hints = generateHints(targetPokemon);
+                            const hints = generatedHintsRef.current.length > 0 
+                              ? generatedHintsRef.current 
+                              : generateHints(targetPokemon);
                             const primaryColor =
                               targetColors.length > 0
                                 ? targetColors[0].hex

@@ -341,7 +341,6 @@ export function GameResultDialog({
               <Button
                 onClick={() => onOpenChange(false)}
                 variant="outline"
-                size="sm"
                 className="cursor-pointer"
               >
                 Close
