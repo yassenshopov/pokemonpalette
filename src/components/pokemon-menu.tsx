@@ -156,17 +156,34 @@ export function PokemonMenu({
   const [colorPickerIndex, setColorPickerIndex] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<string>("palette");
   const [spriteImageError, setSpriteImageError] = useState(false);
+  const [dexNumberInput, setDexNumberInput] = useState<string>(
+    (selectedPokemonId || DEFAULT_POKEMON_ID).toString()
+  );
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const isUpdatingFromDebounceRef = useRef<boolean>(false);
 
   // Sync selectedPokemonId prop with internal state
   useEffect(() => {
     if (
       selectedPokemonId !== undefined &&
-      selectedPokemonId !== selectedPokemon
+      selectedPokemonId !== selectedPokemon &&
+      selectedPokemonId !== null
     ) {
       setSelectedPokemon(selectedPokemonId);
+      setDexNumberInput(selectedPokemonId.toString());
     }
-  }, [selectedPokemonId]);
+  }, [selectedPokemonId, selectedPokemon]);
+
+  // Sync dexNumberInput with selectedPokemon when it changes externally
+  // (but not when it changes from debounced user input)
+  useEffect(() => {
+    if (selectedPokemon && !isUpdatingFromDebounceRef.current) {
+      setDexNumberInput(selectedPokemon.toString());
+    }
+    // Reset the flag after sync check
+    isUpdatingFromDebounceRef.current = false;
+  }, [selectedPokemon]);
 
   useEffect(() => {
     if (selectedPokemon) {
@@ -284,6 +301,10 @@ export function PokemonMenu({
   }, [pokemonData?.id, isShiny]); // Only depend on id and isShiny to avoid infinite loop
 
   const handleSelect = (pokemonId: number) => {
+    // Clear any pending debounce timer to prevent race conditions
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
     setSelectedPokemon(pokemonId);
     onPokemonSelect?.(pokemonId);
   };
@@ -297,19 +318,51 @@ export function PokemonMenu({
   };
 
   const handleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const num = parseInt(e.target.value);
-    if (!isNaN(num) && num >= 1 && num <= pokemonList.length) {
-      handleSelect(num);
+    const value = e.target.value;
+    setDexNumberInput(value);
+
+    // Clear existing timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
     }
+
+    // Set up debounced selection
+    debounceTimerRef.current = setTimeout(() => {
+      const num = parseInt(value);
+      if (!isNaN(num) && num >= 1 && num <= pokemonList.length) {
+        isUpdatingFromDebounceRef.current = true;
+        handleSelect(num);
+      } else if (value === "") {
+        // If input is empty, keep the current selection
+        setDexNumberInput(selectedPokemon?.toString() || "");
+      }
+    }, 500); // 500ms debounce delay
   };
 
+  // Cleanup debounce timer on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, []);
+
   const handleIncrement = () => {
+    // Clear any pending debounce timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
     if (selectedPokemon && selectedPokemon < pokemonList.length) {
       handleSelect(selectedPokemon + 1);
     }
   };
 
   const handleDecrement = () => {
+    // Clear any pending debounce timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
     if (selectedPokemon && selectedPokemon > 1) {
       handleSelect(selectedPokemon - 1);
     }
@@ -541,7 +594,7 @@ export function PokemonMenu({
         </Button>
         <Input
           type="number"
-          value={selectedPokemon || ""}
+          value={dexNumberInput}
           onChange={handleNumberChange}
           placeholder="#"
           className="text-center"
