@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { SignInButton } from "@clerk/nextjs";
-import { LogIn } from "lucide-react";
+import { LogIn, RefreshCw } from "lucide-react";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
@@ -83,16 +83,16 @@ export function GameResultDialog({
 }: GameResultDialogProps) {
   const isWon = status === "won";
   const title = isWon ? "🎉 You Won!" : "Game Over";
-  const titleClassName = isWon
-    ? "text-2xl font-bold"
-    : "text-2xl font-bold text-red-600 dark:text-red-400";
+  const titleClassName = "text-4xl font-bold";
 
-  const spriteUrl = targetPokemon && isShiny !== null 
-    ? getSpriteUrl(targetPokemon, isShiny === true)
-    : null;
+  const spriteUrl =
+    targetPokemon && isShiny !== null
+      ? getSpriteUrl(targetPokemon, isShiny === true)
+      : null;
 
-  // Get primary color for text contrast
-  const primaryColor = targetColors.length > 0 ? targetColors[0].hex : undefined;
+  // Get primary color and calculate contrast text color
+  const primaryColor =
+    targetColors.length > 0 ? targetColors[0].hex : undefined;
   const getTextColor = (hex: string | undefined): "#ffffff" | "#000000" => {
     if (!hex) return "#000000";
     const hexClean = hex.replace("#", "");
@@ -105,10 +105,15 @@ export function GameResultDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md p-0 overflow-hidden relative">
+      <DialogContent
+        className="sm:max-w-2xl p-0 overflow-hidden !fixed !top-[45%] !left-[50%] !translate-x-[-50%] !translate-y-[-50%] !right-auto !m-0"
+        style={{
+          minHeight: "400px",
+        }}
+      >
         {/* Color Bar Background - full dialog */}
         {targetColors.length > 0 && (
-          <div className="absolute inset-0 flex opacity-90">
+          <div className="absolute inset-0 flex opacity-15">
             {(() => {
               // Normalize percentages to sum to 100%
               const totalPercentage = targetColors.reduce(
@@ -138,28 +143,13 @@ export function GameResultDialog({
         )}
 
         {/* Content on top */}
-        <div className="relative z-10 p-6">
+        <div className="relative z-10 p-6 flex flex-col h-full min-h-[400px]">
           <DialogHeader>
-            <DialogTitle
-              className={titleClassName}
-              style={{
-                color: primaryColor
-                  ? getTextColor(primaryColor)
-                  : undefined,
-              }}
-            >
+            <DialogTitle className={`${titleClassName} font-heading`}>
               {title}
             </DialogTitle>
             {targetPokemon && (
-              <DialogDescription
-                className="text-base mt-2"
-                style={{
-                  color: primaryColor
-                    ? getTextColor(primaryColor)
-                    : undefined,
-                  opacity: 0.9,
-                }}
-              >
+              <DialogDescription className="text-lg mt-2">
                 The Pokemon was <strong>{targetPokemon.name}</strong>
                 {isShiny === true ? " (Shiny)" : ""}!
               </DialogDescription>
@@ -168,7 +158,7 @@ export function GameResultDialog({
 
           {/* Pokemon Sprite */}
           {spriteUrl && targetPokemon && (
-            <div className="flex justify-center items-center py-4">
+            <div className="flex justify-center items-center py-4 flex-1">
               <div className="relative">
                 <Image
                   src={spriteUrl}
@@ -182,7 +172,8 @@ export function GameResultDialog({
               </div>
             </div>
           )}
-          <DialogFooter className="flex-col sm:flex-row gap-2 pt-4">
+
+          <DialogFooter className="flex-col sm:flex-row gap-2 pt-4 mt-auto">
             {mode === "daily" && !user && (
               <SignInButton mode="modal">
                 <Button className="w-full cursor-pointer">
@@ -196,32 +187,26 @@ export function GameResultDialog({
                 {unlimitedSettings && onUnlimitedSettingsChange && (
                   <UnlimitedModeSettingsDialog
                     settings={unlimitedSettings}
-                    onSettingsChange={onUnlimitedSettingsChange}
-                    primaryColor={
-                      targetColors.length > 0 && targetColors[0]?.hex
-                        ? targetColors[0].hex
-                        : undefined
-                    }
+                    onSettingsChange={(newSettings) => {
+                      onUnlimitedSettingsChange(newSettings);
+                      onOpenChange(false);
+                      onResetGame();
+                    }}
                     availableGenerations={availableGenerations}
                   />
                 )}
                 <Button
                   onClick={onResetGame}
-                  className="w-full cursor-pointer"
+                  variant="default"
+                  className="cursor-pointer"
                   style={{
-                    backgroundColor: primaryColor
-                      ? getTextColor(primaryColor) === "#ffffff"
-                        ? "rgba(255, 255, 255, 0.2)"
-                        : "rgba(0, 0, 0, 0.2)"
-                      : undefined,
-                    color: primaryColor ? getTextColor(primaryColor) : undefined,
-                    borderColor: primaryColor
-                      ? getTextColor(primaryColor) === "#ffffff"
-                        ? "rgba(255, 255, 255, 0.3)"
-                        : "rgba(0, 0, 0, 0.3)"
+                    backgroundColor: primaryColor || undefined,
+                    color: primaryColor
+                      ? getTextColor(primaryColor)
                       : undefined,
                   }}
                 >
+                  <RefreshCw className="w-4 h-4 mr-2" />
                   {isWon ? "Play Again" : "Try Again"}
                 </Button>
               </>
@@ -231,19 +216,6 @@ export function GameResultDialog({
                 onClick={() => onOpenChange(false)}
                 variant="outline"
                 className="w-full cursor-pointer"
-                style={{
-                  backgroundColor: primaryColor
-                    ? getTextColor(primaryColor) === "#ffffff"
-                      ? "rgba(255, 255, 255, 0.1)"
-                      : "rgba(0, 0, 0, 0.1)"
-                    : undefined,
-                  color: primaryColor ? getTextColor(primaryColor) : undefined,
-                  borderColor: primaryColor
-                    ? getTextColor(primaryColor) === "#ffffff"
-                      ? "rgba(255, 255, 255, 0.3)"
-                      : "rgba(0, 0, 0, 0.3)"
-                    : undefined,
-                }}
               >
                 Close
               </Button>
@@ -254,4 +226,3 @@ export function GameResultDialog({
     </Dialog>
   );
 }
-

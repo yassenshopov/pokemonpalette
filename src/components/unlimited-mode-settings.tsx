@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -28,18 +28,21 @@ interface UnlimitedModeSettings {
 interface UnlimitedModeSettingsDialogProps {
   settings: UnlimitedModeSettings;
   onSettingsChange: (settings: UnlimitedModeSettings) => void;
-  primaryColor?: string;
   availableGenerations: number[];
 }
 
 export function UnlimitedModeSettingsDialog({
   settings,
   onSettingsChange,
-  primaryColor,
   availableGenerations,
 }: UnlimitedModeSettingsDialogProps) {
   const [open, setOpen] = useState(false);
   const [localSettings, setLocalSettings] = useState<UnlimitedModeSettings>(settings);
+
+  // Sync local settings when props change
+  useEffect(() => {
+    setLocalSettings(settings);
+  }, [settings]);
 
   const handleSave = () => {
     onSettingsChange(localSettings);
@@ -91,11 +94,7 @@ export function UnlimitedModeSettingsDialog({
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          size="sm"
           className="cursor-pointer"
-          style={{
-            borderColor: primaryColor ? `${primaryColor}40` : undefined,
-          }}
         >
           <Settings className="w-4 h-4" />
         </Button>
@@ -206,13 +205,8 @@ export function UnlimitedModeSettingsDialog({
           </Button>
           <Button
             onClick={handleSave}
+            variant="default"
             className="cursor-pointer"
-            style={{
-              backgroundColor: primaryColor || undefined,
-              color: primaryColor
-                ? getTextColor(primaryColor)
-                : undefined,
-            }}
           >
             Save Settings
           </Button>
@@ -220,15 +214,5 @@ export function UnlimitedModeSettingsDialog({
       </DialogContent>
     </Dialog>
   );
-}
-
-// Helper function to determine text color
-function getTextColor(hex: string): "#ffffff" | "#000000" {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5 ? "#000000" : "#ffffff";
 }
 

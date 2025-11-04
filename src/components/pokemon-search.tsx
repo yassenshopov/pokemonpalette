@@ -13,7 +13,22 @@ interface PokemonSearchProps {
   onPokemonSelect: (pokemonId: number) => void;
   isShiny?: boolean;
   guessedPokemonIds?: number[];
+  selectedGenerations?: number[];
 }
+
+// Get generation from Pokemon ID
+const getGenerationFromId = (id: number): number => {
+  if (id <= 151) return 1;
+  if (id <= 251) return 2;
+  if (id <= 386) return 3;
+  if (id <= 493) return 4;
+  if (id <= 649) return 5;
+  if (id <= 721) return 6;
+  if (id <= 809) return 7;
+  if (id <= 905) return 8;
+  if (id <= 1025) return 9;
+  return 1; // Default fallback
+};
 
 export function PokemonSearch({
   pokemonList,
@@ -21,6 +36,7 @@ export function PokemonSearch({
   onPokemonSelect,
   isShiny = false,
   guessedPokemonIds = [],
+  selectedGenerations,
 }: PokemonSearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<PokemonMetadata[]>([]);
@@ -120,10 +136,18 @@ export function PokemonSearch({
           let next = prev < suggestions.length - 1 ? prev + 1 : 0;
           // Skip disabled items
           let attempts = 0;
-          while (
-            attempts < suggestions.length &&
-            guessedPokemonIds.includes(suggestions[next].id)
-          ) {
+          while (attempts < suggestions.length) {
+            const pokemon = suggestions[next];
+            const generation = getGenerationFromId(pokemon.id);
+            const isGenerationSelected = selectedGenerations
+              ? selectedGenerations.includes(generation)
+              : true;
+            if (
+              !guessedPokemonIds.includes(pokemon.id) &&
+              isGenerationSelected
+            ) {
+              break;
+            }
             next = next < suggestions.length - 1 ? next + 1 : 0;
             attempts++;
           }
@@ -136,10 +160,18 @@ export function PokemonSearch({
           let next = prev > 0 ? prev - 1 : suggestions.length - 1;
           // Skip disabled items
           let attempts = 0;
-          while (
-            attempts < suggestions.length &&
-            guessedPokemonIds.includes(suggestions[next].id)
-          ) {
+          while (attempts < suggestions.length) {
+            const pokemon = suggestions[next];
+            const generation = getGenerationFromId(pokemon.id);
+            const isGenerationSelected = selectedGenerations
+              ? selectedGenerations.includes(generation)
+              : true;
+            if (
+              !guessedPokemonIds.includes(pokemon.id) &&
+              isGenerationSelected
+            ) {
+              break;
+            }
             next = next > 0 ? next - 1 : suggestions.length - 1;
             attempts++;
           }
@@ -148,11 +180,18 @@ export function PokemonSearch({
         break;
       case "Enter":
         e.preventDefault();
-        if (
-          suggestions[selectedIndex] &&
-          !guessedPokemonIds.includes(suggestions[selectedIndex].id)
-        ) {
-          handleSelect(suggestions[selectedIndex].id);
+        if (suggestions[selectedIndex]) {
+          const pokemon = suggestions[selectedIndex];
+          const generation = getGenerationFromId(pokemon.id);
+          const isGenerationSelected = selectedGenerations
+            ? selectedGenerations.includes(generation)
+            : true;
+          if (
+            !guessedPokemonIds.includes(pokemon.id) &&
+            isGenerationSelected
+          ) {
+            handleSelect(pokemon.id);
+          }
         }
         break;
       case "Escape":
@@ -163,12 +202,18 @@ export function PokemonSearch({
   };
 
   useEffect(() => {
-    // Find first non-guessed Pokemon
-    const firstAvailable = suggestions.findIndex(
-      (p) => !guessedPokemonIds.includes(p.id)
-    );
+    // Find first non-guessed and generation-selected Pokemon
+    const firstAvailable = suggestions.findIndex((p) => {
+      const generation = getGenerationFromId(p.id);
+      const isGenerationSelected = selectedGenerations
+        ? selectedGenerations.includes(generation)
+        : true;
+      return (
+        !guessedPokemonIds.includes(p.id) && isGenerationSelected
+      );
+    });
     setSelectedIndex(firstAvailable >= 0 ? firstAvailable : 0);
-  }, [searchQuery, suggestions, guessedPokemonIds]);
+  }, [searchQuery, suggestions, guessedPokemonIds, selectedGenerations]);
 
   // Sync search query with selected Pokemon
   useEffect(() => {
@@ -208,20 +253,25 @@ export function PokemonSearch({
         <div className="absolute top-full left-0 right-0 mt-2 bg-popover border rounded-md max-h-[400px] overflow-y-auto z-50">
           {suggestions.map((pokemon, index) => {
             const isGuessed = guessedPokemonIds.includes(pokemon.id);
+            const generation = getGenerationFromId(pokemon.id);
+            const isGenerationSelected = selectedGenerations
+              ? selectedGenerations.includes(generation)
+              : true;
+            const isDisabled = isGuessed || !isGenerationSelected;
             return (
               <button
                 key={pokemon.id}
                 ref={(el) => {
                   itemRefs.current[index] = el;
                 }}
-                onClick={() => !isGuessed && handleSelect(pokemon.id)}
-                disabled={isGuessed}
+                onClick={() => !isDisabled && handleSelect(pokemon.id)}
+                disabled={isDisabled}
                 className={`w-full flex items-center gap-3 p-3 transition-colors text-left ${
-                  isGuessed
+                  isDisabled
                     ? "opacity-40 cursor-not-allowed"
                     : "cursor-pointer hover:bg-accent"
                 } ${
-                  index === selectedIndex && !isGuessed ? "bg-accent" : ""
+                  index === selectedIndex && !isDisabled ? "bg-accent" : ""
                 }`}
               >
                 {/* Sprite */}
@@ -247,6 +297,11 @@ export function PokemonSearch({
                   {isGuessed && (
                     <span className="text-xs text-muted-foreground ml-auto">
                       (Already guessed)
+                    </span>
+                  )}
+                  {!isGuessed && !isGenerationSelected && (
+                    <span className="text-xs text-muted-foreground ml-auto">
+                      (Generation not selected)
                     </span>
                   )}
                 </div>

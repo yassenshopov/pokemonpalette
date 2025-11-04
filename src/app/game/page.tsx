@@ -203,6 +203,16 @@ export default function GamePage() {
 
   const PENDING_ATTEMPTS_KEY = "pokemon-palette-pending-attempts";
 
+  // Helper function to calculate contrast text color
+  const getTextColor = (hex: string): "#ffffff" | "#000000" => {
+    const hexClean = hex.replace("#", "");
+    const r = parseInt(hexClean.substring(0, 2), 16);
+    const g = parseInt(hexClean.substring(2, 4), 16);
+    const b = parseInt(hexClean.substring(4, 6), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminance > 0.5 ? "#000000" : "#ffffff";
+  };
+
   // Get generation from Pokemon ID (since JSON data has incorrect generation)
   const getGenerationFromId = (id: number): number => {
     if (id <= 151) return 1;
@@ -1348,14 +1358,34 @@ export default function GamePage() {
                 <TabsList className="grid grid-cols-2 font-heading">
                   <TabsTrigger
                     value="daily"
-                    className="cursor-pointer font-heading"
+                    className="cursor-pointer font-heading data-[state=active]:text-white data-[state=active]:dark:text-white"
+                    style={
+                      mode === "daily" &&
+                      targetColors.length > 0 &&
+                      targetColors[0]?.hex
+                        ? {
+                            backgroundColor: targetColors[0].hex,
+                            color: getTextColor(targetColors[0].hex),
+                          }
+                        : undefined
+                    }
                   >
                     <Calendar className="w-4 h-4 mr-2" />
                     Daily
                   </TabsTrigger>
                   <TabsTrigger
                     value="unlimited"
-                    className="cursor-pointer font-heading"
+                    className="cursor-pointer font-heading data-[state=active]:text-white data-[state=active]:dark:text-white"
+                    style={
+                      mode === "unlimited" &&
+                      targetColors.length > 0 &&
+                      targetColors[0]?.hex
+                        ? {
+                            backgroundColor: targetColors[0].hex,
+                            color: getTextColor(targetColors[0].hex),
+                          }
+                        : undefined
+                    }
                   >
                     <InfinityIcon className="w-4 h-4 mr-2" />
                     Unlimited
@@ -1373,7 +1403,7 @@ export default function GamePage() {
                 ref={(el) => {
                   colorBarRef.current = el;
                 }}
-                className="relative z-10 w-full flex h-16 md:h-20 overflow-hidden"
+                className="relative z-10 w-full flex h-24 md:h-32 overflow-hidden"
               >
                 {(() => {
                   // Normalize percentages to sum to 100% while maintaining proportions
@@ -1405,7 +1435,7 @@ export default function GamePage() {
 
               {/* Pokemon artwork behind the content */}
               {status !== "playing" && targetPokemon && (
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none z-0 pt-16 md:pt-20">
+                <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none z-0 pt-24 md:pt-32">
                   <Image
                     src={
                       isShiny === true
@@ -1439,9 +1469,7 @@ export default function GamePage() {
                             : undefined,
                         color:
                           targetColors.length > 0 && targetColors[0].hex
-                            ? getTextColor(targetColors[0].hex) === "text-white"
-                              ? "#ffffff"
-                              : "#000000"
+                            ? getTextColor(targetColors[0].hex)
                             : undefined,
                       }}
                     >
@@ -1477,10 +1505,7 @@ export default function GamePage() {
                                   style={{
                                     backgroundColor: primaryColor || undefined,
                                     color: primaryColor
-                                      ? getTextColor(primaryColor) ===
-                                        "text-white"
-                                        ? "#ffffff"
-                                        : "#000000"
+                                      ? getTextColor(primaryColor)
                                       : undefined,
                                   }}
                                 >
@@ -1541,11 +1566,6 @@ export default function GamePage() {
                       <UnlimitedModeSettingsDialog
                         settings={unlimitedSettings}
                         onSettingsChange={setUnlimitedSettings}
-                        primaryColor={
-                          targetColors.length > 0 && targetColors[0]?.hex
-                            ? targetColors[0].hex
-                            : undefined
-                        }
                         availableGenerations={availableGenerations}
                       />
                     )}
@@ -1604,11 +1624,16 @@ export default function GamePage() {
                 {status === "playing" ? (
                   <>
                     <PokemonSearch
-                      pokemonList={pokemonList}
+                      pokemonList={allPokemonList}
                       selectedPokemon={null}
                       onPokemonSelect={handleGuess}
                       isShiny={isShiny === true}
                       guessedPokemonIds={guesses.map((g) => g.pokemonId)}
+                      selectedGenerations={
+                        mode === "unlimited"
+                          ? unlimitedSettings.selectedGenerations
+                          : undefined
+                      }
                     />
                     {loadingGuess && (
                       <p className="text-sm text-muted-foreground mt-2">
