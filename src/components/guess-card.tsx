@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
 
 interface Guess {
   pokemonId: number;
@@ -13,10 +14,11 @@ interface Guess {
 interface GuessCardProps {
   guess: Guess;
   index: number;
+  isCorrect?: boolean;
   onRef?: (el: HTMLDivElement | null) => void;
 }
 
-export function GuessCard({ guess, index, onRef }: GuessCardProps) {
+export function GuessCard({ guess, index, isCorrect = false, onRef }: GuessCardProps) {
   return (
     <div
       ref={onRef}
@@ -39,9 +41,14 @@ export function GuessCard({ guess, index, onRef }: GuessCardProps) {
 
       {/* Name and Match % - Center */}
       <div className="flex-1 min-w-0">
-        <h3 className="font-semibold text-sm truncate">{guess.pokemonName}</h3>
+        <div className="flex items-center gap-2">
+          <h3 className="font-semibold text-sm truncate">{guess.pokemonName}</h3>
+          {isCorrect && (
+            <CheckCircle2 className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0" />
+          )}
+        </div>
         <span className="text-xs text-muted-foreground">
-          {Math.round(guess.similarity * 100)}% match
+          {isCorrect ? "Correct!" : `${Math.round(guess.similarity * 100)}% match`}
         </span>
       </div>
 

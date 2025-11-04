@@ -18,6 +18,13 @@ import { PokemonSearch } from "@/components/pokemon-search";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { LoaderOverlay } from "@/components/loader-overlay";
 import { POKEMON_CONSTANTS, FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
@@ -54,6 +61,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import Image from "next/image";
+import Link from "next/link";
 
 type GameMode = "daily" | "unlimited";
 type GameStatus = "playing" | "won" | "lost";
@@ -138,7 +146,10 @@ function calculateSimilarity(
 
   // Find best matches for each color
   let totalSimilarity = 0;
-  const maxDistance = Math.sqrt(255 * 255 * 3); // Max possible distance
+  // Use a more realistic max distance threshold (250 instead of theoretical max ~442)
+  // This makes the similarity calculation more strict and discriminating
+  const effectiveMaxDistance = 250;
+  const theoreticalMaxDistance = Math.sqrt(255 * 255 * 3); // ~442
 
   colors1.forEach((color1) => {
     const color1Hex = typeof color1 === "string" ? color1 : color1.hex;
@@ -149,8 +160,11 @@ function calculateSimilarity(
         minDistance = dist;
       }
     });
-    // Convert distance to similarity (0-1, where 1 is most similar)
-    const similarity = 1 - minDistance / maxDistance;
+    // Convert distance to similarity with a steeper curve
+    // Use effectiveMaxDistance for most colors, but cap at theoretical max
+    const normalizedDistance = Math.min(minDistance / effectiveMaxDistance, 1);
+    // Apply a power curve (1.5) to make the falloff steeper - colors need to be closer to score high
+    const similarity = Math.pow(1 - normalizedDistance, 1.5);
     totalSimilarity += similarity;
   });
 
@@ -210,6 +224,7 @@ export default function GamePage() {
   const hintRefs = useRef<(HTMLDivElement | null)[]>([]);
   const guessRefs = useRef<(HTMLDivElement | null)[]>([]);
   const colorBarRef = useRef<HTMLDivElement | null>(null);
+  const pokemonArtworkRef = useRef<HTMLDivElement | null>(null);
   const generatedHintsRef = useRef<string[]>([]); // Store generated hints to maintain consistency
 
   const MAX_ATTEMPTS = 4;
@@ -1099,6 +1114,19 @@ export default function GamePage() {
     }
 
     // MEDIUM HINTS (more specific, but still narrowing)
+    // Type hint - medium (more specific than vague)
+    if (pokemon.type && pokemon.type.length > 0) {
+      if (pokemon.type.length === 1) {
+        allHints.medium.push(
+          `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
+        );
+      } else if (pokemon.type.length === 2) {
+        allHints.medium.push(
+          `This Pokemon is a ${pokemon.type[0]}- and ${pokemon.type[1]}-type Pokemon.`
+        );
+      }
+    }
+
     // Generation hint - medium
     const shouldShowGenerationHint =
       mode === "daily" ||
@@ -1125,9 +1153,7 @@ export default function GamePage() {
           `This Pokemon is very light, weighing less than 5kg.`
         );
       } else if (pokemon.weight < 20) {
-        allHints.medium.push(
-          `This Pokemon is light, weighing between 5-20kg.`
-        );
+        allHints.medium.push(`This Pokemon is light, weighing between 5-20kg.`);
       } else if (pokemon.weight < 100) {
         allHints.medium.push(
           `This Pokemon is moderately heavy, weighing 20-100kg.`
@@ -1173,26 +1199,18 @@ export default function GamePage() {
     if (pokemon.abilities && Array.isArray(pokemon.abilities)) {
       const abilityCount = pokemon.abilities.length;
       if (abilityCount > 2) {
-        allHints.medium.push(
-          `This Pokemon has multiple abilities.`
-        );
+        allHints.medium.push(`This Pokemon has multiple abilities.`);
       }
     }
 
     // Capture rate hint - medium
     if (pokemon.captureRate !== undefined) {
       if (pokemon.captureRate < 45) {
-        allHints.medium.push(
-          `This Pokemon is very difficult to catch.`
-        );
+        allHints.medium.push(`This Pokemon is very difficult to catch.`);
       } else if (pokemon.captureRate < 90) {
-        allHints.medium.push(
-          `This Pokemon has a moderate catch rate.`
-        );
+        allHints.medium.push(`This Pokemon has a moderate catch rate.`);
       } else {
-        allHints.medium.push(
-          `This Pokemon is relatively easy to catch.`
-        );
+        allHints.medium.push(`This Pokemon is relatively easy to catch.`);
       }
     }
 
@@ -1222,9 +1240,20 @@ export default function GamePage() {
 
     // Species category hint - specific
     if (pokemon.species && pokemon.species !== "Pokémon") {
-      allHints.specific.push(
-        `This Pokemon is known as the ${pokemon.species} Pokemon.`
-      );
+      // Check if species already includes "Pokemon" or "Pokémon"
+      const speciesLower = pokemon.species.toLowerCase();
+      const alreadyHasPokemon =
+        speciesLower.includes("pokemon") || speciesLower.includes("pokémon");
+
+      if (alreadyHasPokemon) {
+        allHints.specific.push(
+          `This Pokemon is known as the ${pokemon.species}.`
+        );
+      } else {
+        allHints.specific.push(
+          `This Pokemon is known as the ${pokemon.species} Pokemon.`
+        );
+      }
     }
 
     // Base experience hint - specific
@@ -1248,7 +1277,10 @@ export default function GamePage() {
     if (pokemon.description) {
       // Only use description if it's not too revealing
       const description = pokemon.description;
-      if (description.length < 200 && !description.toLowerCase().includes(pokemon.name.toLowerCase())) {
+      if (
+        description.length < 200 &&
+        !description.toLowerCase().includes(pokemon.name.toLowerCase())
+      ) {
         allHints.specific.push(description);
       }
     }
@@ -1265,23 +1297,86 @@ export default function GamePage() {
 
     // Select one hint from each category, ensuring progression
     const selectedHints: string[] = [];
-    
-    // First hint: vague (random selection)
+
+    // Find all type-related hints
+    const typeHints: string[] = [];
     if (allHints.vague.length > 0) {
-      const shuffledVague = shuffleArray(allHints.vague);
-      selectedHints.push(shuffledVague[0]);
+      const vagueTypeHint = allHints.vague.find(
+        (h) => h.includes("mono-type") || h.includes("dual-type")
+      );
+      if (vagueTypeHint) typeHints.push(vagueTypeHint);
+    }
+    if (allHints.medium.length > 0) {
+      const mediumTypeHints = allHints.medium.filter((h) =>
+        h.includes("-type Pokemon")
+      );
+      typeHints.push(...mediumTypeHints);
     }
 
-    // Second hint: medium (random selection)
+    // First hint: vague (random selection, but prioritize type hint if available)
+    if (allHints.vague.length > 0) {
+      const shuffledVague = shuffleArray(allHints.vague);
+      // Try to include a type hint if we don't have one yet
+      const vagueTypeHint = shuffledVague.find(
+        (h) => h.includes("mono-type") || h.includes("dual-type")
+      );
+      if (vagueTypeHint && typeHints.length > 0) {
+        selectedHints.push(vagueTypeHint);
+      } else {
+        selectedHints.push(shuffledVague[0]);
+      }
+    }
+
+    // Second hint: medium (random selection, but ensure type hint if not already included)
     if (allHints.medium.length > 0) {
       const shuffledMedium = shuffleArray(allHints.medium);
-      selectedHints.push(shuffledMedium[0]);
+      // Check if we already have a type hint
+      const hasTypeHint = selectedHints.some(
+        (h) =>
+          h.includes("mono-type") ||
+          h.includes("dual-type") ||
+          h.includes("-type Pokemon")
+      );
+
+      if (!hasTypeHint) {
+        // Prioritize type hint
+        const mediumTypeHint = shuffledMedium.find((h) =>
+          h.includes("-type Pokemon")
+        );
+        if (mediumTypeHint) {
+          selectedHints.push(mediumTypeHint);
+        } else {
+          selectedHints.push(shuffledMedium[0]);
+        }
+      } else {
+        selectedHints.push(shuffledMedium[0]);
+      }
     }
 
     // Third hint: specific (random selection)
     if (allHints.specific.length > 0) {
       const shuffledSpecific = shuffleArray(allHints.specific);
       selectedHints.push(shuffledSpecific[0]);
+    }
+
+    // Ensure at least one type hint is included
+    const hasTypeHint = selectedHints.some(
+      (h) =>
+        h.includes("mono-type") ||
+        h.includes("dual-type") ||
+        h.includes("-type Pokemon")
+    );
+
+    if (!hasTypeHint && typeHints.length > 0) {
+      // Replace the first non-type hint with a type hint
+      const typeHint = typeHints[0];
+      if (selectedHints.length >= 1) {
+        selectedHints[0] = typeHint;
+      } else if (selectedHints.length >= 2) {
+        selectedHints[1] = typeHint;
+      } else {
+        selectedHints.push(typeHint);
+      }
     }
 
     // Fill remaining slots if needed
@@ -1404,6 +1499,62 @@ export default function GamePage() {
       });
     }
   }, [targetColors]);
+
+  // Animate Pokemon artwork with subtle wiggle every few seconds
+  useEffect(() => {
+    if (status !== "playing" && pokemonArtworkRef.current) {
+      const artworkElement = pokemonArtworkRef.current;
+
+      // Create a more interesting wiggle animation with rotation, scale, and position
+      const wiggleAnimation = gsap.timeline({ paused: true });
+      wiggleAnimation
+        .to(artworkElement, {
+          rotation: 4,
+          scale: 1.05,
+          y: -3,
+          duration: 0.15,
+          ease: "power2.out",
+        })
+        .to(artworkElement, {
+          rotation: -4,
+          scale: 0.98,
+          y: 3,
+          duration: 0.15,
+          ease: "power2.inOut",
+        })
+        .to(artworkElement, {
+          rotation: 2,
+          scale: 1.02,
+          y: -1,
+          duration: 0.1,
+          ease: "power2.out",
+        })
+        .to(artworkElement, {
+          rotation: 0,
+          scale: 1,
+          y: 0,
+          duration: 0.2,
+          ease: "power2.inOut",
+        });
+
+      // Function to trigger wiggle
+      const triggerWiggle = () => {
+        wiggleAnimation.restart();
+      };
+
+      // Trigger wiggle every 2.5 seconds (more frequent)
+      const interval = setInterval(triggerWiggle, 2500);
+
+      // Initial wiggle after a short delay
+      const initialTimeout = setTimeout(triggerWiggle, 800);
+
+      return () => {
+        clearInterval(interval);
+        clearTimeout(initialTimeout);
+        wiggleAnimation.kill();
+      };
+    }
+  }, [status, targetPokemon]);
 
   const handleGiveUp = () => {
     if (status !== "playing" || !targetPokemon) return;
@@ -1528,6 +1679,28 @@ export default function GamePage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes shine {
+              0%, 85% {
+                transform: translateX(-100%);
+              }
+              95% {
+                transform: translateX(100%);
+              }
+              100% {
+                transform: translateX(100%);
+              }
+            }
+            
+            .shine-animation {
+              animation: shine 6s ease-in-out infinite;
+              animation-delay: 3s;
+            }
+          `,
+        }}
+      />
       <CoffeeCTA
         primaryColor={
           targetColors.length > 0 && targetColors[0]?.hex
@@ -1650,37 +1823,13 @@ export default function GamePage() {
                     />
                   ));
                 })()}
-              </div>
 
-              {/* Pokemon artwork behind the content */}
-              {status !== "playing" && targetPokemon && (
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none z-0 pt-24 md:pt-32">
-                  <Image
-                    src={
-                      isShiny === true
-                        ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${targetPokemon.id}.png`
-                        : typeof targetPokemon.artwork === "object" &&
-                          "official" in targetPokemon.artwork
-                        ? targetPokemon.artwork.official
-                        : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${targetPokemon.id}.png`
-                    }
-                    alt={targetPokemon.name}
-                    width={400}
-                    height={400}
-                    className="w-auto h-64 md:h-80 object-contain"
-                    unoptimized
-                  />
-                </div>
-              )}
-
-              {/* Content with padding */}
-              <div className="relative z-10 p-4 md:p-6">
-                {/* Shiny Badge - Top Left Corner */}
+                {/* Shiny Badge - Top Right Corner */}
                 {isShiny === true && (
-                  <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
+                  <div className="absolute top-2 right-2 md:top-3 md:right-3 z-20">
                     <Badge
                       variant="default"
-                      className="border-transparent text-xs"
+                      className="border-transparent font-heading"
                       style={{
                         backgroundColor:
                           targetColors.length > 0
@@ -1697,7 +1846,10 @@ export default function GamePage() {
                     </Badge>
                   </div>
                 )}
+              </div>
 
+              {/* Content with padding */}
+              <div className="relative z-10 p-4 md:p-6">
                 <div className="flex items-start justify-end gap-4">
                   <div className="flex flex-col items-end gap-2">
                     {/* Hints Display - Right side, in a column */}
@@ -1706,9 +1858,10 @@ export default function GamePage() {
                       revealedHints.length > 0 && (
                         <div className="flex flex-col gap-2 items-end">
                           {revealedHints.map((hintIndex) => {
-                            const hints = generatedHintsRef.current.length > 0 
-                              ? generatedHintsRef.current 
-                              : generateHints(targetPokemon);
+                            const hints =
+                              generatedHintsRef.current.length > 0
+                                ? generatedHintsRef.current
+                                : generateHints(targetPokemon);
                             const primaryColor =
                               targetColors.length > 0
                                 ? targetColors[0].hex
@@ -1769,6 +1922,125 @@ export default function GamePage() {
                     )}
                   </div>
                 </div>
+
+                {/* Pokemon artwork and info when game is finished */}
+                {status !== "playing" && targetPokemon && (
+                  <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+                    {/* Pokemon Artwork */}
+                    <div
+                      ref={pokemonArtworkRef}
+                      className="relative flex-shrink-0"
+                    >
+                      <Image
+                        src={
+                          isShiny === true
+                            ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${targetPokemon.id}.png`
+                            : typeof targetPokemon.artwork === "object" &&
+                              "official" in targetPokemon.artwork
+                            ? targetPokemon.artwork.official
+                            : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${targetPokemon.id}.png`
+                        }
+                        alt={targetPokemon.name}
+                        width={400}
+                        height={400}
+                        className="w-auto h-48 md:h-64 object-contain"
+                        unoptimized
+                      />
+                    </div>
+
+                    {/* Pokemon Info */}
+                    <div className="flex flex-col gap-2 text-center md:text-left">
+                      <h3 className="text-2xl md:text-3xl font-bold font-heading">
+                        {targetPokemon.name}
+                        {isShiny === true && (
+                          <Badge
+                            variant="default"
+                            className="ml-2 font-heading"
+                            style={{
+                              backgroundColor:
+                                targetColors.length > 0
+                                  ? targetColors[0].hex
+                                  : undefined,
+                              color:
+                                targetColors.length > 0 && targetColors[0].hex
+                                  ? getTextColor(targetColors[0].hex)
+                                  : undefined,
+                            }}
+                          >
+                            <Sparkles className="w-3 h-3 mr-1" />
+                            Shiny
+                          </Badge>
+                        )}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {targetPokemon.species.toLowerCase().startsWith("the")
+                          ? targetPokemon.species
+                          : `The ${targetPokemon.species}`}
+                      </p>
+                      <div className="flex flex-wrap gap-2 justify-center md:justify-start mt-2">
+                        {targetPokemon.type.map((type, index) => (
+                          <Badge
+                            key={type}
+                            className="font-medium"
+                            style={{
+                              backgroundColor:
+                                targetColors[index % targetColors.length]
+                                  ?.hex || targetColors[0]?.hex,
+                              color:
+                                targetColors[index % targetColors.length]
+                                  ?.hex || targetColors[0]?.hex
+                                  ? getTextColor(
+                                      targetColors[index % targetColors.length]
+                                        ?.hex || targetColors[0]?.hex
+                                    )
+                                  : undefined,
+                            }}
+                          >
+                            {type}
+                          </Badge>
+                        ))}
+                      </div>
+                      <div className="text-sm text-muted-foreground mt-2">
+                        #{targetPokemon.id.toString().padStart(3, "0")} •
+                        Generation {getGenerationFromId(targetPokemon.id)}
+                      </div>
+                      <Link
+                        href={`/${targetPokemon.name.toLowerCase()}`}
+                        className="mt-4"
+                      >
+                        <Button
+                          variant="default"
+                          className="w-full md:w-auto cursor-pointer font-medium font-heading transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group"
+                          style={{
+                            backgroundColor:
+                              targetColors.length > 0
+                                ? targetColors[0].hex
+                                : undefined,
+                            color:
+                              targetColors.length > 0 && targetColors[0].hex
+                                ? getTextColor(targetColors[0].hex)
+                                : undefined,
+                            borderColor:
+                              targetColors.length > 0
+                                ? targetColors[0].hex
+                                : undefined,
+                          }}
+                        >
+                          {/* Hover shine animation overlay */}
+                          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+                          {/* Automatic shine animation overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none shine-animation" />
+
+                          <Sparkles className="w-4 h-4 mr-2 relative z-10" />
+                          <span className="relative z-10">
+                            Explore {targetPokemon.name}'s palette
+                          </span>
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
 
                 {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-4">
@@ -1924,6 +2196,7 @@ export default function GamePage() {
                         </DialogContent>
                       </Dialog>
                     </div>
+
                     {loadingGuess && (
                       <p className="text-sm text-muted-foreground mt-2">
                         Analyzing guess...
@@ -1938,7 +2211,105 @@ export default function GamePage() {
                         Pokemon!
                       </p>
                       <Button
-                        onClick={() => setMode("unlimited")}
+                        onClick={async () => {
+                          // Reset all game state first
+                          setGuesses([]);
+                          setAttempts(0);
+                          setStatus("playing");
+                          setRevealedHints([]);
+                          setHintCooldown(0);
+                          setTargetPokemon(null);
+                          setTargetPokemonId(null);
+                          setTargetColors([]);
+                          generatedHintsRef.current = [];
+                          // Switch to unlimited mode
+                          setMode("unlimited");
+                          // Initialize new game in unlimited mode
+                          setLoading(true);
+
+                          // Determine shiny status for unlimited mode
+                          let gameShiny: boolean;
+                          if (unlimitedSettings.shinyPreference === "shiny") {
+                            gameShiny = true;
+                          } else if (
+                            unlimitedSettings.shinyPreference === "normal"
+                          ) {
+                            gameShiny = false;
+                          } else {
+                            gameShiny = getRandomShiny();
+                          }
+                          setIsShiny(gameShiny);
+
+                          // Get filtered Pokemon list for unlimited mode
+                          const filteredPokemonList = allPokemonList.filter(
+                            (p) => {
+                              const generation = getGenerationFromId(p.id);
+                              return unlimitedSettings.selectedGenerations.includes(
+                                generation
+                              );
+                            }
+                          );
+
+                          // Choose random Pokemon
+                          let pokemonId: number;
+                          if (filteredPokemonList.length === 0) {
+                            const randomIndex = Math.floor(
+                              Math.random() * allPokemonList.length
+                            );
+                            pokemonId = allPokemonList[randomIndex].id;
+                          } else {
+                            const randomIndex = Math.floor(
+                              Math.random() * filteredPokemonList.length
+                            );
+                            pokemonId = filteredPokemonList[randomIndex].id;
+                          }
+
+                          setTargetPokemonId(pokemonId);
+                          const pokemonData = await getPokemonById(pokemonId);
+
+                          if (pokemonData) {
+                            setTargetPokemon(pokemonData);
+                            const spriteUrl = getSpriteUrl(
+                              pokemonData,
+                              gameShiny
+                            );
+                            if (spriteUrl) {
+                              try {
+                                const colors = (await extractColorsFromImage(
+                                  spriteUrl,
+                                  POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
+                                  true
+                                )) as ColorWithFrequency[];
+                                const topColors = colors.slice(
+                                  0,
+                                  POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+                                );
+                                setTargetColors(topColors);
+                              } catch (error) {
+                                console.error(
+                                  "Failed to extract colors:",
+                                  error
+                                );
+                                const fallbackColors =
+                                  pokemonData.colorPalette?.highlights?.slice(
+                                    0,
+                                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+                                  ) || [];
+                                const fallbackWithFreq: ColorWithFrequency[] =
+                                  fallbackColors.map((hex, idx) => ({
+                                    hex,
+                                    frequency: 100 - idx * 10,
+                                    percentage:
+                                      ((100 - idx * 10) /
+                                        fallbackColors.length) *
+                                      100,
+                                  }));
+                                setTargetColors(fallbackWithFreq);
+                              }
+                            }
+                          }
+                          setLoading(false);
+                        }}
                         className="w-full cursor-pointer"
                       >
                         <InfinityIcon className="w-4 h-4 mr-2" />
@@ -1946,6 +2317,61 @@ export default function GamePage() {
                       </Button>
                     </div>
                   </div>
+                )}
+
+                {/* Game Rules Panel - Show when playing or game hasn't started, hide when game has ended */}
+                {status !== "won" && status !== "lost" && (
+                  <Card className="mt-4">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Sparkles className="w-4 h-4" />
+                        How to Play
+                      </CardTitle>
+                      <CardDescription>
+                        Guess the Pokemon based on its color palette
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <span className="text-muted-foreground mt-0.5">
+                            •
+                          </span>
+                          <span>
+                            You have <strong>{MAX_ATTEMPTS} attempts</strong> to
+                            guess the correct Pokemon
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-muted-foreground mt-0.5">
+                            •
+                          </span>
+                          <span>
+                            Use the color palette at the top to identify the
+                            Pokemon
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-muted-foreground mt-0.5">
+                            •
+                          </span>
+                          <span>
+                            After each guess, you'll see how similar your guess
+                            is to the target
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-muted-foreground mt-0.5">
+                            •
+                          </span>
+                          <span>
+                            Use hints to narrow down your options (up to 3 hints
+                            available)
+                          </span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
                 )}
               </div>
             </div>
@@ -1956,11 +2382,14 @@ export default function GamePage() {
                 <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto">
                   {Array.from({ length: MAX_ATTEMPTS }).map((_, index) => {
                     const guess = guesses[index];
+                    const isCorrect =
+                      guess && guess.pokemonId === targetPokemonId;
                     return guess ? (
                       <GuessCard
                         key={index}
                         guess={guess}
                         index={index}
+                        isCorrect={isCorrect || false}
                         onRef={(el) => {
                           guessRefs.current[index] = el;
                         }}

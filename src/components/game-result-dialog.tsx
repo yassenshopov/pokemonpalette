@@ -109,6 +109,10 @@ export function GameResultDialog({
       ? getSpriteUrl(targetPokemon, isShiny === true)
       : null;
 
+  // Determine if this is an animated BW2 sprite (Gen V and earlier)
+  const isAnimatedBW2Sprite =
+    targetPokemon && getGenerationFromId(targetPokemon.id) <= 5;
+
   // Get primary color and calculate contrast text color
   const primaryColor =
     targetColors.length > 0 ? targetColors[0].hex : undefined;
@@ -226,9 +230,13 @@ export function GameResultDialog({
                 <Image
                   src={spriteUrl}
                   alt={targetPokemon.name}
-                  width={192}
-                  height={192}
-                  className="w-48 h-48 object-contain"
+                  width={isAnimatedBW2Sprite ? 144 : 192}
+                  height={isAnimatedBW2Sprite ? 144 : 192}
+                  className={
+                    isAnimatedBW2Sprite
+                      ? "w-36 h-36 object-contain"
+                      : "w-48 h-48 object-contain"
+                  }
                   style={{ imageRendering: "pixelated" }}
                   unoptimized
                 />

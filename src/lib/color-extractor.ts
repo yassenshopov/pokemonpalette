@@ -54,6 +54,9 @@ export async function extractColorsFromImage(
         const colorMap = new Map<string, number>();
         let totalPixels = 0;
 
+        // Colors to exclude (black/near-black colors)
+        const excludedColors = new Set(["#000000", "#101010", "#121212"]);
+
         // Sample every 4th pixel for performance
         for (let i = 0; i < pixels.length; i += 16) {
           const r = pixels[i];
@@ -68,6 +71,9 @@ export async function extractColorsFromImage(
           const hex = `#${[r, g, b]
             .map((x) => x.toString(16).padStart(2, "0"))
             .join("")}`;
+
+          // Skip excluded colors
+          if (excludedColors.has(hex)) continue;
 
           colorMap.set(hex, (colorMap.get(hex) || 0) + 1);
           totalPixels++;
