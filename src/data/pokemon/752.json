@@ -2,10 +2,7 @@
   "id": 752,
   "name": "Araquanid",
   "species": "Water Bubble Pok\u00e9mon",
-  "type": [
-    "Water",
-    "Bug"
-  ],
+  "type": ["Water", "Bug"],
   "typeDetails": [
     {
       "name": "Water",
@@ -69,11 +66,7 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+    "highlights": ["#6890F0", "#F08030", "#F8D030"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/752.png",
@@ -292,13 +285,6 @@
       "raw_name": "araquanid",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/752/",
-      "type": ""
-    },
-    {
-      "name": "Araquanid totem",
-      "raw_name": "araquanid-totem",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10153/",
       "type": ""
     }
   ],

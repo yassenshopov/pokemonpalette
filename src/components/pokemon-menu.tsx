@@ -24,11 +24,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { ColorPickerDialog } from "@/components/color-picker-dialog";
 import { EvolutionChain } from "@/components/evolution-chain";
+import { Switch } from "@/components/ui/switch";
 import {
   Shuffle,
   ChevronDown,
   ChevronUp,
-  Sparkles,
   GripVertical,
   Edit3,
   Lock,
@@ -38,6 +38,10 @@ import {
   Palette,
 } from "lucide-react";
 import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
+
+// MissingNo fallback image URL
+const MISSINGNO_IMAGE_URL =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/MissingNo.svg/514px-MissingNo.svg.png";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "text-white" | "text-black" => {
@@ -51,6 +55,20 @@ const getTextColor = (hex: string): "text-white" | "text-black" => {
 
   // Return white for dark colors, black for light colors
   return luminance > 0.5 ? "text-black" : "text-white";
+};
+
+// Helper function to get contrast text color value for inline styles
+const getContrastTextColor = (hex: string): string => {
+  const hexClean = hex.replace("#", "");
+  const r = parseInt(hexClean.substring(0, 2), 16);
+  const g = parseInt(hexClean.substring(2, 4), 16);
+  const b = parseInt(hexClean.substring(4, 6), 16);
+
+  // Calculate luminance
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Return white for dark colors, black for light colors
+  return luminance > 0.5 ? "#000000" : "#ffffff";
 };
 
 // Helper function to convert colors
@@ -134,6 +152,8 @@ export function PokemonMenu({
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
   const [colorPickerIndex, setColorPickerIndex] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("palette");
+  const [spriteImageError, setSpriteImageError] = useState(false);
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   // Sync selectedPokemonId prop with internal state
@@ -168,6 +188,11 @@ export function PokemonMenu({
         });
     }
   }, [selectedPokemon, onPokemonSelect]);
+
+  // Reset sprite image error when pokemon or shiny state changes
+  useEffect(() => {
+    setSpriteImageError(false);
+  }, [pokemonData?.id, isShiny]);
 
   // Extract colors from sprite when pokemonData changes
   useEffect(() => {
@@ -432,7 +457,7 @@ export function PokemonMenu({
   }
 
   return (
-    <div className="h-auto md:h-full p-4 md:p-8 flex flex-col items-center justify-start gap-4 md:gap-6 relative w-full">
+    <div className="h-auto md:h-full p-4 md:p-8 flex flex-col items-center justify-start gap-4 md:gap-6 relative w-full xl:max-w-2xl xl:mx-auto">
       <LoaderOverlay loading={loading} text="Loading Pokemon..." />
 
       {/* Collapse button - desktop only */}
@@ -451,34 +476,47 @@ export function PokemonMenu({
       {/* Sprite image */}
       {pokemonData && (
         <div className="flex flex-col items-center gap-2 mt-4 md:mt-8">
-          <div className="relative">
-            {getSpriteUrl(pokemonData, isShiny) ? (
-              <Image
-                src={getSpriteUrl(pokemonData, isShiny)!}
-                alt={pokemonData.name}
-                width={400}
-                height={400}
-                className="w-auto h-auto max-w-[200px] md:max-w-none"
-                style={{ imageRendering: "pixelated" }}
-                unoptimized
-              />
-            ) : null}
+          <div className="relative w-[200px] h-[200px] md:w-[200px] md:h-[200px]">
+            <Image
+              src={
+                spriteImageError || !getSpriteUrl(pokemonData, isShiny)
+                  ? MISSINGNO_IMAGE_URL
+                  : getSpriteUrl(pokemonData, isShiny)!
+              }
+              alt={pokemonData.name}
+              width={200}
+              height={200}
+              className="w-full h-full object-contain"
+              style={{
+                imageRendering:
+                  spriteImageError || !getSpriteUrl(pokemonData, isShiny)
+                    ? "auto"
+                    : "pixelated",
+              }}
+              unoptimized
+              onError={() => setSpriteImageError(true)}
+            />
             {/* Shiny toggle button */}
             <button
               onClick={() => onShinyToggle(!isShiny)}
-              className={`absolute -top-2 -right-2 p-2 rounded-full transition-colors cursor-pointer z-10 ${
-                isShiny ? "opacity-100" : "opacity-60"
+              className={`absolute -top-2 -right-2 p-2 rounded-full transition-all cursor-pointer z-10 backdrop-blur-md border-2 ${
+                isShiny
+                  ? "opacity-100 scale-100 ring-2 ring-offset-2"
+                  : "opacity-80 scale-95 hover:scale-100"
               }`}
               title="Toggle Shiny"
               style={{
-                color: extractedColors[0] || pokemonData.colorPalette?.primary,
+                color: getContrastTextColor("#ffffff"),
                 backgroundColor: isShiny
-                  ? (extractedColors[0] ||
-                      pokemonData.colorPalette?.primary ||
-                      "#000") + "80"
+                  ? `rgba(255, 255, 255, 0.9)`
+                  : `rgba(255, 255, 255, 0.85)`,
+                borderColor: isShiny
+                  ? extractedColors[0] ||
+                    pokemonData.colorPalette?.primary ||
+                    "#6366f1"
                   : (extractedColors[0] ||
                       pokemonData.colorPalette?.primary ||
-                      "#000") + "20",
+                      "#6366f1") + "60",
               }}
             >
               <Sparkles className="w-4 h-4" />
@@ -504,8 +542,23 @@ export function PokemonMenu({
         <Button
           onClick={handleDecrement}
           variant="outline"
-          className="w-8 px-0 cursor-pointer"
+          className="w-8 px-0 cursor-pointer font-heading"
           disabled={!selectedPokemon || selectedPokemon <= 1}
+          style={{
+            backgroundColor:
+              extractedColors[1] ||
+              pokemonData?.colorPalette?.secondary ||
+              undefined,
+            borderColor:
+              extractedColors[1] ||
+              pokemonData?.colorPalette?.secondary ||
+              undefined,
+            color: getContrastTextColor(
+              extractedColors[1] ||
+                pokemonData?.colorPalette?.secondary ||
+                "#8b5cf6"
+            ),
+          }}
         >
           <ChevronDown className="h-4 w-4" />
         </Button>
@@ -521,39 +574,113 @@ export function PokemonMenu({
         <Button
           onClick={handleIncrement}
           variant="outline"
-          className="w-8 px-0 cursor-pointer"
+          className="w-8 px-0 cursor-pointer font-heading"
           disabled={!selectedPokemon || selectedPokemon >= pokemonList.length}
+          style={{
+            backgroundColor:
+              extractedColors[1] ||
+              pokemonData?.colorPalette?.secondary ||
+              undefined,
+            borderColor:
+              extractedColors[1] ||
+              pokemonData?.colorPalette?.secondary ||
+              undefined,
+            color: getContrastTextColor(
+              extractedColors[1] ||
+                pokemonData?.colorPalette?.secondary ||
+                "#8b5cf6"
+            ),
+          }}
         >
           <ChevronUp className="h-4 w-4" />
         </Button>
       </div>
 
-      {/* Search component */}
-      <PokemonSearch
-        pokemonList={pokemonList}
-        selectedPokemon={selectedPokemon}
-        onPokemonSelect={handleSelect}
-        autoFocus={false}
-      />
+      {/* Search component and Randomize button */}
+      <div className="w-full flex flex-col xl:flex-row gap-4">
+        <div className="xl:flex-1">
+          <PokemonSearch
+            pokemonList={pokemonList}
+            selectedPokemon={selectedPokemon}
+            onPokemonSelect={handleSelect}
+            autoFocus={false}
+          />
+        </div>
 
-      {/* Randomize button */}
-      <Button
-        onClick={handleRandomize}
-        variant="outline"
-        className="w-full cursor-pointer"
-      >
-        <Shuffle className="w-4 h-4 mr-2" />
-        Randomize
-      </Button>
+        {/* Randomize button */}
+        <Button
+          onClick={handleRandomize}
+          variant="outline"
+          className="w-full xl:w-auto xl:flex-shrink-0 cursor-pointer font-heading"
+          style={{
+            backgroundColor:
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              undefined,
+            borderColor:
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              undefined,
+            color: getContrastTextColor(
+              extractedColors[0] ||
+                pokemonData?.colorPalette?.primary ||
+                "#6366f1"
+            ),
+          }}
+        >
+          <Shuffle className="w-4 h-4 mr-2" />
+          Randomize
+        </Button>
+      </div>
 
       {/* Palette and Forms Tabs */}
       {pokemonData && (
-        <Tabs defaultValue="palette" className="w-full mt-2 md:mt-4">
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="w-full mt-2 md:mt-4"
+        >
           <TabsList className="w-full grid grid-cols-2">
-            <TabsTrigger value="palette" className="cursor-pointer text-sm">
+            <TabsTrigger
+              value="palette"
+              className="cursor-pointer text-sm font-heading"
+              style={
+                activeTab === "palette"
+                  ? {
+                      backgroundColor:
+                        extractedColors[0] ||
+                        pokemonData?.colorPalette?.primary ||
+                        undefined,
+                      color: getContrastTextColor(
+                        extractedColors[0] ||
+                          pokemonData?.colorPalette?.primary ||
+                          "#6366f1"
+                      ),
+                    }
+                  : {}
+              }
+            >
               Palette
             </TabsTrigger>
-            <TabsTrigger value="forms" className="cursor-pointer text-sm">
+            <TabsTrigger
+              value="forms"
+              className="cursor-pointer text-sm font-heading"
+              style={
+                activeTab === "forms"
+                  ? {
+                      backgroundColor:
+                        extractedColors[0] ||
+                        pokemonData?.colorPalette?.primary ||
+                        undefined,
+                      color: getContrastTextColor(
+                        extractedColors[0] ||
+                          pokemonData?.colorPalette?.primary ||
+                          "#6366f1"
+                      ),
+                    }
+                  : {}
+              }
+            >
               Forms/Related
             </TabsTrigger>
           </TabsList>
@@ -745,21 +872,26 @@ export function PokemonMenu({
                             : {}
                         }
                       >
-                        {varietySprite ? (
-                          <Image
-                            src={varietySprite}
-                            alt={variety.name}
-                            width={40}
-                            height={40}
-                            className="w-auto h-auto"
-                            style={{ imageRendering: "pixelated" }}
-                            unoptimized
-                          />
-                        ) : (
-                          <div className="w-10 h-10 bg-muted rounded flex items-center justify-center text-xs">
-                            {variety.name.charAt(0)}
-                          </div>
-                        )}
+                        <Image
+                          src={varietySprite || MISSINGNO_IMAGE_URL}
+                          alt={variety.name}
+                          width={40}
+                          height={40}
+                          className="w-10 h-10 object-contain"
+                          style={{
+                            imageRendering: varietySprite
+                              ? "pixelated"
+                              : "auto",
+                          }}
+                          unoptimized
+                          onError={(e) => {
+                            const target = e.currentTarget;
+                            if (target.src !== MISSINGNO_IMAGE_URL) {
+                              target.src = MISSINGNO_IMAGE_URL;
+                              target.style.imageRendering = "auto";
+                            }
+                          }}
+                        />
                         <div className="flex-1 text-left">
                           <div className="text-sm font-medium">
                             {variety.name}

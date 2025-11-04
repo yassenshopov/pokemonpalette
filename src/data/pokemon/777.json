@@ -2,10 +2,7 @@
   "id": 777,
   "name": "Togedemaru",
   "species": "Roly-Poly Pok\u00e9mon",
-  "type": [
-    "Electric",
-    "Steel"
-  ],
+  "type": ["Electric", "Steel"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -75,11 +72,7 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
-    ]
+    "highlights": ["#F8D030", "#F08030", "#F8F8F8"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/777.png",
@@ -288,13 +281,6 @@
       "raw_name": "togedemaru",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/777/",
-      "type": ""
-    },
-    {
-      "name": "Togedemaru totem",
-      "raw_name": "togedemaru-totem",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10154/",
       "type": ""
     }
   ],

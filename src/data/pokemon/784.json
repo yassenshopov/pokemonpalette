@@ -2,10 +2,7 @@
   "id": 784,
   "name": "Kommo-o",
   "species": "Scaly Pok\u00e9mon",
-  "type": [
-    "Dragon",
-    "Fighting"
-  ],
+  "type": ["Dragon", "Fighting"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -75,11 +72,7 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+    "highlights": ["#A8A878", "#F8D030", "#F8F8F8"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/784.png",
@@ -308,13 +301,6 @@
       "raw_name": "kommo-o",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/784/",
-      "type": ""
-    },
-    {
-      "name": "Kommo o totem",
-      "raw_name": "kommo-o-totem",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10146/",
       "type": ""
     }
   ],

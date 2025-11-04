@@ -2,10 +2,7 @@
   "id": 738,
   "name": "Vikavolt",
   "species": "Stag Beetle Pok\u00e9mon",
-  "type": [
-    "Bug",
-    "Electric"
-  ],
+  "type": ["Bug", "Electric"],
   "typeDetails": [
     {
       "name": "Bug",
@@ -63,11 +60,7 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
-    ]
+    "highlights": ["#A8B820", "#78C850", "#F8D030"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/738.png",
@@ -299,13 +292,6 @@
       "raw_name": "vikavolt",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/738/",
-      "type": ""
-    },
-    {
-      "name": "Vikavolt totem",
-      "raw_name": "vikavolt-totem",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10122/",
       "type": ""
     }
   ],
