@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
 import { useUser } from "@clerk/nextjs";
 import confetti from "canvas-confetti";
@@ -23,12 +23,21 @@ import { POKEMON_CONSTANTS, FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
-import { RefreshCw, Lightbulb, Flag, Sparkles, Search } from "lucide-react";
+import {
+  RefreshCw,
+  Lightbulb,
+  Flag,
+  Sparkles,
+  Search,
+  Calendar,
+  Infinity as InfinityIcon,
+} from "lucide-react";
 import { GameResultDialog } from "@/components/game-result-dialog";
-import { UserStatsPanel } from "@/components/user-stats-panel";
 import { GameLeaderboard } from "@/components/game-leaderboard";
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
+import { AnimatedDotGrid } from "@/components/animated-dot-grid";
+import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
 import Image from "next/image";
 
 type GameMode = "daily" | "unlimited";
@@ -143,11 +152,23 @@ function getSpriteUrl(pokemon: Pokemon, shiny: boolean): string | null {
   return null;
 }
 
+type ShinyPreference = "both" | "shiny" | "normal";
+
+interface UnlimitedModeSettings {
+  shinyPreference: ShinyPreference;
+  selectedGenerations: number[];
+}
+
 export default function GamePage() {
   const { user, isLoaded: userLoaded } = useUser();
-  const pokemonList = getAllPokemonMetadata();
+  const allPokemonList = getAllPokemonMetadata();
   const [mode, setMode] = useState<GameMode>("daily");
   const [isShiny, setIsShiny] = useState<boolean | null>(null);
+  const [unlimitedSettings, setUnlimitedSettings] =
+    useState<UnlimitedModeSettings>({
+      shinyPreference: "both",
+      selectedGenerations: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    });
   const [targetPokemonId, setTargetPokemonId] = useState<number | null>(null);
   const [targetPokemon, setTargetPokemon] = useState<Pokemon | null>(null);
   const [targetColors, setTargetColors] = useState<ColorWithFrequency[]>([]);
@@ -176,10 +197,49 @@ export default function GamePage() {
   const [showGameResultDialog, setShowGameResultDialog] = useState(false);
   const hintRefs = useRef<(HTMLDivElement | null)[]>([]);
   const guessRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const colorBarRef = useRef<HTMLDivElement | null>(null);
 
   const MAX_ATTEMPTS = 4;
 
   const PENDING_ATTEMPTS_KEY = "pokemon-palette-pending-attempts";
+
+  // Get generation from Pokemon ID (since JSON data has incorrect generation)
+  const getGenerationFromId = (id: number): number => {
+    if (id <= 151) return 1;
+    if (id <= 251) return 2;
+    if (id <= 386) return 3;
+    if (id <= 493) return 4;
+    if (id <= 649) return 5;
+    if (id <= 721) return 6;
+    if (id <= 809) return 7;
+    if (id <= 905) return 8;
+    if (id <= 1025) return 9;
+    return 1; // Default fallback
+  };
+
+  // Filter Pokemon list based on unlimited mode settings
+  const pokemonList = useMemo(() => {
+    if (mode === "daily") {
+      return allPokemonList;
+    }
+
+    // Filter by generation
+    let filtered = allPokemonList.filter((pokemon) => {
+      const generation = getGenerationFromId(pokemon.id);
+      return unlimitedSettings.selectedGenerations.includes(generation);
+    });
+
+    return filtered;
+  }, [mode, allPokemonList, unlimitedSettings.selectedGenerations]);
+
+  // Get available generations (1-9)
+  const availableGenerations = useMemo(() => {
+    const gens = new Set<number>();
+    allPokemonList.forEach((pokemon) => {
+      gens.add(getGenerationFromId(pokemon.id));
+    });
+    return Array.from(gens).sort((a, b) => a - b);
+  }, [allPokemonList]);
 
   // Randomly determine shiny status (50% chance)
   const getRandomShiny = (): boolean => {
@@ -476,22 +536,37 @@ export default function GamePage() {
 
       setLoading(true);
 
-      // Randomly determine shiny status for this game
-      const gameShiny =
-        mode === "daily"
-          ? getDailyShinyStatus() // Deterministic for daily based on date
-          : getRandomShiny(); // Random for unlimited
+      // Determine shiny status for this game
+      let gameShiny: boolean;
+      if (mode === "daily") {
+        gameShiny = getDailyShinyStatus(); // Deterministic for daily based on date
+      } else {
+        // Use settings for unlimited mode
+        if (unlimitedSettings.shinyPreference === "shiny") {
+          gameShiny = true;
+        } else if (unlimitedSettings.shinyPreference === "normal") {
+          gameShiny = false;
+        } else {
+          gameShiny = getRandomShiny(); // Random if "both"
+        }
+      }
 
       setIsShiny(gameShiny);
 
       let pokemonId: number;
 
       if (mode === "daily") {
-        pokemonId = getDailyPokemonId(pokemonList.length, gameShiny);
+        pokemonId = getDailyPokemonId(allPokemonList.length, gameShiny);
       } else {
-        // Unlimited mode: always choose a new random Pokemon
-        const randomIndex = Math.floor(Math.random() * pokemonList.length);
-        pokemonId = pokemonList[randomIndex].id;
+        // Unlimited mode: choose from filtered list based on settings
+        if (pokemonList.length === 0) {
+          // Fallback if no Pokemon match filters
+          const randomIndex = Math.floor(Math.random() * allPokemonList.length);
+          pokemonId = allPokemonList[randomIndex].id;
+        } else {
+          const randomIndex = Math.floor(Math.random() * pokemonList.length);
+          pokemonId = pokemonList[randomIndex].id;
+        }
       }
 
       setTargetPokemonId(pokemonId);
@@ -564,7 +639,7 @@ export default function GamePage() {
     };
 
     initializeGame();
-  }, [mode, pokemonList.length, checkingAuth]);
+  }, [mode, pokemonList.length, checkingAuth, unlimitedSettings]);
 
   // Trigger confetti on win with palette colors
   useEffect(() => {
@@ -952,20 +1027,6 @@ export default function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]); // Only sync when user ID changes (signs in)
 
-  // Get generation from Pokemon ID (since JSON data has incorrect generation)
-  const getGenerationFromId = (id: number): number => {
-    if (id <= 151) return 1;
-    if (id <= 251) return 2;
-    if (id <= 386) return 3;
-    if (id <= 493) return 4;
-    if (id <= 649) return 5;
-    if (id <= 721) return 6;
-    if (id <= 809) return 7;
-    if (id <= 905) return 8;
-    if (id <= 1025) return 9;
-    return 1; // Default fallback
-  };
-
   // Generate hints from Pokemon data
   const generateHints = (pokemon: Pokemon): string[] => {
     const hints: string[] = [];
@@ -1117,6 +1178,25 @@ export default function GamePage() {
     }
   }, [guesses]);
 
+  // Animate color bar when colors are loaded
+  useEffect(() => {
+    if (targetColors.length > 0 && colorBarRef.current) {
+      const colorBar = colorBarRef.current;
+      const colorDivs = colorBar.querySelectorAll<HTMLElement>("div");
+
+      // Set initial state
+      gsap.set(colorDivs, { scaleX: 0, transformOrigin: "left center" });
+
+      // Animate in with stagger
+      gsap.to(colorDivs, {
+        scaleX: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.1,
+      });
+    }
+  }, [targetColors]);
+
   const handleGiveUp = () => {
     if (status !== "playing" || !targetPokemon) return;
 
@@ -1159,21 +1239,36 @@ export default function GamePage() {
     setHintCooldown(0);
     setLoading(true);
 
-    // Randomly determine shiny status for this game
-    const gameShiny =
-      mode === "daily"
-        ? getDailyShinyStatus() // Deterministic for daily based on date
-        : getRandomShiny(); // Random for unlimited
+    // Determine shiny status for this game
+    let gameShiny: boolean;
+    if (mode === "daily") {
+      gameShiny = getDailyShinyStatus(); // Deterministic for daily based on date
+    } else {
+      // Use settings for unlimited mode
+      if (unlimitedSettings.shinyPreference === "shiny") {
+        gameShiny = true;
+      } else if (unlimitedSettings.shinyPreference === "normal") {
+        gameShiny = false;
+      } else {
+        gameShiny = getRandomShiny(); // Random if "both"
+      }
+    }
 
     setIsShiny(gameShiny);
 
     let pokemonId: number;
     if (mode === "daily") {
-      pokemonId = getDailyPokemonId(pokemonList.length, gameShiny);
+      pokemonId = getDailyPokemonId(allPokemonList.length, gameShiny);
     } else {
-      // Unlimited mode: always choose a new random Pokemon
-      const randomIndex = Math.floor(Math.random() * pokemonList.length);
-      pokemonId = pokemonList[randomIndex].id;
+      // Unlimited mode: choose from filtered list based on settings
+      if (pokemonList.length === 0) {
+        // Fallback if no Pokemon match filters
+        const randomIndex = Math.floor(Math.random() * allPokemonList.length);
+        pokemonId = allPokemonList[randomIndex].id;
+      } else {
+        const randomIndex = Math.floor(Math.random() * pokemonList.length);
+        pokemonId = pokemonList[randomIndex].id;
+      }
     }
 
     setTargetPokemonId(pokemonId);
@@ -1234,219 +1329,260 @@ export default function GamePage() {
         }
       />
       <div className="flex-1 flex flex-col h-full overflow-auto relative">
+        {/* Animated dot grid background */}
+        <AnimatedDotGrid colors={targetColors} />
+
         <LoaderOverlay
           loading={checkingAuth || loading}
           text={checkingAuth ? "Checking authentication..." : "Loading game..."}
         />
 
-        <div className="w-full max-w-4xl mx-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 md:gap-8 flex-1">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
+        <div className="w-full max-w-4xl mx-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 md:gap-8 flex-1 relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 font-heading">
             Pokemon Palette Guesser
           </h1>
 
-          {/* Game Number and Date - Daily Mode Only */}
-          <GameDateHeader mode={mode} />
-
-          {/* Mode Selection */}
-          <div className="w-full flex flex-col gap-4 mb-6">
-            <Tabs
-              value={mode}
-              onValueChange={(value) => {
-                const newMode = value as GameMode;
-                // Reset game state when switching modes
-                if (newMode === "unlimited") {
-                  setGuesses([]);
-                  setAttempts(0);
-                  setStatus("playing");
-                }
-                setMode(newMode);
-              }}
-              className="w-full"
-            >
-              <TabsList className="w-full grid grid-cols-2">
-                <TabsTrigger value="daily" className="cursor-pointer">
-                  Daily
-                </TabsTrigger>
-                <TabsTrigger value="unlimited" className="cursor-pointer">
-                  Unlimited
-                </TabsTrigger>
-              </TabsList>
-            </Tabs>
+          {/* Game Number, Date, and Mode Selection */}
+          <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <GameDateHeader mode={mode} />
+            <div className="flex-shrink-0">
+              <Tabs
+                value={mode}
+                onValueChange={(value) => {
+                  const newMode = value as GameMode;
+                  // Reset game state when switching modes
+                  if (newMode === "unlimited") {
+                    setGuesses([]);
+                    setAttempts(0);
+                    setStatus("playing");
+                  }
+                  setMode(newMode);
+                }}
+                className="w-full"
+              >
+                <TabsList className="grid grid-cols-2 font-heading">
+                  <TabsTrigger
+                    value="daily"
+                    className="cursor-pointer font-heading"
+                  >
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Daily
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="unlimited"
+                    className="cursor-pointer font-heading"
+                  >
+                    <InfinityIcon className="w-4 h-4 mr-2" />
+                    Unlimited
+                  </TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
           </div>
-
-          {/* User Stats - Daily Mode Only */}
-          {mode === "daily" && userStats && (
-            <UserStatsPanel userStats={userStats} />
-          )}
 
           {/* Target Palette Display */}
           {targetColors.length > 0 && (
-            <div className="mb-6 w-full max-w-6xl p-4 md:p-6 rounded-lg border bg-card shadow-none relative">
-              {/* Shiny Badge - Top Left Corner */}
-              {isShiny === true && (
-                <div className="absolute top-2 left-2 z-10">
-                  <Badge
-                    variant="default"
-                    className="border-transparent text-xs"
-                    style={{
-                      backgroundColor:
-                        targetColors.length > 0
-                          ? targetColors[0].hex
-                          : undefined,
-                      color:
-                        targetColors.length > 0 && targetColors[0].hex
-                          ? getTextColor(targetColors[0].hex) === "text-white"
-                            ? "#ffffff"
-                            : "#000000"
-                          : undefined,
-                    }}
-                  >
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    Shiny
-                  </Badge>
-                </div>
-              )}
+            <div className="mb-6 w-full max-w-6xl rounded-lg border bg-card shadow-none relative overflow-hidden">
+              {/* Color bar - at the top, outside padding */}
+              <div
+                ref={(el) => {
+                  colorBarRef.current = el;
+                }}
+                className="relative z-10 w-full flex h-16 md:h-20 overflow-hidden"
+              >
+                {(() => {
+                  // Normalize percentages to sum to 100% while maintaining proportions
+                  const totalPercentage = targetColors.reduce(
+                    (sum, color) => sum + color.percentage,
+                    0
+                  );
+                  const normalizedColors = targetColors.map((color) => ({
+                    ...color,
+                    normalizedPercentage:
+                      totalPercentage > 0
+                        ? (color.percentage / totalPercentage) * 100
+                        : 100 / targetColors.length,
+                  }));
 
-              {/* Show official artwork when game is finished */}
-              {status !== "playing" && targetPokemon && (
-                <div className="mb-4 flex justify-center">
-                  <div className="relative">
-                    <Image
-                      src={
-                        isShiny === true
-                          ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${targetPokemon.id}.png`
-                          : typeof targetPokemon.artwork === "object" &&
-                            "official" in targetPokemon.artwork
-                          ? targetPokemon.artwork.official
-                          : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${targetPokemon.id}.png`
-                      }
-                      alt={targetPokemon.name}
-                      width={300}
-                      height={300}
-                      className="w-auto h-48 md:h-64 object-contain"
-                      unoptimized
+                  return normalizedColors.map((color, index) => (
+                    <div
+                      key={index}
+                      className="h-full flex items-center justify-center"
+                      style={{
+                        backgroundColor: color.hex,
+                        width: `${color.normalizedPercentage}%`,
+                      }}
+                      title={`${color.hex} - ${color.percentage.toFixed(1)}%`}
                     />
-                  </div>
-                </div>
-              )}
-
-              <div className="w-full flex gap-1 md:gap-2 h-16 md:h-20 rounded-md overflow-hidden border-2">
-                {targetColors.map((color, index) => (
-                  <div
-                    key={index}
-                    className="h-full flex items-center justify-center border-r last:border-r-0 border-border/50"
-                    style={{
-                      backgroundColor: color.hex,
-                      width: `${color.percentage}%`,
-                      minWidth: "2rem",
-                    }}
-                    title={`${color.hex} - ${color.percentage.toFixed(1)}%`}
-                  />
-                ))}
+                  ));
+                })()}
               </div>
 
-              <div className="flex items-start justify-between mt-4 gap-4">
-                <p className="text-sm text-muted-foreground">
-                  Attempts remaining: {MAX_ATTEMPTS - attempts}
-                </p>
-                <div className="flex flex-col items-end gap-2">
-                  {/* Hints Display - Right side, in a column */}
-                  {status === "playing" &&
-                    targetPokemon &&
-                    revealedHints.length > 0 && (
-                      <div className="flex flex-col gap-2 items-end">
-                        {revealedHints.map((hintIndex) => {
-                          const hints = generateHints(targetPokemon);
-                          const primaryColor =
-                            targetColors.length > 0
-                              ? targetColors[0].hex
-                              : undefined;
-                          return (
-                            <div
-                              key={hintIndex}
-                              ref={(el) => {
-                                hintRefs.current[hintIndex] = el;
-                              }}
-                            >
-                              <Badge
-                                variant="default"
-                                className="border-transparent"
-                                style={{
-                                  backgroundColor: primaryColor || undefined,
-                                  color: primaryColor
-                                    ? getTextColor(primaryColor) ===
-                                      "text-white"
-                                      ? "#ffffff"
-                                      : "#000000"
-                                    : undefined,
+              {/* Pokemon artwork behind the content */}
+              {status !== "playing" && targetPokemon && (
+                <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none z-0 pt-16 md:pt-20">
+                  <Image
+                    src={
+                      isShiny === true
+                        ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/${targetPokemon.id}.png`
+                        : typeof targetPokemon.artwork === "object" &&
+                          "official" in targetPokemon.artwork
+                        ? targetPokemon.artwork.official
+                        : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${targetPokemon.id}.png`
+                    }
+                    alt={targetPokemon.name}
+                    width={400}
+                    height={400}
+                    className="w-auto h-64 md:h-80 object-contain"
+                    unoptimized
+                  />
+                </div>
+              )}
+
+              {/* Content with padding */}
+              <div className="relative z-10 p-4 md:p-6">
+                {/* Shiny Badge - Top Left Corner */}
+                {isShiny === true && (
+                  <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
+                    <Badge
+                      variant="default"
+                      className="border-transparent text-xs"
+                      style={{
+                        backgroundColor:
+                          targetColors.length > 0
+                            ? targetColors[0].hex
+                            : undefined,
+                        color:
+                          targetColors.length > 0 && targetColors[0].hex
+                            ? getTextColor(targetColors[0].hex) === "text-white"
+                              ? "#ffffff"
+                              : "#000000"
+                            : undefined,
+                      }}
+                    >
+                      <Sparkles className="w-3 h-3 mr-1" />
+                      Shiny
+                    </Badge>
+                  </div>
+                )}
+
+                <div className="flex items-start justify-end gap-4">
+                  <div className="flex flex-col items-end gap-2">
+                    {/* Hints Display - Right side, in a column */}
+                    {status === "playing" &&
+                      targetPokemon &&
+                      revealedHints.length > 0 && (
+                        <div className="flex flex-col gap-2 items-end">
+                          {revealedHints.map((hintIndex) => {
+                            const hints = generateHints(targetPokemon);
+                            const primaryColor =
+                              targetColors.length > 0
+                                ? targetColors[0].hex
+                                : undefined;
+                            return (
+                              <div
+                                key={hintIndex}
+                                ref={(el) => {
+                                  hintRefs.current[hintIndex] = el;
                                 }}
                               >
-                                {hints[hintIndex]}
-                              </Badge>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  {status === "playing" && targetPokemon && (
-                    <Button
-                      onClick={showNextHint}
-                      variant="outline"
-                      size="sm"
-                      disabled={revealedHints.length >= 3 || hintCooldown > 0}
-                      className="text-xs relative overflow-hidden"
-                    >
-                      {/* Progress bar background */}
-                      {hintCooldown > 0 && (
-                        <div
-                          className="absolute inset-y-0 left-0 bg-primary opacity-30 transition-all duration-1000 ease-linear"
-                          style={{
-                            width: `${((5 - hintCooldown) / 5) * 100}%`,
-                            borderRadius: "inherit",
-                          }}
-                        />
+                                <Badge
+                                  variant="default"
+                                  className="border-transparent"
+                                  style={{
+                                    backgroundColor: primaryColor || undefined,
+                                    color: primaryColor
+                                      ? getTextColor(primaryColor) ===
+                                        "text-white"
+                                        ? "#ffffff"
+                                        : "#000000"
+                                      : undefined,
+                                  }}
+                                >
+                                  {hints[hintIndex]}
+                                </Badge>
+                              </div>
+                            );
+                          })}
+                        </div>
                       )}
-                      <Lightbulb className="w-3 h-3 mr-1.5 relative z-10" />
-                      <span className="relative z-10">
-                        {revealedHints.length === 0
-                          ? "Show me a hint"
-                          : revealedHints.length === 1
-                          ? "Show another hint"
-                          : revealedHints.length === 2
-                          ? "Show final hint"
-                          : "All hints revealed"}
-                      </span>
-                    </Button>
-                  )}
+                    {status === "playing" && targetPokemon && (
+                      <Button
+                        onClick={showNextHint}
+                        variant="outline"
+                        size="sm"
+                        disabled={revealedHints.length >= 3 || hintCooldown > 0}
+                        className="text-xs relative overflow-hidden cursor-pointer"
+                      >
+                        {/* Progress bar background */}
+                        {hintCooldown > 0 && (
+                          <div
+                            className="absolute inset-y-0 left-0 bg-primary opacity-30 transition-all duration-1000 ease-linear"
+                            style={{
+                              width: `${((5 - hintCooldown) / 5) * 100}%`,
+                              borderRadius: "inherit",
+                            }}
+                          />
+                        )}
+                        <Lightbulb className="w-3 h-3 mr-1.5 relative z-10" />
+                        <span className="relative z-10">
+                          {revealedHints.length === 0
+                            ? "Show me a hint"
+                            : revealedHints.length === 1
+                            ? "Show another hint"
+                            : revealedHints.length === 2
+                            ? "Show final hint"
+                            : "All hints revealed"}
+                        </span>
+                      </Button>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-wrap gap-2 justify-center mt-4">
-                {status === "playing" && (
-                  <Button
-                    onClick={handleGiveUp}
-                    variant="outline"
-                    className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-300 dark:border-red-700"
-                  >
-                    <Flag className="w-4 h-4 mr-2" />
-                    Give Up
-                  </Button>
-                )}
-                {mode === "unlimited" && (
-                  <Button
-                    onClick={resetGame}
-                    variant="outline"
-                    disabled={loading}
-                  >
-                    <RefreshCw
-                      className={`w-4 h-4 mr-2 ${
-                        loading ? "animate-spin" : ""
-                      }`}
-                    />
-                    Get New Pokemon
-                  </Button>
-                )}
+                {/* Action Buttons */}
+                <div className="flex justify-between items-center mt-4">
+                  <div className="flex items-center gap-2">
+                    {status === "playing" && (
+                      <Button
+                        onClick={handleGiveUp}
+                        variant="outline"
+                        className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-300 dark:border-red-700 cursor-pointer"
+                      >
+                        <Flag className="w-4 h-4 mr-2" />
+                        Give Up
+                      </Button>
+                    )}
+                    {mode === "unlimited" && (
+                      <UnlimitedModeSettingsDialog
+                        settings={unlimitedSettings}
+                        onSettingsChange={setUnlimitedSettings}
+                        primaryColor={
+                          targetColors.length > 0 && targetColors[0]?.hex
+                            ? targetColors[0].hex
+                            : undefined
+                        }
+                        availableGenerations={availableGenerations}
+                      />
+                    )}
+                  </div>
+                  <div>
+                    {mode === "unlimited" && (
+                      <Button
+                        onClick={resetGame}
+                        variant="outline"
+                        disabled={loading}
+                        className="cursor-pointer"
+                      >
+                        <RefreshCw
+                          className={`w-4 h-4 mr-2 ${
+                            loading ? "animate-spin" : ""
+                          }`}
+                        />
+                        Get New Pokemon
+                      </Button>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -1469,34 +1605,36 @@ export default function GamePage() {
           <div className="mb-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Column: Search */}
             <div className="lg:col-span-1">
-              {status === "playing" ? (
-                <>
-                  <PokemonSearch
-                    pokemonList={pokemonList}
-                    selectedPokemon={null}
-                    onPokemonSelect={handleGuess}
-                    isShiny={isShiny === true}
-                  />
-                  {loadingGuess && (
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Analyzing guess...
-                    </p>
-                  )}
-                </>
-              ) : (
-                <div className="p-4 rounded-lg border bg-muted/50 text-center text-muted-foreground">
-                  <p className="text-sm">Game finished</p>
-                </div>
-              )}
+              <div className="space-y-3 p-4 md:p-6">
+                {status === "playing" ? (
+                  <>
+                    <PokemonSearch
+                      pokemonList={pokemonList}
+                      selectedPokemon={null}
+                      onPokemonSelect={handleGuess}
+                      isShiny={isShiny === true}
+                    />
+                    {loadingGuess && (
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Analyzing guess...
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <div className="p-4 rounded-lg border bg-muted/50 text-center text-muted-foreground">
+                    <p className="text-sm">Game finished</p>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Right Column: Previous Guesses */}
             <div className="lg:col-span-1">
               <div className="space-y-3 p-4 md:p-6">
-                <h2 className="text-lg font-semibold mb-3">Your Guesses</h2>
-                {guesses.length > 0 ? (
-                  <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto">
-                    {guesses.map((guess, index) => (
+                <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto">
+                  {Array.from({ length: MAX_ATTEMPTS }).map((_, index) => {
+                    const guess = guesses[index];
+                    return guess ? (
                       <GuessCard
                         key={index}
                         guess={guess}
@@ -1505,17 +1643,36 @@ export default function GamePage() {
                           guessRefs.current[index] = el;
                         }}
                       />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-8 text-muted-foreground border rounded-lg bg-card">
-                    <Search className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                    <p className="text-sm font-medium mb-2">No guesses yet</p>
-                    <p className="text-xs">
-                      Start guessing to see your attempts here
-                    </p>
-                  </div>
-                )}
+                    ) : (
+                      <div
+                        key={index}
+                        ref={(el) => {
+                          guessRefs.current[index] = el;
+                        }}
+                        className="flex items-center gap-4 p-3 rounded-lg border bg-card/50 opacity-50 flex-shrink-0"
+                      >
+                        {/* Empty placeholder - Image */}
+                        <div className="relative flex-shrink-0 w-16 h-16 bg-muted rounded" />
+
+                        {/* Empty placeholder - Name and Match */}
+                        <div className="flex-1 min-w-0">
+                          <div className="h-4 bg-muted rounded mb-2 w-24" />
+                          <div className="h-3 bg-muted rounded w-16" />
+                        </div>
+
+                        {/* Empty placeholder - Colors */}
+                        <div className="flex gap-1.5 items-center flex-shrink-0">
+                          {Array.from({ length: 3 }).map((_, colorIndex) => (
+                            <div
+                              key={colorIndex}
+                              className="h-10 w-10 rounded-md border-2 bg-muted"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

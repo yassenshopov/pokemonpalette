@@ -25,7 +25,7 @@ export function GameDateHeader({ mode }: GameDateHeaderProps) {
   });
 
   return (
-    <div className="w-full mb-4 text-center">
+    <div className="text-center font-heading">
       <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-foreground">

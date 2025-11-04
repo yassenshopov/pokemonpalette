@@ -172,6 +172,7 @@ export function PokemonSearch({
         onKeyDown={handleKeyDown}
         onFocus={() => setShowSuggestions(true)}
         className="w-full"
+        autoFocus
       />
 
       {showSuggestions && suggestions.length > 0 && (

@@ -179,4 +179,20 @@
   .animate-scroll-right {
     animation: scroll-right 20s linear infinite;
   }
+
+  /* Animated dot grid background */
+  @keyframes dot-grid-pulse {
+    0%, 100% {
+      opacity: 0.1;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    50% {
+      opacity: 0.25;
+      transform: translate(-50%, -50%) scale(1.3);
+    }
+  }
+
+  .dot-grid-pulse {
+    animation: dot-grid-pulse 5s ease-in-out infinite;
+  }
 }

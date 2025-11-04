@@ -61,7 +61,7 @@ export function CoffeeCTA({ primaryColor = "#f59e0b" }: CoffeeCTAProps) {
       >
         <Button
           size="default"
-          className="border-2 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group px-3 py-2 md:px-4"
+          className="border-2 cursor-pointer font-medium font-heading transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group px-3 py-2 md:px-4"
           style={{
             backgroundColor: primaryColor,
             borderColor: primaryColor,
