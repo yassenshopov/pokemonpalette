@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,11 +11,19 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { SignInButton } from "@clerk/nextjs";
-import { LogIn, RefreshCw } from "lucide-react";
+import {
+  LogIn,
+  RefreshCw,
+  Flame,
+  Calendar,
+  Clock,
+  Sparkles,
+} from "lucide-react";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
 import Image from "next/image";
+import Link from "next/link";
 
 // Get generation from Pokemon ID
 function getGenerationFromId(id: number): number {
@@ -46,6 +55,14 @@ function getSpriteUrl(pokemon: Pokemon, isShiny: boolean): string {
   }
 }
 
+interface UserStats {
+  currentStreak: number;
+  longestStreak: number;
+  totalGames: number;
+  totalWins: number;
+  winRate: number;
+}
+
 interface GameResultDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -65,6 +82,7 @@ interface GameResultDialogProps {
     selectedGenerations: number[];
   }) => void;
   availableGenerations?: number[];
+  userStats?: UserStats | null;
 }
 
 export function GameResultDialog({
@@ -80,6 +98,7 @@ export function GameResultDialog({
   unlimitedSettings,
   onUnlimitedSettingsChange,
   availableGenerations = [],
+  userStats,
 }: GameResultDialogProps) {
   const isWon = status === "won";
   const title = isWon ? "🎉 You Won!" : "Game Over";
@@ -103,6 +122,44 @@ export function GameResultDialog({
     return luminance > 0.5 ? "#000000" : "#ffffff";
   };
 
+  // Calculate time until next puzzle (midnight UTC)
+  const [timeUntilNext, setTimeUntilNext] = useState<string>("");
+
+  useEffect(() => {
+    if (mode !== "daily") {
+      return;
+    }
+
+    const updateTimer = () => {
+      const now = new Date();
+      // Get UTC date components
+      const utcYear = now.getUTCFullYear();
+      const utcMonth = now.getUTCMonth();
+      const utcDate = now.getUTCDate();
+
+      // Create tomorrow at midnight UTC
+      const tomorrowUTC = new Date(
+        Date.UTC(utcYear, utcMonth, utcDate + 1, 0, 0, 0)
+      );
+
+      const diff = tomorrowUTC.getTime() - now.getTime();
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      setTimeUntilNext(
+        `${hours.toString().padStart(2, "0")}:${minutes
+          .toString()
+          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+      );
+    };
+
+    updateTimer();
+    const interval = setInterval(updateTimer, 1000);
+
+    return () => clearInterval(interval);
+  }, [mode, open]);
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -112,35 +169,40 @@ export function GameResultDialog({
         }}
         showCloseButton={false}
       >
-        {/* Color Bar Background - full dialog */}
+        {/* Color Bar Background - full dialog with angled gradient */}
         {targetColors.length > 0 && (
-          <div className="absolute inset-0 flex opacity-15">
-            {(() => {
-              // Normalize percentages to sum to 100%
-              const totalPercentage = targetColors.reduce(
-                (sum, color) => sum + color.percentage,
-                0
-              );
-              const normalizedColors = targetColors.map((color) => ({
-                ...color,
-                normalizedPercentage:
-                  totalPercentage > 0
-                    ? (color.percentage / totalPercentage) * 100
-                    : 100 / targetColors.length,
-              }));
+          <div
+            className="absolute inset-0 opacity-15"
+            style={{
+              background: (() => {
+                // Normalize percentages to sum to 100%
+                const totalPercentage = targetColors.reduce(
+                  (sum, color) => sum + color.percentage,
+                  0
+                );
+                const normalizedColors = targetColors.map((color) => ({
+                  ...color,
+                  normalizedPercentage:
+                    totalPercentage > 0
+                      ? (color.percentage / totalPercentage) * 100
+                      : 100 / targetColors.length,
+                }));
 
-              return normalizedColors.map((color, index) => (
-                <div
-                  key={index}
-                  className="h-full"
-                  style={{
-                    backgroundColor: color.hex,
-                    width: `${color.normalizedPercentage}%`,
-                  }}
-                />
-              ));
-            })()}
-          </div>
+                // Calculate cumulative percentages for gradient stops with hard edges
+                let cumulative = 0;
+                const stops: string[] = [];
+                normalizedColors.forEach((color) => {
+                  const start = `${cumulative}%`;
+                  cumulative += color.normalizedPercentage;
+                  const end = `${cumulative}%`;
+                  // Create hard stops by using the same color at start and end positions
+                  stops.push(`${color.hex} ${start}, ${color.hex} ${end}`);
+                });
+
+                return `linear-gradient(135deg, ${stops.join(", ")})`;
+              })(),
+            }}
+          />
         )}
 
         {/* Content on top */}
@@ -174,7 +236,70 @@ export function GameResultDialog({
             </div>
           )}
 
-          <DialogFooter className="flex-col sm:flex-row gap-2 pt-4 mt-auto">
+          {/* Stats and Timer for Daily Mode */}
+          {mode === "daily" && userStats && (
+            <div className="py-4 border-t border-b">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-muted-foreground" />
+                  <div>
+                    <p className="text-xs text-muted-foreground">
+                      Games Played
+                    </p>
+                    <p className="text-lg font-bold">{userStats.totalGames}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Flame className="w-5 h-5 text-muted-foreground" />
+                  <div>
+                    <p className="text-xs text-muted-foreground">
+                      Current Streak
+                    </p>
+                    <p className="text-lg font-bold">
+                      {userStats.currentStreak} days
+                    </p>
+                  </div>
+                </div>
+                {timeUntilNext && (
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-muted-foreground" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Next puzzle in
+                      </p>
+                      <p className="text-lg font-bold font-mono">
+                        {timeUntilNext}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          <DialogFooter className="flex-col sm:flex-row gap-2 pt-4 mt-auto justify-center">
+            {/* Explore Pokemon Palette Button - Both modes */}
+            {targetPokemon && (
+              <Link
+                href={`/${targetPokemon.name.toLowerCase()}`}
+                className="w-full sm:w-auto"
+              >
+                <Button
+                  variant="outline"
+                  className="w-full cursor-pointer"
+                  style={{
+                    backgroundColor: primaryColor || undefined,
+                    color: primaryColor
+                      ? getTextColor(primaryColor)
+                      : undefined,
+                    borderColor: primaryColor || undefined,
+                  }}
+                >
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Explore {targetPokemon.name}'s palette
+                </Button>
+              </Link>
+            )}
             {mode === "daily" && !user && (
               <SignInButton mode="modal">
                 <Button className="w-full cursor-pointer">
@@ -216,7 +341,8 @@ export function GameResultDialog({
               <Button
                 onClick={() => onOpenChange(false)}
                 variant="outline"
-                className="w-full cursor-pointer"
+                size="sm"
+                className="cursor-pointer"
               >
                 Close
               </Button>

@@ -183,13 +183,9 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     }}
                   >
                     <Coffee className="w-4 h-4 mr-2" />
-                    Buy Me a Coffee
+                    Buy Me a Coffee!
                   </Button>
                 </a>
-                
-                <p className="text-xs text-muted-foreground">
-                  PokémonPalette v0.1.0
-                </p>
               </div>
             </div>
           </div>
@@ -368,13 +364,9 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     }}
                   >
                     <Coffee className="w-4 h-4 mr-2" />
-                    Buy Me a Coffee
+                    Buy Me a Coffee!
                   </Button>
                 </a>
-                
-                <p className="text-xs text-muted-foreground">
-                  PokémonPalette v0.1.0
-                </p>
               </div>
             )}
           </div>

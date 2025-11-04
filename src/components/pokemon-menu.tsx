@@ -533,6 +533,7 @@ export function PokemonMenu({
         pokemonList={pokemonList}
         selectedPokemon={selectedPokemon}
         onPokemonSelect={handleSelect}
+        autoFocus={false}
       />
 
       {/* Randomize button */}

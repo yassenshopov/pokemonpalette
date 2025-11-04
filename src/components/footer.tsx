@@ -49,14 +49,6 @@ export function Footer() {
                   Color Game
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/community"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Explore Community
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -133,17 +125,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-        </div>
-
-        <Separator className="my-6 md:my-8" />
-
-        {/* Copyright */}
-        <div className="text-center">
-          <p className="text-xs md:text-sm text-muted-foreground">
-            © 2025 Pokemon Palette by{" "}
-            <span className="font-semibold">Yassen Shopov</span>. All rights
-            reserved.
-          </p>
         </div>
       </div>
     </footer>

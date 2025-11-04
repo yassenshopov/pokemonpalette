@@ -14,6 +14,7 @@ interface PokemonSearchProps {
   isShiny?: boolean;
   guessedPokemonIds?: number[];
   selectedGenerations?: number[];
+  autoFocus?: boolean;
 }
 
 // Get generation from Pokemon ID
@@ -37,6 +38,7 @@ export function PokemonSearch({
   isShiny = false,
   guessedPokemonIds = [],
   selectedGenerations,
+  autoFocus = true,
 }: PokemonSearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<PokemonMetadata[]>([]);
@@ -246,7 +248,7 @@ export function PokemonSearch({
         onKeyDown={handleKeyDown}
         onFocus={() => setShowSuggestions(true)}
         className="w-full"
-        autoFocus
+        autoFocus={autoFocus}
       />
 
       {showSuggestions && suggestions.length > 0 && (

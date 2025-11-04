@@ -33,7 +33,6 @@ import {
   Infinity as InfinityIcon,
 } from "lucide-react";
 import { GameResultDialog } from "@/components/game-result-dialog";
-import { GameLeaderboard } from "@/components/game-leaderboard";
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
 import { AnimatedDotGrid } from "@/components/animated-dot-grid";
@@ -201,11 +200,6 @@ export default function GamePage() {
     totalWins: number;
     winRate: number;
   } | null>(null);
-  const [leaderboard, setLeaderboard] = useState<any[]>([]);
-  const [currentUserPosition, setCurrentUserPosition] = useState<number | null>(
-    null
-  );
-  const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
   const [pendingAttempts, setPendingAttempts] = useState<any[]>([]);
   const [checkingAuth, setCheckingAuth] = useState(true);
   const [revealedHints, setRevealedHints] = useState<number[]>([]);
@@ -391,7 +385,10 @@ export default function GamePage() {
                     ).filter((g): g is Guess => g !== null);
                     setGuesses(loadedGuesses);
                     setAttempts(todayAttempt.attempts);
-                    setStatus(todayAttempt.won ? "won" : "lost");
+                    const gameStatus = todayAttempt.won ? "won" : "lost";
+                    setStatus(gameStatus);
+                    // Show the result dialog if the game is already completed
+                    setShowGameResultDialog(true);
                   } catch (error) {
                     console.error("Failed to load pending attempt:", error);
                   }
@@ -533,7 +530,10 @@ export default function GamePage() {
               });
 
               setAttempts(todayAttempt.attempts);
-              setStatus(todayAttempt.won ? "won" : "lost");
+              const gameStatus = todayAttempt.won ? "won" : "lost";
+              setStatus(gameStatus);
+              // Show the result dialog if the game is already completed
+              setShowGameResultDialog(true);
             }
           }
         }
@@ -719,30 +719,12 @@ export default function GamePage() {
     }
   }, [status, targetColors]);
 
-  // Fetch user stats and leaderboard for daily mode
+  // Fetch user stats for daily mode
   useEffect(() => {
     const fetchStats = async () => {
       if (mode !== "daily") {
         setUserStats(null);
-        setLeaderboard([]);
         return;
-      }
-
-      // Always fetch leaderboard (works without auth)
-      setLoadingLeaderboard(true);
-      try {
-        const leaderboardResponse = await fetch(
-          "/api/daily-game-attempts/leaderboard?limit=10&sortBy=currentStreak"
-        );
-        if (leaderboardResponse.ok) {
-          const leaderboardData = await leaderboardResponse.json();
-          setLeaderboard(leaderboardData.leaderboard || []);
-          setCurrentUserPosition(leaderboardData.currentUserPosition || null);
-        }
-      } catch (error) {
-        console.error("Error fetching leaderboard:", error);
-      } finally {
-        setLoadingLeaderboard(false);
       }
 
       // Only fetch user stats if signed in
@@ -1664,6 +1646,7 @@ export default function GamePage() {
               availableGenerations={
                 mode === "unlimited" ? availableGenerations : undefined
               }
+              userStats={mode === "daily" ? userStats : undefined}
             />
           )}
 
@@ -1733,8 +1716,20 @@ export default function GamePage() {
                     )}
                   </>
                 ) : (
-                  <div className="p-4 rounded-lg border bg-muted/50 text-center text-muted-foreground">
-                    <p className="text-sm">Game finished</p>
+                  <div className="flex flex-col justify-center min-h-[400px] rounded-lg border bg-card">
+                    <div className="space-y-4 px-4">
+                      <p className="text-sm text-muted-foreground text-center">
+                        Want to keep playing? Try unlimited mode with random
+                        Pokemon!
+                      </p>
+                      <Button
+                        onClick={() => setMode("unlimited")}
+                        className="w-full cursor-pointer"
+                      >
+                        <InfinityIcon className="w-4 h-4 mr-2" />
+                        Play Unlimited Mode
+                      </Button>
+                    </div>
                   </div>
                 )}
               </div>
@@ -1788,31 +1783,6 @@ export default function GamePage() {
               </div>
             </div>
           </div>
-
-          {/* CTA to play unlimited after daily game is complete */}
-          {mode === "daily" && status !== "playing" && (
-            <div className="mb-6 p-4 rounded-lg border bg-card">
-              <p className="text-sm text-muted-foreground mb-3">
-                Want to keep playing? Try unlimited mode with random Pokemon!
-              </p>
-              <Button
-                onClick={() => setMode("unlimited")}
-                className="w-full cursor-pointer"
-              >
-                Play Unlimited Mode
-              </Button>
-            </div>
-          )}
-
-          {/* Leaderboard - Daily Mode Only */}
-          {mode === "daily" && (
-            <GameLeaderboard
-              leaderboard={leaderboard}
-              loading={loadingLeaderboard}
-              currentUserId={user?.id}
-              currentUserPosition={currentUserPosition}
-            />
-          )}
         </div>
         <Footer />
       </div>
