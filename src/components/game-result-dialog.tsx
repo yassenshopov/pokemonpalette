@@ -304,7 +304,7 @@ export function GameResultDialog({
                   }}
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Explore {targetPokemon.name}'s palette
+                  Explore {targetPokemon.name}&apos;s palette
                 </Button>
               </Link>
             )}

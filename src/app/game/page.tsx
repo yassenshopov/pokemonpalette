@@ -2034,7 +2034,7 @@ export default function GamePage() {
 
                           <Sparkles className="w-4 h-4 mr-2 relative z-10" />
                           <span className="relative z-10">
-                            Explore {targetPokemon.name}'s palette
+                            Explore {targetPokemon.name}&apos;s palette
                           </span>
                         </Button>
                       </Link>
@@ -2356,8 +2356,8 @@ export default function GamePage() {
                             •
                           </span>
                           <span>
-                            After each guess, you'll see how similar your guess
-                            is to the target
+                            After each guess, you&apos;ll see how similar your
+                            guess is to the target
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
