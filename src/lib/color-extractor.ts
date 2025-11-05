@@ -55,7 +55,13 @@ export async function extractColorsFromImage(
         let totalPixels = 0;
 
         // Colors to exclude (black/near-black colors)
-        const excludedColors = new Set(["#000000", "#101010", "#121212"]);
+        const excludedColors = new Set([
+          "#000000",
+          "#101010",
+          "#121212",
+          "#010101",
+          "#0f0f0f",
+        ]);
 
         // Sample every 4th pixel for performance
         for (let i = 0; i < pixels.length; i += 16) {
@@ -85,11 +91,13 @@ export async function extractColorsFromImage(
           .slice(0, count);
 
         if (includeFrequencies) {
-          const colorsWithFreq: ColorWithFrequency[] = sortedColors.map(([hex, frequency]) => ({
-            hex,
-            frequency,
-            percentage: (frequency / totalPixels) * 100,
-          }));
+          const colorsWithFreq: ColorWithFrequency[] = sortedColors.map(
+            ([hex, frequency]) => ({
+              hex,
+              frequency,
+              percentage: (frequency / totalPixels) * 100,
+            })
+          );
           resolve(colorsWithFreq);
         } else {
           const hexColors = sortedColors.map(([hex]) => hex);

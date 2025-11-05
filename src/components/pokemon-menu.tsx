@@ -626,89 +626,88 @@ export function PokemonMenu({
         </Button>
       </div>
 
-      {/* Search component, Randomize button, and Shiny toggle */}
-      <div className="w-full flex flex-col xl:flex-row gap-4">
-        <div className="xl:flex-1">
-          <PokemonSearch
-            pokemonList={pokemonList}
-            selectedPokemon={selectedPokemon}
-            onPokemonSelect={handleSelect}
-            autoFocus={false}
-          />
-        </div>
+      {/* Search component */}
+      <div className="w-full">
+        <PokemonSearch
+          pokemonList={pokemonList}
+          selectedPokemon={selectedPokemon}
+          onPokemonSelect={handleSelect}
+          autoFocus={false}
+        />
+      </div>
 
-        <div className="flex items-center gap-4">
-          {/* Randomize button */}
-          <Button
-            onClick={handleRandomize}
-            variant="outline"
-            size="sm"
-            className="xl:flex-shrink-0 cursor-pointer font-heading"
-            style={{
-              backgroundColor:
-                extractedColors[0] ||
+      {/* Randomize button and Shiny toggle */}
+      <div className="w-full flex items-center gap-4">
+        {/* Randomize button */}
+        <Button
+          onClick={handleRandomize}
+          variant="outline"
+          size="sm"
+          className="cursor-pointer font-heading"
+          style={{
+            backgroundColor:
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              undefined,
+            borderColor:
+              extractedColors[0] ||
+              pokemonData?.colorPalette?.primary ||
+              undefined,
+            color: getContrastTextColor(
+              extractedColors[0] ||
                 pokemonData?.colorPalette?.primary ||
-                undefined,
-              borderColor:
-                extractedColors[0] ||
-                pokemonData?.colorPalette?.primary ||
-                undefined,
-              color: getContrastTextColor(
-                extractedColors[0] ||
-                  pokemonData?.colorPalette?.primary ||
-                  "#6366f1"
-              ),
-            }}
-          >
-            <Shuffle className="w-4 h-4 mr-2" />
-            Randomize
-          </Button>
+                "#6366f1"
+            ),
+          }}
+        >
+          <Shuffle className="w-4 h-4 mr-2" />
+          Randomize
+        </Button>
 
-          {/* Shiny toggle */}
-          <SwitchPrimitive.Root
-            checked={isShiny}
-            onCheckedChange={onShinyToggle}
+        {/* Shiny toggle */}
+        <SwitchPrimitive.Root
+          checked={isShiny}
+          onCheckedChange={onShinyToggle}
+          className={cn(
+            "peer inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer",
+            isShiny
+              ? ""
+              : "bg-input dark:bg-input/80 focus-visible:border-ring focus-visible:ring-ring/50"
+          )}
+          style={
+            isShiny
+              ? {
+                  backgroundColor:
+                    extractedColors[0] ||
+                    pokemonData?.colorPalette?.primary ||
+                    "#6366f1",
+                }
+              : undefined
+          }
+        >
+          <SwitchPrimitive.Thumb
             className={cn(
-              "peer inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer",
+              "pointer-events-none flex items-center justify-center size-4 rounded-full ring-0 transition-transform",
               isShiny
-                ? ""
-                : "bg-input dark:bg-input/80 focus-visible:border-ring focus-visible:ring-ring/50"
+                ? "translate-x-[calc(100%-2px)] bg-white"
+                : "translate-x-0 bg-background dark:bg-foreground"
             )}
-            style={
-              isShiny
-                ? {
-                    backgroundColor:
-                      extractedColors[0] ||
-                      pokemonData?.colorPalette?.primary ||
-                      "#6366f1",
-                  }
-                : undefined
-            }
           >
-            <SwitchPrimitive.Thumb
+            <Sparkles
               className={cn(
-                "pointer-events-none flex items-center justify-center size-4 rounded-full ring-0 transition-transform",
-                isShiny
-                  ? "translate-x-[calc(100%-2px)] bg-white"
-                  : "translate-x-0 bg-background dark:bg-foreground"
+                "w-2.5 h-2.5 transition-opacity",
+                isShiny ? "opacity-100" : "opacity-0"
               )}
-            >
-              <Sparkles
-                className={cn(
-                  "w-2.5 h-2.5 transition-opacity",
-                  isShiny ? "opacity-100" : "opacity-0"
-                )}
-                style={{
-                  color: isShiny
-                    ? extractedColors[0] ||
-                      pokemonData?.colorPalette?.primary ||
-                      "#6366f1"
-                    : undefined,
-                }}
-              />
-            </SwitchPrimitive.Thumb>
-          </SwitchPrimitive.Root>
-        </div>
+              style={{
+                color: isShiny
+                  ? extractedColors[0] ||
+                    pokemonData?.colorPalette?.primary ||
+                    "#6366f1"
+                  : undefined,
+              }}
+            />
+          </SwitchPrimitive.Thumb>
+        </SwitchPrimitive.Root>
       </div>
 
       {/* Palette and Forms Tabs */}

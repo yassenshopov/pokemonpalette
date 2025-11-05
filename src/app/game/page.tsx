@@ -201,6 +201,9 @@ export default function GamePage() {
   const [targetPokemonId, setTargetPokemonId] = useState<number | null>(null);
   const [targetPokemon, setTargetPokemon] = useState<Pokemon | null>(null);
   const [targetColors, setTargetColors] = useState<ColorWithFrequency[]>([]);
+  const [allTargetColors, setAllTargetColors] = useState<ColorWithFrequency[]>(
+    []
+  ); // Store all extracted colors
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const [attempts, setAttempts] = useState(0);
   const [status, setStatus] = useState<GameStatus>("playing");
@@ -226,6 +229,7 @@ export default function GamePage() {
   const colorBarRef = useRef<HTMLDivElement | null>(null);
   const pokemonArtworkRef = useRef<HTMLDivElement | null>(null);
   const generatedHintsRef = useRef<string[]>([]); // Store generated hints to maintain consistency
+  const hasAnimatedFullPaletteRef = useRef(false); // Track if we've animated the full palette expansion
 
   const MAX_ATTEMPTS = 4;
 
@@ -341,6 +345,7 @@ export default function GamePage() {
                       POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
                       true
                     )) as ColorWithFrequency[];
+                    setAllTargetColors(colors); // Store all colors
                     const topColors = colors.slice(
                       0,
                       POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -457,20 +462,22 @@ export default function GamePage() {
                   setTargetColors(topColors);
                 } catch (error) {
                   console.error("Failed to extract colors:", error);
-                  const fallbackColors =
-                    targetPokemonData.colorPalette?.highlights?.slice(
-                      0,
-                      POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                    ) || [];
+                  const allFallbackColors =
+                    targetPokemonData.colorPalette?.highlights || [];
                   // Convert fallback colors to ColorWithFrequency format
-                  const fallbackWithFreq: ColorWithFrequency[] =
-                    fallbackColors.map((hex, idx) => ({
+                  const allFallbackWithFreq: ColorWithFrequency[] =
+                    allFallbackColors.map((hex, idx) => ({
                       hex,
                       frequency: 100 - idx * 10, // Dummy frequencies for fallback
                       percentage:
-                        ((100 - idx * 10) / fallbackColors.length) * 100,
+                        ((100 - idx * 10) / allFallbackColors.length) * 100,
                     }));
-                  setTargetColors(fallbackWithFreq);
+                  setAllTargetColors(allFallbackWithFreq); // Store all colors
+                  const fallbackColors = allFallbackWithFreq.slice(
+                    0,
+                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+                  );
+                  setTargetColors(fallbackColors);
                 }
               }
 
@@ -627,6 +634,7 @@ export default function GamePage() {
               POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
               true
             )) as ColorWithFrequency[];
+            setAllTargetColors(colors); // Store all colors
             const topColors = colors.slice(
               0,
               POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -634,20 +642,21 @@ export default function GamePage() {
             setTargetColors(topColors);
           } catch (error) {
             console.error("Failed to extract colors:", error);
-            const fallbackColors =
-              pokemonData.colorPalette?.highlights?.slice(
-                0,
-                POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-              ) || [];
+            const allFallbackColors =
+              pokemonData.colorPalette?.highlights || [];
             // Convert fallback colors to ColorWithFrequency format
-            const fallbackWithFreq: ColorWithFrequency[] = fallbackColors.map(
-              (hex, idx) => ({
+            const allFallbackWithFreq: ColorWithFrequency[] =
+              allFallbackColors.map((hex, idx) => ({
                 hex,
                 frequency: 100 - idx * 10, // Dummy frequencies for fallback
-                percentage: ((100 - idx * 10) / fallbackColors.length) * 100,
-              })
+                percentage: ((100 - idx * 10) / allFallbackColors.length) * 100,
+              }));
+            setAllTargetColors(allFallbackWithFreq); // Store all colors
+            const fallbackColors = allFallbackWithFreq.slice(
+              0,
+              POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
             );
-            setTargetColors(fallbackWithFreq);
+            setTargetColors(fallbackColors);
           }
         }
       }
@@ -1069,11 +1078,16 @@ export default function GamePage() {
     // VAGUE HINTS (less revealing, broad categories)
     // Type hint - vague
     if (pokemon.type && pokemon.type.length > 0) {
-      allHints.vague.push(
-        pokemon.type.length === 1
-          ? `This Pokemon is a mono-type Pokemon.`
-          : `This Pokemon is a dual-type Pokemon.`
-      );
+      if (pokemon.type.length === 1) {
+        allHints.vague.push(
+          `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
+        );
+      } else {
+        // For dual types, mention one of the types with "part-X type"
+        allHints.vague.push(
+          `This Pokemon is a part-${pokemon.type[0]} type Pokemon.`
+        );
+      }
     }
 
     // Rarity hint - vague
@@ -1302,7 +1316,7 @@ export default function GamePage() {
     const typeHints: string[] = [];
     if (allHints.vague.length > 0) {
       const vagueTypeHint = allHints.vague.find(
-        (h) => h.includes("mono-type") || h.includes("dual-type")
+        (h) => h.includes("-type Pokemon") || h.includes("part-")
       );
       if (vagueTypeHint) typeHints.push(vagueTypeHint);
     }
@@ -1318,7 +1332,7 @@ export default function GamePage() {
       const shuffledVague = shuffleArray(allHints.vague);
       // Try to include a type hint if we don't have one yet
       const vagueTypeHint = shuffledVague.find(
-        (h) => h.includes("mono-type") || h.includes("dual-type")
+        (h) => h.includes("-type Pokemon") || h.includes("part-")
       );
       if (vagueTypeHint && typeHints.length > 0) {
         selectedHints.push(vagueTypeHint);
@@ -1332,10 +1346,7 @@ export default function GamePage() {
       const shuffledMedium = shuffleArray(allHints.medium);
       // Check if we already have a type hint
       const hasTypeHint = selectedHints.some(
-        (h) =>
-          h.includes("mono-type") ||
-          h.includes("dual-type") ||
-          h.includes("-type Pokemon")
+        (h) => h.includes("-type Pokemon") || h.includes("part-")
       );
 
       if (!hasTypeHint) {
@@ -1353,18 +1364,12 @@ export default function GamePage() {
       }
     }
 
-    // Third hint: specific (random selection)
-    if (allHints.specific.length > 0) {
-      const shuffledSpecific = shuffleArray(allHints.specific);
-      selectedHints.push(shuffledSpecific[0]);
-    }
+    // Third hint: always "Full palette shown"
+    selectedHints.push("Full palette shown");
 
     // Ensure at least one type hint is included
     const hasTypeHint = selectedHints.some(
-      (h) =>
-        h.includes("mono-type") ||
-        h.includes("dual-type") ||
-        h.includes("-type Pokemon")
+      (h) => h.includes("-type Pokemon") || h.includes("part-")
     );
 
     if (!hasTypeHint && typeHints.length > 0) {
@@ -1499,6 +1504,50 @@ export default function GamePage() {
       });
     }
   }, [targetColors]);
+
+  // Animate full palette expansion when third hint is revealed
+  useEffect(() => {
+    if (
+      revealedHints.includes(2) &&
+      allTargetColors.length > targetColors.length &&
+      colorBarRef.current &&
+      !hasAnimatedFullPaletteRef.current
+    ) {
+      // Mark that we've animated to prevent re-animating
+      hasAnimatedFullPaletteRef.current = true;
+
+      // Wait for DOM to update with new color divs (use double RAF for reliability)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (!colorBarRef.current) return;
+
+          const colorBar = colorBarRef.current;
+          const allDivs = colorBar.querySelectorAll<HTMLElement>("div");
+
+          if (allDivs.length > targetColors.length) {
+            // Get the new divs (the ones beyond the initial 3)
+            const newDivs = Array.from(allDivs).slice(targetColors.length);
+
+            // Set initial state for new divs
+            gsap.set(newDivs, { scaleX: 0, transformOrigin: "left center" });
+
+            // Animate in new divs with stagger (same animation as initial load)
+            gsap.to(newDivs, {
+              scaleX: 1,
+              duration: 0.8,
+              ease: "power3.out",
+              stagger: 0.1,
+            });
+          }
+        });
+      });
+    }
+  }, [revealedHints, allTargetColors.length, targetColors.length]);
+
+  // Reset animation flag when game resets or Pokemon changes
+  useEffect(() => {
+    hasAnimatedFullPaletteRef.current = false;
+  }, [targetPokemonId]);
 
   // Animate Pokemon artwork with subtle wiggle every few seconds
   useEffect(() => {
@@ -1649,6 +1698,7 @@ export default function GamePage() {
             POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
             true
           )) as ColorWithFrequency[];
+          setAllTargetColors(colors); // Store all colors
           const topColors = colors.slice(
             0,
             POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -1656,20 +1706,20 @@ export default function GamePage() {
           setTargetColors(topColors);
         } catch (error) {
           console.error("Failed to extract colors:", error);
-          const fallbackColors =
-            pokemonData.colorPalette?.highlights?.slice(
-              0,
-              POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-            ) || [];
+          const allFallbackColors = pokemonData.colorPalette?.highlights || [];
           // Convert fallback colors to ColorWithFrequency format
-          const fallbackWithFreq: ColorWithFrequency[] = fallbackColors.map(
-            (hex, idx) => ({
+          const allFallbackWithFreq: ColorWithFrequency[] =
+            allFallbackColors.map((hex, idx) => ({
               hex,
               frequency: 100 - idx * 10, // Dummy frequencies for fallback
-              percentage: ((100 - idx * 10) / fallbackColors.length) * 100,
-            })
+              percentage: ((100 - idx * 10) / allFallbackColors.length) * 100,
+            }));
+          setAllTargetColors(allFallbackWithFreq); // Store all colors
+          const fallbackColors = allFallbackWithFreq.slice(
+            0,
+            POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
           );
-          setTargetColors(fallbackWithFreq);
+          setTargetColors(fallbackColors);
         }
       }
     }
@@ -1798,17 +1848,25 @@ export default function GamePage() {
                 className="relative z-10 w-full flex h-24 md:h-32 overflow-hidden"
               >
                 {(() => {
+                  // Show all colors if third hint is revealed and we have more colors available
+                  const shouldShowFullPalette =
+                    revealedHints.includes(2) &&
+                    allTargetColors.length > targetColors.length;
+                  const colorsToShow = shouldShowFullPalette
+                    ? allTargetColors
+                    : targetColors;
+
                   // Normalize percentages to sum to 100% while maintaining proportions
-                  const totalPercentage = targetColors.reduce(
+                  const totalPercentage = colorsToShow.reduce(
                     (sum, color) => sum + color.percentage,
                     0
                   );
-                  const normalizedColors = targetColors.map((color) => ({
+                  const normalizedColors = colorsToShow.map((color) => ({
                     ...color,
                     normalizedPercentage:
                       totalPercentage > 0
                         ? (color.percentage / totalPercentage) * 100
-                        : 100 / targetColors.length,
+                        : 100 / colorsToShow.length,
                   }));
 
                   return normalizedColors.map((color, index) => (
@@ -2221,6 +2279,7 @@ export default function GamePage() {
                           setTargetPokemon(null);
                           setTargetPokemonId(null);
                           setTargetColors([]);
+                          setAllTargetColors([]);
                           generatedHintsRef.current = [];
                           // Switch to unlimited mode
                           setMode("unlimited");
@@ -2280,6 +2339,7 @@ export default function GamePage() {
                                   POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
                                   true
                                 )) as ColorWithFrequency[];
+                                setAllTargetColors(colors); // Store all colors
                                 const topColors = colors.slice(
                                   0,
                                   POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -2290,21 +2350,24 @@ export default function GamePage() {
                                   "Failed to extract colors:",
                                   error
                                 );
-                                const fallbackColors =
-                                  pokemonData.colorPalette?.highlights?.slice(
-                                    0,
-                                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                                  ) || [];
-                                const fallbackWithFreq: ColorWithFrequency[] =
-                                  fallbackColors.map((hex, idx) => ({
+                                const allFallbackColors =
+                                  pokemonData.colorPalette?.highlights || [];
+                                const allFallbackWithFreq: ColorWithFrequency[] =
+                                  allFallbackColors.map((hex, idx) => ({
                                     hex,
                                     frequency: 100 - idx * 10,
                                     percentage:
                                       ((100 - idx * 10) /
-                                        fallbackColors.length) *
+                                        allFallbackColors.length) *
                                       100,
                                   }));
-                                setTargetColors(fallbackWithFreq);
+                                setAllTargetColors(allFallbackWithFreq); // Store all colors
+                                const fallbackColors =
+                                  allFallbackWithFreq.slice(
+                                    0,
+                                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+                                  );
+                                setTargetColors(fallbackColors);
                               }
                             }
                           }
