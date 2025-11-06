@@ -95,10 +95,8 @@ function getDailyPokemonId(totalPokemon: number, isShiny: boolean): number {
 }
 
 function getDailyShinyStatus(): boolean {
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}-shinystatus`;
-  const hash = hashString(dateStr);
-  return hash % 2 === 0; // Deterministic shiny status for the day
+  // Daily mode is non-shiny only for now
+  return false;
 }
 
 // Helper function to determine if text should be dark or light based on background
@@ -608,7 +606,8 @@ export default function GamePage() {
       let pokemonId: number;
 
       if (mode === "daily") {
-        pokemonId = getDailyPokemonId(allPokemonList.length, gameShiny);
+        // Daily mode limited to Gen 1 Pokemon (IDs 1-151) for now
+        pokemonId = getDailyPokemonId(151, gameShiny);
       } else {
         // Unlimited mode: choose from filtered list based on settings
         if (pokemonList.length === 0) {
@@ -1614,7 +1613,8 @@ export default function GamePage() {
 
     let pokemonId: number;
     if (mode === "daily") {
-      pokemonId = getDailyPokemonId(allPokemonList.length, gameShiny);
+      // Daily mode limited to Gen 1 Pokemon (IDs 1-151) for now
+      pokemonId = getDailyPokemonId(151, gameShiny);
     } else {
       // Unlimited mode: choose from filtered list based on settings
       if (pokemonList.length === 0) {
