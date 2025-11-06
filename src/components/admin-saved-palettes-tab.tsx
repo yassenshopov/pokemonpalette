@@ -64,6 +64,7 @@ export function AdminSavedPalettesTab() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState<number | "all">(25);
   const [showAll, setShowAll] = useState(false);
+  const [expandedUsers, setExpandedUsers] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const fetchPalettes = async () => {
@@ -125,12 +126,16 @@ export function AdminSavedPalettesTab() {
       grouped.get(userId)!.palettes.push(palette);
     });
     
-    // Convert to array and sort by user name
-    return Array.from(grouped.values()).sort((a, b) => {
-      const nameA = getUserDisplayName(a.user).toLowerCase();
-      const nameB = getUserDisplayName(b.user).toLowerCase();
-      return nameA.localeCompare(nameB);
-    });
+    // Convert to array and sort by most recently created palette (newest first)
+    return Array.from(grouped.values())
+      .map(group => ({
+        ...group,
+        mostRecentDate: Math.max(
+          ...group.palettes.map(p => new Date(p.created_at).getTime())
+        ),
+      }))
+      .sort((a, b) => b.mostRecentDate - a.mostRecentDate)
+      .map(({ mostRecentDate, ...group }) => group);
   }, [palettes]);
 
   const totalUsers = groupedByUser.length;
@@ -495,8 +500,86 @@ export function AdminSavedPalettesTab() {
                   </TableCell>
                 </TableRow>
               ) : (
-                displayedGroups.map((group, groupIndex) => (
-                  group.palettes.map((palette, paletteIndex) => (
+                displayedGroups.map((group, groupIndex) => {
+                  const userId = group.user?.id || `unknown-${groupIndex}`;
+                  const isExpanded = expandedUsers.has(userId);
+                  
+                  const toggleExpand = () => {
+                    setExpandedUsers(prev => {
+                      const newSet = new Set(prev);
+                      if (newSet.has(userId)) {
+                        newSet.delete(userId);
+                      } else {
+                        newSet.add(userId);
+                      }
+                      return newSet;
+                    });
+                  };
+
+                  const getOfficialArtworkUrl = (pokemonId: number, isShiny: boolean = false): string => {
+                    const shinyPath = isShiny ? "/shiny" : "";
+                    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemonId}.png`;
+                  };
+
+                  if (!isExpanded) {
+                    // Collapsed view - show only user info and artwork grid
+                    return (
+                      <TableRow 
+                        key={userId}
+                        className="cursor-pointer hover:bg-muted/50"
+                        onClick={toggleExpand}
+                      >
+                        <TableCell colSpan={8} className="p-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex flex-col min-w-0 flex-1">
+                              <span className="font-medium text-sm truncate">
+                                {getUserDisplayName(group.user)}
+                              </span>
+                              <span className="text-xs text-muted-foreground truncate">
+                                {group.user?.email || group.user?.id || "Unknown"}
+                              </span>
+                              <span className="text-xs text-muted-foreground mt-1">
+                                {group.palettes.length} palette{group.palettes.length !== 1 ? "s" : ""}
+                              </span>
+                            </div>
+                            <div className="flex flex-wrap gap-2 ml-4">
+                              {group.palettes.map((palette) => (
+                                <img
+                                  key={palette.id}
+                                  src={palette.image_url || getOfficialArtworkUrl(palette.pokemon_id, palette.is_shiny)}
+                                  alt={palette.pokemon_name}
+                                  className="w-12 h-12 object-contain"
+                                  title={`${palette.pokemon_name}${palette.is_shiny ? " (Shiny)" : ""}`}
+                                  onError={(e) => {
+                                    const target = e.target as HTMLImageElement;
+                                    target.src = getOfficialArtworkUrl(palette.pokemon_id, palette.is_shiny);
+                                  }}
+                                />
+                              ))}
+                            </div>
+                            <div className="ml-4 text-muted-foreground">
+                              <svg
+                                className="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  }
+
+                  // Expanded view - show full table rows
+                  return group.palettes.map((palette, paletteIndex) => (
                     <TableRow key={palette.id}>
                       {paletteIndex === 0 && (
                         <TableCell
@@ -504,9 +587,27 @@ export function AdminSavedPalettesTab() {
                           className="align-top border-r border-border/50"
                         >
                           <div className="flex flex-col min-w-0 py-2">
-                            <span className="font-medium text-sm truncate">
-                              {getUserDisplayName(group.user)}
-                            </span>
+                            <button
+                              onClick={toggleExpand}
+                              className="flex items-center gap-1 text-left hover:underline"
+                            >
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M5 15l7-7 7 7"
+                                />
+                              </svg>
+                              <span className="font-medium text-sm truncate">
+                                {getUserDisplayName(group.user)}
+                              </span>
+                            </button>
                             <span className="text-xs text-muted-foreground truncate">
                               {group.user?.email || group.user?.id || "Unknown"}
                             </span>
@@ -580,8 +681,8 @@ export function AdminSavedPalettesTab() {
                         {formatDate(palette.created_at)}
                       </TableCell>
                     </TableRow>
-                  ))
-                )).flat()
+                  ));
+                })
               )}
             </TableBody>
           </Table>
