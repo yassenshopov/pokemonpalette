@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Badge } from "@/components/ui/badge";
 import { Settings } from "lucide-react";
 
 type ShinyPreference = "both" | "shiny" | "normal";
@@ -29,12 +30,14 @@ interface UnlimitedModeSettingsDialogProps {
   settings: UnlimitedModeSettings;
   onSettingsChange: (settings: UnlimitedModeSettings) => void;
   availableGenerations: number[];
+  showBadges?: boolean;
 }
 
 export function UnlimitedModeSettingsDialog({
   settings,
   onSettingsChange,
   availableGenerations,
+  showBadges = true,
 }: UnlimitedModeSettingsDialogProps) {
   const [open, setOpen] = useState(false);
   const [localSettings, setLocalSettings] = useState<UnlimitedModeSettings>(settings);
@@ -89,17 +92,35 @@ export function UnlimitedModeSettingsDialog({
     }
   };
 
+  // Get sorted generations for display
+  const sortedGens = [...settings.selectedGenerations].sort((a, b) => a - b);
+
+  // Format shiny preference display
+  const formatShinyPreference = () => {
+    switch (settings.shinyPreference) {
+      case "shiny":
+        return "Shiny Only";
+      case "normal":
+        return "Normal Only";
+      case "both":
+        return "Normal & Shiny";
+      default:
+        return "Normal & Shiny";
+    }
+  };
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="cursor-pointer"
-        >
-          <Settings className="w-4 h-4" />
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
+    <div className="flex items-center gap-2">
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button
+            variant="outline"
+            className="cursor-pointer"
+          >
+            <Settings className="w-4 h-4" />
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="font-heading">Unlimited Mode Settings</DialogTitle>
           <DialogDescription>
@@ -213,6 +234,28 @@ export function UnlimitedModeSettingsDialog({
         </div>
       </DialogContent>
     </Dialog>
+    {showBadges && (
+      <div className="flex items-center gap-2 flex-wrap">
+        <Badge variant="secondary" className="text-xs">
+          {formatShinyPreference()}
+        </Badge>
+        {sortedGens.length === availableGenerations.length ? (
+          <Badge variant="secondary" className="text-xs">
+            All Generations
+          </Badge>
+        ) : (
+          sortedGens.map((gen) => {
+            const genRoman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][gen - 1] || gen.toString();
+            return (
+              <Badge key={gen} variant="secondary" className="text-xs">
+                Gen {genRoman}
+              </Badge>
+            );
+          })
+        )}
+      </div>
+    )}
+  </div>
   );
 }
 

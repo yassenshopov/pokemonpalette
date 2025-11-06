@@ -285,39 +285,31 @@ export function GameResultDialog({
             </div>
           )}
 
-          <DialogFooter className="flex-col sm:flex-row gap-2 pt-4 mt-auto justify-center">
-            {/* Explore Pokemon Palette Button - Both modes */}
-            {targetPokemon && (
-              <Link
-                href={`/${targetPokemon.name.toLowerCase()}`}
-                className="w-full sm:w-auto"
-              >
-                <Button
-                  variant="outline"
-                  className="w-full cursor-pointer"
-                  style={{
-                    backgroundColor: primaryColor || undefined,
-                    color: primaryColor
-                      ? getTextColor(primaryColor)
-                      : undefined,
-                    borderColor: primaryColor || undefined,
-                  }}
-                >
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Explore {targetPokemon.name}&apos;s palette
-                </Button>
-              </Link>
-            )}
-            {mode === "daily" && !user && (
-              <SignInButton mode="modal">
-                <Button className="w-full cursor-pointer">
-                  <LogIn className="w-4 h-4 mr-2" />
-                  Sign In to Save Progress
-                </Button>
-              </SignInButton>
-            )}
+          <DialogFooter className="flex-col sm:flex-row gap-2 pt-4 mt-auto justify-start">
+            {/* Group buttons for unlimited mode */}
             {mode === "unlimited" && (
-              <>
+              <div className="flex items-center gap-2 flex-wrap">
+                {targetPokemon && (
+                  <Link
+                    href={`/${targetPokemon.name.toLowerCase()}`}
+                    className="w-full sm:w-auto"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full cursor-pointer"
+                      style={{
+                        backgroundColor: primaryColor || undefined,
+                        color: primaryColor
+                          ? getTextColor(primaryColor)
+                          : undefined,
+                        borderColor: primaryColor || undefined,
+                      }}
+                    >
+                      <Sparkles className="w-4 h-4 mr-2" />
+                      Explore {targetPokemon.name}&apos;s palette
+                    </Button>
+                  </Link>
+                )}
                 {unlimitedSettings && onUnlimitedSettingsChange && (
                   <UnlimitedModeSettingsDialog
                     settings={unlimitedSettings}
@@ -327,6 +319,7 @@ export function GameResultDialog({
                       onResetGame();
                     }}
                     availableGenerations={availableGenerations}
+                    showBadges={false}
                   />
                 )}
                 <Button
@@ -343,16 +336,50 @@ export function GameResultDialog({
                   <RefreshCw className="w-4 h-4 mr-2" />
                   {isWon ? "Play Again" : "Try Again"}
                 </Button>
-              </>
+              </div>
             )}
-            {mode === "daily" && user && (
-              <Button
-                onClick={() => onOpenChange(false)}
-                variant="outline"
-                className="cursor-pointer"
-              >
-                Close
-              </Button>
+            {/* Daily mode buttons */}
+            {mode === "daily" && (
+              <>
+                {targetPokemon && (
+                  <Link
+                    href={`/${targetPokemon.name.toLowerCase()}`}
+                    className="w-full sm:w-auto"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full cursor-pointer"
+                      style={{
+                        backgroundColor: primaryColor || undefined,
+                        color: primaryColor
+                          ? getTextColor(primaryColor)
+                          : undefined,
+                        borderColor: primaryColor || undefined,
+                      }}
+                    >
+                      <Sparkles className="w-4 h-4 mr-2" />
+                      Explore {targetPokemon.name}&apos;s palette
+                    </Button>
+                  </Link>
+                )}
+                {!user && (
+                  <SignInButton mode="modal">
+                    <Button className="w-full cursor-pointer">
+                      <LogIn className="w-4 h-4 mr-2" />
+                      Sign In to Save Progress
+                    </Button>
+                  </SignInButton>
+                )}
+                {user && (
+                  <Button
+                    onClick={() => onOpenChange(false)}
+                    variant="outline"
+                    className="cursor-pointer"
+                  >
+                    Close
+                  </Button>
+                )}
+              </>
             )}
           </DialogFooter>
         </div>

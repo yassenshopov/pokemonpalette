@@ -71,12 +71,16 @@ export function PokemonSearch({
           ) {
             // Use shiny sprite if isShiny is true and shiny artwork is available
             let spriteUrl: string | null = null;
-            if (isShiny && "shiny" in pokemon.artwork && pokemon.artwork.shiny) {
+            if (
+              isShiny &&
+              "shiny" in pokemon.artwork &&
+              pokemon.artwork.shiny
+            ) {
               spriteUrl = pokemon.artwork.shiny;
             } else {
               spriteUrl = pokemon.artwork.front || null;
             }
-            
+
             setPokemonSprites((prev) => ({
               ...prev,
               [id]: spriteUrl,
@@ -190,10 +194,7 @@ export function PokemonSearch({
           const isGenerationSelected = selectedGenerations
             ? selectedGenerations.includes(generation)
             : true;
-          if (
-            !guessedPokemonIds.includes(pokemon.id) &&
-            isGenerationSelected
-          ) {
+          if (!guessedPokemonIds.includes(pokemon.id) && isGenerationSelected) {
             handleSelect(pokemon.id);
           }
         }
@@ -212,9 +213,7 @@ export function PokemonSearch({
       const isGenerationSelected = selectedGenerations
         ? selectedGenerations.includes(generation)
         : true;
-      return (
-        !guessedPokemonIds.includes(p.id) && isGenerationSelected
-      );
+      return !guessedPokemonIds.includes(p.id) && isGenerationSelected;
     });
     setSelectedIndex(firstAvailable >= 0 ? firstAvailable : 0);
   }, [searchQuery, suggestions, guessedPokemonIds, selectedGenerations]);
@@ -274,9 +273,7 @@ export function PokemonSearch({
                   isDisabled
                     ? "opacity-40 cursor-not-allowed"
                     : "cursor-pointer hover:bg-accent"
-                } ${
-                  index === selectedIndex && !isDisabled ? "bg-accent" : ""
-                }`}
+                } ${index === selectedIndex && !isDisabled ? "bg-accent" : ""}`}
               >
                 {/* Sprite */}
                 {pokemonSprites[pokemon.id] ? (
