@@ -15,6 +15,7 @@ interface PokemonSearchProps {
   guessedPokemonIds?: number[];
   selectedGenerations?: number[];
   autoFocus?: boolean;
+  placeholder?: string;
 }
 
 // Get generation from Pokemon ID
@@ -39,6 +40,7 @@ export function PokemonSearch({
   guessedPokemonIds = [],
   selectedGenerations,
   autoFocus = true,
+  placeholder = "Search Pokemon...",
 }: PokemonSearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<PokemonMetadata[]>([]);
@@ -239,7 +241,7 @@ export function PokemonSearch({
     <div className="w-full relative" ref={searchRef}>
       <Input
         type="text"
-        placeholder="Search Pokemon..."
+        placeholder={placeholder}
         value={searchQuery}
         onChange={(e) => {
           setSearchQuery(e.target.value);

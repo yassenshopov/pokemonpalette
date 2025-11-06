@@ -9,7 +9,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -71,7 +77,7 @@ export function AdminSavedPalettesTab() {
       try {
         setLoading(true);
         const response = await fetch("/api/admin/saved-palettes");
-        
+
         if (!response.ok) {
           if (response.status === 403) {
             setError("Access denied. Admin privileges required.");
@@ -113,25 +119,28 @@ export function AdminSavedPalettesTab() {
 
   // Group palettes by user
   const groupedByUser = useMemo(() => {
-    const grouped = new Map<string, { user: SavedPalette["users"]; palettes: SavedPalette[] }>();
-    
+    const grouped = new Map<
+      string,
+      { user: SavedPalette["users"]; palettes: SavedPalette[] }
+    >();
+
     palettes.forEach((palette) => {
       const userId = palette.user_id;
       if (!grouped.has(userId)) {
         grouped.set(userId, {
-          user: palette.users || null,
+          user: palette.users,
           palettes: [],
         });
       }
       grouped.get(userId)!.palettes.push(palette);
     });
-    
+
     // Convert to array and sort by most recently created palette (newest first)
     return Array.from(grouped.values())
-      .map(group => ({
+      .map((group) => ({
         ...group,
         mostRecentDate: Math.max(
-          ...group.palettes.map(p => new Date(p.created_at).getTime())
+          ...group.palettes.map((p) => new Date(p.created_at).getTime())
         ),
       }))
       .sort((a, b) => b.mostRecentDate - a.mostRecentDate)
@@ -139,9 +148,13 @@ export function AdminSavedPalettesTab() {
   }, [palettes]);
 
   const totalUsers = groupedByUser.length;
-  const effectivePageSize = showAll || pageSize === "all" ? totalUsers : pageSize;
-  const totalPages = effectivePageSize === totalUsers ? 1 : Math.ceil(totalUsers / effectivePageSize);
-  
+  const effectivePageSize =
+    showAll || pageSize === "all" ? totalUsers : pageSize;
+  const totalPages =
+    effectivePageSize === totalUsers
+      ? 1
+      : Math.ceil(totalUsers / effectivePageSize);
+
   const displayedGroups = useMemo(() => {
     if (showAll || pageSize === "all") {
       return groupedByUser;
@@ -187,7 +200,7 @@ export function AdminSavedPalettesTab() {
   const getPageNumbers = () => {
     const pages: (number | "ellipsis")[] = [];
     const maxVisible = 5;
-    
+
     if (totalPages <= maxVisible) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
@@ -215,7 +228,7 @@ export function AdminSavedPalettesTab() {
         pages.push(totalPages);
       }
     }
-    
+
     return pages;
   };
 
@@ -262,91 +275,102 @@ export function AdminSavedPalettesTab() {
               </div>
             </CardContent>
           </Card>
-          {stats.topPokemon[0] && (() => {
-            const topPokemon = stats.topPokemon[0];
-            
-            // Get representative color from saved palettes for this Pokemon
-            const getPokemonColor = (pokemonId: number): string | null => {
-              const pokemonPalettes = palettes.filter(
-                p => p.pokemon_id === pokemonId && Array.isArray(p.colors) && p.colors.length > 0
+          {stats.topPokemon[0] &&
+            (() => {
+              const topPokemon = stats.topPokemon[0];
+
+              // Get representative color from saved palettes for this Pokemon
+              const getPokemonColor = (pokemonId: number): string | null => {
+                const pokemonPalettes = palettes.filter(
+                  (p) =>
+                    p.pokemon_id === pokemonId &&
+                    Array.isArray(p.colors) &&
+                    p.colors.length > 0
+                );
+
+                if (pokemonPalettes.length === 0) return null;
+
+                // Get the first color from each palette (usually the primary color)
+                const primaryColors = pokemonPalettes
+                  .map((p) => p.colors[0])
+                  .filter(
+                    (color): color is string => typeof color === "string"
+                  );
+
+                if (primaryColors.length === 0) return null;
+
+                // Return the most common color, or the first one if all are unique
+                const colorCounts = primaryColors.reduce((acc, color) => {
+                  acc[color] = (acc[color] || 0) + 1;
+                  return acc;
+                }, {} as Record<string, number>);
+
+                const mostCommonColor = Object.entries(colorCounts).sort(
+                  ([, a], [, b]) => b - a
+                )[0]?.[0];
+
+                return mostCommonColor || primaryColors[0];
+              };
+
+              // Convert hex color to rgba with opacity
+              const hexToRgba = (hex: string, opacity: number): string => {
+                // Remove # if present
+                const cleanHex = hex.replace("#", "");
+
+                // Handle 3-digit hex
+                const fullHex =
+                  cleanHex.length === 3
+                    ? cleanHex
+                        .split("")
+                        .map((c) => c + c)
+                        .join("")
+                    : cleanHex;
+
+                const r = parseInt(fullHex.substring(0, 2), 16);
+                const g = parseInt(fullHex.substring(2, 4), 16);
+                const b = parseInt(fullHex.substring(4, 6), 16);
+
+                return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+              };
+
+              const pokemonColor = getPokemonColor(topPokemon.pokemon_id);
+              const officialArtworkUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${topPokemon.pokemon_id}.png`;
+
+              return (
+                <Card
+                  style={{
+                    backgroundColor: pokemonColor
+                      ? hexToRgba(pokemonColor, 0.1) // 10% opacity for card background
+                      : undefined,
+                    borderColor: pokemonColor
+                      ? hexToRgba(pokemonColor, 0.3) // 30% opacity for border
+                      : undefined,
+                  }}
+                >
+                  <CardHeader className="pb-2">
+                    <CardDescription>Top Saved Pokemon</CardDescription>
+                    <div className="flex items-center gap-3 mt-2">
+                      <img
+                        src={officialArtworkUrl}
+                        alt={topPokemon.name}
+                        className="w-12 h-12 object-contain"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                      <CardTitle className="text-lg capitalize">
+                        {topPokemon.name}
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm text-muted-foreground">
+                      {topPokemon.count} saves
+                    </div>
+                  </CardContent>
+                </Card>
               );
-              
-              if (pokemonPalettes.length === 0) return null;
-              
-              // Get the first color from each palette (usually the primary color)
-              const primaryColors = pokemonPalettes
-                .map(p => p.colors[0])
-                .filter((color): color is string => typeof color === 'string');
-              
-              if (primaryColors.length === 0) return null;
-              
-              // Return the most common color, or the first one if all are unique
-              const colorCounts = primaryColors.reduce((acc, color) => {
-                acc[color] = (acc[color] || 0) + 1;
-                return acc;
-              }, {} as Record<string, number>);
-              
-              const mostCommonColor = Object.entries(colorCounts)
-                .sort(([, a], [, b]) => b - a)[0]?.[0];
-              
-              return mostCommonColor || primaryColors[0];
-            };
-
-            // Convert hex color to rgba with opacity
-            const hexToRgba = (hex: string, opacity: number): string => {
-              // Remove # if present
-              const cleanHex = hex.replace('#', '');
-              
-              // Handle 3-digit hex
-              const fullHex = cleanHex.length === 3
-                ? cleanHex.split('').map(c => c + c).join('')
-                : cleanHex;
-              
-              const r = parseInt(fullHex.substring(0, 2), 16);
-              const g = parseInt(fullHex.substring(2, 4), 16);
-              const b = parseInt(fullHex.substring(4, 6), 16);
-              
-              return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-            };
-
-            const pokemonColor = getPokemonColor(topPokemon.pokemon_id);
-            const officialArtworkUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${topPokemon.pokemon_id}.png`;
-
-            return (
-              <Card
-                style={{
-                  backgroundColor: pokemonColor
-                    ? hexToRgba(pokemonColor, 0.1) // 10% opacity for card background
-                    : undefined,
-                  borderColor: pokemonColor
-                    ? hexToRgba(pokemonColor, 0.3) // 30% opacity for border
-                    : undefined,
-                }}
-              >
-                <CardHeader className="pb-2">
-                  <CardDescription>Top Saved Pokemon</CardDescription>
-                  <div className="flex items-center gap-3 mt-2">
-                    <img
-                      src={officialArtworkUrl}
-                      alt={topPokemon.name}
-                      className="w-12 h-12 object-contain"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                    <CardTitle className="text-lg capitalize">
-                      {topPokemon.name}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-sm text-muted-foreground">
-                    {topPokemon.count} saves
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })()}
+            })()}
         </div>
       )}
 
@@ -354,7 +378,9 @@ export function AdminSavedPalettesTab() {
         <Card>
           <CardHeader>
             <CardTitle>Most Saved Pokemon</CardTitle>
-            <CardDescription>Top 5 most frequently saved Pokemon</CardDescription>
+            <CardDescription>
+              Top 5 most frequently saved Pokemon
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -367,44 +393,54 @@ export function AdminSavedPalettesTab() {
                 // Convert hex color to rgba with opacity
                 const hexToRgba = (hex: string, opacity: number): string => {
                   // Remove # if present
-                  const cleanHex = hex.replace('#', '');
-                  
+                  const cleanHex = hex.replace("#", "");
+
                   // Handle 3-digit hex
-                  const fullHex = cleanHex.length === 3
-                    ? cleanHex.split('').map(c => c + c).join('')
-                    : cleanHex;
-                  
+                  const fullHex =
+                    cleanHex.length === 3
+                      ? cleanHex
+                          .split("")
+                          .map((c) => c + c)
+                          .join("")
+                      : cleanHex;
+
                   const r = parseInt(fullHex.substring(0, 2), 16);
                   const g = parseInt(fullHex.substring(2, 4), 16);
                   const b = parseInt(fullHex.substring(4, 6), 16);
-                  
+
                   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
                 };
 
                 // Get representative color from saved palettes for this Pokemon
                 const getPokemonColor = (pokemonId: number): string | null => {
                   const pokemonPalettes = palettes.filter(
-                    p => p.pokemon_id === pokemonId && Array.isArray(p.colors) && p.colors.length > 0
+                    (p) =>
+                      p.pokemon_id === pokemonId &&
+                      Array.isArray(p.colors) &&
+                      p.colors.length > 0
                   );
-                  
+
                   if (pokemonPalettes.length === 0) return null;
-                  
+
                   // Get the first color from each palette (usually the primary color)
                   const primaryColors = pokemonPalettes
-                    .map(p => p.colors[0])
-                    .filter((color): color is string => typeof color === 'string');
-                  
+                    .map((p) => p.colors[0])
+                    .filter(
+                      (color): color is string => typeof color === "string"
+                    );
+
                   if (primaryColors.length === 0) return null;
-                  
+
                   // Return the most common color, or the first one if all are unique
                   const colorCounts = primaryColors.reduce((acc, color) => {
                     acc[color] = (acc[color] || 0) + 1;
                     return acc;
                   }, {} as Record<string, number>);
-                  
-                  const mostCommonColor = Object.entries(colorCounts)
-                    .sort(([, a], [, b]) => b - a)[0]?.[0];
-                  
+
+                  const mostCommonColor = Object.entries(colorCounts).sort(
+                    ([, a], [, b]) => b - a
+                  )[0]?.[0];
+
                   return mostCommonColor || primaryColors[0];
                 };
 
@@ -421,11 +457,13 @@ export function AdminSavedPalettesTab() {
                       borderColor: pokemonColor
                         ? hexToRgba(pokemonColor, 0.2) // 20% opacity for border
                         : undefined,
-                      borderWidth: pokemonColor ? '1px' : undefined,
+                      borderWidth: pokemonColor ? "1px" : undefined,
                     }}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium w-6">#{index + 1}</span>
+                      <span className="text-sm font-medium w-6">
+                        #{index + 1}
+                      </span>
                       <img
                         src={getOfficialArtworkUrl(pokemon.pokemon_id)}
                         alt={pokemon.name}
@@ -435,9 +473,13 @@ export function AdminSavedPalettesTab() {
                           (e.target as HTMLImageElement).style.display = "none";
                         }}
                       />
-                      <span className="text-sm font-medium capitalize">{pokemon.name}</span>
+                      <span className="text-sm font-medium capitalize">
+                        {pokemon.name}
+                      </span>
                     </div>
-                    <span className="text-sm text-muted-foreground">{pokemon.count} saves</span>
+                    <span className="text-sm text-muted-foreground">
+                      {pokemon.count} saves
+                    </span>
                   </div>
                 );
               })}
@@ -454,7 +496,11 @@ export function AdminSavedPalettesTab() {
               <CardDescription>
                 Total users: {totalUsers} • Total palettes: {palettes.length}
                 {!showAll && pageSize !== "all" && (
-                  <> • Showing {displayedGroups.length} of {totalUsers} users (Page {currentPage} of {totalPages})</>
+                  <>
+                    {" "}
+                    • Showing {displayedGroups.length} of {totalUsers} users
+                    (Page {currentPage} of {totalPages})
+                  </>
                 )}
               </CardDescription>
             </div>
@@ -495,7 +541,10 @@ export function AdminSavedPalettesTab() {
             <TableBody>
               {displayedGroups.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center text-muted-foreground">
+                  <TableCell
+                    colSpan={8}
+                    className="text-center text-muted-foreground"
+                  >
                     No saved palettes found
                   </TableCell>
                 </TableRow>
@@ -503,9 +552,9 @@ export function AdminSavedPalettesTab() {
                 displayedGroups.map((group, groupIndex) => {
                   const userId = group.user?.id || `unknown-${groupIndex}`;
                   const isExpanded = expandedUsers.has(userId);
-                  
+
                   const toggleExpand = () => {
-                    setExpandedUsers(prev => {
+                    setExpandedUsers((prev) => {
                       const newSet = new Set(prev);
                       if (newSet.has(userId)) {
                         newSet.delete(userId);
@@ -516,7 +565,10 @@ export function AdminSavedPalettesTab() {
                     });
                   };
 
-                  const getOfficialArtworkUrl = (pokemonId: number, isShiny: boolean = false): string => {
+                  const getOfficialArtworkUrl = (
+                    pokemonId: number,
+                    isShiny: boolean = false
+                  ): string => {
                     const shinyPath = isShiny ? "/shiny" : "";
                     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemonId}.png`;
                   };
@@ -524,7 +576,7 @@ export function AdminSavedPalettesTab() {
                   if (!isExpanded) {
                     // Collapsed view - show only user info and artwork grid
                     return (
-                      <TableRow 
+                      <TableRow
                         key={userId}
                         className="cursor-pointer hover:bg-muted/50"
                         onClick={toggleExpand}
@@ -536,23 +588,37 @@ export function AdminSavedPalettesTab() {
                                 {getUserDisplayName(group.user)}
                               </span>
                               <span className="text-xs text-muted-foreground truncate">
-                                {group.user?.email || group.user?.id || "Unknown"}
+                                {group.user?.email ||
+                                  group.user?.id ||
+                                  "Unknown"}
                               </span>
                               <span className="text-xs text-muted-foreground mt-1">
-                                {group.palettes.length} palette{group.palettes.length !== 1 ? "s" : ""}
+                                {group.palettes.length} palette
+                                {group.palettes.length !== 1 ? "s" : ""}
                               </span>
                             </div>
                             <div className="flex flex-wrap gap-2 ml-4">
                               {group.palettes.map((palette) => (
                                 <img
                                   key={palette.id}
-                                  src={palette.image_url || getOfficialArtworkUrl(palette.pokemon_id, palette.is_shiny)}
+                                  src={
+                                    palette.image_url ||
+                                    getOfficialArtworkUrl(
+                                      palette.pokemon_id,
+                                      palette.is_shiny
+                                    )
+                                  }
                                   alt={palette.pokemon_name}
                                   className="w-12 h-12 object-contain"
-                                  title={`${palette.pokemon_name}${palette.is_shiny ? " (Shiny)" : ""}`}
+                                  title={`${palette.pokemon_name}${
+                                    palette.is_shiny ? " (Shiny)" : ""
+                                  }`}
                                   onError={(e) => {
                                     const target = e.target as HTMLImageElement;
-                                    target.src = getOfficialArtworkUrl(palette.pokemon_id, palette.is_shiny);
+                                    target.src = getOfficialArtworkUrl(
+                                      palette.pokemon_id,
+                                      palette.is_shiny
+                                    );
                                   }}
                                 />
                               ))}
@@ -612,7 +678,8 @@ export function AdminSavedPalettesTab() {
                               {group.user?.email || group.user?.id || "Unknown"}
                             </span>
                             <span className="text-xs text-muted-foreground mt-1">
-                              {group.palettes.length} palette{group.palettes.length !== 1 ? "s" : ""}
+                              {group.palettes.length} palette
+                              {group.palettes.length !== 1 ? "s" : ""}
                             </span>
                           </div>
                         </TableCell>
@@ -624,7 +691,8 @@ export function AdminSavedPalettesTab() {
                             alt={palette.pokemon_name}
                             className="w-12 h-12 object-contain"
                             onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = "none";
+                              (e.target as HTMLImageElement).style.display =
+                                "none";
                             }}
                           />
                         ) : (
@@ -659,19 +727,23 @@ export function AdminSavedPalettesTab() {
                       </TableCell>
                       <TableCell>
                         <div className="flex gap-1 flex-wrap">
-                          {Array.isArray(palette.colors) && palette.colors.slice(0, 5).map((color, idx) => (
-                            <div
-                              key={idx}
-                              className="w-6 h-6 rounded border border-border"
-                              style={{ backgroundColor: color }}
-                              title={color}
-                            />
-                          ))}
-                          {Array.isArray(palette.colors) && palette.colors.length > 5 && (
-                            <span className="text-xs text-muted-foreground flex items-center">
-                              +{palette.colors.length - 5}
-                            </span>
-                          )}
+                          {Array.isArray(palette.colors) &&
+                            palette.colors
+                              .slice(0, 5)
+                              .map((color, idx) => (
+                                <div
+                                  key={idx}
+                                  className="w-6 h-6 rounded border border-border"
+                                  style={{ backgroundColor: color }}
+                                  title={color}
+                                />
+                              ))}
+                          {Array.isArray(palette.colors) &&
+                            palette.colors.length > 5 && (
+                              <span className="text-xs text-muted-foreground flex items-center">
+                                +{palette.colors.length - 5}
+                              </span>
+                            )}
                         </div>
                       </TableCell>
                       <TableCell className="text-sm">
@@ -686,11 +758,13 @@ export function AdminSavedPalettesTab() {
               )}
             </TableBody>
           </Table>
-          
+
           {!showAll && pageSize !== "all" && totalPages > 1 && (
             <div className="flex items-center justify-between mt-4 pt-4 border-t">
               <div className="text-sm text-muted-foreground">
-                Showing {((currentPage - 1) * (pageSize as number)) + 1} to {Math.min(currentPage * (pageSize as number), totalUsers)} of {totalUsers} users
+                Showing {(currentPage - 1) * (pageSize as number) + 1} to{" "}
+                {Math.min(currentPage * (pageSize as number), totalUsers)} of{" "}
+                {totalUsers} users
               </div>
               <Pagination>
                 <PaginationContent>
@@ -703,10 +777,14 @@ export function AdminSavedPalettesTab() {
                           setCurrentPage((prev) => prev - 1);
                         }
                       }}
-                      className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      className={
+                        currentPage === 1
+                          ? "pointer-events-none opacity-50"
+                          : "cursor-pointer"
+                      }
                     />
                   </PaginationItem>
-                  
+
                   {getPageNumbers().map((page, index) => (
                     <PaginationItem key={index}>
                       {page === "ellipsis" ? (
@@ -726,7 +804,7 @@ export function AdminSavedPalettesTab() {
                       )}
                     </PaginationItem>
                   ))}
-                  
+
                   <PaginationItem>
                     <PaginationNext
                       href="#"
@@ -736,7 +814,11 @@ export function AdminSavedPalettesTab() {
                           setCurrentPage((prev) => prev + 1);
                         }
                       }}
-                      className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      className={
+                        currentPage === totalPages
+                          ? "pointer-events-none opacity-50"
+                          : "cursor-pointer"
+                      }
                     />
                   </PaginationItem>
                 </PaginationContent>
@@ -748,4 +830,3 @@ export function AdminSavedPalettesTab() {
     </div>
   );
 }
-

@@ -1090,11 +1090,6 @@ export default function GamePage() {
       }
     }
 
-    // Rarity hint - vague
-    if (pokemon.rarity) {
-      allHints.vague.push(`This Pokemon has a ${pokemon.rarity} rarity.`);
-    }
-
     // Evolution stage hint - vague
     if (pokemon.evolution?.stage) {
       const stage = pokemon.evolution.stage;
@@ -1105,26 +1100,6 @@ export default function GamePage() {
       } else {
         allHints.vague.push(`This Pokemon is a final-stage evolution.`);
       }
-    }
-
-    // Size category hint - vague
-    if (pokemon.height) {
-      if (pokemon.height < 0.5) {
-        allHints.vague.push(`This Pokemon is very small.`);
-      } else if (pokemon.height < 1.0) {
-        allHints.vague.push(`This Pokemon is small.`);
-      } else if (pokemon.height < 2.0) {
-        allHints.vague.push(`This Pokemon is medium-sized.`);
-      } else {
-        allHints.vague.push(`This Pokemon is large.`);
-      }
-    }
-
-    // Habitat hint - vague
-    if (pokemon.habitat) {
-      allHints.vague.push(
-        `This Pokemon can be found in ${pokemon.habitat} habitats.`
-      );
     }
 
     // MEDIUM HINTS (more specific, but still narrowing)
@@ -1160,98 +1135,7 @@ export default function GamePage() {
       }
     }
 
-    // Weight range hint - medium
-    if (pokemon.weight) {
-      if (pokemon.weight < 5) {
-        allHints.medium.push(
-          `This Pokemon is very light, weighing less than 5kg.`
-        );
-      } else if (pokemon.weight < 20) {
-        allHints.medium.push(`This Pokemon is light, weighing between 5-20kg.`);
-      } else if (pokemon.weight < 100) {
-        allHints.medium.push(
-          `This Pokemon is moderately heavy, weighing 20-100kg.`
-        );
-      } else {
-        allHints.medium.push(
-          `This Pokemon is very heavy, weighing over 100kg.`
-        );
-      }
-    }
-
-    // Base stats hint - medium
-    if (pokemon.baseStats) {
-      const stats = pokemon.baseStats;
-      const highestStat = Math.max(
-        stats.hp || 0,
-        stats.attack || 0,
-        stats.defense || 0,
-        stats.specialAttack || 0,
-        stats.specialDefense || 0,
-        stats.speed || 0
-      );
-      const highestStatName = Object.entries(stats).find(
-        ([_, value]) => value === highestStat
-      )?.[0];
-
-      if (highestStatName) {
-        const statDisplayName: Record<string, string> = {
-          hp: "HP",
-          attack: "Attack",
-          defense: "Defense",
-          specialAttack: "Special Attack",
-          specialDefense: "Special Defense",
-          speed: "Speed",
-        };
-        allHints.medium.push(
-          `This Pokemon's highest base stat is ${statDisplayName[highestStatName]}.`
-        );
-      }
-    }
-
-    // Ability count hint - medium
-    if (pokemon.abilities && Array.isArray(pokemon.abilities)) {
-      const abilityCount = pokemon.abilities.length;
-      if (abilityCount > 2) {
-        allHints.medium.push(`This Pokemon has multiple abilities.`);
-      }
-    }
-
-    // Capture rate hint - medium
-    if (pokemon.captureRate !== undefined) {
-      if (pokemon.captureRate < 45) {
-        allHints.medium.push(`This Pokemon is very difficult to catch.`);
-      } else if (pokemon.captureRate < 90) {
-        allHints.medium.push(`This Pokemon has a moderate catch rate.`);
-      } else {
-        allHints.medium.push(`This Pokemon is relatively easy to catch.`);
-      }
-    }
-
     // SPECIFIC HINTS (most revealing, narrows it down significantly)
-    // Exact height and weight - specific
-    if (pokemon.height && pokemon.weight) {
-      const sizeCategory =
-        pokemon.height < 0.5
-          ? "very small"
-          : pokemon.height < 1.0
-          ? "small"
-          : pokemon.height < 2.0
-          ? "medium-sized"
-          : "large";
-      const weightCategory =
-        pokemon.weight < 10
-          ? "light"
-          : pokemon.weight < 50
-          ? "moderately heavy"
-          : "heavy";
-      allHints.specific.push(
-        `This Pokemon is ${sizeCategory} and ${weightCategory}, weighing ${pokemon.weight.toFixed(
-          1
-        )}kg and standing ${pokemon.height.toFixed(1)}m tall.`
-      );
-    }
-
     // Species category hint - specific
     if (pokemon.species && pokemon.species !== "Pokémon") {
       // Check if species already includes "Pokemon" or "Pokémon"
@@ -1266,23 +1150,6 @@ export default function GamePage() {
       } else {
         allHints.specific.push(
           `This Pokemon is known as the ${pokemon.species} Pokemon.`
-        );
-      }
-    }
-
-    // Base experience hint - specific
-    if (pokemon.baseExperience) {
-      if (pokemon.baseExperience < 100) {
-        allHints.specific.push(
-          `This Pokemon gives relatively low base experience when defeated.`
-        );
-      } else if (pokemon.baseExperience < 200) {
-        allHints.specific.push(
-          `This Pokemon gives moderate base experience when defeated.`
-        );
-      } else {
-        allHints.specific.push(
-          `This Pokemon gives high base experience when defeated.`
         );
       }
     }
@@ -1311,6 +1178,75 @@ export default function GamePage() {
 
     // Select one hint from each category, ensuring progression
     const selectedHints: string[] = [];
+
+    // Helper function to check if two hints are similar (especially for type hints)
+    const isSimilarHint = (hint1: string, hint2: string): boolean => {
+      // Exact match
+      if (hint1 === hint2) return true;
+
+      // For type hints, check if they mention the same type(s)
+      const isTypeHint1 =
+        hint1.includes("-type Pokemon") || hint1.includes("part-");
+      const isTypeHint2 =
+        hint2.includes("-type Pokemon") || hint2.includes("part-");
+
+      if (isTypeHint1 && isTypeHint2) {
+        // Extract type information from hints
+        const extractTypes = (hint: string): string[] => {
+          const types: string[] = [];
+
+          // Pattern 1: "Fire-type Pokemon" or "part-Fire type Pokemon"
+          // Pattern 2: "Fire- and Water-type Pokemon"
+
+          // First, try to match dual type pattern: "X- and Y-type"
+          const dualTypeMatch = hint.match(
+            /([A-Za-z]+)-\s*and\s*([A-Za-z]+)-type/
+          );
+          if (dualTypeMatch) {
+            types.push(dualTypeMatch[1].toLowerCase());
+            types.push(dualTypeMatch[2].toLowerCase());
+          } else {
+            // Single type pattern: look for "X-type" or "part-X type"
+            const singleTypeMatch = hint.match(
+              /(?:part-)?([A-Za-z]+)(?:-type| type)/
+            );
+            if (singleTypeMatch) {
+              types.push(singleTypeMatch[1].toLowerCase());
+            }
+          }
+
+          return types.sort();
+        };
+
+        const types1 = extractTypes(hint1);
+        const types2 = extractTypes(hint2);
+
+        // If they mention the same types, they're similar
+        if (types1.length > 0 && types2.length > 0) {
+          const types1Str = types1.join(",");
+          const types2Str = types2.join(",");
+          if (types1Str === types2Str) return true;
+        }
+      }
+
+      return false;
+    };
+
+    // Helper function to find a hint that's not similar to already selected hints
+    const findUniqueHint = (
+      hints: string[],
+      excludeHints: string[]
+    ): string | null => {
+      for (const hint of hints) {
+        const isSimilar = excludeHints.some((existing) =>
+          isSimilarHint(hint, existing)
+        );
+        if (!isSimilar) {
+          return hint;
+        }
+      }
+      return null;
+    };
 
     // Find all type-related hints
     const typeHints: string[] = [];
@@ -1341,25 +1277,17 @@ export default function GamePage() {
       }
     }
 
-    // Second hint: medium (random selection, but ensure type hint if not already included)
+    // Second hint: medium (random selection, but ensure it's different from first hint)
     if (allHints.medium.length > 0) {
       const shuffledMedium = shuffleArray(allHints.medium);
-      // Check if we already have a type hint
-      const hasTypeHint = selectedHints.some(
-        (h) => h.includes("-type Pokemon") || h.includes("part-")
-      );
 
-      if (!hasTypeHint) {
-        // Prioritize type hint
-        const mediumTypeHint = shuffledMedium.find((h) =>
-          h.includes("-type Pokemon")
-        );
-        if (mediumTypeHint) {
-          selectedHints.push(mediumTypeHint);
-        } else {
-          selectedHints.push(shuffledMedium[0]);
-        }
+      // Find a hint that's not similar to the first hint
+      const uniqueHint = findUniqueHint(shuffledMedium, selectedHints);
+
+      if (uniqueHint) {
+        selectedHints.push(uniqueHint);
       } else {
+        // If all hints are similar, just pick the first one (shouldn't happen often)
         selectedHints.push(shuffledMedium[0]);
       }
     }
@@ -1367,20 +1295,28 @@ export default function GamePage() {
     // Third hint: always "Full palette shown"
     selectedHints.push("Full palette shown");
 
-    // Ensure at least one type hint is included
+    // Ensure at least one type hint is included, but only if it's not a duplicate
     const hasTypeHint = selectedHints.some(
       (h) => h.includes("-type Pokemon") || h.includes("part-")
     );
 
     if (!hasTypeHint && typeHints.length > 0) {
-      // Replace the first non-type hint with a type hint
-      const typeHint = typeHints[0];
-      if (selectedHints.length >= 1) {
-        selectedHints[0] = typeHint;
-      } else if (selectedHints.length >= 2) {
-        selectedHints[1] = typeHint;
-      } else {
-        selectedHints.push(typeHint);
+      // Find a unique type hint that's not similar to existing hints
+      const uniqueTypeHint = findUniqueHint(typeHints, selectedHints);
+
+      if (uniqueTypeHint) {
+        // Replace the first non-type hint (excluding "Full palette shown") with a type hint
+        const replaceIndex = selectedHints.findIndex(
+          (h) =>
+            h !== "Full palette shown" &&
+            !h.includes("-type Pokemon") &&
+            !h.includes("part-")
+        );
+        if (replaceIndex >= 0) {
+          selectedHints[replaceIndex] = uniqueTypeHint;
+        } else if (selectedHints.length >= 1) {
+          selectedHints[0] = uniqueTypeHint;
+        }
       }
     }
 
@@ -1393,8 +1329,14 @@ export default function GamePage() {
 
     while (selectedHints.length < 3 && allAvailable.length > 0) {
       const hint = allAvailable.shift();
-      if (hint && !selectedHints.includes(hint)) {
-        selectedHints.push(hint);
+      if (hint) {
+        // Check if hint is similar to any already selected hint
+        const isSimilar = selectedHints.some((existing) =>
+          isSimilarHint(hint, existing)
+        );
+        if (!isSimilar) {
+          selectedHints.push(hint);
+        }
       }
     }
 
@@ -2215,6 +2157,7 @@ export default function GamePage() {
                             ? unlimitedSettings.selectedGenerations
                             : undefined
                         }
+                        placeholder="Enter Pokemon name or number..."
                       />
                     </div>
                     {/* Mobile: Show button to open dialog */}
@@ -2249,6 +2192,7 @@ export default function GamePage() {
                                   ? unlimitedSettings.selectedGenerations
                                   : undefined
                               }
+                              placeholder="Enter Pokemon name or number..."
                             />
                           </div>
                         </DialogContent>
