@@ -53,6 +53,8 @@ export function PokemonSearch({
   const [pokemonSprites, setPokemonSprites] = useState<
     Record<number, string | null>
   >({});
+  const loadingSpritesRef = useRef<Set<number>>(new Set());
+  const loadedSpritesRef = useRef<Set<number>>(new Set());
 
   // Cache for Pokemon language names (to avoid reloading for search)
   const [pokemonLanguageNames, setPokemonLanguageNames] = useState<
@@ -62,38 +64,51 @@ export function PokemonSearch({
   // Clear sprite cache when isShiny changes
   useEffect(() => {
     setPokemonSprites({});
+    loadingSpritesRef.current.clear();
+    loadedSpritesRef.current.clear();
   }, [isShiny]);
 
   useEffect(() => {
     const loadSprite = async (id: number) => {
-      if (!pokemonSprites[id]) {
-        try {
-          const pokemon = await getPokemonById(id);
-          if (
-            pokemon &&
-            typeof pokemon.artwork === "object" &&
-            "front" in pokemon.artwork
-          ) {
-            // Use shiny sprite if isShiny is true and shiny artwork is available
-            let spriteUrl: string | null = null;
-            if (
-              isShiny &&
-              "shiny" in pokemon.artwork &&
-              pokemon.artwork.shiny
-            ) {
-              spriteUrl = pokemon.artwork.shiny;
-            } else {
-              spriteUrl = pokemon.artwork.front || null;
-            }
+      // Skip if already loaded or currently loading
+      if (loadedSpritesRef.current.has(id) || loadingSpritesRef.current.has(id)) {
+        return;
+      }
 
-            setPokemonSprites((prev) => ({
+      loadingSpritesRef.current.add(id);
+      try {
+        const pokemon = await getPokemonById(id);
+        if (
+          pokemon &&
+          typeof pokemon.artwork === "object" &&
+          "front" in pokemon.artwork
+        ) {
+          // Use shiny sprite if isShiny is true and shiny artwork is available
+          let spriteUrl: string | null = null;
+          if (
+            isShiny &&
+            "shiny" in pokemon.artwork &&
+            pokemon.artwork.shiny
+          ) {
+            spriteUrl = pokemon.artwork.shiny;
+          } else {
+            spriteUrl = pokemon.artwork.front || null;
+          }
+
+          setPokemonSprites((prev) => {
+            // Double-check we haven't loaded it in the meantime
+            if (prev[id]) return prev;
+            loadedSpritesRef.current.add(id);
+            return {
               ...prev,
               [id]: spriteUrl,
-            }));
-          }
-        } catch (error) {
-          console.error(`Failed to load sprite for Pokemon ${id}:`, error);
+            };
+          });
         }
+      } catch (error) {
+        console.error(`Failed to load sprite for Pokemon ${id}:`, error);
+      } finally {
+        loadingSpritesRef.current.delete(id);
       }
     };
 
@@ -101,7 +116,7 @@ export function PokemonSearch({
     suggestions.forEach((pokemon) => {
       loadSprite(pokemon.id);
     });
-  }, [suggestions, pokemonSprites, isShiny]);
+  }, [suggestions, isShiny]);
 
   // Load language names for Pokemon (for multi-language search)
   useEffect(() => {
