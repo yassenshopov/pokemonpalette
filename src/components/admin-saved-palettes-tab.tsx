@@ -597,7 +597,7 @@ export function AdminSavedPalettesTab() {
                                 {group.palettes.length !== 1 ? "s" : ""}
                               </span>
                             </div>
-                            <div className="flex flex-wrap gap-2 ml-4">
+                            <div className="grid grid-cols-8 gap-2 ml-4 max-w-fit">
                               {group.palettes.map((palette) => (
                                 <img
                                   key={palette.id}

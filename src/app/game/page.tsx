@@ -2159,6 +2159,10 @@ export default function GamePage() {
                         }
                         placeholder="Enter Pokemon name or number..."
                       />
+                      <p className="text-xs text-muted-foreground mt-2 text-center">
+                        💡 Tip: Search works in multiple languages (日本語,
+                        Français, Deutsch, Español, and more!)
+                      </p>
                     </div>
                     {/* Mobile: Show button to open dialog */}
                     <div className="lg:hidden">
@@ -2194,6 +2198,10 @@ export default function GamePage() {
                               }
                               placeholder="Enter Pokemon name or number..."
                             />
+                            <p className="text-xs text-muted-foreground mt-2 text-center">
+                              💡 Tip: Search works in multiple languages
+                              (日本語, Français, Deutsch, Español, and more!)
+                            </p>
                           </div>
                         </DialogContent>
                       </Dialog>
