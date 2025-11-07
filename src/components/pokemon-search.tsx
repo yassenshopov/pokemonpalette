@@ -71,7 +71,10 @@ export function PokemonSearch({
   useEffect(() => {
     const loadSprite = async (id: number) => {
       // Skip if already loaded or currently loading
-      if (loadedSpritesRef.current.has(id) || loadingSpritesRef.current.has(id)) {
+      if (
+        loadedSpritesRef.current.has(id) ||
+        loadingSpritesRef.current.has(id)
+      ) {
         return;
       }
 
@@ -85,11 +88,7 @@ export function PokemonSearch({
         ) {
           // Use shiny sprite if isShiny is true and shiny artwork is available
           let spriteUrl: string | null = null;
-          if (
-            isShiny &&
-            "shiny" in pokemon.artwork &&
-            pokemon.artwork.shiny
-          ) {
+          if (isShiny && "shiny" in pokemon.artwork && pokemon.artwork.shiny) {
             spriteUrl = pokemon.artwork.shiny;
           } else {
             spriteUrl = pokemon.artwork.front || null;
@@ -146,10 +145,10 @@ export function PokemonSearch({
         // Only load if:
         // 1. Not already cached
         // 2. Doesn't match English name or ID (so we need to check languages)
-        const matchesEnglish = 
+        const matchesEnglish =
           pokemon.name.toLowerCase().includes(queryLower) ||
           pokemon.id.toString().includes(queryLower);
-        
+
         if (!pokemonLanguageNames[pokemon.id] && !matchesEnglish) {
           loadLanguageNames(pokemon.id);
         }
