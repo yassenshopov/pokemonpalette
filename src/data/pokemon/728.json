@@ -1,7 +1,7 @@
 {
   "id": 728,
   "name": "Popplio",
-  "species": "Sea Lion Pok\u00e9mon",
+  "species": "Sea Lion Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 56,
     "speed": 40
   },
-  "description": "This Pok\u00e9mon snorts body fluids from its nose, blowing balloons to smash into its foes. It\u2019s famous for being a hard worker.",
+  "description": "This Pokémon snorts body fluids from its nose, blowing balloons to smash into its foes. It’s famous for being a hard worker.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon snorts body fluids from its nose, blowing balloons to smash into its foes. It\u2019s famous for being a hard worker.",
+      "text": "This Pokémon snorts body fluids from its nose, blowing balloons to smash into its foes. It’s famous for being a hard worker.",
       "version": "sun"
     },
     {
-      "text": "This Pok\u00e9mon can control water bubbles. It practices diligently so it can learn to make big bubbles.",
+      "text": "This Pokémon can control water bubbles. It practices diligently so it can learn to make big bubbles.",
       "version": "moon"
     },
     {
@@ -50,7 +50,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Popplio gets on top of its bouncy water balloons to jump higher. It\u2019s quite the acrobatic fighter!",
+      "text": "Popplio gets on top of its bouncy water balloons to jump higher. It’s quite the acrobatic fighter!",
       "version": "ultra-moon"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/728.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アシマリ",
+    "roomaji": "Ashimari",
+    "ko": "누리공",
+    "zh-Hant": "球球海獅",
+    "fr": "Otaquin",
+    "de": "Robball",
+    "es": "Popplio",
+    "it": "Popplio",
+    "en": "Popplio",
+    "ja": "アシマリ",
+    "zh-Hans": "球球海狮"
   }
 }

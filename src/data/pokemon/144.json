@@ -1,7 +1,7 @@
 {
   "id": 144,
   "name": "Articuno",
-  "species": "Freeze Pok\u00e9mon",
+  "species": "Freeze Pokémon",
   "type": [
     "Ice",
     "Flying"
@@ -40,26 +40,26 @@
     "specialDefense": 125,
     "speed": 85
   },
-  "description": "A legendary bird POK\u00e9MON that is said to appear to doomed people who are lost in icy mountains.",
+  "description": "A legendary bird POKéMON that is said to appear to doomed people who are lost in icy mountains.",
   "flavorTexts": [
     {
-      "text": "A legendary bird POK\u00e9MON that is said to appear to doomed people who are lost in icy mountains.",
+      "text": "A legendary bird POKéMON that is said to appear to doomed people who are lost in icy mountains.",
       "version": "red"
     },
     {
-      "text": "A legendary bird POK\u00e9MON that is said to appear to doomed people who are lost in icy mountains.",
+      "text": "A legendary bird POKéMON that is said to appear to doomed people who are lost in icy mountains.",
       "version": "blue"
     },
     {
-      "text": "A legendary bird POK\u00e9MON. It freezes water that is contained in winter air and makes it snow.",
+      "text": "A legendary bird POKéMON. It freezes water that is contained in winter air and makes it snow.",
       "version": "yellow"
     },
     {
-      "text": "The magnificent, seemingly translu\u00ad cent wings of this legendary bird POK\u00e9MON are said to be made of ice.",
+      "text": "The magnificent, seemingly translu­ cent wings of this legendary bird POKéMON are said to be made of ice.",
       "version": "gold"
     },
     {
-      "text": "One of the legen\u00ad dary bird POK\u00e9MON, it chills moisture in the atmosphere to create snow while flying.",
+      "text": "One of the legen­ dary bird POKéMON, it chills moisture in the atmosphere to create snow while flying.",
       "version": "silver"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/144.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/144.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フリーザー",
+    "roomaji": "Freezer",
+    "ko": "프리져",
+    "zh-Hant": "急凍鳥",
+    "fr": "Artikodin",
+    "de": "Arktos",
+    "es": "Articuno",
+    "it": "Articuno",
+    "en": "Articuno",
+    "ja": "フリーザー",
+    "zh-Hans": "急冻鸟"
   }
 }

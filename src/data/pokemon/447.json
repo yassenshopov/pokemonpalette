@@ -1,7 +1,7 @@
 {
   "id": 447,
   "name": "Riolu",
-  "species": "Emanation Pok\u00e9mon",
+  "species": "Emanation Pokémon",
   "type": [
     "Fighting"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/447.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/447.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リオル",
+    "roomaji": "Riolu",
+    "ko": "리오르",
+    "zh-Hant": "利歐路",
+    "fr": "Riolu",
+    "de": "Riolu",
+    "es": "Riolu",
+    "it": "Riolu",
+    "en": "Riolu",
+    "ja": "リオル",
+    "zh-Hans": "利欧路"
   }
 }

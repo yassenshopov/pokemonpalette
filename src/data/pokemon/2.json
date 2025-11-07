@@ -1,7 +1,7 @@
 {
   "id": 2,
   "name": "Ivysaur",
-  "species": "Seed Pok\u00e9mon",
+  "species": "Seed Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -55,7 +55,7 @@
       "version": "yellow"
     },
     {
-      "text": "Exposure to sun\u00ad light adds to its strength. Sunlight also makes the bud on its back grow larger.",
+      "text": "Exposure to sun­ light adds to its strength. Sunlight also makes the bud on its back grow larger.",
       "version": "gold"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/2.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/2.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フシギソウ",
+    "roomaji": "Fushigisou",
+    "ko": "이상해풀",
+    "zh-Hant": "妙蛙草",
+    "fr": "Herbizarre",
+    "de": "Bisaknosp",
+    "es": "Ivysaur",
+    "it": "Ivysaur",
+    "en": "Ivysaur",
+    "ja": "フシギソウ",
+    "zh-Hans": "妙蛙草"
   }
 }

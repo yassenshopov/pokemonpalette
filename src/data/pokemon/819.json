@@ -1,7 +1,7 @@
 {
   "id": 819,
   "name": "Skwovet",
-  "species": "Cheeky Pok\u00e9mon",
+  "species": "Cheeky Pokémon",
   "type": [
     "Normal"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 35,
     "speed": 25
   },
-  "description": "Found throughout the Galar region, this Pok\u00e9mon becomes uneasy if its cheeks are ever completely empty of berries.",
+  "description": "Found throughout the Galar region, this Pokémon becomes uneasy if its cheeks are ever completely empty of berries.",
   "flavorTexts": [
     {
-      "text": "Found throughout the Galar region, this Pok\u00e9mon becomes uneasy if its cheeks are ever completely empty of berries.",
+      "text": "Found throughout the Galar region, this Pokémon becomes uneasy if its cheeks are ever completely empty of berries.",
       "version": "sword"
     },
     {
-      "text": "It eats berries nonstop\u2014a habit that has made it more resilient than it looks. It\u2019ll show up on farms, searching for yet more berries.",
+      "text": "It eats berries nonstop—a habit that has made it more resilient than it looks. It’ll show up on farms, searching for yet more berries.",
       "version": "shield"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/819.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ホシガリス",
+    "roomaji": "Hoshigarisu",
+    "ko": "탐리스",
+    "zh-Hant": "貪心栗鼠",
+    "fr": "Rongourmand",
+    "de": "Raffel",
+    "es": "Skwovet",
+    "it": "Skwovet",
+    "en": "Skwovet",
+    "ja": "ホシガリス",
+    "zh-Hans": "贪心栗鼠"
   }
 }

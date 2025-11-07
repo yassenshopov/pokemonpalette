@@ -1,7 +1,7 @@
 {
   "id": 412,
   "name": "Burmy",
-  "species": "Bagworm Pok\u00e9mon",
+  "species": "Bagworm Pokémon",
   "type": [
     "Bug"
   ],
@@ -50,11 +50,11 @@
       "version": "platinum"
     },
     {
-      "text": "It covers itself with a cloak to shelter from the cold. When it\u2019s hot, its cloak is thinner.",
+      "text": "It covers itself with a cloak to shelter from the cold. When it’s hot, its cloak is thinner.",
       "version": "heartgold"
     },
     {
-      "text": "It covers itself with a cloak to shelter from the cold. When it\u2019s hot, its cloak is thinner.",
+      "text": "It covers itself with a cloak to shelter from the cold. When it’s hot, its cloak is thinner.",
       "version": "soulsilver"
     }
   ],
@@ -270,5 +270,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/412.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/412.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミノムッチ",
+    "roomaji": "Minomucchi",
+    "ko": "도롱충이",
+    "zh-Hant": "結草兒",
+    "fr": "Cheniti",
+    "de": "Burmy",
+    "es": "Burmy",
+    "it": "Burmy",
+    "en": "Burmy",
+    "ja": "ミノムッチ",
+    "zh-Hans": "结草儿"
   }
 }

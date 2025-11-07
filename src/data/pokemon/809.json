@@ -1,7 +1,7 @@
 {
   "id": 809,
   "name": "Melmetal",
-  "species": "Hex Nut Pok\u00e9mon",
+  "species": "Hex Nut Pokémon",
   "type": [
     "Steel"
   ],
@@ -44,7 +44,7 @@
       "version": "sword"
     },
     {
-      "text": "Centrifugal force is behind the punches of Melmetal\u2019s heavy hex-nut arms. Melmetal is said to deliver the strongest punches of all Pok\u00e9mon.",
+      "text": "Centrifugal force is behind the punches of Melmetal’s heavy hex-nut arms. Melmetal is said to deliver the strongest punches of all Pokémon.",
       "version": "shield"
     }
   ],
@@ -281,5 +281,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/809.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "メルメタル",
+    "roomaji": "Melmetal",
+    "ko": "멜메탈",
+    "zh-Hant": "美錄梅塔",
+    "fr": "Melmetal",
+    "de": "Melmetal",
+    "es": "Melmetal",
+    "it": "Melmetal",
+    "en": "Melmetal",
+    "ja": "メルメタル",
+    "zh-Hans": "美录梅塔"
   }
 }

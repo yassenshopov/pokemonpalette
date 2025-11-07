@@ -1,7 +1,7 @@
 {
   "id": 726,
   "name": "Torracat",
-  "species": "Fire Cat Pok\u00e9mon",
+  "species": "Fire Cat Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 50,
     "speed": 90
   },
-  "description": "At its throat, it bears a bell of fire. The bell rings brightly whenever this Pok\u00e9mon spits fire.",
+  "description": "At its throat, it bears a bell of fire. The bell rings brightly whenever this Pokémon spits fire.",
   "flavorTexts": [
     {
-      "text": "At its throat, it bears a bell of fire. The bell rings brightly whenever this Pok\u00e9mon spits fire.",
+      "text": "At its throat, it bears a bell of fire. The bell rings brightly whenever this Pokémon spits fire.",
       "version": "sun"
     },
     {
@@ -46,15 +46,15 @@
       "version": "moon"
     },
     {
-      "text": "It can act spoiled if it grows close to its Trainer. A powerful Pok\u00e9mon, its sharp claws can leave its Trainer\u2019s whole body covered in scratches.",
+      "text": "It can act spoiled if it grows close to its Trainer. A powerful Pokémon, its sharp claws can leave its Trainer’s whole body covered in scratches.",
       "version": "ultra-sun"
     },
     {
-      "text": "When its mane is standing on end, you can tell it\u2019s feeling good. When it isn\u2019t feeling well, its fur will lie down flat.",
+      "text": "When its mane is standing on end, you can tell it’s feeling good. When it isn’t feeling well, its fur will lie down flat.",
       "version": "ultra-moon"
     },
     {
-      "text": "In the midst of battle, the fire pouch on Torracat\u2019s neck rings like a bell and produces stronger flames than usual.",
+      "text": "In the midst of battle, the fire pouch on Torracat’s neck rings like a bell and produces stronger flames than usual.",
       "version": "sword"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/726.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャヒート",
+    "roomaji": "Nyaheat",
+    "ko": "냐오히트",
+    "zh-Hant": "炎熱喵",
+    "fr": "Matoufeu",
+    "de": "Miezunder",
+    "es": "Torracat",
+    "it": "Torracat",
+    "en": "Torracat",
+    "ja": "ニャヒート",
+    "zh-Hans": "炎热喵"
   }
 }

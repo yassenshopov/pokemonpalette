@@ -1,7 +1,7 @@
 {
   "id": 774,
   "name": "Minior-red-meteor",
-  "species": "Meteor Pok\u00e9mon",
+  "species": "Meteor Pokémon",
   "type": [
     "Rock",
     "Flying"
@@ -41,11 +41,11 @@
       "version": "sun"
     },
     {
-      "text": "Strong impacts can knock it out of its shell. This Pok\u00e9mon was born from mutated nanoparticles.",
+      "text": "Strong impacts can knock it out of its shell. This Pokémon was born from mutated nanoparticles.",
       "version": "moon"
     },
     {
-      "text": "It lives in the ozone layer, where it becomes food for stronger Pok\u00e9mon. When it tries to run away, it falls to the ground.",
+      "text": "It lives in the ozone layer, where it becomes food for stronger Pokémon. When it tries to run away, it falls to the ground.",
       "version": "ultra-sun"
     },
     {
@@ -375,5 +375,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/774.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "メテノ",
+    "roomaji": "Meteno",
+    "ko": "메테노",
+    "zh-Hant": "小隕星",
+    "fr": "Météno",
+    "de": "Meteno",
+    "es": "Minior",
+    "it": "Minior",
+    "en": "Minior",
+    "ja": "メテノ",
+    "zh-Hans": "小陨星"
   }
 }

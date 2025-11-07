@@ -1,7 +1,7 @@
 {
   "id": 622,
   "name": "Golett",
-  "species": "Automaton Pok\u00e9mon",
+  "species": "Automaton Pokémon",
   "type": [
     "Ground",
     "Ghost"
@@ -53,15 +53,15 @@
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon are thought to have been created by the science of an ancient and mysterious civilization.",
+      "text": "These Pokémon are thought to have been created by the science of an ancient and mysterious civilization.",
       "version": "white"
     },
     {
-      "text": "Ancient science fashioned this Pok\u00e9mon from clay. It\u2019s been active for thousands of years.",
+      "text": "Ancient science fashioned this Pokémon from clay. It’s been active for thousands of years.",
       "version": "black-2"
     },
     {
-      "text": "Ancient science fashioned this Pok\u00e9mon from clay. It\u2019s been active for thousands of years.",
+      "text": "Ancient science fashioned this Pokémon from clay. It’s been active for thousands of years.",
       "version": "white-2"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/622.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/622.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴビット",
+    "roomaji": "Gobit",
+    "ko": "골비람",
+    "zh-Hant": "泥偶小人",
+    "fr": "Gringolem",
+    "de": "Golbit",
+    "es": "Golett",
+    "it": "Golett",
+    "en": "Golett",
+    "ja": "ゴビット",
+    "zh-Hans": "泥偶小人"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 854,
   "name": "Sinistea",
-  "species": "Black Tea Pok\u00e9mon",
+  "species": "Black Tea Pokémon",
   "type": [
     "Ghost"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 54,
     "speed": 50
   },
-  "description": "This Pok\u00e9mon is said to have been born when a lonely spirit possessed a cold, leftover cup of tea.",
+  "description": "This Pokémon is said to have been born when a lonely spirit possessed a cold, leftover cup of tea.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is said to have been born when a lonely spirit possessed a cold, leftover cup of tea.",
+      "text": "This Pokémon is said to have been born when a lonely spirit possessed a cold, leftover cup of tea.",
       "version": "sword"
     },
     {
-      "text": "The teacup in which this Pok\u00e9mon makes its home is a famous piece of antique tableware. Many forgeries are in circulation.",
+      "text": "The teacup in which this Pokémon makes its home is a famous piece of antique tableware. Many forgeries are in circulation.",
       "version": "shield"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/854.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤバチャ",
+    "roomaji": "Yabacha",
+    "ko": "데인차",
+    "zh-Hant": "來悲茶",
+    "fr": "Théffroi",
+    "de": "Fatalitee",
+    "es": "Sinistea",
+    "it": "Sinistea",
+    "en": "Sinistea",
+    "ja": "ヤバチャ",
+    "zh-Hans": "来悲茶"
   }
 }

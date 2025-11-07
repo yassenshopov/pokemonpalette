@@ -1,8 +1,11 @@
 {
   "id": 758,
   "name": "Salazzle",
-  "species": "Toxic Lizard Pok\u00e9mon",
-  "type": ["Poison", "Fire"],
+  "species": "Toxic Lizard Pokémon",
+  "type": [
+    "Poison",
+    "Fire"
+  ],
   "typeDetails": [
     {
       "name": "Poison",
@@ -52,7 +55,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "It punishes Salandit that couldn\u2019t bring it food with a fierce slap of its flame-spewing palm.",
+      "text": "It punishes Salandit that couldn’t bring it food with a fierce slap of its flame-spewing palm.",
       "version": "ultra-moon"
     },
     {
@@ -66,7 +69,11 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#A040A0", "#78C850", "#F8D030"]
+    "highlights": [
+      "#A040A0",
+      "#78C850",
+      "#F8D030"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/758.png",
@@ -298,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/758.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "エンニュート",
+    "roomaji": "Ennewt",
+    "ko": "염뉴트",
+    "zh-Hant": "焰后蜥",
+    "fr": "Malamandre",
+    "de": "Amfira",
+    "es": "Salazzle",
+    "it": "Salazzle",
+    "en": "Salazzle",
+    "ja": "エンニュート",
+    "zh-Hans": "焰后蜥"
   }
 }

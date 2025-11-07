@@ -1,7 +1,7 @@
 {
   "id": 677,
   "name": "Espurr",
-  "species": "Restraint Pok\u00e9mon",
+  "species": "Restraint Pokémon",
   "type": [
     "Psychic"
   ],
@@ -60,7 +60,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "Though Espurr\u2019s expression never changes, behind that blank stare is an intense struggle to contain its devastating psychic power.",
+      "text": "Though Espurr’s expression never changes, behind that blank stare is an intense struggle to contain its devastating psychic power.",
       "version": "sword"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/677.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャスパー",
+    "roomaji": "Nyasper",
+    "ko": "냐스퍼",
+    "zh-Hant": "妙喵",
+    "fr": "Psystigri",
+    "de": "Psiau",
+    "es": "Espurr",
+    "it": "Espurr",
+    "en": "Espurr",
+    "ja": "ニャスパー",
+    "zh-Hans": "妙喵"
   }
 }

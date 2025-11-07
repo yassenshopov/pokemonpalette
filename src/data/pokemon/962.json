@@ -1,7 +1,7 @@
 {
   "id": 962,
   "name": "Bombirdier",
-  "species": "Item Drop Pok\u00e9mon",
+  "species": "Item Drop Pokémon",
   "type": [
     "Flying",
     "Dark"
@@ -46,10 +46,10 @@
     "specialDefense": 85,
     "speed": 82
   },
-  "description": "It gathers things up in an apron made from shed feathers added to the Pok\u00e9mon\u2019s chest feathers, then drops those things from high places for fun.",
+  "description": "It gathers things up in an apron made from shed feathers added to the Pokémon’s chest feathers, then drops those things from high places for fun.",
   "flavorTexts": [
     {
-      "text": "It gathers things up in an apron made from shed feathers added to the Pok\u00e9mon\u2019s chest feathers, then drops those things from high places for fun.",
+      "text": "It gathers things up in an apron made from shed feathers added to the Pokémon’s chest feathers, then drops those things from high places for fun.",
       "version": "scarlet"
     },
     {
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/962.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オトシドリ",
+    "roomaji": "Otoshidori",
+    "ko": "떨구새",
+    "zh-Hant": "下石鳥",
+    "fr": "Lestombaile",
+    "de": "Adebom",
+    "es": "Bombirdier",
+    "it": "Bombirdier",
+    "en": "Bombirdier",
+    "ja": "オトシドリ",
+    "zh-Hans": "下石鸟"
   }
 }

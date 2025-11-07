@@ -1,7 +1,7 @@
 {
   "id": 617,
   "name": "Accelgor",
-  "species": "Shell Out Pok\u00e9mon",
+  "species": "Shell Out Pokémon",
   "type": [
     "Bug"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/617.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/617.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アギルダー",
+    "roomaji": "Agilder",
+    "ko": "어지리더",
+    "zh-Hant": "敏捷蟲",
+    "fr": "Limaspeed",
+    "de": "Hydragil",
+    "es": "Accelgor",
+    "it": "Accelgor",
+    "en": "Accelgor",
+    "ja": "アギルダー",
+    "zh-Hans": "敏捷虫"
   }
 }

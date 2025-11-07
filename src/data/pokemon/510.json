@@ -1,7 +1,7 @@
 {
   "id": 510,
   "name": "Liepard",
-  "species": "Cruel Pok\u00e9mon",
+  "species": "Cruel Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 50,
     "speed": 106
   },
-  "description": "These Pok\u00e9mon vanish and appear unexpectedly. Many Trainers are drawn to their beautiful form and fur.",
+  "description": "These Pokémon vanish and appear unexpectedly. Many Trainers are drawn to their beautiful form and fur.",
   "flavorTexts": [
     {
-      "text": "These Pok\u00e9mon vanish and appear unexpectedly. Many Trainers are drawn to their beautiful form and fur.",
+      "text": "These Pokémon vanish and appear unexpectedly. Many Trainers are drawn to their beautiful form and fur.",
       "version": "black"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/510.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/510.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レパルダス",
+    "roomaji": "Lepardas",
+    "ko": "레파르다스",
+    "zh-Hant": "酷豹",
+    "fr": "Léopardus",
+    "de": "Kleoparda",
+    "es": "Liepard",
+    "it": "Liepard",
+    "en": "Liepard",
+    "ja": "レパルダス",
+    "zh-Hans": "酷豹"
   }
 }

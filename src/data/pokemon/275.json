@@ -1,7 +1,7 @@
 {
   "id": 275,
   "name": "Shiftry",
-  "species": "Wicked Pok\u00e9mon",
+  "species": "Wicked Pokémon",
   "type": [
     "Grass",
     "Dark"
@@ -53,19 +53,19 @@
       "version": "soulsilver"
     },
     {
-      "text": "SHIFTRY is a mysterious POK\u00e9MON that is said to live atop towering trees  dating back over a thousand years. It creates terrific windstorms with the fans it holds.",
+      "text": "SHIFTRY is a mysterious POKéMON that is said to live atop towering trees  dating back over a thousand years. It creates terrific windstorms with the fans it holds.",
       "version": "ruby"
     },
     {
-      "text": "SHIFTRY\u2019s large fans generate awesome gusts of wind at a speed close to 100 feet per second. The whipped-up wind blows anything away. This POK\u00e9MON chooses to live quietly deep in forests.",
+      "text": "SHIFTRY’s large fans generate awesome gusts of wind at a speed close to 100 feet per second. The whipped-up wind blows anything away. This POKéMON chooses to live quietly deep in forests.",
       "version": "sapphire"
     },
     {
-      "text": "It is said to arrive on chilly, wintry winds. Feared from long ago as the guardian of forests, this POK\u00e9MON lives in a deep forest where people do not venture.",
+      "text": "It is said to arrive on chilly, wintry winds. Feared from long ago as the guardian of forests, this POKéMON lives in a deep forest where people do not venture.",
       "version": "emerald"
     },
     {
-      "text": "A POK\u00e9MON that was feared as a forest guardian. It can read the foe\u2019s mind and take preemptive action.",
+      "text": "A POKéMON that was feared as a forest guardian. It can read the foe’s mind and take preemptive action.",
       "version": "firered"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/275.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/275.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダーテング",
+    "roomaji": "Dirteng",
+    "ko": "다탱구",
+    "zh-Hant": "狡猾天狗",
+    "fr": "Tengalice",
+    "de": "Tengulist",
+    "es": "Shiftry",
+    "it": "Shiftry",
+    "en": "Shiftry",
+    "ja": "ダーテング",
+    "zh-Hans": "狡猾天狗"
   }
 }

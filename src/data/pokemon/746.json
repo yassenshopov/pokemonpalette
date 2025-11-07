@@ -1,7 +1,7 @@
 {
   "id": 746,
   "name": "Wishiwashi-solo",
-  "species": "Small Fry Pok\u00e9mon",
+  "species": "Small Fry Pokémon",
   "type": [
     "Water"
   ],
@@ -29,26 +29,26 @@
     "specialDefense": 25,
     "speed": 40
   },
-  "description": "When it\u2019s in trouble, its eyes moisten and begin to shine. The shining light attracts its comrades, and they stand together against their enemies.",
+  "description": "When it’s in trouble, its eyes moisten and begin to shine. The shining light attracts its comrades, and they stand together against their enemies.",
   "flavorTexts": [
     {
-      "text": "When it\u2019s in trouble, its eyes moisten and begin to shine. The shining light attracts its comrades, and they stand together against their enemies.",
+      "text": "When it’s in trouble, its eyes moisten and begin to shine. The shining light attracts its comrades, and they stand together against their enemies.",
       "version": "sun"
     },
     {
-      "text": "It\u2019s awfully weak and notably tasty, so everyone is always out to get it. As it happens, anyone trying to bully it receives a painful lesson.",
+      "text": "It’s awfully weak and notably tasty, so everyone is always out to get it. As it happens, anyone trying to bully it receives a painful lesson.",
       "version": "moon"
     },
     {
-      "text": "They\u2019re weak, so they move in schools. However, they can also often be seen all alone, having strayed from the school.",
+      "text": "They’re weak, so they move in schools. However, they can also often be seen all alone, having strayed from the school.",
       "version": "ultra-sun"
     },
     {
-      "text": "When it\u2019s in a jam, its shining eyes attract others of its kind. The light from its eyes is visible almost 25 miles away.",
+      "text": "When it’s in a jam, its shining eyes attract others of its kind. The light from its eyes is visible almost 25 miles away.",
       "version": "ultra-moon"
     },
     {
-      "text": "Individually, they\u2019re incredibly weak. It\u2019s by gathering up into schools that they\u2019re able to confront opponents.",
+      "text": "Individually, they’re incredibly weak. It’s by gathering up into schools that they’re able to confront opponents.",
       "version": "sword"
     }
   ],
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/746.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヨワシ",
+    "roomaji": "Yowashi",
+    "ko": "약어리",
+    "zh-Hant": "弱丁魚",
+    "fr": "Froussardine",
+    "de": "Lusardin",
+    "es": "Wishiwashi",
+    "it": "Wishiwashi",
+    "en": "Wishiwashi",
+    "ja": "ヨワシ",
+    "zh-Hans": "弱丁鱼"
   }
 }

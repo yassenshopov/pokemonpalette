@@ -1,7 +1,7 @@
 {
   "id": 597,
   "name": "Ferroseed",
-  "species": "Thorn Seed Pok\u00e9mon",
+  "species": "Thorn Seed Pokémon",
   "type": [
     "Grass",
     "Steel"
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/597.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/597.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "テッシード",
+    "roomaji": "Tesseed",
+    "ko": "철시드",
+    "zh-Hant": "種子鐵球",
+    "fr": "Grindur",
+    "de": "Kastadur",
+    "es": "Ferroseed",
+    "it": "Ferroseed",
+    "en": "Ferroseed",
+    "ja": "テッシード",
+    "zh-Hans": "种子铁球"
   }
 }

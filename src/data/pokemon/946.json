@@ -1,7 +1,7 @@
 {
   "id": 946,
   "name": "Bramblin",
-  "species": "Tumbleweed Pok\u00e9mon",
+  "species": "Tumbleweed Pokémon",
   "type": [
     "Grass",
     "Ghost"
@@ -40,10 +40,10 @@
     "specialDefense": 35,
     "speed": 60
   },
-  "description": "A soul unable to move on to the afterlife was blown around by the wind until it got tangled up with dried grass and became a Pok\u00e9mon.",
+  "description": "A soul unable to move on to the afterlife was blown around by the wind until it got tangled up with dried grass and became a Pokémon.",
   "flavorTexts": [
     {
-      "text": "A soul unable to move on to the afterlife was blown around by the wind until it got tangled up with dried grass and became a Pok\u00e9mon.",
+      "text": "A soul unable to move on to the afterlife was blown around by the wind until it got tangled up with dried grass and became a Pokémon.",
       "version": "scarlet"
     },
     {
@@ -286,5 +286,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/946.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アノクサ",
+    "roomaji": "Anokusa",
+    "ko": "그푸리",
+    "zh-Hant": "納噬草",
+    "fr": "Virovent",
+    "de": "Weherba",
+    "es": "Bramblin",
+    "it": "Bramblin",
+    "en": "Bramblin",
+    "ja": "アノクサ",
+    "zh-Hans": "纳噬草"
   }
 }

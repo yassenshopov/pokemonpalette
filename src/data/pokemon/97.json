@@ -1,7 +1,7 @@
 {
   "id": 97,
   "name": "Hypno",
-  "species": "Hypnosis Pok\u00e9mon",
+  "species": "Hypnosis Pokémon",
   "type": [
     "Psychic"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Always holding a pendulum that it rocks at a steady rhythm, it causes drowsiness in any\u00ad one nearby.",
+      "text": "Always holding a pendulum that it rocks at a steady rhythm, it causes drowsiness in any­ one nearby.",
       "version": "silver"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/97.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/97.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スリーパー",
+    "roomaji": "Sleeper",
+    "ko": "슬리퍼",
+    "zh-Hant": "引夢貘人",
+    "fr": "Hypnomade",
+    "de": "Hypno",
+    "es": "Hypno",
+    "it": "Hypno",
+    "en": "Hypno",
+    "ja": "スリーパー",
+    "zh-Hans": "引梦貘人"
   }
 }

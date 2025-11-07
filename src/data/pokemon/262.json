@@ -1,7 +1,7 @@
 {
   "id": 262,
   "name": "Mightyena",
-  "species": "Bite Pok\u00e9mon",
+  "species": "Bite Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 60,
     "speed": 70
   },
-  "description": "MIGHTYENA gives obvious signals when it is preparing to attack. It starts to growl deeply and then flattens its body. This POK\u00e9MON will bite savagely with its sharply pointed fangs.",
+  "description": "MIGHTYENA gives obvious signals when it is preparing to attack. It starts to growl deeply and then flattens its body. This POKéMON will bite savagely with its sharply pointed fangs.",
   "flavorTexts": [
     {
-      "text": "MIGHTYENA gives obvious signals when it is preparing to attack. It starts to growl deeply and then flattens its body. This POK\u00e9MON will bite savagely with its sharply pointed fangs.",
+      "text": "MIGHTYENA gives obvious signals when it is preparing to attack. It starts to growl deeply and then flattens its body. This POKéMON will bite savagely with its sharply pointed fangs.",
       "version": "ruby"
     },
     {
-      "text": "MIGHTYENA travel and act as a pack in the wild. The memory of its life in the wild compels the POK\u00e9MON to obey only those TRAINERS that it recognizes to possess superior skill.",
+      "text": "MIGHTYENA travel and act as a pack in the wild. The memory of its life in the wild compels the POKéMON to obey only those TRAINERS that it recognizes to possess superior skill.",
       "version": "sapphire"
     },
     {
-      "text": "In the wild, MIGHTYENA live in a pack. They never defy their leader\u2019s orders. They defeat foes with perfectly coordinated teamwork.",
+      "text": "In the wild, MIGHTYENA live in a pack. They never defy their leader’s orders. They defeat foes with perfectly coordinated teamwork.",
       "version": "emerald"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/262.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/262.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グラエナ",
+    "roomaji": "Guraena",
+    "ko": "그라에나",
+    "zh-Hant": "大狼犬",
+    "fr": "Grahyèna",
+    "de": "Magnayen",
+    "es": "Mightyena",
+    "it": "Mightyena",
+    "en": "Mightyena",
+    "ja": "グラエナ",
+    "zh-Hans": "大狼犬"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 889,
   "name": "Zamazenta",
-  "species": "Warrior Pok\u00e9mon",
+  "species": "Warrior Pokémon",
   "type": [
     "Fighting"
   ],
@@ -36,7 +36,7 @@
       "version": "sword"
     },
     {
-      "text": "This Pok\u00e9mon slept for aeons while in the form of a statue. It was asleep for so long, people forgot that it ever existed.",
+      "text": "This Pokémon slept for aeons while in the form of a statue. It was asleep for so long, people forgot that it ever existed.",
       "version": "shield"
     }
   ],
@@ -273,5 +273,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/889.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ザマゼンタ",
+    "roomaji": "Zamazenta",
+    "ko": "자마젠타",
+    "zh-Hant": "藏瑪然特",
+    "fr": "Zamazenta",
+    "de": "Zamazenta",
+    "es": "Zamazenta",
+    "it": "Zamazenta",
+    "en": "Zamazenta",
+    "ja": "ザマゼンタ",
+    "zh-Hans": "藏玛然特"
   }
 }

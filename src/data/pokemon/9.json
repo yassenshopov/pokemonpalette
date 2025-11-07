@@ -1,7 +1,7 @@
 {
   "id": 9,
   "name": "Blastoise",
-  "species": "Shellfish Pok\u00e9mon",
+  "species": "Shellfish Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 105,
     "speed": 78
   },
-  "description": "A brutal POK\u00e9MON with pressurized water jets on its shell. They are used for high speed tackles.",
+  "description": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.",
   "flavorTexts": [
     {
-      "text": "A brutal POK\u00e9MON with pressurized water jets on its shell. They are used for high speed tackles.",
+      "text": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.",
       "version": "red"
     },
     {
-      "text": "A brutal POK\u00e9MON with pressurized water jets on its shell. They are used for high speed tackles.",
+      "text": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.",
       "version": "blue"
     },
     {
@@ -50,11 +50,11 @@
       "version": "yellow"
     },
     {
-      "text": "It deliberately makes itself heavy so it can with\u00ad stand the recoil of the water jets it fires.",
+      "text": "It deliberately makes itself heavy so it can with­ stand the recoil of the water jets it fires.",
       "version": "gold"
     },
     {
-      "text": "The rocket cannons on its shell fire jets of water capable of punch\u00ad ing holes through thick steel.",
+      "text": "The rocket cannons on its shell fire jets of water capable of punch­ ing holes through thick steel.",
       "version": "silver"
     }
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/9.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/9.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カメックス",
+    "roomaji": "Kamex",
+    "ko": "거북왕",
+    "zh-Hant": "水箭龜",
+    "fr": "Tortank",
+    "de": "Turtok",
+    "es": "Blastoise",
+    "it": "Blastoise",
+    "en": "Blastoise",
+    "ja": "カメックス",
+    "zh-Hans": "水箭龟"
   }
 }

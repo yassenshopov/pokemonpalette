@@ -1,7 +1,7 @@
 {
   "id": 86,
   "name": "Seel",
-  "species": "Sea Lion Pok\u00e9mon",
+  "species": "Sea Lion Pokémon",
   "type": [
     "Water"
   ],
@@ -52,11 +52,11 @@
       "version": "blue"
     },
     {
-      "text": "Loves freezing cold conditions. Relishes swimming in a frigid cli\u00ad mate of around 14F degrees.",
+      "text": "Loves freezing cold conditions. Relishes swimming in a frigid cli­ mate of around 14F degrees.",
       "version": "yellow"
     },
     {
-      "text": "Although it can't walk well on land, it is a graceful swimmer. It espe\u00ad cially loves being in frigid seas.",
+      "text": "Although it can't walk well on land, it is a graceful swimmer. It espe­ cially loves being in frigid seas.",
       "version": "gold"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/86.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/86.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パウワウ",
+    "roomaji": "Pawou",
+    "ko": "쥬쥬",
+    "zh-Hant": "小海獅",
+    "fr": "Otaria",
+    "de": "Jurob",
+    "es": "Seel",
+    "it": "Seel",
+    "en": "Seel",
+    "ja": "パウワウ",
+    "zh-Hans": "小海狮"
   }
 }

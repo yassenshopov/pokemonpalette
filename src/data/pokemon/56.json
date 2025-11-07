@@ -1,7 +1,7 @@
 {
   "id": 56,
   "name": "Mankey",
-  "species": "Pig Monkey Pok\u00e9mon",
+  "species": "Pig Monkey Pokémon",
   "type": [
     "Fighting"
   ],
@@ -52,7 +52,7 @@
       "version": "blue"
     },
     {
-      "text": "An agile POK\u00e9MON that lives in trees. It angers easily and will not hesitate to attack anything.",
+      "text": "An agile POKéMON that lives in trees. It angers easily and will not hesitate to attack anything.",
       "version": "yellow"
     },
     {
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "It's unsafe to ap\u00ad proach if it gets violently enraged for no reason and can't distinguish friends from foes.",
+      "text": "It's unsafe to ap­ proach if it gets violently enraged for no reason and can't distinguish friends from foes.",
       "version": "silver"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/56.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/56.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マンキー",
+    "roomaji": "Mankey",
+    "ko": "망키",
+    "zh-Hant": "猴怪",
+    "fr": "Férosinge",
+    "de": "Menki",
+    "es": "Mankey",
+    "it": "Mankey",
+    "en": "Mankey",
+    "ja": "マンキー",
+    "zh-Hans": "猴怪"
   }
 }

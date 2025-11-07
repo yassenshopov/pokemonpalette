@@ -1,7 +1,7 @@
 {
   "id": 1006,
   "name": "Iron-valiant",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Fairy",
     "Fighting"
@@ -34,14 +34,14 @@
     "specialDefense": 60,
     "speed": 116
   },
-  "description": "It has some similarities to a mad scientist\u2019s invention covered in a paranormal magazine.",
+  "description": "It has some similarities to a mad scientist’s invention covered in a paranormal magazine.",
   "flavorTexts": [
     {
-      "text": "It has some similarities to a mad scientist\u2019s invention covered in a paranormal magazine.",
+      "text": "It has some similarities to a mad scientist’s invention covered in a paranormal magazine.",
       "version": "scarlet"
     },
     {
-      "text": "It\u2019s possible that this is the object listed as Iron Valiant in a certain expedition journal.",
+      "text": "It’s possible that this is the object listed as Iron Valiant in a certain expedition journal.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1006.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノブジン",
+    "roomaji": "Tetsunobujin",
+    "ko": "무쇠무인",
+    "zh-Hant": "鐵武者",
+    "fr": "Garde-de-Fer",
+    "de": "Eisenkrieger",
+    "es": "Ferropaladín",
+    "it": "Eroeferreo",
+    "en": "Iron Valiant",
+    "ja": "テツノブジン",
+    "zh-Hans": "铁武者"
   }
 }

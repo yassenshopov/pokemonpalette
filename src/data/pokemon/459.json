@@ -1,7 +1,7 @@
 {
   "id": 459,
   "name": "Snover",
-  "species": "Frost Tree Pok\u00e9mon",
+  "species": "Frost Tree Pokémon",
   "type": [
     "Grass",
     "Ice"
@@ -55,11 +55,11 @@
       "version": "platinum"
     },
     {
-      "text": "During cold seasons, it migrates to the mountain\u2019s lower reaches. It returns to the snow-covered summit in the spring.",
+      "text": "During cold seasons, it migrates to the mountain’s lower reaches. It returns to the snow-covered summit in the spring.",
       "version": "heartgold"
     },
     {
-      "text": "During cold seasons, it migrates to the mountain\u2019s lower reaches. It returns to the snow-covered summit in the spring.",
+      "text": "During cold seasons, it migrates to the mountain’s lower reaches. It returns to the snow-covered summit in the spring.",
       "version": "soulsilver"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/459.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/459.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユキカブリ",
+    "roomaji": "Yukikaburi",
+    "ko": "눈쓰개",
+    "zh-Hant": "雪笠怪",
+    "fr": "Blizzi",
+    "de": "Shnebedeck",
+    "es": "Snover",
+    "it": "Snover",
+    "en": "Snover",
+    "ja": "ユキカブリ",
+    "zh-Hans": "雪笠怪"
   }
 }

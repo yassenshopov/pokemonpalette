@@ -1,7 +1,7 @@
 {
   "id": 272,
   "name": "Ludicolo",
-  "species": "Carefree Pok\u00e9mon",
+  "species": "Carefree Pokémon",
   "type": [
     "Water",
     "Grass"
@@ -46,14 +46,14 @@
     "specialDefense": 100,
     "speed": 70
   },
-  "description": "LUDICOLO begins dancing as soon as it hears cheerful, festive music. This POK\u00e9MON is said to appear when it hears the singing of children on hiking outings.",
+  "description": "LUDICOLO begins dancing as soon as it hears cheerful, festive music. This POKéMON is said to appear when it hears the singing of children on hiking outings.",
   "flavorTexts": [
     {
-      "text": "LUDICOLO begins dancing as soon as it hears cheerful, festive music. This POK\u00e9MON is said to appear when it hears the singing of children on hiking outings.",
+      "text": "LUDICOLO begins dancing as soon as it hears cheerful, festive music. This POKéMON is said to appear when it hears the singing of children on hiking outings.",
       "version": "ruby"
     },
     {
-      "text": "Upon hearing an upbeat and cheerful rhythm, the cells in LUDICOLO\u2019s body become very energetic and active. Even in battle, this POK\u00e9MON will exhibit an amazing amount of power.",
+      "text": "Upon hearing an upbeat and cheerful rhythm, the cells in LUDICOLO’s body become very energetic and active. Even in battle, this POKéMON will exhibit an amazing amount of power.",
       "version": "sapphire"
     },
     {
@@ -61,11 +61,11 @@
       "version": "emerald"
     },
     {
-      "text": "The rhythm of bright, festive music activates LUDICOLO\u2019s cells, making it more powerful.",
+      "text": "The rhythm of bright, festive music activates LUDICOLO’s cells, making it more powerful.",
       "version": "firered"
     },
     {
-      "text": "The rhythm of bright, festive music activates LUDICOLO\u2019s cells, making it more powerful.",
+      "text": "The rhythm of bright, festive music activates LUDICOLO’s cells, making it more powerful.",
       "version": "leafgreen"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/272.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/272.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ルンパッパ",
+    "roomaji": "Runpappa",
+    "ko": "로파파",
+    "zh-Hant": "樂天河童",
+    "fr": "Ludicolo",
+    "de": "Kappalores",
+    "es": "Ludicolo",
+    "it": "Ludicolo",
+    "en": "Ludicolo",
+    "ja": "ルンパッパ",
+    "zh-Hans": "乐天河童"
   }
 }

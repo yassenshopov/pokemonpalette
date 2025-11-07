@@ -1,7 +1,7 @@
 {
   "id": 100,
   "name": "Voltorb",
-  "species": "Ball Pok\u00e9mon",
+  "species": "Ball Pokémon",
   "type": [
     "Electric"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 55,
     "speed": 100
   },
-  "description": "Usually found in power plants. Easily mistaken for a POK\u00e9 BALL, they have zapped many people.",
+  "description": "Usually found in power plants. Easily mistaken for a POKé BALL, they have zapped many people.",
   "flavorTexts": [
     {
-      "text": "Usually found in power plants. Easily mistaken for a POK\u00e9 BALL, they have zapped many people.",
+      "text": "Usually found in power plants. Easily mistaken for a POKé BALL, they have zapped many people.",
       "version": "red"
     },
     {
-      "text": "Usually found in power plants. Easily mistaken for a POK\u00e9 BALL, they have zapped many people.",
+      "text": "Usually found in power plants. Easily mistaken for a POKé BALL, they have zapped many people.",
       "version": "blue"
     },
     {
-      "text": "It is said to camouflage itself as a POK\u00e9 BALL. It will self-destruct with very little stimulus.",
+      "text": "It is said to camouflage itself as a POKé BALL. It will self-destruct with very little stimulus.",
       "version": "yellow"
     },
     {
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "It was discovered when POK\u00e9 BALLS were introduced. It is said that there is some connection.",
+      "text": "It was discovered when POKé BALLS were introduced. It is said that there is some connection.",
       "version": "silver"
     }
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/100.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/100.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビリリダマ",
+    "roomaji": "Biriridama",
+    "ko": "찌리리공",
+    "zh-Hant": "霹靂電球",
+    "fr": "Voltorbe",
+    "de": "Voltobal",
+    "es": "Voltorb",
+    "it": "Voltorb",
+    "en": "Voltorb",
+    "ja": "ビリリダマ",
+    "zh-Hans": "霹雳电球"
   }
 }

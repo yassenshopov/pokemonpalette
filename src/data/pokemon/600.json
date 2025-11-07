@@ -1,7 +1,7 @@
 {
   "id": 600,
   "name": "Klang",
-  "species": "Gear Pok\u00e9mon",
+  "species": "Gear Pokémon",
   "type": [
     "Steel"
   ],
@@ -48,15 +48,15 @@
       "version": "black"
     },
     {
-      "text": "Spinning minigears are rotated at high speed and repeatedly fired away. It is dangerous if the gears don\u2019t return.",
+      "text": "Spinning minigears are rotated at high speed and repeatedly fired away. It is dangerous if the gears don’t return.",
       "version": "white"
     },
     {
-      "text": "A minigear and big gear comprise its body. If the minigear it launches at a foe doesn\u2019t return, it will die.",
+      "text": "A minigear and big gear comprise its body. If the minigear it launches at a foe doesn’t return, it will die.",
       "version": "black-2"
     },
     {
-      "text": "A minigear and big gear comprise its body. If the minigear it launches at a foe doesn\u2019t return, it will die.",
+      "text": "A minigear and big gear comprise its body. If the minigear it launches at a foe doesn’t return, it will die.",
       "version": "white-2"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/600.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/600.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ギギアル",
+    "roomaji": "Gigiaru",
+    "ko": "기기어르",
+    "zh-Hant": "齒輪組",
+    "fr": "Clic",
+    "de": "Kliklak",
+    "es": "Klang",
+    "it": "Klang",
+    "en": "Klang",
+    "ja": "ギギアル",
+    "zh-Hans": "齿轮组"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 581,
   "name": "Swanna",
-  "species": "White Bird Pok\u00e9mon",
+  "species": "White Bird Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/581.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/581.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スワンナ",
+    "roomaji": "Swanna",
+    "ko": "스완나",
+    "zh-Hant": "舞天鵝",
+    "fr": "Lakmécygne",
+    "de": "Swaroness",
+    "es": "Swanna",
+    "it": "Swanna",
+    "en": "Swanna",
+    "ja": "スワンナ",
+    "zh-Hans": "舞天鹅"
   }
 }

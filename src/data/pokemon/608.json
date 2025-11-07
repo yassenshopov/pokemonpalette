@@ -1,7 +1,7 @@
 {
   "id": 608,
   "name": "Lampent",
-  "species": "Lamp Pok\u00e9mon",
+  "species": "Lamp Pokémon",
   "type": [
     "Ghost",
     "Fire"
@@ -46,10 +46,10 @@
     "specialDefense": 60,
     "speed": 55
   },
-  "description": "This ominous Pok\u00e9mon is feared. Through cities it wanders, searching for the spirits of the fallen.",
+  "description": "This ominous Pokémon is feared. Through cities it wanders, searching for the spirits of the fallen.",
   "flavorTexts": [
     {
-      "text": "This ominous Pok\u00e9mon is feared. Through cities it wanders, searching for the spirits of the fallen.",
+      "text": "This ominous Pokémon is feared. Through cities it wanders, searching for the spirits of the fallen.",
       "version": "black"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/608.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/608.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ランプラー",
+    "roomaji": "Lampler",
+    "ko": "램프라",
+    "zh-Hant": "燈火幽靈",
+    "fr": "Mélancolux",
+    "de": "Laternecto",
+    "es": "Lampent",
+    "it": "Lampent",
+    "en": "Lampent",
+    "ja": "ランプラー",
+    "zh-Hans": "灯火幽灵"
   }
 }

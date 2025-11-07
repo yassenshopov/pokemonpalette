@@ -1,7 +1,7 @@
 {
   "id": 868,
   "name": "Milcery",
-  "species": "Cream Pok\u00e9mon",
+  "species": "Cream Pokémon",
   "type": [
     "Fairy"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 61,
     "speed": 34
   },
-  "description": "This Pok\u00e9mon was born from sweet-smelling particles in the air. Its body is made of cream.",
+  "description": "This Pokémon was born from sweet-smelling particles in the air. Its body is made of cream.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon was born from sweet-smelling particles in the air. Its body is made of cream.",
+      "text": "This Pokémon was born from sweet-smelling particles in the air. Its body is made of cream.",
       "version": "sword"
     },
     {
@@ -281,5 +281,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/868.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マホミル",
+    "roomaji": "Mahomil",
+    "ko": "마빌크",
+    "zh-Hant": "小仙奶",
+    "fr": "Crèmy",
+    "de": "Hokumil",
+    "es": "Milcery",
+    "it": "Milcery",
+    "en": "Milcery",
+    "ja": "マホミル",
+    "zh-Hans": "小仙奶"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 1002,
   "name": "Chien-pao",
-  "species": "Ruinous Pok\u00e9mon",
+  "species": "Ruinous Pokémon",
   "type": [
     "Dark",
     "Ice"
@@ -34,14 +34,14 @@
     "specialDefense": 65,
     "speed": 135
   },
-  "description": "This Pok\u00e9mon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused.",
+  "description": "This Pokémon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused.",
+      "text": "This Pokémon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused.",
       "version": "scarlet"
     },
     {
-      "text": "The hatred of those who perished by the sword long ago has clad itself in snow and become a Pok\u00e9mon.",
+      "text": "The hatred of those who perished by the sword long ago has clad itself in snow and become a Pokémon.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1002.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パオジアン",
+    "roomaji": "Paojian",
+    "ko": "파오젠",
+    "zh-Hant": "古劍豹",
+    "fr": "Baojian",
+    "de": "Baojian",
+    "es": "Chien-Pao",
+    "it": "Chien-Pao",
+    "en": "Chien-Pao",
+    "ja": "パオジアン",
+    "zh-Hans": "古剑豹"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 685,
   "name": "Slurpuff",
-  "species": "Meringue Pok\u00e9mon",
+  "species": "Meringue Pokémon",
   "type": [
     "Fairy"
   ],
@@ -42,7 +42,7 @@
       "version": "x"
     },
     {
-      "text": "Its sense of smell is 100 million times better than a human\u2019s, so even the faintest scent tells it about everything in the area. It\u2019s like it can see with its nose!",
+      "text": "Its sense of smell is 100 million times better than a human’s, so even the faintest scent tells it about everything in the area. It’s like it can see with its nose!",
       "version": "y"
     },
     {
@@ -50,11 +50,11 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Its sense of smell is 100 million times better than a human\u2019s, so even the faintest scent tells it about everything in the area. It\u2019s like it can see with its nose!",
+      "text": "Its sense of smell is 100 million times better than a human’s, so even the faintest scent tells it about everything in the area. It’s like it can see with its nose!",
       "version": "alpha-sapphire"
     },
     {
-      "text": "By taking in a person\u2019s scent, it can sniff out their mental and physical condition. It\u2019s hoped that this skill will have many medical applications.",
+      "text": "By taking in a person’s scent, it can sniff out their mental and physical condition. It’s hoped that this skill will have many medical applications.",
       "version": "sword"
     }
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/685.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ペロリーム",
+    "roomaji": "Peroream",
+    "ko": "나루림",
+    "zh-Hant": "胖甜妮",
+    "fr": "Cupcanaille",
+    "de": "Sabbaione",
+    "es": "Slurpuff",
+    "it": "Slurpuff",
+    "en": "Slurpuff",
+    "ja": "ペロリーム",
+    "zh-Hans": "胖甜妮"
   }
 }

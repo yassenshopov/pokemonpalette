@@ -1,7 +1,7 @@
 {
   "id": 197,
   "name": "Umbreon",
-  "species": "Moonlight Pok\u00e9mon",
+  "species": "Moonlight Pokémon",
   "type": [
     "Dark"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 130,
     "speed": 65
   },
-  "description": "When agitated, this POK\u00e9MON pro\u00ad tects itself by spraying poisonous sweat from its pores.",
+  "description": "When agitated, this POKéMON pro­ tects itself by spraying poisonous sweat from its pores.",
   "flavorTexts": [
     {
-      "text": "When agitated, this POK\u00e9MON pro\u00ad tects itself by spraying poisonous sweat from its pores.",
+      "text": "When agitated, this POKéMON pro­ tects itself by spraying poisonous sweat from its pores.",
       "version": "gold"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "UMBREON evolved as a result of exposure to the moon\u2019s waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.",
+      "text": "UMBREON evolved as a result of exposure to the moon’s waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.",
       "version": "ruby"
     },
     {
-      "text": "UMBREON evolved as a result of exposure to the moon\u2019s waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.",
+      "text": "UMBREON evolved as a result of exposure to the moon’s waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.",
       "version": "sapphire"
     }
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/197.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/197.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブラッキー",
+    "roomaji": "Blacky",
+    "ko": "블래키",
+    "zh-Hant": "月亮伊布",
+    "fr": "Noctali",
+    "de": "Nachtara",
+    "es": "Umbreon",
+    "it": "Umbreon",
+    "en": "Umbreon",
+    "ja": "ブラッキー",
+    "zh-Hans": "月亮伊布"
   }
 }

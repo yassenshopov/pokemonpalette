@@ -1,7 +1,7 @@
 {
   "id": 621,
   "name": "Druddigon",
-  "species": "Cave Pok\u00e9mon",
+  "species": "Cave Pokémon",
   "type": [
     "Dragon"
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/621.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/621.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クリムガン",
+    "roomaji": "Crimgan",
+    "ko": "크리만",
+    "zh-Hant": "赤面龍",
+    "fr": "Drakkarmin",
+    "de": "Shardrago",
+    "es": "Druddigon",
+    "it": "Druddigon",
+    "en": "Druddigon",
+    "ja": "クリムガン",
+    "zh-Hans": "赤面龙"
   }
 }

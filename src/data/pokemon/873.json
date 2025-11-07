@@ -1,7 +1,7 @@
 {
   "id": 873,
   "name": "Frosmoth",
-  "species": "Frost Moth Pok\u00e9mon",
+  "species": "Frost Moth Pokémon",
   "type": [
     "Ice",
     "Bug"
@@ -40,10 +40,10 @@
     "specialDefense": 90,
     "speed": 65
   },
-  "description": "Icy scales fall from its wings like snow as it flies over fields and mountains. The temperature of its wings is less than \u2212290 degrees Fahrenheit.",
+  "description": "Icy scales fall from its wings like snow as it flies over fields and mountains. The temperature of its wings is less than −290 degrees Fahrenheit.",
   "flavorTexts": [
     {
-      "text": "Icy scales fall from its wings like snow as it flies over fields and mountains. The temperature of its wings is less than \u2212290 degrees Fahrenheit.",
+      "text": "Icy scales fall from its wings like snow as it flies over fields and mountains. The temperature of its wings is less than −290 degrees Fahrenheit.",
       "version": "sword"
     },
     {
@@ -286,5 +286,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/873.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "モスノウ",
+    "roomaji": "Mothnow",
+    "ko": "모스노우",
+    "zh-Hant": "雪絨蛾",
+    "fr": "Beldeneige",
+    "de": "Mottineva",
+    "es": "Frosmoth",
+    "it": "Frosmoth",
+    "en": "Frosmoth",
+    "ja": "モスノウ",
+    "zh-Hans": "雪绒蛾"
   }
 }

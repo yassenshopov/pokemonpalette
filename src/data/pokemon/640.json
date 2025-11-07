@@ -1,7 +1,7 @@
 {
   "id": 640,
   "name": "Virizion",
-  "species": "Grassland Pok\u00e9mon",
+  "species": "Grassland Pokémon",
   "type": [
     "Grass",
     "Fighting"
@@ -34,10 +34,10 @@
     "specialDefense": 129,
     "speed": 108
   },
-  "description": "This Pok\u00e9mon fought humans in order to protect its friends. Legends about it continue to be passed down.",
+  "description": "This Pokémon fought humans in order to protect its friends. Legends about it continue to be passed down.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon fought humans in order to protect its friends. Legends about it continue to be passed down.",
+      "text": "This Pokémon fought humans in order to protect its friends. Legends about it continue to be passed down.",
       "version": "black"
     },
     {
@@ -45,11 +45,11 @@
       "version": "white"
     },
     {
-      "text": "Legends say this Pok\u00e9mon confounded opponents with its swift movements.",
+      "text": "Legends say this Pokémon confounded opponents with its swift movements.",
       "version": "black-2"
     },
     {
-      "text": "Legends say this Pok\u00e9mon confounded opponents with its swift movements.",
+      "text": "Legends say this Pokémon confounded opponents with its swift movements.",
       "version": "white-2"
     },
     {
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/640.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/640.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビリジオン",
+    "roomaji": "Virizion",
+    "ko": "비리디온",
+    "zh-Hant": "畢力吉翁",
+    "fr": "Viridium",
+    "de": "Viridium",
+    "es": "Virizion",
+    "it": "Virizion",
+    "en": "Virizion",
+    "ja": "ビリジオン",
+    "zh-Hans": "毕力吉翁"
   }
 }

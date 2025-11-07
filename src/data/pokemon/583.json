@@ -1,7 +1,7 @@
 {
   "id": 583,
   "name": "Vanillish",
-  "species": "Icy Snow Pok\u00e9mon",
+  "species": "Icy Snow Pokémon",
   "type": [
     "Ice"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 75,
     "speed": 59
   },
-  "description": "Snowy mountains are this Pok\u00e9mon\u2019s habitat. During an ancient ice age, they moved to southern areas.",
+  "description": "Snowy mountains are this Pokémon’s habitat. During an ancient ice age, they moved to southern areas.",
   "flavorTexts": [
     {
-      "text": "Snowy mountains are this Pok\u00e9mon\u2019s habitat. During an ancient ice age, they moved to southern areas.",
+      "text": "Snowy mountains are this Pokémon’s habitat. During an ancient ice age, they moved to southern areas.",
       "version": "black"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/583.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/583.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バニリッチ",
+    "roomaji": "Vanirich",
+    "ko": "바닐리치",
+    "zh-Hant": "多多冰",
+    "fr": "Sorboul",
+    "de": "Gelatroppo",
+    "es": "Vanillish",
+    "it": "Vanillish",
+    "en": "Vanillish",
+    "ja": "バニリッチ",
+    "zh-Hans": "多多冰"
   }
 }

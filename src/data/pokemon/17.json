@@ -1,7 +1,7 @@
 {
   "id": 17,
   "name": "Pidgeotto",
-  "species": "Bird Pok\u00e9mon",
+  "species": "Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -46,22 +46,22 @@
     "specialDefense": 50,
     "speed": 71
   },
-  "description": "Very protective of its sprawling territorial area, this POK\u00e9MON will fiercely peck at any intruder.",
+  "description": "Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder.",
   "flavorTexts": [
     {
-      "text": "Very protective of its sprawling territorial area, this POK\u00e9MON will fiercely peck at any intruder.",
+      "text": "Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder.",
       "version": "red"
     },
     {
-      "text": "Very protective of its sprawling territorial area, this POK\u00e9MON will fiercely peck at any intruder.",
+      "text": "Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder.",
       "version": "blue"
     },
     {
-      "text": "This POK\u00e9MON is full of vitality. It constantly flies around its large territory in search of prey.",
+      "text": "This POKéMON is full of vitality. It constantly flies around its large territory in search of prey.",
       "version": "yellow"
     },
     {
-      "text": "It has outstanding vision. However high it flies, it is able to distin\u00ad guish the move\u00ad ments of its prey.",
+      "text": "It has outstanding vision. However high it flies, it is able to distin­ guish the move­ ments of its prey.",
       "version": "gold"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/17.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/17.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピジョン",
+    "roomaji": "Pigeon",
+    "ko": "피죤",
+    "zh-Hant": "比比鳥",
+    "fr": "Roucoups",
+    "de": "Tauboga",
+    "es": "Pidgeotto",
+    "it": "Pidgeotto",
+    "en": "Pidgeotto",
+    "ja": "ピジョン",
+    "zh-Hans": "比比鸟"
   }
 }

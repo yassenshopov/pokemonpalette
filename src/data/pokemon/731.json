@@ -1,7 +1,7 @@
 {
   "id": 731,
   "name": "Pikipek",
-  "species": "Woodpecker Pok\u00e9mon",
+  "species": "Woodpecker Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -53,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "This Pok\u00e9mon feeds on berries, whose leftover seeds become the ammunition for the attacks it fires off from its mouth.",
+      "text": "This Pokémon feeds on berries, whose leftover seeds become the ammunition for the attacks it fires off from its mouth.",
       "version": "moon"
     },
     {
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/731.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ツツケラ",
+    "roomaji": "Tsutsukera",
+    "ko": "콕코구리",
+    "zh-Hant": "小篤兒",
+    "fr": "Picassaut",
+    "de": "Peppeck",
+    "es": "Pikipek",
+    "it": "Pikipek",
+    "en": "Pikipek",
+    "ja": "ツツケラ",
+    "zh-Hans": "小笃儿"
   }
 }

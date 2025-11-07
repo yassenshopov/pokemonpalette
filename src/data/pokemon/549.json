@@ -1,7 +1,7 @@
 {
   "id": 549,
   "name": "Lilligant",
-  "species": "Flowering Pok\u00e9mon",
+  "species": "Flowering Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 75,
     "speed": 90
   },
-  "description": "Even veteran Trainers face a challenge in getting its beautiful flower to bloom. This Pok\u00e9mon is popular with celebrities.",
+  "description": "Even veteran Trainers face a challenge in getting its beautiful flower to bloom. This Pokémon is popular with celebrities.",
   "flavorTexts": [
     {
-      "text": "Even veteran Trainers face a challenge in getting its beautiful flower to bloom. This Pok\u00e9mon is popular with celebrities.",
+      "text": "Even veteran Trainers face a challenge in getting its beautiful flower to bloom. This Pokémon is popular with celebrities.",
       "version": "black"
     },
     {
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/549.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/549.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドレディア",
+    "roomaji": "Dredear",
+    "ko": "드레디어",
+    "zh-Hant": "裙兒小姐",
+    "fr": "Fragilady",
+    "de": "Dressella",
+    "es": "Lilligant",
+    "it": "Lilligant",
+    "en": "Lilligant",
+    "ja": "ドレディア",
+    "zh-Hans": "裙儿小姐"
   }
 }

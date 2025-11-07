@@ -1,7 +1,7 @@
 {
   "id": 422,
   "name": "Shellos",
-  "species": "Sea Slug Pok\u00e9mon",
+  "species": "Sea Slug Pokémon",
   "type": [
     "Water"
   ],
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/422.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/422.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カラナクシ",
+    "roomaji": "Karanakushi",
+    "ko": "깝질무",
+    "zh-Hant": "無殼海兔",
+    "fr": "Sancoki",
+    "de": "Schalellos",
+    "es": "Shellos",
+    "it": "Shellos",
+    "en": "Shellos",
+    "ja": "カラナクシ",
+    "zh-Hans": "无壳海兔"
   }
 }

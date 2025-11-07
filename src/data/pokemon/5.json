@@ -1,7 +1,7 @@
 {
   "id": 5,
   "name": "Charmeleon",
-  "species": "Flame Pok\u00e9mon",
+  "species": "Flame Pokémon",
   "type": [
     "Fire"
   ],
@@ -46,11 +46,11 @@
       "version": "blue"
     },
     {
-      "text": "Tough fights could excite this POK\u00e9MON. When excited, it may blow out bluish- white flames.",
+      "text": "Tough fights could excite this POKéMON. When excited, it may blow out bluish- white flames.",
       "version": "yellow"
     },
     {
-      "text": "It is very hot\u00ad headed by nature, so it constantly seeks opponents. It calms down only when it wins.",
+      "text": "It is very hot­ headed by nature, so it constantly seeks opponents. It calms down only when it wins.",
       "version": "gold"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/5.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/5.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リザード",
+    "roomaji": "Lizardo",
+    "ko": "리자드",
+    "zh-Hant": "火恐龍",
+    "fr": "Reptincel",
+    "de": "Glutexo",
+    "es": "Charmeleon",
+    "it": "Charmeleon",
+    "en": "Charmeleon",
+    "ja": "リザード",
+    "zh-Hans": "火恐龙"
   }
 }

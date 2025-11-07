@@ -1,7 +1,7 @@
 {
   "id": 212,
   "name": "Scizor",
-  "species": "Pincer Pok\u00e9mon",
+  "species": "Pincer Pokémon",
   "type": [
     "Bug",
     "Steel"
@@ -61,11 +61,11 @@
       "version": "silver"
     },
     {
-      "text": "This POK\u00e9MON's pincers, which contain steel, can crush any hard object it gets a hold of into bits.",
+      "text": "This POKéMON's pincers, which contain steel, can crush any hard object it gets a hold of into bits.",
       "version": "crystal"
     },
     {
-      "text": "SCIZOR has a body with the hardness of steel. It is not easily fazed by ordinary sorts of attacks. This POK\u00e9MON flaps its wings to regulate its body temperature.",
+      "text": "SCIZOR has a body with the hardness of steel. It is not easily fazed by ordinary sorts of attacks. This POKéMON flaps its wings to regulate its body temperature.",
       "version": "ruby"
     }
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/212.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/212.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハッサム",
+    "roomaji": "Hassam",
+    "ko": "핫삼",
+    "zh-Hant": "巨鉗螳螂",
+    "fr": "Cizayox",
+    "de": "Scherox",
+    "es": "Scizor",
+    "it": "Scizor",
+    "en": "Scizor",
+    "ja": "ハッサム",
+    "zh-Hans": "巨钳螳螂"
   }
 }

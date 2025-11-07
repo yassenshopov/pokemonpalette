@@ -1,7 +1,7 @@
 {
   "id": 815,
   "name": "Cinderace",
-  "species": "Striker Pok\u00e9mon",
+  "species": "Striker Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "sword"
     },
     {
-      "text": "It\u2019s skilled at both offense and defense, and it gets pumped up when cheered on. But if it starts showboating, it could put itself in a tough spot.",
+      "text": "It’s skilled at both offense and defense, and it gets pumped up when cheered on. But if it starts showboating, it could put itself in a tough spot.",
       "version": "shield"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/815.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "エースバーン",
+    "roomaji": "Aceburn",
+    "ko": "에이스번",
+    "zh-Hant": "閃焰王牌",
+    "fr": "Pyrobut",
+    "de": "Liberlo",
+    "es": "Cinderace",
+    "it": "Cinderace",
+    "en": "Cinderace",
+    "ja": "エースバーン",
+    "zh-Hans": "闪焰王牌"
   }
 }

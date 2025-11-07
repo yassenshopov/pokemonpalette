@@ -1,7 +1,7 @@
 {
   "id": 671,
   "name": "Florges",
-  "species": "Garden Pok\u00e9mon",
+  "species": "Garden Pokémon",
   "type": [
     "Fairy"
   ],
@@ -372,5 +372,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/671.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フラージェス",
+    "roomaji": "Florges",
+    "ko": "플라제스",
+    "zh-Hant": "花潔夫人",
+    "fr": "Florges",
+    "de": "Florges",
+    "es": "Florges",
+    "it": "Florges",
+    "en": "Florges",
+    "ja": "フラージェス",
+    "zh-Hans": "花洁夫人"
   }
 }

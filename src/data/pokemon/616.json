@@ -1,7 +1,7 @@
 {
   "id": 616,
   "name": "Shelmet",
-  "species": "Snail Pok\u00e9mon",
+  "species": "Snail Pokémon",
   "type": [
     "Bug"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/616.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/616.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チョボマキ",
+    "roomaji": "Chobomaki",
+    "ko": "쪼마리",
+    "zh-Hant": "小嘴蝸",
+    "fr": "Escargaume",
+    "de": "Schnuthelm",
+    "es": "Shelmet",
+    "it": "Shelmet",
+    "en": "Shelmet",
+    "ja": "チョボマキ",
+    "zh-Hans": "小嘴蜗"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 852,
   "name": "Clobbopus",
-  "species": "Tantrum Pok\u00e9mon",
+  "species": "Tantrum Pokémon",
   "type": [
     "Fighting"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 50,
     "speed": 32
   },
-  "description": "It\u2019s very curious, but its means of investigating things is to try to punch them with its tentacles. The search for food is what brings it onto land.",
+  "description": "It’s very curious, but its means of investigating things is to try to punch them with its tentacles. The search for food is what brings it onto land.",
   "flavorTexts": [
     {
-      "text": "It\u2019s very curious, but its means of investigating things is to try to punch them with its tentacles. The search for food is what brings it onto land.",
+      "text": "It’s very curious, but its means of investigating things is to try to punch them with its tentacles. The search for food is what brings it onto land.",
       "version": "sword"
     },
     {
-      "text": "Its tentacles tear off easily, but it isn\u2019t alarmed when that happens\u2014it knows they\u2019ll grow back. It\u2019s about as smart as a three-year-old.",
+      "text": "Its tentacles tear off easily, but it isn’t alarmed when that happens—it knows they’ll grow back. It’s about as smart as a three-year-old.",
       "version": "shield"
     }
   ],
@@ -281,5 +281,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/852.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タタッコ",
+    "roomaji": "Tatakko",
+    "ko": "때때무노",
+    "zh-Hant": "拳拳蛸",
+    "fr": "Poulpaf",
+    "de": "Klopptopus",
+    "es": "Clobbopus",
+    "it": "Clobbopus",
+    "en": "Clobbopus",
+    "ja": "タタッコ",
+    "zh-Hans": "拳拳蛸"
   }
 }

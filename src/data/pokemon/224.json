@@ -1,7 +1,7 @@
 {
   "id": 224,
   "name": "Octillery",
-  "species": "Jet Pok\u00e9mon",
+  "species": "Jet Pokémon",
   "type": [
     "Water"
   ],
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "It instinctively sneaks into rocky holes. If it gets sleepy, it steals the nest of a fel\u00ad low OCTILLERY.",
+      "text": "It instinctively sneaks into rocky holes. If it gets sleepy, it steals the nest of a fel­ low OCTILLERY.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "OCTILLERY grabs onto its foe using its tentacles. This POK\u00e9MON tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, OCTILLERY spews ink to escape.",
+      "text": "OCTILLERY grabs onto its foe using its tentacles. This POKéMON tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, OCTILLERY spews ink to escape.",
       "version": "ruby"
     },
     {
-      "text": "OCTILLERY grabs onto its foe using its tentacles. This POK\u00e9MON tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, OCTILLERY spews ink to escape.",
+      "text": "OCTILLERY grabs onto its foe using its tentacles. This POKéMON tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, OCTILLERY spews ink to escape.",
       "version": "sapphire"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/224.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/224.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オクタン",
+    "roomaji": "Okutank",
+    "ko": "대포무노",
+    "zh-Hant": "章魚桶",
+    "fr": "Octillery",
+    "de": "Octillery",
+    "es": "Octillery",
+    "it": "Octillery",
+    "en": "Octillery",
+    "ja": "オクタン",
+    "zh-Hans": "章鱼桶"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 14,
   "name": "Kakuna",
-  "species": "Cocoon Pok\u00e9mon",
+  "species": "Cocoon Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -34,14 +34,14 @@
     "specialDefense": 25,
     "speed": 35
   },
-  "description": "Almost incapable of moving, this POK\u00e9MON can only harden its shell to protect itself from predators.",
+  "description": "Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators.",
   "flavorTexts": [
     {
-      "text": "Almost incapable of moving, this POK\u00e9MON can only harden its shell to protect itself from predators.",
+      "text": "Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators.",
       "version": "red"
     },
     {
-      "text": "Almost incapable of moving, this POK\u00e9MON can only harden its shell to protect itself from predators.",
+      "text": "Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators.",
       "version": "blue"
     },
     {
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "From this form, it will grow into an adult. As its body becomes soft\u00ad er, the external shell hardens.",
+      "text": "From this form, it will grow into an adult. As its body becomes soft­ er, the external shell hardens.",
       "version": "silver"
     }
   ],
@@ -203,5 +203,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/14.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/14.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コクーン",
+    "roomaji": "Cocoon",
+    "ko": "딱충이",
+    "zh-Hant": "鐵殼蛹",
+    "fr": "Coconfort",
+    "de": "Kokuna",
+    "es": "Kakuna",
+    "it": "Kakuna",
+    "en": "Kakuna",
+    "ja": "コクーン",
+    "zh-Hans": "铁壳蛹"
   }
 }

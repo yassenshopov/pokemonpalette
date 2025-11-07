@@ -1,7 +1,7 @@
 {
   "id": 268,
   "name": "Cascoon",
-  "species": "Cocoon Pok\u00e9mon",
+  "species": "Cocoon Pokémon",
   "type": [
     "Bug"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 25,
     "speed": 15
   },
-  "description": "CASCOON makes its protective cocoon by wrapping its body entirely with a fine silk from its mouth. Once the silk goes around its body, it hardens. This POK\u00e9MON prepares for its evolution inside the cocoon.",
+  "description": "CASCOON makes its protective cocoon by wrapping its body entirely with a fine silk from its mouth. Once the silk goes around its body, it hardens. This POKéMON prepares for its evolution inside the cocoon.",
   "flavorTexts": [
     {
-      "text": "CASCOON makes its protective cocoon by wrapping its body entirely with a fine silk from its mouth. Once the silk goes around its body, it hardens. This POK\u00e9MON prepares for its evolution inside the cocoon.",
+      "text": "CASCOON makes its protective cocoon by wrapping its body entirely with a fine silk from its mouth. Once the silk goes around its body, it hardens. This POKéMON prepares for its evolution inside the cocoon.",
       "version": "ruby"
     },
     {
-      "text": "If it is attacked, CASCOON remains motionless however badly it may be hurt. It does so because if it were to move, its body would be weak upon evolution. This POK\u00e9MON will also not forget the pain it endured.",
+      "text": "If it is attacked, CASCOON remains motionless however badly it may be hurt. It does so because if it were to move, its body would be weak upon evolution. This POKéMON will also not forget the pain it endured.",
       "version": "sapphire"
     },
     {
@@ -238,5 +238,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/268.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/268.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マユルド",
+    "roomaji": "Mayuld",
+    "ko": "카스쿤",
+    "zh-Hant": "盾甲繭",
+    "fr": "Blindalys",
+    "de": "Panekon",
+    "es": "Cascoon",
+    "it": "Cascoon",
+    "en": "Cascoon",
+    "ja": "マユルド",
+    "zh-Hans": "盾甲茧"
   }
 }

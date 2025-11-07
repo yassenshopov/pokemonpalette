@@ -1,7 +1,7 @@
 {
   "id": 857,
   "name": "Hattrem",
-  "species": "Serene Pok\u00e9mon",
+  "species": "Serene Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 73,
     "speed": 49
   },
-  "description": "No matter who you are, if you bring strong emotions near this Pok\u00e9mon, it will silence you violently.",
+  "description": "No matter who you are, if you bring strong emotions near this Pokémon, it will silence you violently.",
   "flavorTexts": [
     {
-      "text": "No matter who you are, if you bring strong emotions near this Pok\u00e9mon, it will silence you violently.",
+      "text": "No matter who you are, if you bring strong emotions near this Pokémon, it will silence you violently.",
       "version": "sword"
     },
     {
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/857.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テブリム",
+    "roomaji": "Tebrim",
+    "ko": "손지브림",
+    "zh-Hant": "提布莉姆",
+    "fr": "Chapotus",
+    "de": "Brimano",
+    "es": "Hattrem",
+    "it": "Hattrem",
+    "en": "Hattrem",
+    "ja": "テブリム",
+    "zh-Hans": "提布莉姆"
   }
 }

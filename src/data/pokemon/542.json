@@ -1,7 +1,7 @@
 {
   "id": 542,
   "name": "Leavanny",
-  "species": "Nurturing Pok\u00e9mon",
+  "species": "Nurturing Pokémon",
   "type": [
     "Bug",
     "Grass"
@@ -46,10 +46,10 @@
     "specialDefense": 80,
     "speed": 92
   },
-  "description": "Upon finding a small Pok\u00e9mon, it weaves clothing for it from leaves, using the cutters on its arms and sticky silk.",
+  "description": "Upon finding a small Pokémon, it weaves clothing for it from leaves, using the cutters on its arms and sticky silk.",
   "flavorTexts": [
     {
-      "text": "Upon finding a small Pok\u00e9mon, it weaves clothing for it from leaves, using the cutters on its arms and sticky silk.",
+      "text": "Upon finding a small Pokémon, it weaves clothing for it from leaves, using the cutters on its arms and sticky silk.",
       "version": "black"
     },
     {
@@ -57,15 +57,15 @@
       "version": "white"
     },
     {
-      "text": "Upon finding a small Pok\u00e9mon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
+      "text": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
       "version": "black-2"
     },
     {
-      "text": "Upon finding a small Pok\u00e9mon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
+      "text": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
       "version": "white-2"
     },
     {
-      "text": "Upon finding a small Pok\u00e9mon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
+      "text": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
       "version": "x"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/542.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/542.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハハコモリ",
+    "roomaji": "Hahakomori",
+    "ko": "모아머",
+    "zh-Hant": "保母蟲",
+    "fr": "Manternel",
+    "de": "Matrifol",
+    "es": "Leavanny",
+    "it": "Leavanny",
+    "en": "Leavanny",
+    "ja": "ハハコモリ",
+    "zh-Hans": "保姆虫"
   }
 }

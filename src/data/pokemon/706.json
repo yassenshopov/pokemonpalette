@@ -1,7 +1,7 @@
 {
   "id": 706,
   "name": "Goodra",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Dragon"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 150,
     "speed": 80
   },
-  "description": "This very friendly Dragon-type Pok\u00e9mon will hug its beloved Trainer, leaving that Trainer covered in sticky slime.",
+  "description": "This very friendly Dragon-type Pokémon will hug its beloved Trainer, leaving that Trainer covered in sticky slime.",
   "flavorTexts": [
     {
-      "text": "This very friendly Dragon-type Pok\u00e9mon will hug its beloved Trainer, leaving that Trainer covered in sticky slime.",
+      "text": "This very friendly Dragon-type Pokémon will hug its beloved Trainer, leaving that Trainer covered in sticky slime.",
       "version": "x"
     },
     {
-      "text": "It attacks with retractable horns. It throws a punch that\u2019s the equivalent of the force of a hundred pro boxers.",
+      "text": "It attacks with retractable horns. It throws a punch that’s the equivalent of the force of a hundred pro boxers.",
       "version": "y"
     },
     {
-      "text": "This very friendly Dragon-type Pok\u00e9mon will hug its beloved Trainer, leaving that Trainer covered in sticky slime.",
+      "text": "This very friendly Dragon-type Pokémon will hug its beloved Trainer, leaving that Trainer covered in sticky slime.",
       "version": "omega-ruby"
     },
     {
-      "text": "It attacks with retractable horns. It throws a punch that\u2019s the equivalent of the force of a hundred pro boxers.",
+      "text": "It attacks with retractable horns. It throws a punch that’s the equivalent of the force of a hundred pro boxers.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "An amazingly friendly Pok\u00e9mon, but if left to itself, loneliness overcomes it, and it oozes gooey tears.",
+      "text": "An amazingly friendly Pokémon, but if left to itself, loneliness overcomes it, and it oozes gooey tears.",
       "version": "sun"
     }
   ],
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/706.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヌメルゴン",
+    "roomaji": "Numelgon",
+    "ko": "미끄래곤",
+    "zh-Hant": "黏美龍",
+    "fr": "Muplodocus",
+    "de": "Viscogon",
+    "es": "Goodra",
+    "it": "Goodra",
+    "en": "Goodra",
+    "ja": "ヌメルゴン",
+    "zh-Hans": "黏美龙"
   }
 }

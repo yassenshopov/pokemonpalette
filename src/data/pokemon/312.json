@@ -1,7 +1,7 @@
 {
   "id": 312,
   "name": "Minun",
-  "species": "Cheering Pok\u00e9mon",
+  "species": "Cheering Pokémon",
   "type": [
     "Electric"
   ],
@@ -42,11 +42,11 @@
       "version": "ruby"
     },
     {
-      "text": "MINUN loves to cheer on its partner in battle. It gives off sparks from its body while it is doing so. If its partner is in trouble, this POK\u00e9MON gives off increasing amounts of sparks.",
+      "text": "MINUN loves to cheer on its partner in battle. It gives off sparks from its body while it is doing so. If its partner is in trouble, this POKéMON gives off increasing amounts of sparks.",
       "version": "sapphire"
     },
     {
-      "text": "At a meeting of POK\u00e9MON academics, it was announced that simultaneous exposure to electricity from a PLUSLE and MINUN will promote circulation and boost vitality.",
+      "text": "At a meeting of POKéMON academics, it was announced that simultaneous exposure to electricity from a PLUSLE and MINUN will promote circulation and boost vitality.",
       "version": "emerald"
     },
     {
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/312.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/312.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マイナン",
+    "roomaji": "Minun",
+    "ko": "마이농",
+    "zh-Hant": "負電拍拍",
+    "fr": "Négapi",
+    "de": "Minun",
+    "es": "Minun",
+    "it": "Minun",
+    "en": "Minun",
+    "ja": "マイナン",
+    "zh-Hans": "負电拍拍"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 614,
   "name": "Beartic",
-  "species": "Freezing Pok\u00e9mon",
+  "species": "Freezing Pokémon",
   "type": [
     "Ice"
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/614.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/614.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ツンベアー",
+    "roomaji": "Tunbear",
+    "ko": "툰베어",
+    "zh-Hant": "凍原熊",
+    "fr": "Polagriffe",
+    "de": "Siberio",
+    "es": "Beartic",
+    "it": "Beartic",
+    "en": "Beartic",
+    "ja": "ツンベアー",
+    "zh-Hans": "冻原熊"
   }
 }

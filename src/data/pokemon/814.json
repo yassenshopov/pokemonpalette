@@ -1,7 +1,7 @@
 {
   "id": 814,
   "name": "Raboot",
-  "species": "Rabbit Pok\u00e9mon",
+  "species": "Rabbit Pokémon",
   "type": [
     "Fire"
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/814.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ラビフット",
+    "roomaji": "Rabbifuto",
+    "ko": "래비풋",
+    "zh-Hant": "騰蹴小將",
+    "fr": "Lapyro",
+    "de": "Kickerlo",
+    "es": "Raboot",
+    "it": "Raboot",
+    "en": "Raboot",
+    "ja": "ラビフット",
+    "zh-Hans": "腾蹴小将"
   }
 }

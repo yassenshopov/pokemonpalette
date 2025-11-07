@@ -1,7 +1,7 @@
 {
   "id": 339,
   "name": "Barboach",
-  "species": "Whiskers Pok\u00e9mon",
+  "species": "Whiskers Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -46,18 +46,18 @@
     "specialDefense": 41,
     "speed": 60
   },
-  "description": "BARBOACH\u2019s sensitive whiskers serve as a superb radar system. This POK\u00e9MON hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.",
+  "description": "BARBOACH’s sensitive whiskers serve as a superb radar system. This POKéMON hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.",
   "flavorTexts": [
     {
-      "text": "BARBOACH\u2019s sensitive whiskers serve as a superb radar system. This POK\u00e9MON hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.",
+      "text": "BARBOACH’s sensitive whiskers serve as a superb radar system. This POKéMON hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.",
       "version": "ruby"
     },
     {
-      "text": "BARBOACH\u2019s body is covered with a slimy film. If a foe grabs it, this POK\u00e9MON just slips out of the enemy\u2019s grip. This POK\u00e9MON grows weak if the slimy coating dries up.",
+      "text": "BARBOACH’s body is covered with a slimy film. If a foe grabs it, this POKéMON just slips out of the enemy’s grip. This POKéMON grows weak if the slimy coating dries up.",
       "version": "sapphire"
     },
     {
-      "text": "Its body is covered with a slimy film. The film acts as a barrier to prevent germs in muddy water from entering the BARBOACH\u2019s body.",
+      "text": "Its body is covered with a slimy film. The film acts as a barrier to prevent germs in muddy water from entering the BARBOACH’s body.",
       "version": "emerald"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/339.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/339.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドジョッチ",
+    "roomaji": "Dojoach",
+    "ko": "미꾸리",
+    "zh-Hant": "泥泥鰍",
+    "fr": "Barloche",
+    "de": "Schmerbe",
+    "es": "Barboach",
+    "it": "Barboach",
+    "en": "Barboach",
+    "ja": "ドジョッチ",
+    "zh-Hans": "泥泥鳅"
   }
 }

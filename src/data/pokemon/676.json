@@ -1,7 +1,7 @@
 {
   "id": 676,
   "name": "Furfrou",
-  "species": "Poodle Pok\u00e9mon",
+  "species": "Poodle Pokémon",
   "type": [
     "Normal"
   ],
@@ -36,7 +36,7 @@
       "version": "x"
     },
     {
-      "text": "Historically, in the Kalos region, these Pok\u00e9mon were the designated guardians of the king.",
+      "text": "Historically, in the Kalos region, these Pokémon were the designated guardians of the king.",
       "version": "y"
     },
     {
@@ -44,11 +44,11 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Historically, in the Kalos region, these Pok\u00e9mon were the designated guardians of the king.",
+      "text": "Historically, in the Kalos region, these Pokémon were the designated guardians of the king.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "There was an era when aristocrats would compete to see who could trim their Furfrou\u2019s fur into the most exquisite style.",
+      "text": "There was an era when aristocrats would compete to see who could trim their Furfrou’s fur into the most exquisite style.",
       "version": "ultra-sun"
     }
   ],
@@ -431,5 +431,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/676.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "トリミアン",
+    "roomaji": "Trimmien",
+    "ko": "트리미앙",
+    "zh-Hant": "多麗米亞",
+    "fr": "Couafarel",
+    "de": "Coiffwaff",
+    "es": "Furfrou",
+    "it": "Furfrou",
+    "en": "Furfrou",
+    "ja": "トリミアン",
+    "zh-Hans": "多丽米亚"
   }
 }

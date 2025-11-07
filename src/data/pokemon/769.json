@@ -1,7 +1,7 @@
 {
   "id": 769,
   "name": "Sandygast",
-  "species": "Sand Heap Pok\u00e9mon",
+  "species": "Sand Heap Pokémon",
   "type": [
     "Ghost",
     "Ground"
@@ -40,10 +40,10 @@
     "specialDefense": 45,
     "speed": 15
   },
-  "description": "Born from a sand mound playfully built by a child, this Pok\u00e9mon embodies the grudges of the departed.",
+  "description": "Born from a sand mound playfully built by a child, this Pokémon embodies the grudges of the departed.",
   "flavorTexts": [
     {
-      "text": "Born from a sand mound playfully built by a child, this Pok\u00e9mon embodies the grudges of the departed.",
+      "text": "Born from a sand mound playfully built by a child, this Pokémon embodies the grudges of the departed.",
       "version": "sun"
     },
     {
@@ -55,11 +55,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "If you build sand mounds when you\u2019re playing, destroy them before you go home, or they may get possessed and become Sandygast.",
+      "text": "If you build sand mounds when you’re playing, destroy them before you go home, or they may get possessed and become Sandygast.",
       "version": "ultra-moon"
     },
     {
-      "text": "Grudges of the dead have possessed a mound of sand and become a Pok\u00e9mon. Sandygast is fond of the shovel on its head.",
+      "text": "Grudges of the dead have possessed a mound of sand and become a Pokémon. Sandygast is fond of the shovel on its head.",
       "version": "sword"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/769.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "スナバァ",
+    "roomaji": "Sunaba",
+    "ko": "모래꿍",
+    "zh-Hant": "沙丘娃",
+    "fr": "Bacabouh",
+    "de": "Sankabuh",
+    "es": "Sandygast",
+    "it": "Sandygast",
+    "en": "Sandygast",
+    "ja": "スナバァ",
+    "zh-Hans": "沙丘娃"
   }
 }

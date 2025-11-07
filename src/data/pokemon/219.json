@@ -1,7 +1,7 @@
 {
   "id": 219,
   "name": "Magcargo",
-  "species": "Lava Pok\u00e9mon",
+  "species": "Lava Pokémon",
   "type": [
     "Fire",
     "Rock"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "Its brittle shell occasionally spouts intense flames that cir\u00ad culate throughout its body.",
+      "text": "Its brittle shell occasionally spouts intense flames that cir­ culate throughout its body.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "MAGCARGO\u2019s shell is actually its skin that hardened as a result of cooling. Its shell is very brittle and fragile - just touching it causes it to crumble apart. This POK\u00e9MON returns to its original size by dipping itself in magma.",
+      "text": "MAGCARGO’s shell is actually its skin that hardened as a result of cooling. Its shell is very brittle and fragile - just touching it causes it to crumble apart. This POKéMON returns to its original size by dipping itself in magma.",
       "version": "ruby"
     },
     {
-      "text": "MAGCARGO\u2019s body temperature is approximately 18,000 degrees F. Water is vaporized on contact. If this POK\u00e9MON is caught in the rain, the raindrops instantly turn into steam, cloaking the area in a thick fog.",
+      "text": "MAGCARGO’s body temperature is approximately 18,000 degrees F. Water is vaporized on contact. If this POKéMON is caught in the rain, the raindrops instantly turn into steam, cloaking the area in a thick fog.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/219.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/219.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マグカルゴ",
+    "roomaji": "Magcargot",
+    "ko": "마그카르고",
+    "zh-Hant": "熔岩蝸牛",
+    "fr": "Volcaropod",
+    "de": "Magcargo",
+    "es": "Magcargo",
+    "it": "Magcargo",
+    "en": "Magcargo",
+    "ja": "マグカルゴ",
+    "zh-Hans": "熔岩蜗牛"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 335,
   "name": "Zangoose",
-  "species": "Cat Ferret Pok\u00e9mon",
+  "species": "Cat Ferret Pokémon",
   "type": [
     "Normal"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 60,
     "speed": 90
   },
-  "description": "Memories of battling its arch-rival SEVIPER are etched into every cell of ZANGOOSE\u2019s body. This POK\u00e9MON adroitly dodges attacks with incredible agility.",
+  "description": "Memories of battling its arch-rival SEVIPER are etched into every cell of ZANGOOSE’s body. This POKéMON adroitly dodges attacks with incredible agility.",
   "flavorTexts": [
     {
-      "text": "Memories of battling its arch-rival SEVIPER are etched into every cell of ZANGOOSE\u2019s body. This POK\u00e9MON adroitly dodges attacks with incredible agility.",
+      "text": "Memories of battling its arch-rival SEVIPER are etched into every cell of ZANGOOSE’s body. This POKéMON adroitly dodges attacks with incredible agility.",
       "version": "ruby"
     },
     {
-      "text": "ZANGOOSE usually stays on all fours, but when angered, it gets up on its hind legs and extends its claws. This POK\u00e9MON shares a bitter rivalry with SEVIPER that dates back over generations.",
+      "text": "ZANGOOSE usually stays on all fours, but when angered, it gets up on its hind legs and extends its claws. This POKéMON shares a bitter rivalry with SEVIPER that dates back over generations.",
       "version": "sapphire"
     },
     {
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/335.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/335.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ザングース",
+    "roomaji": "Zangoose",
+    "ko": "쟝고",
+    "zh-Hant": "貓鼬斬",
+    "fr": "Mangriff",
+    "de": "Sengo",
+    "es": "Zangoose",
+    "it": "Zangoose",
+    "en": "Zangoose",
+    "ja": "ザングース",
+    "zh-Hans": "猫鼬斩"
   }
 }

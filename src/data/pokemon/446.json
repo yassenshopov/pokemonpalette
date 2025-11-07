@@ -1,7 +1,7 @@
 {
   "id": 446,
   "name": "Munchlax",
-  "species": "Big Eater Pok\u00e9mon",
+  "species": "Big Eater Pokémon",
   "type": [
     "Normal"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/446.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/446.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴンベ",
+    "roomaji": "Gonbe",
+    "ko": "먹고자",
+    "zh-Hant": "小卡比獸",
+    "fr": "Goinfrex",
+    "de": "Mampfaxo",
+    "es": "Munchlax",
+    "it": "Munchlax",
+    "en": "Munchlax",
+    "ja": "ゴンベ",
+    "zh-Hans": "小卡比兽"
   }
 }

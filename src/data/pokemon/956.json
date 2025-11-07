@@ -1,7 +1,7 @@
 {
   "id": 956,
   "name": "Espathra",
-  "species": "Ostrich Pok\u00e9mon",
+  "species": "Ostrich Pokémon",
   "type": [
     "Psychic"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/956.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クエスパトラ",
+    "roomaji": "Cuespatra",
+    "ko": "클레스퍼트라",
+    "zh-Hant": "超能艷鴕",
+    "fr": "Cléopsytra",
+    "de": "Psiopatra",
+    "es": "Espathra",
+    "it": "Espathra",
+    "en": "Espathra",
+    "ja": "クエスパトラ",
+    "zh-Hans": "超能艳鸵"
   }
 }

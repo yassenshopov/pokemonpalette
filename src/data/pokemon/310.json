@@ -1,7 +1,7 @@
 {
   "id": 310,
   "name": "Manectric",
-  "species": "Discharge Pok\u00e9mon",
+  "species": "Discharge Pokémon",
   "type": [
     "Electric"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 60,
     "speed": 105
   },
-  "description": "MANECTRIC is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this POK\u00e9MON creates thunderclouds.",
+  "description": "MANECTRIC is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this POKéMON creates thunderclouds.",
   "flavorTexts": [
     {
-      "text": "MANECTRIC is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this POK\u00e9MON creates thunderclouds.",
+      "text": "MANECTRIC is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this POKéMON creates thunderclouds.",
       "version": "ruby"
     },
     {
-      "text": "MANECTRIC discharges strong electricity from its mane. The mane is used for collecting electricity in the atmosphere. This POK\u00e9MON creates thunderclouds above its head.",
+      "text": "MANECTRIC discharges strong electricity from its mane. The mane is used for collecting electricity in the atmosphere. This POKéMON creates thunderclouds above its head.",
       "version": "sapphire"
     },
     {
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/310.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/310.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ライボルト",
+    "roomaji": "Livolt",
+    "ko": "썬더볼트",
+    "zh-Hant": "雷電獸",
+    "fr": "Élecsprint",
+    "de": "Voltenso",
+    "es": "Manectric",
+    "it": "Manectric",
+    "en": "Manectric",
+    "ja": "ライボルト",
+    "zh-Hans": "雷电兽"
   }
 }

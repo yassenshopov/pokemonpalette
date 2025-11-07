@@ -1,7 +1,7 @@
 {
   "id": 64,
   "name": "Kadabra",
-  "species": "Psi Pok\u00e9mon",
+  "species": "Psi Pokémon",
   "type": [
     "Psychic"
   ],
@@ -52,7 +52,7 @@
       "version": "blue"
     },
     {
-      "text": "Many odd things happen if this POK\u00e9MON is close by. For example, it makes clocks run backwards.",
+      "text": "Many odd things happen if this POKéMON is close by. For example, it makes clocks run backwards.",
       "version": "yellow"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/64.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/64.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユンゲラー",
+    "roomaji": "Yungerer",
+    "ko": "윤겔라",
+    "zh-Hant": "勇基拉",
+    "fr": "Kadabra",
+    "de": "Kadabra",
+    "es": "Kadabra",
+    "it": "Kadabra",
+    "en": "Kadabra",
+    "ja": "ユンゲラー",
+    "zh-Hans": "勇基拉"
   }
 }

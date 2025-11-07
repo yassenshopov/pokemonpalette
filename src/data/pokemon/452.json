@@ -1,7 +1,7 @@
 {
   "id": 452,
   "name": "Drapion",
-  "species": "Ogre Scorpion Pok\u00e9mon",
+  "species": "Ogre Scorpion Pokémon",
   "type": [
     "Poison",
     "Dark"
@@ -61,11 +61,11 @@
       "version": "platinum"
     },
     {
-      "text": "It attacks people and Pok\u00e9mon that cross the desert. This has only furthered its bad reputation.",
+      "text": "It attacks people and Pokémon that cross the desert. This has only furthered its bad reputation.",
       "version": "heartgold"
     },
     {
-      "text": "It attacks people and Pok\u00e9mon that cross the desert. This has only furthered its bad reputation.",
+      "text": "It attacks people and Pokémon that cross the desert. This has only furthered its bad reputation.",
       "version": "soulsilver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/452.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/452.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドラピオン",
+    "roomaji": "Dorapion",
+    "ko": "드래피온",
+    "zh-Hant": "龍王蠍",
+    "fr": "Drascore",
+    "de": "Piondragi",
+    "es": "Drapion",
+    "it": "Drapion",
+    "en": "Drapion",
+    "ja": "ドラピオン",
+    "zh-Hans": "龙王蝎"
   }
 }

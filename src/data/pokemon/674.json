@@ -1,7 +1,7 @@
 {
   "id": 674,
   "name": "Pancham",
-  "species": "Playful Pok\u00e9mon",
+  "species": "Playful Pokémon",
   "type": [
     "Fighting"
   ],
@@ -48,7 +48,7 @@
       "version": "x"
     },
     {
-      "text": "It does its level best to glare and pull a scary face, but it can\u2019t help grinning if anyone pats its head.",
+      "text": "It does its level best to glare and pull a scary face, but it can’t help grinning if anyone pats its head.",
       "version": "y"
     },
     {
@@ -56,7 +56,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "It does its level best to glare and pull a scary face, but it can\u2019t help grinning if anyone pats its head.",
+      "text": "It does its level best to glare and pull a scary face, but it can’t help grinning if anyone pats its head.",
       "version": "alpha-sapphire"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/674.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤンチャム",
+    "roomaji": "Yancham",
+    "ko": "판짱",
+    "zh-Hant": "頑皮熊貓",
+    "fr": "Pandespiègle",
+    "de": "Pam-Pam",
+    "es": "Pancham",
+    "it": "Pancham",
+    "en": "Pancham",
+    "ja": "ヤンチャム",
+    "zh-Hans": "顽皮熊猫"
   }
 }

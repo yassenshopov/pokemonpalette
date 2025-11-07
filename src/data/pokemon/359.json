@@ -1,7 +1,7 @@
 {
   "id": 359,
   "name": "Absol",
-  "species": "Disaster Pok\u00e9mon",
+  "species": "Disaster Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 60,
     "speed": 75
   },
-  "description": "Every time ABSOL appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster POK\u00e9MON.",
+  "description": "Every time ABSOL appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster POKéMON.",
   "flavorTexts": [
     {
-      "text": "Every time ABSOL appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster POK\u00e9MON.",
+      "text": "Every time ABSOL appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster POKéMON.",
       "version": "ruby"
     },
     {
-      "text": "ABSOL has the ability to foretell the coming of natural disasters. It lives in a harsh, rugged mountain environment. This POK\u00e9MON very rarely ventures down from the mountains.",
+      "text": "ABSOL has the ability to foretell the coming of natural disasters. It lives in a harsh, rugged mountain environment. This POKéMON very rarely ventures down from the mountains.",
       "version": "sapphire"
     },
     {
-      "text": "It sharply senses even subtle changes in the sky and the land to predict natural disasters. It is a long-lived POK\u00e9MON that has a life-span of 100 years.",
+      "text": "It sharply senses even subtle changes in the sky and the land to predict natural disasters. It is a long-lived POKéMON that has a life-span of 100 years.",
       "version": "emerald"
     },
     {
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/359.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/359.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アブソル",
+    "roomaji": "Absol",
+    "ko": "앱솔",
+    "zh-Hant": "阿勃梭魯",
+    "fr": "Absol",
+    "de": "Absol",
+    "es": "Absol",
+    "it": "Absol",
+    "en": "Absol",
+    "ja": "アブソル",
+    "zh-Hans": "阿勃梭鲁"
   }
 }

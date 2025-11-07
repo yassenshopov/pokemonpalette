@@ -1,7 +1,7 @@
 {
   "id": 8,
   "name": "Wartortle",
-  "species": "Turtle Pok\u00e9mon",
+  "species": "Turtle Pokémon",
   "type": [
     "Water"
   ],
@@ -46,7 +46,7 @@
       "version": "blue"
     },
     {
-      "text": "When tapped, this POK\u00e9MON will pull in its head, but its tail will still stick out a little bit.",
+      "text": "When tapped, this POKéMON will pull in its head, but its tail will still stick out a little bit.",
       "version": "yellow"
     },
     {
@@ -54,7 +54,7 @@
       "version": "gold"
     },
     {
-      "text": "It cleverly con\u00ad trols its furry ears and tail to maintain its balance while swimming.",
+      "text": "It cleverly con­ trols its furry ears and tail to maintain its balance while swimming.",
       "version": "silver"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/8.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/8.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カメール",
+    "roomaji": "Kameil",
+    "ko": "어니부기",
+    "zh-Hant": "卡咪龜",
+    "fr": "Carabaffe",
+    "de": "Schillok",
+    "es": "Wartortle",
+    "it": "Wartortle",
+    "en": "Wartortle",
+    "ja": "カメール",
+    "zh-Hans": "卡咪龟"
   }
 }

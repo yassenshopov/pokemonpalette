@@ -1,7 +1,7 @@
 {
   "id": 596,
   "name": "Galvantula",
-  "species": "EleSpider Pok\u00e9mon",
+  "species": "EleSpider Pokémon",
   "type": [
     "Bug",
     "Electric"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/596.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/596.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "デンチュラ",
+    "roomaji": "Dentula",
+    "ko": "전툴라",
+    "zh-Hant": "電蜘蛛",
+    "fr": "Mygavolt",
+    "de": "Voltula",
+    "es": "Galvantula",
+    "it": "Galvantula",
+    "en": "Galvantula",
+    "ja": "デンチュラ",
+    "zh-Hans": "电蜘蛛"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 76,
   "name": "Golem",
-  "species": "Megaton Pok\u00e9mon",
+  "species": "Megaton Pokémon",
   "type": [
     "Rock",
     "Ground"
@@ -61,7 +61,7 @@
       "version": "yellow"
     },
     {
-      "text": "It sheds its skin once a year. The discarded shell immediately hard\u00ad ens and crumbles away.",
+      "text": "It sheds its skin once a year. The discarded shell immediately hard­ ens and crumbles away.",
       "version": "gold"
     },
     {
@@ -330,5 +330,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/76.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/76.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴローニャ",
+    "roomaji": "Golonya",
+    "ko": "딱구리",
+    "zh-Hant": "隆隆岩",
+    "fr": "Grolem",
+    "de": "Geowaz",
+    "es": "Golem",
+    "it": "Golem",
+    "en": "Golem",
+    "ja": "ゴローニャ",
+    "zh-Hans": "隆隆岩"
   }
 }

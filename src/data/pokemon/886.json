@@ -1,7 +1,7 @@
 {
   "id": 886,
   "name": "Drakloak",
-  "species": "Caretaker Pok\u00e9mon",
+  "species": "Caretaker Pokémon",
   "type": [
     "Dragon",
     "Ghost"
@@ -46,14 +46,14 @@
     "specialDefense": 50,
     "speed": 102
   },
-  "description": "It\u2019s capable of flying faster than 120 mph. It battles alongside Dreepy and dotes on them until they successfully evolve.",
+  "description": "It’s capable of flying faster than 120 mph. It battles alongside Dreepy and dotes on them until they successfully evolve.",
   "flavorTexts": [
     {
-      "text": "It\u2019s capable of flying faster than 120 mph. It battles alongside Dreepy and dotes on them until they successfully evolve.",
+      "text": "It’s capable of flying faster than 120 mph. It battles alongside Dreepy and dotes on them until they successfully evolve.",
       "version": "sword"
     },
     {
-      "text": "Without a Dreepy to place on its head and care for, it gets so uneasy it\u2019ll try to substitute any Pok\u00e9mon it finds for the missing Dreepy.",
+      "text": "Without a Dreepy to place on its head and care for, it gets so uneasy it’ll try to substitute any Pokémon it finds for the missing Dreepy.",
       "version": "shield"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/886.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドロンチ",
+    "roomaji": "Doronch",
+    "ko": "드래런치",
+    "zh-Hant": "多龍奇",
+    "fr": "Dispareptil",
+    "de": "Phandra",
+    "es": "Drakloak",
+    "it": "Drakloak",
+    "en": "Drakloak",
+    "ja": "ドロンチ",
+    "zh-Hans": "多龙奇"
   }
 }

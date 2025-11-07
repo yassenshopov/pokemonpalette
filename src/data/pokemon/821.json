@@ -1,7 +1,7 @@
 {
   "id": 821,
   "name": "Rookidee",
-  "species": "Tiny Bird Pok\u00e9mon",
+  "species": "Tiny Bird Pokémon",
   "type": [
     "Flying"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 35,
     "speed": 57
   },
-  "description": "It will bravely challenge any opponent, no matter how powerful. This Pok\u00e9mon benefits from every battle\u2014even a defeat increases its strength a bit.",
+  "description": "It will bravely challenge any opponent, no matter how powerful. This Pokémon benefits from every battle—even a defeat increases its strength a bit.",
   "flavorTexts": [
     {
-      "text": "It will bravely challenge any opponent, no matter how powerful. This Pok\u00e9mon benefits from every battle\u2014even a defeat increases its strength a bit.",
+      "text": "It will bravely challenge any opponent, no matter how powerful. This Pokémon benefits from every battle—even a defeat increases its strength a bit.",
       "version": "sword"
     },
     {
-      "text": "Jumping nimbly about, this small-bodied Pok\u00e9mon takes advantage of even the slightest opportunity to disorient larger opponents.",
+      "text": "Jumping nimbly about, this small-bodied Pokémon takes advantage of even the slightest opportunity to disorient larger opponents.",
       "version": "shield"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/821.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ココガラ",
+    "roomaji": "Kokogara",
+    "ko": "파라꼬",
+    "zh-Hant": "稚山雀",
+    "fr": "Minisange",
+    "de": "Meikro",
+    "es": "Rookidee",
+    "it": "Rookidee",
+    "en": "Rookidee",
+    "ja": "ココガラ",
+    "zh-Hans": "稚山雀"
   }
 }

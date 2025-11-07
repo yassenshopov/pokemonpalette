@@ -1,7 +1,7 @@
 {
   "id": 767,
   "name": "Wimpod",
-  "species": "Turn Tail Pok\u00e9mon",
+  "species": "Turn Tail Pokémon",
   "type": [
     "Bug",
     "Water"
@@ -34,10 +34,10 @@
     "specialDefense": 30,
     "speed": 80
   },
-  "description": "This Pok\u00e9mon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.",
+  "description": "This Pokémon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.",
+      "text": "This Pokémon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.",
       "version": "sun"
     },
     {
@@ -49,11 +49,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "An astonishingly cowardly Pok\u00e9mon, Wimpod will whir its legs at high speeds to run away if anything comes near it.",
+      "text": "An astonishingly cowardly Pokémon, Wimpod will whir its legs at high speeds to run away if anything comes near it.",
       "version": "ultra-moon"
     },
     {
-      "text": "It\u2019s nature\u2019s cleaner\u2014it eats anything and everything, including garbage and rotten things. The ground near its nest is always clean.",
+      "text": "It’s nature’s cleaner—it eats anything and everything, including garbage and rotten things. The ground near its nest is always clean.",
       "version": "sword"
     }
   ],
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/767.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コソクムシ",
+    "roomaji": "Kosokumushi",
+    "ko": "꼬시레",
+    "zh-Hant": "膽小蟲",
+    "fr": "Sovkipou",
+    "de": "Reißlaus",
+    "es": "Wimpod",
+    "it": "Wimpod",
+    "en": "Wimpod",
+    "ja": "コソクムシ",
+    "zh-Hans": "胆小虫"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 241,
   "name": "Miltank",
-  "species": "Milk Cow Pok\u00e9mon",
+  "species": "Milk Cow Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,19 +48,19 @@
       "version": "gold"
     },
     {
-      "text": "If it has just had a baby, the milk it produces con\u00ad tains much more nutrition than usual.",
+      "text": "If it has just had a baby, the milk it produces con­ tains much more nutrition than usual.",
       "version": "silver"
     },
     {
-      "text": "In order to milk a MILTANK, one must have a knack for rhythmically pull\u00ad ing up and down on its udders.",
+      "text": "In order to milk a MILTANK, one must have a knack for rhythmically pull­ ing up and down on its udders.",
       "version": "crystal"
     },
     {
-      "text": "MILTANK gives over five gallons of milk on a daily basis. Its sweet milk is enjoyed by children and grown-ups alike. People who can\u2019t drink milk turn it into yogurt and eat it instead.",
+      "text": "MILTANK gives over five gallons of milk on a daily basis. Its sweet milk is enjoyed by children and grown-ups alike. People who can’t drink milk turn it into yogurt and eat it instead.",
       "version": "ruby"
     },
     {
-      "text": "MILTANK gives over five gallons of milk on a daily basis. Its sweet milk is enjoyed by children and grown-ups alike. People who can\u2019t drink milk turn it into yogurt and eat it instead.",
+      "text": "MILTANK gives over five gallons of milk on a daily basis. Its sweet milk is enjoyed by children and grown-ups alike. People who can’t drink milk turn it into yogurt and eat it instead.",
       "version": "sapphire"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/241.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/241.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミルタンク",
+    "roomaji": "Miltank",
+    "ko": "밀탱크",
+    "zh-Hant": "大奶罐",
+    "fr": "Écrémeuh",
+    "de": "Miltank",
+    "es": "Miltank",
+    "it": "Miltank",
+    "en": "Miltank",
+    "ja": "ミルタンク",
+    "zh-Hans": "大奶罐"
   }
 }

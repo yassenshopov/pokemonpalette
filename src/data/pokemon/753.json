@@ -1,7 +1,7 @@
 {
   "id": 753,
   "name": "Fomantis",
-  "species": "Sickle Grass Pok\u00e9mon",
+  "species": "Sickle Grass Pokémon",
   "type": [
     "Grass"
   ],
@@ -54,7 +54,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "When bathed in sunlight, this Pok\u00e9mon emits a pleasantly sweet scent, which causes bug Pok\u00e9mon to gather around it.",
+      "text": "When bathed in sunlight, this Pokémon emits a pleasantly sweet scent, which causes bug Pokémon to gather around it.",
       "version": "sword"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/753.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カリキリ",
+    "roomaji": "Karikiri",
+    "ko": "짜랑랑",
+    "zh-Hant": "偽螳草",
+    "fr": "Mimantis",
+    "de": "Imantis",
+    "es": "Fomantis",
+    "it": "Fomantis",
+    "en": "Fomantis",
+    "ja": "カリキリ",
+    "zh-Hans": "伪螳草"
   }
 }

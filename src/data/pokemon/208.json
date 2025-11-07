@@ -1,7 +1,7 @@
 {
   "id": 208,
   "name": "Steelix",
-  "species": "Iron Snake Pok\u00e9mon",
+  "species": "Iron Snake Pokémon",
   "type": [
     "Steel",
     "Ground"
@@ -61,11 +61,11 @@
       "version": "silver"
     },
     {
-      "text": "The many small metal particles that cover this POK\u00e9MON's body reflect bright light well.",
+      "text": "The many small metal particles that cover this POKéMON's body reflect bright light well.",
       "version": "crystal"
     },
     {
-      "text": "STEELIX lives even further underground than ONIX. This POK\u00e9MON is known to dig towards the earth\u2019s core. There are records of this POK\u00e9MON reaching a depth of over six-tenths of a mile underground.",
+      "text": "STEELIX lives even further underground than ONIX. This POKéMON is known to dig towards the earth’s core. There are records of this POKéMON reaching a depth of over six-tenths of a mile underground.",
       "version": "ruby"
     }
   ],
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/208.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/208.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハガネール",
+    "roomaji": "Haganeil",
+    "ko": "강철톤",
+    "zh-Hant": "大鋼蛇",
+    "fr": "Steelix",
+    "de": "Stahlos",
+    "es": "Steelix",
+    "it": "Steelix",
+    "en": "Steelix",
+    "ja": "ハガネール",
+    "zh-Hans": "大钢蛇"
   }
 }

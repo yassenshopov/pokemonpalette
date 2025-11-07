@@ -1,7 +1,7 @@
 {
   "id": 318,
   "name": "Carvanha",
-  "species": "Savage Pok\u00e9mon",
+  "species": "Savage Pokémon",
   "type": [
     "Water",
     "Dark"
@@ -40,18 +40,18 @@
     "specialDefense": 20,
     "speed": 65
   },
-  "description": "CARVANHA\u2019s strongly developed jaws and its sharply pointed fangs pack the destructive power to rip out boat hulls. Many boats have been attacked and sunk by this POK\u00e9MON.",
+  "description": "CARVANHA’s strongly developed jaws and its sharply pointed fangs pack the destructive power to rip out boat hulls. Many boats have been attacked and sunk by this POKéMON.",
   "flavorTexts": [
     {
-      "text": "CARVANHA\u2019s strongly developed jaws and its sharply pointed fangs pack the destructive power to rip out boat hulls. Many boats have been attacked and sunk by this POK\u00e9MON.",
+      "text": "CARVANHA’s strongly developed jaws and its sharply pointed fangs pack the destructive power to rip out boat hulls. Many boats have been attacked and sunk by this POKéMON.",
       "version": "ruby"
     },
     {
-      "text": "If anything invades CARVANHA\u2019s territory, it will swarm and tear at the intruder with its pointed fangs. On its own, however, this POK\u00e9MON turns suddenly timid.",
+      "text": "If anything invades CARVANHA’s territory, it will swarm and tear at the intruder with its pointed fangs. On its own, however, this POKéMON turns suddenly timid.",
       "version": "sapphire"
     },
     {
-      "text": "CARVANHA attack ships in swarms, making them sink. Although it is said to be a very vicious POK\u00e9MON, it timidly flees as soon as it finds itself alone.",
+      "text": "CARVANHA attack ships in swarms, making them sink. Although it is said to be a very vicious POKéMON, it timidly flees as soon as it finds itself alone.",
       "version": "emerald"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/318.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/318.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キバニア",
+    "roomaji": "Kibanha",
+    "ko": "샤프니아",
+    "zh-Hant": "利牙魚",
+    "fr": "Carvanha",
+    "de": "Kanivanha",
+    "es": "Carvanha",
+    "it": "Carvanha",
+    "en": "Carvanha",
+    "ja": "キバニア",
+    "zh-Hans": "利牙鱼"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 185,
   "name": "Sudowoodo",
-  "species": "Imitation Pok\u00e9mon",
+  "species": "Imitation Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 65,
     "speed": 30
   },
-  "description": "Although it always pretends to be a tree, its composi\u00ad tion appears to be closer to a rock than a plant.",
+  "description": "Although it always pretends to be a tree, its composi­ tion appears to be closer to a rock than a plant.",
   "flavorTexts": [
     {
-      "text": "Although it always pretends to be a tree, its composi\u00ad tion appears to be closer to a rock than a plant.",
+      "text": "Although it always pretends to be a tree, its composi­ tion appears to be closer to a rock than a plant.",
       "version": "gold"
     },
     {
-      "text": "It disguises it\u00ad self as a tree to avoid attack. It hates water, so it will disappear if it starts raining.",
+      "text": "It disguises it­ self as a tree to avoid attack. It hates water, so it will disappear if it starts raining.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "SUDOWOODO camouflages itself as a tree to avoid being attacked by enemies. However, because the forelegs remain green throughout the year, the POK\u00e9MON is easily identified as a fake during the winter.",
+      "text": "SUDOWOODO camouflages itself as a tree to avoid being attacked by enemies. However, because the forelegs remain green throughout the year, the POKéMON is easily identified as a fake during the winter.",
       "version": "ruby"
     },
     {
-      "text": "SUDOWOODO camouflages itself as a tree to avoid being attacked by enemies. However, because the forelegs remain green throughout the year, the POK\u00e9MON is easily identified as a fake during the winter.",
+      "text": "SUDOWOODO camouflages itself as a tree to avoid being attacked by enemies. However, because the forelegs remain green throughout the year, the POKéMON is easily identified as a fake during the winter.",
       "version": "sapphire"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/185.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/185.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウソッキー",
+    "roomaji": "Usokkie",
+    "ko": "꼬지모",
+    "zh-Hant": "樹才怪",
+    "fr": "Simularbre",
+    "de": "Mogelbaum",
+    "es": "Sudowoodo",
+    "it": "Sudowoodo",
+    "en": "Sudowoodo",
+    "ja": "ウソッキー",
+    "zh-Hans": "树才怪"
   }
 }

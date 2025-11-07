@@ -1,7 +1,7 @@
 {
   "id": 990,
   "name": "Iron-treads",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Ground",
     "Steel"
@@ -34,14 +34,14 @@
     "specialDefense": 70,
     "speed": 106
   },
-  "description": "This Pok\u00e9mon closely resembles a scientific weapon that a paranormal magazine claimed was sent to this planet by aliens.",
+  "description": "This Pokémon closely resembles a scientific weapon that a paranormal magazine claimed was sent to this planet by aliens.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon closely resembles a scientific weapon that a paranormal magazine claimed was sent to this planet by aliens.",
+      "text": "This Pokémon closely resembles a scientific weapon that a paranormal magazine claimed was sent to this planet by aliens.",
       "version": "scarlet"
     },
     {
-      "text": "Sightings of this Pok\u00e9mon have occurred in recent years. It resembles a mysterious object described in an old expedition journal.",
+      "text": "Sightings of this Pokémon have occurred in recent years. It resembles a mysterious object described in an old expedition journal.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/990.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノワダチ",
+    "roomaji": "Tetsunowadachi",
+    "ko": "무쇠바퀴",
+    "zh-Hant": "鐵轍跡",
+    "fr": "Roue-de-Fer",
+    "de": "Eisenrad",
+    "es": "Ferrodada",
+    "it": "Solcoferreo",
+    "en": "Iron Treads",
+    "ja": "テツノワダチ",
+    "zh-Hans": "铁轍迹"
   }
 }

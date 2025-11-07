@@ -1,7 +1,7 @@
 {
   "id": 477,
   "name": "Dusknoir",
-  "species": "Gripper Pok\u00e9mon",
+  "species": "Gripper Pokémon",
   "type": [
     "Ghost"
   ],
@@ -50,11 +50,11 @@
       "version": "platinum"
     },
     {
-      "text": "This feared Pok\u00e9mon is said to travel to worlds unknown. Some even believe that it takes lost spirits along with it.",
+      "text": "This feared Pokémon is said to travel to worlds unknown. Some even believe that it takes lost spirits along with it.",
       "version": "heartgold"
     },
     {
-      "text": "This feared Pok\u00e9mon is said to travel to worlds unknown. Some even believe that it takes lost spirits along with it.",
+      "text": "This feared Pokémon is said to travel to worlds unknown. Some even believe that it takes lost spirits along with it.",
       "version": "soulsilver"
     }
   ],
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/477.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/477.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヨノワール",
+    "roomaji": "Yonoir",
+    "ko": "야느와르몽",
+    "zh-Hant": "黑夜魔靈",
+    "fr": "Noctunoir",
+    "de": "Zwirrfinst",
+    "es": "Dusknoir",
+    "it": "Dusknoir",
+    "en": "Dusknoir",
+    "ja": "ヨノワール",
+    "zh-Hans": "黑夜魔灵"
   }
 }

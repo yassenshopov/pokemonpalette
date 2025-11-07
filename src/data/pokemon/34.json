@@ -1,7 +1,7 @@
 {
   "id": 34,
   "name": "Nidoking",
-  "species": "Drill Pok\u00e9mon",
+  "species": "Drill Pokémon",
   "type": [
     "Poison",
     "Ground"
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/34.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/34.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニドキング",
+    "roomaji": "Nidoking",
+    "ko": "니드킹",
+    "zh-Hant": "尼多王",
+    "fr": "Nidoking",
+    "de": "Nidoking",
+    "es": "Nidoking",
+    "it": "Nidoking",
+    "en": "Nidoking",
+    "ja": "ニドキング",
+    "zh-Hans": "尼多王"
   }
 }

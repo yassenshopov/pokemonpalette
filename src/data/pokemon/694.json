@@ -1,7 +1,7 @@
 {
   "id": 694,
   "name": "Helioptile",
-  "species": "Generator Pok\u00e9mon",
+  "species": "Generator Pokémon",
   "type": [
     "Electric",
     "Normal"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "When spread, the frills on its head act like solar panels, generating the power behind this Pok\u00e9mon\u2019s electric moves.",
+      "text": "When spread, the frills on its head act like solar panels, generating the power behind this Pokémon’s electric moves.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/694.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "エリキテル",
+    "roomaji": "Erikiteru",
+    "ko": "목도리키텔",
+    "zh-Hant": "傘電蜥",
+    "fr": "Galvaran",
+    "de": "Eguana",
+    "es": "Helioptile",
+    "it": "Helioptile",
+    "en": "Helioptile",
+    "ja": "エリキテル",
+    "zh-Hans": "伞电蜥"
   }
 }

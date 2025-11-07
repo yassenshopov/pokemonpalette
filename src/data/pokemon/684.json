@@ -1,7 +1,7 @@
 {
   "id": 684,
   "name": "Swirlix",
-  "species": "Cotton Candy Pok\u00e9mon",
+  "species": "Cotton Candy Pokémon",
   "type": [
     "Fairy"
   ],
@@ -54,7 +54,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "It eats its own weight in sugar every day. If it doesn\u2019t get enough sugar, it becomes incredibly grumpy.",
+      "text": "It eats its own weight in sugar every day. If it doesn’t get enough sugar, it becomes incredibly grumpy.",
       "version": "sword"
     }
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/684.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ペロッパフ",
+    "roomaji": "Peroppafu",
+    "ko": "나룸퍼프",
+    "zh-Hant": "綿綿泡芙",
+    "fr": "Sucroquin",
+    "de": "Flauschling",
+    "es": "Swirlix",
+    "it": "Swirlix",
+    "en": "Swirlix",
+    "ja": "ペロッパフ",
+    "zh-Hans": "绵绵泡芙"
   }
 }

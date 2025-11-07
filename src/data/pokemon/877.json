@@ -1,8 +1,11 @@
 {
   "id": 877,
   "name": "Morpeko",
-  "species": "Two-Sided Pok\u00e9mon",
-  "type": ["Electric", "Dark"],
+  "species": "Two-Sided Pokémon",
+  "type": [
+    "Electric",
+    "Dark"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -31,14 +34,14 @@
     "specialDefense": 58,
     "speed": 97
   },
-  "description": "As it eats the seeds stored up in its pocket-like pouches, this Pok\u00e9mon is not just satisfying its constant hunger. It\u2019s also generating electricity.",
+  "description": "As it eats the seeds stored up in its pocket-like pouches, this Pokémon is not just satisfying its constant hunger. It’s also generating electricity.",
   "flavorTexts": [
     {
-      "text": "As it eats the seeds stored up in its pocket-like pouches, this Pok\u00e9mon is not just satisfying its constant hunger. It\u2019s also generating electricity.",
+      "text": "As it eats the seeds stored up in its pocket-like pouches, this Pokémon is not just satisfying its constant hunger. It’s also generating electricity.",
       "version": "sword"
     },
     {
-      "text": "It carries electrically roasted seeds with it as if they\u2019re precious treasures. No matter how much it eats, it always gets hungry again in short order.",
+      "text": "It carries electrically roasted seeds with it as if they’re precious treasures. No matter how much it eats, it always gets hungry again in short order.",
       "version": "shield"
     }
   ],
@@ -48,7 +51,11 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#F8D030", "#F08030", "#F8F8F8"]
+    "highlights": [
+      "#F8D030",
+      "#F08030",
+      "#F8F8F8"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/877.png",
@@ -271,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/877.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "モルペコ",
+    "roomaji": "Morpeko",
+    "ko": "모르페코",
+    "zh-Hant": "莫魯貝可",
+    "fr": "Morpeko",
+    "de": "Morpeko",
+    "es": "Morpeko",
+    "it": "Morpeko",
+    "en": "Morpeko",
+    "ja": "モルペコ",
+    "zh-Hans": "莫鲁贝可"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 233,
   "name": "Porygon2",
-  "species": "Virtual Pok\u00e9mon",
+  "species": "Virtual Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,19 +48,19 @@
       "version": "gold"
     },
     {
-      "text": "Further research enhanced its abil\u00ad ities. Sometimes, it may exhibit motions that were not programmed.",
+      "text": "Further research enhanced its abil­ ities. Sometimes, it may exhibit motions that were not programmed.",
       "version": "silver"
     },
     {
-      "text": "This manmade POK\u00e9MON evolved from the latest technology. It may have unprog\u00ad rammed reactions.",
+      "text": "This manmade POKéMON evolved from the latest technology. It may have unprog­ rammed reactions.",
       "version": "crystal"
     },
     {
-      "text": "PORYGON2 was created by humans using the power of science. The man-made POK\u00e9MON has been endowed with artificial intelligence that enables it to learn new gestures and emotions on its own.",
+      "text": "PORYGON2 was created by humans using the power of science. The man-made POKéMON has been endowed with artificial intelligence that enables it to learn new gestures and emotions on its own.",
       "version": "ruby"
     },
     {
-      "text": "PORYGON2 was created by humans using the power of science. The man-made POK\u00e9MON has been endowed with artificial intelligence that enables it to learn new gestures and emotions on its own.",
+      "text": "PORYGON2 was created by humans using the power of science. The man-made POKéMON has been endowed with artificial intelligence that enables it to learn new gestures and emotions on its own.",
       "version": "sapphire"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/233.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/233.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポリゴン２",
+    "roomaji": "Porygon2",
+    "ko": "폴리곤2",
+    "zh-Hant": "多邊獸Ⅱ",
+    "fr": "Porygon2",
+    "de": "Porygon2",
+    "es": "Porygon2",
+    "it": "Porygon2",
+    "en": "Porygon2",
+    "ja": "ポリゴン２",
+    "zh-Hans": "多边兽２型"
   }
 }

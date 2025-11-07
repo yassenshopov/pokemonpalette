@@ -1,7 +1,7 @@
 {
   "id": 483,
   "name": "Dialga",
-  "species": "Temporal Pok\u00e9mon",
+  "species": "Temporal Pokémon",
   "type": [
     "Steel",
     "Dragon"
@@ -47,19 +47,19 @@
       "version": "diamond"
     },
     {
-      "text": "A Pok\u00e9mon spoken of in legend. It is said that time began moving when DIALGA was born.",
+      "text": "A Pokémon spoken of in legend. It is said that time began moving when DIALGA was born.",
       "version": "pearl"
     },
     {
-      "text": "A legendary Pok\u00e9mon of Sinnoh. It is said that time flows when DIALGA\u2019s heart beats.",
+      "text": "A legendary Pokémon of Sinnoh. It is said that time flows when DIALGA’s heart beats.",
       "version": "platinum"
     },
     {
-      "text": "This Pok\u00e9mon completely controls the flow of time. It uses its power to travel at will through the past and future.",
+      "text": "This Pokémon completely controls the flow of time. It uses its power to travel at will through the past and future.",
       "version": "heartgold"
     },
     {
-      "text": "This Pok\u00e9mon completely controls the flow of time. It uses its power to travel at will through the past and future.",
+      "text": "This Pokémon completely controls the flow of time. It uses its power to travel at will through the past and future.",
       "version": "soulsilver"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/483.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/483.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ディアルガ",
+    "roomaji": "Dialga",
+    "ko": "디아루가",
+    "zh-Hant": "帝牙盧卡",
+    "fr": "Dialga",
+    "de": "Dialga",
+    "es": "Dialga",
+    "it": "Dialga",
+    "en": "Dialga",
+    "ja": "ディアルガ",
+    "zh-Hans": "帝牙卢卡"
   }
 }

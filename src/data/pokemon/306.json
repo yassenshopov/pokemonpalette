@@ -1,7 +1,7 @@
 {
   "id": 306,
   "name": "Aggron",
-  "species": "Iron Armor Pok\u00e9mon",
+  "species": "Iron Armor Pokémon",
   "type": [
     "Steel",
     "Rock"
@@ -46,18 +46,18 @@
     "specialDefense": 60,
     "speed": 50
   },
-  "description": "AGGRON claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This POK\u00e9MON vigilantly patrols its territory at all times.",
+  "description": "AGGRON claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This POKéMON vigilantly patrols its territory at all times.",
   "flavorTexts": [
     {
-      "text": "AGGRON claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This POK\u00e9MON vigilantly patrols its territory at all times.",
+      "text": "AGGRON claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This POKéMON vigilantly patrols its territory at all times.",
       "version": "ruby"
     },
     {
-      "text": "AGGRON is surprisingly protective of its environment. If its mountain is ravaged by a landslide or a fire, this POK\u00e9MON will haul topsoil to the area, plant trees, and beautifully restore its own territory.",
+      "text": "AGGRON is surprisingly protective of its environment. If its mountain is ravaged by a landslide or a fire, this POKéMON will haul topsoil to the area, plant trees, and beautifully restore its own territory.",
       "version": "sapphire"
     },
     {
-      "text": "Its iron horns grow longer a little at a time. They are used to determine the AGGRON\u2019s age. The gouges in its armor are worn with pride as mementos from battles.",
+      "text": "Its iron horns grow longer a little at a time. They are used to determine the AGGRON’s age. The gouges in its armor are worn with pride as mementos from battles.",
       "version": "emerald"
     },
     {
@@ -327,5 +327,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/306.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/306.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ボスゴドラ",
+    "roomaji": "Bossgodora",
+    "ko": "보스로라",
+    "zh-Hant": "波士可多拉",
+    "fr": "Galeking",
+    "de": "Stolloss",
+    "es": "Aggron",
+    "it": "Aggron",
+    "en": "Aggron",
+    "ja": "ボスゴドラ",
+    "zh-Hans": "波士可多拉"
   }
 }

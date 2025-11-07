@@ -1,7 +1,7 @@
 {
   "id": 186,
   "name": "Politoed",
-  "species": "Frog Pok\u00e9mon",
+  "species": "Frog Pokémon",
   "type": [
     "Water"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 100,
     "speed": 70
   },
-  "description": "If POLIWAG and POLIWHIRL hear its echoing cry, they respond by gather\u00ad ing from far and wide.",
+  "description": "If POLIWAG and POLIWHIRL hear its echoing cry, they respond by gather­ ing from far and wide.",
   "flavorTexts": [
     {
-      "text": "If POLIWAG and POLIWHIRL hear its echoing cry, they respond by gather\u00ad ing from far and wide.",
+      "text": "If POLIWAG and POLIWHIRL hear its echoing cry, they respond by gather­ ing from far and wide.",
       "version": "gold"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "The curled hair on POLITOED\u2019s head is proof of its status as a king. It is said that the longer and more curled the hair, the more respect this POK\u00e9MON earns from its peers.",
+      "text": "The curled hair on POLITOED’s head is proof of its status as a king. It is said that the longer and more curled the hair, the more respect this POKéMON earns from its peers.",
       "version": "ruby"
     },
     {
-      "text": "The curled hair on POLITOED\u2019s head is proof of its status as a king. It is said that the longer and more curled the hair, the more respect this POK\u00e9MON earns from its peers.",
+      "text": "The curled hair on POLITOED’s head is proof of its status as a king. It is said that the longer and more curled the hair, the more respect this POKéMON earns from its peers.",
       "version": "sapphire"
     }
   ],
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/186.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/186.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニョロトノ",
+    "roomaji": "Nyorotono",
+    "ko": "왕구리",
+    "zh-Hant": "蚊香蛙皇",
+    "fr": "Tarpaud",
+    "de": "Quaxo",
+    "es": "Politoed",
+    "it": "Politoed",
+    "en": "Politoed",
+    "ja": "ニョロトノ",
+    "zh-Hans": "蚊香蛙皇"
   }
 }

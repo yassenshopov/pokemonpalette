@@ -1,7 +1,7 @@
 {
   "id": 1021,
   "name": "Raging-bolt",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Electric",
     "Dragon"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It bears resemblance to a Pok\u00e9mon that became a hot topic for a short while after a paranormal magazine touted it as Raikou's ancestor.",
+      "text": "It bears resemblance to a Pokémon that became a hot topic for a short while after a paranormal magazine touted it as Raikou's ancestor.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1021.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タケルライコ",
+    "ko": "날뛰는우레",
+    "zh-Hant": "猛雷鼓",
+    "fr": "Ire-Foudre",
+    "de": "Furienblitz",
+    "es": "Electrofuria",
+    "it": "Furiatonante",
+    "en": "Raging Bolt",
+    "ja": "タケルライコ",
+    "zh-Hans": "猛雷鼓"
   }
 }

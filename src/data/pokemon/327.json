@@ -1,7 +1,7 @@
 {
   "id": 327,
   "name": "Spinda",
-  "species": "Spot Panda Pok\u00e9mon",
+  "species": "Spot Panda Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,15 +48,15 @@
       "version": "black"
     },
     {
-      "text": "All the SPINDA that exist in the world are said to have utterly unique spot patterns. The shaky, tottering steps of this POK\u00e9MON give it the appearance of dancing.",
+      "text": "All the SPINDA that exist in the world are said to have utterly unique spot patterns. The shaky, tottering steps of this POKéMON give it the appearance of dancing.",
       "version": "ruby"
     },
     {
-      "text": "No two SPINDA are said to have identical spot patterns on their hides. This POK\u00e9MON moves in a curious manner as if it is stumbling in dizziness. Its lurching movements can cause the opponent to become confused.",
+      "text": "No two SPINDA are said to have identical spot patterns on their hides. This POKéMON moves in a curious manner as if it is stumbling in dizziness. Its lurching movements can cause the opponent to become confused.",
       "version": "sapphire"
     },
     {
-      "text": "It is distinguished by a pattern of spots that is always different. Its unsteady, tottering walk has the effect of fouling its foe\u2019s aim.",
+      "text": "It is distinguished by a pattern of spots that is always different. Its unsteady, tottering walk has the effect of fouling its foe’s aim.",
       "version": "emerald"
     },
     {
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/327.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/327.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パッチール",
+    "roomaji": "Patcheel",
+    "ko": "얼루기",
+    "zh-Hant": "晃晃斑",
+    "fr": "Spinda",
+    "de": "Pandir",
+    "es": "Spinda",
+    "it": "Spinda",
+    "en": "Spinda",
+    "ja": "パッチール",
+    "zh-Hans": "晃晃斑"
   }
 }

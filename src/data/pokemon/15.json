@@ -1,7 +1,7 @@
 {
   "id": 15,
   "name": "Beedrill",
-  "species": "Poison Bee Pok\u00e9mon",
+  "species": "Poison Bee Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -59,7 +59,7 @@
       "version": "yellow"
     },
     {
-      "text": "It can take down any opponent with its powerful poi\u00ad son stingers. It sometimes attacks in swarms.",
+      "text": "It can take down any opponent with its powerful poi­ son stingers. It sometimes attacks in swarms.",
       "version": "gold"
     }
   ],
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/15.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/15.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スピアー",
+    "roomaji": "Spear",
+    "ko": "독침붕",
+    "zh-Hant": "大針蜂",
+    "fr": "Dardargnan",
+    "de": "Bibor",
+    "es": "Beedrill",
+    "it": "Beedrill",
+    "en": "Beedrill",
+    "ja": "スピアー",
+    "zh-Hans": "大针蜂"
   }
 }

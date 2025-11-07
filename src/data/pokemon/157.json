@@ -1,7 +1,7 @@
 {
   "id": 157,
   "name": "Typhlosion",
-  "species": "Volcano Pok\u00e9mon",
+  "species": "Volcano Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "gold"
     },
     {
-      "text": "It has a secret, devastating move. It rubs its blaz\u00ad  ing fur together to cause huge explosions.",
+      "text": "It has a secret, devastating move. It rubs its blaz­  ing fur together to cause huge explosions.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "TYPHLOSION obscures itself behind a shimmering heat haze that it creates using its intensely hot flames. This POK\u00e9MON creates blazing explosive blasts that burn everything to cinders.",
+      "text": "TYPHLOSION obscures itself behind a shimmering heat haze that it creates using its intensely hot flames. This POKéMON creates blazing explosive blasts that burn everything to cinders.",
       "version": "ruby"
     },
     {
-      "text": "TYPHLOSION obscures itself behind a shimmering heat haze that it creates using its intensely hot flames. This POK\u00e9MON creates blazing explosive blasts that burn everything to cinders.",
+      "text": "TYPHLOSION obscures itself behind a shimmering heat haze that it creates using its intensely hot flames. This POKéMON creates blazing explosive blasts that burn everything to cinders.",
       "version": "sapphire"
     }
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/157.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/157.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バクフーン",
+    "roomaji": "Bakphoon",
+    "ko": "블레이범",
+    "zh-Hant": "火爆獸",
+    "fr": "Typhlosion",
+    "de": "Tornupto",
+    "es": "Typhlosion",
+    "it": "Typhlosion",
+    "en": "Typhlosion",
+    "ja": "バクフーン",
+    "zh-Hans": "火暴兽"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 189,
   "name": "Jumpluff",
-  "species": "Cottonweed Pok\u00e9mon",
+  "species": "Cottonweed Pokémon",
   "type": [
     "Grass",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 95,
     "speed": 110
   },
-  "description": "Once it catches the wind, it deft\u00ad ly controls its cotton-puff spores to float, even around the world.",
+  "description": "Once it catches the wind, it deft­ ly controls its cotton-puff spores to float, even around the world.",
   "flavorTexts": [
     {
-      "text": "Once it catches the wind, it deft\u00ad ly controls its cotton-puff spores to float, even around the world.",
+      "text": "Once it catches the wind, it deft­ ly controls its cotton-puff spores to float, even around the world.",
       "version": "gold"
     },
     {
@@ -57,15 +57,15 @@
       "version": "silver"
     },
     {
-      "text": "Even in the fierc\u00ad est wind, it can control its fluff to make its way to any place in the world it wants.",
+      "text": "Even in the fierc­ est wind, it can control its fluff to make its way to any place in the world it wants.",
       "version": "crystal"
     },
     {
-      "text": "JUMPLUFF rides warm southern winds to cross the sea and fly to foreign lands. The POK\u00e9MON descends to the ground when it encounters cold air while it is floating.",
+      "text": "JUMPLUFF rides warm southern winds to cross the sea and fly to foreign lands. The POKéMON descends to the ground when it encounters cold air while it is floating.",
       "version": "ruby"
     },
     {
-      "text": "JUMPLUFF rides warm southern winds to cross the sea and fly to foreign lands. The POK\u00e9MON descends to the ground when it encounters cold air while it is floating.",
+      "text": "JUMPLUFF rides warm southern winds to cross the sea and fly to foreign lands. The POKéMON descends to the ground when it encounters cold air while it is floating.",
       "version": "sapphire"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/189.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/189.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワタッコ",
+    "roomaji": "Watacco",
+    "ko": "솜솜코",
+    "zh-Hant": "毽子棉",
+    "fr": "Cotovol",
+    "de": "Papungha",
+    "es": "Jumpluff",
+    "it": "Jumpluff",
+    "en": "Jumpluff",
+    "ja": "ワタッコ",
+    "zh-Hans": "毽子棉"
   }
 }

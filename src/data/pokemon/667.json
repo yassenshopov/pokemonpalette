@@ -1,7 +1,7 @@
 {
   "id": 667,
   "name": "Litleo",
-  "species": "Lion Cub Pok\u00e9mon",
+  "species": "Lion Cub Pokémon",
   "type": [
     "Fire",
     "Normal"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pok\u00e9mon are quick to fight.",
+      "text": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.",
       "version": "y"
     },
     {
@@ -61,11 +61,11 @@
       "version": "omega-ruby"
     },
     {
-      "text": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pok\u00e9mon are quick to fight.",
+      "text": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "When they\u2019re young, they live with a pride. Once they\u2019re able to hunt prey on their own, they\u2019re kicked out and have to make their own way.",
+      "text": "When they’re young, they live with a pride. Once they’re able to hunt prey on their own, they’re kicked out and have to make their own way.",
       "version": "ultra-sun"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/667.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シシコ",
+    "roomaji": "Shishiko",
+    "ko": "레오꼬",
+    "zh-Hant": "小獅獅",
+    "fr": "Hélionceau",
+    "de": "Leufeo",
+    "es": "Litleo",
+    "it": "Litleo",
+    "en": "Litleo",
+    "ja": "シシコ",
+    "zh-Hans": "小狮狮"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 931,
   "name": "Squawkabilly-green-plumage",
-  "species": "Parrot Pok\u00e9mon",
+  "species": "Parrot Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -46,14 +46,14 @@
     "specialDefense": 51,
     "speed": 92
   },
-  "description": "These Pok\u00e9mon prefer to live in cities. They form flocks based on the color of their feathers, and they fight over territory.",
+  "description": "These Pokémon prefer to live in cities. They form flocks based on the color of their feathers, and they fight over territory.",
   "flavorTexts": [
     {
-      "text": "These Pok\u00e9mon prefer to live in cities. They form flocks based on the color of their feathers, and they fight over territory.",
+      "text": "These Pokémon prefer to live in cities. They form flocks based on the color of their feathers, and they fight over territory.",
       "version": "scarlet"
     },
     {
-      "text": "Green-feathered flocks hold the most sway. When they\u2019re out searching for food in the mornings and evenings, it gets very noisy.",
+      "text": "Green-feathered flocks hold the most sway. When they’re out searching for food in the mornings and evenings, it gets very noisy.",
       "version": "violet"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/931.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イキリンコ",
+    "roomaji": "Ikirinko",
+    "ko": "시비꼬",
+    "zh-Hant": "怒鸚哥",
+    "fr": "Tapatoès",
+    "de": "Krawalloro",
+    "es": "Squawkabilly",
+    "it": "Squawkabilly",
+    "en": "Squawkabilly",
+    "ja": "イキリンコ",
+    "zh-Hans": "怒鹦哥"
   }
 }

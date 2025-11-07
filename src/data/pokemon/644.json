@@ -1,7 +1,7 @@
 {
   "id": 644,
   "name": "Zekrom",
-  "species": "Deep Black Pok\u00e9mon",
+  "species": "Deep Black Pokémon",
   "type": [
     "Dragon",
     "Electric"
@@ -41,19 +41,19 @@
       "version": "black"
     },
     {
-      "text": "This Pok\u00e9mon appears in legends. In its tail, it has a giant generator that creates electricity.",
+      "text": "This Pokémon appears in legends. In its tail, it has a giant generator that creates electricity.",
       "version": "white"
     },
     {
-      "text": "This legendary Pok\u00e9mon can scorch the world with lightning. It assists those who want to build an ideal world.",
+      "text": "This legendary Pokémon can scorch the world with lightning. It assists those who want to build an ideal world.",
       "version": "black-2"
     },
     {
-      "text": "This legendary Pok\u00e9mon can scorch the world with lightning. It assists those who want to build an ideal world.",
+      "text": "This legendary Pokémon can scorch the world with lightning. It assists those who want to build an ideal world.",
       "version": "white-2"
     },
     {
-      "text": "This legendary Pok\u00e9mon can scorch the world with lightning. It assists those who want to build an ideal world.",
+      "text": "This legendary Pokémon can scorch the world with lightning. It assists those who want to build an ideal world.",
       "version": "x"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/644.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/644.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゼクロム",
+    "roomaji": "Zekrom",
+    "ko": "제크로무",
+    "zh-Hant": "捷克羅姆",
+    "fr": "Zekrom",
+    "de": "Zekrom",
+    "es": "Zekrom",
+    "it": "Zekrom",
+    "en": "Zekrom",
+    "ja": "ゼクロム",
+    "zh-Hans": "捷克罗姆"
   }
 }

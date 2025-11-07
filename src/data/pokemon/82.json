@@ -1,7 +1,7 @@
 {
   "id": 82,
   "name": "Magneton",
-  "species": "Magnet Pok\u00e9mon",
+  "species": "Magnet Pokémon",
   "type": [
     "Electric",
     "Steel"
@@ -57,7 +57,7 @@
       "version": "blue"
     },
     {
-      "text": "Generates strange radio signals. It raises the tem\u00ad perature by 3.6F degrees within 3,300 feet.",
+      "text": "Generates strange radio signals. It raises the tem­ perature by 3.6F degrees within 3,300 feet.",
       "version": "yellow"
     },
     {
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "The MAGNEMITE are united by a mag\u00ad netism so power\u00ad ful, it dries all moisture in its vicinities.",
+      "text": "The MAGNEMITE are united by a mag­ netism so power­ ful, it dries all moisture in its vicinities.",
       "version": "silver"
     }
   ],
@@ -336,5 +336,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/82.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/82.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レアコイル",
+    "roomaji": "Rarecoil",
+    "ko": "레어코일",
+    "zh-Hant": "三合一磁怪",
+    "fr": "Magnéton",
+    "de": "Magneton",
+    "es": "Magneton",
+    "it": "Magneton",
+    "en": "Magneton",
+    "ja": "レアコイル",
+    "zh-Hans": "三合一磁怪"
   }
 }

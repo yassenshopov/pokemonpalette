@@ -1,7 +1,7 @@
 {
   "id": 701,
   "name": "Hawlucha",
-  "species": "Wrestling Pok\u00e9mon",
+  "species": "Wrestling Pokémon",
   "type": [
     "Fighting",
     "Flying"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "It overwhelms opponents with quick moves, but sometimes it showboats for too long when it\u2019s using a special move and gets itself into a pinch.",
+      "text": "It overwhelms opponents with quick moves, but sometimes it showboats for too long when it’s using a special move and gets itself into a pinch.",
       "version": "ultra-sun"
     }
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/701.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ルチャブル",
+    "roomaji": "Luchabull",
+    "ko": "루차불",
+    "zh-Hant": "摔角鷹人",
+    "fr": "Brutalibré",
+    "de": "Resladero",
+    "es": "Hawlucha",
+    "it": "Hawlucha",
+    "en": "Hawlucha",
+    "ja": "ルチャブル",
+    "zh-Hans": "摔角鹰人"
   }
 }

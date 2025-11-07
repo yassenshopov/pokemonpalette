@@ -1,7 +1,7 @@
 {
   "id": 487,
   "name": "Giratina-altered",
-  "species": "Renegade Pok\u00e9mon",
+  "species": "Renegade Pokémon",
   "type": [
     "Ghost",
     "Dragon"
@@ -40,14 +40,14 @@
     "specialDefense": 120,
     "speed": 90
   },
-  "description": "A Pok\u00e9mon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.",
+  "description": "A Pokémon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.",
+      "text": "A Pokémon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.",
       "version": "diamond"
     },
     {
-      "text": "A Pok\u00e9mon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.",
+      "text": "A Pokémon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.",
       "version": "pearl"
     },
     {
@@ -55,11 +55,11 @@
       "version": "platinum"
     },
     {
-      "text": "This Pok\u00e9mon is said to live in a world on the reverse side of ours, where common knowledge is distorted and strange.",
+      "text": "This Pokémon is said to live in a world on the reverse side of ours, where common knowledge is distorted and strange.",
       "version": "heartgold"
     },
     {
-      "text": "This Pok\u00e9mon is said to live in a world on the reverse side of ours, where common knowledge is distorted and strange.",
+      "text": "This Pokémon is said to live in a world on the reverse side of ours, where common knowledge is distorted and strange.",
       "version": "soulsilver"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/487.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/487.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ギラティナ",
+    "roomaji": "Giratina",
+    "ko": "기라티나",
+    "zh-Hant": "騎拉帝納",
+    "fr": "Giratina",
+    "de": "Giratina",
+    "es": "Giratina",
+    "it": "Giratina",
+    "en": "Giratina",
+    "ja": "ギラティナ",
+    "zh-Hans": "骑拉帝纳"
   }
 }

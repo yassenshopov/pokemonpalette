@@ -1,7 +1,7 @@
 {
   "id": 1008,
   "name": "Miraidon",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Electric",
     "Dragon"
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1008.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ミライドン",
+    "roomaji": "Miraidon",
+    "ko": "미라이돈",
+    "zh-Hant": "密勒頓",
+    "fr": "Miraidon",
+    "de": "Miraidon",
+    "es": "Miraidon",
+    "it": "Miraidon",
+    "en": "Miraidon",
+    "ja": "ミライドン",
+    "zh-Hans": "密勒顿"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 830,
   "name": "Eldegoss",
-  "species": "Cotton Bloom Pok\u00e9mon",
+  "species": "Cotton Bloom Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 120,
     "speed": 60
   },
-  "description": "The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pok\u00e9mon can benefit from them.",
+  "description": "The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pokémon can benefit from them.",
   "flavorTexts": [
     {
-      "text": "The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pok\u00e9mon can benefit from them.",
+      "text": "The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pokémon can benefit from them.",
       "version": "sword"
     },
     {
-      "text": "The cotton on the head of this Pok\u00e9mon can be spun into a glossy, gorgeous yarn\u2014a Galar regional specialty.",
+      "text": "The cotton on the head of this Pokémon can be spun into a glossy, gorgeous yarn—a Galar regional specialty.",
       "version": "shield"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/830.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ワタシラガ",
+    "roomaji": "Watashiraga",
+    "ko": "백솜모카",
+    "zh-Hant": "白蓬蓬",
+    "fr": "Blancoton",
+    "de": "Cottomi",
+    "es": "Eldegoss",
+    "it": "Eldegoss",
+    "en": "Eldegoss",
+    "ja": "ワタシラガ",
+    "zh-Hans": "白蓬蓬"
   }
 }

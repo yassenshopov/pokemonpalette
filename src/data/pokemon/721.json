@@ -1,7 +1,7 @@
 {
   "id": 721,
   "name": "Volcanion",
-  "species": "Steam Pok\u00e9mon",
+  "species": "Steam Pokémon",
   "type": [
     "Fire",
     "Water"
@@ -34,10 +34,10 @@
     "specialDefense": 90,
     "speed": 70
   },
-  "description": "It lets out billows of steam and disappears into the dense fog. It\u2019s said to live in mountains where humans do not tread.",
+  "description": "It lets out billows of steam and disappears into the dense fog. It’s said to live in mountains where humans do not tread.",
   "flavorTexts": [
     {
-      "text": "It lets out billows of steam and disappears into the dense fog. It\u2019s said to live in mountains where humans do not tread.",
+      "text": "It lets out billows of steam and disappears into the dense fog. It’s said to live in mountains where humans do not tread.",
       "version": "x"
     },
     {
@@ -45,7 +45,7 @@
       "version": "y"
     },
     {
-      "text": "It lets out billows of steam and disappears into the dense fog. It\u2019s said to live in mountains where humans do not tread.",
+      "text": "It lets out billows of steam and disappears into the dense fog. It’s said to live in mountains where humans do not tread.",
       "version": "omega-ruby"
     },
     {
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/721.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ボルケニオン",
+    "roomaji": "Volcanion",
+    "ko": "볼케니온",
+    "zh-Hant": "波爾凱尼恩",
+    "fr": "Volcanion",
+    "de": "Volcanion",
+    "es": "Volcanion",
+    "it": "Volcanion",
+    "en": "Volcanion",
+    "ja": "ボルケニオン",
+    "zh-Hans": "波尔凯尼恩"
   }
 }

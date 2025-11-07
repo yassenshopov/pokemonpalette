@@ -1,7 +1,7 @@
 {
   "id": 964,
   "name": "Palafin-zero",
-  "species": "Dolphin Pok\u00e9mon",
+  "species": "Dolphin Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 62,
     "speed": 100
   },
-  "description": "This Pok\u00e9mon changes its appearance if it hears its allies calling for help. Palafin will never show anybody its moment of transformation.",
+  "description": "This Pokémon changes its appearance if it hears its allies calling for help. Palafin will never show anybody its moment of transformation.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon changes its appearance if it hears its allies calling for help. Palafin will never show anybody its moment of transformation.",
+      "text": "This Pokémon changes its appearance if it hears its allies calling for help. Palafin will never show anybody its moment of transformation.",
       "version": "scarlet"
     },
     {
-      "text": "Its physical capabilities are no different than a Finizen\u2019s, but when its allies are in danger, it transforms and powers itself up.",
+      "text": "Its physical capabilities are no different than a Finizen’s, but when its allies are in danger, it transforms and powers itself up.",
       "version": "violet"
     }
   ],
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/964.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イルカマン",
+    "roomaji": "Irukaman",
+    "ko": "돌핀맨",
+    "zh-Hant": "海豚俠",
+    "fr": "Superdofin",
+    "de": "Delfinator",
+    "es": "Palafin",
+    "it": "Palafin",
+    "en": "Palafin",
+    "ja": "イルカマン",
+    "zh-Hans": "海豚侠"
   }
 }

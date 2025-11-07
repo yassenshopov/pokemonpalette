@@ -1,7 +1,7 @@
 {
   "id": 636,
   "name": "Larvesta",
-  "species": "Torch Pok\u00e9mon",
+  "species": "Torch Pokémon",
   "type": [
     "Bug",
     "Fire"
@@ -40,10 +40,10 @@
     "specialDefense": 55,
     "speed": 60
   },
-  "description": "This Pok\u00e9mon was believed to have been born from the sun. When it evolves, its entire body is engulfed in flames.",
+  "description": "This Pokémon was believed to have been born from the sun. When it evolves, its entire body is engulfed in flames.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon was believed to have been born from the sun. When it evolves, its entire body is engulfed in flames.",
+      "text": "This Pokémon was believed to have been born from the sun. When it evolves, its entire body is engulfed in flames.",
       "version": "black"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/636.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/636.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メラルバ",
+    "roomaji": "Merlarva",
+    "ko": "활화르바",
+    "zh-Hant": "燃燒蟲",
+    "fr": "Pyronille",
+    "de": "Ignivor",
+    "es": "Larvesta",
+    "it": "Larvesta",
+    "en": "Larvesta",
+    "ja": "メラルバ",
+    "zh-Hans": "燃烧虫"
   }
 }

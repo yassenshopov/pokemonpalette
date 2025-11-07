@@ -1,7 +1,7 @@
 {
   "id": 377,
   "name": "Regirock",
-  "species": "Rock Peak Pok\u00e9mon",
+  "species": "Rock Peak Pokémon",
   "type": [
     "Rock"
   ],
@@ -42,15 +42,15 @@
       "version": "black-2"
     },
     {
-      "text": "REGIROCK was sealed away by people long ago. If this POK\u00e9MON\u2019s body is damaged in battle, it is said to seek out suitable rocks on its own to repair itself.",
+      "text": "REGIROCK was sealed away by people long ago. If this POKéMON’s body is damaged in battle, it is said to seek out suitable rocks on its own to repair itself.",
       "version": "ruby"
     },
     {
-      "text": "REGIROCK\u2019s body is composed entirely of rocks. Recently, a study made the startling discovery that the rocks were all unearthed from different locations.",
+      "text": "REGIROCK’s body is composed entirely of rocks. Recently, a study made the startling discovery that the rocks were all unearthed from different locations.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that is made entirely of rocks and boulders. If parts of its body chip off in battle, REGIROCK repairs itself by adding new rocks.",
+      "text": "A POKéMON that is made entirely of rocks and boulders. If parts of its body chip off in battle, REGIROCK repairs itself by adding new rocks.",
       "version": "emerald"
     },
     {
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/377.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/377.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レジロック",
+    "roomaji": "Regirock",
+    "ko": "레지락",
+    "zh-Hant": "雷吉洛克",
+    "fr": "Regirock",
+    "de": "Regirock",
+    "es": "Regirock",
+    "it": "Regirock",
+    "en": "Regirock",
+    "ja": "レジロック",
+    "zh-Hans": "雷吉洛克"
   }
 }

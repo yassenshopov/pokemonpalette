@@ -1,7 +1,7 @@
 {
   "id": 888,
   "name": "Zacian",
-  "species": "Warrior Pok\u00e9mon",
+  "species": "Warrior Pokémon",
   "type": [
     "Fairy"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 115,
     "speed": 138
   },
-  "description": "Known as a legendary hero, this Pok\u00e9mon absorbs metal particles, transforming them into a weapon it uses to battle.",
+  "description": "Known as a legendary hero, this Pokémon absorbs metal particles, transforming them into a weapon it uses to battle.",
   "flavorTexts": [
     {
-      "text": "Known as a legendary hero, this Pok\u00e9mon absorbs metal particles, transforming them into a weapon it uses to battle.",
+      "text": "Known as a legendary hero, this Pokémon absorbs metal particles, transforming them into a weapon it uses to battle.",
       "version": "sword"
     },
     {
-      "text": "This Pok\u00e9mon has slumbered for many years. Some say it\u2019s Zamazenta\u2019s elder sister\u2014others say the two Pok\u00e9mon are rivals.",
+      "text": "This Pokémon has slumbered for many years. Some say it’s Zamazenta’s elder sister—others say the two Pokémon are rivals.",
       "version": "shield"
     }
   ],
@@ -273,5 +273,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/888.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ザシアン",
+    "roomaji": "Zacian",
+    "ko": "자시안",
+    "zh-Hant": "蒼響",
+    "fr": "Zacian",
+    "de": "Zacian",
+    "es": "Zacian",
+    "it": "Zacian",
+    "en": "Zacian",
+    "ja": "ザシアン",
+    "zh-Hans": "苍响"
   }
 }

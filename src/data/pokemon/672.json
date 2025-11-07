@@ -1,7 +1,7 @@
 {
   "id": 672,
   "name": "Skiddo",
-  "species": "Mount Pok\u00e9mon",
+  "species": "Mount Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,22 +35,22 @@
     "specialDefense": 57,
     "speed": 52
   },
-  "description": "Thought to be one of the first Pok\u00e9mon to live in harmony with humans, it has a placid disposition.",
+  "description": "Thought to be one of the first Pokémon to live in harmony with humans, it has a placid disposition.",
   "flavorTexts": [
     {
-      "text": "Thought to be one of the first Pok\u00e9mon to live in harmony with humans, it has a placid disposition.",
+      "text": "Thought to be one of the first Pokémon to live in harmony with humans, it has a placid disposition.",
       "version": "x"
     },
     {
-      "text": "If it has sunshine and water, it doesn\u2019t need to eat, because it can generate energy from the leaves on its back.",
+      "text": "If it has sunshine and water, it doesn’t need to eat, because it can generate energy from the leaves on its back.",
       "version": "y"
     },
     {
-      "text": "Thought to be one of the first Pok\u00e9mon to live in harmony with humans, it has a placid disposition.",
+      "text": "Thought to be one of the first Pokémon to live in harmony with humans, it has a placid disposition.",
       "version": "omega-ruby"
     },
     {
-      "text": "If it has sunshine and water, it doesn\u2019t need to eat, because it can generate energy from the leaves on its back.",
+      "text": "If it has sunshine and water, it doesn’t need to eat, because it can generate energy from the leaves on its back.",
       "version": "alpha-sapphire"
     }
   ],
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/672.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "メェークル",
+    "roomaji": "Meecle",
+    "ko": "메이클",
+    "zh-Hant": "坐騎小羊",
+    "fr": "Cabriolaine",
+    "de": "Mähikel",
+    "es": "Skiddo",
+    "it": "Skiddo",
+    "en": "Skiddo",
+    "ja": "メェークル",
+    "zh-Hans": "坐骑小羊"
   }
 }

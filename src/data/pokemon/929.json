@@ -1,7 +1,7 @@
 {
   "id": 929,
   "name": "Dolliv",
-  "species": "Olive Pok\u00e9mon",
+  "species": "Olive Pokémon",
   "type": [
     "Grass",
     "Normal"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It basks in the sun to its heart\u2019s content until the fruits on its head ripen. After that, Dolliv departs from human settlements and goes on a journey.",
+      "text": "It basks in the sun to its heart’s content until the fruits on its head ripen. After that, Dolliv departs from human settlements and goes on a journey.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/929.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オリーニョ",
+    "roomaji": "Olinyo",
+    "ko": "올리뇨",
+    "zh-Hant": "奧利紐",
+    "fr": "Olivado",
+    "de": "Olivinio",
+    "es": "Dolliv",
+    "it": "Dolliv",
+    "en": "Dolliv",
+    "ja": "オリーニョ",
+    "zh-Hans": "奥利纽"
   }
 }

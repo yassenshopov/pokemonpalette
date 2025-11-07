@@ -1,7 +1,7 @@
 {
   "id": 10,
   "name": "Caterpie",
-  "species": "Worm Pok\u00e9mon",
+  "species": "Worm Pokémon",
   "type": [
     "Bug"
   ],
@@ -54,7 +54,7 @@
       "version": "yellow"
     },
     {
-      "text": "For protection, it releases a horri\u00ad ble stench from the antenna on its head to drive away enemies.",
+      "text": "For protection, it releases a horri­ ble stench from the antenna on its head to drive away enemies.",
       "version": "gold"
     }
   ],
@@ -204,5 +204,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/10.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/10.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キャタピー",
+    "roomaji": "Caterpie",
+    "ko": "캐터피",
+    "zh-Hant": "綠毛蟲",
+    "fr": "Chenipan",
+    "de": "Raupy",
+    "es": "Caterpie",
+    "it": "Caterpie",
+    "en": "Caterpie",
+    "ja": "キャタピー",
+    "zh-Hans": "绿毛虫"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 646,
   "name": "Kyurem",
-  "species": "Boundary Pok\u00e9mon",
+  "species": "Boundary Pokémon",
   "type": [
     "Dragon",
     "Ice"
@@ -45,15 +45,15 @@
       "version": "white"
     },
     {
-      "text": "This legendary ice Pok\u00e9mon waits for a hero to fill in the missing parts of its body with truth or ideals.",
+      "text": "This legendary ice Pokémon waits for a hero to fill in the missing parts of its body with truth or ideals.",
       "version": "black-2"
     },
     {
-      "text": "This legendary ice Pok\u00e9mon waits for a hero to fill in the missing parts of its body with truth or ideals.",
+      "text": "This legendary ice Pokémon waits for a hero to fill in the missing parts of its body with truth or ideals.",
       "version": "white-2"
     },
     {
-      "text": "This legendary ice Pok\u00e9mon waits for a hero to fill in the missing parts of its body with truth or ideals.",
+      "text": "This legendary ice Pokémon waits for a hero to fill in the missing parts of its body with truth or ideals.",
       "version": "x"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/646.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/646.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キュレム",
+    "roomaji": "Kyurem",
+    "ko": "큐레무",
+    "zh-Hant": "酋雷姆",
+    "fr": "Kyurem",
+    "de": "Kyurem",
+    "es": "Kyurem",
+    "it": "Kyurem",
+    "en": "Kyurem",
+    "ja": "キュレム",
+    "zh-Hans": "酋雷姆"
   }
 }

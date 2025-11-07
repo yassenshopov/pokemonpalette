@@ -1,7 +1,7 @@
 {
   "id": 396,
   "name": "Starly",
-  "species": "Starling Pok\u00e9mon",
+  "species": "Starling Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -55,11 +55,11 @@
       "version": "platinum"
     },
     {
-      "text": "They flock around mountains and fields, chasing after bug Pok\u00e9mon. Their singing is noisy and annoying.",
+      "text": "They flock around mountains and fields, chasing after bug Pokémon. Their singing is noisy and annoying.",
       "version": "heartgold"
     },
     {
-      "text": "They flock around mountains and fields, chasing after bug Pok\u00e9mon. Their singing is noisy and annoying.",
+      "text": "They flock around mountains and fields, chasing after bug Pokémon. Their singing is noisy and annoying.",
       "version": "soulsilver"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/396.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/396.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムックル",
+    "roomaji": "Mukkuru",
+    "ko": "찌르꼬",
+    "zh-Hant": "姆克兒",
+    "fr": "Étourmi",
+    "de": "Staralili",
+    "es": "Starly",
+    "it": "Starly",
+    "en": "Starly",
+    "ja": "ムックル",
+    "zh-Hans": "姆克儿"
   }
 }

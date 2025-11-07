@@ -1,7 +1,7 @@
 {
   "id": 865,
   "name": "Sirfetchd",
-  "species": "Wild Duck Pok\u00e9mon",
+  "species": "Wild Duck Pokémon",
   "type": [
     "Fighting"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 82,
     "speed": 65
   },
-  "description": "Only Farfetch\u2019d that have survived many battles can attain this evolution. When this Pok\u00e9mon\u2019s leek withers, it will retire from combat.",
+  "description": "Only Farfetch’d that have survived many battles can attain this evolution. When this Pokémon’s leek withers, it will retire from combat.",
   "flavorTexts": [
     {
-      "text": "Only Farfetch\u2019d that have survived many battles can attain this evolution. When this Pok\u00e9mon\u2019s leek withers, it will retire from combat.",
+      "text": "Only Farfetch’d that have survived many battles can attain this evolution. When this Pokémon’s leek withers, it will retire from combat.",
       "version": "sword"
     },
     {
@@ -281,5 +281,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/865.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ネギガナイト",
+    "roomaji": "Negigaknight",
+    "ko": "창파나이트",
+    "zh-Hant": "蔥遊兵",
+    "fr": "Palarticho",
+    "de": "Lauchzelot",
+    "es": "Sirfetch’d",
+    "it": "Sirfetch’d",
+    "en": "Sirfetch’d",
+    "ja": "ネギガナイト",
+    "zh-Hans": "葱游兵"
   }
 }

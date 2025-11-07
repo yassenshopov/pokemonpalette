@@ -1,7 +1,7 @@
 {
   "id": 75,
   "name": "Graveler",
-  "species": "Rock Pok\u00e9mon",
+  "species": "Rock Pokémon",
   "type": [
     "Rock",
     "Ground"
@@ -330,5 +330,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/75.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/75.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴローン",
+    "roomaji": "Golone",
+    "ko": "데구리",
+    "zh-Hant": "隆隆石",
+    "fr": "Gravalanch",
+    "de": "Georok",
+    "es": "Graveler",
+    "it": "Graveler",
+    "en": "Graveler",
+    "ja": "ゴローン",
+    "zh-Hans": "隆隆石"
   }
 }

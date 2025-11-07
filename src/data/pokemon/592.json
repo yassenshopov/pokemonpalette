@@ -1,7 +1,7 @@
 {
   "id": 592,
   "name": "Frillish",
-  "species": "Floating Pok\u00e9mon",
+  "species": "Floating Pokémon",
   "type": [
     "Water",
     "Ghost"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/592.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/592.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "プルリル",
+    "roomaji": "Pururill",
+    "ko": "탱그릴",
+    "zh-Hant": "輕飄飄",
+    "fr": "Viskuse",
+    "de": "Quabbel",
+    "es": "Frillish",
+    "it": "Frillish",
+    "en": "Frillish",
+    "ja": "プルリル",
+    "zh-Hans": "轻飘飘"
   }
 }

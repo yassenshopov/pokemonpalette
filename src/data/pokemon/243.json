@@ -1,7 +1,7 @@
 {
   "id": 243,
   "name": "Raikou",
-  "species": "Thunder Pok\u00e9mon",
+  "species": "Thunder Pokémon",
   "type": [
     "Electric"
   ],
@@ -42,19 +42,19 @@
       "version": "gold"
     },
     {
-      "text": "A POK\u00e9MON that races across the land while barking a cry that sounds like crashing thunder.",
+      "text": "A POKéMON that races across the land while barking a cry that sounds like crashing thunder.",
       "version": "silver"
     },
     {
-      "text": "This rough POK\u00e9MON stores energy inside its body, then sweeps across the land, shooting off electricity.",
+      "text": "This rough POKéMON stores energy inside its body, then sweeps across the land, shooting off electricity.",
       "version": "crystal"
     },
     {
-      "text": "RAIKOU embodies the speed of lightning. The roars of this POK\u00e9MON send shock waves shuddering through the air and shake the ground as if lightning bolts had come crashing down.",
+      "text": "RAIKOU embodies the speed of lightning. The roars of this POKéMON send shock waves shuddering through the air and shake the ground as if lightning bolts had come crashing down.",
       "version": "ruby"
     },
     {
-      "text": "RAIKOU embodies the speed of lightning. The roars of this POK\u00e9MON send shock waves shuddering through the air and shake the ground as if lightning bolts had come crashing down.",
+      "text": "RAIKOU embodies the speed of lightning. The roars of this POKéMON send shock waves shuddering through the air and shake the ground as if lightning bolts had come crashing down.",
       "version": "sapphire"
     }
   ],
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/243.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/243.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ライコウ",
+    "roomaji": "Raikou",
+    "ko": "라이코",
+    "zh-Hant": "雷公",
+    "fr": "Raikou",
+    "de": "Raikou",
+    "es": "Raikou",
+    "it": "Raikou",
+    "en": "Raikou",
+    "ja": "ライコウ",
+    "zh-Hans": "雷公"
   }
 }

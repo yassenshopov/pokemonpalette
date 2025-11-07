@@ -1,7 +1,7 @@
 {
   "id": 72,
   "name": "Tentacool",
-  "species": "Jellyfish Pok\u00e9mon",
+  "species": "Jellyfish Pokémon",
   "type": [
     "Water",
     "Poison"
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "It drifts aimless\u00ad ly in waves. Very difficult to see in water, it may not be noticed until it stings.",
+      "text": "It drifts aimless­ ly in waves. Very difficult to see in water, it may not be noticed until it stings.",
       "version": "silver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/72.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/72.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メノクラゲ",
+    "roomaji": "Menokurage",
+    "ko": "왕눈해",
+    "zh-Hant": "瑪瑙水母",
+    "fr": "Tentacool",
+    "de": "Tentacha",
+    "es": "Tentacool",
+    "it": "Tentacool",
+    "en": "Tentacool",
+    "ja": "メノクラゲ",
+    "zh-Hans": "玛瑙水母"
   }
 }

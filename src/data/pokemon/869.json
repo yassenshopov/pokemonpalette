@@ -1,7 +1,7 @@
 {
   "id": 869,
   "name": "Alcremie",
-  "species": "Cream Pok\u00e9mon",
+  "species": "Cream Pokémon",
   "type": [
     "Fairy"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 121,
     "speed": 64
   },
-  "description": "When it trusts a Trainer, it will treat them to berries it\u2019s decorated with cream.",
+  "description": "When it trusts a Trainer, it will treat them to berries it’s decorated with cream.",
   "flavorTexts": [
     {
-      "text": "When it trusts a Trainer, it will treat them to berries it\u2019s decorated with cream.",
+      "text": "When it trusts a Trainer, it will treat them to berries it’s decorated with cream.",
       "version": "sword"
     },
     {
@@ -1342,5 +1342,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/869.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マホイップ",
+    "roomaji": "Mawhip",
+    "ko": "마휘핑",
+    "zh-Hant": "霜奶仙",
+    "fr": "Charmilly",
+    "de": "Pokusan",
+    "es": "Alcremie",
+    "it": "Alcremie",
+    "en": "Alcremie",
+    "ja": "マホイップ",
+    "zh-Hans": "霜奶仙"
   }
 }

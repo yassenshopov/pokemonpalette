@@ -1,7 +1,7 @@
 {
   "id": 46,
   "name": "Paras",
-  "species": "Mushroom Pok\u00e9mon",
+  "species": "Mushroom Pokémon",
   "type": [
     "Bug",
     "Grass"
@@ -46,14 +46,14 @@
     "specialDefense": 55,
     "speed": 25
   },
-  "description": "Burrows to suck tree roots. The mushrooms on its back grow by draw\u00ad ing nutrients from the bug host.",
+  "description": "Burrows to suck tree roots. The mushrooms on its back grow by draw­ ing nutrients from the bug host.",
   "flavorTexts": [
     {
-      "text": "Burrows to suck tree roots. The mushrooms on its back grow by draw\u00ad ing nutrients from the bug host.",
+      "text": "Burrows to suck tree roots. The mushrooms on its back grow by draw­ ing nutrients from the bug host.",
       "version": "red"
     },
     {
-      "text": "Burrows to suck tree roots. The mushrooms on its back grow by draw\u00ad ing nutrients from the bug host.",
+      "text": "Burrows to suck tree roots. The mushrooms on its back grow by draw­ ing nutrients from the bug host.",
       "version": "blue"
     },
     {
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/46.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/46.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パラス",
+    "roomaji": "Paras",
+    "ko": "파라스",
+    "zh-Hant": "派拉斯",
+    "fr": "Paras",
+    "de": "Paras",
+    "es": "Paras",
+    "it": "Paras",
+    "en": "Paras",
+    "ja": "パラス",
+    "zh-Hans": "派拉斯"
   }
 }

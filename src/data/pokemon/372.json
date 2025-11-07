@@ -1,7 +1,7 @@
 {
   "id": 372,
   "name": "Shelgon",
-  "species": "Endurance Pok\u00e9mon",
+  "species": "Endurance Pokémon",
   "type": [
     "Dragon"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 50,
     "speed": 50
   },
-  "description": "Inside SHELGON\u2019s armor-like shell, cells are in the midst of transformation to create an entirely new body. This POK\u00e9MON\u2019s shell is extremely heavy, making its movements sluggish.",
+  "description": "Inside SHELGON’s armor-like shell, cells are in the midst of transformation to create an entirely new body. This POKéMON’s shell is extremely heavy, making its movements sluggish.",
   "flavorTexts": [
     {
-      "text": "Inside SHELGON\u2019s armor-like shell, cells are in the midst of transformation to create an entirely new body. This POK\u00e9MON\u2019s shell is extremely heavy, making its movements sluggish.",
+      "text": "Inside SHELGON’s armor-like shell, cells are in the midst of transformation to create an entirely new body. This POKéMON’s shell is extremely heavy, making its movements sluggish.",
       "version": "ruby"
     },
     {
-      "text": "Covering SHELGON\u2019s body are outgrowths much like bones. The shell is very hard and bounces off enemy attacks. When awaiting evolution, this POK\u00e9MON hides away in a cavern.",
+      "text": "Covering SHELGON’s body are outgrowths much like bones. The shell is very hard and bounces off enemy attacks. When awaiting evolution, this POKéMON hides away in a cavern.",
       "version": "sapphire"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/372.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/372.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コモルー",
+    "roomaji": "Komoruu",
+    "ko": "쉘곤",
+    "zh-Hant": "甲殼龍",
+    "fr": "Drackhaus",
+    "de": "Draschel",
+    "es": "Shelgon",
+    "it": "Shelgon",
+    "en": "Shelgon",
+    "ja": "コモルー",
+    "zh-Hans": "甲壳龙"
   }
 }

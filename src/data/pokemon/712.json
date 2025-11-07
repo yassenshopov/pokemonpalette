@@ -1,7 +1,7 @@
 {
   "id": 712,
   "name": "Bergmite",
-  "species": "Ice Chunk Pok\u00e9mon",
+  "species": "Ice Chunk Pokémon",
   "type": [
     "Ice"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 35,
     "speed": 28
   },
-  "description": "It blocks opponents\u2019 attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
+  "description": "It blocks opponents’ attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
   "flavorTexts": [
     {
-      "text": "It blocks opponents\u2019 attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
+      "text": "It blocks opponents’ attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
       "version": "x"
     },
     {
@@ -52,7 +52,7 @@
       "version": "y"
     },
     {
-      "text": "It blocks opponents\u2019 attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
+      "text": "It blocks opponents’ attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
       "version": "omega-ruby"
     },
     {
@@ -60,7 +60,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "They chill the air around them to \u2212150 degrees Fahrenheit, freezing the water in the air into ice that they use as armor.",
+      "text": "They chill the air around them to −150 degrees Fahrenheit, freezing the water in the air into ice that they use as armor.",
       "version": "sword"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/712.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カチコール",
+    "roomaji": "Kachikohru",
+    "ko": "꽁어름",
+    "zh-Hant": "冰寶",
+    "fr": "Grelaçon",
+    "de": "Arktip",
+    "es": "Bergmite",
+    "it": "Bergmite",
+    "en": "Bergmite",
+    "ja": "カチコール",
+    "zh-Hans": "冰宝"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 883,
   "name": "Arctovish",
-  "species": "Fossil Pok\u00e9mon",
+  "species": "Fossil Pokémon",
   "type": [
     "Water",
     "Ice"
@@ -46,14 +46,14 @@
     "specialDefense": 90,
     "speed": 55
   },
-  "description": "Though it\u2019s able to capture prey by freezing its surroundings, it has trouble eating the prey afterward because its mouth is on top of its head.",
+  "description": "Though it’s able to capture prey by freezing its surroundings, it has trouble eating the prey afterward because its mouth is on top of its head.",
   "flavorTexts": [
     {
-      "text": "Though it\u2019s able to capture prey by freezing its surroundings, it has trouble eating the prey afterward because its mouth is on top of its head.",
+      "text": "Though it’s able to capture prey by freezing its surroundings, it has trouble eating the prey afterward because its mouth is on top of its head.",
       "version": "sword"
     },
     {
-      "text": "The skin on its face is impervious to attack, but breathing difficulties made this Pok\u00e9mon go extinct anyway.",
+      "text": "The skin on its face is impervious to attack, but breathing difficulties made this Pokémon go extinct anyway.",
       "version": "shield"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/883.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウオチルドン",
+    "roomaji": "Uochilldon",
+    "ko": "어치르돈",
+    "zh-Hant": "鰓魚海獸",
+    "fr": "Hydragla",
+    "de": "Pescryodon",
+    "es": "Arctovish",
+    "it": "Arctovish",
+    "en": "Arctovish",
+    "ja": "ウオチルドン",
+    "zh-Hans": "鳃鱼海兽"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 55,
   "name": "Golduck",
-  "species": "Duck Pok\u00e9mon",
+  "species": "Duck Pokémon",
   "type": [
     "Water"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 80,
     "speed": 85
   },
-  "description": "Often seen swim\u00ad ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
+  "description": "Often seen swim­ ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
   "flavorTexts": [
     {
-      "text": "Often seen swim\u00ad ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
+      "text": "Often seen swim­ ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
       "version": "red"
     },
     {
-      "text": "Often seen swim\u00ad ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
+      "text": "Often seen swim­ ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
       "version": "blue"
     },
     {
-      "text": "Its slim and long limbs end in broad flippers. They are used for swim\u00ad ming gracefully in lakes.",
+      "text": "Its slim and long limbs end in broad flippers. They are used for swim­ ming gracefully in lakes.",
       "version": "yellow"
     },
     {
-      "text": "When it swims at full speed using its long, webbed limbs, its fore\u00ad head somehow be\u00ad gins to glow.",
+      "text": "When it swims at full speed using its long, webbed limbs, its fore­ head somehow be­ gins to glow.",
       "version": "gold"
     },
     {
-      "text": "It appears by waterways at dusk. It may use tele\u00ad kinetic powers if its forehead glows mysteriously.",
+      "text": "It appears by waterways at dusk. It may use tele­ kinetic powers if its forehead glows mysteriously.",
       "version": "silver"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/55.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/55.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴルダック",
+    "roomaji": "Golduck",
+    "ko": "골덕",
+    "zh-Hant": "哥達鴨",
+    "fr": "Akwakwak",
+    "de": "Entoron",
+    "es": "Golduck",
+    "it": "Golduck",
+    "en": "Golduck",
+    "ja": "ゴルダック",
+    "zh-Hans": "哥达鸭"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 675,
   "name": "Pangoro",
-  "species": "Daunting Pok\u00e9mon",
+  "species": "Daunting Pokémon",
   "type": [
     "Fighting",
     "Dark"
@@ -46,10 +46,10 @@
     "specialDefense": 71,
     "speed": 58
   },
-  "description": "Although it possesses a violent temperament, it won\u2019t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.",
+  "description": "Although it possesses a violent temperament, it won’t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.",
   "flavorTexts": [
     {
-      "text": "Although it possesses a violent temperament, it won\u2019t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.",
+      "text": "Although it possesses a violent temperament, it won’t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.",
       "version": "x"
     },
     {
@@ -57,7 +57,7 @@
       "version": "y"
     },
     {
-      "text": "Although it possesses a violent temperament, it won\u2019t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.",
+      "text": "Although it possesses a violent temperament, it won’t put up with bullying. It uses the leaf in its mouth to sense the movements of its enemies.",
       "version": "omega-ruby"
     },
     {
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "It boasts superb physical strength. Those who wish to become Pangoro\u2019s Trainer have no choice but to converse with their fists.",
+      "text": "It boasts superb physical strength. Those who wish to become Pangoro’s Trainer have no choice but to converse with their fists.",
       "version": "sun"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/675.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ゴロンダ",
+    "roomaji": "Goronda",
+    "ko": "부란다",
+    "zh-Hant": "流氓熊貓",
+    "fr": "Pandarbare",
+    "de": "Pandagro",
+    "es": "Pangoro",
+    "it": "Pangoro",
+    "en": "Pangoro",
+    "ja": "ゴロンダ",
+    "zh-Hans": "霸道熊猫"
   }
 }

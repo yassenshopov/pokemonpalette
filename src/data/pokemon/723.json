@@ -1,7 +1,7 @@
 {
   "id": 723,
   "name": "Dartrix",
-  "species": "Blade Quill Pok\u00e9mon",
+  "species": "Blade Quill Pokémon",
   "type": [
     "Grass",
     "Flying"
@@ -51,7 +51,7 @@
       "version": "moon"
     },
     {
-      "text": "This narcissistic Pok\u00e9mon is a clean freak. If you don\u2019t groom it diligently, it will stop listening to you.",
+      "text": "This narcissistic Pokémon is a clean freak. If you don’t groom it diligently, it will stop listening to you.",
       "version": "ultra-sun"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/723.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フクスロー",
+    "roomaji": "Fukuthrow",
+    "ko": "빼미스로우",
+    "zh-Hant": "投羽梟",
+    "fr": "Efflèche",
+    "de": "Arboretoss",
+    "es": "Dartrix",
+    "it": "Dartrix",
+    "en": "Dartrix",
+    "ja": "フクスロー",
+    "zh-Hans": "投羽枭"
   }
 }

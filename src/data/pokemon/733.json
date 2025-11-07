@@ -1,7 +1,7 @@
 {
   "id": 733,
   "name": "Toucannon",
-  "species": "Cannon Pok\u00e9mon",
+  "species": "Cannon Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -61,7 +61,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Known for forming harmonious couples, this Pok\u00e9mon is brought to wedding ceremonies as a good luck charm.",
+      "text": "Known for forming harmonious couples, this Pokémon is brought to wedding ceremonies as a good luck charm.",
       "version": "ultra-moon"
     }
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/733.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドデカバシ",
+    "roomaji": "Dodekabashi",
+    "ko": "왕큰부리",
+    "zh-Hant": "銃嘴大鳥",
+    "fr": "Bazoucan",
+    "de": "Tukanon",
+    "es": "Toucannon",
+    "it": "Toucannon",
+    "en": "Toucannon",
+    "ja": "ドデカバシ",
+    "zh-Hans": "铳嘴大鸟"
   }
 }

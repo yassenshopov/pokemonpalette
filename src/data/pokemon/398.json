@@ -1,7 +1,7 @@
 {
   "id": 398,
   "name": "Staraptor",
-  "species": "Predator Pok\u00e9mon",
+  "species": "Predator Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -47,7 +47,7 @@
       "version": "diamond"
     },
     {
-      "text": "The muscles in its wings and legs are strong. It can easily fly while gripping a small Pok\u00e9mon.",
+      "text": "The muscles in its wings and legs are strong. It can easily fly while gripping a small Pokémon.",
       "version": "pearl"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/398.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/398.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムクホーク",
+    "roomaji": "Mukuhawk",
+    "ko": "찌르호크",
+    "zh-Hant": "姆克鷹",
+    "fr": "Étouraptor",
+    "de": "Staraptor",
+    "es": "Staraptor",
+    "it": "Staraptor",
+    "en": "Staraptor",
+    "ja": "ムクホーク",
+    "zh-Hans": "姆克鹰"
   }
 }

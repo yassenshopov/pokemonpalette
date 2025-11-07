@@ -1,7 +1,7 @@
 {
   "id": 301,
   "name": "Delcatty",
-  "species": "Prim Pok\u00e9mon",
+  "species": "Prim Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 55,
     "speed": 90
   },
-  "description": "DELCATTY prefers to live an unfettered existence in which it can do as it pleases at its own pace. Because this POK\u00e9MON eats and sleeps whenever it decides, its daily routines are completely random.",
+  "description": "DELCATTY prefers to live an unfettered existence in which it can do as it pleases at its own pace. Because this POKéMON eats and sleeps whenever it decides, its daily routines are completely random.",
   "flavorTexts": [
     {
-      "text": "DELCATTY prefers to live an unfettered existence in which it can do as it pleases at its own pace. Because this POK\u00e9MON eats and sleeps whenever it decides, its daily routines are completely random.",
+      "text": "DELCATTY prefers to live an unfettered existence in which it can do as it pleases at its own pace. Because this POKéMON eats and sleeps whenever it decides, its daily routines are completely random.",
       "version": "ruby"
     },
     {
-      "text": "DELCATTY sleeps anywhere it wants without keeping a permanent nest. If other POK\u00e9MON approach it as it sleeps, this POK\u00e9MON will never fight - it will just move away somewhere else.",
+      "text": "DELCATTY sleeps anywhere it wants without keeping a permanent nest. If other POKéMON approach it as it sleeps, this POKéMON will never fight - it will just move away somewhere else.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/301.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/301.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エネコロロ",
+    "roomaji": "Enekororo",
+    "ko": "델케티",
+    "zh-Hant": "優雅貓",
+    "fr": "Delcatty",
+    "de": "Enekoro",
+    "es": "Delcatty",
+    "it": "Delcatty",
+    "en": "Delcatty",
+    "ja": "エネコロロ",
+    "zh-Hans": "优雅猫"
   }
 }

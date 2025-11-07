@@ -1,7 +1,7 @@
 {
   "id": 250,
   "name": "Ho-oh",
-  "species": "Rainbow Pok\u00e9mon",
+  "species": "Rainbow Pokémon",
   "type": [
     "Fire",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 154,
     "speed": 90
   },
-  "description": "Legends claim this POK\u00e9MON flies the world's skies con\u00ad tinuously on its magnificent seven- colored wings.",
+  "description": "Legends claim this POKéMON flies the world's skies con­ tinuously on its magnificent seven- colored wings.",
   "flavorTexts": [
     {
-      "text": "Legends claim this POK\u00e9MON flies the world's skies con\u00ad tinuously on its magnificent seven- colored wings.",
+      "text": "Legends claim this POKéMON flies the world's skies con­ tinuously on its magnificent seven- colored wings.",
       "version": "gold"
     },
     {
@@ -51,15 +51,15 @@
       "version": "silver"
     },
     {
-      "text": "It will reveal itself before a pure-hearted trainer by shining its bright rain\u00ad bow-colored wings.",
+      "text": "It will reveal itself before a pure-hearted trainer by shining its bright rain­ bow-colored wings.",
       "version": "crystal"
     },
     {
-      "text": "HO-OH\u2019s feathers glow in seven colors depending on the angle at which they are struck by light. These feathers are said to bring happiness to the bearers. This POK\u00e9MON is said to live at the foot of a rainbow.",
+      "text": "HO-OH’s feathers glow in seven colors depending on the angle at which they are struck by light. These feathers are said to bring happiness to the bearers. This POKéMON is said to live at the foot of a rainbow.",
       "version": "ruby"
     },
     {
-      "text": "HO-OH\u2019s feathers glow in seven colors depending on the angle at which they are struck by light. These feathers are said to bring happiness to the bearers. This POK\u00e9MON is said to live at the foot of a rainbow.",
+      "text": "HO-OH’s feathers glow in seven colors depending on the angle at which they are struck by light. These feathers are said to bring happiness to the bearers. This POKéMON is said to live at the foot of a rainbow.",
       "version": "sapphire"
     }
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/250.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/250.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ホウオウ",
+    "roomaji": "Houou",
+    "ko": "칠색조",
+    "zh-Hant": "鳳王",
+    "fr": "Ho-Oh",
+    "de": "Ho-Oh",
+    "es": "Ho-Oh",
+    "it": "Ho-Oh",
+    "en": "Ho-Oh",
+    "ja": "ホウオウ",
+    "zh-Hans": "凤王"
   }
 }

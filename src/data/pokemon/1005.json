@@ -1,7 +1,7 @@
 {
   "id": 1005,
   "name": "Roaring-moon",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Dragon",
     "Dark"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "According to an article in a dubious magazine, this Pok\u00e9mon has some connection to a phenomenon that occurs in a certain region.",
+      "text": "According to an article in a dubious magazine, this Pokémon has some connection to a phenomenon that occurs in a certain region.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1005.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "トドロクツキ",
+    "roomaji": "Todorokutsuki",
+    "ko": "고동치는달",
+    "zh-Hant": "轟鳴月",
+    "fr": "Rugit-Lune",
+    "de": "Donnersichel",
+    "es": "Bramaluna",
+    "it": "Lunaruggente",
+    "en": "Roaring Moon",
+    "ja": "トドロクツキ",
+    "zh-Hans": "轰鸣月"
   }
 }

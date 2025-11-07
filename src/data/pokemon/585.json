@@ -1,7 +1,7 @@
 {
   "id": 585,
   "name": "Deerling",
-  "species": "Season Pok\u00e9mon",
+  "species": "Season Pokémon",
   "type": [
     "Normal",
     "Grass"
@@ -53,7 +53,7 @@
       "version": "black"
     },
     {
-      "text": "The turning of the seasons changes the color and scent of this Pok\u00e9mon\u2019s fur. People use it to mark the seasons.",
+      "text": "The turning of the seasons changes the color and scent of this Pokémon’s fur. People use it to mark the seasons.",
       "version": "white"
     },
     {
@@ -356,5 +356,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/585.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/585.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シキジカ",
+    "roomaji": "Shikijika",
+    "ko": "사철록",
+    "zh-Hant": "四季鹿",
+    "fr": "Vivaldaim",
+    "de": "Sesokitz",
+    "es": "Deerling",
+    "it": "Deerling",
+    "en": "Deerling",
+    "ja": "シキジカ",
+    "zh-Hans": "四季鹿"
   }
 }

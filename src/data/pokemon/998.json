@@ -1,7 +1,7 @@
 {
   "id": 998,
   "name": "Baxcalibur",
-  "species": "Ice Dragon Pok\u00e9mon",
+  "species": "Ice Dragon Pokémon",
   "type": [
     "Dragon",
     "Ice"
@@ -40,10 +40,10 @@
     "specialDefense": 86,
     "speed": 87
   },
-  "description": "This Pok\u00e9mon blasts cryogenic air out from its mouth. This air can instantly freeze even liquid-hot lava.",
+  "description": "This Pokémon blasts cryogenic air out from its mouth. This air can instantly freeze even liquid-hot lava.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon blasts cryogenic air out from its mouth. This air can instantly freeze even liquid-hot lava.",
+      "text": "This Pokémon blasts cryogenic air out from its mouth. This air can instantly freeze even liquid-hot lava.",
       "version": "scarlet"
     },
     {
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/998.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "セグレイブ",
+    "roomaji": "Seglaive",
+    "ko": "드닐레이브",
+    "zh-Hant": "戟脊龍",
+    "fr": "Glaivodo",
+    "de": "Espinodon",
+    "es": "Baxcalibur",
+    "it": "Baxcalibur",
+    "en": "Baxcalibur",
+    "ja": "セグレイブ",
+    "zh-Hans": "戟脊龙"
   }
 }

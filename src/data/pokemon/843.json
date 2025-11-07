@@ -1,7 +1,7 @@
 {
   "id": 843,
   "name": "Silicobra",
-  "species": "Sand Snake Pok\u00e9mon",
+  "species": "Sand Snake Pokémon",
   "type": [
     "Ground"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/843.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "スナヘビ",
+    "roomaji": "Sunahebi",
+    "ko": "모래뱀",
+    "zh-Hant": "沙包蛇",
+    "fr": "Dunaja",
+    "de": "Salanga",
+    "es": "Silicobra",
+    "it": "Silicobra",
+    "en": "Silicobra",
+    "ja": "スナヘビ",
+    "zh-Hans": "沙包蛇"
   }
 }

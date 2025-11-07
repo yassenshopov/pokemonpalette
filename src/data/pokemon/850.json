@@ -1,7 +1,7 @@
 {
   "id": 850,
   "name": "Sizzlipede",
-  "species": "Radiator Pok\u00e9mon",
+  "species": "Radiator Pokémon",
   "type": [
     "Fire",
     "Bug"
@@ -53,7 +53,7 @@
       "version": "sword"
     },
     {
-      "text": "It wraps prey up with its heated body, cooking them in its coils. Once they\u2019re well-done, it will voraciously nibble them down to the last morsel.",
+      "text": "It wraps prey up with its heated body, cooking them in its coils. Once they’re well-done, it will voraciously nibble them down to the last morsel.",
       "version": "shield"
     }
   ],
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/850.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤクデ",
+    "roomaji": "Yakude",
+    "ko": "태우지네",
+    "zh-Hant": "燒火蚣",
+    "fr": "Grillepattes",
+    "de": "Thermopod",
+    "es": "Sizzlipede",
+    "it": "Sizzlipede",
+    "en": "Sizzlipede",
+    "ja": "ヤクデ",
+    "zh-Hans": "烧火蚣"
   }
 }

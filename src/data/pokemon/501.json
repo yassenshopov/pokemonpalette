@@ -1,7 +1,7 @@
 {
   "id": 501,
   "name": "Oshawott",
-  "species": "Sea Otter Pok\u00e9mon",
+  "species": "Sea Otter Pokémon",
   "type": [
     "Water"
   ],
@@ -46,15 +46,15 @@
       "version": "white"
     },
     {
-      "text": "The scalchop on its stomach isn\u2019t just used for battle--it can be used to break open hard berries as well.",
+      "text": "The scalchop on its stomach isn’t just used for battle--it can be used to break open hard berries as well.",
       "version": "black-2"
     },
     {
-      "text": "The scalchop on its stomach isn\u2019t just used for battle--it can be used to break open hard berries as well.",
+      "text": "The scalchop on its stomach isn’t just used for battle--it can be used to break open hard berries as well.",
       "version": "white-2"
     },
     {
-      "text": "The scalchop on its stomach isn\u2019t just used for battle--it can be used to break open hard berries as well.",
+      "text": "The scalchop on its stomach isn’t just used for battle--it can be used to break open hard berries as well.",
       "version": "x"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/501.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/501.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミジュマル",
+    "roomaji": "Mijumaru",
+    "ko": "수댕이",
+    "zh-Hant": "水水獺",
+    "fr": "Moustillon",
+    "de": "Ottaro",
+    "es": "Oshawott",
+    "it": "Oshawott",
+    "en": "Oshawott",
+    "ja": "ミジュマル",
+    "zh-Hans": "水水獭"
   }
 }

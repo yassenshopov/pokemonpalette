@@ -1,7 +1,7 @@
 {
   "id": 225,
   "name": "Delibird",
-  "species": "Delivery Pok\u00e9mon",
+  "species": "Delivery Pokémon",
   "type": [
     "Ice",
     "Flying"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "It nests at the edge of sharp cliffs. It spends all day carrying food to its await\u00ad ing chicks.",
+      "text": "It nests at the edge of sharp cliffs. It spends all day carrying food to its await­ ing chicks.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "DELIBIRD carries its food bundled up in its tail. There once was a famous explorer who managed to reach the peak of Mt. Everest thanks to one of these POK\u00e9MON sharing its food.",
+      "text": "DELIBIRD carries its food bundled up in its tail. There once was a famous explorer who managed to reach the peak of Mt. Everest thanks to one of these POKéMON sharing its food.",
       "version": "ruby"
     },
     {
-      "text": "DELIBIRD carries its food bundled up in its tail. There once was a famous explorer who managed to reach the peak of Mt. Everest thanks to one of these POK\u00e9MON sharing its food.",
+      "text": "DELIBIRD carries its food bundled up in its tail. There once was a famous explorer who managed to reach the peak of Mt. Everest thanks to one of these POKéMON sharing its food.",
       "version": "sapphire"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/225.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/225.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "デリバード",
+    "roomaji": "Delibird",
+    "ko": "딜리버드",
+    "zh-Hant": "信使鳥",
+    "fr": "Cadoizo",
+    "de": "Botogel",
+    "es": "Delibird",
+    "it": "Delibird",
+    "en": "Delibird",
+    "ja": "デリバード",
+    "zh-Hans": "信使鸟"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 515,
   "name": "Panpour",
-  "species": "Spray Pok\u00e9mon",
+  "species": "Spray Pokémon",
   "type": [
     "Water"
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/515.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/515.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒヤップ",
+    "roomaji": "Hiyappu",
+    "ko": "앗차프",
+    "zh-Hant": "冷水猴",
+    "fr": "Flotajou",
+    "de": "Sodamak",
+    "es": "Panpour",
+    "it": "Panpour",
+    "en": "Panpour",
+    "ja": "ヒヤップ",
+    "zh-Hans": "冷水猴"
   }
 }

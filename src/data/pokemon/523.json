@@ -1,7 +1,7 @@
 {
   "id": 523,
   "name": "Zebstrika",
-  "species": "Thunderbolt Pok\u00e9mon",
+  "species": "Thunderbolt Pokémon",
   "type": [
     "Electric"
   ],
@@ -48,19 +48,19 @@
       "version": "black"
     },
     {
-      "text": "This ill-tempered Pok\u00e9mon is dangerous because when it\u2019s angry, it shoots lightning from its mane in all directions.",
+      "text": "This ill-tempered Pokémon is dangerous because when it’s angry, it shoots lightning from its mane in all directions.",
       "version": "white"
     },
     {
-      "text": "When this ill-tempered Pok\u00e9mon runs wild, it shoots lightning from its mane in all directions.",
+      "text": "When this ill-tempered Pokémon runs wild, it shoots lightning from its mane in all directions.",
       "version": "black-2"
     },
     {
-      "text": "When this ill-tempered Pok\u00e9mon runs wild, it shoots lightning from its mane in all directions.",
+      "text": "When this ill-tempered Pokémon runs wild, it shoots lightning from its mane in all directions.",
       "version": "white-2"
     },
     {
-      "text": "When this ill-tempered Pok\u00e9mon runs wild, it shoots lightning from its mane in all directions.",
+      "text": "When this ill-tempered Pokémon runs wild, it shoots lightning from its mane in all directions.",
       "version": "x"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/523.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/523.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゼブライカ",
+    "roomaji": "Zebraika",
+    "ko": "제브라이카",
+    "zh-Hant": "雷電斑馬",
+    "fr": "Zéblitz",
+    "de": "Zebritz",
+    "es": "Zebstrika",
+    "it": "Zebstrika",
+    "en": "Zebstrika",
+    "ja": "ゼブライカ",
+    "zh-Hans": "雷电斑马"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 691,
   "name": "Dragalge",
-  "species": "Mock Kelp Pok\u00e9mon",
+  "species": "Mock Kelp Pokémon",
   "type": [
     "Poison",
     "Dragon"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "This vicious Pok\u00e9mon sprays a poisonous liquid on opponents that come near. For whatever reason, it gets along really well with Dhelmise.",
+      "text": "This vicious Pokémon sprays a poisonous liquid on opponents that come near. For whatever reason, it gets along really well with Dhelmise.",
       "version": "ultra-sun"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/691.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドラミドロ",
+    "roomaji": "Dramidoro",
+    "ko": "드래캄",
+    "zh-Hant": "毒藻龍",
+    "fr": "Kravarech",
+    "de": "Tandrak",
+    "es": "Dragalge",
+    "it": "Dragalge",
+    "en": "Dragalge",
+    "ja": "ドラミドロ",
+    "zh-Hans": "毒藻龙"
   }
 }

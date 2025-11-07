@@ -1,7 +1,7 @@
 {
   "id": 683,
   "name": "Aromatisse",
-  "species": "Fragrance Pok\u00e9mon",
+  "species": "Fragrance Pokémon",
   "type": [
     "Fairy"
   ],
@@ -54,7 +54,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "The scent that constantly emits from its fur is so powerful that this Pok\u00e9mon\u2019s companions will eventually lose their sense of smell.",
+      "text": "The scent that constantly emits from its fur is so powerful that this Pokémon’s companions will eventually lose their sense of smell.",
       "version": "sword"
     }
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/683.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フレフワン",
+    "roomaji": "Frefuwan",
+    "ko": "프레프티르",
+    "zh-Hant": "芳香精",
+    "fr": "Cocotine",
+    "de": "Parfinesse",
+    "es": "Aromatisse",
+    "it": "Aromatisse",
+    "en": "Aromatisse",
+    "ja": "フレフワン",
+    "zh-Hans": "芳香精"
   }
 }

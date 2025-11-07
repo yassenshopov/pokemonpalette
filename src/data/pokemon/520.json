@@ -1,7 +1,7 @@
 {
   "id": 520,
   "name": "Tranquill",
-  "species": "Wild Pigeon Pok\u00e9mon",
+  "species": "Wild Pigeon Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 42,
     "speed": 65
   },
-  "description": "It can return to its Trainer\u2019s location regardless of the distance separating them.",
+  "description": "It can return to its Trainer’s location regardless of the distance separating them.",
   "flavorTexts": [
     {
-      "text": "It can return to its Trainer\u2019s location regardless of the distance separating them.",
+      "text": "It can return to its Trainer’s location regardless of the distance separating them.",
       "version": "black"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/520.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/520.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハトーボー",
+    "roomaji": "Hatoboh",
+    "ko": "유토브",
+    "zh-Hant": "咕咕鴿",
+    "fr": "Colombeau",
+    "de": "Navitaub",
+    "es": "Tranquill",
+    "it": "Tranquill",
+    "en": "Tranquill",
+    "ja": "ハトーボー",
+    "zh-Hans": "咕咕鸽"
   }
 }

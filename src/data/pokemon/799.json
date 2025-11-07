@@ -1,7 +1,7 @@
 {
   "id": 799,
   "name": "Guzzlord",
-  "species": "Junkivore Pok\u00e9mon",
+  "species": "Junkivore Pokémon",
   "type": [
     "Dark",
     "Dragon"
@@ -34,10 +34,10 @@
     "specialDefense": 53,
     "speed": 43
   },
-  "description": "It has gobbled mountains and swallowed whole buildings, according to reports. It\u2019s one of the Ultra Beasts.",
+  "description": "It has gobbled mountains and swallowed whole buildings, according to reports. It’s one of the Ultra Beasts.",
   "flavorTexts": [
     {
-      "text": "It has gobbled mountains and swallowed whole buildings, according to reports. It\u2019s one of the Ultra Beasts.",
+      "text": "It has gobbled mountains and swallowed whole buildings, according to reports. It’s one of the Ultra Beasts.",
       "version": "sun"
     },
     {
@@ -45,11 +45,11 @@
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s alien to this world and a danger here, it\u2019s apparently a common organism in the world where it normally lives.",
+      "text": "Although it’s alien to this world and a danger here, it’s apparently a common organism in the world where it normally lives.",
       "version": "ultra-sun"
     },
     {
-      "text": "An unknown life-form called a UB. It may be constantly hungry\u2014it is certainly always devouring something.",
+      "text": "An unknown life-form called a UB. It may be constantly hungry—it is certainly always devouring something.",
       "version": "ultra-moon"
     }
   ],
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/799.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アクジキング",
+    "roomaji": "Akuziking",
+    "ko": "악식킹",
+    "zh-Hant": "惡食大王",
+    "fr": "Engloutyran",
+    "de": "Schlingking",
+    "es": "Guzzlord",
+    "it": "Guzzlord",
+    "en": "Guzzlord",
+    "ja": "アクジキング",
+    "zh-Hans": "恶食大王"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 954,
   "name": "Rabsca",
-  "species": "Rolling Pok\u00e9mon",
+  "species": "Rolling Pokémon",
   "type": [
     "Bug",
     "Psychic"
@@ -40,10 +40,10 @@
     "specialDefense": 100,
     "speed": 45
   },
-  "description": "The body that supports the ball barely moves. Therefore, it is thought that the true body of this Pok\u00e9mon is actually inside the ball.",
+  "description": "The body that supports the ball barely moves. Therefore, it is thought that the true body of this Pokémon is actually inside the ball.",
   "flavorTexts": [
     {
-      "text": "The body that supports the ball barely moves. Therefore, it is thought that the true body of this Pok\u00e9mon is actually inside the ball.",
+      "text": "The body that supports the ball barely moves. Therefore, it is thought that the true body of this Pokémon is actually inside the ball.",
       "version": "scarlet"
     },
     {
@@ -286,5 +286,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/954.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ベラカス",
+    "roomaji": "Beracas",
+    "ko": "베라카스",
+    "zh-Hant": "蟲甲聖",
+    "fr": "Bérasca",
+    "de": "Skarabaks",
+    "es": "Rabsca",
+    "it": "Rabsca",
+    "en": "Rabsca",
+    "ja": "ベラカス",
+    "zh-Hans": "虫甲圣"
   }
 }

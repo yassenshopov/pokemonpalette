@@ -1,7 +1,7 @@
 {
   "id": 547,
   "name": "Whimsicott",
-  "species": "Windveiled Pok\u00e9mon",
+  "species": "Windveiled Pokémon",
   "type": [
     "Grass",
     "Fairy"
@@ -53,7 +53,7 @@
       "version": "black"
     },
     {
-      "text": "Riding whirlwinds, they appear. These Pok\u00e9mon sneak through gaps into houses and cause all sorts of mischief.",
+      "text": "Riding whirlwinds, they appear. These Pokémon sneak through gaps into houses and cause all sorts of mischief.",
       "version": "white"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/547.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/547.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エルフーン",
+    "roomaji": "Elfuun",
+    "ko": "엘풍",
+    "zh-Hant": "風妖精",
+    "fr": "Farfaduvet",
+    "de": "Elfun",
+    "es": "Whimsicott",
+    "it": "Whimsicott",
+    "en": "Whimsicott",
+    "ja": "エルフーン",
+    "zh-Hans": "风妖精"
   }
 }

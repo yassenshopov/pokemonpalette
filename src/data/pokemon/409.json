@@ -1,7 +1,7 @@
 {
   "id": 409,
   "name": "Rampardos",
-  "species": "Head Butt Pok\u00e9mon",
+  "species": "Head Butt Pokémon",
   "type": [
     "Rock"
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/409.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/409.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラムパルド",
+    "roomaji": "Rampard",
+    "ko": "램펄드",
+    "zh-Hant": "戰槌龍",
+    "fr": "Charkos",
+    "de": "Rameidon",
+    "es": "Rampardos",
+    "it": "Rampardos",
+    "en": "Rampardos",
+    "ja": "ラムパルド",
+    "zh-Hans": "战槌龙"
   }
 }

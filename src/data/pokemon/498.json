@@ -1,7 +1,7 @@
 {
   "id": 498,
   "name": "Tepig",
-  "species": "Fire Pig Pok\u00e9mon",
+  "species": "Fire Pig Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 45,
     "speed": 45
   },
-  "description": "It can deftly dodge its foe\u2019s attacks while shooting fireballs from its nose. It roasts berries before it eats them.",
+  "description": "It can deftly dodge its foe’s attacks while shooting fireballs from its nose. It roasts berries before it eats them.",
   "flavorTexts": [
     {
-      "text": "It can deftly dodge its foe\u2019s attacks while shooting fireballs from its nose. It roasts berries before it eats them.",
+      "text": "It can deftly dodge its foe’s attacks while shooting fireballs from its nose. It roasts berries before it eats them.",
       "version": "black"
     },
     {
@@ -54,7 +54,7 @@
       "version": "white-2"
     },
     {
-      "text": "It can deftly dodge its foe\u2019s attacks while shooting fireballs from its nose. It roasts berries before it eats them.",
+      "text": "It can deftly dodge its foe’s attacks while shooting fireballs from its nose. It roasts berries before it eats them.",
       "version": "x"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/498.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/498.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポカブ",
+    "roomaji": "Pokabu",
+    "ko": "뚜꾸리",
+    "zh-Hant": "暖暖豬",
+    "fr": "Gruikui",
+    "de": "Floink",
+    "es": "Tepig",
+    "it": "Tepig",
+    "en": "Tepig",
+    "ja": "ポカブ",
+    "zh-Hans": "暖暖猪"
   }
 }

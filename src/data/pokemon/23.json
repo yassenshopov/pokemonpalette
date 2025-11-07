@@ -1,7 +1,7 @@
 {
   "id": 23,
   "name": "Ekans",
-  "species": "Snake Pok\u00e9mon",
+  "species": "Snake Pokémon",
   "type": [
     "Poison"
   ],
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "It can freely de\u00ad tach its jaw to swallow large prey whole. It can be\u00ad come too heavy to move, however.",
+      "text": "It can freely de­ tach its jaw to swallow large prey whole. It can be­ come too heavy to move, however.",
       "version": "gold"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/23.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/23.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アーボ",
+    "roomaji": "Arbo",
+    "ko": "아보",
+    "zh-Hant": "阿柏蛇",
+    "fr": "Abo",
+    "de": "Rettan",
+    "es": "Ekans",
+    "it": "Ekans",
+    "en": "Ekans",
+    "ja": "アーボ",
+    "zh-Hans": "阿柏蛇"
   }
 }

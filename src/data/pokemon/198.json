@@ -1,7 +1,7 @@
 {
   "id": 198,
   "name": "Murkrow",
-  "species": "Darkness Pok\u00e9mon",
+  "species": "Darkness Pokémon",
   "type": [
     "Dark",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "MURKROW was feared and loathed as the alleged bearer of ill fortune. This POK\u00e9MON shows strong interest in anything that sparkles or glitters. It will even try to steal rings from women.",
+      "text": "MURKROW was feared and loathed as the alleged bearer of ill fortune. This POKéMON shows strong interest in anything that sparkles or glitters. It will even try to steal rings from women.",
       "version": "ruby"
     },
     {
-      "text": "MURKROW was feared and loathed as the alleged bearer of ill fortune. This POK\u00e9MON shows strong interest in anything that sparkles or glitters. It will even try to steal rings from women.",
+      "text": "MURKROW was feared and loathed as the alleged bearer of ill fortune. This POKéMON shows strong interest in anything that sparkles or glitters. It will even try to steal rings from women.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/198.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/198.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤミカラス",
+    "roomaji": "Yamikarasu",
+    "ko": "니로우",
+    "zh-Hant": "黑暗鴉",
+    "fr": "Cornèbre",
+    "de": "Kramurx",
+    "es": "Murkrow",
+    "it": "Murkrow",
+    "en": "Murkrow",
+    "ja": "ヤミカラス",
+    "zh-Hans": "黑暗鸦"
   }
 }

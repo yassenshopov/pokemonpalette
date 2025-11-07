@@ -1,7 +1,7 @@
 {
   "id": 548,
   "name": "Petilil",
-  "species": "Bulb Pok\u00e9mon",
+  "species": "Bulb Pokémon",
   "type": [
     "Grass"
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/548.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/548.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チュリネ",
+    "roomaji": "Churine",
+    "ko": "치릴리",
+    "zh-Hant": "百合根娃娃",
+    "fr": "Chlorobule",
+    "de": "Lilminip",
+    "es": "Petilil",
+    "it": "Petilil",
+    "en": "Petilil",
+    "ja": "チュリネ",
+    "zh-Hans": "百合根娃娃"
   }
 }

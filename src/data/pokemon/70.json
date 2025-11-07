@@ -1,7 +1,7 @@
 {
   "id": 70,
   "name": "Weepinbell",
-  "species": "Flycatcher Pok\u00e9mon",
+  "species": "Flycatcher Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -55,7 +55,7 @@
       "version": "yellow"
     },
     {
-      "text": "Even though it is filled with ACID, it does not melt because it also oozes a neutral\u00ad izing fluid.",
+      "text": "Even though it is filled with ACID, it does not melt because it also oozes a neutral­ izing fluid.",
       "version": "gold"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/70.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/70.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウツドン",
+    "roomaji": "Utsudon",
+    "ko": "우츠동",
+    "zh-Hant": "口呆花",
+    "fr": "Boustiflor",
+    "de": "Ultrigaria",
+    "es": "Weepinbell",
+    "it": "Weepinbell",
+    "en": "Weepinbell",
+    "ja": "ウツドン",
+    "zh-Hans": "口呆花"
   }
 }

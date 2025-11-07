@@ -1,7 +1,7 @@
 {
   "id": 885,
   "name": "Dreepy",
-  "species": "Lingering Pok\u00e9mon",
+  "species": "Lingering Pokémon",
   "type": [
     "Dragon",
     "Ghost"
@@ -46,14 +46,14 @@
     "specialDefense": 30,
     "speed": 82
   },
-  "description": "After being reborn as a ghost Pok\u00e9mon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.",
+  "description": "After being reborn as a ghost Pokémon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.",
   "flavorTexts": [
     {
-      "text": "After being reborn as a ghost Pok\u00e9mon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.",
+      "text": "After being reborn as a ghost Pokémon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.",
       "version": "sword"
     },
     {
-      "text": "If this weak Pok\u00e9mon is by itself, a mere child could defeat it. But if Dreepy has friends to help it train, it can evolve and become much stronger.",
+      "text": "If this weak Pokémon is by itself, a mere child could defeat it. But if Dreepy has friends to help it train, it can evolve and become much stronger.",
       "version": "shield"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/885.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドラメシヤ",
+    "roomaji": "Dorameshiya",
+    "ko": "드라꼰",
+    "zh-Hant": "多龍梅西亞",
+    "fr": "Fantyrm",
+    "de": "Grolldra",
+    "es": "Dreepy",
+    "it": "Dreepy",
+    "en": "Dreepy",
+    "ja": "ドラメシヤ",
+    "zh-Hans": "多龙梅西亚"
   }
 }

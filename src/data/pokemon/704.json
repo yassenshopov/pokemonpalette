@@ -1,7 +1,7 @@
 {
   "id": 704,
   "name": "Goomy",
-  "species": "Soft Tissue Pok\u00e9mon",
+  "species": "Soft Tissue Pokémon",
   "type": [
     "Dragon"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 75,
     "speed": 40
   },
-  "description": "The weakest Dragon-type Pok\u00e9mon, it lives in damp, shady places, so its body doesn\u2019t dry out.",
+  "description": "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn’t dry out.",
   "flavorTexts": [
     {
-      "text": "The weakest Dragon-type Pok\u00e9mon, it lives in damp, shady places, so its body doesn\u2019t dry out.",
+      "text": "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn’t dry out.",
       "version": "x"
     },
     {
-      "text": "It\u2019s covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.",
+      "text": "It’s covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.",
       "version": "y"
     },
     {
-      "text": "The weakest Dragon-type Pok\u00e9mon, it lives in damp, shady places, so its body doesn\u2019t dry out.",
+      "text": "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn’t dry out.",
       "version": "omega-ruby"
     },
     {
-      "text": "It\u2019s covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.",
+      "text": "It’s covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "The weakest of all Dragon-type Pok\u00e9mon, it\u2019s unable to breathe if its skin dries out, so it sticks to shady places.",
+      "text": "The weakest of all Dragon-type Pokémon, it’s unable to breathe if its skin dries out, so it sticks to shady places.",
       "version": "sun"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/704.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヌメラ",
+    "roomaji": "Numera",
+    "ko": "미끄메라",
+    "zh-Hant": "黏黏寶",
+    "fr": "Mucuscule",
+    "de": "Viscora",
+    "es": "Goomy",
+    "it": "Goomy",
+    "en": "Goomy",
+    "ja": "ヌメラ",
+    "zh-Hans": "黏黏宝"
   }
 }

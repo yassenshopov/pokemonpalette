@@ -1,7 +1,7 @@
 {
   "id": 385,
   "name": "Jirachi",
-  "species": "Wish Pok\u00e9mon",
+  "species": "Wish Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -34,10 +34,10 @@
     "specialDefense": 100,
     "speed": 100
   },
-  "description": "A legend states that JIRACHI will make true any wish that is written on notes attached to its head when it awakens. If this POK\u00e9MON senses danger, it will fight without awakening.",
+  "description": "A legend states that JIRACHI will make true any wish that is written on notes attached to its head when it awakens. If this POKéMON senses danger, it will fight without awakening.",
   "flavorTexts": [
     {
-      "text": "A legend states that JIRACHI will make true any wish that is written on notes attached to its head when it awakens. If this POK\u00e9MON senses danger, it will fight without awakening.",
+      "text": "A legend states that JIRACHI will make true any wish that is written on notes attached to its head when it awakens. If this POKéMON senses danger, it will fight without awakening.",
       "version": "ruby"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/385.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/385.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジラーチ",
+    "roomaji": "Jirachi",
+    "ko": "지라치",
+    "zh-Hant": "基拉祈",
+    "fr": "Jirachi",
+    "de": "Jirachi",
+    "es": "Jirachi",
+    "it": "Jirachi",
+    "en": "Jirachi",
+    "ja": "ジラーチ",
+    "zh-Hans": "基拉祈"
   }
 }

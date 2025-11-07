@@ -1,7 +1,7 @@
 {
   "id": 797,
   "name": "Celesteela",
-  "species": "Launch Pok\u00e9mon",
+  "species": "Launch Pokémon",
   "type": [
     "Steel",
     "Flying"
@@ -49,7 +49,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Although it\u2019s alien to this world and a danger here, it\u2019s apparently a common organism in the world where it normally lives.",
+      "text": "Although it’s alien to this world and a danger here, it’s apparently a common organism in the world where it normally lives.",
       "version": "ultra-moon"
     }
   ],
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/797.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テッカグヤ",
+    "roomaji": "Tekkaguya",
+    "ko": "철화구야",
+    "zh-Hant": "鐵火輝夜",
+    "fr": "Bamboiselle",
+    "de": "Kaguron",
+    "es": "Celesteela",
+    "it": "Celesteela",
+    "en": "Celesteela",
+    "ja": "テッカグヤ",
+    "zh-Hans": "铁火辉夜"
   }
 }

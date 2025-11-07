@@ -1,7 +1,7 @@
 {
   "id": 1013,
   "name": "Sinistcha",
-  "species": "Matcha Pok\u00e9mon",
+  "species": "Matcha Pokémon",
   "type": [
     "Grass",
     "Ghost"
@@ -299,5 +299,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1013.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤバソチャ",
+    "ko": "그우린차",
+    "zh-Hant": "來悲粗茶",
+    "fr": "Théffroyable",
+    "de": "Fatalitcha",
+    "es": "Sinistcha",
+    "it": "Sinistcha",
+    "en": "Sinistcha",
+    "ja": "ヤバソチャ",
+    "zh-Hans": "来悲粗茶"
   }
 }

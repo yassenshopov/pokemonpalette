@@ -1,7 +1,7 @@
 {
   "id": 569,
   "name": "Garbodor",
-  "species": "Trash Heap Pok\u00e9mon",
+  "species": "Trash Heap Pokémon",
   "type": [
     "Poison"
   ],
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/569.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/569.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダストダス",
+    "roomaji": "Dustdas",
+    "ko": "더스트나",
+    "zh-Hant": "灰塵山",
+    "fr": "Miasmax",
+    "de": "Deponitox",
+    "es": "Garbodor",
+    "it": "Garbodor",
+    "en": "Garbodor",
+    "ja": "ダストダス",
+    "zh-Hans": "灰尘山"
   }
 }

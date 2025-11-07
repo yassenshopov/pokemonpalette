@@ -1,7 +1,7 @@
 {
   "id": 779,
   "name": "Bruxish",
-  "species": "Gnash Teeth Pok\u00e9mon",
+  "species": "Gnash Teeth Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -53,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "It stuns its prey with psychokinesis and then grinds them to mush with its strong teeth. Even Shellder\u2019s shell is no match for it.",
+      "text": "It stuns its prey with psychokinesis and then grinds them to mush with its strong teeth. Even Shellder’s shell is no match for it.",
       "version": "moon"
     },
     {
@@ -61,7 +61,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Its skin is thick enough to fend off Mareanie\u2019s spikes. With its robust teeth, Bruxish crunches up the spikes and eats them.",
+      "text": "Its skin is thick enough to fend off Mareanie’s spikes. With its robust teeth, Bruxish crunches up the spikes and eats them.",
       "version": "ultra-moon"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/779.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハギギシリ",
+    "roomaji": "Hagigishiri",
+    "ko": "치갈기",
+    "zh-Hant": "磨牙彩皮魚",
+    "fr": "Denticrisse",
+    "de": "Knirfish",
+    "es": "Bruxish",
+    "it": "Bruxish",
+    "en": "Bruxish",
+    "ja": "ハギギシリ",
+    "zh-Hans": "磨牙彩皮鱼"
   }
 }

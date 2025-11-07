@@ -1,7 +1,7 @@
 {
   "id": 84,
   "name": "Doduo",
-  "species": "Twin Bird Pok\u00e9mon",
+  "species": "Twin Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -57,11 +57,11 @@
       "version": "blue"
     },
     {
-      "text": "Its short wings make flying dif\u00ad ficult. Instead, this POK\u00e9MON runs at high speed on developed legs.",
+      "text": "Its short wings make flying dif­ ficult. Instead, this POKéMON runs at high speed on developed legs.",
       "version": "yellow"
     },
     {
-      "text": "By alternately raising and lower\u00ad ing its two heads, it balances itself to be more stable while running.",
+      "text": "By alternately raising and lower­ ing its two heads, it balances itself to be more stable while running.",
       "version": "gold"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/84.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/84.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドードー",
+    "roomaji": "Dodo",
+    "ko": "두두",
+    "zh-Hant": "嘟嘟",
+    "fr": "Doduo",
+    "de": "Dodu",
+    "es": "Doduo",
+    "it": "Doduo",
+    "en": "Doduo",
+    "ja": "ドードー",
+    "zh-Hans": "嘟嘟"
   }
 }

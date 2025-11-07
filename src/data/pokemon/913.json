@@ -1,7 +1,7 @@
 {
   "id": 913,
   "name": "Quaxwell",
-  "species": "Practicing Pok\u00e9mon",
+  "species": "Practicing Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 60,
     "speed": 65
   },
-  "description": "These Pok\u00e9mon constantly run through shallow waters to train their legs, then compete with each other to see which of them kicks most gracefully.",
+  "description": "These Pokémon constantly run through shallow waters to train their legs, then compete with each other to see which of them kicks most gracefully.",
   "flavorTexts": [
     {
-      "text": "These Pok\u00e9mon constantly run through shallow waters to train their legs, then compete with each other to see which of them kicks most gracefully.",
+      "text": "These Pokémon constantly run through shallow waters to train their legs, then compete with each other to see which of them kicks most gracefully.",
       "version": "scarlet"
     },
     {
-      "text": "The hardworking Quaxwell observes people and Pok\u00e9mon from various regions and incorporates their movements into its own dance routines.",
+      "text": "The hardworking Quaxwell observes people and Pokémon from various regions and incorporates their movements into its own dance routines.",
       "version": "violet"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/913.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウェルカモ",
+    "roomaji": "Welkamo",
+    "ko": "아꾸왁",
+    "zh-Hant": "湧躍鴨",
+    "fr": "Canarbello",
+    "de": "Fuentente",
+    "es": "Quaxwell",
+    "it": "Quaxwell",
+    "en": "Quaxwell",
+    "ja": "ウェルカモ",
+    "zh-Hans": "涌跃鸭"
   }
 }

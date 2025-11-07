@@ -1,7 +1,7 @@
 {
   "id": 288,
   "name": "Vigoroth",
-  "species": "Wild Monkey Pok\u00e9mon",
+  "species": "Wild Monkey Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,26 +29,26 @@
     "specialDefense": 55,
     "speed": 90
   },
-  "description": "VIGOROTH is always itching and agitated to go on a wild rampage. It simply can\u2019t tolerate sitting still for even a minute. This POK\u00e9MON\u2019s stress level rises if it can\u2019t be moving constantly.",
+  "description": "VIGOROTH is always itching and agitated to go on a wild rampage. It simply can’t tolerate sitting still for even a minute. This POKéMON’s stress level rises if it can’t be moving constantly.",
   "flavorTexts": [
     {
-      "text": "VIGOROTH is always itching and agitated to go on a wild rampage. It simply can\u2019t tolerate sitting still for even a minute. This POK\u00e9MON\u2019s stress level rises if it can\u2019t be moving constantly.",
+      "text": "VIGOROTH is always itching and agitated to go on a wild rampage. It simply can’t tolerate sitting still for even a minute. This POKéMON’s stress level rises if it can’t be moving constantly.",
       "version": "ruby"
     },
     {
-      "text": "VIGOROTH is simply incapable of remaining still. Even when it tries to sleep, the blood in its veins grows agitated, compelling this POK\u00e9MON to run wild throughout the jungle before it can settle down.",
+      "text": "VIGOROTH is simply incapable of remaining still. Even when it tries to sleep, the blood in its veins grows agitated, compelling this POKéMON to run wild throughout the jungle before it can settle down.",
       "version": "sapphire"
     },
     {
-      "text": "It can\u2019t keep still because its blood boils with energy. It runs through the fields and mountains all day to calm itself. If it doesn\u2019t, it can\u2019t sleep at night.",
+      "text": "It can’t keep still because its blood boils with energy. It runs through the fields and mountains all day to calm itself. If it doesn’t, it can’t sleep at night.",
       "version": "emerald"
     },
     {
-      "text": "It is always hungry because it won\u2019t stop rampaging. Even while it is eating, it can\u2019t keep still.",
+      "text": "It is always hungry because it won’t stop rampaging. Even while it is eating, it can’t keep still.",
       "version": "firered"
     },
     {
-      "text": "It is always hungry because it won\u2019t stop rampaging. Even while it is eating, it can\u2019t keep still.",
+      "text": "It is always hungry because it won’t stop rampaging. Even while it is eating, it can’t keep still.",
       "version": "leafgreen"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/288.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/288.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤルキモノ",
+    "roomaji": "Yarukimono",
+    "ko": "발바로",
+    "zh-Hant": "過動猿",
+    "fr": "Vigoroth",
+    "de": "Muntier",
+    "es": "Vigoroth",
+    "it": "Vigoroth",
+    "en": "Vigoroth",
+    "ja": "ヤルキモノ",
+    "zh-Hans": "过动猿"
   }
 }

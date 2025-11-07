@@ -1,7 +1,7 @@
 {
   "id": 978,
   "name": "Tatsugiri-curly",
-  "species": "Mimicry Pok\u00e9mon",
+  "species": "Mimicry Pokémon",
   "type": [
     "Dragon",
     "Water"
@@ -40,14 +40,14 @@
     "specialDefense": 95,
     "speed": 82
   },
-  "description": "This is a small dragon Pok\u00e9mon. It lives inside the mouth of Dondozo to protect itself from enemies on the outside.",
+  "description": "This is a small dragon Pokémon. It lives inside the mouth of Dondozo to protect itself from enemies on the outside.",
   "flavorTexts": [
     {
-      "text": "This is a small dragon Pok\u00e9mon. It lives inside the mouth of Dondozo to protect itself from enemies on the outside.",
+      "text": "This is a small dragon Pokémon. It lives inside the mouth of Dondozo to protect itself from enemies on the outside.",
       "version": "scarlet"
     },
     {
-      "text": "Tatsugiri is an extremely cunning Pok\u00e9mon. It feigns weakness to lure in prey, then orders its partner to attack.",
+      "text": "Tatsugiri is an extremely cunning Pokémon. It feigns weakness to lure in prey, then orders its partner to attack.",
       "version": "violet"
     }
   ],
@@ -291,5 +291,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/978.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シャリタツ",
+    "roomaji": "Syaritatsu",
+    "ko": "싸리용",
+    "zh-Hant": "米立龍",
+    "fr": "Nigirigon",
+    "de": "Nigiragi",
+    "es": "Tatsugiri",
+    "it": "Tatsugiri",
+    "en": "Tatsugiri",
+    "ja": "シャリタツ",
+    "zh-Hans": "米立龙"
   }
 }

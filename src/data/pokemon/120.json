@@ -1,7 +1,7 @@
 {
   "id": 120,
   "name": "Staryu",
-  "species": "Star Shape Pok\u00e9mon",
+  "species": "Star Shape Pokémon",
   "type": [
     "Water"
   ],
@@ -48,11 +48,11 @@
       "version": "black"
     },
     {
-      "text": "An enigmatic POK\u00e9MON that can effortlessly regenerate any appendage it loses in battle.",
+      "text": "An enigmatic POKéMON that can effortlessly regenerate any appendage it loses in battle.",
       "version": "red"
     },
     {
-      "text": "An enigmatic POK\u00e9MON that can effortlessly regenerate any appendage it loses in battle.",
+      "text": "An enigmatic POKéMON that can effortlessly regenerate any appendage it loses in battle.",
       "version": "blue"
     },
     {
@@ -60,7 +60,7 @@
       "version": "yellow"
     },
     {
-      "text": "At night, the cen\u00ad ter of its body slowly flickers with the same rhythm as a human heartbeat.",
+      "text": "At night, the cen­ ter of its body slowly flickers with the same rhythm as a human heartbeat.",
       "version": "gold"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/120.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/120.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒトデマン",
+    "roomaji": "Hitodeman",
+    "ko": "별가사리",
+    "zh-Hant": "海星星",
+    "fr": "Stari",
+    "de": "Sterndu",
+    "es": "Staryu",
+    "it": "Staryu",
+    "en": "Staryu",
+    "ja": "ヒトデマン",
+    "zh-Hans": "海星星"
   }
 }

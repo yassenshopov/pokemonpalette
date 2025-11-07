@@ -1,7 +1,7 @@
 {
   "id": 289,
   "name": "Slaking",
-  "species": "Lazy Pok\u00e9mon",
+  "species": "Lazy Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 65,
     "speed": 100
   },
-  "description": "SLAKING spends all day lying down and lolling about. It eats grass growing within its reach. If it eats all the grass it can reach, this POK\u00e9MON reluctantly moves to another spot.",
+  "description": "SLAKING spends all day lying down and lolling about. It eats grass growing within its reach. If it eats all the grass it can reach, this POKéMON reluctantly moves to another spot.",
   "flavorTexts": [
     {
-      "text": "SLAKING spends all day lying down and lolling about. It eats grass growing within its reach. If it eats all the grass it can reach, this POK\u00e9MON reluctantly moves to another spot.",
+      "text": "SLAKING spends all day lying down and lolling about. It eats grass growing within its reach. If it eats all the grass it can reach, this POKéMON reluctantly moves to another spot.",
       "version": "ruby"
     },
     {
-      "text": "Wherever SLAKING live, rings of over a yard in diameter appear in grassy fields. They are made by the POK\u00e9MON as it eats all the grass within reach while lying prone on the ground.",
+      "text": "Wherever SLAKING live, rings of over a yard in diameter appear in grassy fields. They are made by the POKéMON as it eats all the grass within reach while lying prone on the ground.",
       "version": "sapphire"
     },
     {
@@ -44,11 +44,11 @@
       "version": "emerald"
     },
     {
-      "text": "It is the world\u2019s most slothful POK\u00e9MON. However, it can exert horrifying power by releasing pent-up energy all at once.",
+      "text": "It is the world’s most slothful POKéMON. However, it can exert horrifying power by releasing pent-up energy all at once.",
       "version": "firered"
     },
     {
-      "text": "It is the world\u2019s most slothful POK\u00e9MON. However, it can exert horrifying power by releasing pent-up energy all at once.",
+      "text": "It is the world’s most slothful POKéMON. However, it can exert horrifying power by releasing pent-up energy all at once.",
       "version": "leafgreen"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/289.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/289.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ケッキング",
+    "roomaji": "Kekking",
+    "ko": "게을킹",
+    "zh-Hant": "請假王",
+    "fr": "Monaflèmit",
+    "de": "Letarking",
+    "es": "Slaking",
+    "it": "Slaking",
+    "en": "Slaking",
+    "ja": "ケッキング",
+    "zh-Hans": "请假王"
   }
 }

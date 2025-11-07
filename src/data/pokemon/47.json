@@ -1,7 +1,7 @@
 {
   "id": 47,
   "name": "Parasect",
-  "species": "Mushroom Pok\u00e9mon",
+  "species": "Mushroom Pokémon",
   "type": [
     "Bug",
     "Grass"
@@ -61,11 +61,11 @@
       "version": "yellow"
     },
     {
-      "text": "It stays mostly in dark, damp places, the preference not of the bug, but of the big mush\u00ad rooms on its back.",
+      "text": "It stays mostly in dark, damp places, the preference not of the bug, but of the big mush­ rooms on its back.",
       "version": "gold"
     },
     {
-      "text": "The larger the mushroom on its back grows, the stronger the mush\u00ad room spores it scatters.",
+      "text": "The larger the mushroom on its back grows, the stronger the mush­ room spores it scatters.",
       "version": "silver"
     }
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/47.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/47.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パラセクト",
+    "roomaji": "Parasect",
+    "ko": "파라섹트",
+    "zh-Hant": "派拉斯特",
+    "fr": "Parasect",
+    "de": "Parasek",
+    "es": "Parasect",
+    "it": "Parasect",
+    "en": "Parasect",
+    "ja": "パラセクト",
+    "zh-Hans": "派拉斯特"
   }
 }

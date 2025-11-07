@@ -1,7 +1,7 @@
 {
   "id": 806,
   "name": "Blacephalon",
-  "species": "Fireworks Pok\u00e9mon",
+  "species": "Fireworks Pokémon",
   "type": [
     "Fire",
     "Ghost"
@@ -34,14 +34,14 @@
     "specialDefense": 79,
     "speed": 107
   },
-  "description": "It slithers toward people. Then, without warning, it triggers the explosion of its own head. It\u2019s apparently one kind of Ultra Beast.",
+  "description": "It slithers toward people. Then, without warning, it triggers the explosion of its own head. It’s apparently one kind of Ultra Beast.",
   "flavorTexts": [
     {
-      "text": "It slithers toward people. Then, without warning, it triggers the explosion of its own head. It\u2019s apparently one kind of Ultra Beast.",
+      "text": "It slithers toward people. Then, without warning, it triggers the explosion of its own head. It’s apparently one kind of Ultra Beast.",
       "version": "ultra-sun"
     },
     {
-      "text": "A UB that appeared from an Ultra Wormhole, it causes explosions, then takes advantage of opponents\u2019 surprise to rob them of their vitality.",
+      "text": "A UB that appeared from an Ultra Wormhole, it causes explosions, then takes advantage of opponents’ surprise to rob them of their vitality.",
       "version": "ultra-moon"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/806.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ズガドーン",
+    "roomaji": "Zugadoon",
+    "ko": "두파팡",
+    "zh-Hant": "砰頭小丑",
+    "fr": "Pierroteknik",
+    "de": "Kopplosio",
+    "es": "Blacephalon",
+    "it": "Blacephalon",
+    "en": "Blacephalon",
+    "ja": "ズガドーン",
+    "zh-Hans": "砰头小丑"
   }
 }

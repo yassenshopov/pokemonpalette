@@ -1,7 +1,7 @@
 {
   "id": 164,
   "name": "Noctowl",
-  "species": "Owl Pok\u00e9mon",
+  "species": "Owl Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "When it needs to think, it rotates its head 180 de\u00ad grees to sharpen its intellectual power.",
+      "text": "When it needs to think, it rotates its head 180 de­ grees to sharpen its intellectual power.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "NOCTOWL never fails at catching prey in darkness. This POK\u00e9MON owes its success to its superior vision that allows it to see in minimal light, and to its soft,  supple wings that make no sound in flight.",
+      "text": "NOCTOWL never fails at catching prey in darkness. This POKéMON owes its success to its superior vision that allows it to see in minimal light, and to its soft,  supple wings that make no sound in flight.",
       "version": "ruby"
     },
     {
-      "text": "NOCTOWL never fails at catching prey in darkness. This POK\u00e9MON owes its success to its superior vision that allows it to see in minimal light, and to its soft,  supple wings that make no sound in flight.",
+      "text": "NOCTOWL never fails at catching prey in darkness. This POKéMON owes its success to its superior vision that allows it to see in minimal light, and to its soft,  supple wings that make no sound in flight.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/164.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/164.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヨルノズク",
+    "roomaji": "Yorunozuku",
+    "ko": "야부엉",
+    "zh-Hant": "貓頭夜鷹",
+    "fr": "Noarfang",
+    "de": "Noctuh",
+    "es": "Noctowl",
+    "it": "Noctowl",
+    "en": "Noctowl",
+    "ja": "ヨルノズク",
+    "zh-Hans": "猫头夜鹰"
   }
 }

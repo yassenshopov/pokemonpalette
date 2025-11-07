@@ -1,7 +1,7 @@
 {
   "id": 273,
   "name": "Seedot",
-  "species": "Acorn Pok\u00e9mon",
+  "species": "Acorn Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 30,
     "speed": 30
   },
-  "description": "SEEDOT attaches itself to a tree branch using the top of its head. It sucks moisture from the tree while hanging off the branch. The more water it drinks, the glossier this POK\u00e9MON\u2019s body becomes.",
+  "description": "SEEDOT attaches itself to a tree branch using the top of its head. It sucks moisture from the tree while hanging off the branch. The more water it drinks, the glossier this POKéMON’s body becomes.",
   "flavorTexts": [
     {
-      "text": "SEEDOT attaches itself to a tree branch using the top of its head. It sucks moisture from the tree while hanging off the branch. The more water it drinks, the glossier this POK\u00e9MON\u2019s body becomes.",
+      "text": "SEEDOT attaches itself to a tree branch using the top of its head. It sucks moisture from the tree while hanging off the branch. The more water it drinks, the glossier this POKéMON’s body becomes.",
       "version": "ruby"
     },
     {
-      "text": "SEEDOT looks exactly like an acorn when it is dangling from a tree branch. It startles other POK\u00e9MON by suddenly moving. This POK\u00e9MON polishes its body once a day using leaves.",
+      "text": "SEEDOT looks exactly like an acorn when it is dangling from a tree branch. It startles other POKéMON by suddenly moving. This POKéMON polishes its body once a day using leaves.",
       "version": "sapphire"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/273.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/273.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タネボー",
+    "roomaji": "Taneboh",
+    "ko": "도토링",
+    "zh-Hant": "橡實果",
+    "fr": "Grainipiot",
+    "de": "Samurzel",
+    "es": "Seedot",
+    "it": "Seedot",
+    "en": "Seedot",
+    "ja": "タネボー",
+    "zh-Hans": "橡实果"
   }
 }

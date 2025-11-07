@@ -1,7 +1,7 @@
 {
   "id": 258,
   "name": "Mudkip",
-  "species": "Mud Fish Pok\u00e9mon",
+  "species": "Mud Fish Pokémon",
   "type": [
     "Water"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 50,
     "speed": 40
   },
-  "description": "The fin on MUDKIP\u2019s head acts as highly sensitive radar. Using this fin to sense movements of water and air, this POK\u00e9MON can determine what is taking place around it without using its eyes.",
+  "description": "The fin on MUDKIP’s head acts as highly sensitive radar. Using this fin to sense movements of water and air, this POKéMON can determine what is taking place around it without using its eyes.",
   "flavorTexts": [
     {
-      "text": "The fin on MUDKIP\u2019s head acts as highly sensitive radar. Using this fin to sense movements of water and air, this POK\u00e9MON can determine what is taking place around it without using its eyes.",
+      "text": "The fin on MUDKIP’s head acts as highly sensitive radar. Using this fin to sense movements of water and air, this POKéMON can determine what is taking place around it without using its eyes.",
       "version": "ruby"
     },
     {
-      "text": "In water, MUDKIP breathes using the gills on its cheeks. If it is faced with a tight situation in battle, this POK\u00e9MON will unleash its amazing power - it can crush rocks bigger than itself.",
+      "text": "In water, MUDKIP breathes using the gills on its cheeks. If it is faced with a tight situation in battle, this POKéMON will unleash its amazing power - it can crush rocks bigger than itself.",
       "version": "sapphire"
     },
     {
-      "text": "On land, it can powerfully lift large boulders by planting its four feet and heaving. It sleeps by burying itself in soil at the water\u2019s edge.",
+      "text": "On land, it can powerfully lift large boulders by planting its four feet and heaving. It sleeps by burying itself in soil at the water’s edge.",
       "version": "emerald"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/258.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/258.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミズゴロウ",
+    "roomaji": "Mizugorou",
+    "ko": "물짱이",
+    "zh-Hant": "水躍魚",
+    "fr": "Gobou",
+    "de": "Hydropi",
+    "es": "Mudkip",
+    "it": "Mudkip",
+    "en": "Mudkip",
+    "ja": "ミズゴロウ",
+    "zh-Hans": "水跃鱼"
   }
 }

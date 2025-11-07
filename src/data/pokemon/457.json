@@ -1,7 +1,7 @@
 {
   "id": 457,
   "name": "Lumineon",
-  "species": "Neon Pok\u00e9mon",
+  "species": "Neon Pokémon",
   "type": [
     "Water"
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/457.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/457.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ネオラント",
+    "roomaji": "Neolant",
+    "ko": "네오라이트",
+    "zh-Hant": "霓虹魚",
+    "fr": "Luminéon",
+    "de": "Lumineon",
+    "es": "Lumineon",
+    "it": "Lumineon",
+    "en": "Lumineon",
+    "ja": "ネオラント",
+    "zh-Hans": "霓虹鱼"
   }
 }

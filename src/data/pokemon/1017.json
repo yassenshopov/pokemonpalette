@@ -1,7 +1,7 @@
 {
   "id": 1017,
   "name": "Ogerpon",
-  "species": "Mask Pok\u00e9mon",
+  "species": "Mask Pokémon",
   "type": [
     "Grass"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 96,
     "speed": 110
   },
-  "description": "This Pok\u00e9mon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks.",
+  "description": "This Pokémon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks.",
+      "text": "This Pokémon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks.",
       "version": "scarlet"
     },
     {
-      "text": "This mischief-loving Pok\u00e9mon is full of curiosity. It battles by drawing out the type-based energy contained within its masks.",
+      "text": "This mischief-loving Pokémon is full of curiosity. It battles by drawing out the type-based energy contained within its masks.",
       "version": "violet"
     }
   ],
@@ -287,5 +287,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1017.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オーガポン",
+    "ko": "오거폰",
+    "zh-Hant": "厄鬼椪",
+    "fr": "Ogerpon",
+    "de": "Ogerpon",
+    "es": "Ogerpon",
+    "it": "Ogerpon",
+    "en": "Ogerpon",
+    "ja": "オーガポン",
+    "zh-Hans": "厄诡椪"
   }
 }

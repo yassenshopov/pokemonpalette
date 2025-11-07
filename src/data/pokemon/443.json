@@ -1,7 +1,7 @@
 {
   "id": 443,
   "name": "Gible",
-  "species": "Land Shark Pok\u00e9mon",
+  "species": "Land Shark Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/443.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/443.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フカマル",
+    "roomaji": "Fukamaru",
+    "ko": "딥상어동",
+    "zh-Hant": "圓陸鯊",
+    "fr": "Griknot",
+    "de": "Kaumalat",
+    "es": "Gible",
+    "it": "Gible",
+    "en": "Gible",
+    "ja": "フカマル",
+    "zh-Hans": "圆陆鲨"
   }
 }

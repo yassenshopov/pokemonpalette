@@ -1,7 +1,7 @@
 {
   "id": 444,
   "name": "Gabite",
-  "species": "Cave Pok\u00e9mon",
+  "species": "Cave Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/444.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/444.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガバイト",
+    "roomaji": "Gabite",
+    "ko": "한바이트",
+    "zh-Hant": "尖牙陸鯊",
+    "fr": "Carmache",
+    "de": "Knarksel",
+    "es": "Gabite",
+    "it": "Gabite",
+    "en": "Gabite",
+    "ja": "ガバイト",
+    "zh-Hans": "尖牙陆鲨"
   }
 }

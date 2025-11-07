@@ -1,7 +1,7 @@
 {
   "id": 648,
   "name": "Meloetta-aria",
-  "species": "Melody Pok\u00e9mon",
+  "species": "Melody Pokémon",
   "type": [
     "Normal",
     "Psychic"
@@ -49,11 +49,11 @@
       "version": "white"
     },
     {
-      "text": "The melodies sung by Meloetta have the power to make Pok\u00e9mon that hear them happy or sad.",
+      "text": "The melodies sung by Meloetta have the power to make Pokémon that hear them happy or sad.",
       "version": "black-2"
     },
     {
-      "text": "The melodies sung by Meloetta have the power to make Pok\u00e9mon that hear them happy or sad.",
+      "text": "The melodies sung by Meloetta have the power to make Pokémon that hear them happy or sad.",
       "version": "white-2"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/648.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/648.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メロエッタ",
+    "roomaji": "Meloetta",
+    "ko": "메로엣타",
+    "zh-Hant": "美洛耶塔",
+    "fr": "Meloetta",
+    "de": "Meloetta",
+    "es": "Meloetta",
+    "it": "Meloetta",
+    "en": "Meloetta",
+    "ja": "メロエッタ",
+    "zh-Hans": "美洛耶塔"
   }
 }

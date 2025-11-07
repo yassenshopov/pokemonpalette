@@ -1,7 +1,7 @@
 {
   "id": 302,
   "name": "Sableye",
-  "species": "Darkness Pok\u00e9mon",
+  "species": "Darkness Pokémon",
   "type": [
     "Dark",
     "Ghost"
@@ -46,14 +46,14 @@
     "specialDefense": 65,
     "speed": 50
   },
-  "description": "SABLEYE lead quiet lives deep inside caverns. They are feared, however, because these POK\u00e9MON are thought to steal the spirits of people when their eyes burn with a sinister glow in the darkness.",
+  "description": "SABLEYE lead quiet lives deep inside caverns. They are feared, however, because these POKéMON are thought to steal the spirits of people when their eyes burn with a sinister glow in the darkness.",
   "flavorTexts": [
     {
-      "text": "SABLEYE lead quiet lives deep inside caverns. They are feared, however, because these POK\u00e9MON are thought to steal the spirits of people when their eyes burn with a sinister glow in the darkness.",
+      "text": "SABLEYE lead quiet lives deep inside caverns. They are feared, however, because these POKéMON are thought to steal the spirits of people when their eyes burn with a sinister glow in the darkness.",
       "version": "ruby"
     },
     {
-      "text": "SABLEYE digs the ground with sharpened claws to find rocks that it eats. Substances in the eaten rocks crystallize and rise up to the POK\u00e9MON\u2019s body surface.",
+      "text": "SABLEYE digs the ground with sharpened claws to find rocks that it eats. Substances in the eaten rocks crystallize and rise up to the POKéMON’s body surface.",
       "version": "sapphire"
     },
     {
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/302.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/302.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤミラミ",
+    "roomaji": "Yamirami",
+    "ko": "깜까미",
+    "zh-Hant": "勾魂眼",
+    "fr": "Ténéfix",
+    "de": "Zobiris",
+    "es": "Sableye",
+    "it": "Sableye",
+    "en": "Sableye",
+    "ja": "ヤミラミ",
+    "zh-Hans": "勾魂眼"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 171,
   "name": "Lanturn",
-  "species": "Light Pok\u00e9mon",
+  "species": "Light Pokémon",
   "type": [
     "Water",
     "Electric"
@@ -57,15 +57,15 @@
       "version": "silver"
     },
     {
-      "text": "This POK\u00e9MON uses the bright part of its body, which changed from a dorsal fin, to lure prey.",
+      "text": "This POKéMON uses the bright part of its body, which changed from a dorsal fin, to lure prey.",
       "version": "crystal"
     },
     {
-      "text": "LANTURN is nicknamed \u201cthe deep-sea star\u201d for its illuminated antenna. This POK\u00e9MON produces light by causing a chemical reaction between bacteria and its bodily fluids inside the antenna.",
+      "text": "LANTURN is nicknamed “the deep-sea star” for its illuminated antenna. This POKéMON produces light by causing a chemical reaction between bacteria and its bodily fluids inside the antenna.",
       "version": "ruby"
     },
     {
-      "text": "LANTURN is known to emit light. If you peer down into the dark sea from a ship at night, you can sometimes see this POK\u00e9MON\u2019s light rising from the depths where it swims. It gives the sea an appearance of a starlit night.",
+      "text": "LANTURN is known to emit light. If you peer down into the dark sea from a ship at night, you can sometimes see this POKéMON’s light rising from the depths where it swims. It gives the sea an appearance of a starlit night.",
       "version": "sapphire"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/171.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/171.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ランターン",
+    "roomaji": "Lantern",
+    "ko": "랜턴",
+    "zh-Hant": "電燈怪",
+    "fr": "Lanturn",
+    "de": "Lanturn",
+    "es": "Lanturn",
+    "it": "Lanturn",
+    "en": "Lanturn",
+    "ja": "ランターン",
+    "zh-Hans": "电灯怪"
   }
 }

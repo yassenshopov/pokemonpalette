@@ -1,7 +1,7 @@
 {
   "id": 216,
   "name": "Teddiursa",
-  "species": "Little Bear Pok\u00e9mon",
+  "species": "Little Bear Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "Before food be\u00ad comes scarce in wintertime, its habit is to hoard food in many hid\u00ad den locations.",
+      "text": "Before food be­ comes scarce in wintertime, its habit is to hoard food in many hid­ den locations.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "This POK\u00e9MON likes to lick its palms that are sweetened by being soaked in honey. TEDDIURSA concocts its own honey by blending fruits and pollen collected by BEEDRILL.",
+      "text": "This POKéMON likes to lick its palms that are sweetened by being soaked in honey. TEDDIURSA concocts its own honey by blending fruits and pollen collected by BEEDRILL.",
       "version": "ruby"
     },
     {
-      "text": "This POK\u00e9MON likes to lick its palms that are sweetened by being soaked in honey. TEDDIURSA concocts its own honey by blending fruits and pollen collected by BEEDRILL.",
+      "text": "This POKéMON likes to lick its palms that are sweetened by being soaked in honey. TEDDIURSA concocts its own honey by blending fruits and pollen collected by BEEDRILL.",
       "version": "sapphire"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/216.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/216.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒメグマ",
+    "roomaji": "Himeguma",
+    "ko": "깜지곰",
+    "zh-Hant": "熊寶寶",
+    "fr": "Teddiursa",
+    "de": "Teddiursa",
+    "es": "Teddiursa",
+    "it": "Teddiursa",
+    "en": "Teddiursa",
+    "ja": "ヒメグマ",
+    "zh-Hans": "熊宝宝"
   }
 }

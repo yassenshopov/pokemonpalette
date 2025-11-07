@@ -1,7 +1,7 @@
 {
   "id": 129,
   "name": "Magikarp",
-  "species": "Fish Pok\u00e9mon",
+  "species": "Fish Pokémon",
   "type": [
     "Water"
   ],
@@ -50,7 +50,7 @@
       "version": "yellow"
     },
     {
-      "text": "An underpowered, pathetic POK\u00e9MON. It may jump high on rare occasions, but never more than seven feet.",
+      "text": "An underpowered, pathetic POKéMON. It may jump high on rare occasions, but never more than seven feet.",
       "version": "gold"
     },
     {
@@ -194,5 +194,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/129.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/129.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コイキング",
+    "roomaji": "Koiking",
+    "ko": "잉어킹",
+    "zh-Hant": "鯉魚王",
+    "fr": "Magicarpe",
+    "de": "Karpador",
+    "es": "Magikarp",
+    "it": "Magikarp",
+    "en": "Magikarp",
+    "ja": "コイキング",
+    "zh-Hans": "鲤鱼王"
   }
 }

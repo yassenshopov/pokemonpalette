@@ -1,7 +1,7 @@
 {
   "id": 43,
   "name": "Oddish",
-  "species": "Weed Pok\u00e9mon",
+  "species": "Weed Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -55,7 +55,7 @@
       "version": "yellow"
     },
     {
-      "text": "Awakened by moon\u00ad light, it roams  actively at night. In the day, it stays quietly underground.",
+      "text": "Awakened by moon­ light, it roams  actively at night. In the day, it stays quietly underground.",
       "version": "gold"
     },
     {
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/43.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/43.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナゾノクサ",
+    "roomaji": "Nazonokusa",
+    "ko": "뚜벅쵸",
+    "zh-Hant": "走路草",
+    "fr": "Mystherbe",
+    "de": "Myrapla",
+    "es": "Oddish",
+    "it": "Oddish",
+    "en": "Oddish",
+    "ja": "ナゾノクサ",
+    "zh-Hans": "走路草"
   }
 }

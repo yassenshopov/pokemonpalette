@@ -1,7 +1,7 @@
 {
   "id": 511,
   "name": "Pansage",
-  "species": "Grass Monkey Pok\u00e9mon",
+  "species": "Grass Monkey Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,26 +35,26 @@
     "specialDefense": 48,
     "speed": 64
   },
-  "description": "This Pok\u00e9mon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.",
+  "description": "This Pokémon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.",
+      "text": "This Pokémon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.",
       "version": "black"
     },
     {
-      "text": "It shares the leaf on its head with weary-looking Pok\u00e9mon. These leaves are known to relieve stress.",
+      "text": "It shares the leaf on its head with weary-looking Pokémon. These leaves are known to relieve stress.",
       "version": "white"
     },
     {
-      "text": "It\u2019s good at finding berries and gathers them from all over. It\u2019s kind enough to share them with friends.",
+      "text": "It’s good at finding berries and gathers them from all over. It’s kind enough to share them with friends.",
       "version": "black-2"
     },
     {
-      "text": "It\u2019s good at finding berries and gathers them from all over. It\u2019s kind enough to share them with friends.",
+      "text": "It’s good at finding berries and gathers them from all over. It’s kind enough to share them with friends.",
       "version": "white-2"
     },
     {
-      "text": "It shares the leaf on its head with weary-looking Pok\u00e9mon. These leaves are known to relieve stress.",
+      "text": "It shares the leaf on its head with weary-looking Pokémon. These leaves are known to relieve stress.",
       "version": "x"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/511.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/511.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤナップ",
+    "roomaji": "Yanappu",
+    "ko": "야나프",
+    "zh-Hant": "花椰猴",
+    "fr": "Feuillajou",
+    "de": "Vegimak",
+    "es": "Pansage",
+    "it": "Pansage",
+    "en": "Pansage",
+    "ja": "ヤナップ",
+    "zh-Hans": "花椰猴"
   }
 }

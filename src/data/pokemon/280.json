@@ -1,7 +1,7 @@
 {
   "id": 280,
   "name": "Ralts",
-  "species": "Feeling Pok\u00e9mon",
+  "species": "Feeling Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -46,26 +46,26 @@
     "specialDefense": 35,
     "speed": 40
   },
-  "description": "RALTS senses the emotions of people using the horns on its head. This POK\u00e9MON rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.",
+  "description": "RALTS senses the emotions of people using the horns on its head. This POKéMON rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.",
   "flavorTexts": [
     {
-      "text": "RALTS senses the emotions of people using the horns on its head. This POK\u00e9MON rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.",
+      "text": "RALTS senses the emotions of people using the horns on its head. This POKéMON rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.",
       "version": "ruby"
     },
     {
-      "text": "RALTS has the ability to sense the emotions of people. If its TRAINER is in a cheerful mood, this POK\u00e9MON grows cheerful and joyous in the same way.",
+      "text": "RALTS has the ability to sense the emotions of people. If its TRAINER is in a cheerful mood, this POKéMON grows cheerful and joyous in the same way.",
       "version": "sapphire"
     },
     {
-      "text": "A RALTS has the power to sense the emotions of people and POK\u00e9MON with the horns on its head. It takes cover if it senses any hostility.",
+      "text": "A RALTS has the power to sense the emotions of people and POKéMON with the horns on its head. It takes cover if it senses any hostility.",
       "version": "emerald"
     },
     {
-      "text": "It is highly attuned to the emotions of people and POK\u00e9MON. It hides if it senses hostility.",
+      "text": "It is highly attuned to the emotions of people and POKéMON. It hides if it senses hostility.",
       "version": "firered"
     },
     {
-      "text": "It is highly attuned to the emotions of people and POK\u00e9MON. It hides if it senses hostility.",
+      "text": "It is highly attuned to the emotions of people and POKéMON. It hides if it senses hostility.",
       "version": "leafgreen"
     }
   ],
@@ -326,5 +326,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/280.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/280.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラルトス",
+    "roomaji": "Ralts",
+    "ko": "랄토스",
+    "zh-Hant": "拉魯拉絲",
+    "fr": "Tarsal",
+    "de": "Trasla",
+    "es": "Ralts",
+    "it": "Ralts",
+    "en": "Ralts",
+    "ja": "ラルトス",
+    "zh-Hans": "拉鲁拉丝"
   }
 }

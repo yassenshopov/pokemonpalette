@@ -1,7 +1,7 @@
 {
   "id": 485,
   "name": "Heatran",
-  "species": "Lava Dome Pok\u00e9mon",
+  "species": "Lava Dome Pokémon",
   "type": [
     "Fire",
     "Steel"
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/485.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/485.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒードラン",
+    "roomaji": "Heatran",
+    "ko": "히드런",
+    "zh-Hant": "席多藍恩",
+    "fr": "Heatran",
+    "de": "Heatran",
+    "es": "Heatran",
+    "it": "Heatran",
+    "en": "Heatran",
+    "ja": "ヒードラン",
+    "zh-Hans": "席多蓝恩"
   }
 }

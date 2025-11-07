@@ -1,7 +1,7 @@
 {
   "id": 1022,
   "name": "Iron-boulder",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Rock",
     "Psychic"
@@ -34,10 +34,10 @@
     "specialDefense": 108,
     "speed": 124
   },
-  "description": "It resembles a Pok\u00e9mon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
+  "description": "It resembles a Pokémon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
   "flavorTexts": [
     {
-      "text": "It resembles a Pok\u00e9mon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
+      "text": "It resembles a Pokémon described in a dubious magazine as a Terrakion that had been modified by an evil organization.",
       "version": "scarlet"
     },
     {
@@ -271,5 +271,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1022.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノイワオ",
+    "ko": "무쇠암석",
+    "zh-Hant": "铁磐岩",
+    "fr": "Roc-de-Fer",
+    "de": "Eisenfels",
+    "es": "Ferromole",
+    "it": "Massoferreo",
+    "en": "Iron Boulder",
+    "ja": "テツノイワオ",
+    "zh-Hans": "鐵磐岩"
   }
 }

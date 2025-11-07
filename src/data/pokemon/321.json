@@ -1,7 +1,7 @@
 {
   "id": 321,
   "name": "Wailord",
-  "species": "Float Whale Pok\u00e9mon",
+  "species": "Float Whale Pokémon",
   "type": [
     "Water"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 60
   },
-  "description": "WAILORD is the largest of all identified POK\u00e9MON up to now. This giant POK\u00e9MON swims languorously in the vast open sea, eating massive amounts of food at once with its enormous mouth.",
+  "description": "WAILORD is the largest of all identified POKéMON up to now. This giant POKéMON swims languorously in the vast open sea, eating massive amounts of food at once with its enormous mouth.",
   "flavorTexts": [
     {
-      "text": "WAILORD is the largest of all identified POK\u00e9MON up to now. This giant POK\u00e9MON swims languorously in the vast open sea, eating massive amounts of food at once with its enormous mouth.",
+      "text": "WAILORD is the largest of all identified POKéMON up to now. This giant POKéMON swims languorously in the vast open sea, eating massive amounts of food at once with its enormous mouth.",
       "version": "ruby"
     },
     {
-      "text": "When chasing prey, WAILORD herds them by leaping out of the water and making a humongous splash. It is breathtaking to see this POK\u00e9MON leaping out of the sea with others in its pod.",
+      "text": "When chasing prey, WAILORD herds them by leaping out of the water and making a humongous splash. It is breathtaking to see this POKéMON leaping out of the sea with others in its pod.",
       "version": "sapphire"
     },
     {
@@ -56,11 +56,11 @@
       "version": "emerald"
     },
     {
-      "text": "It is among the largest of all POK\u00e9MON. It herds prey in a pack then swallows the massed prey in one gulp.",
+      "text": "It is among the largest of all POKéMON. It herds prey in a pack then swallows the massed prey in one gulp.",
       "version": "firered"
     },
     {
-      "text": "It is among the largest of all POK\u00e9MON. It herds prey in a pack then swallows the massed prey in one gulp.",
+      "text": "It is among the largest of all POKéMON. It herds prey in a pack then swallows the massed prey in one gulp.",
       "version": "leafgreen"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/321.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/321.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ホエルオー",
+    "roomaji": "Whaloh",
+    "ko": "고래왕",
+    "zh-Hant": "吼鯨王",
+    "fr": "Wailord",
+    "de": "Wailord",
+    "es": "Wailord",
+    "it": "Wailord",
+    "en": "Wailord",
+    "ja": "ホエルオー",
+    "zh-Hans": "吼鲸王"
   }
 }

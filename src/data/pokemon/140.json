@@ -1,7 +1,7 @@
 {
   "id": 140,
   "name": "Kabuto",
-  "species": "Shellfish Pok\u00e9mon",
+  "species": "Shellfish Pokémon",
   "type": [
     "Rock",
     "Water"
@@ -46,18 +46,18 @@
     "specialDefense": 45,
     "speed": 55
   },
-  "description": "A POK\u00e9MON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
+  "description": "A POKéMON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
   "flavorTexts": [
     {
-      "text": "A POK\u00e9MON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
+      "text": "A POKéMON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
       "version": "red"
     },
     {
-      "text": "A POK\u00e9MON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
+      "text": "A POKéMON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
       "version": "blue"
     },
     {
-      "text": "A POK\u00e9MON that was recovered from a fossil. It uses the eyes on its back while hiding on the sea floor.",
+      "text": "A POKéMON that was recovered from a fossil. It uses the eyes on its back while hiding on the sea floor.",
       "version": "yellow"
     },
     {
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "This POK\u00e9MON lived in ancient times. On rare occasions, it has been discovered as a living fossil.",
+      "text": "This POKéMON lived in ancient times. On rare occasions, it has been discovered as a living fossil.",
       "version": "silver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/140.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/140.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カブト",
+    "roomaji": "Kabuto",
+    "ko": "투구",
+    "zh-Hant": "化石盔",
+    "fr": "Kabuto",
+    "de": "Kabuto",
+    "es": "Kabuto",
+    "it": "Kabuto",
+    "en": "Kabuto",
+    "ja": "カブト",
+    "zh-Hans": "化石盔"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 1023,
   "name": "Iron-crown",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -271,5 +271,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1023.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノカシラ",
+    "ko": "무쇠감투",
+    "zh-Hant": "铁头壳",
+    "fr": "Chef-de-Fer",
+    "de": "Eisenhaupt",
+    "es": "Ferrotesta",
+    "it": "Capoferreo",
+    "en": "Iron Crown",
+    "ja": "テツノカシラ",
+    "zh-Hans": "鐵頭殼"
   }
 }

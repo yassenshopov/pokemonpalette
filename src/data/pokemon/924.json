@@ -1,7 +1,7 @@
 {
   "id": 924,
   "name": "Tandemaus",
-  "species": "Couple Pok\u00e9mon",
+  "species": "Couple Pokémon",
   "type": [
     "Normal"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/924.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ワッカネズミ",
+    "roomaji": "Wakkanezumi",
+    "ko": "두리쥐",
+    "zh-Hant": "一對鼠",
+    "fr": "Compagnol",
+    "de": "Zwieps",
+    "es": "Tandemaus",
+    "it": "Tandemaus",
+    "en": "Tandemaus",
+    "ja": "ワッカネズミ",
+    "zh-Hans": "一对鼠"
   }
 }

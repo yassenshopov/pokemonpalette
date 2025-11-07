@@ -1,7 +1,7 @@
 {
   "id": 793,
   "name": "Nihilego",
-  "species": "Parasite Pok\u00e9mon",
+  "species": "Parasite Pokémon",
   "type": [
     "Rock",
     "Poison"
@@ -41,7 +41,7 @@
       "version": "sun"
     },
     {
-      "text": "One of the Ultra Beasts. It\u2019s unclear whether or not this Pok\u00e9mon is sentient, but sometimes it can be observed behaving like a young girl.",
+      "text": "One of the Ultra Beasts. It’s unclear whether or not this Pokémon is sentient, but sometimes it can be observed behaving like a young girl.",
       "version": "moon"
     },
     {
@@ -49,7 +49,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "It appeared in this world from an Ultra Wormhole. Nihilego appears to be a parasite that lives by feeding on people and Pok\u00e9mon.",
+      "text": "It appeared in this world from an Ultra Wormhole. Nihilego appears to be a parasite that lives by feeding on people and Pokémon.",
       "version": "ultra-moon"
     }
   ],
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/793.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウツロイド",
+    "roomaji": "Uturoid",
+    "ko": "텅비드",
+    "zh-Hant": "虛吾伊德",
+    "fr": "Zéroïd",
+    "de": "Anego",
+    "es": "Nihilego",
+    "it": "Nihilego",
+    "en": "Nihilego",
+    "ja": "ウツロイド",
+    "zh-Hans": "虚吾伊德"
   }
 }

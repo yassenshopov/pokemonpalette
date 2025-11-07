@@ -1,7 +1,7 @@
 {
   "id": 239,
   "name": "Elekid",
-  "species": "Electric Pok\u00e9mon",
+  "species": "Electric Pokémon",
   "type": [
     "Electric"
   ],
@@ -42,7 +42,7 @@
       "version": "gold"
     },
     {
-      "text": "Even in the most vicious storm, this POK\u00e9MON plays happily if thunder rumbles in the sky.",
+      "text": "Even in the most vicious storm, this POKéMON plays happily if thunder rumbles in the sky.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "ELEKID stores electricity in its body. If it touches metal and accidentally discharges all its built-up electricity, this POK\u00e9MON begins swinging its arms in circles to recharge itself.",
+      "text": "ELEKID stores electricity in its body. If it touches metal and accidentally discharges all its built-up electricity, this POKéMON begins swinging its arms in circles to recharge itself.",
       "version": "ruby"
     },
     {
-      "text": "ELEKID stores electricity in its body. If it touches metal and accidentally discharges all its built-up electricity, this POK\u00e9MON begins swinging its arms in circles to recharge itself.",
+      "text": "ELEKID stores electricity in its body. If it touches metal and accidentally discharges all its built-up electricity, this POKéMON begins swinging its arms in circles to recharge itself.",
       "version": "sapphire"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/239.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/239.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エレキッド",
+    "roomaji": "Elekid",
+    "ko": "에레키드",
+    "zh-Hant": "電擊怪",
+    "fr": "Élekid",
+    "de": "Elekid",
+    "es": "Elekid",
+    "it": "Elekid",
+    "en": "Elekid",
+    "ja": "エレキッド",
+    "zh-Hans": "电击怪"
   }
 }

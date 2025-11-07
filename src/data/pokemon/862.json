@@ -1,7 +1,7 @@
 {
   "id": 862,
   "name": "Obstagoon",
-  "species": "Blocking Pok\u00e9mon",
+  "species": "Blocking Pokémon",
   "type": [
     "Dark",
     "Normal"
@@ -46,10 +46,10 @@
     "specialDefense": 81,
     "speed": 95
   },
-  "description": "Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout\u2014this move is known as Obstruct.",
+  "description": "Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout—this move is known as Obstruct.",
   "flavorTexts": [
     {
-      "text": "Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout\u2014this move is known as Obstruct.",
+      "text": "Its voice is staggering in volume. Obstagoon has a tendency to take on a threatening posture and shout—this move is known as Obstruct.",
       "version": "sword"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/862.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タチフサグマ",
+    "roomaji": "Tachifusaguma",
+    "ko": "가로막구리",
+    "zh-Hant": "堵攔熊",
+    "fr": "Ixon",
+    "de": "Barrikadax",
+    "es": "Obstagoon",
+    "it": "Obstagoon",
+    "en": "Obstagoon",
+    "ja": "タチフサグマ",
+    "zh-Hans": "堵拦熊"
   }
 }

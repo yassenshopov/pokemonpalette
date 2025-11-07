@@ -1,7 +1,7 @@
 {
   "id": 187,
   "name": "Hoppip",
-  "species": "Cottonweed Pok\u00e9mon",
+  "species": "Cottonweed Pokémon",
   "type": [
     "Grass",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "This POK\u00e9MON drifts and floats with the wind. If it senses the approach of strong winds, HOPPIP links its leaves with other HOPPIP to prepare against being blown away.",
+      "text": "This POKéMON drifts and floats with the wind. If it senses the approach of strong winds, HOPPIP links its leaves with other HOPPIP to prepare against being blown away.",
       "version": "ruby"
     },
     {
-      "text": "This POK\u00e9MON drifts and floats with the wind. If it senses the approach of strong winds, HOPPIP links its leaves with other HOPPIP to prepare against being blown away.",
+      "text": "This POKéMON drifts and floats with the wind. If it senses the approach of strong winds, HOPPIP links its leaves with other HOPPIP to prepare against being blown away.",
       "version": "sapphire"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/187.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/187.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハネッコ",
+    "roomaji": "Hanecco",
+    "ko": "통통코",
+    "zh-Hant": "毽子草",
+    "fr": "Granivol",
+    "de": "Hoppspross",
+    "es": "Hoppip",
+    "it": "Hoppip",
+    "en": "Hoppip",
+    "ja": "ハネッコ",
+    "zh-Hans": "毽子草"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 780,
   "name": "Drampa",
-  "species": "Placid Pok\u00e9mon",
+  "species": "Placid Pokémon",
   "type": [
     "Normal",
     "Dragon"
@@ -53,15 +53,15 @@
       "version": "sun"
     },
     {
-      "text": "This Pok\u00e9mon is friendly to people and loves children most of all. It comes from deep in the mountains to play with children it likes in town.",
+      "text": "This Pokémon is friendly to people and loves children most of all. It comes from deep in the mountains to play with children it likes in town.",
       "version": "moon"
     },
     {
-      "text": "If a child it has made friends with is bullied, Drampa will find the bully\u2019s house and burn it to the ground.",
+      "text": "If a child it has made friends with is bullied, Drampa will find the bully’s house and burn it to the ground.",
       "version": "ultra-sun"
     },
     {
-      "text": "It appears in towns and plays with the children. Drampa will protect kids when they\u2019re in danger, so their moms don\u2019t have to worry.",
+      "text": "It appears in towns and plays with the children. Drampa will protect kids when they’re in danger, so their moms don’t have to worry.",
       "version": "ultra-moon"
     },
     {
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/780.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジジーロン",
+    "roomaji": "Jijilong",
+    "ko": "할비롱",
+    "zh-Hant": "老翁龍",
+    "fr": "Draïeul",
+    "de": "Sen-Long",
+    "es": "Drampa",
+    "it": "Drampa",
+    "en": "Drampa",
+    "ja": "ジジーロン",
+    "zh-Hans": "老翁龙"
   }
 }

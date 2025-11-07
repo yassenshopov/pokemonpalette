@@ -1,7 +1,7 @@
 {
   "id": 473,
   "name": "Mamoswine",
-  "species": "Twin Tusk Pok\u00e9mon",
+  "species": "Twin Tusk Pokémon",
   "type": [
     "Ice",
     "Ground"
@@ -61,7 +61,7 @@
       "version": "platinum"
     },
     {
-      "text": "A frozen MAMOSWINE was dug from ice dating back 10,000 years. This Pok\u00e9mon has been around a long, long, long time.",
+      "text": "A frozen MAMOSWINE was dug from ice dating back 10,000 years. This Pokémon has been around a long, long, long time.",
       "version": "heartgold"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/473.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/473.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マンムー",
+    "roomaji": "Mammoo",
+    "ko": "맘모꾸리",
+    "zh-Hant": "象牙豬",
+    "fr": "Mammochon",
+    "de": "Mamutel",
+    "es": "Mamoswine",
+    "it": "Mamoswine",
+    "en": "Mamoswine",
+    "ja": "マンムー",
+    "zh-Hans": "象牙猪"
   }
 }

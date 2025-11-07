@@ -1,7 +1,7 @@
 {
   "id": 303,
   "name": "Mawile",
-  "species": "Deceiver Pok\u00e9mon",
+  "species": "Deceiver Pokémon",
   "type": [
     "Steel",
     "Fairy"
@@ -46,14 +46,14 @@
     "specialDefense": 55,
     "speed": 50
   },
-  "description": "MAWHILE\u2019s huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, MAWHILE chomps it with its gaping jaws.",
+  "description": "MAWHILE’s huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, MAWHILE chomps it with its gaping jaws.",
   "flavorTexts": [
     {
-      "text": "MAWHILE\u2019s huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, MAWHILE chomps it with its gaping jaws.",
+      "text": "MAWHILE’s huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, MAWHILE chomps it with its gaping jaws.",
       "version": "ruby"
     },
     {
-      "text": "Don\u2019t be taken in by this POK\u00e9MON\u2019s cute face - it\u2019s very dangerous. MAWILE fools the foe into letting down its guard, then chomps down with its massive jaws. The steel jaws are really horns that have been transformed.",
+      "text": "Don’t be taken in by this POKéMON’s cute face - it’s very dangerous. MAWILE fools the foe into letting down its guard, then chomps down with its massive jaws. The steel jaws are really horns that have been transformed.",
       "version": "sapphire"
     },
     {
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/303.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/303.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クチート",
+    "roomaji": "Kucheat",
+    "ko": "입치트",
+    "zh-Hant": "大嘴娃",
+    "fr": "Mysdibule",
+    "de": "Flunkifer",
+    "es": "Mawile",
+    "it": "Mawile",
+    "en": "Mawile",
+    "ja": "クチート",
+    "zh-Hans": "大嘴娃"
   }
 }

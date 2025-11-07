@@ -1,7 +1,7 @@
 {
   "id": 395,
   "name": "Empoleon",
-  "species": "Emperor Pok\u00e9mon",
+  "species": "Emperor Pokémon",
   "type": [
     "Water",
     "Steel"
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/395.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/395.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エンペルト",
+    "roomaji": "Emperte",
+    "ko": "엠페르트",
+    "zh-Hant": "帝王拿波",
+    "fr": "Pingoléon",
+    "de": "Impoleon",
+    "es": "Empoleon",
+    "it": "Empoleon",
+    "en": "Empoleon",
+    "ja": "エンペルト",
+    "zh-Hans": "帝王拿波"
   }
 }

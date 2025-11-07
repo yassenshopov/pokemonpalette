@@ -1,7 +1,7 @@
 {
   "id": 642,
   "name": "Thundurus-incarnate",
-  "species": "Bolt Strike Pok\u00e9mon",
+  "species": "Bolt Strike Pokémon",
   "type": [
     "Electric",
     "Flying"
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/642.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/642.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ボルトロス",
+    "roomaji": "Voltolos",
+    "ko": "볼트로스",
+    "zh-Hant": "雷電雲",
+    "fr": "Fulguris",
+    "de": "Voltolos",
+    "es": "Thundurus",
+    "it": "Thundurus",
+    "en": "Thundurus",
+    "ja": "ボルトロス",
+    "zh-Hans": "雷电云"
   }
 }

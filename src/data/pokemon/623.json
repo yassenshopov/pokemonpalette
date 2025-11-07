@@ -1,7 +1,7 @@
 {
   "id": 623,
   "name": "Golurk",
-  "species": "Automaton Pok\u00e9mon",
+  "species": "Automaton Pokémon",
   "type": [
     "Ground",
     "Ghost"
@@ -53,19 +53,19 @@
       "version": "black"
     },
     {
-      "text": "It is said that Golurk were ordered to protect people and Pok\u00e9mon by the ancient people who made them.",
+      "text": "It is said that Golurk were ordered to protect people and Pokémon by the ancient people who made them.",
       "version": "white"
     },
     {
-      "text": "Golurk were created to protect people and Pok\u00e9mon. They run on a mysterious energy.",
+      "text": "Golurk were created to protect people and Pokémon. They run on a mysterious energy.",
       "version": "black-2"
     },
     {
-      "text": "Golurk were created to protect people and Pok\u00e9mon. They run on a mysterious energy.",
+      "text": "Golurk were created to protect people and Pokémon. They run on a mysterious energy.",
       "version": "white-2"
     },
     {
-      "text": "It is said that Golurk were ordered to protect people and Pok\u00e9mon by the ancient people who made them.",
+      "text": "It is said that Golurk were ordered to protect people and Pokémon by the ancient people who made them.",
       "version": "x"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/623.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/623.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴルーグ",
+    "roomaji": "Goloog",
+    "ko": "골루그",
+    "zh-Hant": "泥偶巨人",
+    "fr": "Golemastoc",
+    "de": "Golgantes",
+    "es": "Golurk",
+    "it": "Golurk",
+    "en": "Golurk",
+    "ja": "ゴルーグ",
+    "zh-Hans": "泥偶巨人"
   }
 }

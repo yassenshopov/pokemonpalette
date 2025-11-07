@@ -1,7 +1,7 @@
 {
   "id": 918,
   "name": "Spidops",
-  "species": "Trap Pok\u00e9mon",
+  "species": "Trap Pokémon",
   "type": [
     "Bug"
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/918.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ワナイダー",
+    "roomaji": "Wanaider",
+    "ko": "트래피더",
+    "zh-Hant": "操陷蛛",
+    "fr": "Filentrappe",
+    "de": "Spinsidias",
+    "es": "Spidops",
+    "it": "Spidops",
+    "en": "Spidops",
+    "ja": "ワナイダー",
+    "zh-Hans": "操陷蛛"
   }
 }

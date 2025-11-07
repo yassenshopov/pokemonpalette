@@ -1,7 +1,7 @@
 {
   "id": 166,
   "name": "Ledian",
-  "species": "Five Star Pok\u00e9mon",
+  "species": "Five Star Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "It is said that in lands with clean air, where the stars fill the sky, there live LEDIAN in countless numbers. There is a good reason for this - the POK\u00e9MON uses the light of the stars as its energy.",
+      "text": "It is said that in lands with clean air, where the stars fill the sky, there live LEDIAN in countless numbers. There is a good reason for this - the POKéMON uses the light of the stars as its energy.",
       "version": "ruby"
     },
     {
-      "text": "It is said that in lands with clean air, where the stars fill the sky, there live LEDIAN in countless numbers. There is a good reason for this - the POK\u00e9MON uses the light of the stars as its energy.",
+      "text": "It is said that in lands with clean air, where the stars fill the sky, there live LEDIAN in countless numbers. There is a good reason for this - the POKéMON uses the light of the stars as its energy.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/166.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/166.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レディアン",
+    "roomaji": "Redian",
+    "ko": "레디안",
+    "zh-Hant": "安瓢蟲",
+    "fr": "Coxyclaque",
+    "de": "Ledian",
+    "es": "Ledian",
+    "it": "Ledian",
+    "en": "Ledian",
+    "ja": "レディアン",
+    "zh-Hans": "安瓢虫"
   }
 }

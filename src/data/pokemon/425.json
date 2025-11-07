@@ -1,7 +1,7 @@
 {
   "id": 425,
   "name": "Drifloon",
-  "species": "Balloon Pok\u00e9mon",
+  "species": "Balloon Pokémon",
   "type": [
     "Ghost",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 44,
     "speed": 70
   },
-  "description": "A Pok\u00e9mon formed by the spirits of people and Pok\u00e9mon. It loves damp, humid seasons.",
+  "description": "A Pokémon formed by the spirits of people and Pokémon. It loves damp, humid seasons.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon formed by the spirits of people and Pok\u00e9mon. It loves damp, humid seasons.",
+      "text": "A Pokémon formed by the spirits of people and Pokémon. It loves damp, humid seasons.",
       "version": "diamond"
     },
     {
@@ -57,7 +57,7 @@
       "version": "pearl"
     },
     {
-      "text": "Because of the way it floats aimlessly, an old folktale calls it a \u201cSignpost for Wandering Spirits.\u201d",
+      "text": "Because of the way it floats aimlessly, an old folktale calls it a “Signpost for Wandering Spirits.”",
       "version": "platinum"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/425.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/425.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フワンテ",
+    "roomaji": "Fuwante",
+    "ko": "흔들풍손",
+    "zh-Hant": "飄飄球",
+    "fr": "Baudrive",
+    "de": "Driftlon",
+    "es": "Drifloon",
+    "it": "Drifloon",
+    "en": "Drifloon",
+    "ja": "フワンテ",
+    "zh-Hans": "飘飘球"
   }
 }

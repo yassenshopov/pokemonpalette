@@ -1,7 +1,7 @@
 {
   "id": 497,
   "name": "Serperior",
-  "species": "Regal Pok\u00e9mon",
+  "species": "Regal Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 95,
     "speed": 113
   },
-  "description": "It can stop its opponents\u2019 movements with just a glare. It takes in solar energy and boosts it internally.",
+  "description": "It can stop its opponents’ movements with just a glare. It takes in solar energy and boosts it internally.",
   "flavorTexts": [
     {
-      "text": "It can stop its opponents\u2019 movements with just a glare. It takes in solar energy and boosts it internally.",
+      "text": "It can stop its opponents’ movements with just a glare. It takes in solar energy and boosts it internally.",
       "version": "black"
     },
     {
@@ -46,15 +46,15 @@
       "version": "white"
     },
     {
-      "text": "It only gives its all against strong opponents who are not fazed by the glare from Serperior\u2019s noble eyes.",
+      "text": "It only gives its all against strong opponents who are not fazed by the glare from Serperior’s noble eyes.",
       "version": "black-2"
     },
     {
-      "text": "It only gives its all against strong opponents who are not fazed by the glare from Serperior\u2019s noble eyes.",
+      "text": "It only gives its all against strong opponents who are not fazed by the glare from Serperior’s noble eyes.",
       "version": "white-2"
     },
     {
-      "text": "It only gives its all against strong opponents who are not fazed by the glare from Serperior\u2019s noble eyes.",
+      "text": "It only gives its all against strong opponents who are not fazed by the glare from Serperior’s noble eyes.",
       "version": "x"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/497.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/497.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジャローダ",
+    "roomaji": "Jalorda",
+    "ko": "샤로다",
+    "zh-Hant": "君主蛇",
+    "fr": "Majaspic",
+    "de": "Serpiroyal",
+    "es": "Serperior",
+    "it": "Serperior",
+    "en": "Serperior",
+    "ja": "ジャローダ",
+    "zh-Hans": "君主蛇"
   }
 }

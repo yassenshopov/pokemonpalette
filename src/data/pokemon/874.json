@@ -1,7 +1,7 @@
 {
   "id": 874,
   "name": "Stonjourner",
-  "species": "Big Rock Pok\u00e9mon",
+  "species": "Big Rock Pokémon",
   "type": [
     "Rock"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 20,
     "speed": 70
   },
-  "description": "It stands in grasslands, watching the sun\u2019s descent from zenith to horizon. This Pok\u00e9mon has a talent for delivering dynamic kicks.",
+  "description": "It stands in grasslands, watching the sun’s descent from zenith to horizon. This Pokémon has a talent for delivering dynamic kicks.",
   "flavorTexts": [
     {
-      "text": "It stands in grasslands, watching the sun\u2019s descent from zenith to horizon. This Pok\u00e9mon has a talent for delivering dynamic kicks.",
+      "text": "It stands in grasslands, watching the sun’s descent from zenith to horizon. This Pokémon has a talent for delivering dynamic kicks.",
       "version": "sword"
     },
     {
@@ -266,5 +266,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/874.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イシヘンジン",
+    "roomaji": "Ishihengin",
+    "ko": "돌헨진",
+    "zh-Hant": "巨石丁",
+    "fr": "Dolman",
+    "de": "Humanolith",
+    "es": "Stonjourner",
+    "it": "Stonjourner",
+    "en": "Stonjourner",
+    "ja": "イシヘンジン",
+    "zh-Hans": "巨石丁"
   }
 }

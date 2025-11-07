@@ -1,7 +1,7 @@
 {
   "id": 528,
   "name": "Swoobat",
-  "species": "Courting Pok\u00e9mon",
+  "species": "Courting Pokémon",
   "type": [
     "Psychic",
     "Flying"
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/528.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/528.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ココロモリ",
+    "roomaji": "Kokoromori",
+    "ko": "맘박쥐",
+    "zh-Hant": "心蝙蝠",
+    "fr": "Rhinolove",
+    "de": "Fletiamo",
+    "es": "Swoobat",
+    "it": "Swoobat",
+    "en": "Swoobat",
+    "ja": "ココロモリ",
+    "zh-Hans": "心蝙蝠"
   }
 }

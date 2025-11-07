@@ -1,7 +1,7 @@
 {
   "id": 90,
   "name": "Shellder",
-  "species": "Bivalve Pok\u00e9mon",
+  "species": "Bivalve Pokémon",
   "type": [
     "Water"
   ],
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "It swims facing backward by open\u00ad ing and closing its two-piece shell. It is surprisingly fast.",
+      "text": "It swims facing backward by open­ ing and closing its two-piece shell. It is surprisingly fast.",
       "version": "gold"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/90.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/90.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シェルダー",
+    "roomaji": "Shellder",
+    "ko": "셀러",
+    "zh-Hant": "大舌貝",
+    "fr": "Kokiyas",
+    "de": "Muschas",
+    "es": "Shellder",
+    "it": "Shellder",
+    "en": "Shellder",
+    "ja": "シェルダー",
+    "zh-Hans": "大舌贝"
   }
 }

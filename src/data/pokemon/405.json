@@ -1,7 +1,7 @@
 {
   "id": 405,
   "name": "Luxray",
-  "species": "Gleam Eyes Pok\u00e9mon",
+  "species": "Gleam Eyes Pokémon",
   "type": [
     "Electric"
   ],
@@ -56,11 +56,11 @@
       "version": "platinum"
     },
     {
-      "text": "LUXRAY\u2019s ability to see through objects comes in handy when it\u2019s scouting for danger.",
+      "text": "LUXRAY’s ability to see through objects comes in handy when it’s scouting for danger.",
       "version": "heartgold"
     },
     {
-      "text": "LUXRAY\u2019s ability to see through objects comes in handy when it\u2019s scouting for danger.",
+      "text": "LUXRAY’s ability to see through objects comes in handy when it’s scouting for danger.",
       "version": "soulsilver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/405.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/405.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レントラー",
+    "roomaji": "Rentorar",
+    "ko": "렌트라",
+    "zh-Hant": "倫琴貓",
+    "fr": "Luxray",
+    "de": "Luxtra",
+    "es": "Luxray",
+    "it": "Luxray",
+    "en": "Luxray",
+    "ja": "レントラー",
+    "zh-Hans": "伦琴猫"
   }
 }

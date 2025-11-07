@@ -1,7 +1,7 @@
 {
   "id": 757,
   "name": "Salandit",
-  "species": "Toxic Lizard Pok\u00e9mon",
+  "species": "Toxic Lizard Pokémon",
   "type": [
     "Poison",
     "Fire"
@@ -47,19 +47,19 @@
       "version": "sun"
     },
     {
-      "text": "Volcanoes or dry, craggy places are its home. It emanates a sweet-smelling poisonous gas that attracts bug Pok\u00e9mon, then attacks them.",
+      "text": "Volcanoes or dry, craggy places are its home. It emanates a sweet-smelling poisonous gas that attracts bug Pokémon, then attacks them.",
       "version": "moon"
     },
     {
-      "text": "The males will do whatever the females tell them. They give the females most of their food. Due to malnutrition, the males can\u2019t evolve.",
+      "text": "The males will do whatever the females tell them. They give the females most of their food. Due to malnutrition, the males can’t evolve.",
       "version": "ultra-sun"
     },
     {
-      "text": "It weakens opponents and sends them reeling with its poisonous gas. Salandit doesn\u2019t deal well with Spinda, since it\u2019s always reeling.",
+      "text": "It weakens opponents and sends them reeling with its poisonous gas. Salandit doesn’t deal well with Spinda, since it’s always reeling.",
       "version": "ultra-moon"
     },
     {
-      "text": "Its venom sacs produce a fluid that this Pok\u00e9mon then heats up with the flame in its tail. This process creates Salandit\u2019s poisonous gas.",
+      "text": "Its venom sacs produce a fluid that this Pokémon then heats up with the flame in its tail. This process creates Salandit’s poisonous gas.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/757.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤトウモリ",
+    "roomaji": "Yatoumori",
+    "ko": "야도뇽",
+    "zh-Hant": "夜盜火蜥",
+    "fr": "Tritox",
+    "de": "Molunk",
+    "es": "Salandit",
+    "it": "Salandit",
+    "en": "Salandit",
+    "ja": "ヤトウモリ",
+    "zh-Hans": "夜盗火蜥"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 593,
   "name": "Jellicent",
-  "species": "Floating Pok\u00e9mon",
+  "species": "Floating Pokémon",
   "type": [
     "Water",
     "Ghost"
@@ -46,10 +46,10 @@
     "specialDefense": 105,
     "speed": 60
   },
-  "description": "The fate of the ships and crew that wander into Jellicent\u2019s habitat: all sunken, all lost, all vanished.",
+  "description": "The fate of the ships and crew that wander into Jellicent’s habitat: all sunken, all lost, all vanished.",
   "flavorTexts": [
     {
-      "text": "The fate of the ships and crew that wander into Jellicent\u2019s habitat: all sunken, all lost, all vanished.",
+      "text": "The fate of the ships and crew that wander into Jellicent’s habitat: all sunken, all lost, all vanished.",
       "version": "black"
     },
     {
@@ -57,15 +57,15 @@
       "version": "white"
     },
     {
-      "text": "Its body is mostly seawater. It\u2019s said there\u2019s a castle of ships Jellicent have sunk on the seafloor.",
+      "text": "Its body is mostly seawater. It’s said there’s a castle of ships Jellicent have sunk on the seafloor.",
       "version": "black-2"
     },
     {
-      "text": "Its body is mostly seawater. It\u2019s said there\u2019s a castle of ships Jellicent have sunk on the seafloor.",
+      "text": "Its body is mostly seawater. It’s said there’s a castle of ships Jellicent have sunk on the seafloor.",
       "version": "white-2"
     },
     {
-      "text": "Its body is mostly seawater. It\u2019s said there\u2019s a castle of ships Jellicent have sunk on the seafloor.",
+      "text": "Its body is mostly seawater. It’s said there’s a castle of ships Jellicent have sunk on the seafloor.",
       "version": "x"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/593.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/593.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブルンゲル",
+    "roomaji": "Burungel",
+    "ko": "탱탱겔",
+    "zh-Hant": "胖嘟嘟",
+    "fr": "Moyade",
+    "de": "Apoquallyp",
+    "es": "Jellicent",
+    "it": "Jellicent",
+    "en": "Jellicent",
+    "ja": "ブルンゲル",
+    "zh-Hans": "胖嘟嘟"
   }
 }

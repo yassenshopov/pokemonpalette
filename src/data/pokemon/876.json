@@ -1,7 +1,7 @@
 {
   "id": 876,
   "name": "Indeedee-male",
-  "species": "Emotion Pok\u00e9mon",
+  "species": "Emotion Pokémon",
   "type": [
     "Psychic",
     "Normal"
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/876.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イエッサン",
+    "roomaji": "Yessan",
+    "ko": "에써르",
+    "zh-Hant": "愛管侍",
+    "fr": "Wimessir",
+    "de": "Servol",
+    "es": "Indeedee",
+    "it": "Indeedee",
+    "en": "Indeedee",
+    "ja": "イエッサン",
+    "zh-Hans": "爱管侍"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 65,
   "name": "Alakazam",
-  "species": "Psi Pok\u00e9mon",
+  "species": "Psi Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 95,
     "speed": 120
   },
-  "description": "Its brain can out\u00ad perform a super\u00ad computer. Its intelligence quotient is said to be 5,000.",
+  "description": "Its brain can out­ perform a super­ computer. Its intelligence quotient is said to be 5,000.",
   "flavorTexts": [
     {
-      "text": "Its brain can out\u00ad perform a super\u00ad computer. Its intelligence quotient is said to be 5,000.",
+      "text": "Its brain can out­ perform a super­ computer. Its intelligence quotient is said to be 5,000.",
       "version": "red"
     },
     {
-      "text": "Its brain can out\u00ad perform a super\u00ad computer. Its intelligence quotient is said to be 5,000.",
+      "text": "Its brain can out­ perform a super­ computer. Its intelligence quotient is said to be 5,000.",
       "version": "blue"
     },
     {
-      "text": "A POK\u00e9MON that can memorize anything. It never forgets what it learns-- that's why this POK\u00e9MON is smart.",
+      "text": "A POKéMON that can memorize anything. It never forgets what it learns-- that's why this POKéMON is smart.",
       "version": "yellow"
     },
     {
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Its brain cells multiply continu\u00ad ally until it dies. As a result, it remembers everything.",
+      "text": "Its brain cells multiply continu­ ally until it dies. As a result, it remembers everything.",
       "version": "silver"
     }
   ],
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/65.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/65.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フーディン",
+    "roomaji": "Foodin",
+    "ko": "후딘",
+    "zh-Hant": "胡地",
+    "fr": "Alakazam",
+    "de": "Simsala",
+    "es": "Alakazam",
+    "it": "Alakazam",
+    "en": "Alakazam",
+    "ja": "フーディン",
+    "zh-Hans": "胡地"
   }
 }

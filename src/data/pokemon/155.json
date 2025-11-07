@@ -1,7 +1,7 @@
 {
   "id": 155,
   "name": "Cyndaquil",
-  "species": "Fire Mouse Pok\u00e9mon",
+  "species": "Fire Mouse Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "y"
     },
     {
-      "text": "It is timid, and always curls it\u00ad self up in a ball. If attacked, it flares up its back for protection.",
+      "text": "It is timid, and always curls it­ self up in a ball. If attacked, it flares up its back for protection.",
       "version": "gold"
     },
     {
@@ -54,7 +54,7 @@
       "version": "crystal"
     },
     {
-      "text": "CYNDAQUIL protects itself by flaring up the flames on its back. The flames are vigorous if the POK\u00e9MON is angry. However, if it is tired, the flames splutter fitfully with incomplete combustion.",
+      "text": "CYNDAQUIL protects itself by flaring up the flames on its back. The flames are vigorous if the POKéMON is angry. However, if it is tired, the flames splutter fitfully with incomplete combustion.",
       "version": "ruby"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/155.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/155.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒノアラシ",
+    "roomaji": "Hinoarashi",
+    "ko": "브케인",
+    "zh-Hant": "火球鼠",
+    "fr": "Héricendre",
+    "de": "Feurigel",
+    "es": "Cyndaquil",
+    "it": "Cyndaquil",
+    "en": "Cyndaquil",
+    "ja": "ヒノアラシ",
+    "zh-Hans": "火球鼠"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 798,
   "name": "Kartana",
-  "species": "Drawn Sword Pok\u00e9mon",
+  "species": "Drawn Sword Pokémon",
   "type": [
     "Grass",
     "Steel"
@@ -45,11 +45,11 @@
       "version": "moon"
     },
     {
-      "text": "This Ultra Beast\u2019s body, which is as thin as paper, is like a sharpened sword.",
+      "text": "This Ultra Beast’s body, which is as thin as paper, is like a sharpened sword.",
       "version": "ultra-sun"
     },
     {
-      "text": "Although it\u2019s alien to this world and a danger here, it\u2019s apparently a common organism in the world where it normally lives.",
+      "text": "Although it’s alien to this world and a danger here, it’s apparently a common organism in the world where it normally lives.",
       "version": "ultra-moon"
     }
   ],
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/798.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カミツルギ",
+    "roomaji": "Kamiturugi",
+    "ko": "종이신도",
+    "zh-Hant": "紙御劍",
+    "fr": "Katagami",
+    "de": "Katagami",
+    "es": "Kartana",
+    "it": "Kartana",
+    "en": "Kartana",
+    "ja": "カミツルギ",
+    "zh-Hans": "纸御剑"
   }
 }

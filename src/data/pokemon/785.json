@@ -1,7 +1,7 @@
 {
   "id": 785,
   "name": "Tapu-koko",
-  "species": "Land Spirit Pok\u00e9mon",
+  "species": "Land Spirit Pokémon",
   "type": [
     "Electric",
     "Fairy"
@@ -51,7 +51,7 @@
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s called a guardian deity, if a person or Pok\u00e9mon puts it in a bad mood, it will become a malevolent deity and attack.",
+      "text": "Although it’s called a guardian deity, if a person or Pokémon puts it in a bad mood, it will become a malevolent deity and attack.",
       "version": "ultra-sun"
     },
     {
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/785.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カプ・コケコ",
+    "roomaji": "Kokeko",
+    "ko": "카푸꼬꼬꼭",
+    "zh-Hant": "卡璞・鳴鳴",
+    "fr": "Tokorico",
+    "de": "Kapu-Riki",
+    "es": "Tapu Koko",
+    "it": "Tapu Koko",
+    "en": "Tapu Koko",
+    "ja": "カプ・コケコ",
+    "zh-Hans": "卡璞・鸣鸣"
   }
 }

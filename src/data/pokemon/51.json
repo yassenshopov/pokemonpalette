@@ -1,7 +1,7 @@
 {
   "id": 51,
   "name": "Dugtrio",
-  "species": "Mole Pok\u00e9mon",
+  "species": "Mole Pokémon",
   "type": [
     "Ground"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Extremely power\u00ad ful, they can DIG through even the hardest ground to a depth of over 60 miles.",
+      "text": "Extremely power­ ful, they can DIG through even the hardest ground to a depth of over 60 miles.",
       "version": "silver"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/51.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/51.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダグトリオ",
+    "roomaji": "Dugtrio",
+    "ko": "닥트리오",
+    "zh-Hant": "三地鼠",
+    "fr": "Triopikeur",
+    "de": "Digdri",
+    "es": "Dugtrio",
+    "it": "Dugtrio",
+    "en": "Dugtrio",
+    "ja": "ダグトリオ",
+    "zh-Hans": "三地鼠"
   }
 }

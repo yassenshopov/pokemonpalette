@@ -1,7 +1,7 @@
 {
   "id": 742,
   "name": "Cutiefly",
-  "species": "Bee Fly Pok\u00e9mon",
+  "species": "Bee Fly Pokémon",
   "type": [
     "Bug",
     "Fairy"
@@ -46,10 +46,10 @@
     "specialDefense": 40,
     "speed": 84
   },
-  "description": "It feeds on the nectar and pollen of flowers. Because it\u2019s able to sense auras, it can identify which flowers are about to bloom.",
+  "description": "It feeds on the nectar and pollen of flowers. Because it’s able to sense auras, it can identify which flowers are about to bloom.",
   "flavorTexts": [
     {
-      "text": "It feeds on the nectar and pollen of flowers. Because it\u2019s able to sense auras, it can identify which flowers are about to bloom.",
+      "text": "It feeds on the nectar and pollen of flowers. Because it’s able to sense auras, it can identify which flowers are about to bloom.",
       "version": "sun"
     },
     {
@@ -61,11 +61,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Cutiefly can pick up the auras of living things. It skillfully reads those auras to predict its foes\u2019 movements and make fools of them.",
+      "text": "Cutiefly can pick up the auras of living things. It skillfully reads those auras to predict its foes’ movements and make fools of them.",
       "version": "ultra-moon"
     },
     {
-      "text": "Nectar and pollen are its favorite fare. You can find Cutiefly hovering around Gossifleur, trying to get some of Gossifleur\u2019s pollen.",
+      "text": "Nectar and pollen are its favorite fare. You can find Cutiefly hovering around Gossifleur, trying to get some of Gossifleur’s pollen.",
       "version": "sword"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/742.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アブリー",
+    "roomaji": "Abuly",
+    "ko": "에블리",
+    "zh-Hant": "萌虻",
+    "fr": "Bombydou",
+    "de": "Wommel",
+    "es": "Cutiefly",
+    "it": "Cutiefly",
+    "en": "Cutiefly",
+    "ja": "アブリー",
+    "zh-Hans": "萌虻"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 471,
   "name": "Glaceon",
-  "species": "Fresh Snow Pok\u00e9mon",
+  "species": "Fresh Snow Pokémon",
   "type": [
     "Ice"
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/471.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/471.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グレイシア",
+    "roomaji": "Glacia",
+    "ko": "글레이시아",
+    "zh-Hant": "冰伊布",
+    "fr": "Givrali",
+    "de": "Glaziola",
+    "es": "Glaceon",
+    "it": "Glaceon",
+    "en": "Glaceon",
+    "ja": "グレイシア",
+    "zh-Hans": "冰伊布"
   }
 }

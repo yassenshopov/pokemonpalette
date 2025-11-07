@@ -1,7 +1,7 @@
 {
   "id": 533,
   "name": "Gurdurr",
-  "species": "Muscular Pok\u00e9mon",
+  "species": "Muscular Pokémon",
   "type": [
     "Fighting"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 50,
     "speed": 40
   },
-  "description": "This Pok\u00e9mon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.",
+  "description": "This Pokémon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.",
+      "text": "This Pokémon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.",
       "version": "black"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/533.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/533.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドテッコツ",
+    "roomaji": "Dotekkotsu",
+    "ko": "토쇠골",
+    "zh-Hant": "鐵骨土人",
+    "fr": "Ouvrifier",
+    "de": "Strepoli",
+    "es": "Gurdurr",
+    "it": "Gurdurr",
+    "en": "Gurdurr",
+    "ja": "ドテッコツ",
+    "zh-Hans": "铁骨土人"
   }
 }

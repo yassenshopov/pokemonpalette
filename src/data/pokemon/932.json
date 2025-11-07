@@ -1,7 +1,7 @@
 {
   "id": 932,
   "name": "Nacli",
-  "species": "Rock Salt Pok\u00e9mon",
+  "species": "Rock Salt Pokémon",
   "type": [
     "Rock"
   ],
@@ -48,7 +48,7 @@
       "version": "scarlet"
     },
     {
-      "text": "The ground scrapes its body as it travels, causing it to leave salt behind. Salt is constantly being created and replenished inside Nacli\u2019s body.",
+      "text": "The ground scrapes its body as it travels, causing it to leave salt behind. Salt is constantly being created and replenished inside Nacli’s body.",
       "version": "violet"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/932.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コジオ",
+    "roomaji": "Kojio",
+    "ko": "베베솔트",
+    "zh-Hant": "鹽石寶",
+    "fr": "Selutin",
+    "de": "Geosali",
+    "es": "Nacli",
+    "it": "Nacli",
+    "en": "Nacli",
+    "ja": "コジオ",
+    "zh-Hans": "盐石宝"
   }
 }

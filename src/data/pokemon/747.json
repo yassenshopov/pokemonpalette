@@ -1,7 +1,7 @@
 {
   "id": 747,
   "name": "Mareanie",
-  "species": "Brutal Star Pok\u00e9mon",
+  "species": "Brutal Star Pokémon",
   "type": [
     "Poison",
     "Water"
@@ -53,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "It\u2019s found crawling on beaches and seafloors. The coral that grows on Corsola\u2019s head is as good as a five-star banquet to this Pok\u00e9mon.",
+      "text": "It’s found crawling on beaches and seafloors. The coral that grows on Corsola’s head is as good as a five-star banquet to this Pokémon.",
       "version": "moon"
     },
     {
@@ -61,11 +61,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Aside from its head, its body parts regenerate quickly if they\u2019re cut off. After a good night\u2019s sleep, Mareanie is back to normal.",
+      "text": "Aside from its head, its body parts regenerate quickly if they’re cut off. After a good night’s sleep, Mareanie is back to normal.",
       "version": "ultra-moon"
     },
     {
-      "text": "The first symptom of its sting is numbness. The next is an itching sensation so intense that it\u2019s impossible to resist the urge to claw at your skin.",
+      "text": "The first symptom of its sting is numbness. The next is an itching sensation so intense that it’s impossible to resist the urge to claw at your skin.",
       "version": "sword"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/747.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヒドイデ",
+    "roomaji": "Hidoide",
+    "ko": "시마사리",
+    "zh-Hant": "好壞星",
+    "fr": "Vorastérie",
+    "de": "Garstella",
+    "es": "Mareanie",
+    "it": "Mareanie",
+    "en": "Mareanie",
+    "ja": "ヒドイデ",
+    "zh-Hans": "好坏星"
   }
 }

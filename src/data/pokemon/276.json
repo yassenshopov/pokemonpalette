@@ -1,7 +1,7 @@
 {
   "id": 276,
   "name": "Taillow",
-  "species": "Tiny Swallow Pok\u00e9mon",
+  "species": "Tiny Swallow Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -40,14 +40,14 @@
     "specialDefense": 30,
     "speed": 85
   },
-  "description": "TAILLOW courageously stands its ground against foes, however strong they may be. This gutsy POK\u00e9MON will remain defiant even after a loss. On the other hand, it cries loudly if it becomes hungry.",
+  "description": "TAILLOW courageously stands its ground against foes, however strong they may be. This gutsy POKéMON will remain defiant even after a loss. On the other hand, it cries loudly if it becomes hungry.",
   "flavorTexts": [
     {
-      "text": "TAILLOW courageously stands its ground against foes, however strong they may be. This gutsy POK\u00e9MON will remain defiant even after a loss. On the other hand, it cries loudly if it becomes hungry.",
+      "text": "TAILLOW courageously stands its ground against foes, however strong they may be. This gutsy POKéMON will remain defiant even after a loss. On the other hand, it cries loudly if it becomes hungry.",
       "version": "ruby"
     },
     {
-      "text": "TAILLOW is young - it has only just left its nest. As a result, it sometimes becomes lonesome and cries at night. This POK\u00e9MON feeds on WURMPLE that live in forests.",
+      "text": "TAILLOW is young - it has only just left its nest. As a result, it sometimes becomes lonesome and cries at night. This POKéMON feeds on WURMPLE that live in forests.",
       "version": "sapphire"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/276.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/276.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スバメ",
+    "roomaji": "Subame",
+    "ko": "테일로",
+    "zh-Hant": "傲骨燕",
+    "fr": "Nirondelle",
+    "de": "Schwalbini",
+    "es": "Taillow",
+    "it": "Taillow",
+    "en": "Taillow",
+    "ja": "スバメ",
+    "zh-Hans": "傲骨燕"
   }
 }

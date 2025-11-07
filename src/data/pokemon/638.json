@@ -1,7 +1,7 @@
 {
   "id": 638,
   "name": "Cobalion",
-  "species": "Iron Will Pok\u00e9mon",
+  "species": "Iron Will Pokémon",
   "type": [
     "Steel",
     "Fighting"
@@ -34,26 +34,26 @@
     "specialDefense": 72,
     "speed": 108
   },
-  "description": "This legendary Pok\u00e9mon battled against humans to protect Pok\u00e9mon. Its personality is calm and composed.",
+  "description": "This legendary Pokémon battled against humans to protect Pokémon. Its personality is calm and composed.",
   "flavorTexts": [
     {
-      "text": "This legendary Pok\u00e9mon battled against humans to protect Pok\u00e9mon. Its personality is calm and composed.",
+      "text": "This legendary Pokémon battled against humans to protect Pokémon. Its personality is calm and composed.",
       "version": "black"
     },
     {
-      "text": "It has a body and heart of steel. Its glare is sufficient to make even an unruly Pok\u00e9mon obey it.",
+      "text": "It has a body and heart of steel. Its glare is sufficient to make even an unruly Pokémon obey it.",
       "version": "white"
     },
     {
-      "text": "It has a body and heart of steel. It worked with its allies to punish people when they hurt Pok\u00e9mon.",
+      "text": "It has a body and heart of steel. It worked with its allies to punish people when they hurt Pokémon.",
       "version": "black-2"
     },
     {
-      "text": "It has a body and heart of steel. It worked with its allies to punish people when they hurt Pok\u00e9mon.",
+      "text": "It has a body and heart of steel. It worked with its allies to punish people when they hurt Pokémon.",
       "version": "white-2"
     },
     {
-      "text": "It has a body and heart of steel. Its glare is sufficient to make even an unruly Pok\u00e9mon obey it.",
+      "text": "It has a body and heart of steel. Its glare is sufficient to make even an unruly Pokémon obey it.",
       "version": "x"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/638.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/638.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コバルオン",
+    "roomaji": "Cobalon",
+    "ko": "코바르온",
+    "zh-Hant": "勾帕路翁",
+    "fr": "Cobaltium",
+    "de": "Kobalium",
+    "es": "Cobalion",
+    "it": "Cobalion",
+    "en": "Cobalion",
+    "ja": "コバルオン",
+    "zh-Hans": "勾帕路翁"
   }
 }

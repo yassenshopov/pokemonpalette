@@ -1,7 +1,7 @@
 {
   "id": 142,
   "name": "Aerodactyl",
-  "species": "Fossil Pok\u00e9mon",
+  "species": "Fossil Pokémon",
   "type": [
     "Rock",
     "Flying"
@@ -46,26 +46,26 @@
     "specialDefense": 75,
     "speed": 130
   },
-  "description": "A Pok\u00e9mon that roamed the skies in the dinosaur era. Its teeth are like saw blades.",
+  "description": "A Pokémon that roamed the skies in the dinosaur era. Its teeth are like saw blades.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon that roamed the skies in the dinosaur era. Its teeth are like saw blades.",
+      "text": "A Pokémon that roamed the skies in the dinosaur era. Its teeth are like saw blades.",
       "version": "black"
     },
     {
-      "text": "A ferocious, pre\u00ad historic POK\u00e9MON that goes for the enemy's throat with its serrated saw-like fangs.",
+      "text": "A ferocious, pre­ historic POKéMON that goes for the enemy's throat with its serrated saw-like fangs.",
       "version": "red"
     },
     {
-      "text": "A ferocious, pre\u00ad historic POK\u00e9MON that goes for the enemy's throat with its serrated saw-like fangs.",
+      "text": "A ferocious, pre­ historic POKéMON that goes for the enemy's throat with its serrated saw-like fangs.",
       "version": "blue"
     },
     {
-      "text": "A savage POK\u00e9MON that died out in ancient times. It was resurrected using DNA taken from amber.",
+      "text": "A savage POKéMON that died out in ancient times. It was resurrected using DNA taken from amber.",
       "version": "yellow"
     },
     {
-      "text": "A vicious POK\u00e9MON from the distant past, it appears to have flown by spreading its wings and gliding.",
+      "text": "A vicious POKéMON from the distant past, it appears to have flown by spreading its wings and gliding.",
       "version": "gold"
     }
   ],
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/142.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/142.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "プテラ",
+    "roomaji": "Ptera",
+    "ko": "프테라",
+    "zh-Hant": "化石翼龍",
+    "fr": "Ptéra",
+    "de": "Aerodactyl",
+    "es": "Aerodactyl",
+    "it": "Aerodactyl",
+    "en": "Aerodactyl",
+    "ja": "プテラ",
+    "zh-Hans": "化石翼龙"
   }
 }

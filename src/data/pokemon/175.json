@@ -1,7 +1,7 @@
 {
   "id": 175,
   "name": "Togepi",
-  "species": "Spike Ball Pok\u00e9mon",
+  "species": "Spike Ball Pokémon",
   "type": [
     "Fairy"
   ],
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "A proverb claims that happiness will come to any\u00ad one who can make a sleeping TOGEPI stand up.",
+      "text": "A proverb claims that happiness will come to any­ one who can make a sleeping TOGEPI stand up.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "As its energy, TOGEPI uses the positive emotions of compassion and pleasure exuded by people and POK\u00e9MON. This POK\u00e9MON stores up feelings of happiness inside its shell, then shares them with others.",
+      "text": "As its energy, TOGEPI uses the positive emotions of compassion and pleasure exuded by people and POKéMON. This POKéMON stores up feelings of happiness inside its shell, then shares them with others.",
       "version": "ruby"
     },
     {
-      "text": "As its energy, TOGEPI uses the positive emotions of compassion and pleasure exuded by people and POK\u00e9MON. This POK\u00e9MON stores up feelings of happiness inside its shell, then shares them with others.",
+      "text": "As its energy, TOGEPI uses the positive emotions of compassion and pleasure exuded by people and POKéMON. This POKéMON stores up feelings of happiness inside its shell, then shares them with others.",
       "version": "sapphire"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/175.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/175.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トゲピー",
+    "roomaji": "Togepy",
+    "ko": "토게피",
+    "zh-Hant": "波克比",
+    "fr": "Togepi",
+    "de": "Togepi",
+    "es": "Togepi",
+    "it": "Togepi",
+    "en": "Togepi",
+    "ja": "トゲピー",
+    "zh-Hans": "波克比"
   }
 }

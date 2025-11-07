@@ -1,7 +1,7 @@
 {
   "id": 148,
   "name": "Dragonair",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Dragon"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 70,
     "speed": 70
   },
-  "description": "A mystical POK\u00e9MON that exudes a gentle aura. Has the ability to change climate conditions.",
+  "description": "A mystical POKéMON that exudes a gentle aura. Has the ability to change climate conditions.",
   "flavorTexts": [
     {
-      "text": "A mystical POK\u00e9MON that exudes a gentle aura. Has the ability to change climate conditions.",
+      "text": "A mystical POKéMON that exudes a gentle aura. Has the ability to change climate conditions.",
       "version": "red"
     },
     {
-      "text": "A mystical POK\u00e9MON that exudes a gentle aura. Has the ability to change climate conditions.",
+      "text": "A mystical POKéMON that exudes a gentle aura. Has the ability to change climate conditions.",
       "version": "blue"
     },
     {
@@ -54,7 +54,7 @@
       "version": "gold"
     },
     {
-      "text": "Its crystalline orbs appear to give this POK\u00e9MON the power to freely control the weather.",
+      "text": "Its crystalline orbs appear to give this POKéMON the power to freely control the weather.",
       "version": "silver"
     }
   ],
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/148.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/148.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハクリュー",
+    "roomaji": "Hakuryu",
+    "ko": "신뇽",
+    "zh-Hant": "哈克龍",
+    "fr": "Draco",
+    "de": "Dragonir",
+    "es": "Dragonair",
+    "it": "Dragonair",
+    "en": "Dragonair",
+    "ja": "ハクリュー",
+    "zh-Hans": "哈克龙"
   }
 }

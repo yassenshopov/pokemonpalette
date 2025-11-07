@@ -1,7 +1,7 @@
 {
   "id": 279,
   "name": "Pelipper",
-  "species": "Water Bird Pok\u00e9mon",
+  "species": "Water Bird Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -46,18 +46,18 @@
     "specialDefense": 70,
     "speed": 65
   },
-  "description": "It is a messenger of the skies, carrying small Pok\u00e9mon and eggs to safety in its bill.",
+  "description": "It is a messenger of the skies, carrying small Pokémon and eggs to safety in its bill.",
   "flavorTexts": [
     {
-      "text": "It is a messenger of the skies, carrying small Pok\u00e9mon and eggs to safety in its bill.",
+      "text": "It is a messenger of the skies, carrying small Pokémon and eggs to safety in its bill.",
       "version": "black"
     },
     {
-      "text": "PELIPPER is a flying transporter that carries small POK\u00e9MON and eggs inside its massive bill. This POK\u00e9MON builds its nest on steep cliffs facing the sea.",
+      "text": "PELIPPER is a flying transporter that carries small POKéMON and eggs inside its massive bill. This POKéMON builds its nest on steep cliffs facing the sea.",
       "version": "ruby"
     },
     {
-      "text": "PELIPPER searches for food while in flight by skimming the wave tops. This POK\u00e9MON dips its large bill in the sea to scoop up food, then swallows everything in one big gulp.",
+      "text": "PELIPPER searches for food while in flight by skimming the wave tops. This POKéMON dips its large bill in the sea to scoop up food, then swallows everything in one big gulp.",
       "version": "sapphire"
     },
     {
@@ -65,7 +65,7 @@
       "version": "emerald"
     },
     {
-      "text": "It is a flying transporter that carries small POK\u00e9MON in its beak. It bobs on the waves to rest its wings.",
+      "text": "It is a flying transporter that carries small POKéMON in its beak. It bobs on the waves to rest its wings.",
       "version": "firered"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/279.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/279.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ペリッパー",
+    "roomaji": "Pelipper",
+    "ko": "패리퍼",
+    "zh-Hant": "大嘴鷗",
+    "fr": "Bekipan",
+    "de": "Pelipper",
+    "es": "Pelipper",
+    "it": "Pelipper",
+    "en": "Pelipper",
+    "ja": "ペリッパー",
+    "zh-Hans": "大嘴鸥"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 135,
   "name": "Jolteon",
-  "species": "Lightning Pok\u00e9mon",
+  "species": "Lightning Pokémon",
   "type": [
     "Electric"
   ],
@@ -46,7 +46,7 @@
       "version": "blue"
     },
     {
-      "text": "A sensitive POK\u00e9\u00ad MON that easily becomes sad or angry. Every time its mood changes, it charges power.",
+      "text": "A sensitive POKé­ MON that easily becomes sad or angry. Every time its mood changes, it charges power.",
       "version": "yellow"
     },
     {
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/135.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/135.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サンダース",
+    "roomaji": "Thunders",
+    "ko": "쥬피썬더",
+    "zh-Hant": "雷伊布",
+    "fr": "Voltali",
+    "de": "Blitza",
+    "es": "Jolteon",
+    "it": "Jolteon",
+    "en": "Jolteon",
+    "ja": "サンダース",
+    "zh-Hans": "雷伊布"
   }
 }

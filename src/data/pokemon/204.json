@@ -1,7 +1,7 @@
 {
   "id": 204,
   "name": "Pineco",
-  "species": "Bagworm Pok\u00e9mon",
+  "species": "Bagworm Pokémon",
   "type": [
     "Bug"
   ],
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "PINECO hangs from a tree branch and patiently waits for prey to come along. If the POK\u00e9MON is disturbed while eating by someone shaking its tree, it drops down to the ground and explodes with no warning.",
+      "text": "PINECO hangs from a tree branch and patiently waits for prey to come along. If the POKéMON is disturbed while eating by someone shaking its tree, it drops down to the ground and explodes with no warning.",
       "version": "ruby"
     },
     {
-      "text": "PINECO hangs from a tree branch and patiently waits for prey to come along. If the POK\u00e9MON is disturbed while eating by someone shaking its tree, it drops down to the ground and explodes with no warning.",
+      "text": "PINECO hangs from a tree branch and patiently waits for prey to come along. If the POKéMON is disturbed while eating by someone shaking its tree, it drops down to the ground and explodes with no warning.",
       "version": "sapphire"
     }
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/204.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/204.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クヌギダマ",
+    "roomaji": "Kunugidama",
+    "ko": "피콘",
+    "zh-Hant": "榛果球",
+    "fr": "Pomdepik",
+    "de": "Tannza",
+    "es": "Pineco",
+    "it": "Pineco",
+    "en": "Pineco",
+    "ja": "クヌギダマ",
+    "zh-Hans": "榛果球"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 973,
   "name": "Flamigo",
-  "species": "Synchronize Pok\u00e9mon",
+  "species": "Synchronize Pokémon",
   "type": [
     "Flying",
     "Fighting"
@@ -46,14 +46,14 @@
     "specialDefense": 64,
     "speed": 90
   },
-  "description": "This Pok\u00e9mon apparently ties the base of its neck into a knot so that energy stored in its belly does not escape from its beak.",
+  "description": "This Pokémon apparently ties the base of its neck into a knot so that energy stored in its belly does not escape from its beak.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon apparently ties the base of its neck into a knot so that energy stored in its belly does not escape from its beak.",
+      "text": "This Pokémon apparently ties the base of its neck into a knot so that energy stored in its belly does not escape from its beak.",
       "version": "scarlet"
     },
     {
-      "text": "Thanks to a behavior of theirs known as \u201csynchronizing,\u201d an entire flock of these Pok\u00e9mon can attack simultaneously in perfect harmony.",
+      "text": "Thanks to a behavior of theirs known as “synchronizing,” an entire flock of these Pokémon can attack simultaneously in perfect harmony.",
       "version": "violet"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/973.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カラミンゴ",
+    "roomaji": "Karamingo",
+    "ko": "꼬이밍고",
+    "zh-Hant": "纏紅鶴",
+    "fr": "Flamenroule",
+    "de": "Flaminkno",
+    "es": "Flamigo",
+    "it": "Flamigo",
+    "en": "Flamigo",
+    "ja": "カラミンゴ",
+    "zh-Hans": "纏红鹤"
   }
 }

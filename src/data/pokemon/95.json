@@ -1,7 +1,7 @@
 {
   "id": 95,
   "name": "Onix",
-  "species": "Rock Snake Pok\u00e9mon",
+  "species": "Rock Snake Pokémon",
   "type": [
     "Rock",
     "Ground"
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "It rapidly bores through the ground at 50 mph by squirming and twisting its mas\u00ad sive, rugged body.",
+      "text": "It rapidly bores through the ground at 50 mph by squirming and twisting its mas­ sive, rugged body.",
       "version": "silver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/95.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/95.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イワーク",
+    "roomaji": "Iwark",
+    "ko": "롱스톤",
+    "zh-Hant": "大岩蛇",
+    "fr": "Onix",
+    "de": "Onix",
+    "es": "Onix",
+    "it": "Onix",
+    "en": "Onix",
+    "ja": "イワーク",
+    "zh-Hans": "大岩蛇"
   }
 }

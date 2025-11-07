@@ -1,7 +1,7 @@
 {
   "id": 420,
   "name": "Cherubi",
-  "species": "Cherry Pok\u00e9mon",
+  "species": "Cherry Pokémon",
   "type": [
     "Grass"
   ],
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/420.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/420.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チェリンボ",
+    "roomaji": "Cherinbo",
+    "ko": "체리버",
+    "zh-Hant": "櫻花寶",
+    "fr": "Ceribou",
+    "de": "Kikugi",
+    "es": "Cherubi",
+    "it": "Cherubi",
+    "en": "Cherubi",
+    "ja": "チェリンボ",
+    "zh-Hans": "樱花宝"
   }
 }

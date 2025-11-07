@@ -1,7 +1,7 @@
 {
   "id": 845,
   "name": "Cramorant",
-  "species": "Gulp Pok\u00e9mon",
+  "species": "Gulp Pokémon",
   "type": [
     "Flying",
     "Water"
@@ -34,14 +34,14 @@
     "specialDefense": 95,
     "speed": 85
   },
-  "description": "It\u2019s so strong that it can knock out some opponents in a single hit, but it also may forget what it\u2019s battling midfight.",
+  "description": "It’s so strong that it can knock out some opponents in a single hit, but it also may forget what it’s battling midfight.",
   "flavorTexts": [
     {
-      "text": "It\u2019s so strong that it can knock out some opponents in a single hit, but it also may forget what it\u2019s battling midfight.",
+      "text": "It’s so strong that it can knock out some opponents in a single hit, but it also may forget what it’s battling midfight.",
       "version": "sword"
     },
     {
-      "text": "This hungry Pok\u00e9mon swallows Arrokuda whole. Occasionally, it makes a mistake and tries to swallow a Pok\u00e9mon other than its preferred prey.",
+      "text": "This hungry Pokémon swallows Arrokuda whole. Occasionally, it makes a mistake and tries to swallow a Pokémon other than its preferred prey.",
       "version": "shield"
     }
   ],
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/845.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウッウ",
+    "roomaji": "Uu",
+    "ko": "윽우지",
+    "zh-Hant": "古月鳥",
+    "fr": "Nigosier",
+    "de": "Urgl",
+    "es": "Cramorant",
+    "it": "Cramorant",
+    "en": "Cramorant",
+    "ja": "ウッウ",
+    "zh-Hans": "古月鸟"
   }
 }

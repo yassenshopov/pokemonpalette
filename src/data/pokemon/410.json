@@ -1,7 +1,7 @@
 {
   "id": 410,
   "name": "Shieldon",
-  "species": "Shield Pok\u00e9mon",
+  "species": "Shield Pokémon",
   "type": [
     "Rock",
     "Steel"
@@ -40,10 +40,10 @@
     "specialDefense": 88,
     "speed": 30
   },
-  "description": "A Pok\u00e9mon that lived in jungles around 100 million years ago. Its facial hide is extremely hard.",
+  "description": "A Pokémon that lived in jungles around 100 million years ago. Its facial hide is extremely hard.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon that lived in jungles around 100 million years ago. Its facial hide is extremely hard.",
+      "text": "A Pokémon that lived in jungles around 100 million years ago. Its facial hide is extremely hard.",
       "version": "diamond"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/410.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/410.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タテトプス",
+    "roomaji": "Tatetops",
+    "ko": "방패톱스",
+    "zh-Hant": "盾甲龍",
+    "fr": "Dinoclier",
+    "de": "Schilterus",
+    "es": "Shieldon",
+    "it": "Shieldon",
+    "en": "Shieldon",
+    "ja": "タテトプス",
+    "zh-Hans": "盾甲龙"
   }
 }

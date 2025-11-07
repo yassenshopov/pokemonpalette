@@ -1,7 +1,7 @@
 {
   "id": 689,
   "name": "Barbaracle",
-  "species": "Collective Pok\u00e9mon",
+  "species": "Collective Pokémon",
   "type": [
     "Rock",
     "Water"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "Barbaracle\u2019s legs and hands have minds of their own, and they will move independently. But they usually follow the head\u2019s orders.",
+      "text": "Barbaracle’s legs and hands have minds of their own, and they will move independently. But they usually follow the head’s orders.",
       "version": "y"
     },
     {
@@ -61,7 +61,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Barbaracle\u2019s legs and hands have minds of their own, and they will move independently. But they usually follow the head\u2019s orders.",
+      "text": "Barbaracle’s legs and hands have minds of their own, and they will move independently. But they usually follow the head’s orders.",
       "version": "alpha-sapphire"
     },
     {
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/689.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ガメノデス",
+    "roomaji": "Gamenodes",
+    "ko": "거북손데스",
+    "zh-Hant": "龜足巨鎧",
+    "fr": "Golgopathe",
+    "de": "Thanathora",
+    "es": "Barbaracle",
+    "it": "Barbaracle",
+    "en": "Barbaracle",
+    "ja": "ガメノデス",
+    "zh-Hans": "龟足巨铠"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 635,
   "name": "Hydreigon",
-  "species": "Brutal Pok\u00e9mon",
+  "species": "Brutal Pokémon",
   "type": [
     "Dark",
     "Dragon"
@@ -34,10 +34,10 @@
     "specialDefense": 90,
     "speed": 98
   },
-  "description": "This brutal Pok\u00e9mon travels the skies on its six wings. Anything that moves seems like a foe to it, triggering its attack.",
+  "description": "This brutal Pokémon travels the skies on its six wings. Anything that moves seems like a foe to it, triggering its attack.",
   "flavorTexts": [
     {
-      "text": "This brutal Pok\u00e9mon travels the skies on its six wings. Anything that moves seems like a foe to it, triggering its attack.",
+      "text": "This brutal Pokémon travels the skies on its six wings. Anything that moves seems like a foe to it, triggering its attack.",
       "version": "black"
     },
     {
@@ -45,11 +45,11 @@
       "version": "white"
     },
     {
-      "text": "It responds to movement by attacking. This scary, three-headed Pok\u00e9mon devours everything in its path!",
+      "text": "It responds to movement by attacking. This scary, three-headed Pokémon devours everything in its path!",
       "version": "black-2"
     },
     {
-      "text": "It responds to movement by attacking. This scary, three-headed Pok\u00e9mon devours everything in its path!",
+      "text": "It responds to movement by attacking. This scary, three-headed Pokémon devours everything in its path!",
       "version": "white-2"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/635.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/635.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サザンドラ",
+    "roomaji": "Sazandora",
+    "ko": "삼삼드래",
+    "zh-Hant": "三首惡龍",
+    "fr": "Trioxhydre",
+    "de": "Trikephalo",
+    "es": "Hydreigon",
+    "it": "Hydreigon",
+    "en": "Hydreigon",
+    "ja": "サザンドラ",
+    "zh-Hans": "三首恶龙"
   }
 }

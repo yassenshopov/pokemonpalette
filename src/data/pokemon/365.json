@@ -1,7 +1,7 @@
 {
   "id": 365,
   "name": "Walrein",
-  "species": "Ice Break Pok\u00e9mon",
+  "species": "Ice Break Pokémon",
   "type": [
     "Ice",
     "Water"
@@ -53,7 +53,7 @@
       "version": "leafgreen"
     },
     {
-      "text": "WALREIN\u2019s two massively developed tusks can totally shatter blocks of ice weighing ten tons with one blow. This POK\u00e9MON\u2019s thick coat of blubber insulates it from subzero temperatures.",
+      "text": "WALREIN’s two massively developed tusks can totally shatter blocks of ice weighing ten tons with one blow. This POKéMON’s thick coat of blubber insulates it from subzero temperatures.",
       "version": "ruby"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/365.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/365.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トドゼルガ",
+    "roomaji": "Todoseruga",
+    "ko": "씨카이저",
+    "zh-Hant": "帝牙海獅",
+    "fr": "Kaimorse",
+    "de": "Walraisa",
+    "es": "Walrein",
+    "it": "Walrein",
+    "en": "Walrein",
+    "ja": "トドゼルガ",
+    "zh-Hans": "帝牙海狮"
   }
 }

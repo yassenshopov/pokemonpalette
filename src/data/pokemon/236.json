@@ -1,7 +1,7 @@
 {
   "id": 236,
   "name": "Tyrogue",
-  "species": "Scuffle Pok\u00e9mon",
+  "species": "Scuffle Pokémon",
   "type": [
     "Fighting"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 35,
     "speed": 35
   },
-  "description": "It is always bursting with en\u00ad ergy. To make it\u00ad self stronger, it keeps on fighting even if it loses.",
+  "description": "It is always bursting with en­ ergy. To make it­ self stronger, it keeps on fighting even if it loses.",
   "flavorTexts": [
     {
-      "text": "It is always bursting with en\u00ad ergy. To make it\u00ad self stronger, it keeps on fighting even if it loses.",
+      "text": "It is always bursting with en­ ergy. To make it­ self stronger, it keeps on fighting even if it loses.",
       "version": "gold"
     },
     {
-      "text": "Even though it is small, it can't be ignored because it will slug any handy target with\u00ad out warning.",
+      "text": "Even though it is small, it can't be ignored because it will slug any handy target with­ out warning.",
       "version": "silver"
     },
     {
-      "text": "To brush up on its fighting skills, it will challenge anyone. It has a very strong com\u00ad petitive spirit.",
+      "text": "To brush up on its fighting skills, it will challenge anyone. It has a very strong com­ petitive spirit.",
       "version": "crystal"
     },
     {
-      "text": "TYROGUE becomes stressed out if it does not get to train every day. When raising this POK\u00e9MON, the TRAINER must establish and uphold various training methods.",
+      "text": "TYROGUE becomes stressed out if it does not get to train every day. When raising this POKéMON, the TRAINER must establish and uphold various training methods.",
       "version": "ruby"
     },
     {
-      "text": "TYROGUE becomes stressed out if it does not get to train every day. When raising this POK\u00e9MON, the TRAINER must establish and uphold various training methods.",
+      "text": "TYROGUE becomes stressed out if it does not get to train every day. When raising this POKéMON, the TRAINER must establish and uphold various training methods.",
       "version": "sapphire"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/236.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/236.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バルキー",
+    "roomaji": "Balkie",
+    "ko": "배루키",
+    "zh-Hant": "無畏小子",
+    "fr": "Debugant",
+    "de": "Rabauz",
+    "es": "Tyrogue",
+    "it": "Tyrogue",
+    "en": "Tyrogue",
+    "ja": "バルキー",
+    "zh-Hans": "无畏小子"
   }
 }

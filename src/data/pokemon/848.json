@@ -1,7 +1,7 @@
 {
   "id": 848,
   "name": "Toxel",
-  "species": "Baby Pok\u00e9mon",
+  "species": "Baby Pokémon",
   "type": [
     "Electric",
     "Poison"
@@ -46,10 +46,10 @@
     "specialDefense": 35,
     "speed": 40
   },
-  "description": "It stores poison in an internal poison sac and secretes that poison through its skin. If you touch this Pok\u00e9mon, a tingling sensation follows.",
+  "description": "It stores poison in an internal poison sac and secretes that poison through its skin. If you touch this Pokémon, a tingling sensation follows.",
   "flavorTexts": [
     {
-      "text": "It stores poison in an internal poison sac and secretes that poison through its skin. If you touch this Pok\u00e9mon, a tingling sensation follows.",
+      "text": "It stores poison in an internal poison sac and secretes that poison through its skin. If you touch this Pokémon, a tingling sensation follows.",
       "version": "sword"
     },
     {
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/848.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "エレズン",
+    "roomaji": "Eleson",
+    "ko": "일레즌",
+    "zh-Hant": "毒電嬰",
+    "fr": "Toxizap",
+    "de": "Toxel",
+    "es": "Toxel",
+    "it": "Toxel",
+    "en": "Toxel",
+    "ja": "エレズン",
+    "zh-Hans": "电音婴"
   }
 }

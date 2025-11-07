@@ -1,7 +1,7 @@
 {
   "id": 669,
   "name": "Flabebe",
-  "species": "Single Bloom Pok\u00e9mon",
+  "species": "Single Bloom Pokémon",
   "type": [
     "Fairy"
   ],
@@ -35,26 +35,26 @@
     "specialDefense": 79,
     "speed": 42
   },
-  "description": "It draws out and controls the hidden power of flowers. The flower Flab\u00e9b\u00e9 holds is most likely part of its body.",
+  "description": "It draws out and controls the hidden power of flowers. The flower Flabébé holds is most likely part of its body.",
   "flavorTexts": [
     {
-      "text": "It draws out and controls the hidden power of flowers. The flower Flab\u00e9b\u00e9 holds is most likely part of its body.",
+      "text": "It draws out and controls the hidden power of flowers. The flower Flabébé holds is most likely part of its body.",
       "version": "x"
     },
     {
-      "text": "When it finds a flower it likes, it dwells on that flower its whole life long. It floats in the wind\u2019s embrace with an untroubled heart.",
+      "text": "When it finds a flower it likes, it dwells on that flower its whole life long. It floats in the wind’s embrace with an untroubled heart.",
       "version": "y"
     },
     {
-      "text": "It draws out and controls the hidden power of flowers. The flower Flab\u00e9b\u00e9 holds is most likely part of its body.",
+      "text": "It draws out and controls the hidden power of flowers. The flower Flabébé holds is most likely part of its body.",
       "version": "omega-ruby"
     },
     {
-      "text": "When it finds a flower it likes, it dwells on that flower its whole life long. It floats in the wind\u2019s embrace with an untroubled heart.",
+      "text": "When it finds a flower it likes, it dwells on that flower its whole life long. It floats in the wind’s embrace with an untroubled heart.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "It\u2019s not safe without the power of a flower, but it will keep traveling around until it finds one with the color and shape it wants.",
+      "text": "It’s not safe without the power of a flower, but it will keep traveling around until it finds one with the color and shape it wants.",
       "version": "ultra-sun"
     }
   ],
@@ -372,5 +372,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/669.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フラベベ",
+    "roomaji": "Flabebe",
+    "ko": "플라베베",
+    "zh-Hant": "花蓓蓓",
+    "fr": "Flabébé",
+    "de": "Flabébé",
+    "es": "Flabébé",
+    "it": "Flabébé",
+    "en": "Flabébé",
+    "ja": "フラベベ",
+    "zh-Hans": "花蓓蓓"
   }
 }

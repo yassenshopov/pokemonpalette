@@ -1,7 +1,7 @@
 {
   "id": 668,
   "name": "Pyroar",
-  "species": "Royal Pok\u00e9mon",
+  "species": "Royal Pokémon",
   "type": [
     "Fire",
     "Normal"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "With fiery breath of more than 10,000 degrees Fahrenheit, they viciously threaten any challenger. The females protect the pride\u2019s cubs.",
+      "text": "With fiery breath of more than 10,000 degrees Fahrenheit, they viciously threaten any challenger. The females protect the pride’s cubs.",
       "version": "y"
     },
     {
@@ -61,7 +61,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "With fiery breath of more than 10,000 degrees Fahrenheit, they viciously threaten any challenger. The females protect the pride\u2019s cubs.",
+      "text": "With fiery breath of more than 10,000 degrees Fahrenheit, they viciously threaten any challenger. The females protect the pride’s cubs.",
       "version": "alpha-sapphire"
     },
     {
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/668.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カエンジシ",
+    "roomaji": "Kaenjishi",
+    "ko": "화염레오",
+    "zh-Hant": "火炎獅",
+    "fr": "Némélios",
+    "de": "Pyroleo",
+    "es": "Pyroar",
+    "it": "Pyroar",
+    "en": "Pyroar",
+    "ja": "カエンジシ",
+    "zh-Hans": "火炎狮"
   }
 }

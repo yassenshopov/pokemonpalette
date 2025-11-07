@@ -1,7 +1,7 @@
 {
   "id": 526,
   "name": "Gigalith",
-  "species": "Compressed Pok\u00e9mon",
+  "species": "Compressed Pokémon",
   "type": [
     "Rock"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "The solar energy absorbed by its body\u2019s orange crystals is magnified internally and fired from its mouth.",
+      "text": "The solar energy absorbed by its body’s orange crystals is magnified internally and fired from its mouth.",
       "version": "white"
     },
     {
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/526.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/526.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ギガイアス",
+    "roomaji": "Gigaiath",
+    "ko": "기가이어스",
+    "zh-Hant": "龐岩怪",
+    "fr": "Gigalithe",
+    "de": "Brockoloss",
+    "es": "Gigalith",
+    "it": "Gigalith",
+    "en": "Gigalith",
+    "ja": "ギガイアス",
+    "zh-Hans": "庞岩怪"
   }
 }

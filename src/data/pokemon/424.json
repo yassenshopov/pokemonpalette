@@ -1,7 +1,7 @@
 {
   "id": 424,
   "name": "Ambipom",
-  "species": "Long Tail Pok\u00e9mon",
+  "species": "Long Tail Pokémon",
   "type": [
     "Normal"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/424.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/424.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エテボース",
+    "roomaji": "Eteboth",
+    "ko": "겟핸보숭",
+    "zh-Hant": "雙尾怪手",
+    "fr": "Capidextre",
+    "de": "Ambidiffel",
+    "es": "Ambipom",
+    "it": "Ambipom",
+    "en": "Ambipom",
+    "ja": "エテボース",
+    "zh-Hans": "双尾怪手"
   }
 }

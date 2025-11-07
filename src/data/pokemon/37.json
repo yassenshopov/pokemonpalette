@@ -1,7 +1,7 @@
 {
   "id": 37,
   "name": "Vulpix",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Fire"
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/37.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/37.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ロコン",
+    "roomaji": "Rokon",
+    "ko": "식스테일",
+    "zh-Hant": "六尾",
+    "fr": "Goupix",
+    "de": "Vulpix",
+    "es": "Vulpix",
+    "it": "Vulpix",
+    "en": "Vulpix",
+    "ja": "ロコン",
+    "zh-Hans": "六尾"
   }
 }

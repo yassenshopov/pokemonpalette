@@ -1,7 +1,7 @@
 {
   "id": 486,
   "name": "Regigigas",
-  "species": "Colossal Pok\u00e9mon",
+  "species": "Colossal Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,18 +29,18 @@
     "specialDefense": 110,
     "speed": 100
   },
-  "description": "There is an enduring legend that states this Pok\u00e9mon towed continents with ropes.",
+  "description": "There is an enduring legend that states this Pokémon towed continents with ropes.",
   "flavorTexts": [
     {
-      "text": "There is an enduring legend that states this Pok\u00e9mon towed continents with ropes.",
+      "text": "There is an enduring legend that states this Pokémon towed continents with ropes.",
       "version": "diamond"
     },
     {
-      "text": "There is an enduring legend that states this Pok\u00e9mon towed continents with ropes.",
+      "text": "There is an enduring legend that states this Pokémon towed continents with ropes.",
       "version": "pearl"
     },
     {
-      "text": "It is said to have made Pok\u00e9mon that look like itself from a special ice mountain, rocks, and magma.",
+      "text": "It is said to have made Pokémon that look like itself from a special ice mountain, rocks, and magma.",
       "version": "platinum"
     },
     {
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/486.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/486.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レジギガス",
+    "roomaji": "Regigigas",
+    "ko": "레지기가스",
+    "zh-Hant": "雷吉奇卡斯",
+    "fr": "Regigigas",
+    "de": "Regigigas",
+    "es": "Regigigas",
+    "it": "Regigigas",
+    "en": "Regigigas",
+    "ja": "レジギガス",
+    "zh-Hans": "雷吉奇卡斯"
   }
 }

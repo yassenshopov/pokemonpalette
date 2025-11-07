@@ -1,7 +1,7 @@
 {
   "id": 294,
   "name": "Loudred",
-  "species": "Big Voice Pok\u00e9mon",
+  "species": "Big Voice Pokémon",
   "type": [
     "Normal"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 43,
     "speed": 48
   },
-  "description": "LOUDRED\u2019s bellowing can completely decimate a wood-frame house. It uses its voice to punish its foes. This POK\u00e9MON\u2019s round ears serve as loudspeakers.",
+  "description": "LOUDRED’s bellowing can completely decimate a wood-frame house. It uses its voice to punish its foes. This POKéMON’s round ears serve as loudspeakers.",
   "flavorTexts": [
     {
-      "text": "LOUDRED\u2019s bellowing can completely decimate a wood-frame house. It uses its voice to punish its foes. This POK\u00e9MON\u2019s round ears serve as loudspeakers.",
+      "text": "LOUDRED’s bellowing can completely decimate a wood-frame house. It uses its voice to punish its foes. This POKéMON’s round ears serve as loudspeakers.",
       "version": "ruby"
     },
     {
-      "text": "LOUDRED shouts while stamping its feet. After it finishes shouting, this POK\u00e9MON becomes incapable of hearing anything for a while. This is considered to be a weak point.",
+      "text": "LOUDRED shouts while stamping its feet. After it finishes shouting, this POKéMON becomes incapable of hearing anything for a while. This is considered to be a weak point.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/294.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/294.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドゴーム",
+    "roomaji": "Dogohmb",
+    "ko": "노공룡",
+    "zh-Hant": "吼爆彈",
+    "fr": "Ramboum",
+    "de": "Krakeelo",
+    "es": "Loudred",
+    "it": "Loudred",
+    "en": "Loudred",
+    "ja": "ドゴーム",
+    "zh-Hans": "吼爆弹"
   }
 }

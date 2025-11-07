@@ -1,7 +1,7 @@
 {
   "id": 38,
   "name": "Ninetales",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Fire"
   ],
@@ -46,7 +46,7 @@
       "version": "blue"
     },
     {
-      "text": "According to an enduring legend, 9 noble saints were united and reincarnated as this POK\u00e9MON.",
+      "text": "According to an enduring legend, 9 noble saints were united and reincarnated as this POKéMON.",
       "version": "yellow"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/38.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/38.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キュウコン",
+    "roomaji": "Kyukon",
+    "ko": "나인테일",
+    "zh-Hant": "九尾",
+    "fr": "Feunard",
+    "de": "Vulnona",
+    "es": "Ninetales",
+    "it": "Ninetales",
+    "en": "Ninetales",
+    "ja": "キュウコン",
+    "zh-Hans": "九尾"
   }
 }

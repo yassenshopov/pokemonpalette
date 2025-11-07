@@ -1,7 +1,7 @@
 {
   "id": 41,
   "name": "Zubat",
-  "species": "Bat Pok\u00e9mon",
+  "species": "Bat Pokémon",
   "type": [
     "Poison",
     "Flying"
@@ -51,11 +51,11 @@
       "version": "blue"
     },
     {
-      "text": "Emits ultrasonic cries while it flies. They act as a sonar used to check for ob\u00ad jects in its way.",
+      "text": "Emits ultrasonic cries while it flies. They act as a sonar used to check for ob­ jects in its way.",
       "version": "yellow"
     },
     {
-      "text": "While flying, it constantly emits ultrasonic waves from its mouth to check its sur\u00ad roundings.",
+      "text": "While flying, it constantly emits ultrasonic waves from its mouth to check its sur­ roundings.",
       "version": "gold"
     },
     {
@@ -308,5 +308,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/41.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/41.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ズバット",
+    "roomaji": "Zubat",
+    "ko": "주뱃",
+    "zh-Hant": "超音蝠",
+    "fr": "Nosferapti",
+    "de": "Zubat",
+    "es": "Zubat",
+    "it": "Zubat",
+    "en": "Zubat",
+    "ja": "ズバット",
+    "zh-Hans": "超音蝠"
   }
 }

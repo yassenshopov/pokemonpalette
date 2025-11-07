@@ -1,7 +1,7 @@
 {
   "id": 985,
   "name": "Scream-tail",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Fairy",
     "Psychic"
@@ -34,14 +34,14 @@
     "specialDefense": 115,
     "speed": 111
   },
-  "description": "There has been only one reported sighting of this Pok\u00e9mon. It resembles a mysterious creature depicted in an old expedition journal.",
+  "description": "There has been only one reported sighting of this Pokémon. It resembles a mysterious creature depicted in an old expedition journal.",
   "flavorTexts": [
     {
-      "text": "There has been only one reported sighting of this Pok\u00e9mon. It resembles a mysterious creature depicted in an old expedition journal.",
+      "text": "There has been only one reported sighting of this Pokémon. It resembles a mysterious creature depicted in an old expedition journal.",
       "version": "scarlet"
     },
     {
-      "text": "It resembles a mysterious Pok\u00e9mon described in a paranormal magazine as a Jigglypuff from one billion years ago.",
+      "text": "It resembles a mysterious Pokémon described in a paranormal magazine as a Jigglypuff from one billion years ago.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/985.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サケブシッポ",
+    "roomaji": "Sakebushippo",
+    "ko": "우렁찬꼬리",
+    "zh-Hant": "吼叫尾",
+    "fr": "Hurle-Queue",
+    "de": "Brüllschweif",
+    "es": "Colagrito",
+    "it": "Codaurlante",
+    "en": "Scream Tail",
+    "ja": "サケブシッポ",
+    "zh-Hans": "吼叫尾"
   }
 }

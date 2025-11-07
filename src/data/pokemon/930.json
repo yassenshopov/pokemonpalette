@@ -1,7 +1,7 @@
 {
   "id": 930,
   "name": "Arboliva",
-  "species": "Olive Pok\u00e9mon",
+  "species": "Olive Pokémon",
   "type": [
     "Grass",
     "Normal"
@@ -40,14 +40,14 @@
     "specialDefense": 109,
     "speed": 39
   },
-  "description": "This calm Pok\u00e9mon is very compassionate. It will share its delicious, nutrient-rich oil with weakened Pok\u00e9mon.",
+  "description": "This calm Pokémon is very compassionate. It will share its delicious, nutrient-rich oil with weakened Pokémon.",
   "flavorTexts": [
     {
-      "text": "This calm Pok\u00e9mon is very compassionate. It will share its delicious, nutrient-rich oil with weakened Pok\u00e9mon.",
+      "text": "This calm Pokémon is very compassionate. It will share its delicious, nutrient-rich oil with weakened Pokémon.",
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon drives back enemies by launching its rich, aromatic oil at them with enough force to smash a boulder.",
+      "text": "This Pokémon drives back enemies by launching its rich, aromatic oil at them with enough force to smash a boulder.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/930.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オリーヴァ",
+    "roomaji": "Oliva",
+    "ko": "올리르바",
+    "zh-Hant": "奧利瓦",
+    "fr": "Arboliva",
+    "de": "Olithena",
+    "es": "Arboliva",
+    "it": "Arboliva",
+    "en": "Arboliva",
+    "ja": "オリーヴァ",
+    "zh-Hans": "奥利瓦"
   }
 }

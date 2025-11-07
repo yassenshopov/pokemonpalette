@@ -1,7 +1,7 @@
 {
   "id": 895,
   "name": "Regidrago",
-  "species": "Dragon Orb Pok\u00e9mon",
+  "species": "Dragon Orb Pokémon",
   "type": [
     "Dragon"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 50,
     "speed": 80
   },
-  "description": "An academic theory proposes that Regidrago\u2019s arms were once the head of an ancient dragon Pok\u00e9mon. The theory remains unproven.",
+  "description": "An academic theory proposes that Regidrago’s arms were once the head of an ancient dragon Pokémon. The theory remains unproven.",
   "flavorTexts": [
     {
-      "text": "An academic theory proposes that Regidrago\u2019s arms were once the head of an ancient dragon Pok\u00e9mon. The theory remains unproven.",
+      "text": "An academic theory proposes that Regidrago’s arms were once the head of an ancient dragon Pokémon. The theory remains unproven.",
       "version": "sword"
     },
     {
-      "text": "Its body is composed of crystallized dragon energy. Regidrago is said to have the powers of every dragon Pok\u00e9mon.",
+      "text": "Its body is composed of crystallized dragon energy. Regidrago is said to have the powers of every dragon Pokémon.",
       "version": "shield"
     }
   ],
@@ -266,5 +266,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/895.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "レジドラゴ",
+    "roomaji": "Regidorago",
+    "ko": "레지드래고",
+    "zh-Hant": "雷吉鐸拉戈",
+    "fr": "Regidrago",
+    "de": "Regidrago",
+    "es": "Regidrago",
+    "it": "Regidrago",
+    "en": "Regidrago",
+    "ja": "レジドラゴ",
+    "zh-Hans": "雷吉铎拉戈"
   }
 }

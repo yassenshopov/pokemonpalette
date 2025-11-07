@@ -1,7 +1,7 @@
 {
   "id": 286,
   "name": "Breloom",
-  "species": "Mushroom Pok\u00e9mon",
+  "species": "Mushroom Pokémon",
   "type": [
     "Grass",
     "Fighting"
@@ -46,14 +46,14 @@
     "specialDefense": 60,
     "speed": 70
   },
-  "description": "BRELOOM closes in on its foe with light and sprightly footwork, then throws punches with its stretchy arms. This POK\u00e9MON\u2019s fighting technique puts boxers to shame.",
+  "description": "BRELOOM closes in on its foe with light and sprightly footwork, then throws punches with its stretchy arms. This POKéMON’s fighting technique puts boxers to shame.",
   "flavorTexts": [
     {
-      "text": "BRELOOM closes in on its foe with light and sprightly footwork, then throws punches with its stretchy arms. This POK\u00e9MON\u2019s fighting technique puts boxers to shame.",
+      "text": "BRELOOM closes in on its foe with light and sprightly footwork, then throws punches with its stretchy arms. This POKéMON’s fighting technique puts boxers to shame.",
       "version": "ruby"
     },
     {
-      "text": "The seeds ringing BRELOOM\u2019s tail are made of hardened toxic spores. It is horrible to eat the seeds. Just taking a bite of this POK\u00e9MON\u2019s seed will cause your stomach to rumble.",
+      "text": "The seeds ringing BRELOOM’s tail are made of hardened toxic spores. It is horrible to eat the seeds. Just taking a bite of this POKéMON’s seed will cause your stomach to rumble.",
       "version": "sapphire"
     },
     {
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/286.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/286.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キノガッサ",
+    "roomaji": "Kinogassa",
+    "ko": "버섯모",
+    "zh-Hant": "斗笠菇",
+    "fr": "Chapignon",
+    "de": "Kapilz",
+    "es": "Breloom",
+    "it": "Breloom",
+    "en": "Breloom",
+    "ja": "キノガッサ",
+    "zh-Hans": "斗笠菇"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 136,
   "name": "Flareon",
-  "species": "Flame Pok\u00e9mon",
+  "species": "Flame Pokémon",
   "type": [
     "Fire"
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/136.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/136.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブースター",
+    "roomaji": "Booster",
+    "ko": "부스터",
+    "zh-Hant": "火伊布",
+    "fr": "Pyroli",
+    "de": "Flamara",
+    "es": "Flareon",
+    "it": "Flareon",
+    "en": "Flareon",
+    "ja": "ブースター",
+    "zh-Hans": "火伊布"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 400,
   "name": "Bibarel",
-  "species": "Beaver Pok\u00e9mon",
+  "species": "Beaver Pokémon",
   "type": [
     "Normal",
     "Water"
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/400.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/400.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビーダル",
+    "roomaji": "Beadull",
+    "ko": "비버통",
+    "zh-Hant": "大尾狸",
+    "fr": "Castorno",
+    "de": "Bidifas",
+    "es": "Bibarel",
+    "it": "Bibarel",
+    "en": "Bibarel",
+    "ja": "ビーダル",
+    "zh-Hans": "大尾狸"
   }
 }

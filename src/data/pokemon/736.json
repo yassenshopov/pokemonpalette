@@ -1,7 +1,7 @@
 {
   "id": 736,
   "name": "Grubbin",
-  "species": "Larva Pok\u00e9mon",
+  "species": "Larva Pokémon",
   "type": [
     "Bug"
   ],
@@ -36,11 +36,11 @@
       "version": "sun"
     },
     {
-      "text": "They often gather near places frequented by electric Pok\u00e9mon in order to avoid being attacked by bird Pok\u00e9mon.",
+      "text": "They often gather near places frequented by electric Pokémon in order to avoid being attacked by bird Pokémon.",
       "version": "moon"
     },
     {
-      "text": "If you find its nest, you shouldn\u2019t stick your hand inside. You\u2019ll get bitten by an irritated Grubbin.",
+      "text": "If you find its nest, you shouldn’t stick your hand inside. You’ll get bitten by an irritated Grubbin.",
       "version": "ultra-sun"
     },
     {
@@ -301,5 +301,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/736.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アゴジムシ",
+    "roomaji": "Agojimushi",
+    "ko": "턱지충이",
+    "zh-Hant": "強顎雞母蟲",
+    "fr": "Larvibule",
+    "de": "Mabula",
+    "es": "Grubbin",
+    "it": "Grubbin",
+    "en": "Grubbin",
+    "ja": "アゴジムシ",
+    "zh-Hans": "强颚鸡母虫"
   }
 }

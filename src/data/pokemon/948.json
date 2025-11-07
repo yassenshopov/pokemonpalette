@@ -1,7 +1,7 @@
 {
   "id": 948,
   "name": "Toedscool",
-  "species": "Woodear Pok\u00e9mon",
+  "species": "Woodear Pokémon",
   "type": [
     "Ground",
     "Grass"
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/948.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ノノクラゲ",
+    "roomaji": "Nonokurage",
+    "ko": "들눈해",
+    "zh-Hant": "原野水母",
+    "fr": "Terracool",
+    "de": "Tentagra",
+    "es": "Toedscool",
+    "it": "Toedscool",
+    "en": "Toedscool",
+    "ja": "ノノクラゲ",
+    "zh-Hans": "原野水母"
   }
 }

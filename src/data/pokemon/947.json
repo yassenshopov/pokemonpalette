@@ -1,7 +1,7 @@
 {
   "id": 947,
   "name": "Brambleghast",
-  "species": "Tumbleweed Pok\u00e9mon",
+  "species": "Tumbleweed Pokémon",
   "type": [
     "Grass",
     "Ghost"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "Brambleghast wanders around arid regions. On rare occasions, mass outbreaks of these Pok\u00e9mon will bury an entire town.",
+      "text": "Brambleghast wanders around arid regions. On rare occasions, mass outbreaks of these Pokémon will bury an entire town.",
       "version": "violet"
     }
   ],
@@ -286,5 +286,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/947.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アノホラグサ",
+    "roomaji": "Anohoragusa",
+    "ko": "공푸리",
+    "zh-Hant": "怖納噬草",
+    "fr": "Virevorreur",
+    "de": "Horrerba",
+    "es": "Brambleghast",
+    "it": "Brambleghast",
+    "en": "Brambleghast",
+    "ja": "アノホラグサ",
+    "zh-Hans": "怖纳噬草"
   }
 }

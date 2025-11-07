@@ -1,7 +1,7 @@
 {
   "id": 961,
   "name": "Wugtrio",
-  "species": "Garden Eel Pok\u00e9mon",
+  "species": "Garden Eel Pokémon",
   "type": [
     "Water"
   ],
@@ -48,7 +48,7 @@
       "version": "scarlet"
     },
     {
-      "text": "A variety of fish Pok\u00e9mon, Wugtrio was once considered to be a regional form of Dugtrio.",
+      "text": "A variety of fish Pokémon, Wugtrio was once considered to be a regional form of Dugtrio.",
       "version": "violet"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/961.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウミトリオ",
+    "roomaji": "Umitrio",
+    "ko": "바닥트리오",
+    "zh-Hant": "三海地鼠",
+    "fr": "Triopikeau",
+    "de": "Schligdri",
+    "es": "Wugtrio",
+    "it": "Wugtrio",
+    "en": "Wugtrio",
+    "ja": "ウミトリオ",
+    "zh-Hans": "三海地鼠"
   }
 }

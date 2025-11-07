@@ -1,7 +1,7 @@
 {
   "id": 29,
   "name": "Nidoran-f",
-  "species": "Poison Pin Pok\u00e9mon",
+  "species": "Poison Pin Pokémon",
   "type": [
     "Poison"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 40,
     "speed": 41
   },
-  "description": "Although small, its venomous barbs render this POK\u00e9MON dangerous. The female has smaller horns.",
+  "description": "Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns.",
   "flavorTexts": [
     {
-      "text": "Although small, its venomous barbs render this POK\u00e9MON dangerous. The female has smaller horns.",
+      "text": "Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns.",
       "version": "red"
     },
     {
-      "text": "Although small, its venomous barbs render this POK\u00e9MON dangerous. The female has smaller horns.",
+      "text": "Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns.",
       "version": "blue"
     },
     {
-      "text": "A mild-mannered POK\u00e9MON that does not like to fight. Beware, its small horns secrete venom.",
+      "text": "A mild-mannered POKéMON that does not like to fight. Beware, its small horns secrete venom.",
       "version": "yellow"
     },
     {
-      "text": "The poison hidden in its small horn is extremely po\u00ad tent. Even a tiny scratch can have fatal results.",
+      "text": "The poison hidden in its small horn is extremely po­ tent. Even a tiny scratch can have fatal results.",
       "version": "gold"
     },
     {
-      "text": "Although not very combative, it will torment its foes with poison spikes if it is threat\u00ad ened in any way.",
+      "text": "Although not very combative, it will torment its foes with poison spikes if it is threat­ ened in any way.",
       "version": "silver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/29.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/29.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニドラン♀",
+    "roomaji": "Nidoran♀",
+    "ko": "니드런♀",
+    "zh-Hant": "尼多蘭",
+    "fr": "Nidoran♀",
+    "de": "Nidoran♀",
+    "es": "Nidoran♀",
+    "it": "Nidoran♀",
+    "en": "Nidoran♀",
+    "ja": "ニドラン♀",
+    "zh-Hans": "尼多兰"
   }
 }

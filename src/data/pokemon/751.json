@@ -1,7 +1,7 @@
 {
   "id": 751,
   "name": "Dewpider",
-  "species": "Water Bubble Pok\u00e9mon",
+  "species": "Water Bubble Pokémon",
   "type": [
     "Water",
     "Bug"
@@ -47,11 +47,11 @@
       "version": "sun"
     },
     {
-      "text": "When it comes across enemies or potential prey, this Pok\u00e9mon smashes its water-bubble-covered head into them.",
+      "text": "When it comes across enemies or potential prey, this Pokémon smashes its water-bubble-covered head into them.",
       "version": "moon"
     },
     {
-      "text": "When two Dewpider meet, they display their water bubbles to each other. Then the one with the smaller bubble gets out of the other\u2019s way.",
+      "text": "When two Dewpider meet, they display their water bubbles to each other. Then the one with the smaller bubble gets out of the other’s way.",
       "version": "ultra-sun"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/751.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シズクモ",
+    "roomaji": "Shizukumo",
+    "ko": "물거미",
+    "zh-Hant": "滴蛛",
+    "fr": "Araqua",
+    "de": "Araqua",
+    "es": "Dewpider",
+    "it": "Dewpider",
+    "en": "Dewpider",
+    "ja": "シズクモ",
+    "zh-Hans": "滴蛛"
   }
 }

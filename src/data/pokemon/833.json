@@ -1,7 +1,7 @@
 {
   "id": 833,
   "name": "Chewtle",
-  "species": "Snapping Pok\u00e9mon",
+  "species": "Snapping Pokémon",
   "type": [
     "Water"
   ],
@@ -48,7 +48,7 @@
       "version": "sword"
     },
     {
-      "text": "It starts off battles by attacking with its rock-hard horn, but as soon as the opponent flinches, this Pok\u00e9mon bites down and never lets go.",
+      "text": "It starts off battles by attacking with its rock-hard horn, but as soon as the opponent flinches, this Pokémon bites down and never lets go.",
       "version": "shield"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/833.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カムカメ",
+    "roomaji": "Kamukame",
+    "ko": "깨물부기",
+    "zh-Hant": "咬咬龜",
+    "fr": "Khélocrok",
+    "de": "Kamehaps",
+    "es": "Chewtle",
+    "it": "Chewtle",
+    "en": "Chewtle",
+    "ja": "カムカメ",
+    "zh-Hans": "咬咬龟"
   }
 }

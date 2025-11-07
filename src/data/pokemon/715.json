@@ -1,7 +1,7 @@
 {
   "id": 715,
   "name": "Noivern",
-  "species": "Sound Wave Pok\u00e9mon",
+  "species": "Sound Wave Pokémon",
   "type": [
     "Flying",
     "Dragon"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/715.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オンバーン",
+    "roomaji": "Onvern",
+    "ko": "음번",
+    "zh-Hant": "音波龍",
+    "fr": "Bruyverne",
+    "de": "UHaFnir",
+    "es": "Noivern",
+    "it": "Noivern",
+    "en": "Noivern",
+    "ja": "オンバーン",
+    "zh-Hans": "音波龙"
   }
 }

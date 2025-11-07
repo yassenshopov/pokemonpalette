@@ -1,7 +1,7 @@
 {
   "id": 975,
   "name": "Cetitan",
-  "species": "Terra Whale Pok\u00e9mon",
+  "species": "Terra Whale Pokémon",
   "type": [
     "Ice"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 55,
     "speed": 73
   },
-  "description": "This Pok\u00e9mon wanders around snowy, icy areas. It protects its body with powerful muscles and a thick layer of fat under its skin.",
+  "description": "This Pokémon wanders around snowy, icy areas. It protects its body with powerful muscles and a thick layer of fat under its skin.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon wanders around snowy, icy areas. It protects its body with powerful muscles and a thick layer of fat under its skin.",
+      "text": "This Pokémon wanders around snowy, icy areas. It protects its body with powerful muscles and a thick layer of fat under its skin.",
       "version": "scarlet"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/975.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハルクジラ",
+    "roomaji": "Hulkujira",
+    "ko": "우락고래",
+    "zh-Hant": "浩大鯨",
+    "fr": "Balbalèze",
+    "de": "Kolowal",
+    "es": "Cetitan",
+    "it": "Cetitan",
+    "en": "Cetitan",
+    "ja": "ハルクジラ",
+    "zh-Hans": "浩大鲸"
   }
 }

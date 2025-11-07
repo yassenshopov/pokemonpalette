@@ -1,7 +1,7 @@
 {
   "id": 926,
   "name": "Fidough",
-  "species": "Puppy Pok\u00e9mon",
+  "species": "Puppy Pokémon",
   "type": [
     "Fairy"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 55,
     "speed": 65
   },
-  "description": "This Pok\u00e9mon is smooth and moist to the touch. Yeast in Fidough\u2019s breath induces fermentation in the Pok\u00e9mon\u2019s vicinity.",
+  "description": "This Pokémon is smooth and moist to the touch. Yeast in Fidough’s breath induces fermentation in the Pokémon’s vicinity.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is smooth and moist to the touch. Yeast in Fidough\u2019s breath induces fermentation in the Pok\u00e9mon\u2019s vicinity.",
+      "text": "This Pokémon is smooth and moist to the touch. Yeast in Fidough’s breath induces fermentation in the Pokémon’s vicinity.",
       "version": "scarlet"
     },
     {
-      "text": "The yeast in Fidough\u2019s breath is useful for cooking, so this Pok\u00e9mon has been protected by people since long ago.",
+      "text": "The yeast in Fidough’s breath is useful for cooking, so this Pokémon has been protected by people since long ago.",
       "version": "violet"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/926.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パピモッチ",
+    "roomaji": "Pupimocchi",
+    "ko": "쫀도기",
+    "zh-Hant": "狗仔包",
+    "fr": "Pâtachiot",
+    "de": "Hefel",
+    "es": "Fidough",
+    "it": "Fidough",
+    "en": "Fidough",
+    "ja": "パピモッチ",
+    "zh-Hans": "狗仔包"
   }
 }

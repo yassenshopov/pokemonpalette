@@ -1,7 +1,7 @@
 {
   "id": 401,
   "name": "Kricketot",
-  "species": "Cricket Pok\u00e9mon",
+  "species": "Cricket Pokémon",
   "type": [
     "Bug"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/401.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/401.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コロボーシ",
+    "roomaji": "Korobohshi",
+    "ko": "귀뚤뚜기",
+    "zh-Hant": "圓法師",
+    "fr": "Crikzik",
+    "de": "Zirpurze",
+    "es": "Kricketot",
+    "it": "Kricketot",
+    "en": "Kricketot",
+    "ja": "コロボーシ",
+    "zh-Hans": "圆法师"
   }
 }

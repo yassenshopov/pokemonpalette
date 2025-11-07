@@ -1,7 +1,7 @@
 {
   "id": 435,
   "name": "Skuntank",
-  "species": "Skunk Pok\u00e9mon",
+  "species": "Skunk Pokémon",
   "type": [
     "Poison",
     "Dark"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/435.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/435.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スカタンク",
+    "roomaji": "Skutank",
+    "ko": "스컹탱크",
+    "zh-Hant": "坦克臭鼬",
+    "fr": "Moufflair",
+    "de": "Skuntank",
+    "es": "Skuntank",
+    "it": "Skuntank",
+    "en": "Skuntank",
+    "ja": "スカタンク",
+    "zh-Hans": "坦克臭鼬"
   }
 }

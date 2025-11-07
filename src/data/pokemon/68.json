@@ -1,7 +1,7 @@
 {
   "id": 68,
   "name": "Machamp",
-  "species": "Superpower Pok\u00e9mon",
+  "species": "Superpower Pokémon",
   "type": [
     "Fighting"
   ],
@@ -52,7 +52,7 @@
       "version": "blue"
     },
     {
-      "text": "One arm alone can move mountains. Using all four arms, this POK\u00e9MON fires off awesome punches.",
+      "text": "One arm alone can move mountains. Using all four arms, this POKéMON fires off awesome punches.",
       "version": "yellow"
     },
     {
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/68.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/68.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カイリキー",
+    "roomaji": "Kairiky",
+    "ko": "괴력몬",
+    "zh-Hant": "怪力",
+    "fr": "Mackogneur",
+    "de": "Machomei",
+    "es": "Machamp",
+    "it": "Machamp",
+    "en": "Machamp",
+    "ja": "カイリキー",
+    "zh-Hans": "怪力"
   }
 }

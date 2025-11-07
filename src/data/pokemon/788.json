@@ -1,7 +1,7 @@
 {
   "id": 788,
   "name": "Tapu-fini",
-  "species": "Land Spirit Pok\u00e9mon",
+  "species": "Land Spirit Pokémon",
   "type": [
     "Water",
     "Fairy"
@@ -55,7 +55,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Although it\u2019s called a guardian deity, terrible calamities sometimes befall those who recklessly approach Tapu Fini.",
+      "text": "Although it’s called a guardian deity, terrible calamities sometimes befall those who recklessly approach Tapu Fini.",
       "version": "ultra-moon"
     }
   ],
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/788.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カプ・レヒレ",
+    "roomaji": "Rehire",
+    "ko": "카푸느지느",
+    "zh-Hant": "卡璞・鰭鰭",
+    "fr": "Tokopisco",
+    "de": "Kapu-Kime",
+    "es": "Tapu Fini",
+    "it": "Tapu Fini",
+    "en": "Tapu Fini",
+    "ja": "カプ・レヒレ",
+    "zh-Hans": "卡璞・鳍鳍"
   }
 }

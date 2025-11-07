@@ -1,7 +1,7 @@
 {
   "id": 134,
   "name": "Vaporeon",
-  "species": "Bubble Jet Pok\u00e9mon",
+  "species": "Bubble Jet Pokémon",
   "type": [
     "Water"
   ],
@@ -46,15 +46,15 @@
       "version": "blue"
     },
     {
-      "text": "Its cell structure is similar to water molecules. It will melt away and become invis\u00ad ible in water.",
+      "text": "Its cell structure is similar to water molecules. It will melt away and become invis­ ible in water.",
       "version": "yellow"
     },
     {
-      "text": "When VAPOREON's fins begin to vi\u00ad brate, it is a sign that rain will come within a few hours.",
+      "text": "When VAPOREON's fins begin to vi­ brate, it is a sign that rain will come within a few hours.",
       "version": "gold"
     },
     {
-      "text": "It prefers beauti\u00ad ful shores. With cells similar to water molecules, it could melt in water.",
+      "text": "It prefers beauti­ ful shores. With cells similar to water molecules, it could melt in water.",
       "version": "silver"
     }
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/134.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/134.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シャワーズ",
+    "roomaji": "Showers",
+    "ko": "샤미드",
+    "zh-Hant": "水伊布",
+    "fr": "Aquali",
+    "de": "Aquana",
+    "es": "Vaporeon",
+    "it": "Vaporeon",
+    "en": "Vaporeon",
+    "ja": "シャワーズ",
+    "zh-Hans": "水伊布"
   }
 }

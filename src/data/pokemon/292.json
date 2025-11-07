@@ -1,7 +1,7 @@
 {
   "id": 292,
   "name": "Shedinja",
-  "species": "Shed Pok\u00e9mon",
+  "species": "Shed Pokémon",
   "type": [
     "Bug",
     "Ghost"
@@ -34,26 +34,26 @@
     "specialDefense": 30,
     "speed": 40
   },
-  "description": "SHEDINJA\u2019s hard body doesn\u2019t move - not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this POK\u00e9MON will steal the spirit of anyone peering into its hollow body from its back.",
+  "description": "SHEDINJA’s hard body doesn’t move - not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this POKéMON will steal the spirit of anyone peering into its hollow body from its back.",
   "flavorTexts": [
     {
-      "text": "SHEDINJA\u2019s hard body doesn\u2019t move - not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this POK\u00e9MON will steal the spirit of anyone peering into its hollow body from its back.",
+      "text": "SHEDINJA’s hard body doesn’t move - not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this POKéMON will steal the spirit of anyone peering into its hollow body from its back.",
       "version": "ruby"
     },
     {
-      "text": "SHEDINJA is a peculiar POK\u00e9MON. It seems to appear unsought in a POK\u00e9 BALL after a NINCADA evolves. This bizarre POK\u00e9MON is entirely immobile - it doesn\u2019t even breathe.",
+      "text": "SHEDINJA is a peculiar POKéMON. It seems to appear unsought in a POKé BALL after a NINCADA evolves. This bizarre POKéMON is entirely immobile - it doesn’t even breathe.",
       "version": "sapphire"
     },
     {
-      "text": "A peculiar POK\u00e9MON that floats in air even though its wings remain completely still. The inside of its body is hollow and utterly dark.",
+      "text": "A peculiar POKéMON that floats in air even though its wings remain completely still. The inside of its body is hollow and utterly dark.",
       "version": "emerald"
     },
     {
-      "text": "A most peculiar POK\u00e9MON that somehow appears in a POK\u00e9 BALL when a NINCADA evolves.",
+      "text": "A most peculiar POKéMON that somehow appears in a POKé BALL when a NINCADA evolves.",
       "version": "firered"
     },
     {
-      "text": "A most peculiar POK\u00e9MON that somehow appears in a POK\u00e9 BALL when a NINCADA evolves.",
+      "text": "A most peculiar POKéMON that somehow appears in a POKé BALL when a NINCADA evolves.",
       "version": "leafgreen"
     }
   ],
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/292.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/292.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヌケニン",
+    "roomaji": "Nukenin",
+    "ko": "껍질몬",
+    "zh-Hant": "脫殼忍者",
+    "fr": "Munja",
+    "de": "Ninjatom",
+    "es": "Shedinja",
+    "it": "Shedinja",
+    "en": "Shedinja",
+    "ja": "ヌケニン",
+    "zh-Hans": "脱壳忍者"
   }
 }

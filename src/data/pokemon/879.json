@@ -1,7 +1,7 @@
 {
   "id": 879,
   "name": "Copperajah",
-  "species": "Copperderm Pok\u00e9mon",
+  "species": "Copperderm Pokémon",
   "type": [
     "Steel"
   ],
@@ -42,7 +42,7 @@
       "version": "sword"
     },
     {
-      "text": "These Pok\u00e9mon live in herds. Their trunks have incredible grip strength, strong enough to crush giant rocks into powder.",
+      "text": "These Pokémon live in herds. Their trunks have incredible grip strength, strong enough to crush giant rocks into powder.",
       "version": "shield"
     }
   ],
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/879.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ダイオウドウ",
+    "roomaji": "Daioudou",
+    "ko": "대왕끼리동",
+    "zh-Hant": "大王銅象",
+    "fr": "Pachyradjah",
+    "de": "Patinaraja",
+    "es": "Copperajah",
+    "it": "Copperajah",
+    "en": "Copperajah",
+    "ja": "ダイオウドウ",
+    "zh-Hans": "大王铜象"
   }
 }

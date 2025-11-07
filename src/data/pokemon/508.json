@@ -1,7 +1,7 @@
 {
   "id": 508,
   "name": "Stoutland",
-  "species": "Big-Hearted Pok\u00e9mon",
+  "species": "Big-Hearted Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "This extremely wise Pok\u00e9mon excels at rescuing people stranded at sea or in the mountains.",
+      "text": "This extremely wise Pokémon excels at rescuing people stranded at sea or in the mountains.",
       "version": "white"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/508.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/508.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムーランド",
+    "roomaji": "Mooland",
+    "ko": "바랜드",
+    "zh-Hant": "長毛狗",
+    "fr": "Mastouffe",
+    "de": "Bissbark",
+    "es": "Stoutland",
+    "it": "Stoutland",
+    "en": "Stoutland",
+    "ja": "ムーランド",
+    "zh-Hans": "长毛狗"
   }
 }

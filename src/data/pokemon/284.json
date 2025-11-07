@@ -1,7 +1,7 @@
 {
   "id": 284,
   "name": "Masquerain",
-  "species": "Eyeball Pok\u00e9mon",
+  "species": "Eyeball Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -40,18 +40,18 @@
     "specialDefense": 82,
     "speed": 80
   },
-  "description": "MASQUERAIN intimidates enemies with the eyelike patterns on its antennas. This POK\u00e9MON flaps its four wings to freely fly in any direction - even sideways and backwards - as if it were a helicopter.",
+  "description": "MASQUERAIN intimidates enemies with the eyelike patterns on its antennas. This POKéMON flaps its four wings to freely fly in any direction - even sideways and backwards - as if it were a helicopter.",
   "flavorTexts": [
     {
-      "text": "MASQUERAIN intimidates enemies with the eyelike patterns on its antennas. This POK\u00e9MON flaps its four wings to freely fly in any direction - even sideways and backwards - as if it were a helicopter.",
+      "text": "MASQUERAIN intimidates enemies with the eyelike patterns on its antennas. This POKéMON flaps its four wings to freely fly in any direction - even sideways and backwards - as if it were a helicopter.",
       "version": "ruby"
     },
     {
-      "text": "MASQUERAIN\u2019s antennas have eyelike patterns that usually give it an angry look. If the \u201ceyes\u201d are droopy and appear sad, it is said to be a sign that a heavy rainfall is on its way.",
+      "text": "MASQUERAIN’s antennas have eyelike patterns that usually give it an angry look. If the “eyes” are droopy and appear sad, it is said to be a sign that a heavy rainfall is on its way.",
       "version": "sapphire"
     },
     {
-      "text": "It intimidates foes with the large eyelike patterns on its antennae. Because it can\u2019t fly if its wings get wet, it shelters itself from rain under large trees and eaves.",
+      "text": "It intimidates foes with the large eyelike patterns on its antennae. Because it can’t fly if its wings get wet, it shelters itself from rain under large trees and eaves.",
       "version": "emerald"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/284.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/284.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アメモース",
+    "roomaji": "Amemoth",
+    "ko": "비나방",
+    "zh-Hant": "雨翅蛾",
+    "fr": "Maskadra",
+    "de": "Maskeregen",
+    "es": "Masquerain",
+    "it": "Masquerain",
+    "en": "Masquerain",
+    "ja": "アメモース",
+    "zh-Hans": "雨翅蛾"
   }
 }

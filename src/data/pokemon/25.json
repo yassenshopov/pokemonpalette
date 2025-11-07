@@ -1,7 +1,7 @@
 {
   "id": 25,
   "name": "Pikachu",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Electric"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 50,
     "speed": 90
   },
-  "description": "When several of these POK\u00e9MON gather, their electricity could build and cause lightning storms.",
+  "description": "When several of these POKéMON gather, their electricity could build and cause lightning storms.",
   "flavorTexts": [
     {
-      "text": "When several of these POK\u00e9MON gather, their electricity could build and cause lightning storms.",
+      "text": "When several of these POKéMON gather, their electricity could build and cause lightning storms.",
       "version": "red"
     },
     {
-      "text": "When several of these POK\u00e9MON gather, their electricity could build and cause lightning storms.",
+      "text": "When several of these POKéMON gather, their electricity could build and cause lightning storms.",
       "version": "blue"
     },
     {
@@ -50,11 +50,11 @@
       "version": "yellow"
     },
     {
-      "text": "This intelligent POK\u00e9MON roasts hard BERRIES with electricity to make them tender enough to eat.",
+      "text": "This intelligent POKéMON roasts hard BERRIES with electricity to make them tender enough to eat.",
       "version": "gold"
     },
     {
-      "text": "It raises its tail to check its sur\u00ad roundings. The tail is sometimes struck by light\u00ad ning in this pose.",
+      "text": "It raises its tail to check its sur­ roundings. The tail is sometimes struck by light­ ning in this pose.",
       "version": "silver"
     }
   ],
@@ -424,5 +424,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/25.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/25.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピカチュウ",
+    "roomaji": "Pikachu",
+    "ko": "피카츄",
+    "zh-Hant": "皮卡丘",
+    "fr": "Pikachu",
+    "de": "Pikachu",
+    "es": "Pikachu",
+    "it": "Pikachu",
+    "en": "Pikachu",
+    "ja": "ピカチュウ",
+    "zh-Hans": "皮卡丘"
   }
 }

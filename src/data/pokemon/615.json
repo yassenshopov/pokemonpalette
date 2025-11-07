@@ -1,7 +1,7 @@
 {
   "id": 615,
   "name": "Cryogonal",
-  "species": "Crystallizing Pok\u00e9mon",
+  "species": "Crystallizing Pokémon",
   "type": [
     "Ice"
   ],
@@ -40,11 +40,11 @@
       "version": "white"
     },
     {
-      "text": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148\u00b0 F.",
+      "text": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
       "version": "black-2"
     },
     {
-      "text": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148\u00b0 F.",
+      "text": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
       "version": "white-2"
     },
     {
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/615.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/615.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フリージオ",
+    "roomaji": "Freegeo",
+    "ko": "프리지오",
+    "zh-Hant": "幾何雪花",
+    "fr": "Hexagel",
+    "de": "Frigometri",
+    "es": "Cryogonal",
+    "it": "Cryogonal",
+    "en": "Cryogonal",
+    "ja": "フリージオ",
+    "zh-Hans": "几何雪花"
   }
 }

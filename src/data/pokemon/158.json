@@ -1,7 +1,7 @@
 {
   "id": 158,
   "name": "Totodile",
-  "species": "Big Jaw Pok\u00e9mon",
+  "species": "Big Jaw Pokémon",
   "type": [
     "Water"
   ],
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "Despite the smallness of its body, TOTODILE\u2019s jaws are very powerful. While the POK\u00e9MON may think it is just playfully nipping, its bite has enough power to cause serious injury.",
+      "text": "Despite the smallness of its body, TOTODILE’s jaws are very powerful. While the POKéMON may think it is just playfully nipping, its bite has enough power to cause serious injury.",
       "version": "ruby"
     },
     {
-      "text": "Despite the smallness of its body, TOTODILE\u2019s jaws are very powerful. While the POK\u00e9MON may think it is just playfully nipping, its bite has enough power to cause serious injury.",
+      "text": "Despite the smallness of its body, TOTODILE’s jaws are very powerful. While the POKéMON may think it is just playfully nipping, its bite has enough power to cause serious injury.",
       "version": "sapphire"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/158.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/158.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワニノコ",
+    "roomaji": "Waninoko",
+    "ko": "리아코",
+    "zh-Hant": "小鋸鱷",
+    "fr": "Kaiminus",
+    "de": "Karnimani",
+    "es": "Totodile",
+    "it": "Totodile",
+    "en": "Totodile",
+    "ja": "ワニノコ",
+    "zh-Hans": "小锯鳄"
   }
 }

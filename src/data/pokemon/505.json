@@ -1,7 +1,7 @@
 {
   "id": 505,
   "name": "Watchog",
-  "species": "Lookout Pok\u00e9mon",
+  "species": "Lookout Pokémon",
   "type": [
     "Normal"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/505.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/505.ogg"
+  },
+  "names": {
+    "es": "Watchog",
+    "ja-Hrkt": "ミルホッグ",
+    "roomaji": "Miruhog",
+    "ko": "보르그",
+    "zh-Hant": "步哨鼠",
+    "fr": "Miradar",
+    "de": "Kukmarda",
+    "it": "Watchog",
+    "en": "Watchog",
+    "ja": "ミルホッグ",
+    "zh-Hans": "步哨鼠"
   }
 }

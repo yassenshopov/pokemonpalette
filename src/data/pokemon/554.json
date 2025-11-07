@@ -1,7 +1,7 @@
 {
   "id": 554,
   "name": "Darumaka",
-  "species": "Zen Charm Pok\u00e9mon",
+  "species": "Zen Charm Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,19 +42,19 @@
       "version": "black"
     },
     {
-      "text": "Darumaka\u2019s droppings are hot, so people used to put them in their clothes to keep themselves warm.",
+      "text": "Darumaka’s droppings are hot, so people used to put them in their clothes to keep themselves warm.",
       "version": "white"
     },
     {
-      "text": "When it sleeps, it pulls its limbs into its body and its internal fire goes down to 1,100\u00b0 F.",
+      "text": "When it sleeps, it pulls its limbs into its body and its internal fire goes down to 1,100° F.",
       "version": "black-2"
     },
     {
-      "text": "When it sleeps, it pulls its limbs into its body and its internal fire goes down to 1,100\u00b0 F.",
+      "text": "When it sleeps, it pulls its limbs into its body and its internal fire goes down to 1,100° F.",
       "version": "white-2"
     },
     {
-      "text": "Darumaka\u2019s droppings are hot, so people used to put them in their clothes to keep themselves warm.",
+      "text": "Darumaka’s droppings are hot, so people used to put them in their clothes to keep themselves warm.",
       "version": "x"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/554.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/554.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダルマッカ",
+    "roomaji": "Darumakka",
+    "ko": "달막화",
+    "zh-Hant": "火紅不倒翁",
+    "fr": "Darumarond",
+    "de": "Flampion",
+    "es": "Darumaka",
+    "it": "Darumaka",
+    "en": "Darumaka",
+    "ja": "ダルマッカ",
+    "zh-Hans": "火红不倒翁"
   }
 }

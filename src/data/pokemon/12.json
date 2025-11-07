@@ -1,7 +1,7 @@
 {
   "id": 12,
   "name": "Butterfree",
-  "species": "Butterfly Pok\u00e9mon",
+  "species": "Butterfly Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -59,7 +59,7 @@
       "version": "gold"
     },
     {
-      "text": "Water-repellent powder on its wings enables it to collect honey, even in the heav\u00ad iest of rains.",
+      "text": "Water-repellent powder on its wings enables it to collect honey, even in the heav­ iest of rains.",
       "version": "silver"
     }
   ],
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/12.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/12.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バタフリー",
+    "roomaji": "Butterfree",
+    "ko": "버터플",
+    "zh-Hant": "巴大蝶",
+    "fr": "Papilusion",
+    "de": "Smettbo",
+    "es": "Butterfree",
+    "it": "Butterfree",
+    "en": "Butterfree",
+    "ja": "バタフリー",
+    "zh-Hans": "巴大蝶"
   }
 }

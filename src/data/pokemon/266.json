@@ -1,7 +1,7 @@
 {
   "id": 266,
   "name": "Silcoon",
-  "species": "Cocoon Pok\u00e9mon",
+  "species": "Cocoon Pokémon",
   "type": [
     "Bug"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 25,
     "speed": 15
   },
-  "description": "SILCOON tethers itself to a tree branch using silk to keep from falling. There,  this POK\u00e9MON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
+  "description": "SILCOON tethers itself to a tree branch using silk to keep from falling. There,  this POKéMON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
   "flavorTexts": [
     {
-      "text": "SILCOON tethers itself to a tree branch using silk to keep from falling. There,  this POK\u00e9MON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
+      "text": "SILCOON tethers itself to a tree branch using silk to keep from falling. There,  this POKéMON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
       "version": "ruby"
     },
     {
-      "text": "SILCOON was thought to endure hunger and not consume anything before its evolution. However, it is now thought that this POK\u00e9MON slakes its thirst by drinking rainwater that collects on its silk.",
+      "text": "SILCOON was thought to endure hunger and not consume anything before its evolution. However, it is now thought that this POKéMON slakes its thirst by drinking rainwater that collects on its silk.",
       "version": "sapphire"
     },
     {
@@ -238,5 +238,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/266.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/266.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カラサリス",
+    "roomaji": "Karasalis",
+    "ko": "실쿤",
+    "zh-Hant": "甲殼繭",
+    "fr": "Armulys",
+    "de": "Schaloko",
+    "es": "Silcoon",
+    "it": "Silcoon",
+    "en": "Silcoon",
+    "ja": "カラサリス",
+    "zh-Hans": "甲壳茧"
   }
 }

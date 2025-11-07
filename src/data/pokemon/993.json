@@ -1,7 +1,7 @@
 {
   "id": 993,
   "name": "Iron-jugulis",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Dark",
     "Flying"
@@ -34,14 +34,14 @@
     "specialDefense": 80,
     "speed": 108
   },
-  "description": "It resembles a certain Pok\u00e9mon introduced in a paranormal magazine, described as the offspring of a Hydreigon that fell in love with a robot.",
+  "description": "It resembles a certain Pokémon introduced in a paranormal magazine, described as the offspring of a Hydreigon that fell in love with a robot.",
   "flavorTexts": [
     {
-      "text": "It resembles a certain Pok\u00e9mon introduced in a paranormal magazine, described as the offspring of a Hydreigon that fell in love with a robot.",
+      "text": "It resembles a certain Pokémon introduced in a paranormal magazine, described as the offspring of a Hydreigon that fell in love with a robot.",
       "version": "scarlet"
     },
     {
-      "text": "It\u2019s possible that Iron Jugulis, an object described in an old book, may actually be this Pok\u00e9mon.",
+      "text": "It’s possible that Iron Jugulis, an object described in an old book, may actually be this Pokémon.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/993.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノコウベ",
+    "roomaji": "Tetsunokoube",
+    "ko": "무쇠머리",
+    "zh-Hant": "鐵脖頸",
+    "fr": "Têtes-de-Fer",
+    "de": "Eisenhals",
+    "es": "Ferrocuello",
+    "it": "Colloferreo",
+    "en": "Iron Jugulis",
+    "ja": "テツノコウベ",
+    "zh-Hans": "铁脖颈"
   }
 }

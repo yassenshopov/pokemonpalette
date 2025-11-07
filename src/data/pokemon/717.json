@@ -1,7 +1,7 @@
 {
   "id": 717,
   "name": "Yveltal",
-  "species": "Destruction Pok\u00e9mon",
+  "species": "Destruction Pokémon",
   "type": [
     "Dark",
     "Flying"
@@ -34,10 +34,10 @@
     "specialDefense": 98,
     "speed": 99
   },
-  "description": "When this legendary Pok\u00e9mon\u2019s wings and tail feathers spread wide and glow red, it absorbs the life force of living creatures.",
+  "description": "When this legendary Pokémon’s wings and tail feathers spread wide and glow red, it absorbs the life force of living creatures.",
   "flavorTexts": [
     {
-      "text": "When this legendary Pok\u00e9mon\u2019s wings and tail feathers spread wide and glow red, it absorbs the life force of living creatures.",
+      "text": "When this legendary Pokémon’s wings and tail feathers spread wide and glow red, it absorbs the life force of living creatures.",
       "version": "x"
     },
     {
@@ -45,7 +45,7 @@
       "version": "y"
     },
     {
-      "text": "When this legendary Pok\u00e9mon\u2019s wings and tail feathers spread wide and glow red, it absorbs the life force of living creatures.",
+      "text": "When this legendary Pokémon’s wings and tail feathers spread wide and glow red, it absorbs the life force of living creatures.",
       "version": "omega-ruby"
     },
     {
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/717.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イベルタル",
+    "roomaji": "Yveltal",
+    "ko": "이벨타르",
+    "zh-Hant": "伊裴爾塔爾",
+    "fr": "Yveltal",
+    "de": "Yveltal",
+    "es": "Yveltal",
+    "it": "Yveltal",
+    "en": "Yveltal",
+    "ja": "イベルタル",
+    "zh-Hans": "伊裴尔塔尔"
   }
 }

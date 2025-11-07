@@ -1,8 +1,11 @@
 {
   "id": 778,
   "name": "Mimikyu",
-  "species": "Disguise Pok\u00e9mon",
-  "type": ["Ghost", "Fairy"],
+  "species": "Disguise Pokémon",
+  "type": [
+    "Ghost",
+    "Fairy"
+  ],
   "typeDetails": [
     {
       "name": "Ghost",
@@ -38,15 +41,15 @@
       "version": "sun"
     },
     {
-      "text": "A lonely Pok\u00e9mon, it conceals its terrifying appearance beneath an old rag so it can get closer to people and other Pok\u00e9mon.",
+      "text": "A lonely Pokémon, it conceals its terrifying appearance beneath an old rag so it can get closer to people and other Pokémon.",
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s a quiet, lonely Pok\u00e9mon, if you try to look at what\u2019s under its rag, it will become agitated and resist violently.",
+      "text": "Although it’s a quiet, lonely Pokémon, if you try to look at what’s under its rag, it will become agitated and resist violently.",
       "version": "ultra-sun"
     },
     {
-      "text": "A gust of wind revealed what hides under this Pok\u00e9mon\u2019s rag to a passing Trainer, who went home and died painfully that very night.",
+      "text": "A gust of wind revealed what hides under this Pokémon’s rag to a passing Trainer, who went home and died painfully that very night.",
       "version": "ultra-moon"
     },
     {
@@ -60,7 +63,11 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#A8A878", "#F8D030", "#F8F8F8"]
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/778.png",
@@ -288,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/778.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ミミッキュ",
+    "roomaji": "Mimikkyu",
+    "ko": "따라큐",
+    "zh-Hant": "謎擬Ｑ",
+    "fr": "Mimiqui",
+    "de": "Mimigma",
+    "es": "Mimikyu",
+    "it": "Mimikyu",
+    "en": "Mimikyu",
+    "ja": "ミミッキュ",
+    "zh-Hans": "谜拟丘"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 764,
   "name": "Comfey",
-  "species": "Posy Picker Pok\u00e9mon",
+  "species": "Posy Picker Pokémon",
   "type": [
     "Fairy"
   ],
@@ -48,11 +48,11 @@
       "version": "sun"
     },
     {
-      "text": "Baths prepared with the flowers from its vine have a relaxing effect, so this Pok\u00e9mon is a hit with many people.",
+      "text": "Baths prepared with the flowers from its vine have a relaxing effect, so this Pokémon is a hit with many people.",
       "version": "moon"
     },
     {
-      "text": "It stretches sticky vines out from its head and picks flowers to adorn itself with. When it doesn\u2019t have any flowers, it feels uneasy.",
+      "text": "It stretches sticky vines out from its head and picks flowers to adorn itself with. When it doesn’t have any flowers, it feels uneasy.",
       "version": "ultra-sun"
     },
     {
@@ -60,7 +60,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "Comfey picks flowers with its vine and decorates itself with them. For some reason, flowers won\u2019t wither once they\u2019re attached to a Comfey.",
+      "text": "Comfey picks flowers with its vine and decorates itself with them. For some reason, flowers won’t wither once they’re attached to a Comfey.",
       "version": "sword"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/764.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "キュワワー",
+    "roomaji": "Cuwawa",
+    "ko": "큐아링",
+    "zh-Hant": "花療環環",
+    "fr": "Guérilande",
+    "de": "Curelei",
+    "es": "Comfey",
+    "it": "Comfey",
+    "en": "Comfey",
+    "ja": "キュワワー",
+    "zh-Hans": "花疗环环"
   }
 }

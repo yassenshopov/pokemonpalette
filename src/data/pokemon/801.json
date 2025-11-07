@@ -1,7 +1,7 @@
 {
   "id": 801,
   "name": "Magearna",
-  "species": "Artificial Pok\u00e9mon",
+  "species": "Artificial Pokémon",
   "type": [
     "Steel",
     "Fairy"
@@ -34,10 +34,10 @@
     "specialDefense": 115,
     "speed": 65
   },
-  "description": "This artificial Pok\u00e9mon, constructed more than 500 years ago, can understand human speech but cannot itself speak.",
+  "description": "This artificial Pokémon, constructed more than 500 years ago, can understand human speech but cannot itself speak.",
   "flavorTexts": [
     {
-      "text": "This artificial Pok\u00e9mon, constructed more than 500 years ago, can understand human speech but cannot itself speak.",
+      "text": "This artificial Pokémon, constructed more than 500 years ago, can understand human speech but cannot itself speak.",
       "version": "sun"
     },
     {
@@ -286,5 +286,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/801.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マギアナ",
+    "roomaji": "Magearna",
+    "ko": "마기아나",
+    "zh-Hant": "瑪機雅娜",
+    "fr": "Magearna",
+    "de": "Magearna",
+    "es": "Magearna",
+    "it": "Magearna",
+    "en": "Magearna",
+    "ja": "マギアナ",
+    "zh-Hans": "玛机雅娜"
   }
 }

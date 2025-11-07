@@ -1,7 +1,7 @@
 {
   "id": 737,
   "name": "Charjabug",
-  "species": "Battery Pok\u00e9mon",
+  "species": "Battery Pokémon",
   "type": [
     "Bug",
     "Electric"
@@ -45,7 +45,7 @@
       "version": "moon"
     },
     {
-      "text": "It buries itself in fallen leaves and barely moves, munching away on humus. If you accidentally step on one, you\u2019ll get a shock!",
+      "text": "It buries itself in fallen leaves and barely moves, munching away on humus. If you accidentally step on one, you’ll get a shock!",
       "version": "ultra-sun"
     },
     {
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/737.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "デンヂムシ",
+    "roomaji": "Dendimushi",
+    "ko": "전지충이",
+    "zh-Hant": "蟲電寶",
+    "fr": "Chrysapile",
+    "de": "Akkup",
+    "es": "Charjabug",
+    "it": "Charjabug",
+    "en": "Charjabug",
+    "ja": "デンヂムシ",
+    "zh-Hans": "虫电宝"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 386,
   "name": "Deoxys-normal",
-  "species": "DNA Pok\u00e9mon",
+  "species": "DNA Pokémon",
   "type": [
     "Psychic"
   ],
@@ -29,18 +29,18 @@
     "specialDefense": 50,
     "speed": 150
   },
-  "description": "The DNA of a space virus underwent a sudden mutation upon exposure to a laser beam and resulted in DEOXYS. The crystalline organ on this POK\u00e9MON\u2019s chest appears to be its brain.",
+  "description": "The DNA of a space virus underwent a sudden mutation upon exposure to a laser beam and resulted in DEOXYS. The crystalline organ on this POKéMON’s chest appears to be its brain.",
   "flavorTexts": [
     {
-      "text": "The DNA of a space virus underwent a sudden mutation upon exposure to a laser beam and resulted in DEOXYS. The crystalline organ on this POK\u00e9MON\u2019s chest appears to be its brain.",
+      "text": "The DNA of a space virus underwent a sudden mutation upon exposure to a laser beam and resulted in DEOXYS. The crystalline organ on this POKéMON’s chest appears to be its brain.",
       "version": "ruby"
     },
     {
-      "text": "DEOXYS emerged from a virus that came from space. It is highly intelligent and wields psychokinetic powers. This POK\u00e9MON shoots lasers from the crystalline organ on its chest.",
+      "text": "DEOXYS emerged from a virus that came from space. It is highly intelligent and wields psychokinetic powers. This POKéMON shoots lasers from the crystalline organ on its chest.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that mutated from an extraterrestrial virus exposed to a laser beam. Its body is configured for superior agility and speed.",
+      "text": "A POKéMON that mutated from an extraterrestrial virus exposed to a laser beam. Its body is configured for superior agility and speed.",
       "version": "emerald"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/386.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/386.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "デオキシス",
+    "roomaji": "Deoxys",
+    "ko": "테오키스",
+    "zh-Hant": "代歐奇希斯",
+    "fr": "Deoxys",
+    "de": "Deoxys",
+    "es": "Deoxys",
+    "it": "Deoxys",
+    "en": "Deoxys",
+    "ja": "デオキシス",
+    "zh-Hans": "代欧奇希斯"
   }
 }

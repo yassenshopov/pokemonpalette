@@ -1,7 +1,7 @@
 {
   "id": 573,
   "name": "Cinccino",
-  "species": "Scarf Pok\u00e9mon",
+  "species": "Scarf Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,11 +52,11 @@
       "version": "white"
     },
     {
-      "text": "Cinccino\u2019s body is coated in a special oil that helps it deflect attacks, such as punches.",
+      "text": "Cinccino’s body is coated in a special oil that helps it deflect attacks, such as punches.",
       "version": "black-2"
     },
     {
-      "text": "Cinccino\u2019s body is coated in a special oil that helps it deflect attacks, such as punches.",
+      "text": "Cinccino’s body is coated in a special oil that helps it deflect attacks, such as punches.",
       "version": "white-2"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/573.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/573.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チラチーノ",
+    "roomaji": "Chillaccino",
+    "ko": "치라치노",
+    "zh-Hant": "奇諾栗鼠",
+    "fr": "Pashmilla",
+    "de": "Chillabell",
+    "es": "Cinccino",
+    "it": "Cinccino",
+    "en": "Cinccino",
+    "ja": "チラチーノ",
+    "zh-Hans": "奇诺栗鼠"
   }
 }

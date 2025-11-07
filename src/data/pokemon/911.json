@@ -1,7 +1,7 @@
 {
   "id": 911,
   "name": "Skeledirge",
-  "species": "Singer Pok\u00e9mon",
+  "species": "Singer Pokémon",
   "type": [
     "Fire",
     "Ghost"
@@ -40,14 +40,14 @@
     "specialDefense": 75,
     "speed": 66
   },
-  "description": "The fiery bird changes shape when Skeledirge sings. Rumor has it that the bird was born when the fireball on Skeledirge\u2019s head gained a soul.",
+  "description": "The fiery bird changes shape when Skeledirge sings. Rumor has it that the bird was born when the fireball on Skeledirge’s head gained a soul.",
   "flavorTexts": [
     {
-      "text": "The fiery bird changes shape when Skeledirge sings. Rumor has it that the bird was born when the fireball on Skeledirge\u2019s head gained a soul.",
+      "text": "The fiery bird changes shape when Skeledirge sings. Rumor has it that the bird was born when the fireball on Skeledirge’s head gained a soul.",
       "version": "scarlet"
     },
     {
-      "text": "Skeledirge\u2019s gentle singing soothes the souls of all that hear it. It burns its enemies to a crisp with flames of over 5,400 degrees Fahrenheit.",
+      "text": "Skeledirge’s gentle singing soothes the souls of all that hear it. It burns its enemies to a crisp with flames of over 5,400 degrees Fahrenheit.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/911.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ラウドボーン",
+    "roomaji": "Laudbon",
+    "ko": "라우드본",
+    "zh-Hant": "骨紋巨聲鱷",
+    "fr": "Flâmigator",
+    "de": "Skelokrok",
+    "es": "Skeledirge",
+    "it": "Skeledirge",
+    "en": "Skeledirge",
+    "ja": "ラウドボーン",
+    "zh-Hans": "骨纹巨声鳄"
   }
 }

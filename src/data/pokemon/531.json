@@ -1,7 +1,7 @@
 {
   "id": 531,
   "name": "Audino",
-  "species": "Hearing Pok\u00e9mon",
+  "species": "Hearing Pokémon",
   "type": [
     "Normal"
   ],
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/531.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/531.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タブンネ",
+    "roomaji": "Tabunne",
+    "ko": "다부니",
+    "zh-Hant": "差不多娃娃",
+    "fr": "Nanméouïe",
+    "de": "Ohrdoch",
+    "es": "Audino",
+    "it": "Audino",
+    "en": "Audino",
+    "ja": "タブンネ",
+    "zh-Hans": "差不多娃娃"
   }
 }

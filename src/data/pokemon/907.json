@@ -1,7 +1,7 @@
 {
   "id": 907,
   "name": "Floragato",
-  "species": "Grass Cat Pok\u00e9mon",
+  "species": "Grass Cat Pokémon",
   "type": [
     "Grass"
   ],
@@ -42,7 +42,7 @@
       "version": "scarlet"
     },
     {
-      "text": "The hardness of Floragato\u2019s fur depends on the Pok\u00e9mon\u2019s mood. When Floragato is prepared to battle, its fur becomes pointed and needle sharp.",
+      "text": "The hardness of Floragato’s fur depends on the Pokémon’s mood. When Floragato is prepared to battle, its fur becomes pointed and needle sharp.",
       "version": "violet"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/907.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャローテ",
+    "roomaji": "Nyarote",
+    "ko": "나로테",
+    "zh-Hant": "蒂蕾喵",
+    "fr": "Matourgeon",
+    "de": "Feliospa",
+    "es": "Floragato",
+    "it": "Floragato",
+    "en": "Floragato",
+    "ja": "ニャローテ",
+    "zh-Hans": "蒂蕾喵"
   }
 }

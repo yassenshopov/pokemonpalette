@@ -1,7 +1,7 @@
 {
   "id": 363,
   "name": "Spheal",
-  "species": "Clap Pok\u00e9mon",
+  "species": "Clap Pokémon",
   "type": [
     "Ice",
     "Water"
@@ -46,14 +46,14 @@
     "specialDefense": 50,
     "speed": 25
   },
-  "description": "SPHEAL is much faster rolling than  walking to get around. When groups of this POK\u00e9MON eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
+  "description": "SPHEAL is much faster rolling than  walking to get around. When groups of this POKéMON eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
   "flavorTexts": [
     {
-      "text": "SPHEAL is much faster rolling than  walking to get around. When groups of this POK\u00e9MON eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
+      "text": "SPHEAL is much faster rolling than  walking to get around. When groups of this POKéMON eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
       "version": "ruby"
     },
     {
-      "text": "SPHEAL always travels by rolling around on its ball-like body. When the season for ice floes arrives, this POK\u00e9MON can be seen rolling about on ice and crossing the sea.",
+      "text": "SPHEAL always travels by rolling around on its ball-like body. When the season for ice floes arrives, this POKéMON can be seen rolling about on ice and crossing the sea.",
       "version": "sapphire"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/363.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/363.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タマザラシ",
+    "roomaji": "Tamazarashi",
+    "ko": "대굴레오",
+    "zh-Hant": "海豹球",
+    "fr": "Obalie",
+    "de": "Seemops",
+    "es": "Spheal",
+    "it": "Spheal",
+    "en": "Spheal",
+    "ja": "タマザラシ",
+    "zh-Hans": "海豹球"
   }
 }

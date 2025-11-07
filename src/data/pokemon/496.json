@@ -1,7 +1,7 @@
 {
   "id": 496,
   "name": "Servine",
-  "species": "Grass Snake Pok\u00e9mon",
+  "species": "Grass Snake Pokémon",
   "type": [
     "Grass"
   ],
@@ -46,11 +46,11 @@
       "version": "white"
     },
     {
-      "text": "When it gets dirty, its leaves can\u2019t be used in photosynthesis, so it always keeps itself clean.",
+      "text": "When it gets dirty, its leaves can’t be used in photosynthesis, so it always keeps itself clean.",
       "version": "black-2"
     },
     {
-      "text": "When it gets dirty, its leaves can\u2019t be used in photosynthesis, so it always keeps itself clean.",
+      "text": "When it gets dirty, its leaves can’t be used in photosynthesis, so it always keeps itself clean.",
       "version": "white-2"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/496.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/496.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジャノビー",
+    "roomaji": "Janovy",
+    "ko": "샤비",
+    "zh-Hant": "青藤蛇",
+    "fr": "Lianaja",
+    "de": "Efoserp",
+    "es": "Servine",
+    "it": "Servine",
+    "en": "Servine",
+    "ja": "ジャノビー",
+    "zh-Hans": "青藤蛇"
   }
 }

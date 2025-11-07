@@ -1,7 +1,7 @@
 {
   "id": 842,
   "name": "Appletun",
-  "species": "Apple Nectar Pok\u00e9mon",
+  "species": "Apple Nectar Pokémon",
   "type": [
     "Grass",
     "Dragon"
@@ -46,10 +46,10 @@
     "specialDefense": 80,
     "speed": 30
   },
-  "description": "Eating a sweet apple caused its evolution. A nectarous scent wafts from its body, luring in the bug Pok\u00e9mon it preys on.",
+  "description": "Eating a sweet apple caused its evolution. A nectarous scent wafts from its body, luring in the bug Pokémon it preys on.",
   "flavorTexts": [
     {
-      "text": "Eating a sweet apple caused its evolution. A nectarous scent wafts from its body, luring in the bug Pok\u00e9mon it preys on.",
+      "text": "Eating a sweet apple caused its evolution. A nectarous scent wafts from its body, luring in the bug Pokémon it preys on.",
       "version": "sword"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/842.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タルップル",
+    "roomaji": "Tarupple",
+    "ko": "단지래플",
+    "zh-Hant": "豐蜜龍",
+    "fr": "Dratatin",
+    "de": "Schlapfel",
+    "es": "Appletun",
+    "it": "Appletun",
+    "en": "Appletun",
+    "ja": "タルップル",
+    "zh-Hans": "丰蜜龙"
   }
 }

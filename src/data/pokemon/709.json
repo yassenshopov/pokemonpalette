@@ -1,7 +1,7 @@
 {
   "id": 709,
   "name": "Trevenant",
-  "species": "Elder Tree Pok\u00e9mon",
+  "species": "Elder Tree Pokémon",
   "type": [
     "Ghost",
     "Grass"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "Using its roots as a nervous system, it controls the trees in the forest. It\u2019s kind to the Pok\u00e9mon that reside in its body.",
+      "text": "Using its roots as a nervous system, it controls the trees in the forest. It’s kind to the Pokémon that reside in its body.",
       "version": "y"
     },
     {
@@ -61,11 +61,11 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Using its roots as a nervous system, it controls the trees in the forest. It\u2019s kind to the Pok\u00e9mon that reside in its body.",
+      "text": "Using its roots as a nervous system, it controls the trees in the forest. It’s kind to the Pokémon that reside in its body.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "This Pok\u00e9mon is said to devour anyone daring to ravage the forest. To the creatures dwelling in the forest, it offers great kindness.",
+      "text": "This Pokémon is said to devour anyone daring to ravage the forest. To the creatures dwelling in the forest, it offers great kindness.",
       "version": "sun"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/709.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オーロット",
+    "roomaji": "Ohrot",
+    "ko": "대로트",
+    "zh-Hant": "朽木妖",
+    "fr": "Desséliande",
+    "de": "Trombork",
+    "es": "Trevenant",
+    "it": "Trevenant",
+    "en": "Trevenant",
+    "ja": "オーロット",
+    "zh-Hans": "朽木妖"
   }
 }

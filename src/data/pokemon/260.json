@@ -1,7 +1,7 @@
 {
   "id": 260,
   "name": "Swampert",
-  "species": "Mud Fish Pok\u00e9mon",
+  "species": "Mud Fish Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -40,10 +40,10 @@
     "specialDefense": 90,
     "speed": 60
   },
-  "description": "SWAMPERT is very strong. It has enough power to easily drag a boulder weighing more than a ton. This POK\u00e9MON also has powerful vision that lets it see even in murky water.",
+  "description": "SWAMPERT is very strong. It has enough power to easily drag a boulder weighing more than a ton. This POKéMON also has powerful vision that lets it see even in murky water.",
   "flavorTexts": [
     {
-      "text": "SWAMPERT is very strong. It has enough power to easily drag a boulder weighing more than a ton. This POK\u00e9MON also has powerful vision that lets it see even in murky water.",
+      "text": "SWAMPERT is very strong. It has enough power to easily drag a boulder weighing more than a ton. This POKéMON also has powerful vision that lets it see even in murky water.",
       "version": "ruby"
     },
     {
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/260.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/260.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラグラージ",
+    "roomaji": "Laglarge",
+    "ko": "대짱이",
+    "zh-Hant": "巨沼怪",
+    "fr": "Laggron",
+    "de": "Sumpex",
+    "es": "Swampert",
+    "it": "Swampert",
+    "en": "Swampert",
+    "ja": "ラグラージ",
+    "zh-Hans": "巨沼怪"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 903,
   "name": "Sneasler",
-  "species": "Free Climb Pok\u00e9mon",
+  "species": "Free Climb Pokémon",
   "type": [
     "Fighting",
     "Poison"
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/903.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オオニューラ",
+    "roomaji": "Oonyura",
+    "ko": "포푸니크",
+    "zh-Hant": "大狃拉",
+    "fr": "Farfurex",
+    "de": "Snieboss",
+    "es": "Sneasler",
+    "it": "Sneasler",
+    "en": "Sneasler",
+    "ja": "オオニューラ",
+    "zh-Hans": "大狃拉"
   }
 }

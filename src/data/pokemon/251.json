@@ -1,7 +1,7 @@
 {
   "id": 251,
   "name": "Celebi",
-  "species": "Time Travel Pok\u00e9mon",
+  "species": "Time Travel Pokémon",
   "type": [
     "Psychic",
     "Grass"
@@ -34,14 +34,14 @@
     "specialDefense": 100,
     "speed": 100
   },
-  "description": "This POK\u00e9MON wan\u00ad ders across time. Grass and trees flourish in the forests in which it has appeared.",
+  "description": "This POKéMON wan­ ders across time. Grass and trees flourish in the forests in which it has appeared.",
   "flavorTexts": [
     {
-      "text": "This POK\u00e9MON wan\u00ad ders across time. Grass and trees flourish in the forests in which it has appeared.",
+      "text": "This POKéMON wan­ ders across time. Grass and trees flourish in the forests in which it has appeared.",
       "version": "gold"
     },
     {
-      "text": "When CELEBI disap\u00ad pears deep in a forest, it is said to leave behind an egg it brought from the future.",
+      "text": "When CELEBI disap­ pears deep in a forest, it is said to leave behind an egg it brought from the future.",
       "version": "silver"
     },
     {
@@ -49,11 +49,11 @@
       "version": "crystal"
     },
     {
-      "text": "This POK\u00e9MON came from the future by crossing over time. It is thought that so long as CELEBI appears, a bright and shining future awaits us.",
+      "text": "This POKéMON came from the future by crossing over time. It is thought that so long as CELEBI appears, a bright and shining future awaits us.",
       "version": "ruby"
     },
     {
-      "text": "This POK\u00e9MON came from the future by crossing over time. It is thought that so long as CELEBI appears, a bright and shining future awaits us.",
+      "text": "This POKéMON came from the future by crossing over time. It is thought that so long as CELEBI appears, a bright and shining future awaits us.",
       "version": "sapphire"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/251.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/251.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "セレビィ",
+    "roomaji": "Celebi",
+    "ko": "세레비",
+    "zh-Hant": "時拉比",
+    "fr": "Celebi",
+    "de": "Celebi",
+    "es": "Celebi",
+    "it": "Celebi",
+    "en": "Celebi",
+    "ja": "セレビィ",
+    "zh-Hans": "时拉比"
   }
 }

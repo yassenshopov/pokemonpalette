@@ -1,7 +1,7 @@
 {
   "id": 495,
   "name": "Snivy",
-  "species": "Grass Snake Pok\u00e9mon",
+  "species": "Grass Snake Pokémon",
   "type": [
     "Grass"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/495.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/495.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ツタージャ",
+    "roomaji": "Tsutarja",
+    "ko": "주리비얀",
+    "zh-Hant": "藤藤蛇",
+    "fr": "Vipélierre",
+    "de": "Serpifeu",
+    "es": "Snivy",
+    "it": "Snivy",
+    "en": "Snivy",
+    "ja": "ツタージャ",
+    "zh-Hans": "藤藤蛇"
   }
 }

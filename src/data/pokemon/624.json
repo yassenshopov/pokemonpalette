@@ -1,7 +1,7 @@
 {
   "id": 624,
   "name": "Pawniard",
-  "species": "Sharp Blade Pok\u00e9mon",
+  "species": "Sharp Blade Pokémon",
   "type": [
     "Dark",
     "Steel"
@@ -46,14 +46,14 @@
     "specialDefense": 40,
     "speed": 60
   },
-  "description": "Blades comprise this Pok\u00e9mon\u2019s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
+  "description": "Blades comprise this Pokémon’s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
   "flavorTexts": [
     {
-      "text": "Blades comprise this Pok\u00e9mon\u2019s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
+      "text": "Blades comprise this Pokémon’s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
       "version": "black"
     },
     {
-      "text": "They fight at Bisharp\u2019s command. They cling to their prey and inflict damage by sinking their blades into it.",
+      "text": "They fight at Bisharp’s command. They cling to their prey and inflict damage by sinking their blades into it.",
       "version": "white"
     },
     {
@@ -65,7 +65,7 @@
       "version": "white-2"
     },
     {
-      "text": "Blades comprise this Pok\u00e9mon\u2019s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
+      "text": "Blades comprise this Pokémon’s entire body. If battling dulls the blades, it sharpens them on stones by the river.",
       "version": "x"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/624.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/624.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コマタナ",
+    "roomaji": "Komatana",
+    "ko": "자망칼",
+    "zh-Hant": "駒刀小兵",
+    "fr": "Scalpion",
+    "de": "Gladiantri",
+    "es": "Pawniard",
+    "it": "Pawniard",
+    "en": "Pawniard",
+    "ja": "コマタナ",
+    "zh-Hans": "驹刀小兵"
   }
 }

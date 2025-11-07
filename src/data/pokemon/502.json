@@ -1,7 +1,7 @@
 {
   "id": 502,
   "name": "Dewott",
-  "species": "Discipline Pok\u00e9mon",
+  "species": "Discipline Pokémon",
   "type": [
     "Water"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/502.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/502.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フタチマル",
+    "roomaji": "Futachimaru",
+    "ko": "쌍검자비",
+    "zh-Hant": "雙刃丸",
+    "fr": "Mateloutre",
+    "de": "Zwottronin",
+    "es": "Dewott",
+    "it": "Dewott",
+    "en": "Dewott",
+    "ja": "フタチマル",
+    "zh-Hans": "双刃丸"
   }
 }

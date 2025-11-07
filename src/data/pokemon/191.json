@@ -1,7 +1,7 @@
 {
   "id": 191,
   "name": "Sunkern",
-  "species": "Seed Pok\u00e9mon",
+  "species": "Seed Pokémon",
   "type": [
     "Grass"
   ],
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "It lives by drink\u00ad ing only dewdrops from under the leaves of plants. It is said that it eats nothing else.",
+      "text": "It lives by drink­ ing only dewdrops from under the leaves of plants. It is said that it eats nothing else.",
       "version": "silver"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/191.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/191.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒマナッツ",
+    "roomaji": "Himanuts",
+    "ko": "해너츠",
+    "zh-Hant": "向日種子",
+    "fr": "Tournegrin",
+    "de": "Sonnkern",
+    "es": "Sunkern",
+    "it": "Sunkern",
+    "en": "Sunkern",
+    "ja": "ヒマナッツ",
+    "zh-Hans": "向日种子"
   }
 }

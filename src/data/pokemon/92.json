@@ -1,7 +1,7 @@
 {
   "id": 92,
   "name": "Gastly",
-  "species": "Gas Pok\u00e9mon",
+  "species": "Gas Pokémon",
   "type": [
     "Ghost",
     "Poison"
@@ -34,14 +34,14 @@
     "specialDefense": 35,
     "speed": 80
   },
-  "description": "Almost invisible, this gaseous POK\u00e9MON cloaks the target and puts it to sleep without notice.",
+  "description": "Almost invisible, this gaseous POKéMON cloaks the target and puts it to sleep without notice.",
   "flavorTexts": [
     {
-      "text": "Almost invisible, this gaseous POK\u00e9MON cloaks the target and puts it to sleep without notice.",
+      "text": "Almost invisible, this gaseous POKéMON cloaks the target and puts it to sleep without notice.",
       "version": "red"
     },
     {
-      "text": "Almost invisible, this gaseous POK\u00e9MON cloaks the target and puts it to sleep without notice.",
+      "text": "Almost invisible, this gaseous POKéMON cloaks the target and puts it to sleep without notice.",
       "version": "blue"
     },
     {
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/92.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/92.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴース",
+    "roomaji": "Ghos",
+    "ko": "고오스",
+    "zh-Hant": "鬼斯",
+    "fr": "Fantominus",
+    "de": "Nebulak",
+    "es": "Gastly",
+    "it": "Gastly",
+    "en": "Gastly",
+    "ja": "ゴース",
+    "zh-Hans": "鬼斯"
   }
 }

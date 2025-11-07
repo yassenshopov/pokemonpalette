@@ -1,7 +1,7 @@
 {
   "id": 368,
   "name": "Gorebyss",
-  "species": "South Sea Pok\u00e9mon",
+  "species": "South Sea Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 75,
     "speed": 52
   },
-  "description": "GOREBYSS lives in the southern seas at extreme depths. Its body is built to withstand the enormous pressure of water at incredible depths. Because of this, this POK\u00e9MON\u2019s body is unharmed by ordinary attacks.",
+  "description": "GOREBYSS lives in the southern seas at extreme depths. Its body is built to withstand the enormous pressure of water at incredible depths. Because of this, this POKéMON’s body is unharmed by ordinary attacks.",
   "flavorTexts": [
     {
-      "text": "GOREBYSS lives in the southern seas at extreme depths. Its body is built to withstand the enormous pressure of water at incredible depths. Because of this, this POK\u00e9MON\u2019s body is unharmed by ordinary attacks.",
+      "text": "GOREBYSS lives in the southern seas at extreme depths. Its body is built to withstand the enormous pressure of water at incredible depths. Because of this, this POKéMON’s body is unharmed by ordinary attacks.",
       "version": "ruby"
     },
     {
-      "text": "Although GOREBYSS is the very picture of elegance and beauty while swimming, it is also cruel. When it spots prey, this POK\u00e9MON inserts its thin mouth into the prey\u2019s body and drains the prey of its body fluids.",
+      "text": "Although GOREBYSS is the very picture of elegance and beauty while swimming, it is also cruel. When it spots prey, this POKéMON inserts its thin mouth into the prey’s body and drains the prey of its body fluids.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/368.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/368.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サクラビス",
+    "roomaji": "Sakurabyss",
+    "ko": "분홍장이",
+    "zh-Hant": "櫻花魚",
+    "fr": "Rosabyss",
+    "de": "Saganabyss",
+    "es": "Gorebyss",
+    "it": "Gorebyss",
+    "en": "Gorebyss",
+    "ja": "サクラビス",
+    "zh-Hans": "樱花鱼"
   }
 }

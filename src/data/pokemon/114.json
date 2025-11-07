@@ -1,7 +1,7 @@
 {
   "id": 114,
   "name": "Tangela",
-  "species": "Vine Pok\u00e9mon",
+  "species": "Vine Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 40,
     "speed": 60
   },
-  "description": "The whole body is swathed with wide vines that are similar to sea\u00ad weed. Its vines shake as it walks.",
+  "description": "The whole body is swathed with wide vines that are similar to sea­ weed. Its vines shake as it walks.",
   "flavorTexts": [
     {
-      "text": "The whole body is swathed with wide vines that are similar to sea\u00ad weed. Its vines shake as it walks.",
+      "text": "The whole body is swathed with wide vines that are similar to sea­ weed. Its vines shake as it walks.",
       "version": "red"
     },
     {
-      "text": "The whole body is swathed with wide vines that are similar to sea\u00ad weed. Its vines shake as it walks.",
+      "text": "The whole body is swathed with wide vines that are similar to sea­ weed. Its vines shake as it walks.",
       "version": "blue"
     },
     {
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "The vines that cloak its entire body are always jiggling. They effectively un\u00ad nerve its foes.",
+      "text": "The vines that cloak its entire body are always jiggling. They effectively un­ nerve its foes.",
       "version": "gold"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/114.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/114.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モンジャラ",
+    "roomaji": "Monjara",
+    "ko": "덩쿠리",
+    "zh-Hant": "蔓藤怪",
+    "fr": "Saquedeneu",
+    "de": "Tangela",
+    "es": "Tangela",
+    "it": "Tangela",
+    "en": "Tangela",
+    "ja": "モンジャラ",
+    "zh-Hans": "蔓藤怪"
   }
 }

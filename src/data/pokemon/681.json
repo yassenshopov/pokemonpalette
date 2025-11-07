@@ -1,7 +1,7 @@
 {
   "id": 681,
   "name": "Aegislash-shield",
-  "species": "Royal Sword Pok\u00e9mon",
+  "species": "Royal Sword Pokémon",
   "type": [
     "Steel",
     "Ghost"
@@ -34,10 +34,10 @@
     "specialDefense": 140,
     "speed": 60
   },
-  "description": "Generations of kings were attended by these Pok\u00e9mon, which used their spectral power to manipulate and control people and Pok\u00e9mon.",
+  "description": "Generations of kings were attended by these Pokémon, which used their spectral power to manipulate and control people and Pokémon.",
   "flavorTexts": [
     {
-      "text": "Generations of kings were attended by these Pok\u00e9mon, which used their spectral power to manipulate and control people and Pok\u00e9mon.",
+      "text": "Generations of kings were attended by these Pokémon, which used their spectral power to manipulate and control people and Pokémon.",
       "version": "x"
     },
     {
@@ -45,7 +45,7 @@
       "version": "y"
     },
     {
-      "text": "Generations of kings were attended by these Pok\u00e9mon, which used their spectral power to manipulate and control people and Pok\u00e9mon.",
+      "text": "Generations of kings were attended by these Pokémon, which used their spectral power to manipulate and control people and Pokémon.",
       "version": "omega-ruby"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/681.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ギルガルド",
+    "roomaji": "Gillgard",
+    "ko": "킬가르도",
+    "zh-Hant": "堅盾劍怪",
+    "fr": "Exagide",
+    "de": "Durengard",
+    "es": "Aegislash",
+    "it": "Aegislash",
+    "en": "Aegislash",
+    "ja": "ギルガルド",
+    "zh-Hans": "坚盾剑怪"
   }
 }

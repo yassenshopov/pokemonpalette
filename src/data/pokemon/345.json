@@ -1,7 +1,7 @@
 {
   "id": 345,
   "name": "Lileep",
-  "species": "Sea Lily Pok\u00e9mon",
+  "species": "Sea Lily Pokémon",
   "type": [
     "Rock",
     "Grass"
@@ -40,14 +40,14 @@
     "specialDefense": 87,
     "speed": 23
   },
-  "description": "LILEEP became extinct approximately a hundred million years ago. This ancient POK\u00e9MON attaches itself to a rock on the seafloor and catches approaching prey using tentacles  shaped like flower petals.",
+  "description": "LILEEP became extinct approximately a hundred million years ago. This ancient POKéMON attaches itself to a rock on the seafloor and catches approaching prey using tentacles  shaped like flower petals.",
   "flavorTexts": [
     {
-      "text": "LILEEP became extinct approximately a hundred million years ago. This ancient POK\u00e9MON attaches itself to a rock on the seafloor and catches approaching prey using tentacles  shaped like flower petals.",
+      "text": "LILEEP became extinct approximately a hundred million years ago. This ancient POKéMON attaches itself to a rock on the seafloor and catches approaching prey using tentacles  shaped like flower petals.",
       "version": "ruby"
     },
     {
-      "text": "LILEEP is an ancient POK\u00e9MON that was regenerated from a fossil. It remains permanently anchored to a rock. From its immobile perch, this POK\u00e9MON intently scans for prey with its two eyes.",
+      "text": "LILEEP is an ancient POKéMON that was regenerated from a fossil. It remains permanently anchored to a rock. From its immobile perch, this POKéMON intently scans for prey with its two eyes.",
       "version": "sapphire"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/345.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/345.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リリーラ",
+    "roomaji": "Lilyla",
+    "ko": "릴링",
+    "zh-Hant": "觸手百合",
+    "fr": "Lilia",
+    "de": "Liliep",
+    "es": "Lileep",
+    "it": "Lileep",
+    "en": "Lileep",
+    "ja": "リリーラ",
+    "zh-Hans": "触手百合"
   }
 }

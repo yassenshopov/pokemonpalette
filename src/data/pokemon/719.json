@@ -1,7 +1,7 @@
 {
   "id": 719,
   "name": "Diancie",
-  "species": "Jewel Pok\u00e9mon",
+  "species": "Jewel Pokémon",
   "type": [
     "Rock",
     "Fairy"
@@ -286,5 +286,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/719.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ディアンシー",
+    "roomaji": "Diancie",
+    "ko": "디안시",
+    "zh-Hant": "蒂安希",
+    "fr": "Diancie",
+    "de": "Diancie",
+    "es": "Diancie",
+    "it": "Diancie",
+    "en": "Diancie",
+    "ja": "ディアンシー",
+    "zh-Hans": "蒂安希"
   }
 }

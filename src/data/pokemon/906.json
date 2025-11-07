@@ -1,7 +1,7 @@
 {
   "id": 906,
   "name": "Sprigatito",
-  "species": "Grass Cat Pok\u00e9mon",
+  "species": "Grass Cat Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 45,
     "speed": 65
   },
-  "description": "Its fluffy fur is similar in composition to plants. This Pok\u00e9mon frequently washes its face to keep it from drying out.",
+  "description": "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out.",
   "flavorTexts": [
     {
-      "text": "Its fluffy fur is similar in composition to plants. This Pok\u00e9mon frequently washes its face to keep it from drying out.",
+      "text": "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out.",
       "version": "scarlet"
     },
     {
-      "text": "The sweet scent its body gives off mesmerizes those around it. The scent grows stronger when this Pok\u00e9mon is in the sun.",
+      "text": "The sweet scent its body gives off mesmerizes those around it. The scent grows stronger when this Pokémon is in the sun.",
       "version": "violet"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/906.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャオハ",
+    "roomaji": "Nyahoja",
+    "ko": "나오하",
+    "zh-Hant": "新葉喵",
+    "fr": "Poussacha",
+    "de": "Felori",
+    "es": "Sprigatito",
+    "it": "Sprigatito",
+    "en": "Sprigatito",
+    "ja": "ニャオハ",
+    "zh-Hans": "新叶喵"
   }
 }

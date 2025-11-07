@@ -1,7 +1,7 @@
 {
   "id": 920,
   "name": "Lokix",
-  "species": "Grasshopper Pok\u00e9mon",
+  "species": "Grasshopper Pokémon",
   "type": [
     "Bug",
     "Dark"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It uses its normally folded third set of legs when in Showdown Mode. This places a huge burden on its body, so it can\u2019t stay in this mode for long.",
+      "text": "It uses its normally folded third set of legs when in Showdown Mode. This places a huge burden on its body, so it can’t stay in this mode for long.",
       "version": "violet"
     }
   ],
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/920.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "エクスレッグ",
+    "roomaji": "Exleg",
+    "ko": "엑스레그",
+    "zh-Hant": "烈腿蝗",
+    "fr": "Gambex",
+    "de": "Lextremo",
+    "es": "Lokix",
+    "it": "Lokix",
+    "en": "Lokix",
+    "ja": "エクスレッグ",
+    "zh-Hans": "烈腿蝗"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 915,
   "name": "Lechonk",
-  "species": "Hog Pok\u00e9mon",
+  "species": "Hog Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 35
   },
-  "description": "It searches for food all day. It possesses a keen sense of smell but doesn\u2019t use it for anything other than foraging.",
+  "description": "It searches for food all day. It possesses a keen sense of smell but doesn’t use it for anything other than foraging.",
   "flavorTexts": [
     {
-      "text": "It searches for food all day. It possesses a keen sense of smell but doesn\u2019t use it for anything other than foraging.",
+      "text": "It searches for food all day. It possesses a keen sense of smell but doesn’t use it for anything other than foraging.",
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon spurns all but the finest of foods. Its body gives off an herblike scent that bug Pok\u00e9mon detest.",
+      "text": "This Pokémon spurns all but the finest of foods. Its body gives off an herblike scent that bug Pokémon detest.",
       "version": "violet"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/915.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "グルトン",
+    "roomaji": "Gourton",
+    "ko": "맛보돈",
+    "zh-Hant": "愛吃豚",
+    "fr": "Gourmelet",
+    "de": "Ferkuli",
+    "es": "Lechonk",
+    "it": "Lechonk",
+    "en": "Lechonk",
+    "ja": "グルトン",
+    "zh-Hans": "爱吃豚"
   }
 }

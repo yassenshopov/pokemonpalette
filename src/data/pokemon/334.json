@@ -1,7 +1,7 @@
 {
   "id": 334,
   "name": "Altaria",
-  "species": "Humming Pok\u00e9mon",
+  "species": "Humming Pokémon",
   "type": [
     "Dragon",
     "Flying"
@@ -40,14 +40,14 @@
     "specialDefense": 105,
     "speed": 80
   },
-  "description": "ALTARIA dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this POK\u00e9MON makes its listeners experience dreamy wonderment.",
+  "description": "ALTARIA dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this POKéMON makes its listeners experience dreamy wonderment.",
   "flavorTexts": [
     {
-      "text": "ALTARIA dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this POK\u00e9MON makes its listeners experience dreamy wonderment.",
+      "text": "ALTARIA dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this POKéMON makes its listeners experience dreamy wonderment.",
       "version": "ruby"
     },
     {
-      "text": "ALTARIA sings in a gorgeous soprano. Its wings are like cotton clouds. This POK\u00e9MON catches updrafts with its buoyant wings and soars way up into the wild blue yonder.",
+      "text": "ALTARIA sings in a gorgeous soprano. Its wings are like cotton clouds. This POKéMON catches updrafts with its buoyant wings and soars way up into the wild blue yonder.",
       "version": "sapphire"
     },
     {
@@ -55,11 +55,11 @@
       "version": "emerald"
     },
     {
-      "text": "If you hear a beautiful melody trilling deep among mountains far from people, it is ALTARIA\u2019s humming.",
+      "text": "If you hear a beautiful melody trilling deep among mountains far from people, it is ALTARIA’s humming.",
       "version": "firered"
     },
     {
-      "text": "If you hear a beautiful melody trilling deep among mountains far from people, it is ALTARIA\u2019s humming.",
+      "text": "If you hear a beautiful melody trilling deep among mountains far from people, it is ALTARIA’s humming.",
       "version": "leafgreen"
     }
   ],
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/334.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/334.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チルタリス",
+    "roomaji": "Tyltalis",
+    "ko": "파비코리",
+    "zh-Hant": "七夕青鳥",
+    "fr": "Altaria",
+    "de": "Altaria",
+    "es": "Altaria",
+    "it": "Altaria",
+    "en": "Altaria",
+    "ja": "チルタリス",
+    "zh-Hans": "七夕青鸟"
   }
 }

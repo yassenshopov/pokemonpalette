@@ -1,7 +1,7 @@
 {
   "id": 551,
   "name": "Sandile",
-  "species": "Desert Croc Pok\u00e9mon",
+  "species": "Desert Croc Pokémon",
   "type": [
     "Ground",
     "Dark"
@@ -53,7 +53,7 @@
       "version": "black"
     },
     {
-      "text": "It moves along below the sand\u2019s surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
+      "text": "It moves along below the sand’s surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
       "version": "white"
     },
     {
@@ -65,7 +65,7 @@
       "version": "white-2"
     },
     {
-      "text": "It moves along below the sand\u2019s surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
+      "text": "It moves along below the sand’s surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
       "version": "x"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/551.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/551.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メグロコ",
+    "roomaji": "Meguroco",
+    "ko": "깜눈크",
+    "zh-Hant": "黑眼鱷",
+    "fr": "Mascaïman",
+    "de": "Ganovil",
+    "es": "Sandile",
+    "it": "Sandile",
+    "en": "Sandile",
+    "ja": "メグロコ",
+    "zh-Hans": "黑眼鳄"
   }
 }

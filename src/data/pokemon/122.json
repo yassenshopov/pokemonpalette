@@ -1,7 +1,7 @@
 {
   "id": 122,
   "name": "Mr-mime",
-  "species": "Barrier Pok\u00e9mon",
+  "species": "Barrier Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -61,7 +61,7 @@
       "version": "yellow"
     },
     {
-      "text": "A skilled mime from birth, it gains the ability to create invisi\u00ad ble objects as it matures.",
+      "text": "A skilled mime from birth, it gains the ability to create invisi­ ble objects as it matures.",
       "version": "gold"
     },
     {
@@ -326,5 +326,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/122.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/122.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バリヤード",
+    "roomaji": "Barrierd",
+    "ko": "마임맨",
+    "zh-Hant": "魔牆人偶",
+    "fr": "M. Mime",
+    "de": "Pantimos",
+    "es": "Mr. Mime",
+    "it": "Mr. Mime",
+    "en": "Mr. Mime",
+    "ja": "バリヤード",
+    "zh-Hans": "魔墙人偶"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 196,
   "name": "Espeon",
-  "species": "Sun Pok\u00e9mon",
+  "species": "Sun Pokémon",
   "type": [
     "Psychic"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 95,
     "speed": 110
   },
-  "description": "It uses the fine hair that covers its body to sense air currents and predict its ene\u00ad my's actions.",
+  "description": "It uses the fine hair that covers its body to sense air currents and predict its ene­ my's actions.",
   "flavorTexts": [
     {
-      "text": "It uses the fine hair that covers its body to sense air currents and predict its ene\u00ad my's actions.",
+      "text": "It uses the fine hair that covers its body to sense air currents and predict its ene­ my's actions.",
       "version": "gold"
     },
     {
-      "text": "By reading air currents, it can predict things such as the weath\u00ad er or its foe's next move.",
+      "text": "By reading air currents, it can predict things such as the weath­ er or its foe's next move.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "ESPEON is extremely loyal to any TRAINER it considers to be worthy. It is said that this POK\u00e9MON developed its precognitive powers to protect its TRAINER from harm.",
+      "text": "ESPEON is extremely loyal to any TRAINER it considers to be worthy. It is said that this POKéMON developed its precognitive powers to protect its TRAINER from harm.",
       "version": "ruby"
     },
     {
-      "text": "ESPEON is extremely loyal to any TRAINER it considers to be worthy. It is said that this POK\u00e9MON developed its precognitive powers to protect its TRAINER from harm.",
+      "text": "ESPEON is extremely loyal to any TRAINER it considers to be worthy. It is said that this POKéMON developed its precognitive powers to protect its TRAINER from harm.",
       "version": "sapphire"
     }
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/196.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/196.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エーフィ",
+    "roomaji": "Eifie",
+    "ko": "에브이",
+    "zh-Hant": "太陽伊布",
+    "fr": "Mentali",
+    "de": "Psiana",
+    "es": "Espeon",
+    "it": "Espeon",
+    "en": "Espeon",
+    "ja": "エーフィ",
+    "zh-Hans": "太阳伊布"
   }
 }

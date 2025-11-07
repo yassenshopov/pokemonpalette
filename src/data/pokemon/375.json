@@ -1,7 +1,7 @@
 {
   "id": 375,
   "name": "Metang",
-  "species": "Iron Claw Pok\u00e9mon",
+  "species": "Iron Claw Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -40,14 +40,14 @@
     "specialDefense": 80,
     "speed": 50
   },
-  "description": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. By linking its brains magnetically, this POK\u00e9MON generates strong psychokinetic power.",
+  "description": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. By linking its brains magnetically, this POKéMON generates strong psychokinetic power.",
   "flavorTexts": [
     {
-      "text": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. By linking its brains magnetically, this POK\u00e9MON generates strong psychokinetic power.",
+      "text": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. By linking its brains magnetically, this POKéMON generates strong psychokinetic power.",
       "version": "ruby"
     },
     {
-      "text": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. This POK\u00e9MON turns its arms to the rear for traveling at high speed.",
+      "text": "When two BELDUM fuse together, METANG is formed. The brains of the BELDUM are joined by a magnetic nervous system. This POKéMON turns its arms to the rear for traveling at high speed.",
       "version": "sapphire"
     },
     {
@@ -55,11 +55,11 @@
       "version": "emerald"
     },
     {
-      "text": "It floats midair using magnetism. Its body is so tough, even a crash with a jet plane won\u2019t leave a scratch.",
+      "text": "It floats midair using magnetism. Its body is so tough, even a crash with a jet plane won’t leave a scratch.",
       "version": "firered"
     },
     {
-      "text": "It floats midair using magnetism. Its body is so tough, even a crash with a jet plane won\u2019t leave a scratch.",
+      "text": "It floats midair using magnetism. Its body is so tough, even a crash with a jet plane won’t leave a scratch.",
       "version": "leafgreen"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/375.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/375.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メタング",
+    "roomaji": "Metang",
+    "ko": "메탕구",
+    "zh-Hant": "金屬怪",
+    "fr": "Métang",
+    "de": "Metang",
+    "es": "Metang",
+    "it": "Metang",
+    "en": "Metang",
+    "ja": "メタング",
+    "zh-Hans": "金属怪"
   }
 }

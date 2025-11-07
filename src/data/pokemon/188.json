@@ -1,7 +1,7 @@
 {
   "id": 188,
   "name": "Skiploom",
-  "species": "Cottonweed Pok\u00e9mon",
+  "species": "Cottonweed Pokémon",
   "type": [
     "Grass",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 65,
     "speed": 80
   },
-  "description": "The bloom on top of its head opens and closes as the temperature fluc\u00ad tuates up and down.",
+  "description": "The bloom on top of its head opens and closes as the temperature fluc­ tuates up and down.",
   "flavorTexts": [
     {
-      "text": "The bloom on top of its head opens and closes as the temperature fluc\u00ad tuates up and down.",
+      "text": "The bloom on top of its head opens and closes as the temperature fluc­ tuates up and down.",
       "version": "gold"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "SKIPLOOM\u2019s flower blossoms when the temperature rises above 64 degrees F. How much the flower opens depends on the temperature. For that reason, this POK\u00e9MON is sometimes used as a thermometer.",
+      "text": "SKIPLOOM’s flower blossoms when the temperature rises above 64 degrees F. How much the flower opens depends on the temperature. For that reason, this POKéMON is sometimes used as a thermometer.",
       "version": "ruby"
     },
     {
-      "text": "SKIPLOOM\u2019s flower blossoms when the temperature rises above 64 degrees F. How much the flower opens depends on the temperature. For that reason, this POK\u00e9MON is sometimes used as a thermometer.",
+      "text": "SKIPLOOM’s flower blossoms when the temperature rises above 64 degrees F. How much the flower opens depends on the temperature. For that reason, this POKéMON is sometimes used as a thermometer.",
       "version": "sapphire"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/188.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/188.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポポッコ",
+    "roomaji": "Popocco",
+    "ko": "두코",
+    "zh-Hant": "毽子花",
+    "fr": "Floravol",
+    "de": "Hubelupf",
+    "es": "Skiploom",
+    "it": "Skiploom",
+    "en": "Skiploom",
+    "ja": "ポポッコ",
+    "zh-Hans": "毽子花"
   }
 }

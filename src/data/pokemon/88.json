@@ -1,7 +1,7 @@
 {
   "id": 88,
   "name": "Grimer",
-  "species": "Sludge Pok\u00e9mon",
+  "species": "Sludge Pokémon",
   "type": [
     "Poison"
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/88.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/88.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ベトベター",
+    "roomaji": "Betbeter",
+    "ko": "질퍽이",
+    "zh-Hant": "臭泥",
+    "fr": "Tadmorv",
+    "de": "Sleima",
+    "es": "Grimer",
+    "it": "Grimer",
+    "en": "Grimer",
+    "ja": "ベトベター",
+    "zh-Hans": "臭泥"
   }
 }

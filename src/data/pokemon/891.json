@@ -1,7 +1,7 @@
 {
   "id": 891,
   "name": "Kubfu",
-  "species": "Wushu Pok\u00e9mon",
+  "species": "Wushu Pokémon",
   "type": [
     "Fighting"
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/891.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ダクマ",
+    "roomaji": "Dakuma",
+    "ko": "치고마",
+    "zh-Hant": "熊徒弟",
+    "fr": "Wushours",
+    "de": "Dakuma",
+    "es": "Kubfu",
+    "it": "Kubfu",
+    "en": "Kubfu",
+    "ja": "ダクマ",
+    "zh-Hans": "熊徒弟"
   }
 }

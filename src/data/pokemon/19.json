@@ -1,7 +1,7 @@
 {
   "id": 19,
   "name": "Rattata",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,7 +52,7 @@
       "version": "blue"
     },
     {
-      "text": "Will chew on any\u00ad thing with its fangs. If you see one, it is certain that 40 more live in the area.",
+      "text": "Will chew on any­ thing with its fangs. If you see one, it is certain that 40 more live in the area.",
       "version": "yellow"
     },
     {
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Living wherever there is food available, it ceaselessly scav\u00ad enges for edibles the entire day.",
+      "text": "Living wherever there is food available, it ceaselessly scav­ enges for edibles the entire day.",
       "version": "silver"
     }
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/19.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/19.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コラッタ",
+    "roomaji": "Koratta",
+    "ko": "꼬렛",
+    "zh-Hant": "小拉達",
+    "fr": "Rattata",
+    "de": "Rattfratz",
+    "es": "Rattata",
+    "it": "Rattata",
+    "en": "Rattata",
+    "ja": "コラッタ",
+    "zh-Hans": "小拉达"
   }
 }

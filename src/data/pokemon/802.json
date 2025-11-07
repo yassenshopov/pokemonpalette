@@ -1,7 +1,7 @@
 {
   "id": 802,
   "name": "Marshadow",
-  "species": "Gloomdweller Pok\u00e9mon",
+  "species": "Gloomdweller Pokémon",
   "type": [
     "Fighting",
     "Ghost"
@@ -41,19 +41,19 @@
       "version": "sun"
     },
     {
-      "text": "It lurks in the shadows of others, copying their movements and powers. This Pok\u00e9mon is craven and cowering.",
+      "text": "It lurks in the shadows of others, copying their movements and powers. This Pokémon is craven and cowering.",
       "version": "moon"
     },
     {
-      "text": "It slips into the shadows of others and mimics their powers and movements. As it improves, it becomes stronger than those it\u2019s imitating.",
+      "text": "It slips into the shadows of others and mimics their powers and movements. As it improves, it becomes stronger than those it’s imitating.",
       "version": "ultra-sun"
     },
     {
-      "text": "It sinks into the shadows of people and Pok\u00e9mon, where it can understand their feelings and copy their capabilities.",
+      "text": "It sinks into the shadows of people and Pokémon, where it can understand their feelings and copy their capabilities.",
       "version": "ultra-moon"
     },
     {
-      "text": "By slipping into the shadow of a martial arts master and copying their movements, this Pok\u00e9mon learned the ultimate techniques.",
+      "text": "By slipping into the shadow of a martial arts master and copying their movements, this Pokémon learned the ultimate techniques.",
       "version": "sword"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/802.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マーシャドー",
+    "roomaji": "Marshadow",
+    "ko": "마샤도",
+    "zh-Hant": "瑪夏多",
+    "fr": "Marshadow",
+    "de": "Marshadow",
+    "es": "Marshadow",
+    "it": "Marshadow",
+    "en": "Marshadow",
+    "ja": "マーシャドー",
+    "zh-Hans": "玛夏多"
   }
 }

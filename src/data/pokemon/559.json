@@ -1,7 +1,7 @@
 {
   "id": 559,
   "name": "Scraggy",
-  "species": "Shedding Pok\u00e9mon",
+  "species": "Shedding Pokémon",
   "type": [
     "Dark",
     "Fighting"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/559.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/559.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ズルッグ",
+    "roomaji": "Zuruggu",
+    "ko": "곤율랭",
+    "zh-Hant": "滑滑小子",
+    "fr": "Baggiguane",
+    "de": "Zurrokex",
+    "es": "Scraggy",
+    "it": "Scraggy",
+    "en": "Scraggy",
+    "ja": "ズルッグ",
+    "zh-Hans": "滑滑小子"
   }
 }

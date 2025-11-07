@@ -1,7 +1,7 @@
 {
   "id": 207,
   "name": "Gligar",
-  "species": "Fly Scorpion Pok\u00e9mon",
+  "species": "Fly Scorpion Pokémon",
   "type": [
     "Ground",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 65,
     "speed": 85
   },
-  "description": "It flies straight at its target's face then clamps down on the star\u00ad tled victim to inject poison.",
+  "description": "It flies straight at its target's face then clamps down on the star­ tled victim to inject poison.",
   "flavorTexts": [
     {
-      "text": "It flies straight at its target's face then clamps down on the star\u00ad tled victim to inject poison.",
+      "text": "It flies straight at its target's face then clamps down on the star­ tled victim to inject poison.",
       "version": "gold"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "GLIGAR glides through the air without a sound as if it were sliding. This POK\u00e9MON hangs on to the face of its foe using its clawed hind legs and the large pincers on its forelegs, then injects the prey with its poison barb.",
+      "text": "GLIGAR glides through the air without a sound as if it were sliding. This POKéMON hangs on to the face of its foe using its clawed hind legs and the large pincers on its forelegs, then injects the prey with its poison barb.",
       "version": "ruby"
     },
     {
-      "text": "GLIGAR glides through the air without a sound as if it were sliding. This POK\u00e9MON hangs on to the face of its foe using its clawed hind legs and the large pincers on its forelegs, then injects the prey with its poison barb.",
+      "text": "GLIGAR glides through the air without a sound as if it were sliding. This POKéMON hangs on to the face of its foe using its clawed hind legs and the large pincers on its forelegs, then injects the prey with its poison barb.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/207.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/207.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グライガー",
+    "roomaji": "Gliger",
+    "ko": "글라이거",
+    "zh-Hant": "天蠍",
+    "fr": "Scorplane",
+    "de": "Skorgla",
+    "es": "Gligar",
+    "it": "Gligar",
+    "en": "Gligar",
+    "ja": "グライガー",
+    "zh-Hans": "天蝎"
   }
 }

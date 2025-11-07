@@ -1,7 +1,7 @@
 {
   "id": 40,
   "name": "Wigglytuff",
-  "species": "Balloon Pok\u00e9mon",
+  "species": "Balloon Pokémon",
   "type": [
     "Normal",
     "Fairy"
@@ -323,5 +323,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/40.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/40.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "プクリン",
+    "roomaji": "Pukurin",
+    "ko": "푸크린",
+    "zh-Hant": "胖可丁",
+    "fr": "Grodoudou",
+    "de": "Knuddeluff",
+    "es": "Wigglytuff",
+    "it": "Wigglytuff",
+    "en": "Wigglytuff",
+    "ja": "プクリン",
+    "zh-Hans": "胖可丁"
   }
 }

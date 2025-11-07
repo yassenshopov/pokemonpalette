@@ -1,7 +1,7 @@
 {
   "id": 60,
   "name": "Poliwag",
-  "species": "Tadpole Pok\u00e9mon",
+  "species": "Tadpole Pokémon",
   "type": [
     "Water"
   ],
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "Because it is in\u00ad ept at walking on its newly grown legs, it always  swims around in water.",
+      "text": "Because it is in­ ept at walking on its newly grown legs, it always  swims around in water.",
       "version": "gold"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/60.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/60.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニョロモ",
+    "roomaji": "Nyoromo",
+    "ko": "발챙이",
+    "zh-Hant": "蚊香蝌蚪",
+    "fr": "Ptitard",
+    "de": "Quapsel",
+    "es": "Poliwag",
+    "it": "Poliwag",
+    "en": "Poliwag",
+    "ja": "ニョロモ",
+    "zh-Hans": "蚊香蝌蚪"
   }
 }

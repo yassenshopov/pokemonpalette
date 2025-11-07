@@ -1,7 +1,7 @@
 {
   "id": 587,
   "name": "Emolga",
-  "species": "Sky Squirrel Pok\u00e9mon",
+  "species": "Sky Squirrel Pokémon",
   "type": [
     "Electric",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 60,
     "speed": 103
   },
-  "description": "The energy made in its cheeks\u2019 electric pouches is stored inside its membrane and released while it is gliding.",
+  "description": "The energy made in its cheeks’ electric pouches is stored inside its membrane and released while it is gliding.",
   "flavorTexts": [
     {
-      "text": "The energy made in its cheeks\u2019 electric pouches is stored inside its membrane and released while it is gliding.",
+      "text": "The energy made in its cheeks’ electric pouches is stored inside its membrane and released while it is gliding.",
       "version": "black"
     },
     {
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/587.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/587.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エモンガ",
+    "roomaji": "Emonga",
+    "ko": "에몽가",
+    "zh-Hant": "電飛鼠",
+    "fr": "Emolga",
+    "de": "Emolga",
+    "es": "Emolga",
+    "it": "Emolga",
+    "en": "Emolga",
+    "ja": "エモンガ",
+    "zh-Hans": "电飞鼠"
   }
 }

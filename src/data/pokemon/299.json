@@ -1,7 +1,7 @@
 {
   "id": 299,
   "name": "Nosepass",
-  "species": "Compass Pok\u00e9mon",
+  "species": "Compass Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 90,
     "speed": 30
   },
-  "description": "NOSEPASS\u2019s magnetic nose is always pointed to the north. If two of these POK\u00e9MON meet, they cannot turn their faces to each other when they are close because their magnetic noses repel one another.",
+  "description": "NOSEPASS’s magnetic nose is always pointed to the north. If two of these POKéMON meet, they cannot turn their faces to each other when they are close because their magnetic noses repel one another.",
   "flavorTexts": [
     {
-      "text": "NOSEPASS\u2019s magnetic nose is always pointed to the north. If two of these POK\u00e9MON meet, they cannot turn their faces to each other when they are close because their magnetic noses repel one another.",
+      "text": "NOSEPASS’s magnetic nose is always pointed to the north. If two of these POKéMON meet, they cannot turn their faces to each other when they are close because their magnetic noses repel one another.",
       "version": "ruby"
     },
     {
-      "text": "NOSEPASS had been said to be completely unmoving, with its magnetic nose pointed due north. However, close observation has revealed that the POK\u00e9MON actually moves by a little over 3/8 of an inch every year.",
+      "text": "NOSEPASS had been said to be completely unmoving, with its magnetic nose pointed due north. However, close observation has revealed that the POKéMON actually moves by a little over 3/8 of an inch every year.",
       "version": "sapphire"
     },
     {
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/299.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/299.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ノズパス",
+    "roomaji": "Nosepass",
+    "ko": "코코파스",
+    "zh-Hant": "朝北鼻",
+    "fr": "Tarinor",
+    "de": "Nasgnet",
+    "es": "Nosepass",
+    "it": "Nosepass",
+    "en": "Nosepass",
+    "ja": "ノズパス",
+    "zh-Hans": "朝北鼻"
   }
 }

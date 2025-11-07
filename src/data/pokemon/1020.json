@@ -1,7 +1,7 @@
 {
   "id": 1020,
   "name": "Gouging-fire",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Fire",
     "Dragon"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It resembles an eerie Pok\u00e9mon once shown in a paranormal magazine. That Pok\u00e9mon was said to be an Entei regenerated from a fossil.",
+      "text": "It resembles an eerie Pokémon once shown in a paranormal magazine. That Pokémon was said to be an Entei regenerated from a fossil.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1020.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウガツホムラ",
+    "ko": "꿰뚫는화염",
+    "zh-Hant": "破空焰",
+    "fr": "Feu-Perçant",
+    "de": "Keilflamme",
+    "es": "Flamariete",
+    "it": "Vampeaguzze",
+    "en": "Gouging Fire",
+    "ja": "ウガツホムラ",
+    "zh-Hans": "破空焰"
   }
 }

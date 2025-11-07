@@ -1,7 +1,7 @@
 {
   "id": 61,
   "name": "Poliwhirl",
-  "species": "Tadpole Pok\u00e9mon",
+  "species": "Tadpole Pokémon",
   "type": [
     "Water"
   ],
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "The swirl on its belly subtly un\u00ad dulates. Staring at it may gradual\u00ad ly cause drowsi\u00ad ness.",
+      "text": "The swirl on its belly subtly un­ dulates. Staring at it may gradual­ ly cause drowsi­ ness.",
       "version": "gold"
     },
     {
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/61.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/61.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニョロゾ",
+    "roomaji": "Nyorozo",
+    "ko": "슈륙챙이",
+    "zh-Hant": "蚊香君",
+    "fr": "Têtarte",
+    "de": "Quaputzi",
+    "es": "Poliwhirl",
+    "it": "Poliwhirl",
+    "en": "Poliwhirl",
+    "ja": "ニョロゾ",
+    "zh-Hans": "蚊香君"
   }
 }

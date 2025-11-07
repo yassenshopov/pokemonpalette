@@ -1,7 +1,7 @@
 {
   "id": 832,
   "name": "Dubwool",
-  "species": "Sheep Pok\u00e9mon",
+  "species": "Sheep Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 90,
     "speed": 88
   },
-  "description": "Weave a carpet from its springy wool, and you end up with something closer to a trampoline. You\u2019ll start to bounce the moment you set foot on it.",
+  "description": "Weave a carpet from its springy wool, and you end up with something closer to a trampoline. You’ll start to bounce the moment you set foot on it.",
   "flavorTexts": [
     {
-      "text": "Weave a carpet from its springy wool, and you end up with something closer to a trampoline. You\u2019ll start to bounce the moment you set foot on it.",
+      "text": "Weave a carpet from its springy wool, and you end up with something closer to a trampoline. You’ll start to bounce the moment you set foot on it.",
       "version": "sword"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/832.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バイウールー",
+    "roomaji": "Baiwooluu",
+    "ko": "배우르",
+    "zh-Hant": "毛毛角羊",
+    "fr": "Moumouflon",
+    "de": "Zwollock",
+    "es": "Dubwool",
+    "it": "Dubwool",
+    "en": "Dubwool",
+    "ja": "バイウールー",
+    "zh-Hans": "毛毛角羊"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 836,
   "name": "Boltund",
-  "species": "Dog Pok\u00e9mon",
+  "species": "Dog Pokémon",
   "type": [
     "Electric"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 60,
     "speed": 121
   },
-  "description": "This Pok\u00e9mon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.",
+  "description": "This Pokémon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.",
+      "text": "This Pokémon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.",
       "version": "sword"
     },
     {
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/836.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パルスワン",
+    "roomaji": "Pulsewan",
+    "ko": "펄스멍",
+    "zh-Hant": "逐電犬",
+    "fr": "Fulgudog",
+    "de": "Bellektro",
+    "es": "Boltund",
+    "it": "Boltund",
+    "en": "Boltund",
+    "ja": "パルスワン",
+    "zh-Hans": "逐电犬"
   }
 }

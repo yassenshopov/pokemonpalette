@@ -1,7 +1,7 @@
 {
   "id": 421,
   "name": "Cherrim",
-  "species": "Blossom Pok\u00e9mon",
+  "species": "Blossom Pokémon",
   "type": [
     "Grass"
   ],
@@ -40,7 +40,7 @@
       "version": "pearl"
     },
     {
-      "text": "If it senses strong sunlight, it opens its folded petals to absorb the sun\u2019s rays with its whole body.",
+      "text": "If it senses strong sunlight, it opens its folded petals to absorb the sun’s rays with its whole body.",
       "version": "platinum"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/421.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/421.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チェリム",
+    "roomaji": "Cherrim",
+    "ko": "체리꼬",
+    "zh-Hant": "櫻花兒",
+    "fr": "Ceriflor",
+    "de": "Kinoso",
+    "es": "Cherrim",
+    "it": "Cherrim",
+    "en": "Cherrim",
+    "ja": "チェリム",
+    "zh-Hans": "樱花儿"
   }
 }

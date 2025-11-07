@@ -1,7 +1,7 @@
 {
   "id": 710,
   "name": "Pumpkaboo-average",
-  "species": "Pumpkin Pok\u00e9mon",
+  "species": "Pumpkin Pokémon",
   "type": [
     "Ghost",
     "Grass"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "Spirits that wander this world are placed into Pumpkaboo\u2019s body. They\u2019re then moved on to the afterlife.",
+      "text": "Spirits that wander this world are placed into Pumpkaboo’s body. They’re then moved on to the afterlife.",
       "version": "sword"
     }
   ],
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/710.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バケッチャ",
+    "roomaji": "Bakeccha",
+    "ko": "호바귀",
+    "zh-Hant": "南瓜精",
+    "fr": "Pitrouille",
+    "de": "Irrbis",
+    "es": "Pumpkaboo",
+    "it": "Pumpkaboo",
+    "en": "Pumpkaboo",
+    "ja": "バケッチャ",
+    "zh-Hans": "南瓜精"
   }
 }

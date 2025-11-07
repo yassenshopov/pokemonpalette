@@ -1,7 +1,7 @@
 {
   "id": 442,
   "name": "Spiritomb",
-  "species": "Forbidden Pok\u00e9mon",
+  "species": "Forbidden Pokémon",
   "type": [
     "Ghost",
     "Dark"
@@ -40,10 +40,10 @@
     "specialDefense": 108,
     "speed": 35
   },
-  "description": "A Pok\u00e9mon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.",
+  "description": "A Pokémon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.",
+      "text": "A Pokémon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.",
       "version": "diamond"
     },
     {
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/442.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/442.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミカルゲ",
+    "roomaji": "Mikaruge",
+    "ko": "화강돌",
+    "zh-Hant": "花岩怪",
+    "fr": "Spiritomb",
+    "de": "Kryppuk",
+    "es": "Spiritomb",
+    "it": "Spiritomb",
+    "en": "Spiritomb",
+    "ja": "ミカルゲ",
+    "zh-Hans": "花岩怪"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 560,
   "name": "Scrafty",
-  "species": "Hoodlum Pok\u00e9mon",
+  "species": "Hoodlum Pokémon",
   "type": [
     "Dark",
     "Fighting"
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/560.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/560.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ズルズキン",
+    "roomaji": "Zuruzukin",
+    "ko": "곤율거니",
+    "zh-Hant": "頭巾混混",
+    "fr": "Baggaïd",
+    "de": "Irokex",
+    "es": "Scrafty",
+    "it": "Scrafty",
+    "en": "Scrafty",
+    "ja": "ズルズキン",
+    "zh-Hans": "头巾混混"
   }
 }

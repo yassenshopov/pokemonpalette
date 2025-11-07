@@ -1,7 +1,7 @@
 {
   "id": 881,
   "name": "Arctozolt",
-  "species": "Fossil Pok\u00e9mon",
+  "species": "Fossil Pokémon",
   "type": [
     "Electric",
     "Ice"
@@ -53,7 +53,7 @@
       "version": "sword"
     },
     {
-      "text": "This Pok\u00e9mon lived on prehistoric seashores and was able to preserve food with the ice on its body. It went extinct because it moved so slowly.",
+      "text": "This Pokémon lived on prehistoric seashores and was able to preserve food with the ice on its body. It went extinct because it moved so slowly.",
       "version": "shield"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/881.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パッチルドン",
+    "roomaji": "Patchilldon",
+    "ko": "파치르돈",
+    "zh-Hant": "雷鳥海獸",
+    "fr": "Galvagla",
+    "de": "Lecryodon",
+    "es": "Arctozolt",
+    "it": "Arctozolt",
+    "en": "Arctozolt",
+    "ja": "パッチルドン",
+    "zh-Hans": "雷鸟海兽"
   }
 }

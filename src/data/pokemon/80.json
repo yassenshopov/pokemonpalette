@@ -1,7 +1,7 @@
 {
   "id": 80,
   "name": "Slowbro",
-  "species": "Hermit Crab Pok\u00e9mon",
+  "species": "Hermit Crab Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -61,7 +61,7 @@
       "version": "yellow"
     },
     {
-      "text": "If the tail-biting SHELLDER is thrown off in a harsh battle, it reverts to being an ordi\u00ad nary SLOWPOKE.",
+      "text": "If the tail-biting SHELLDER is thrown off in a harsh battle, it reverts to being an ordi­ nary SLOWPOKE.",
       "version": "gold"
     },
     {
@@ -342,5 +342,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/80.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/80.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤドラン",
+    "roomaji": "Yadoran",
+    "ko": "야도란",
+    "zh-Hant": "呆殼獸",
+    "fr": "Flagadoss",
+    "de": "Lahmus",
+    "es": "Slowbro",
+    "it": "Slowbro",
+    "en": "Slowbro",
+    "ja": "ヤドラン",
+    "zh-Hans": "呆壳兽"
   }
 }

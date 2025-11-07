@@ -1,7 +1,7 @@
 {
   "id": 79,
   "name": "Slowpoke",
-  "species": "Dopey Pok\u00e9mon",
+  "species": "Dopey Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -339,5 +339,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/79.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/79.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤドン",
+    "roomaji": "Yadon",
+    "ko": "야돈",
+    "zh-Hant": "呆呆獸",
+    "fr": "Ramoloss",
+    "de": "Flegmon",
+    "es": "Slowpoke",
+    "it": "Slowpoke",
+    "en": "Slowpoke",
+    "ja": "ヤドン",
+    "zh-Hans": "呆呆兽"
   }
 }

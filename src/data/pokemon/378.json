@@ -1,7 +1,7 @@
 {
   "id": 378,
   "name": "Regice",
-  "species": "Iceberg Pok\u00e9mon",
+  "species": "Iceberg Pokémon",
   "type": [
     "Ice"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 200,
     "speed": 50
   },
-  "description": "REGICE\u2019s body was made during an ice age. The deep-frozen body can\u2019t be melted, even by fire. This POK\u00e9MON controls frigid air of minus 328 degrees F.",
+  "description": "REGICE’s body was made during an ice age. The deep-frozen body can’t be melted, even by fire. This POKéMON controls frigid air of minus 328 degrees F.",
   "flavorTexts": [
     {
-      "text": "REGICE\u2019s body was made during an ice age. The deep-frozen body can\u2019t be melted, even by fire. This POK\u00e9MON controls frigid air of minus 328 degrees F.",
+      "text": "REGICE’s body was made during an ice age. The deep-frozen body can’t be melted, even by fire. This POKéMON controls frigid air of minus 328 degrees F.",
       "version": "ruby"
     },
     {
-      "text": "REGICE cloaks itself with frigid air of negative 328 degrees F. Things will freeze solid just by going near this POK\u00e9MON. Its icy body is so cold, it will not melt even if it is immersed in magma.",
+      "text": "REGICE cloaks itself with frigid air of negative 328 degrees F. Things will freeze solid just by going near this POKéMON. Its icy body is so cold, it will not melt even if it is immersed in magma.",
       "version": "sapphire"
     },
     {
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/378.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/378.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レジアイス",
+    "roomaji": "Regice",
+    "ko": "레지아이스",
+    "zh-Hant": "雷吉艾斯",
+    "fr": "Regice",
+    "de": "Regice",
+    "es": "Regice",
+    "it": "Regice",
+    "en": "Regice",
+    "ja": "レジアイス",
+    "zh-Hans": "雷吉艾斯"
   }
 }

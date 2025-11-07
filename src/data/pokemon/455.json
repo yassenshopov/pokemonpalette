@@ -1,7 +1,7 @@
 {
   "id": 455,
   "name": "Carnivine",
-  "species": "Bug Catcher Pok\u00e9mon",
+  "species": "Bug Catcher Pokémon",
   "type": [
     "Grass"
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/455.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/455.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マスキッパ",
+    "roomaji": "Muskippa",
+    "ko": "무스틈니",
+    "zh-Hant": "尖牙籠",
+    "fr": "Vortente",
+    "de": "Venuflibis",
+    "es": "Carnivine",
+    "it": "Carnivine",
+    "en": "Carnivine",
+    "ja": "マスキッパ",
+    "zh-Hans": "尖牙笼"
   }
 }

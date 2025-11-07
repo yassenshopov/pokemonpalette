@@ -1,7 +1,7 @@
 {
   "id": 179,
   "name": "Mareep",
-  "species": "Wool Pok\u00e9mon",
+  "species": "Wool Pokémon",
   "type": [
     "Electric"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 45,
     "speed": 35
   },
-  "description": "If static elec\u00ad tricity builds in its body, its fleece doubles in volume. Touching it will shock you.",
+  "description": "If static elec­ tricity builds in its body, its fleece doubles in volume. Touching it will shock you.",
   "flavorTexts": [
     {
-      "text": "If static elec\u00ad tricity builds in its body, its fleece doubles in volume. Touching it will shock you.",
+      "text": "If static elec­ tricity builds in its body, its fleece doubles in volume. Touching it will shock you.",
       "version": "gold"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "MAREEP\u2019s fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail grows.",
+      "text": "MAREEP’s fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail grows.",
       "version": "ruby"
     },
     {
-      "text": "MAREEP\u2019s fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail grows.",
+      "text": "MAREEP’s fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail grows.",
       "version": "sapphire"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/179.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/179.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メリープ",
+    "roomaji": "Merriep",
+    "ko": "메리프",
+    "zh-Hant": "咩利羊",
+    "fr": "Wattouat",
+    "de": "Voltilamm",
+    "es": "Mareep",
+    "it": "Mareep",
+    "en": "Mareep",
+    "ja": "メリープ",
+    "zh-Hans": "咩利羊"
   }
 }

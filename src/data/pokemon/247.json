@@ -1,7 +1,7 @@
 {
   "id": 247,
   "name": "Pupitar",
-  "species": "Hard Shell Pok\u00e9mon",
+  "species": "Hard Shell Pokémon",
   "type": [
     "Rock",
     "Ground"
@@ -41,7 +41,7 @@
       "version": "gold"
     },
     {
-      "text": "Even sealed in its shell, it can move freely. Hard and fast, it has out\u00ad standing destruc\u00ad tive power.",
+      "text": "Even sealed in its shell, it can move freely. Hard and fast, it has out­ standing destruc­ tive power.",
       "version": "silver"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/247.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/247.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サナギラス",
+    "roomaji": "Sanagiras",
+    "ko": "데기라스",
+    "zh-Hant": "沙基拉斯",
+    "fr": "Ymphect",
+    "de": "Pupitar",
+    "es": "Pupitar",
+    "it": "Pupitar",
+    "en": "Pupitar",
+    "ja": "サナギラス",
+    "zh-Hans": "沙基拉斯"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 974,
   "name": "Cetoddle",
-  "species": "Terra Whale Pok\u00e9mon",
+  "species": "Terra Whale Pokémon",
   "type": [
     "Ice"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/974.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アルクジラ",
+    "roomaji": "Arukujira",
+    "ko": "터벅고래",
+    "zh-Hant": "走鯨",
+    "fr": "Piétacé",
+    "de": "Flaniwal",
+    "es": "Cetoddle",
+    "it": "Cetoddle",
+    "en": "Cetoddle",
+    "ja": "アルクジラ",
+    "zh-Hans": "走鲸"
   }
 }

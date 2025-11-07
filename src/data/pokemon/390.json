@@ -1,7 +1,7 @@
 {
   "id": 390,
   "name": "Chimchar",
-  "species": "Chimp Pok\u00e9mon",
+  "species": "Chimp Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "diamond"
     },
     {
-      "text": "Its fiery rear end is fueled by gas made in its belly. Even rain can\u2019t extinguish the fire.",
+      "text": "Its fiery rear end is fueled by gas made in its belly. Even rain can’t extinguish the fire.",
       "version": "pearl"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/390.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/390.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒコザル",
+    "roomaji": "Hikozaru",
+    "ko": "불꽃숭이",
+    "zh-Hant": "小火焰猴",
+    "fr": "Ouisticram",
+    "de": "Panflam",
+    "es": "Chimchar",
+    "it": "Chimchar",
+    "en": "Chimchar",
+    "ja": "ヒコザル",
+    "zh-Hans": "小火焰猴"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 21,
   "name": "Spearow",
-  "species": "Tiny Bird Pok\u00e9mon",
+  "species": "Tiny Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -55,7 +55,7 @@
       "version": "blue"
     },
     {
-      "text": "Inept at flying high. However, it can fly around very fast to protect its ter\u00ad ritory.",
+      "text": "Inept at flying high. However, it can fly around very fast to protect its ter­ ritory.",
       "version": "yellow"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/21.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/21.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オニスズメ",
+    "roomaji": "Onisuzume",
+    "ko": "깨비참",
+    "zh-Hant": "烈雀",
+    "fr": "Piafabec",
+    "de": "Habitak",
+    "es": "Spearow",
+    "it": "Spearow",
+    "en": "Spearow",
+    "ja": "オニスズメ",
+    "zh-Hans": "烈雀"
   }
 }

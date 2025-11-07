@@ -1,7 +1,7 @@
 {
   "id": 143,
   "name": "Snorlax",
-  "species": "Sleeping Pok\u00e9mon",
+  "species": "Sleeping Pokémon",
   "type": [
     "Normal"
   ],
@@ -56,11 +56,11 @@
       "version": "yellow"
     },
     {
-      "text": "What sounds like its cry may ac\u00ad tually be its snores or the rumblings of its hungry belly.",
+      "text": "What sounds like its cry may ac­ tually be its snores or the rumblings of its hungry belly.",
       "version": "gold"
     },
     {
-      "text": "Its stomach's di\u00ad gestive juices can dissolve any kind of poison. It can even eat things off the ground.",
+      "text": "Its stomach's di­ gestive juices can dissolve any kind of poison. It can even eat things off the ground.",
       "version": "silver"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/143.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/143.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カビゴン",
+    "roomaji": "Kabigon",
+    "ko": "잠만보",
+    "zh-Hant": "卡比獸",
+    "fr": "Ronflex",
+    "de": "Relaxo",
+    "es": "Snorlax",
+    "it": "Snorlax",
+    "en": "Snorlax",
+    "ja": "カビゴン",
+    "zh-Hans": "卡比兽"
   }
 }

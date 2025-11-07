@@ -1,8 +1,10 @@
 {
   "id": 754,
   "name": "Lurantis",
-  "species": "Bloom Sickle Pok\u00e9mon",
-  "type": ["Grass"],
+  "species": "Bloom Sickle Pokémon",
+  "type": [
+    "Grass"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -33,10 +35,10 @@
     "specialDefense": 90,
     "speed": 45
   },
-  "description": "It requires a lot of effort to maintain Lurantis\u2019s vivid coloring, but some collectors enjoy this work and treat it as their hobby.",
+  "description": "It requires a lot of effort to maintain Lurantis’s vivid coloring, but some collectors enjoy this work and treat it as their hobby.",
   "flavorTexts": [
     {
-      "text": "It requires a lot of effort to maintain Lurantis\u2019s vivid coloring, but some collectors enjoy this work and treat it as their hobby.",
+      "text": "It requires a lot of effort to maintain Lurantis’s vivid coloring, but some collectors enjoy this work and treat it as their hobby.",
       "version": "sun"
     },
     {
@@ -44,15 +46,15 @@
       "version": "moon"
     },
     {
-      "text": "For self-protection, it pretends to be a bug Pok\u00e9mon. Both of its arms bear keen-edged petals.",
+      "text": "For self-protection, it pretends to be a bug Pokémon. Both of its arms bear keen-edged petals.",
       "version": "ultra-sun"
     },
     {
-      "text": "As it slashes into its enemies, it looks like it\u2019s dancing. Its elegant appearance has led some to call it the most glamorous Grass Pok\u00e9mon.",
+      "text": "As it slashes into its enemies, it looks like it’s dancing. Its elegant appearance has led some to call it the most glamorous Grass Pokémon.",
       "version": "ultra-moon"
     },
     {
-      "text": "This Pok\u00e9mon resembles a beautiful flower. A properly raised Lurantis will have gorgeous, brilliant colors.",
+      "text": "This Pokémon resembles a beautiful flower. A properly raised Lurantis will have gorgeous, brilliant colors.",
       "version": "sword"
     }
   ],
@@ -62,7 +64,11 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#78C850", "#A040A0", "#F8D030"]
+    "highlights": [
+      "#78C850",
+      "#A040A0",
+      "#F8D030"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/754.png",
@@ -293,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/754.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ラランテス",
+    "roomaji": "Lalantes",
+    "ko": "라란티스",
+    "zh-Hant": "蘭螳花",
+    "fr": "Floramantis",
+    "de": "Mantidea",
+    "es": "Lurantis",
+    "it": "Lurantis",
+    "en": "Lurantis",
+    "ja": "ラランテス",
+    "zh-Hans": "兰螳花"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 99,
   "name": "Kingler",
-  "species": "Pincer Pok\u00e9mon",
+  "species": "Pincer Pokémon",
   "type": [
     "Water"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Its pincers grow peculiarly large. If it lifts the pincers too fast, it loses its bal\u00ad ance and staggers.",
+      "text": "Its pincers grow peculiarly large. If it lifts the pincers too fast, it loses its bal­ ance and staggers.",
       "version": "silver"
     }
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/99.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/99.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キングラー",
+    "roomaji": "Kingler",
+    "ko": "킹크랩",
+    "zh-Hant": "巨鉗蟹",
+    "fr": "Krabboss",
+    "de": "Kingler",
+    "es": "Kingler",
+    "it": "Kingler",
+    "en": "Kingler",
+    "ja": "キングラー",
+    "zh-Hans": "巨钳蟹"
   }
 }

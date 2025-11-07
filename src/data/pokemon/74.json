@@ -1,7 +1,7 @@
 {
   "id": 74,
   "name": "Geodude",
-  "species": "Rock Pok\u00e9mon",
+  "species": "Rock Pokémon",
   "type": [
     "Rock",
     "Ground"
@@ -326,5 +326,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/74.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/74.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イシツブテ",
+    "roomaji": "Isitsubute",
+    "ko": "꼬마돌",
+    "zh-Hant": "小拳石",
+    "fr": "Racaillou",
+    "de": "Kleinstein",
+    "es": "Geodude",
+    "it": "Geodude",
+    "en": "Geodude",
+    "ja": "イシツブテ",
+    "zh-Hans": "小拳石"
   }
 }

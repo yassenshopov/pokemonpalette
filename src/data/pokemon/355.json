@@ -1,7 +1,7 @@
 {
   "id": 355,
   "name": "Duskull",
-  "species": "Requiem Pok\u00e9mon",
+  "species": "Requiem Pokémon",
   "type": [
     "Ghost"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 90,
     "speed": 25
   },
-  "description": "DUSKULL can pass through any wall no matter how thick it may be. Once this POK\u00e9MON chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
+  "description": "DUSKULL can pass through any wall no matter how thick it may be. Once this POKéMON chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
   "flavorTexts": [
     {
-      "text": "DUSKULL can pass through any wall no matter how thick it may be. Once this POK\u00e9MON chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
+      "text": "DUSKULL can pass through any wall no matter how thick it may be. Once this POKéMON chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
       "version": "ruby"
     },
     {
-      "text": "DUSKULL wanders lost among the deep darkness of midnight. There is an oft- told admonishment given to misbehaving children that this POK\u00e9MON will spirit away bad children who earn scoldings from their mothers.",
+      "text": "DUSKULL wanders lost among the deep darkness of midnight. There is an oft- told admonishment given to misbehaving children that this POKéMON will spirit away bad children who earn scoldings from their mothers.",
       "version": "sapphire"
     },
     {
-      "text": "A glare from its single scarlet eye makes even burly grown-ups freeze in utter fear. It is a nocturnal POK\u00e9MON that roams about under the cloak of darkness.",
+      "text": "A glare from its single scarlet eye makes even burly grown-ups freeze in utter fear. It is a nocturnal POKéMON that roams about under the cloak of darkness.",
       "version": "emerald"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/355.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/355.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヨマワル",
+    "roomaji": "Yomawaru",
+    "ko": "해골몽",
+    "zh-Hant": "夜巡靈",
+    "fr": "Skelénox",
+    "de": "Zwirrlicht",
+    "es": "Duskull",
+    "it": "Duskull",
+    "en": "Duskull",
+    "ja": "ヨマワル",
+    "zh-Hans": "夜巡灵"
   }
 }

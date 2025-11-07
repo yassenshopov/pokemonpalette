@@ -1,7 +1,7 @@
 {
   "id": 124,
   "name": "Jynx",
-  "species": "Human Shape Pok\u00e9mon",
+  "species": "Human Shape Pokémon",
   "type": [
     "Ice",
     "Psychic"
@@ -61,11 +61,11 @@
       "version": "yellow"
     },
     {
-      "text": "It rocks its body rhythmically. It appears to alter the rhythm depend\u00ad ing on how it is feeling.",
+      "text": "It rocks its body rhythmically. It appears to alter the rhythm depend­ ing on how it is feeling.",
       "version": "gold"
     },
     {
-      "text": "It speaks a lan\u00ad guage similar to that of humans. However, it seems to use dancing to communicate.",
+      "text": "It speaks a lan­ guage similar to that of humans. However, it seems to use dancing to communicate.",
       "version": "silver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/124.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/124.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ルージュラ",
+    "roomaji": "Rougela",
+    "ko": "루주라",
+    "zh-Hant": "迷唇姐",
+    "fr": "Lippoutou",
+    "de": "Rossana",
+    "es": "Jynx",
+    "it": "Jynx",
+    "en": "Jynx",
+    "ja": "ルージュラ",
+    "zh-Hans": "迷唇姐"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 991,
   "name": "Iron-bundle",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Ice",
     "Water"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It resembles a mysterious object mentioned in an old book. There are only two reported sightings of this Pok\u00e9mon.",
+      "text": "It resembles a mysterious object mentioned in an old book. There are only two reported sightings of this Pokémon.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/991.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノツツミ",
+    "roomaji": "Tetsunotsutsumi",
+    "ko": "무쇠보따리",
+    "zh-Hant": "鐵包袱",
+    "fr": "Hotte-de-Fer",
+    "de": "Eisenbündel",
+    "es": "Ferrosaco",
+    "it": "Saccoferreo",
+    "en": "Iron Bundle",
+    "ja": "テツノツツミ",
+    "zh-Hans": "铁包袱"
   }
 }

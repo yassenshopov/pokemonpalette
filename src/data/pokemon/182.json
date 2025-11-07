@@ -1,7 +1,7 @@
 {
   "id": 182,
   "name": "Bellossom",
-  "species": "Flower Pok\u00e9mon",
+  "species": "Flower Pokémon",
   "type": [
     "Grass"
   ],
@@ -54,7 +54,7 @@
       "version": "crystal"
     },
     {
-      "text": "When BELLOSSOM gets exposed to plenty of sunlight, the leaves ringing its body begin to spin around. This POK\u00e9MON\u2019s dancing is renowned in the southern lands.",
+      "text": "When BELLOSSOM gets exposed to plenty of sunlight, the leaves ringing its body begin to spin around. This POKéMON’s dancing is renowned in the southern lands.",
       "version": "ruby"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/182.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/182.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キレイハナ",
+    "roomaji": "Kireihana",
+    "ko": "아르코",
+    "zh-Hant": "美麗花",
+    "fr": "Joliflor",
+    "de": "Blubella",
+    "es": "Bellossom",
+    "it": "Bellossom",
+    "en": "Bellossom",
+    "ja": "キレイハナ",
+    "zh-Hans": "美丽花"
   }
 }

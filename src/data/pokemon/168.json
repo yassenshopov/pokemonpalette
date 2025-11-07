@@ -1,7 +1,7 @@
 {
   "id": 168,
   "name": "Ariados",
-  "species": "Long Leg Pok\u00e9mon",
+  "species": "Long Leg Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -57,15 +57,15 @@
       "version": "silver"
     },
     {
-      "text": "Rather than mak\u00ad ing a nest in one specific spot, it wanders in search of food after darkness falls.",
+      "text": "Rather than mak­ ing a nest in one specific spot, it wanders in search of food after darkness falls.",
       "version": "crystal"
     },
     {
-      "text": "ARIADOS\u2019s feet are tipped with tiny hooked claws that enable it to scuttle on ceilings and vertical walls. This POK\u00e9MON constricts the foe with thin and strong silk webbing.",
+      "text": "ARIADOS’s feet are tipped with tiny hooked claws that enable it to scuttle on ceilings and vertical walls. This POKéMON constricts the foe with thin and strong silk webbing.",
       "version": "ruby"
     },
     {
-      "text": "ARIADOS\u2019s feet are tipped with tiny hooked claws that enable it to scuttle on ceilings and vertical walls. This POK\u00e9MON constricts the foe with thin and strong silk webbing.",
+      "text": "ARIADOS’s feet are tipped with tiny hooked claws that enable it to scuttle on ceilings and vertical walls. This POKéMON constricts the foe with thin and strong silk webbing.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/168.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/168.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アリアドス",
+    "roomaji": "Ariados",
+    "ko": "아리아도스",
+    "zh-Hant": "阿利多斯",
+    "fr": "Migalos",
+    "de": "Ariados",
+    "es": "Ariados",
+    "it": "Ariados",
+    "en": "Ariados",
+    "ja": "アリアドス",
+    "zh-Hans": "阿利多斯"
   }
 }

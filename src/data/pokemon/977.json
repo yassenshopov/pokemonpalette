@@ -1,7 +1,7 @@
 {
   "id": 977,
   "name": "Dondozo",
-  "species": "Big Catfish Pok\u00e9mon",
+  "species": "Big Catfish Pokémon",
   "type": [
     "Water"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 65,
     "speed": 35
   },
-  "description": "This Pok\u00e9mon is a glutton, but it\u2019s bad at getting food. It teams up with a Tatsugiri to catch prey.",
+  "description": "This Pokémon is a glutton, but it’s bad at getting food. It teams up with a Tatsugiri to catch prey.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is a glutton, but it\u2019s bad at getting food. It teams up with a Tatsugiri to catch prey.",
+      "text": "This Pokémon is a glutton, but it’s bad at getting food. It teams up with a Tatsugiri to catch prey.",
       "version": "scarlet"
     },
     {
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/977.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヘイラッシャ",
+    "roomaji": "Heyrusher",
+    "ko": "어써러셔",
+    "zh-Hant": "吃吼霸",
+    "fr": "Oyacata",
+    "de": "Heerashai",
+    "es": "Dondozo",
+    "it": "Dondozo",
+    "en": "Dondozo",
+    "ja": "ヘイラッシャ",
+    "zh-Hans": "吃吼霸"
   }
 }

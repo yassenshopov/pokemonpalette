@@ -1,7 +1,7 @@
 {
   "id": 360,
   "name": "Wynaut",
-  "species": "Bright Pok\u00e9mon",
+  "species": "Bright Pokémon",
   "type": [
     "Psychic"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 48,
     "speed": 23
   },
-  "description": "WYNAUT can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this POK\u00e9MON will be slapping the ground with its tail.",
+  "description": "WYNAUT can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this POKéMON will be slapping the ground with its tail.",
   "flavorTexts": [
     {
-      "text": "WYNAUT can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this POK\u00e9MON will be slapping the ground with its tail.",
+      "text": "WYNAUT can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this POKéMON will be slapping the ground with its tail.",
       "version": "ruby"
     },
     {
-      "text": "WYNAUT gather on moonlit nights to play by squeezing up against each other. By being squeezed, this POK\u00e9MON gains endurance and is trained to dole out powerful counterattacks.",
+      "text": "WYNAUT gather on moonlit nights to play by squeezing up against each other. By being squeezed, this POKéMON gains endurance and is trained to dole out powerful counterattacks.",
       "version": "sapphire"
     },
     {
@@ -224,5 +224,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/360.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/360.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ソーナノ",
+    "roomaji": "Sohnano",
+    "ko": "마자",
+    "zh-Hant": "小果然",
+    "fr": "Okéoké",
+    "de": "Isso",
+    "es": "Wynaut",
+    "it": "Wynaut",
+    "en": "Wynaut",
+    "ja": "ソーナノ",
+    "zh-Hans": "小果然"
   }
 }

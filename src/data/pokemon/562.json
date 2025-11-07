@@ -1,7 +1,7 @@
 {
   "id": 562,
   "name": "Yamask",
-  "species": "Spirit Pok\u00e9mon",
+  "species": "Spirit Pokémon",
   "type": [
     "Ghost"
   ],
@@ -36,19 +36,19 @@
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon arose from the spirits of people interred in graves in past ages. Each retains memories of its former life.",
+      "text": "These Pokémon arose from the spirits of people interred in graves in past ages. Each retains memories of its former life.",
       "version": "white"
     },
     {
-      "text": "These Pok\u00e9mon arose from the spirits of people interred in graves. Each retains memories of its former life.",
+      "text": "These Pokémon arose from the spirits of people interred in graves. Each retains memories of its former life.",
       "version": "black-2"
     },
     {
-      "text": "These Pok\u00e9mon arose from the spirits of people interred in graves. Each retains memories of its former life.",
+      "text": "These Pokémon arose from the spirits of people interred in graves. Each retains memories of its former life.",
       "version": "white-2"
     },
     {
-      "text": "These Pok\u00e9mon arose from the spirits of people interred in graves. Each retains memories of its former life.",
+      "text": "These Pokémon arose from the spirits of people interred in graves. Each retains memories of its former life.",
       "version": "x"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/562.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/562.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "デスマス",
+    "roomaji": "Desumasu",
+    "ko": "데스마스",
+    "zh-Hant": "哭哭面具",
+    "fr": "Tutafeh",
+    "de": "Makabaja",
+    "es": "Yamask",
+    "it": "Yamask",
+    "en": "Yamask",
+    "ja": "デスマス",
+    "zh-Hans": "哭哭面具"
   }
 }

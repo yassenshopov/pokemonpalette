@@ -1,7 +1,7 @@
 {
   "id": 690,
   "name": "Skrelp",
-  "species": "Mock Kelp Pok\u00e9mon",
+  "species": "Mock Kelp Pokémon",
   "type": [
     "Poison",
     "Water"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "It vanishes into seaweed and remains perfectly still to avoid attacks from large Pok\u00e9mon. Rotten seaweed is its main food source.",
+      "text": "It vanishes into seaweed and remains perfectly still to avoid attacks from large Pokémon. Rotten seaweed is its main food source.",
       "version": "ultra-sun"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/690.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クズモー",
+    "roomaji": "Kuzumo",
+    "ko": "수레기",
+    "zh-Hant": "垃垃藻",
+    "fr": "Venalgue",
+    "de": "Algitt",
+    "es": "Skrelp",
+    "it": "Skrelp",
+    "en": "Skrelp",
+    "ja": "クズモー",
+    "zh-Hans": "垃垃藻"
   }
 }

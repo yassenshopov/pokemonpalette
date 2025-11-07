@@ -1,7 +1,7 @@
 {
   "id": 570,
   "name": "Zorua",
-  "species": "Tricky Fox Pok\u00e9mon",
+  "species": "Tricky Fox Pokémon",
   "type": [
     "Dark"
   ],
@@ -36,7 +36,7 @@
       "version": "black"
     },
     {
-      "text": "To protect themselves from danger, they hide their true identities by transforming into people and Pok\u00e9mon.",
+      "text": "To protect themselves from danger, they hide their true identities by transforming into people and Pokémon.",
       "version": "white"
     },
     {
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/570.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/570.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゾロア",
+    "roomaji": "Zorua",
+    "ko": "조로아",
+    "zh-Hant": "索羅亞",
+    "fr": "Zorua",
+    "de": "Zorua",
+    "es": "Zorua",
+    "it": "Zorua",
+    "en": "Zorua",
+    "ja": "ゾロア",
+    "zh-Hans": "索罗亚"
   }
 }

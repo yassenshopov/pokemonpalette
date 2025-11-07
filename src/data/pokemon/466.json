@@ -1,7 +1,7 @@
 {
   "id": 466,
   "name": "Electivire",
-  "species": "Thunderbolt Pok\u00e9mon",
+  "species": "Thunderbolt Pokémon",
   "type": [
     "Electric"
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/466.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/466.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エレキブル",
+    "roomaji": "Elekible",
+    "ko": "에레키블",
+    "zh-Hant": "電擊魔獸",
+    "fr": "Élekable",
+    "de": "Elevoltek",
+    "es": "Electivire",
+    "it": "Electivire",
+    "en": "Electivire",
+    "ja": "エレキブル",
+    "zh-Hans": "电击魔兽"
   }
 }

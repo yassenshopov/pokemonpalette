@@ -1,7 +1,7 @@
 {
   "id": 278,
   "name": "Wingull",
-  "species": "Seagull Pok\u00e9mon",
+  "species": "Seagull Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -46,14 +46,14 @@
     "specialDefense": 30,
     "speed": 85
   },
-  "description": "WINGULL has the habit of carrying prey and valuables in its beak and hiding them in all sorts of locations. This POK\u00e9MON rides the winds and flies as if it were skating across the sky.",
+  "description": "WINGULL has the habit of carrying prey and valuables in its beak and hiding them in all sorts of locations. This POKéMON rides the winds and flies as if it were skating across the sky.",
   "flavorTexts": [
     {
-      "text": "WINGULL has the habit of carrying prey and valuables in its beak and hiding them in all sorts of locations. This POK\u00e9MON rides the winds and flies as if it were skating across the sky.",
+      "text": "WINGULL has the habit of carrying prey and valuables in its beak and hiding them in all sorts of locations. This POKéMON rides the winds and flies as if it were skating across the sky.",
       "version": "ruby"
     },
     {
-      "text": "WINGULL rides updrafts rising from the sea by extending its long and narrow wings to glide. This POK\u00e9MON\u2019s long beak is useful for catching prey.",
+      "text": "WINGULL rides updrafts rising from the sea by extending its long and narrow wings to glide. This POKéMON’s long beak is useful for catching prey.",
       "version": "sapphire"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/278.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/278.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キャモメ",
+    "roomaji": "Camome",
+    "ko": "갈모매",
+    "zh-Hant": "長翅鷗",
+    "fr": "Goélise",
+    "de": "Wingull",
+    "es": "Wingull",
+    "it": "Wingull",
+    "en": "Wingull",
+    "ja": "キャモメ",
+    "zh-Hans": "长翅鸥"
   }
 }

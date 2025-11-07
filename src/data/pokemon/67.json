@@ -1,7 +1,7 @@
 {
   "id": 67,
   "name": "Machoke",
-  "species": "Superpower Pok\u00e9mon",
+  "species": "Superpower Pokémon",
   "type": [
     "Fighting"
   ],
@@ -52,15 +52,15 @@
       "version": "blue"
     },
     {
-      "text": "The belt around its waist holds back its energy. Without it, this POK\u00e9MON would be unstoppable.",
+      "text": "The belt around its waist holds back its energy. Without it, this POKéMON would be unstoppable.",
       "version": "yellow"
     },
     {
-      "text": "It always goes at its full power, but this very tough and durable POK\u00e9MON never gets tired.",
+      "text": "It always goes at its full power, but this very tough and durable POKéMON never gets tired.",
       "version": "gold"
     },
     {
-      "text": "The muscles cover\u00ad ing its body teem with power. Even when still, it exudes an amazing sense of strength.",
+      "text": "The muscles cover­ ing its body teem with power. Even when still, it exudes an amazing sense of strength.",
       "version": "silver"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/67.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/67.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴーリキー",
+    "roomaji": "Goriky",
+    "ko": "근육몬",
+    "zh-Hant": "豪力",
+    "fr": "Machopeur",
+    "de": "Maschock",
+    "es": "Machoke",
+    "it": "Machoke",
+    "en": "Machoke",
+    "ja": "ゴーリキー",
+    "zh-Hans": "豪力"
   }
 }

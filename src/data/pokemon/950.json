@@ -1,7 +1,7 @@
 {
   "id": 950,
   "name": "Klawf",
-  "species": "Ambush Pok\u00e9mon",
+  "species": "Ambush Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 55,
     "speed": 75
   },
-  "description": "Klawf hangs upside-down from cliffs, waiting for prey. But Klawf can\u2019t remain in this position for long because its blood rushes to its head.",
+  "description": "Klawf hangs upside-down from cliffs, waiting for prey. But Klawf can’t remain in this position for long because its blood rushes to its head.",
   "flavorTexts": [
     {
-      "text": "Klawf hangs upside-down from cliffs, waiting for prey. But Klawf can\u2019t remain in this position for long because its blood rushes to its head.",
+      "text": "Klawf hangs upside-down from cliffs, waiting for prey. But Klawf can’t remain in this position for long because its blood rushes to its head.",
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon lives on sheer cliffs. It sidesteps opponents\u2019 attacks, then lunges for their weak spots with its claws.",
+      "text": "This Pokémon lives on sheer cliffs. It sidesteps opponents’ attacks, then lunges for their weak spots with its claws.",
       "version": "violet"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/950.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ガケガニ",
+    "roomaji": "Gakegani",
+    "ko": "절벼게",
+    "zh-Hant": "毛崖蟹",
+    "fr": "Craparoi",
+    "de": "Klibbe",
+    "es": "Klawf",
+    "it": "Klawf",
+    "en": "Klawf",
+    "ja": "ガケガニ",
+    "zh-Hans": "毛崖蟹"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 908,
   "name": "Meowscarada",
-  "species": "Magician Pok\u00e9mon",
+  "species": "Magician Pokémon",
   "type": [
     "Grass",
     "Dark"
@@ -40,14 +40,14 @@
     "specialDefense": 70,
     "speed": 123
   },
-  "description": "This Pok\u00e9mon uses the reflective fur lining its cape to camouflage the stem of its flower, creating the illusion that the flower is floating.",
+  "description": "This Pokémon uses the reflective fur lining its cape to camouflage the stem of its flower, creating the illusion that the flower is floating.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon uses the reflective fur lining its cape to camouflage the stem of its flower, creating the illusion that the flower is floating.",
+      "text": "This Pokémon uses the reflective fur lining its cape to camouflage the stem of its flower, creating the illusion that the flower is floating.",
       "version": "scarlet"
     },
     {
-      "text": "With skillful misdirection, it rigs foes with pollen-packed flower bombs. Meowscarada sets off the bombs before its foes realize what\u2019s going on.",
+      "text": "With skillful misdirection, it rigs foes with pollen-packed flower bombs. Meowscarada sets off the bombs before its foes realize what’s going on.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/908.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マスカーニャ",
+    "roomaji": "Masquernya",
+    "ko": "마스카나",
+    "zh-Hant": "魔幻假面喵",
+    "fr": "Miascarade",
+    "de": "Maskagato",
+    "es": "Meowscarada",
+    "it": "Meowscarada",
+    "en": "Meowscarada",
+    "ja": "マスカーニャ",
+    "zh-Hans": "魔幻假面喵"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 656,
   "name": "Froakie",
-  "species": "Bubble Frog Pok\u00e9mon",
+  "species": "Bubble Frog Pokémon",
   "type": [
     "Water"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/656.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ケロマツ",
+    "roomaji": "Keromatsu",
+    "ko": "개구마르",
+    "zh-Hant": "呱呱泡蛙",
+    "fr": "Grenousse",
+    "de": "Froxy",
+    "es": "Froakie",
+    "it": "Froakie",
+    "en": "Froakie",
+    "ja": "ケロマツ",
+    "zh-Hans": "呱呱泡蛙"
   }
 }

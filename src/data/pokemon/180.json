@@ -1,7 +1,7 @@
 {
   "id": 180,
   "name": "Flaaffy",
-  "species": "Wool Pok\u00e9mon",
+  "species": "Wool Pokémon",
   "type": [
     "Electric"
   ],
@@ -46,15 +46,15 @@
       "version": "silver"
     },
     {
-      "text": "Because of its rubbery, electric\u00ad ity-resistant skin, it can store lots of electric\u00ad ity in its fur.",
+      "text": "Because of its rubbery, electric­ ity-resistant skin, it can store lots of electric­ ity in its fur.",
       "version": "crystal"
     },
     {
-      "text": "FLAAFFY\u2019s wool quality changes so that it can generate a high amount of static electricity with a small amount of wool. The bare and slick parts of its hide are shielded against electricity.",
+      "text": "FLAAFFY’s wool quality changes so that it can generate a high amount of static electricity with a small amount of wool. The bare and slick parts of its hide are shielded against electricity.",
       "version": "ruby"
     },
     {
-      "text": "FLAAFFY\u2019s wool quality changes so that it can generate a high amount of static electricity with a small amount of wool. The bare and slick parts of its hide are shielded against electricity.",
+      "text": "FLAAFFY’s wool quality changes so that it can generate a high amount of static electricity with a small amount of wool. The bare and slick parts of its hide are shielded against electricity.",
       "version": "sapphire"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/180.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/180.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モココ",
+    "roomaji": "Mokoko",
+    "ko": "보송송",
+    "zh-Hant": "茸茸羊",
+    "fr": "Lainergie",
+    "de": "Waaty",
+    "es": "Flaaffy",
+    "it": "Flaaffy",
+    "en": "Flaaffy",
+    "ja": "モココ",
+    "zh-Hans": "茸茸羊"
   }
 }

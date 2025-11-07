@@ -1,7 +1,7 @@
 {
   "id": 163,
   "name": "Hoothoot",
-  "species": "Owl Pok\u00e9mon",
+  "species": "Owl Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "HOOTHOOT has an internal organ that senses and tracks the earth\u2019s rotation. Using this special organ, this POK\u00e9MON begins hooting at precisely the same time every day.",
+      "text": "HOOTHOOT has an internal organ that senses and tracks the earth’s rotation. Using this special organ, this POKéMON begins hooting at precisely the same time every day.",
       "version": "ruby"
     },
     {
-      "text": "HOOTHOOT has an internal organ that senses and tracks the earth\u2019s rotation. Using this special organ, this POK\u00e9MON begins hooting at precisely the same time every day.",
+      "text": "HOOTHOOT has an internal organ that senses and tracks the earth’s rotation. Using this special organ, this POKéMON begins hooting at precisely the same time every day.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/163.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/163.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ホーホー",
+    "roomaji": "Hoho",
+    "ko": "부우부",
+    "zh-Hant": "咕咕",
+    "fr": "Hoothoot",
+    "de": "Hoothoot",
+    "es": "Hoothoot",
+    "it": "Hoothoot",
+    "en": "Hoothoot",
+    "ja": "ホーホー",
+    "zh-Hans": "咕咕"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 117,
   "name": "Seadra",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Water"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 45,
     "speed": 85
   },
-  "description": "Capable of swim\u00ad ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
+  "description": "Capable of swim­ ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
   "flavorTexts": [
     {
-      "text": "Capable of swim\u00ad ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
+      "text": "Capable of swim­ ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
       "version": "red"
     },
     {
-      "text": "Capable of swim\u00ad ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
+      "text": "Capable of swim­ ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
       "version": "blue"
     },
     {
-      "text": "Touching the back fin causes numb\u00ad ness. It hooks its tail to coral to stay in place while sleeping.",
+      "text": "Touching the back fin causes numb­ ness. It hooks its tail to coral to stay in place while sleeping.",
       "version": "yellow"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/117.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/117.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シードラ",
+    "roomaji": "Seadra",
+    "ko": "시드라",
+    "zh-Hant": "海刺龍",
+    "fr": "Hypocéan",
+    "de": "Seemon",
+    "es": "Seadra",
+    "it": "Seadra",
+    "en": "Seadra",
+    "ja": "シードラ",
+    "zh-Hans": "海刺龙"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 381,
   "name": "Latios",
-  "species": "Eon Pok\u00e9mon",
+  "species": "Eon Pokémon",
   "type": [
     "Dragon",
     "Psychic"
@@ -34,14 +34,14 @@
     "specialDefense": 110,
     "speed": 110
   },
-  "description": "LATIOS has the ability to make its foe see an image of what it has seen or imagines in its head. This POK\u00e9MON is intelligent and understands human speech.",
+  "description": "LATIOS has the ability to make its foe see an image of what it has seen or imagines in its head. This POKéMON is intelligent and understands human speech.",
   "flavorTexts": [
     {
-      "text": "LATIOS has the ability to make its foe see an image of what it has seen or imagines in its head. This POK\u00e9MON is intelligent and understands human speech.",
+      "text": "LATIOS has the ability to make its foe see an image of what it has seen or imagines in its head. This POKéMON is intelligent and understands human speech.",
       "version": "ruby"
     },
     {
-      "text": "LATIOS will only open its heart to a TRAINER with a compassionate spirit. This POK\u00e9MON can fly faster than a jet plane by folding its forelegs to minimize air resistance.",
+      "text": "LATIOS will only open its heart to a TRAINER with a compassionate spirit. This POKéMON can fly faster than a jet plane by folding its forelegs to minimize air resistance.",
       "version": "sapphire"
     },
     {
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/381.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/381.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラティオス",
+    "roomaji": "Latios",
+    "ko": "라티오스",
+    "zh-Hant": "拉帝歐斯",
+    "fr": "Latios",
+    "de": "Latios",
+    "es": "Latios",
+    "it": "Latios",
+    "en": "Latios",
+    "ja": "ラティオス",
+    "zh-Hans": "拉帝欧斯"
   }
 }

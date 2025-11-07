@@ -1,7 +1,7 @@
 {
   "id": 856,
   "name": "Hatenna",
-  "species": "Calm Pok\u00e9mon",
+  "species": "Calm Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 53,
     "speed": 39
   },
-  "description": "Via the protrusion on its head, it senses other creatures\u2019 emotions. If you don\u2019t have a calm disposition, it will never warm up to you.",
+  "description": "Via the protrusion on its head, it senses other creatures’ emotions. If you don’t have a calm disposition, it will never warm up to you.",
   "flavorTexts": [
     {
-      "text": "Via the protrusion on its head, it senses other creatures\u2019 emotions. If you don\u2019t have a calm disposition, it will never warm up to you.",
+      "text": "Via the protrusion on its head, it senses other creatures’ emotions. If you don’t have a calm disposition, it will never warm up to you.",
       "version": "sword"
     },
     {
-      "text": "If this Pok\u00e9mon senses a strong emotion, it will run away as fast as it can. It prefers areas without people.",
+      "text": "If this Pokémon senses a strong emotion, it will run away as fast as it can. It prefers areas without people.",
       "version": "shield"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/856.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ミブリム",
+    "roomaji": "Mibrim",
+    "ko": "몸지브림",
+    "zh-Hant": "迷布莉姆",
+    "fr": "Bibichut",
+    "de": "Brimova",
+    "es": "Hatenna",
+    "it": "Hatenna",
+    "en": "Hatenna",
+    "ja": "ミブリム",
+    "zh-Hans": "迷布莉姆"
   }
 }

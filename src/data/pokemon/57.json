@@ -1,7 +1,7 @@
 {
   "id": 57,
   "name": "Primeape",
-  "species": "Pig Monkey Pok\u00e9mon",
+  "species": "Pig Monkey Pokémon",
   "type": [
     "Fighting"
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/57.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/57.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オコリザル",
+    "roomaji": "Okorizaru",
+    "ko": "성원숭",
+    "zh-Hant": "火爆猴",
+    "fr": "Colossinge",
+    "de": "Rasaff",
+    "es": "Primeape",
+    "it": "Primeape",
+    "en": "Primeape",
+    "ja": "オコリザル",
+    "zh-Hans": "火暴猴"
   }
 }

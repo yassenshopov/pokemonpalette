@@ -1,7 +1,7 @@
 {
   "id": 567,
   "name": "Archeops",
-  "species": "First Bird Pok\u00e9mon",
+  "species": "First Bird Pokémon",
   "type": [
     "Rock",
     "Flying"
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/567.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/567.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アーケオス",
+    "roomaji": "Archeos",
+    "ko": "아케오스",
+    "zh-Hant": "始祖大鳥",
+    "fr": "Aéroptéryx",
+    "de": "Aeropteryx",
+    "es": "Archeops",
+    "it": "Archeops",
+    "en": "Archeops",
+    "ja": "アーケオス",
+    "zh-Hans": "始祖大鸟"
   }
 }

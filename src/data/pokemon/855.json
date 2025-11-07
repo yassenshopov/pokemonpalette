@@ -1,7 +1,7 @@
 {
   "id": 855,
   "name": "Polteageist",
-  "species": "Black Tea Pok\u00e9mon",
+  "species": "Black Tea Pokémon",
   "type": [
     "Ghost"
   ],
@@ -42,7 +42,7 @@
       "version": "sword"
     },
     {
-      "text": "Leaving leftover black tea unattended is asking for this Pok\u00e9mon to come along and pour itself into it, turning the tea into a new Polteageist.",
+      "text": "Leaving leftover black tea unattended is asking for this Pokémon to come along and pour itself into it, turning the tea into a new Polteageist.",
       "version": "shield"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/855.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ポットデス",
+    "roomaji": "Potdeath",
+    "ko": "포트데스",
+    "zh-Hant": "怖思壺",
+    "fr": "Polthégeist",
+    "de": "Mortipot",
+    "es": "Polteageist",
+    "it": "Polteageist",
+    "en": "Polteageist",
+    "ja": "ポットデス",
+    "zh-Hans": "怖思壶"
   }
 }

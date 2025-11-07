@@ -1,7 +1,7 @@
 {
   "id": 810,
   "name": "Grookey",
-  "species": "Chimp Pok\u00e9mon",
+  "species": "Chimp Pokémon",
   "type": [
     "Grass"
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/810.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サルノリ",
+    "roomaji": "Sarunori",
+    "ko": "흥나숭",
+    "zh-Hant": "敲音猴",
+    "fr": "Ouistempo",
+    "de": "Chimpep",
+    "es": "Grookey",
+    "it": "Grookey",
+    "en": "Grookey",
+    "ja": "サルノリ",
+    "zh-Hans": "敲音猴"
   }
 }

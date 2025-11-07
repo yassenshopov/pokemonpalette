@@ -1,7 +1,7 @@
 {
   "id": 98,
   "name": "Krabby",
-  "species": "River Crab Pok\u00e9mon",
+  "species": "River Crab Pokémon",
   "type": [
     "Water"
   ],
@@ -56,11 +56,11 @@
       "version": "yellow"
     },
     {
-      "text": "If it senses dan\u00ad ger approaching, it cloaks itself with bubbles from its mouth so it will look bigger.",
+      "text": "If it senses dan­ ger approaching, it cloaks itself with bubbles from its mouth so it will look bigger.",
       "version": "gold"
     },
     {
-      "text": "The pincers break off easily. If it loses a pincer, it somehow becomes incapable of walk\u00ad ing sideways.",
+      "text": "The pincers break off easily. If it loses a pincer, it somehow becomes incapable of walk­ ing sideways.",
       "version": "silver"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/98.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/98.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クラブ",
+    "roomaji": "Crab",
+    "ko": "크랩",
+    "zh-Hant": "大鉗蟹",
+    "fr": "Krabby",
+    "de": "Krabby",
+    "es": "Krabby",
+    "it": "Krabby",
+    "en": "Krabby",
+    "ja": "クラブ",
+    "zh-Hans": "大钳蟹"
   }
 }

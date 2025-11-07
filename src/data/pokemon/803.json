@@ -1,7 +1,7 @@
 {
   "id": 803,
   "name": "Poipole",
-  "species": "Poison Pin Pok\u00e9mon",
+  "species": "Poison Pin Pokémon",
   "type": [
     "Poison"
   ],
@@ -275,5 +275,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/803.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ベベノム",
+    "roomaji": "Bevenom",
+    "ko": "베베놈",
+    "zh-Hant": "毒貝比",
+    "fr": "Vémini",
+    "de": "Venicro",
+    "es": "Poipole",
+    "it": "Poipole",
+    "en": "Poipole",
+    "ja": "ベベノム",
+    "zh-Hans": "毒贝比"
   }
 }

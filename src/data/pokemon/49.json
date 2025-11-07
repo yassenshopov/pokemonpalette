@@ -1,7 +1,7 @@
 {
   "id": 49,
   "name": "Venomoth",
-  "species": "Poison Moth Pok\u00e9mon",
+  "species": "Poison Moth Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -65,7 +65,7 @@
       "version": "yellow"
     },
     {
-      "text": "When it attacks, it flaps its large wings violently to scatter its poi\u00ad sonous powder all around.",
+      "text": "When it attacks, it flaps its large wings violently to scatter its poi­ sonous powder all around.",
       "version": "gold"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/49.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/49.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モルフォン",
+    "roomaji": "Morphon",
+    "ko": "도나리",
+    "zh-Hant": "摩魯蛾",
+    "fr": "Aéromite",
+    "de": "Omot",
+    "es": "Venomoth",
+    "it": "Venomoth",
+    "en": "Venomoth",
+    "ja": "モルフォン",
+    "zh-Hans": "摩鲁蛾"
   }
 }

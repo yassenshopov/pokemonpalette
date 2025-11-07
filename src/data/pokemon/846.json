@@ -1,7 +1,7 @@
 {
   "id": 846,
   "name": "Arrokuda",
-  "species": "Rush Pok\u00e9mon",
+  "species": "Rush Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 30,
     "speed": 66
   },
-  "description": "If it sees any movement around it, this Pok\u00e9mon charges for it straightaway, leading with its sharply pointed jaw. It\u2019s very proud of that jaw.",
+  "description": "If it sees any movement around it, this Pokémon charges for it straightaway, leading with its sharply pointed jaw. It’s very proud of that jaw.",
   "flavorTexts": [
     {
-      "text": "If it sees any movement around it, this Pok\u00e9mon charges for it straightaway, leading with its sharply pointed jaw. It\u2019s very proud of that jaw.",
+      "text": "If it sees any movement around it, this Pokémon charges for it straightaway, leading with its sharply pointed jaw. It’s very proud of that jaw.",
       "version": "sword"
     },
     {
-      "text": "After it\u2019s eaten its fill, its movements become extremely sluggish. That\u2019s when Cramorant swallows it up.",
+      "text": "After it’s eaten its fill, its movements become extremely sluggish. That’s when Cramorant swallows it up.",
       "version": "shield"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/846.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サシカマス",
+    "roomaji": "Sasikamasu",
+    "ko": "찌로꼬치",
+    "zh-Hant": "刺梭魚",
+    "fr": "Embrochet",
+    "de": "Pikuda",
+    "es": "Arrokuda",
+    "it": "Arrokuda",
+    "en": "Arrokuda",
+    "ja": "サシカマス",
+    "zh-Hans": "刺梭鱼"
   }
 }

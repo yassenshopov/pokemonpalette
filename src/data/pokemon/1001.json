@@ -1,7 +1,7 @@
 {
   "id": 1001,
   "name": "Wo-chien",
-  "species": "Ruinous Pok\u00e9mon",
+  "species": "Ruinous Pokémon",
   "type": [
     "Dark",
     "Grass"
@@ -34,10 +34,10 @@
     "specialDefense": 135,
     "speed": 70
   },
-  "description": "The grudge of a person punished for writing the king\u2019s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pok\u00e9mon.",
+  "description": "The grudge of a person punished for writing the king’s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pokémon.",
   "flavorTexts": [
     {
-      "text": "The grudge of a person punished for writing the king\u2019s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pok\u00e9mon.",
+      "text": "The grudge of a person punished for writing the king’s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pokémon.",
       "version": "scarlet"
     },
     {
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1001.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "チオンジェン",
+    "roomaji": "Chionjen",
+    "ko": "총지엔",
+    "zh-Hant": "古簡蝸",
+    "fr": "Chongjian",
+    "de": "Chongjian",
+    "es": "Wo-Chien",
+    "it": "Wo-Chien",
+    "en": "Wo-Chien",
+    "ja": "チオンジェン",
+    "zh-Hans": "古简蜗"
   }
 }

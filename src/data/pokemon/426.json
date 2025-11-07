@@ -1,7 +1,7 @@
 {
   "id": 426,
   "name": "Drifblim",
-  "species": "Blimp Pok\u00e9mon",
+  "species": "Blimp Pokémon",
   "type": [
     "Ghost",
     "Flying"
@@ -53,11 +53,11 @@
       "version": "black"
     },
     {
-      "text": "It\u2019s drowzy in daytime, but flies off in the evening in big groups. No one knows where they go.",
+      "text": "It’s drowzy in daytime, but flies off in the evening in big groups. No one knows where they go.",
       "version": "diamond"
     },
     {
-      "text": "It carries people and Pok\u00e9mon when it flies. But since it only drifts, it can end up anywhere.",
+      "text": "It carries people and Pokémon when it flies. But since it only drifts, it can end up anywhere.",
       "version": "pearl"
     },
     {
@@ -65,7 +65,7 @@
       "version": "platinum"
     },
     {
-      "text": "It can generate and release gas within its body. That\u2019s how it can control the altitude of its drift.",
+      "text": "It can generate and release gas within its body. That’s how it can control the altitude of its drift.",
       "version": "heartgold"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/426.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/426.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フワライド",
+    "roomaji": "Fuwaride",
+    "ko": "둥실라이드",
+    "zh-Hant": "隨風球",
+    "fr": "Grodrive",
+    "de": "Drifzepeli",
+    "es": "Drifblim",
+    "it": "Drifblim",
+    "en": "Drifblim",
+    "ja": "フワライド",
+    "zh-Hans": "随风球"
   }
 }

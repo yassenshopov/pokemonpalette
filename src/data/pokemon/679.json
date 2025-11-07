@@ -1,7 +1,7 @@
 {
   "id": 679,
   "name": "Honedge",
-  "species": "Sword Pok\u00e9mon",
+  "species": "Sword Pokémon",
   "type": [
     "Steel",
     "Ghost"
@@ -34,26 +34,26 @@
     "specialDefense": 37,
     "speed": 28
   },
-  "description": "Apparently this Pok\u00e9mon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.",
+  "description": "Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.",
   "flavorTexts": [
     {
-      "text": "Apparently this Pok\u00e9mon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.",
+      "text": "Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.",
       "version": "x"
     },
     {
-      "text": "If anyone dares to grab its hilt, it wraps a blue cloth around that person\u2019s arm and drains that person\u2019s life energy completely.",
+      "text": "If anyone dares to grab its hilt, it wraps a blue cloth around that person’s arm and drains that person’s life energy completely.",
       "version": "y"
     },
     {
-      "text": "Apparently this Pok\u00e9mon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.",
+      "text": "Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.",
       "version": "omega-ruby"
     },
     {
-      "text": "If anyone dares to grab its hilt, it wraps a blue cloth around that person\u2019s arm and drains that person\u2019s life energy completely.",
+      "text": "If anyone dares to grab its hilt, it wraps a blue cloth around that person’s arm and drains that person’s life energy completely.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "Honedge\u2019s soul once belonged to a person who was killed a long time ago by the sword that makes up Honedge\u2019s body.",
+      "text": "Honedge’s soul once belonged to a person who was killed a long time ago by the sword that makes up Honedge’s body.",
       "version": "sword"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/679.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヒトツキ",
+    "roomaji": "Hitotsuki",
+    "ko": "단칼빙",
+    "zh-Hant": "獨劍鞘",
+    "fr": "Monorpale",
+    "de": "Gramokles",
+    "es": "Honedge",
+    "it": "Honedge",
+    "en": "Honedge",
+    "ja": "ヒトツキ",
+    "zh-Hans": "独剑鞘"
   }
 }

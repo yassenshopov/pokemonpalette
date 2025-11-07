@@ -1,7 +1,7 @@
 {
   "id": 532,
   "name": "Timburr",
-  "species": "Muscular Pok\u00e9mon",
+  "species": "Muscular Pokémon",
   "type": [
     "Fighting"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon appear at building sites and help out with construction. They always carry squared logs.",
+      "text": "These Pokémon appear at building sites and help out with construction. They always carry squared logs.",
       "version": "white"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "These Pok\u00e9mon appear at building sites and help out with construction. They always carry squared logs.",
+      "text": "These Pokémon appear at building sites and help out with construction. They always carry squared logs.",
       "version": "x"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/532.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/532.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドッコラー",
+    "roomaji": "Dokkorer",
+    "ko": "으랏차",
+    "zh-Hant": "搬運小匠",
+    "fr": "Charpenti",
+    "de": "Praktibalk",
+    "es": "Timburr",
+    "it": "Timburr",
+    "en": "Timburr",
+    "ja": "ドッコラー",
+    "zh-Hans": "搬运小匠"
   }
 }

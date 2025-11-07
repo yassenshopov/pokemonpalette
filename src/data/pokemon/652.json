@@ -1,7 +1,7 @@
 {
   "id": 652,
   "name": "Chesnaught",
-  "species": "Spiny Armor Pok\u00e9mon",
+  "species": "Spiny Armor Pokémon",
   "type": [
     "Grass",
     "Fighting"
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/652.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブリガロン",
+    "roomaji": "Brigarron",
+    "ko": "브리가론",
+    "zh-Hant": "布里卡隆",
+    "fr": "Blindépique",
+    "de": "Brigaron",
+    "es": "Chesnaught",
+    "it": "Chesnaught",
+    "en": "Chesnaught",
+    "ja": "ブリガロン",
+    "zh-Hans": "布里卡隆"
   }
 }

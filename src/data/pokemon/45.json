@@ -1,7 +1,7 @@
 {
   "id": 45,
   "name": "Vileplume",
-  "species": "Flower Pok\u00e9mon",
+  "species": "Flower Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -40,10 +40,10 @@
     "specialDefense": 90,
     "speed": 50
   },
-  "description": "It has the world\u2019s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.",
+  "description": "It has the world’s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.",
   "flavorTexts": [
     {
-      "text": "It has the world\u2019s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.",
+      "text": "It has the world’s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.",
       "version": "sword"
     },
     {
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/45.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/45.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラフレシア",
+    "roomaji": "Ruffresia",
+    "ko": "라플레시아",
+    "zh-Hant": "霸王花",
+    "fr": "Rafflesia",
+    "de": "Giflor",
+    "es": "Vileplume",
+    "it": "Vileplume",
+    "en": "Vileplume",
+    "ja": "ラフレシア",
+    "zh-Hans": "霸王花"
   }
 }

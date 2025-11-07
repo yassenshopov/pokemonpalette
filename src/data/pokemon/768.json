@@ -1,7 +1,7 @@
 {
   "id": 768,
   "name": "Golisopod",
-  "species": "Hard Scale Pok\u00e9mon",
+  "species": "Hard Scale Pokémon",
   "type": [
     "Bug",
     "Water"
@@ -34,10 +34,10 @@
     "specialDefense": 90,
     "speed": 40
   },
-  "description": "With a flashing slash of its giant sharp claws, it cleaves seawater\u2014or even air\u2014right in two.",
+  "description": "With a flashing slash of its giant sharp claws, it cleaves seawater—or even air—right in two.",
   "flavorTexts": [
     {
-      "text": "With a flashing slash of its giant sharp claws, it cleaves seawater\u2014or even air\u2014right in two.",
+      "text": "With a flashing slash of its giant sharp claws, it cleaves seawater—or even air—right in two.",
       "version": "sun"
     },
     {
@@ -45,7 +45,7 @@
       "version": "moon"
     },
     {
-      "text": "The shell covering its body is as hard as diamond. This Pok\u00e9mon will do anything it takes to win.",
+      "text": "The shell covering its body is as hard as diamond. This Pokémon will do anything it takes to win.",
       "version": "ultra-sun"
     },
     {
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/768.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "グソクムシャ",
+    "roomaji": "Gusokumusha",
+    "ko": "갑주무사",
+    "zh-Hant": "具甲武者",
+    "fr": "Sarmuraï",
+    "de": "Tectass",
+    "es": "Golisopod",
+    "it": "Golisopod",
+    "en": "Golisopod",
+    "ja": "グソクムシャ",
+    "zh-Hans": "具甲武者"
   }
 }

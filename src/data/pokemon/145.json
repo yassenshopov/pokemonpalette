@@ -1,7 +1,7 @@
 {
   "id": 145,
   "name": "Zapdos",
-  "species": "Electric Pok\u00e9mon",
+  "species": "Electric Pokémon",
   "type": [
     "Electric",
     "Flying"
@@ -40,26 +40,26 @@
     "specialDefense": 90,
     "speed": 100
   },
-  "description": "A legendary bird POK\u00e9MON that is said to appear from clouds while dropping enormous lightning bolts.",
+  "description": "A legendary bird POKéMON that is said to appear from clouds while dropping enormous lightning bolts.",
   "flavorTexts": [
     {
-      "text": "A legendary bird POK\u00e9MON that is said to appear from clouds while dropping enormous lightning bolts.",
+      "text": "A legendary bird POKéMON that is said to appear from clouds while dropping enormous lightning bolts.",
       "version": "red"
     },
     {
-      "text": "A legendary bird POK\u00e9MON that is said to appear from clouds while dropping enormous lightning bolts.",
+      "text": "A legendary bird POKéMON that is said to appear from clouds while dropping enormous lightning bolts.",
       "version": "blue"
     },
     {
-      "text": "This legendary bird POK\u00e9MON is said to appear when the sky turns dark and lightning showers down.",
+      "text": "This legendary bird POKéMON is said to appear when the sky turns dark and lightning showers down.",
       "version": "yellow"
     },
     {
-      "text": "This legendary bird POK\u00e9MON causes savage thunderstorms by flapping its glit\u00ad tering wings.",
+      "text": "This legendary bird POKéMON causes savage thunderstorms by flapping its glit­ tering wings.",
       "version": "gold"
     },
     {
-      "text": "This legendary bird POK\u00e9MON is said to appear only when a thun\u00ad dercloud parts into two halves.",
+      "text": "This legendary bird POKéMON is said to appear only when a thun­ dercloud parts into two halves.",
       "version": "silver"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/145.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/145.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サンダー",
+    "roomaji": "Thunder",
+    "ko": "썬더",
+    "zh-Hant": "閃電鳥",
+    "fr": "Électhor",
+    "de": "Zapdos",
+    "es": "Zapdos",
+    "it": "Zapdos",
+    "en": "Zapdos",
+    "ja": "サンダー",
+    "zh-Hans": "闪电鸟"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 702,
   "name": "Dedenne",
-  "species": "Antenna Pok\u00e9mon",
+  "species": "Antenna Pokémon",
   "type": [
     "Electric",
     "Fairy"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "It sneaks into people\u2019s homes and steals electricity from their outlets. When your electric bill seems off, it\u2019s the handiwork of this rascal.",
+      "text": "It sneaks into people’s homes and steals electricity from their outlets. When your electric bill seems off, it’s the handiwork of this rascal.",
       "version": "ultra-sun"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/702.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "デデンネ",
+    "roomaji": "Dedenne",
+    "ko": "데덴네",
+    "zh-Hant": "咚咚鼠",
+    "fr": "Dedenne",
+    "de": "Dedenne",
+    "es": "Dedenne",
+    "it": "Dedenne",
+    "en": "Dedenne",
+    "ja": "デデンネ",
+    "zh-Hans": "咚咚鼠"
   }
 }

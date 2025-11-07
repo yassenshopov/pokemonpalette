@@ -1,7 +1,7 @@
 {
   "id": 337,
   "name": "Lunatone",
-  "species": "Meteorite Pok\u00e9mon",
+  "species": "Meteorite Pokémon",
   "type": [
     "Rock",
     "Psychic"
@@ -34,18 +34,18 @@
     "specialDefense": 85,
     "speed": 70
   },
-  "description": "LUNATONE was discovered at a location where a meteorite fell. As a result, some people theorize that this POK\u00e9MON came from space. However, no one has been able to prove this theory so far.",
+  "description": "LUNATONE was discovered at a location where a meteorite fell. As a result, some people theorize that this POKéMON came from space. However, no one has been able to prove this theory so far.",
   "flavorTexts": [
     {
-      "text": "LUNATONE was discovered at a location where a meteorite fell. As a result, some people theorize that this POK\u00e9MON came from space. However, no one has been able to prove this theory so far.",
+      "text": "LUNATONE was discovered at a location where a meteorite fell. As a result, some people theorize that this POKéMON came from space. However, no one has been able to prove this theory so far.",
       "version": "ruby"
     },
     {
-      "text": "LUNATONE becomes active around the time of the full moon. Instead of walking, it moves by floating in midair. The POK\u00e9MON\u2019s intimidating red eyes cause all those who see it to become transfixed with fear.",
+      "text": "LUNATONE becomes active around the time of the full moon. Instead of walking, it moves by floating in midair. The POKéMON’s intimidating red eyes cause all those who see it to become transfixed with fear.",
       "version": "sapphire"
     },
     {
-      "text": "It becomes very active on the night of a full moon. This POK\u00e9MON was first discovered 40 years ago at the site of a meteor strike.",
+      "text": "It becomes very active on the night of a full moon. This POKéMON was first discovered 40 years ago at the site of a meteor strike.",
       "version": "emerald"
     },
     {
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/337.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/337.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ルナトーン",
+    "roomaji": "Lunatone",
+    "ko": "루나톤",
+    "zh-Hant": "月石",
+    "fr": "Séléroc",
+    "de": "Lunastein",
+    "es": "Lunatone",
+    "it": "Lunatone",
+    "en": "Lunatone",
+    "ja": "ルナトーン",
+    "zh-Hans": "月石"
   }
 }

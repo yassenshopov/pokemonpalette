@@ -1,7 +1,7 @@
 {
   "id": 835,
   "name": "Yamper",
-  "species": "Puppy Pok\u00e9mon",
+  "species": "Puppy Pokémon",
   "type": [
     "Electric"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 50,
     "speed": 26
   },
-  "description": "This Pok\u00e9mon is very popular as a herding dog in the Galar region. As it runs, it generates electricity from the base of its tail.",
+  "description": "This Pokémon is very popular as a herding dog in the Galar region. As it runs, it generates electricity from the base of its tail.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is very popular as a herding dog in the Galar region. As it runs, it generates electricity from the base of its tail.",
+      "text": "This Pokémon is very popular as a herding dog in the Galar region. As it runs, it generates electricity from the base of its tail.",
       "version": "sword"
     },
     {
-      "text": "This gluttonous Pok\u00e9mon only assists people with their work because it wants treats. As it runs, it crackles with electricity.",
+      "text": "This gluttonous Pokémon only assists people with their work because it wants treats. As it runs, it crackles with electricity.",
       "version": "shield"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/835.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ワンパチ",
+    "roomaji": "Wanpachi",
+    "ko": "멍파치",
+    "zh-Hant": "來電汪",
+    "fr": "Voltoutou",
+    "de": "Voldi",
+    "es": "Yamper",
+    "it": "Yamper",
+    "en": "Yamper",
+    "ja": "ワンパチ",
+    "zh-Hans": "来电汪"
   }
 }

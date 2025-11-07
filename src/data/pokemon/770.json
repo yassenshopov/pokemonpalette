@@ -1,7 +1,7 @@
 {
   "id": 770,
   "name": "Palossand",
-  "species": "Sand Castle Pok\u00e9mon",
+  "species": "Sand Castle Pokémon",
   "type": [
     "Ghost",
     "Ground"
@@ -40,10 +40,10 @@
     "specialDefense": 75,
     "speed": 35
   },
-  "description": "Possessed people controlled by this Pok\u00e9mon transformed its sand mound into a castle. As it evolved, its power to curse grew ever stronger.",
+  "description": "Possessed people controlled by this Pokémon transformed its sand mound into a castle. As it evolved, its power to curse grew ever stronger.",
   "flavorTexts": [
     {
-      "text": "Possessed people controlled by this Pok\u00e9mon transformed its sand mound into a castle. As it evolved, its power to curse grew ever stronger.",
+      "text": "Possessed people controlled by this Pokémon transformed its sand mound into a castle. As it evolved, its power to curse grew ever stronger.",
       "version": "sun"
     },
     {
@@ -51,11 +51,11 @@
       "version": "moon"
     },
     {
-      "text": "Each of its grains of sand has its own will. Palossand eats small Pok\u00e9mon and siphons away their vital essence while they\u2019re still alive.",
+      "text": "Each of its grains of sand has its own will. Palossand eats small Pokémon and siphons away their vital essence while they’re still alive.",
       "version": "ultra-sun"
     },
     {
-      "text": "Once it has whipped up a sandstorm to halt its opponents in their tracks, this terrifying Pok\u00e9mon snatches away their vitality.",
+      "text": "Once it has whipped up a sandstorm to halt its opponents in their tracks, this terrifying Pokémon snatches away their vitality.",
       "version": "ultra-moon"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/770.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シロデスナ",
+    "roomaji": "Sirodethna",
+    "ko": "모래성이당",
+    "zh-Hant": "噬沙堡爺",
+    "fr": "Trépassable",
+    "de": "Colossand",
+    "es": "Palossand",
+    "it": "Palossand",
+    "en": "Palossand",
+    "ja": "シロデスナ",
+    "zh-Hans": "噬沙堡爷"
   }
 }

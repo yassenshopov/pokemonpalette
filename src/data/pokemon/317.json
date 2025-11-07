@@ -1,7 +1,7 @@
 {
   "id": 317,
   "name": "Swalot",
-  "species": "Poison Bag Pok\u00e9mon",
+  "species": "Poison Bag Pokémon",
   "type": [
     "Poison"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 83,
     "speed": 55
   },
-  "description": "When SWALOT spots prey, it spurts out a hideously toxic fluid from its pores and sprays the target. Once the prey has weakened, this POK\u00e9MON gulps it down whole with its cavernous mouth.",
+  "description": "When SWALOT spots prey, it spurts out a hideously toxic fluid from its pores and sprays the target. Once the prey has weakened, this POKéMON gulps it down whole with its cavernous mouth.",
   "flavorTexts": [
     {
-      "text": "When SWALOT spots prey, it spurts out a hideously toxic fluid from its pores and sprays the target. Once the prey has weakened, this POK\u00e9MON gulps it down whole with its cavernous mouth.",
+      "text": "When SWALOT spots prey, it spurts out a hideously toxic fluid from its pores and sprays the target. Once the prey has weakened, this POKéMON gulps it down whole with its cavernous mouth.",
       "version": "ruby"
     },
     {
-      "text": "SWALOT has no teeth, so what it eats, it swallows whole, no matter what. Its cavernous mouth yawns widely. An automobile tire could easily fit inside this POK\u00e9MON\u2019s mouth.",
+      "text": "SWALOT has no teeth, so what it eats, it swallows whole, no matter what. Its cavernous mouth yawns widely. An automobile tire could easily fit inside this POKéMON’s mouth.",
       "version": "sapphire"
     },
     {
-      "text": "Its powerful stomach acid is capable of digesting almost anything. The one thing in the whole world a SWALOT can\u2019t digest is its own stomach.",
+      "text": "Its powerful stomach acid is capable of digesting almost anything. The one thing in the whole world a SWALOT can’t digest is its own stomach.",
       "version": "emerald"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/317.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/317.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マルノーム",
+    "roomaji": "Marunoom",
+    "ko": "꿀꺽몬",
+    "zh-Hant": "吞食獸",
+    "fr": "Avaltout",
+    "de": "Schlukwech",
+    "es": "Swalot",
+    "it": "Swalot",
+    "en": "Swalot",
+    "ja": "マルノーム",
+    "zh-Hans": "吞食兽"
   }
 }

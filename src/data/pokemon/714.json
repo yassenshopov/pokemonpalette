@@ -1,7 +1,7 @@
 {
   "id": 714,
   "name": "Noibat",
-  "species": "Sound Wave Pok\u00e9mon",
+  "species": "Sound Wave Pokémon",
   "type": [
     "Flying",
     "Dragon"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/714.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オンバット",
+    "roomaji": "Onbat",
+    "ko": "음뱃",
+    "zh-Hant": "嗡蝠",
+    "fr": "Sonistrelle",
+    "de": "eF-eM",
+    "es": "Noibat",
+    "it": "Noibat",
+    "en": "Noibat",
+    "ja": "オンバット",
+    "zh-Hans": "嗡蝠"
   }
 }

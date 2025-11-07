@@ -1,7 +1,7 @@
 {
   "id": 632,
   "name": "Durant",
-  "species": "Iron Ant Pok\u00e9mon",
+  "species": "Iron Ant Pokémon",
   "type": [
     "Bug",
     "Steel"
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/632.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/632.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アイアント",
+    "roomaji": "Aiant",
+    "ko": "아이앤트",
+    "zh-Hant": "鐵蟻",
+    "fr": "Fermite",
+    "de": "Fermicula",
+    "es": "Durant",
+    "it": "Durant",
+    "en": "Durant",
+    "ja": "アイアント",
+    "zh-Hans": "铁蚁"
   }
 }

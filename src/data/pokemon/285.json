@@ -1,7 +1,7 @@
 {
   "id": 285,
   "name": "Shroomish",
-  "species": "Mushroom Pok\u00e9mon",
+  "species": "Mushroom Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 60,
     "speed": 35
   },
-  "description": "SHROOMISH live in damp soil in the dark depths of forests. They are often found keeping still under fallen leaves. This POK\u00e9MON feeds on compost that is made up of fallen, rotted leaves.",
+  "description": "SHROOMISH live in damp soil in the dark depths of forests. They are often found keeping still under fallen leaves. This POKéMON feeds on compost that is made up of fallen, rotted leaves.",
   "flavorTexts": [
     {
-      "text": "SHROOMISH live in damp soil in the dark depths of forests. They are often found keeping still under fallen leaves. This POK\u00e9MON feeds on compost that is made up of fallen, rotted leaves.",
+      "text": "SHROOMISH live in damp soil in the dark depths of forests. They are often found keeping still under fallen leaves. This POKéMON feeds on compost that is made up of fallen, rotted leaves.",
       "version": "ruby"
     },
     {
-      "text": "If SHROOMISH senses danger, it shakes its body and scatters spores from the top of its head. This POK\u00e9MON\u2019s spores are so toxic, they make trees and weeds wilt.",
+      "text": "If SHROOMISH senses danger, it shakes its body and scatters spores from the top of its head. This POKéMON’s spores are so toxic, they make trees and weeds wilt.",
       "version": "sapphire"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/285.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/285.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キノココ",
+    "roomaji": "Kinococo",
+    "ko": "버섯꼬",
+    "zh-Hant": "蘑蘑菇",
+    "fr": "Balignon",
+    "de": "Knilz",
+    "es": "Shroomish",
+    "it": "Shroomish",
+    "en": "Shroomish",
+    "ja": "キノココ",
+    "zh-Hans": "蘑蘑菇"
   }
 }

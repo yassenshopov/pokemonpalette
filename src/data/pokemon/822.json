@@ -1,7 +1,7 @@
 {
   "id": 822,
   "name": "Corvisquire",
-  "species": "Raven Pok\u00e9mon",
+  "species": "Raven Pokémon",
   "type": [
     "Flying"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 55,
     "speed": 77
   },
-  "description": "Smart enough to use tools in battle, these Pok\u00e9mon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.",
+  "description": "Smart enough to use tools in battle, these Pokémon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.",
   "flavorTexts": [
     {
-      "text": "Smart enough to use tools in battle, these Pok\u00e9mon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.",
+      "text": "Smart enough to use tools in battle, these Pokémon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.",
       "version": "sword"
     },
     {
-      "text": "The lessons of many harsh battles have taught it how to accurately judge an opponent\u2019s strength.",
+      "text": "The lessons of many harsh battles have taught it how to accurately judge an opponent’s strength.",
       "version": "shield"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/822.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アオガラス",
+    "roomaji": "Aogarasu",
+    "ko": "파크로우",
+    "zh-Hant": "藍鴉",
+    "fr": "Bleuseille",
+    "de": "Kranoviz",
+    "es": "Corvisquire",
+    "it": "Corvisquire",
+    "en": "Corvisquire",
+    "ja": "アオガラス",
+    "zh-Hans": "蓝鸦"
   }
 }

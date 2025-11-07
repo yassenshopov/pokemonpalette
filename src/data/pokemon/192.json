@@ -1,7 +1,7 @@
 {
   "id": 192,
   "name": "Sunflora",
-  "species": "Sun Pok\u00e9mon",
+  "species": "Sun Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 85,
     "speed": 30
   },
-  "description": "It converts sun\u00ad light into energy. In the darkness after sunset, it closes its petals and becomes still.",
+  "description": "It converts sun­ light into energy. In the darkness after sunset, it closes its petals and becomes still.",
   "flavorTexts": [
     {
-      "text": "It converts sun\u00ad light into energy. In the darkness after sunset, it closes its petals and becomes still.",
+      "text": "It converts sun­ light into energy. In the darkness after sunset, it closes its petals and becomes still.",
       "version": "gold"
     },
     {
-      "text": "In the daytime, it rushes about in a hectic manner, but it comes to a com\u00ad plete stop when the sun sets.",
+      "text": "In the daytime, it rushes about in a hectic manner, but it comes to a com­ plete stop when the sun sets.",
       "version": "silver"
     },
     {
-      "text": "As the hot season approaches, the petals on this POK\u00e9MON's face become more vivid and lively.",
+      "text": "As the hot season approaches, the petals on this POKéMON's face become more vivid and lively.",
       "version": "crystal"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/192.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/192.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キマワリ",
+    "roomaji": "Kimawari",
+    "ko": "해루미",
+    "zh-Hant": "向日花怪",
+    "fr": "Héliatronc",
+    "de": "Sonnflora",
+    "es": "Sunflora",
+    "it": "Sunflora",
+    "en": "Sunflora",
+    "ja": "キマワリ",
+    "zh-Hans": "向日花怪"
   }
 }

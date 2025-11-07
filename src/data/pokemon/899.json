@@ -1,7 +1,7 @@
 {
   "id": 899,
   "name": "Wyrdeer",
-  "species": "Big Horn Pok\u00e9mon",
+  "species": "Big Horn Pokémon",
   "type": [
     "Normal",
     "Psychic"
@@ -46,10 +46,10 @@
     "specialDefense": 75,
     "speed": 65
   },
-  "description": "The black orbs shine with an uncanny light when the Pok\u00e9mon is erecting invisible barriers. The fur shed from its beard retains heat well and is a highly useful material for winter clothing.",
+  "description": "The black orbs shine with an uncanny light when the Pokémon is erecting invisible barriers. The fur shed from its beard retains heat well and is a highly useful material for winter clothing.",
   "flavorTexts": [
     {
-      "text": "The black orbs shine with an uncanny light when the Pok\u00e9mon is erecting invisible barriers. The fur shed from its beard retains heat well and is a highly useful material for winter clothing.",
+      "text": "The black orbs shine with an uncanny light when the Pokémon is erecting invisible barriers. The fur shed from its beard retains heat well and is a highly useful material for winter clothing.",
       "version": "legends-arceus"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/899.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アヤシシ",
+    "roomaji": "Ayashishi",
+    "ko": "신비록",
+    "zh-Hant": "詭角鹿",
+    "fr": "Cerbyllin",
+    "de": "Damythir",
+    "es": "Wyrdeer",
+    "it": "Wyrdeer",
+    "en": "Wyrdeer",
+    "ja": "アヤシシ",
+    "zh-Hans": "诡角鹿"
   }
 }

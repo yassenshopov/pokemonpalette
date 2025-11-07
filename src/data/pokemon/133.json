@@ -1,7 +1,7 @@
 {
   "id": 133,
   "name": "Eevee",
-  "species": "Evolution Pok\u00e9mon",
+  "species": "Evolution Pokémon",
   "type": [
     "Normal"
   ],
@@ -56,11 +56,11 @@
       "version": "yellow"
     },
     {
-      "text": "It has the ability to alter the com\u00ad position of its body to suit its surrounding envi\u00ad ronment.",
+      "text": "It has the ability to alter the com­ position of its body to suit its surrounding envi­ ronment.",
       "version": "gold"
     },
     {
-      "text": "Its irregularly configured DNA is affected by its surroundings. It evolves if its en\u00ad vironment changes.",
+      "text": "Its irregularly configured DNA is affected by its surroundings. It evolves if its en­ vironment changes.",
       "version": "silver"
     }
   ],
@@ -402,5 +402,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/133.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/133.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イーブイ",
+    "roomaji": "Eievui",
+    "ko": "이브이",
+    "zh-Hant": "伊布",
+    "fr": "Évoli",
+    "de": "Evoli",
+    "es": "Eevee",
+    "it": "Eevee",
+    "en": "Eevee",
+    "ja": "イーブイ",
+    "zh-Hans": "伊布"
   }
 }

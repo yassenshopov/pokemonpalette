@@ -1,7 +1,7 @@
 {
   "id": 333,
   "name": "Swablu",
-  "species": "Cotton Bird Pok\u00e9mon",
+  "species": "Cotton Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -40,18 +40,18 @@
     "specialDefense": 75,
     "speed": 50
   },
-  "description": "SWABLU has light and fluffy wings that are like cottony clouds. This POK\u00e9MON is not frightened of people. It lands on the heads of people and sits there like a cotton-fluff hat.",
+  "description": "SWABLU has light and fluffy wings that are like cottony clouds. This POKéMON is not frightened of people. It lands on the heads of people and sits there like a cotton-fluff hat.",
   "flavorTexts": [
     {
-      "text": "SWABLU has light and fluffy wings that are like cottony clouds. This POK\u00e9MON is not frightened of people. It lands on the heads of people and sits there like a cotton-fluff hat.",
+      "text": "SWABLU has light and fluffy wings that are like cottony clouds. This POKéMON is not frightened of people. It lands on the heads of people and sits there like a cotton-fluff hat.",
       "version": "ruby"
     },
     {
-      "text": "SWABLU loves to make things clean. If it spots something dirty, it will wipe and polish it with its cottony wings. If its wings become dirty, this POK\u00e9MON finds a stream and showers itself.",
+      "text": "SWABLU loves to make things clean. If it spots something dirty, it will wipe and polish it with its cottony wings. If its wings become dirty, this POKéMON finds a stream and showers itself.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that has wings like cottony clouds. After enduring winter, in which little food is available, SWABLU flocks move closer to towns in the spring.",
+      "text": "A POKéMON that has wings like cottony clouds. After enduring winter, in which little food is available, SWABLU flocks move closer to towns in the spring.",
       "version": "emerald"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/333.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/333.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チルット",
+    "roomaji": "Tyltto",
+    "ko": "파비코",
+    "zh-Hant": "青綿鳥",
+    "fr": "Tylton",
+    "de": "Wablu",
+    "es": "Swablu",
+    "it": "Swablu",
+    "en": "Swablu",
+    "ja": "チルット",
+    "zh-Hans": "青绵鸟"
   }
 }

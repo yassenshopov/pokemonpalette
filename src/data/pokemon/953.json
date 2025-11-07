@@ -1,7 +1,7 @@
 {
   "id": 953,
   "name": "Rellor",
-  "species": "Rolling Pok\u00e9mon",
+  "species": "Rolling Pokémon",
   "type": [
     "Bug"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 58,
     "speed": 30
   },
-  "description": "This Pok\u00e9mon creates a mud ball by mixing sand and dirt with psychic energy. It treasures its mud ball more than its own life.",
+  "description": "This Pokémon creates a mud ball by mixing sand and dirt with psychic energy. It treasures its mud ball more than its own life.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon creates a mud ball by mixing sand and dirt with psychic energy. It treasures its mud ball more than its own life.",
+      "text": "This Pokémon creates a mud ball by mixing sand and dirt with psychic energy. It treasures its mud ball more than its own life.",
       "version": "scarlet"
     },
     {
@@ -281,5 +281,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/953.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シガロコ",
+    "roomaji": "Shigaroko",
+    "ko": "구르데",
+    "zh-Hant": "蟲滾泥",
+    "fr": "Léboulérou",
+    "de": "Relluk",
+    "es": "Rellor",
+    "it": "Rellor",
+    "en": "Rellor",
+    "ja": "シガロコ",
+    "zh-Hans": "虫滚泥"
   }
 }

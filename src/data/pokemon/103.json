@@ -1,7 +1,7 @@
 {
   "id": 103,
   "name": "Exeggutor",
-  "species": "Coconut Pok\u00e9mon",
+  "species": "Coconut Pokémon",
   "type": [
     "Grass",
     "Psychic"
@@ -55,7 +55,7 @@
       "version": "yellow"
     },
     {
-      "text": "Its three heads think independent\u00ad ly. However, they are friendly and never appear to squabble.",
+      "text": "Its three heads think independent­ ly. However, they are friendly and never appear to squabble.",
       "version": "gold"
     },
     {
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/103.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/103.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナッシー",
+    "roomaji": "Nassy",
+    "ko": "나시",
+    "zh-Hant": "椰蛋樹",
+    "fr": "Noadkoko",
+    "de": "Kokowei",
+    "es": "Exeggutor",
+    "it": "Exeggutor",
+    "en": "Exeggutor",
+    "ja": "ナッシー",
+    "zh-Hans": "椰蛋树"
   }
 }

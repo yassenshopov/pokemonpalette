@@ -1,7 +1,7 @@
 {
   "id": 141,
   "name": "Kabutops",
-  "species": "Shellfish Pok\u00e9mon",
+  "species": "Shellfish Pokémon",
   "type": [
     "Rock",
     "Water"
@@ -46,14 +46,14 @@
     "specialDefense": 70,
     "speed": 80
   },
-  "description": "Its sleek shape is perfect for swim\u00ad ming. It slashes prey with its claws and drains the body fluids.",
+  "description": "Its sleek shape is perfect for swim­ ming. It slashes prey with its claws and drains the body fluids.",
   "flavorTexts": [
     {
-      "text": "Its sleek shape is perfect for swim\u00ad ming. It slashes prey with its claws and drains the body fluids.",
+      "text": "Its sleek shape is perfect for swim­ ming. It slashes prey with its claws and drains the body fluids.",
       "version": "red"
     },
     {
-      "text": "Its sleek shape is perfect for swim\u00ad ming. It slashes prey with its claws and drains the body fluids.",
+      "text": "Its sleek shape is perfect for swim­ ming. It slashes prey with its claws and drains the body fluids.",
       "version": "blue"
     },
     {
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "With sharp claws, this ferocious, ancient POK\u00e9MON rips apart prey and sucks their body fluids.",
+      "text": "With sharp claws, this ferocious, ancient POKéMON rips apart prey and sucks their body fluids.",
       "version": "silver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/141.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/141.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カブトプス",
+    "roomaji": "Kabutops",
+    "ko": "투구푸스",
+    "zh-Hant": "鐮刀盔",
+    "fr": "Kabutops",
+    "de": "Kabutops",
+    "es": "Kabutops",
+    "it": "Kabutops",
+    "en": "Kabutops",
+    "ja": "カブトプス",
+    "zh-Hans": "镰刀盔"
   }
 }

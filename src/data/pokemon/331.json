@@ -1,7 +1,7 @@
 {
   "id": 331,
   "name": "Cacnea",
-  "species": "Cactus Pok\u00e9mon",
+  "species": "Cactus Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 40,
     "speed": 35
   },
-  "description": "CACNEA lives in arid locations such as deserts. It releases a strong aroma from its flower to attract prey. When prey comes near, this POK\u00e9MON shoots sharp thorns from its body to bring the victim down.",
+  "description": "CACNEA lives in arid locations such as deserts. It releases a strong aroma from its flower to attract prey. When prey comes near, this POKéMON shoots sharp thorns from its body to bring the victim down.",
   "flavorTexts": [
     {
-      "text": "CACNEA lives in arid locations such as deserts. It releases a strong aroma from its flower to attract prey. When prey comes near, this POK\u00e9MON shoots sharp thorns from its body to bring the victim down.",
+      "text": "CACNEA lives in arid locations such as deserts. It releases a strong aroma from its flower to attract prey. When prey comes near, this POKéMON shoots sharp thorns from its body to bring the victim down.",
       "version": "ruby"
     },
     {
-      "text": "The more arid and harsh the environment, the more pretty and fragrant a flower CACNEA grows. This POK\u00e9MON battles by wildly swinging its thorny arms.",
+      "text": "The more arid and harsh the environment, the more pretty and fragrant a flower CACNEA grows. This POKéMON battles by wildly swinging its thorny arms.",
       "version": "sapphire"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/331.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/331.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サボネア",
+    "roomaji": "Sabonea",
+    "ko": "선인왕",
+    "zh-Hant": "刺球仙人掌",
+    "fr": "Cacnea",
+    "de": "Tuska",
+    "es": "Cacnea",
+    "it": "Cacnea",
+    "en": "Cacnea",
+    "ja": "サボネア",
+    "zh-Hans": "刺球仙人掌"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 866,
   "name": "Mr-rime",
-  "species": "Comedian Pok\u00e9mon",
+  "species": "Comedian Pokémon",
   "type": [
     "Ice",
     "Psychic"
@@ -46,10 +46,10 @@
     "specialDefense": 100,
     "speed": 70
   },
-  "description": "It\u2019s highly skilled at tap-dancing. It waves its cane of ice in time with its graceful movements.",
+  "description": "It’s highly skilled at tap-dancing. It waves its cane of ice in time with its graceful movements.",
   "flavorTexts": [
     {
-      "text": "It\u2019s highly skilled at tap-dancing. It waves its cane of ice in time with its graceful movements.",
+      "text": "It’s highly skilled at tap-dancing. It waves its cane of ice in time with its graceful movements.",
       "version": "sword"
     },
     {
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/866.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バリコオル",
+    "roomaji": "Barrikohru",
+    "ko": "마임꽁꽁",
+    "zh-Hant": "踏冰人偶",
+    "fr": "M. Glaquette",
+    "de": "Pantifrost",
+    "es": "Mr. Rime",
+    "it": "Mr. Rime",
+    "en": "Mr. Rime",
+    "ja": "バリコオル",
+    "zh-Hans": "踏冰人偶"
   }
 }

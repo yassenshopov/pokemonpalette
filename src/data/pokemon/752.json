@@ -1,8 +1,11 @@
 {
   "id": 752,
   "name": "Araquanid",
-  "species": "Water Bubble Pok\u00e9mon",
-  "type": ["Water", "Bug"],
+  "species": "Water Bubble Pokémon",
+  "type": [
+    "Water",
+    "Bug"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -37,14 +40,14 @@
     "specialDefense": 132,
     "speed": 42
   },
-  "description": "It delivers headbutts with the water bubble on its head. Small Pok\u00e9mon get sucked into the bubble, where they drown.",
+  "description": "It delivers headbutts with the water bubble on its head. Small Pokémon get sucked into the bubble, where they drown.",
   "flavorTexts": [
     {
-      "text": "It delivers headbutts with the water bubble on its head. Small Pok\u00e9mon get sucked into the bubble, where they drown.",
+      "text": "It delivers headbutts with the water bubble on its head. Small Pokémon get sucked into the bubble, where they drown.",
       "version": "sun"
     },
     {
-      "text": "Despite what its appearance suggests, it cares for others. If it finds vulnerable, weak Pok\u00e9mon, it protectively brings them into its water bubble.",
+      "text": "Despite what its appearance suggests, it cares for others. If it finds vulnerable, weak Pokémon, it protectively brings them into its water bubble.",
       "version": "moon"
     },
     {
@@ -52,11 +55,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "It has a habit of storing things it values in its water bubble. If its Trainer doesn\u2019t watch out, Araquanid will try to put them in its bubble!",
+      "text": "It has a habit of storing things it values in its water bubble. If its Trainer doesn’t watch out, Araquanid will try to put them in its bubble!",
       "version": "ultra-moon"
     },
     {
-      "text": "It launches water bubbles with its legs, drowning prey within the bubbles. This Pok\u00e9mon can then take its time to savor its meal.",
+      "text": "It launches water bubbles with its legs, drowning prey within the bubbles. This Pokémon can then take its time to savor its meal.",
       "version": "sword"
     }
   ],
@@ -66,7 +69,11 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#6890F0", "#F08030", "#F8D030"]
+    "highlights": [
+      "#6890F0",
+      "#F08030",
+      "#F8D030"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/752.png",
@@ -297,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/752.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オニシズクモ",
+    "roomaji": "Onishizukumo",
+    "ko": "깨비물거미",
+    "zh-Hant": "滴蛛霸",
+    "fr": "Tarenbulle",
+    "de": "Aranestro",
+    "es": "Araquanid",
+    "it": "Araquanid",
+    "en": "Araquanid",
+    "ja": "オニシズクモ",
+    "zh-Hans": "滴蛛霸"
   }
 }

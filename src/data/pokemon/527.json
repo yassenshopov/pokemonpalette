@@ -1,7 +1,7 @@
 {
   "id": 527,
   "name": "Woobat",
-  "species": "Bat Pok\u00e9mon",
+  "species": "Bat Pokémon",
   "type": [
     "Psychic",
     "Flying"
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/527.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/527.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コロモリ",
+    "roomaji": "Koromori",
+    "ko": "또르박쥐",
+    "zh-Hant": "滾滾蝙蝠",
+    "fr": "Chovsourir",
+    "de": "Fleknoil",
+    "es": "Woobat",
+    "it": "Woobat",
+    "en": "Woobat",
+    "ja": "コロモリ",
+    "zh-Hans": "滚滚蝙蝠"
   }
 }

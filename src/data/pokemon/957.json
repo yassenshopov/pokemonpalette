@@ -1,7 +1,7 @@
 {
   "id": 957,
   "name": "Tinkatink",
-  "species": "Metalsmith Pok\u00e9mon",
+  "species": "Metalsmith Pokémon",
   "type": [
     "Fairy",
     "Steel"
@@ -46,14 +46,14 @@
     "specialDefense": 64,
     "speed": 58
   },
-  "description": "It swings its handmade hammer around to protect itself, but the hammer is often stolen by Pok\u00e9mon that eat metal.",
+  "description": "It swings its handmade hammer around to protect itself, but the hammer is often stolen by Pokémon that eat metal.",
   "flavorTexts": [
     {
-      "text": "It swings its handmade hammer around to protect itself, but the hammer is often stolen by Pok\u00e9mon that eat metal.",
+      "text": "It swings its handmade hammer around to protect itself, but the hammer is often stolen by Pokémon that eat metal.",
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon pounds iron scraps together to make a hammer. It will remake the hammer again and again until it\u2019s satisfied with the result.",
+      "text": "This Pokémon pounds iron scraps together to make a hammer. It will remake the hammer again and again until it’s satisfied with the result.",
       "version": "violet"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/957.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カヌチャン",
+    "roomaji": "Kanuchan",
+    "ko": "어리짱",
+    "zh-Hant": "小鍛匠",
+    "fr": "Forgerette",
+    "de": "Forgita",
+    "es": "Tinkatink",
+    "it": "Tinkatink",
+    "en": "Tinkatink",
+    "ja": "カヌチャン",
+    "zh-Hans": "小锻匠"
   }
 }

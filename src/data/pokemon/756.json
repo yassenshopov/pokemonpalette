@@ -1,7 +1,7 @@
 {
   "id": 756,
   "name": "Shiinotic",
-  "species": "Illuminating Pok\u00e9mon",
+  "species": "Illuminating Pokémon",
   "type": [
     "Grass",
     "Fairy"
@@ -53,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "It emits flickering spores that cause drowsiness. When its prey succumb to sleep, this Pok\u00e9mon feeds on them by sucking in their energy.",
+      "text": "It emits flickering spores that cause drowsiness. When its prey succumb to sleep, this Pokémon feeds on them by sucking in their energy.",
       "version": "moon"
     },
     {
@@ -65,7 +65,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "Its flickering spores lure in prey and put them to sleep. Once this Pok\u00e9mon has its prey snoozing, it drains their vitality with its fingertips.",
+      "text": "Its flickering spores lure in prey and put them to sleep. Once this Pokémon has its prey snoozing, it drains their vitality with its fingertips.",
       "version": "sword"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/756.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マシェード",
+    "roomaji": "Mashade",
+    "ko": "마셰이드",
+    "zh-Hant": "燈罩夜菇",
+    "fr": "Lampignon",
+    "de": "Lamellux",
+    "es": "Shiinotic",
+    "it": "Shiinotic",
+    "en": "Shiinotic",
+    "ja": "マシェード",
+    "zh-Hans": "灯罩夜菇"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 976,
   "name": "Veluza",
-  "species": "Jettison Pok\u00e9mon",
+  "species": "Jettison Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -277,5 +277,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/976.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ミガルーサ",
+    "roomaji": "Migalusa",
+    "ko": "가비루사",
+    "zh-Hant": "輕身鱈",
+    "fr": "Délestin",
+    "de": "Agiluza",
+    "es": "Veluza",
+    "it": "Veluza",
+    "en": "Veluza",
+    "ja": "ミガルーサ",
+    "zh-Hans": "轻身鳕"
   }
 }

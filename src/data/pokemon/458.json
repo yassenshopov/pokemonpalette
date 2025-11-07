@@ -1,7 +1,7 @@
 {
   "id": 458,
   "name": "Mantyke",
-  "species": "Kite Pok\u00e9mon",
+  "species": "Kite Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 120,
     "speed": 50
   },
-  "description": "A friendly Pok\u00e9mon that captures the subtle flows of seawater using its two antennae.",
+  "description": "A friendly Pokémon that captures the subtle flows of seawater using its two antennae.",
   "flavorTexts": [
     {
-      "text": "A friendly Pok\u00e9mon that captures the subtle flows of seawater using its two antennae.",
+      "text": "A friendly Pokémon that captures the subtle flows of seawater using its two antennae.",
       "version": "diamond"
     },
     {
@@ -57,7 +57,7 @@
       "version": "pearl"
     },
     {
-      "text": "People organize tours to see this Pok\u00e9mon frolic and skim the tops of waves with REMORAID.",
+      "text": "People organize tours to see this Pokémon frolic and skim the tops of waves with REMORAID.",
       "version": "platinum"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/458.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/458.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タマンタ",
+    "roomaji": "Tamanta",
+    "ko": "타만타",
+    "zh-Hant": "小球飛魚",
+    "fr": "Babimanta",
+    "de": "Mantirps",
+    "es": "Mantyke",
+    "it": "Mantyke",
+    "en": "Mantyke",
+    "ja": "タマンタ",
+    "zh-Hans": "小球飞鱼"
   }
 }

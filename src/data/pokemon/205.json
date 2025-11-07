@@ -1,7 +1,7 @@
 {
   "id": 205,
   "name": "Forretress",
-  "species": "Bagworm Pok\u00e9mon",
+  "species": "Bagworm Pokémon",
   "type": [
     "Bug",
     "Steel"
@@ -47,7 +47,7 @@
       "version": "gold"
     },
     {
-      "text": "It remains immova\u00ad bly rooted to its tree. It scatters pieces of its hard shell to drive its enemies away.",
+      "text": "It remains immova­ bly rooted to its tree. It scatters pieces of its hard shell to drive its enemies away.",
       "version": "silver"
     },
     {
@@ -55,11 +55,11 @@
       "version": "crystal"
     },
     {
-      "text": "FORRETRESS conceals itself inside its hardened steel shell. The shell is opened when the POK\u00e9MON is catching prey, but it does so at such a quick pace that the shell\u2019s inside cannot be seen.",
+      "text": "FORRETRESS conceals itself inside its hardened steel shell. The shell is opened when the POKéMON is catching prey, but it does so at such a quick pace that the shell’s inside cannot be seen.",
       "version": "ruby"
     },
     {
-      "text": "FORRETRESS conceals itself inside its hardened steel shell. The shell is opened when the POK\u00e9MON is catching prey, but it does so at such a quick pace that the shell\u2019s inside cannot be seen.",
+      "text": "FORRETRESS conceals itself inside its hardened steel shell. The shell is opened when the POKéMON is catching prey, but it does so at such a quick pace that the shell’s inside cannot be seen.",
       "version": "sapphire"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/205.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/205.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フォレトス",
+    "roomaji": "Foretos",
+    "ko": "쏘콘",
+    "zh-Hant": "佛烈托斯",
+    "fr": "Foretress",
+    "de": "Forstellka",
+    "es": "Forretress",
+    "it": "Forretress",
+    "en": "Forretress",
+    "ja": "フォレトス",
+    "zh-Hans": "佛烈托斯"
   }
 }

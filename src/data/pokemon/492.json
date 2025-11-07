@@ -1,7 +1,7 @@
 {
   "id": 492,
   "name": "Shaymin-land",
-  "species": "Gratitude Pok\u00e9mon",
+  "species": "Gratitude Pokémon",
   "type": [
     "Grass"
   ],
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/492.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/492.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シェイミ",
+    "roomaji": "Shaymin",
+    "ko": "쉐이미",
+    "zh-Hant": "謝米",
+    "fr": "Shaymin",
+    "de": "Shaymin",
+    "es": "Shaymin",
+    "it": "Shaymin",
+    "en": "Shaymin",
+    "ja": "シェイミ",
+    "zh-Hans": "谢米"
   }
 }

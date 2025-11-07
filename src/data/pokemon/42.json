@@ -1,7 +1,7 @@
 {
   "id": 42,
   "name": "Golbat",
-  "species": "Bat Pok\u00e9mon",
+  "species": "Bat Pokémon",
   "type": [
     "Poison",
     "Flying"
@@ -308,5 +308,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/42.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/42.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴルバット",
+    "roomaji": "Golbat",
+    "ko": "골뱃",
+    "zh-Hant": "大嘴蝠",
+    "fr": "Nosferalto",
+    "de": "Golbat",
+    "es": "Golbat",
+    "it": "Golbat",
+    "en": "Golbat",
+    "ja": "ゴルバット",
+    "zh-Hans": "大嘴蝠"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 937,
   "name": "Ceruledge",
-  "species": "Fire Blades Pok\u00e9mon",
+  "species": "Fire Blades Pokémon",
   "type": [
     "Fire",
     "Ghost"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "An old set of armor steeped in grudges caused this Pok\u00e9mon\u2019s evolution. Ceruledge cuts its enemies to pieces without mercy.",
+      "text": "An old set of armor steeped in grudges caused this Pokémon’s evolution. Ceruledge cuts its enemies to pieces without mercy.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/937.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ソウブレイズ",
+    "roomaji": "Soublades",
+    "ko": "파라블레이즈",
+    "zh-Hant": "蒼炎刃鬼",
+    "fr": "Malvalame",
+    "de": "Azugladis",
+    "es": "Ceruledge",
+    "it": "Ceruledge",
+    "en": "Ceruledge",
+    "ja": "ソウブレイズ",
+    "zh-Hans": "苍炎刃鬼"
   }
 }

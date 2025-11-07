@@ -1,7 +1,7 @@
 {
   "id": 308,
   "name": "Medicham",
-  "species": "Meditate Pok\u00e9mon",
+  "species": "Meditate Pokémon",
   "type": [
     "Fighting",
     "Psychic"
@@ -40,18 +40,18 @@
     "specialDefense": 75,
     "speed": 80
   },
-  "description": "It is said that through meditation, MEDICHAM heightens energy inside its body and sharpens its sixth sense. This POK\u00e9MON hides its presence by merging itself with fields and mountains.",
+  "description": "It is said that through meditation, MEDICHAM heightens energy inside its body and sharpens its sixth sense. This POKéMON hides its presence by merging itself with fields and mountains.",
   "flavorTexts": [
     {
-      "text": "It is said that through meditation, MEDICHAM heightens energy inside its body and sharpens its sixth sense. This POK\u00e9MON hides its presence by merging itself with fields and mountains.",
+      "text": "It is said that through meditation, MEDICHAM heightens energy inside its body and sharpens its sixth sense. This POKéMON hides its presence by merging itself with fields and mountains.",
       "version": "ruby"
     },
     {
-      "text": "Through the power of meditation, MEDICHAM developed its sixth sense. It gained the ability to use psychokinetic powers. This POK\u00e9MON is known to meditate for a whole month without eating.",
+      "text": "Through the power of meditation, MEDICHAM developed its sixth sense. It gained the ability to use psychokinetic powers. This POKéMON is known to meditate for a whole month without eating.",
       "version": "sapphire"
     },
     {
-      "text": "Through crushingly harsh yoga training, it gained the power to foretell its foe\u2019s actions. It battles with elegant, dance- like movement.",
+      "text": "Through crushingly harsh yoga training, it gained the power to foretell its foe’s actions. It battles with elegant, dance- like movement.",
       "version": "emerald"
     },
     {
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/308.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/308.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チャーレム",
+    "roomaji": "Charem",
+    "ko": "요가램",
+    "zh-Hant": "恰雷姆",
+    "fr": "Charmina",
+    "de": "Meditalis",
+    "es": "Medicham",
+    "it": "Medicham",
+    "en": "Medicham",
+    "ja": "チャーレム",
+    "zh-Hans": "恰雷姆"
   }
 }

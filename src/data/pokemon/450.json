@@ -1,7 +1,7 @@
 {
   "id": 450,
   "name": "Hippowdon",
-  "species": "Heavyweight Pok\u00e9mon",
+  "species": "Heavyweight Pokémon",
   "type": [
     "Ground"
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/450.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/450.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カバルドン",
+    "roomaji": "Kabarudon",
+    "ko": "하마돈",
+    "zh-Hant": "河馬獸",
+    "fr": "Hippodocus",
+    "de": "Hippoterus",
+    "es": "Hippowdon",
+    "it": "Hippowdon",
+    "en": "Hippowdon",
+    "ja": "カバルドン",
+    "zh-Hans": "河马兽"
   }
 }

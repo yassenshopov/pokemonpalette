@@ -1,7 +1,7 @@
 {
   "id": 382,
   "name": "Kyogre",
-  "species": "Sea Basin Pok\u00e9mon",
+  "species": "Sea Basin Pokémon",
   "type": [
     "Water"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 140,
     "speed": 90
   },
-  "description": "KYOGRE has the power to create massive rain clouds that cover the entire sky and bring about torrential downpours. This POK\u00e9MON saved people who were suffering from droughts.",
+  "description": "KYOGRE has the power to create massive rain clouds that cover the entire sky and bring about torrential downpours. This POKéMON saved people who were suffering from droughts.",
   "flavorTexts": [
     {
-      "text": "KYOGRE has the power to create massive rain clouds that cover the entire sky and bring about torrential downpours. This POK\u00e9MON saved people who were suffering from droughts.",
+      "text": "KYOGRE has the power to create massive rain clouds that cover the entire sky and bring about torrential downpours. This POKéMON saved people who were suffering from droughts.",
       "version": "ruby"
     },
     {
-      "text": "KYOGRE is named in mythology as the POK\u00e9MON that expanded the sea by covering the land with torrential rains and towering tidal waves. It took to sleep after a cataclysmic battle with GROUDON.",
+      "text": "KYOGRE is named in mythology as the POKéMON that expanded the sea by covering the land with torrential rains and towering tidal waves. It took to sleep after a cataclysmic battle with GROUDON.",
       "version": "sapphire"
     },
     {
@@ -44,11 +44,11 @@
       "version": "emerald"
     },
     {
-      "text": "This POK\u00e9MON is said to have expanded the sea by bringing heavy rains. It has the power to control water.",
+      "text": "This POKéMON is said to have expanded the sea by bringing heavy rains. It has the power to control water.",
       "version": "firered"
     },
     {
-      "text": "This POK\u00e9MON is said to have expanded the sea by bringing heavy rains. It has the power to control water.",
+      "text": "This POKéMON is said to have expanded the sea by bringing heavy rains. It has the power to control water.",
       "version": "leafgreen"
     }
   ],
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/382.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/382.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カイオーガ",
+    "roomaji": "Kyogre",
+    "ko": "가이오가",
+    "zh-Hant": "蓋歐卡",
+    "fr": "Kyogre",
+    "de": "Kyogre",
+    "es": "Kyogre",
+    "it": "Kyogre",
+    "en": "Kyogre",
+    "ja": "カイオーガ",
+    "zh-Hans": "盖欧卡"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 50,
   "name": "Diglett",
-  "species": "Mole Pok\u00e9mon",
+  "species": "Mole Pokémon",
   "type": [
     "Ground"
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/50.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/50.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ディグダ",
+    "roomaji": "Digda",
+    "ko": "디그다",
+    "zh-Hant": "地鼠",
+    "fr": "Taupiqueur",
+    "de": "Digda",
+    "es": "Diglett",
+    "it": "Diglett",
+    "en": "Diglett",
+    "ja": "ディグダ",
+    "zh-Hans": "地鼠"
   }
 }

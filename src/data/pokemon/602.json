@@ -1,7 +1,7 @@
 {
   "id": 602,
   "name": "Tynamo",
-  "species": "EleFish Pok\u00e9mon",
+  "species": "EleFish Pokémon",
   "type": [
     "Electric"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 40,
     "speed": 60
   },
-  "description": "While one alone doesn\u2019t have much power, a chain of many Tynamo can be as powerful as lightning.",
+  "description": "While one alone doesn’t have much power, a chain of many Tynamo can be as powerful as lightning.",
   "flavorTexts": [
     {
-      "text": "While one alone doesn\u2019t have much power, a chain of many Tynamo can be as powerful as lightning.",
+      "text": "While one alone doesn’t have much power, a chain of many Tynamo can be as powerful as lightning.",
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon move in schools. They have an electricity-generating organ, so they discharge electricity if in danger.",
+      "text": "These Pokémon move in schools. They have an electricity-generating organ, so they discharge electricity if in danger.",
       "version": "white"
     },
     {
@@ -48,7 +48,7 @@
       "version": "white-2"
     },
     {
-      "text": "While one alone doesn\u2019t have much power, a chain of many Tynamo can be as powerful as lightning.",
+      "text": "While one alone doesn’t have much power, a chain of many Tynamo can be as powerful as lightning.",
       "version": "x"
     }
   ],
@@ -228,5 +228,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/602.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/602.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シビシラス",
+    "roomaji": "Shibishirasu",
+    "ko": "저리어",
+    "zh-Hant": "麻麻小魚",
+    "fr": "Anchwatt",
+    "de": "Zapplardin",
+    "es": "Tynamo",
+    "it": "Tynamo",
+    "en": "Tynamo",
+    "ja": "シビシラス",
+    "zh-Hans": "麻麻小鱼"
   }
 }

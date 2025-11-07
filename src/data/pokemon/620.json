@@ -1,7 +1,7 @@
 {
   "id": 620,
   "name": "Mienshao",
-  "species": "Martial Arts Pok\u00e9mon",
+  "species": "Martial Arts Pokémon",
   "type": [
     "Fighting"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/620.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/620.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コジョンド",
+    "roomaji": "Kojondo",
+    "ko": "비조도",
+    "zh-Hant": "師父鼬",
+    "fr": "Shaofouine",
+    "de": "Wie-Shu",
+    "es": "Mienshao",
+    "it": "Mienshao",
+    "en": "Mienshao",
+    "ja": "コジョンド",
+    "zh-Hans": "师父鼬"
   }
 }

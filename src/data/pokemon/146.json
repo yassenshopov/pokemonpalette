@@ -1,7 +1,7 @@
 {
   "id": 146,
   "name": "Moltres",
-  "species": "Flame Pok\u00e9mon",
+  "species": "Flame Pokémon",
   "type": [
     "Fire",
     "Flying"
@@ -51,15 +51,15 @@
       "version": "blue"
     },
     {
-      "text": "A legendary bird POK\u00e9MON. As it flaps its flaming wings, even the night sky will turn red.",
+      "text": "A legendary bird POKéMON. As it flaps its flaming wings, even the night sky will turn red.",
       "version": "yellow"
     },
     {
-      "text": "This legendary POK\u00e9MON scatters embers with every flap of its wings. It is a thrilling sight to behold.",
+      "text": "This legendary POKéMON scatters embers with every flap of its wings. It is a thrilling sight to behold.",
       "version": "gold"
     },
     {
-      "text": "This legendary bird POK\u00e9MON is said to bring early spring to the wintry lands it visits.",
+      "text": "This legendary bird POKéMON is said to bring early spring to the wintry lands it visits.",
       "version": "silver"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/146.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/146.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ファイヤー",
+    "roomaji": "Fire",
+    "ko": "파이어",
+    "zh-Hant": "火焰鳥",
+    "fr": "Sulfura",
+    "de": "Lavados",
+    "es": "Moltres",
+    "it": "Moltres",
+    "en": "Moltres",
+    "ja": "ファイヤー",
+    "zh-Hans": "火焰鸟"
   }
 }

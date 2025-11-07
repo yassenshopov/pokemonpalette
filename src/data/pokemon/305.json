@@ -1,7 +1,7 @@
 {
   "id": 305,
   "name": "Lairon",
-  "species": "Iron Armor Pok\u00e9mon",
+  "species": "Iron Armor Pokémon",
   "type": [
     "Steel",
     "Rock"
@@ -46,14 +46,14 @@
     "specialDefense": 50,
     "speed": 40
   },
-  "description": "LAIRON tempers its steel body by drinking highly nutritious mineral springwater until it is bloated. This POK\u00e9MON makes its nest close to springs of delicious water.",
+  "description": "LAIRON tempers its steel body by drinking highly nutritious mineral springwater until it is bloated. This POKéMON makes its nest close to springs of delicious water.",
   "flavorTexts": [
     {
-      "text": "LAIRON tempers its steel body by drinking highly nutritious mineral springwater until it is bloated. This POK\u00e9MON makes its nest close to springs of delicious water.",
+      "text": "LAIRON tempers its steel body by drinking highly nutritious mineral springwater until it is bloated. This POKéMON makes its nest close to springs of delicious water.",
       "version": "ruby"
     },
     {
-      "text": "LAIRON feeds on iron contained in rocks and water. It makes its nest on mountains where iron ore is buried. As a result, the POK\u00e9MON often clashes with humans mining the iron ore.",
+      "text": "LAIRON feeds on iron contained in rocks and water. It makes its nest on mountains where iron ore is buried. As a result, the POKéMON often clashes with humans mining the iron ore.",
       "version": "sapphire"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/305.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/305.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コドラ",
+    "roomaji": "Kodora",
+    "ko": "갱도라",
+    "zh-Hant": "可多拉",
+    "fr": "Galegon",
+    "de": "Stollrak",
+    "es": "Lairon",
+    "it": "Lairon",
+    "en": "Lairon",
+    "ja": "コドラ",
+    "zh-Hans": "可多拉"
   }
 }

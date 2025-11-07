@@ -1,7 +1,7 @@
 {
   "id": 24,
   "name": "Arbok",
-  "species": "Cobra Pok\u00e9mon",
+  "species": "Cobra Pokémon",
   "type": [
     "Poison"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "With a very venge\u00ad ful nature, it won't give up the chase, no matter how far, once it targets its prey.",
+      "text": "With a very venge­ ful nature, it won't give up the chase, no matter how far, once it targets its prey.",
       "version": "silver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/24.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/24.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アーボック",
+    "roomaji": "Arbok",
+    "ko": "아보크",
+    "zh-Hant": "阿柏怪",
+    "fr": "Arbok",
+    "de": "Arbok",
+    "es": "Arbok",
+    "it": "Arbok",
+    "en": "Arbok",
+    "ja": "アーボック",
+    "zh-Hans": "阿柏怪"
   }
 }

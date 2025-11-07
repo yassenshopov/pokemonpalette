@@ -1,7 +1,7 @@
 {
   "id": 30,
   "name": "Nidorina",
-  "species": "Poison Pin Pok\u00e9mon",
+  "species": "Poison Pin Pokémon",
   "type": [
     "Poison"
   ],
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "When feeding its young, it first chews and tender\u00ad izes the food, then spits it out for the offspring.",
+      "text": "When feeding its young, it first chews and tender­ izes the food, then spits it out for the offspring.",
       "version": "gold"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/30.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/30.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニドリーナ",
+    "roomaji": "Nidorina",
+    "ko": "니드리나",
+    "zh-Hant": "尼多娜",
+    "fr": "Nidorina",
+    "de": "Nidorina",
+    "es": "Nidorina",
+    "it": "Nidorina",
+    "en": "Nidorina",
+    "ja": "ニドリーナ",
+    "zh-Hans": "尼多娜"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 631,
   "name": "Heatmor",
-  "species": "Anteater Pok\u00e9mon",
+  "species": "Anteater Pokémon",
   "type": [
     "Fire"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "Using their very hot, flame-covered tongues, they burn through Durant\u2019s steel bodies and consume their insides.",
+      "text": "Using their very hot, flame-covered tongues, they burn through Durant’s steel bodies and consume their insides.",
       "version": "white"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "Using their very hot, flame-covered tongues, they burn through Durant\u2019s steel bodies and consume their insides.",
+      "text": "Using their very hot, flame-covered tongues, they burn through Durant’s steel bodies and consume their insides.",
       "version": "x"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/631.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/631.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クイタラン",
+    "roomaji": "Kuitaran",
+    "ko": "앤티골",
+    "zh-Hant": "熔蟻獸",
+    "fr": "Aflamanoir",
+    "de": "Furnifraß",
+    "es": "Heatmor",
+    "it": "Heatmor",
+    "en": "Heatmor",
+    "ja": "クイタラン",
+    "zh-Hans": "熔蚁兽"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 245,
   "name": "Suicune",
-  "species": "Aurora Pok\u00e9mon",
+  "species": "Aurora Pokémon",
   "type": [
     "Water"
   ],
@@ -50,11 +50,11 @@
       "version": "gold"
     },
     {
-      "text": "This POK\u00e9MON races across the land. It is said that north winds will somehow blow when\u00ad ever it appears.",
+      "text": "This POKéMON races across the land. It is said that north winds will somehow blow when­ ever it appears.",
       "version": "silver"
     },
     {
-      "text": "This divine POK\u00e9MON blows around the world, always in search of a pure reservoir.",
+      "text": "This divine POKéMON blows around the world, always in search of a pure reservoir.",
       "version": "crystal"
     }
   ],
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/245.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/245.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スイクン",
+    "roomaji": "Suikun",
+    "ko": "스이쿤",
+    "zh-Hant": "水君",
+    "fr": "Suicune",
+    "de": "Suicune",
+    "es": "Suicune",
+    "it": "Suicune",
+    "en": "Suicune",
+    "ja": "スイクン",
+    "zh-Hans": "水君"
   }
 }

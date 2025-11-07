@@ -1,7 +1,7 @@
 {
   "id": 488,
   "name": "Cresselia",
-  "species": "Lunar Pok\u00e9mon",
+  "species": "Lunar Pokémon",
   "type": [
     "Psychic"
   ],
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "Those who sleep holding CRESSELIA\u2019s feather are assured of joyful dreams. It is said to represent the crescent moon.",
+      "text": "Those who sleep holding CRESSELIA’s feather are assured of joyful dreams. It is said to represent the crescent moon.",
       "version": "heartgold"
     },
     {
-      "text": "Those who sleep holding CRESSELIA\u2019s feather are assured of joyful dreams. It is said to represent the crescent moon.",
+      "text": "Those who sleep holding CRESSELIA’s feather are assured of joyful dreams. It is said to represent the crescent moon.",
       "version": "soulsilver"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/488.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/488.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クレセリア",
+    "roomaji": "Crecelia",
+    "ko": "크레세리아",
+    "zh-Hant": "克雷色利亞",
+    "fr": "Cresselia",
+    "de": "Cresselia",
+    "es": "Cresselia",
+    "it": "Cresselia",
+    "en": "Cresselia",
+    "ja": "クレセリア",
+    "zh-Hans": "克雷色利亚"
   }
 }

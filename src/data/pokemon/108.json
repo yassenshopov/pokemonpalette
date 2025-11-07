@@ -1,7 +1,7 @@
 {
   "id": 108,
   "name": "Lickitung",
-  "species": "Licking Pok\u00e9mon",
+  "species": "Licking Pokémon",
   "type": [
     "Normal"
   ],
@@ -56,11 +56,11 @@
       "version": "yellow"
     },
     {
-      "text": "Its tongue has well-developed nerves that run to the very tip, so it can be deft\u00ad ly manipulated.",
+      "text": "Its tongue has well-developed nerves that run to the very tip, so it can be deft­ ly manipulated.",
       "version": "gold"
     },
     {
-      "text": "Its long tongue, slathered with a gooey saliva, sticks to any\u00ad thing, so it is very useful.",
+      "text": "Its long tongue, slathered with a gooey saliva, sticks to any­ thing, so it is very useful.",
       "version": "silver"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/108.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/108.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ベロリンガ",
+    "roomaji": "Beroringa",
+    "ko": "내루미",
+    "zh-Hant": "大舌頭",
+    "fr": "Excelangue",
+    "de": "Schlurp",
+    "es": "Lickitung",
+    "it": "Lickitung",
+    "en": "Lickitung",
+    "ja": "ベロリンガ",
+    "zh-Hans": "大舌头"
   }
 }

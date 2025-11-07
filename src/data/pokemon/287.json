@@ -1,7 +1,7 @@
 {
   "id": 287,
   "name": "Slakoth",
-  "species": "Slacker Pok\u00e9mon",
+  "species": "Slacker Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,18 +29,18 @@
     "specialDefense": 35,
     "speed": 30
   },
-  "description": "SLAKOTH lolls around for over twenty hours every day. Because it moves so little, it does not need much food. This POK\u00e9MON\u2019s sole daily meal consists of just three leaves.",
+  "description": "SLAKOTH lolls around for over twenty hours every day. Because it moves so little, it does not need much food. This POKéMON’s sole daily meal consists of just three leaves.",
   "flavorTexts": [
     {
-      "text": "SLAKOTH lolls around for over twenty hours every day. Because it moves so little, it does not need much food. This POK\u00e9MON\u2019s sole daily meal consists of just three leaves.",
+      "text": "SLAKOTH lolls around for over twenty hours every day. Because it moves so little, it does not need much food. This POKéMON’s sole daily meal consists of just three leaves.",
       "version": "ruby"
     },
     {
-      "text": "SLAKOTH\u2019s heart beats just once a minute. Whatever happens, it is content to loaf around motionless. It is rare to see this POK\u00e9MON in motion.",
+      "text": "SLAKOTH’s heart beats just once a minute. Whatever happens, it is content to loaf around motionless. It is rare to see this POKéMON in motion.",
       "version": "sapphire"
     },
     {
-      "text": "It sleeps virtually all day and night long. It doesn\u2019t change its nest its entire life, but it sometimes travels great distances by swimming in rivers.",
+      "text": "It sleeps virtually all day and night long. It doesn’t change its nest its entire life, but it sometimes travels great distances by swimming in rivers.",
       "version": "emerald"
     },
     {
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/287.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/287.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナマケロ",
+    "roomaji": "Namakero",
+    "ko": "게을로",
+    "zh-Hant": "懶人獺",
+    "fr": "Parecool",
+    "de": "Bummelz",
+    "es": "Slakoth",
+    "it": "Slakoth",
+    "en": "Slakoth",
+    "ja": "ナマケロ",
+    "zh-Hans": "懒人獭"
   }
 }

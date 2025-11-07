@@ -1,7 +1,7 @@
 {
   "id": 740,
   "name": "Crabominable",
-  "species": "Woolly Crab Pok\u00e9mon",
+  "species": "Woolly Crab Pokémon",
   "type": [
     "Fighting",
     "Ice"
@@ -46,10 +46,10 @@
     "specialDefense": 67,
     "speed": 43
   },
-  "description": "It aimed for the top but got lost and ended up on a snowy mountain. Being forced to endure the cold, this Pok\u00e9mon evolved and grew fur.",
+  "description": "It aimed for the top but got lost and ended up on a snowy mountain. Being forced to endure the cold, this Pokémon evolved and grew fur.",
   "flavorTexts": [
     {
-      "text": "It aimed for the top but got lost and ended up on a snowy mountain. Being forced to endure the cold, this Pok\u00e9mon evolved and grew fur.",
+      "text": "It aimed for the top but got lost and ended up on a snowy mountain. Being forced to endure the cold, this Pokémon evolved and grew fur.",
       "version": "sun"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/740.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ケケンカニ",
+    "roomaji": "Kekenkani",
+    "ko": "모단단게",
+    "zh-Hant": "好勝毛蟹",
+    "fr": "Crabominable",
+    "de": "Krawell",
+    "es": "Crabominable",
+    "it": "Crabominable",
+    "en": "Crabominable",
+    "ja": "ケケンカニ",
+    "zh-Hans": "好胜毛蟹"
   }
 }

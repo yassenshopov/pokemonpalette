@@ -1,7 +1,7 @@
 {
   "id": 1018,
   "name": "Archaludon",
-  "species": "Alloy Pok\u00e9mon",
+  "species": "Alloy Pokémon",
   "type": [
     "Steel",
     "Dragon"
@@ -53,7 +53,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It digs holes on mountains, searching for food. It\u2019s so durable that being caught in a cave-in won\u2019t faze it.",
+      "text": "It digs holes on mountains, searching for food. It’s so durable that being caught in a cave-in won’t faze it.",
       "version": "violet"
     }
   ],
@@ -288,5 +288,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1018.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブリジュラス",
+    "ko": "브리두라스",
+    "zh-Hant": "鋁鋼橋龍",
+    "fr": "Pondralugon",
+    "de": "Briduradon",
+    "es": "Archaludon",
+    "it": "Archaludon",
+    "en": "Archaludon",
+    "ja": "ブリジュラス",
+    "zh-Hans": "铝钢桥龙"
   }
 }

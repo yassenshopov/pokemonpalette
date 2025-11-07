@@ -1,7 +1,7 @@
 {
   "id": 322,
   "name": "Numel",
-  "species": "Numb Pok\u00e9mon",
+  "species": "Numb Pokémon",
   "type": [
     "Fire",
     "Ground"
@@ -46,18 +46,18 @@
     "specialDefense": 45,
     "speed": 35
   },
-  "description": "NUMEL is extremely dull witted - it doesn\u2019t notice being hit. However, it can\u2019t stand hunger for even a second. This POK\u00e9MON\u2019s body is a seething cauldron of boiling magma.",
+  "description": "NUMEL is extremely dull witted - it doesn’t notice being hit. However, it can’t stand hunger for even a second. This POKéMON’s body is a seething cauldron of boiling magma.",
   "flavorTexts": [
     {
-      "text": "NUMEL is extremely dull witted - it doesn\u2019t notice being hit. However, it can\u2019t stand hunger for even a second. This POK\u00e9MON\u2019s body is a seething cauldron of boiling magma.",
+      "text": "NUMEL is extremely dull witted - it doesn’t notice being hit. However, it can’t stand hunger for even a second. This POKéMON’s body is a seething cauldron of boiling magma.",
       "version": "ruby"
     },
     {
-      "text": "NUMEL stores magma of almost 2,200 degrees F within its body. If it gets wet, the magma cools and hardens. In that event, the POK\u00e9MON\u2019s body grows heavy and its movements become sluggish.",
+      "text": "NUMEL stores magma of almost 2,200 degrees F within its body. If it gets wet, the magma cools and hardens. In that event, the POKéMON’s body grows heavy and its movements become sluggish.",
       "version": "sapphire"
     },
     {
-      "text": "A NUMEL stores boiling magma in the hump on its back. It is a hardy POK\u00e9MON that can transport a 220-pound load. It has served humans at work since long ago.",
+      "text": "A NUMEL stores boiling magma in the hump on its back. It is a hardy POKéMON that can transport a 220-pound load. It has served humans at work since long ago.",
       "version": "emerald"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/322.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/322.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドンメル",
+    "roomaji": "Donmel",
+    "ko": "둔타",
+    "zh-Hant": "呆火駝",
+    "fr": "Chamallot",
+    "de": "Camaub",
+    "es": "Numel",
+    "it": "Numel",
+    "en": "Numel",
+    "ja": "ドンメル",
+    "zh-Hans": "呆火驼"
   }
 }

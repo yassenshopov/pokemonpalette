@@ -1,7 +1,7 @@
 {
   "id": 944,
   "name": "Shroodle",
-  "species": "Toxic Mouse Pok\u00e9mon",
+  "species": "Toxic Mouse Pokémon",
   "type": [
     "Poison",
     "Normal"
@@ -46,10 +46,10 @@
     "specialDefense": 35,
     "speed": 75
   },
-  "description": "Though usually a mellow Pok\u00e9mon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire.",
+  "description": "Though usually a mellow Pokémon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire.",
   "flavorTexts": [
     {
-      "text": "Though usually a mellow Pok\u00e9mon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire.",
+      "text": "Though usually a mellow Pokémon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire.",
       "version": "scarlet"
     },
     {
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/944.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シルシュルー",
+    "roomaji": "Shirushrew",
+    "ko": "땃쭈르",
+    "zh-Hant": "滋汁鼴",
+    "fr": "Gribouraigne",
+    "de": "Sproxi",
+    "es": "Shroodle",
+    "it": "Shroodle",
+    "en": "Shroodle",
+    "ja": "シルシュルー",
+    "zh-Hans": "滋汁鼹"
   }
 }

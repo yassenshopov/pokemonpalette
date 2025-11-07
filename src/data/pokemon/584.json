@@ -1,7 +1,7 @@
 {
   "id": 584,
   "name": "Vanilluxe",
-  "species": "Snowstorm Pok\u00e9mon",
+  "species": "Snowstorm Pokémon",
   "type": [
     "Ice"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "If both heads get angry simultaneously, this Pok\u00e9mon expels a blizzard, burying everything in snow.",
+      "text": "If both heads get angry simultaneously, this Pokémon expels a blizzard, burying everything in snow.",
       "version": "white"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "If both heads get angry simultaneously, this Pok\u00e9mon expels a blizzard, burying everything in snow.",
+      "text": "If both heads get angry simultaneously, this Pokémon expels a blizzard, burying everything in snow.",
       "version": "x"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/584.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/584.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バイバニラ",
+    "roomaji": "Baivanilla",
+    "ko": "배바닐라",
+    "zh-Hant": "雙倍多多冰",
+    "fr": "Sorbouboul",
+    "de": "Gelatwino",
+    "es": "Vanilluxe",
+    "it": "Vanilluxe",
+    "en": "Vanilluxe",
+    "ja": "バイバニラ",
+    "zh-Hans": "双倍多多冰"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 87,
   "name": "Dewgong",
-  "species": "Sea Lion Pok\u00e9mon",
+  "species": "Sea Lion Pokémon",
   "type": [
     "Water",
     "Ice"
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/87.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/87.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジュゴン",
+    "roomaji": "Jugon",
+    "ko": "쥬레곤",
+    "zh-Hant": "白海獅",
+    "fr": "Lamantine",
+    "de": "Jugong",
+    "es": "Dewgong",
+    "it": "Dewgong",
+    "en": "Dewgong",
+    "ja": "ジュゴン",
+    "zh-Hans": "白海狮"
   }
 }

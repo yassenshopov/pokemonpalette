@@ -1,7 +1,7 @@
 {
   "id": 66,
   "name": "Machop",
-  "species": "Superpower Pok\u00e9mon",
+  "species": "Superpower Pokémon",
   "type": [
     "Fighting"
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/66.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/66.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワンリキー",
+    "roomaji": "Wanriky",
+    "ko": "알통몬",
+    "zh-Hant": "腕力",
+    "fr": "Machoc",
+    "de": "Machollo",
+    "es": "Machop",
+    "it": "Machop",
+    "en": "Machop",
+    "ja": "ワンリキー",
+    "zh-Hans": "腕力"
   }
 }

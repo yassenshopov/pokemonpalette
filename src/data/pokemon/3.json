@@ -1,7 +1,7 @@
 {
   "id": 3,
   "name": "Venusaur",
-  "species": "Seed Pok\u00e9mon",
+  "species": "Seed Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -59,7 +59,7 @@
       "version": "gold"
     },
     {
-      "text": "It is able to con\u00ad vert sunlight into energy. As a result, it is more powerful in the summertime.",
+      "text": "It is able to con­ vert sunlight into energy. As a result, it is more powerful in the summertime.",
       "version": "silver"
     }
   ],
@@ -323,5 +323,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/3.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/3.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フシギバナ",
+    "roomaji": "Fushigibana",
+    "ko": "이상해꽃",
+    "zh-Hant": "妙蛙花",
+    "fr": "Florizarre",
+    "de": "Bisaflor",
+    "es": "Venusaur",
+    "it": "Venusaur",
+    "en": "Venusaur",
+    "ja": "フシギバナ",
+    "zh-Hans": "妙蛙花"
   }
 }

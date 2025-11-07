@@ -1,7 +1,7 @@
 {
   "id": 897,
   "name": "Spectrier",
-  "species": "Swift Horse Pok\u00e9mon",
+  "species": "Swift Horse Pokémon",
   "type": [
     "Ghost"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 80,
     "speed": 130
   },
-  "description": "It probes its surroundings with all its senses save one\u2014it doesn\u2019t use its sense of sight. Spectrier\u2019s kicks are said to separate soul from body.",
+  "description": "It probes its surroundings with all its senses save one—it doesn’t use its sense of sight. Spectrier’s kicks are said to separate soul from body.",
   "flavorTexts": [
     {
-      "text": "It probes its surroundings with all its senses save one\u2014it doesn\u2019t use its sense of sight. Spectrier\u2019s kicks are said to separate soul from body.",
+      "text": "It probes its surroundings with all its senses save one—it doesn’t use its sense of sight. Spectrier’s kicks are said to separate soul from body.",
       "version": "sword"
     },
     {
@@ -266,5 +266,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/897.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "レイスポス",
+    "roomaji": "Wraithpos",
+    "ko": "레이스포스",
+    "zh-Hant": "靈幽馬",
+    "fr": "Spectreval",
+    "de": "Phantoross",
+    "es": "Spectrier",
+    "it": "Spectrier",
+    "en": "Spectrier",
+    "ja": "レイスポス",
+    "zh-Hans": "灵幽马"
   }
 }

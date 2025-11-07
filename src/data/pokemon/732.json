@@ -1,7 +1,7 @@
 {
   "id": 732,
   "name": "Trumbeak",
-  "species": "Bugle Beak Pok\u00e9mon",
+  "species": "Bugle Beak Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/732.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ケララッパ",
+    "roomaji": "Kerarappa",
+    "ko": "크라파",
+    "zh-Hant": "喇叭啄鳥",
+    "fr": "Piclairon",
+    "de": "Trompeck",
+    "es": "Trumbeak",
+    "it": "Trumbeak",
+    "en": "Trumbeak",
+    "ja": "ケララッパ",
+    "zh-Hans": "喇叭啄鸟"
   }
 }

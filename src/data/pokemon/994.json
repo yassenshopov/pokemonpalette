@@ -1,7 +1,7 @@
 {
   "id": 994,
   "name": "Iron-moth",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Fire",
     "Poison"
@@ -34,14 +34,14 @@
     "specialDefense": 110,
     "speed": 110
   },
-  "description": "This Pok\u00e9mon resembles an unknown object described in a paranormal magazine as a UFO sent to observe humanity.",
+  "description": "This Pokémon resembles an unknown object described in a paranormal magazine as a UFO sent to observe humanity.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon resembles an unknown object described in a paranormal magazine as a UFO sent to observe humanity.",
+      "text": "This Pokémon resembles an unknown object described in a paranormal magazine as a UFO sent to observe humanity.",
       "version": "scarlet"
     },
     {
-      "text": "No records exist of this species being caught. Data is lacking, but the Pok\u00e9mon\u2019s traits match up with an object described in an old book.",
+      "text": "No records exist of this species being caught. Data is lacking, but the Pokémon’s traits match up with an object described in an old book.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/994.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノドクガ",
+    "roomaji": "Tetsunodokuga",
+    "ko": "무쇠독나방",
+    "zh-Hant": "鐵毒蛾",
+    "fr": "Mite-de-Fer",
+    "de": "Eisenfalter",
+    "es": "Ferropolilla",
+    "it": "Falenaferrea",
+    "en": "Iron Moth",
+    "ja": "テツノドクガ",
+    "zh-Hans": "铁毒蛾"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 153,
   "name": "Bayleef",
-  "species": "Leaf Pok\u00e9mon",
+  "species": "Leaf Pokémon",
   "type": [
     "Grass"
   ],
@@ -42,7 +42,7 @@
       "version": "gold"
     },
     {
-      "text": "A spicy aroma ema\u00ad nates from around its neck. The aroma acts as a stimulant to re\u00ad store health.",
+      "text": "A spicy aroma ema­ nates from around its neck. The aroma acts as a stimulant to re­ store health.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "BAYLEEF\u2019s neck is ringed by curled-up leaves. Inside each tubular leaf is a small shoot of a tree. The fragrance of this shoot makes people peppy.",
+      "text": "BAYLEEF’s neck is ringed by curled-up leaves. Inside each tubular leaf is a small shoot of a tree. The fragrance of this shoot makes people peppy.",
       "version": "ruby"
     },
     {
-      "text": "BAYLEEF\u2019s neck is ringed by curled-up leaves. Inside each tubular leaf is a small shoot of a tree. The fragrance of this shoot makes people peppy.",
+      "text": "BAYLEEF’s neck is ringed by curled-up leaves. Inside each tubular leaf is a small shoot of a tree. The fragrance of this shoot makes people peppy.",
       "version": "sapphire"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/153.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/153.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ベイリーフ",
+    "roomaji": "Bayleaf",
+    "ko": "베이리프",
+    "zh-Hant": "月桂葉",
+    "fr": "Macronium",
+    "de": "Lorblatt",
+    "es": "Bayleef",
+    "it": "Bayleef",
+    "en": "Bayleef",
+    "ja": "ベイリーフ",
+    "zh-Hans": "月桂叶"
   }
 }

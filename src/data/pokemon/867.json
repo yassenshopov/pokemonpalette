@@ -1,7 +1,7 @@
 {
   "id": 867,
   "name": "Runerigus",
-  "species": "Grudge Pok\u00e9mon",
+  "species": "Grudge Pokémon",
   "type": [
     "Ground",
     "Ghost"
@@ -41,7 +41,7 @@
       "version": "sword"
     },
     {
-      "text": "Never touch its shadowlike body, or you\u2019ll be shown the horrific memories behind the picture carved into it.",
+      "text": "Never touch its shadowlike body, or you’ll be shown the horrific memories behind the picture carved into it.",
       "version": "shield"
     }
   ],
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/867.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "デスバーン",
+    "roomaji": "Deathbarn",
+    "ko": "데스판",
+    "zh-Hant": "死神板",
+    "fr": "Tutétékri",
+    "de": "Oghnatoll",
+    "es": "Runerigus",
+    "it": "Runerigus",
+    "en": "Runerigus",
+    "ja": "デスバーン",
+    "zh-Hans": "迭失板"
   }
 }

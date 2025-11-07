@@ -1,8 +1,11 @@
 {
   "id": 743,
   "name": "Ribombee",
-  "species": "Bee Fly Pok\u00e9mon",
-  "type": ["Bug", "Fairy"],
+  "species": "Bee Fly Pokémon",
+  "type": [
+    "Bug",
+    "Fairy"
+  ],
   "typeDetails": [
     {
       "name": "Bug",
@@ -50,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "Some of Ribombee\u2019s pollen puffs are highly nutritious. They are sometimes sold as supplements.",
+      "text": "Some of Ribombee’s pollen puffs are highly nutritious. They are sometimes sold as supplements.",
       "version": "moon"
     },
     {
@@ -62,7 +65,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "It makes pollen puffs from pollen and nectar. The puffs\u2019 effects depend on the type of ingredients and how much of each one is used.",
+      "text": "It makes pollen puffs from pollen and nectar. The puffs’ effects depend on the type of ingredients and how much of each one is used.",
       "version": "sword"
     }
   ],
@@ -72,7 +75,11 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#A8B820", "#78C850", "#F8D030"]
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/743.png",
@@ -303,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/743.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アブリボン",
+    "roomaji": "Aburibbon",
+    "ko": "에리본",
+    "zh-Hant": "蝶結萌虻",
+    "fr": "Rubombelle",
+    "de": "Bandelby",
+    "es": "Ribombee",
+    "it": "Ribombee",
+    "en": "Ribombee",
+    "ja": "アブリボン",
+    "zh-Hans": "蝶结萌虻"
   }
 }

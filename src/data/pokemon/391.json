@@ -1,7 +1,7 @@
 {
   "id": 391,
   "name": "Monferno",
-  "species": "Playful Pok\u00e9mon",
+  "species": "Playful Pokémon",
   "type": [
     "Fire",
     "Fighting"
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/391.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/391.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モウカザル",
+    "roomaji": "Mōkazaru",
+    "ko": "파이숭이",
+    "zh-Hant": "猛火猴",
+    "fr": "Chimpenfeu",
+    "de": "Panpyro",
+    "es": "Monferno",
+    "it": "Monferno",
+    "en": "Monferno",
+    "ja": "モウカザル",
+    "zh-Hans": "猛火猴"
   }
 }

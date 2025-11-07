@@ -1,7 +1,7 @@
 {
   "id": 115,
   "name": "Kangaskhan",
-  "species": "Parent Pok\u00e9mon",
+  "species": "Parent Pokémon",
   "type": [
     "Normal"
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/115.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/115.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガルーラ",
+    "roomaji": "Garura",
+    "ko": "캥카",
+    "zh-Hant": "袋獸",
+    "fr": "Kangourex",
+    "de": "Kangama",
+    "es": "Kangaskhan",
+    "it": "Kangaskhan",
+    "en": "Kangaskhan",
+    "ja": "ガルーラ",
+    "zh-Hans": "袋兽"
   }
 }

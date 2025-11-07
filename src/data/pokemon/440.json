@@ -1,7 +1,7 @@
 {
   "id": 440,
   "name": "Happiny",
-  "species": "Playhouse Pok\u00e9mon",
+  "species": "Playhouse Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,15 +52,15 @@
       "version": "pearl"
     },
     {
-      "text": "It likes to carry around a small rock. It may wander around others\u2019 feet and cause them to stumble.",
+      "text": "It likes to carry around a small rock. It may wander around others’ feet and cause them to stumble.",
       "version": "platinum"
     },
     {
-      "text": "It carefully carries a round, white rock that it thinks is an egg. It\u2019s bothered by how curly its hair looks.",
+      "text": "It carefully carries a round, white rock that it thinks is an egg. It’s bothered by how curly its hair looks.",
       "version": "heartgold"
     },
     {
-      "text": "It carefully carries a round, white rock that it thinks is an egg. It\u2019s bothered by how curly its hair looks.",
+      "text": "It carefully carries a round, white rock that it thinks is an egg. It’s bothered by how curly its hair looks.",
       "version": "soulsilver"
     }
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/440.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/440.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピンプク",
+    "roomaji": "Pinpuku",
+    "ko": "핑복",
+    "zh-Hant": "小福蛋",
+    "fr": "Ptiravi",
+    "de": "Wonneira",
+    "es": "Happiny",
+    "it": "Happiny",
+    "en": "Happiny",
+    "ja": "ピンプク",
+    "zh-Hans": "小福蛋"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 499,
   "name": "Pignite",
-  "species": "Fire Pig Pok\u00e9mon",
+  "species": "Fire Pig Pokémon",
   "type": [
     "Fire",
     "Fighting"
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/499.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/499.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チャオブー",
+    "roomaji": "Chaoboo",
+    "ko": "차오꿀",
+    "zh-Hant": "炒炒豬",
+    "fr": "Grotichon",
+    "de": "Ferkokel",
+    "es": "Pignite",
+    "it": "Pignite",
+    "en": "Pignite",
+    "ja": "チャオブー",
+    "zh-Hans": "炒炒猪"
   }
 }

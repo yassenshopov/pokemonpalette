@@ -1,7 +1,7 @@
 {
   "id": 248,
   "name": "Tyranitar",
-  "species": "Armor Pok\u00e9mon",
+  "species": "Armor Pokémon",
   "type": [
     "Rock",
     "Dark"
@@ -51,15 +51,15 @@
       "version": "silver"
     },
     {
-      "text": "In just one of its mighty hands, it has the power to make the ground shake and moun\u00ad tains crumble.",
+      "text": "In just one of its mighty hands, it has the power to make the ground shake and moun­ tains crumble.",
       "version": "crystal"
     },
     {
-      "text": "TYRANITAR is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This POK\u00e9MON wanders about in mountains seeking new opponents to fight.",
+      "text": "TYRANITAR is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This POKéMON wanders about in mountains seeking new opponents to fight.",
       "version": "ruby"
     },
     {
-      "text": "TYRANITAR is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This POK\u00e9MON wanders about in mountains seeking new opponents to fight.",
+      "text": "TYRANITAR is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This POKéMON wanders about in mountains seeking new opponents to fight.",
       "version": "sapphire"
     }
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/248.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/248.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バンギラス",
+    "roomaji": "Bangiras",
+    "ko": "마기라스",
+    "zh-Hant": "班基拉斯",
+    "fr": "Tyranocif",
+    "de": "Despotar",
+    "es": "Tyranitar",
+    "it": "Tyranitar",
+    "en": "Tyranitar",
+    "ja": "バンギラス",
+    "zh-Hans": "班基拉斯"
   }
 }

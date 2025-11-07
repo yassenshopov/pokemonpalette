@@ -1,7 +1,7 @@
 {
   "id": 630,
   "name": "Mandibuzz",
-  "species": "Bone Vulture Pok\u00e9mon",
+  "species": "Bone Vulture Pokémon",
   "type": [
     "Dark",
     "Flying"
@@ -53,7 +53,7 @@
       "version": "black"
     },
     {
-      "text": "Watching from the sky, they swoop to strike weakened Pok\u00e9mon on the ground. They decorate themselves with bones.",
+      "text": "Watching from the sky, they swoop to strike weakened Pokémon on the ground. They decorate themselves with bones.",
       "version": "white"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/630.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/630.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バルジーナ",
+    "roomaji": "Vulgina",
+    "ko": "버랜지나",
+    "zh-Hant": "禿鷹娜",
+    "fr": "Vaututrice",
+    "de": "Grypheldis",
+    "es": "Mandibuzz",
+    "it": "Mandibuzz",
+    "en": "Mandibuzz",
+    "ja": "バルジーナ",
+    "zh-Hans": "秃鹰娜"
   }
 }

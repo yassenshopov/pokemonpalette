@@ -1,7 +1,7 @@
 {
   "id": 104,
   "name": "Cubone",
-  "species": "Lonely Pok\u00e9mon",
+  "species": "Lonely Pokémon",
   "type": [
     "Ground"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 50,
     "speed": 35
   },
-  "description": "Because it never removes its skull helmet, no one has ever seen this POK\u00e9MON's real face.",
+  "description": "Because it never removes its skull helmet, no one has ever seen this POKéMON's real face.",
   "flavorTexts": [
     {
-      "text": "Because it never removes its skull helmet, no one has ever seen this POK\u00e9MON's real face.",
+      "text": "Because it never removes its skull helmet, no one has ever seen this POKéMON's real face.",
       "version": "red"
     },
     {
-      "text": "Because it never removes its skull helmet, no one has ever seen this POK\u00e9MON's real face.",
+      "text": "Because it never removes its skull helmet, no one has ever seen this POKéMON's real face.",
       "version": "blue"
     },
     {
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "If it is sad or lonely, the skull it wears shakes, and emits a plain\u00ad tive and mournful sound.",
+      "text": "If it is sad or lonely, the skull it wears shakes, and emits a plain­ tive and mournful sound.",
       "version": "gold"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/104.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/104.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カラカラ",
+    "roomaji": "Karakara",
+    "ko": "탕구리",
+    "zh-Hant": "卡拉卡拉",
+    "fr": "Osselait",
+    "de": "Tragosso",
+    "es": "Cubone",
+    "it": "Cubone",
+    "en": "Cubone",
+    "ja": "カラカラ",
+    "zh-Hans": "卡拉卡拉"
   }
 }

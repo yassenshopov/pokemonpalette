@@ -1,7 +1,7 @@
 {
   "id": 858,
   "name": "Hatterene",
-  "species": "Silent Pok\u00e9mon",
+  "species": "Silent Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -53,7 +53,7 @@
       "version": "sword"
     },
     {
-      "text": "If you\u2019re too loud around it, you risk being torn apart by the claws on its tentacle. This Pok\u00e9mon is also known as the Forest Witch.",
+      "text": "If you’re too loud around it, you risk being torn apart by the claws on its tentacle. This Pokémon is also known as the Forest Witch.",
       "version": "shield"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/858.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブリムオン",
+    "roomaji": "Brimuon",
+    "ko": "브리무음",
+    "zh-Hant": "布莉姆溫",
+    "fr": "Sorcilence",
+    "de": "Silembrim",
+    "es": "Hatterene",
+    "it": "Hatterene",
+    "en": "Hatterene",
+    "ja": "ブリムオン",
+    "zh-Hans": "布莉姆温"
   }
 }

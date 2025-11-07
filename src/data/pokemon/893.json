@@ -1,7 +1,7 @@
 {
   "id": 893,
   "name": "Zarude",
-  "species": "Rogue Monkey Pok\u00e9mon",
+  "species": "Rogue Monkey Pokémon",
   "type": [
     "Dark",
     "Grass"
@@ -34,14 +34,14 @@
     "specialDefense": 95,
     "speed": 105
   },
-  "description": "Within dense forests, this Pok\u00e9mon lives in a pack with others of its kind. It\u2019s incredibly aggressive, and the other Pok\u00e9mon of the forest fear it.",
+  "description": "Within dense forests, this Pokémon lives in a pack with others of its kind. It’s incredibly aggressive, and the other Pokémon of the forest fear it.",
   "flavorTexts": [
     {
-      "text": "Within dense forests, this Pok\u00e9mon lives in a pack with others of its kind. It\u2019s incredibly aggressive, and the other Pok\u00e9mon of the forest fear it.",
+      "text": "Within dense forests, this Pokémon lives in a pack with others of its kind. It’s incredibly aggressive, and the other Pokémon of the forest fear it.",
       "version": "sword"
     },
     {
-      "text": "Once the vines on Zarude\u2019s body tear off, they become nutrients in the soil. This helps the plants of the forest grow.",
+      "text": "Once the vines on Zarude’s body tear off, they become nutrients in the soil. This helps the plants of the forest grow.",
       "version": "shield"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/893.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ザルード",
+    "roomaji": "Zarude",
+    "ko": "자루도",
+    "zh-Hant": "薩戮德",
+    "fr": "Zarude",
+    "de": "Zarude",
+    "es": "Zarude",
+    "it": "Zarude",
+    "en": "Zarude",
+    "ja": "ザルード",
+    "zh-Hans": "萨戮德"
   }
 }

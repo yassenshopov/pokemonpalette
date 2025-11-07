@@ -1,7 +1,7 @@
 {
   "id": 296,
   "name": "Makuhita",
-  "species": "Guts Pok\u00e9mon",
+  "species": "Guts Pokémon",
   "type": [
     "Fighting"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 30,
     "speed": 25
   },
-  "description": "MAKUHITA is tenacious - it will keep getting up and attacking its foe however many times it is knocked down. Every time it gets back up, this POK\u00e9MON stores more energy in its body for evolving.",
+  "description": "MAKUHITA is tenacious - it will keep getting up and attacking its foe however many times it is knocked down. Every time it gets back up, this POKéMON stores more energy in its body for evolving.",
   "flavorTexts": [
     {
-      "text": "MAKUHITA is tenacious - it will keep getting up and attacking its foe however many times it is knocked down. Every time it gets back up, this POK\u00e9MON stores more energy in its body for evolving.",
+      "text": "MAKUHITA is tenacious - it will keep getting up and attacking its foe however many times it is knocked down. Every time it gets back up, this POKéMON stores more energy in its body for evolving.",
       "version": "ruby"
     },
     {
-      "text": "MAKUHITA has a tireless spirit - it will never give up hope. It eats a lot of food, gets plenty of sleep, and it trains very rigorously. By living that way, this POK\u00e9MON packs its body with energy.",
+      "text": "MAKUHITA has a tireless spirit - it will never give up hope. It eats a lot of food, gets plenty of sleep, and it trains very rigorously. By living that way, this POKéMON packs its body with energy.",
       "version": "sapphire"
     },
     {
@@ -56,11 +56,11 @@
       "version": "emerald"
     },
     {
-      "text": "It grows stronger by enduring harsh training. It is a gutsy POK\u00e9MON that can withstand any attack.",
+      "text": "It grows stronger by enduring harsh training. It is a gutsy POKéMON that can withstand any attack.",
       "version": "firered"
     },
     {
-      "text": "It grows stronger by enduring harsh training. It is a gutsy POK\u00e9MON that can withstand any attack.",
+      "text": "It grows stronger by enduring harsh training. It is a gutsy POKéMON that can withstand any attack.",
       "version": "leafgreen"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/296.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/296.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マクノシタ",
+    "roomaji": "Makunoshita",
+    "ko": "마크탕",
+    "zh-Hant": "幕下力士",
+    "fr": "Makuhita",
+    "de": "Makuhita",
+    "es": "Makuhita",
+    "it": "Makuhita",
+    "en": "Makuhita",
+    "ja": "マクノシタ",
+    "zh-Hans": "幕下力士"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 226,
   "name": "Mantine",
-  "species": "Kite Pok\u00e9mon",
+  "species": "Kite Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "On sunny days, schools of MANTINE can be seen elegantly leaping over the sea\u2019s waves. This POK\u00e9MON is not bothered by the REMORAID that hitches rides.",
+      "text": "On sunny days, schools of MANTINE can be seen elegantly leaping over the sea’s waves. This POKéMON is not bothered by the REMORAID that hitches rides.",
       "version": "ruby"
     },
     {
-      "text": "On sunny days, schools of MANTINE can be seen elegantly leaping over the sea\u2019s waves. This POK\u00e9MON is not bothered by the REMORAID that hitches rides.",
+      "text": "On sunny days, schools of MANTINE can be seen elegantly leaping over the sea’s waves. This POKéMON is not bothered by the REMORAID that hitches rides.",
       "version": "sapphire"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/226.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/226.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マンタイン",
+    "roomaji": "Mantain",
+    "ko": "만타인",
+    "zh-Hant": "巨翅飛魚",
+    "fr": "Démanta",
+    "de": "Mantax",
+    "es": "Mantine",
+    "it": "Mantine",
+    "en": "Mantine",
+    "ja": "マンタイン",
+    "zh-Hans": "巨翅飞鱼"
   }
 }

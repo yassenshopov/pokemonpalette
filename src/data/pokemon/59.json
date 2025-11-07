@@ -1,7 +1,7 @@
 {
   "id": 59,
   "name": "Arcanine",
-  "species": "Legendary Pok\u00e9mon",
+  "species": "Legendary Pokémon",
   "type": [
     "Fire"
   ],
@@ -41,22 +41,22 @@
     "specialDefense": 80,
     "speed": 95
   },
-  "description": "A POK\u00e9MON that has been admired since the past for its beauty. It runs agilely as if on wings.",
+  "description": "A POKéMON that has been admired since the past for its beauty. It runs agilely as if on wings.",
   "flavorTexts": [
     {
-      "text": "A POK\u00e9MON that has been admired since the past for its beauty. It runs agilely as if on wings.",
+      "text": "A POKéMON that has been admired since the past for its beauty. It runs agilely as if on wings.",
       "version": "red"
     },
     {
-      "text": "A POK\u00e9MON that has been admired since the past for its beauty. It runs agilely as if on wings.",
+      "text": "A POKéMON that has been admired since the past for its beauty. It runs agilely as if on wings.",
       "version": "blue"
     },
     {
-      "text": "A legendary POK\u00e9\u00ad MON in China. Many people are charmed by its grace and beauty while running.",
+      "text": "A legendary POKé­ MON in China. Many people are charmed by its grace and beauty while running.",
       "version": "yellow"
     },
     {
-      "text": "This legendary Chinese POKEMON is considered magnif\u00ad icent. Many people are enchanted by its grand mane.",
+      "text": "This legendary Chinese POKEMON is considered magnif­ icent. Many people are enchanted by its grand mane.",
       "version": "gold"
     },
     {
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/59.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/59.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウインディ",
+    "roomaji": "Windie",
+    "ko": "윈디",
+    "zh-Hant": "風速狗",
+    "fr": "Arcanin",
+    "de": "Arkani",
+    "es": "Arcanine",
+    "it": "Arcanine",
+    "en": "Arcanine",
+    "ja": "ウインディ",
+    "zh-Hans": "风速狗"
   }
 }

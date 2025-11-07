@@ -1,7 +1,7 @@
 {
   "id": 664,
   "name": "Scatterbug",
-  "species": "Scatterdust Pok\u00e9mon",
+  "species": "Scatterdust Pokémon",
   "type": [
     "Bug"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 25,
     "speed": 35
   },
-  "description": "When under attack from bird Pok\u00e9mon, it spews a poisonous black powder that causes paralysis on contact.",
+  "description": "When under attack from bird Pokémon, it spews a poisonous black powder that causes paralysis on contact.",
   "flavorTexts": [
     {
-      "text": "When under attack from bird Pok\u00e9mon, it spews a poisonous black powder that causes paralysis on contact.",
+      "text": "When under attack from bird Pokémon, it spews a poisonous black powder that causes paralysis on contact.",
       "version": "x"
     },
     {
@@ -52,7 +52,7 @@
       "version": "y"
     },
     {
-      "text": "When under attack from bird Pok\u00e9mon, it spews a poisonous black powder that causes paralysis on contact.",
+      "text": "When under attack from bird Pokémon, it spews a poisonous black powder that causes paralysis on contact.",
       "version": "omega-ruby"
     },
     {
@@ -569,5 +569,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/664.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コフキムシ",
+    "roomaji": "Kofukimushi",
+    "ko": "분이벌레",
+    "zh-Hant": "粉蝶蟲",
+    "fr": "Lépidonille",
+    "de": "Purmel",
+    "es": "Scatterbug",
+    "it": "Scatterbug",
+    "en": "Scatterbug",
+    "ja": "コフキムシ",
+    "zh-Hans": "粉蝶虫"
   }
 }

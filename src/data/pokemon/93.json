@@ -1,7 +1,7 @@
 {
   "id": 93,
   "name": "Haunter",
-  "species": "Gas Pok\u00e9mon",
+  "species": "Gas Pokémon",
   "type": [
     "Ghost",
     "Poison"
@@ -34,14 +34,14 @@
     "specialDefense": 55,
     "speed": 95
   },
-  "description": "Because of its ability to slip through block walls, it is said to be from an\u00ad other dimension.",
+  "description": "Because of its ability to slip through block walls, it is said to be from an­ other dimension.",
   "flavorTexts": [
     {
-      "text": "Because of its ability to slip through block walls, it is said to be from an\u00ad other dimension.",
+      "text": "Because of its ability to slip through block walls, it is said to be from an­ other dimension.",
       "version": "red"
     },
     {
-      "text": "Because of its ability to slip through block walls, it is said to be from an\u00ad other dimension.",
+      "text": "Because of its ability to slip through block walls, it is said to be from an­ other dimension.",
       "version": "blue"
     },
     {
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "Its tongue is made of gas. If licked, its victim starts shaking constantly until death even\u00ad tually comes.",
+      "text": "Its tongue is made of gas. If licked, its victim starts shaking constantly until death even­ tually comes.",
       "version": "silver"
     }
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/93.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/93.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴースト",
+    "roomaji": "Ghost",
+    "ko": "고우스트",
+    "zh-Hant": "鬼斯通",
+    "fr": "Spectrum",
+    "de": "Alpollo",
+    "es": "Haunter",
+    "it": "Haunter",
+    "en": "Haunter",
+    "ja": "ゴースト",
+    "zh-Hans": "鬼斯通"
   }
 }

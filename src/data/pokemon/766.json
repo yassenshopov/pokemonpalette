@@ -1,7 +1,7 @@
 {
   "id": 766,
   "name": "Passimian",
-  "species": "Teamwork Pok\u00e9mon",
+  "species": "Teamwork Pokémon",
   "type": [
     "Fighting"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 60,
     "speed": 80
   },
-  "description": "They form groups of roughly 20 individuals. Their mutual bond is remarkable\u2014they will never let down a comrade.",
+  "description": "They form groups of roughly 20 individuals. Their mutual bond is remarkable—they will never let down a comrade.",
   "flavorTexts": [
     {
-      "text": "They form groups of roughly 20 individuals. Their mutual bond is remarkable\u2014they will never let down a comrade.",
+      "text": "They form groups of roughly 20 individuals. Their mutual bond is remarkable—they will never let down a comrade.",
       "version": "sun"
     },
     {
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/766.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ナゲツケサル",
+    "roomaji": "Nagetukesaru",
+    "ko": "내던숭이",
+    "zh-Hant": "投擲猴",
+    "fr": "Quartermac",
+    "de": "Quartermak",
+    "es": "Passimian",
+    "it": "Passimian",
+    "en": "Passimian",
+    "ja": "ナゲツケサル",
+    "zh-Hans": "投掷猴"
   }
 }

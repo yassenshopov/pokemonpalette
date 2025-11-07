@@ -1,7 +1,7 @@
 {
   "id": 1024,
   "name": "Terapagos",
-  "species": "Tera Pok\u00e9mon",
+  "species": "Tera Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 85,
     "speed": 60
   },
-  "description": "Terapagos protects itself using its power to transform energy into hard crystals. This Pok\u00e9mon is the source of the Terastal phenomenon.",
+  "description": "Terapagos protects itself using its power to transform energy into hard crystals. This Pokémon is the source of the Terastal phenomenon.",
   "flavorTexts": [
     {
-      "text": "Terapagos protects itself using its power to transform energy into hard crystals. This Pok\u00e9mon is the source of the Terastal phenomenon.",
+      "text": "Terapagos protects itself using its power to transform energy into hard crystals. This Pokémon is the source of the Terastal phenomenon.",
       "version": "scarlet"
     },
     {
-      "text": "It\u2019s thought that this Pok\u00e9mon lived in ancient Paldea until it got caught in seismic shifts and went extinct.",
+      "text": "It’s thought that this Pokémon lived in ancient Paldea until it got caught in seismic shifts and went extinct.",
       "version": "violet"
     }
   ],
@@ -280,5 +280,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1024.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テラパゴス",
+    "ko": "테라파고스",
+    "zh-Hant": "太樂巴戈斯",
+    "fr": "Terapagos",
+    "de": "Terapagos",
+    "es": "Terapagos",
+    "it": "Terapagos",
+    "en": "Terapagos",
+    "ja": "テラパゴス",
+    "zh-Hans": "太乐巴戈斯"
   }
 }

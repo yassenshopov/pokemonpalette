@@ -1,7 +1,7 @@
 {
   "id": 823,
   "name": "Corviknight",
-  "species": "Raven Pok\u00e9mon",
+  "species": "Raven Pokémon",
   "type": [
     "Flying",
     "Steel"
@@ -46,14 +46,14 @@
     "specialDefense": 85,
     "speed": 67
   },
-  "description": "This Pok\u00e9mon reigns supreme in the skies of the Galar region. The black luster of its steel body could drive terror into the heart of any foe.",
+  "description": "This Pokémon reigns supreme in the skies of the Galar region. The black luster of its steel body could drive terror into the heart of any foe.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon reigns supreme in the skies of the Galar region. The black luster of its steel body could drive terror into the heart of any foe.",
+      "text": "This Pokémon reigns supreme in the skies of the Galar region. The black luster of its steel body could drive terror into the heart of any foe.",
       "version": "sword"
     },
     {
-      "text": "With their great intellect and flying skills, these Pok\u00e9mon very successfully act as the Galar region\u2019s airborne taxi service.",
+      "text": "With their great intellect and flying skills, these Pokémon very successfully act as the Galar region’s airborne taxi service.",
       "version": "shield"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/823.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アーマーガア",
+    "roomaji": "Armorga",
+    "ko": "아머까오",
+    "zh-Hant": "鋼鎧鴉",
+    "fr": "Corvaillus",
+    "de": "Krarmor",
+    "es": "Corviknight",
+    "it": "Corviknight",
+    "en": "Corviknight",
+    "ja": "アーマーガア",
+    "zh-Hans": "钢铠鸦"
   }
 }

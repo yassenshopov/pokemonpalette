@@ -1,7 +1,7 @@
 {
   "id": 493,
   "name": "Arceus",
-  "species": "Alpha Pok\u00e9mon",
+  "species": "Alpha Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 120,
     "speed": 120
   },
-  "description": "It is described in mythology as the Pok\u00e9mon that shaped the universe with its 1,000 arms.",
+  "description": "It is described in mythology as the Pokémon that shaped the universe with its 1,000 arms.",
   "flavorTexts": [
     {
-      "text": "It is described in mythology as the Pok\u00e9mon that shaped the universe with its 1,000 arms.",
+      "text": "It is described in mythology as the Pokémon that shaped the universe with its 1,000 arms.",
       "version": "diamond"
     },
     {
-      "text": "It is told in mythology that this Pok\u00e9mon was born before the universe even existed.",
+      "text": "It is told in mythology that this Pokémon was born before the universe even existed.",
       "version": "pearl"
     },
     {
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "According to the legends of Sinnoh, this Pok\u00e9mon emerged from an egg and shaped all there is in this world.",
+      "text": "According to the legends of Sinnoh, this Pokémon emerged from an egg and shaped all there is in this world.",
       "version": "heartgold"
     },
     {
-      "text": "According to the legends of Sinnoh, this Pok\u00e9mon emerged from an egg and shaped all there is in this world.",
+      "text": "According to the legends of Sinnoh, this Pokémon emerged from an egg and shaped all there is in this world.",
       "version": "soulsilver"
     }
   ],
@@ -584,5 +584,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/493.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/493.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アルセウス",
+    "roomaji": "Arceus",
+    "ko": "아르세우스",
+    "zh-Hant": "阿爾宙斯",
+    "fr": "Arceus",
+    "de": "Arceus",
+    "es": "Arceus",
+    "it": "Arceus",
+    "en": "Arceus",
+    "ja": "アルセウス",
+    "zh-Hans": "阿尔宙斯"
   }
 }

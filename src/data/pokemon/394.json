@@ -1,7 +1,7 @@
 {
   "id": 394,
   "name": "Prinplup",
-  "species": "Penguin Pok\u00e9mon",
+  "species": "Penguin Pokémon",
   "type": [
     "Water"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/394.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/394.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポッタイシ",
+    "roomaji": "Pottaishi",
+    "ko": "팽태자",
+    "zh-Hant": "波皇子",
+    "fr": "Prinplouf",
+    "de": "Pliprin",
+    "es": "Prinplup",
+    "it": "Prinplup",
+    "en": "Prinplup",
+    "ja": "ポッタイシ",
+    "zh-Hans": "波皇子"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 199,
   "name": "Slowking",
-  "species": "Royal Pok\u00e9mon",
+  "species": "Royal Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -46,10 +46,10 @@
     "specialDefense": 110,
     "speed": 30
   },
-  "description": "It has incredible intellect and in\u00ad tuition. Whatever the situation, it remains calm and collected.",
+  "description": "It has incredible intellect and in­ tuition. Whatever the situation, it remains calm and collected.",
   "flavorTexts": [
     {
-      "text": "It has incredible intellect and in\u00ad tuition. Whatever the situation, it remains calm and collected.",
+      "text": "It has incredible intellect and in­ tuition. Whatever the situation, it remains calm and collected.",
       "version": "gold"
     },
     {
@@ -57,15 +57,15 @@
       "version": "silver"
     },
     {
-      "text": "Every time it ya\u00ad wns, SHELLDER injects more poi\u00ad son into it. The poison makes it more intelligent.",
+      "text": "Every time it ya­ wns, SHELLDER injects more poi­ son into it. The poison makes it more intelligent.",
       "version": "crystal"
     },
     {
-      "text": "SLOWKING undertakes research every day in an effort to solve the mysteries of the world. However, this POK\u00e9MON apparently forgets everything it has learned if the SHELLDER on its head comes off.",
+      "text": "SLOWKING undertakes research every day in an effort to solve the mysteries of the world. However, this POKéMON apparently forgets everything it has learned if the SHELLDER on its head comes off.",
       "version": "ruby"
     },
     {
-      "text": "SLOWKING undertakes research every day in an effort to solve the mysteries of the world. However, this POK\u00e9MON apparently forgets everything it has learned if the SHELLDER on its head comes off.",
+      "text": "SLOWKING undertakes research every day in an effort to solve the mysteries of the world. However, this POKéMON apparently forgets everything it has learned if the SHELLDER on its head comes off.",
       "version": "sapphire"
     }
   ],
@@ -335,5 +335,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/199.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/199.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤドキング",
+    "roomaji": "Yadoking",
+    "ko": "야도킹",
+    "zh-Hant": "呆呆王",
+    "fr": "Roigada",
+    "de": "Laschoking",
+    "es": "Slowking",
+    "it": "Slowking",
+    "en": "Slowking",
+    "ja": "ヤドキング",
+    "zh-Hans": "呆呆王"
   }
 }

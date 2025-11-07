@@ -1,7 +1,7 @@
 {
   "id": 605,
   "name": "Elgyem",
-  "species": "Cerebral Pok\u00e9mon",
+  "species": "Cerebral Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 55,
     "speed": 30
   },
-  "description": "It uses its strong psychic power to squeeze its opponent\u2019s brain, causing unendurable headaches.",
+  "description": "It uses its strong psychic power to squeeze its opponent’s brain, causing unendurable headaches.",
   "flavorTexts": [
     {
-      "text": "It uses its strong psychic power to squeeze its opponent\u2019s brain, causing unendurable headaches.",
+      "text": "It uses its strong psychic power to squeeze its opponent’s brain, causing unendurable headaches.",
       "version": "black"
     },
     {
-      "text": "This Pok\u00e9mon had never been seen until it appeared from far in the desert 50 years ago.",
+      "text": "This Pokémon had never been seen until it appeared from far in the desert 50 years ago.",
       "version": "white"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "It uses its strong psychic power to squeeze its opponent\u2019s brain, causing unendurable headaches.",
+      "text": "It uses its strong psychic power to squeeze its opponent’s brain, causing unendurable headaches.",
       "version": "x"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/605.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/605.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リグレー",
+    "roomaji": "Ligray",
+    "ko": "리그레",
+    "zh-Hant": "小灰怪",
+    "fr": "Lewsor",
+    "de": "Pygraulon",
+    "es": "Elgyem",
+    "it": "Elgyem",
+    "en": "Elgyem",
+    "ja": "リグレー",
+    "zh-Hans": "小灰怪"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 678,
   "name": "Meowstic-male",
-  "species": "Constraint Pok\u00e9mon",
+  "species": "Constraint Pokémon",
   "type": [
     "Psychic"
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/678.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャオニクス",
+    "roomaji": "Nyaonix",
+    "ko": "냐오닉스",
+    "zh-Hant": "超能妙喵",
+    "fr": "Mistigrix",
+    "de": "Psiaugon",
+    "es": "Meowstic",
+    "it": "Meowstic",
+    "en": "Meowstic",
+    "ja": "ニャオニクス",
+    "zh-Hans": "超能妙喵"
   }
 }

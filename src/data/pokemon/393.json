@@ -1,7 +1,7 @@
 {
   "id": 393,
   "name": "Piplup",
-  "species": "Penguin Pok\u00e9mon",
+  "species": "Penguin Pokémon",
   "type": [
     "Water"
   ],
@@ -50,11 +50,11 @@
       "version": "platinum"
     },
     {
-      "text": "It doesn\u2019t like to be taken care of. It\u2019s difficult to bond with since it won\u2019t listen to its Trainer.",
+      "text": "It doesn’t like to be taken care of. It’s difficult to bond with since it won’t listen to its Trainer.",
       "version": "heartgold"
     },
     {
-      "text": "It doesn\u2019t like to be taken care of. It\u2019s difficult to bond with since it won\u2019t listen to its Trainer.",
+      "text": "It doesn’t like to be taken care of. It’s difficult to bond with since it won’t listen to its Trainer.",
       "version": "soulsilver"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/393.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/393.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポッチャマ",
+    "roomaji": "Pochama",
+    "ko": "팽도리",
+    "zh-Hant": "波加曼",
+    "fr": "Tiplouf",
+    "de": "Plinfa",
+    "es": "Piplup",
+    "it": "Piplup",
+    "en": "Piplup",
+    "ja": "ポッチャマ",
+    "zh-Hans": "波加曼"
   }
 }

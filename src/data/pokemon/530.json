@@ -1,7 +1,7 @@
 {
   "id": 530,
   "name": "Excadrill",
-  "species": "Subterrene Pok\u00e9mon",
+  "species": "Subterrene Pokémon",
   "type": [
     "Ground",
     "Steel"
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/530.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/530.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドリュウズ",
+    "roomaji": "Doryuzu",
+    "ko": "몰드류",
+    "zh-Hant": "龍頭地鼠",
+    "fr": "Minotaupe",
+    "de": "Stalobor",
+    "es": "Excadrill",
+    "it": "Excadrill",
+    "en": "Excadrill",
+    "ja": "ドリュウズ",
+    "zh-Hans": "龙头地鼠"
   }
 }

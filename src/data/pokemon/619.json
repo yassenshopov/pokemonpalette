@@ -1,7 +1,7 @@
 {
   "id": 619,
   "name": "Mienfoo",
-  "species": "Martial Arts Pok\u00e9mon",
+  "species": "Martial Arts Pokémon",
   "type": [
     "Fighting"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/619.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/619.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コジョフー",
+    "roomaji": "Kojofu",
+    "ko": "비조푸",
+    "zh-Hant": "功夫鼬",
+    "fr": "Kungfouine",
+    "de": "Lin-Fu",
+    "es": "Mienfoo",
+    "it": "Mienfoo",
+    "en": "Mienfoo",
+    "ja": "コジョフー",
+    "zh-Hans": "功夫鼬"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 612,
   "name": "Haxorus",
-  "species": "Axe Jaw Pok\u00e9mon",
+  "species": "Axe Jaw Pokémon",
   "type": [
     "Dragon"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "Their sturdy tusks will stay sharp even if used to cut steel beams. These Pok\u00e9mon are covered in hard armor.",
+      "text": "Their sturdy tusks will stay sharp even if used to cut steel beams. These Pokémon are covered in hard armor.",
       "version": "white"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/612.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/612.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オノノクス",
+    "roomaji": "Ononokus",
+    "ko": "액스라이즈",
+    "zh-Hant": "雙斧戰龍",
+    "fr": "Tranchodon",
+    "de": "Maxax",
+    "es": "Haxorus",
+    "it": "Haxorus",
+    "en": "Haxorus",
+    "ja": "オノノクス",
+    "zh-Hans": "双斧战龙"
   }
 }

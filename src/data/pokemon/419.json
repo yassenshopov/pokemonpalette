@@ -1,7 +1,7 @@
 {
   "id": 419,
   "name": "Floatzel",
-  "species": "Sea Weasel Pok\u00e9mon",
+  "species": "Sea Weasel Pokémon",
   "type": [
     "Water"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/419.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/419.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フローゼル",
+    "roomaji": "Flowsel",
+    "ko": "플로젤",
+    "zh-Hant": "浮潛鼬",
+    "fr": "Mustéflott",
+    "de": "Bojelin",
+    "es": "Floatzel",
+    "it": "Floatzel",
+    "en": "Floatzel",
+    "ja": "フローゼル",
+    "zh-Hans": "浮潜鼬"
   }
 }

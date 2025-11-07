@@ -1,7 +1,7 @@
 {
   "id": 392,
   "name": "Infernape",
-  "species": "Flame Pok\u00e9mon",
+  "species": "Flame Pokémon",
   "type": [
     "Fire",
     "Fighting"
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/392.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/392.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴウカザル",
+    "roomaji": "Gōkazaru",
+    "ko": "초염몽",
+    "zh-Hant": "烈焰猴",
+    "fr": "Simiabraz",
+    "de": "Panferno",
+    "es": "Infernape",
+    "it": "Infernape",
+    "en": "Infernape",
+    "ja": "ゴウカザル",
+    "zh-Hans": "烈焰猴"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 861,
   "name": "Grimmsnarl",
-  "species": "Bulk Up Pok\u00e9mon",
+  "species": "Bulk Up Pokémon",
   "type": [
     "Dark",
     "Fairy"
@@ -46,10 +46,10 @@
     "specialDefense": 75,
     "speed": 60
   },
-  "description": "With the hair wrapped around its body helping to enhance its muscles, this Pok\u00e9mon can overwhelm even Machamp.",
+  "description": "With the hair wrapped around its body helping to enhance its muscles, this Pokémon can overwhelm even Machamp.",
   "flavorTexts": [
     {
-      "text": "With the hair wrapped around its body helping to enhance its muscles, this Pok\u00e9mon can overwhelm even Machamp.",
+      "text": "With the hair wrapped around its body helping to enhance its muscles, this Pokémon can overwhelm even Machamp.",
       "version": "sword"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/861.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オーロンゲ",
+    "roomaji": "Ohlonge",
+    "ko": "오롱털",
+    "zh-Hant": "長毛巨魔",
+    "fr": "Angoliath",
+    "de": "Olangaar",
+    "es": "Grimmsnarl",
+    "it": "Grimmsnarl",
+    "en": "Grimmsnarl",
+    "ja": "オーロンゲ",
+    "zh-Hans": "长毛巨魔"
   }
 }

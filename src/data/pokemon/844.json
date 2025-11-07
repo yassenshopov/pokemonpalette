@@ -1,7 +1,7 @@
 {
   "id": 844,
   "name": "Sandaconda",
-  "species": "Sand Snake Pok\u00e9mon",
+  "species": "Sand Snake Pokémon",
   "type": [
     "Ground"
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/844.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サダイジャ",
+    "roomaji": "Sadaija",
+    "ko": "사다이사",
+    "zh-Hant": "沙螺蟒",
+    "fr": "Dunaconda",
+    "de": "Sanaconda",
+    "es": "Sandaconda",
+    "it": "Sandaconda",
+    "en": "Sandaconda",
+    "ja": "サダイジャ",
+    "zh-Hans": "沙螺蟒"
   }
 }

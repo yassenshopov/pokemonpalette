@@ -1,7 +1,7 @@
 {
   "id": 670,
   "name": "Floette",
-  "species": "Single Bloom Pok\u00e9mon",
+  "species": "Single Bloom Pokémon",
   "type": [
     "Fairy"
   ],
@@ -386,5 +386,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/670.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フラエッテ",
+    "roomaji": "Floette",
+    "ko": "플라엣테",
+    "zh-Hant": "花葉蒂",
+    "fr": "Floette",
+    "de": "Floette",
+    "es": "Floette",
+    "it": "Floette",
+    "en": "Floette",
+    "ja": "フラエッテ",
+    "zh-Hans": "花叶蒂"
   }
 }

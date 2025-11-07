@@ -1,7 +1,7 @@
 {
   "id": 456,
   "name": "Finneon",
-  "species": "Wing Fish Pok\u00e9mon",
+  "species": "Wing Fish Pokémon",
   "type": [
     "Water"
   ],
@@ -48,7 +48,7 @@
       "version": "diamond"
     },
     {
-      "text": "The way its two tail fins flutter while it swims has earned it the nickname \u201cBEAUTIFLY of the Sea.\u201d",
+      "text": "The way its two tail fins flutter while it swims has earned it the nickname “BEAUTIFLY of the Sea.”",
       "version": "pearl"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/456.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/456.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ケイコウオ",
+    "roomaji": "Keikouo",
+    "ko": "형광어",
+    "zh-Hant": "螢光魚",
+    "fr": "Écayon",
+    "de": "Finneon",
+    "es": "Finneon",
+    "it": "Finneon",
+    "en": "Finneon",
+    "ja": "ケイコウオ",
+    "zh-Hans": "荧光鱼"
   }
 }

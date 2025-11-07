@@ -1,7 +1,7 @@
 {
   "id": 432,
   "name": "Purugly",
-  "species": "Tiger Cat Pok\u00e9mon",
+  "species": "Tiger Cat Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 59,
     "speed": 112
   },
-  "description": "It is a brazen brute that barges its way into another Pok\u00e9mon\u2019s nest and claims it as its own.",
+  "description": "It is a brazen brute that barges its way into another Pokémon’s nest and claims it as its own.",
   "flavorTexts": [
     {
-      "text": "It is a brazen brute that barges its way into another Pok\u00e9mon\u2019s nest and claims it as its own.",
+      "text": "It is a brazen brute that barges its way into another Pokémon’s nest and claims it as its own.",
       "version": "diamond"
     },
     {
@@ -56,11 +56,11 @@
       "version": "platinum"
     },
     {
-      "text": "It would claim another Pok\u00e9mon\u2019s nest as its own if it finds a nest sufficiently comfortable.",
+      "text": "It would claim another Pokémon’s nest as its own if it finds a nest sufficiently comfortable.",
       "version": "heartgold"
     },
     {
-      "text": "It would claim another Pok\u00e9mon\u2019s nest as its own if it finds a nest sufficiently comfortable.",
+      "text": "It would claim another Pokémon’s nest as its own if it finds a nest sufficiently comfortable.",
       "version": "soulsilver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/432.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/432.ogg"
+  },
+  "names": {
+    "es": "Purugly",
+    "ja-Hrkt": "ブニャット",
+    "roomaji": "Bunyat",
+    "ko": "몬냥이",
+    "zh-Hant": "東施喵",
+    "fr": "Chaffreux",
+    "de": "Shnurgarst",
+    "it": "Purugly",
+    "en": "Purugly",
+    "ja": "ブニャット",
+    "zh-Hans": "东施喵"
   }
 }

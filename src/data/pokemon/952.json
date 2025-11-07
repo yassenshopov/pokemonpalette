@@ -1,7 +1,7 @@
 {
   "id": 952,
   "name": "Scovillain",
-  "species": "Spicy Pepper Pok\u00e9mon",
+  "species": "Spicy Pepper Pokémon",
   "type": [
     "Grass",
     "Fire"
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/952.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "スコヴィラン",
+    "roomaji": "Scovillain",
+    "ko": "스코빌런",
+    "zh-Hant": "狠辣椒",
+    "fr": "Scovilain",
+    "de": "Halupenjo",
+    "es": "Scovillain",
+    "it": "Scovillain",
+    "en": "Scovillain",
+    "ja": "スコヴィラン",
+    "zh-Hans": "狠辣椒"
   }
 }

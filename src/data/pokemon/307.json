@@ -1,7 +1,7 @@
 {
   "id": 307,
   "name": "Meditite",
-  "species": "Meditate Pok\u00e9mon",
+  "species": "Meditate Pokémon",
   "type": [
     "Fighting",
     "Psychic"
@@ -40,14 +40,14 @@
     "specialDefense": 55,
     "speed": 60
   },
-  "description": "MEDITITE undertakes rigorous mental training deep in the mountains. However, whenever it meditates, this POK\u00e9MON always loses its concentration and focus. As a result, its training never ends.",
+  "description": "MEDITITE undertakes rigorous mental training deep in the mountains. However, whenever it meditates, this POKéMON always loses its concentration and focus. As a result, its training never ends.",
   "flavorTexts": [
     {
-      "text": "MEDITITE undertakes rigorous mental training deep in the mountains. However, whenever it meditates, this POK\u00e9MON always loses its concentration and focus. As a result, its training never ends.",
+      "text": "MEDITITE undertakes rigorous mental training deep in the mountains. However, whenever it meditates, this POKéMON always loses its concentration and focus. As a result, its training never ends.",
       "version": "ruby"
     },
     {
-      "text": "MEDITITE heightens its inner energy through meditation. It survives on just one berry a day. Minimal eating is another aspect of this POK\u00e9MON\u2019s training.",
+      "text": "MEDITITE heightens its inner energy through meditation. It survives on just one berry a day. Minimal eating is another aspect of this POKéMON’s training.",
       "version": "sapphire"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/307.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/307.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アサナン",
+    "roomaji": "Asanan",
+    "ko": "요가랑",
+    "zh-Hant": "瑪沙那",
+    "fr": "Méditikka",
+    "de": "Meditie",
+    "es": "Meditite",
+    "it": "Meditite",
+    "en": "Meditite",
+    "ja": "アサナン",
+    "zh-Hans": "玛沙那"
   }
 }

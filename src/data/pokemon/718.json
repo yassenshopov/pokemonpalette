@@ -1,7 +1,7 @@
 {
   "id": 718,
   "name": "Zygarde-50",
-  "species": "Order Pok\u00e9mon",
+  "species": "Order Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -34,26 +34,26 @@
     "specialDefense": 95,
     "speed": 95
   },
-  "description": "When the Kalos region\u2019s ecosystem falls into disarray, it appears and reveals its secret power.",
+  "description": "When the Kalos region’s ecosystem falls into disarray, it appears and reveals its secret power.",
   "flavorTexts": [
     {
-      "text": "When the Kalos region\u2019s ecosystem falls into disarray, it appears and reveals its secret power.",
+      "text": "When the Kalos region’s ecosystem falls into disarray, it appears and reveals its secret power.",
       "version": "x"
     },
     {
-      "text": "It\u2019s hypothesized that it\u2019s monitoring those who destroy the ecosystem from deep in the cave where it lives.",
+      "text": "It’s hypothesized that it’s monitoring those who destroy the ecosystem from deep in the cave where it lives.",
       "version": "y"
     },
     {
-      "text": "When the Kalos region\u2019s ecosystem falls into disarray, it appears and reveals its secret power.",
+      "text": "When the Kalos region’s ecosystem falls into disarray, it appears and reveals its secret power.",
       "version": "omega-ruby"
     },
     {
-      "text": "It\u2019s hypothesized that it\u2019s monitoring those who destroy the ecosystem from deep in the cave where it lives.",
+      "text": "It’s hypothesized that it’s monitoring those who destroy the ecosystem from deep in the cave where it lives.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "This is Zygarde\u2019s form when it has gathered 50% of its cells. It wipes out all those who oppose it, showing not a shred of mercy.",
+      "text": "This is Zygarde’s form when it has gathered 50% of its cells. It wipes out all those who oppose it, showing not a shred of mercy.",
       "version": "sun"
     }
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/718.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジガルデ",
+    "roomaji": "Zygarde",
+    "ko": "지가르데",
+    "zh-Hant": "基格爾德",
+    "fr": "Zygarde",
+    "de": "Zygarde",
+    "es": "Zygarde",
+    "it": "Zygarde",
+    "en": "Zygarde",
+    "ja": "ジガルデ",
+    "zh-Hans": "基格尔德"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 465,
   "name": "Tangrowth",
-  "species": "Vine Pok\u00e9mon",
+  "species": "Vine Pokémon",
   "type": [
     "Grass"
   ],
@@ -60,7 +60,7 @@
       "version": "heartgold"
     },
     {
-      "text": "Its vines grow so profusely that, in the warm season, you can\u2019t even see its eyes.",
+      "text": "Its vines grow so profusely that, in the warm season, you can’t even see its eyes.",
       "version": "soulsilver"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/465.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/465.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モジャンボ",
+    "roomaji": "Mojumbo",
+    "ko": "덩쿠림보",
+    "zh-Hant": "巨蔓藤",
+    "fr": "Bouldeneu",
+    "de": "Tangoloss",
+    "es": "Tangrowth",
+    "it": "Tangrowth",
+    "en": "Tangrowth",
+    "ja": "モジャンボ",
+    "zh-Hans": "巨蔓藤"
   }
 }

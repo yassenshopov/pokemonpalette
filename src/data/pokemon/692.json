@@ -1,7 +1,7 @@
 {
   "id": 692,
   "name": "Clauncher",
-  "species": "Water Gun Pok\u00e9mon",
+  "species": "Water Gun Pokémon",
   "type": [
     "Water"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/692.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウデッポウ",
+    "roomaji": "Udeppou",
+    "ko": "완철포",
+    "zh-Hant": "鐵臂槍蝦",
+    "fr": "Flingouste",
+    "de": "Scampisto",
+    "es": "Clauncher",
+    "it": "Clauncher",
+    "en": "Clauncher",
+    "ja": "ウデッポウ",
+    "zh-Hans": "铁臂枪虾"
   }
 }

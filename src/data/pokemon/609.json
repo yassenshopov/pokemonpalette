@@ -1,7 +1,7 @@
 {
   "id": 609,
   "name": "Chandelure",
-  "species": "Luring Pok\u00e9mon",
+  "species": "Luring Pokémon",
   "type": [
     "Ghost",
     "Fire"
@@ -53,7 +53,7 @@
       "version": "black"
     },
     {
-      "text": "Being consumed in Chandelure\u2019s flame burns up the spirit, leaving the body behind.",
+      "text": "Being consumed in Chandelure’s flame burns up the spirit, leaving the body behind.",
       "version": "white"
     },
     {
@@ -65,7 +65,7 @@
       "version": "white-2"
     },
     {
-      "text": "Being consumed in Chandelure\u2019s flame burns up the spirit, leaving the body behind.",
+      "text": "Being consumed in Chandelure’s flame burns up the spirit, leaving the body behind.",
       "version": "x"
     }
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/609.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/609.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シャンデラ",
+    "roomaji": "Chandela",
+    "ko": "샹델라",
+    "zh-Hant": "水晶燈火靈",
+    "fr": "Lugulabre",
+    "de": "Skelabra",
+    "es": "Chandelure",
+    "it": "Chandelure",
+    "en": "Chandelure",
+    "ja": "シャンデラ",
+    "zh-Hans": "水晶灯火灵"
   }
 }

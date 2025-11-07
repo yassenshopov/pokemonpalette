@@ -1,7 +1,7 @@
 {
   "id": 808,
   "name": "Meltan",
-  "species": "Hex Nut Pok\u00e9mon",
+  "species": "Hex Nut Pokémon",
   "type": [
     "Steel"
   ],
@@ -274,5 +274,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/808.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "メルタン",
+    "roomaji": "Meltan",
+    "ko": "멜탄",
+    "zh-Hant": "美錄坦",
+    "fr": "Meltan",
+    "de": "Meltan",
+    "es": "Meltan",
+    "it": "Meltan",
+    "en": "Meltan",
+    "ja": "メルタン",
+    "zh-Hans": "美录坦"
   }
 }

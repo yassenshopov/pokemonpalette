@@ -1,7 +1,7 @@
 {
   "id": 397,
   "name": "Staravia",
-  "species": "Starling Pok\u00e9mon",
+  "species": "Starling Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 40,
     "speed": 80
   },
-  "description": "It flies around forests and fields in search of bug Pok\u00e9mon. It stays within a huge flock.",
+  "description": "It flies around forests and fields in search of bug Pokémon. It stays within a huge flock.",
   "flavorTexts": [
     {
-      "text": "It flies around forests and fields in search of bug Pok\u00e9mon. It stays within a huge flock.",
+      "text": "It flies around forests and fields in search of bug Pokémon. It stays within a huge flock.",
       "version": "diamond"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/397.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/397.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムクバード",
+    "roomaji": "Mukubird",
+    "ko": "찌르버드",
+    "zh-Hant": "姆克鳥",
+    "fr": "Étourvol",
+    "de": "Staravia",
+    "es": "Staravia",
+    "it": "Staravia",
+    "en": "Staravia",
+    "ja": "ムクバード",
+    "zh-Hans": "姆克鸟"
   }
 }

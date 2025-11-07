@@ -1,7 +1,7 @@
 {
   "id": 870,
   "name": "Falinks",
-  "species": "Formation Pok\u00e9mon",
+  "species": "Formation Pokémon",
   "type": [
     "Fighting"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 60,
     "speed": 75
   },
-  "description": "Five of them are troopers, and one is the brass. The brass\u2019s orders are absolute.",
+  "description": "Five of them are troopers, and one is the brass. The brass’s orders are absolute.",
   "flavorTexts": [
     {
-      "text": "Five of them are troopers, and one is the brass. The brass\u2019s orders are absolute.",
+      "text": "Five of them are troopers, and one is the brass. The brass’s orders are absolute.",
       "version": "sword"
     },
     {
-      "text": "The six of them work together as one Pok\u00e9mon. Teamwork is also their battle strategy, and they constantly change their formation as they fight.",
+      "text": "The six of them work together as one Pokémon. Teamwork is also their battle strategy, and they constantly change their formation as they fight.",
       "version": "shield"
     }
   ],
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/870.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タイレーツ",
+    "roomaji": "Tairetsu",
+    "ko": "대여르",
+    "zh-Hant": "列陣兵",
+    "fr": "Hexadron",
+    "de": "Legios",
+    "es": "Falinks",
+    "it": "Falinks",
+    "en": "Falinks",
+    "ja": "タイレーツ",
+    "zh-Hans": "列阵兵"
   }
 }

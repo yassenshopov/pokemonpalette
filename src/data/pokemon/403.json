@@ -1,7 +1,7 @@
 {
   "id": 403,
   "name": "Shinx",
-  "species": "Flash Pok\u00e9mon",
+  "species": "Flash Pokémon",
   "type": [
     "Electric"
   ],
@@ -56,11 +56,11 @@
       "version": "platinum"
     },
     {
-      "text": "The extension and contraction of its muscles generates electricity. Its fur glows when it\u2019s in trouble.",
+      "text": "The extension and contraction of its muscles generates electricity. Its fur glows when it’s in trouble.",
       "version": "heartgold"
     },
     {
-      "text": "The extension and contraction of its muscles generates electricity. Its fur glows when it\u2019s in trouble.",
+      "text": "The extension and contraction of its muscles generates electricity. Its fur glows when it’s in trouble.",
       "version": "soulsilver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/403.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/403.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コリンク",
+    "roomaji": "Kolink",
+    "ko": "꼬링크",
+    "zh-Hant": "小貓怪",
+    "fr": "Lixy",
+    "de": "Sheinux",
+    "es": "Shinx",
+    "it": "Shinx",
+    "en": "Shinx",
+    "ja": "コリンク",
+    "zh-Hans": "小猫怪"
   }
 }

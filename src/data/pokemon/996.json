@@ -1,7 +1,7 @@
 {
   "id": 996,
   "name": "Frigibax",
-  "species": "Ice Fin Pok\u00e9mon",
+  "species": "Ice Fin Pokémon",
   "type": [
     "Dragon",
     "Ice"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon lives in forests and craggy areas. Using the power of its dorsal fin, it cools the inside of its nest like a refrigerator.",
+      "text": "This Pokémon lives in forests and craggy areas. Using the power of its dorsal fin, it cools the inside of its nest like a refrigerator.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/996.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "セビエ",
+    "roomaji": "Sebie",
+    "ko": "드니차",
+    "zh-Hant": "涼脊龍",
+    "fr": "Frigodo",
+    "de": "Frospino",
+    "es": "Frigibax",
+    "it": "Frigibax",
+    "en": "Frigibax",
+    "ja": "セビエ",
+    "zh-Hans": "凉脊龙"
   }
 }

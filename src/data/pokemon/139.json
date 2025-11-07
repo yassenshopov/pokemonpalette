@@ -1,7 +1,7 @@
 {
   "id": 139,
   "name": "Omastar",
-  "species": "Spiral Pok\u00e9mon",
+  "species": "Spiral Pokémon",
   "type": [
     "Rock",
     "Water"
@@ -46,14 +46,14 @@
     "specialDefense": 70,
     "speed": 55
   },
-  "description": "A prehistoric POK\u00e9MON that died out when its heavy shell made it impossible to catch prey.",
+  "description": "A prehistoric POKéMON that died out when its heavy shell made it impossible to catch prey.",
   "flavorTexts": [
     {
-      "text": "A prehistoric POK\u00e9MON that died out when its heavy shell made it impossible to catch prey.",
+      "text": "A prehistoric POKéMON that died out when its heavy shell made it impossible to catch prey.",
       "version": "red"
     },
     {
-      "text": "A prehistoric POK\u00e9MON that died out when its heavy shell made it impossible to catch prey.",
+      "text": "A prehistoric POKéMON that died out when its heavy shell made it impossible to catch prey.",
       "version": "blue"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/139.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/139.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オムスター",
+    "roomaji": "Omstar",
+    "ko": "암스타",
+    "zh-Hant": "多刺菊石獸",
+    "fr": "Amonistar",
+    "de": "Amoroso",
+    "es": "Omastar",
+    "it": "Omastar",
+    "en": "Omastar",
+    "ja": "オムスター",
+    "zh-Hans": "多刺菊石兽"
   }
 }

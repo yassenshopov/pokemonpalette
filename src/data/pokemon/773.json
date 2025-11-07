@@ -1,7 +1,7 @@
 {
   "id": 773,
   "name": "Silvally",
-  "species": "Synthetic Pok\u00e9mon",
+  "species": "Synthetic Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 95,
     "speed": 95
   },
-  "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
+  "description": "Its trust in its partner is what awakens it. This Pokémon is capable of changing its type, a flexibility that is well displayed in battle.",
   "flavorTexts": [
     {
-      "text": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
+      "text": "Its trust in its partner is what awakens it. This Pokémon is capable of changing its type, a flexibility that is well displayed in battle.",
       "version": "sun"
     },
     {
@@ -48,7 +48,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "A solid bond of trust between this Pok\u00e9mon and its Trainer awakened the strength hidden within Silvally. It can change its type at will.",
+      "text": "A solid bond of trust between this Pokémon and its Trainer awakened the strength hidden within Silvally. It can change its type at will.",
       "version": "sword"
     }
   ],
@@ -576,5 +576,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/773.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シルヴァディ",
+    "roomaji": "Silvady",
+    "ko": "실버디",
+    "zh-Hant": "銀伴戰獸",
+    "fr": "Silvallié",
+    "de": "Amigento",
+    "es": "Silvally",
+    "it": "Silvally",
+    "en": "Silvally",
+    "ja": "シルヴァディ",
+    "zh-Hans": "银伴战兽"
   }
 }

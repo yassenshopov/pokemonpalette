@@ -1,7 +1,7 @@
 {
   "id": 765,
   "name": "Oranguru",
-  "species": "Sage Pok\u00e9mon",
+  "species": "Sage Pokémon",
   "type": [
     "Normal",
     "Psychic"
@@ -46,26 +46,26 @@
     "specialDefense": 110,
     "speed": 60
   },
-  "description": "Known for its extreme intelligence, this Pok\u00e9mon will look down on inexperienced Trainers, so it\u2019s best suited to veteran Trainers.",
+  "description": "Known for its extreme intelligence, this Pokémon will look down on inexperienced Trainers, so it’s best suited to veteran Trainers.",
   "flavorTexts": [
     {
-      "text": "Known for its extreme intelligence, this Pok\u00e9mon will look down on inexperienced Trainers, so it\u2019s best suited to veteran Trainers.",
+      "text": "Known for its extreme intelligence, this Pokémon will look down on inexperienced Trainers, so it’s best suited to veteran Trainers.",
       "version": "sun"
     },
     {
-      "text": "Deep in the jungle, high in the lofty canopy, this Pok\u00e9mon abides. On rare occasions, it shows up at the beach to match wits with Slowking.",
+      "text": "Deep in the jungle, high in the lofty canopy, this Pokémon abides. On rare occasions, it shows up at the beach to match wits with Slowking.",
       "version": "moon"
     },
     {
-      "text": "It normally spends its time meditating in the treetops. It throws Pok\u00e9 Balls and gives other Pok\u00e9mon orders as it pleases.",
+      "text": "It normally spends its time meditating in the treetops. It throws Poké Balls and gives other Pokémon orders as it pleases.",
       "version": "ultra-sun"
     },
     {
-      "text": "Oranguru don\u2019t get along with each other, so they\u2019re always engaging in battles of wits to decide which one is superior.",
+      "text": "Oranguru don’t get along with each other, so they’re always engaging in battles of wits to decide which one is superior.",
       "version": "ultra-moon"
     },
     {
-      "text": "With waves of its fan\u2014made from leaves and its own fur\u2014Oranguru skillfully gives instructions to other Pok\u00e9mon.",
+      "text": "With waves of its fan—made from leaves and its own fur—Oranguru skillfully gives instructions to other Pokémon.",
       "version": "sword"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/765.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤレユータン",
+    "roomaji": "Yareyuutan",
+    "ko": "하랑우탄",
+    "zh-Hant": "智揮猩",
+    "fr": "Gouroutan",
+    "de": "Kommandutan",
+    "es": "Oranguru",
+    "it": "Oranguru",
+    "en": "Oranguru",
+    "ja": "ヤレユータン",
+    "zh-Hans": "智挥猩"
   }
 }

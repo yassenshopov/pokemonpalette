@@ -1,7 +1,7 @@
 {
   "id": 739,
   "name": "Crabrawler",
-  "species": "Boxing Pok\u00e9mon",
+  "species": "Boxing Pokémon",
   "type": [
     "Fighting"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/739.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マケンカニ",
+    "roomaji": "Makenkani",
+    "ko": "오기지게",
+    "zh-Hant": "好勝蟹",
+    "fr": "Crabagarre",
+    "de": "Krabbox",
+    "es": "Crabrawler",
+    "it": "Crabrawler",
+    "en": "Crabrawler",
+    "ja": "マケンカニ",
+    "zh-Hans": "好胜蟹"
   }
 }

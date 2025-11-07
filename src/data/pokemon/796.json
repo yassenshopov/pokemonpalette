@@ -1,7 +1,7 @@
 {
   "id": 796,
   "name": "Xurkitree",
-  "species": "Glowing Pok\u00e9mon",
+  "species": "Glowing Pokémon",
   "type": [
     "Electric"
   ],
@@ -40,11 +40,11 @@
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s alien to this world and a danger here, it\u2019s apparently a common organism in the world where it normally lives.",
+      "text": "Although it’s alien to this world and a danger here, it’s apparently a common organism in the world where it normally lives.",
       "version": "ultra-sun"
     },
     {
-      "text": "They\u2019ve been dubbed Ultra Beasts. Some of them stand unmoving, like trees, with their arms and legs stuck into the ground.",
+      "text": "They’ve been dubbed Ultra Beasts. Some of them stand unmoving, like trees, with their arms and legs stuck into the ground.",
       "version": "ultra-moon"
     }
   ],
@@ -274,5 +274,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/796.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "デンジュモク",
+    "roomaji": "Denjyumoku",
+    "ko": "전수목",
+    "zh-Hant": "電束木",
+    "fr": "Câblifère",
+    "de": "Voltriant",
+    "es": "Xurkitree",
+    "it": "Xurkitree",
+    "en": "Xurkitree",
+    "ja": "デンジュモク",
+    "zh-Hans": "电束木"
   }
 }

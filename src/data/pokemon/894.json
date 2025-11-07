@@ -1,7 +1,7 @@
 {
   "id": 894,
   "name": "Regieleki",
-  "species": "Electron Pok\u00e9mon",
+  "species": "Electron Pokémon",
   "type": [
     "Electric"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 50,
     "speed": 200
   },
-  "description": "This Pok\u00e9mon is a cluster of electrical energy. It\u2019s said that removing the rings on Regieleki\u2019s body will unleash the Pok\u00e9mon\u2019s latent power.",
+  "description": "This Pokémon is a cluster of electrical energy. It’s said that removing the rings on Regieleki’s body will unleash the Pokémon’s latent power.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon is a cluster of electrical energy. It\u2019s said that removing the rings on Regieleki\u2019s body will unleash the Pok\u00e9mon\u2019s latent power.",
+      "text": "This Pokémon is a cluster of electrical energy. It’s said that removing the rings on Regieleki’s body will unleash the Pokémon’s latent power.",
       "version": "sword"
     },
     {
-      "text": "Its entire body is made up of a single organ that generates electrical energy. Regieleki is capable of creating all Galar\u2019s electricity.",
+      "text": "Its entire body is made up of a single organ that generates electrical energy. Regieleki is capable of creating all Galar’s electricity.",
       "version": "shield"
     }
   ],
@@ -266,5 +266,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/894.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "レジエレキ",
+    "roomaji": "Regieleki",
+    "ko": "레지에레키",
+    "zh-Hant": "雷吉艾勒奇",
+    "fr": "Regieleki",
+    "de": "Regieleki",
+    "es": "Regieleki",
+    "it": "Regieleki",
+    "en": "Regieleki",
+    "ja": "レジエレキ",
+    "zh-Hans": "雷吉艾勒奇"
   }
 }

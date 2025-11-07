@@ -1,7 +1,7 @@
 {
   "id": 31,
   "name": "Nidoqueen",
-  "species": "Drill Pok\u00e9mon",
+  "species": "Drill Pokémon",
   "type": [
     "Poison",
     "Ground"
@@ -57,11 +57,11 @@
       "version": "blue"
     },
     {
-      "text": "Tough scales cover the sturdy body of this POK\u00e9MON. It appears that the scales grow in cycles.",
+      "text": "Tough scales cover the sturdy body of this POKéMON. It appears that the scales grow in cycles.",
       "version": "yellow"
     },
     {
-      "text": "Its body is cover\u00ad ed with needle- like scales. It never shows signs of shrinking from any attack.",
+      "text": "Its body is cover­ ed with needle- like scales. It never shows signs of shrinking from any attack.",
       "version": "gold"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/31.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/31.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニドクイン",
+    "roomaji": "Nidoqueen",
+    "ko": "니드퀸",
+    "zh-Hant": "尼多后",
+    "fr": "Nidoqueen",
+    "de": "Nidoqueen",
+    "es": "Nidoqueen",
+    "it": "Nidoqueen",
+    "en": "Nidoqueen",
+    "ja": "ニドクイン",
+    "zh-Hans": "尼多后"
   }
 }

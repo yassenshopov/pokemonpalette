@@ -1,7 +1,7 @@
 {
   "id": 364,
   "name": "Sealeo",
-  "species": "Ball Roll Pok\u00e9mon",
+  "species": "Ball Roll Pokémon",
   "type": [
     "Ice",
     "Water"
@@ -46,14 +46,14 @@
     "specialDefense": 70,
     "speed": 45
   },
-  "description": "SEALEO has the habit of always juggling on the tip of its nose anything it sees for the first time. This POK\u00e9MON occasionally entertains itself by balancing and rolling a SPHEAL on its nose.",
+  "description": "SEALEO has the habit of always juggling on the tip of its nose anything it sees for the first time. This POKéMON occasionally entertains itself by balancing and rolling a SPHEAL on its nose.",
   "flavorTexts": [
     {
-      "text": "SEALEO has the habit of always juggling on the tip of its nose anything it sees for the first time. This POK\u00e9MON occasionally entertains itself by balancing and rolling a SPHEAL on its nose.",
+      "text": "SEALEO has the habit of always juggling on the tip of its nose anything it sees for the first time. This POKéMON occasionally entertains itself by balancing and rolling a SPHEAL on its nose.",
       "version": "ruby"
     },
     {
-      "text": "SEALEO often balances and rolls things on the tip of its nose. While the POK\u00e9MON is rolling something, it checks the object\u2019s aroma and texture to determine whether it likes the object or not.",
+      "text": "SEALEO often balances and rolls things on the tip of its nose. While the POKéMON is rolling something, it checks the object’s aroma and texture to determine whether it likes the object or not.",
       "version": "sapphire"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/364.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/364.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トドグラー",
+    "roomaji": "Todoggler",
+    "ko": "씨레오",
+    "zh-Hant": "海魔獅",
+    "fr": "Phogleur",
+    "de": "Seejong",
+    "es": "Sealeo",
+    "it": "Sealeo",
+    "en": "Sealeo",
+    "ja": "トドグラー",
+    "zh-Hans": "海魔狮"
   }
 }

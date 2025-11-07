@@ -1,7 +1,7 @@
 {
   "id": 1004,
   "name": "Chi-yu",
-  "species": "Ruinous Pok\u00e9mon",
+  "species": "Ruinous Pokémon",
   "type": [
     "Dark",
     "Fire"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "The envy accumulated within curved beads that sparked multiple conflicts has clad itself in fire and become a Pok\u00e9mon.",
+      "text": "The envy accumulated within curved beads that sparked multiple conflicts has clad itself in fire and become a Pokémon.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1004.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イーユイ",
+    "roomaji": "Yiyui",
+    "ko": "위유이",
+    "zh-Hant": "古玉魚",
+    "fr": "Yuyu",
+    "de": "Yuyu",
+    "es": "Chi-Yu",
+    "it": "Chi-Yu",
+    "en": "Chi-Yu",
+    "ja": "イーユイ",
+    "zh-Hans": "古玉鱼"
   }
 }

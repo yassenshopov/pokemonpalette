@@ -1,7 +1,7 @@
 {
   "id": 900,
   "name": "Kleavor",
-  "species": "Axe Pok\u00e9mon",
+  "species": "Axe Pokémon",
   "type": [
     "Bug",
     "Rock"
@@ -46,10 +46,10 @@
     "specialDefense": 70,
     "speed": 85
   },
-  "description": "A violent creature that fells towering trees with its crude axes and shields itself with hard stone. If one should chance upon this Pok\u00e9mon in the wilds, one's only recourse is to flee.",
+  "description": "A violent creature that fells towering trees with its crude axes and shields itself with hard stone. If one should chance upon this Pokémon in the wilds, one's only recourse is to flee.",
   "flavorTexts": [
     {
-      "text": "A violent creature that fells towering trees with its crude axes and shields itself with hard stone. If one should chance upon this Pok\u00e9mon in the wilds, one's only recourse is to flee.",
+      "text": "A violent creature that fells towering trees with its crude axes and shields itself with hard stone. If one should chance upon this Pokémon in the wilds, one's only recourse is to flee.",
       "version": "legends-arceus"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/900.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バサギリ",
+    "roomaji": "Basagiri",
+    "ko": "사마자르",
+    "zh-Hant": "劈斧螳螂",
+    "fr": "Hachécateur",
+    "de": "Axantor",
+    "es": "Kleavor",
+    "it": "Kleavor",
+    "en": "Kleavor",
+    "ja": "バサギリ",
+    "zh-Hans": "劈斧螳螂"
   }
 }

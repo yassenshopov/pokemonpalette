@@ -1,7 +1,7 @@
 {
   "id": 916,
   "name": "Oinkologne-male",
-  "species": "Hog Pok\u00e9mon",
+  "species": "Hog Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,7 +48,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It entrances female Pok\u00e9mon with the sweet, alluring scent that wafts from all over its body.",
+      "text": "It entrances female Pokémon with the sweet, alluring scent that wafts from all over its body.",
       "version": "violet"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/916.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パフュートン",
+    "roomaji": "Perfuton",
+    "ko": "퍼퓨돈",
+    "zh-Hant": "飄香豚",
+    "fr": "Fragroin",
+    "de": "Fragrunz",
+    "es": "Oinkologne",
+    "it": "Oinkologne",
+    "en": "Oinkologne",
+    "ja": "パフュートン",
+    "zh-Hans": "飘香豚"
   }
 }

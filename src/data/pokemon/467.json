@@ -1,7 +1,7 @@
 {
   "id": 467,
   "name": "Magmortar",
-  "species": "Blast Pok\u00e9mon",
+  "species": "Blast Pokémon",
   "type": [
     "Fire"
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/467.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/467.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブーバーン",
+    "roomaji": "Booburn",
+    "ko": "마그마번",
+    "zh-Hant": "鴨嘴炎獸",
+    "fr": "Maganon",
+    "de": "Magbrant",
+    "es": "Magmortar",
+    "it": "Magmortar",
+    "en": "Magmortar",
+    "ja": "ブーバーン",
+    "zh-Hans": "鸭嘴炎兽"
   }
 }

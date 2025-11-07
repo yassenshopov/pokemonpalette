@@ -1,7 +1,7 @@
 {
   "id": 945,
   "name": "Grafaiai",
-  "species": "Toxic Monkey Pok\u00e9mon",
+  "species": "Toxic Monkey Pokémon",
   "type": [
     "Poison",
     "Normal"
@@ -46,10 +46,10 @@
     "specialDefense": 72,
     "speed": 110
   },
-  "description": "The color of the poisonous saliva depends on what the Pok\u00e9mon eats. Grafaiai covers its fingers in its saliva and draws patterns on trees in forests.",
+  "description": "The color of the poisonous saliva depends on what the Pokémon eats. Grafaiai covers its fingers in its saliva and draws patterns on trees in forests.",
   "flavorTexts": [
     {
-      "text": "The color of the poisonous saliva depends on what the Pok\u00e9mon eats. Grafaiai covers its fingers in its saliva and draws patterns on trees in forests.",
+      "text": "The color of the poisonous saliva depends on what the Pokémon eats. Grafaiai covers its fingers in its saliva and draws patterns on trees in forests.",
       "version": "scarlet"
     },
     {
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/945.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タギングル",
+    "roomaji": "Taggingru",
+    "ko": "태깅구르",
+    "zh-Hant": "塗標客",
+    "fr": "Tag-Tag",
+    "de": "Affiti",
+    "es": "Grafaiai",
+    "it": "Grafaiai",
+    "en": "Grafaiai",
+    "ja": "タギングル",
+    "zh-Hans": "涂标客"
   }
 }

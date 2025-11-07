@@ -1,7 +1,7 @@
 {
   "id": 943,
   "name": "Mabosstiff",
-  "species": "Boss Pok\u00e9mon",
+  "species": "Boss Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 70,
     "speed": 85
   },
-  "description": "This Pok\u00e9mon can store energy in its large dewlap. Mabosstiff unleashes this energy all at once to blow away enemies.",
+  "description": "This Pokémon can store energy in its large dewlap. Mabosstiff unleashes this energy all at once to blow away enemies.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon can store energy in its large dewlap. Mabosstiff unleashes this energy all at once to blow away enemies.",
+      "text": "This Pokémon can store energy in its large dewlap. Mabosstiff unleashes this energy all at once to blow away enemies.",
       "version": "scarlet"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/943.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マフィティフ",
+    "roomaji": "Mafitiff",
+    "ko": "마피티프",
+    "zh-Hant": "獒教父",
+    "fr": "Dogrino",
+    "de": "Mastifioso",
+    "es": "Mabosstiff",
+    "it": "Mabosstiff",
+    "en": "Mabosstiff",
+    "ja": "マフィティフ",
+    "zh-Hans": "獒教父"
   }
 }

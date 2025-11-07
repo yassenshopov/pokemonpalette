@@ -1,7 +1,7 @@
 {
   "id": 561,
   "name": "Sigilyph",
-  "species": "Avianoid Pok\u00e9mon",
+  "species": "Avianoid Pokémon",
   "type": [
     "Psychic",
     "Flying"
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/561.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/561.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シンボラー",
+    "roomaji": "Symboler",
+    "ko": "심보러",
+    "zh-Hant": "象徵鳥",
+    "fr": "Cryptéro",
+    "de": "Symvolara",
+    "es": "Sigilyph",
+    "it": "Sigilyph",
+    "en": "Sigilyph",
+    "ja": "シンボラー",
+    "zh-Hans": "象征鸟"
   }
 }

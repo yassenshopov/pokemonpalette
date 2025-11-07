@@ -1,7 +1,7 @@
 {
   "id": 167,
   "name": "Spinarak",
-  "species": "String Spit Pok\u00e9mon",
+  "species": "String Spit Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "It spins a web using fine--but durable--thread. It then waits pa\u00ad tiently for prey to be trapped.",
+      "text": "It spins a web using fine--but durable--thread. It then waits pa­ tiently for prey to be trapped.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "The web spun by SPINARAK can be considered its second nervous system. It is said that this POK\u00e9MON can determine what kind of prey is touching its web just by the tiny vibrations it feels through the web\u2019s strands.",
+      "text": "The web spun by SPINARAK can be considered its second nervous system. It is said that this POKéMON can determine what kind of prey is touching its web just by the tiny vibrations it feels through the web’s strands.",
       "version": "ruby"
     },
     {
-      "text": "The web spun by SPINARAK can be considered its second nervous system. It is said that this POK\u00e9MON can determine what kind of prey is touching its web just by the tiny vibrations it feels through the web\u2019s strands.",
+      "text": "The web spun by SPINARAK can be considered its second nervous system. It is said that this POKéMON can determine what kind of prey is touching its web just by the tiny vibrations it feels through the web’s strands.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/167.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/167.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イトマル",
+    "roomaji": "Itomaru",
+    "ko": "페이검",
+    "zh-Hant": "圓絲蛛",
+    "fr": "Mimigal",
+    "de": "Webarak",
+    "es": "Spinarak",
+    "it": "Spinarak",
+    "en": "Spinarak",
+    "ja": "イトマル",
+    "zh-Hans": "圆丝蛛"
   }
 }

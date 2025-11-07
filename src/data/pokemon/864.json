@@ -1,7 +1,7 @@
 {
   "id": 864,
   "name": "Cursola",
-  "species": "Coral Pok\u00e9mon",
+  "species": "Coral Pokémon",
   "type": [
     "Ghost"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 130,
     "speed": 30
   },
-  "description": "Its shell is overflowing with its heightened otherworldly energy. The ectoplasm serves as protection for this Pok\u00e9mon\u2019s core spirit.",
+  "description": "Its shell is overflowing with its heightened otherworldly energy. The ectoplasm serves as protection for this Pokémon’s core spirit.",
   "flavorTexts": [
     {
-      "text": "Its shell is overflowing with its heightened otherworldly energy. The ectoplasm serves as protection for this Pok\u00e9mon\u2019s core spirit.",
+      "text": "Its shell is overflowing with its heightened otherworldly energy. The ectoplasm serves as protection for this Pokémon’s core spirit.",
       "version": "sword"
     },
     {
-      "text": "Be cautious of the ectoplasmic body surrounding its soul. You\u2019ll become stiff as stone if you touch it.",
+      "text": "Be cautious of the ectoplasmic body surrounding its soul. You’ll become stiff as stone if you touch it.",
       "version": "shield"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/864.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サニゴーン",
+    "roomaji": "Sunigoon",
+    "ko": "산호르곤",
+    "zh-Hant": "魔靈珊瑚",
+    "fr": "Corayôme",
+    "de": "Gorgasonn",
+    "es": "Cursola",
+    "it": "Cursola",
+    "en": "Cursola",
+    "ja": "サニゴーン",
+    "zh-Hans": "魔灵珊瑚"
   }
 }

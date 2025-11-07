@@ -1,7 +1,7 @@
 {
   "id": 639,
   "name": "Terrakion",
-  "species": "Cavern Pok\u00e9mon",
+  "species": "Cavern Pokémon",
   "type": [
     "Rock",
     "Fighting"
@@ -34,26 +34,26 @@
     "specialDefense": 90,
     "speed": 108
   },
-  "description": "This Pok\u00e9mon came to the defense of Pok\u00e9mon that had lost their homes in a war among humans.",
+  "description": "This Pokémon came to the defense of Pokémon that had lost their homes in a war among humans.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon came to the defense of Pok\u00e9mon that had lost their homes in a war among humans.",
+      "text": "This Pokémon came to the defense of Pokémon that had lost their homes in a war among humans.",
       "version": "black"
     },
     {
-      "text": "Its charge is strong enough to break through a giant castle wall in one blow. This Pok\u00e9mon is spoken of in legends.",
+      "text": "Its charge is strong enough to break through a giant castle wall in one blow. This Pokémon is spoken of in legends.",
       "version": "white"
     },
     {
-      "text": "Spoken of in legend, this Pok\u00e9mon used its phenomenal power to destroy a castle in its effort to protect Pok\u00e9mon.",
+      "text": "Spoken of in legend, this Pokémon used its phenomenal power to destroy a castle in its effort to protect Pokémon.",
       "version": "black-2"
     },
     {
-      "text": "Spoken of in legend, this Pok\u00e9mon used its phenomenal power to destroy a castle in its effort to protect Pok\u00e9mon.",
+      "text": "Spoken of in legend, this Pokémon used its phenomenal power to destroy a castle in its effort to protect Pokémon.",
       "version": "white-2"
     },
     {
-      "text": "Its charge is strong enough to break through a giant castle wall in one blow. This Pok\u00e9mon is spoken of in legends.",
+      "text": "Its charge is strong enough to break through a giant castle wall in one blow. This Pokémon is spoken of in legends.",
       "version": "x"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/639.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/639.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "テラキオン",
+    "roomaji": "Terrakion",
+    "ko": "테라키온",
+    "zh-Hant": "代拉基翁",
+    "fr": "Terrakium",
+    "de": "Terrakium",
+    "es": "Terrakion",
+    "it": "Terrakion",
+    "en": "Terrakion",
+    "ja": "テラキオン",
+    "zh-Hans": "代拉基翁"
   }
 }

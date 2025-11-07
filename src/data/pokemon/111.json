@@ -1,7 +1,7 @@
 {
   "id": 111,
   "name": "Rhyhorn",
-  "species": "Spikes Pok\u00e9mon",
+  "species": "Spikes Pokémon",
   "type": [
     "Ground",
     "Rock"
@@ -46,10 +46,10 @@
     "specialDefense": 30,
     "speed": 25
   },
-  "description": "A POK\u00e9MON with a one-track mind. Once it charges,  it won't stop running until it falls asleep.",
+  "description": "A POKéMON with a one-track mind. Once it charges,  it won't stop running until it falls asleep.",
   "flavorTexts": [
     {
-      "text": "A POK\u00e9MON with a one-track mind. Once it charges,  it won't stop running until it falls asleep.",
+      "text": "A POKéMON with a one-track mind. Once it charges,  it won't stop running until it falls asleep.",
       "version": "yellow"
     },
     {
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "It doesn't care if there is anything in its way. It just charges and destroys all ob\u00ad stacles.",
+      "text": "It doesn't care if there is anything in its way. It just charges and destroys all ob­ stacles.",
       "version": "silver"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/111.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/111.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サイホーン",
+    "roomaji": "Sihorn",
+    "ko": "뿔카노",
+    "zh-Hant": "獨角犀牛",
+    "fr": "Rhinocorne",
+    "de": "Rihorn",
+    "es": "Rhyhorn",
+    "it": "Rhyhorn",
+    "en": "Rhyhorn",
+    "ja": "サイホーン",
+    "zh-Hans": "独角犀牛"
   }
 }

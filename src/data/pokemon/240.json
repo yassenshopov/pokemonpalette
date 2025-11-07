@@ -1,7 +1,7 @@
 {
   "id": 240,
   "name": "Magby",
-  "species": "Live Coal Pok\u00e9mon",
+  "species": "Live Coal Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "gold"
     },
     {
-      "text": "It is found in volcanic craters. Its body temp. is over 1100 degrees, so don't under\u00ad estimate it.",
+      "text": "It is found in volcanic craters. Its body temp. is over 1100 degrees, so don't under­ estimate it.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "MAGBY\u2019s state of health is determined by observing the fire it breathes. If the POK\u00e9MON is spouting yellow flames from its mouth, it is in good health. When it is fatigued, black smoke will be mixed in with the flames.",
+      "text": "MAGBY’s state of health is determined by observing the fire it breathes. If the POKéMON is spouting yellow flames from its mouth, it is in good health. When it is fatigued, black smoke will be mixed in with the flames.",
       "version": "ruby"
     },
     {
-      "text": "MAGBY\u2019s state of health is determined by observing the fire it breathes. If the POK\u00e9MON is spouting yellow flames from its mouth, it is in good health. When it is fatigued, black smoke will be mixed in with the flames.",
+      "text": "MAGBY’s state of health is determined by observing the fire it breathes. If the POKéMON is spouting yellow flames from its mouth, it is in good health. When it is fatigued, black smoke will be mixed in with the flames.",
       "version": "sapphire"
     }
   ],
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/240.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/240.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブビィ",
+    "roomaji": "Buby",
+    "ko": "마그비",
+    "zh-Hant": "鴨嘴寶寶",
+    "fr": "Magby",
+    "de": "Magby",
+    "es": "Magby",
+    "it": "Magby",
+    "en": "Magby",
+    "ja": "ブビィ",
+    "zh-Hans": "鸭嘴宝宝"
   }
 }

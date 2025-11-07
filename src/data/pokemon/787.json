@@ -1,7 +1,7 @@
 {
   "id": 787,
   "name": "Tapu-bulu",
-  "species": "Land Spirit Pok\u00e9mon",
+  "species": "Land Spirit Pokémon",
   "type": [
     "Grass",
     "Fairy"
@@ -47,15 +47,15 @@
       "version": "sun"
     },
     {
-      "text": "The guardian deity of Ula\u2019ula is a lazy Pok\u00e9mon. It commands plants to immobilize its foes and then deals them a savage blow with its horns.",
+      "text": "The guardian deity of Ula’ula is a lazy Pokémon. It commands plants to immobilize its foes and then deals them a savage blow with its horns.",
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s called a guardian deity, it\u2019s violent enough to crush anyone it sees as an enemy.",
+      "text": "Although it’s called a guardian deity, it’s violent enough to crush anyone it sees as an enemy.",
       "version": "ultra-sun"
     },
     {
-      "text": "It makes ringing sounds with its tail to let others know where it is, avoiding unneeded conflicts. This guardian deity of Ula\u2019ula controls plants.",
+      "text": "It makes ringing sounds with its tail to let others know where it is, avoiding unneeded conflicts. This guardian deity of Ula’ula controls plants.",
       "version": "ultra-moon"
     }
   ],
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/787.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カプ・ブルル",
+    "roomaji": "Bulul",
+    "ko": "카푸브루루",
+    "zh-Hant": "卡璞・哞哞",
+    "fr": "Tokotoro",
+    "de": "Kapu-Toro",
+    "es": "Tapu Bulu",
+    "it": "Tapu Bulu",
+    "en": "Tapu Bulu",
+    "ja": "カプ・ブルル",
+    "zh-Hans": "卡璞・哞哞"
   }
 }

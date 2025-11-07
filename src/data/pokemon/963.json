@@ -1,7 +1,7 @@
 {
   "id": 963,
   "name": "Finizen",
-  "species": "Dolphin Pok\u00e9mon",
+  "species": "Dolphin Pokémon",
   "type": [
     "Water"
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/963.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ナミイルカ",
+    "roomaji": "Namiiruka",
+    "ko": "맨돌핀",
+    "zh-Hant": "波普海豚",
+    "fr": "Dofin",
+    "de": "Normifin",
+    "es": "Finizen",
+    "it": "Finizen",
+    "en": "Finizen",
+    "ja": "ナミイルカ",
+    "zh-Hans": "波普海豚"
   }
 }

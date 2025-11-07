@@ -1,7 +1,7 @@
 {
   "id": 159,
   "name": "Croconaw",
-  "species": "Big Jaw Pok\u00e9mon",
+  "species": "Big Jaw Pokémon",
   "type": [
     "Water"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/159.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/159.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アリゲイツ",
+    "roomaji": "Alligates",
+    "ko": "엘리게이",
+    "zh-Hant": "藍鱷",
+    "fr": "Crocrodil",
+    "de": "Tyracroc",
+    "es": "Croconaw",
+    "it": "Croconaw",
+    "en": "Croconaw",
+    "ja": "アリゲイツ",
+    "zh-Hans": "蓝鳄"
   }
 }

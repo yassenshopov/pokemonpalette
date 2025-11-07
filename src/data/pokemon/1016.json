@@ -1,7 +1,7 @@
 {
   "id": 1016,
   "name": "Fezandipiti",
-  "species": "Retainer Pok\u00e9mon",
+  "species": "Retainer Pokémon",
   "type": [
     "Poison",
     "Fairy"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "Fezandipiti beats its glossy wings to scatter pheromones that captivate people and Pok\u00e9mon.",
+      "text": "Fezandipiti beats its glossy wings to scatter pheromones that captivate people and Pokémon.",
       "version": "violet"
     }
   ],
@@ -277,5 +277,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1016.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "キチキギス",
+    "ko": "기로치",
+    "zh-Hant": "吉雉雞",
+    "fr": "Favianos",
+    "de": "Beatori",
+    "es": "Fezandipiti",
+    "it": "Fezandipiti",
+    "en": "Fezandipiti",
+    "ja": "キチキギス",
+    "zh-Hans": "吉雉鸡"
   }
 }

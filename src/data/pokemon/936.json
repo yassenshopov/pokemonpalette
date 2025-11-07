@@ -1,7 +1,7 @@
 {
   "id": 936,
   "name": "Armarouge",
-  "species": "Fire Warrior Pok\u00e9mon",
+  "species": "Fire Warrior Pokémon",
   "type": [
     "Fire",
     "Psychic"
@@ -40,14 +40,14 @@
     "specialDefense": 80,
     "speed": 75
   },
-  "description": "Armarouge evolved through the use of a set of armor that belonged to a distinguished warrior. This Pok\u00e9mon is incredibly loyal.",
+  "description": "Armarouge evolved through the use of a set of armor that belonged to a distinguished warrior. This Pokémon is incredibly loyal.",
   "flavorTexts": [
     {
-      "text": "Armarouge evolved through the use of a set of armor that belonged to a distinguished warrior. This Pok\u00e9mon is incredibly loyal.",
+      "text": "Armarouge evolved through the use of a set of armor that belonged to a distinguished warrior. This Pokémon is incredibly loyal.",
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon clads itself in armor that has been fortified by psychic and fire energy, and it shoots blazing fireballs.",
+      "text": "This Pokémon clads itself in armor that has been fortified by psychic and fire energy, and it shoots blazing fireballs.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/936.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "グレンアルマ",
+    "roomaji": "Gurenarma",
+    "ko": "카디나르마",
+    "zh-Hant": "紅蓮鎧騎",
+    "fr": "Carmadura",
+    "de": "Crimanzo",
+    "es": "Armarouge",
+    "it": "Armarouge",
+    "en": "Armarouge",
+    "ja": "グレンアルマ",
+    "zh-Hans": "红莲铠骑"
   }
 }

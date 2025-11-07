@@ -1,7 +1,7 @@
 {
   "id": 776,
   "name": "Turtonator",
-  "species": "Blast Turtle Pok\u00e9mon",
+  "species": "Blast Turtle Pokémon",
   "type": [
     "Fire",
     "Dragon"
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/776.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バクガメス",
+    "roomaji": "Bakugames",
+    "ko": "폭거북스",
+    "zh-Hant": "爆焰龜獸",
+    "fr": "Boumata",
+    "de": "Tortunator",
+    "es": "Turtonator",
+    "it": "Turtonator",
+    "en": "Turtonator",
+    "ja": "バクガメス",
+    "zh-Hans": "爆焰龟兽"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 995,
   "name": "Iron-thorns",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Rock",
     "Electric"
@@ -34,10 +34,10 @@
     "specialDefense": 84,
     "speed": 72
   },
-  "description": "It has some similarities to a Pok\u00e9mon introduced in a dubious magazine as a Tyranitar from one billion years into the future.",
+  "description": "It has some similarities to a Pokémon introduced in a dubious magazine as a Tyranitar from one billion years into the future.",
   "flavorTexts": [
     {
-      "text": "It has some similarities to a Pok\u00e9mon introduced in a dubious magazine as a Tyranitar from one billion years into the future.",
+      "text": "It has some similarities to a Pokémon introduced in a dubious magazine as a Tyranitar from one billion years into the future.",
       "version": "scarlet"
     },
     {
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/995.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノイバラ",
+    "roomaji": "Tetsunoibara",
+    "ko": "무쇠가시",
+    "zh-Hant": "鐵荊棘",
+    "fr": "Épine-de-Fer",
+    "de": "Eisendorn",
+    "es": "Ferropúas",
+    "it": "Spineferree",
+    "en": "Iron Thorns",
+    "ja": "テツノイバラ",
+    "zh-Hans": "铁荆棘"
   }
 }

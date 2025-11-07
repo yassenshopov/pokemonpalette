@@ -1,7 +1,7 @@
 {
   "id": 827,
   "name": "Nickit",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 52,
     "speed": 50
   },
-  "description": "Aided by the soft pads on its feet, it silently raids the food stores of other Pok\u00e9mon. It survives off its ill-gotten gains.",
+  "description": "Aided by the soft pads on its feet, it silently raids the food stores of other Pokémon. It survives off its ill-gotten gains.",
   "flavorTexts": [
     {
-      "text": "Aided by the soft pads on its feet, it silently raids the food stores of other Pok\u00e9mon. It survives off its ill-gotten gains.",
+      "text": "Aided by the soft pads on its feet, it silently raids the food stores of other Pokémon. It survives off its ill-gotten gains.",
       "version": "sword"
     },
     {
-      "text": "Cunning and cautious, this Pok\u00e9mon survives by stealing food from others. It erases its tracks with swipes of its tail as it makes off with its plunder.",
+      "text": "Cunning and cautious, this Pokémon survives by stealing food from others. It erases its tracks with swipes of its tail as it makes off with its plunder.",
       "version": "shield"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/827.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クスネ",
+    "roomaji": "Kusune",
+    "ko": "훔처우",
+    "zh-Hant": "偷兒狐",
+    "fr": "Goupilou",
+    "de": "Kleptifux",
+    "es": "Nickit",
+    "it": "Nickit",
+    "en": "Nickit",
+    "ja": "クスネ",
+    "zh-Hans": "狡小狐"
   }
 }

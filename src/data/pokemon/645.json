@@ -1,7 +1,7 @@
 {
   "id": 645,
   "name": "Landorus-incarnate",
-  "species": "Abundance Pok\u00e9mon",
+  "species": "Abundance Pokémon",
   "type": [
     "Ground",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 80,
     "speed": 101
   },
-  "description": "Lands visited by Landorus grant such bountiful crops that it has been hailed as \u201cThe Guardian of the Fields.\u201d",
+  "description": "Lands visited by Landorus grant such bountiful crops that it has been hailed as “The Guardian of the Fields.”",
   "flavorTexts": [
     {
-      "text": "Lands visited by Landorus grant such bountiful crops that it has been hailed as \u201cThe Guardian of the Fields.\u201d",
+      "text": "Lands visited by Landorus grant such bountiful crops that it has been hailed as “The Guardian of the Fields.”",
       "version": "black"
     },
     {
@@ -59,7 +59,7 @@
       "version": "white-2"
     },
     {
-      "text": "Lands visited by Landorus grant such bountiful crops that it has been hailed as \u201cThe Guardian of the Fields.\u201d",
+      "text": "Lands visited by Landorus grant such bountiful crops that it has been hailed as “The Guardian of the Fields.”",
       "version": "x"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/645.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/645.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ランドロス",
+    "roomaji": "Landlos",
+    "ko": "랜드로스",
+    "zh-Hant": "土地雲",
+    "fr": "Démétéros",
+    "de": "Demeteros",
+    "es": "Landorus",
+    "it": "Landorus",
+    "en": "Landorus",
+    "ja": "ランドロス",
+    "zh-Hans": "土地云"
   }
 }

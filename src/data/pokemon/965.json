@@ -1,7 +1,7 @@
 {
   "id": 965,
   "name": "Varoom",
-  "species": "Single-Cyl Pok\u00e9mon",
+  "species": "Single-Cyl Pokémon",
   "type": [
     "Steel",
     "Poison"
@@ -40,14 +40,14 @@
     "specialDefense": 45,
     "speed": 47
   },
-  "description": "It is said that this Pok\u00e9mon was born when an unknown poison Pok\u00e9mon entered and inspirited an engine left at a scrap-processing factory.",
+  "description": "It is said that this Pokémon was born when an unknown poison Pokémon entered and inspirited an engine left at a scrap-processing factory.",
   "flavorTexts": [
     {
-      "text": "It is said that this Pok\u00e9mon was born when an unknown poison Pok\u00e9mon entered and inspirited an engine left at a scrap-processing factory.",
+      "text": "It is said that this Pokémon was born when an unknown poison Pokémon entered and inspirited an engine left at a scrap-processing factory.",
       "version": "scarlet"
     },
     {
-      "text": "The steel section is Varoom\u2019s actual body. This Pok\u00e9mon clings to rocks and converts the minerals within into energy to fuel its activities.",
+      "text": "The steel section is Varoom’s actual body. This Pokémon clings to rocks and converts the minerals within into energy to fuel its activities.",
       "version": "violet"
     }
   ],
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/965.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブロロン",
+    "roomaji": "Buroron",
+    "ko": "부르롱",
+    "zh-Hant": "噗隆隆",
+    "fr": "Vrombi",
+    "de": "Knattox",
+    "es": "Varoom",
+    "it": "Varoom",
+    "en": "Varoom",
+    "ja": "ブロロン",
+    "zh-Hans": "噗隆隆"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 705,
   "name": "Sliggoo",
-  "species": "Soft Tissue Pok\u00e9mon",
+  "species": "Soft Tissue Pokémon",
   "type": [
     "Dragon"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 113,
     "speed": 60
   },
-  "description": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can\u2019t see anything.",
+  "description": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can’t see anything.",
   "flavorTexts": [
     {
-      "text": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can\u2019t see anything.",
+      "text": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can’t see anything.",
       "version": "x"
     },
     {
@@ -52,7 +52,7 @@
       "version": "y"
     },
     {
-      "text": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can\u2019t see anything.",
+      "text": "It drives away opponents by excreting a sticky liquid that can dissolve anything. Its eyes devolved, so it can’t see anything.",
       "version": "omega-ruby"
     },
     {
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/705.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヌメイル",
+    "roomaji": "Numeil",
+    "ko": "미끄네일",
+    "zh-Hant": "黏美兒",
+    "fr": "Colimucus",
+    "de": "Viscargot",
+    "es": "Sliggoo",
+    "it": "Sliggoo",
+    "en": "Sliggoo",
+    "ja": "ヌメイル",
+    "zh-Hans": "黏美儿"
   }
 }

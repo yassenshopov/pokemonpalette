@@ -1,7 +1,7 @@
 {
   "id": 660,
   "name": "Diggersby",
-  "species": "Digging Pok\u00e9mon",
+  "species": "Digging Pokémon",
   "type": [
     "Normal",
     "Ground"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "As powerful as an excavator, its ears can reduce dense bedrock to rubble. When it\u2019s finished digging, it lounges lazily.",
+      "text": "As powerful as an excavator, its ears can reduce dense bedrock to rubble. When it’s finished digging, it lounges lazily.",
       "version": "y"
     },
     {
@@ -61,11 +61,11 @@
       "version": "omega-ruby"
     },
     {
-      "text": "As powerful as an excavator, its ears can reduce dense bedrock to rubble. When it\u2019s finished digging, it lounges lazily.",
+      "text": "As powerful as an excavator, its ears can reduce dense bedrock to rubble. When it’s finished digging, it lounges lazily.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "With power equal to an excavator, it can dig through dense bedrock. It\u2019s a huge help during tunnel construction.",
+      "text": "With power equal to an excavator, it can dig through dense bedrock. It’s a huge help during tunnel construction.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/660.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ホルード",
+    "roomaji": "Horudo",
+    "ko": "파르토",
+    "zh-Hant": "掘地兔",
+    "fr": "Excavarenne",
+    "de": "Grebbit",
+    "es": "Diggersby",
+    "it": "Diggersby",
+    "en": "Diggersby",
+    "ja": "ホルード",
+    "zh-Hans": "掘地兔"
   }
 }

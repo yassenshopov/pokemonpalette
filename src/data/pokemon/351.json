@@ -1,7 +1,7 @@
 {
   "id": 351,
   "name": "Castform",
-  "species": "Weather Pok\u00e9mon",
+  "species": "Weather Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 70,
     "speed": 70
   },
-  "description": "CASTFORM\u2019s appearance changes with the weather. This POK\u00e9MON gained the ability to use the vast power of nature to protect its tiny body.",
+  "description": "CASTFORM’s appearance changes with the weather. This POKéMON gained the ability to use the vast power of nature to protect its tiny body.",
   "flavorTexts": [
     {
-      "text": "CASTFORM\u2019s appearance changes with the weather. This POK\u00e9MON gained the ability to use the vast power of nature to protect its tiny body.",
+      "text": "CASTFORM’s appearance changes with the weather. This POKéMON gained the ability to use the vast power of nature to protect its tiny body.",
       "version": "ruby"
     },
     {
-      "text": "CASTFORM borrows the power of nature to transform itself into the guises of the sun, rain clouds, and snow clouds. This POK\u00e9MON\u2019s feelings change with the weather.",
+      "text": "CASTFORM borrows the power of nature to transform itself into the guises of the sun, rain clouds, and snow clouds. This POKéMON’s feelings change with the weather.",
       "version": "sapphire"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/351.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/351.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポワルン",
+    "roomaji": "Powalen",
+    "ko": "캐스퐁",
+    "zh-Hant": "飄浮泡泡",
+    "fr": "Morphéo",
+    "de": "Formeo",
+    "es": "Castform",
+    "it": "Castform",
+    "en": "Castform",
+    "ja": "ポワルン",
+    "zh-Hans": "飘浮泡泡"
   }
 }

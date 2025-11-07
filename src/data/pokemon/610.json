@@ -1,7 +1,7 @@
 {
   "id": 610,
   "name": "Axew",
-  "species": "Tusk Pok\u00e9mon",
+  "species": "Tusk Pokémon",
   "type": [
     "Dragon"
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/610.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/610.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キバゴ",
+    "roomaji": "Kibago",
+    "ko": "터검니",
+    "zh-Hant": "牙牙",
+    "fr": "Coupenotte",
+    "de": "Milza",
+    "es": "Axew",
+    "it": "Axew",
+    "en": "Axew",
+    "ja": "キバゴ",
+    "zh-Hans": "牙牙"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 700,
   "name": "Sylveon",
-  "species": "Intertwining Pok\u00e9mon",
+  "species": "Intertwining Pokémon",
   "type": [
     "Fairy"
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/700.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニンフィア",
+    "roomaji": "Nymphia",
+    "ko": "님피아",
+    "zh-Hant": "仙子伊布",
+    "fr": "Nymphali",
+    "de": "Feelinara",
+    "es": "Sylveon",
+    "it": "Sylveon",
+    "en": "Sylveon",
+    "ja": "ニンフィア",
+    "zh-Hans": "仙子伊布"
   }
 }

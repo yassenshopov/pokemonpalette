@@ -1,7 +1,7 @@
 {
   "id": 775,
   "name": "Komala",
-  "species": "Drowsing Pok\u00e9mon",
+  "species": "Drowsing Pokémon",
   "type": [
     "Normal"
   ],
@@ -40,7 +40,7 @@
       "version": "moon"
     },
     {
-      "text": "It stays asleep from the moment it\u2019s born. When it falls into a deep sleep, it stops moving altogether.",
+      "text": "It stays asleep from the moment it’s born. When it falls into a deep sleep, it stops moving altogether.",
       "version": "ultra-sun"
     },
     {
@@ -274,5 +274,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/775.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ネッコアラ",
+    "roomaji": "Nekkoara",
+    "ko": "자말라",
+    "zh-Hant": "樹枕尾熊",
+    "fr": "Dodoala",
+    "de": "Koalelu",
+    "es": "Komala",
+    "it": "Komala",
+    "en": "Komala",
+    "ja": "ネッコアラ",
+    "zh-Hans": "树枕尾熊"
   }
 }

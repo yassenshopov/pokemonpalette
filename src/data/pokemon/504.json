@@ -1,7 +1,7 @@
 {
   "id": 504,
   "name": "Patrat",
-  "species": "Scout Pok\u00e9mon",
+  "species": "Scout Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,11 +52,11 @@
       "version": "white"
     },
     {
-      "text": "Extremely cautious, one of them will always be on the lookout, but it won\u2019t notice a foe coming from behind.",
+      "text": "Extremely cautious, one of them will always be on the lookout, but it won’t notice a foe coming from behind.",
       "version": "black-2"
     },
     {
-      "text": "Extremely cautious, one of them will always be on the lookout, but it won\u2019t notice a foe coming from behind.",
+      "text": "Extremely cautious, one of them will always be on the lookout, but it won’t notice a foe coming from behind.",
       "version": "white-2"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/504.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/504.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミネズミ",
+    "roomaji": "Minezumi",
+    "ko": "보르쥐",
+    "zh-Hant": "探探鼠",
+    "fr": "Ratentif",
+    "de": "Nagelotz",
+    "es": "Patrat",
+    "it": "Patrat",
+    "en": "Patrat",
+    "ja": "ミネズミ",
+    "zh-Hans": "探探鼠"
   }
 }

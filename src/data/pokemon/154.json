@@ -1,7 +1,7 @@
 {
   "id": 154,
   "name": "Meganium",
-  "species": "Herb Pok\u00e9mon",
+  "species": "Herb Pokémon",
   "type": [
     "Grass"
   ],
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "The fragrance of MEGANIUM\u2019s flower soothes and calms emotions. In battle, this POK\u00e9MON gives off more of its becalming scent to blunt the foe\u2019s fighting spirit.",
+      "text": "The fragrance of MEGANIUM’s flower soothes and calms emotions. In battle, this POKéMON gives off more of its becalming scent to blunt the foe’s fighting spirit.",
       "version": "ruby"
     },
     {
-      "text": "The fragrance of MEGANIUM\u2019s flower soothes and calms emotions. In battle, this POK\u00e9MON gives off more of its becalming scent to blunt the foe\u2019s fighting spirit.",
+      "text": "The fragrance of MEGANIUM’s flower soothes and calms emotions. In battle, this POKéMON gives off more of its becalming scent to blunt the foe’s fighting spirit.",
       "version": "sapphire"
     }
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/154.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/154.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メガニウム",
+    "roomaji": "Meganium",
+    "ko": "메가니움",
+    "zh-Hant": "大竺葵",
+    "fr": "Méganium",
+    "de": "Meganie",
+    "es": "Meganium",
+    "it": "Meganium",
+    "en": "Meganium",
+    "ja": "メガニウム",
+    "zh-Hans": "大竺葵"
   }
 }

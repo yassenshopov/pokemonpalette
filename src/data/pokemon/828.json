@@ -1,7 +1,7 @@
 {
   "id": 828,
   "name": "Thievul",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Dark"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/828.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フォクスライ",
+    "roomaji": "Foxly",
+    "ko": "폭슬라이",
+    "zh-Hant": "狐大盜",
+    "fr": "Roublenard",
+    "de": "Gaunux",
+    "es": "Thievul",
+    "it": "Thievul",
+    "en": "Thievul",
+    "ja": "フォクスライ",
+    "zh-Hans": "猾大狐"
   }
 }

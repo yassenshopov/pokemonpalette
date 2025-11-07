@@ -1,7 +1,7 @@
 {
   "id": 178,
   "name": "Xatu",
-  "species": "Mystic Pok\u00e9mon",
+  "species": "Mystic Pokémon",
   "type": [
     "Psychic",
     "Flying"
@@ -57,15 +57,15 @@
       "version": "silver"
     },
     {
-      "text": "Once it begins to meditate at sun\u00ad rise, the entire day will pass before it will move again.",
+      "text": "Once it begins to meditate at sun­ rise, the entire day will pass before it will move again.",
       "version": "crystal"
     },
     {
-      "text": "XATU stands rooted and still in one spot all day long. People believe that this POK\u00e9MON does so out of fear of the terrible things it has foreseen in the future.",
+      "text": "XATU stands rooted and still in one spot all day long. People believe that this POKéMON does so out of fear of the terrible things it has foreseen in the future.",
       "version": "ruby"
     },
     {
-      "text": "XATU is known to stand motionless while staring at the sun all day long. Some people revere it as a mystical POK\u00e9MON out of their belief that XATU is in possession of the power to see into the future.",
+      "text": "XATU is known to stand motionless while staring at the sun all day long. Some people revere it as a mystical POKéMON out of their belief that XATU is in possession of the power to see into the future.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/178.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/178.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ネイティオ",
+    "roomaji": "Natio",
+    "ko": "네이티오",
+    "zh-Hant": "天然鳥",
+    "fr": "Xatu",
+    "de": "Xatu",
+    "es": "Xatu",
+    "it": "Xatu",
+    "en": "Xatu",
+    "ja": "ネイティオ",
+    "zh-Hans": "天然鸟"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 1000,
   "name": "Gholdengo",
-  "species": "Coin Entity Pok\u00e9mon",
+  "species": "Coin Entity Pokémon",
   "type": [
     "Steel",
     "Ghost"
@@ -34,10 +34,10 @@
     "specialDefense": 91,
     "speed": 84
   },
-  "description": "Its body seems to be made up of 1,000 coins. This Pok\u00e9mon gets along well with others and is quick to make friends with anybody.",
+  "description": "Its body seems to be made up of 1,000 coins. This Pokémon gets along well with others and is quick to make friends with anybody.",
   "flavorTexts": [
     {
-      "text": "Its body seems to be made up of 1,000 coins. This Pok\u00e9mon gets along well with others and is quick to make friends with anybody.",
+      "text": "Its body seems to be made up of 1,000 coins. This Pokémon gets along well with others and is quick to make friends with anybody.",
       "version": "scarlet"
     },
     {
@@ -280,5 +280,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1000.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サーフゴー",
+    "roomaji": "Surfugo",
+    "ko": "타부자고",
+    "zh-Hant": "賽富豪",
+    "fr": "Gromago",
+    "de": "Monetigo",
+    "es": "Gholdengo",
+    "it": "Gholdengo",
+    "en": "Gholdengo",
+    "ja": "サーフゴー",
+    "zh-Hans": "赛富豪"
   }
 }

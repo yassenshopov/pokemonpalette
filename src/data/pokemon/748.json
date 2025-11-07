@@ -1,7 +1,7 @@
 {
   "id": 748,
   "name": "Toxapex",
-  "species": "Brutal Star Pok\u00e9mon",
+  "species": "Brutal Star Pokémon",
   "type": [
     "Poison",
     "Water"
@@ -53,19 +53,19 @@
       "version": "sun"
     },
     {
-      "text": "Those attacked by Toxapex\u2019s poison will suffer intense pain for three days and three nights. Post-recovery, there will be some aftereffects.",
+      "text": "Those attacked by Toxapex’s poison will suffer intense pain for three days and three nights. Post-recovery, there will be some aftereffects.",
       "version": "moon"
     },
     {
-      "text": "To attack, this Pok\u00e9mon sends toxic spikes flying at its enemies. Ones that come close get mown down by the claws on its feet.",
+      "text": "To attack, this Pokémon sends toxic spikes flying at its enemies. Ones that come close get mown down by the claws on its feet.",
       "version": "ultra-sun"
     },
     {
-      "text": "With its 12 legs, it creates a dome to shelter within. The flow of the tides doesn\u2019t affect Toxapex in there, so it\u2019s very comfortable.",
+      "text": "With its 12 legs, it creates a dome to shelter within. The flow of the tides doesn’t affect Toxapex in there, so it’s very comfortable.",
       "version": "ultra-moon"
     },
     {
-      "text": "To survive in the cold waters of Galar, this Pok\u00e9mon forms a dome with its legs, enclosing its body so it can capture its own body heat.",
+      "text": "To survive in the cold waters of Galar, this Pokémon forms a dome with its legs, enclosing its body so it can capture its own body heat.",
       "version": "sword"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/748.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドヒドイデ",
+    "roomaji": "Dohidoide",
+    "ko": "더시마사리",
+    "zh-Hant": "超壞星",
+    "fr": "Prédastérie",
+    "de": "Aggrostella",
+    "es": "Toxapex",
+    "it": "Toxapex",
+    "en": "Toxapex",
+    "ja": "ドヒドイデ",
+    "zh-Hans": "超坏星"
   }
 }

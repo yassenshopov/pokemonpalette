@@ -1,7 +1,7 @@
 {
   "id": 529,
   "name": "Drilbur",
-  "species": "Mole Pok\u00e9mon",
+  "species": "Mole Pokémon",
   "type": [
     "Ground"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/529.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/529.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モグリュー",
+    "roomaji": "Mogurew",
+    "ko": "두더류",
+    "zh-Hant": "螺釘地鼠",
+    "fr": "Rototaupe",
+    "de": "Rotomurf",
+    "es": "Drilbur",
+    "it": "Drilbur",
+    "en": "Drilbur",
+    "ja": "モグリュー",
+    "zh-Hans": "螺钉地鼠"
   }
 }

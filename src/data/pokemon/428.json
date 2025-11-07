@@ -1,7 +1,7 @@
 {
   "id": 428,
   "name": "Lopunny",
-  "species": "Rabbit Pok\u00e9mon",
+  "species": "Rabbit Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 96,
     "speed": 105
   },
-  "description": "An extremely cautious Pok\u00e9mon. It cloaks its body with its fluffy ear fur when it senses danger.",
+  "description": "An extremely cautious Pokémon. It cloaks its body with its fluffy ear fur when it senses danger.",
   "flavorTexts": [
     {
-      "text": "An extremely cautious Pok\u00e9mon. It cloaks its body with its fluffy ear fur when it senses danger.",
+      "text": "An extremely cautious Pokémon. It cloaks its body with its fluffy ear fur when it senses danger.",
       "version": "diamond"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/428.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/428.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミミロップ",
+    "roomaji": "Mimilop",
+    "ko": "이어롭",
+    "zh-Hant": "長耳兔",
+    "fr": "Lockpin",
+    "de": "Schlapor",
+    "es": "Lopunny",
+    "it": "Lopunny",
+    "en": "Lopunny",
+    "ja": "ミミロップ",
+    "zh-Hans": "长耳兔"
   }
 }

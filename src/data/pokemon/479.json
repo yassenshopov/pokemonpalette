@@ -1,7 +1,7 @@
 {
   "id": 479,
   "name": "Rotom",
-  "species": "Plasma Pok\u00e9mon",
+  "species": "Plasma Pokémon",
   "type": [
     "Electric",
     "Ghost"
@@ -49,11 +49,11 @@
       "version": "platinum"
     },
     {
-      "text": "Research continues on this Pok\u00e9mon, which could be the power source of a unique motor.",
+      "text": "Research continues on this Pokémon, which could be the power source of a unique motor.",
       "version": "heartgold"
     },
     {
-      "text": "Research continues on this Pok\u00e9mon, which could be the power source of a unique motor.",
+      "text": "Research continues on this Pokémon, which could be the power source of a unique motor.",
       "version": "soulsilver"
     }
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/479.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/479.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ロトム",
+    "roomaji": "Rotom",
+    "ko": "로토무",
+    "zh-Hant": "洛托姆",
+    "fr": "Motisma",
+    "de": "Rotom",
+    "es": "Rotom",
+    "it": "Rotom",
+    "en": "Rotom",
+    "ja": "ロトム",
+    "zh-Hans": "洛托姆"
   }
 }

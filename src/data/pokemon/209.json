@@ -1,7 +1,7 @@
 {
   "id": 209,
   "name": "Snubbull",
-  "species": "Fairy Pok\u00e9mon",
+  "species": "Fairy Pokémon",
   "type": [
     "Fairy"
   ],
@@ -48,19 +48,19 @@
       "version": "gold"
     },
     {
-      "text": "It has an active, playful nature. Many women like to frolic with it because of its af\u00ad fectionate ways.",
+      "text": "It has an active, playful nature. Many women like to frolic with it because of its af­ fectionate ways.",
       "version": "silver"
     },
     {
-      "text": "In truth, it is a cowardly POK\u00e9MON. It growls eagerly in order to hide its fear from its opponent.",
+      "text": "In truth, it is a cowardly POKéMON. It growls eagerly in order to hide its fear from its opponent.",
       "version": "crystal"
     },
     {
-      "text": "By baring its fangs and making a scary face, SNUBBULL sends smaller POK\u00e9MON scurrying away in terror. However, this POK\u00e9MON seems a little sad at making its foes flee.",
+      "text": "By baring its fangs and making a scary face, SNUBBULL sends smaller POKéMON scurrying away in terror. However, this POKéMON seems a little sad at making its foes flee.",
       "version": "ruby"
     },
     {
-      "text": "By baring its fangs and making a scary face, SNUBBULL sends smaller POK\u00e9MON scurrying away in terror. However, this POK\u00e9MON seems a little sad at making its foes flee.",
+      "text": "By baring its fangs and making a scary face, SNUBBULL sends smaller POKéMON scurrying away in terror. However, this POKéMON seems a little sad at making its foes flee.",
       "version": "sapphire"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/209.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/209.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブルー",
+    "roomaji": "Bulu",
+    "ko": "블루",
+    "zh-Hant": "布魯",
+    "fr": "Snubbull",
+    "de": "Snubbull",
+    "es": "Snubbull",
+    "it": "Snubbull",
+    "en": "Snubbull",
+    "ja": "ブルー",
+    "zh-Hans": "布鲁"
   }
 }

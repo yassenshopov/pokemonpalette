@@ -1,7 +1,7 @@
 {
   "id": 102,
   "name": "Exeggcute",
-  "species": "Egg Pok\u00e9mon",
+  "species": "Egg Pokémon",
   "type": [
     "Grass",
     "Psychic"
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/102.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/102.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タマタマ",
+    "roomaji": "Tamatama",
+    "ko": "아라리",
+    "zh-Hant": "蛋蛋",
+    "fr": "Noeunoeuf",
+    "de": "Owei",
+    "es": "Exeggcute",
+    "it": "Exeggcute",
+    "en": "Exeggcute",
+    "ja": "タマタマ",
+    "zh-Hans": "蛋蛋"
   }
 }

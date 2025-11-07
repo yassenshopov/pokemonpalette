@@ -1,7 +1,7 @@
 {
   "id": 586,
   "name": "Sawsbuck",
-  "species": "Season Pok\u00e9mon",
+  "species": "Season Pokémon",
   "type": [
     "Normal",
     "Grass"
@@ -46,10 +46,10 @@
     "specialDefense": 70,
     "speed": 95
   },
-  "description": "They migrate according to the seasons. People can tell the season by looking at Sawsbuck\u2019s horns.",
+  "description": "They migrate according to the seasons. People can tell the season by looking at Sawsbuck’s horns.",
   "flavorTexts": [
     {
-      "text": "They migrate according to the seasons. People can tell the season by looking at Sawsbuck\u2019s horns.",
+      "text": "They migrate according to the seasons. People can tell the season by looking at Sawsbuck’s horns.",
       "version": "black"
     },
     {
@@ -65,7 +65,7 @@
       "version": "white-2"
     },
     {
-      "text": "They migrate according to the seasons. People can tell the season by looking at Sawsbuck\u2019s horns.",
+      "text": "They migrate according to the seasons. People can tell the season by looking at Sawsbuck’s horns.",
       "version": "x"
     }
   ],
@@ -356,5 +356,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/586.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/586.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メブキジカ",
+    "roomaji": "Mebukijika",
+    "ko": "바라철록",
+    "zh-Hant": "萌芽鹿",
+    "fr": "Haydaim",
+    "de": "Kronjuwild",
+    "es": "Sawsbuck",
+    "it": "Sawsbuck",
+    "en": "Sawsbuck",
+    "ja": "メブキジカ",
+    "zh-Hans": "萌芽鹿"
   }
 }

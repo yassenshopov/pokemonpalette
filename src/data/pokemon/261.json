@@ -1,7 +1,7 @@
 {
   "id": 261,
   "name": "Poochyena",
-  "species": "Bite Pok\u00e9mon",
+  "species": "Bite Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 30,
     "speed": 35
   },
-  "description": "At first sight, POOCHYENA takes a bite at anything that moves. This POK\u00e9MON chases after prey until the victim becomes exhausted. However, it may turn tail if the prey strikes back.",
+  "description": "At first sight, POOCHYENA takes a bite at anything that moves. This POKéMON chases after prey until the victim becomes exhausted. However, it may turn tail if the prey strikes back.",
   "flavorTexts": [
     {
-      "text": "At first sight, POOCHYENA takes a bite at anything that moves. This POK\u00e9MON chases after prey until the victim becomes exhausted. However, it may turn tail if the prey strikes back.",
+      "text": "At first sight, POOCHYENA takes a bite at anything that moves. This POKéMON chases after prey until the victim becomes exhausted. However, it may turn tail if the prey strikes back.",
       "version": "ruby"
     },
     {
-      "text": "POOCHYENA is an omnivore - it will eat anything. A distinguishing feature is how large its fangs are compared to its body. This POK\u00e9MON tries to intimidate its foes by making the hair on its tail bristle out.",
+      "text": "POOCHYENA is an omnivore - it will eat anything. A distinguishing feature is how large its fangs are compared to its body. This POKéMON tries to intimidate its foes by making the hair on its tail bristle out.",
       "version": "sapphire"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/261.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/261.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポチエナ",
+    "roomaji": "Pochiena",
+    "ko": "포챠나",
+    "zh-Hant": "土狼犬",
+    "fr": "Medhyèna",
+    "de": "Fiffyen",
+    "es": "Poochyena",
+    "it": "Poochyena",
+    "en": "Poochyena",
+    "ja": "ポチエナ",
+    "zh-Hans": "土狼犬"
   }
 }

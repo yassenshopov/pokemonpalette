@@ -1,7 +1,7 @@
 {
   "id": 246,
   "name": "Larvitar",
-  "species": "Rock Skin Pok\u00e9mon",
+  "species": "Rock Skin Pokémon",
   "type": [
     "Rock",
     "Ground"
@@ -51,15 +51,15 @@
       "version": "silver"
     },
     {
-      "text": "Born deep under\u00ad ground, this POK\u00e9MON becomes a pupa after eating enough dirt to make a mountain.",
+      "text": "Born deep under­ ground, this POKéMON becomes a pupa after eating enough dirt to make a mountain.",
       "version": "crystal"
     },
     {
-      "text": "LARVITAR is born deep under the ground. To come up to the surface, this POK\u00e9MON must eat its way through the soil above. Until it does so, LARVITAR cannot see its parent\u2019s face.",
+      "text": "LARVITAR is born deep under the ground. To come up to the surface, this POKéMON must eat its way through the soil above. Until it does so, LARVITAR cannot see its parent’s face.",
       "version": "ruby"
     },
     {
-      "text": "LARVITAR is born deep under the ground. To come up to the surface, this POK\u00e9MON must eat its way through the soil above. Until it does so, LARVITAR cannot see its parent\u2019s face.",
+      "text": "LARVITAR is born deep under the ground. To come up to the surface, this POKéMON must eat its way through the soil above. Until it does so, LARVITAR cannot see its parent’s face.",
       "version": "sapphire"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/246.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/246.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヨーギラス",
+    "roomaji": "Yogiras",
+    "ko": "애버라스",
+    "zh-Hant": "幼基拉斯",
+    "fr": "Embrylex",
+    "de": "Larvitar",
+    "es": "Larvitar",
+    "it": "Larvitar",
+    "en": "Larvitar",
+    "ja": "ヨーギラス",
+    "zh-Hans": "幼基拉斯"
   }
 }

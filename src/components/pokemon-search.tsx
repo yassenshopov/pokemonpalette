@@ -54,6 +54,11 @@ export function PokemonSearch({
     Record<number, string | null>
   >({});
 
+  // Cache for Pokemon language names (to avoid reloading for search)
+  const [pokemonLanguageNames, setPokemonLanguageNames] = useState<
+    Record<number, Record<string, string>>
+  >({});
+
   // Clear sprite cache when isShiny changes
   useEffect(() => {
     setPokemonSprites({});
@@ -98,20 +103,81 @@ export function PokemonSearch({
     });
   }, [suggestions, pokemonSprites, isShiny]);
 
+  // Load language names for Pokemon (for multi-language search)
+  useEffect(() => {
+    const loadLanguageNames = async (id: number) => {
+      try {
+        const pokemon = await getPokemonById(id);
+        if (pokemon?.names) {
+          setPokemonLanguageNames((prev) => {
+            // Only update if not already cached
+            if (prev[id]) return prev;
+            return {
+              ...prev,
+              [id]: pokemon.names!,
+            };
+          });
+        }
+      } catch (error) {
+        // Silently fail - language names are optional
+      }
+    };
+
+    // Load language names for Pokemon that don't match English name/ID
+    // This allows searching by other languages
+    if (searchQuery.trim()) {
+      const queryLower = searchQuery.toLowerCase();
+      pokemonList.forEach((pokemon) => {
+        // Only load if:
+        // 1. Not already cached
+        // 2. Doesn't match English name or ID (so we need to check languages)
+        const matchesEnglish = 
+          pokemon.name.toLowerCase().includes(queryLower) ||
+          pokemon.id.toString().includes(queryLower);
+        
+        if (!pokemonLanguageNames[pokemon.id] && !matchesEnglish) {
+          loadLanguageNames(pokemon.id);
+        }
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery, pokemonList]);
+
   useEffect(() => {
     if (searchQuery.trim() === "") {
       setSuggestions([]);
       return;
     }
 
-    const filtered = pokemonList.filter(
-      (pokemon) =>
-        pokemon.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        pokemon.id.toString().includes(searchQuery)
-    );
+    const queryLower = searchQuery.toLowerCase();
+
+    const filtered = pokemonList.filter((pokemon) => {
+      // Check English name
+      if (pokemon.name.toLowerCase().includes(queryLower)) {
+        return true;
+      }
+
+      // Check ID
+      if (pokemon.id.toString().includes(queryLower)) {
+        return true;
+      }
+
+      // Check language names if available
+      const languageNames = pokemonLanguageNames[pokemon.id];
+      if (languageNames) {
+        const matchesLanguage = Object.values(languageNames).some((name) =>
+          name.toLowerCase().includes(queryLower)
+        );
+        if (matchesLanguage) {
+          return true;
+        }
+      }
+
+      return false;
+    });
 
     setSuggestions(filtered);
-  }, [searchQuery, pokemonList]);
+  }, [searchQuery, pokemonList, pokemonLanguageNames]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

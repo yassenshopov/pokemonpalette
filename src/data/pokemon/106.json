@@ -1,7 +1,7 @@
 {
   "id": 106,
   "name": "Hitmonlee",
-  "species": "Kicking Pok\u00e9mon",
+  "species": "Kicking Pokémon",
   "type": [
     "Fighting"
   ],
@@ -52,15 +52,15 @@
       "version": "blue"
     },
     {
-      "text": "When kicking, the sole of its foot turns as hard as a diamond on im\u00ad pact and destroys its enemy.",
+      "text": "When kicking, the sole of its foot turns as hard as a diamond on im­ pact and destroys its enemy.",
       "version": "yellow"
     },
     {
-      "text": "This amazing POK\u00e9\u00ad MON has an awesome sense of balance. It can kick in succession from any position.",
+      "text": "This amazing POKé­ MON has an awesome sense of balance. It can kick in succession from any position.",
       "version": "gold"
     },
     {
-      "text": "If it starts kick\u00ad ing repeatedly, both legs will stretch even long\u00ad er to strike a fleeing foe.",
+      "text": "If it starts kick­ ing repeatedly, both legs will stretch even long­ er to strike a fleeing foe.",
       "version": "silver"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/106.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/106.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サワムラー",
+    "roomaji": "Sawamular",
+    "ko": "시라소몬",
+    "zh-Hant": "飛腿郎",
+    "fr": "Kicklee",
+    "de": "Kicklee",
+    "es": "Hitmonlee",
+    "it": "Hitmonlee",
+    "en": "Hitmonlee",
+    "ja": "サワムラー",
+    "zh-Hans": "飞腿郎"
   }
 }

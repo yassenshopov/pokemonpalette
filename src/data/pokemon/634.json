@@ -1,7 +1,7 @@
 {
   "id": 634,
   "name": "Zweilous",
-  "species": "Hostile Pok\u00e9mon",
+  "species": "Hostile Pokémon",
   "type": [
     "Dark",
     "Dragon"
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/634.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/634.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジヘッド",
+    "roomaji": "Dihead",
+    "ko": "디헤드",
+    "zh-Hant": "雙首暴龍",
+    "fr": "Diamat",
+    "de": "Duodino",
+    "es": "Zweilous",
+    "it": "Zweilous",
+    "en": "Zweilous",
+    "ja": "ジヘッド",
+    "zh-Hans": "双首暴龙"
   }
 }

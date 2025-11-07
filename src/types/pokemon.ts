@@ -190,6 +190,8 @@ export interface Pokemon {
   heldItems?: HeldItem[];
   cries?: Cries;
   flavorTexts?: FlavorText[];
+  // Language names (mapping language code to Pokemon name)
+  names?: Record<string, string>;
 }
 
 export type PokemonType =

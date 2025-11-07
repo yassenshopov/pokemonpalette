@@ -1,7 +1,7 @@
 {
   "id": 782,
   "name": "Jangmo-o",
-  "species": "Scaly Pok\u00e9mon",
+  "species": "Scaly Pokémon",
   "type": [
     "Dragon"
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/782.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジャラコ",
+    "roomaji": "Jyarako",
+    "ko": "짜랑꼬",
+    "zh-Hant": "心鱗寶",
+    "fr": "Bébécaille",
+    "de": "Miniras",
+    "es": "Jangmo-o",
+    "it": "Jangmo-o",
+    "en": "Jangmo-o",
+    "ja": "ジャラコ",
+    "zh-Hans": "心鳞宝"
   }
 }

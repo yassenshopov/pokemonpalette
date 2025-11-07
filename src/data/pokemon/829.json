@@ -1,7 +1,7 @@
 {
   "id": 829,
   "name": "Gossifleur",
-  "species": "Flowering Pok\u00e9mon",
+  "species": "Flowering Pokémon",
   "type": [
     "Grass"
   ],
@@ -48,7 +48,7 @@
       "version": "sword"
     },
     {
-      "text": "It whirls around in the wind while singing a joyous song. This delightful display has charmed many into raising this Pok\u00e9mon.",
+      "text": "It whirls around in the wind while singing a joyous song. This delightful display has charmed many into raising this Pokémon.",
       "version": "shield"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/829.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヒメンカ",
+    "roomaji": "Himenka",
+    "ko": "꼬모카",
+    "zh-Hant": "幼棉棉",
+    "fr": "Tournicoton",
+    "de": "Cottini",
+    "es": "Gossifleur",
+    "it": "Gossifleur",
+    "en": "Gossifleur",
+    "ja": "ヒメンカ",
+    "zh-Hans": "幼棉棉"
   }
 }

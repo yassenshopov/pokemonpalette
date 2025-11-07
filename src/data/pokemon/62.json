@@ -1,7 +1,7 @@
 {
   "id": 62,
   "name": "Poliwrath",
-  "species": "Tadpole Pok\u00e9mon",
+  "species": "Tadpole Pokémon",
   "type": [
     "Water",
     "Fighting"
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "Although an ener\u00ad getic, skilled swimmer that uses all of its mus\u00ad cles, it lives on dry land.",
+      "text": "Although an ener­ getic, skilled swimmer that uses all of its mus­ cles, it lives on dry land.",
       "version": "silver"
     }
   ],
@@ -330,5 +330,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/62.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/62.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニョロボン",
+    "roomaji": "Nyorobon",
+    "ko": "강챙이",
+    "zh-Hant": "蚊香泳士",
+    "fr": "Tartard",
+    "de": "Quappo",
+    "es": "Poliwrath",
+    "it": "Poliwrath",
+    "en": "Poliwrath",
+    "ja": "ニョロボン",
+    "zh-Hans": "蚊香泳士"
   }
 }

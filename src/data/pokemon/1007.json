@@ -1,7 +1,7 @@
 {
   "id": 1007,
   "name": "Koraidon",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Fighting",
     "Dragon"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon resembles Cyclizar, but it is far burlier and more ferocious. Nothing is known about its ecology or other features.",
+      "text": "This Pokémon resembles Cyclizar, but it is far burlier and more ferocious. Nothing is known about its ecology or other features.",
       "version": "violet"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1007.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コライドン",
+    "roomaji": "Koraidon",
+    "ko": "코라이돈",
+    "zh-Hant": "故勒頓",
+    "fr": "Koraidon",
+    "de": "Koraidon",
+    "es": "Koraidon",
+    "it": "Koraidon",
+    "en": "Koraidon",
+    "ja": "コライドン",
+    "zh-Hans": "故勒顿"
   }
 }

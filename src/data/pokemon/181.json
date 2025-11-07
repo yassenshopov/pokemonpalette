@@ -1,7 +1,7 @@
 {
   "id": 181,
   "name": "Ampharos",
-  "species": "Light Pok\u00e9mon",
+  "species": "Light Pokémon",
   "type": [
     "Electric"
   ],
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "AMPHAROS gives off so much light that it can be seen even from space. People in the old days used the light of this POK\u00e9MON to send signals back and forth with others far away.",
+      "text": "AMPHAROS gives off so much light that it can be seen even from space. People in the old days used the light of this POKéMON to send signals back and forth with others far away.",
       "version": "ruby"
     },
     {
-      "text": "AMPHAROS gives off so much light that it can be seen even from space. People in the old days used the light of this POK\u00e9MON to send signals back and forth with others far away.",
+      "text": "AMPHAROS gives off so much light that it can be seen even from space. People in the old days used the light of this POKéMON to send signals back and forth with others far away.",
       "version": "sapphire"
     }
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/181.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/181.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "デンリュウ",
+    "roomaji": "Denryu",
+    "ko": "전룡",
+    "zh-Hant": "電龍",
+    "fr": "Pharamp",
+    "de": "Ampharos",
+    "es": "Ampharos",
+    "it": "Ampharos",
+    "en": "Ampharos",
+    "ja": "デンリュウ",
+    "zh-Hans": "电龙"
   }
 }

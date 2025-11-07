@@ -1,7 +1,7 @@
 {
   "id": 518,
   "name": "Musharna",
-  "species": "Drowsing Pok\u00e9mon",
+  "species": "Drowsing Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 95,
     "speed": 29
   },
-  "description": "The mist emanating from their foreheads is packed with the dreams of people and Pok\u00e9mon.",
+  "description": "The mist emanating from their foreheads is packed with the dreams of people and Pokémon.",
   "flavorTexts": [
     {
-      "text": "The mist emanating from their foreheads is packed with the dreams of people and Pok\u00e9mon.",
+      "text": "The mist emanating from their foreheads is packed with the dreams of people and Pokémon.",
       "version": "black"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "The mist emanating from their foreheads is packed with the dreams of people and Pok\u00e9mon.",
+      "text": "The mist emanating from their foreheads is packed with the dreams of people and Pokémon.",
       "version": "x"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/518.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/518.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムシャーナ",
+    "roomaji": "Musharna",
+    "ko": "몽얌나",
+    "zh-Hant": "夢夢蝕",
+    "fr": "Mushana",
+    "de": "Somnivora",
+    "es": "Musharna",
+    "it": "Musharna",
+    "en": "Musharna",
+    "ja": "ムシャーナ",
+    "zh-Hans": "梦梦蚀"
   }
 }

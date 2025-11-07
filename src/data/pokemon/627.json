@@ -1,7 +1,7 @@
 {
   "id": 627,
   "name": "Rufflet",
-  "species": "Eaglet Pok\u00e9mon",
+  "species": "Eaglet Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/627.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/627.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワシボン",
+    "roomaji": "Washibon",
+    "ko": "수리둥보",
+    "zh-Hant": "毛頭小鷹",
+    "fr": "Furaiglon",
+    "de": "Geronimatz",
+    "es": "Rufflet",
+    "it": "Rufflet",
+    "en": "Rufflet",
+    "ja": "ワシボン",
+    "zh-Hans": "毛头小鹰"
   }
 }

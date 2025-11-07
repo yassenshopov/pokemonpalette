@@ -1,7 +1,7 @@
 {
   "id": 825,
   "name": "Dottler",
-  "species": "Radome Pok\u00e9mon",
+  "species": "Radome Pokémon",
   "type": [
     "Bug",
     "Psychic"
@@ -46,10 +46,10 @@
     "specialDefense": 90,
     "speed": 30
   },
-  "description": "It barely moves, but it\u2019s still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
+  "description": "It barely moves, but it’s still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
   "flavorTexts": [
     {
-      "text": "It barely moves, but it\u2019s still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
+      "text": "It barely moves, but it’s still alive. Hiding in its shell without food or water seems to have awakened its psychic powers.",
       "version": "sword"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/825.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "レドームシ",
+    "roomaji": "Redomushi",
+    "ko": "레돔벌레",
+    "zh-Hant": "天罩蟲",
+    "fr": "Coléodôme",
+    "de": "Keradar",
+    "es": "Dottler",
+    "it": "Dottler",
+    "en": "Dottler",
+    "ja": "レドームシ",
+    "zh-Hans": "天罩虫"
   }
 }

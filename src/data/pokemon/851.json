@@ -1,7 +1,7 @@
 {
   "id": 851,
   "name": "Centiskorch",
-  "species": "Radiator Pok\u00e9mon",
+  "species": "Radiator Pokémon",
   "type": [
     "Fire",
     "Bug"
@@ -53,7 +53,7 @@
       "version": "sword"
     },
     {
-      "text": "While its burning body is already dangerous on its own, this excessively hostile Pok\u00e9mon also has large and very sharp fangs.",
+      "text": "While its burning body is already dangerous on its own, this excessively hostile Pokémon also has large and very sharp fangs.",
       "version": "shield"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/851.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マルヤクデ",
+    "roomaji": "Maruyakude",
+    "ko": "다태우지네",
+    "zh-Hant": "焚焰蚣",
+    "fr": "Scolocendre",
+    "de": "Infernopod",
+    "es": "Centiskorch",
+    "it": "Centiskorch",
+    "en": "Centiskorch",
+    "ja": "マルヤクデ",
+    "zh-Hans": "焚焰蚣"
   }
 }

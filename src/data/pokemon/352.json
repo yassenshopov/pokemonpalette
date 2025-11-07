@@ -1,7 +1,7 @@
 {
   "id": 352,
   "name": "Kecleon",
-  "species": "Color Swap Pok\u00e9mon",
+  "species": "Color Swap Pokémon",
   "type": [
     "Normal"
   ],
@@ -42,7 +42,7 @@
       "version": "leafgreen"
     },
     {
-      "text": "KECLEON is capable of changing its body colors at will to blend in with its surroundings. There is one exception - this POK\u00e9MON can\u2019t change the zigzag pattern on its belly.",
+      "text": "KECLEON is capable of changing its body colors at will to blend in with its surroundings. There is one exception - this POKéMON can’t change the zigzag pattern on its belly.",
       "version": "ruby"
     },
     {
@@ -50,7 +50,7 @@
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that has the ability to alter its body colors to match its surroundings. A KECLEON reverts to its original colors if it is startled.",
+      "text": "A POKéMON that has the ability to alter its body colors to match its surroundings. A KECLEON reverts to its original colors if it is startled.",
       "version": "emerald"
     },
     {
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/352.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/352.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カクレオン",
+    "roomaji": "Kakureon",
+    "ko": "켈리몬",
+    "zh-Hant": "變隱龍",
+    "fr": "Kecleon",
+    "de": "Kecleon",
+    "es": "Kecleon",
+    "it": "Kecleon",
+    "en": "Kecleon",
+    "ja": "カクレオン",
+    "zh-Hans": "变隐龙"
   }
 }

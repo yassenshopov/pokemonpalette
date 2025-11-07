@@ -1,7 +1,7 @@
 {
   "id": 69,
   "name": "Bellsprout",
-  "species": "Flower Pok\u00e9mon",
+  "species": "Flower Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -40,14 +40,14 @@
     "specialDefense": 30,
     "speed": 40
   },
-  "description": "A carnivorous POK\u00e9MON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
+  "description": "A carnivorous POKéMON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
   "flavorTexts": [
     {
-      "text": "A carnivorous POK\u00e9MON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
+      "text": "A carnivorous POKéMON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
       "version": "red"
     },
     {
-      "text": "A carnivorous POK\u00e9MON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
+      "text": "A carnivorous POKéMON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
       "version": "blue"
     },
     {
@@ -59,7 +59,7 @@
       "version": "gold"
     },
     {
-      "text": "It plants its feet deep underground to replenish wa\u00ad ter. It can't es\u00ad cape its enemy while it's rooted.",
+      "text": "It plants its feet deep underground to replenish wa­ ter. It can't es­ cape its enemy while it's rooted.",
       "version": "silver"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/69.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/69.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マダツボミ",
+    "roomaji": "Madatsubomi",
+    "ko": "모다피",
+    "zh-Hant": "喇叭芽",
+    "fr": "Chétiflor",
+    "de": "Knofensa",
+    "es": "Bellsprout",
+    "it": "Bellsprout",
+    "en": "Bellsprout",
+    "ja": "マダツボミ",
+    "zh-Hans": "喇叭芽"
   }
 }

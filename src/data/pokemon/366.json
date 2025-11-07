@@ -1,7 +1,7 @@
 {
   "id": 366,
   "name": "Clamperl",
-  "species": "Bivalve Pok\u00e9mon",
+  "species": "Bivalve Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 55,
     "speed": 32
   },
-  "description": "CLAMPERL\u2019s sturdy shell is not only good for protection - it is also used for clamping and catching prey. A fully grown CLAMPERL\u2019s shell will be scored with nicks and scratches all over.",
+  "description": "CLAMPERL’s sturdy shell is not only good for protection - it is also used for clamping and catching prey. A fully grown CLAMPERL’s shell will be scored with nicks and scratches all over.",
   "flavorTexts": [
     {
-      "text": "CLAMPERL\u2019s sturdy shell is not only good for protection - it is also used for clamping and catching prey. A fully grown CLAMPERL\u2019s shell will be scored with nicks and scratches all over.",
+      "text": "CLAMPERL’s sturdy shell is not only good for protection - it is also used for clamping and catching prey. A fully grown CLAMPERL’s shell will be scored with nicks and scratches all over.",
       "version": "ruby"
     },
     {
-      "text": "CLAMPERL grows while being protected by its rock-hard shell. When its body becomes too large to fit inside the shell, it is sure evidence that this POK\u00e9MON is getting close to evolution.",
+      "text": "CLAMPERL grows while being protected by its rock-hard shell. When its body becomes too large to fit inside the shell, it is sure evidence that this POKéMON is getting close to evolution.",
       "version": "sapphire"
     },
     {
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/366.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/366.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パールル",
+    "roomaji": "Pearlulu",
+    "ko": "진주몽",
+    "zh-Hant": "珍珠貝",
+    "fr": "Coquiperl",
+    "de": "Perlu",
+    "es": "Clamperl",
+    "it": "Clamperl",
+    "en": "Clamperl",
+    "ja": "パールル",
+    "zh-Hans": "珍珠贝"
   }
 }

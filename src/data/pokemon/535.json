@@ -1,7 +1,7 @@
 {
   "id": 535,
   "name": "Tympole",
-  "species": "Tadpole Pok\u00e9mon",
+  "species": "Tadpole Pokémon",
   "type": [
     "Water"
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/535.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/535.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オタマロ",
+    "roomaji": "Otamaro",
+    "ko": "동챙이",
+    "zh-Hant": "圓蝌蚪",
+    "fr": "Tritonde",
+    "de": "Schallquap",
+    "es": "Tympole",
+    "it": "Tympole",
+    "en": "Tympole",
+    "ja": "オタマロ",
+    "zh-Hans": "圆蝌蚪"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 83,
   "name": "Farfetchd",
-  "species": "Wild Duck Pok\u00e9mon",
+  "species": "Wild Duck Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "If it eats the plant stick it carries as emer\u00ad gency rations, it runs off in search of a new stick.",
+      "text": "If it eats the plant stick it carries as emer­ gency rations, it runs off in search of a new stick.",
       "version": "silver"
     }
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/83.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/83.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カモネギ",
+    "roomaji": "Kamonegi",
+    "ko": "파오리",
+    "zh-Hant": "大蔥鴨",
+    "fr": "Canarticho",
+    "de": "Porenta",
+    "es": "Farfetch’d",
+    "it": "Farfetch’d",
+    "en": "Farfetch’d",
+    "ja": "カモネギ",
+    "zh-Hans": "大葱鸭"
   }
 }

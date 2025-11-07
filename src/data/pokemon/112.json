@@ -1,7 +1,7 @@
 {
   "id": 112,
   "name": "Rhydon",
-  "species": "Drill Pok\u00e9mon",
+  "species": "Drill Pokémon",
   "type": [
     "Ground",
     "Rock"
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "Its brain devel\u00ad oped when it began walking on hind legs. Its thick hide protects it even in magma.",
+      "text": "Its brain devel­ oped when it began walking on hind legs. Its thick hide protects it even in magma.",
       "version": "silver"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/112.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/112.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サイドン",
+    "roomaji": "Sidon",
+    "ko": "코뿌리",
+    "zh-Hant": "鑽角犀獸",
+    "fr": "Rhinoféros",
+    "de": "Rizeros",
+    "es": "Rhydon",
+    "it": "Rhydon",
+    "en": "Rhydon",
+    "ja": "サイドン",
+    "zh-Hans": "钻角犀兽"
   }
 }

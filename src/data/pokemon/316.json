@@ -1,7 +1,7 @@
 {
   "id": 316,
   "name": "Gulpin",
-  "species": "Stomach Pok\u00e9mon",
+  "species": "Stomach Pokémon",
   "type": [
     "Poison"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 53,
     "speed": 40
   },
-  "description": "Virtually all of GULPIN\u2019s body is its stomach. As a result, it can swallow something its own size. This POK\u00e9MON\u2019s stomach contains a special fluid that digests anything.",
+  "description": "Virtually all of GULPIN’s body is its stomach. As a result, it can swallow something its own size. This POKéMON’s stomach contains a special fluid that digests anything.",
   "flavorTexts": [
     {
-      "text": "Virtually all of GULPIN\u2019s body is its stomach. As a result, it can swallow something its own size. This POK\u00e9MON\u2019s stomach contains a special fluid that digests anything.",
+      "text": "Virtually all of GULPIN’s body is its stomach. As a result, it can swallow something its own size. This POKéMON’s stomach contains a special fluid that digests anything.",
       "version": "ruby"
     },
     {
-      "text": "Most of GULPIN\u2019s body is made up of its stomach - its heart and brain are very small in comparison. This POK\u00e9MON\u2019s stomach contains special enzymes that dissolve anything.",
+      "text": "Most of GULPIN’s body is made up of its stomach - its heart and brain are very small in comparison. This POKéMON’s stomach contains special enzymes that dissolve anything.",
       "version": "sapphire"
     },
     {
-      "text": "This POK\u00e9MON\u2019s stomach fluid can even digest scrap iron. In one gulp, it can swallow something that is as large as itself.",
+      "text": "This POKéMON’s stomach fluid can even digest scrap iron. In one gulp, it can swallow something that is as large as itself.",
       "version": "emerald"
     },
     {
-      "text": "There is nothing its stomach can\u2019t digest. While it is digesting, vile, overpowering gases are expelled.",
+      "text": "There is nothing its stomach can’t digest. While it is digesting, vile, overpowering gases are expelled.",
       "version": "firered"
     },
     {
-      "text": "There is nothing its stomach can\u2019t digest. While it is digesting, vile, overpowering gases are expelled.",
+      "text": "There is nothing its stomach can’t digest. While it is digesting, vile, overpowering gases are expelled.",
       "version": "leafgreen"
     }
   ],
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/316.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/316.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴクリン",
+    "roomaji": "Gokulin",
+    "ko": "꼴깍몬",
+    "zh-Hant": "溶食獸",
+    "fr": "Gloupti",
+    "de": "Schluppuck",
+    "es": "Gulpin",
+    "it": "Gulpin",
+    "en": "Gulpin",
+    "ja": "ゴクリン",
+    "zh-Hans": "溶食兽"
   }
 }

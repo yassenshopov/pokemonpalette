@@ -1,7 +1,7 @@
 {
   "id": 987,
   "name": "Flutter-mane",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Ghost",
     "Fairy"
@@ -34,10 +34,10 @@
     "specialDefense": 135,
     "speed": 135
   },
-  "description": "This Pok\u00e9mon has characteristics similar to those of Flutter Mane, a creature mentioned in a certain book.",
+  "description": "This Pokémon has characteristics similar to those of Flutter Mane, a creature mentioned in a certain book.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon has characteristics similar to those of Flutter Mane, a creature mentioned in a certain book.",
+      "text": "This Pokémon has characteristics similar to those of Flutter Mane, a creature mentioned in a certain book.",
       "version": "scarlet"
     },
     {
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/987.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハバタクカミ",
+    "roomaji": "Habatakukami",
+    "ko": "날개치는머리",
+    "zh-Hant": "振翼髮",
+    "fr": "Flotte-Mèche",
+    "de": "Flatterhaar",
+    "es": "Melenaleteo",
+    "it": "Crinealato",
+    "en": "Flutter Mane",
+    "ja": "ハバタクカミ",
+    "zh-Hans": "振翼发"
   }
 }

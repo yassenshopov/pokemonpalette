@@ -1,7 +1,7 @@
 {
   "id": 713,
   "name": "Avalugg",
-  "species": "Iceberg Pok\u00e9mon",
+  "species": "Iceberg Pokémon",
   "type": [
     "Ice"
   ],
@@ -60,7 +60,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "At high latitudes, this Pok\u00e9mon can be found with clusters of Bergmite on its back as it swims among the icebergs.",
+      "text": "At high latitudes, this Pokémon can be found with clusters of Bergmite on its back as it swims among the icebergs.",
       "version": "sword"
     }
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/713.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クレベース",
+    "roomaji": "Crebase",
+    "ko": "크레베이스",
+    "zh-Hant": "冰岩怪",
+    "fr": "Séracrawl",
+    "de": "Arktilas",
+    "es": "Avalugg",
+    "it": "Avalugg",
+    "en": "Avalugg",
+    "ja": "クレベース",
+    "zh-Hans": "冰岩怪"
   }
 }

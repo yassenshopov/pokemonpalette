@@ -1,7 +1,7 @@
 {
   "id": 997,
   "name": "Arctibax",
-  "species": "Ice Fin Pok\u00e9mon",
+  "species": "Ice Fin Pokémon",
   "type": [
     "Dragon",
     "Ice"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It attacks with the blade of its frozen dorsal fin by doing a front flip in the air. Arctibax\u2019s strong back and legs allow it to pull off this technique.",
+      "text": "It attacks with the blade of its frozen dorsal fin by doing a front flip in the air. Arctibax’s strong back and legs allow it to pull off this technique.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/997.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "セゴール",
+    "roomaji": "Segohru",
+    "ko": "드니꽁",
+    "zh-Hant": "凍脊龍",
+    "fr": "Cryodo",
+    "de": "Cryospino",
+    "es": "Arctibax",
+    "it": "Arctibax",
+    "en": "Arctibax",
+    "ja": "セゴール",
+    "zh-Hans": "冻脊龙"
   }
 }

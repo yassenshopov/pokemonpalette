@@ -1,7 +1,7 @@
 {
   "id": 165,
   "name": "Ledyba",
-  "species": "Five Star Pok\u00e9mon",
+  "species": "Five Star Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "LEDYBA secretes an aromatic fluid from where its legs join its body. This fluid is used for communicating with others. This POK\u00e9MON conveys its feelings to others by altering the fluid\u2019s scent.",
+      "text": "LEDYBA secretes an aromatic fluid from where its legs join its body. This fluid is used for communicating with others. This POKéMON conveys its feelings to others by altering the fluid’s scent.",
       "version": "ruby"
     },
     {
-      "text": "LEDYBA secretes an aromatic fluid from where its legs join its body. This fluid is used for communicating with others. This POK\u00e9MON conveys its feelings to others by altering the fluid\u2019s scent.",
+      "text": "LEDYBA secretes an aromatic fluid from where its legs join its body. This fluid is used for communicating with others. This POKéMON conveys its feelings to others by altering the fluid’s scent.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/165.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/165.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レディバ",
+    "roomaji": "Rediba",
+    "ko": "레디바",
+    "zh-Hant": "芭瓢蟲",
+    "fr": "Coxy",
+    "de": "Ledyba",
+    "es": "Ledyba",
+    "it": "Ledyba",
+    "en": "Ledyba",
+    "ja": "レディバ",
+    "zh-Hans": "芭瓢虫"
   }
 }

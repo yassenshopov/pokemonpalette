@@ -1,7 +1,7 @@
 {
   "id": 431,
   "name": "Glameow",
-  "species": "Catty Pok\u00e9mon",
+  "species": "Catty Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,19 +48,19 @@
       "version": "diamond"
     },
     {
-      "text": "With its sharp glare, it puts foes in a mild hypnotic state. It is a very fickle Pok\u00e9mon.",
+      "text": "With its sharp glare, it puts foes in a mild hypnotic state. It is a very fickle Pokémon.",
       "version": "pearl"
     },
     {
-      "text": "It hides its spiteful tendency of hooking its claws into the nose of its Trainer if it isn\u2019t fed.",
+      "text": "It hides its spiteful tendency of hooking its claws into the nose of its Trainer if it isn’t fed.",
       "version": "platinum"
     },
     {
-      "text": "When it\u2019s happy, GLAMEOW demonstrates beautiful movements of its tail, like a dancing ribbon.",
+      "text": "When it’s happy, GLAMEOW demonstrates beautiful movements of its tail, like a dancing ribbon.",
       "version": "heartgold"
     },
     {
-      "text": "When it\u2019s happy, GLAMEOW demonstrates beautiful movements of its tail, like a dancing ribbon.",
+      "text": "When it’s happy, GLAMEOW demonstrates beautiful movements of its tail, like a dancing ribbon.",
       "version": "soulsilver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/431.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/431.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニャルマー",
+    "roomaji": "Nyarmar",
+    "ko": "나옹마",
+    "zh-Hant": "魅力喵",
+    "fr": "Chaglam",
+    "de": "Charmian",
+    "es": "Glameow",
+    "it": "Glameow",
+    "en": "Glameow",
+    "ja": "ニャルマー",
+    "zh-Hans": "魅力喵"
   }
 }

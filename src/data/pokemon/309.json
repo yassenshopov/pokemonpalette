@@ -1,7 +1,7 @@
 {
   "id": 309,
   "name": "Electrike",
-  "species": "Lightning Pok\u00e9mon",
+  "species": "Lightning Pokémon",
   "type": [
     "Electric"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 40,
     "speed": 65
   },
-  "description": "ELECTRIKE stores electricity in its long body hair. This POK\u00e9MON stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
+  "description": "ELECTRIKE stores electricity in its long body hair. This POKéMON stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
   "flavorTexts": [
     {
-      "text": "ELECTRIKE stores electricity in its long body hair. This POK\u00e9MON stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
+      "text": "ELECTRIKE stores electricity in its long body hair. This POKéMON stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
       "version": "ruby"
     },
     {
-      "text": "ELECTRIKE runs faster than the human eye can follow. The friction from running is converted into electricity, which is then stored in this POK\u00e9MON\u2019s fur.",
+      "text": "ELECTRIKE runs faster than the human eye can follow. The friction from running is converted into electricity, which is then stored in this POKéMON’s fur.",
       "version": "sapphire"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/309.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/309.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラクライ",
+    "roomaji": "Rakurai",
+    "ko": "썬더라이",
+    "zh-Hant": "落雷獸",
+    "fr": "Dynavolt",
+    "de": "Frizelbliz",
+    "es": "Electrike",
+    "it": "Electrike",
+    "en": "Electrike",
+    "ja": "ラクライ",
+    "zh-Hans": "落雷兽"
   }
 }

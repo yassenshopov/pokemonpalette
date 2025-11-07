@@ -1,7 +1,7 @@
 {
   "id": 221,
   "name": "Piloswine",
-  "species": "Swine Pok\u00e9mon",
+  "species": "Swine Pokémon",
   "type": [
     "Ice",
     "Ground"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "If it charges at an enemy, the hairs on its back stand up straight. It is very sensi\u00ad tive to sound.",
+      "text": "If it charges at an enemy, the hairs on its back stand up straight. It is very sensi­ tive to sound.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "PILOSWINE is covered by a thick coat of long hair that enables it to endure the freezing cold. This POK\u00e9MON uses its tusks to dig up food that has been buried under ice.",
+      "text": "PILOSWINE is covered by a thick coat of long hair that enables it to endure the freezing cold. This POKéMON uses its tusks to dig up food that has been buried under ice.",
       "version": "ruby"
     },
     {
-      "text": "PILOSWINE is covered by a thick coat of long hair that enables it to endure the freezing cold. This POK\u00e9MON uses its tusks to dig up food that has been buried under ice.",
+      "text": "PILOSWINE is covered by a thick coat of long hair that enables it to endure the freezing cold. This POKéMON uses its tusks to dig up food that has been buried under ice.",
       "version": "sapphire"
     }
   ],
@@ -323,5 +323,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/221.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/221.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イノムー",
+    "roomaji": "Inomoo",
+    "ko": "메꾸리",
+    "zh-Hant": "長毛豬",
+    "fr": "Cochignon",
+    "de": "Keifel",
+    "es": "Piloswine",
+    "it": "Piloswine",
+    "en": "Piloswine",
+    "ja": "イノムー",
+    "zh-Hans": "长毛猪"
   }
 }

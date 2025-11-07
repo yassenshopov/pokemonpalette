@@ -1,7 +1,7 @@
 {
   "id": 267,
   "name": "Beautifly",
-  "species": "Butterfly Pok\u00e9mon",
+  "species": "Butterfly Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -40,14 +40,14 @@
     "specialDefense": 50,
     "speed": 65
   },
-  "description": "BEAUTIFLY\u2019s favorite food is the sweet pollen of flowers. If you want to see this POK\u00e9MON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
+  "description": "BEAUTIFLY’s favorite food is the sweet pollen of flowers. If you want to see this POKéMON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
   "flavorTexts": [
     {
-      "text": "BEAUTIFLY\u2019s favorite food is the sweet pollen of flowers. If you want to see this POK\u00e9MON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
+      "text": "BEAUTIFLY’s favorite food is the sweet pollen of flowers. If you want to see this POKéMON, just leave a potted flower by an open window. BEAUTIFLY is sure to come looking for pollen.",
       "version": "ruby"
     },
     {
-      "text": "BEAUTIFLY has a long mouth like a coiled needle, which is very convenient for collecting pollen from flowers. This POK\u00e9MON rides the spring winds as it flits around gathering pollen.",
+      "text": "BEAUTIFLY has a long mouth like a coiled needle, which is very convenient for collecting pollen from flowers. This POKéMON rides the spring winds as it flits around gathering pollen.",
       "version": "sapphire"
     },
     {
@@ -338,5 +338,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/267.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/267.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アゲハント",
+    "roomaji": "Agehunt",
+    "ko": "뷰티플라이",
+    "zh-Hant": "狩獵鳳蝶",
+    "fr": "Charmillon",
+    "de": "Papinella",
+    "es": "Beautifly",
+    "it": "Beautifly",
+    "en": "Beautifly",
+    "ja": "アゲハント",
+    "zh-Hans": "狩猎凤蝶"
   }
 }

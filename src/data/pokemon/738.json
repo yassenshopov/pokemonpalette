@@ -1,8 +1,11 @@
 {
   "id": 738,
   "name": "Vikavolt",
-  "species": "Stag Beetle Pok\u00e9mon",
-  "type": ["Bug", "Electric"],
+  "species": "Stag Beetle Pokémon",
+  "type": [
+    "Bug",
+    "Electric"
+  ],
   "typeDetails": [
     {
       "name": "Bug",
@@ -38,7 +41,7 @@
       "version": "sun"
     },
     {
-      "text": "It produces electricity via an electrical organ in its abdomen. It overwhelms bird Pok\u00e9mon with shocking beams of electrical energy.",
+      "text": "It produces electricity via an electrical organ in its abdomen. It overwhelms bird Pokémon with shocking beams of electrical energy.",
       "version": "moon"
     },
     {
@@ -60,7 +63,11 @@
     "accent": "#F8D030",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#A8B820", "#78C850", "#F8D030"]
+    "highlights": [
+      "#A8B820",
+      "#78C850",
+      "#F8D030"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/738.png",
@@ -299,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/738.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クワガノン",
+    "roomaji": "Kuwagannon",
+    "ko": "투구뿌논",
+    "zh-Hant": "鍬農炮蟲",
+    "fr": "Lucanon",
+    "de": "Donarion",
+    "es": "Vikavolt",
+    "it": "Vikavolt",
+    "en": "Vikavolt",
+    "ja": "クワガノン",
+    "zh-Hans": "锹农炮虫"
   }
 }

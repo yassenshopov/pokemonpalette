@@ -1,7 +1,7 @@
 {
   "id": 418,
   "name": "Buizel",
-  "species": "Sea Weasel Pok\u00e9mon",
+  "species": "Sea Weasel Pokémon",
   "type": [
     "Water"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/418.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/418.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブイゼル",
+    "roomaji": "Buoysel",
+    "ko": "브이젤",
+    "zh-Hant": "泳圈鼬",
+    "fr": "Mustébouée",
+    "de": "Bamelin",
+    "es": "Buizel",
+    "it": "Buizel",
+    "en": "Buizel",
+    "ja": "ブイゼル",
+    "zh-Hans": "泳圈鼬"
   }
 }

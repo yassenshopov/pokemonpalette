@@ -1,7 +1,7 @@
 {
   "id": 26,
   "name": "Raichu",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Electric"
   ],
@@ -54,7 +54,7 @@
       "version": "yellow"
     },
     {
-      "text": "When its electric\u00ad ity builds, its muscles are stimu\u00ad lated, and it be\u00ad comes more aggres\u00ad sive than usual.",
+      "text": "When its electric­ ity builds, its muscles are stimu­ lated, and it be­ comes more aggres­ sive than usual.",
       "version": "gold"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/26.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/26.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ライチュウ",
+    "roomaji": "Raichu",
+    "ko": "라이츄",
+    "zh-Hant": "雷丘",
+    "fr": "Raichu",
+    "de": "Raichu",
+    "es": "Raichu",
+    "it": "Raichu",
+    "en": "Raichu",
+    "ja": "ライチュウ",
+    "zh-Hans": "雷丘"
   }
 }

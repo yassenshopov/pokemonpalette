@@ -1,7 +1,7 @@
 {
   "id": 480,
   "name": "Uxie",
-  "species": "Knowledge Pok\u00e9mon",
+  "species": "Knowledge Pokémon",
   "type": [
     "Psychic"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 130,
     "speed": 95
   },
-  "description": "Known as \u201cThe Being of Knowledge.\u201d It is said that it can wipe out the memory of those who see its eyes.",
+  "description": "Known as “The Being of Knowledge.” It is said that it can wipe out the memory of those who see its eyes.",
   "flavorTexts": [
     {
-      "text": "Known as \u201cThe Being of Knowledge.\u201d It is said that it can wipe out the memory of those who see its eyes.",
+      "text": "Known as “The Being of Knowledge.” It is said that it can wipe out the memory of those who see its eyes.",
       "version": "diamond"
     },
     {
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "According to some sources, this Pok\u00e9mon provided people with the intelligence necessary to solve various problems.",
+      "text": "According to some sources, this Pokémon provided people with the intelligence necessary to solve various problems.",
       "version": "heartgold"
     },
     {
-      "text": "According to some sources, this Pok\u00e9mon provided people with the intelligence necessary to solve various problems.",
+      "text": "According to some sources, this Pokémon provided people with the intelligence necessary to solve various problems.",
       "version": "soulsilver"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/480.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/480.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユクシー",
+    "roomaji": "Yuxie",
+    "ko": "유크시",
+    "zh-Hant": "由克希",
+    "fr": "Créhelf",
+    "de": "Selfe",
+    "es": "Uxie",
+    "it": "Uxie",
+    "en": "Uxie",
+    "ja": "ユクシー",
+    "zh-Hans": "由克希"
   }
 }

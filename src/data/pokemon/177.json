@@ -1,7 +1,7 @@
 {
   "id": 177,
   "name": "Natu",
-  "species": "Tiny Bird Pok\u00e9mon",
+  "species": "Tiny Bird Pokémon",
   "type": [
     "Psychic",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 45,
     "speed": 70
   },
-  "description": "Because its wings aren't yet fully grown, it has to hop to get around. It is always star\u00ad ing at something.",
+  "description": "Because its wings aren't yet fully grown, it has to hop to get around. It is always star­ ing at something.",
   "flavorTexts": [
     {
-      "text": "Because its wings aren't yet fully grown, it has to hop to get around. It is always star\u00ad ing at something.",
+      "text": "Because its wings aren't yet fully grown, it has to hop to get around. It is always star­ ing at something.",
       "version": "gold"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "NATU cannot fly because its wings are not yet fully grown. If your eyes meet with this POK\u00e9MON\u2019s eyes, it will stare back intently at you. But if you move even slightly, it will hop away to safety.",
+      "text": "NATU cannot fly because its wings are not yet fully grown. If your eyes meet with this POKéMON’s eyes, it will stare back intently at you. But if you move even slightly, it will hop away to safety.",
       "version": "ruby"
     },
     {
-      "text": "NATU has a highly developed jumping ability. The POK\u00e9MON flaps and leaps onto tree branches that are taller than grown-up people to pick at the tree\u2019s new shoots.",
+      "text": "NATU has a highly developed jumping ability. The POKéMON flaps and leaps onto tree branches that are taller than grown-up people to pick at the tree’s new shoots.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/177.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/177.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ネイティ",
+    "roomaji": "Naty",
+    "ko": "네이티",
+    "zh-Hant": "天然雀",
+    "fr": "Natu",
+    "de": "Natu",
+    "es": "Natu",
+    "it": "Natu",
+    "en": "Natu",
+    "ja": "ネイティ",
+    "zh-Hans": "天然雀"
   }
 }

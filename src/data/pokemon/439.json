@@ -1,7 +1,7 @@
 {
   "id": 439,
   "name": "Mime-jr",
-  "species": "Mime Pok\u00e9mon",
+  "species": "Mime Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -46,10 +46,10 @@
     "specialDefense": 90,
     "speed": 60
   },
-  "description": "It habitually mimics foes. Once mimicked, the foe cannot take its eyes off this Pok\u00e9mon.",
+  "description": "It habitually mimics foes. Once mimicked, the foe cannot take its eyes off this Pokémon.",
   "flavorTexts": [
     {
-      "text": "It habitually mimics foes. Once mimicked, the foe cannot take its eyes off this Pok\u00e9mon.",
+      "text": "It habitually mimics foes. Once mimicked, the foe cannot take its eyes off this Pokémon.",
       "version": "diamond"
     },
     {
@@ -61,11 +61,11 @@
       "version": "platinum"
     },
     {
-      "text": "In an attempt to confuse its enemy, it mimics the enemy\u2019s movements. Then it wastes no time in making itself scarce!",
+      "text": "In an attempt to confuse its enemy, it mimics the enemy’s movements. Then it wastes no time in making itself scarce!",
       "version": "heartgold"
     },
     {
-      "text": "In an attempt to confuse its enemy, it mimics the enemy\u2019s movements. Then it wastes no time in making itself scarce!",
+      "text": "In an attempt to confuse its enemy, it mimics the enemy’s movements. Then it wastes no time in making itself scarce!",
       "version": "soulsilver"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/439.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/439.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マネネ",
+    "roomaji": "Manene",
+    "ko": "흉내내",
+    "zh-Hant": "魔尼尼",
+    "fr": "Mime Jr.",
+    "de": "Pantimimi",
+    "es": "Mime Jr.",
+    "it": "Mime Jr.",
+    "en": "Mime Jr.",
+    "ja": "マネネ",
+    "zh-Hans": "魔尼尼"
   }
 }

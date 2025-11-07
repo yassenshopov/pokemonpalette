@@ -1,7 +1,7 @@
 {
   "id": 332,
   "name": "Cacturne",
-  "species": "Scarecrow Pok\u00e9mon",
+  "species": "Scarecrow Pokémon",
   "type": [
     "Grass",
     "Dark"
@@ -40,14 +40,14 @@
     "specialDefense": 60,
     "speed": 55
   },
-  "description": "During the daytime, CACTURNE remains unmoving so that it does not lose any moisture to the harsh desert sun. This POK\u00e9MON becomes active at night when the temperature drops.",
+  "description": "During the daytime, CACTURNE remains unmoving so that it does not lose any moisture to the harsh desert sun. This POKéMON becomes active at night when the temperature drops.",
   "flavorTexts": [
     {
-      "text": "During the daytime, CACTURNE remains unmoving so that it does not lose any moisture to the harsh desert sun. This POK\u00e9MON becomes active at night when the temperature drops.",
+      "text": "During the daytime, CACTURNE remains unmoving so that it does not lose any moisture to the harsh desert sun. This POKéMON becomes active at night when the temperature drops.",
       "version": "ruby"
     },
     {
-      "text": "If a traveler is going through a desert in the thick of night, CACTURNE will follow in a ragtag group. The POK\u00e9MON are biding their time, waiting for the traveler to tire and become incapable of moving.",
+      "text": "If a traveler is going through a desert in the thick of night, CACTURNE will follow in a ragtag group. The POKéMON are biding their time, waiting for the traveler to tire and become incapable of moving.",
       "version": "sapphire"
     },
     {
@@ -55,11 +55,11 @@
       "version": "emerald"
     },
     {
-      "text": "It lives in deserts. It becomes active at night when it hunts for prey exhausted from the desert\u2019s heat.",
+      "text": "It lives in deserts. It becomes active at night when it hunts for prey exhausted from the desert’s heat.",
       "version": "firered"
     },
     {
-      "text": "It lives in deserts. It becomes active at night when it hunts for prey exhausted from the desert\u2019s heat.",
+      "text": "It lives in deserts. It becomes active at night when it hunts for prey exhausted from the desert’s heat.",
       "version": "leafgreen"
     }
   ],
@@ -308,5 +308,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/332.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/332.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ノクタス",
+    "roomaji": "Noctus",
+    "ko": "밤선인",
+    "zh-Hant": "夢歌仙人掌",
+    "fr": "Cacturne",
+    "de": "Noktuska",
+    "es": "Cacturne",
+    "it": "Cacturne",
+    "en": "Cacturne",
+    "ja": "ノクタス",
+    "zh-Hans": "梦歌仙人掌"
   }
 }

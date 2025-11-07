@@ -1,7 +1,7 @@
 {
   "id": 472,
   "name": "Gliscor",
-  "species": "Fang Scorpion Pok\u00e9mon",
+  "species": "Fang Scorpion Pokémon",
   "type": [
     "Ground",
     "Flying"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/472.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/472.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グライオン",
+    "roomaji": "Glion",
+    "ko": "글라이온",
+    "zh-Hant": "天蠍王",
+    "fr": "Scorvol",
+    "de": "Skorgro",
+    "es": "Gliscor",
+    "it": "Gliscor",
+    "en": "Gliscor",
+    "ja": "グライオン",
+    "zh-Hans": "天蝎王"
   }
 }

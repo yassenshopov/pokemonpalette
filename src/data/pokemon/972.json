@@ -1,7 +1,7 @@
 {
   "id": 972,
   "name": "Houndstone",
-  "species": "Ghost Dog Pok\u00e9mon",
+  "species": "Ghost Dog Pokémon",
   "type": [
     "Ghost"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 97,
     "speed": 68
   },
-  "description": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pok\u00e9mon, this one is most loyal to its master.",
+  "description": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pokémon, this one is most loyal to its master.",
   "flavorTexts": [
     {
-      "text": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pok\u00e9mon, this one is most loyal to its master.",
+      "text": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pokémon, this one is most loyal to its master.",
       "version": "scarlet"
     },
     {
-      "text": "A lovingly mourned Pok\u00e9mon was reborn as Houndstone. It doesn\u2019t like anyone touching the protuberance atop its head.",
+      "text": "A lovingly mourned Pokémon was reborn as Houndstone. It doesn’t like anyone touching the protuberance atop its head.",
       "version": "violet"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/972.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハカドッグ",
+    "roomaji": "Hakadog",
+    "ko": "묘두기",
+    "zh-Hant": "墓揚犬",
+    "fr": "Tomberro",
+    "de": "Friedwuff",
+    "es": "Houndstone",
+    "it": "Houndstone",
+    "en": "Houndstone",
+    "ja": "ハカドッグ",
+    "zh-Hans": "墓扬犬"
   }
 }

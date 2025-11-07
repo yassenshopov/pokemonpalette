@@ -1,7 +1,7 @@
 {
   "id": 131,
   "name": "Lapras",
-  "species": "Transport Pok\u00e9mon",
+  "species": "Transport Pokémon",
   "type": [
     "Water",
     "Ice"
@@ -46,14 +46,14 @@
     "specialDefense": 95,
     "speed": 60
   },
-  "description": "A POK\u00e9MON that has been over\u00ad hunted almost to extinction. It can ferry people across the water.",
+  "description": "A POKéMON that has been over­ hunted almost to extinction. It can ferry people across the water.",
   "flavorTexts": [
     {
-      "text": "A POK\u00e9MON that has been over\u00ad hunted almost to extinction. It can ferry people across the water.",
+      "text": "A POKéMON that has been over­ hunted almost to extinction. It can ferry people across the water.",
       "version": "red"
     },
     {
-      "text": "A POK\u00e9MON that has been over\u00ad hunted almost to extinction. It can ferry people across the water.",
+      "text": "A POKéMON that has been over­ hunted almost to extinction. It can ferry people across the water.",
       "version": "blue"
     },
     {
@@ -61,7 +61,7 @@
       "version": "yellow"
     },
     {
-      "text": "They have gentle hearts. Because they rarely fight, many have been caught. Their num\u00ad ber has dwindled.",
+      "text": "They have gentle hearts. Because they rarely fight, many have been caught. Their num­ ber has dwindled.",
       "version": "gold"
     },
     {
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/131.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/131.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラプラス",
+    "roomaji": "Laplace",
+    "ko": "라프라스",
+    "zh-Hant": "拉普拉斯",
+    "fr": "Lokhlass",
+    "de": "Lapras",
+    "es": "Lapras",
+    "it": "Lapras",
+    "en": "Lapras",
+    "ja": "ラプラス",
+    "zh-Hans": "拉普拉斯"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 33,
   "name": "Nidorino",
-  "species": "Poison Pin Pok\u00e9mon",
+  "species": "Poison Pin Pokémon",
   "type": [
     "Poison"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 55,
     "speed": 65
   },
-  "description": "An aggressive POK\u00e9MON that is quick to attack. The horn on its head secretes a powerful venom.",
+  "description": "An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom.",
   "flavorTexts": [
     {
-      "text": "An aggressive POK\u00e9MON that is quick to attack. The horn on its head secretes a powerful venom.",
+      "text": "An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom.",
       "version": "red"
     },
     {
-      "text": "An aggressive POK\u00e9MON that is quick to attack. The horn on its head secretes a powerful venom.",
+      "text": "An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom.",
       "version": "blue"
     },
     {
@@ -56,7 +56,7 @@
       "version": "yellow"
     },
     {
-      "text": "It raises its big ears to check its surroundings. If it senses any\u00ad thing, it attacks immediately.",
+      "text": "It raises its big ears to check its surroundings. If it senses any­ thing, it attacks immediately.",
       "version": "gold"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/33.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/33.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニドリーノ",
+    "roomaji": "Nidorino",
+    "ko": "니드리노",
+    "zh-Hant": "尼多力諾",
+    "fr": "Nidorino",
+    "de": "Nidorino",
+    "es": "Nidorino",
+    "it": "Nidorino",
+    "en": "Nidorino",
+    "ja": "ニドリーノ",
+    "zh-Hans": "尼多力诺"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 805,
   "name": "Stakataka",
-  "species": "Rampart Pok\u00e9mon",
+  "species": "Rampart Pokémon",
   "type": [
     "Rock",
     "Steel"
@@ -41,7 +41,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "When stone walls started moving and attacking, the brute\u2019s true identity was this mysterious life-form, which brings to mind an Ultra Beast.",
+      "text": "When stone walls started moving and attacking, the brute’s true identity was this mysterious life-form, which brings to mind an Ultra Beast.",
       "version": "ultra-moon"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/805.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ツンデツンデ",
+    "roomaji": "Tundetunde",
+    "ko": "차곡차곡",
+    "zh-Hant": "壘磊石",
+    "fr": "Ama-Ama",
+    "de": "Muramura",
+    "es": "Stakataka",
+    "it": "Stakataka",
+    "en": "Stakataka",
+    "ja": "ツンデツンデ",
+    "zh-Hans": "垒磊石"
   }
 }

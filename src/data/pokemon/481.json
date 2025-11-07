@@ -1,7 +1,7 @@
 {
   "id": 481,
   "name": "Mesprit",
-  "species": "Emotion Pok\u00e9mon",
+  "species": "Emotion Pokémon",
   "type": [
     "Psychic"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 105,
     "speed": 80
   },
-  "description": "Known as \u201cThe Being of Emotion.\u201d It taught humans the nobility of sorrow, pain, and joy.",
+  "description": "Known as “The Being of Emotion.” It taught humans the nobility of sorrow, pain, and joy.",
   "flavorTexts": [
     {
-      "text": "Known as \u201cThe Being of Emotion.\u201d It taught humans the nobility of sorrow, pain, and joy.",
+      "text": "Known as “The Being of Emotion.” It taught humans the nobility of sorrow, pain, and joy.",
       "version": "diamond"
     },
     {
-      "text": "It sleeps at the bottom of a lake. Its spirit is said to leave its body to fly on the lake\u2019s surface.",
+      "text": "It sleeps at the bottom of a lake. Its spirit is said to leave its body to fly on the lake’s surface.",
       "version": "pearl"
     },
     {
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "This Pok\u00e9mon is said to have endowed the human heart with emotions, such as sorrow and joy.",
+      "text": "This Pokémon is said to have endowed the human heart with emotions, such as sorrow and joy.",
       "version": "heartgold"
     },
     {
-      "text": "This Pok\u00e9mon is said to have endowed the human heart with emotions, such as sorrow and joy.",
+      "text": "This Pokémon is said to have endowed the human heart with emotions, such as sorrow and joy.",
       "version": "soulsilver"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/481.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/481.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エムリット",
+    "roomaji": "Emrit",
+    "ko": "엠라이트",
+    "zh-Hant": "艾姆利多",
+    "fr": "Créfollet",
+    "de": "Vesprit",
+    "es": "Mesprit",
+    "it": "Mesprit",
+    "en": "Mesprit",
+    "ja": "エムリット",
+    "zh-Hans": "艾姆利多"
   }
 }

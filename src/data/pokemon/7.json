@@ -1,7 +1,7 @@
 {
   "id": 7,
   "name": "Squirtle",
-  "species": "Tiny Turtle Pok\u00e9mon",
+  "species": "Tiny Turtle Pokémon",
   "type": [
     "Water"
   ],
@@ -50,7 +50,7 @@
       "version": "yellow"
     },
     {
-      "text": "The shell is soft when it is born. It soon becomes so resilient, prod\u00ad ding fingers will bounce off it.",
+      "text": "The shell is soft when it is born. It soon becomes so resilient, prod­ ding fingers will bounce off it.",
       "version": "gold"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/7.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/7.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゼニガメ",
+    "roomaji": "Zenigame",
+    "ko": "꼬부기",
+    "zh-Hant": "傑尼龜",
+    "fr": "Carapuce",
+    "de": "Schiggy",
+    "es": "Squirtle",
+    "it": "Squirtle",
+    "en": "Squirtle",
+    "ja": "ゼニガメ",
+    "zh-Hans": "杰尼龟"
   }
 }

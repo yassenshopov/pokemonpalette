@@ -1,7 +1,7 @@
 {
   "id": 512,
   "name": "Simisage",
-  "species": "Thorn Monkey Pok\u00e9mon",
+  "species": "Thorn Monkey Pokémon",
   "type": [
     "Grass"
   ],
@@ -42,7 +42,7 @@
       "version": "black"
     },
     {
-      "text": "It attacks enemies with strikes of its thorn-covered tail. This Pok\u00e9mon is wild tempered.",
+      "text": "It attacks enemies with strikes of its thorn-covered tail. This Pokémon is wild tempered.",
       "version": "white"
     },
     {
@@ -54,7 +54,7 @@
       "version": "white-2"
     },
     {
-      "text": "It attacks enemies with strikes of its thorn-covered tail. This Pok\u00e9mon is wild tempered.",
+      "text": "It attacks enemies with strikes of its thorn-covered tail. This Pokémon is wild tempered.",
       "version": "x"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/512.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/512.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤナッキー",
+    "roomaji": "Yanakkie",
+    "ko": "야나키",
+    "zh-Hant": "花椰猿",
+    "fr": "Feuiloutan",
+    "de": "Vegichita",
+    "es": "Simisage",
+    "it": "Simisage",
+    "en": "Simisage",
+    "ja": "ヤナッキー",
+    "zh-Hans": "花椰猿"
   }
 }

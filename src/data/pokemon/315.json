@@ -1,7 +1,7 @@
 {
   "id": 315,
   "name": "Roselia",
-  "species": "Thorn Pok\u00e9mon",
+  "species": "Thorn Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -46,14 +46,14 @@
     "specialDefense": 80,
     "speed": 65
   },
-  "description": "ROSELIA shoots sharp thorns as projectiles at any opponent that tries to steal the flowers on its arms. The aroma of this POK\u00e9MON brings serenity to living things.",
+  "description": "ROSELIA shoots sharp thorns as projectiles at any opponent that tries to steal the flowers on its arms. The aroma of this POKéMON brings serenity to living things.",
   "flavorTexts": [
     {
-      "text": "ROSELIA shoots sharp thorns as projectiles at any opponent that tries to steal the flowers on its arms. The aroma of this POK\u00e9MON brings serenity to living things.",
+      "text": "ROSELIA shoots sharp thorns as projectiles at any opponent that tries to steal the flowers on its arms. The aroma of this POKéMON brings serenity to living things.",
       "version": "ruby"
     },
     {
-      "text": "On extremely rare occasions, a ROSELIA is said to appear with its flowers in unusual colors. The thorns on this POK\u00e9MON\u2019s head contain a vicious poison.",
+      "text": "On extremely rare occasions, a ROSELIA is said to appear with its flowers in unusual colors. The thorns on this POKéMON’s head contain a vicious poison.",
       "version": "sapphire"
     },
     {
@@ -323,5 +323,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/315.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/315.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ロゼリア",
+    "roomaji": "Roselia",
+    "ko": "로젤리아",
+    "zh-Hant": "毒薔薇",
+    "fr": "Rosélia",
+    "de": "Roselia",
+    "es": "Roselia",
+    "it": "Roselia",
+    "en": "Roselia",
+    "ja": "ロゼリア",
+    "zh-Hans": "毒蔷薇"
   }
 }

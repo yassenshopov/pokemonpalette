@@ -1,7 +1,7 @@
 {
   "id": 237,
   "name": "Hitmontop",
-  "species": "Handstand Pok\u00e9mon",
+  "species": "Handstand Pokémon",
   "type": [
     "Fighting"
   ],
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "HITMONTOP spins on its head at high speed, all the while delivering kicks. This technique is a remarkable mix of both offense and defense at the same time. The POK\u00e9MON travels faster spinning than it does walking.",
+      "text": "HITMONTOP spins on its head at high speed, all the while delivering kicks. This technique is a remarkable mix of both offense and defense at the same time. The POKéMON travels faster spinning than it does walking.",
       "version": "ruby"
     },
     {
-      "text": "HITMONTOP spins on its head at high speed, all the while delivering kicks. This technique is a remarkable mix of both offense and defense at the same time. The POK\u00e9MON travels faster spinning than it does walking.",
+      "text": "HITMONTOP spins on its head at high speed, all the while delivering kicks. This technique is a remarkable mix of both offense and defense at the same time. The POKéMON travels faster spinning than it does walking.",
       "version": "sapphire"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/237.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/237.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カポエラー",
+    "roomaji": "Kapoerer",
+    "ko": "카포에라",
+    "zh-Hant": "戰舞郎",
+    "fr": "Kapoera",
+    "de": "Kapoera",
+    "es": "Hitmontop",
+    "it": "Hitmontop",
+    "en": "Hitmontop",
+    "ja": "カポエラー",
+    "zh-Hans": "战舞郎"
   }
 }

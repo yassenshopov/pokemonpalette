@@ -1,7 +1,7 @@
 {
   "id": 898,
   "name": "Calyrex",
-  "species": "King Pok\u00e9mon",
+  "species": "King Pokémon",
   "type": [
     "Psychic",
     "Grass"
@@ -34,10 +34,10 @@
     "specialDefense": 80,
     "speed": 80
   },
-  "description": "Calyrex is a merciful Pok\u00e9mon, capable of providing healing and blessings. It reigned over the Galar region in times of yore.",
+  "description": "Calyrex is a merciful Pokémon, capable of providing healing and blessings. It reigned over the Galar region in times of yore.",
   "flavorTexts": [
     {
-      "text": "Calyrex is a merciful Pok\u00e9mon, capable of providing healing and blessings. It reigned over the Galar region in times of yore.",
+      "text": "Calyrex is a merciful Pokémon, capable of providing healing and blessings. It reigned over the Galar region in times of yore.",
       "version": "sword"
     },
     {
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/898.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バドレックス",
+    "roomaji": "Budrex",
+    "ko": "버드렉스",
+    "zh-Hant": "蕾冠王",
+    "fr": "Sylveroy",
+    "de": "Coronospa",
+    "es": "Calyrex",
+    "it": "Calyrex",
+    "en": "Calyrex",
+    "ja": "バドレックス",
+    "zh-Hans": "蕾冠王"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 603,
   "name": "Eelektrik",
-  "species": "EleFish Pok\u00e9mon",
+  "species": "EleFish Pokémon",
   "type": [
     "Electric"
   ],
@@ -36,7 +36,7 @@
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon have a big appetite. When they spot their prey, they attack it and paralyze it with electricity.",
+      "text": "These Pokémon have a big appetite. When they spot their prey, they attack it and paralyze it with electricity.",
       "version": "white"
     },
     {
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/603.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/603.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シビビール",
+    "roomaji": "Shibibeel",
+    "ko": "저리릴",
+    "zh-Hant": "麻麻鰻",
+    "fr": "Lampéroie",
+    "de": "Zapplalek",
+    "es": "Eelektrik",
+    "it": "Eelektrik",
+    "en": "Eelektrik",
+    "ja": "シビビール",
+    "zh-Hans": "麻麻鳗"
   }
 }

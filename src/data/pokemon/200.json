@@ -1,7 +1,7 @@
 {
   "id": 200,
   "name": "Misdreavus",
-  "species": "Screech Pok\u00e9mon",
+  "species": "Screech Pokémon",
   "type": [
     "Ghost"
   ],
@@ -40,15 +40,15 @@
       "version": "silver"
     },
     {
-      "text": "It loves to watch people it's scar\u00ad ed. It frightens them by screaming loudly or appear\u00ad ing suddenly.",
+      "text": "It loves to watch people it's scar­ ed. It frightens them by screaming loudly or appear­ ing suddenly.",
       "version": "crystal"
     },
     {
-      "text": "MISDREAVUS frightens people with a creepy, sobbing cry. The POK\u00e9MON apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition.",
+      "text": "MISDREAVUS frightens people with a creepy, sobbing cry. The POKéMON apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition.",
       "version": "ruby"
     },
     {
-      "text": "MISDREAVUS frightens people with a creepy, sobbing cry. The POK\u00e9MON apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition.",
+      "text": "MISDREAVUS frightens people with a creepy, sobbing cry. The POKéMON apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition.",
       "version": "sapphire"
     }
   ],
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/200.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/200.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムウマ",
+    "roomaji": "Muma",
+    "ko": "무우마",
+    "zh-Hant": "夢妖",
+    "fr": "Feuforêve",
+    "de": "Traunfugil",
+    "es": "Misdreavus",
+    "it": "Misdreavus",
+    "en": "Misdreavus",
+    "ja": "ムウマ",
+    "zh-Hans": "梦妖"
   }
 }

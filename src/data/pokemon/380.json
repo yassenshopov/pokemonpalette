@@ -1,7 +1,7 @@
 {
   "id": 380,
   "name": "Latias",
-  "species": "Eon Pok\u00e9mon",
+  "species": "Eon Pokémon",
   "type": [
     "Dragon",
     "Psychic"
@@ -34,18 +34,18 @@
     "specialDefense": 130,
     "speed": 110
   },
-  "description": "LATIAS is highly sensitive to the emotions of people. If it senses any hostility, this POK\u00e9MON ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
+  "description": "LATIAS is highly sensitive to the emotions of people. If it senses any hostility, this POKéMON ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
   "flavorTexts": [
     {
-      "text": "LATIAS is highly sensitive to the emotions of people. If it senses any hostility, this POK\u00e9MON ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
+      "text": "LATIAS is highly sensitive to the emotions of people. If it senses any hostility, this POKéMON ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
       "version": "ruby"
     },
     {
-      "text": "LATIAS is highly intelligent and capable of understanding human speech. It is covered with a glass-like down. The POK\u00e9MON enfolds its body with its down and refracts light to alter its appearance.",
+      "text": "LATIAS is highly intelligent and capable of understanding human speech. It is covered with a glass-like down. The POKéMON enfolds its body with its down and refracts light to alter its appearance.",
       "version": "sapphire"
     },
     {
-      "text": "They make a small herd of only several members. They rarely make contact with people or other POK\u00e9MON. They disappear if they sense enemies.",
+      "text": "They make a small herd of only several members. They rarely make contact with people or other POKéMON. They disappear if they sense enemies.",
       "version": "emerald"
     },
     {
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/380.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/380.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラティアス",
+    "roomaji": "Latias",
+    "ko": "라티아스",
+    "zh-Hant": "拉帝亞斯",
+    "fr": "Latias",
+    "de": "Latias",
+    "es": "Latias",
+    "it": "Latias",
+    "en": "Latias",
+    "ja": "ラティアス",
+    "zh-Hans": "拉帝亚斯"
   }
 }

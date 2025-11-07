@@ -1,7 +1,7 @@
 {
   "id": 840,
   "name": "Applin",
-  "species": "Apple Core Pok\u00e9mon",
+  "species": "Apple Core Pokémon",
   "type": [
     "Grass",
     "Dragon"
@@ -46,14 +46,14 @@
     "specialDefense": 40,
     "speed": 20
   },
-  "description": "It spends its entire life inside an apple. It hides from its natural enemies, bird Pok\u00e9mon, by pretending it\u2019s just an apple and nothing more.",
+  "description": "It spends its entire life inside an apple. It hides from its natural enemies, bird Pokémon, by pretending it’s just an apple and nothing more.",
   "flavorTexts": [
     {
-      "text": "It spends its entire life inside an apple. It hides from its natural enemies, bird Pok\u00e9mon, by pretending it\u2019s just an apple and nothing more.",
+      "text": "It spends its entire life inside an apple. It hides from its natural enemies, bird Pokémon, by pretending it’s just an apple and nothing more.",
       "version": "sword"
     },
     {
-      "text": "As soon as it\u2019s born, it burrows into an apple. Not only does the apple serve as its food source, but the flavor of the fruit determines its evolution.",
+      "text": "As soon as it’s born, it burrows into an apple. Not only does the apple serve as its food source, but the flavor of the fruit determines its evolution.",
       "version": "shield"
     }
   ],
@@ -273,5 +273,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/840.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カジッチュ",
+    "roomaji": "Kajicchu",
+    "ko": "과사삭벌레",
+    "zh-Hant": "啃果蟲",
+    "fr": "Verpom",
+    "de": "Knapfel",
+    "es": "Applin",
+    "it": "Applin",
+    "en": "Applin",
+    "ja": "カジッチュ",
+    "zh-Hans": "啃果虫"
   }
 }

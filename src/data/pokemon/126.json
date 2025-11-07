@@ -1,7 +1,7 @@
 {
   "id": 126,
   "name": "Magmar",
-  "species": "Spitfire Pok\u00e9mon",
+  "species": "Spitfire Pokémon",
   "type": [
     "Fire"
   ],
@@ -50,7 +50,7 @@
       "version": "yellow"
     },
     {
-      "text": "It dislikes cold places, so it blows scorching flames to make the environment suit\u00ad able for itself.",
+      "text": "It dislikes cold places, so it blows scorching flames to make the environment suit­ able for itself.",
       "version": "gold"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/126.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/126.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブーバー",
+    "roomaji": "Boober",
+    "ko": "마그마",
+    "zh-Hant": "鴨嘴火獸",
+    "fr": "Magmar",
+    "de": "Magmar",
+    "es": "Magmar",
+    "it": "Magmar",
+    "en": "Magmar",
+    "ja": "ブーバー",
+    "zh-Hans": "鸭嘴火兽"
   }
 }

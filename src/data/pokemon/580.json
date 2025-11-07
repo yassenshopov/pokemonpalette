@@ -1,7 +1,7 @@
 {
   "id": 580,
   "name": "Ducklett",
-  "species": "Water Bird Pok\u00e9mon",
+  "species": "Water Bird Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 50,
     "speed": 55
   },
-  "description": "These bird Pok\u00e9mon are excellent divers. They swim around in the water eating their favorite food--peat moss.",
+  "description": "These bird Pokémon are excellent divers. They swim around in the water eating their favorite food--peat moss.",
   "flavorTexts": [
     {
-      "text": "These bird Pok\u00e9mon are excellent divers. They swim around in the water eating their favorite food--peat moss.",
+      "text": "These bird Pokémon are excellent divers. They swim around in the water eating their favorite food--peat moss.",
       "version": "black"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/580.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/580.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コアルヒー",
+    "roomaji": "Koaruhie",
+    "ko": "꼬지보리",
+    "zh-Hant": "鴨寶寶",
+    "fr": "Couaneton",
+    "de": "Piccolente",
+    "es": "Ducklett",
+    "it": "Ducklett",
+    "en": "Ducklett",
+    "ja": "コアルヒー",
+    "zh-Hans": "鸭宝宝"
   }
 }

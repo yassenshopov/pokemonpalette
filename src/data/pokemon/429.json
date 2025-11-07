@@ -1,7 +1,7 @@
 {
   "id": 429,
   "name": "Mismagius",
-  "species": "Magical Pok\u00e9mon",
+  "species": "Magical Pokémon",
   "type": [
     "Ghost"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/429.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/429.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムウマージ",
+    "roomaji": "Mumage",
+    "ko": "무우마직",
+    "zh-Hant": "夢妖魔",
+    "fr": "Magirêve",
+    "de": "Traunmagil",
+    "es": "Mismagius",
+    "it": "Mismagius",
+    "en": "Mismagius",
+    "ja": "ムウマージ",
+    "zh-Hans": "梦妖魔"
   }
 }

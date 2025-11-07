@@ -1,7 +1,7 @@
 {
   "id": 577,
   "name": "Solosis",
-  "species": "Cell Pok\u00e9mon",
+  "species": "Cell Pokémon",
   "type": [
     "Psychic"
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/577.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/577.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユニラン",
+    "roomaji": "Uniran",
+    "ko": "유니란",
+    "zh-Hant": "單卵細胞球",
+    "fr": "Nucléos",
+    "de": "Monozyto",
+    "es": "Solosis",
+    "it": "Solosis",
+    "en": "Solosis",
+    "ja": "ユニラン",
+    "zh-Hans": "单卵细胞球"
   }
 }

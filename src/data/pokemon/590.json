@@ -1,7 +1,7 @@
 {
   "id": 590,
   "name": "Foongus",
-  "species": "Mushroom Pok\u00e9mon",
+  "species": "Mushroom Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -40,26 +40,26 @@
     "specialDefense": 55,
     "speed": 15
   },
-  "description": "It lures people in with its Pok\u00e9 Ball pattern, then releases poison spores. Why it resembles a Pok\u00e9 Ball is unknown.",
+  "description": "It lures people in with its Poké Ball pattern, then releases poison spores. Why it resembles a Poké Ball is unknown.",
   "flavorTexts": [
     {
-      "text": "It lures people in with its Pok\u00e9 Ball pattern, then releases poison spores. Why it resembles a Pok\u00e9 Ball is unknown.",
+      "text": "It lures people in with its Poké Ball pattern, then releases poison spores. Why it resembles a Poké Ball is unknown.",
       "version": "black"
     },
     {
-      "text": "For some reason, this Pok\u00e9mon resembles a Pok\u00e9 Ball. They release poison spores to repel those who try to catch them.",
+      "text": "For some reason, this Pokémon resembles a Poké Ball. They release poison spores to repel those who try to catch them.",
       "version": "white"
     },
     {
-      "text": "It lures Pok\u00e9mon with its pattern that looks just like a Pok\u00e9 Ball then releases poison spores.",
+      "text": "It lures Pokémon with its pattern that looks just like a Poké Ball then releases poison spores.",
       "version": "black-2"
     },
     {
-      "text": "It lures Pok\u00e9mon with its pattern that looks just like a Pok\u00e9 Ball then releases poison spores.",
+      "text": "It lures Pokémon with its pattern that looks just like a Poké Ball then releases poison spores.",
       "version": "white-2"
     },
     {
-      "text": "It lures people in with its Pok\u00e9 Ball pattern, then releases poison spores. Why it resembles a Pok\u00e9 Ball is unknown.",
+      "text": "It lures people in with its Poké Ball pattern, then releases poison spores. Why it resembles a Poké Ball is unknown.",
       "version": "x"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/590.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/590.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タマゲタケ",
+    "roomaji": "Tamagetake",
+    "ko": "깜놀버슬",
+    "zh-Hant": "哎呀球菇",
+    "fr": "Trompignon",
+    "de": "Tarnpignon",
+    "es": "Foongus",
+    "it": "Foongus",
+    "en": "Foongus",
+    "ja": "タマゲタケ",
+    "zh-Hans": "哎呀球菇"
   }
 }

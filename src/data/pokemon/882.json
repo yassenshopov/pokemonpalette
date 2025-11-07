@@ -1,7 +1,7 @@
 {
   "id": 882,
   "name": "Dracovish",
-  "species": "Fossil Pok\u00e9mon",
+  "species": "Fossil Pokémon",
   "type": [
     "Water",
     "Dragon"
@@ -53,7 +53,7 @@
       "version": "sword"
     },
     {
-      "text": "Its mighty legs are capable of running at speeds exceeding 40 mph, but this Pok\u00e9mon can\u2019t breathe unless it\u2019s underwater.",
+      "text": "Its mighty legs are capable of running at speeds exceeding 40 mph, but this Pokémon can’t breathe unless it’s underwater.",
       "version": "shield"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/882.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウオノラゴン",
+    "roomaji": "Uonoragon",
+    "ko": "어래곤",
+    "zh-Hant": "鰓魚龍",
+    "fr": "Hydragon",
+    "de": "Pescragon",
+    "es": "Dracovish",
+    "it": "Dracovish",
+    "en": "Dracovish",
+    "ja": "ウオノラゴン",
+    "zh-Hans": "鳃鱼龙"
   }
 }

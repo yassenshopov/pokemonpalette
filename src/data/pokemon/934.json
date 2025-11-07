@@ -1,7 +1,7 @@
 {
   "id": 934,
   "name": "Garganacl",
-  "species": "Rock Salt Pok\u00e9mon",
+  "species": "Rock Salt Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 90,
     "speed": 35
   },
-  "description": "Garganacl will rub its fingertips together and sprinkle injured Pok\u00e9mon with salt. Even severe wounds will promptly heal afterward.",
+  "description": "Garganacl will rub its fingertips together and sprinkle injured Pokémon with salt. Even severe wounds will promptly heal afterward.",
   "flavorTexts": [
     {
-      "text": "Garganacl will rub its fingertips together and sprinkle injured Pok\u00e9mon with salt. Even severe wounds will promptly heal afterward.",
+      "text": "Garganacl will rub its fingertips together and sprinkle injured Pokémon with salt. Even severe wounds will promptly heal afterward.",
       "version": "scarlet"
     },
     {
-      "text": "Many Pok\u00e9mon gather around Garganacl, hoping to lick at its mineral-rich salt.",
+      "text": "Many Pokémon gather around Garganacl, hoping to lick at its mineral-rich salt.",
       "version": "violet"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/934.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "キョジオーン",
+    "roomaji": "Kyojiohn",
+    "ko": "콜로솔트",
+    "zh-Hant": "鹽石巨靈",
+    "fr": "Gigansel",
+    "de": "Saltigant",
+    "es": "Garganacl",
+    "it": "Garganacl",
+    "en": "Garganacl",
+    "ja": "キョジオーン",
+    "zh-Hans": "盐石巨灵"
   }
 }

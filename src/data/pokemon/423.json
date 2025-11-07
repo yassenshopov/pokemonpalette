@@ -1,7 +1,7 @@
 {
   "id": 423,
   "name": "Gastrodon",
-  "species": "Sea Slug Pok\u00e9mon",
+  "species": "Sea Slug Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/423.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/423.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トリトドン",
+    "roomaji": "Toritodon",
+    "ko": "트리토돈",
+    "zh-Hant": "海兔獸",
+    "fr": "Tritosor",
+    "de": "Gastrodon",
+    "es": "Gastrodon",
+    "it": "Gastrodon",
+    "en": "Gastrodon",
+    "ja": "トリトドン",
+    "zh-Hans": "海兔兽"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 257,
   "name": "Blaziken",
-  "species": "Blaze Pok\u00e9mon",
+  "species": "Blaze Pokémon",
   "type": [
     "Fire",
     "Fighting"
@@ -40,14 +40,14 @@
     "specialDefense": 70,
     "speed": 80
   },
-  "description": "In battle, BLAZIKEN blows out intense flames from its wrists and attacks foes courageously. The stronger the foe, the more intensely this POK\u00e9MON\u2019s wrists burn.",
+  "description": "In battle, BLAZIKEN blows out intense flames from its wrists and attacks foes courageously. The stronger the foe, the more intensely this POKéMON’s wrists burn.",
   "flavorTexts": [
     {
-      "text": "In battle, BLAZIKEN blows out intense flames from its wrists and attacks foes courageously. The stronger the foe, the more intensely this POK\u00e9MON\u2019s wrists burn.",
+      "text": "In battle, BLAZIKEN blows out intense flames from its wrists and attacks foes courageously. The stronger the foe, the more intensely this POKéMON’s wrists burn.",
       "version": "ruby"
     },
     {
-      "text": "BLAZIKEN has incredibly strong legs - it can easily clear a 30-story building in one leap. This POK\u00e9MON\u2019s blazing punches leave its foes scorched and blackened.",
+      "text": "BLAZIKEN has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened.",
       "version": "sapphire"
     },
     {
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/257.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/257.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バシャーモ",
+    "roomaji": "Bursyamo",
+    "ko": "번치코",
+    "zh-Hant": "火焰雞",
+    "fr": "Braségali",
+    "de": "Lohgock",
+    "es": "Blaziken",
+    "it": "Blaziken",
+    "en": "Blaziken",
+    "ja": "バシャーモ",
+    "zh-Hans": "火焰鸡"
   }
 }

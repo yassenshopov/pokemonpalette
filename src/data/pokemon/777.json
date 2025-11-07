@@ -1,8 +1,11 @@
 {
   "id": 777,
   "name": "Togedemaru",
-  "species": "Roly-Poly Pok\u00e9mon",
-  "type": ["Electric", "Steel"],
+  "species": "Roly-Poly Pokémon",
+  "type": [
+    "Electric",
+    "Steel"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -43,10 +46,10 @@
     "specialDefense": 73,
     "speed": 96
   },
-  "description": "The spiny fur on its back is normally at rest. When this Pok\u00e9mon becomes agitated, its fur stands on end and stabs into its attackers.",
+  "description": "The spiny fur on its back is normally at rest. When this Pokémon becomes agitated, its fur stands on end and stabs into its attackers.",
   "flavorTexts": [
     {
-      "text": "The spiny fur on its back is normally at rest. When this Pok\u00e9mon becomes agitated, its fur stands on end and stabs into its attackers.",
+      "text": "The spiny fur on its back is normally at rest. When this Pokémon becomes agitated, its fur stands on end and stabs into its attackers.",
       "version": "sun"
     },
     {
@@ -54,7 +57,7 @@
       "version": "moon"
     },
     {
-      "text": "When it\u2019s surprised or agitated, the 14 fur spikes on its back will stand up involuntarily.",
+      "text": "When it’s surprised or agitated, the 14 fur spikes on its back will stand up involuntarily.",
       "version": "ultra-sun"
     },
     {
@@ -62,7 +65,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "With the long hairs on its back, this Pok\u00e9mon takes in electricity from other electric Pok\u00e9mon. It stores what it absorbs in an electric sac.",
+      "text": "With the long hairs on its back, this Pokémon takes in electricity from other electric Pokémon. It stores what it absorbs in an electric sac.",
       "version": "sword"
     }
   ],
@@ -72,7 +75,11 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#F8D030", "#F08030", "#F8F8F8"]
+    "highlights": [
+      "#F8D030",
+      "#F08030",
+      "#F8F8F8"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/777.png",
@@ -293,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/777.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "トゲデマル",
+    "roomaji": "Togedemaru",
+    "ko": "토게데마루",
+    "zh-Hant": "托戈德瑪爾",
+    "fr": "Togedemaru",
+    "de": "Togedemaru",
+    "es": "Togedemaru",
+    "it": "Togedemaru",
+    "en": "Togedemaru",
+    "ja": "トゲデマル",
+    "zh-Hans": "托戈德玛尔"
   }
 }

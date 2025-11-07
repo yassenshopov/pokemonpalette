@@ -1,7 +1,7 @@
 {
   "id": 330,
   "name": "Flygon",
-  "species": "Mystic Pok\u00e9mon",
+  "species": "Mystic Pokémon",
   "type": [
     "Ground",
     "Dragon"
@@ -34,14 +34,14 @@
     "specialDefense": 80,
     "speed": 100
   },
-  "description": "FLYGON is nicknamed \u201cthe elemental  spirit of the desert.\u201d Because its flapping wings whip up a cloud of sand, this POK\u00e9MON is always enveloped in a sandstorm while flying.",
+  "description": "FLYGON is nicknamed “the elemental  spirit of the desert.” Because its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in a sandstorm while flying.",
   "flavorTexts": [
     {
-      "text": "FLYGON is nicknamed \u201cthe elemental  spirit of the desert.\u201d Because its flapping wings whip up a cloud of sand, this POK\u00e9MON is always enveloped in a sandstorm while flying.",
+      "text": "FLYGON is nicknamed “the elemental  spirit of the desert.” Because its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in a sandstorm while flying.",
       "version": "ruby"
     },
     {
-      "text": "FLYGON whips up a sandstorm by flapping its wings. The wings create a series of notes that sound like singing. Because the \u201csinging\u201d is the only thing that can be heard in a sandstorm, this POK\u00e9MON is said to be the desert spirit.",
+      "text": "FLYGON whips up a sandstorm by flapping its wings. The wings create a series of notes that sound like singing. Because the “singing” is the only thing that can be heard in a sandstorm, this POKéMON is said to be the desert spirit.",
       "version": "sapphire"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/330.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/330.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フライゴン",
+    "roomaji": "Frygon",
+    "ko": "플라이곤",
+    "zh-Hant": "沙漠蜻蜓",
+    "fr": "Libégon",
+    "de": "Libelldra",
+    "es": "Flygon",
+    "it": "Flygon",
+    "en": "Flygon",
+    "ja": "フライゴン",
+    "zh-Hans": "沙漠蜻蜓"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 264,
   "name": "Linoone",
-  "species": "Rushing Pok\u00e9mon",
+  "species": "Rushing Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 61,
     "speed": 100
   },
-  "description": "LINOONE always runs full speed and only in straight lines. If facing an obstacle, it makes a right-angle turn to evade it. This POK\u00e9MON is very challenged by gently curving roads.",
+  "description": "LINOONE always runs full speed and only in straight lines. If facing an obstacle, it makes a right-angle turn to evade it. This POKéMON is very challenged by gently curving roads.",
   "flavorTexts": [
     {
-      "text": "LINOONE always runs full speed and only in straight lines. If facing an obstacle, it makes a right-angle turn to evade it. This POK\u00e9MON is very challenged by gently curving roads.",
+      "text": "LINOONE always runs full speed and only in straight lines. If facing an obstacle, it makes a right-angle turn to evade it. This POKéMON is very challenged by gently curving roads.",
       "version": "ruby"
     },
     {
-      "text": "When hunting, LINOONE will make a beeline straight for the prey at a full run. While this POK\u00e9MON is capable of topping 60 mph, it has to come to a screeching halt before it can turn.",
+      "text": "When hunting, LINOONE will make a beeline straight for the prey at a full run. While this POKéMON is capable of topping 60 mph, it has to come to a screeching halt before it can turn.",
       "version": "sapphire"
     },
     {
@@ -334,5 +334,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/264.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/264.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マッスグマ",
+    "roomaji": "Massuguma",
+    "ko": "직구리",
+    "zh-Hant": "直衝熊",
+    "fr": "Linéon",
+    "de": "Geradaks",
+    "es": "Linoone",
+    "it": "Linoone",
+    "en": "Linoone",
+    "ja": "マッスグマ",
+    "zh-Hans": "直冲熊"
   }
 }

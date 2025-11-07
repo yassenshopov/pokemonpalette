@@ -1,7 +1,7 @@
 {
   "id": 369,
   "name": "Relicanth",
-  "species": "Longevity Pok\u00e9mon",
+  "species": "Longevity Pokémon",
   "type": [
     "Water",
     "Rock"
@@ -46,18 +46,18 @@
     "specialDefense": 65,
     "speed": 55
   },
-  "description": "RELICANTH is a POK\u00e9MON species that existed for a hundred million years without ever changing its form. This ancient POK\u00e9MON feeds on microscopic organisms with its toothless mouth.",
+  "description": "RELICANTH is a POKéMON species that existed for a hundred million years without ever changing its form. This ancient POKéMON feeds on microscopic organisms with its toothless mouth.",
   "flavorTexts": [
     {
-      "text": "RELICANTH is a POK\u00e9MON species that existed for a hundred million years without ever changing its form. This ancient POK\u00e9MON feeds on microscopic organisms with its toothless mouth.",
+      "text": "RELICANTH is a POKéMON species that existed for a hundred million years without ever changing its form. This ancient POKéMON feeds on microscopic organisms with its toothless mouth.",
       "version": "ruby"
     },
     {
-      "text": "RELICANTH is a rare species that was discovered in deep-sea explorations. This POK\u00e9MON\u2019s body withstands the enormous water pressure of the ocean depths. Its body is covered in tough scales that are like craggy rocks.",
+      "text": "RELICANTH is a rare species that was discovered in deep-sea explorations. This POKéMON’s body withstands the enormous water pressure of the ocean depths. Its body is covered in tough scales that are like craggy rocks.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that was once believed to have been extinct. The species has not changed its form for 100 million years. It walks on the seafloor using its pectoral fins.",
+      "text": "A POKéMON that was once believed to have been extinct. The species has not changed its form for 100 million years. It walks on the seafloor using its pectoral fins.",
       "version": "emerald"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/369.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/369.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジーランス",
+    "roomaji": "Glanth",
+    "ko": "시라칸",
+    "zh-Hant": "古空棘魚",
+    "fr": "Relicanth",
+    "de": "Relicanth",
+    "es": "Relicanth",
+    "it": "Relicanth",
+    "en": "Relicanth",
+    "ja": "ジーランス",
+    "zh-Hans": "古空棘鱼"
   }
 }

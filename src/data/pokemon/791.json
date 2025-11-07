@@ -1,7 +1,7 @@
 {
   "id": 791,
   "name": "Solgaleo",
-  "species": "Sunne Pok\u00e9mon",
+  "species": "Sunne Pokémon",
   "type": [
     "Psychic",
     "Steel"
@@ -41,7 +41,7 @@
       "version": "sun"
     },
     {
-      "text": "This Pok\u00e9mon is said to be a male evolution of Cosmog. At the activation of its third eye, it departs for another world.",
+      "text": "This Pokémon is said to be a male evolution of Cosmog. At the activation of its third eye, it departs for another world.",
       "version": "moon"
     },
     {
@@ -49,11 +49,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "In writings from the distant past, it\u2019s called by the name \u201cthe beast that devours the sun.\u201d",
+      "text": "In writings from the distant past, it’s called by the name “the beast that devours the sun.”",
       "version": "ultra-moon"
     },
     {
-      "text": "When light radiates from its body, this Pok\u00e9mon could almost appear to be the sun. It will dispel any darkness and light up the world.",
+      "text": "When light radiates from its body, this Pokémon could almost appear to be the sun. It will dispel any darkness and light up the world.",
       "version": "sword"
     }
   ],
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/791.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ソルガレオ",
+    "roomaji": "Solgaleo",
+    "ko": "솔가레오",
+    "zh-Hant": "索爾迦雷歐",
+    "fr": "Solgaleo",
+    "de": "Solgaleo",
+    "es": "Solgaleo",
+    "it": "Solgaleo",
+    "en": "Solgaleo",
+    "ja": "ソルガレオ",
+    "zh-Hans": "索尔迦雷欧"
   }
 }

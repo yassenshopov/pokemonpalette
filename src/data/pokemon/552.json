@@ -1,7 +1,7 @@
 {
   "id": 552,
   "name": "Krokorok",
-  "species": "Desert Croc Pok\u00e9mon",
+  "species": "Desert Croc Pokémon",
   "type": [
     "Ground",
     "Dark"
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/552.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/552.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワルビル",
+    "roomaji": "Waruvile",
+    "ko": "악비르",
+    "zh-Hant": "混混鱷",
+    "fr": "Escroco",
+    "de": "Rokkaiman",
+    "es": "Krokorok",
+    "it": "Krokorok",
+    "en": "Krokorok",
+    "ja": "ワルビル",
+    "zh-Hans": "混混鳄"
   }
 }

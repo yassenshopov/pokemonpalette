@@ -1,7 +1,7 @@
 {
   "id": 503,
   "name": "Samurott",
-  "species": "Formidable Pok\u00e9mon",
+  "species": "Formidable Pokémon",
   "type": [
     "Water"
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/503.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/503.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダイケンキ",
+    "roomaji": "Daikenki",
+    "ko": "대검귀",
+    "zh-Hant": "大劍鬼",
+    "fr": "Clamiral",
+    "de": "Admurai",
+    "es": "Samurott",
+    "it": "Samurott",
+    "en": "Samurott",
+    "ja": "ダイケンキ",
+    "zh-Hans": "大剑鬼"
   }
 }

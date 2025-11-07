@@ -1,7 +1,7 @@
 {
   "id": 151,
   "name": "Mew",
-  "species": "New Species Pok\u00e9mon",
+  "species": "New Species Pokémon",
   "type": [
     "Psychic"
   ],
@@ -40,7 +40,7 @@
       "version": "blue"
     },
     {
-      "text": "When viewed through a micro\u00ad scope, this POK\u00e9MON's short, fine, delicate hair can be seen.",
+      "text": "When viewed through a micro­ scope, this POKéMON's short, fine, delicate hair can be seen.",
       "version": "yellow"
     },
     {
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "Its DNA is said to contain the genet\u00ad ic codes of all POK\u00e9MON, so it can use all kinds of techniques.",
+      "text": "Its DNA is said to contain the genet­ ic codes of all POKéMON, so it can use all kinds of techniques.",
       "version": "silver"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/151.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/151.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミュウ",
+    "roomaji": "Mew",
+    "ko": "뮤",
+    "zh-Hant": "夢幻",
+    "fr": "Mew",
+    "de": "Mew",
+    "es": "Mew",
+    "it": "Mew",
+    "en": "Mew",
+    "ja": "ミュウ",
+    "zh-Hans": "梦幻"
   }
 }

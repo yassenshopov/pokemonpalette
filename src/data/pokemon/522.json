@@ -1,7 +1,7 @@
 {
   "id": 522,
   "name": "Blitzle",
-  "species": "Electrified Pok\u00e9mon",
+  "species": "Electrified Pokémon",
   "type": [
     "Electric"
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/522.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/522.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シママ",
+    "roomaji": "Shimama",
+    "ko": "줄뮤마",
+    "zh-Hant": "斑斑馬",
+    "fr": "Zébibron",
+    "de": "Elezeba",
+    "es": "Blitzle",
+    "it": "Blitzle",
+    "en": "Blitzle",
+    "ja": "シママ",
+    "zh-Hans": "斑斑马"
   }
 }

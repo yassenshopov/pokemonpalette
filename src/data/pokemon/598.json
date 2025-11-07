@@ -1,7 +1,7 @@
 {
   "id": 598,
   "name": "Ferrothorn",
-  "species": "Thorn Pod Pok\u00e9mon",
+  "species": "Thorn Pod Pokémon",
   "type": [
     "Grass",
     "Steel"
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/598.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/598.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナットレイ",
+    "roomaji": "Nutrey",
+    "ko": "너트령",
+    "zh-Hant": "堅果啞鈴",
+    "fr": "Noacier",
+    "de": "Tentantel",
+    "es": "Ferrothorn",
+    "it": "Ferrothorn",
+    "en": "Ferrothorn",
+    "ja": "ナットレイ",
+    "zh-Hans": "坚果哑铃"
   }
 }

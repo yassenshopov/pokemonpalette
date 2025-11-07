@@ -1,7 +1,7 @@
 {
   "id": 379,
   "name": "Registeel",
-  "species": "Iron Pok\u00e9mon",
+  "species": "Iron Pokémon",
   "type": [
     "Steel"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 150,
     "speed": 50
   },
-  "description": "REGISTEEL has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this POK\u00e9MON eats.",
+  "description": "REGISTEEL has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this POKéMON eats.",
   "flavorTexts": [
     {
-      "text": "REGISTEEL has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this POK\u00e9MON eats.",
+      "text": "REGISTEEL has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this POKéMON eats.",
       "version": "ruby"
     },
     {
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/379.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/379.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レジスチル",
+    "roomaji": "Registeel",
+    "ko": "레지스틸",
+    "zh-Hant": "雷吉斯奇魯",
+    "fr": "Registeel",
+    "de": "Registeel",
+    "es": "Registeel",
+    "it": "Registeel",
+    "en": "Registeel",
+    "ja": "レジスチル",
+    "zh-Hans": "雷吉斯奇鲁"
   }
 }

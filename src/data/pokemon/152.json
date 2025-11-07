@@ -1,7 +1,7 @@
 {
   "id": 152,
   "name": "Chikorita",
-  "species": "Leaf Pok\u00e9mon",
+  "species": "Leaf Pokémon",
   "type": [
     "Grass"
   ],
@@ -42,7 +42,7 @@
       "version": "gold"
     },
     {
-      "text": "Its pleasantly aromatic leaves have the ability to check the hu\u00ad midity and tem\u00ad perature.",
+      "text": "Its pleasantly aromatic leaves have the ability to check the hu­ midity and tem­ perature.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "In battle, CHIKORITA waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling POK\u00e9MON and creating a cozy, friendly atmosphere all around.",
+      "text": "In battle, CHIKORITA waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling POKéMON and creating a cozy, friendly atmosphere all around.",
       "version": "ruby"
     },
     {
-      "text": "In battle, CHIKORITA waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling POK\u00e9MON and creating a cozy, friendly atmosphere all around.",
+      "text": "In battle, CHIKORITA waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling POKéMON and creating a cozy, friendly atmosphere all around.",
       "version": "sapphire"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/152.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/152.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チコリータ",
+    "roomaji": "Chicorita",
+    "ko": "치코리타",
+    "zh-Hant": "菊草葉",
+    "fr": "Germignon",
+    "de": "Endivie",
+    "es": "Chikorita",
+    "it": "Chikorita",
+    "en": "Chikorita",
+    "ja": "チコリータ",
+    "zh-Hans": "菊草叶"
   }
 }

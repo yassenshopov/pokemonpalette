@@ -1,7 +1,7 @@
 {
   "id": 847,
   "name": "Barraskewda",
-  "species": "Skewer Pok\u00e9mon",
+  "species": "Skewer Pokémon",
   "type": [
     "Water"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 50,
     "speed": 136
   },
-  "description": "This Pok\u00e9mon has a jaw that\u2019s as sharp as a spear and as strong as steel. Apparently Barraskewda\u2019s flesh is surprisingly tasty, too.",
+  "description": "This Pokémon has a jaw that’s as sharp as a spear and as strong as steel. Apparently Barraskewda’s flesh is surprisingly tasty, too.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon has a jaw that\u2019s as sharp as a spear and as strong as steel. Apparently Barraskewda\u2019s flesh is surprisingly tasty, too.",
+      "text": "This Pokémon has a jaw that’s as sharp as a spear and as strong as steel. Apparently Barraskewda’s flesh is surprisingly tasty, too.",
       "version": "sword"
     },
     {
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/847.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カマスジョー",
+    "roomaji": "Kamasujaw",
+    "ko": "꼬치조",
+    "zh-Hant": "戽斗尖梭",
+    "fr": "Hastacuda",
+    "de": "Barrakiefa",
+    "es": "Barraskewda",
+    "it": "Barraskewda",
+    "en": "Barraskewda",
+    "ja": "カマスジョー",
+    "zh-Hans": "戽斗尖梭"
   }
 }

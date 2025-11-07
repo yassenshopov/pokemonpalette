@@ -1,7 +1,7 @@
 {
   "id": 4,
   "name": "Charmander",
-  "species": "Lizard Pok\u00e9mon",
+  "species": "Lizard Pokémon",
   "type": [
     "Fire"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/4.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/4.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒトカゲ",
+    "roomaji": "Hitokage",
+    "ko": "파이리",
+    "zh-Hant": "小火龍",
+    "fr": "Salamèche",
+    "de": "Glumanda",
+    "es": "Charmander",
+    "it": "Charmander",
+    "en": "Charmander",
+    "ja": "ヒトカゲ",
+    "zh-Hans": "小火龙"
   }
 }

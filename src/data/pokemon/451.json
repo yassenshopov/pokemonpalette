@@ -1,7 +1,7 @@
 {
   "id": 451,
   "name": "Skorupi",
-  "species": "Scorpion Pok\u00e9mon",
+  "species": "Scorpion Pokémon",
   "type": [
     "Poison",
     "Bug"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/451.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/451.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スコルピ",
+    "roomaji": "Scorpi",
+    "ko": "스콜피",
+    "zh-Hant": "鉗尾蠍",
+    "fr": "Rapion",
+    "de": "Pionskora",
+    "es": "Skorupi",
+    "it": "Skorupi",
+    "en": "Skorupi",
+    "ja": "スコルピ",
+    "zh-Hans": "钳尾蝎"
   }
 }

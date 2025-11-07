@@ -1,7 +1,7 @@
 {
   "id": 661,
   "name": "Fletchling",
-  "species": "Tiny Robin Pok\u00e9mon",
+  "species": "Tiny Robin Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -40,26 +40,26 @@
     "specialDefense": 38,
     "speed": 62
   },
-  "description": "These friendly Pok\u00e9mon send signals to one another with beautiful chirps and tail-feather movements.",
+  "description": "These friendly Pokémon send signals to one another with beautiful chirps and tail-feather movements.",
   "flavorTexts": [
     {
-      "text": "These friendly Pok\u00e9mon send signals to one another with beautiful chirps and tail-feather movements.",
+      "text": "These friendly Pokémon send signals to one another with beautiful chirps and tail-feather movements.",
       "version": "x"
     },
     {
-      "text": "Despite the beauty of its lilting voice, it\u2019s merciless to intruders that enter its territory.",
+      "text": "Despite the beauty of its lilting voice, it’s merciless to intruders that enter its territory.",
       "version": "y"
     },
     {
-      "text": "These friendly Pok\u00e9mon send signals to one another with beautiful chirps and tail-feather movements.",
+      "text": "These friendly Pokémon send signals to one another with beautiful chirps and tail-feather movements.",
       "version": "omega-ruby"
     },
     {
-      "text": "Despite the beauty of its lilting voice, it\u2019s merciless to intruders that enter its territory.",
+      "text": "Despite the beauty of its lilting voice, it’s merciless to intruders that enter its territory.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "This amiable Pok\u00e9mon is easy to train. But when battle is joined, it shows its ferocious side.",
+      "text": "This amiable Pokémon is easy to train. But when battle is joined, it shows its ferocious side.",
       "version": "sun"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/661.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤヤコマ",
+    "roomaji": "Yayakoma",
+    "ko": "화살꼬빈",
+    "zh-Hant": "小箭雀",
+    "fr": "Passerouge",
+    "de": "Dartiri",
+    "es": "Fletchling",
+    "it": "Fletchling",
+    "en": "Fletchling",
+    "ja": "ヤヤコマ",
+    "zh-Hans": "小箭雀"
   }
 }

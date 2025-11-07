@@ -1,7 +1,7 @@
 {
   "id": 982,
   "name": "Dudunsparce-two-segment",
-  "species": "Land Snake Pok\u00e9mon",
+  "species": "Land Snake Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 75,
     "speed": 55
   },
-  "description": "This Pok\u00e9mon uses its hard tail to make its nest by boring holes into bedrock deep underground. The nest can reach lengths of over six miles.",
+  "description": "This Pokémon uses its hard tail to make its nest by boring holes into bedrock deep underground. The nest can reach lengths of over six miles.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon uses its hard tail to make its nest by boring holes into bedrock deep underground. The nest can reach lengths of over six miles.",
+      "text": "This Pokémon uses its hard tail to make its nest by boring holes into bedrock deep underground. The nest can reach lengths of over six miles.",
       "version": "scarlet"
     },
     {
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/982.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ノココッチ",
+    "roomaji": "Nokokocchi",
+    "ko": "노고고치",
+    "zh-Hant": "土龍節節",
+    "fr": "Deusolourdo",
+    "de": "Dummimisel",
+    "es": "Dudunsparce",
+    "it": "Dudunsparce",
+    "en": "Dudunsparce",
+    "ja": "ノココッチ",
+    "zh-Hans": "土龙节节"
   }
 }

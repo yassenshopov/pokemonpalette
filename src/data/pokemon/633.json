@@ -1,7 +1,7 @@
 {
   "id": 633,
   "name": "Deino",
-  "species": "Irate Pok\u00e9mon",
+  "species": "Irate Pokémon",
   "type": [
     "Dark",
     "Dragon"
@@ -45,11 +45,11 @@
       "version": "white"
     },
     {
-      "text": "Lacking sight, it\u2019s unaware of its surroundings, so it bumps into things and eats anything that moves.",
+      "text": "Lacking sight, it’s unaware of its surroundings, so it bumps into things and eats anything that moves.",
       "version": "black-2"
     },
     {
-      "text": "Lacking sight, it\u2019s unaware of its surroundings, so it bumps into things and eats anything that moves.",
+      "text": "Lacking sight, it’s unaware of its surroundings, so it bumps into things and eats anything that moves.",
       "version": "white-2"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/633.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/633.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モノズ",
+    "roomaji": "Monozu",
+    "ko": "모노두",
+    "zh-Hant": "單首龍",
+    "fr": "Solochi",
+    "de": "Kapuno",
+    "es": "Deino",
+    "it": "Deino",
+    "en": "Deino",
+    "ja": "モノズ",
+    "zh-Hans": "单首龙"
   }
 }

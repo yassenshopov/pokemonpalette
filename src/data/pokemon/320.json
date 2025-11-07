@@ -1,7 +1,7 @@
 {
   "id": 320,
   "name": "Wailmer",
-  "species": "Ball Whale Pok\u00e9mon",
+  "species": "Ball Whale Pokémon",
   "type": [
     "Water"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 35,
     "speed": 60
   },
-  "description": "WAILMER\u2019s nostrils are located above its eyes. This playful POK\u00e9MON loves to startle people by forcefully snorting out seawater it stores inside its body out of its nostrils.",
+  "description": "WAILMER’s nostrils are located above its eyes. This playful POKéMON loves to startle people by forcefully snorting out seawater it stores inside its body out of its nostrils.",
   "flavorTexts": [
     {
-      "text": "WAILMER\u2019s nostrils are located above its eyes. This playful POK\u00e9MON loves to startle people by forcefully snorting out seawater it stores inside its body out of its nostrils.",
+      "text": "WAILMER’s nostrils are located above its eyes. This playful POKéMON loves to startle people by forcefully snorting out seawater it stores inside its body out of its nostrils.",
       "version": "ruby"
     },
     {
-      "text": "WAILMER can store water inside its body to transform itself into a ball for bouncing around on the ground. By filling itself up with more water, this POK\u00e9MON can elevate the height of its bounces.",
+      "text": "WAILMER can store water inside its body to transform itself into a ball for bouncing around on the ground. By filling itself up with more water, this POKéMON can elevate the height of its bounces.",
       "version": "sapphire"
     },
     {
-      "text": "While this POK\u00e9MON usually lives in the sea, it can survive on land, although not too long. It loses vitality if its body becomes dried out.",
+      "text": "While this POKéMON usually lives in the sea, it can survive on land, although not too long. It loses vitality if its body becomes dried out.",
       "version": "emerald"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/320.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/320.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ホエルコ",
+    "roomaji": "Whalko",
+    "ko": "고래왕자",
+    "zh-Hant": "吼吼鯨",
+    "fr": "Wailmer",
+    "de": "Wailmer",
+    "es": "Wailmer",
+    "it": "Wailmer",
+    "en": "Wailmer",
+    "ja": "ホエルコ",
+    "zh-Hans": "吼吼鲸"
   }
 }

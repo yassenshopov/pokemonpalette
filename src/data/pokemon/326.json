@@ -1,7 +1,7 @@
 {
   "id": 326,
   "name": "Grumpig",
-  "species": "Manipulate Pok\u00e9mon",
+  "species": "Manipulate Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 110,
     "speed": 80
   },
-  "description": "GRUMPIG uses the black pearls on its body to amplify its psychic power waves for gaining total control over its foe. When this POK\u00e9MON uses its special power, its snorting breath grows labored.",
+  "description": "GRUMPIG uses the black pearls on its body to amplify its psychic power waves for gaining total control over its foe. When this POKéMON uses its special power, its snorting breath grows labored.",
   "flavorTexts": [
     {
-      "text": "GRUMPIG uses the black pearls on its body to amplify its psychic power waves for gaining total control over its foe. When this POK\u00e9MON uses its special power, its snorting breath grows labored.",
+      "text": "GRUMPIG uses the black pearls on its body to amplify its psychic power waves for gaining total control over its foe. When this POKéMON uses its special power, its snorting breath grows labored.",
       "version": "ruby"
     },
     {
-      "text": "GRUMPIG uses the black pearls on its body to wield its fantastic powers. When it is doing so, it dances bizarrely. This POK\u00e9MON\u2019s black pearls are valuable as works of art.",
+      "text": "GRUMPIG uses the black pearls on its body to wield its fantastic powers. When it is doing so, it dances bizarrely. This POKéMON’s black pearls are valuable as works of art.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/326.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/326.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ブーピッグ",
+    "roomaji": "Boopig",
+    "ko": "피그킹",
+    "zh-Hant": "噗噗豬",
+    "fr": "Groret",
+    "de": "Groink",
+    "es": "Grumpig",
+    "it": "Grumpig",
+    "en": "Grumpig",
+    "ja": "ブーピッグ",
+    "zh-Hans": "噗噗猪"
   }
 }

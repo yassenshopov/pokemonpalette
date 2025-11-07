@@ -1,7 +1,7 @@
 {
   "id": 611,
   "name": "Fraxure",
-  "species": "Axe Jaw Pok\u00e9mon",
+  "species": "Axe Jaw Pokémon",
   "type": [
     "Dragon"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 50,
     "speed": 67
   },
-  "description": "Since a broken tusk will not grow back, they diligently sharpen their tusks on river rocks after they\u2019ve been fighting.",
+  "description": "Since a broken tusk will not grow back, they diligently sharpen their tusks on river rocks after they’ve been fighting.",
   "flavorTexts": [
     {
-      "text": "Since a broken tusk will not grow back, they diligently sharpen their tusks on river rocks after they\u2019ve been fighting.",
+      "text": "Since a broken tusk will not grow back, they diligently sharpen their tusks on river rocks after they’ve been fighting.",
       "version": "black"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/611.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/611.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オノンド",
+    "roomaji": "Onondo",
+    "ko": "액슨도",
+    "zh-Hant": "斧牙龍",
+    "fr": "Incisache",
+    "de": "Sharfax",
+    "es": "Fraxure",
+    "it": "Fraxure",
+    "en": "Fraxure",
+    "ja": "オノンド",
+    "zh-Hans": "斧牙龙"
   }
 }

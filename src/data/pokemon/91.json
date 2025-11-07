@@ -1,7 +1,7 @@
 {
   "id": 91,
   "name": "Cloyster",
-  "species": "Bivalve Pok\u00e9mon",
+  "species": "Bivalve Pokémon",
   "type": [
     "Water",
     "Ice"
@@ -61,7 +61,7 @@
       "version": "yellow"
     },
     {
-      "text": "Once it slams its shell shut, it is impossible to open, even by those with superi\u00ad or strength.",
+      "text": "Once it slams its shell shut, it is impossible to open, even by those with superi­ or strength.",
       "version": "gold"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/91.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/91.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パルシェン",
+    "roomaji": "Parshen",
+    "ko": "파르셀",
+    "zh-Hant": "刺甲貝",
+    "fr": "Crustabri",
+    "de": "Austos",
+    "es": "Cloyster",
+    "it": "Cloyster",
+    "en": "Cloyster",
+    "ja": "パルシェン",
+    "zh-Hans": "刺甲贝"
   }
 }

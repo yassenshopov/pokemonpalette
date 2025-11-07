@@ -1,7 +1,7 @@
 {
   "id": 39,
   "name": "Jigglypuff",
-  "species": "Balloon Pok\u00e9mon",
+  "species": "Balloon Pokémon",
   "type": [
     "Normal",
     "Fairy"
@@ -323,5 +323,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/39.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/39.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "プリン",
+    "roomaji": "Purin",
+    "ko": "푸린",
+    "zh-Hant": "胖丁",
+    "fr": "Rondoudou",
+    "de": "Pummeluff",
+    "es": "Jigglypuff",
+    "it": "Jigglypuff",
+    "en": "Jigglypuff",
+    "ja": "プリン",
+    "zh-Hans": "胖丁"
   }
 }

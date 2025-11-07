@@ -1,7 +1,7 @@
 {
   "id": 373,
   "name": "Salamence",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Dragon",
     "Flying"
@@ -40,14 +40,14 @@
     "specialDefense": 80,
     "speed": 100
   },
-  "description": "SALAMENCE came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this POK\u00e9MON\u2019s cells, causing it to sprout its magnificent wings.",
+  "description": "SALAMENCE came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this POKéMON’s cells, causing it to sprout its magnificent wings.",
   "flavorTexts": [
     {
-      "text": "SALAMENCE came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this POK\u00e9MON\u2019s cells, causing it to sprout its magnificent wings.",
+      "text": "SALAMENCE came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this POKéMON’s cells, causing it to sprout its magnificent wings.",
       "version": "ruby"
     },
     {
-      "text": "By evolving into SALAMENCE, this POK\u00e9MON finally realizes its long-held dream of growing wings. To express its joy, it flies and wheels all over the sky while spouting flames from its mouth.",
+      "text": "By evolving into SALAMENCE, this POKéMON finally realizes its long-held dream of growing wings. To express its joy, it flies and wheels all over the sky while spouting flames from its mouth.",
       "version": "sapphire"
     },
     {
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/373.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/373.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ボーマンダ",
+    "roomaji": "Bohmander",
+    "ko": "보만다",
+    "zh-Hant": "暴飛龍",
+    "fr": "Drattak",
+    "de": "Brutalanda",
+    "es": "Salamence",
+    "it": "Salamence",
+    "en": "Salamence",
+    "ja": "ボーマンダ",
+    "zh-Hans": "暴飞龙"
   }
 }

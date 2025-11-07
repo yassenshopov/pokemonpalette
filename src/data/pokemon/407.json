@@ -1,7 +1,7 @@
 {
   "id": 407,
   "name": "Roserade",
-  "species": "Bouquet Pok\u00e9mon",
+  "species": "Bouquet Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -323,5 +323,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/407.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/407.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ロズレイド",
+    "roomaji": "Roserade",
+    "ko": "로즈레이드",
+    "zh-Hant": "羅絲雷朵",
+    "fr": "Roserade",
+    "de": "Roserade",
+    "es": "Roserade",
+    "it": "Roserade",
+    "en": "Roserade",
+    "ja": "ロズレイド",
+    "zh-Hans": "罗丝雷朵"
   }
 }

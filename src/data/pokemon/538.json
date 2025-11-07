@@ -1,7 +1,7 @@
 {
   "id": 538,
   "name": "Throh",
-  "species": "Judo Pok\u00e9mon",
+  "species": "Judo Pokémon",
   "type": [
     "Fighting"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/538.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/538.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナゲキ",
+    "roomaji": "Nageki",
+    "ko": "던지미",
+    "zh-Hant": "投摔鬼",
+    "fr": "Judokrak",
+    "de": "Jiutesto",
+    "es": "Throh",
+    "it": "Throh",
+    "en": "Throh",
+    "ja": "ナゲキ",
+    "zh-Hans": "投摔鬼"
   }
 }

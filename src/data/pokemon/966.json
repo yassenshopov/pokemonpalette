@@ -1,7 +1,7 @@
 {
   "id": 966,
   "name": "Revavroom",
-  "species": "Multi-Cyl Pok\u00e9mon",
+  "species": "Multi-Cyl Pokémon",
   "type": [
     "Steel",
     "Poison"
@@ -40,10 +40,10 @@
     "specialDefense": 67,
     "speed": 90
   },
-  "description": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders\u2014now numbering eight\u2014to generate energy.",
+  "description": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders—now numbering eight—to generate energy.",
   "flavorTexts": [
     {
-      "text": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders\u2014now numbering eight\u2014to generate energy.",
+      "text": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders—now numbering eight—to generate energy.",
       "version": "scarlet"
     },
     {
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/966.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブロロローム",
+    "roomaji": "Burororoom",
+    "ko": "부르르룸",
+    "zh-Hant": "普隆隆姆",
+    "fr": "Vrombotor",
+    "de": "Knattatox",
+    "es": "Revavroom",
+    "it": "Revavroom",
+    "en": "Revavroom",
+    "ja": "ブロロローム",
+    "zh-Hans": "普隆隆姆"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 170,
   "name": "Chinchou",
-  "species": "Angler Pok\u00e9mon",
+  "species": "Angler Pokémon",
   "type": [
     "Water",
     "Electric"
@@ -53,19 +53,19 @@
       "version": "ultra-moon"
     },
     {
-      "text": "It shoots positive and negative elec\u00ad tricity between the tips of its two antennae and zaps its enemies.",
+      "text": "It shoots positive and negative elec­ tricity between the tips of its two antennae and zaps its enemies.",
       "version": "gold"
     },
     {
-      "text": "On the dark ocean floor, its only means of communi\u00ad cation is its constantly flash\u00ad ing lights.",
+      "text": "On the dark ocean floor, its only means of communi­ cation is its constantly flash­ ing lights.",
       "version": "silver"
     },
     {
-      "text": "Its antennae, whi\u00ad ch evolved from a fin, have both po\u00ad sitive and neg\u00ad ative charges flo\u00ad wing through them.",
+      "text": "Its antennae, whi­ ch evolved from a fin, have both po­ sitive and neg­ ative charges flo­ wing through them.",
       "version": "crystal"
     },
     {
-      "text": "CHINCHOU lets loose positive and negative electrical charges from its two antennas to make its prey faint. This POK\u00e9MON flashes its electric lights to exchange signals with others.",
+      "text": "CHINCHOU lets loose positive and negative electrical charges from its two antennas to make its prey faint. This POKéMON flashes its electric lights to exchange signals with others.",
       "version": "ruby"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/170.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/170.ogg"
+  },
+  "names": {
+    "ko": "초라기",
+    "ja-Hrkt": "チョンチー",
+    "roomaji": "Chonchie",
+    "zh-Hant": "燈籠魚",
+    "fr": "Loupio",
+    "de": "Lampi",
+    "es": "Chinchou",
+    "it": "Chinchou",
+    "en": "Chinchou",
+    "ja": "チョンチー",
+    "zh-Hans": "灯笼鱼"
   }
 }

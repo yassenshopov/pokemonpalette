@@ -1,7 +1,7 @@
 {
   "id": 541,
   "name": "Swadloon",
-  "species": "Leaf-Wrapped Pok\u00e9mon",
+  "species": "Leaf-Wrapped Pokémon",
   "type": [
     "Bug",
     "Grass"
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/541.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/541.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クルマユ",
+    "roomaji": "Kurumayu",
+    "ko": "두르쿤",
+    "zh-Hant": "寶包繭",
+    "fr": "Couverdure",
+    "de": "Folikon",
+    "es": "Swadloon",
+    "it": "Swadloon",
+    "en": "Swadloon",
+    "ja": "クルマユ",
+    "zh-Hans": "宝包茧"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 453,
   "name": "Croagunk",
-  "species": "Toxic Mouth Pok\u00e9mon",
+  "species": "Toxic Mouth Pokémon",
   "type": [
     "Poison",
     "Fighting"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/453.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/453.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グレッグル",
+    "roomaji": "Gureggru",
+    "ko": "삐딱구리",
+    "zh-Hant": "不良蛙",
+    "fr": "Cradopaud",
+    "de": "Glibunkel",
+    "es": "Croagunk",
+    "it": "Croagunk",
+    "en": "Croagunk",
+    "ja": "グレッグル",
+    "zh-Hans": "不良蛙"
   }
 }

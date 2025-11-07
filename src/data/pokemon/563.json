@@ -1,7 +1,7 @@
 {
   "id": 563,
   "name": "Cofagrigus",
-  "species": "Coffin Pok\u00e9mon",
+  "species": "Coffin Pokémon",
   "type": [
     "Ghost"
   ],
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/563.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/563.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "デスカーン",
+    "roomaji": "Desukarn",
+    "ko": "데스니칸",
+    "zh-Hant": "死神棺",
+    "fr": "Tutankafer",
+    "de": "Echnatoll",
+    "es": "Cofagrigus",
+    "it": "Cofagrigus",
+    "en": "Cofagrigus",
+    "ja": "デスカーン",
+    "zh-Hans": "迭失棺"
   }
 }

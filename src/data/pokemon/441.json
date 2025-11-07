@@ -1,7 +1,7 @@
 {
   "id": 441,
   "name": "Chatot",
-  "species": "Music Note Pok\u00e9mon",
+  "species": "Music Note Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -57,15 +57,15 @@
       "version": "pearl"
     },
     {
-      "text": "Its tongue is just like a human\u2019s. As a result, it can cleverly mimic human speech.",
+      "text": "Its tongue is just like a human’s. As a result, it can cleverly mimic human speech.",
       "version": "platinum"
     },
     {
-      "text": "It mimics the cries of other Pok\u00e9mon to trick them into thinking it\u2019s one of them. This way they won\u2019t attack it.",
+      "text": "It mimics the cries of other Pokémon to trick them into thinking it’s one of them. This way they won’t attack it.",
       "version": "heartgold"
     },
     {
-      "text": "It mimics the cries of other Pok\u00e9mon to trick them into thinking it\u2019s one of them. This way they won\u2019t attack it.",
+      "text": "It mimics the cries of other Pokémon to trick them into thinking it’s one of them. This way they won’t attack it.",
       "version": "soulsilver"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/441.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/441.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ペラップ",
+    "roomaji": "Perap",
+    "ko": "페라페",
+    "zh-Hant": "聒噪鳥",
+    "fr": "Pijako",
+    "de": "Plaudagei",
+    "es": "Chatot",
+    "it": "Chatot",
+    "en": "Chatot",
+    "ja": "ペラップ",
+    "zh-Hans": "聒噪鸟"
   }
 }

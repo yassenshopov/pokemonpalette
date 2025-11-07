@@ -1,7 +1,7 @@
 {
   "id": 259,
   "name": "Marshtomp",
-  "species": "Mud Fish Pok\u00e9mon",
+  "species": "Mud Fish Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -40,14 +40,14 @@
     "specialDefense": 70,
     "speed": 50
   },
-  "description": "The surface of MARSHTOMP\u2019s body is enveloped by a thin, sticky film that enables it to live on land. This POK\u00e9MON plays in mud on beaches when the ocean tide is low.",
+  "description": "The surface of MARSHTOMP’s body is enveloped by a thin, sticky film that enables it to live on land. This POKéMON plays in mud on beaches when the ocean tide is low.",
   "flavorTexts": [
     {
-      "text": "The surface of MARSHTOMP\u2019s body is enveloped by a thin, sticky film that enables it to live on land. This POK\u00e9MON plays in mud on beaches when the ocean tide is low.",
+      "text": "The surface of MARSHTOMP’s body is enveloped by a thin, sticky film that enables it to live on land. This POKéMON plays in mud on beaches when the ocean tide is low.",
       "version": "ruby"
     },
     {
-      "text": "MARSHTOMP is much faster at traveling through mud than it is at swimming. This POK\u00e9MON\u2019s hindquarters exhibit obvious development, giving it the ability to walk on just its hind legs.",
+      "text": "MARSHTOMP is much faster at traveling through mud than it is at swimming. This POKéMON’s hindquarters exhibit obvious development, giving it the ability to walk on just its hind legs.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/259.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/259.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヌマクロー",
+    "roomaji": "Numacraw",
+    "ko": "늪짱이",
+    "zh-Hant": "沼躍魚",
+    "fr": "Flobio",
+    "de": "Moorabbel",
+    "es": "Marshtomp",
+    "it": "Marshtomp",
+    "en": "Marshtomp",
+    "ja": "ヌマクロー",
+    "zh-Hans": "沼跃鱼"
   }
 }

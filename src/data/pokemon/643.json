@@ -1,7 +1,7 @@
 {
   "id": 643,
   "name": "Reshiram",
-  "species": "Vast White Pok\u00e9mon",
+  "species": "Vast White Pokémon",
   "type": [
     "Dragon",
     "Fire"
@@ -34,26 +34,26 @@
     "specialDefense": 120,
     "speed": 90
   },
-  "description": "This Pok\u00e9mon appears in legends. It sends flames into the air from its tail, burning up everything around it.",
+  "description": "This Pokémon appears in legends. It sends flames into the air from its tail, burning up everything around it.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon appears in legends. It sends flames into the air from its tail, burning up everything around it.",
+      "text": "This Pokémon appears in legends. It sends flames into the air from its tail, burning up everything around it.",
       "version": "black"
     },
     {
-      "text": "When Reshiram\u2019s tail flares, the heat energy moves the atmosphere and changes the world\u2019s weather.",
+      "text": "When Reshiram’s tail flares, the heat energy moves the atmosphere and changes the world’s weather.",
       "version": "white"
     },
     {
-      "text": "This legendary Pok\u00e9mon can scorch the world with fire. It helps those who want to build a world of truth.",
+      "text": "This legendary Pokémon can scorch the world with fire. It helps those who want to build a world of truth.",
       "version": "black-2"
     },
     {
-      "text": "This legendary Pok\u00e9mon can scorch the world with fire. It helps those who want to build a world of truth.",
+      "text": "This legendary Pokémon can scorch the world with fire. It helps those who want to build a world of truth.",
       "version": "white-2"
     },
     {
-      "text": "This legendary Pok\u00e9mon can scorch the world with fire. It helps those who want to build a world of truth.",
+      "text": "This legendary Pokémon can scorch the world with fire. It helps those who want to build a world of truth.",
       "version": "x"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/643.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/643.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レシラム",
+    "roomaji": "Reshiram",
+    "ko": "레시라무",
+    "zh-Hant": "萊希拉姆",
+    "fr": "Reshiram",
+    "de": "Reshiram",
+    "es": "Reshiram",
+    "it": "Reshiram",
+    "en": "Reshiram",
+    "ja": "レシラム",
+    "zh-Hans": "莱希拉姆"
   }
 }

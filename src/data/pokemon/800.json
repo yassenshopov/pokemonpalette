@@ -1,7 +1,7 @@
 {
   "id": 800,
   "name": "Necrozma",
-  "species": "Prism Pok\u00e9mon",
+  "species": "Prism Pokémon",
   "type": [
     "Psychic"
   ],
@@ -40,11 +40,11 @@
       "version": "moon"
     },
     {
-      "text": "It looks somehow pained as it rages around in search of light, which serves as its energy. It\u2019s apparently from another world.",
+      "text": "It looks somehow pained as it rages around in search of light, which serves as its energy. It’s apparently from another world.",
       "version": "ultra-sun"
     },
     {
-      "text": "Light is the source of its energy. If it isn\u2019t devouring light, impurities build up in it and on it, and Necrozma darkens and stops moving.",
+      "text": "Light is the source of its energy. If it isn’t devouring light, impurities build up in it and on it, and Necrozma darkens and stops moving.",
       "version": "ultra-moon"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/800.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ネクロズマ",
+    "roomaji": "Necrozma",
+    "ko": "네크로즈마",
+    "zh-Hant": "奈克洛茲瑪",
+    "fr": "Necrozma",
+    "de": "Necrozma",
+    "es": "Necrozma",
+    "it": "Necrozma",
+    "en": "Necrozma",
+    "ja": "ネクロズマ",
+    "zh-Hans": "奈克洛兹玛"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 693,
   "name": "Clawitzer",
-  "species": "Howitzer Pok\u00e9mon",
+  "species": "Howitzer Pokémon",
   "type": [
     "Water"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/693.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブロスター",
+    "roomaji": "Bloster",
+    "ko": "블로스터",
+    "zh-Hant": "鋼炮臂蝦",
+    "fr": "Gamblast",
+    "de": "Wummer",
+    "es": "Clawitzer",
+    "it": "Clawitzer",
+    "en": "Clawitzer",
+    "ja": "ブロスター",
+    "zh-Hans": "钢炮臂虾"
   }
 }

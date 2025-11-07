@@ -1,7 +1,7 @@
 {
   "id": 875,
   "name": "Eiscue-ice",
-  "species": "Penguin Pok\u00e9mon",
+  "species": "Penguin Pokémon",
   "type": [
     "Ice"
   ],
@@ -36,7 +36,7 @@
       "version": "sword"
     },
     {
-      "text": "This Pok\u00e9mon keeps its heat-sensitive head cool with ice. It fishes for its food, dangling its single hair into the sea to lure in prey.",
+      "text": "This Pokémon keeps its heat-sensitive head cool with ice. It fishes for its food, dangling its single hair into the sea to lure in prey.",
       "version": "shield"
     }
   ],
@@ -273,5 +273,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/875.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コオリッポ",
+    "roomaji": "Korippo",
+    "ko": "빙큐보",
+    "zh-Hant": "冰砌鵝",
+    "fr": "Bekaglaçon",
+    "de": "Kubuin",
+    "es": "Eiscue",
+    "it": "Eiscue",
+    "en": "Eiscue",
+    "ja": "コオリッポ",
+    "zh-Hans": "冰砌鹅"
   }
 }

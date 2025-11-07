@@ -1,7 +1,7 @@
 {
   "id": 22,
   "name": "Fearow",
-  "species": "Beak Pok\u00e9mon",
+  "species": "Beak Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -51,7 +51,7 @@
       "version": "blue"
     },
     {
-      "text": "A POK\u00e9MON that dates back many years. If it senses danger, it flies high and away, instantly.",
+      "text": "A POKéMON that dates back many years. If it senses danger, it flies high and away, instantly.",
       "version": "yellow"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/22.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/22.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オニドリル",
+    "roomaji": "Onidrill",
+    "ko": "깨비드릴조",
+    "zh-Hant": "大嘴雀",
+    "fr": "Rapasdepic",
+    "de": "Ibitak",
+    "es": "Fearow",
+    "it": "Fearow",
+    "en": "Fearow",
+    "ja": "オニドリル",
+    "zh-Hans": "大嘴雀"
   }
 }

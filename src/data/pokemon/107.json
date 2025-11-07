@@ -1,7 +1,7 @@
 {
   "id": 107,
   "name": "Hitmonchan",
-  "species": "Punching Pok\u00e9mon",
+  "species": "Punching Pokémon",
   "type": [
     "Fighting"
   ],
@@ -52,7 +52,7 @@
       "version": "blue"
     },
     {
-      "text": "Punches in cork\u00ad screw fashion. It can punch its way through a concrete wall in the same way as a drill.",
+      "text": "Punches in cork­ screw fashion. It can punch its way through a concrete wall in the same way as a drill.",
       "version": "yellow"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/107.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/107.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エビワラー",
+    "roomaji": "Ebiwalar",
+    "ko": "홍수몬",
+    "zh-Hant": "快拳郎",
+    "fr": "Tygnon",
+    "de": "Nockchan",
+    "es": "Hitmonchan",
+    "it": "Hitmonchan",
+    "en": "Hitmonchan",
+    "ja": "エビワラー",
+    "zh-Hans": "快拳郎"
   }
 }

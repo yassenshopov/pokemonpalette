@@ -1,7 +1,7 @@
 {
   "id": 959,
   "name": "Tinkaton",
-  "species": "Hammer Pok\u00e9mon",
+  "species": "Hammer Pokémon",
   "type": [
     "Fairy",
     "Steel"
@@ -46,10 +46,10 @@
     "specialDefense": 105,
     "speed": 94
   },
-  "description": "This intelligent Pok\u00e9mon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
+  "description": "This intelligent Pokémon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
   "flavorTexts": [
     {
-      "text": "This intelligent Pok\u00e9mon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
+      "text": "This intelligent Pokémon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
       "version": "scarlet"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/959.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "デカヌチャン",
+    "roomaji": "Dekanuchan",
+    "ko": "두드리짱",
+    "zh-Hant": "巨鍛匠",
+    "fr": "Forgelina",
+    "de": "Granforgita",
+    "es": "Tinkaton",
+    "it": "Tinkaton",
+    "en": "Tinkaton",
+    "ja": "デカヌチャン",
+    "zh-Hans": "巨锻匠"
   }
 }

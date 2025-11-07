@@ -1,7 +1,7 @@
 {
   "id": 376,
   "name": "Metagross",
-  "species": "Iron Leg Pok\u00e9mon",
+  "species": "Iron Leg Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -40,18 +40,18 @@
     "specialDefense": 90,
     "speed": 70
   },
-  "description": "METAGROSS has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This POK\u00e9MON can float in the air by tucking in its four legs.",
+  "description": "METAGROSS has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This POKéMON can float in the air by tucking in its four legs.",
   "flavorTexts": [
     {
-      "text": "METAGROSS has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This POK\u00e9MON can float in the air by tucking in its four legs.",
+      "text": "METAGROSS has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This POKéMON can float in the air by tucking in its four legs.",
       "version": "ruby"
     },
     {
-      "text": "METAGROSS is the result of two METANG achieving fusion. When hunting, this POK\u00e9MON pins the prey to the ground under its massive body. It then eats the helpless victim using the large  mouth on its stomach.",
+      "text": "METAGROSS is the result of two METANG achieving fusion. When hunting, this POKéMON pins the prey to the ground under its massive body. It then eats the helpless victim using the large  mouth on its stomach.",
       "version": "sapphire"
     },
     {
-      "text": "METAGROSS has four brains that are joined by a complex neural network. As a result of integration, this POK\u00e9MON is smarter than a supercomputer.",
+      "text": "METAGROSS has four brains that are joined by a complex neural network. As a result of integration, this POKéMON is smarter than a supercomputer.",
       "version": "emerald"
     },
     {
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/376.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/376.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "メタグロス",
+    "roomaji": "Metagross",
+    "ko": "메타그로스",
+    "zh-Hant": "巨金怪",
+    "fr": "Métalosse",
+    "de": "Metagross",
+    "es": "Metagross",
+    "it": "Metagross",
+    "en": "Metagross",
+    "ja": "メタグロス",
+    "zh-Hans": "巨金怪"
   }
 }

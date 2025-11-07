@@ -1,7 +1,7 @@
 {
   "id": 568,
   "name": "Trubbish",
-  "species": "Trash Bag Pok\u00e9mon",
+  "species": "Trash Bag Pokémon",
   "type": [
     "Poison"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "The combination of garbage bags and industrial waste caused the chemical reaction that created this Pok\u00e9mon.",
+      "text": "The combination of garbage bags and industrial waste caused the chemical reaction that created this Pokémon.",
       "version": "white"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "The combination of garbage bags and industrial waste caused the chemical reaction that created this Pok\u00e9mon.",
+      "text": "The combination of garbage bags and industrial waste caused the chemical reaction that created this Pokémon.",
       "version": "x"
     }
   ],
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/568.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/568.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤブクロン",
+    "roomaji": "Yabukuron",
+    "ko": "깨봉이",
+    "zh-Hant": "破破袋",
+    "fr": "Miamiasme",
+    "de": "Unratütox",
+    "es": "Trubbish",
+    "it": "Trubbish",
+    "en": "Trubbish",
+    "ja": "ヤブクロン",
+    "zh-Hans": "破破袋"
   }
 }

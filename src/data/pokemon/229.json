@@ -1,7 +1,7 @@
 {
   "id": 229,
   "name": "Houndoom",
-  "species": "Dark Pok\u00e9mon",
+  "species": "Dark Pokémon",
   "type": [
     "Dark",
     "Fire"
@@ -53,19 +53,19 @@
       "version": "gold"
     },
     {
-      "text": "Upon hearing its eerie howls, other POK\u00e9MON get the shivers and head straight back to their nests.",
+      "text": "Upon hearing its eerie howls, other POKéMON get the shivers and head straight back to their nests.",
       "version": "silver"
     },
     {
-      "text": "The pungent- smelling flame that shoots from its mouth results from toxins burn\u00ad ing in its body.",
+      "text": "The pungent- smelling flame that shoots from its mouth results from toxins burn­ ing in its body.",
       "version": "crystal"
     },
     {
-      "text": "In a HOUNDOOM pack, the one with its horns raked sharply towards the back serves a leadership role. These POK\u00e9MON choose their leader by fighting amongst themselves.",
+      "text": "In a HOUNDOOM pack, the one with its horns raked sharply towards the back serves a leadership role. These POKéMON choose their leader by fighting amongst themselves.",
       "version": "ruby"
     },
     {
-      "text": "In a HOUNDOOM pack, the one with its horns raked sharply towards the back serves a leadership role. These POK\u00e9MON choose their leader by fighting amongst themselves.",
+      "text": "In a HOUNDOOM pack, the one with its horns raked sharply towards the back serves a leadership role. These POKéMON choose their leader by fighting amongst themselves.",
       "version": "sapphire"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/229.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/229.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヘルガー",
+    "roomaji": "Hellgar",
+    "ko": "헬가",
+    "zh-Hant": "黑魯加",
+    "fr": "Démolosse",
+    "de": "Hundemon",
+    "es": "Houndoom",
+    "it": "Houndoom",
+    "en": "Houndoom",
+    "ja": "ヘルガー",
+    "zh-Hans": "黑鲁加"
   }
 }

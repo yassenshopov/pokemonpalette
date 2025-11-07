@@ -1,7 +1,7 @@
 {
   "id": 697,
   "name": "Tyrantrum",
-  "species": "Despot Pok\u00e9mon",
+  "species": "Despot Pokémon",
   "type": [
     "Rock",
     "Dragon"
@@ -47,7 +47,7 @@
       "version": "x"
     },
     {
-      "text": "Nothing could stop this Pok\u00e9mon 100 million years ago, so it behaved like a king.",
+      "text": "Nothing could stop this Pokémon 100 million years ago, so it behaved like a king.",
       "version": "y"
     },
     {
@@ -55,7 +55,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Nothing could stop this Pok\u00e9mon 100 million years ago, so it behaved like a king.",
+      "text": "Nothing could stop this Pokémon 100 million years ago, so it behaved like a king.",
       "version": "alpha-sapphire"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/697.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ガチゴラス",
+    "roomaji": "Gachigoras",
+    "ko": "견고라스",
+    "zh-Hant": "怪顎龍",
+    "fr": "Rexillius",
+    "de": "Monargoras",
+    "es": "Tyrantrum",
+    "it": "Tyrantrum",
+    "en": "Tyrantrum",
+    "ja": "ガチゴラス",
+    "zh-Hans": "怪颚龙"
   }
 }

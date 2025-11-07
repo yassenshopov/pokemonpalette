@@ -1,7 +1,7 @@
 {
   "id": 271,
   "name": "Lombre",
-  "species": "Jolly Pok\u00e9mon",
+  "species": "Jolly Pokémon",
   "type": [
     "Water",
     "Grass"
@@ -46,18 +46,18 @@
     "specialDefense": 70,
     "speed": 50
   },
-  "description": "It lives at the water\u2019s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.",
+  "description": "It lives at the water’s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.",
   "flavorTexts": [
     {
-      "text": "It lives at the water\u2019s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.",
+      "text": "It lives at the water’s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.",
       "version": "leafgreen"
     },
     {
-      "text": "LOMBRE is nocturnal - it will get active after dusk. It is also a mischief-maker. When this POK\u00e9MON spots anglers, it tugs on their fishing lines from beneath the surface and enjoys their consternation.",
+      "text": "LOMBRE is nocturnal - it will get active after dusk. It is also a mischief-maker. When this POKéMON spots anglers, it tugs on their fishing lines from beneath the surface and enjoys their consternation.",
       "version": "ruby"
     },
     {
-      "text": "LOMBRE\u2019s entire body is covered by a slippery, slimy film. It feels horribly unpleasant to be touched by this POK\u00e9MON\u2019s hands. LOMBRE is often mistaken for a human child.",
+      "text": "LOMBRE’s entire body is covered by a slippery, slimy film. It feels horribly unpleasant to be touched by this POKéMON’s hands. LOMBRE is often mistaken for a human child.",
       "version": "sapphire"
     },
     {
@@ -65,7 +65,7 @@
       "version": "emerald"
     },
     {
-      "text": "It lives at the water\u2019s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.",
+      "text": "It lives at the water’s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.",
       "version": "firered"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/271.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/271.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハスブレロ",
+    "roomaji": "Hasubrero",
+    "ko": "로토스",
+    "zh-Hant": "蓮帽小童",
+    "fr": "Lombre",
+    "de": "Lombrero",
+    "es": "Lombre",
+    "it": "Lombre",
+    "en": "Lombre",
+    "ja": "ハスブレロ",
+    "zh-Hans": "莲帽小童"
   }
 }

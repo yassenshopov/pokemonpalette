@@ -1,7 +1,7 @@
 {
   "id": 687,
   "name": "Malamar",
-  "species": "Overturning Pok\u00e9mon",
+  "species": "Overturning Pokémon",
   "type": [
     "Dark",
     "Psychic"
@@ -46,10 +46,10 @@
     "specialDefense": 75,
     "speed": 73
   },
-  "description": "It wields the most compelling hypnotic powers of any Pok\u00e9mon, and it forces others to do whatever it wants.",
+  "description": "It wields the most compelling hypnotic powers of any Pokémon, and it forces others to do whatever it wants.",
   "flavorTexts": [
     {
-      "text": "It wields the most compelling hypnotic powers of any Pok\u00e9mon, and it forces others to do whatever it wants.",
+      "text": "It wields the most compelling hypnotic powers of any Pokémon, and it forces others to do whatever it wants.",
       "version": "x"
     },
     {
@@ -57,7 +57,7 @@
       "version": "y"
     },
     {
-      "text": "It wields the most compelling hypnotic powers of any Pok\u00e9mon, and it forces others to do whatever it wants.",
+      "text": "It wields the most compelling hypnotic powers of any Pokémon, and it forces others to do whatever it wants.",
       "version": "omega-ruby"
     },
     {
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "When it comes to strong hypnosis, there\u2019s an endless number of people who utilize Malamar for their nefarious deeds.",
+      "text": "When it comes to strong hypnosis, there’s an endless number of people who utilize Malamar for their nefarious deeds.",
       "version": "ultra-sun"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/687.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カラマネロ",
+    "roomaji": "Calamanero",
+    "ko": "칼라마네로",
+    "zh-Hant": "烏賊王",
+    "fr": "Sepiatroce",
+    "de": "Calamanero",
+    "es": "Malamar",
+    "it": "Malamar",
+    "en": "Malamar",
+    "ja": "カラマネロ",
+    "zh-Hans": "乌贼王"
   }
 }

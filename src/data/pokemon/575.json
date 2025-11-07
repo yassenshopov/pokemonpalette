@@ -1,7 +1,7 @@
 {
   "id": 575,
   "name": "Gothorita",
-  "species": "Manipulate Pok\u00e9mon",
+  "species": "Manipulate Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 85,
     "speed": 55
   },
-  "description": "They use hypnosis to control people and Pok\u00e9mon. Tales of Gothorita leading people astray are told in every corner.",
+  "description": "They use hypnosis to control people and Pokémon. Tales of Gothorita leading people astray are told in every corner.",
   "flavorTexts": [
     {
-      "text": "They use hypnosis to control people and Pok\u00e9mon. Tales of Gothorita leading people astray are told in every corner.",
+      "text": "They use hypnosis to control people and Pokémon. Tales of Gothorita leading people astray are told in every corner.",
       "version": "black"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/575.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/575.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴチミル",
+    "roomaji": "Gothimiru",
+    "ko": "고디보미",
+    "zh-Hant": "哥德小童",
+    "fr": "Mesmérella",
+    "de": "Hypnomorba",
+    "es": "Gothorita",
+    "it": "Gothorita",
+    "en": "Gothorita",
+    "ja": "ゴチミル",
+    "zh-Hans": "哥德小童"
   }
 }

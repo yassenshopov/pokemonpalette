@@ -1,7 +1,7 @@
 {
   "id": 242,
   "name": "Blissey",
-  "species": "Happiness Pok\u00e9mon",
+  "species": "Happiness Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 135,
     "speed": 55
   },
-  "description": "Anyone who takes even one bite of BLISSEY's egg be\u00ad comes unfailingly caring and pleas\u00ad ant to everyone.",
+  "description": "Anyone who takes even one bite of BLISSEY's egg be­ comes unfailingly caring and pleas­ ant to everyone.",
   "flavorTexts": [
     {
-      "text": "Anyone who takes even one bite of BLISSEY's egg be\u00ad comes unfailingly caring and pleas\u00ad ant to everyone.",
+      "text": "Anyone who takes even one bite of BLISSEY's egg be­ comes unfailingly caring and pleas­ ant to everyone.",
       "version": "gold"
     },
     {
-      "text": "It has a very com\u00ad passionate nature. If it sees a sick POK\u00e9MON, it will nurse the sufferer back to health.",
+      "text": "It has a very com­ passionate nature. If it sees a sick POKéMON, it will nurse the sufferer back to health.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "BLISSEY senses sadness with its fluffy coat of fur. If it does so, this POK\u00e9MON will rush over to the sad person, however far they may be, to share an egg of happiness that brings a smile to any face.",
+      "text": "BLISSEY senses sadness with its fluffy coat of fur. If it does so, this POKéMON will rush over to the sad person, however far they may be, to share an egg of happiness that brings a smile to any face.",
       "version": "ruby"
     },
     {
-      "text": "BLISSEY senses sadness with its fluffy coat of fur. If it does so, this POK\u00e9MON will rush over to the sad person, however far they may be, to share an egg of happiness that brings a smile to any face.",
+      "text": "BLISSEY senses sadness with its fluffy coat of fur. If it does so, this POKéMON will rush over to the sad person, however far they may be, to share an egg of happiness that brings a smile to any face.",
       "version": "sapphire"
     }
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/242.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/242.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハピナス",
+    "roomaji": "Happinas",
+    "ko": "해피너스",
+    "zh-Hant": "幸福蛋",
+    "fr": "Leuphorie",
+    "de": "Heiteira",
+    "es": "Blissey",
+    "it": "Blissey",
+    "en": "Blissey",
+    "ja": "ハピナス",
+    "zh-Hans": "幸福蛋"
   }
 }

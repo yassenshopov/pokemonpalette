@@ -1,7 +1,7 @@
 {
   "id": 408,
   "name": "Cranidos",
-  "species": "Head Butt Pok\u00e9mon",
+  "species": "Head Butt Pokémon",
   "type": [
     "Rock"
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/408.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/408.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ズガイドス",
+    "roomaji": "Zugaidos",
+    "ko": "두개도스",
+    "zh-Hant": "頭蓋龍",
+    "fr": "Kranidos",
+    "de": "Koknodon",
+    "es": "Cranidos",
+    "it": "Cranidos",
+    "en": "Cranidos",
+    "ja": "ズガイドス",
+    "zh-Hans": "头盖龙"
   }
 }

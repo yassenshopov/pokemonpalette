@@ -1,7 +1,7 @@
 {
   "id": 73,
   "name": "Tentacruel",
-  "species": "Jellyfish Pok\u00e9mon",
+  "species": "Jellyfish Pokémon",
   "type": [
     "Water",
     "Poison"
@@ -61,11 +61,11 @@
       "version": "yellow"
     },
     {
-      "text": "Its 80 tentacles absorb water and stretch almost endlessly to CON\u00ad STRICT its prey and enemies.",
+      "text": "Its 80 tentacles absorb water and stretch almost endlessly to CON­ STRICT its prey and enemies.",
       "version": "gold"
     },
     {
-      "text": "In battle, it extends all 80 of its tentacles to entrap its oppo\u00ad nent inside a poisonous net.",
+      "text": "In battle, it extends all 80 of its tentacles to entrap its oppo­ nent inside a poisonous net.",
       "version": "silver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/73.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/73.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドククラゲ",
+    "roomaji": "Dokukurage",
+    "ko": "독파리",
+    "zh-Hant": "毒刺水母",
+    "fr": "Tentacruel",
+    "de": "Tentoxa",
+    "es": "Tentacruel",
+    "it": "Tentacruel",
+    "en": "Tentacruel",
+    "ja": "ドククラゲ",
+    "zh-Hans": "毒刺水母"
   }
 }

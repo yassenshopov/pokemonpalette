@@ -1,7 +1,7 @@
 {
   "id": 389,
   "name": "Torterra",
-  "species": "Continent Pok\u00e9mon",
+  "species": "Continent Pokémon",
   "type": [
     "Grass",
     "Ground"
@@ -40,18 +40,18 @@
     "specialDefense": 85,
     "speed": 56
   },
-  "description": "Small Pok\u00e9mon occasionally gather on its unmoving back to begin building their nests.",
+  "description": "Small Pokémon occasionally gather on its unmoving back to begin building their nests.",
   "flavorTexts": [
     {
-      "text": "Small Pok\u00e9mon occasionally gather on its unmoving back to begin building their nests.",
+      "text": "Small Pokémon occasionally gather on its unmoving back to begin building their nests.",
       "version": "diamond"
     },
     {
-      "text": "Groups of this Pok\u00e9mon migrating in search of water have been mistaken for \u201cmoving forests.\u201d",
+      "text": "Groups of this Pokémon migrating in search of water have been mistaken for “moving forests.”",
       "version": "pearl"
     },
     {
-      "text": "Some Pok\u00e9mon are born on a TORTERRA\u2019s back and spend their entire life there.",
+      "text": "Some Pokémon are born on a TORTERRA’s back and spend their entire life there.",
       "version": "platinum"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/389.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/389.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドダイトス",
+    "roomaji": "Dodaitose",
+    "ko": "토대부기",
+    "zh-Hant": "土台龜",
+    "fr": "Torterra",
+    "de": "Chelterrar",
+    "es": "Torterra",
+    "it": "Torterra",
+    "en": "Torterra",
+    "ja": "ドダイトス",
+    "zh-Hans": "土台龟"
   }
 }

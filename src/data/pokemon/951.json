@@ -1,7 +1,7 @@
 {
   "id": 951,
   "name": "Capsakid",
-  "species": "Spicy Pepper Pok\u00e9mon",
+  "species": "Spicy Pepper Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 40,
     "speed": 50
   },
-  "description": "The more sunlight this Pok\u00e9mon bathes in, the more spicy chemicals are produced by its body, and thus the spicier its moves become.",
+  "description": "The more sunlight this Pokémon bathes in, the more spicy chemicals are produced by its body, and thus the spicier its moves become.",
   "flavorTexts": [
     {
-      "text": "The more sunlight this Pok\u00e9mon bathes in, the more spicy chemicals are produced by its body, and thus the spicier its moves become.",
+      "text": "The more sunlight this Pokémon bathes in, the more spicy chemicals are produced by its body, and thus the spicier its moves become.",
       "version": "scarlet"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/951.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カプサイジ",
+    "roomaji": "Capsaiji",
+    "ko": "캡싸이",
+    "zh-Hant": "熱辣娃",
+    "fr": "Pimito",
+    "de": "Chilingel",
+    "es": "Capsakid",
+    "it": "Capsakid",
+    "en": "Capsakid",
+    "ja": "カプサイジ",
+    "zh-Hans": "热辣娃"
   }
 }

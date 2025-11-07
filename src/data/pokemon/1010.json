@@ -1,7 +1,7 @@
 {
   "id": 1010,
   "name": "Iron-leaves",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Grass",
     "Psychic"
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1010.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノイサハ",
+    "roomaji": "Tetsunoisaha",
+    "ko": "무쇠잎새",
+    "zh-Hant": "鐵斑葉",
+    "fr": "Vert-de-Fer",
+    "de": "Eisenblatt",
+    "es": "Ferroverdor",
+    "it": "Fogliaferrea",
+    "en": "Iron Leaves",
+    "ja": "テツノイサハ",
+    "zh-Hans": "铁斑叶"
   }
 }

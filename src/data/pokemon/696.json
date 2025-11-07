@@ -1,7 +1,7 @@
 {
   "id": 696,
   "name": "Tyrunt",
-  "species": "Royal Heir Pok\u00e9mon",
+  "species": "Royal Heir Pokémon",
   "type": [
     "Rock",
     "Dragon"
@@ -40,10 +40,10 @@
     "specialDefense": 45,
     "speed": 48
   },
-  "description": "This Pok\u00e9mon was restored from a fossil. If something happens that it doesn\u2019t like, it throws a tantrum and runs wild.",
+  "description": "This Pokémon was restored from a fossil. If something happens that it doesn’t like, it throws a tantrum and runs wild.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon was restored from a fossil. If something happens that it doesn\u2019t like, it throws a tantrum and runs wild.",
+      "text": "This Pokémon was restored from a fossil. If something happens that it doesn’t like, it throws a tantrum and runs wild.",
       "version": "x"
     },
     {
@@ -51,7 +51,7 @@
       "version": "y"
     },
     {
-      "text": "This Pok\u00e9mon was restored from a fossil. If something happens that it doesn\u2019t like, it throws a tantrum and runs wild.",
+      "text": "This Pokémon was restored from a fossil. If something happens that it doesn’t like, it throws a tantrum and runs wild.",
       "version": "omega-ruby"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/696.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "チゴラス",
+    "roomaji": "Chigoras",
+    "ko": "티고라스",
+    "zh-Hant": "寶寶暴龍",
+    "fr": "Ptyranidur",
+    "de": "Balgoras",
+    "es": "Tyrunt",
+    "it": "Tyrunt",
+    "en": "Tyrunt",
+    "ja": "チゴラス",
+    "zh-Hans": "宝宝暴龙"
   }
 }

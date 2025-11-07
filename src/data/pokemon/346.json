@@ -1,7 +1,7 @@
 {
   "id": 346,
   "name": "Cradily",
-  "species": "Barnacle Pok\u00e9mon",
+  "species": "Barnacle Pokémon",
   "type": [
     "Rock",
     "Grass"
@@ -40,14 +40,14 @@
     "specialDefense": 107,
     "speed": 43
   },
-  "description": "CRADILY roams around the ocean floor in search of food. This POK\u00e9MON freely extends its tree trunk-like neck and captures unwary prey using its eight tentacles.",
+  "description": "CRADILY roams around the ocean floor in search of food. This POKéMON freely extends its tree trunk-like neck and captures unwary prey using its eight tentacles.",
   "flavorTexts": [
     {
-      "text": "CRADILY roams around the ocean floor in search of food. This POK\u00e9MON freely extends its tree trunk-like neck and captures unwary prey using its eight tentacles.",
+      "text": "CRADILY roams around the ocean floor in search of food. This POKéMON freely extends its tree trunk-like neck and captures unwary prey using its eight tentacles.",
       "version": "ruby"
     },
     {
-      "text": "CRADILY\u2019s body serves as an anchor, preventing it from being washed away in rough seas. This POK\u00e9MON secretes a strong digestive fluid from its tentacles.",
+      "text": "CRADILY’s body serves as an anchor, preventing it from being washed away in rough seas. This POKéMON secretes a strong digestive fluid from its tentacles.",
       "version": "sapphire"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/346.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/346.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユレイドル",
+    "roomaji": "Yuradle",
+    "ko": "릴리요",
+    "zh-Hant": "搖籃百合",
+    "fr": "Vacilys",
+    "de": "Wielie",
+    "es": "Cradily",
+    "it": "Cradily",
+    "en": "Cradily",
+    "ja": "ユレイドル",
+    "zh-Hans": "摇篮百合"
   }
 }

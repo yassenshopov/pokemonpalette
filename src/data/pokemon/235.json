@@ -1,7 +1,7 @@
 {
   "id": 235,
   "name": "Smeargle",
-  "species": "Painter Pok\u00e9mon",
+  "species": "Painter Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,15 +52,15 @@
       "version": "silver"
     },
     {
-      "text": "The color of the mysterious fluid secreted from its tail is predeter\u00ad mined for each SMEARGLE.",
+      "text": "The color of the mysterious fluid secreted from its tail is predeter­ mined for each SMEARGLE.",
       "version": "crystal"
     },
     {
-      "text": "SMEARGLE marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this POK\u00e9MON have been found.",
+      "text": "SMEARGLE marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this POKéMON have been found.",
       "version": "ruby"
     },
     {
-      "text": "SMEARGLE marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this POK\u00e9MON have been found.",
+      "text": "SMEARGLE marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this POKéMON have been found.",
       "version": "sapphire"
     }
   ],
@@ -150,5 +150,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/235.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/235.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドーブル",
+    "roomaji": "Doble",
+    "ko": "루브도",
+    "zh-Hant": "圖圖犬",
+    "fr": "Queulorior",
+    "de": "Farbeagle",
+    "es": "Smeargle",
+    "it": "Smeargle",
+    "en": "Smeargle",
+    "ja": "ドーブル",
+    "zh-Hans": "图图犬"
   }
 }

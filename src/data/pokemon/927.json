@@ -1,7 +1,7 @@
 {
   "id": 927,
   "name": "Dachsbun",
-  "species": "Dog Pok\u00e9mon",
+  "species": "Dog Pokémon",
   "type": [
     "Fairy"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 80,
     "speed": 95
   },
-  "description": "The pleasant aroma that emanates from this Pok\u00e9mon\u2019s body helps wheat grow, so Dachsbun has been treasured by farming villages.",
+  "description": "The pleasant aroma that emanates from this Pokémon’s body helps wheat grow, so Dachsbun has been treasured by farming villages.",
   "flavorTexts": [
     {
-      "text": "The pleasant aroma that emanates from this Pok\u00e9mon\u2019s body helps wheat grow, so Dachsbun has been treasured by farming villages.",
+      "text": "The pleasant aroma that emanates from this Pokémon’s body helps wheat grow, so Dachsbun has been treasured by farming villages.",
       "version": "scarlet"
     },
     {
-      "text": "The surface of this Pok\u00e9mon\u2019s skin hardens when exposed to intense heat, and its body has an appetizing aroma.",
+      "text": "The surface of this Pokémon’s skin hardens when exposed to intense heat, and its body has an appetizing aroma.",
       "version": "violet"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/927.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バウッツェル",
+    "roomaji": "Bowtzel",
+    "ko": "바우첼",
+    "zh-Hant": "麻花犬",
+    "fr": "Briochien",
+    "de": "Backel",
+    "es": "Dachsbun",
+    "it": "Dachsbun",
+    "en": "Dachsbun",
+    "ja": "バウッツェル",
+    "zh-Hans": "麻花犬"
   }
 }

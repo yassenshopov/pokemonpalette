@@ -1,7 +1,7 @@
 {
   "id": 790,
   "name": "Cosmoem",
-  "species": "Protostar Pok\u00e9mon",
+  "species": "Protostar Pokémon",
   "type": [
     "Psychic"
   ],
@@ -36,11 +36,11 @@
       "version": "sun"
     },
     {
-      "text": "There\u2019s something accumulating around the black core within its hard shell. People think this Pok\u00e9mon may come from another world.",
+      "text": "There’s something accumulating around the black core within its hard shell. People think this Pokémon may come from another world.",
       "version": "moon"
     },
     {
-      "text": "The king who ruled Alola in times of antiquity called it the \u201ccocoon of the stars\u201d and built an altar to worship it.",
+      "text": "The king who ruled Alola in times of antiquity called it the “cocoon of the stars” and built an altar to worship it.",
       "version": "ultra-sun"
     },
     {
@@ -48,7 +48,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "The absorption of starlight fuels this Pok\u00e9mon\u2019s growth. The shell that encases it is harder than any known material.",
+      "text": "The absorption of starlight fuels this Pokémon’s growth. The shell that encases it is harder than any known material.",
       "version": "sword"
     }
   ],
@@ -178,5 +178,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/790.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コスモウム",
+    "roomaji": "Cosmovum",
+    "ko": "코스모움",
+    "zh-Hant": "科斯莫姆",
+    "fr": "Cosmovum",
+    "de": "Cosmovum",
+    "es": "Cosmoem",
+    "it": "Cosmoem",
+    "en": "Cosmoem",
+    "ja": "コスモウム",
+    "zh-Hans": "科斯莫姆"
   }
 }

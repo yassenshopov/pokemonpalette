@@ -1,7 +1,7 @@
 {
   "id": 234,
   "name": "Stantler",
-  "species": "Big Horn Pok\u00e9mon",
+  "species": "Big Horn Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 65,
     "speed": 85
   },
-  "description": "The curved antlers subtly change the flow of air to create a strange space where real\u00ad ity is distorted.",
+  "description": "The curved antlers subtly change the flow of air to create a strange space where real­ ity is distorted.",
   "flavorTexts": [
     {
-      "text": "The curved antlers subtly change the flow of air to create a strange space where real\u00ad ity is distorted.",
+      "text": "The curved antlers subtly change the flow of air to create a strange space where real­ ity is distorted.",
       "version": "gold"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "STANTLER\u2019s magnificent antlers were traded at high prices as works of art. As a result, this POK\u00e9MON was hunted close to extinction by those who were after the priceless antlers.",
+      "text": "STANTLER’s magnificent antlers were traded at high prices as works of art. As a result, this POKéMON was hunted close to extinction by those who were after the priceless antlers.",
       "version": "ruby"
     },
     {
-      "text": "STANTLER\u2019s magnificent antlers were traded at high prices as works of art. As a result, this POK\u00e9MON was hunted close to extinction by those who were after the priceless antlers.",
+      "text": "STANTLER’s magnificent antlers were traded at high prices as works of art. As a result, this POKéMON was hunted close to extinction by those who were after the priceless antlers.",
       "version": "sapphire"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/234.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/234.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オドシシ",
+    "roomaji": "Odoshishi",
+    "ko": "노라키",
+    "zh-Hant": "驚角鹿",
+    "fr": "Cerfrousse",
+    "de": "Damhirplex",
+    "es": "Stantler",
+    "it": "Stantler",
+    "en": "Stantler",
+    "ja": "オドシシ",
+    "zh-Hans": "惊角鹿"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 514,
   "name": "Simisear",
-  "species": "Ember Pok\u00e9mon",
+  "species": "Ember Pokémon",
   "type": [
     "Fire"
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/514.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/514.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バオッキー",
+    "roomaji": "Baokkie",
+    "ko": "바오키",
+    "zh-Hant": "爆香猿",
+    "fr": "Flamoutan",
+    "de": "Grillchita",
+    "es": "Simisear",
+    "it": "Simisear",
+    "en": "Simisear",
+    "ja": "バオッキー",
+    "zh-Hans": "爆香猿"
   }
 }

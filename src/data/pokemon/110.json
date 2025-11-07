@@ -1,7 +1,7 @@
 {
   "id": 110,
   "name": "Weezing",
-  "species": "Poison Gas Pok\u00e9mon",
+  "species": "Poison Gas Pokémon",
   "type": [
     "Poison"
   ],
@@ -56,11 +56,11 @@
       "version": "yellow"
     },
     {
-      "text": "If one of the twin KOFFING inflates, the other one deflates. It con\u00ad stantly mixes its poisonous gases.",
+      "text": "If one of the twin KOFFING inflates, the other one deflates. It con­ stantly mixes its poisonous gases.",
       "version": "gold"
     },
     {
-      "text": "Top-grade perfume is made using its internal poison gases by diluting them to the high\u00ad est level.",
+      "text": "Top-grade perfume is made using its internal poison gases by diluting them to the high­ est level.",
       "version": "silver"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/110.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/110.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マタドガス",
+    "roomaji": "Matadogas",
+    "ko": "또도가스",
+    "zh-Hant": "雙彈瓦斯",
+    "fr": "Smogogo",
+    "de": "Smogmog",
+    "es": "Weezing",
+    "it": "Weezing",
+    "en": "Weezing",
+    "ja": "マタドガス",
+    "zh-Hans": "双弹瓦斯"
   }
 }

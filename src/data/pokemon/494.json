@@ -1,7 +1,7 @@
 {
   "id": 494,
   "name": "Victini",
-  "species": "Victory Pok\u00e9mon",
+  "species": "Victory Pokémon",
   "type": [
     "Psychic",
     "Fire"
@@ -34,10 +34,10 @@
     "specialDefense": 100,
     "speed": 100
   },
-  "description": "This Pok\u00e9mon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
+  "description": "This Pokémon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
+      "text": "This Pokémon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
       "version": "black"
     },
     {
@@ -45,15 +45,15 @@
       "version": "white"
     },
     {
-      "text": "When it shares the infinite energy it creates, that being\u2019s entire body will be overflowing with power.",
+      "text": "When it shares the infinite energy it creates, that being’s entire body will be overflowing with power.",
       "version": "black-2"
     },
     {
-      "text": "When it shares the infinite energy it creates, that being\u2019s entire body will be overflowing with power.",
+      "text": "When it shares the infinite energy it creates, that being’s entire body will be overflowing with power.",
       "version": "white-2"
     },
     {
-      "text": "This Pok\u00e9mon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
+      "text": "This Pokémon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
       "version": "x"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/494.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/494.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビクティニ",
+    "roomaji": "Victini",
+    "ko": "비크티니",
+    "zh-Hant": "比克提尼",
+    "fr": "Victini",
+    "de": "Victini",
+    "es": "Victini",
+    "it": "Victini",
+    "en": "Victini",
+    "ja": "ビクティニ",
+    "zh-Hans": "比克提尼"
   }
 }

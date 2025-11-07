@@ -1,7 +1,7 @@
 {
   "id": 402,
   "name": "Kricketune",
-  "species": "Cricket Pok\u00e9mon",
+  "species": "Cricket Pokémon",
   "type": [
     "Bug"
   ],
@@ -46,7 +46,7 @@
       "version": "pearl"
     },
     {
-      "text": "There is a village that hosts a contest based on the amazingly variable cries of this Pok\u00e9mon.",
+      "text": "There is a village that hosts a contest based on the amazingly variable cries of this Pokémon.",
       "version": "platinum"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/402.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/402.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コロトック",
+    "roomaji": "Korotok",
+    "ko": "귀뚤톡크",
+    "zh-Hant": "音箱蟀",
+    "fr": "Mélokrik",
+    "de": "Zirpeise",
+    "es": "Kricketune",
+    "it": "Kricketune",
+    "en": "Kricketune",
+    "ja": "コロトック",
+    "zh-Hans": "音箱蟀"
   }
 }

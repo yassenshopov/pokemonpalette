@@ -1,7 +1,7 @@
 {
   "id": 147,
   "name": "Dratini",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Dragon"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 50,
     "speed": 50
   },
-  "description": "Long considered a mythical POK\u00e9MON until recently when a small colony was found living underwater.",
+  "description": "Long considered a mythical POKéMON until recently when a small colony was found living underwater.",
   "flavorTexts": [
     {
-      "text": "Long considered a mythical POK\u00e9MON until recently when a small colony was found living underwater.",
+      "text": "Long considered a mythical POKéMON until recently when a small colony was found living underwater.",
       "version": "red"
     },
     {
-      "text": "Long considered a mythical POK\u00e9MON until recently when a small colony was found living underwater.",
+      "text": "Long considered a mythical POKéMON until recently when a small colony was found living underwater.",
       "version": "blue"
     },
     {
-      "text": "The existence of this mythical POK\u00e9MON was only recently confirmed by a fisherman who caught one.",
+      "text": "The existence of this mythical POKéMON was only recently confirmed by a fisherman who caught one.",
       "version": "yellow"
     },
     {
@@ -54,7 +54,7 @@
       "version": "gold"
     },
     {
-      "text": "This POK\u00e9MON is full of life ener\u00ad gy. It continually sheds its skin and grows steadily larger.",
+      "text": "This POKéMON is full of life ener­ gy. It continually sheds its skin and grows steadily larger.",
       "version": "silver"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/147.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/147.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミニリュウ",
+    "roomaji": "Miniryu",
+    "ko": "미뇽",
+    "zh-Hant": "迷你龍",
+    "fr": "Minidraco",
+    "de": "Dratini",
+    "es": "Dratini",
+    "it": "Dratini",
+    "en": "Dratini",
+    "ja": "ミニリュウ",
+    "zh-Hans": "迷你龙"
   }
 }

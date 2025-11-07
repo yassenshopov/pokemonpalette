@@ -1,7 +1,7 @@
 {
   "id": 557,
   "name": "Dwebble",
-  "species": "Rock Inn Pok\u00e9mon",
+  "species": "Rock Inn Pokémon",
   "type": [
     "Bug",
     "Rock"
@@ -46,14 +46,14 @@
     "specialDefense": 35,
     "speed": 55
   },
-  "description": "This Pok\u00e9mon can easily melt holes in hard rocks with a liquid secreted from its mouth.",
+  "description": "This Pokémon can easily melt holes in hard rocks with a liquid secreted from its mouth.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon can easily melt holes in hard rocks with a liquid secreted from its mouth.",
+      "text": "This Pokémon can easily melt holes in hard rocks with a liquid secreted from its mouth.",
       "version": "black"
     },
     {
-      "text": "It makes a hole in a suitable rock. If that rock breaks, the Pok\u00e9mon remains agitated until it locates a replacement.",
+      "text": "It makes a hole in a suitable rock. If that rock breaks, the Pokémon remains agitated until it locates a replacement.",
       "version": "white"
     },
     {
@@ -65,7 +65,7 @@
       "version": "white-2"
     },
     {
-      "text": "It makes a hole in a suitable rock. If that rock breaks, the Pok\u00e9mon remains agitated until it locates a replacement.",
+      "text": "It makes a hole in a suitable rock. If that rock breaks, the Pokémon remains agitated until it locates a replacement.",
       "version": "x"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/557.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/557.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イシズマイ",
+    "roomaji": "Ishizumai",
+    "ko": "돌살이",
+    "zh-Hant": "石居蟹",
+    "fr": "Crabicoque",
+    "de": "Lithomith",
+    "es": "Dwebble",
+    "it": "Dwebble",
+    "en": "Dwebble",
+    "ja": "イシズマイ",
+    "zh-Hans": "石居蟹"
   }
 }

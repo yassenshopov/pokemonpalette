@@ -1,7 +1,7 @@
 {
   "id": 116,
   "name": "Horsea",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Water"
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/116.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/116.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "タッツー",
+    "roomaji": "Tattu",
+    "ko": "쏘드라",
+    "zh-Hant": "墨海馬",
+    "fr": "Hypotrempe",
+    "de": "Seeper",
+    "es": "Horsea",
+    "it": "Horsea",
+    "en": "Horsea",
+    "ja": "タッツー",
+    "zh-Hans": "墨海马"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 781,
   "name": "Dhelmise",
-  "species": "Sea Creeper Pok\u00e9mon",
+  "species": "Sea Creeper Pokémon",
   "type": [
     "Ghost",
     "Grass"
@@ -41,7 +41,7 @@
       "version": "sun"
     },
     {
-      "text": "The soul of seaweed adrift in the waves became reborn as this Pok\u00e9mon. It maintains itself with new infusions of seabed detritus and seaweed.",
+      "text": "The soul of seaweed adrift in the waves became reborn as this Pokémon. It maintains itself with new infusions of seabed detritus and seaweed.",
       "version": "moon"
     },
     {
@@ -53,7 +53,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "After a piece of seaweed merged with debris from a sunken ship, it was reborn as this ghost Pok\u00e9mon.",
+      "text": "After a piece of seaweed merged with debris from a sunken ship, it was reborn as this ghost Pokémon.",
       "version": "sword"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/781.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ダダリン",
+    "roomaji": "Dadarin",
+    "ko": "타타륜",
+    "zh-Hant": "破破舵輪",
+    "fr": "Sinistrail",
+    "de": "Moruda",
+    "es": "Dhelmise",
+    "it": "Dhelmise",
+    "en": "Dhelmise",
+    "ja": "ダダリン",
+    "zh-Hans": "破破舵轮"
   }
 }

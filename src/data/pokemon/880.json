@@ -1,7 +1,7 @@
 {
   "id": 880,
   "name": "Dracozolt",
-  "species": "Fossil Pok\u00e9mon",
+  "species": "Fossil Pokémon",
   "type": [
     "Electric",
     "Dragon"
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/880.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パッチラゴン",
+    "roomaji": "Patchiragon",
+    "ko": "파치래곤",
+    "zh-Hant": "雷鳥龍",
+    "fr": "Galvagon",
+    "de": "Lectragon",
+    "es": "Dracozolt",
+    "it": "Dracozolt",
+    "en": "Dracozolt",
+    "ja": "パッチラゴン",
+    "zh-Hans": "雷鸟龙"
   }
 }

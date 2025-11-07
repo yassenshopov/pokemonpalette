@@ -1,7 +1,7 @@
 {
   "id": 329,
   "name": "Vibrava",
-  "species": "Vibration Pok\u00e9mon",
+  "species": "Vibration Pokémon",
   "type": [
     "Ground",
     "Dragon"
@@ -34,18 +34,18 @@
     "specialDefense": 50,
     "speed": 70
   },
-  "description": "To make prey faint, VIBRAVA generates ultrasonic waves by vigorously making its two wings vibrate. This POK\u00e9MON\u2019s ultrasonic waves are so powerful, they can bring on headaches in people.",
+  "description": "To make prey faint, VIBRAVA generates ultrasonic waves by vigorously making its two wings vibrate. This POKéMON’s ultrasonic waves are so powerful, they can bring on headaches in people.",
   "flavorTexts": [
     {
-      "text": "To make prey faint, VIBRAVA generates ultrasonic waves by vigorously making its two wings vibrate. This POK\u00e9MON\u2019s ultrasonic waves are so powerful, they can bring on headaches in people.",
+      "text": "To make prey faint, VIBRAVA generates ultrasonic waves by vigorously making its two wings vibrate. This POKéMON’s ultrasonic waves are so powerful, they can bring on headaches in people.",
       "version": "ruby"
     },
     {
-      "text": "VIBRAVA\u2019s wings have not yet completed the process of growing. Rather than flying long distances, they are more useful for generating ultrasonic waves by vibrating.",
+      "text": "VIBRAVA’s wings have not yet completed the process of growing. Rather than flying long distances, they are more useful for generating ultrasonic waves by vibrating.",
       "version": "sapphire"
     },
     {
-      "text": "It looses ultrasonic waves by rubbing its wings together. Since a VIBRAVA\u2019s wings are still in the process of growing, it can only fly short distances.",
+      "text": "It looses ultrasonic waves by rubbing its wings together. Since a VIBRAVA’s wings are still in the process of growing, it can only fly short distances.",
       "version": "emerald"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/329.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/329.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビブラーバ",
+    "roomaji": "Vibrava",
+    "ko": "비브라바",
+    "zh-Hant": "超音波幼蟲",
+    "fr": "Vibraninf",
+    "de": "Vibrava",
+    "es": "Vibrava",
+    "it": "Vibrava",
+    "en": "Vibrava",
+    "ja": "ビブラーバ",
+    "zh-Hans": "超音波幼虫"
   }
 }

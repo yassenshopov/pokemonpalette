@@ -1,7 +1,7 @@
 {
   "id": 173,
   "name": "Cleffa",
-  "species": "Star Shape Pok\u00e9mon",
+  "species": "Star Shape Pokémon",
   "type": [
     "Fairy"
   ],
@@ -48,19 +48,19 @@
       "version": "gold"
     },
     {
-      "text": "When numerous me\u00ad teors illuminate the night sky, sightings of CLEFFA strangely increase.",
+      "text": "When numerous me­ teors illuminate the night sky, sightings of CLEFFA strangely increase.",
       "version": "silver"
     },
     {
-      "text": "If the impact site of a meteorite is found, this POK\u00e9MON is certain to be within the immediate area.",
+      "text": "If the impact site of a meteorite is found, this POKéMON is certain to be within the immediate area.",
       "version": "crystal"
     },
     {
-      "text": "On nights with many shooting stars, CLEFFA can be seen dancing in a ring. They dance through the night and stop only at the break of day, when these POK\u00e9MON quench their thirst with the morning dew.",
+      "text": "On nights with many shooting stars, CLEFFA can be seen dancing in a ring. They dance through the night and stop only at the break of day, when these POKéMON quench their thirst with the morning dew.",
       "version": "ruby"
     },
     {
-      "text": "On nights with many shooting stars, CLEFFA can be seen dancing in a ring. They dance through the night and stop only at the break of day, when these POK\u00e9MON quench their thirst with the morning dew.",
+      "text": "On nights with many shooting stars, CLEFFA can be seen dancing in a ring. They dance through the night and stop only at the break of day, when these POKéMON quench their thirst with the morning dew.",
       "version": "sapphire"
     }
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/173.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/173.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピィ",
+    "roomaji": "Py",
+    "ko": "삐",
+    "zh-Hant": "皮寶寶",
+    "fr": "Mélo",
+    "de": "Pii",
+    "es": "Cleffa",
+    "it": "Cleffa",
+    "en": "Cleffa",
+    "ja": "ピィ",
+    "zh-Hans": "皮宝宝"
   }
 }

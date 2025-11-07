@@ -1,7 +1,7 @@
 {
   "id": 506,
   "name": "Lillipup",
-  "species": "Puppy Pok\u00e9mon",
+  "species": "Puppy Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 45,
     "speed": 55
   },
-  "description": "It faces strong opponents with great courage. But, when at a disadvantage in a fight, this intelligent Pok\u00e9mon flees.",
+  "description": "It faces strong opponents with great courage. But, when at a disadvantage in a fight, this intelligent Pokémon flees.",
   "flavorTexts": [
     {
-      "text": "It faces strong opponents with great courage. But, when at a disadvantage in a fight, this intelligent Pok\u00e9mon flees.",
+      "text": "It faces strong opponents with great courage. But, when at a disadvantage in a fight, this intelligent Pokémon flees.",
       "version": "black"
     },
     {
@@ -52,11 +52,11 @@
       "version": "white"
     },
     {
-      "text": "Though it is a very brave Pok\u00e9mon, it\u2019s also smart enough to check its foe\u2019s strength and avoid battle.",
+      "text": "Though it is a very brave Pokémon, it’s also smart enough to check its foe’s strength and avoid battle.",
       "version": "black-2"
     },
     {
-      "text": "Though it is a very brave Pok\u00e9mon, it\u2019s also smart enough to check its foe\u2019s strength and avoid battle.",
+      "text": "Though it is a very brave Pokémon, it’s also smart enough to check its foe’s strength and avoid battle.",
       "version": "white-2"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/506.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/506.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヨーテリー",
+    "roomaji": "Yorterrie",
+    "ko": "요테리",
+    "zh-Hant": "小約克",
+    "fr": "Ponchiot",
+    "de": "Yorkleff",
+    "es": "Lillipup",
+    "it": "Lillipup",
+    "en": "Lillipup",
+    "ja": "ヨーテリー",
+    "zh-Hans": "小约克"
   }
 }

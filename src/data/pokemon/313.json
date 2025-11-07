@@ -1,7 +1,7 @@
 {
   "id": 313,
   "name": "Volbeat",
-  "species": "Firefly Pok\u00e9mon",
+  "species": "Firefly Pokémon",
   "type": [
     "Bug"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 85,
     "speed": 85
   },
-  "description": "With the arrival of night, VOLBEAT emits light from its tail. It communicates with others by adjusting the intensity and flashing of its light. This POK\u00e9MON is attracted by the sweet aroma of ILLUMISE.",
+  "description": "With the arrival of night, VOLBEAT emits light from its tail. It communicates with others by adjusting the intensity and flashing of its light. This POKéMON is attracted by the sweet aroma of ILLUMISE.",
   "flavorTexts": [
     {
-      "text": "With the arrival of night, VOLBEAT emits light from its tail. It communicates with others by adjusting the intensity and flashing of its light. This POK\u00e9MON is attracted by the sweet aroma of ILLUMISE.",
+      "text": "With the arrival of night, VOLBEAT emits light from its tail. It communicates with others by adjusting the intensity and flashing of its light. This POKéMON is attracted by the sweet aroma of ILLUMISE.",
       "version": "ruby"
     },
     {
-      "text": "VOLBEAT\u2019s tail glows like a lightbulb. With other VOLBEAT, it uses its tail to draw geometric shapes in the night sky. This POK\u00e9MON loves the sweet aroma given off by ILLUMISE.",
+      "text": "VOLBEAT’s tail glows like a lightbulb. With other VOLBEAT, it uses its tail to draw geometric shapes in the night sky. This POKéMON loves the sweet aroma given off by ILLUMISE.",
       "version": "sapphire"
     },
     {
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/313.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/313.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バルビート",
+    "roomaji": "Barubeat",
+    "ko": "볼비트",
+    "zh-Hant": "電螢蟲",
+    "fr": "Muciole",
+    "de": "Volbeat",
+    "es": "Volbeat",
+    "it": "Volbeat",
+    "en": "Volbeat",
+    "ja": "バルビート",
+    "zh-Hans": "电萤虫"
   }
 }

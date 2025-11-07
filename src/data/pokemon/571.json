@@ -1,7 +1,7 @@
 {
   "id": 571,
   "name": "Zoroark",
-  "species": "Illusion Fox Pok\u00e9mon",
+  "species": "Illusion Fox Pokémon",
   "type": [
     "Dark"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 60,
     "speed": 105
   },
-  "description": "Bonds between these Pok\u00e9mon are very strong. It protects the safety of its pack by tricking its opponents.",
+  "description": "Bonds between these Pokémon are very strong. It protects the safety of its pack by tricking its opponents.",
   "flavorTexts": [
     {
-      "text": "Bonds between these Pok\u00e9mon are very strong. It protects the safety of its pack by tricking its opponents.",
+      "text": "Bonds between these Pokémon are very strong. It protects the safety of its pack by tricking its opponents.",
       "version": "black"
     },
     {
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/571.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/571.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゾロアーク",
+    "roomaji": "Zoroark",
+    "ko": "조로아크",
+    "zh-Hant": "索羅亞克",
+    "fr": "Zoroark",
+    "de": "Zoroark",
+    "es": "Zoroark",
+    "it": "Zoroark",
+    "en": "Zoroark",
+    "ja": "ゾロアーク",
+    "zh-Hans": "索罗亚克"
   }
 }

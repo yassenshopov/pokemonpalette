@@ -1,7 +1,7 @@
 {
   "id": 222,
   "name": "Corsola",
-  "species": "Coral Pok\u00e9mon",
+  "species": "Coral Pokémon",
   "type": [
     "Water",
     "Rock"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "In a south sea nation, the people live in communi\u00ad ties that are built on groups of these POK\u00e9MON.",
+      "text": "In a south sea nation, the people live in communi­ ties that are built on groups of these POKéMON.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "CORSOLA\u2019s branches glitter very beautifully in seven colors when they catch sunlight. If any branch breaks off, this POK\u00e9MON grows it back in just one night.",
+      "text": "CORSOLA’s branches glitter very beautifully in seven colors when they catch sunlight. If any branch breaks off, this POKéMON grows it back in just one night.",
       "version": "ruby"
     },
     {
-      "text": "Clusters of CORSOLA congregate in warm seas where they serve as ideal hiding places for smaller POK\u00e9MON. When the water temperature falls, this POK\u00e9MON migrates to the southern seas.",
+      "text": "Clusters of CORSOLA congregate in warm seas where they serve as ideal hiding places for smaller POKéMON. When the water temperature falls, this POKéMON migrates to the southern seas.",
       "version": "sapphire"
     }
   ],
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/222.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/222.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サニーゴ",
+    "roomaji": "Sunnygo",
+    "ko": "코산호",
+    "zh-Hant": "太陽珊瑚",
+    "fr": "Corayon",
+    "de": "Corasonn",
+    "es": "Corsola",
+    "it": "Corsola",
+    "en": "Corsola",
+    "ja": "サニーゴ",
+    "zh-Hans": "太阳珊瑚"
   }
 }

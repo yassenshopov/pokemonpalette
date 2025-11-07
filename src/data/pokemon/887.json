@@ -1,7 +1,7 @@
 {
   "id": 887,
   "name": "Dragapult",
-  "species": "Stealth Pok\u00e9mon",
+  "species": "Stealth Pokémon",
   "type": [
     "Dragon",
     "Ghost"
@@ -46,14 +46,14 @@
     "specialDefense": 75,
     "speed": 142
   },
-  "description": "When it isn\u2019t battling, it keeps Dreepy in the holes on its horns. Once a fight starts, it launches the Dreepy like supersonic missiles.",
+  "description": "When it isn’t battling, it keeps Dreepy in the holes on its horns. Once a fight starts, it launches the Dreepy like supersonic missiles.",
   "flavorTexts": [
     {
-      "text": "When it isn\u2019t battling, it keeps Dreepy in the holes on its horns. Once a fight starts, it launches the Dreepy like supersonic missiles.",
+      "text": "When it isn’t battling, it keeps Dreepy in the holes on its horns. Once a fight starts, it launches the Dreepy like supersonic missiles.",
       "version": "sword"
     },
     {
-      "text": "Apparently the Dreepy inside Dragapult\u2019s horns eagerly look forward to being launched out at Mach speeds.",
+      "text": "Apparently the Dreepy inside Dragapult’s horns eagerly look forward to being launched out at Mach speeds.",
       "version": "shield"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/887.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドラパルト",
+    "roomaji": "Dorapult",
+    "ko": "드래펄트",
+    "zh-Hant": "多龍巴魯托",
+    "fr": "Lanssorien",
+    "de": "Katapuldra",
+    "es": "Dragapult",
+    "it": "Dragapult",
+    "en": "Dragapult",
+    "ja": "ドラパルト",
+    "zh-Hans": "多龙巴鲁托"
   }
 }

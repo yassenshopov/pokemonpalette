@@ -1,7 +1,7 @@
 {
   "id": 128,
   "name": "Tauros",
-  "species": "Wild Bull Pok\u00e9mon",
+  "species": "Wild Bull Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,11 +52,11 @@
       "version": "blue"
     },
     {
-      "text": "A rowdy POK\u00e9MON with a lot of stamina. Once running, it won't stop until it hits something.",
+      "text": "A rowdy POKéMON with a lot of stamina. Once running, it won't stop until it hits something.",
       "version": "yellow"
     },
     {
-      "text": "They fight each other by locking horns. The herd's protector takes pride in its bat\u00ad tle-scarred horns.",
+      "text": "They fight each other by locking horns. The herd's protector takes pride in its bat­ tle-scarred horns.",
       "version": "gold"
     },
     {
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/128.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/128.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ケンタロス",
+    "roomaji": "Kentauros",
+    "ko": "켄타로스",
+    "zh-Hant": "肯泰羅",
+    "fr": "Tauros",
+    "de": "Tauros",
+    "es": "Tauros",
+    "it": "Tauros",
+    "en": "Tauros",
+    "ja": "ケンタロス",
+    "zh-Hans": "肯泰罗"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 655,
   "name": "Delphox",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Fire",
     "Psychic"
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/655.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マフォクシー",
+    "roomaji": "Mahoxy",
+    "ko": "마폭시",
+    "zh-Hant": "妖火紅狐",
+    "fr": "Goupelin",
+    "de": "Fennexis",
+    "es": "Delphox",
+    "it": "Delphox",
+    "en": "Delphox",
+    "ja": "マフォクシー",
+    "zh-Hans": "妖火红狐"
   }
 }

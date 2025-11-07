@@ -1,7 +1,7 @@
 {
   "id": 356,
   "name": "Dusclops",
-  "species": "Beckon Pok\u00e9mon",
+  "species": "Beckon Pokémon",
   "type": [
     "Ghost"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 130,
     "speed": 25
   },
-  "description": "DUSCLOPS\u2019s body is completely hollow - there is nothing at all inside. It is said that its body is like a black hole. This POK\u00e9MON will absorb anything into its body, but nothing will ever come back out.",
+  "description": "DUSCLOPS’s body is completely hollow - there is nothing at all inside. It is said that its body is like a black hole. This POKéMON will absorb anything into its body, but nothing will ever come back out.",
   "flavorTexts": [
     {
-      "text": "DUSCLOPS\u2019s body is completely hollow - there is nothing at all inside. It is said that its body is like a black hole. This POK\u00e9MON will absorb anything into its body, but nothing will ever come back out.",
+      "text": "DUSCLOPS’s body is completely hollow - there is nothing at all inside. It is said that its body is like a black hole. This POKéMON will absorb anything into its body, but nothing will ever come back out.",
       "version": "ruby"
     },
     {
-      "text": "DUSCLOPS absorbs anything, however large the object may be. This POK\u00e9MON hypnotizes its foe by waving its hands in a macabre manner and by bringing its single eye to bear. The hypnotized foe is made to do DUSCLOPS\u2019s bidding.",
+      "text": "DUSCLOPS absorbs anything, however large the object may be. This POKéMON hypnotizes its foe by waving its hands in a macabre manner and by bringing its single eye to bear. The hypnotized foe is made to do DUSCLOPS’s bidding.",
       "version": "sapphire"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/356.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/356.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サマヨール",
+    "roomaji": "Samayouru",
+    "ko": "미라몽",
+    "zh-Hant": "彷徨夜靈",
+    "fr": "Téraclope",
+    "de": "Zwirrklop",
+    "es": "Dusclops",
+    "it": "Dusclops",
+    "en": "Dusclops",
+    "ja": "サマヨール",
+    "zh-Hans": "彷徨夜灵"
   }
 }

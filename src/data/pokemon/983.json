@@ -1,7 +1,7 @@
 {
   "id": 983,
   "name": "Kingambit",
-  "species": "Big Blade Pok\u00e9mon",
+  "species": "Big Blade Pokémon",
   "type": [
     "Dark",
     "Steel"
@@ -53,7 +53,7 @@
       "version": "scarlet"
     },
     {
-      "text": "Though it commands a massive army in battle, it\u2019s not skilled at devising complex strategies. It just uses brute strength to keep pushing.",
+      "text": "Though it commands a massive army in battle, it’s not skilled at devising complex strategies. It just uses brute strength to keep pushing.",
       "version": "violet"
     }
   ],
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/983.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドドゲザン",
+    "roomaji": "Dodogezan",
+    "ko": "대도각참",
+    "zh-Hant": "仆刀將軍",
+    "fr": "Scalpereur",
+    "de": "Gladimperio",
+    "es": "Kingambit",
+    "it": "Kingambit",
+    "en": "Kingambit",
+    "ja": "ドドゲザン",
+    "zh-Hans": "仆刀将军"
   }
 }

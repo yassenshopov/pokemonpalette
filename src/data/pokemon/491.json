@@ -1,7 +1,7 @@
 {
   "id": 491,
   "name": "Darkrai",
-  "species": "Pitch-Black Pok\u00e9mon",
+  "species": "Pitch-Black Pokémon",
   "type": [
     "Dark"
   ],
@@ -36,7 +36,7 @@
       "version": "diamond"
     },
     {
-      "text": "Folklore has it that on moonless nights, this Pok\u00e9mon will make people see horrific nightmares.",
+      "text": "Folklore has it that on moonless nights, this Pokémon will make people see horrific nightmares.",
       "version": "pearl"
     },
     {
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "It chases people and Pok\u00e9mon from its territory by causing them to experience deep, nightmarish slumbers.",
+      "text": "It chases people and Pokémon from its territory by causing them to experience deep, nightmarish slumbers.",
       "version": "heartgold"
     },
     {
-      "text": "It chases people and Pok\u00e9mon from its territory by causing them to experience deep, nightmarish slumbers.",
+      "text": "It chases people and Pokémon from its territory by causing them to experience deep, nightmarish slumbers.",
       "version": "soulsilver"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/491.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/491.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダークライ",
+    "roomaji": "Darkrai",
+    "ko": "다크라이",
+    "zh-Hant": "達克萊伊",
+    "fr": "Darkrai",
+    "de": "Darkrai",
+    "es": "Darkrai",
+    "it": "Darkrai",
+    "en": "Darkrai",
+    "ja": "ダークライ",
+    "zh-Hans": "达克莱伊"
   }
 }

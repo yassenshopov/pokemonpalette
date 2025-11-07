@@ -1,7 +1,7 @@
 {
   "id": 839,
   "name": "Coalossal",
-  "species": "Coal Pok\u00e9mon",
+  "species": "Coal Pokémon",
   "type": [
     "Rock",
     "Fire"
@@ -46,14 +46,14 @@
     "specialDefense": 90,
     "speed": 30
   },
-  "description": "It\u2019s usually peaceful, but the vandalism of mines enrages it. Offenders will be incinerated with flames that reach 2,700 degrees Fahrenheit.",
+  "description": "It’s usually peaceful, but the vandalism of mines enrages it. Offenders will be incinerated with flames that reach 2,700 degrees Fahrenheit.",
   "flavorTexts": [
     {
-      "text": "It\u2019s usually peaceful, but the vandalism of mines enrages it. Offenders will be incinerated with flames that reach 2,700 degrees Fahrenheit.",
+      "text": "It’s usually peaceful, but the vandalism of mines enrages it. Offenders will be incinerated with flames that reach 2,700 degrees Fahrenheit.",
       "version": "sword"
     },
     {
-      "text": "While it\u2019s engaged in battle, its mountain of coal will burn bright red, sending off sparks that scorch the surrounding area.",
+      "text": "While it’s engaged in battle, its mountain of coal will burn bright red, sending off sparks that scorch the surrounding area.",
       "version": "shield"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/839.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "セキタンザン",
+    "roomaji": "Sekitanzan",
+    "ko": "석탄산",
+    "zh-Hant": "巨炭山",
+    "fr": "Monthracite",
+    "de": "Montecarbo",
+    "es": "Coalossal",
+    "it": "Coalossal",
+    "en": "Coalossal",
+    "ja": "セキタンザン",
+    "zh-Hans": "巨炭山"
   }
 }

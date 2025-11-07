@@ -1,7 +1,7 @@
 {
   "id": 558,
   "name": "Crustle",
-  "species": "Stone Home Pok\u00e9mon",
+  "species": "Stone Home Pokémon",
   "type": [
     "Bug",
     "Rock"
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/558.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/558.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イワパレス",
+    "roomaji": "Iwapalace",
+    "ko": "암팰리스",
+    "zh-Hant": "岩殿居蟹",
+    "fr": "Crabaraque",
+    "de": "Castellith",
+    "es": "Crustle",
+    "it": "Crustle",
+    "en": "Crustle",
+    "ja": "イワパレス",
+    "zh-Hans": "岩殿居蟹"
   }
 }

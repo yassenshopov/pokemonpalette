@@ -1,7 +1,7 @@
 {
   "id": 890,
   "name": "Eternatus",
-  "species": "Gigantic Pok\u00e9mon",
+  "species": "Gigantic Pokémon",
   "type": [
     "Poison",
     "Dragon"
@@ -41,7 +41,7 @@
       "version": "sword"
     },
     {
-      "text": "It was inside a meteorite that fell 20,000 years ago. There seems to be a connection between this Pok\u00e9mon and the Dynamax phenomenon.",
+      "text": "It was inside a meteorite that fell 20,000 years ago. There seems to be a connection between this Pokémon and the Dynamax phenomenon.",
       "version": "shield"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/890.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ムゲンダイナ",
+    "roomaji": "Mugendina",
+    "ko": "무한다이노",
+    "zh-Hant": "無極汰那",
+    "fr": "Éthernatos",
+    "de": "Endynalos",
+    "es": "Eternatus",
+    "it": "Eternatus",
+    "en": "Eternatus",
+    "ja": "ムゲンダイナ",
+    "zh-Hans": "无极汰那"
   }
 }

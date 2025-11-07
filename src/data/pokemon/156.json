@@ -1,7 +1,7 @@
 {
   "id": 156,
   "name": "Quilava",
-  "species": "Volcano Pok\u00e9mon",
+  "species": "Volcano Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "gold"
     },
     {
-      "text": "This POK\u00e9MON is fully covered by nonflammable fur. It can withstand any kind of fire attack.",
+      "text": "This POKéMON is fully covered by nonflammable fur. It can withstand any kind of fire attack.",
       "version": "silver"
     },
     {
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "QUILAVA keeps its foes at bay with the intensity of its flames and gusts of superheated air. This POK\u00e9MON applies its outstanding nimbleness to dodge attacks even while scorching the foe with flames.",
+      "text": "QUILAVA keeps its foes at bay with the intensity of its flames and gusts of superheated air. This POKéMON applies its outstanding nimbleness to dodge attacks even while scorching the foe with flames.",
       "version": "ruby"
     },
     {
-      "text": "QUILAVA keeps its foes at bay with the intensity of its flames and gusts of superheated air. This POK\u00e9MON applies its outstanding nimbleness to dodge attacks even while scorching the foe with flames.",
+      "text": "QUILAVA keeps its foes at bay with the intensity of its flames and gusts of superheated air. This POKéMON applies its outstanding nimbleness to dodge attacks even while scorching the foe with flames.",
       "version": "sapphire"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/156.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/156.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マグマラシ",
+    "roomaji": "Magmarashi",
+    "ko": "마그케인",
+    "zh-Hant": "火岩鼠",
+    "fr": "Feurisson",
+    "de": "Igelavar",
+    "es": "Quilava",
+    "it": "Quilava",
+    "en": "Quilava",
+    "ja": "マグマラシ",
+    "zh-Hans": "火岩鼠"
   }
 }

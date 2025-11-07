@@ -1,7 +1,7 @@
 {
   "id": 274,
   "name": "Nuzleaf",
-  "species": "Wily Pok\u00e9mon",
+  "species": "Wily Pokémon",
   "type": [
     "Grass",
     "Dark"
@@ -46,26 +46,26 @@
     "specialDefense": 40,
     "speed": 60
   },
-  "description": "NUZLEAF live in densely overgrown forests. They occasionally venture out of the forest to startle people. This POK\u00e9MON dislikes having its long nose pinched.",
+  "description": "NUZLEAF live in densely overgrown forests. They occasionally venture out of the forest to startle people. This POKéMON dislikes having its long nose pinched.",
   "flavorTexts": [
     {
-      "text": "NUZLEAF live in densely overgrown forests. They occasionally venture out of the forest to startle people. This POK\u00e9MON dislikes having its long nose pinched.",
+      "text": "NUZLEAF live in densely overgrown forests. They occasionally venture out of the forest to startle people. This POKéMON dislikes having its long nose pinched.",
       "version": "ruby"
     },
     {
-      "text": "This POK\u00e9MON pulls out the leaf on its head and makes a flute with it. The sound of NUZLEAF\u2019s flute strikes fear and uncertainty in the hearts of people lost in a forest.",
+      "text": "This POKéMON pulls out the leaf on its head and makes a flute with it. The sound of NUZLEAF’s flute strikes fear and uncertainty in the hearts of people lost in a forest.",
       "version": "sapphire"
     },
     {
-      "text": "A forest-dwelling POK\u00e9MON that is skilled at climbing trees. Its long and pointed nose is its weak point. It loses power if the nose is gripped.",
+      "text": "A forest-dwelling POKéMON that is skilled at climbing trees. Its long and pointed nose is its weak point. It loses power if the nose is gripped.",
       "version": "emerald"
     },
     {
-      "text": "They live in holes bored in large trees. The sound of NUZLEAF\u2019s grass flute fills listeners with dread.",
+      "text": "They live in holes bored in large trees. The sound of NUZLEAF’s grass flute fills listeners with dread.",
       "version": "firered"
     },
     {
-      "text": "They live in holes bored in large trees. The sound of NUZLEAF\u2019s grass flute fills listeners with dread.",
+      "text": "They live in holes bored in large trees. The sound of NUZLEAF’s grass flute fills listeners with dread.",
       "version": "leafgreen"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/274.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/274.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コノハナ",
+    "roomaji": "Konohana",
+    "ko": "잎새코",
+    "zh-Hant": "長鼻葉",
+    "fr": "Pifeuil",
+    "de": "Blanas",
+    "es": "Nuzleaf",
+    "it": "Nuzleaf",
+    "en": "Nuzleaf",
+    "ja": "コノハナ",
+    "zh-Hans": "长鼻叶"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 928,
   "name": "Smoliv",
-  "species": "Olive Pok\u00e9mon",
+  "species": "Olive Pokémon",
   "type": [
     "Grass",
     "Normal"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon converts nutrients into oil, which it stores in the fruit on its head. It can easily go a whole week without eating or drinking.",
+      "text": "This Pokémon converts nutrients into oil, which it stores in the fruit on its head. It can easily go a whole week without eating or drinking.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/928.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ミニーブ",
+    "roomaji": "Minive",
+    "ko": "미니브",
+    "zh-Hant": "迷你芙",
+    "fr": "Olivini",
+    "de": "Olini",
+    "es": "Smoliv",
+    "it": "Smoliv",
+    "en": "Smoliv",
+    "ja": "ミニーブ",
+    "zh-Hans": "迷你芙"
   }
 }

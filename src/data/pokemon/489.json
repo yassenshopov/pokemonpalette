@@ -1,7 +1,7 @@
 {
   "id": 489,
   "name": "Phione",
-  "species": "Sea Drifter Pok\u00e9mon",
+  "species": "Sea Drifter Pokémon",
   "type": [
     "Water"
   ],
@@ -36,11 +36,11 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "A Pok\u00e9mon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.",
+      "text": "A Pokémon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.",
       "version": "diamond"
     },
     {
-      "text": "A Pok\u00e9mon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.",
+      "text": "A Pokémon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.",
       "version": "pearl"
     },
     {
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/489.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/489.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フィオネ",
+    "roomaji": "Phione",
+    "ko": "피오네",
+    "zh-Hant": "霏歐納",
+    "fr": "Phione",
+    "de": "Phione",
+    "es": "Phione",
+    "it": "Phione",
+    "en": "Phione",
+    "ja": "フィオネ",
+    "zh-Hans": "霏欧纳"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 282,
   "name": "Gardevoir",
-  "species": "Embrace Pok\u00e9mon",
+  "species": "Embrace Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -46,14 +46,14 @@
     "specialDefense": 115,
     "speed": 80
   },
-  "description": "GARDEVOIR has the ability to read the future. If it senses impending danger to its TRAINER, this POK\u00e9MON is said to unleash its psychokinetic energy at full power.",
+  "description": "GARDEVOIR has the ability to read the future. If it senses impending danger to its TRAINER, this POKéMON is said to unleash its psychokinetic energy at full power.",
   "flavorTexts": [
     {
-      "text": "GARDEVOIR has the ability to read the future. If it senses impending danger to its TRAINER, this POK\u00e9MON is said to unleash its psychokinetic energy at full power.",
+      "text": "GARDEVOIR has the ability to read the future. If it senses impending danger to its TRAINER, this POKéMON is said to unleash its psychokinetic energy at full power.",
       "version": "ruby"
     },
     {
-      "text": "GARDEVOIR has the psychokinetic power to distort the dimensions and create a small black hole. This POK\u00e9MON will try to protect its TRAINER even at the risk of its own life.",
+      "text": "GARDEVOIR has the psychokinetic power to distort the dimensions and create a small black hole. This POKéMON will try to protect its TRAINER even at the risk of its own life.",
       "version": "sapphire"
     },
     {
@@ -333,5 +333,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/282.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/282.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サーナイト",
+    "roomaji": "Sirnight",
+    "ko": "가디안",
+    "zh-Hant": "沙奈朵",
+    "fr": "Gardevoir",
+    "de": "Guardevoir",
+    "es": "Gardevoir",
+    "it": "Gardevoir",
+    "en": "Gardevoir",
+    "ja": "サーナイト",
+    "zh-Hans": "沙奈朵"
   }
 }

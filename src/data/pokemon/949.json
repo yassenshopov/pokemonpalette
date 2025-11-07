@@ -1,7 +1,7 @@
 {
   "id": 949,
   "name": "Toedscruel",
-  "species": "Woodear Pok\u00e9mon",
+  "species": "Woodear Pokémon",
   "type": [
     "Ground",
     "Grass"
@@ -40,10 +40,10 @@
     "specialDefense": 120,
     "speed": 100
   },
-  "description": "These Pok\u00e9mon gather into groups and form colonies deep within forests. They absolutely hate it when strangers approach.",
+  "description": "These Pokémon gather into groups and form colonies deep within forests. They absolutely hate it when strangers approach.",
   "flavorTexts": [
     {
-      "text": "These Pok\u00e9mon gather into groups and form colonies deep within forests. They absolutely hate it when strangers approach.",
+      "text": "These Pokémon gather into groups and form colonies deep within forests. They absolutely hate it when strangers approach.",
       "version": "scarlet"
     },
     {
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/949.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "リククラゲ",
+    "roomaji": "Rikukurage",
+    "ko": "육파리",
+    "zh-Hant": "陸地水母",
+    "fr": "Terracruel",
+    "de": "Tenterra",
+    "es": "Toedscruel",
+    "it": "Toedscruel",
+    "en": "Toedscruel",
+    "ja": "リククラゲ",
+    "zh-Hans": "陆地水母"
   }
 }

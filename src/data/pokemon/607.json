@@ -1,7 +1,7 @@
 {
   "id": 607,
   "name": "Litwick",
-  "species": "Candle Pok\u00e9mon",
+  "species": "Candle Pokémon",
   "type": [
     "Ghost",
     "Fire"
@@ -46,10 +46,10 @@
     "specialDefense": 55,
     "speed": 20
   },
-  "description": "Litwick shines a light that absorbs the life energy of people and Pok\u00e9mon, which becomes the fuel that it burns.",
+  "description": "Litwick shines a light that absorbs the life energy of people and Pokémon, which becomes the fuel that it burns.",
   "flavorTexts": [
     {
-      "text": "Litwick shines a light that absorbs the life energy of people and Pok\u00e9mon, which becomes the fuel that it burns.",
+      "text": "Litwick shines a light that absorbs the life energy of people and Pokémon, which becomes the fuel that it burns.",
       "version": "black"
     },
     {
@@ -57,11 +57,11 @@
       "version": "white"
     },
     {
-      "text": "Its flame is usually out, but it starts shining when it absorbs life force from people or Pok\u00e9mon.",
+      "text": "Its flame is usually out, but it starts shining when it absorbs life force from people or Pokémon.",
       "version": "black-2"
     },
     {
-      "text": "Its flame is usually out, but it starts shining when it absorbs life force from people or Pok\u00e9mon.",
+      "text": "Its flame is usually out, but it starts shining when it absorbs life force from people or Pokémon.",
       "version": "white-2"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/607.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/607.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒトモシ",
+    "roomaji": "Hitomoshi",
+    "ko": "불켜미",
+    "zh-Hant": "燭光靈",
+    "fr": "Funécire",
+    "de": "Lichtel",
+    "es": "Litwick",
+    "it": "Litwick",
+    "en": "Litwick",
+    "ja": "ヒトモシ",
+    "zh-Hans": "烛光灵"
   }
 }

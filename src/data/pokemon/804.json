@@ -1,7 +1,7 @@
 {
   "id": 804,
   "name": "Naganadel",
-  "species": "Poison Pin Pok\u00e9mon",
+  "species": "Poison Pin Pokémon",
   "type": [
     "Poison",
     "Dragon"
@@ -280,5 +280,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/804.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アーゴヨン",
+    "roomaji": "Agoyon",
+    "ko": "아고용",
+    "zh-Hant": "四顎針龍",
+    "fr": "Mandrillon",
+    "de": "Agoyon",
+    "es": "Naganadel",
+    "it": "Naganadel",
+    "en": "Naganadel",
+    "ja": "アーゴヨン",
+    "zh-Hans": "四颚针龙"
   }
 }

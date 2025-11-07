@@ -1,7 +1,7 @@
 {
   "id": 130,
   "name": "Gyarados",
-  "species": "Atrocious Pok\u00e9mon",
+  "species": "Atrocious Pokémon",
   "type": [
     "Water",
     "Flying"
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/130.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/130.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ギャラドス",
+    "roomaji": "Gyarados",
+    "ko": "갸라도스",
+    "zh-Hant": "暴鯉龍",
+    "fr": "Léviator",
+    "de": "Garados",
+    "es": "Gyarados",
+    "it": "Gyarados",
+    "en": "Gyarados",
+    "ja": "ギャラドス",
+    "zh-Hans": "暴鲤龙"
   }
 }

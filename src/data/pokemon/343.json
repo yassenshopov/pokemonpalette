@@ -1,7 +1,7 @@
 {
   "id": 343,
   "name": "Baltoy",
-  "species": "Clay Doll Pok\u00e9mon",
+  "species": "Clay Doll Pokémon",
   "type": [
     "Ground",
     "Psychic"
@@ -34,14 +34,14 @@
     "specialDefense": 70,
     "speed": 55
   },
-  "description": "BALTOY moves while spinning around on its one foot. Primitive wall paintings depicting this POK\u00e9MON living among people were discovered in some ancient ruins.",
+  "description": "BALTOY moves while spinning around on its one foot. Primitive wall paintings depicting this POKéMON living among people were discovered in some ancient ruins.",
   "flavorTexts": [
     {
-      "text": "BALTOY moves while spinning around on its one foot. Primitive wall paintings depicting this POK\u00e9MON living among people were discovered in some ancient ruins.",
+      "text": "BALTOY moves while spinning around on its one foot. Primitive wall paintings depicting this POKéMON living among people were discovered in some ancient ruins.",
       "version": "ruby"
     },
     {
-      "text": "As soon as it spots others of its kind, BALTOY congregates with them and then begins crying noisily in unison. This POK\u00e9MON sleeps while cleverly balancing itself on its one foot.",
+      "text": "As soon as it spots others of its kind, BALTOY congregates with them and then begins crying noisily in unison. This POKéMON sleeps while cleverly balancing itself on its one foot.",
       "version": "sapphire"
     },
     {
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/343.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/343.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤジロン",
+    "roomaji": "Yajilon",
+    "ko": "오뚝군",
+    "zh-Hant": "天秤偶",
+    "fr": "Balbuto",
+    "de": "Puppance",
+    "es": "Baltoy",
+    "it": "Baltoy",
+    "en": "Baltoy",
+    "ja": "ヤジロン",
+    "zh-Hans": "天秤偶"
   }
 }

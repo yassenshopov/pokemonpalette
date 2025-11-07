@@ -1,7 +1,7 @@
 {
   "id": 824,
   "name": "Blipbug",
-  "species": "Larva Pok\u00e9mon",
+  "species": "Larva Pokémon",
   "type": [
     "Bug"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 45
   },
-  "description": "A constant collector of information, this Pok\u00e9mon is very smart. Very strong is what it isn\u2019t.",
+  "description": "A constant collector of information, this Pokémon is very smart. Very strong is what it isn’t.",
   "flavorTexts": [
     {
-      "text": "A constant collector of information, this Pok\u00e9mon is very smart. Very strong is what it isn\u2019t.",
+      "text": "A constant collector of information, this Pokémon is very smart. Very strong is what it isn’t.",
       "version": "sword"
     },
     {
-      "text": "Often found in gardens, this Pok\u00e9mon has hairs on its body that it uses to assess its surroundings.",
+      "text": "Often found in gardens, this Pokémon has hairs on its body that it uses to assess its surroundings.",
       "version": "shield"
     }
   ],
@@ -198,5 +198,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/824.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "サッチムシ",
+    "roomaji": "Sacchimushi",
+    "ko": "두루지벌레",
+    "zh-Hant": "索偵蟲",
+    "fr": "Larvadar",
+    "de": "Sensect",
+    "es": "Blipbug",
+    "it": "Blipbug",
+    "en": "Blipbug",
+    "ja": "サッチムシ",
+    "zh-Hans": "索侦虫"
   }
 }

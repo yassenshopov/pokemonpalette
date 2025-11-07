@@ -1,7 +1,7 @@
 {
   "id": 902,
   "name": "Basculegion-male",
-  "species": "Big Fish Pok\u00e9mon",
+  "species": "Big Fish Pokémon",
   "type": [
     "Water",
     "Ghost"
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/902.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イダイトウ",
+    "roomaji": "Idaitou",
+    "ko": "대쓰여너",
+    "zh-Hant": "幽尾玄魚",
+    "fr": "Paragruel",
+    "de": "Salmagnis",
+    "es": "Basculegion",
+    "it": "Basculegion",
+    "en": "Basculegion",
+    "ja": "イダイトウ",
+    "zh-Hans": "幽尾玄鱼"
   }
 }

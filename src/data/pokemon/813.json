@@ -1,7 +1,7 @@
 {
   "id": 813,
   "name": "Scorbunny",
-  "species": "Rabbit Pok\u00e9mon",
+  "species": "Rabbit Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 40,
     "speed": 69
   },
-  "description": "A warm-up of running around gets fire energy coursing through this Pok\u00e9mon\u2019s body. Once that happens, it\u2019s ready to fight at full power.",
+  "description": "A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.",
   "flavorTexts": [
     {
-      "text": "A warm-up of running around gets fire energy coursing through this Pok\u00e9mon\u2019s body. Once that happens, it\u2019s ready to fight at full power.",
+      "text": "A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.",
       "version": "sword"
     },
     {
-      "text": "It has special pads on the backs of its feet, and one on its nose. Once it\u2019s raring to fight, these pads radiate tremendous heat.",
+      "text": "It has special pads on the backs of its feet, and one on its nose. Once it’s raring to fight, these pads radiate tremendous heat.",
       "version": "shield"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/813.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヒバニー",
+    "roomaji": "Hibanny",
+    "ko": "염버니",
+    "zh-Hant": "炎兔兒",
+    "fr": "Flambino",
+    "de": "Hopplo",
+    "es": "Scorbunny",
+    "it": "Scorbunny",
+    "en": "Scorbunny",
+    "ja": "ヒバニー",
+    "zh-Hans": "炎兔儿"
   }
 }

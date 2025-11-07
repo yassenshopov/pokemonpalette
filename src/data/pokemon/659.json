@@ -1,7 +1,7 @@
 {
   "id": 659,
   "name": "Bunnelby",
-  "species": "Digging Pok\u00e9mon",
+  "species": "Digging Pokémon",
   "type": [
     "Normal"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/659.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ホルビー",
+    "roomaji": "Horubee",
+    "ko": "파르빗",
+    "zh-Hant": "掘掘兔",
+    "fr": "Sapereau",
+    "de": "Scoppel",
+    "es": "Bunnelby",
+    "it": "Bunnelby",
+    "en": "Bunnelby",
+    "ja": "ホルビー",
+    "zh-Hans": "掘掘兔"
   }
 }

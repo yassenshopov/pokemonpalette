@@ -1,7 +1,7 @@
 {
   "id": 914,
   "name": "Quaquaval",
-  "species": "Dancer Pok\u00e9mon",
+  "species": "Dancer Pokémon",
   "type": [
     "Water",
     "Fighting"
@@ -40,14 +40,14 @@
     "specialDefense": 75,
     "speed": 85
   },
-  "description": "A single kick from a Quaquaval can send a truck rolling. This Pok\u00e9mon uses its powerful legs to perform striking dances from far-off lands.",
+  "description": "A single kick from a Quaquaval can send a truck rolling. This Pokémon uses its powerful legs to perform striking dances from far-off lands.",
   "flavorTexts": [
     {
-      "text": "A single kick from a Quaquaval can send a truck rolling. This Pok\u00e9mon uses its powerful legs to perform striking dances from far-off lands.",
+      "text": "A single kick from a Quaquaval can send a truck rolling. This Pokémon uses its powerful legs to perform striking dances from far-off lands.",
       "version": "scarlet"
     },
     {
-      "text": "Dancing in ways that evoke far-away places, this Pok\u00e9mon mesmerizes all that see it. Flourishes of its decorative water feathers slice into its foes.",
+      "text": "Dancing in ways that evoke far-away places, this Pokémon mesmerizes all that see it. Flourishes of its decorative water feathers slice into its foes.",
       "version": "violet"
     }
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/914.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウェーニバル",
+    "roomaji": "Wanival",
+    "ko": "웨이니발",
+    "zh-Hant": "狂歡浪舞鴨",
+    "fr": "Palmaval",
+    "de": "Bailonda",
+    "es": "Quaquaval",
+    "it": "Quaquaval",
+    "en": "Quaquaval",
+    "ja": "ウェーニバル",
+    "zh-Hans": "狂欢浪舞鸭"
   }
 }

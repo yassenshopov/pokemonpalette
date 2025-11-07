@@ -1,7 +1,7 @@
 {
   "id": 666,
   "name": "Vivillon",
-  "species": "Scale Pok\u00e9mon",
+  "species": "Scale Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "The patterns on this Pok\u00e9mon\u2019s wings depend on the climate and topography of its habitat. It scatters colorful scales.",
+      "text": "The patterns on this Pokémon’s wings depend on the climate and topography of its habitat. It scatters colorful scales.",
       "version": "y"
     },
     {
@@ -61,7 +61,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "The patterns on this Pok\u00e9mon\u2019s wings depend on the climate and topography of its habitat. It scatters colorful scales.",
+      "text": "The patterns on this Pokémon’s wings depend on the climate and topography of its habitat. It scatters colorful scales.",
       "version": "alpha-sapphire"
     }
   ],
@@ -634,5 +634,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/666.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ビビヨン",
+    "roomaji": "Viviyon",
+    "ko": "비비용",
+    "zh-Hant": "彩粉蝶",
+    "fr": "Prismillon",
+    "de": "Vivillon",
+    "es": "Vivillon",
+    "it": "Vivillon",
+    "en": "Vivillon",
+    "ja": "ビビヨン",
+    "zh-Hans": "彩粉蝶"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 44,
   "name": "Gloom",
-  "species": "Weed Pok\u00e9mon",
+  "species": "Weed Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/44.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/44.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クサイハナ",
+    "roomaji": "Kusaihana",
+    "ko": "냄새꼬",
+    "zh-Hant": "臭臭花",
+    "fr": "Ortide",
+    "de": "Duflor",
+    "es": "Gloom",
+    "it": "Gloom",
+    "en": "Gloom",
+    "ja": "クサイハナ",
+    "zh-Hans": "臭臭花"
   }
 }

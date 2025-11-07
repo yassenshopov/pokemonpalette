@@ -1,7 +1,7 @@
 {
   "id": 121,
   "name": "Starmie",
-  "species": "Mysterious Pok\u00e9mon",
+  "species": "Mysterious Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -61,11 +61,11 @@
       "version": "yellow"
     },
     {
-      "text": "The center section of its body is called the core. It glows in a dif\u00ad ferent color each time it is seen.",
+      "text": "The center section of its body is called the core. It glows in a dif­ ferent color each time it is seen.",
       "version": "gold"
     },
     {
-      "text": "Regardless of the environment it lives in, its body grows to form a symmetrical geo\u00ad metric shape.",
+      "text": "Regardless of the environment it lives in, its body grows to form a symmetrical geo­ metric shape.",
       "version": "silver"
     }
   ],
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/121.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/121.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スターミー",
+    "roomaji": "Starmie",
+    "ko": "아쿠스타",
+    "zh-Hant": "寶石海星",
+    "fr": "Staross",
+    "de": "Starmie",
+    "es": "Starmie",
+    "it": "Starmie",
+    "en": "Starmie",
+    "ja": "スターミー",
+    "zh-Hans": "宝石海星"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 794,
   "name": "Buzzwole",
-  "species": "Swollen Pok\u00e9mon",
+  "species": "Swollen Pokémon",
   "type": [
     "Bug",
     "Fighting"
@@ -45,7 +45,7 @@
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s alien to this world and a danger here, it\u2019s apparently a common organism in the world where it normally lives.",
+      "text": "Although it’s alien to this world and a danger here, it’s apparently a common organism in the world where it normally lives.",
       "version": "ultra-sun"
     },
     {
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/794.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マッシブーン",
+    "roomaji": "Massivoon",
+    "ko": "매시붕",
+    "zh-Hant": "爆肌蚊",
+    "fr": "Mouscoto",
+    "de": "Masskito",
+    "es": "Buzzwole",
+    "it": "Buzzwole",
+    "en": "Buzzwole",
+    "ja": "マッシブーン",
+    "zh-Hans": "爆肌蚊"
   }
 }

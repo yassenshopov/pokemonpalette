@@ -1,7 +1,7 @@
 {
   "id": 536,
   "name": "Palpitoad",
-  "species": "Vibration Pok\u00e9mon",
+  "species": "Vibration Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/536.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/536.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガマガル",
+    "roomaji": "Gamagaru",
+    "ko": "두까비",
+    "zh-Hant": "藍蟾蜍",
+    "fr": "Batracné",
+    "de": "Mebrana",
+    "es": "Palpitoad",
+    "it": "Palpitoad",
+    "en": "Palpitoad",
+    "ja": "ガマガル",
+    "zh-Hans": "蓝蟾蜍"
   }
 }

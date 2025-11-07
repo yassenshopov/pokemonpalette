@@ -1,7 +1,7 @@
 {
   "id": 374,
   "name": "Beldum",
-  "species": "Iron Ball Pok\u00e9mon",
+  "species": "Iron Ball Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -40,18 +40,18 @@
     "specialDefense": 60,
     "speed": 30
   },
-  "description": "Instead of blood, a powerful magnetic force courses throughout BELDUM\u2019s body. This POK\u00e9MON communicates with others by sending controlled pulses of magnetism.",
+  "description": "Instead of blood, a powerful magnetic force courses throughout BELDUM’s body. This POKéMON communicates with others by sending controlled pulses of magnetism.",
   "flavorTexts": [
     {
-      "text": "Instead of blood, a powerful magnetic force courses throughout BELDUM\u2019s body. This POK\u00e9MON communicates with others by sending controlled pulses of magnetism.",
+      "text": "Instead of blood, a powerful magnetic force courses throughout BELDUM’s body. This POKéMON communicates with others by sending controlled pulses of magnetism.",
       "version": "ruby"
     },
     {
-      "text": "BELDUM keeps itself floating by generating a magnetic force that repels earth\u2019s natural magnetism. When it sleeps, this POK\u00e9MON anchors itself to a cliff using the hooks on its rear.",
+      "text": "BELDUM keeps itself floating by generating a magnetic force that repels earth’s natural magnetism. When it sleeps, this POKéMON anchors itself to a cliff using the hooks on its rear.",
       "version": "sapphire"
     },
     {
-      "text": "When BELDUM gather in a swarm, they move in perfect unison as if they were but one POK\u00e9MON. They communicate with each other using brain waves.",
+      "text": "When BELDUM gather in a swarm, they move in perfect unison as if they were but one POKéMON. They communicate with each other using brain waves.",
       "version": "emerald"
     },
     {
@@ -244,5 +244,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/374.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/374.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダンバル",
+    "roomaji": "Dumbber",
+    "ko": "메탕",
+    "zh-Hant": "鐵啞鈴",
+    "fr": "Terhal",
+    "de": "Tanhel",
+    "es": "Beldum",
+    "it": "Beldum",
+    "en": "Beldum",
+    "ja": "ダンバル",
+    "zh-Hans": "铁哑铃"
   }
 }

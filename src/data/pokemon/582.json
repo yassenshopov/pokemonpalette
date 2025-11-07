@@ -1,7 +1,7 @@
 {
   "id": 582,
   "name": "Vanillite",
-  "species": "Fresh Snow Pok\u00e9mon",
+  "species": "Fresh Snow Pokémon",
   "type": [
     "Ice"
   ],
@@ -41,22 +41,22 @@
     "specialDefense": 60,
     "speed": 44
   },
-  "description": "The temperature of their breath is -58\u00b0 F. They create snow crystals and make snow fall in the areas around them.",
+  "description": "The temperature of their breath is -58° F. They create snow crystals and make snow fall in the areas around them.",
   "flavorTexts": [
     {
-      "text": "The temperature of their breath is -58\u00b0 F. They create snow crystals and make snow fall in the areas around them.",
+      "text": "The temperature of their breath is -58° F. They create snow crystals and make snow fall in the areas around them.",
       "version": "black"
     },
     {
-      "text": "This Pok\u00e9mon formed from icicles bathed in energy from the morning sun. It sleeps buried in snow.",
+      "text": "This Pokémon formed from icicles bathed in energy from the morning sun. It sleeps buried in snow.",
       "version": "white"
     },
     {
-      "text": "Theoretically, this Pok\u00e9mon formed from icicles bathed in energy from the morning sun. Their breath is -58\u00b0 F.",
+      "text": "Theoretically, this Pokémon formed from icicles bathed in energy from the morning sun. Their breath is -58° F.",
       "version": "black-2"
     },
     {
-      "text": "Theoretically, this Pok\u00e9mon formed from icicles bathed in energy from the morning sun. Their breath is -58\u00b0 F.",
+      "text": "Theoretically, this Pokémon formed from icicles bathed in energy from the morning sun. Their breath is -58° F.",
       "version": "white-2"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/582.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/582.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バニプッチ",
+    "roomaji": "Vanipeti",
+    "ko": "바닐프티",
+    "zh-Hant": "迷你冰",
+    "fr": "Sorbébé",
+    "de": "Gelatini",
+    "es": "Vanillite",
+    "it": "Vanillite",
+    "en": "Vanillite",
+    "ja": "バニプッチ",
+    "zh-Hans": "迷你冰"
   }
 }

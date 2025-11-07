@@ -1,7 +1,7 @@
 {
   "id": 818,
   "name": "Inteleon",
-  "species": "Secret Agent Pok\u00e9mon",
+  "species": "Secret Agent Pokémon",
   "type": [
     "Water"
   ],
@@ -42,7 +42,7 @@
       "version": "sword"
     },
     {
-      "text": "Its nictitating membranes let it pick out foes\u2019 weak points so it can precisely blast them with water that shoots from its fingertips at Mach 3.",
+      "text": "Its nictitating membranes let it pick out foes’ weak points so it can precisely blast them with water that shoots from its fingertips at Mach 3.",
       "version": "shield"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/818.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "インテレオン",
+    "roomaji": "Intereon",
+    "ko": "인텔리레온",
+    "zh-Hant": "千面避役",
+    "fr": "Lézargus",
+    "de": "Intelleon",
+    "es": "Inteleon",
+    "it": "Inteleon",
+    "en": "Inteleon",
+    "ja": "インテレオン",
+    "zh-Hans": "千面避役"
   }
 }

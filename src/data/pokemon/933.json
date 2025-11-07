@@ -1,7 +1,7 @@
 {
   "id": 933,
   "name": "Naclstack",
-  "species": "Rock Salt Pok\u00e9mon",
+  "species": "Rock Salt Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 65,
     "speed": 35
   },
-  "description": "This Pok\u00e9mon dry cures its prey by spraying salt over them. The curing process steals away the water in the prey\u2019s body.",
+  "description": "This Pokémon dry cures its prey by spraying salt over them. The curing process steals away the water in the prey’s body.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon dry cures its prey by spraying salt over them. The curing process steals away the water in the prey\u2019s body.",
+      "text": "This Pokémon dry cures its prey by spraying salt over them. The curing process steals away the water in the prey’s body.",
       "version": "scarlet"
     },
     {
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/933.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジオヅム",
+    "roomaji": "Jiodumu",
+    "ko": "스태솔트",
+    "zh-Hant": "鹽石壘",
+    "fr": "Amassel",
+    "de": "Sedisal",
+    "es": "Naclstack",
+    "it": "Naclstack",
+    "en": "Naclstack",
+    "ja": "ジオヅム",
+    "zh-Hans": "盐石垒"
   }
 }

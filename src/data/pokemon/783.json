@@ -1,7 +1,7 @@
 {
   "id": 783,
   "name": "Hakamo-o",
-  "species": "Scaly Pok\u00e9mon",
+  "species": "Scaly Pokémon",
   "type": [
     "Dragon",
     "Fighting"
@@ -53,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "It sheds and regrows its scales on a continuous basis. The scales become harder and sharper each time they\u2019re regrown.",
+      "text": "It sheds and regrows its scales on a continuous basis. The scales become harder and sharper each time they’re regrown.",
       "version": "moon"
     },
     {
@@ -61,7 +61,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "The scales it sheds can be molded and processed to make pots and pans. They conduct heat well, so they\u2019re a popular item.",
+      "text": "The scales it sheds can be molded and processed to make pots and pans. They conduct heat well, so they’re a popular item.",
       "version": "ultra-moon"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/783.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジャランゴ",
+    "roomaji": "Jyarango",
+    "ko": "짜랑고우",
+    "zh-Hant": "鱗甲龍",
+    "fr": "Écaïd",
+    "de": "Mediras",
+    "es": "Hakamo-o",
+    "it": "Hakamo-o",
+    "en": "Hakamo-o",
+    "ja": "ジャランゴ",
+    "zh-Hans": "鳞甲龙"
   }
 }

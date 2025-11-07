@@ -1,7 +1,7 @@
 {
   "id": 841,
   "name": "Flapple",
-  "species": "Apple Wing Pok\u00e9mon",
+  "species": "Apple Wing Pokémon",
   "type": [
     "Grass",
     "Dragon"
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/841.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アップリュー",
+    "roomaji": "Appryu",
+    "ko": "애프룡",
+    "zh-Hant": "蘋裹龍",
+    "fr": "Pomdrapi",
+    "de": "Drapfel",
+    "es": "Flapple",
+    "it": "Flapple",
+    "en": "Flapple",
+    "ja": "アップリュー",
+    "zh-Hans": "苹裹龙"
   }
 }

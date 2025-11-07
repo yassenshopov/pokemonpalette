@@ -1,7 +1,7 @@
 {
   "id": 298,
   "name": "Azurill",
-  "species": "Polka Dot Pok\u00e9mon",
+  "species": "Polka Dot Pokémon",
   "type": [
     "Normal",
     "Fairy"
@@ -46,18 +46,18 @@
     "specialDefense": 40,
     "speed": 20
   },
-  "description": "A Pok\u00e9mon that lives by water. It moves quickly on land by bouncing on its big tail.",
+  "description": "A Pokémon that lives by water. It moves quickly on land by bouncing on its big tail.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon that lives by water. It moves quickly on land by bouncing on its big tail.",
+      "text": "A Pokémon that lives by water. It moves quickly on land by bouncing on its big tail.",
       "version": "diamond"
     },
     {
-      "text": "AZURILL spins its tail as if it were a lasso, then hurls it far. The momentum of the throw sends its body flying, too. Using this unique action, one of these POK\u00e9MON managed to hurl itself a record 33 feet.",
+      "text": "AZURILL spins its tail as if it were a lasso, then hurls it far. The momentum of the throw sends its body flying, too. Using this unique action, one of these POKéMON managed to hurl itself a record 33 feet.",
       "version": "ruby"
     },
     {
-      "text": "AZURILL\u2019s tail is large and bouncy. It is packed full of the nutrients this POK\u00e9MON needs to grow. AZURILL can be seen bouncing and playing on its big, rubbery tail.",
+      "text": "AZURILL’s tail is large and bouncy. It is packed full of the nutrients this POKéMON needs to grow. AZURILL can be seen bouncing and playing on its big, rubbery tail.",
       "version": "sapphire"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/298.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/298.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ルリリ",
+    "roomaji": "Ruriri",
+    "ko": "루리리",
+    "zh-Hant": "露力麗",
+    "fr": "Azurill",
+    "de": "Azurill",
+    "es": "Azurill",
+    "it": "Azurill",
+    "en": "Azurill",
+    "ja": "ルリリ",
+    "zh-Hans": "露力丽"
   }
 }

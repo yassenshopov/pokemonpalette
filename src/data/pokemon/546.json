@@ -1,7 +1,7 @@
 {
   "id": 546,
   "name": "Cottonee",
-  "species": "Cotton Puff Pok\u00e9mon",
+  "species": "Cotton Puff Pokémon",
   "type": [
     "Grass",
     "Fairy"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/546.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/546.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モンメン",
+    "roomaji": "Monmen",
+    "ko": "소미안",
+    "zh-Hant": "木棉球",
+    "fr": "Doudouvet",
+    "de": "Waumboll",
+    "es": "Cottonee",
+    "it": "Cottonee",
+    "en": "Cottonee",
+    "ja": "モンメン",
+    "zh-Hans": "木棉球"
   }
 }

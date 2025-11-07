@@ -1,7 +1,7 @@
 {
   "id": 519,
   "name": "Pidove",
-  "species": "Tiny Pigeon Pok\u00e9mon",
+  "species": "Tiny Pigeon Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -46,26 +46,26 @@
     "specialDefense": 30,
     "speed": 43
   },
-  "description": "Each follows its Trainer\u2019s orders as best it can, but they sometimes fail to understand complicated commands.",
+  "description": "Each follows its Trainer’s orders as best it can, but they sometimes fail to understand complicated commands.",
   "flavorTexts": [
     {
-      "text": "Each follows its Trainer\u2019s orders as best it can, but they sometimes fail to understand complicated commands.",
+      "text": "Each follows its Trainer’s orders as best it can, but they sometimes fail to understand complicated commands.",
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
+      "text": "These Pokémon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
       "version": "white"
     },
     {
-      "text": "This very forgetful Pok\u00e9mon will wait for a new order from its Trainer even though it already has one.",
+      "text": "This very forgetful Pokémon will wait for a new order from its Trainer even though it already has one.",
       "version": "black-2"
     },
     {
-      "text": "This very forgetful Pok\u00e9mon will wait for a new order from its Trainer even though it already has one.",
+      "text": "This very forgetful Pokémon will wait for a new order from its Trainer even though it already has one.",
       "version": "white-2"
     },
     {
-      "text": "This very forgetful Pok\u00e9mon will wait for a new order from its Trainer even though it already has one.",
+      "text": "This very forgetful Pokémon will wait for a new order from its Trainer even though it already has one.",
       "version": "x"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/519.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/519.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マメパト",
+    "roomaji": "Mamepato",
+    "ko": "콩둘기",
+    "zh-Hant": "豆豆鴿",
+    "fr": "Poichigeon",
+    "de": "Dusselgurr",
+    "es": "Pidove",
+    "it": "Pidove",
+    "en": "Pidove",
+    "ja": "マメパト",
+    "zh-Hans": "豆豆鸽"
   }
 }

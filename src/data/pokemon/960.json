@@ -1,7 +1,7 @@
 {
   "id": 960,
   "name": "Wiglett",
-  "species": "Garden Eel Pok\u00e9mon",
+  "species": "Garden Eel Pokémon",
   "type": [
     "Water"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 25,
     "speed": 95
   },
-  "description": "This Pok\u00e9mon can pick up the scent of a Veluza just over 65 feet away and will hide itself in the sand.",
+  "description": "This Pokémon can pick up the scent of a Veluza just over 65 feet away and will hide itself in the sand.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon can pick up the scent of a Veluza just over 65 feet away and will hide itself in the sand.",
+      "text": "This Pokémon can pick up the scent of a Veluza just over 65 feet away and will hide itself in the sand.",
       "version": "scarlet"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/960.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウミディグダ",
+    "roomaji": "Umidigda",
+    "ko": "바다그다",
+    "zh-Hant": "海地鼠",
+    "fr": "Taupikeau",
+    "de": "Schligda",
+    "es": "Wiglett",
+    "it": "Wiglett",
+    "en": "Wiglett",
+    "ja": "ウミディグダ",
+    "zh-Hans": "海地鼠"
   }
 }

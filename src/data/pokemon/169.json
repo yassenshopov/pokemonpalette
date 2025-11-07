@@ -1,7 +1,7 @@
 {
   "id": 169,
   "name": "Crobat",
-  "species": "Bat Pok\u00e9mon",
+  "species": "Bat Pokémon",
   "type": [
     "Poison",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 80,
     "speed": 130
   },
-  "description": "It flies so si\u00ad lently through the dark on its four wings that it may not be noticed even when nearby.",
+  "description": "It flies so si­ lently through the dark on its four wings that it may not be noticed even when nearby.",
   "flavorTexts": [
     {
-      "text": "It flies so si\u00ad lently through the dark on its four wings that it may not be noticed even when nearby.",
+      "text": "It flies so si­ lently through the dark on its four wings that it may not be noticed even when nearby.",
       "version": "gold"
     },
     {
@@ -55,11 +55,11 @@
       "version": "crystal"
     },
     {
-      "text": "If this POK\u00e9MON is flying by fluttering only a pair of wings on either the forelegs or hind legs, it\u2019s proof that CROBAT has been flying a long distance. It switches the wings it uses if it is tired.",
+      "text": "If this POKéMON is flying by fluttering only a pair of wings on either the forelegs or hind legs, it’s proof that CROBAT has been flying a long distance. It switches the wings it uses if it is tired.",
       "version": "ruby"
     },
     {
-      "text": "CROBAT sneaks up on its intended prey using wings that barely make a sound. This POK\u00e9MON rests by hanging on a tree branch with its rear legs that serve as wings.",
+      "text": "CROBAT sneaks up on its intended prey using wings that barely make a sound. This POKéMON rests by hanging on a tree branch with its rear legs that serve as wings.",
       "version": "sapphire"
     }
   ],
@@ -308,5 +308,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/169.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/169.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クロバット",
+    "roomaji": "Crobat",
+    "ko": "크로뱃",
+    "zh-Hant": "叉字蝠",
+    "fr": "Nostenfer",
+    "de": "Iksbat",
+    "es": "Crobat",
+    "it": "Crobat",
+    "en": "Crobat",
+    "ja": "クロバット",
+    "zh-Hans": "叉字蝠"
   }
 }

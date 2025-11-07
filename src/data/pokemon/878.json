@@ -1,7 +1,7 @@
 {
   "id": 878,
   "name": "Cufant",
-  "species": "Copperderm Pok\u00e9mon",
+  "species": "Copperderm Pokémon",
   "type": [
     "Steel"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 49,
     "speed": 40
   },
-  "description": "It digs up the ground with its trunk. It\u2019s also very strong, being able to carry loads of over five tons without any problem at all.",
+  "description": "It digs up the ground with its trunk. It’s also very strong, being able to carry loads of over five tons without any problem at all.",
   "flavorTexts": [
     {
-      "text": "It digs up the ground with its trunk. It\u2019s also very strong, being able to carry loads of over five tons without any problem at all.",
+      "text": "It digs up the ground with its trunk. It’s also very strong, being able to carry loads of over five tons without any problem at all.",
       "version": "sword"
     },
     {
-      "text": "If a job requires serious strength, this Pok\u00e9mon will excel at it. Its copper body tarnishes in the rain, turning a vibrant green color.",
+      "text": "If a job requires serious strength, this Pokémon will excel at it. Its copper body tarnishes in the rain, turning a vibrant green color.",
       "version": "shield"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/878.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ゾウドウ",
+    "roomaji": "Zoudou",
+    "ko": "끼리동",
+    "zh-Hant": "銅象",
+    "fr": "Charibari",
+    "de": "Kupfanti",
+    "es": "Cufant",
+    "it": "Cufant",
+    "en": "Cufant",
+    "ja": "ゾウドウ",
+    "zh-Hans": "铜象"
   }
 }

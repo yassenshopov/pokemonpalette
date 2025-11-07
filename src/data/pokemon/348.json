@@ -1,7 +1,7 @@
 {
   "id": 348,
   "name": "Armaldo",
-  "species": "Plate Pok\u00e9mon",
+  "species": "Plate Pokémon",
   "type": [
     "Rock",
     "Bug"
@@ -40,14 +40,14 @@
     "specialDefense": 80,
     "speed": 45
   },
-  "description": "ARMALDO\u2019s tough armor makes all attacks bounce off. This POK\u00e9MON\u2019s two enormous claws can be freely extended or contracted. They have the power to punch right through a steel slab.",
+  "description": "ARMALDO’s tough armor makes all attacks bounce off. This POKéMON’s two enormous claws can be freely extended or contracted. They have the power to punch right through a steel slab.",
   "flavorTexts": [
     {
-      "text": "ARMALDO\u2019s tough armor makes all attacks bounce off. This POK\u00e9MON\u2019s two enormous claws can be freely extended or contracted. They have the power to punch right through a steel slab.",
+      "text": "ARMALDO’s tough armor makes all attacks bounce off. This POKéMON’s two enormous claws can be freely extended or contracted. They have the power to punch right through a steel slab.",
       "version": "ruby"
     },
     {
-      "text": "ARMALDO is a POK\u00e9MON species that became extinct in prehistoric times. This POK\u00e9MON is said to have walked on its hind legs, which would have been more convenient for life on land.",
+      "text": "ARMALDO is a POKéMON species that became extinct in prehistoric times. This POKéMON is said to have walked on its hind legs, which would have been more convenient for life on land.",
       "version": "sapphire"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/348.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/348.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アーマルド",
+    "roomaji": "Armaldo",
+    "ko": "아말도",
+    "zh-Hant": "太古盔甲",
+    "fr": "Armaldo",
+    "de": "Armaldo",
+    "es": "Armaldo",
+    "it": "Armaldo",
+    "en": "Armaldo",
+    "ja": "アーマルド",
+    "zh-Hans": "太古盔甲"
   }
 }

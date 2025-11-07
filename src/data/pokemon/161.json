@@ -1,7 +1,7 @@
 {
   "id": 161,
   "name": "Sentret",
-  "species": "Scout Pok\u00e9mon",
+  "species": "Scout Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 45,
     "speed": 20
   },
-  "description": "A very cautious POK\u00e9MON, it raises itself up using its tail to get a better view of its surroundings.",
+  "description": "A very cautious POKéMON, it raises itself up using its tail to get a better view of its surroundings.",
   "flavorTexts": [
     {
-      "text": "A very cautious POK\u00e9MON, it raises itself up using its tail to get a better view of its surroundings.",
+      "text": "A very cautious POKéMON, it raises itself up using its tail to get a better view of its surroundings.",
       "version": "gold"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "When SENTRET sleeps, it does so while another stands guard. The sentry wakes the others at the first sign of danger. When this POK\u00e9MON becomes separated from its pack, it becomes incapable of sleep due to fear.",
+      "text": "When SENTRET sleeps, it does so while another stands guard. The sentry wakes the others at the first sign of danger. When this POKéMON becomes separated from its pack, it becomes incapable of sleep due to fear.",
       "version": "ruby"
     },
     {
-      "text": "When SENTRET sleeps, it does so while another stands guard. The sentry wakes the others at the first sign of danger. When this POK\u00e9MON becomes separated from its pack, it becomes incapable of sleep due to fear.",
+      "text": "When SENTRET sleeps, it does so while another stands guard. The sentry wakes the others at the first sign of danger. When this POKéMON becomes separated from its pack, it becomes incapable of sleep due to fear.",
       "version": "sapphire"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/161.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/161.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オタチ",
+    "roomaji": "Otachi",
+    "ko": "꼬리선",
+    "zh-Hant": "尾立",
+    "fr": "Fouinette",
+    "de": "Wiesor",
+    "es": "Sentret",
+    "it": "Sentret",
+    "en": "Sentret",
+    "ja": "オタチ",
+    "zh-Hans": "尾立"
   }
 }

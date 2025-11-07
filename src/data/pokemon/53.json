@@ -1,7 +1,7 @@
 {
   "id": 53,
   "name": "Persian",
-  "species": "Classy Cat Pok\u00e9mon",
+  "species": "Classy Cat Pokémon",
   "type": [
     "Normal"
   ],
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/53.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/53.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ペルシアン",
+    "roomaji": "Persian",
+    "ko": "페르시온",
+    "zh-Hant": "貓老大",
+    "fr": "Persian",
+    "de": "Snobilikat",
+    "es": "Persian",
+    "it": "Persian",
+    "en": "Persian",
+    "ja": "ペルシアン",
+    "zh-Hans": "猫老大"
   }
 }

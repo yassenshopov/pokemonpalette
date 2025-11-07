@@ -1,7 +1,7 @@
 {
   "id": 77,
   "name": "Ponyta",
-  "species": "Fire Horse Pok\u00e9mon",
+  "species": "Fire Horse Pokémon",
   "type": [
     "Fire"
   ],
@@ -56,11 +56,11 @@
       "version": "yellow"
     },
     {
-      "text": "It is a weak run\u00ad ner immediately after birth. It gradually becomes faster by chasing after its parents.",
+      "text": "It is a weak run­ ner immediately after birth. It gradually becomes faster by chasing after its parents.",
       "version": "gold"
     },
     {
-      "text": "Its hind legs, which have hard\u00ad er-than-diamond hooves, kick back at any presence it senses behind it.",
+      "text": "Its hind legs, which have hard­ er-than-diamond hooves, kick back at any presence it senses behind it.",
       "version": "silver"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/77.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/77.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポニータ",
+    "roomaji": "Ponyta",
+    "ko": "포니타",
+    "zh-Hant": "小火馬",
+    "fr": "Ponyta",
+    "de": "Ponita",
+    "es": "Ponyta",
+    "it": "Ponyta",
+    "en": "Ponyta",
+    "ja": "ポニータ",
+    "zh-Hans": "小火马"
   }
 }

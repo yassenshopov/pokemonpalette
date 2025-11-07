@@ -1,7 +1,7 @@
 {
   "id": 517,
   "name": "Munna",
-  "species": "Dream Eater Pok\u00e9mon",
+  "species": "Dream Eater Pokémon",
   "type": [
     "Psychic"
   ],
@@ -48,19 +48,19 @@
       "version": "black"
     },
     {
-      "text": "It eats the dreams of people and Pok\u00e9mon. When it eats a pleasant dream, it expels pink-colored mist.",
+      "text": "It eats the dreams of people and Pokémon. When it eats a pleasant dream, it expels pink-colored mist.",
       "version": "white"
     },
     {
-      "text": "This Pok\u00e9mon appears before people and Pok\u00e9mon who are having nightmares and eats those dreams.",
+      "text": "This Pokémon appears before people and Pokémon who are having nightmares and eats those dreams.",
       "version": "black-2"
     },
     {
-      "text": "This Pok\u00e9mon appears before people and Pok\u00e9mon who are having nightmares and eats those dreams.",
+      "text": "This Pokémon appears before people and Pokémon who are having nightmares and eats those dreams.",
       "version": "white-2"
     },
     {
-      "text": "This Pok\u00e9mon appears before people and Pok\u00e9mon who are having nightmares and eats those dreams.",
+      "text": "This Pokémon appears before people and Pokémon who are having nightmares and eats those dreams.",
       "version": "x"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/517.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/517.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムンナ",
+    "roomaji": "Munna",
+    "ko": "몽나",
+    "zh-Hant": "食夢夢",
+    "fr": "Munna",
+    "de": "Somniam",
+    "es": "Munna",
+    "it": "Munna",
+    "en": "Munna",
+    "ja": "ムンナ",
+    "zh-Hans": "食梦梦"
   }
 }

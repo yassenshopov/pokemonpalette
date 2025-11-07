@@ -1,7 +1,7 @@
 {
   "id": 461,
   "name": "Weavile",
-  "species": "Sharp Claw Pok\u00e9mon",
+  "species": "Sharp Claw Pokémon",
   "type": [
     "Dark",
     "Ice"
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/461.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/461.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マニューラ",
+    "roomaji": "Manyula",
+    "ko": "포푸니라",
+    "zh-Hant": "瑪狃拉",
+    "fr": "Dimoret",
+    "de": "Snibunna",
+    "es": "Weavile",
+    "it": "Weavile",
+    "en": "Weavile",
+    "ja": "マニューラ",
+    "zh-Hans": "玛狃拉"
   }
 }

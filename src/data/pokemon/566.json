@@ -1,7 +1,7 @@
 {
   "id": 566,
   "name": "Archen",
-  "species": "First Bird Pok\u00e9mon",
+  "species": "First Bird Pokémon",
   "type": [
     "Rock",
     "Flying"
@@ -34,14 +34,14 @@
     "specialDefense": 45,
     "speed": 70
   },
-  "description": "Said to be an ancestor of bird Pok\u00e9mon, they were unable to fly and moved about by hopping from one branch to another.",
+  "description": "Said to be an ancestor of bird Pokémon, they were unable to fly and moved about by hopping from one branch to another.",
   "flavorTexts": [
     {
-      "text": "Said to be an ancestor of bird Pok\u00e9mon, they were unable to fly and moved about by hopping from one branch to another.",
+      "text": "Said to be an ancestor of bird Pokémon, they were unable to fly and moved about by hopping from one branch to another.",
       "version": "black"
     },
     {
-      "text": "Revived from a fossil, this Pok\u00e9mon is thought to be the ancestor of all bird Pok\u00e9mon.",
+      "text": "Revived from a fossil, this Pokémon is thought to be the ancestor of all bird Pokémon.",
       "version": "white"
     },
     {
@@ -53,7 +53,7 @@
       "version": "white-2"
     },
     {
-      "text": "Revived from a fossil, this Pok\u00e9mon is thought to be the ancestor of all bird Pok\u00e9mon.",
+      "text": "Revived from a fossil, this Pokémon is thought to be the ancestor of all bird Pokémon.",
       "version": "x"
     }
   ],
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/566.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/566.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アーケン",
+    "roomaji": "Archen",
+    "ko": "아켄",
+    "zh-Hant": "始祖小鳥",
+    "fr": "Arkéapti",
+    "de": "Flapteryx",
+    "es": "Archen",
+    "it": "Archen",
+    "en": "Archen",
+    "ja": "アーケン",
+    "zh-Hans": "始祖小鸟"
   }
 }

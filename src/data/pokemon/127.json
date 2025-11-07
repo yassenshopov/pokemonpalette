@@ -1,7 +1,7 @@
 {
   "id": 127,
   "name": "Pinsir",
-  "species": "Stag Beetle Pok\u00e9mon",
+  "species": "Stag Beetle Pokémon",
   "type": [
     "Bug"
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/127.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/127.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カイロス",
+    "roomaji": "Kailios",
+    "ko": "쁘사이저",
+    "zh-Hant": "凱羅斯",
+    "fr": "Scarabrute",
+    "de": "Pinsir",
+    "es": "Pinsir",
+    "it": "Pinsir",
+    "en": "Pinsir",
+    "ja": "カイロス",
+    "zh-Hans": "凯罗斯"
   }
 }

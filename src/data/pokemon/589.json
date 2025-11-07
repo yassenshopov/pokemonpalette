@@ -1,7 +1,7 @@
 {
   "id": 589,
   "name": "Escavalier",
-  "species": "Cavalry Pok\u00e9mon",
+  "species": "Cavalry Pokémon",
   "type": [
     "Bug",
     "Steel"
@@ -53,7 +53,7 @@
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.",
+      "text": "These Pokémon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.",
       "version": "white"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/589.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/589.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シュバルゴ",
+    "roomaji": "Chevargo",
+    "ko": "슈바르고",
+    "zh-Hant": "騎士蝸牛",
+    "fr": "Lançargot",
+    "de": "Cavalanzas",
+    "es": "Escavalier",
+    "it": "Escavalier",
+    "en": "Escavalier",
+    "ja": "シュバルゴ",
+    "zh-Hans": "骑士蜗牛"
   }
 }

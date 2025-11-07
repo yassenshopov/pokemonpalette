@@ -1,7 +1,7 @@
 {
   "id": 113,
   "name": "Chansey",
-  "species": "Egg Pok\u00e9mon",
+  "species": "Egg Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 105,
     "speed": 50
   },
-  "description": "A rare and elusive POK\u00e9MON that is said to bring happiness to those who manage to get it.",
+  "description": "A rare and elusive POKéMON that is said to bring happiness to those who manage to get it.",
   "flavorTexts": [
     {
-      "text": "A rare and elusive POK\u00e9MON that is said to bring happiness to those who manage to get it.",
+      "text": "A rare and elusive POKéMON that is said to bring happiness to those who manage to get it.",
       "version": "red"
     },
     {
-      "text": "A rare and elusive POK\u00e9MON that is said to bring happiness to those who manage to get it.",
+      "text": "A rare and elusive POKéMON that is said to bring happiness to those who manage to get it.",
       "version": "blue"
     },
     {
-      "text": "A gentle and kind\u00ad hearted POK\u00e9MON that shares its nutritious eggs if it sees an injured POK\u00e9MON.",
+      "text": "A gentle and kind­ hearted POKéMON that shares its nutritious eggs if it sees an injured POKéMON.",
       "version": "yellow"
     },
     {
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Few in number and difficult to cap\u00ad ture, it is said to bring happiness to the trainer who catches it.",
+      "text": "Few in number and difficult to cap­ ture, it is said to bring happiness to the trainer who catches it.",
       "version": "silver"
     }
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/113.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/113.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラッキー",
+    "roomaji": "Lucky",
+    "ko": "럭키",
+    "zh-Hant": "吉利蛋",
+    "fr": "Leveinard",
+    "de": "Chaneira",
+    "es": "Chansey",
+    "it": "Chansey",
+    "en": "Chansey",
+    "ja": "ラッキー",
+    "zh-Hans": "吉利蛋"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 304,
   "name": "Aron",
-  "species": "Iron Armor Pok\u00e9mon",
+  "species": "Iron Armor Pokémon",
   "type": [
     "Steel",
     "Rock"
@@ -46,18 +46,18 @@
     "specialDefense": 40,
     "speed": 30
   },
-  "description": "This POK\u00e9MON has a body of steel. To make its body, ARON feeds on iron ore that it digs from mountains. Occasionally, it causes major trouble by eating bridges and rails.",
+  "description": "This POKéMON has a body of steel. To make its body, ARON feeds on iron ore that it digs from mountains. Occasionally, it causes major trouble by eating bridges and rails.",
   "flavorTexts": [
     {
-      "text": "This POK\u00e9MON has a body of steel. To make its body, ARON feeds on iron ore that it digs from mountains. Occasionally, it causes major trouble by eating bridges and rails.",
+      "text": "This POKéMON has a body of steel. To make its body, ARON feeds on iron ore that it digs from mountains. Occasionally, it causes major trouble by eating bridges and rails.",
       "version": "ruby"
     },
     {
-      "text": "ARON has a body of steel. With one all-out charge, this POK\u00e9MON can demolish even a heavy dump truck. The destroyed dump truck then becomes a handy meal for the POK\u00e9MON.",
+      "text": "ARON has a body of steel. With one all-out charge, this POKéMON can demolish even a heavy dump truck. The destroyed dump truck then becomes a handy meal for the POKéMON.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that is clad in steel armor. A new suit of armor is made when it evolves. The old, discarded armor is salvaged as metal for making iron products.",
+      "text": "A POKéMON that is clad in steel armor. A new suit of armor is made when it evolves. The old, discarded armor is salvaged as metal for making iron products.",
       "version": "emerald"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/304.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/304.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ココドラ",
+    "roomaji": "Cokodora",
+    "ko": "가보리",
+    "zh-Hant": "可可多拉",
+    "fr": "Galekid",
+    "de": "Stollunior",
+    "es": "Aron",
+    "it": "Aron",
+    "en": "Aron",
+    "ja": "ココドラ",
+    "zh-Hans": "可可多拉"
   }
 }

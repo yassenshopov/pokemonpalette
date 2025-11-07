@@ -1,7 +1,7 @@
 {
   "id": 13,
   "name": "Weedle",
-  "species": "Hairy Bug Pok\u00e9mon",
+  "species": "Hairy Bug Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -199,5 +199,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/13.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/13.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビードル",
+    "roomaji": "Beedle",
+    "ko": "뿔충이",
+    "zh-Hant": "獨角蟲",
+    "fr": "Aspicot",
+    "de": "Hornliu",
+    "es": "Weedle",
+    "it": "Weedle",
+    "en": "Weedle",
+    "ja": "ビードル",
+    "zh-Hans": "独角虫"
   }
 }

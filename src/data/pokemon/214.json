@@ -1,7 +1,7 @@
 {
   "id": 214,
   "name": "Heracross",
-  "species": "Single Horn Pok\u00e9mon",
+  "species": "Single Horn Pokémon",
   "type": [
     "Bug",
     "Fighting"
@@ -53,7 +53,7 @@
       "version": "soulsilver"
     },
     {
-      "text": "This powerful POK\u00e9MON thrusts its prized horn under its enemies\u2019 bellies then lifts and throws them.",
+      "text": "This powerful POKéMON thrusts its prized horn under its enemies’ bellies then lifts and throws them.",
       "version": "gold"
     },
     {
@@ -61,11 +61,11 @@
       "version": "silver"
     },
     {
-      "text": "With its Herculean powers, it can easily throw arou\u00ad nd an object that is 100 times its own weight.",
+      "text": "With its Herculean powers, it can easily throw arou­ nd an object that is 100 times its own weight.",
       "version": "crystal"
     },
     {
-      "text": "HERACROSS charges in a straight line at its foe, slips beneath the foe\u2019s grasp, and then scoops up and hurls the opponent with its mighty horn. This POK\u00e9MON even has enough power to topple a massive tree.",
+      "text": "HERACROSS charges in a straight line at its foe, slips beneath the foe’s grasp, and then scoops up and hurls the opponent with its mighty horn. This POKéMON even has enough power to topple a massive tree.",
       "version": "ruby"
     }
   ],
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/214.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/214.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヘラクロス",
+    "roomaji": "Heracros",
+    "ko": "헤라크로스",
+    "zh-Hant": "赫拉克羅斯",
+    "fr": "Scarhino",
+    "de": "Skaraborn",
+    "es": "Heracross",
+    "it": "Heracross",
+    "en": "Heracross",
+    "ja": "ヘラクロス",
+    "zh-Hans": "赫拉克罗斯"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 500,
   "name": "Emboar",
-  "species": "Mega Fire Pig Pok\u00e9mon",
+  "species": "Mega Fire Pig Pokémon",
   "type": [
     "Fire",
     "Fighting"
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/500.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/500.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エンブオー",
+    "roomaji": "Enbuoh",
+    "ko": "염무왕",
+    "zh-Hant": "炎武王",
+    "fr": "Roitiflam",
+    "de": "Flambirex",
+    "es": "Emboar",
+    "it": "Emboar",
+    "en": "Emboar",
+    "ja": "エンブオー",
+    "zh-Hans": "炎武王"
   }
 }

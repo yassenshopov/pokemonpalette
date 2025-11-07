@@ -1,7 +1,7 @@
 {
   "id": 901,
   "name": "Ursaluna",
-  "species": "Peat Pok\u00e9mon",
+  "species": "Peat Pokémon",
   "type": [
     "Ground",
     "Normal"
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/901.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ガチグマ",
+    "roomaji": "Gachiguma",
+    "ko": "다투곰",
+    "zh-Hant": "月月熊",
+    "fr": "Ursaking",
+    "de": "Ursaluna",
+    "es": "Ursaluna",
+    "it": "Ursaluna",
+    "en": "Ursaluna",
+    "ja": "ガチグマ",
+    "zh-Hans": "月月熊"
   }
 }

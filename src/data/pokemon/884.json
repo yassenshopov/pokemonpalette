@@ -1,7 +1,7 @@
 {
   "id": 884,
   "name": "Duraludon",
-  "species": "Alloy Pok\u00e9mon",
+  "species": "Alloy Pokémon",
   "type": [
     "Steel",
     "Dragon"
@@ -46,14 +46,14 @@
     "specialDefense": 50,
     "speed": 85
   },
-  "description": "Its body resembles polished metal, and it\u2019s both lightweight and strong. The only drawback is that it rusts easily.",
+  "description": "Its body resembles polished metal, and it’s both lightweight and strong. The only drawback is that it rusts easily.",
   "flavorTexts": [
     {
-      "text": "Its body resembles polished metal, and it\u2019s both lightweight and strong. The only drawback is that it rusts easily.",
+      "text": "Its body resembles polished metal, and it’s both lightweight and strong. The only drawback is that it rusts easily.",
       "version": "sword"
     },
     {
-      "text": "The special metal that composes its body is very light, so this Pok\u00e9mon has considerable agility. It lives in caves because it dislikes the rain.",
+      "text": "The special metal that composes its body is very light, so this Pokémon has considerable agility. It lives in caves because it dislikes the rain.",
       "version": "shield"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/884.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジュラルドン",
+    "roomaji": "Duraludon",
+    "ko": "두랄루돈",
+    "zh-Hant": "鋁鋼龍",
+    "fr": "Duralugon",
+    "de": "Duraludon",
+    "es": "Duraludon",
+    "it": "Duraludon",
+    "en": "Duraludon",
+    "ja": "ジュラルドン",
+    "zh-Hans": "铝钢龙"
   }
 }

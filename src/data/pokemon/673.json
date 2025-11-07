@@ -1,7 +1,7 @@
 {
   "id": 673,
   "name": "Gogoat",
-  "species": "Mount Pok\u00e9mon",
+  "species": "Mount Pokémon",
   "type": [
     "Grass"
   ],
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/673.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ゴーゴート",
+    "roomaji": "Gogoat",
+    "ko": "고고트",
+    "zh-Hant": "坐騎山羊",
+    "fr": "Chevroum",
+    "de": "Chevrumm",
+    "es": "Gogoat",
+    "it": "Gogoat",
+    "en": "Gogoat",
+    "ja": "ゴーゴート",
+    "zh-Hans": "坐骑山羊"
   }
 }

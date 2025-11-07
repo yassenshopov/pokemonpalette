@@ -1,7 +1,7 @@
 {
   "id": 750,
   "name": "Mudsdale",
-  "species": "Draft Horse Pok\u00e9mon",
+  "species": "Draft Horse Pokémon",
   "type": [
     "Ground"
   ],
@@ -60,7 +60,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "Mud that hardens around a Mudsdale\u2019s legs sets harder than stone. It\u2019s so hard that it allows this Pok\u00e9mon to scrap a truck with a single kick.",
+      "text": "Mud that hardens around a Mudsdale’s legs sets harder than stone. It’s so hard that it allows this Pokémon to scrap a truck with a single kick.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/750.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バンバドロ",
+    "roomaji": "Banbadoro",
+    "ko": "만마드",
+    "zh-Hant": "重泥挽馬",
+    "fr": "Bourrinos",
+    "de": "Pampross",
+    "es": "Mudsdale",
+    "it": "Mudsdale",
+    "en": "Mudsdale",
+    "ja": "バンバドロ",
+    "zh-Hans": "重泥挽马"
   }
 }

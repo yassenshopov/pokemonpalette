@@ -1,7 +1,7 @@
 {
   "id": 524,
   "name": "Roggenrola",
-  "species": "Mantle Pok\u00e9mon",
+  "species": "Mantle Pokémon",
   "type": [
     "Rock"
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/524.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/524.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダンゴロ",
+    "roomaji": "Dangoro",
+    "ko": "단굴",
+    "zh-Hant": "石丸子",
+    "fr": "Nodulithe",
+    "de": "Kiesling",
+    "es": "Roggenrola",
+    "it": "Roggenrola",
+    "en": "Roggenrola",
+    "ja": "ダンゴロ",
+    "zh-Hans": "石丸子"
   }
 }

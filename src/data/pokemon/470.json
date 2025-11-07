@@ -1,7 +1,7 @@
 {
   "id": 470,
   "name": "Leafeon",
-  "species": "Verdant Pok\u00e9mon",
+  "species": "Verdant Pokémon",
   "type": [
     "Grass"
   ],
@@ -50,11 +50,11 @@
       "version": "platinum"
     },
     {
-      "text": "When you see LEAFEON asleep in a patch of sunshine, you\u2019ll know it is using photosynthesis to produce clean air.",
+      "text": "When you see LEAFEON asleep in a patch of sunshine, you’ll know it is using photosynthesis to produce clean air.",
       "version": "heartgold"
     },
     {
-      "text": "When you see LEAFEON asleep in a patch of sunshine, you\u2019ll know it is using photosynthesis to produce clean air.",
+      "text": "When you see LEAFEON asleep in a patch of sunshine, you’ll know it is using photosynthesis to produce clean air.",
       "version": "soulsilver"
     }
   ],
@@ -382,5 +382,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/470.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/470.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リーフィア",
+    "roomaji": "Leafia",
+    "ko": "리피아",
+    "zh-Hant": "葉伊布",
+    "fr": "Phyllali",
+    "de": "Folipurba",
+    "es": "Leafeon",
+    "it": "Leafeon",
+    "en": "Leafeon",
+    "ja": "リーフィア",
+    "zh-Hans": "叶伊布"
   }
 }

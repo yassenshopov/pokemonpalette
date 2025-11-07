@@ -1,7 +1,7 @@
 {
   "id": 415,
   "name": "Combee",
-  "species": "Tiny Bee Pok\u00e9mon",
+  "species": "Tiny Bee Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 42,
     "speed": 70
   },
-  "description": "A Pok\u00e9mon formed by three others. It busily carries sweet floral honey to VESPIQUEN.",
+  "description": "A Pokémon formed by three others. It busily carries sweet floral honey to VESPIQUEN.",
   "flavorTexts": [
     {
-      "text": "A Pok\u00e9mon formed by three others. It busily carries sweet floral honey to VESPIQUEN.",
+      "text": "A Pokémon formed by three others. It busily carries sweet floral honey to VESPIQUEN.",
       "version": "diamond"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/415.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/415.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミツハニー",
+    "roomaji": "Mitsuhoney",
+    "ko": "세꿀버리",
+    "zh-Hant": "三蜜蜂",
+    "fr": "Apitrini",
+    "de": "Wadribie",
+    "es": "Combee",
+    "it": "Combee",
+    "en": "Combee",
+    "ja": "ミツハニー",
+    "zh-Hans": "三蜜蜂"
   }
 }

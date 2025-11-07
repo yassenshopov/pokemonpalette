@@ -1,7 +1,7 @@
 {
   "id": 184,
   "name": "Azumarill",
-  "species": "Aqua Rabbit Pok\u00e9mon",
+  "species": "Aqua Rabbit Pokémon",
   "type": [
     "Water",
     "Fairy"
@@ -53,11 +53,11 @@
       "version": "emerald"
     },
     {
-      "text": "By keeping still and listening in\u00ad tently, it can tell what is in even wild, fast- moving rivers.",
+      "text": "By keeping still and listening in­ tently, it can tell what is in even wild, fast- moving rivers.",
       "version": "gold"
     },
     {
-      "text": "When it plays in water, it rolls up its elongated ears to prevent their insides from get\u00ad ting wet.",
+      "text": "When it plays in water, it rolls up its elongated ears to prevent their insides from get­ ting wet.",
       "version": "silver"
     },
     {
@@ -65,7 +65,7 @@
       "version": "crystal"
     },
     {
-      "text": "AZUMARILL\u2019s long ears are indispensable sensors. By focusing its hearing, this POK\u00e9MON can identify what kinds of prey are around, even in rough and fast-running rivers.",
+      "text": "AZUMARILL’s long ears are indispensable sensors. By focusing its hearing, this POKéMON can identify what kinds of prey are around, even in rough and fast-running rivers.",
       "version": "ruby"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/184.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/184.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マリルリ",
+    "roomaji": "Marilli",
+    "ko": "마릴리",
+    "zh-Hant": "瑪力露麗",
+    "fr": "Azumarill",
+    "de": "Azumarill",
+    "es": "Azumarill",
+    "it": "Azumarill",
+    "en": "Azumarill",
+    "ja": "マリルリ",
+    "zh-Hans": "玛力露丽"
   }
 }

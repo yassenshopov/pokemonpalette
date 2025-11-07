@@ -1,7 +1,7 @@
 {
   "id": 255,
   "name": "Torchic",
-  "species": "Chick Pok\u00e9mon",
+  "species": "Chick Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 50,
     "speed": 45
   },
-  "description": "TORCHIC sticks with its TRAINER, following behind with unsteady steps. This POK\u00e9MON breathes fire of over 1,800 degrees F, including fireballs that leave the foe scorched black.",
+  "description": "TORCHIC sticks with its TRAINER, following behind with unsteady steps. This POKéMON breathes fire of over 1,800 degrees F, including fireballs that leave the foe scorched black.",
   "flavorTexts": [
     {
-      "text": "TORCHIC sticks with its TRAINER, following behind with unsteady steps. This POK\u00e9MON breathes fire of over 1,800 degrees F, including fireballs that leave the foe scorched black.",
+      "text": "TORCHIC sticks with its TRAINER, following behind with unsteady steps. This POKéMON breathes fire of over 1,800 degrees F, including fireballs that leave the foe scorched black.",
       "version": "ruby"
     },
     {
-      "text": "TORCHIC has a place inside its body where it keeps its flame. Give it a hug - it will be glowing with warmth. This POK\u00e9MON is covered all over by a fluffy coat of down.",
+      "text": "TORCHIC has a place inside its body where it keeps its flame. Give it a hug - it will be glowing with warmth. This POKéMON is covered all over by a fluffy coat of down.",
       "version": "sapphire"
     },
     {
-      "text": "If attacked, it strikes back by spitting balls of fire it forms in its stomach. A TORCHIC dislikes darkness because it can\u2019t see its surroundings.",
+      "text": "If attacked, it strikes back by spitting balls of fire it forms in its stomach. A TORCHIC dislikes darkness because it can’t see its surroundings.",
       "version": "emerald"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/255.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/255.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アチャモ",
+    "roomaji": "Achamo",
+    "ko": "아차모",
+    "zh-Hant": "火稚雞",
+    "fr": "Poussifeu",
+    "de": "Flemmli",
+    "es": "Torchic",
+    "it": "Torchic",
+    "en": "Torchic",
+    "ja": "アチャモ",
+    "zh-Hans": "火稚鸡"
   }
 }

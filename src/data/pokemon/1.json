@@ -1,7 +1,7 @@
 {
   "id": 1,
   "name": "Bulbasaur",
-  "species": "Seed Pok\u00e9mon",
+  "species": "Seed Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -40,14 +40,14 @@
     "specialDefense": 65,
     "speed": 45
   },
-  "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
+  "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
   "flavorTexts": [
     {
-      "text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
+      "text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
       "version": "red"
     },
     {
-      "text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POK\u00e9MON.",
+      "text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
       "version": "blue"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/1.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フシギダネ",
+    "roomaji": "Fushigidane",
+    "ko": "이상해씨",
+    "zh-Hant": "妙蛙種子",
+    "fr": "Bulbizarre",
+    "de": "Bisasam",
+    "es": "Bulbasaur",
+    "it": "Bulbasaur",
+    "en": "Bulbasaur",
+    "ja": "フシギダネ",
+    "zh-Hans": "妙蛙种子"
   }
 }

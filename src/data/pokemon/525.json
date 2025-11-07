@@ -1,7 +1,7 @@
 {
   "id": 525,
   "name": "Boldore",
-  "species": "Ore Pok\u00e9mon",
+  "species": "Ore Pokémon",
   "type": [
     "Rock"
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/525.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/525.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガントル",
+    "roomaji": "Gantle",
+    "ko": "암트르",
+    "zh-Hant": "地幔岩",
+    "fr": "Géolithe",
+    "de": "Sedimantur",
+    "es": "Boldore",
+    "it": "Boldore",
+    "en": "Boldore",
+    "ja": "ガントル",
+    "zh-Hans": "地幔岩"
   }
 }

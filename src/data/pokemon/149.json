@@ -1,7 +1,7 @@
 {
   "id": 149,
   "name": "Dragonite",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Dragon",
     "Flying"
@@ -40,26 +40,26 @@
     "specialDefense": 100,
     "speed": 80
   },
-  "description": "An extremely rarely seen marine POK\u00e9MON. Its intelligence is said to match that of humans.",
+  "description": "An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans.",
   "flavorTexts": [
     {
-      "text": "An extremely rarely seen marine POK\u00e9MON. Its intelligence is said to match that of humans.",
+      "text": "An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans.",
       "version": "red"
     },
     {
-      "text": "An extremely rarely seen marine POK\u00e9MON. Its intelligence is said to match that of humans.",
+      "text": "An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans.",
       "version": "blue"
     },
     {
-      "text": "It is said that this POK\u00e9MON lives somewhere in the sea and that it flies. However, it is only a rumor.",
+      "text": "It is said that this POKéMON lives somewhere in the sea and that it flies. However, it is only a rumor.",
       "version": "yellow"
     },
     {
-      "text": "It is said that this POK\u00e9MON con\u00ad stantly flies over the immense seas and rescues drown\u00ad ing people.",
+      "text": "It is said that this POKéMON con­ stantly flies over the immense seas and rescues drown­ ing people.",
       "version": "gold"
     },
     {
-      "text": "This marine POK\u00e9\u00ad MON has an impres\u00ad sive build that lets it freely fly over raging seas without trouble.",
+      "text": "This marine POKé­ MON has an impres­ sive build that lets it freely fly over raging seas without trouble.",
       "version": "silver"
     }
   ],
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/149.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/149.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カイリュー",
+    "roomaji": "Kairyu",
+    "ko": "망나뇽",
+    "zh-Hant": "快龍",
+    "fr": "Dracolosse",
+    "de": "Dragoran",
+    "es": "Dragonite",
+    "it": "Dragonite",
+    "en": "Dragonite",
+    "ja": "カイリュー",
+    "zh-Hans": "快龙"
   }
 }

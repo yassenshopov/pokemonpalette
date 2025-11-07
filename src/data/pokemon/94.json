@@ -1,7 +1,7 @@
 {
   "id": 94,
   "name": "Gengar",
-  "species": "Shadow Pok\u00e9mon",
+  "species": "Shadow Pokémon",
   "type": [
     "Ghost",
     "Poison"
@@ -34,14 +34,14 @@
     "specialDefense": 75,
     "speed": 110
   },
-  "description": "Under a full moon, this POK\u00e9MON likes to mimic the shadows of people and laugh at their fright.",
+  "description": "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright.",
   "flavorTexts": [
     {
-      "text": "Under a full moon, this POK\u00e9MON likes to mimic the shadows of people and laugh at their fright.",
+      "text": "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright.",
       "version": "red"
     },
     {
-      "text": "Under a full moon, this POK\u00e9MON likes to mimic the shadows of people and laugh at their fright.",
+      "text": "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright.",
       "version": "blue"
     },
     {
@@ -49,7 +49,7 @@
       "version": "yellow"
     },
     {
-      "text": "It steals heat from its surround\u00ad ings. If you feel a sudden chill, it is certain that a GENGAR appeared.",
+      "text": "It steals heat from its surround­ ings. If you feel a sudden chill, it is certain that a GENGAR appeared.",
       "version": "gold"
     },
     {
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/94.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/94.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゲンガー",
+    "roomaji": "Gangar",
+    "ko": "팬텀",
+    "zh-Hant": "耿鬼",
+    "fr": "Ectoplasma",
+    "de": "Gengar",
+    "es": "Gengar",
+    "it": "Gengar",
+    "en": "Gengar",
+    "ja": "ゲンガー",
+    "zh-Hans": "耿鬼"
   }
 }

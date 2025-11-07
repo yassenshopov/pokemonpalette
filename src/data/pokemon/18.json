@@ -1,7 +1,7 @@
 {
   "id": 18,
   "name": "Pidgeot",
-  "species": "Bird Pok\u00e9mon",
+  "species": "Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -57,7 +57,7 @@
       "version": "blue"
     },
     {
-      "text": "This POK\u00e9MON flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.",
+      "text": "This POKéMON flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.",
       "version": "yellow"
     },
     {
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/18.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/18.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピジョット",
+    "roomaji": "Pigeot",
+    "ko": "피죤투",
+    "zh-Hant": "大比鳥",
+    "fr": "Roucarnage",
+    "de": "Tauboss",
+    "es": "Pidgeot",
+    "it": "Pidgeot",
+    "en": "Pidgeot",
+    "ja": "ピジョット",
+    "zh-Hans": "大比鸟"
   }
 }

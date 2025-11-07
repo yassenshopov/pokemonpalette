@@ -1,7 +1,7 @@
 {
   "id": 256,
   "name": "Combusken",
-  "species": "Young Fowl Pok\u00e9mon",
+  "species": "Young Fowl Pokémon",
   "type": [
     "Fire",
     "Fighting"
@@ -40,14 +40,14 @@
     "specialDefense": 60,
     "speed": 55
   },
-  "description": "COMBUSKEN toughens up its legs and thighs by running through fields and mountains. This POK\u00e9MON\u2019s legs possess both speed and power, enabling it to dole out ten kicks in one second.",
+  "description": "COMBUSKEN toughens up its legs and thighs by running through fields and mountains. This POKéMON’s legs possess both speed and power, enabling it to dole out ten kicks in one second.",
   "flavorTexts": [
     {
-      "text": "COMBUSKEN toughens up its legs and thighs by running through fields and mountains. This POK\u00e9MON\u2019s legs possess both speed and power, enabling it to dole out ten kicks in one second.",
+      "text": "COMBUSKEN toughens up its legs and thighs by running through fields and mountains. This POKéMON’s legs possess both speed and power, enabling it to dole out ten kicks in one second.",
       "version": "ruby"
     },
     {
-      "text": "COMBUSKEN battles with the intensely hot flames it spews from its beak and with outstandingly destructive kicks. This POK\u00e9MON\u2019s cry is very loud and distracting.",
+      "text": "COMBUSKEN battles with the intensely hot flames it spews from its beak and with outstandingly destructive kicks. This POKéMON’s cry is very loud and distracting.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/256.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/256.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワカシャモ",
+    "roomaji": "Wakasyamo",
+    "ko": "영치코",
+    "zh-Hant": "力壯雞",
+    "fr": "Galifeu",
+    "de": "Jungglut",
+    "es": "Combusken",
+    "it": "Combusken",
+    "en": "Combusken",
+    "ja": "ワカシャモ",
+    "zh-Hans": "力壮鸡"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 734,
   "name": "Yungoos",
-  "species": "Loitering Pok\u00e9mon",
+  "species": "Loitering Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,7 +52,7 @@
       "version": "moon"
     },
     {
-      "text": "Its stomach takes up most of its long torso. It\u2019s a big eater, so the amount Trainers have to spend on its food is no laughing matter.",
+      "text": "Its stomach takes up most of its long torso. It’s a big eater, so the amount Trainers have to spend on its food is no laughing matter.",
       "version": "ultra-sun"
     },
     {
@@ -301,5 +301,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/734.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヤングース",
+    "roomaji": "Youngoose",
+    "ko": "영구스",
+    "zh-Hant": "貓鼬少",
+    "fr": "Manglouton",
+    "de": "Mangunior",
+    "es": "Yungoos",
+    "it": "Yungoos",
+    "en": "Yungoos",
+    "ja": "ヤングース",
+    "zh-Hans": "猫鼬少"
   }
 }

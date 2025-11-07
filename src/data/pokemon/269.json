@@ -1,7 +1,7 @@
 {
   "id": 269,
   "name": "Dustox",
-  "species": "Poison Moth Pok\u00e9mon",
+  "species": "Poison Moth Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -40,18 +40,18 @@
     "specialDefense": 90,
     "speed": 65
   },
-  "description": "DUSTOX is instinctively drawn to light. Swarms of this POK\u00e9MON are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
+  "description": "DUSTOX is instinctively drawn to light. Swarms of this POKéMON are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
   "flavorTexts": [
     {
-      "text": "DUSTOX is instinctively drawn to light. Swarms of this POK\u00e9MON are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
+      "text": "DUSTOX is instinctively drawn to light. Swarms of this POKéMON are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
       "version": "ruby"
     },
     {
-      "text": "When DUSTOX flaps its wings, a fine dust is scattered all over. This dust is actually a powerful poison that will even make a pro wrestler sick. This POK\u00e9MON searches for food using its antennae like radar.",
+      "text": "When DUSTOX flaps its wings, a fine dust is scattered all over. This dust is actually a powerful poison that will even make a pro wrestler sick. This POKéMON searches for food using its antennae like radar.",
       "version": "sapphire"
     },
     {
-      "text": "It is a nocturnal POK\u00e9MON that flies from fields and mountains to the attraction of streetlights at night. It looses highly toxic powder from its wings.",
+      "text": "It is a nocturnal POKéMON that flies from fields and mountains to the attraction of streetlights at night. It looses highly toxic powder from its wings.",
       "version": "emerald"
     },
     {
@@ -338,5 +338,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/269.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/269.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドクケイル",
+    "roomaji": "Dokucale",
+    "ko": "독케일",
+    "zh-Hant": "毒粉蛾",
+    "fr": "Papinox",
+    "de": "Pudox",
+    "es": "Dustox",
+    "it": "Dustox",
+    "en": "Dustox",
+    "ja": "ドクケイル",
+    "zh-Hans": "毒粉蛾"
   }
 }

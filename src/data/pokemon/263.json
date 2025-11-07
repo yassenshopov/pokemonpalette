@@ -1,7 +1,7 @@
 {
   "id": 263,
   "name": "Zigzagoon",
-  "species": "Tiny Raccoon Pok\u00e9mon",
+  "species": "Tiny Raccoon Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 41,
     "speed": 60
   },
-  "description": "ZIGZAGOON restlessly wanders everywhere at all times. This POK\u00e9MON does so because it is very curious. It becomes interested in anything that it happens to see.",
+  "description": "ZIGZAGOON restlessly wanders everywhere at all times. This POKéMON does so because it is very curious. It becomes interested in anything that it happens to see.",
   "flavorTexts": [
     {
-      "text": "ZIGZAGOON restlessly wanders everywhere at all times. This POK\u00e9MON does so because it is very curious. It becomes interested in anything that it happens to see.",
+      "text": "ZIGZAGOON restlessly wanders everywhere at all times. This POKéMON does so because it is very curious. It becomes interested in anything that it happens to see.",
       "version": "ruby"
     },
     {
-      "text": "The hair on ZIGZAGOON\u2019s back is  bristly. It rubs the hard back hair against trees to leave its territorial markings. This POK\u00e9MON may play dead to fool foes in battle.",
+      "text": "The hair on ZIGZAGOON’s back is  bristly. It rubs the hard back hair against trees to leave its territorial markings. This POKéMON may play dead to fool foes in battle.",
       "version": "sapphire"
     },
     {
@@ -56,11 +56,11 @@
       "version": "emerald"
     },
     {
-      "text": "A POK\u00e9MON with abundant curiosity. It shows an interest in everything, so it always zigs and zags.",
+      "text": "A POKéMON with abundant curiosity. It shows an interest in everything, so it always zigs and zags.",
       "version": "firered"
     },
     {
-      "text": "A POK\u00e9MON with abundant curiosity. It shows an interest in everything, so it always zigs and zags.",
+      "text": "A POKéMON with abundant curiosity. It shows an interest in everything, so it always zigs and zags.",
       "version": "leafgreen"
     }
   ],
@@ -330,5 +330,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/263.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/263.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジグザグマ",
+    "roomaji": "Ziguzaguma",
+    "ko": "지그제구리",
+    "zh-Hant": "蛇紋熊",
+    "fr": "Zigzaton",
+    "de": "Zigzachs",
+    "es": "Zigzagoon",
+    "it": "Zigzagoon",
+    "en": "Zigzagoon",
+    "ja": "ジグザグマ",
+    "zh-Hans": "蛇纹熊"
   }
 }

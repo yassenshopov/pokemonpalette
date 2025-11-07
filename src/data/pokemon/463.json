@@ -1,7 +1,7 @@
 {
   "id": 463,
   "name": "Lickilicky",
-  "species": "Licking Pok\u00e9mon",
+  "species": "Licking Pokémon",
   "type": [
     "Normal"
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/463.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/463.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ベロベルト",
+    "roomaji": "Beroberto",
+    "ko": "내룸벨트",
+    "zh-Hant": "大舌舔",
+    "fr": "Coudlangue",
+    "de": "Schlurplek",
+    "es": "Lickilicky",
+    "it": "Lickilicky",
+    "en": "Lickilicky",
+    "ja": "ベロベルト",
+    "zh-Hans": "大舌舔"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 641,
   "name": "Tornadus-incarnate",
-  "species": "Cyclone Pok\u00e9mon",
+  "species": "Cyclone Pokémon",
   "type": [
     "Flying"
   ],
@@ -291,5 +291,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/641.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/641.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トルネロス",
+    "roomaji": "Tornelos",
+    "ko": "토네로스",
+    "zh-Hant": "龍捲雲",
+    "fr": "Boréas",
+    "de": "Boreos",
+    "es": "Tornadus",
+    "it": "Tornadus",
+    "en": "Tornadus",
+    "ja": "トルネロス",
+    "zh-Hans": "龙卷云"
   }
 }

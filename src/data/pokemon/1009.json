@@ -1,7 +1,7 @@
 {
   "id": 1009,
   "name": "Walking-wake",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Water",
     "Dragon"
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1009.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウネルミナモ",
+    "roomaji": "Uneruminamo",
+    "ko": "굽이치는물결",
+    "zh-Hant": "波盪水",
+    "fr": "Serpente-Eau",
+    "de": "Windewoge",
+    "es": "Ondulagua",
+    "it": "Acquecrespe",
+    "en": "Walking Wake",
+    "ja": "ウネルミナモ",
+    "zh-Hans": "波荡水"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 759,
   "name": "Stufful",
-  "species": "Flailing Pok\u00e9mon",
+  "species": "Flailing Pokémon",
   "type": [
     "Normal",
     "Fighting"
@@ -53,7 +53,7 @@
       "version": "sun"
     },
     {
-      "text": "A touch from anyone except a known friend sends it into a surging frenzy. It\u2019s an incredibly dangerous Pok\u00e9mon.",
+      "text": "A touch from anyone except a known friend sends it into a surging frenzy. It’s an incredibly dangerous Pokémon.",
       "version": "moon"
     },
     {
@@ -65,7 +65,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "Its fluffy fur is a delight to pet, but carelessly reaching out to touch this Pok\u00e9mon could result in painful retaliation.",
+      "text": "Its fluffy fur is a delight to pet, but carelessly reaching out to touch this Pokémon could result in painful retaliation.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/759.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヌイコグマ",
+    "roomaji": "Nuikoguma",
+    "ko": "포곰곰",
+    "zh-Hant": "童偶熊",
+    "fr": "Nounourson",
+    "de": "Velursi",
+    "es": "Stufful",
+    "it": "Stufful",
+    "en": "Stufful",
+    "ja": "ヌイコグマ",
+    "zh-Hans": "童偶熊"
   }
 }

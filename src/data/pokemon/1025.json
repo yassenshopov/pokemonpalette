@@ -1,7 +1,7 @@
 {
   "id": 1025,
   "name": "Pecharunt",
-  "species": "Subjugation Pok\u00e9mon",
+  "species": "Subjugation Pokémon",
   "type": [
     "Poison",
     "Ghost"
@@ -34,14 +34,14 @@
     "specialDefense": 88,
     "speed": 88
   },
-  "description": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt\u2019s control, chained to its will.",
+  "description": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will.",
   "flavorTexts": [
     {
-      "text": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt\u2019s control, chained to its will.",
+      "text": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will.",
       "version": "scarlet"
     },
     {
-      "text": "Its peach-shaped shell serves as storage for a potent poison. It makes poisonous mochi and serves them to people and Pok\u00e9mon.",
+      "text": "Its peach-shaped shell serves as storage for a potent poison. It makes poisonous mochi and serves them to people and Pokémon.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1025.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "モモワロウ",
+    "ko": "복숭악동",
+    "zh-Hant": "桃歹郎",
+    "fr": "Pêchaminus",
+    "de": "Infamomo",
+    "es": "Pecharunt",
+    "it": "Pecharunt",
+    "en": "Pecharunt",
+    "ja": "モモワロウ",
+    "zh-Hans": "桃歹郎"
   }
 }

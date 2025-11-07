@@ -1,7 +1,7 @@
 {
   "id": 921,
   "name": "Pawmi",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Electric"
   ],
@@ -297,5 +297,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/921.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パモ",
+    "roomaji": "Pamo",
+    "ko": "빠모",
+    "zh-Hant": "布撥",
+    "fr": "Pohm",
+    "de": "Pamo",
+    "es": "Pawmi",
+    "it": "Pawmi",
+    "en": "Pawmi",
+    "ja": "パモ",
+    "zh-Hans": "布拨"
   }
 }

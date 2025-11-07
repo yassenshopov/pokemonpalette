@@ -1,7 +1,7 @@
 {
   "id": 270,
   "name": "Lotad",
-  "species": "Water Weed Pok\u00e9mon",
+  "species": "Water Weed Pokémon",
   "type": [
     "Water",
     "Grass"
@@ -53,15 +53,15 @@
       "version": "y"
     },
     {
-      "text": "LOTAD live in ponds and lakes, where they float on the surface. It grows weak if its broad leaf dies. On rare occasions, this POK\u00e9MON travels on land in search of clean water.",
+      "text": "LOTAD live in ponds and lakes, where they float on the surface. It grows weak if its broad leaf dies. On rare occasions, this POKéMON travels on land in search of clean water.",
       "version": "ruby"
     },
     {
-      "text": "LOTAD is said to have dwelled on land before. However, this POK\u00e9MON is thought to have returned to water because the leaf on its head grew large and heavy. It now lives by floating atop the water.",
+      "text": "LOTAD is said to have dwelled on land before. However, this POKéMON is thought to have returned to water because the leaf on its head grew large and heavy. It now lives by floating atop the water.",
       "version": "sapphire"
     },
     {
-      "text": "This POK\u00e9MON lives in ponds with clean water. It is known to ferry small POK\u00e9MON across ponds by carrying them on the broad leaf on its head.",
+      "text": "This POKéMON lives in ponds with clean water. It is known to ferry small POKéMON across ponds by carrying them on the broad leaf on its head.",
       "version": "emerald"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/270.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/270.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハスボー",
+    "roomaji": "Hassboh",
+    "ko": "연꽃몬",
+    "zh-Hant": "蓮葉童子",
+    "fr": "Nénupiot",
+    "de": "Loturzel",
+    "es": "Lotad",
+    "it": "Lotad",
+    "en": "Lotad",
+    "ja": "ハスボー",
+    "zh-Hans": "莲叶童子"
   }
 }

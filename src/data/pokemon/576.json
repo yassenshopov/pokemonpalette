@@ -1,7 +1,7 @@
 {
   "id": 576,
   "name": "Gothitelle",
-  "species": "Astral Body Pok\u00e9mon",
+  "species": "Astral Body Pokémon",
   "type": [
     "Psychic"
   ],
@@ -48,15 +48,15 @@
       "version": "black"
     },
     {
-      "text": "They can predict the future from the placement and movement of the stars. They can see Trainers\u2019 life spans.",
+      "text": "They can predict the future from the placement and movement of the stars. They can see Trainers’ life spans.",
       "version": "white"
     },
     {
-      "text": "It can see the future from the movement of the stars. When it learns its Trainer\u2019s life span, it cries in sadness.",
+      "text": "It can see the future from the movement of the stars. When it learns its Trainer’s life span, it cries in sadness.",
       "version": "black-2"
     },
     {
-      "text": "It can see the future from the movement of the stars. When it learns its Trainer\u2019s life span, it cries in sadness.",
+      "text": "It can see the future from the movement of the stars. When it learns its Trainer’s life span, it cries in sadness.",
       "version": "white-2"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/576.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/576.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴチルゼル",
+    "roomaji": "Gothiruselle",
+    "ko": "고디모아젤",
+    "zh-Hant": "哥德小姐",
+    "fr": "Sidérella",
+    "de": "Morbitesse",
+    "es": "Gothitelle",
+    "it": "Gothitelle",
+    "en": "Gothitelle",
+    "ja": "ゴチルゼル",
+    "zh-Hans": "哥德小姐"
   }
 }

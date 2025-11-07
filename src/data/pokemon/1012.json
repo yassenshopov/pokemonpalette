@@ -1,7 +1,7 @@
 {
   "id": 1012,
   "name": "Poltchageist",
-  "species": "Matcha Pok\u00e9mon",
+  "species": "Matcha Pokémon",
   "type": [
     "Grass",
     "Ghost"
@@ -40,14 +40,14 @@
     "specialDefense": 54,
     "speed": 50
   },
-  "description": "Supposedly, the regrets of a tea ceremony master who died before perfecting his craft lingered in some matcha and became a Pok\u00e9mon.",
+  "description": "Supposedly, the regrets of a tea ceremony master who died before perfecting his craft lingered in some matcha and became a Pokémon.",
   "flavorTexts": [
     {
-      "text": "Supposedly, the regrets of a tea ceremony master who died before perfecting his craft lingered in some matcha and became a Pok\u00e9mon.",
+      "text": "Supposedly, the regrets of a tea ceremony master who died before perfecting his craft lingered in some matcha and became a Pokémon.",
       "version": "scarlet"
     },
     {
-      "text": "Poltchageist looks like a regional form of Sinistea, but it was recently discovered that the two Pok\u00e9mon are entirely unrelated.",
+      "text": "Poltchageist looks like a regional form of Sinistea, but it was recently discovered that the two Pokémon are entirely unrelated.",
       "version": "violet"
     }
   ],
@@ -299,5 +299,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1012.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "チャデス",
+    "ko": "차데스",
+    "zh-Hant": "斯魔茶",
+    "fr": "Poltchageist",
+    "de": "Mortcha",
+    "es": "Poltchageist",
+    "it": "Poltchageist",
+    "en": "Poltchageist",
+    "ja": "チャデス",
+    "zh-Hans": "斯魔茶"
   }
 }

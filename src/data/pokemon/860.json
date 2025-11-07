@@ -1,7 +1,7 @@
 {
   "id": 860,
   "name": "Morgrem",
-  "species": "Devious Pok\u00e9mon",
+  "species": "Devious Pokémon",
   "type": [
     "Dark",
     "Fairy"
@@ -46,10 +46,10 @@
     "specialDefense": 55,
     "speed": 70
   },
-  "description": "When it gets down on all fours as if to beg for forgiveness, it\u2019s trying to lure opponents in so that it can stab them with its spear-like hair.",
+  "description": "When it gets down on all fours as if to beg for forgiveness, it’s trying to lure opponents in so that it can stab them with its spear-like hair.",
   "flavorTexts": [
     {
-      "text": "When it gets down on all fours as if to beg for forgiveness, it\u2019s trying to lure opponents in so that it can stab them with its spear-like hair.",
+      "text": "When it gets down on all fours as if to beg for forgiveness, it’s trying to lure opponents in so that it can stab them with its spear-like hair.",
       "version": "sword"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/860.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ギモー",
+    "roomaji": "Gimoh",
+    "ko": "쏘겨모",
+    "zh-Hant": "詐唬魔",
+    "fr": "Fourbelin",
+    "de": "Pelzebub",
+    "es": "Morgrem",
+    "it": "Morgrem",
+    "en": "Morgrem",
+    "ja": "ギモー",
+    "zh-Hans": "诈唬魔"
   }
 }

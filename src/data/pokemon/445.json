@@ -1,7 +1,7 @@
 {
   "id": 445,
   "name": "Garchomp",
-  "species": "Mach Pok\u00e9mon",
+  "species": "Mach Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -321,5 +321,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/445.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/445.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガブリアス",
+    "roomaji": "Gablias",
+    "ko": "한카리아스",
+    "zh-Hant": "烈咬陸鯊",
+    "fr": "Carchacrok",
+    "de": "Knakrack",
+    "es": "Garchomp",
+    "it": "Garchomp",
+    "en": "Garchomp",
+    "ja": "ガブリアス",
+    "zh-Hans": "烈咬陆鲨"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 52,
   "name": "Meowth",
-  "species": "Scratch Cat Pok\u00e9mon",
+  "species": "Scratch Cat Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 40,
     "speed": 90
   },
-  "description": "It washes its face regularly to keep the coin on its forehead spotless. It doesn\u2019t get along with Galarian Meowth.",
+  "description": "It washes its face regularly to keep the coin on its forehead spotless. It doesn’t get along with Galarian Meowth.",
   "flavorTexts": [
     {
-      "text": "It washes its face regularly to keep the coin on its forehead spotless. It doesn\u2019t get along with Galarian Meowth.",
+      "text": "It washes its face regularly to keep the coin on its forehead spotless. It doesn’t get along with Galarian Meowth.",
       "version": "shield"
     },
     {
@@ -343,5 +343,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/52.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/52.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニャース",
+    "roomaji": "Nyarth",
+    "ko": "나옹",
+    "zh-Hant": "喵喵",
+    "fr": "Miaouss",
+    "de": "Mauzi",
+    "es": "Meowth",
+    "it": "Meowth",
+    "en": "Meowth",
+    "ja": "ニャース",
+    "zh-Hans": "喵喵"
   }
 }

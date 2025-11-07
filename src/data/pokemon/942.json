@@ -1,7 +1,7 @@
 {
   "id": 942,
   "name": "Maschiff",
-  "species": "Rascal Pok\u00e9mon",
+  "species": "Rascal Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 51,
     "speed": 51
   },
-  "description": "It always scowls in an attempt to make opponents take it seriously, but even crying children will burst into laughter when they see Maschiff\u2019s face.",
+  "description": "It always scowls in an attempt to make opponents take it seriously, but even crying children will burst into laughter when they see Maschiff’s face.",
   "flavorTexts": [
     {
-      "text": "It always scowls in an attempt to make opponents take it seriously, but even crying children will burst into laughter when they see Maschiff\u2019s face.",
+      "text": "It always scowls in an attempt to make opponents take it seriously, but even crying children will burst into laughter when they see Maschiff’s face.",
       "version": "scarlet"
     },
     {
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/942.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オラチフ",
+    "roomaji": "Orachifu",
+    "ko": "오라티프",
+    "zh-Hant": "偶叫獒",
+    "fr": "Grondogue",
+    "de": "Mobtiff",
+    "es": "Maschiff",
+    "it": "Maschiff",
+    "en": "Maschiff",
+    "ja": "オラチフ",
+    "zh-Hans": "偶叫獒"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 411,
   "name": "Bastiodon",
-  "species": "Shield Pok\u00e9mon",
+  "species": "Shield Pokémon",
   "type": [
     "Rock",
     "Steel"
@@ -40,10 +40,10 @@
     "specialDefense": 138,
     "speed": 30
   },
-  "description": "Any frontal attack is repulsed. It is a docile Pok\u00e9mon that feeds on grass and berries.",
+  "description": "Any frontal attack is repulsed. It is a docile Pokémon that feeds on grass and berries.",
   "flavorTexts": [
     {
-      "text": "Any frontal attack is repulsed. It is a docile Pok\u00e9mon that feeds on grass and berries.",
+      "text": "Any frontal attack is repulsed. It is a docile Pokémon that feeds on grass and berries.",
       "version": "diamond"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/411.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/411.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トリデプス",
+    "roomaji": "Trideps",
+    "ko": "바리톱스",
+    "zh-Hant": "護城龍",
+    "fr": "Bastiodon",
+    "de": "Bollterus",
+    "es": "Bastiodon",
+    "it": "Bastiodon",
+    "en": "Bastiodon",
+    "ja": "トリデプス",
+    "zh-Hans": "护城龙"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 295,
   "name": "Exploud",
-  "species": "Loud Noise Pok\u00e9mon",
+  "species": "Loud Noise Pokémon",
   "type": [
     "Normal"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 73,
     "speed": 68
   },
-  "description": "EXPLOUD triggers earthquakes with the tremors it creates by bellowing. If this POK\u00e9MON violently inhales from the ports on its body, it\u2019s a sign that it is preparing to let loose a huge bellow.",
+  "description": "EXPLOUD triggers earthquakes with the tremors it creates by bellowing. If this POKéMON violently inhales from the ports on its body, it’s a sign that it is preparing to let loose a huge bellow.",
   "flavorTexts": [
     {
-      "text": "EXPLOUD triggers earthquakes with the tremors it creates by bellowing. If this POK\u00e9MON violently inhales from the ports on its body, it\u2019s a sign that it is preparing to let loose a huge bellow.",
+      "text": "EXPLOUD triggers earthquakes with the tremors it creates by bellowing. If this POKéMON violently inhales from the ports on its body, it’s a sign that it is preparing to let loose a huge bellow.",
       "version": "ruby"
     },
     {
-      "text": "EXPLOUD communicates its feelings to the others by emitting whistle-like sounds from the tubes on its body. This POK\u00e9MON only raises its voice when it is in battle.",
+      "text": "EXPLOUD communicates its feelings to the others by emitting whistle-like sounds from the tubes on its body. This POKéMON only raises its voice when it is in battle.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/295.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/295.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バクオング",
+    "roomaji": "Bakuong",
+    "ko": "폭음룡",
+    "zh-Hant": "爆音怪",
+    "fr": "Brouhabam",
+    "de": "Krawumms",
+    "es": "Exploud",
+    "it": "Exploud",
+    "en": "Exploud",
+    "ja": "バクオング",
+    "zh-Hans": "爆音怪"
   }
 }

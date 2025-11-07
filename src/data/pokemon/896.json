@@ -1,7 +1,7 @@
 {
   "id": 896,
   "name": "Glastrier",
-  "species": "Wild Horse Pok\u00e9mon",
+  "species": "Wild Horse Pokémon",
   "type": [
     "Ice"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 110,
     "speed": 30
   },
-  "description": "Glastrier emits intense cold from its hooves. It\u2019s also a belligerent Pok\u00e9mon\u2014anything it wants, it takes by force.",
+  "description": "Glastrier emits intense cold from its hooves. It’s also a belligerent Pokémon—anything it wants, it takes by force.",
   "flavorTexts": [
     {
-      "text": "Glastrier emits intense cold from its hooves. It\u2019s also a belligerent Pok\u00e9mon\u2014anything it wants, it takes by force.",
+      "text": "Glastrier emits intense cold from its hooves. It’s also a belligerent Pokémon—anything it wants, it takes by force.",
       "version": "sword"
     },
     {
@@ -266,5 +266,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/896.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ブリザポス",
+    "roomaji": "Blizzapos",
+    "ko": "블리자포스",
+    "zh-Hant": "雪暴馬",
+    "fr": "Blizzeval",
+    "de": "Polaross",
+    "es": "Glastrier",
+    "it": "Glastrier",
+    "en": "Glastrier",
+    "ja": "ブリザポス",
+    "zh-Hans": "雪暴马"
   }
 }

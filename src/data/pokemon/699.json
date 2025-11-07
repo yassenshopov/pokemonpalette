@@ -1,7 +1,7 @@
 {
   "id": 699,
   "name": "Aurorus",
-  "species": "Tundra Pok\u00e9mon",
+  "species": "Tundra Pokémon",
   "type": [
     "Rock",
     "Ice"
@@ -47,7 +47,7 @@
       "version": "x"
     },
     {
-      "text": "Using its diamond-shaped crystals, it can instantly create a wall of ice to block an opponent\u2019s attack.",
+      "text": "Using its diamond-shaped crystals, it can instantly create a wall of ice to block an opponent’s attack.",
       "version": "y"
     },
     {
@@ -55,7 +55,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Using its diamond-shaped crystals, it can instantly create a wall of ice to block an opponent\u2019s attack.",
+      "text": "Using its diamond-shaped crystals, it can instantly create a wall of ice to block an opponent’s attack.",
       "version": "alpha-sapphire"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/699.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アマルルガ",
+    "roomaji": "Amaruruga",
+    "ko": "아마루르가",
+    "zh-Hant": "冰雪巨龍",
+    "fr": "Dragmara",
+    "de": "Amagarga",
+    "es": "Aurorus",
+    "it": "Aurorus",
+    "en": "Aurorus",
+    "ja": "アマルルガ",
+    "zh-Hans": "冰雪巨龙"
   }
 }

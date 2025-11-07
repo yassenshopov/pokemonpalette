@@ -1,7 +1,7 @@
 {
   "id": 708,
   "name": "Phantump",
-  "species": "Stump Pok\u00e9mon",
+  "species": "Stump Pokémon",
   "type": [
     "Ghost",
     "Grass"
@@ -46,26 +46,26 @@
     "specialDefense": 60,
     "speed": 38
   },
-  "description": "These Pok\u00e9mon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
+  "description": "These Pokémon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
   "flavorTexts": [
     {
-      "text": "These Pok\u00e9mon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
+      "text": "These Pokémon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
       "version": "x"
     },
     {
-      "text": "According to old tales, these Pok\u00e9mon are stumps possessed by the spirits of children who died while lost in the forest.",
+      "text": "According to old tales, these Pokémon are stumps possessed by the spirits of children who died while lost in the forest.",
       "version": "y"
     },
     {
-      "text": "These Pok\u00e9mon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
+      "text": "These Pokémon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
       "version": "omega-ruby"
     },
     {
-      "text": "According to old tales, these Pok\u00e9mon are stumps possessed by the spirits of children who died while lost in the forest.",
+      "text": "According to old tales, these Pokémon are stumps possessed by the spirits of children who died while lost in the forest.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "These Pok\u00e9mon are stumps possessed by the spirits of children who died in the forest. Their cries sound like eerie screams.",
+      "text": "These Pokémon are stumps possessed by the spirits of children who died in the forest. Their cries sound like eerie screams.",
       "version": "sun"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/708.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ボクレー",
+    "roomaji": "Bokurei",
+    "ko": "나목령",
+    "zh-Hant": "小木靈",
+    "fr": "Brocélôme",
+    "de": "Paragoni",
+    "es": "Phantump",
+    "it": "Phantump",
+    "en": "Phantump",
+    "ja": "ボクレー",
+    "zh-Hans": "小木灵"
   }
 }

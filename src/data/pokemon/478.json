@@ -1,7 +1,7 @@
 {
   "id": 478,
   "name": "Froslass",
-  "species": "Snow Land Pok\u00e9mon",
+  "species": "Snow Land Pokémon",
   "type": [
     "Ice",
     "Ghost"
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/478.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/478.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユキメノコ",
+    "roomaji": "Yukimenoko",
+    "ko": "눈여아",
+    "zh-Hant": "雪妖女",
+    "fr": "Momartik",
+    "de": "Frosdedje",
+    "es": "Froslass",
+    "it": "Froslass",
+    "en": "Froslass",
+    "ja": "ユキメノコ",
+    "zh-Hans": "雪妖女"
   }
 }

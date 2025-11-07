@@ -1,7 +1,7 @@
 {
   "id": 984,
   "name": "Great-tusk",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Ground",
     "Fighting"
@@ -34,14 +34,14 @@
     "specialDefense": 53,
     "speed": 87
   },
-  "description": "Sightings of this Pok\u00e9mon have occurred in recent years. The name Great Tusk was taken from a creature listed in a certain book.",
+  "description": "Sightings of this Pokémon have occurred in recent years. The name Great Tusk was taken from a creature listed in a certain book.",
   "flavorTexts": [
     {
-      "text": "Sightings of this Pok\u00e9mon have occurred in recent years. The name Great Tusk was taken from a creature listed in a certain book.",
+      "text": "Sightings of this Pokémon have occurred in recent years. The name Great Tusk was taken from a creature listed in a certain book.",
       "version": "scarlet"
     },
     {
-      "text": "This creature resembles a mysterious Pok\u00e9mon that, according to a paranormal magazine, has lived since ancient times.",
+      "text": "This creature resembles a mysterious Pokémon that, according to a paranormal magazine, has lived since ancient times.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/984.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イダイナキバ",
+    "roomaji": "Idainakiba",
+    "ko": "위대한엄니",
+    "zh-Hant": "雄偉牙",
+    "fr": "Fort-Ivoire",
+    "de": "Riesenzahn",
+    "es": "Colmilargo",
+    "it": "Grandizanne",
+    "en": "Great Tusk",
+    "ja": "イダイナキバ",
+    "zh-Hans": "雄伟牙"
   }
 }

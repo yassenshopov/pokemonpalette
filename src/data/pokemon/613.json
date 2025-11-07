@@ -1,7 +1,7 @@
 {
   "id": 613,
   "name": "Cubchoo",
-  "species": "Chill Pok\u00e9mon",
+  "species": "Chill Pokémon",
   "type": [
     "Ice"
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/613.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/613.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "クマシュン",
+    "roomaji": "Kumasyun",
+    "ko": "코고미",
+    "zh-Hant": "噴嚏熊",
+    "fr": "Polarhume",
+    "de": "Petznief",
+    "es": "Cubchoo",
+    "it": "Cubchoo",
+    "en": "Cubchoo",
+    "ja": "クマシュン",
+    "zh-Hans": "喷嚏熊"
   }
 }

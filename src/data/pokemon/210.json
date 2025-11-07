@@ -1,7 +1,7 @@
 {
   "id": 210,
   "name": "Granbull",
-  "species": "Fairy Pok\u00e9mon",
+  "species": "Fairy Pokémon",
   "type": [
     "Fairy"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 60,
     "speed": 45
   },
-  "description": "It is actually timid and easily spooked. If at\u00ad tacked, it flails about to fend off its attacker.",
+  "description": "It is actually timid and easily spooked. If at­ tacked, it flails about to fend off its attacker.",
   "flavorTexts": [
     {
-      "text": "It is actually timid and easily spooked. If at\u00ad tacked, it flails about to fend off its attacker.",
+      "text": "It is actually timid and easily spooked. If at­ tacked, it flails about to fend off its attacker.",
       "version": "gold"
     },
     {
@@ -52,15 +52,15 @@
       "version": "silver"
     },
     {
-      "text": "It can make most any POK\u00e9MON run away simply by opening its mouth wide to reveal its big fangs.",
+      "text": "It can make most any POKéMON run away simply by opening its mouth wide to reveal its big fangs.",
       "version": "crystal"
     },
     {
-      "text": "GRANBULL has a particularly well- developed lower jaw. The enormous fangs are heavy, causing the POK\u00e9MON to tip its head back for balance. Unless it is startled, it will not try to bite indiscriminately.",
+      "text": "GRANBULL has a particularly well- developed lower jaw. The enormous fangs are heavy, causing the POKéMON to tip its head back for balance. Unless it is startled, it will not try to bite indiscriminately.",
       "version": "ruby"
     },
     {
-      "text": "GRANBULL has a particularly well- developed lower jaw. The enormous fangs are heavy, causing the POK\u00e9MON to tip its head back for balance. Unless it is startled, it will not try to bite indiscriminately.",
+      "text": "GRANBULL has a particularly well- developed lower jaw. The enormous fangs are heavy, causing the POKéMON to tip its head back for balance. Unless it is startled, it will not try to bite indiscriminately.",
       "version": "sapphire"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/210.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/210.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グランブル",
+    "roomaji": "Granbulu",
+    "ko": "그랑블루",
+    "zh-Hant": "布魯皇",
+    "fr": "Granbull",
+    "de": "Granbull",
+    "es": "Granbull",
+    "it": "Granbull",
+    "en": "Granbull",
+    "ja": "グランブル",
+    "zh-Hans": "布鲁皇"
   }
 }

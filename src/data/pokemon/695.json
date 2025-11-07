@@ -1,7 +1,7 @@
 {
   "id": 695,
   "name": "Heliolisk",
-  "species": "Generator Pok\u00e9mon",
+  "species": "Generator Pokémon",
   "type": [
     "Electric",
     "Normal"
@@ -65,7 +65,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "A now-vanished desert culture treasured these Pok\u00e9mon. Appropriately, when Heliolisk came to the Galar region, treasure came with them.",
+      "text": "A now-vanished desert culture treasured these Pokémon. Appropriately, when Heliolisk came to the Galar region, treasure came with them.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/695.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "エレザード",
+    "roomaji": "Elezard",
+    "ko": "일레도리자드",
+    "zh-Hant": "光電傘蜥",
+    "fr": "Iguolta",
+    "de": "Elezard",
+    "es": "Heliolisk",
+    "it": "Heliolisk",
+    "en": "Heliolisk",
+    "ja": "エレザード",
+    "zh-Hans": "光电伞蜥"
   }
 }

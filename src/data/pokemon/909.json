@@ -1,7 +1,7 @@
 {
   "id": 909,
   "name": "Fuecoco",
-  "species": "Fire Croc Pok\u00e9mon",
+  "species": "Fire Croc Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,7 +42,7 @@
       "version": "scarlet"
     },
     {
-      "text": "Its flame sac is small, so energy is always leaking out. This energy is released from the dent atop Fuecoco\u2019s head and flickers to and fro.",
+      "text": "Its flame sac is small, so energy is always leaking out. This energy is released from the dent atop Fuecoco’s head and flickers to and fro.",
       "version": "violet"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/909.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ホゲータ",
+    "roomaji": "Hogator",
+    "ko": "뜨아거",
+    "zh-Hant": "呆火鱷",
+    "fr": "Chochodile",
+    "de": "Krokel",
+    "es": "Fuecoco",
+    "it": "Fuecoco",
+    "en": "Fuecoco",
+    "ja": "ホゲータ",
+    "zh-Hans": "呆火鳄"
   }
 }

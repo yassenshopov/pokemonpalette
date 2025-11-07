@@ -1,7 +1,7 @@
 {
   "id": 340,
   "name": "Whiscash",
-  "species": "Whiskers Pok\u00e9mon",
+  "species": "Whiskers Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -46,14 +46,14 @@
     "specialDefense": 71,
     "speed": 60
   },
-  "description": "WHISCASH is extremely territorial. Just one of these POK\u00e9MON will claim a large pond as its exclusive territory. If a foe approaches it, it thrashes about and triggers a massive earthquake.",
+  "description": "WHISCASH is extremely territorial. Just one of these POKéMON will claim a large pond as its exclusive territory. If a foe approaches it, it thrashes about and triggers a massive earthquake.",
   "flavorTexts": [
     {
-      "text": "WHISCASH is extremely territorial. Just one of these POK\u00e9MON will claim a large pond as its exclusive territory. If a foe approaches it, it thrashes about and triggers a massive earthquake.",
+      "text": "WHISCASH is extremely territorial. Just one of these POKéMON will claim a large pond as its exclusive territory. If a foe approaches it, it thrashes about and triggers a massive earthquake.",
       "version": "ruby"
     },
     {
-      "text": "If WHISCASH goes on a wild rampage, it sets off a quake-like tremor with a radius of over three miles. This POK\u00e9MON has the ability to predict real earthquakes.",
+      "text": "If WHISCASH goes on a wild rampage, it sets off a quake-like tremor with a radius of over three miles. This POKéMON has the ability to predict real earthquakes.",
       "version": "sapphire"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/340.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/340.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナマズン",
+    "roomaji": "Namazun",
+    "ko": "메깅",
+    "zh-Hant": "鯰魚王",
+    "fr": "Barbicha",
+    "de": "Welsar",
+    "es": "Whiscash",
+    "it": "Whiscash",
+    "en": "Whiscash",
+    "ja": "ナマズン",
+    "zh-Hans": "鲶鱼王"
   }
 }

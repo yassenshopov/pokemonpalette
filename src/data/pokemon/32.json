@@ -1,7 +1,7 @@
 {
   "id": 32,
   "name": "Nidoran-m",
-  "species": "Poison Pin Pok\u00e9mon",
+  "species": "Poison Pin Pokémon",
   "type": [
     "Poison"
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/32.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/32.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ニドラン♂",
+    "roomaji": "Nidoran♂",
+    "ko": "니드런♂",
+    "zh-Hant": "尼多朗",
+    "fr": "Nidoran♂",
+    "de": "Nidoran♂",
+    "es": "Nidoran♂",
+    "it": "Nidoran♂",
+    "en": "Nidoran♂",
+    "ja": "ニドラン♂",
+    "zh-Hans": "尼多朗"
   }
 }

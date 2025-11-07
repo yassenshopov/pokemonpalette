@@ -1,7 +1,7 @@
 {
   "id": 940,
   "name": "Wattrel",
-  "species": "Storm Petrel Pok\u00e9mon",
+  "species": "Storm Petrel Pokémon",
   "type": [
     "Electric",
     "Flying"
@@ -46,14 +46,14 @@
     "specialDefense": 40,
     "speed": 70
   },
-  "description": "When its wings catch the wind, the bones within produce electricity. This Pok\u00e9mon dives into the ocean, catching prey by electrocuting them.",
+  "description": "When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them.",
   "flavorTexts": [
     {
-      "text": "When its wings catch the wind, the bones within produce electricity. This Pok\u00e9mon dives into the ocean, catching prey by electrocuting them.",
+      "text": "When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them.",
       "version": "scarlet"
     },
     {
-      "text": "These Pok\u00e9mon make their nests on coastal cliffs. The nests have a strange, crackling texture, and they\u2019re a popular delicacy.",
+      "text": "These Pokémon make their nests on coastal cliffs. The nests have a strange, crackling texture, and they’re a popular delicacy.",
       "version": "violet"
     }
   ],
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/940.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カイデン",
+    "roomaji": "Kaiden",
+    "ko": "찌리비",
+    "zh-Hant": "電海燕",
+    "fr": "Zapétrel",
+    "de": "Voltrel",
+    "es": "Wattrel",
+    "it": "Wattrel",
+    "en": "Wattrel",
+    "ja": "カイデン",
+    "zh-Hans": "电海燕"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 578,
   "name": "Duosion",
-  "species": "Mitosis Pok\u00e9mon",
+  "species": "Mitosis Pokémon",
   "type": [
     "Psychic"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "When their brains, now divided in two, are thinking the same thoughts, these Pok\u00e9mon exhibit their maximum power.",
+      "text": "When their brains, now divided in two, are thinking the same thoughts, these Pokémon exhibit their maximum power.",
       "version": "white"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/578.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/578.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダブラン",
+    "roomaji": "Doublan",
+    "ko": "듀란",
+    "zh-Hant": "雙卵細胞球",
+    "fr": "Méios",
+    "de": "Mitodos",
+    "es": "Duosion",
+    "it": "Duosion",
+    "en": "Duosion",
+    "ja": "ダブラン",
+    "zh-Hans": "双卵细胞球"
   }
 }

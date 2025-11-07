@@ -1,7 +1,7 @@
 {
   "id": 324,
   "name": "Torkoal",
-  "species": "Coal Pok\u00e9mon",
+  "species": "Coal Pokémon",
   "type": [
     "Fire"
   ],
@@ -41,22 +41,22 @@
     "specialDefense": 70,
     "speed": 20
   },
-  "description": "You can tell how it\u2019s feeling by the smoke spouting from its shell. Tremendous velocity is a sign of good health.",
+  "description": "You can tell how it’s feeling by the smoke spouting from its shell. Tremendous velocity is a sign of good health.",
   "flavorTexts": [
     {
-      "text": "You can tell how it\u2019s feeling by the smoke spouting from its shell. Tremendous velocity is a sign of good health.",
+      "text": "You can tell how it’s feeling by the smoke spouting from its shell. Tremendous velocity is a sign of good health.",
       "version": "ultra-sun"
     },
     {
-      "text": "TORKOAL digs through mountains in search of coal. If it finds some, it fills hollow spaces on its shell with the coal and burns it. If it is attacked, this POK\u00e9MON spouts thick black smoke to beat a retreat.",
+      "text": "TORKOAL digs through mountains in search of coal. If it finds some, it fills hollow spaces on its shell with the coal and burns it. If it is attacked, this POKéMON spouts thick black smoke to beat a retreat.",
       "version": "ruby"
     },
     {
-      "text": "TORKOAL generates energy by burning coal. It grows weaker as the fire dies down. When it is preparing for battle, this POK\u00e9MON burns more coal.",
+      "text": "TORKOAL generates energy by burning coal. It grows weaker as the fire dies down. When it is preparing for battle, this POKéMON burns more coal.",
       "version": "sapphire"
     },
     {
-      "text": "It battles using energy it gets from burning coal. When loosing smoke from its nostrils, it lets off a sound that is similar to a locomotive\u2019s horn.",
+      "text": "It battles using energy it gets from burning coal. When loosing smoke from its nostrils, it lets off a sound that is similar to a locomotive’s horn.",
       "version": "emerald"
     },
     {
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/324.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/324.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コータス",
+    "roomaji": "Cotoise",
+    "ko": "코터스",
+    "zh-Hant": "煤炭龜",
+    "fr": "Chartor",
+    "de": "Qurtel",
+    "es": "Torkoal",
+    "it": "Torkoal",
+    "en": "Torkoal",
+    "ja": "コータス",
+    "zh-Hans": "煤炭龟"
   }
 }

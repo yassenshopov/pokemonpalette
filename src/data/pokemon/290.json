@@ -1,7 +1,7 @@
 {
   "id": 290,
   "name": "Nincada",
-  "species": "Trainee Pok\u00e9mon",
+  "species": "Trainee Pokémon",
   "type": [
     "Bug",
     "Ground"
@@ -40,14 +40,14 @@
     "specialDefense": 30,
     "speed": 40
   },
-  "description": "NINCADA lives underground for many years in complete darkness. This POK\u00e9MON absorbs nutrients from the roots of trees. It stays motionless as it waits for evolution.",
+  "description": "NINCADA lives underground for many years in complete darkness. This POKéMON absorbs nutrients from the roots of trees. It stays motionless as it waits for evolution.",
   "flavorTexts": [
     {
-      "text": "NINCADA lives underground for many years in complete darkness. This POK\u00e9MON absorbs nutrients from the roots of trees. It stays motionless as it waits for evolution.",
+      "text": "NINCADA lives underground for many years in complete darkness. This POKéMON absorbs nutrients from the roots of trees. It stays motionless as it waits for evolution.",
       "version": "ruby"
     },
     {
-      "text": "NINCADA lives underground. It uses its sharp claws to carve the roots of trees and absorb moisture and nutrients. This POK\u00e9MON can\u2019t withstand bright sunlight so avoids it.",
+      "text": "NINCADA lives underground. It uses its sharp claws to carve the roots of trees and absorb moisture and nutrients. This POKéMON can’t withstand bright sunlight so avoids it.",
       "version": "sapphire"
     },
     {
@@ -313,5 +313,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/290.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/290.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ツチニン",
+    "roomaji": "Tutinin",
+    "ko": "토중몬",
+    "zh-Hant": "土居忍士",
+    "fr": "Ningale",
+    "de": "Nincada",
+    "es": "Nincada",
+    "it": "Nincada",
+    "en": "Nincada",
+    "ja": "ツチニン",
+    "zh-Hans": "土居忍士"
   }
 }

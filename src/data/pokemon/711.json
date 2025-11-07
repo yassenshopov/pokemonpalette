@@ -1,7 +1,7 @@
 {
   "id": 711,
   "name": "Gourgeist-average",
-  "species": "Pumpkin Pok\u00e9mon",
+  "species": "Pumpkin Pokémon",
   "type": [
     "Ghost",
     "Grass"
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/711.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パンプジン",
+    "roomaji": "Pumpjin",
+    "ko": "펌킨인",
+    "zh-Hant": "南瓜怪人",
+    "fr": "Banshitrouye",
+    "de": "Pumpdjinn",
+    "es": "Gourgeist",
+    "it": "Gourgeist",
+    "en": "Gourgeist",
+    "ja": "パンプジン",
+    "zh-Hans": "南瓜怪人"
   }
 }

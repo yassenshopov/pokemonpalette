@@ -1,7 +1,7 @@
 {
   "id": 349,
   "name": "Feebas",
-  "species": "Fish Pok\u00e9mon",
+  "species": "Fish Pokémon",
   "type": [
     "Water"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 55,
     "speed": 80
   },
-  "description": "FEEBAS\u2019s fins are ragged and tattered from the start of its life. Because of its shoddy appearance, this POK\u00e9MON is largely ignored. It is capable of living in both the sea and in rivers.",
+  "description": "FEEBAS’s fins are ragged and tattered from the start of its life. Because of its shoddy appearance, this POKéMON is largely ignored. It is capable of living in both the sea and in rivers.",
   "flavorTexts": [
     {
-      "text": "FEEBAS\u2019s fins are ragged and tattered from the start of its life. Because of its shoddy appearance, this POK\u00e9MON is largely ignored. It is capable of living in both the sea and in rivers.",
+      "text": "FEEBAS’s fins are ragged and tattered from the start of its life. Because of its shoddy appearance, this POKéMON is largely ignored. It is capable of living in both the sea and in rivers.",
       "version": "ruby"
     },
     {
-      "text": "While FEEBAS\u2019s body is in tatters, it has a hardy and tenacious life force that enables it to live anywhere. However, this POK\u00e9MON is also slow and dimwitted, making it an easy catch.",
+      "text": "While FEEBAS’s body is in tatters, it has a hardy and tenacious life force that enables it to live anywhere. However, this POKéMON is also slow and dimwitted, making it an easy catch.",
       "version": "sapphire"
     },
     {
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/349.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/349.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒンバス",
+    "roomaji": "Hinbass",
+    "ko": "빈티나",
+    "zh-Hant": "醜醜魚",
+    "fr": "Barpau",
+    "de": "Barschwa",
+    "es": "Feebas",
+    "it": "Feebas",
+    "en": "Feebas",
+    "ja": "ヒンバス",
+    "zh-Hans": "丑丑鱼"
   }
 }

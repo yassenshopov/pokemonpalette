@@ -1,7 +1,7 @@
 {
   "id": 680,
   "name": "Doublade",
-  "species": "Sword Pok\u00e9mon",
+  "species": "Sword Pokémon",
   "type": [
     "Steel",
     "Ghost"
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/680.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニダンギル",
+    "roomaji": "Nidangill",
+    "ko": "쌍검킬",
+    "zh-Hant": "雙劍鞘",
+    "fr": "Dimoclès",
+    "de": "Duokles",
+    "es": "Doublade",
+    "it": "Doublade",
+    "en": "Doublade",
+    "ja": "ニダンギル",
+    "zh-Hans": "双剑鞘"
   }
 }

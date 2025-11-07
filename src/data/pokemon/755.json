@@ -1,7 +1,7 @@
 {
   "id": 755,
   "name": "Morelull",
-  "species": "Illuminating Pok\u00e9mon",
+  "species": "Illuminating Pokémon",
   "type": [
     "Grass",
     "Fairy"
@@ -57,7 +57,7 @@
       "version": "moon"
     },
     {
-      "text": "It scatters its shining spores around itself. Even though they\u2019re dangerous, nighttime tours of forests where Morelull live are popular.",
+      "text": "It scatters its shining spores around itself. Even though they’re dangerous, nighttime tours of forests where Morelull live are popular.",
       "version": "ultra-sun"
     },
     {
@@ -65,7 +65,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "Pok\u00e9mon living in the forest eat the delicious caps on Morelull\u2019s head. The caps regrow overnight.",
+      "text": "Pokémon living in the forest eat the delicious caps on Morelull’s head. The caps regrow overnight.",
       "version": "sword"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/755.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ネマシュ",
+    "roomaji": "Nemasyu",
+    "ko": "자마슈",
+    "zh-Hant": "睡睡菇",
+    "fr": "Spododo",
+    "de": "Bubungus",
+    "es": "Morelull",
+    "it": "Morelull",
+    "en": "Morelull",
+    "ja": "ネマシュ",
+    "zh-Hans": "睡睡菇"
   }
 }

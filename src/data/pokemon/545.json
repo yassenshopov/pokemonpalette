@@ -1,7 +1,7 @@
 {
   "id": 545,
   "name": "Scolipede",
-  "species": "Megapede Pok\u00e9mon",
+  "species": "Megapede Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -331,5 +331,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/545.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/545.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ペンドラー",
+    "roomaji": "Pendror",
+    "ko": "펜드라",
+    "zh-Hant": "蜈蚣王",
+    "fr": "Brutapode",
+    "de": "Cerapendra",
+    "es": "Scolipede",
+    "it": "Scolipede",
+    "en": "Scolipede",
+    "ja": "ペンドラー",
+    "zh-Hans": "蜈蚣王"
   }
 }

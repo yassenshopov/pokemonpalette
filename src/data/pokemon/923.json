@@ -1,7 +1,7 @@
 {
   "id": 923,
   "name": "Pawmot",
-  "species": "Hands-On Pok\u00e9mon",
+  "species": "Hands-On Pokémon",
   "type": [
     "Electric",
     "Fighting"
@@ -46,14 +46,14 @@
     "specialDefense": 60,
     "speed": 105
   },
-  "description": "This Pok\u00e9mon normally is slow to react, but once it enters battle, it will strike down its enemies with lightning-fast movements.",
+  "description": "This Pokémon normally is slow to react, but once it enters battle, it will strike down its enemies with lightning-fast movements.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon normally is slow to react, but once it enters battle, it will strike down its enemies with lightning-fast movements.",
+      "text": "This Pokémon normally is slow to react, but once it enters battle, it will strike down its enemies with lightning-fast movements.",
       "version": "scarlet"
     },
     {
-      "text": "Pawmot\u2019s fluffy fur acts as a battery. It can store the same amount of electricity as an electric car.",
+      "text": "Pawmot’s fluffy fur acts as a battery. It can store the same amount of electricity as an electric car.",
       "version": "violet"
     }
   ],
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/923.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パーモット",
+    "roomaji": "Parmot",
+    "ko": "빠르모트",
+    "zh-Hant": "巴布土撥",
+    "fr": "Pohmarmotte",
+    "de": "Pamomamo",
+    "es": "Pawmot",
+    "it": "Pawmot",
+    "en": "Pawmot",
+    "ja": "パーモット",
+    "zh-Hans": "巴布土拨"
   }
 }

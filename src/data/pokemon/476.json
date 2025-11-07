@@ -1,7 +1,7 @@
 {
   "id": 476,
   "name": "Probopass",
-  "species": "Compass Pok\u00e9mon",
+  "species": "Compass Pokémon",
   "type": [
     "Rock",
     "Steel"
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/476.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/476.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダイノーズ",
+    "roomaji": "Dainose",
+    "ko": "대코파스",
+    "zh-Hant": "大朝北鼻",
+    "fr": "Tarinorme",
+    "de": "Voluminas",
+    "es": "Probopass",
+    "it": "Probopass",
+    "en": "Probopass",
+    "ja": "ダイノーズ",
+    "zh-Hans": "大朝北鼻"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 388,
   "name": "Grotle",
-  "species": "Grove Pok\u00e9mon",
+  "species": "Grove Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 65,
     "speed": 36
   },
-  "description": "It knows where pure water wells up. It carries fellow Pok\u00e9mon there on its back.",
+  "description": "It knows where pure water wells up. It carries fellow Pokémon there on its back.",
   "flavorTexts": [
     {
-      "text": "It knows where pure water wells up. It carries fellow Pok\u00e9mon there on its back.",
+      "text": "It knows where pure water wells up. It carries fellow Pokémon there on its back.",
       "version": "black"
     },
     {
@@ -50,11 +50,11 @@
       "version": "diamond"
     },
     {
-      "text": "The shell is hardened soil. Some Pok\u00e9mon come to peck the berries growing on the trees on its back.",
+      "text": "The shell is hardened soil. Some Pokémon come to peck the berries growing on the trees on its back.",
       "version": "pearl"
     },
     {
-      "text": "It knows where pure water wells up. It carries fellow Pok\u00e9mon there on its back.",
+      "text": "It knows where pure water wells up. It carries fellow Pokémon there on its back.",
       "version": "platinum"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/388.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/388.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハヤシガメ",
+    "roomaji": "Hayashigame",
+    "ko": "수풀부기",
+    "zh-Hant": "樹林龜",
+    "fr": "Boskara",
+    "de": "Chelcarain",
+    "es": "Grotle",
+    "it": "Grotle",
+    "en": "Grotle",
+    "ja": "ハヤシガメ",
+    "zh-Hans": "树林龟"
   }
 }

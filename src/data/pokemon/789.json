@@ -1,7 +1,7 @@
 {
   "id": 789,
   "name": "Cosmog",
-  "species": "Nebula Pok\u00e9mon",
+  "species": "Nebula Pokémon",
   "type": [
     "Psychic"
   ],
@@ -36,19 +36,19 @@
       "version": "sun"
     },
     {
-      "text": "In ages past, it was called the child of the stars. It\u2019s said to be a Pok\u00e9mon from another world, but no specific details are known.",
+      "text": "In ages past, it was called the child of the stars. It’s said to be a Pokémon from another world, but no specific details are known.",
       "version": "moon"
     },
     {
-      "text": "Even though its helpless, gaseous body can be blown away by the slightest breeze, it doesn\u2019t seem to care.",
+      "text": "Even though its helpless, gaseous body can be blown away by the slightest breeze, it doesn’t seem to care.",
       "version": "ultra-sun"
     },
     {
-      "text": "Whether or not it\u2019s a Pok\u00e9mon from this world is a mystery. When it\u2019s in a jam, it warps away to a safe place to hide.",
+      "text": "Whether or not it’s a Pokémon from this world is a mystery. When it’s in a jam, it warps away to a safe place to hide.",
       "version": "ultra-moon"
     },
     {
-      "text": "This Pok\u00e9mon came from another universe. Its gaseous body is so light that even a gentle breeze can blow it away.",
+      "text": "This Pokémon came from another universe. Its gaseous body is so light that even a gentle breeze can blow it away.",
       "version": "sword"
     }
   ],
@@ -178,5 +178,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/789.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コスモッグ",
+    "roomaji": "Cosmog",
+    "ko": "코스모그",
+    "zh-Hant": "科斯莫古",
+    "fr": "Cosmog",
+    "de": "Cosmog",
+    "es": "Cosmog",
+    "it": "Cosmog",
+    "en": "Cosmog",
+    "ja": "コスモッグ",
+    "zh-Hans": "科斯莫古"
   }
 }

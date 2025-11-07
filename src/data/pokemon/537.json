@@ -1,7 +1,7 @@
 {
   "id": 537,
   "name": "Seismitoad",
-  "species": "Vibration Pok\u00e9mon",
+  "species": "Vibration Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/537.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/537.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガマゲロゲ",
+    "roomaji": "Gamageroge",
+    "ko": "두빅굴",
+    "zh-Hant": "蟾蜍王",
+    "fr": "Crapustule",
+    "de": "Branawarz",
+    "es": "Seismitoad",
+    "it": "Seismitoad",
+    "en": "Seismitoad",
+    "ja": "ガマゲロゲ",
+    "zh-Hans": "蟾蜍王"
   }
 }

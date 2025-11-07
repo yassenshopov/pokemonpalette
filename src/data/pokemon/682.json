@@ -1,7 +1,7 @@
 {
   "id": 682,
   "name": "Spritzee",
-  "species": "Perfume Pok\u00e9mon",
+  "species": "Perfume Pokémon",
   "type": [
     "Fairy"
   ],
@@ -54,7 +54,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "A scent pouch within this Pok\u00e9mon\u2019s body allows it to create various scents. A change in its diet will alter the fragrance it produces.",
+      "text": "A scent pouch within this Pokémon’s body allows it to create various scents. A change in its diet will alter the fragrance it produces.",
       "version": "sword"
     }
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/682.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "シュシュプ",
+    "roomaji": "Shushupu",
+    "ko": "슈쁘",
+    "zh-Hant": "粉香香",
+    "fr": "Fluvetin",
+    "de": "Parfi",
+    "es": "Spritzee",
+    "it": "Spritzee",
+    "en": "Spritzee",
+    "ja": "シュシュプ",
+    "zh-Hans": "粉香香"
   }
 }

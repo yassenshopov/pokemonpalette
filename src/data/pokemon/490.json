@@ -1,7 +1,7 @@
 {
   "id": 490,
   "name": "Manaphy",
-  "species": "Seafaring Pok\u00e9mon",
+  "species": "Seafaring Pokémon",
   "type": [
     "Water"
   ],
@@ -36,19 +36,19 @@
       "version": "diamond"
     },
     {
-      "text": "Water makes up 80% of its body. This Pok\u00e9mon is easily affected by its environment.",
+      "text": "Water makes up 80% of its body. This Pokémon is easily affected by its environment.",
       "version": "pearl"
     },
     {
-      "text": "It is born with a wondrous power that lets it bond with any kind of Pok\u00e9mon.",
+      "text": "It is born with a wondrous power that lets it bond with any kind of Pokémon.",
       "version": "platinum"
     },
     {
-      "text": "It starts its life with a wondrous power that permits it to bond with any kind of Pok\u00e9mon.",
+      "text": "It starts its life with a wondrous power that permits it to bond with any kind of Pokémon.",
       "version": "heartgold"
     },
     {
-      "text": "It starts its life with a wondrous power that permits it to bond with any kind of Pok\u00e9mon.",
+      "text": "It starts its life with a wondrous power that permits it to bond with any kind of Pokémon.",
       "version": "soulsilver"
     }
   ],
@@ -283,5 +283,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/490.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/490.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マナフィ",
+    "roomaji": "Manaphy",
+    "ko": "마나피",
+    "zh-Hant": "瑪納霏",
+    "fr": "Manaphy",
+    "de": "Manaphy",
+    "es": "Manaphy",
+    "it": "Manaphy",
+    "en": "Manaphy",
+    "ja": "マナフィ",
+    "zh-Hans": "玛纳霏"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 565,
   "name": "Carracosta",
-  "species": "Prototurtle Pok\u00e9mon",
+  "species": "Prototurtle Pokémon",
   "type": [
     "Water",
     "Rock"
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/565.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/565.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アバゴーラ",
+    "roomaji": "Abagoura",
+    "ko": "늑골라",
+    "zh-Hant": "肋骨海龜",
+    "fr": "Mégapagos",
+    "de": "Karippas",
+    "es": "Carracosta",
+    "it": "Carracosta",
+    "en": "Carracosta",
+    "ja": "アバゴーラ",
+    "zh-Hans": "肋骨海龟"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 730,
   "name": "Primarina",
-  "species": "Soloist Pok\u00e9mon",
+  "species": "Soloist Pokémon",
   "type": [
     "Water",
     "Fairy"
@@ -47,7 +47,7 @@
       "version": "sun"
     },
     {
-      "text": "Its singing voice is its chief weapon in battle. This Pok\u00e9mon\u2019s Trainer must prioritize the daily maintenance of its throat at all costs.",
+      "text": "Its singing voice is its chief weapon in battle. This Pokémon’s Trainer must prioritize the daily maintenance of its throat at all costs.",
       "version": "moon"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/730.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アシレーヌ",
+    "roomaji": "Ashirene",
+    "ko": "누리레느",
+    "zh-Hant": "西獅海壬",
+    "fr": "Oratoria",
+    "de": "Primarene",
+    "es": "Primarina",
+    "it": "Primarina",
+    "en": "Primarina",
+    "ja": "アシレーヌ",
+    "zh-Hans": "西狮海壬"
   }
 }

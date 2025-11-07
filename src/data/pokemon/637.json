@@ -1,7 +1,7 @@
 {
   "id": 637,
   "name": "Volcarona",
-  "species": "Sun Pok\u00e9mon",
+  "species": "Sun Pokémon",
   "type": [
     "Bug",
     "Fire"
@@ -40,10 +40,10 @@
     "specialDefense": 105,
     "speed": 100
   },
-  "description": "When volcanic ash darkened the atmosphere, it is said that Volcarona\u2019s fire provided a replacement for the sun.",
+  "description": "When volcanic ash darkened the atmosphere, it is said that Volcarona’s fire provided a replacement for the sun.",
   "flavorTexts": [
     {
-      "text": "When volcanic ash darkened the atmosphere, it is said that Volcarona\u2019s fire provided a replacement for the sun.",
+      "text": "When volcanic ash darkened the atmosphere, it is said that Volcarona’s fire provided a replacement for the sun.",
       "version": "black"
     },
     {
@@ -51,11 +51,11 @@
       "version": "white"
     },
     {
-      "text": "Thought to be an embodiment of the sun, it appeared during a bitterly cold winter and saved Pok\u00e9mon from freezing.",
+      "text": "Thought to be an embodiment of the sun, it appeared during a bitterly cold winter and saved Pokémon from freezing.",
       "version": "black-2"
     },
     {
-      "text": "Thought to be an embodiment of the sun, it appeared during a bitterly cold winter and saved Pok\u00e9mon from freezing.",
+      "text": "Thought to be an embodiment of the sun, it appeared during a bitterly cold winter and saved Pokémon from freezing.",
       "version": "white-2"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/637.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/637.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウルガモス",
+    "roomaji": "Ulgamoth",
+    "ko": "불카모스",
+    "zh-Hant": "火神蛾",
+    "fr": "Pyrax",
+    "de": "Ramoth",
+    "es": "Volcarona",
+    "it": "Volcarona",
+    "en": "Volcarona",
+    "ja": "ウルガモス",
+    "zh-Hans": "火神蛾"
   }
 }

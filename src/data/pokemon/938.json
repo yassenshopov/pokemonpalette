@@ -1,7 +1,7 @@
 {
   "id": 938,
   "name": "Tadbulb",
-  "species": "EleTadpole Pok\u00e9mon",
+  "species": "EleTadpole Pokémon",
   "type": [
     "Electric"
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/938.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ズピカ",
+    "roomaji": "Zupika",
+    "ko": "빈나두",
+    "zh-Hant": "光蚪仔",
+    "fr": "Têtampoule",
+    "de": "Blipp",
+    "es": "Tadbulb",
+    "it": "Tadbulb",
+    "en": "Tadbulb",
+    "ja": "ズピカ",
+    "zh-Hans": "光蚪仔"
   }
 }

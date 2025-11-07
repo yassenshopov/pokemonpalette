@@ -1,7 +1,7 @@
 {
   "id": 406,
   "name": "Budew",
-  "species": "Bud Pok\u00e9mon",
+  "species": "Bud Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -57,15 +57,15 @@
       "version": "pearl"
     },
     {
-      "text": "Sensitive to changing temperature, the bud is said to bloom when it feels the sun\u2019s warm touch.",
+      "text": "Sensitive to changing temperature, the bud is said to bloom when it feels the sun’s warm touch.",
       "version": "platinum"
     },
     {
-      "text": "When it feels the sun\u2019s warm touch, it opens its bud to release pollen. It lives alongside clear pools.",
+      "text": "When it feels the sun’s warm touch, it opens its bud to release pollen. It lives alongside clear pools.",
       "version": "heartgold"
     },
     {
-      "text": "When it feels the sun\u2019s warm touch, it opens its bud to release pollen. It lives alongside clear pools.",
+      "text": "When it feels the sun’s warm touch, it opens its bud to release pollen. It lives alongside clear pools.",
       "version": "soulsilver"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/406.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/406.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スボミー",
+    "roomaji": "Subomie",
+    "ko": "꼬몽울",
+    "zh-Hant": "含羞苞",
+    "fr": "Rozbouton",
+    "de": "Knospi",
+    "es": "Budew",
+    "it": "Budew",
+    "en": "Budew",
+    "ja": "スボミー",
+    "zh-Hans": "含羞苞"
   }
 }

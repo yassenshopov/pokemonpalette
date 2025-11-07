@@ -1,7 +1,7 @@
 {
   "id": 763,
   "name": "Tsareena",
-  "species": "Fruit Pok\u00e9mon",
+  "species": "Fruit Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 98,
     "speed": 72
   },
-  "description": "Its long, striking legs aren\u2019t just for show but to be used to kick with skill. In victory, it shows off by kicking the defeated, laughing boisterously.",
+  "description": "Its long, striking legs aren’t just for show but to be used to kick with skill. In victory, it shows off by kicking the defeated, laughing boisterously.",
   "flavorTexts": [
     {
-      "text": "Its long, striking legs aren\u2019t just for show but to be used to kick with skill. In victory, it shows off by kicking the defeated, laughing boisterously.",
+      "text": "Its long, striking legs aren’t just for show but to be used to kick with skill. In victory, it shows off by kicking the defeated, laughing boisterously.",
       "version": "sun"
     },
     {
-      "text": "A Pok\u00e9mon known for the beauty of its well-shaped legs, it sometimes appears as a mascot in advertisements for beauty salons.",
+      "text": "A Pokémon known for the beauty of its well-shaped legs, it sometimes appears as a mascot in advertisements for beauty salons.",
       "version": "moon"
     },
     {
@@ -56,11 +56,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "A Pok\u00e9mon with an aggressive personality and a mastery of kicking, it cackles every time it kicks an opponent.",
+      "text": "A Pokémon with an aggressive personality and a mastery of kicking, it cackles every time it kicks an opponent.",
       "version": "ultra-moon"
     },
     {
-      "text": "This feared Pok\u00e9mon has long, slender legs and a cruel heart. It shows no mercy as it stomps on its opponents.",
+      "text": "This feared Pokémon has long, slender legs and a cruel heart. It shows no mercy as it stomps on its opponents.",
       "version": "sword"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/763.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アマージョ",
+    "roomaji": "Amajo",
+    "ko": "달코퀸",
+    "zh-Hant": "甜冷美后",
+    "fr": "Sucreine",
+    "de": "Fruyal",
+    "es": "Tsareena",
+    "it": "Tsareena",
+    "en": "Tsareena",
+    "ja": "アマージョ",
+    "zh-Hans": "甜冷美后"
   }
 }

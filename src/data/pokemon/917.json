@@ -1,7 +1,7 @@
 {
   "id": 917,
   "name": "Tarountula",
-  "species": "String Ball Pok\u00e9mon",
+  "species": "String Ball Pokémon",
   "type": [
     "Bug"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 40,
     "speed": 20
   },
-  "description": "The ball of threads wrapped around its body is elastic enough to deflect the scythes of Scyther, this Pok\u00e9mon\u2019s natural enemy.",
+  "description": "The ball of threads wrapped around its body is elastic enough to deflect the scythes of Scyther, this Pokémon’s natural enemy.",
   "flavorTexts": [
     {
-      "text": "The ball of threads wrapped around its body is elastic enough to deflect the scythes of Scyther, this Pok\u00e9mon\u2019s natural enemy.",
+      "text": "The ball of threads wrapped around its body is elastic enough to deflect the scythes of Scyther, this Pokémon’s natural enemy.",
       "version": "scarlet"
     },
     {
-      "text": "The thread it secretes from its rear is as strong as wire. The secret behind the thread\u2019s strength is the topic of ongoing research.",
+      "text": "The thread it secretes from its rear is as strong as wire. The secret behind the thread’s strength is the topic of ongoing research.",
       "version": "violet"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/917.ogg",
     "legacy": null
+  },
+  "names": {
+    "de": "Tarundel",
+    "ja-Hrkt": "タマンチュラ",
+    "roomaji": "Tamantula",
+    "ko": "타랜툴라",
+    "zh-Hant": "團珠蛛",
+    "fr": "Tissenboule",
+    "es": "Tarountula",
+    "it": "Tarountula",
+    "en": "Tarountula",
+    "ja": "タマンチュラ",
+    "zh-Hans": "团珠蛛"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 912,
   "name": "Quaxly",
-  "species": "Duckling Pok\u00e9mon",
+  "species": "Duckling Pokémon",
   "type": [
     "Water"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 45,
     "speed": 50
   },
-  "description": "This Pok\u00e9mon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime.\"",
+  "description": "This Pokémon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime.\"",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime.\"",
+      "text": "This Pokémon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime.\"",
       "version": "scarlet"
     },
     {
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/912.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クワッス",
+    "roomaji": "Kuwassu",
+    "ko": "꾸왁스",
+    "zh-Hant": "潤水鴨",
+    "fr": "Coiffeton",
+    "de": "Kwaks",
+    "es": "Quaxly",
+    "it": "Quaxly",
+    "en": "Quaxly",
+    "ja": "クワッス",
+    "zh-Hans": "润水鸭"
   }
 }

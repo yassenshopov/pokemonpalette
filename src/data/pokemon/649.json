@@ -1,7 +1,7 @@
 {
   "id": 649,
   "name": "Genesect",
-  "species": "Paleozoic Pok\u00e9mon",
+  "species": "Paleozoic Pokémon",
   "type": [
     "Bug",
     "Steel"
@@ -41,19 +41,19 @@
       "version": "black"
     },
     {
-      "text": "This ancient bug Pok\u00e9mon was altered by Team Plasma. They upgraded the cannon on its back.",
+      "text": "This ancient bug Pokémon was altered by Team Plasma. They upgraded the cannon on its back.",
       "version": "white"
     },
     {
-      "text": "This Pok\u00e9mon existed 300 million years ago. Team Plasma altered it and attached a cannon to its back.",
+      "text": "This Pokémon existed 300 million years ago. Team Plasma altered it and attached a cannon to its back.",
       "version": "black-2"
     },
     {
-      "text": "This Pok\u00e9mon existed 300 million years ago. Team Plasma altered it and attached a cannon to its back.",
+      "text": "This Pokémon existed 300 million years ago. Team Plasma altered it and attached a cannon to its back.",
       "version": "white-2"
     },
     {
-      "text": "This ancient bug Pok\u00e9mon was altered by Team Plasma. They upgraded the cannon on its back.",
+      "text": "This ancient bug Pokémon was altered by Team Plasma. They upgraded the cannon on its back.",
       "version": "x"
     }
   ],
@@ -351,5 +351,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/649.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/649.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゲノセクト",
+    "roomaji": "Genesect",
+    "ko": "게노세크트",
+    "zh-Hant": "蓋諾賽克特",
+    "fr": "Genesect",
+    "de": "Genesect",
+    "es": "Genesect",
+    "it": "Genesect",
+    "en": "Genesect",
+    "ja": "ゲノセクト",
+    "zh-Hans": "盖诺赛克特"
   }
 }

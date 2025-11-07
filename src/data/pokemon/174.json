@@ -1,7 +1,7 @@
 {
   "id": 174,
   "name": "Igglybuff",
-  "species": "Balloon Pok\u00e9mon",
+  "species": "Balloon Pokémon",
   "type": [
     "Normal",
     "Fairy"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "Its extremely flexible and elas\u00ad tic body makes it bounce continuous\u00ad ly--anytime, any\u00ad where.",
+      "text": "Its extremely flexible and elas­ tic body makes it bounce continuous­ ly--anytime, any­ where.",
       "version": "silver"
     },
     {
@@ -61,7 +61,7 @@
       "version": "crystal"
     },
     {
-      "text": "IGGLYBUFF\u2019s vocal chords are not sufficiently developed. It would hurt its throat if it were to sing too much. This POK\u00e9MON gargles with freshwater from a clean stream.",
+      "text": "IGGLYBUFF’s vocal chords are not sufficiently developed. It would hurt its throat if it were to sing too much. This POKéMON gargles with freshwater from a clean stream.",
       "version": "ruby"
     },
     {
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/174.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/174.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ププリン",
+    "roomaji": "Pupurin",
+    "ko": "푸푸린",
+    "zh-Hant": "寶寶丁",
+    "fr": "Toudoudou",
+    "de": "Fluffeluff",
+    "es": "Igglybuff",
+    "it": "Igglybuff",
+    "en": "Igglybuff",
+    "ja": "ププリン",
+    "zh-Hans": "宝宝丁"
   }
 }

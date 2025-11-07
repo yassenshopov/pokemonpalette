@@ -1,7 +1,7 @@
 {
   "id": 970,
   "name": "Glimmora",
-  "species": "Ore Pok\u00e9mon",
+  "species": "Ore Pokémon",
   "type": [
     "Rock",
     "Poison"
@@ -40,14 +40,14 @@
     "specialDefense": 81,
     "speed": 86
   },
-  "description": "When this Pok\u00e9mon detects danger, it will open up its crystalline petals and fire beams from its conical body.",
+  "description": "When this Pokémon detects danger, it will open up its crystalline petals and fire beams from its conical body.",
   "flavorTexts": [
     {
-      "text": "When this Pok\u00e9mon detects danger, it will open up its crystalline petals and fire beams from its conical body.",
+      "text": "When this Pokémon detects danger, it will open up its crystalline petals and fire beams from its conical body.",
       "version": "scarlet"
     },
     {
-      "text": "Glimmora\u2019s petals are made of crystallized poison energy. It has recently become evident that these petals resemble Tera Jewels.",
+      "text": "Glimmora’s petals are made of crystallized poison energy. It has recently become evident that these petals resemble Tera Jewels.",
       "version": "violet"
     }
   ],
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/970.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "キラフロル",
+    "roomaji": "Kiraflor",
+    "ko": "킬라플로르",
+    "zh-Hant": "晶光花",
+    "fr": "Floréclat",
+    "de": "Lumiflora",
+    "es": "Glimmora",
+    "it": "Glimmora",
+    "en": "Glimmora",
+    "ja": "キラフロル",
+    "zh-Hans": "晶光花"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 438,
   "name": "Bonsly",
-  "species": "Bonsai Pok\u00e9mon",
+  "species": "Bonsai Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 10
   },
-  "description": "It looks as if it is always crying. It is actually adjusting its body\u2019s fluid levels by eliminating excess.",
+  "description": "It looks as if it is always crying. It is actually adjusting its body’s fluid levels by eliminating excess.",
   "flavorTexts": [
     {
-      "text": "It looks as if it is always crying. It is actually adjusting its body\u2019s fluid levels by eliminating excess.",
+      "text": "It looks as if it is always crying. It is actually adjusting its body’s fluid levels by eliminating excess.",
       "version": "diamond"
     },
     {
-      "text": "It prefers arid environments. It leaks water from its eyes to adjust its body\u2019s fluid levels.",
+      "text": "It prefers arid environments. It leaks water from its eyes to adjust its body’s fluid levels.",
       "version": "pearl"
     },
     {
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/438.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/438.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウソハチ",
+    "roomaji": "Usohachi",
+    "ko": "꼬지지",
+    "zh-Hant": "盆才怪",
+    "fr": "Manzaï",
+    "de": "Mobai",
+    "es": "Bonsly",
+    "it": "Bonsly",
+    "en": "Bonsly",
+    "ja": "ウソハチ",
+    "zh-Hans": "盆才怪"
   }
 }

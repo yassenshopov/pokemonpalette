@@ -1,7 +1,7 @@
 {
   "id": 195,
   "name": "Quagsire",
-  "species": "Water Fish Pok\u00e9mon",
+  "species": "Water Fish Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -46,14 +46,14 @@
     "specialDefense": 65,
     "speed": 35
   },
-  "description": "This carefree POK\u00e9MON has an easy-going nature. While swimming, it always bumps into boat hulls.",
+  "description": "This carefree POKéMON has an easy-going nature. While swimming, it always bumps into boat hulls.",
   "flavorTexts": [
     {
-      "text": "This carefree POK\u00e9MON has an easy-going nature. While swimming, it always bumps into boat hulls.",
+      "text": "This carefree POKéMON has an easy-going nature. While swimming, it always bumps into boat hulls.",
       "version": "gold"
     },
     {
-      "text": "Due to its relaxed and carefree atti\u00ad tude, it often bumps its head on boulders and boat hulls as it swims.",
+      "text": "Due to its relaxed and carefree atti­ tude, it often bumps its head on boulders and boat hulls as it swims.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "QUAGSIRE hunts for food by leaving its mouth wide open in water and waiting for its prey to blunder in unaware. Because the POK\u00e9MON does not move, it does not get very hungry.",
+      "text": "QUAGSIRE hunts for food by leaving its mouth wide open in water and waiting for its prey to blunder in unaware. Because the POKéMON does not move, it does not get very hungry.",
       "version": "ruby"
     },
     {
-      "text": "QUAGSIRE hunts for food by leaving its mouth wide open in water and waiting for its prey to blunder in unaware. Because the POK\u00e9MON does not move, it does not get very hungry.",
+      "text": "QUAGSIRE hunts for food by leaving its mouth wide open in water and waiting for its prey to blunder in unaware. Because the POKéMON does not move, it does not get very hungry.",
       "version": "sapphire"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/195.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/195.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヌオー",
+    "roomaji": "Nuoh",
+    "ko": "누오",
+    "zh-Hant": "沼王",
+    "fr": "Maraiste",
+    "de": "Morlord",
+    "es": "Quagsire",
+    "it": "Quagsire",
+    "en": "Quagsire",
+    "ja": "ヌオー",
+    "zh-Hans": "沼王"
   }
 }

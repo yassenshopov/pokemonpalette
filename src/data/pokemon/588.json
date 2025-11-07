@@ -1,7 +1,7 @@
 {
   "id": 588,
   "name": "Karrablast",
-  "species": "Clamping Pok\u00e9mon",
+  "species": "Clamping Pokémon",
   "type": [
     "Bug"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 60
   },
-  "description": "These mysterious Pok\u00e9mon evolve when they receive electrical stimulation while they are in the same place as Shelmet.",
+  "description": "These mysterious Pokémon evolve when they receive electrical stimulation while they are in the same place as Shelmet.",
   "flavorTexts": [
     {
-      "text": "These mysterious Pok\u00e9mon evolve when they receive electrical stimulation while they are in the same place as Shelmet.",
+      "text": "These mysterious Pokémon evolve when they receive electrical stimulation while they are in the same place as Shelmet.",
       "version": "black"
     },
     {
-      "text": "When they feel threatened, they spit an acidic liquid to drive attackers away. This Pok\u00e9mon targets Shelmet.",
+      "text": "When they feel threatened, they spit an acidic liquid to drive attackers away. This Pokémon targets Shelmet.",
       "version": "white"
     },
     {
@@ -60,7 +60,7 @@
       "version": "white-2"
     },
     {
-      "text": "These mysterious Pok\u00e9mon evolve when they receive electrical stimulation while they are in the same place as Shelmet.",
+      "text": "These mysterious Pokémon evolve when they receive electrical stimulation while they are in the same place as Shelmet.",
       "version": "x"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/588.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/588.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カブルモ",
+    "roomaji": "Kaburumo",
+    "ko": "딱정곤",
+    "zh-Hant": "蓋蓋蟲",
+    "fr": "Carabing",
+    "de": "Laukaps",
+    "es": "Karrablast",
+    "it": "Karrablast",
+    "en": "Karrablast",
+    "ja": "カブルモ",
+    "zh-Hans": "盖盖虫"
   }
 }

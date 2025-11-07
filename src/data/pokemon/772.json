@@ -1,7 +1,7 @@
 {
   "id": 772,
   "name": "Type-null",
-  "species": "Synthetic Pok\u00e9mon",
+  "species": "Synthetic Pokémon",
   "type": [
     "Normal"
   ],
@@ -29,26 +29,26 @@
     "specialDefense": 95,
     "speed": 59
   },
-  "description": "The heavy control mask it wears suppresses its intrinsic capabilities. This Pok\u00e9mon has some hidden special power.",
+  "description": "The heavy control mask it wears suppresses its intrinsic capabilities. This Pokémon has some hidden special power.",
   "flavorTexts": [
     {
-      "text": "The heavy control mask it wears suppresses its intrinsic capabilities. This Pok\u00e9mon has some hidden special power.",
+      "text": "The heavy control mask it wears suppresses its intrinsic capabilities. This Pokémon has some hidden special power.",
       "version": "sun"
     },
     {
-      "text": "Due to the danger that this synthetic Pok\u00e9mon may go on a rampage, it wears a control mask to restrain its power.",
+      "text": "Due to the danger that this synthetic Pokémon may go on a rampage, it wears a control mask to restrain its power.",
       "version": "moon"
     },
     {
-      "text": "A Pok\u00e9mon weapon developed for a specific mission, it went berserk during an experiment, so it was cryogenically frozen.",
+      "text": "A Pokémon weapon developed for a specific mission, it went berserk during an experiment, so it was cryogenically frozen.",
       "version": "ultra-sun"
     },
     {
-      "text": "There\u2019s danger of its going on a rampage, so its true power is sealed away beneath its control mask.",
+      "text": "There’s danger of its going on a rampage, so its true power is sealed away beneath its control mask.",
       "version": "ultra-moon"
     },
     {
-      "text": "Rumor has it that the theft of top-secret research notes led to a new instance of this Pok\u00e9mon being created in the Galar region.",
+      "text": "Rumor has it that the theft of top-secret research notes led to a new instance of this Pokémon being created in the Galar region.",
       "version": "sword"
     }
   ],
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/772.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タイプ：ヌル",
+    "roomaji": "Null",
+    "ko": "타입:널",
+    "zh-Hant": "屬性：空",
+    "fr": "Type:0",
+    "de": "Typ:Null",
+    "es": "Código Cero",
+    "it": "Tipo Zero",
+    "en": "Type: Null",
+    "ja": "タイプ：ヌル",
+    "zh-Hans": "属性：空"
   }
 }

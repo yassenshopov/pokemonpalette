@@ -1,7 +1,7 @@
 {
   "id": 521,
   "name": "Unfezant",
-  "species": "Proud Pok\u00e9mon",
+  "species": "Proud Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 55,
     "speed": 93
   },
-  "description": "Males swing their head plumage to threaten opponents. The females\u2019 flying abilities surpass those of the males.",
+  "description": "Males swing their head plumage to threaten opponents. The females’ flying abilities surpass those of the males.",
   "flavorTexts": [
     {
-      "text": "Males swing their head plumage to threaten opponents. The females\u2019 flying abilities surpass those of the males.",
+      "text": "Males swing their head plumage to threaten opponents. The females’ flying abilities surpass those of the males.",
       "version": "black"
     },
     {
@@ -65,7 +65,7 @@
       "version": "white-2"
     },
     {
-      "text": "Males swing their head plumage to threaten opponents. The females\u2019 flying abilities surpass those of the males.",
+      "text": "Males swing their head plumage to threaten opponents. The females’ flying abilities surpass those of the males.",
       "version": "x"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/521.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/521.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ケンホロウ",
+    "roomaji": "Kenhallow",
+    "ko": "켄호로우",
+    "zh-Hant": "高傲雉雞",
+    "fr": "Déflaisan",
+    "de": "Fasasnob",
+    "es": "Unfezant",
+    "it": "Unfezant",
+    "en": "Unfezant",
+    "ja": "ケンホロウ",
+    "zh-Hans": "高傲雉鸡"
   }
 }

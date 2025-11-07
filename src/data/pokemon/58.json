@@ -1,7 +1,7 @@
 {
   "id": 58,
   "name": "Growlithe",
-  "species": "Puppy Pok\u00e9mon",
+  "species": "Puppy Pokémon",
   "type": [
     "Fire"
   ],
@@ -52,15 +52,15 @@
       "version": "blue"
     },
     {
-      "text": "A POK\u00e9MON with a friendly nature. However, it will bark fiercely at anything invading its territory.",
+      "text": "A POKéMON with a friendly nature. However, it will bark fiercely at anything invading its territory.",
       "version": "yellow"
     },
     {
-      "text": "It has a brave and trustworthy na\u00ad ture. It fear\u00ad lessly stands up to bigger and stronger foes.",
+      "text": "It has a brave and trustworthy na­ ture. It fear­ lessly stands up to bigger and stronger foes.",
       "version": "gold"
     },
     {
-      "text": "Extremely loyal, it will fearlessly bark at any oppo\u00ad nent to protect its own trainer from harm.",
+      "text": "Extremely loyal, it will fearlessly bark at any oppo­ nent to protect its own trainer from harm.",
       "version": "silver"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/58.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/58.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガーディ",
+    "roomaji": "Gardie",
+    "ko": "가디",
+    "zh-Hant": "卡蒂狗",
+    "fr": "Caninos",
+    "de": "Fukano",
+    "es": "Growlithe",
+    "it": "Growlithe",
+    "en": "Growlithe",
+    "ja": "ガーディ",
+    "zh-Hans": "卡蒂狗"
   }
 }

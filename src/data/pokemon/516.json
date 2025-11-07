@@ -1,7 +1,7 @@
 {
   "id": 516,
   "name": "Simipour",
-  "species": "Geyser Pok\u00e9mon",
+  "species": "Geyser Pokémon",
   "type": [
     "Water"
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/516.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/516.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒヤッキー",
+    "roomaji": "Hiyakkie",
+    "ko": "앗차키",
+    "zh-Hant": "冷水猿",
+    "fr": "Flotoutan",
+    "de": "Sodachita",
+    "es": "Simipour",
+    "it": "Simipour",
+    "en": "Simipour",
+    "ja": "ヒヤッキー",
+    "zh-Hans": "冷水猿"
   }
 }

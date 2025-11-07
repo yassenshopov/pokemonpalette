@@ -1,7 +1,7 @@
 {
   "id": 629,
   "name": "Vullaby",
-  "species": "Diapered Pok\u00e9mon",
+  "species": "Diapered Pokémon",
   "type": [
     "Dark",
     "Flying"
@@ -57,7 +57,7 @@
       "version": "black"
     },
     {
-      "text": "They tend to guard their posteriors with suitable bones they have found. They pursue weak Pok\u00e9mon.",
+      "text": "They tend to guard their posteriors with suitable bones they have found. They pursue weak Pokémon.",
       "version": "white"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/629.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/629.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バルチャイ",
+    "roomaji": "Valchai",
+    "ko": "벌차이",
+    "zh-Hant": "禿鷹丫頭",
+    "fr": "Vostourno",
+    "de": "Skallyk",
+    "es": "Vullaby",
+    "it": "Vullaby",
+    "en": "Vullaby",
+    "ja": "バルチャイ",
+    "zh-Hans": "秃鹰丫头"
   }
 }

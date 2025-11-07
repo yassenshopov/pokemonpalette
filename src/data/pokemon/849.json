@@ -1,7 +1,7 @@
 {
   "id": 849,
   "name": "Toxtricity-amped",
-  "species": "Punk Pok\u00e9mon",
+  "species": "Punk Pokémon",
   "type": [
     "Electric",
     "Poison"
@@ -46,14 +46,14 @@
     "specialDefense": 70,
     "speed": 75
   },
-  "description": "When this Pok\u00e9mon sounds as if it\u2019s strumming a guitar, it\u2019s actually clawing at the protrusions on its chest to generate electricity.",
+  "description": "When this Pokémon sounds as if it’s strumming a guitar, it’s actually clawing at the protrusions on its chest to generate electricity.",
   "flavorTexts": [
     {
-      "text": "When this Pok\u00e9mon sounds as if it\u2019s strumming a guitar, it\u2019s actually clawing at the protrusions on its chest to generate electricity.",
+      "text": "When this Pokémon sounds as if it’s strumming a guitar, it’s actually clawing at the protrusions on its chest to generate electricity.",
       "version": "sword"
     },
     {
-      "text": "This short-tempered and aggressive Pok\u00e9mon chugs stagnant water to absorb any toxins it might contain.",
+      "text": "This short-tempered and aggressive Pokémon chugs stagnant water to absorb any toxins it might contain.",
       "version": "shield"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/849.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ストリンダー",
+    "roomaji": "Strinder",
+    "ko": "스트린더",
+    "zh-Hant": "顫弦蠑螈",
+    "fr": "Salarsen",
+    "de": "Riffex",
+    "es": "Toxtricity",
+    "it": "Toxtricity",
+    "en": "Toxtricity",
+    "ja": "ストリンダー",
+    "zh-Hans": "颤弦蝾螈"
   }
 }

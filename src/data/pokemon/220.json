@@ -1,7 +1,7 @@
 {
   "id": 220,
   "name": "Swinub",
-  "species": "Pig Pok\u00e9mon",
+  "species": "Pig Pokémon",
   "type": [
     "Ice",
     "Ground"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "If it smells some\u00ad thing enticing, it dashes headlong off to find the source of the aroma.",
+      "text": "If it smells some­ thing enticing, it dashes headlong off to find the source of the aroma.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "SWINUB roots for food by rubbing its snout against the ground. Its favorite food is a mushroom that grows under the cover of dead grass. This POK\u00e9MON occasionally roots out hot springs.",
+      "text": "SWINUB roots for food by rubbing its snout against the ground. Its favorite food is a mushroom that grows under the cover of dead grass. This POKéMON occasionally roots out hot springs.",
       "version": "ruby"
     },
     {
-      "text": "SWINUB roots for food by rubbing its snout against the ground. Its favorite food is a mushroom that grows under the cover of dead grass. This POK\u00e9MON occasionally roots out hot springs.",
+      "text": "SWINUB roots for food by rubbing its snout against the ground. Its favorite food is a mushroom that grows under the cover of dead grass. This POKéMON occasionally roots out hot springs.",
       "version": "sapphire"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/220.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/220.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウリムー",
+    "roomaji": "Urimoo",
+    "ko": "꾸꾸리",
+    "zh-Hant": "小山豬",
+    "fr": "Marcacrin",
+    "de": "Quiekel",
+    "es": "Swinub",
+    "it": "Swinub",
+    "en": "Swinub",
+    "ja": "ウリムー",
+    "zh-Hans": "小山猪"
   }
 }

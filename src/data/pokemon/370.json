@@ -1,7 +1,7 @@
 {
   "id": 370,
   "name": "Luvdisc",
-  "species": "Rendezvous Pok\u00e9mon",
+  "species": "Rendezvous Pokémon",
   "type": [
     "Water"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 65,
     "speed": 97
   },
-  "description": "LUVDISC live in shallow seas in the tropics. This heart-shaped POK\u00e9MON earned its name by swimming after loving couples it spotted in the ocean\u2019s waves.",
+  "description": "LUVDISC live in shallow seas in the tropics. This heart-shaped POKéMON earned its name by swimming after loving couples it spotted in the ocean’s waves.",
   "flavorTexts": [
     {
-      "text": "LUVDISC live in shallow seas in the tropics. This heart-shaped POK\u00e9MON earned its name by swimming after loving couples it spotted in the ocean\u2019s waves.",
+      "text": "LUVDISC live in shallow seas in the tropics. This heart-shaped POKéMON earned its name by swimming after loving couples it spotted in the ocean’s waves.",
       "version": "ruby"
     },
     {
-      "text": "LUVDISC\u2019s heart-shaped body is a symbol of love and romance. It is said that any couple meeting this POK\u00e9MON is promised a loving relationship that never ends.",
+      "text": "LUVDISC’s heart-shaped body is a symbol of love and romance. It is said that any couple meeting this POKéMON is promised a loving relationship that never ends.",
       "version": "sapphire"
     },
     {
-      "text": "LUVDISC make the branches of CORSOLA their nests. There is a custom from long ago of giving a LUVDISC as a gift to express one\u2019s feelings of love.",
+      "text": "LUVDISC make the branches of CORSOLA their nests. There is a custom from long ago of giving a LUVDISC as a gift to express one’s feelings of love.",
       "version": "emerald"
     },
     {
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/370.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/370.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ラブカス",
+    "roomaji": "Lovecus",
+    "ko": "사랑동이",
+    "zh-Hant": "愛心魚",
+    "fr": "Lovdisc",
+    "de": "Liebiskus",
+    "es": "Luvdisc",
+    "it": "Luvdisc",
+    "en": "Luvdisc",
+    "ja": "ラブカス",
+    "zh-Hans": "爱心鱼"
   }
 }

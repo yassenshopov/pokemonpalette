@@ -1,7 +1,7 @@
 {
   "id": 727,
   "name": "Incineroar",
-  "species": "Heel Pok\u00e9mon",
+  "species": "Heel Pokémon",
   "type": [
     "Fire",
     "Dark"
@@ -40,10 +40,10 @@
     "specialDefense": 90,
     "speed": 60
   },
-  "description": "This Pok\u00e9mon has a violent, selfish disposition. If it\u2019s not in the mood to listen, it will ignore its Trainer\u2019s orders with complete nonchalance.",
+  "description": "This Pokémon has a violent, selfish disposition. If it’s not in the mood to listen, it will ignore its Trainer’s orders with complete nonchalance.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon has a violent, selfish disposition. If it\u2019s not in the mood to listen, it will ignore its Trainer\u2019s orders with complete nonchalance.",
+      "text": "This Pokémon has a violent, selfish disposition. If it’s not in the mood to listen, it will ignore its Trainer’s orders with complete nonchalance.",
       "version": "sun"
     },
     {
@@ -51,7 +51,7 @@
       "version": "moon"
     },
     {
-      "text": "Although it\u2019s rough mannered and egotistical, it finds beating down unworthy opponents boring. It gets motivated for stronger opponents.",
+      "text": "Although it’s rough mannered and egotistical, it finds beating down unworthy opponents boring. It gets motivated for stronger opponents.",
       "version": "ultra-sun"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/727.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ガオガエン",
+    "roomaji": "Gaogaen",
+    "ko": "어흥염",
+    "zh-Hant": "熾焰咆哮虎",
+    "fr": "Félinferno",
+    "de": "Fuegro",
+    "es": "Incineroar",
+    "it": "Incineroar",
+    "en": "Incineroar",
+    "ja": "ガオガエン",
+    "zh-Hans": "炽焰咆哮虎"
   }
 }

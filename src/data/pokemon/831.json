@@ -1,7 +1,7 @@
 {
   "id": 831,
   "name": "Wooloo",
-  "species": "Sheep Pok\u00e9mon",
+  "species": "Sheep Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 48
   },
-  "description": "Its curly fleece is such an effective cushion that this Pok\u00e9mon could fall off a cliff and stand right back up at the bottom, unharmed.",
+  "description": "Its curly fleece is such an effective cushion that this Pokémon could fall off a cliff and stand right back up at the bottom, unharmed.",
   "flavorTexts": [
     {
-      "text": "Its curly fleece is such an effective cushion that this Pok\u00e9mon could fall off a cliff and stand right back up at the bottom, unharmed.",
+      "text": "Its curly fleece is such an effective cushion that this Pokémon could fall off a cliff and stand right back up at the bottom, unharmed.",
       "version": "sword"
     },
     {
-      "text": "If its fleece grows too long, Wooloo won\u2019t be able to move. Cloth made with the wool of this Pok\u00e9mon is surprisingly strong.",
+      "text": "If its fleece grows too long, Wooloo won’t be able to move. Cloth made with the wool of this Pokémon is surprisingly strong.",
       "version": "shield"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/831.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウールー",
+    "roomaji": "Wooluu",
+    "ko": "우르",
+    "zh-Hant": "毛辮羊",
+    "fr": "Moumouton",
+    "de": "Wolly",
+    "es": "Wooloo",
+    "it": "Wooloo",
+    "en": "Wooloo",
+    "ja": "ウールー",
+    "zh-Hans": "毛辫羊"
   }
 }

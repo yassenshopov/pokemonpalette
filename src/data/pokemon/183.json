@@ -1,7 +1,7 @@
 {
   "id": 183,
   "name": "Marill",
-  "species": "Aqua Mouse Pok\u00e9mon",
+  "species": "Aqua Mouse Pokémon",
   "type": [
     "Water",
     "Fairy"
@@ -46,10 +46,10 @@
     "specialDefense": 50,
     "speed": 40
   },
-  "description": "The tip of its tail, which con\u00ad tains oil that is lighter than wa\u00ad ter, lets it swim without drowning.",
+  "description": "The tip of its tail, which con­ tains oil that is lighter than wa­ ter, lets it swim without drowning.",
   "flavorTexts": [
     {
-      "text": "The tip of its tail, which con\u00ad tains oil that is lighter than wa\u00ad ter, lets it swim without drowning.",
+      "text": "The tip of its tail, which con­ tains oil that is lighter than wa­ ter, lets it swim without drowning.",
       "version": "gold"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "MARILL\u2019s oil-filled tail acts much like a life preserver. If you see just its tail bobbing on the water\u2019s surface, it\u2019s a sure indication that this POK\u00e9MON is diving beneath the water to feed on aquatic plants.",
+      "text": "MARILL’s oil-filled tail acts much like a life preserver. If you see just its tail bobbing on the water’s surface, it’s a sure indication that this POKéMON is diving beneath the water to feed on aquatic plants.",
       "version": "ruby"
     },
     {
-      "text": "When fishing for food at the edge of a fast-running stream, MARILL wraps its tail around the trunk of a tree. This POK\u00e9MON\u2019s tail is flexible and configured to stretch.",
+      "text": "When fishing for food at the edge of a fast-running stream, MARILL wraps its tail around the trunk of a tree. This POKéMON’s tail is flexible and configured to stretch.",
       "version": "sapphire"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/183.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/183.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マリル",
+    "roomaji": "Maril",
+    "ko": "마릴",
+    "zh-Hant": "瑪力露",
+    "fr": "Marill",
+    "de": "Marill",
+    "es": "Marill",
+    "it": "Marill",
+    "en": "Marill",
+    "ja": "マリル",
+    "zh-Hans": "玛力露"
   }
 }

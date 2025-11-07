@@ -1,7 +1,7 @@
 {
   "id": 958,
   "name": "Tinkatuff",
-  "species": "Hammer Pok\u00e9mon",
+  "species": "Hammer Pokémon",
   "type": [
     "Fairy",
     "Steel"
@@ -46,14 +46,14 @@
     "specialDefense": 82,
     "speed": 78
   },
-  "description": "This Pok\u00e9mon will attack groups of Pawniard and Bisharp, gathering metal from them in order to create a large and sturdy hammer.",
+  "description": "This Pokémon will attack groups of Pawniard and Bisharp, gathering metal from them in order to create a large and sturdy hammer.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon will attack groups of Pawniard and Bisharp, gathering metal from them in order to create a large and sturdy hammer.",
+      "text": "This Pokémon will attack groups of Pawniard and Bisharp, gathering metal from them in order to create a large and sturdy hammer.",
       "version": "scarlet"
     },
     {
-      "text": "These Pok\u00e9mon make their homes in piles of scrap metal. They test the strength of each other\u2019s hammers by smashing them together.",
+      "text": "These Pokémon make their homes in piles of scrap metal. They test the strength of each other’s hammers by smashing them together.",
       "version": "violet"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/958.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ナカヌチャン",
+    "roomaji": "Nakanuchan",
+    "ko": "벼리짱",
+    "zh-Hant": "巧鍛匠",
+    "fr": "Forgella",
+    "de": "Tafforgita",
+    "es": "Tinkatuff",
+    "it": "Tinkatuff",
+    "en": "Tinkatuff",
+    "ja": "ナカヌチャン",
+    "zh-Hans": "巧锻匠"
   }
 }

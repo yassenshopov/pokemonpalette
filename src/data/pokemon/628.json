@@ -1,7 +1,7 @@
 {
   "id": 628,
   "name": "Braviary",
-  "species": "Valiant Pok\u00e9mon",
+  "species": "Valiant Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/628.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/628.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウォーグル",
+    "roomaji": "Warrgle",
+    "ko": "워글",
+    "zh-Hant": "勇士雄鷹",
+    "fr": "Gueriaigle",
+    "de": "Washakwil",
+    "es": "Braviary",
+    "it": "Braviary",
+    "en": "Braviary",
+    "ja": "ウォーグル",
+    "zh-Hans": "勇士雄鹰"
   }
 }

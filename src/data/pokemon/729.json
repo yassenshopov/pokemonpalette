@@ -1,7 +1,7 @@
 {
   "id": 729,
   "name": "Brionne",
-  "species": "Pop Star Pok\u00e9mon",
+  "species": "Pop Star Pokémon",
   "type": [
     "Water"
   ],
@@ -46,7 +46,7 @@
       "version": "moon"
     },
     {
-      "text": "It gets excited when it sees a dance it doesn\u2019t know. This hard worker practices diligently until it can learn that dance.",
+      "text": "It gets excited when it sees a dance it doesn’t know. This hard worker practices diligently until it can learn that dance.",
       "version": "ultra-sun"
     },
     {
@@ -54,7 +54,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "As if dancing, it artfully dodges the attacks of its enemies. All the while, it\u2019s busy forming a bunch of balloons to overwhelm its foes.",
+      "text": "As if dancing, it artfully dodges the attacks of its enemies. All the while, it’s busy forming a bunch of balloons to overwhelm its foes.",
       "version": "sword"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/729.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オシャマリ",
+    "roomaji": "Osyamari",
+    "ko": "키요공",
+    "zh-Hant": "花漾海獅",
+    "fr": "Otarlette",
+    "de": "Marikeck",
+    "es": "Brionne",
+    "it": "Brionne",
+    "en": "Brionne",
+    "ja": "オシャマリ",
+    "zh-Hans": "花漾海狮"
   }
 }

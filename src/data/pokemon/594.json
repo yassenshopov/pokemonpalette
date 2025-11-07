@@ -1,7 +1,7 @@
 {
   "id": 594,
   "name": "Alomomola",
-  "species": "Caring Pok\u00e9mon",
+  "species": "Caring Pokémon",
   "type": [
     "Water"
   ],
@@ -48,19 +48,19 @@
       "version": "black"
     },
     {
-      "text": "Floating in the open sea is how they live. When they find a wounded Pok\u00e9mon, they embrace it and bring it to shore.",
+      "text": "Floating in the open sea is how they live. When they find a wounded Pokémon, they embrace it and bring it to shore.",
       "version": "white"
     },
     {
-      "text": "It gently holds injured and weak Pok\u00e9mon in its fins. Its special membrane heals their wounds.",
+      "text": "It gently holds injured and weak Pokémon in its fins. Its special membrane heals their wounds.",
       "version": "black-2"
     },
     {
-      "text": "It gently holds injured and weak Pok\u00e9mon in its fins. Its special membrane heals their wounds.",
+      "text": "It gently holds injured and weak Pokémon in its fins. Its special membrane heals their wounds.",
       "version": "white-2"
     },
     {
-      "text": "Floating in the open sea is how they live. When they find a wounded Pok\u00e9mon, they embrace it and bring it to shore.",
+      "text": "Floating in the open sea is how they live. When they find a wounded Pokémon, they embrace it and bring it to shore.",
       "version": "x"
     }
   ],
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/594.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/594.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ママンボウ",
+    "roomaji": "Mamanbou",
+    "ko": "맘복치",
+    "zh-Hant": "保母曼波",
+    "fr": "Mamanbo",
+    "de": "Mamolida",
+    "es": "Alomomola",
+    "it": "Alomomola",
+    "en": "Alomomola",
+    "ja": "ママンボウ",
+    "zh-Hans": "保姆曼波"
   }
 }

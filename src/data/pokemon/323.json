@@ -1,7 +1,7 @@
 {
   "id": 323,
   "name": "Camerupt",
-  "species": "Eruption Pok\u00e9mon",
+  "species": "Eruption Pokémon",
   "type": [
     "Fire",
     "Ground"
@@ -46,18 +46,18 @@
     "specialDefense": 75,
     "speed": 40
   },
-  "description": "CAMERUPT has a volcano inside its body. Magma of 18,000 degrees F courses through its body. Occasionally, the humps on this POK\u00e9MON\u2019s back erupt, spewing the superheated magma.",
+  "description": "CAMERUPT has a volcano inside its body. Magma of 18,000 degrees F courses through its body. Occasionally, the humps on this POKéMON’s back erupt, spewing the superheated magma.",
   "flavorTexts": [
     {
-      "text": "CAMERUPT has a volcano inside its body. Magma of 18,000 degrees F courses through its body. Occasionally, the humps on this POK\u00e9MON\u2019s back erupt, spewing the superheated magma.",
+      "text": "CAMERUPT has a volcano inside its body. Magma of 18,000 degrees F courses through its body. Occasionally, the humps on this POKéMON’s back erupt, spewing the superheated magma.",
       "version": "ruby"
     },
     {
-      "text": "The humps on CAMERUPT\u2019s back are formed by a transformation of its bones. They sometimes blast out molten magma. This POK\u00e9MON apparently erupts often when it is enraged.",
+      "text": "The humps on CAMERUPT’s back are formed by a transformation of its bones. They sometimes blast out molten magma. This POKéMON apparently erupts often when it is enraged.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that lives in the crater of a volcano. Every 10 years, the volcanoes on its back erupt violently. Research is under way on the cause of eruption.",
+      "text": "A POKéMON that lives in the crater of a volcano. Every 10 years, the volcanoes on its back erupt violently. Research is under way on the cause of eruption.",
       "version": "emerald"
     },
     {
@@ -317,5 +317,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/323.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/323.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バクーダ",
+    "roomaji": "Bakuuda",
+    "ko": "폭타",
+    "zh-Hant": "噴火駝",
+    "fr": "Camérupt",
+    "de": "Camerupt",
+    "es": "Camerupt",
+    "it": "Camerupt",
+    "en": "Camerupt",
+    "ja": "バクーダ",
+    "zh-Hans": "喷火驼"
   }
 }

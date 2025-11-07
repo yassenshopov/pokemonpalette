@@ -1,7 +1,7 @@
 {
   "id": 190,
   "name": "Aipom",
-  "species": "Long Tail Pok\u00e9mon",
+  "species": "Long Tail Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "It lives atop tall trees. When leap\u00ad ing from branch to branch, it deftly uses its tail for balance.",
+      "text": "It lives atop tall trees. When leap­ ing from branch to branch, it deftly uses its tail for balance.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "AIPOM\u2019s tail ends in a hand-like appendage that can be cleverly manipulated. However, because the POK\u00e9MON uses its tail so much, its real hands have become rather clumsy.",
+      "text": "AIPOM’s tail ends in a hand-like appendage that can be cleverly manipulated. However, because the POKéMON uses its tail so much, its real hands have become rather clumsy.",
       "version": "ruby"
     },
     {
-      "text": "AIPOM\u2019s tail ends in a hand-like appendage that can be cleverly manipulated. However, because the POK\u00e9MON uses its tail so much, its real hands have become rather clumsy.",
+      "text": "AIPOM’s tail ends in a hand-like appendage that can be cleverly manipulated. However, because the POKéMON uses its tail so much, its real hands have become rather clumsy.",
       "version": "sapphire"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/190.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/190.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エイパム",
+    "roomaji": "Eipam",
+    "ko": "에이팜",
+    "zh-Hant": "長尾怪手",
+    "fr": "Capumain",
+    "de": "Griffel",
+    "es": "Aipom",
+    "it": "Aipom",
+    "en": "Aipom",
+    "ja": "エイパム",
+    "zh-Hans": "长尾怪手"
   }
 }

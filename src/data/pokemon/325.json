@@ -1,7 +1,7 @@
 {
   "id": 325,
   "name": "Spoink",
-  "species": "Bounce Pok\u00e9mon",
+  "species": "Bounce Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 80,
     "speed": 60
   },
-  "description": "SPOINK bounces around on its tail. The shock of its bouncing makes its heart pump. As a result, this POK\u00e9MON cannot afford to stop bouncing - if it stops, its heart will stop.",
+  "description": "SPOINK bounces around on its tail. The shock of its bouncing makes its heart pump. As a result, this POKéMON cannot afford to stop bouncing - if it stops, its heart will stop.",
   "flavorTexts": [
     {
-      "text": "SPOINK bounces around on its tail. The shock of its bouncing makes its heart pump. As a result, this POK\u00e9MON cannot afford to stop bouncing - if it stops, its heart will stop.",
+      "text": "SPOINK bounces around on its tail. The shock of its bouncing makes its heart pump. As a result, this POKéMON cannot afford to stop bouncing - if it stops, its heart will stop.",
       "version": "ruby"
     },
     {
-      "text": "SPOINK keeps a pearl on top of its head. The pearl functions to amplify this POK\u00e9MON\u2019s psychokinetic powers. It is therefore on a constant search for a bigger pearl.",
+      "text": "SPOINK keeps a pearl on top of its head. The pearl functions to amplify this POKéMON’s psychokinetic powers. It is therefore on a constant search for a bigger pearl.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that manipulates psychic power at will. It doesn\u2019t stop bouncing even when it is asleep. It loves eating mushrooms that grow underground.",
+      "text": "A POKéMON that manipulates psychic power at will. It doesn’t stop bouncing even when it is asleep. It loves eating mushrooms that grow underground.",
       "version": "emerald"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/325.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/325.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バネブー",
+    "roomaji": "Baneboo",
+    "ko": "피그점프",
+    "zh-Hant": "跳跳豬",
+    "fr": "Spoink",
+    "de": "Spoink",
+    "es": "Spoink",
+    "it": "Spoink",
+    "en": "Spoink",
+    "ja": "バネブー",
+    "zh-Hans": "跳跳猪"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 1019,
   "name": "Hydrapple",
-  "species": "Apple Hydra Pok\u00e9mon",
+  "species": "Apple Hydra Pokémon",
   "type": [
     "Grass",
     "Dragon"
@@ -313,5 +313,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1019.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カミツオロチ",
+    "ko": "과미드라",
+    "zh-Hant": "蜜集大蛇",
+    "fr": "Pomdorochi",
+    "de": "Hydrapfel",
+    "es": "Hydrapple",
+    "it": "Hydrapple",
+    "en": "Hydrapple",
+    "ja": "カミツオロチ",
+    "zh-Hans": "蜜集大蛇"
   }
 }

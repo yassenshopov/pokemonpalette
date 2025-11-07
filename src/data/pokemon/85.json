@@ -1,7 +1,7 @@
 {
   "id": 85,
   "name": "Dodrio",
-  "species": "Triple Bird Pok\u00e9mon",
+  "species": "Triple Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -61,7 +61,7 @@
       "version": "yellow"
     },
     {
-      "text": "It collects data  and plans three times as wisely, but it may think too much and be\u00ad come immobilized.",
+      "text": "It collects data  and plans three times as wisely, but it may think too much and be­ come immobilized.",
       "version": "gold"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/85.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/85.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドードリオ",
+    "roomaji": "Dodorio",
+    "ko": "두트리오",
+    "zh-Hant": "嘟嘟利",
+    "fr": "Dodrio",
+    "de": "Dodri",
+    "es": "Dodrio",
+    "it": "Dodrio",
+    "en": "Dodrio",
+    "ja": "ドードリオ",
+    "zh-Hans": "嘟嘟利"
   }
 }

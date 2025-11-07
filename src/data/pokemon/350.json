@@ -1,7 +1,7 @@
 {
   "id": 350,
   "name": "Milotic",
-  "species": "Tender Pok\u00e9mon",
+  "species": "Tender Pokémon",
   "type": [
     "Water"
   ],
@@ -48,15 +48,15 @@
       "version": "black"
     },
     {
-      "text": "MILOTIC is said to be the most beautiful of all the POK\u00e9MON. It has the power to becalm such emotions as anger and hostility to quell bitter feuding.",
+      "text": "MILOTIC is said to be the most beautiful of all the POKéMON. It has the power to becalm such emotions as anger and hostility to quell bitter feuding.",
       "version": "ruby"
     },
     {
-      "text": "MILOTIC live at the bottom of large lakes. When this POK\u00e9MON\u2019s body glows a vivid pink, it releases a pulsing wave of energy that brings soothing calm to restless spirits.",
+      "text": "MILOTIC live at the bottom of large lakes. When this POKéMON’s body glows a vivid pink, it releases a pulsing wave of energy that brings soothing calm to restless spirits.",
       "version": "sapphire"
     },
     {
-      "text": "It is said to live at the bottom of large lakes. Considered to be the most beautiful of all POK\u00e9MON, it has been depicted in paintings and statues.",
+      "text": "It is said to live at the bottom of large lakes. Considered to be the most beautiful of all POKéMON, it has been depicted in paintings and statues.",
       "version": "emerald"
     },
     {
@@ -306,5 +306,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/350.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/350.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミロカロス",
+    "roomaji": "Milokaross",
+    "ko": "밀로틱",
+    "zh-Hant": "美納斯",
+    "fr": "Milobellus",
+    "de": "Milotic",
+    "es": "Milotic",
+    "it": "Milotic",
+    "en": "Milotic",
+    "ja": "ミロカロス",
+    "zh-Hans": "美纳斯"
   }
 }

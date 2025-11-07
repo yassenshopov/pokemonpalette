@@ -1,7 +1,7 @@
 {
   "id": 354,
   "name": "Banette",
-  "species": "Marionette Pok\u00e9mon",
+  "species": "Marionette Pokémon",
   "type": [
     "Ghost"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 63,
     "speed": 65
   },
-  "description": "BANETTE generates energy for laying strong curses by sticking pins into its own body. This POK\u00e9MON was originally a pitiful plush doll that was thrown away.",
+  "description": "BANETTE generates energy for laying strong curses by sticking pins into its own body. This POKéMON was originally a pitiful plush doll that was thrown away.",
   "flavorTexts": [
     {
-      "text": "BANETTE generates energy for laying strong curses by sticking pins into its own body. This POK\u00e9MON was originally a pitiful plush doll that was thrown away.",
+      "text": "BANETTE generates energy for laying strong curses by sticking pins into its own body. This POKéMON was originally a pitiful plush doll that was thrown away.",
       "version": "ruby"
     },
     {
-      "text": "A cursed energy permeated the stuffing of a discarded and forgotten plush doll, giving it new life as BANETTE. The POK\u00e9MON\u2019s energy would escape if it were to ever open its mouth.",
+      "text": "A cursed energy permeated the stuffing of a discarded and forgotten plush doll, giving it new life as BANETTE. The POKéMON’s energy would escape if it were to ever open its mouth.",
       "version": "sapphire"
     },
     {
-      "text": "An abandoned plush doll became this POK\u00e9MON. They are said to live in garbage dumps and wander about in search of the children that threw them away.",
+      "text": "An abandoned plush doll became this POKéMON. They are said to live in garbage dumps and wander about in search of the children that threw them away.",
       "version": "emerald"
     },
     {
-      "text": "Strong feelings of hatred turned a puppet into a POK\u00e9MON. If it opens its mouth, its cursed energy escapes.",
+      "text": "Strong feelings of hatred turned a puppet into a POKéMON. If it opens its mouth, its cursed energy escapes.",
       "version": "firered"
     },
     {
-      "text": "Strong feelings of hatred turned a puppet into a POK\u00e9MON. If it opens its mouth, its cursed energy escapes.",
+      "text": "Strong feelings of hatred turned a puppet into a POKéMON. If it opens its mouth, its cursed energy escapes.",
       "version": "leafgreen"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/354.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/354.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジュペッタ",
+    "roomaji": "Juppeta",
+    "ko": "다크펫",
+    "zh-Hant": "詛咒娃娃",
+    "fr": "Branette",
+    "de": "Banette",
+    "es": "Banette",
+    "it": "Banette",
+    "en": "Banette",
+    "ja": "ジュペッタ",
+    "zh-Hans": "诅咒娃娃"
   }
 }

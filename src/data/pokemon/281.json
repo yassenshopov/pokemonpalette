@@ -1,7 +1,7 @@
 {
   "id": 281,
   "name": "Kirlia",
-  "species": "Emotion Pok\u00e9mon",
+  "species": "Emotion Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -46,14 +46,14 @@
     "specialDefense": 55,
     "speed": 50
   },
-  "description": "It is said that a KIRLIA that is exposed to the positive emotions of its TRAINER grows beautiful. This POK\u00e9MON controls psychokinetic powers with its highly developed brain.",
+  "description": "It is said that a KIRLIA that is exposed to the positive emotions of its TRAINER grows beautiful. This POKéMON controls psychokinetic powers with its highly developed brain.",
   "flavorTexts": [
     {
-      "text": "It is said that a KIRLIA that is exposed to the positive emotions of its TRAINER grows beautiful. This POK\u00e9MON controls psychokinetic powers with its highly developed brain.",
+      "text": "It is said that a KIRLIA that is exposed to the positive emotions of its TRAINER grows beautiful. This POKéMON controls psychokinetic powers with its highly developed brain.",
       "version": "ruby"
     },
     {
-      "text": "KIRLIA uses the horns on its head to amplify its psychokinetic power. When the POK\u00e9MON uses its power, the air around it becomes distorted, creating mirages of nonexistent scenery.",
+      "text": "KIRLIA uses the horns on its head to amplify its psychokinetic power. When the POKéMON uses its power, the air around it becomes distorted, creating mirages of nonexistent scenery.",
       "version": "sapphire"
     },
     {
@@ -326,5 +326,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/281.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/281.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キルリア",
+    "roomaji": "Kirlia",
+    "ko": "킬리아",
+    "zh-Hant": "奇魯莉安",
+    "fr": "Kirlia",
+    "de": "Kirlia",
+    "es": "Kirlia",
+    "it": "Kirlia",
+    "en": "Kirlia",
+    "ja": "キルリア",
+    "zh-Hans": "奇鲁莉安"
   }
 }

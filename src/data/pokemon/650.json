@@ -1,7 +1,7 @@
 {
   "id": 650,
   "name": "Chespin",
-  "species": "Spiny Nut Pok\u00e9mon",
+  "species": "Spiny Nut Pokémon",
   "type": [
     "Grass"
   ],
@@ -42,7 +42,7 @@
       "version": "x"
     },
     {
-      "text": "Such a thick shell of wood covers its head and back that even a direct hit from a truck wouldn\u2019t faze it.",
+      "text": "Such a thick shell of wood covers its head and back that even a direct hit from a truck wouldn’t faze it.",
       "version": "y"
     },
     {
@@ -50,7 +50,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "Such a thick shell of wood covers its head and back that even a direct hit from a truck wouldn\u2019t faze it.",
+      "text": "Such a thick shell of wood covers its head and back that even a direct hit from a truck wouldn’t faze it.",
       "version": "alpha-sapphire"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/650.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハリマロン",
+    "roomaji": "Harimaron",
+    "ko": "도치마론",
+    "zh-Hant": "哈力栗",
+    "fr": "Marisson",
+    "de": "Igamaro",
+    "es": "Chespin",
+    "it": "Chespin",
+    "en": "Chespin",
+    "ja": "ハリマロン",
+    "zh-Hans": "哈力栗"
   }
 }

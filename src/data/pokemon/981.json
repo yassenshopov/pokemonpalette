@@ -1,7 +1,7 @@
 {
   "id": 981,
   "name": "Farigiraf",
-  "species": "Long Neck Pok\u00e9mon",
+  "species": "Long Neck Pokémon",
   "type": [
     "Normal",
     "Psychic"
@@ -46,10 +46,10 @@
     "specialDefense": 70,
     "speed": 60
   },
-  "description": "Now that the brain waves from the head and tail are synced up, the psychic power of this Pok\u00e9mon is 10 times stronger than Girafarig\u2019s.",
+  "description": "Now that the brain waves from the head and tail are synced up, the psychic power of this Pokémon is 10 times stronger than Girafarig’s.",
   "flavorTexts": [
     {
-      "text": "Now that the brain waves from the head and tail are synced up, the psychic power of this Pok\u00e9mon is 10 times stronger than Girafarig\u2019s.",
+      "text": "Now that the brain waves from the head and tail are synced up, the psychic power of this Pokémon is 10 times stronger than Girafarig’s.",
       "version": "scarlet"
     },
     {
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/981.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "リキキリン",
+    "roomaji": "Rikikirin",
+    "ko": "키키링",
+    "zh-Hant": "奇麒麟",
+    "fr": "Farigiraf",
+    "de": "Farigiraf",
+    "es": "Farigiraf",
+    "it": "Farigiraf",
+    "en": "Farigiraf",
+    "ja": "リキキリン",
+    "zh-Hans": "奇麒麟"
   }
 }

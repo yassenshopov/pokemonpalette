@@ -1,7 +1,7 @@
 {
   "id": 761,
   "name": "Bounsweet",
-  "species": "Fruit Pok\u00e9mon",
+  "species": "Fruit Pokémon",
   "type": [
     "Grass"
   ],
@@ -48,19 +48,19 @@
       "version": "sun"
     },
     {
-      "text": "Although it\u2019s too sugary for human consumption, Bounsweet\u2019s sweat can be watered down into a juice with just the right amount of sweetness.",
+      "text": "Although it’s too sugary for human consumption, Bounsweet’s sweat can be watered down into a juice with just the right amount of sweetness.",
       "version": "moon"
     },
     {
-      "text": "Because of its sweet, delicious aroma, bird Pok\u00e9mon are always after it, but it\u2019s not intelligent enough to care.",
+      "text": "Because of its sweet, delicious aroma, bird Pokémon are always after it, but it’s not intelligent enough to care.",
       "version": "ultra-sun"
     },
     {
-      "text": "It tries to resist being swallowed by a bird Pok\u00e9mon by spinning the sepals on its head. It\u2019s usually a fruitless attempt.",
+      "text": "It tries to resist being swallowed by a bird Pokémon by spinning the sepals on its head. It’s usually a fruitless attempt.",
       "version": "ultra-moon"
     },
     {
-      "text": "Its body gives off a sweet, fruity scent that is extremely appetizing to bird Pok\u00e9mon.",
+      "text": "Its body gives off a sweet, fruity scent that is extremely appetizing to bird Pokémon.",
       "version": "sword"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/761.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アマカジ",
+    "roomaji": "Amakaji",
+    "ko": "달콤아",
+    "zh-Hant": "甜竹竹",
+    "fr": "Croquine",
+    "de": "Frubberl",
+    "es": "Bounsweet",
+    "it": "Bounsweet",
+    "en": "Bounsweet",
+    "ja": "アマカジ",
+    "zh-Hans": "甜竹竹"
   }
 }

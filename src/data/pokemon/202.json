@@ -1,7 +1,7 @@
 {
   "id": 202,
   "name": "Wobbuffet",
-  "species": "Patient Pok\u00e9mon",
+  "species": "Patient Pokémon",
   "type": [
     "Psychic"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 58,
     "speed": 33
   },
-  "description": "It hates light and shock. If attack\u00ad ed, it inflates its body to pump up its counter\u00ad strike.",
+  "description": "It hates light and shock. If attack­ ed, it inflates its body to pump up its counter­ strike.",
   "flavorTexts": [
     {
-      "text": "It hates light and shock. If attack\u00ad ed, it inflates its body to pump up its counter\u00ad strike.",
+      "text": "It hates light and shock. If attack­ ed, it inflates its body to pump up its counter­ strike.",
       "version": "gold"
     },
     {
@@ -46,15 +46,15 @@
       "version": "silver"
     },
     {
-      "text": "In order to con\u00ad ceal its black tail, it lives in a dark cave and only moves about at night.",
+      "text": "In order to con­ ceal its black tail, it lives in a dark cave and only moves about at night.",
       "version": "crystal"
     },
     {
-      "text": "If two or more WOBBUFFET meet, they will turn competitive and try to outdo each other\u2019s endurance. However, they may try to see which one can endure the longest without food. TRAINERS need to beware of this habit.",
+      "text": "If two or more WOBBUFFET meet, they will turn competitive and try to outdo each other’s endurance. However, they may try to see which one can endure the longest without food. TRAINERS need to beware of this habit.",
       "version": "ruby"
     },
     {
-      "text": "WOBBUFFET does nothing but endure attacks - it won\u2019t attack on its own. However, it won\u2019t endure an attack on its tail. When that happens, the POK\u00e9MON will try to take the foe with it using DESTINY BOND.",
+      "text": "WOBBUFFET does nothing but endure attacks - it won’t attack on its own. However, it won’t endure an attack on its tail. When that happens, the POKéMON will try to take the foe with it using DESTINY BOND.",
       "version": "sapphire"
     }
   ],
@@ -224,5 +224,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/202.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/202.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ソーナンス",
+    "roomaji": "Sonans",
+    "ko": "마자용",
+    "zh-Hant": "果然翁",
+    "fr": "Qulbutoké",
+    "de": "Woingenau",
+    "es": "Wobbuffet",
+    "it": "Wobbuffet",
+    "en": "Wobbuffet",
+    "ja": "ソーナンス",
+    "zh-Hans": "果然翁"
   }
 }

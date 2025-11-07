@@ -1,7 +1,7 @@
 {
   "id": 971,
   "name": "Greavard",
-  "species": "Ghost Dog Pok\u00e9mon",
+  "species": "Ghost Dog Pokémon",
   "type": [
     "Ghost"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 55,
     "speed": 34
   },
-  "description": "It is said that a dog Pok\u00e9mon that died in the wild without ever interacting with a human was reborn as this Pok\u00e9mon.",
+  "description": "It is said that a dog Pokémon that died in the wild without ever interacting with a human was reborn as this Pokémon.",
   "flavorTexts": [
     {
-      "text": "It is said that a dog Pok\u00e9mon that died in the wild without ever interacting with a human was reborn as this Pok\u00e9mon.",
+      "text": "It is said that a dog Pokémon that died in the wild without ever interacting with a human was reborn as this Pokémon.",
       "version": "scarlet"
     },
     {
-      "text": "This friendly Pok\u00e9mon doesn\u2019t like being alone. Pay it even the slightest bit of attention, and it will follow you forever.",
+      "text": "This friendly Pokémon doesn’t like being alone. Pay it even the slightest bit of attention, and it will follow you forever.",
       "version": "violet"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/971.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ボチ",
+    "roomaji": "Bochi",
+    "ko": "망망이",
+    "zh-Hant": "墓仔狗",
+    "fr": "Toutombe",
+    "de": "Gruff",
+    "es": "Greavard",
+    "it": "Greavard",
+    "en": "Greavard",
+    "ja": "ボチ",
+    "zh-Hans": "墓仔狗"
   }
 }

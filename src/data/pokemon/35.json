@@ -1,7 +1,7 @@
 {
   "id": 35,
   "name": "Clefairy",
-  "species": "Fairy Pok\u00e9mon",
+  "species": "Fairy Pokémon",
   "type": [
     "Fairy"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Its adorable be\u00ad havior and cry make it highly popular. However, this cute POK\u00e9MON is rarely found.",
+      "text": "Its adorable be­ havior and cry make it highly popular. However, this cute POKéMON is rarely found.",
       "version": "silver"
     }
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/35.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/35.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピッピ",
+    "roomaji": "Pippi",
+    "ko": "삐삐",
+    "zh-Hant": "皮皮",
+    "fr": "Mélofée",
+    "de": "Piepi",
+    "es": "Clefairy",
+    "it": "Clefairy",
+    "en": "Clefairy",
+    "ja": "ピッピ",
+    "zh-Hans": "皮皮"
   }
 }

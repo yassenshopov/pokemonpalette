@@ -1,7 +1,7 @@
 {
   "id": 651,
   "name": "Quilladin",
-  "species": "Spiny Armor Pok\u00e9mon",
+  "species": "Spiny Armor Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,22 +35,22 @@
     "specialDefense": 58,
     "speed": 57
   },
-  "description": "It relies on its sturdy shell to deflect predators\u2019 attacks. It counterattacks with its sharp quills.",
+  "description": "It relies on its sturdy shell to deflect predators’ attacks. It counterattacks with its sharp quills.",
   "flavorTexts": [
     {
-      "text": "It relies on its sturdy shell to deflect predators\u2019 attacks. It counterattacks with its sharp quills.",
+      "text": "It relies on its sturdy shell to deflect predators’ attacks. It counterattacks with its sharp quills.",
       "version": "x"
     },
     {
-      "text": "They strengthen their lower bodies by running into one another. They are very kind and won\u2019t start fights.",
+      "text": "They strengthen their lower bodies by running into one another. They are very kind and won’t start fights.",
       "version": "y"
     },
     {
-      "text": "It relies on its sturdy shell to deflect predators\u2019 attacks. It counterattacks with its sharp quills.",
+      "text": "It relies on its sturdy shell to deflect predators’ attacks. It counterattacks with its sharp quills.",
       "version": "omega-ruby"
     },
     {
-      "text": "They strengthen their lower bodies by running into one another. They are very kind and won\u2019t start fights.",
+      "text": "They strengthen their lower bodies by running into one another. They are very kind and won’t start fights.",
       "version": "alpha-sapphire"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/651.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハリボーグ",
+    "roomaji": "Hariborg",
+    "ko": "도치보구",
+    "zh-Hant": "胖胖哈力",
+    "fr": "Boguérisse",
+    "de": "Igastarnish",
+    "es": "Quilladin",
+    "it": "Quilladin",
+    "en": "Quilladin",
+    "ja": "ハリボーグ",
+    "zh-Hans": "胖胖哈力"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 553,
   "name": "Krookodile",
-  "species": "Intimidation Pok\u00e9mon",
+  "species": "Intimidation Pokémon",
   "type": [
     "Ground",
     "Dark"
@@ -57,15 +57,15 @@
       "version": "white"
     },
     {
-      "text": "Very violent Pok\u00e9mon, they try to clamp down on anything that moves in front of their eyes.",
+      "text": "Very violent Pokémon, they try to clamp down on anything that moves in front of their eyes.",
       "version": "black-2"
     },
     {
-      "text": "Very violent Pok\u00e9mon, they try to clamp down on anything that moves in front of their eyes.",
+      "text": "Very violent Pokémon, they try to clamp down on anything that moves in front of their eyes.",
       "version": "white-2"
     },
     {
-      "text": "Very violent Pok\u00e9mon, they try to clamp down on anything that moves in front of their eyes.",
+      "text": "Very violent Pokémon, they try to clamp down on anything that moves in front of their eyes.",
       "version": "x"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/553.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/553.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ワルビアル",
+    "roomaji": "Waruvial",
+    "ko": "악비아르",
+    "zh-Hant": "流氓鱷",
+    "fr": "Crocorible",
+    "de": "Rabigator",
+    "es": "Krookodile",
+    "it": "Krookodile",
+    "en": "Krookodile",
+    "ja": "ワルビアル",
+    "zh-Hans": "流氓鳄"
   }
 }

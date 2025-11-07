@@ -1,7 +1,7 @@
 {
   "id": 434,
   "name": "Stunky",
-  "species": "Skunk Pok\u00e9mon",
+  "species": "Skunk Pokémon",
   "type": [
     "Poison",
     "Dark"
@@ -57,7 +57,7 @@
       "version": "pearl"
     },
     {
-      "text": "It sprays a foul fluid from its rear. Its stench spreads over a mile radius, driving Pok\u00e9mon away.",
+      "text": "It sprays a foul fluid from its rear. Its stench spreads over a mile radius, driving Pokémon away.",
       "version": "platinum"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/434.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/434.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "スカンプー",
+    "roomaji": "Skunpoo",
+    "ko": "스컹뿡",
+    "zh-Hant": "臭鼬噗",
+    "fr": "Moufouette",
+    "de": "Skunkapuh",
+    "es": "Stunky",
+    "it": "Stunky",
+    "en": "Stunky",
+    "ja": "スカンプー",
+    "zh-Hans": "臭鼬噗"
   }
 }

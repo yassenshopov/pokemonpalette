@@ -1,7 +1,7 @@
 {
   "id": 193,
   "name": "Yanma",
-  "species": "Clear Wing Pok\u00e9mon",
+  "species": "Clear Wing Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -46,10 +46,10 @@
     "specialDefense": 45,
     "speed": 95
   },
-  "description": "If it flaps its wings really fast, it can generate shock waves that will shatter win\u00ad dows in the area.",
+  "description": "If it flaps its wings really fast, it can generate shock waves that will shatter win­ dows in the area.",
   "flavorTexts": [
     {
-      "text": "If it flaps its wings really fast, it can generate shock waves that will shatter win\u00ad dows in the area.",
+      "text": "If it flaps its wings really fast, it can generate shock waves that will shatter win­ dows in the area.",
       "version": "gold"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "YANMA is capable of seeing 360 degrees without having to move its eyes. It is a great flier that is adept at making sudden stops and turning midair. This POK\u00e9MON uses its flying ability to quickly chase down targeted prey.",
+      "text": "YANMA is capable of seeing 360 degrees without having to move its eyes. It is a great flier that is adept at making sudden stops and turning midair. This POKéMON uses its flying ability to quickly chase down targeted prey.",
       "version": "ruby"
     },
     {
-      "text": "YANMA is capable of seeing 360 degrees without having to move its eyes. It is a great flier that is adept at making sudden stops and turning midair. This POK\u00e9MON uses its flying ability to quickly chase down targeted prey.",
+      "text": "YANMA is capable of seeing 360 degrees without having to move its eyes. It is a great flier that is adept at making sudden stops and turning midair. This POKéMON uses its flying ability to quickly chase down targeted prey.",
       "version": "sapphire"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/193.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/193.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヤンヤンマ",
+    "roomaji": "Yanyanma",
+    "ko": "왕자리",
+    "zh-Hant": "蜻蜻蜓",
+    "fr": "Yanma",
+    "de": "Yanma",
+    "es": "Yanma",
+    "it": "Yanma",
+    "en": "Yanma",
+    "ja": "ヤンヤンマ",
+    "zh-Hans": "蜻蜻蜓"
   }
 }

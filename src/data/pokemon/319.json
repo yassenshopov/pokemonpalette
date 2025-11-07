@@ -1,7 +1,7 @@
 {
   "id": 319,
   "name": "Sharpedo",
-  "species": "Brutal Pok\u00e9mon",
+  "species": "Brutal Pokémon",
   "type": [
     "Water",
     "Dark"
@@ -40,14 +40,14 @@
     "specialDefense": 40,
     "speed": 95
   },
-  "description": "Nicknamed \u201cthe bully of the sea,\u201d SHARPEDO is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these POK\u00e9MON can thoroughly tear apart a supertanker.",
+  "description": "Nicknamed “the bully of the sea,” SHARPEDO is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these POKéMON can thoroughly tear apart a supertanker.",
   "flavorTexts": [
     {
-      "text": "Nicknamed \u201cthe bully of the sea,\u201d SHARPEDO is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these POK\u00e9MON can thoroughly tear apart a supertanker.",
+      "text": "Nicknamed “the bully of the sea,” SHARPEDO is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these POKéMON can thoroughly tear apart a supertanker.",
       "version": "ruby"
     },
     {
-      "text": "SHARPEDO can swim at speeds of up to 75 mph by jetting seawater out of its backside. This POK\u00e9MON\u2019s drawback is its inability to swim long distances.",
+      "text": "SHARPEDO can swim at speeds of up to 75 mph by jetting seawater out of its backside. This POKéMON’s drawback is its inability to swim long distances.",
       "version": "sapphire"
     },
     {
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/319.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/319.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サメハダー",
+    "roomaji": "Samehader",
+    "ko": "샤크니아",
+    "zh-Hant": "巨牙鯊",
+    "fr": "Sharpedo",
+    "de": "Tohaido",
+    "es": "Sharpedo",
+    "it": "Sharpedo",
+    "en": "Sharpedo",
+    "ja": "サメハダー",
+    "zh-Hans": "巨牙鲨"
   }
 }

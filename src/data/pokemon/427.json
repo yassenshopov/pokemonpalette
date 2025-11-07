@@ -1,7 +1,7 @@
 {
   "id": 427,
   "name": "Buneary",
-  "species": "Rabbit Pok\u00e9mon",
+  "species": "Rabbit Pokémon",
   "type": [
     "Normal"
   ],
@@ -56,11 +56,11 @@
       "version": "platinum"
     },
     {
-      "text": "You can tell how it feels by the way it rolls its ears. When it\u2019s scared, both ears are rolled up.",
+      "text": "You can tell how it feels by the way it rolls its ears. When it’s scared, both ears are rolled up.",
       "version": "heartgold"
     },
     {
-      "text": "You can tell how it feels by the way it rolls its ears. When it\u2019s scared, both ears are rolled up.",
+      "text": "You can tell how it feels by the way it rolls its ears. When it’s scared, both ears are rolled up.",
       "version": "soulsilver"
     }
   ],
@@ -308,5 +308,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/427.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/427.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミミロル",
+    "roomaji": "Mimirol",
+    "ko": "이어롤",
+    "zh-Hant": "捲捲耳",
+    "fr": "Laporeille",
+    "de": "Haspiror",
+    "es": "Buneary",
+    "it": "Buneary",
+    "en": "Buneary",
+    "ja": "ミミロル",
+    "zh-Hans": "卷卷耳"
   }
 }

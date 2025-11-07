@@ -1,7 +1,7 @@
 {
   "id": 786,
   "name": "Tapu-lele",
-  "species": "Land Spirit Pok\u00e9mon",
+  "species": "Land Spirit Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -51,7 +51,7 @@
       "version": "moon"
     },
     {
-      "text": "It heals the wounds of people and Pok\u00e9mon by sprinkling them with its sparkling scales. This guardian deity is worshiped on Akala.",
+      "text": "It heals the wounds of people and Pokémon by sprinkling them with its sparkling scales. This guardian deity is worshiped on Akala.",
       "version": "ultra-sun"
     },
     {
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/786.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カプ・テテフ",
+    "roomaji": "Tetefu",
+    "ko": "카푸나비나",
+    "zh-Hant": "卡璞・蝶蝶",
+    "fr": "Tokopiyon",
+    "de": "Kapu-Fala",
+    "es": "Tapu Lele",
+    "it": "Tapu Lele",
+    "en": "Tapu Lele",
+    "ja": "カプ・テテフ",
+    "zh-Hans": "卡璞・蝶蝶"
   }
 }

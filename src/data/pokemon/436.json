@@ -1,7 +1,7 @@
 {
   "id": 436,
   "name": "Bronzor",
-  "species": "Bronze Pok\u00e9mon",
+  "species": "Bronze Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -57,15 +57,15 @@
       "version": "pearl"
     },
     {
-      "text": "There are researchers who believe this Pok\u00e9mon reflected like a mirror in the distant past.",
+      "text": "There are researchers who believe this Pokémon reflected like a mirror in the distant past.",
       "version": "platinum"
     },
     {
-      "text": "Ancient people believed that the pattern on BRONZOR\u2019s back contained a mysterious power.",
+      "text": "Ancient people believed that the pattern on BRONZOR’s back contained a mysterious power.",
       "version": "heartgold"
     },
     {
-      "text": "Ancient people believed that the pattern on BRONZOR\u2019s back contained a mysterious power.",
+      "text": "Ancient people believed that the pattern on BRONZOR’s back contained a mysterious power.",
       "version": "soulsilver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/436.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/436.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドーミラー",
+    "roomaji": "Domirror",
+    "ko": "동미러",
+    "zh-Hant": "銅鏡怪",
+    "fr": "Archéomire",
+    "de": "Bronzel",
+    "es": "Bronzor",
+    "it": "Bronzor",
+    "en": "Bronzor",
+    "ja": "ドーミラー",
+    "zh-Hans": "铜镜怪"
   }
 }

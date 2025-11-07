@@ -1,7 +1,7 @@
 {
   "id": 474,
   "name": "Porygon-z",
-  "species": "Virtual Pok\u00e9mon",
+  "species": "Virtual Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 75,
     "speed": 90
   },
-  "description": "Additional software was installed to make it a better Pok\u00e9mon. It began acting oddly, however.",
+  "description": "Additional software was installed to make it a better Pokémon. It began acting oddly, however.",
   "flavorTexts": [
     {
-      "text": "Additional software was installed to make it a better Pok\u00e9mon. It began acting oddly, however.",
+      "text": "Additional software was installed to make it a better Pokémon. It began acting oddly, however.",
       "version": "diamond"
     },
     {
-      "text": "Additional software was installed to make it a better Pok\u00e9mon. It began acting oddly, however.",
+      "text": "Additional software was installed to make it a better Pokémon. It began acting oddly, however.",
       "version": "pearl"
     },
     {
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/474.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/474.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポリゴンＺ",
+    "roomaji": "PorygonZ",
+    "ko": "폴리곤Z",
+    "zh-Hant": "多邊獸Ｚ",
+    "fr": "Porygon-Z",
+    "de": "Porygon-Z",
+    "es": "Porygon-Z",
+    "it": "Porygon-Z",
+    "en": "Porygon-Z",
+    "ja": "ポリゴンＺ",
+    "zh-Hans": "多边兽乙型"
   }
 }

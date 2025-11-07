@@ -1,7 +1,7 @@
 {
   "id": 206,
   "name": "Dunsparce",
-  "species": "Land Snake Pok\u00e9mon",
+  "species": "Land Snake Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 65,
     "speed": 45
   },
-  "description": "When spotted, this POK\u00e9MON escapes backward by furi\u00ad ously boring into the ground with its tail.",
+  "description": "When spotted, this POKéMON escapes backward by furi­ ously boring into the ground with its tail.",
   "flavorTexts": [
     {
-      "text": "When spotted, this POK\u00e9MON escapes backward by furi\u00ad ously boring into the ground with its tail.",
+      "text": "When spotted, this POKéMON escapes backward by furi­ ously boring into the ground with its tail.",
       "version": "gold"
     },
     {
-      "text": "If spotted, it es\u00ad capes by burrowing with its tail. It can float just slightly using its wings.",
+      "text": "If spotted, it es­ capes by burrowing with its tail. It can float just slightly using its wings.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "DUNSPARCE has a drill for its tail. It uses this tail to burrow into the ground backwards. This POK\u00e9MON is known to make its nest in complex shapes deep under the ground.",
+      "text": "DUNSPARCE has a drill for its tail. It uses this tail to burrow into the ground backwards. This POKéMON is known to make its nest in complex shapes deep under the ground.",
       "version": "ruby"
     },
     {
-      "text": "DUNSPARCE has a drill for its tail. It uses this tail to burrow into the ground backwards. This POK\u00e9MON is known to make its nest in complex shapes deep under the ground.",
+      "text": "DUNSPARCE has a drill for its tail. It uses this tail to burrow into the ground backwards. This POKéMON is known to make its nest in complex shapes deep under the ground.",
       "version": "sapphire"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/206.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/206.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ノコッチ",
+    "roomaji": "Nokocchi",
+    "ko": "노고치",
+    "zh-Hant": "土龍弟弟",
+    "fr": "Insolourdo",
+    "de": "Dummisel",
+    "es": "Dunsparce",
+    "it": "Dunsparce",
+    "en": "Dunsparce",
+    "ja": "ノコッチ",
+    "zh-Hans": "土龙弟弟"
   }
 }

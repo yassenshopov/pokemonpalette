@@ -1,7 +1,7 @@
 {
   "id": 291,
   "name": "Ninjask",
-  "species": "Ninja Pok\u00e9mon",
+  "species": "Ninja Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -40,14 +40,14 @@
     "specialDefense": 50,
     "speed": 160
   },
-  "description": "NINJASK moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this POK\u00e9MON was long believed to be invisible.",
+  "description": "NINJASK moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this POKéMON was long believed to be invisible.",
   "flavorTexts": [
     {
-      "text": "NINJASK moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this POK\u00e9MON was long believed to be invisible.",
+      "text": "NINJASK moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this POKéMON was long believed to be invisible.",
       "version": "ruby"
     },
     {
-      "text": "If NINJASK is not trained properly, it will refuse to obey the TRAINER and cry loudly continuously. Because of this quality, this POK\u00e9MON is said to be one that puts the TRAINER\u2019s abilities to the test.",
+      "text": "If NINJASK is not trained properly, it will refuse to obey the TRAINER and cry loudly continuously. Because of this quality, this POKéMON is said to be one that puts the TRAINER’s abilities to the test.",
       "version": "sapphire"
     },
     {
@@ -55,11 +55,11 @@
       "version": "emerald"
     },
     {
-      "text": "This POK\u00e9MON is so quick, it is said to be able to avoid any attack. It loves to feed on tree sap.",
+      "text": "This POKéMON is so quick, it is said to be able to avoid any attack. It loves to feed on tree sap.",
       "version": "firered"
     },
     {
-      "text": "This POK\u00e9MON is so quick, it is said to be able to avoid any attack. It loves to feed on tree sap.",
+      "text": "This POKéMON is so quick, it is said to be able to avoid any attack. It loves to feed on tree sap.",
       "version": "leafgreen"
     }
   ],
@@ -308,5 +308,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/291.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/291.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "テッカニン",
+    "roomaji": "Tekkanin",
+    "ko": "아이스크",
+    "zh-Hant": "鐵面忍者",
+    "fr": "Ninjask",
+    "de": "Ninjask",
+    "es": "Ninjask",
+    "it": "Ninjask",
+    "en": "Ninjask",
+    "ja": "テッカニン",
+    "zh-Hans": "铁面忍者"
   }
 }

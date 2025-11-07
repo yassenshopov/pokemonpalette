@@ -1,7 +1,7 @@
 {
   "id": 760,
   "name": "Bewear",
-  "species": "Strong Arm Pok\u00e9mon",
+  "species": "Strong Arm Pokémon",
   "type": [
     "Normal",
     "Fighting"
@@ -46,26 +46,26 @@
     "specialDefense": 60,
     "speed": 60
   },
-  "description": "This immensely dangerous Pok\u00e9mon possesses overwhelming physical strength. Its habitat is generally off-limits.",
+  "description": "This immensely dangerous Pokémon possesses overwhelming physical strength. Its habitat is generally off-limits.",
   "flavorTexts": [
     {
-      "text": "This immensely dangerous Pok\u00e9mon possesses overwhelming physical strength. Its habitat is generally off-limits.",
+      "text": "This immensely dangerous Pokémon possesses overwhelming physical strength. Its habitat is generally off-limits.",
       "version": "sun"
     },
     {
-      "text": "This Pok\u00e9mon has the habit of hugging its companions. Many Trainers have left this world after their spines were squashed by its hug.",
+      "text": "This Pokémon has the habit of hugging its companions. Many Trainers have left this world after their spines were squashed by its hug.",
       "version": "moon"
     },
     {
-      "text": "It waves its hands wildly in intimidation and warning. Life is over for anyone who doesn\u2019t run away as fast as possible.",
+      "text": "It waves its hands wildly in intimidation and warning. Life is over for anyone who doesn’t run away as fast as possible.",
       "version": "ultra-sun"
     },
     {
-      "text": "It boasts tremendous physical strength. Many people call it the most dangerous Pok\u00e9mon in the Alola region.",
+      "text": "It boasts tremendous physical strength. Many people call it the most dangerous Pokémon in the Alola region.",
       "version": "ultra-moon"
     },
     {
-      "text": "Once it accepts you as a friend, it tries to show its affection with a hug. Letting it do that is dangerous\u2014it could easily shatter your bones.",
+      "text": "Once it accepts you as a friend, it tries to show its affection with a hug. Letting it do that is dangerous—it could easily shatter your bones.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/760.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "キテルグマ",
+    "roomaji": "Kiteruguma",
+    "ko": "이븐곰",
+    "zh-Hant": "穿著熊",
+    "fr": "Chelours",
+    "de": "Kosturso",
+    "es": "Bewear",
+    "it": "Bewear",
+    "en": "Bewear",
+    "ja": "キテルグマ",
+    "zh-Hans": "穿着熊"
   }
 }

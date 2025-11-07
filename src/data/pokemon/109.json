@@ -1,7 +1,7 @@
 {
   "id": 109,
   "name": "Koffing",
-  "species": "Poison Gas Pok\u00e9mon",
+  "species": "Poison Gas Pokémon",
   "type": [
     "Poison"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "The poisonous gases it contains are a little bit lighter than air, keeping it slight\u00ad ly airborne.",
+      "text": "The poisonous gases it contains are a little bit lighter than air, keeping it slight­ ly airborne.",
       "version": "silver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/109.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/109.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドガース",
+    "roomaji": "Dogars",
+    "ko": "또가스",
+    "zh-Hant": "瓦斯彈",
+    "fr": "Smogo",
+    "de": "Smogon",
+    "es": "Koffing",
+    "it": "Koffing",
+    "en": "Koffing",
+    "ja": "ドガース",
+    "zh-Hans": "瓦斯弹"
   }
 }

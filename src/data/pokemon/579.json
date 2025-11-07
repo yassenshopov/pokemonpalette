@@ -1,7 +1,7 @@
 {
   "id": 579,
   "name": "Reuniclus",
-  "species": "Multiplying Pok\u00e9mon",
+  "species": "Multiplying Pokémon",
   "type": [
     "Psychic"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "These remarkably intelligent Pok\u00e9mon fight by controlling arms that can grip with rock-crushing power.",
+      "text": "These remarkably intelligent Pokémon fight by controlling arms that can grip with rock-crushing power.",
       "version": "white"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/579.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/579.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ランクルス",
+    "roomaji": "Lanculus",
+    "ko": "란쿨루스",
+    "zh-Hant": "人造細胞卵",
+    "fr": "Symbios",
+    "de": "Zytomega",
+    "es": "Reuniclus",
+    "it": "Reuniclus",
+    "en": "Reuniclus",
+    "ja": "ランクルス",
+    "zh-Hans": "人造细胞卵"
   }
 }

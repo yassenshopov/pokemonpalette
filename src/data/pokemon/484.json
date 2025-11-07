@@ -1,7 +1,7 @@
 {
   "id": 484,
   "name": "Palkia",
-  "species": "Spatial Pok\u00e9mon",
+  "species": "Spatial Pokémon",
   "type": [
     "Water",
     "Dragon"
@@ -51,7 +51,7 @@
       "version": "pearl"
     },
     {
-      "text": "A legendary Pok\u00e9mon of Sinnoh. It is said that space becomes more stable with PALKIA\u2019s every breath.",
+      "text": "A legendary Pokémon of Sinnoh. It is said that space becomes more stable with PALKIA’s every breath.",
       "version": "platinum"
     },
     {
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/484.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/484.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "パルキア",
+    "roomaji": "Palkia",
+    "ko": "펄기아",
+    "zh-Hant": "帕路奇亞",
+    "fr": "Palkia",
+    "de": "Palkia",
+    "es": "Palkia",
+    "it": "Palkia",
+    "en": "Palkia",
+    "ja": "パルキア",
+    "zh-Hans": "帕路奇亚"
   }
 }

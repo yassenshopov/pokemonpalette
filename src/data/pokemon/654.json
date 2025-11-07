@@ -1,7 +1,7 @@
 {
   "id": 654,
   "name": "Braixen",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Fire"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/654.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テールナー",
+    "roomaji": "Tairenar",
+    "ko": "테르나",
+    "zh-Hant": "長尾火狐",
+    "fr": "Roussil",
+    "de": "Rutena",
+    "es": "Braixen",
+    "it": "Braixen",
+    "en": "Braixen",
+    "ja": "テールナー",
+    "zh-Hans": "长尾火狐"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 300,
   "name": "Skitty",
-  "species": "Kitten Pok\u00e9mon",
+  "species": "Kitten Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 35,
     "speed": 50
   },
-  "description": "SKITTY has the habit of becoming fascinated by moving objects and chasing them around. This POK\u00e9MON is known to chase after its own tail and become dizzy.",
+  "description": "SKITTY has the habit of becoming fascinated by moving objects and chasing them around. This POKéMON is known to chase after its own tail and become dizzy.",
   "flavorTexts": [
     {
-      "text": "SKITTY has the habit of becoming fascinated by moving objects and chasing them around. This POK\u00e9MON is known to chase after its own tail and become dizzy.",
+      "text": "SKITTY has the habit of becoming fascinated by moving objects and chasing them around. This POKéMON is known to chase after its own tail and become dizzy.",
       "version": "ruby"
     },
     {
-      "text": "SKITTY is known to chase around playfully after its own tail. In the wild, this POK\u00e9MON lives in holes in the trees of forests. It is very popular as a pet because of its adorable looks.",
+      "text": "SKITTY is known to chase around playfully after its own tail. In the wild, this POKéMON lives in holes in the trees of forests. It is very popular as a pet because of its adorable looks.",
       "version": "sapphire"
     },
     {
-      "text": "A SKITTY\u2019s adorably cute behavior makes it highly popular. In battle, it makes its tail puff out. It threatens foes with a sharp growl.",
+      "text": "A SKITTY’s adorably cute behavior makes it highly popular. In battle, it makes its tail puff out. It threatens foes with a sharp growl.",
       "version": "emerald"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/300.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/300.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エネコ",
+    "roomaji": "Eneco",
+    "ko": "에나비",
+    "zh-Hant": "向尾喵",
+    "fr": "Skitty",
+    "de": "Eneco",
+    "es": "Skitty",
+    "it": "Skitty",
+    "en": "Skitty",
+    "ja": "エネコ",
+    "zh-Hans": "向尾喵"
   }
 }

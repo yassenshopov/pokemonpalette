@@ -1,7 +1,7 @@
 {
   "id": 437,
   "name": "Bronzong",
-  "species": "Bronze Bell Pok\u00e9mon",
+  "species": "Bronze Bell Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/437.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/437.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドータクン",
+    "roomaji": "Dotakun",
+    "ko": "동탁군",
+    "zh-Hant": "青銅鐘",
+    "fr": "Archéodong",
+    "de": "Bronzong",
+    "es": "Bronzong",
+    "it": "Bronzong",
+    "en": "Bronzong",
+    "ja": "ドータクン",
+    "zh-Hans": "青铜钟"
   }
 }

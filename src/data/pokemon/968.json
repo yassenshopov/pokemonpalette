@@ -1,7 +1,7 @@
 {
   "id": 968,
   "name": "Orthworm",
-  "species": "Earthworm Pok\u00e9mon",
+  "species": "Earthworm Pokémon",
   "type": [
     "Steel"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 55,
     "speed": 65
   },
-  "description": "When attacked, this Pok\u00e9mon will wield the tendrils on its body like fists and pelt the opponent with a storm of punches.",
+  "description": "When attacked, this Pokémon will wield the tendrils on its body like fists and pelt the opponent with a storm of punches.",
   "flavorTexts": [
     {
-      "text": "When attacked, this Pok\u00e9mon will wield the tendrils on its body like fists and pelt the opponent with a storm of punches.",
+      "text": "When attacked, this Pokémon will wield the tendrils on its body like fists and pelt the opponent with a storm of punches.",
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon lives in arid deserts. It maintains its metal body by consuming iron from the soil.",
+      "text": "This Pokémon lives in arid deserts. It maintains its metal body by consuming iron from the soil.",
       "version": "violet"
     }
   ],
@@ -272,5 +272,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/968.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ミミズズ",
+    "roomaji": "Mimizuzu",
+    "ko": "꿈트렁",
+    "zh-Hant": "拖拖蚓",
+    "fr": "Ferdeter",
+    "de": "Schlurm",
+    "es": "Orthworm",
+    "it": "Orthworm",
+    "en": "Orthworm",
+    "ja": "ミミズズ",
+    "zh-Hans": "拖拖蚓"
   }
 }

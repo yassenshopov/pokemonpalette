@@ -1,7 +1,7 @@
 {
   "id": 341,
   "name": "Corphish",
-  "species": "Ruffian Pok\u00e9mon",
+  "species": "Ruffian Pokémon",
   "type": [
     "Water"
   ],
@@ -48,15 +48,15 @@
       "version": "pearl"
     },
     {
-      "text": "CORPHISH were originally foreign POK\u00e9MON that were imported as pets. They eventually turned up in the wild. This POK\u00e9MON is very hardy and has greatly increased its population.",
+      "text": "CORPHISH were originally foreign POKéMON that were imported as pets. They eventually turned up in the wild. This POKéMON is very hardy and has greatly increased its population.",
       "version": "ruby"
     },
     {
-      "text": "CORPHISH catches prey with its sharp claws. It has no likes or dislikes when it comes to food - it will eat anything. This POK\u00e9MON has no trouble living in filthy water.",
+      "text": "CORPHISH catches prey with its sharp claws. It has no likes or dislikes when it comes to food - it will eat anything. This POKéMON has no trouble living in filthy water.",
       "version": "sapphire"
     },
     {
-      "text": "Once it grips prey with its large pincers, it will never let go, no matter what. It is a hardy POK\u00e9MON that can thrive in any environment.",
+      "text": "Once it grips prey with its large pincers, it will never let go, no matter what. It is a hardy POKéMON that can thrive in any environment.",
       "version": "emerald"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/341.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/341.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヘイガニ",
+    "roomaji": "Heigani",
+    "ko": "가재군",
+    "zh-Hant": "龍蝦小兵",
+    "fr": "Écrapince",
+    "de": "Krebscorps",
+    "es": "Corphish",
+    "it": "Corphish",
+    "en": "Corphish",
+    "ja": "ヘイガニ",
+    "zh-Hans": "龙虾小兵"
   }
 }

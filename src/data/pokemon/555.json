@@ -1,7 +1,7 @@
 {
   "id": 555,
   "name": "Darmanitan-standard",
-  "species": "Blazing Pok\u00e9mon",
+  "species": "Blazing Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 55,
     "speed": 95
   },
-  "description": "Its internal fire burns at 2,500\u00b0 F, making enough power that it can destroy a dump truck with one punch.",
+  "description": "Its internal fire burns at 2,500° F, making enough power that it can destroy a dump truck with one punch.",
   "flavorTexts": [
     {
-      "text": "Its internal fire burns at 2,500\u00b0 F, making enough power that it can destroy a dump truck with one punch.",
+      "text": "Its internal fire burns at 2,500° F, making enough power that it can destroy a dump truck with one punch.",
       "version": "black"
     },
     {
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/555.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/555.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒヒダルマ",
+    "roomaji": "Hihidaruma",
+    "ko": "불비달마",
+    "zh-Hant": "達摩狒狒",
+    "fr": "Darumacho",
+    "de": "Flampivian",
+    "es": "Darmanitan",
+    "it": "Darmanitan",
+    "en": "Darmanitan",
+    "ja": "ヒヒダルマ",
+    "zh-Hans": "达摩狒狒"
   }
 }

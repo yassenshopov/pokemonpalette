@@ -1,7 +1,7 @@
 {
   "id": 979,
   "name": "Annihilape",
-  "species": "Rage Monkey Pok\u00e9mon",
+  "species": "Rage Monkey Pokémon",
   "type": [
     "Fighting",
     "Ghost"
@@ -46,10 +46,10 @@
     "specialDefense": 90,
     "speed": 90
   },
-  "description": "When its anger rose beyond a critical point, this Pok\u00e9mon gained power that is unfettered by the limits of its physical body.",
+  "description": "When its anger rose beyond a critical point, this Pokémon gained power that is unfettered by the limits of its physical body.",
   "flavorTexts": [
     {
-      "text": "When its anger rose beyond a critical point, this Pok\u00e9mon gained power that is unfettered by the limits of its physical body.",
+      "text": "When its anger rose beyond a critical point, this Pokémon gained power that is unfettered by the limits of its physical body.",
       "version": "scarlet"
     },
     {
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/979.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コノヨザル",
+    "roomaji": "Konoyozaru",
+    "ko": "저승갓숭",
+    "zh-Hant": "棄世猴",
+    "fr": "Courrousinge",
+    "de": "Epitaff",
+    "es": "Annihilape",
+    "it": "Annihilape",
+    "en": "Annihilape",
+    "ja": "コノヨザル",
+    "zh-Hans": "弃世猴"
   }
 }

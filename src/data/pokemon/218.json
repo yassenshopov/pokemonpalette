@@ -1,7 +1,7 @@
 {
   "id": 218,
   "name": "Slugma",
-  "species": "Lava Pok\u00e9mon",
+  "species": "Lava Pokémon",
   "type": [
     "Fire"
   ],
@@ -48,19 +48,19 @@
       "version": "gold"
     },
     {
-      "text": "A common sight in volcanic areas, it slowly slithers around in a con\u00ad stant search for warm places.",
+      "text": "A common sight in volcanic areas, it slowly slithers around in a con­ stant search for warm places.",
       "version": "silver"
     },
     {
-      "text": "These group to\u00ad gether in areas that are hotter than normal. If it cools off, its skin hardens.",
+      "text": "These group to­ gether in areas that are hotter than normal. If it cools off, its skin hardens.",
       "version": "crystal"
     },
     {
-      "text": "Molten magma courses throughout SLUGMA\u2019s circulatory system. If this POK\u00e9MON is chilled, the magma cools and hardens. Its body turns brittle and chunks fall off, reducing its size.",
+      "text": "Molten magma courses throughout SLUGMA’s circulatory system. If this POKéMON is chilled, the magma cools and hardens. Its body turns brittle and chunks fall off, reducing its size.",
       "version": "ruby"
     },
     {
-      "text": "SLUGMA does not have any blood in its body. Instead, intensely hot magma circulates throughout this POK\u00e9MON\u2019s body, carrying essential nutrients and oxygen to its organs.",
+      "text": "SLUGMA does not have any blood in its body. Instead, intensely hot magma circulates throughout this POKéMON’s body, carrying essential nutrients and oxygen to its organs.",
       "version": "sapphire"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/218.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/218.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マグマッグ",
+    "roomaji": "Magmag",
+    "ko": "마그마그",
+    "zh-Hant": "熔岩蟲",
+    "fr": "Limagma",
+    "de": "Schneckmag",
+    "es": "Slugma",
+    "it": "Slugma",
+    "en": "Slugma",
+    "ja": "マグマッグ",
+    "zh-Hans": "熔岩虫"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 935,
   "name": "Charcadet",
-  "species": "Fire Child Pok\u00e9mon",
+  "species": "Fire Child Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 40,
     "speed": 35
   },
-  "description": "Burnt charcoal came to life and became a Pok\u00e9mon. Possessing a fiery fighting spirit, Charcadet will battle even tough opponents.",
+  "description": "Burnt charcoal came to life and became a Pokémon. Possessing a fiery fighting spirit, Charcadet will battle even tough opponents.",
   "flavorTexts": [
     {
-      "text": "Burnt charcoal came to life and became a Pok\u00e9mon. Possessing a fiery fighting spirit, Charcadet will battle even tough opponents.",
+      "text": "Burnt charcoal came to life and became a Pokémon. Possessing a fiery fighting spirit, Charcadet will battle even tough opponents.",
       "version": "scarlet"
     },
     {
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/935.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カルボウ",
+    "roomaji": "Carbou",
+    "ko": "카르본",
+    "zh-Hant": "炭小侍",
+    "fr": "Charbambin",
+    "de": "Knarbon",
+    "es": "Charcadet",
+    "it": "Charcadet",
+    "en": "Charcadet",
+    "ja": "カルボウ",
+    "zh-Hans": "炭小侍"
   }
 }

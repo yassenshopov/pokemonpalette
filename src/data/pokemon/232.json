@@ -1,7 +1,7 @@
 {
   "id": 232,
   "name": "Donphan",
-  "species": "Armor Pok\u00e9mon",
+  "species": "Armor Pokémon",
   "type": [
     "Ground"
   ],
@@ -46,15 +46,15 @@
       "version": "silver"
     },
     {
-      "text": "Because this POK\u00e9MON's skin is so tough, a normal attack won't even leave a scratch on it.",
+      "text": "Because this POKéMON's skin is so tough, a normal attack won't even leave a scratch on it.",
       "version": "crystal"
     },
     {
-      "text": "DONPHAN\u2019s favorite attack is curling its body into a ball, then charging at its foe while rolling at high speed. Once it starts rolling, this POK\u00e9MON can\u2019t stop very easily.",
+      "text": "DONPHAN’s favorite attack is curling its body into a ball, then charging at its foe while rolling at high speed. Once it starts rolling, this POKéMON can’t stop very easily.",
       "version": "ruby"
     },
     {
-      "text": "If DONPHAN were to tackle with its hard body, even a house could be destroyed. Using its massive strength, the POK\u00e9MON helps clear rock and mud slides that block mountain trails.",
+      "text": "If DONPHAN were to tackle with its hard body, even a house could be destroyed. Using its massive strength, the POKéMON helps clear rock and mud slides that block mountain trails.",
       "version": "sapphire"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/232.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/232.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドンファン",
+    "roomaji": "Donfan",
+    "ko": "코리갑",
+    "zh-Hant": "頓甲",
+    "fr": "Donphan",
+    "de": "Donphan",
+    "es": "Donphan",
+    "it": "Donphan",
+    "en": "Donphan",
+    "ja": "ドンファン",
+    "zh-Hans": "顿甲"
   }
 }

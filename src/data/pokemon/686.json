@@ -1,7 +1,7 @@
 {
   "id": 686,
   "name": "Inkay",
-  "species": "Revolving Pok\u00e9mon",
+  "species": "Revolving Pokémon",
   "type": [
     "Dark",
     "Psychic"
@@ -53,7 +53,7 @@
       "version": "x"
     },
     {
-      "text": "It flashes the light-emitting spots on its body, which drains its opponent\u2019s will to fight. It takes the opportunity to scuttle away and hide.",
+      "text": "It flashes the light-emitting spots on its body, which drains its opponent’s will to fight. It takes the opportunity to scuttle away and hide.",
       "version": "y"
     },
     {
@@ -61,7 +61,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "It flashes the light-emitting spots on its body, which drains its opponent\u2019s will to fight. It takes the opportunity to scuttle away and hide.",
+      "text": "It flashes the light-emitting spots on its body, which drains its opponent’s will to fight. It takes the opportunity to scuttle away and hide.",
       "version": "alpha-sapphire"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/686.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マーイーカ",
+    "roomaji": "Maaiika",
+    "ko": "오케이징",
+    "zh-Hant": "好啦魷",
+    "fr": "Sepiatop",
+    "de": "Iscalar",
+    "es": "Inkay",
+    "it": "Inkay",
+    "en": "Inkay",
+    "ja": "マーイーカ",
+    "zh-Hans": "好啦鱿"
   }
 }

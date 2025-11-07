@@ -1,7 +1,7 @@
 {
   "id": 227,
   "name": "Skarmory",
-  "species": "Armor Bird Pok\u00e9mon",
+  "species": "Armor Bird Pokémon",
   "type": [
     "Steel",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "SKARMORY is entirely encased in hard, protective armor. This POK\u00e9MON flies at close to 190 mph. It slashes foes with its wings that possess swordlike cutting edges.",
+      "text": "SKARMORY is entirely encased in hard, protective armor. This POKéMON flies at close to 190 mph. It slashes foes with its wings that possess swordlike cutting edges.",
       "version": "ruby"
     },
     {
-      "text": "SKARMORY\u2019s steel wings become tattered and bashed in from repeated battles. Once a year, the battered wings grow back completely, restoring the cutting edges to their pristine state.",
+      "text": "SKARMORY’s steel wings become tattered and bashed in from repeated battles. Once a year, the battered wings grow back completely, restoring the cutting edges to their pristine state.",
       "version": "sapphire"
     }
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/227.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/227.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エアームド",
+    "roomaji": "Airmd",
+    "ko": "무장조",
+    "zh-Hant": "盔甲鳥",
+    "fr": "Airmure",
+    "de": "Panzaeron",
+    "es": "Skarmory",
+    "it": "Skarmory",
+    "en": "Skarmory",
+    "ja": "エアームド",
+    "zh-Hans": "盔甲鸟"
   }
 }

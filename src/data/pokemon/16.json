@@ -1,7 +1,7 @@
 {
   "id": 16,
   "name": "Pidgey",
-  "species": "Tiny Bird Pok\u00e9mon",
+  "species": "Tiny Bird Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -61,11 +61,11 @@
       "version": "yellow"
     },
     {
-      "text": "It usually hides in tall grass. Be\u00ad cause it dislikes fighting, it pro\u00ad tects itself by kicking up sand.",
+      "text": "It usually hides in tall grass. Be­ cause it dislikes fighting, it pro­ tects itself by kicking up sand.",
       "version": "gold"
     },
     {
-      "text": "Common in grassy areas and forests, it is very docile and will chase off enemies by flap\u00ad ping up sand.",
+      "text": "Common in grassy areas and forests, it is very docile and will chase off enemies by flap­ ping up sand.",
       "version": "silver"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/16.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/16.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポッポ",
+    "roomaji": "Poppo",
+    "ko": "구구",
+    "zh-Hant": "波波",
+    "fr": "Roucool",
+    "de": "Taubsi",
+    "es": "Pidgey",
+    "it": "Pidgey",
+    "en": "Pidgey",
+    "ja": "ポッポ",
+    "zh-Hans": "波波"
   }
 }

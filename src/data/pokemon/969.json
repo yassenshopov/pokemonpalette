@@ -1,7 +1,7 @@
 {
   "id": 969,
   "name": "Glimmet",
-  "species": "Ore Pok\u00e9mon",
+  "species": "Ore Pokémon",
   "type": [
     "Rock",
     "Poison"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "Glimmet\u2019s toxic mineral crystals look just like flower petals. This Pok\u00e9mon scatters poisonous powder like pollen to protect itself.",
+      "text": "Glimmet’s toxic mineral crystals look just like flower petals. This Pokémon scatters poisonous powder like pollen to protect itself.",
       "version": "violet"
     }
   ],
@@ -287,5 +287,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/969.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "キラーメ",
+    "roomaji": "Kirame",
+    "ko": "초롱순",
+    "zh-Hant": "晶光芽",
+    "fr": "Germéclat",
+    "de": "Lumispross",
+    "es": "Glimmet",
+    "it": "Glimmet",
+    "en": "Glimmet",
+    "ja": "キラーメ",
+    "zh-Hans": "晶光芽"
   }
 }

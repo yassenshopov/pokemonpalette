@@ -1,7 +1,7 @@
 {
   "id": 230,
   "name": "Kingdra",
-  "species": "Dragon Pok\u00e9mon",
+  "species": "Dragon Pokémon",
   "type": [
     "Water",
     "Dragon"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "KINGDRA lives at extreme ocean depths that are otherwise uninhabited. It has long been believed that the yawning of this POK\u00e9MON creates spiraling ocean currents.",
+      "text": "KINGDRA lives at extreme ocean depths that are otherwise uninhabited. It has long been believed that the yawning of this POKéMON creates spiraling ocean currents.",
       "version": "ruby"
     },
     {
-      "text": "KINGDRA sleeps on the seafloor where it is otherwise devoid of life. When a storm arrives, the POK\u00e9MON is said to awaken and wander about in search of prey.",
+      "text": "KINGDRA sleeps on the seafloor where it is otherwise devoid of life. When a storm arrives, the POKéMON is said to awaken and wander about in search of prey.",
       "version": "sapphire"
     }
   ],
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/230.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/230.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キングドラ",
+    "roomaji": "Kingdra",
+    "ko": "킹드라",
+    "zh-Hant": "刺龍王",
+    "fr": "Hyporoi",
+    "de": "Seedraking",
+    "es": "Kingdra",
+    "it": "Kingdra",
+    "en": "Kingdra",
+    "ja": "キングドラ",
+    "zh-Hans": "刺龙王"
   }
 }

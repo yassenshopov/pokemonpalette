@@ -1,7 +1,7 @@
 {
   "id": 48,
   "name": "Venonat",
-  "species": "Insect Pok\u00e9mon",
+  "species": "Insect Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "Poison oozes from all over its body. It catches and eats small bugs at night that are at\u00ad tracted by light.",
+      "text": "Poison oozes from all over its body. It catches and eats small bugs at night that are at­ tracted by light.",
       "version": "silver"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/48.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/48.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コンパン",
+    "roomaji": "Kongpang",
+    "ko": "콘팡",
+    "zh-Hant": "毛球",
+    "fr": "Mimitoss",
+    "de": "Bluzuk",
+    "es": "Venonat",
+    "it": "Venonat",
+    "en": "Venonat",
+    "ja": "コンパン",
+    "zh-Hans": "毛球"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 606,
   "name": "Beheeyem",
-  "species": "Cerebral Pok\u00e9mon",
+  "species": "Cerebral Pokémon",
   "type": [
     "Psychic"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 95,
     "speed": 40
   },
-  "description": "It can manipulate an opponent\u2019s memory. Apparently, it communicates by flashing its three different-colored fingers.",
+  "description": "It can manipulate an opponent’s memory. Apparently, it communicates by flashing its three different-colored fingers.",
   "flavorTexts": [
     {
-      "text": "It can manipulate an opponent\u2019s memory. Apparently, it communicates by flashing its three different-colored fingers.",
+      "text": "It can manipulate an opponent’s memory. Apparently, it communicates by flashing its three different-colored fingers.",
       "version": "black"
     },
     {
-      "text": "It uses psychic power to control an opponent\u2019s brain and tamper with its memories.",
+      "text": "It uses psychic power to control an opponent’s brain and tamper with its memories.",
       "version": "white"
     },
     {
-      "text": "Apparently, it communicates by flashing its three fingers, but those patterns haven\u2019t been decoded.",
+      "text": "Apparently, it communicates by flashing its three fingers, but those patterns haven’t been decoded.",
       "version": "black-2"
     },
     {
-      "text": "Apparently, it communicates by flashing its three fingers, but those patterns haven\u2019t been decoded.",
+      "text": "Apparently, it communicates by flashing its three fingers, but those patterns haven’t been decoded.",
       "version": "white-2"
     },
     {
-      "text": "Apparently, it communicates by flashing its three fingers, but those patterns haven\u2019t been decoded.",
+      "text": "Apparently, it communicates by flashing its three fingers, but those patterns haven’t been decoded.",
       "version": "x"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/606.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/606.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オーベム",
+    "roomaji": "Ohbem",
+    "ko": "벰크",
+    "zh-Hant": "大宇怪",
+    "fr": "Neitram",
+    "de": "Megalon",
+    "es": "Beheeyem",
+    "it": "Beheeyem",
+    "en": "Beheeyem",
+    "ja": "オーベム",
+    "zh-Hans": "大宇怪"
   }
 }

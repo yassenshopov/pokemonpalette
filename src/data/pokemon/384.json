@@ -1,7 +1,7 @@
 {
   "id": 384,
   "name": "Rayquaza",
-  "species": "Sky High Pok\u00e9mon",
+  "species": "Sky High Pokémon",
   "type": [
     "Dragon",
     "Flying"
@@ -34,18 +34,18 @@
     "specialDefense": 90,
     "speed": 95
   },
-  "description": "RAYQUAZA lived for hundreds of millions of years in the earth\u2019s ozone layer,  never descending to the ground. This POK\u00e9MON appears to feed on water and particles in the atmosphere.",
+  "description": "RAYQUAZA lived for hundreds of millions of years in the earth’s ozone layer,  never descending to the ground. This POKéMON appears to feed on water and particles in the atmosphere.",
   "flavorTexts": [
     {
-      "text": "RAYQUAZA lived for hundreds of millions of years in the earth\u2019s ozone layer,  never descending to the ground. This POK\u00e9MON appears to feed on water and particles in the atmosphere.",
+      "text": "RAYQUAZA lived for hundreds of millions of years in the earth’s ozone layer,  never descending to the ground. This POKéMON appears to feed on water and particles in the atmosphere.",
       "version": "ruby"
     },
     {
-      "text": "RAYQUAZA is said to have lived for hundreds of millions of years in the earth\u2019s ozone layer, above the clouds. Its existence had been completely unknown because it lived so high in the sky.",
+      "text": "RAYQUAZA is said to have lived for hundreds of millions of years in the earth’s ozone layer, above the clouds. Its existence had been completely unknown because it lived so high in the sky.",
       "version": "sapphire"
     },
     {
-      "text": "A POK\u00e9MON that flies endlessly in the ozone layer. It is said it would descend to the ground if KYOGRE and GROUDON were to fight.",
+      "text": "A POKéMON that flies endlessly in the ozone layer. It is said it would descend to the ground if KYOGRE and GROUDON were to fight.",
       "version": "emerald"
     },
     {
@@ -290,5 +290,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/384.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/384.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "レックウザ",
+    "roomaji": "Rayquaza",
+    "ko": "레쿠쟈",
+    "zh-Hant": "烈空坐",
+    "fr": "Rayquaza",
+    "de": "Rayquaza",
+    "es": "Rayquaza",
+    "it": "Rayquaza",
+    "en": "Rayquaza",
+    "ja": "レックウザ",
+    "zh-Hans": "烈空坐"
   }
 }

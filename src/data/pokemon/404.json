@@ -1,7 +1,7 @@
 {
   "id": 404,
   "name": "Luxio",
-  "species": "Spark Pok\u00e9mon",
+  "species": "Spark Pokémon",
   "type": [
     "Electric"
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/404.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/404.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ルクシオ",
+    "roomaji": "Luxio",
+    "ko": "럭시오",
+    "zh-Hant": "勒克貓",
+    "fr": "Luxio",
+    "de": "Luxio",
+    "es": "Luxio",
+    "it": "Luxio",
+    "en": "Luxio",
+    "ja": "ルクシオ",
+    "zh-Hans": "勒克猫"
   }
 }

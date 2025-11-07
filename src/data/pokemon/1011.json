@@ -1,7 +1,7 @@
 {
   "id": 1011,
   "name": "Dipplin",
-  "species": "Candy Apple Pok\u00e9mon",
+  "species": "Candy Apple Pokémon",
   "type": [
     "Grass",
     "Dragon"
@@ -46,10 +46,10 @@
     "specialDefense": 80,
     "speed": 40
   },
-  "description": "Dipplin is two creatures in one Pok\u00e9mon. Its evolution was triggered by a special apple grown only in one place.",
+  "description": "Dipplin is two creatures in one Pokémon. Its evolution was triggered by a special apple grown only in one place.",
   "flavorTexts": [
     {
-      "text": "Dipplin is two creatures in one Pok\u00e9mon. Its evolution was triggered by a special apple grown only in one place.",
+      "text": "Dipplin is two creatures in one Pokémon. Its evolution was triggered by a special apple grown only in one place.",
       "version": "scarlet"
     },
     {
@@ -313,5 +313,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1011.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カミッチュ",
+    "ko": "과미르",
+    "zh-Hant": "裹蜜蟲",
+    "fr": "Pomdramour",
+    "de": "Sirapfel",
+    "es": "Dipplin",
+    "it": "Dipplin",
+    "en": "Dipplin",
+    "ja": "カミッチュ",
+    "zh-Hans": "裹蜜虫"
   }
 }

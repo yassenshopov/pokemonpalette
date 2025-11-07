@@ -1,7 +1,7 @@
 {
   "id": 618,
   "name": "Stunfisk",
-  "species": "Trap Pok\u00e9mon",
+  "species": "Trap Pokémon",
   "type": [
     "Ground",
     "Electric"
@@ -57,11 +57,11 @@
       "version": "white"
     },
     {
-      "text": "When its opponent can\u2019t be paralyzed, it contorts itself with unexpected speed and flops away.",
+      "text": "When its opponent can’t be paralyzed, it contorts itself with unexpected speed and flops away.",
       "version": "black-2"
     },
     {
-      "text": "When its opponent can\u2019t be paralyzed, it contorts itself with unexpected speed and flops away.",
+      "text": "When its opponent can’t be paralyzed, it contorts itself with unexpected speed and flops away.",
       "version": "white-2"
     },
     {
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/618.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/618.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マッギョ",
+    "roomaji": "Maggyo",
+    "ko": "메더",
+    "zh-Hant": "泥巴魚",
+    "fr": "Limonde",
+    "de": "Flunschlik",
+    "es": "Stunfisk",
+    "it": "Stunfisk",
+    "en": "Stunfisk",
+    "ja": "マッギョ",
+    "zh-Hans": "泥巴鱼"
   }
 }

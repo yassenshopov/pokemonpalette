@@ -1,7 +1,7 @@
 {
   "id": 744,
   "name": "Rockruff",
-  "species": "Puppy Pok\u00e9mon",
+  "species": "Puppy Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 40,
     "speed": 60
   },
-  "description": "It\u2019s considered to be a good Pok\u00e9mon for beginners because of its friendliness, but its disposition grows rougher as it grows up.",
+  "description": "It’s considered to be a good Pokémon for beginners because of its friendliness, but its disposition grows rougher as it grows up.",
   "flavorTexts": [
     {
-      "text": "It\u2019s considered to be a good Pok\u00e9mon for beginners because of its friendliness, but its disposition grows rougher as it grows up.",
+      "text": "It’s considered to be a good Pokémon for beginners because of its friendliness, but its disposition grows rougher as it grows up.",
       "version": "sun"
     },
     {
-      "text": "This Pok\u00e9mon has lived with people since times long ago. It can sense when its Trainer is in the dumps and will stick close by its Trainer\u2019s side.",
+      "text": "This Pokémon has lived with people since times long ago. It can sense when its Trainer is in the dumps and will stick close by its Trainer’s side.",
       "version": "moon"
     },
     {
@@ -56,11 +56,11 @@
       "version": "ultra-sun"
     },
     {
-      "text": "When it rubs the rocks on its neck against you, that\u2019s proof of its love for you. However, the rocks are sharp, so the gesture is quite painful!",
+      "text": "When it rubs the rocks on its neck against you, that’s proof of its love for you. However, the rocks are sharp, so the gesture is quite painful!",
       "version": "ultra-moon"
     },
     {
-      "text": "This Pok\u00e9mon can bond very strongly with its Trainer, but it also has a habit of biting. Raising a Rockruff for a long time can be challenging.",
+      "text": "This Pokémon can bond very strongly with its Trainer, but it also has a habit of biting. Raising a Rockruff for a long time can be challenging.",
       "version": "sword"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/744.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イワンコ",
+    "roomaji": "Iwanko",
+    "ko": "암멍이",
+    "zh-Hant": "岩狗狗",
+    "fr": "Rocabot",
+    "de": "Wuffels",
+    "es": "Rockruff",
+    "it": "Rockruff",
+    "en": "Rockruff",
+    "ja": "イワンコ",
+    "zh-Hans": "岩狗狗"
   }
 }

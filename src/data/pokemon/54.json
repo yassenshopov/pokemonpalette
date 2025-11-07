@@ -1,7 +1,7 @@
 {
   "id": 54,
   "name": "Psyduck",
-  "species": "Duck Pok\u00e9mon",
+  "species": "Duck Pokémon",
   "type": [
     "Water"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 50,
     "speed": 55
   },
-  "description": "While lulling its enemies with its vacant look, this wily POK\u00e9MON will use psychokinetic powers.",
+  "description": "While lulling its enemies with its vacant look, this wily POKéMON will use psychokinetic powers.",
   "flavorTexts": [
     {
-      "text": "While lulling its enemies with its vacant look, this wily POK\u00e9MON will use psychokinetic powers.",
+      "text": "While lulling its enemies with its vacant look, this wily POKéMON will use psychokinetic powers.",
       "version": "red"
     },
     {
-      "text": "While lulling its enemies with its vacant look, this wily POK\u00e9MON will use psychokinetic powers.",
+      "text": "While lulling its enemies with its vacant look, this wily POKéMON will use psychokinetic powers.",
       "version": "blue"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/54.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/54.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コダック",
+    "roomaji": "Koduck",
+    "ko": "고라파덕",
+    "zh-Hant": "可達鴨",
+    "fr": "Psykokwak",
+    "de": "Enton",
+    "es": "Psyduck",
+    "it": "Psyduck",
+    "en": "Psyduck",
+    "ja": "コダック",
+    "zh-Hans": "可达鸭"
   }
 }

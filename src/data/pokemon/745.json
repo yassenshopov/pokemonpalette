@@ -1,7 +1,7 @@
 {
   "id": 745,
   "name": "Lycanroc-midday",
-  "species": "Wolf Pok\u00e9mon",
+  "species": "Wolf Pokémon",
   "type": [
     "Rock"
   ],
@@ -322,5 +322,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/745.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ルガルガン",
+    "roomaji": "Lugarugan",
+    "ko": "루가루암",
+    "zh-Hant": "鬃岩狼人",
+    "fr": "Lougaroc",
+    "de": "Wolwerock",
+    "es": "Lycanroc",
+    "it": "Lycanroc",
+    "en": "Lycanroc",
+    "ja": "ルガルガン",
+    "zh-Hans": "鬃岩狼人"
   }
 }

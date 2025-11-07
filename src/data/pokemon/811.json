@@ -1,7 +1,7 @@
 {
   "id": 811,
   "name": "Thwackey",
-  "species": "Beat Pok\u00e9mon",
+  "species": "Beat Pokémon",
   "type": [
     "Grass"
   ],
@@ -42,7 +42,7 @@
       "version": "sword"
     },
     {
-      "text": "When it\u2019s drumming out rapid beats in battle, it gets so caught up in the rhythm that it won\u2019t even notice that it\u2019s already knocked out its opponent.",
+      "text": "When it’s drumming out rapid beats in battle, it gets so caught up in the rhythm that it won’t even notice that it’s already knocked out its opponent.",
       "version": "shield"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/811.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バチンキー",
+    "roomaji": "Bachinkey",
+    "ko": "채키몽",
+    "zh-Hant": "啪咚猴",
+    "fr": "Badabouin",
+    "de": "Chimstix",
+    "es": "Thwackey",
+    "it": "Thwackey",
+    "en": "Thwackey",
+    "ja": "バチンキー",
+    "zh-Hans": "啪咚猴"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 834,
   "name": "Drednaw",
-  "species": "Bite Pok\u00e9mon",
+  "species": "Bite Pokémon",
   "type": [
     "Water",
     "Rock"
@@ -46,14 +46,14 @@
     "specialDefense": 68,
     "speed": 74
   },
-  "description": "With jaws that can shear through steel rods, this highly aggressive Pok\u00e9mon chomps down on its unfortunate prey.",
+  "description": "With jaws that can shear through steel rods, this highly aggressive Pokémon chomps down on its unfortunate prey.",
   "flavorTexts": [
     {
-      "text": "With jaws that can shear through steel rods, this highly aggressive Pok\u00e9mon chomps down on its unfortunate prey.",
+      "text": "With jaws that can shear through steel rods, this highly aggressive Pokémon chomps down on its unfortunate prey.",
       "version": "sword"
     },
     {
-      "text": "This Pok\u00e9mon rapidly extends its retractable neck to sink its sharp fangs into distant enemies and take them down.",
+      "text": "This Pokémon rapidly extends its retractable neck to sink its sharp fangs into distant enemies and take them down.",
       "version": "shield"
     }
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/834.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "カジリガメ",
+    "roomaji": "Kajirigame",
+    "ko": "갈가부기",
+    "zh-Hant": "暴噬龜",
+    "fr": "Torgamord",
+    "de": "Kamalm",
+    "es": "Drednaw",
+    "it": "Drednaw",
+    "en": "Drednaw",
+    "ja": "カジリガメ",
+    "zh-Hans": "暴噬龟"
   }
 }

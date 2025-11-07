@@ -1,7 +1,7 @@
 {
   "id": 399,
   "name": "Bidoof",
-  "species": "Plump Mouse Pok\u00e9mon",
+  "species": "Plump Mouse Pokémon",
   "type": [
     "Normal"
   ],
@@ -52,7 +52,7 @@
       "version": "pearl"
     },
     {
-      "text": "A comparison revealed that BIDOOF\u2019s front teeth grow at the same rate as RATTATA\u2019s.",
+      "text": "A comparison revealed that BIDOOF’s front teeth grow at the same rate as RATTATA’s.",
       "version": "platinum"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/399.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/399.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ビッパ",
+    "roomaji": "Bipper",
+    "ko": "비버니",
+    "zh-Hant": "大牙狸",
+    "fr": "Keunotor",
+    "de": "Bidiza",
+    "es": "Bidoof",
+    "it": "Bidoof",
+    "en": "Bidoof",
+    "ja": "ビッパ",
+    "zh-Hans": "大牙狸"
   }
 }

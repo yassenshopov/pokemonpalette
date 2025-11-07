@@ -1,7 +1,7 @@
 {
   "id": 539,
   "name": "Sawk",
-  "species": "Karate Pok\u00e9mon",
+  "species": "Karate Pokémon",
   "type": [
     "Fighting"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/539.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/539.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ダゲキ",
+    "roomaji": "Dageki",
+    "ko": "타격귀",
+    "zh-Hant": "打擊鬼",
+    "fr": "Karaclée",
+    "de": "Karadonis",
+    "es": "Sawk",
+    "it": "Sawk",
+    "en": "Sawk",
+    "ja": "ダゲキ",
+    "zh-Hans": "打击鬼"
   }
 }

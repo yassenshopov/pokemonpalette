@@ -1,7 +1,7 @@
 {
   "id": 71,
   "name": "Victreebel",
-  "species": "Flycatcher Pok\u00e9mon",
+  "species": "Flycatcher Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -55,11 +55,11 @@
       "version": "yellow"
     },
     {
-      "text": "ACID that has dis\u00ad solved many prey becomes sweeter, making it even more effective at attracting prey.",
+      "text": "ACID that has dis­ solved many prey becomes sweeter, making it even more effective at attracting prey.",
       "version": "gold"
     },
     {
-      "text": "This horrifying plant POK\u00e9MON at\u00ad tracts prey with aromatic honey, then melts them in its mouth.",
+      "text": "This horrifying plant POKéMON at­ tracts prey with aromatic honey, then melts them in its mouth.",
       "version": "silver"
     }
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/71.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/71.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ウツボット",
+    "roomaji": "Utsubot",
+    "ko": "우츠보트",
+    "zh-Hant": "大食花",
+    "fr": "Empiflor",
+    "de": "Sarzenia",
+    "es": "Victreebel",
+    "it": "Victreebel",
+    "en": "Victreebel",
+    "ja": "ウツボット",
+    "zh-Hans": "大食花"
   }
 }

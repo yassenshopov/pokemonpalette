@@ -1,7 +1,7 @@
 {
   "id": 201,
   "name": "Unown",
-  "species": "Symbol Pok\u00e9mon",
+  "species": "Symbol Pokémon",
   "type": [
     "Psychic"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 48,
     "speed": 48
   },
-  "description": "Their shapes look like hieroglyphs on ancient tab\u00ad lets. It is said that the two are somehow related.",
+  "description": "Their shapes look like hieroglyphs on ancient tab­ lets. It is said that the two are somehow related.",
   "flavorTexts": [
     {
-      "text": "Their shapes look like hieroglyphs on ancient tab\u00ad lets. It is said that the two are somehow related.",
+      "text": "Their shapes look like hieroglyphs on ancient tab­ lets. It is said that the two are somehow related.",
       "version": "gold"
     },
     {
-      "text": "Its flat, thin body is always stuck on walls. Its shape appears to have some mean\u00ad ing.",
+      "text": "Its flat, thin body is always stuck on walls. Its shape appears to have some mean­ ing.",
       "version": "silver"
     },
     {
@@ -44,11 +44,11 @@
       "version": "crystal"
     },
     {
-      "text": "This POK\u00e9MON is shaped like ancient writing. It is a mystery as to which came first, the ancient writings or the various UNOWN. Research into this topic is ongoing but nothing is known.",
+      "text": "This POKéMON is shaped like ancient writing. It is a mystery as to which came first, the ancient writings or the various UNOWN. Research into this topic is ongoing but nothing is known.",
       "version": "ruby"
     },
     {
-      "text": "This POK\u00e9MON is shaped like ancient writing. It is a mystery as to which came first, the ancient writings or the various UNOWN. Research into this topic is ongoing but nothing is known.",
+      "text": "This POKéMON is shaped like ancient writing. It is a mystery as to which came first, the ancient writings or the various UNOWN. Research into this topic is ongoing but nothing is known.",
       "version": "sapphire"
     }
   ],
@@ -597,5 +597,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/201.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/201.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アンノーン",
+    "roomaji": "Unknown",
+    "ko": "안농",
+    "zh-Hant": "未知圖騰",
+    "fr": "Zarbi",
+    "de": "Icognito",
+    "es": "Unown",
+    "it": "Unown",
+    "en": "Unown",
+    "ja": "アンノーン",
+    "zh-Hans": "未知图腾"
   }
 }

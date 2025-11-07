@@ -1,7 +1,7 @@
 {
   "id": 904,
   "name": "Overqwil",
-  "species": "Pin Cluster Pok\u00e9mon",
+  "species": "Pin Cluster Pokémon",
   "type": [
     "Dark",
     "Poison"
@@ -46,10 +46,10 @@
     "specialDefense": 65,
     "speed": 85
   },
-  "description": "Its lancelike spikes and savage temperament have earned it the nickname \u201dsea fiend.\u201d It slurps up poison to nourish itself.",
+  "description": "Its lancelike spikes and savage temperament have earned it the nickname ”sea fiend.” It slurps up poison to nourish itself.",
   "flavorTexts": [
     {
-      "text": "Its lancelike spikes and savage temperament have earned it the nickname \u201dsea fiend.\u201d It slurps up poison to nourish itself.",
+      "text": "Its lancelike spikes and savage temperament have earned it the nickname ”sea fiend.” It slurps up poison to nourish itself.",
       "version": "legends-arceus"
     }
   ],
@@ -288,5 +288,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/904.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ハリーマン",
+    "roomaji": "Hariman",
+    "ko": "장침바루",
+    "zh-Hant": "萬針魚",
+    "fr": "Qwilpik",
+    "de": "Myriador",
+    "es": "Overqwil",
+    "it": "Overqwil",
+    "en": "Overqwil",
+    "ja": "ハリーマン",
+    "zh-Hans": "万针鱼"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 716,
   "name": "Xerneas",
-  "species": "Life Pok\u00e9mon",
+  "species": "Life Pokémon",
   "type": [
     "Fairy"
   ],
@@ -291,5 +291,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/716.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ゼルネアス",
+    "roomaji": "Xerneas",
+    "ko": "제르네아스",
+    "zh-Hant": "哲爾尼亞斯",
+    "fr": "Xerneas",
+    "de": "Xerneas",
+    "es": "Xerneas",
+    "it": "Xerneas",
+    "en": "Xerneas",
+    "ja": "ゼルネアス",
+    "zh-Hans": "哲尔尼亚斯"
   }
 }

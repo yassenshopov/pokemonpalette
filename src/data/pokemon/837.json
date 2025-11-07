@@ -1,7 +1,7 @@
 {
   "id": 837,
   "name": "Rolycoly",
-  "species": "Coal Pok\u00e9mon",
+  "species": "Coal Pokémon",
   "type": [
     "Rock"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 50,
     "speed": 30
   },
-  "description": "Most of its body has the same composition as coal. Fittingly, this Pok\u00e9mon was first discovered in coal mines about 400 years ago.",
+  "description": "Most of its body has the same composition as coal. Fittingly, this Pokémon was first discovered in coal mines about 400 years ago.",
   "flavorTexts": [
     {
-      "text": "Most of its body has the same composition as coal. Fittingly, this Pok\u00e9mon was first discovered in coal mines about 400 years ago.",
+      "text": "Most of its body has the same composition as coal. Fittingly, this Pokémon was first discovered in coal mines about 400 years ago.",
       "version": "sword"
     },
     {
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/837.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "タンドン",
+    "roomaji": "Tandon",
+    "ko": "탄동",
+    "zh-Hant": "小炭仔",
+    "fr": "Charbi",
+    "de": "Klonkett",
+    "es": "Rolycoly",
+    "it": "Rolycoly",
+    "en": "Rolycoly",
+    "ja": "タンドン",
+    "zh-Hans": "小炭仔"
   }
 }

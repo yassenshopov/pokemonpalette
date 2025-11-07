@@ -1,7 +1,7 @@
 {
   "id": 367,
   "name": "Huntail",
-  "species": "Deep Sea Pok\u00e9mon",
+  "species": "Deep Sea Pokémon",
   "type": [
     "Water"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 75,
     "speed": 52
   },
-  "description": "HUNTAIL\u2019s presence went unnoticed by people for a long time because it lives at extreme depths in the sea. This POK\u00e9MON\u2019s eyes can see clearly even in the murky dark depths of the ocean.",
+  "description": "HUNTAIL’s presence went unnoticed by people for a long time because it lives at extreme depths in the sea. This POKéMON’s eyes can see clearly even in the murky dark depths of the ocean.",
   "flavorTexts": [
     {
-      "text": "HUNTAIL\u2019s presence went unnoticed by people for a long time because it lives at extreme depths in the sea. This POK\u00e9MON\u2019s eyes can see clearly even in the murky dark depths of the ocean.",
+      "text": "HUNTAIL’s presence went unnoticed by people for a long time because it lives at extreme depths in the sea. This POKéMON’s eyes can see clearly even in the murky dark depths of the ocean.",
       "version": "ruby"
     },
     {
-      "text": "HUNTAIL\u2019s tail is shaped like a fish. It uses the tail to attract prey, then swallows the prey whole with its large, gaping mouth. This POK\u00e9MON swims by wiggling its slender body like a snake.",
+      "text": "HUNTAIL’s tail is shaped like a fish. It uses the tail to attract prey, then swallows the prey whole with its large, gaping mouth. This POKéMON swims by wiggling its slender body like a snake.",
       "version": "sapphire"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/367.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/367.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハンテール",
+    "roomaji": "Huntail",
+    "ko": "헌테일",
+    "zh-Hant": "獵斑魚",
+    "fr": "Serpang",
+    "de": "Aalabyss",
+    "es": "Huntail",
+    "it": "Huntail",
+    "en": "Huntail",
+    "ja": "ハンテール",
+    "zh-Hans": "猎斑鱼"
   }
 }

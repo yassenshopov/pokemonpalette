@@ -1,7 +1,7 @@
 {
   "id": 277,
   "name": "Swellow",
-  "species": "Swallow Pok\u00e9mon",
+  "species": "Swallow Pokémon",
   "type": [
     "Normal",
     "Flying"
@@ -40,14 +40,14 @@
     "specialDefense": 50,
     "speed": 125
   },
-  "description": "SWELLOW flies high above our heads, making graceful arcs in the sky. This POK\u00e9MON dives at a steep angle as soon as it spots its prey. The hapless prey is tightly grasped by SWELLOW\u2019s clawed feet, preventing escape.",
+  "description": "SWELLOW flies high above our heads, making graceful arcs in the sky. This POKéMON dives at a steep angle as soon as it spots its prey. The hapless prey is tightly grasped by SWELLOW’s clawed feet, preventing escape.",
   "flavorTexts": [
     {
-      "text": "SWELLOW flies high above our heads, making graceful arcs in the sky. This POK\u00e9MON dives at a steep angle as soon as it spots its prey. The hapless prey is tightly grasped by SWELLOW\u2019s clawed feet, preventing escape.",
+      "text": "SWELLOW flies high above our heads, making graceful arcs in the sky. This POKéMON dives at a steep angle as soon as it spots its prey. The hapless prey is tightly grasped by SWELLOW’s clawed feet, preventing escape.",
       "version": "ruby"
     },
     {
-      "text": "SWELLOW is very conscientious about the upkeep of its glossy wings. Once two SWELLOW are gathered, they diligently take care of cleaning each other\u2019s wings.",
+      "text": "SWELLOW is very conscientious about the upkeep of its glossy wings. Once two SWELLOW are gathered, they diligently take care of cleaning each other’s wings.",
       "version": "sapphire"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/277.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/277.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オオスバメ",
+    "roomaji": "Ohsubame",
+    "ko": "스왈로",
+    "zh-Hant": "大王燕",
+    "fr": "Hélédelle",
+    "de": "Schwalboss",
+    "es": "Swellow",
+    "it": "Swellow",
+    "en": "Swellow",
+    "ja": "オオスバメ",
+    "zh-Hans": "大王燕"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 807,
   "name": "Zeraora",
-  "species": "Thunderclap Pok\u00e9mon",
+  "species": "Thunderclap Pokémon",
   "type": [
     "Electric"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 80,
     "speed": 143
   },
-  "description": "It electrifies its claws and tears its opponents apart with them. Even if they dodge its attack, they\u2019ll be electrocuted by the flying sparks.",
+  "description": "It electrifies its claws and tears its opponents apart with them. Even if they dodge its attack, they’ll be electrocuted by the flying sparks.",
   "flavorTexts": [
     {
-      "text": "It electrifies its claws and tears its opponents apart with them. Even if they dodge its attack, they\u2019ll be electrocuted by the flying sparks.",
+      "text": "It electrifies its claws and tears its opponents apart with them. Even if they dodge its attack, they’ll be electrocuted by the flying sparks.",
       "version": "ultra-sun"
     },
     {
@@ -274,5 +274,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/807.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ゼラオラ",
+    "roomaji": "Zeraora",
+    "ko": "제라오라",
+    "zh-Hant": "捷拉奧拉",
+    "fr": "Zeraora",
+    "de": "Zeraora",
+    "es": "Zeraora",
+    "it": "Zeraora",
+    "en": "Zeraora",
+    "ja": "ゼラオラ",
+    "zh-Hans": "捷拉奥拉"
   }
 }

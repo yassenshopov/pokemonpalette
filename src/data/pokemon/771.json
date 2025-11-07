@@ -1,7 +1,7 @@
 {
   "id": 771,
   "name": "Pyukumuku",
-  "species": "Sea Cucumber Pok\u00e9mon",
+  "species": "Sea Cucumber Pokémon",
   "type": [
     "Water"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 130,
     "speed": 5
   },
-  "description": "It\u2019s covered in a slime that keeps its skin moist, allowing it to stay on land for days without drying up.",
+  "description": "It’s covered in a slime that keeps its skin moist, allowing it to stay on land for days without drying up.",
   "flavorTexts": [
     {
-      "text": "It\u2019s covered in a slime that keeps its skin moist, allowing it to stay on land for days without drying up.",
+      "text": "It’s covered in a slime that keeps its skin moist, allowing it to stay on land for days without drying up.",
       "version": "shield"
     },
     {
@@ -46,7 +46,7 @@
       "version": "sun"
     },
     {
-      "text": "These Pok\u00e9mon line the beaches. The sticky mucous that covers their bodies can be used to soothe sunburned skin. How convenient!",
+      "text": "These Pokémon line the beaches. The sticky mucous that covers their bodies can be used to soothe sunburned skin. How convenient!",
       "version": "moon"
     },
     {
@@ -54,7 +54,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Its entire body is covered in its own slime. If you accidentally step on one, you\u2019ll slip, and it will get mad and smack you!",
+      "text": "Its entire body is covered in its own slime. If you accidentally step on one, you’ll slip, and it will get mad and smack you!",
       "version": "ultra-moon"
     }
   ],
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/771.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ナマコブシ",
+    "roomaji": "Namakobushi",
+    "ko": "해무기",
+    "zh-Hant": "拳海參",
+    "fr": "Concombaffe",
+    "de": "Gufa",
+    "es": "Pyukumuku",
+    "it": "Pyukumuku",
+    "en": "Pyukumuku",
+    "ja": "ナマコブシ",
+    "zh-Hans": "拳海参"
   }
 }

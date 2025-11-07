@@ -1,7 +1,7 @@
 {
   "id": 217,
   "name": "Ursaring",
-  "species": "Hibernator Pok\u00e9mon",
+  "species": "Hibernator Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,7 +48,7 @@
       "version": "gold"
     },
     {
-      "text": "With its ability to distinguish any aroma, it unfail\u00ad ingly finds all food buried deep underground.",
+      "text": "With its ability to distinguish any aroma, it unfail­ ingly finds all food buried deep underground.",
       "version": "silver"
     },
     {
@@ -56,11 +56,11 @@
       "version": "crystal"
     },
     {
-      "text": "In the forests inhabited by URSARING, it is said that there are many streams and towering trees where they gather food. This POK\u00e9MON walks through its forest gathering food every day.",
+      "text": "In the forests inhabited by URSARING, it is said that there are many streams and towering trees where they gather food. This POKéMON walks through its forest gathering food every day.",
       "version": "ruby"
     },
     {
-      "text": "In the forests inhabited by URSARING, it is said that there are many streams and towering trees where they gather food. This POK\u00e9MON walks through its forest gathering food every day.",
+      "text": "In the forests inhabited by URSARING, it is said that there are many streams and towering trees where they gather food. This POKéMON walks through its forest gathering food every day.",
       "version": "sapphire"
     }
   ],
@@ -319,5 +319,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/217.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/217.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リングマ",
+    "roomaji": "Ringuma",
+    "ko": "링곰",
+    "zh-Hant": "圈圈熊",
+    "fr": "Ursaring",
+    "de": "Ursaring",
+    "es": "Ursaring",
+    "it": "Ursaring",
+    "en": "Ursaring",
+    "ja": "リングマ",
+    "zh-Hans": "圈圈熊"
   }
 }

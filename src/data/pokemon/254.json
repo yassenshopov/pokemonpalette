@@ -1,7 +1,7 @@
 {
   "id": 254,
   "name": "Sceptile",
-  "species": "Forest Pok\u00e9mon",
+  "species": "Forest Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 85,
     "speed": 120
   },
-  "description": "The leaves growing on SCEPTILE\u2019s body are very sharp edged. This POK\u00e9MON is very agile - it leaps all over the branches of trees and jumps on its foe from above or behind.",
+  "description": "The leaves growing on SCEPTILE’s body are very sharp edged. This POKéMON is very agile - it leaps all over the branches of trees and jumps on its foe from above or behind.",
   "flavorTexts": [
     {
-      "text": "The leaves growing on SCEPTILE\u2019s body are very sharp edged. This POK\u00e9MON is very agile - it leaps all over the branches of trees and jumps on its foe from above or behind.",
+      "text": "The leaves growing on SCEPTILE’s body are very sharp edged. This POKéMON is very agile - it leaps all over the branches of trees and jumps on its foe from above or behind.",
       "version": "ruby"
     },
     {
-      "text": "SCEPTILE has seeds growing on its back. They are said to be bursting with nutrients that revitalize trees. This POK\u00e9MON raises the trees in a forest with loving care.",
+      "text": "SCEPTILE has seeds growing on its back. They are said to be bursting with nutrients that revitalize trees. This POKéMON raises the trees in a forest with loving care.",
       "version": "sapphire"
     },
     {
-      "text": "In the jungle, its power is without equal. This POK\u00e9MON carefully grows trees and plants. It regulates its body temperature by basking in sunlight.",
+      "text": "In the jungle, its power is without equal. This POKéMON carefully grows trees and plants. It regulates its body temperature by basking in sunlight.",
       "version": "emerald"
     },
     {
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/254.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/254.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジュカイン",
+    "roomaji": "Jukain",
+    "ko": "나무킹",
+    "zh-Hant": "蜥蜴王",
+    "fr": "Jungko",
+    "de": "Gewaldro",
+    "es": "Sceptile",
+    "it": "Sceptile",
+    "en": "Sceptile",
+    "ja": "ジュカイン",
+    "zh-Hans": "蜥蜴王"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 534,
   "name": "Conkeldurr",
-  "species": "Muscular Pok\u00e9mon",
+  "species": "Muscular Pokémon",
   "type": [
     "Fighting"
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/534.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/534.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ローブシン",
+    "roomaji": "Roubushin",
+    "ko": "노보청",
+    "zh-Hant": "修建老匠",
+    "fr": "Bétochef",
+    "de": "Meistagrif",
+    "es": "Conkeldurr",
+    "it": "Conkeldurr",
+    "en": "Conkeldurr",
+    "ja": "ローブシン",
+    "zh-Hans": "修建老匠"
   }
 }

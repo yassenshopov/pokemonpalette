@@ -1,7 +1,7 @@
 {
   "id": 160,
   "name": "Feraligatr",
-  "species": "Big Jaw Pok\u00e9mon",
+  "species": "Big Jaw Pokémon",
   "type": [
     "Water"
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/160.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/160.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "オーダイル",
+    "roomaji": "Ordile",
+    "ko": "장크로다일",
+    "zh-Hant": "大力鱷",
+    "fr": "Aligatueur",
+    "de": "Impergator",
+    "es": "Feraligatr",
+    "it": "Feraligatr",
+    "en": "Feraligatr",
+    "ja": "オーダイル",
+    "zh-Hans": "大力鳄"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 838,
   "name": "Carkol",
-  "species": "Coal Pok\u00e9mon",
+  "species": "Coal Pokémon",
   "type": [
     "Rock",
     "Fire"
@@ -46,10 +46,10 @@
     "specialDefense": 70,
     "speed": 50
   },
-  "description": "It forms coal inside its body. Coal dropped by this Pok\u00e9mon once helped fuel the lives of people in the Galar region.",
+  "description": "It forms coal inside its body. Coal dropped by this Pokémon once helped fuel the lives of people in the Galar region.",
   "flavorTexts": [
     {
-      "text": "It forms coal inside its body. Coal dropped by this Pok\u00e9mon once helped fuel the lives of people in the Galar region.",
+      "text": "It forms coal inside its body. Coal dropped by this Pokémon once helped fuel the lives of people in the Galar region.",
       "version": "sword"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/838.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "トロッゴン",
+    "roomaji": "Toroggon",
+    "ko": "탄차곤",
+    "zh-Hant": "大炭車",
+    "fr": "Wagomine",
+    "de": "Wagong",
+    "es": "Carkol",
+    "it": "Carkol",
+    "en": "Carkol",
+    "ja": "トロッゴン",
+    "zh-Hans": "大炭车"
   }
 }

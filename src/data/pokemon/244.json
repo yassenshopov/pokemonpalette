@@ -1,7 +1,7 @@
 {
   "id": 244,
   "name": "Entei",
-  "species": "Volcano Pok\u00e9mon",
+  "species": "Volcano Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,26 +35,26 @@
     "specialDefense": 75,
     "speed": 100
   },
-  "description": "Volcanoes erupt when it barks. Un\u00ad able to restrain its extreme power, it races headlong around the land.",
+  "description": "Volcanoes erupt when it barks. Un­ able to restrain its extreme power, it races headlong around the land.",
   "flavorTexts": [
     {
-      "text": "Volcanoes erupt when it barks. Un\u00ad able to restrain its extreme power, it races headlong around the land.",
+      "text": "Volcanoes erupt when it barks. Un­ able to restrain its extreme power, it races headlong around the land.",
       "version": "gold"
     },
     {
-      "text": "A POK\u00e9MON that races across the land. It is said that one is born every time a new volcano appears.",
+      "text": "A POKéMON that races across the land. It is said that one is born every time a new volcano appears.",
       "version": "silver"
     },
     {
-      "text": "This brawny POK\u00e9MON courses around the earth, spouting flames hotter than a volcano's magma.",
+      "text": "This brawny POKéMON courses around the earth, spouting flames hotter than a volcano's magma.",
       "version": "crystal"
     },
     {
-      "text": "ENTEI embodies the passion of magma. This POK\u00e9MON is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
+      "text": "ENTEI embodies the passion of magma. This POKéMON is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
       "version": "ruby"
     },
     {
-      "text": "ENTEI embodies the passion of magma. This POK\u00e9MON is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
+      "text": "ENTEI embodies the passion of magma. This POKéMON is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
       "version": "sapphire"
     }
   ],
@@ -284,5 +284,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/244.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/244.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エンテイ",
+    "roomaji": "Entei",
+    "ko": "앤테이",
+    "zh-Hant": "炎帝",
+    "fr": "Entei",
+    "de": "Entei",
+    "es": "Entei",
+    "it": "Entei",
+    "en": "Entei",
+    "ja": "エンテイ",
+    "zh-Hans": "炎帝"
   }
 }

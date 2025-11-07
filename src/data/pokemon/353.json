@@ -1,7 +1,7 @@
 {
   "id": 353,
   "name": "Shuppet",
-  "species": "Puppet Pok\u00e9mon",
+  "species": "Puppet Pokémon",
   "type": [
     "Ghost"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 33,
     "speed": 45
   },
-  "description": "SHUPPET is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this POK\u00e9MON will appear in a swarm and line up beneath the eaves of that person\u2019s home.",
+  "description": "SHUPPET is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this POKéMON will appear in a swarm and line up beneath the eaves of that person’s home.",
   "flavorTexts": [
     {
-      "text": "SHUPPET is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this POK\u00e9MON will appear in a swarm and line up beneath the eaves of that person\u2019s home.",
+      "text": "SHUPPET is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this POKéMON will appear in a swarm and line up beneath the eaves of that person’s home.",
       "version": "ruby"
     },
     {
@@ -52,7 +52,7 @@
       "version": "sapphire"
     },
     {
-      "text": "This POK\u00e9MON roams about deep in the night seeking such negative emotions as grudges and envy. It retreats to its nest when the sun begins to rise.",
+      "text": "This POKéMON roams about deep in the night seeking such negative emotions as grudges and envy. It retreats to its nest when the sun begins to rise.",
       "version": "emerald"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/353.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/353.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "カゲボウズ",
+    "roomaji": "Kagebouzu",
+    "ko": "어둠대신",
+    "zh-Hant": "怨影娃娃",
+    "fr": "Polichombr",
+    "de": "Shuppet",
+    "es": "Shuppet",
+    "it": "Shuppet",
+    "en": "Shuppet",
+    "ja": "カゲボウズ",
+    "zh-Hans": "怨影娃娃"
   }
 }

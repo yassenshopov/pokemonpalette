@@ -1,7 +1,7 @@
 {
   "id": 460,
   "name": "Abomasnow",
-  "species": "Frost Tree Pok\u00e9mon",
+  "species": "Frost Tree Pokémon",
   "type": [
     "Grass",
     "Ice"
@@ -47,7 +47,7 @@
       "version": "diamond"
     },
     {
-      "text": "It blankets wide areas in snow by whipping up blizzards. It is also known as \u201cThe Ice Monster.\u201d",
+      "text": "It blankets wide areas in snow by whipping up blizzards. It is also known as “The Ice Monster.”",
       "version": "pearl"
     },
     {
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/460.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/460.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユキノオー",
+    "roomaji": "Yukinooh",
+    "ko": "눈설왕",
+    "zh-Hant": "暴雪王",
+    "fr": "Blizzaroi",
+    "de": "Rexblisar",
+    "es": "Abomasnow",
+    "it": "Abomasnow",
+    "en": "Abomasnow",
+    "ja": "ユキノオー",
+    "zh-Hans": "暴雪王"
   }
 }

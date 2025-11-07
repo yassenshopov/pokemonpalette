@@ -1,7 +1,7 @@
 {
   "id": 433,
   "name": "Chingling",
-  "species": "Bell Pok\u00e9mon",
+  "species": "Bell Pokémon",
   "type": [
     "Psychic"
   ],
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "It emits high-frequency cries that  people can\u2019t hear. Once it starts, it can cry for an awfully long time.",
+      "text": "It emits high-frequency cries that  people can’t hear. Once it starts, it can cry for an awfully long time.",
       "version": "heartgold"
     },
     {
-      "text": "It emits high-frequency cries that  people can\u2019t hear. Once it starts, it can cry for an awfully long time.",
+      "text": "It emits high-frequency cries that  people can’t hear. Once it starts, it can cry for an awfully long time.",
       "version": "soulsilver"
     }
   ],
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/433.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/433.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リーシャン",
+    "roomaji": "Lisyan",
+    "ko": "랑딸랑",
+    "zh-Hant": "鈴鐺響",
+    "fr": "Korillon",
+    "de": "Klingplim",
+    "es": "Chingling",
+    "it": "Chingling",
+    "en": "Chingling",
+    "ja": "リーシャン",
+    "zh-Hans": "铃铛响"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 653,
   "name": "Fennekin",
-  "species": "Fox Pok\u00e9mon",
+  "species": "Fox Pokémon",
   "type": [
     "Fire"
   ],
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/653.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フォッコ",
+    "roomaji": "Fokko",
+    "ko": "푸호꼬",
+    "zh-Hant": "火狐狸",
+    "fr": "Feunnec",
+    "de": "Fynx",
+    "es": "Fennekin",
+    "it": "Fennekin",
+    "en": "Fennekin",
+    "ja": "フォッコ",
+    "zh-Hans": "火狐狸"
   }
 }

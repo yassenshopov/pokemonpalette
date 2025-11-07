@@ -1,7 +1,7 @@
 {
   "id": 707,
   "name": "Klefki",
-  "species": "Key Ring Pok\u00e9mon",
+  "species": "Key Ring Pokémon",
   "type": [
     "Steel",
     "Fairy"
@@ -59,7 +59,7 @@
       "version": "alpha-sapphire"
     },
     {
-      "text": "This even-tempered Pok\u00e9mon has a habit of collecting keys. It will sneak into people\u2019s homes to steal their keys.",
+      "text": "This even-tempered Pokémon has a habit of collecting keys. It will sneak into people’s homes to steal their keys.",
       "version": "sun"
     }
   ],
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/707.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "クレッフィ",
+    "roomaji": "Cleffy",
+    "ko": "클레피",
+    "zh-Hant": "鑰圈兒",
+    "fr": "Trousselin",
+    "de": "Clavion",
+    "es": "Klefki",
+    "it": "Klefki",
+    "en": "Klefki",
+    "ja": "クレッフィ",
+    "zh-Hans": "钥圈儿"
   }
 }

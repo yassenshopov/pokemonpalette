@@ -1,7 +1,7 @@
 {
   "id": 137,
   "name": "Porygon",
-  "species": "Virtual Pok\u00e9mon",
+  "species": "Virtual Pokémon",
   "type": [
     "Normal"
   ],
@@ -41,26 +41,26 @@
     "specialDefense": 75,
     "speed": 40
   },
-  "description": "A POK\u00e9MON that consists entirely of programming code. Capable of moving freely in cyberspace.",
+  "description": "A POKéMON that consists entirely of programming code. Capable of moving freely in cyberspace.",
   "flavorTexts": [
     {
-      "text": "A POK\u00e9MON that consists entirely of programming code. Capable of moving freely in cyberspace.",
+      "text": "A POKéMON that consists entirely of programming code. Capable of moving freely in cyberspace.",
       "version": "red"
     },
     {
-      "text": "A POK\u00e9MON that consists entirely of programming code. Capable of moving freely in cyberspace.",
+      "text": "A POKéMON that consists entirely of programming code. Capable of moving freely in cyberspace.",
       "version": "blue"
     },
     {
-      "text": "The only POK\u00e9MON people anticipate can fly into space. None has managed the feat yet, however.",
+      "text": "The only POKéMON people anticipate can fly into space. None has managed the feat yet, however.",
       "version": "yellow"
     },
     {
-      "text": "It is a manmade POK\u00e9MON. Since it doesn't breathe, people are eager to try it in any environment.",
+      "text": "It is a manmade POKéMON. Since it doesn't breathe, people are eager to try it in any environment.",
       "version": "gold"
     },
     {
-      "text": "A manmade POK\u00e9MON that came about as a result of re\u00ad search. It is pro\u00ad grammed with only basic motions.",
+      "text": "A manmade POKéMON that came about as a result of re­ search. It is pro­ grammed with only basic motions.",
       "version": "silver"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/137.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/137.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ポリゴン",
+    "roomaji": "Porygon",
+    "ko": "폴리곤",
+    "zh-Hant": "多邊獸",
+    "fr": "Porygon",
+    "de": "Porygon",
+    "es": "Porygon",
+    "it": "Porygon",
+    "en": "Porygon",
+    "ja": "ポリゴン",
+    "zh-Hans": "多边兽"
   }
 }

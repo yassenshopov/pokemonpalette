@@ -1,7 +1,7 @@
 {
   "id": 507,
   "name": "Herdier",
-  "species": "Loyal Dog Pok\u00e9mon",
+  "species": "Loyal Dog Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,19 +48,19 @@
       "version": "black"
     },
     {
-      "text": "It loyally follows its Trainer\u2019s orders. For ages, they have helped Trainers raise Pok\u00e9mon.",
+      "text": "It loyally follows its Trainer’s orders. For ages, they have helped Trainers raise Pokémon.",
       "version": "white"
     },
     {
-      "text": "This very loyal Pok\u00e9mon helps Trainers, and it also takes care of other Pok\u00e9mon.",
+      "text": "This very loyal Pokémon helps Trainers, and it also takes care of other Pokémon.",
       "version": "black-2"
     },
     {
-      "text": "This very loyal Pok\u00e9mon helps Trainers, and it also takes care of other Pok\u00e9mon.",
+      "text": "This very loyal Pokémon helps Trainers, and it also takes care of other Pokémon.",
       "version": "white-2"
     },
     {
-      "text": "This very loyal Pok\u00e9mon helps Trainers, and it also takes care of other Pok\u00e9mon.",
+      "text": "This very loyal Pokémon helps Trainers, and it also takes care of other Pokémon.",
       "version": "x"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/507.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/507.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハーデリア",
+    "roomaji": "Herderrie",
+    "ko": "하데리어",
+    "zh-Hant": "哈約克",
+    "fr": "Ponchien",
+    "de": "Terribark",
+    "es": "Herdier",
+    "it": "Herdier",
+    "en": "Herdier",
+    "ja": "ハーデリア",
+    "zh-Hans": "哈约克"
   }
 }

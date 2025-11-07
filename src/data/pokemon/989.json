@@ -1,7 +1,7 @@
 {
   "id": 989,
   "name": "Sandy-shocks",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Electric",
     "Ground"
@@ -34,10 +34,10 @@
     "specialDefense": 85,
     "speed": 101
   },
-  "description": "No records exist of this Pok\u00e9mon being caught. Data is lacking, but the Pok\u00e9mon\u2019s traits match up with a creature shown in an expedition journal.",
+  "description": "No records exist of this Pokémon being caught. Data is lacking, but the Pokémon’s traits match up with a creature shown in an expedition journal.",
   "flavorTexts": [
     {
-      "text": "No records exist of this Pok\u00e9mon being caught. Data is lacking, but the Pok\u00e9mon\u2019s traits match up with a creature shown in an expedition journal.",
+      "text": "No records exist of this Pokémon being caught. Data is lacking, but the Pokémon’s traits match up with a creature shown in an expedition journal.",
       "version": "scarlet"
     },
     {
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/989.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "スナノケガワ",
+    "roomaji": "Sunanokegawa",
+    "ko": "모래털가죽",
+    "zh-Hant": "沙鐵皮",
+    "fr": "Pelage-Sablé",
+    "de": "Sandfell",
+    "es": "Pelarena",
+    "it": "Peldisabbia",
+    "en": "Sandy Shocks",
+    "ja": "スナノケガワ",
+    "zh-Hans": "沙铁皮"
   }
 }

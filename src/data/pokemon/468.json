@@ -1,7 +1,7 @@
 {
   "id": 468,
   "name": "Togekiss",
-  "species": "Jubilee Pok\u00e9mon",
+  "species": "Jubilee Pokémon",
   "type": [
     "Fairy",
     "Flying"
@@ -57,7 +57,7 @@
       "version": "pearl"
     },
     {
-      "text": "It shares many blessings with people who respect one another\u2019s rights and avoid needless strife.",
+      "text": "It shares many blessings with people who respect one another’s rights and avoid needless strife.",
       "version": "platinum"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/468.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/468.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トゲキッス",
+    "roomaji": "Togekiss",
+    "ko": "토게키스",
+    "zh-Hant": "波克基斯",
+    "fr": "Togekiss",
+    "de": "Togekiss",
+    "es": "Togekiss",
+    "it": "Togekiss",
+    "en": "Togekiss",
+    "ja": "トゲキッス",
+    "zh-Hans": "波克基斯"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 252,
   "name": "Treecko",
-  "species": "Wood Gecko Pok\u00e9mon",
+  "species": "Wood Gecko Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,26 +35,26 @@
     "specialDefense": 55,
     "speed": 70
   },
-  "description": "TREECKO has small hooks on the bottom of its feet that enable it to scale vertical walls. This POK\u00e9MON attacks by slamming foes with its thick tail.",
+  "description": "TREECKO has small hooks on the bottom of its feet that enable it to scale vertical walls. This POKéMON attacks by slamming foes with its thick tail.",
   "flavorTexts": [
     {
-      "text": "TREECKO has small hooks on the bottom of its feet that enable it to scale vertical walls. This POK\u00e9MON attacks by slamming foes with its thick tail.",
+      "text": "TREECKO has small hooks on the bottom of its feet that enable it to scale vertical walls. This POKéMON attacks by slamming foes with its thick tail.",
       "version": "ruby"
     },
     {
-      "text": "TREECKO is cool, calm, and collected - it never panics under any situation. If a bigger foe were to glare at this POK\u00e9MON, it would glare right back without conceding an inch of ground.",
+      "text": "TREECKO is cool, calm, and collected - it never panics under any situation. If a bigger foe were to glare at this POKéMON, it would glare right back without conceding an inch of ground.",
       "version": "sapphire"
     },
     {
-      "text": "It makes its nest in a giant tree in the forest. It ferociously guards against anything nearing its territory. It is said to be the protector of the forest\u2019s trees.",
+      "text": "It makes its nest in a giant tree in the forest. It ferociously guards against anything nearing its territory. It is said to be the protector of the forest’s trees.",
       "version": "emerald"
     },
     {
-      "text": "It quickly scales even vertical walls. It senses humidity with its tail to predict the next day\u2019s weather.",
+      "text": "It quickly scales even vertical walls. It senses humidity with its tail to predict the next day’s weather.",
       "version": "firered"
     },
     {
-      "text": "It quickly scales even vertical walls. It senses humidity with its tail to predict the next day\u2019s weather.",
+      "text": "It quickly scales even vertical walls. It senses humidity with its tail to predict the next day’s weather.",
       "version": "leafgreen"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/252.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/252.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キモリ",
+    "roomaji": "Kimori",
+    "ko": "나무지기",
+    "zh-Hant": "木守宮",
+    "fr": "Arcko",
+    "de": "Geckarbor",
+    "es": "Treecko",
+    "it": "Treecko",
+    "en": "Treecko",
+    "ja": "キモリ",
+    "zh-Hans": "木守宫"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 564,
   "name": "Tirtouga",
-  "species": "Prototurtle Pok\u00e9mon",
+  "species": "Prototurtle Pokémon",
   "type": [
     "Water",
     "Rock"
@@ -46,26 +46,26 @@
     "specialDefense": 45,
     "speed": 22
   },
-  "description": "Restored from a fossil, this Pok\u00e9mon can dive to depths beyond half a mile.",
+  "description": "Restored from a fossil, this Pokémon can dive to depths beyond half a mile.",
   "flavorTexts": [
     {
-      "text": "Restored from a fossil, this Pok\u00e9mon can dive to depths beyond half a mile.",
+      "text": "Restored from a fossil, this Pokémon can dive to depths beyond half a mile.",
       "version": "black"
     },
     {
-      "text": "About 100 million years ago, these Pok\u00e9mon swam in oceans. It is thought they also went on land to attack prey.",
+      "text": "About 100 million years ago, these Pokémon swam in oceans. It is thought they also went on land to attack prey.",
       "version": "white"
     },
     {
-      "text": "This Pok\u00e9mon was restored from a fossil. It swam skillfully and dove to depths beyond half a mile.",
+      "text": "This Pokémon was restored from a fossil. It swam skillfully and dove to depths beyond half a mile.",
       "version": "black-2"
     },
     {
-      "text": "This Pok\u00e9mon was restored from a fossil. It swam skillfully and dove to depths beyond half a mile.",
+      "text": "This Pokémon was restored from a fossil. It swam skillfully and dove to depths beyond half a mile.",
       "version": "white-2"
     },
     {
-      "text": "About 100 million years ago, these Pok\u00e9mon swam in oceans. It is thought they also went on land to attack prey.",
+      "text": "About 100 million years ago, these Pokémon swam in oceans. It is thought they also went on land to attack prey.",
       "version": "x"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/564.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/564.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "プロトーガ",
+    "roomaji": "Protoga",
+    "ko": "프로토가",
+    "zh-Hant": "原蓋海龜",
+    "fr": "Carapagos",
+    "de": "Galapaflos",
+    "es": "Tirtouga",
+    "it": "Tirtouga",
+    "en": "Tirtouga",
+    "ja": "プロトーガ",
+    "zh-Hans": "原盖海龟"
   }
 }

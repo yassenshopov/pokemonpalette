@@ -1,7 +1,7 @@
 {
   "id": 703,
   "name": "Carbink",
-  "species": "Jewel Pok\u00e9mon",
+  "species": "Jewel Pokémon",
   "type": [
     "Rock",
     "Fairy"
@@ -47,7 +47,7 @@
       "version": "x"
     },
     {
-      "text": "It has slept underground for hundreds of millions of years since its birth. It\u2019s occasionally found during the excavation of caves.",
+      "text": "It has slept underground for hundreds of millions of years since its birth. It’s occasionally found during the excavation of caves.",
       "version": "y"
     },
     {
@@ -55,7 +55,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "It has slept underground for hundreds of millions of years since its birth. It\u2019s occasionally found during the excavation of caves.",
+      "text": "It has slept underground for hundreds of millions of years since its birth. It’s occasionally found during the excavation of caves.",
       "version": "alpha-sapphire"
     },
     {
@@ -289,5 +289,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/703.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "メレシー",
+    "roomaji": "Melecie",
+    "ko": "멜리시",
+    "zh-Hant": "小碎鑽",
+    "fr": "Strassie",
+    "de": "Rocara",
+    "es": "Carbink",
+    "it": "Carbink",
+    "en": "Carbink",
+    "ja": "メレシー",
+    "zh-Hans": "小碎钻"
   }
 }

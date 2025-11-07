@@ -1,7 +1,7 @@
 {
   "id": 1014,
   "name": "Okidogi",
-  "species": "Retainer Pok\u00e9mon",
+  "species": "Retainer Pokémon",
   "type": [
     "Poison",
     "Fighting"
@@ -277,5 +277,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1014.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イイネイヌ",
+    "ko": "조타구",
+    "zh-Hant": "夠讚狗",
+    "fr": "Félicanis",
+    "de": "Boninu",
+    "es": "Okidogi",
+    "it": "Okidogi",
+    "en": "Okidogi",
+    "ja": "イイネイヌ",
+    "zh-Hans": "够赞狗"
   }
 }

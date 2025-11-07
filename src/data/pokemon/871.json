@@ -1,7 +1,7 @@
 {
   "id": 871,
   "name": "Pincurchin",
-  "species": "Sea Urchin Pok\u00e9mon",
+  "species": "Sea Urchin Pokémon",
   "type": [
     "Electric"
   ],
@@ -272,5 +272,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/871.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "バチンウニ",
+    "roomaji": "Bachinuni",
+    "ko": "찌르성게",
+    "zh-Hant": "啪嚓海膽",
+    "fr": "Wattapik",
+    "de": "Britzigel",
+    "es": "Pincurchin",
+    "it": "Pincurchin",
+    "en": "Pincurchin",
+    "ja": "バチンウニ",
+    "zh-Hans": "啪嚓海胆"
   }
 }

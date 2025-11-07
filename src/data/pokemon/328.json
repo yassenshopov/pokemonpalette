@@ -1,7 +1,7 @@
 {
   "id": 328,
   "name": "Trapinch",
-  "species": "Ant Pit Pok\u00e9mon",
+  "species": "Ant Pit Pokémon",
   "type": [
     "Ground"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 45,
     "speed": 10
   },
-  "description": "TRAPINCH\u2019s nest is a sloped, bowl-like pit dug in sand. This POK\u00e9MON patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.",
+  "description": "TRAPINCH’s nest is a sloped, bowl-like pit dug in sand. This POKéMON patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.",
   "flavorTexts": [
     {
-      "text": "TRAPINCH\u2019s nest is a sloped, bowl-like pit dug in sand. This POK\u00e9MON patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.",
+      "text": "TRAPINCH’s nest is a sloped, bowl-like pit dug in sand. This POKéMON patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.",
       "version": "ruby"
     },
     {
-      "text": "TRAPINCH is a patient hunter. It digs an inescapable pit in a desert and waits for its prey to come tumbling down. This POK\u00e9MON can go a whole week without access to any water.",
+      "text": "TRAPINCH is a patient hunter. It digs an inescapable pit in a desert and waits for its prey to come tumbling down. This POKéMON can go a whole week without access to any water.",
       "version": "sapphire"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/328.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/328.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ナックラー",
+    "roomaji": "Nuckrar",
+    "ko": "톱치",
+    "zh-Hant": "大顎蟻",
+    "fr": "Kraknoix",
+    "de": "Knacklion",
+    "es": "Trapinch",
+    "it": "Trapinch",
+    "en": "Trapinch",
+    "ja": "ナックラー",
+    "zh-Hans": "大颚蚁"
   }
 }

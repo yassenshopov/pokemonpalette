@@ -1,7 +1,7 @@
 {
   "id": 238,
   "name": "Smoochum",
-  "species": "Kiss Pok\u00e9mon",
+  "species": "Kiss Pokémon",
   "type": [
     "Ice",
     "Psychic"
@@ -53,7 +53,7 @@
       "version": "gold"
     },
     {
-      "text": "It always rocks its head slowly backwards and for\u00ad wards as if it is trying to kiss someone.",
+      "text": "It always rocks its head slowly backwards and for­ wards as if it is trying to kiss someone.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "SMOOCHUM actively runs about, but also falls quite often. Whenever the chance arrives, it will look for its reflection to make sure its face hasn\u2019t become dirty.",
+      "text": "SMOOCHUM actively runs about, but also falls quite often. Whenever the chance arrives, it will look for its reflection to make sure its face hasn’t become dirty.",
       "version": "ruby"
     },
     {
-      "text": "SMOOCHUM actively runs about, but also falls quite often. Whenever the chance arrives, it will look for its reflection to make sure its face hasn\u2019t become dirty.",
+      "text": "SMOOCHUM actively runs about, but also falls quite often. Whenever the chance arrives, it will look for its reflection to make sure its face hasn’t become dirty.",
       "version": "sapphire"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/238.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/238.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ムチュール",
+    "roomaji": "Muchul",
+    "ko": "뽀뽀라",
+    "zh-Hant": "迷唇娃",
+    "fr": "Lippouti",
+    "de": "Kussilla",
+    "es": "Smoochum",
+    "it": "Smoochum",
+    "en": "Smoochum",
+    "ja": "ムチュール",
+    "zh-Hans": "迷唇娃"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 591,
   "name": "Amoonguss",
-  "species": "Mushroom Pok\u00e9mon",
+  "species": "Mushroom Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -40,14 +40,14 @@
     "specialDefense": 80,
     "speed": 30
   },
-  "description": "It lures prey close by dancing and waving its arm caps, which resemble Pok\u00e9 Balls, in a swaying motion.",
+  "description": "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
   "flavorTexts": [
     {
-      "text": "It lures prey close by dancing and waving its arm caps, which resemble Pok\u00e9 Balls, in a swaying motion.",
+      "text": "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
       "version": "black"
     },
     {
-      "text": "They show off their Pok\u00e9 Ball caps to lure prey, but very few Pok\u00e9mon are fooled by this.",
+      "text": "They show off their Poké Ball caps to lure prey, but very few Pokémon are fooled by this.",
       "version": "white"
     },
     {
@@ -59,7 +59,7 @@
       "version": "white-2"
     },
     {
-      "text": "They show off their Pok\u00e9 Ball caps to lure prey, but very few Pok\u00e9mon are fooled by this.",
+      "text": "They show off their Poké Ball caps to lure prey, but very few Pokémon are fooled by this.",
       "version": "x"
     }
   ],
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/591.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/591.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "モロバレル",
+    "roomaji": "Morobareru",
+    "ko": "뽀록나",
+    "zh-Hant": "敗露球菇",
+    "fr": "Gaulet",
+    "de": "Hutsassa",
+    "es": "Amoonguss",
+    "it": "Amoonguss",
+    "en": "Amoonguss",
+    "ja": "モロバレル",
+    "zh-Hans": "败露球菇"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 336,
   "name": "Seviper",
-  "species": "Fang Snake Pok\u00e9mon",
+  "species": "Fang Snake Pokémon",
   "type": [
     "Poison"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 60,
     "speed": 65
   },
-  "description": "SEVIPER shares a generations-long feud with ZANGOOSE. The scars on its body are evidence of vicious battles. This POK\u00e9MON attacks using its sword- edged tail.",
+  "description": "SEVIPER shares a generations-long feud with ZANGOOSE. The scars on its body are evidence of vicious battles. This POKéMON attacks using its sword- edged tail.",
   "flavorTexts": [
     {
-      "text": "SEVIPER shares a generations-long feud with ZANGOOSE. The scars on its body are evidence of vicious battles. This POK\u00e9MON attacks using its sword- edged tail.",
+      "text": "SEVIPER shares a generations-long feud with ZANGOOSE. The scars on its body are evidence of vicious battles. This POKéMON attacks using its sword- edged tail.",
       "version": "ruby"
     },
     {
-      "text": "SEVIPER\u2019s swordlike tail serves two purposes - it slashes foes and douses them with secreted poison. This POK\u00e9MON will not give up its long- running blood feud with ZANGOOSE.",
+      "text": "SEVIPER’s swordlike tail serves two purposes - it slashes foes and douses them with secreted poison. This POKéMON will not give up its long- running blood feud with ZANGOOSE.",
       "version": "sapphire"
     },
     {
-      "text": "SEVIPER and ZANGOOSE are eternal rivals. It counters a ZANGOOSE\u2019s dazzling agility with its swordlike tail, which also oozes a horrible poison.",
+      "text": "SEVIPER and ZANGOOSE are eternal rivals. It counters a ZANGOOSE’s dazzling agility with its swordlike tail, which also oozes a horrible poison.",
       "version": "emerald"
     },
     {
@@ -293,5 +293,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/336.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/336.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハブネーク",
+    "roomaji": "Habunake",
+    "ko": "세비퍼",
+    "zh-Hant": "飯匙蛇",
+    "fr": "Séviper",
+    "de": "Vipitis",
+    "es": "Seviper",
+    "it": "Seviper",
+    "en": "Seviper",
+    "ja": "ハブネーク",
+    "zh-Hans": "饭匙蛇"
   }
 }

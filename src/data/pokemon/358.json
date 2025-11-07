@@ -1,7 +1,7 @@
 {
   "id": 358,
   "name": "Chimecho",
-  "species": "Wind Chime Pok\u00e9mon",
+  "species": "Wind Chime Pokémon",
   "type": [
     "Psychic"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 90,
     "speed": 65
   },
-  "description": "CHIMECHO makes its cries echo inside its hollow body. When this POK\u00e9MON becomes enraged, its cries result in ultrasonic waves that have the power to knock foes flying.",
+  "description": "CHIMECHO makes its cries echo inside its hollow body. When this POKéMON becomes enraged, its cries result in ultrasonic waves that have the power to knock foes flying.",
   "flavorTexts": [
     {
-      "text": "CHIMECHO makes its cries echo inside its hollow body. When this POK\u00e9MON becomes enraged, its cries result in ultrasonic waves that have the power to knock foes flying.",
+      "text": "CHIMECHO makes its cries echo inside its hollow body. When this POKéMON becomes enraged, its cries result in ultrasonic waves that have the power to knock foes flying.",
       "version": "ruby"
     },
     {
-      "text": "In high winds, CHIMECHO cries as it hangs from a tree branch or the eaves of a building using a suction cup on its head. This POK\u00e9MON plucks berries with its long tail and eats them.",
+      "text": "In high winds, CHIMECHO cries as it hangs from a tree branch or the eaves of a building using a suction cup on its head. This POKéMON plucks berries with its long tail and eats them.",
       "version": "sapphire"
     },
     {
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/358.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/358.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チリーン",
+    "roomaji": "Chirean",
+    "ko": "치렁",
+    "zh-Hant": "風鈴鈴",
+    "fr": "Éoko",
+    "de": "Palimpalim",
+    "es": "Chimecho",
+    "it": "Chimecho",
+    "en": "Chimecho",
+    "ja": "チリーン",
+    "zh-Hans": "风铃铃"
   }
 }

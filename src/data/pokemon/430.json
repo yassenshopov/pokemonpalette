@@ -1,7 +1,7 @@
 {
   "id": 430,
   "name": "Honchkrow",
-  "species": "Big Boss Pok\u00e9mon",
+  "species": "Big Boss Pokémon",
   "type": [
     "Dark",
     "Flying"
@@ -57,7 +57,7 @@
       "version": "pearl"
     },
     {
-      "text": "If one utters a deep cry, many MURKROW gather quickly. For this, it is called \u201cSummoner of Night.\u201d",
+      "text": "If one utters a deep cry, many MURKROW gather quickly. For this, it is called “Summoner of Night.”",
       "version": "platinum"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/430.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/430.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドンカラス",
+    "roomaji": "Donkarasu",
+    "ko": "돈크로우",
+    "zh-Hant": "烏鴉頭頭",
+    "fr": "Corboss",
+    "de": "Kramshef",
+    "es": "Honchkrow",
+    "it": "Honchkrow",
+    "en": "Honchkrow",
+    "ja": "ドンカラス",
+    "zh-Hans": "乌鸦头头"
   }
 }

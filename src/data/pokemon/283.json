@@ -1,7 +1,7 @@
 {
   "id": 283,
   "name": "Surskit",
-  "species": "Pond Skater Pok\u00e9mon",
+  "species": "Pond Skater Pokémon",
   "type": [
     "Bug",
     "Water"
@@ -40,14 +40,14 @@
     "specialDefense": 52,
     "speed": 65
   },
-  "description": "From the tips of its feet, SURSKIT secretes an oil that enables it to walk on water as if it were skating. This POK\u00e9MON feeds on microscopic organisms in ponds and lakes.",
+  "description": "From the tips of its feet, SURSKIT secretes an oil that enables it to walk on water as if it were skating. This POKéMON feeds on microscopic organisms in ponds and lakes.",
   "flavorTexts": [
     {
-      "text": "From the tips of its feet, SURSKIT secretes an oil that enables it to walk on water as if it were skating. This POK\u00e9MON feeds on microscopic organisms in ponds and lakes.",
+      "text": "From the tips of its feet, SURSKIT secretes an oil that enables it to walk on water as if it were skating. This POKéMON feeds on microscopic organisms in ponds and lakes.",
       "version": "ruby"
     },
     {
-      "text": "If SURSKIT senses danger, it secretes a thick, sugary syrup from the tip of its head. There are some POK\u00e9MON that love eating this syrup.",
+      "text": "If SURSKIT senses danger, it secretes a thick, sugary syrup from the tip of its head. There are some POKéMON that love eating this syrup.",
       "version": "sapphire"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/283.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/283.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アメタマ",
+    "roomaji": "Ametama",
+    "ko": "비구술",
+    "zh-Hant": "溜溜糖球",
+    "fr": "Arakdo",
+    "de": "Gehweiher",
+    "es": "Surskit",
+    "it": "Surskit",
+    "en": "Surskit",
+    "ja": "アメタマ",
+    "zh-Hans": "溜溜糖球"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 725,
   "name": "Litten",
-  "species": "Fire Cat Pok\u00e9mon",
+  "species": "Fire Cat Pokémon",
   "type": [
     "Fire"
   ],
@@ -42,11 +42,11 @@
       "version": "sun"
     },
     {
-      "text": "It doesn\u2019t allow its emotions to be easily seen. Earning its trust takes time. It prefers solitude.",
+      "text": "It doesn’t allow its emotions to be easily seen. Earning its trust takes time. It prefers solitude.",
       "version": "moon"
     },
     {
-      "text": "If you try too hard to get close to it, it won\u2019t open up to you. Even if you do grow close, giving it too much affection is still a no-no.",
+      "text": "If you try too hard to get close to it, it won’t open up to you. Even if you do grow close, giving it too much affection is still a no-no.",
       "version": "ultra-sun"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/725.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャビー",
+    "roomaji": "Nyabby",
+    "ko": "냐오불",
+    "zh-Hant": "火斑喵",
+    "fr": "Flamiaou",
+    "de": "Flamiau",
+    "es": "Litten",
+    "it": "Litten",
+    "en": "Litten",
+    "ja": "ニャビー",
+    "zh-Hans": "火斑喵"
   }
 }

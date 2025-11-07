@@ -1,7 +1,7 @@
 {
   "id": 892,
   "name": "Urshifu-single-strike",
-  "species": "Wushu Pok\u00e9mon",
+  "species": "Wushu Pokémon",
   "type": [
     "Fighting",
     "Dark"
@@ -41,7 +41,7 @@
       "version": "sword"
     },
     {
-      "text": "Inhabiting the mountains of a distant region, this Pok\u00e9mon races across sheer cliffs, training its legs and refining its moves.",
+      "text": "Inhabiting the mountains of a distant region, this Pokémon races across sheer cliffs, training its legs and refining its moves.",
       "version": "shield"
     }
   ],
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/892.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ウーラオス",
+    "roomaji": "Wulaosu",
+    "ko": "우라오스",
+    "zh-Hant": "武道熊師",
+    "fr": "Shifours",
+    "de": "Wulaosu",
+    "es": "Urshifu",
+    "it": "Urshifu",
+    "en": "Urshifu",
+    "ja": "ウーラオス",
+    "zh-Hans": "武道熊师"
   }
 }

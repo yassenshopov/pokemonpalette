@@ -1,7 +1,7 @@
 {
   "id": 556,
   "name": "Maractus",
-  "species": "Cactus Pok\u00e9mon",
+  "species": "Cactus Pokémon",
   "type": [
     "Grass"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 67,
     "speed": 60
   },
-  "description": "It uses an up-tempo song and dance to drive away the bird Pok\u00e9mon that prey on its flower seeds.",
+  "description": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
   "flavorTexts": [
     {
-      "text": "It uses an up-tempo song and dance to drive away the bird Pok\u00e9mon that prey on its flower seeds.",
+      "text": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
       "version": "black"
     },
     {
@@ -52,15 +52,15 @@
       "version": "white"
     },
     {
-      "text": "When it moves rhythmically, it makes a sound similar to maracas, making the surprised Pok\u00e9mon flee.",
+      "text": "When it moves rhythmically, it makes a sound similar to maracas, making the surprised Pokémon flee.",
       "version": "black-2"
     },
     {
-      "text": "When it moves rhythmically, it makes a sound similar to maracas, making the surprised Pok\u00e9mon flee.",
+      "text": "When it moves rhythmically, it makes a sound similar to maracas, making the surprised Pokémon flee.",
       "version": "white-2"
     },
     {
-      "text": "It uses an up-tempo song and dance to drive away the bird Pok\u00e9mon that prey on its flower seeds.",
+      "text": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
       "version": "x"
     }
   ],
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/556.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/556.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マラカッチ",
+    "roomaji": "Maracacchi",
+    "ko": "마라카치",
+    "zh-Hant": "沙鈴仙人掌",
+    "fr": "Maracachi",
+    "de": "Maracamba",
+    "es": "Maractus",
+    "it": "Maractus",
+    "en": "Maractus",
+    "ja": "マラカッチ",
+    "zh-Hans": "沙铃仙人掌"
   }
 }

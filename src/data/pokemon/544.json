@@ -1,7 +1,7 @@
 {
   "id": 544,
   "name": "Whirlipede",
-  "species": "Curlipede Pok\u00e9mon",
+  "species": "Curlipede Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/544.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/544.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ホイーガ",
+    "roomaji": "Wheega",
+    "ko": "휠구",
+    "zh-Hant": "車輪毬",
+    "fr": "Scobolide",
+    "de": "Rollum",
+    "es": "Whirlipede",
+    "it": "Whirlipede",
+    "en": "Whirlipede",
+    "ja": "ホイーガ",
+    "zh-Hans": "车轮球"
   }
 }

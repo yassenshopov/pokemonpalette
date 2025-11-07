@@ -1,7 +1,7 @@
 {
   "id": 724,
   "name": "Decidueye",
-  "species": "Arrow Quill Pok\u00e9mon",
+  "species": "Arrow Quill Pokémon",
   "type": [
     "Grass",
     "Ghost"
@@ -47,11 +47,11 @@
       "version": "sun"
     },
     {
-      "text": "Although basically cool and cautious, when it\u2019s caught by surprise, it\u2019s seized by panic.",
+      "text": "Although basically cool and cautious, when it’s caught by surprise, it’s seized by panic.",
       "version": "moon"
     },
     {
-      "text": "It nocks its arrow quills and shoots them at opponents. When it simply can\u2019t afford to miss, it tugs the vine on its head to improve its focus.",
+      "text": "It nocks its arrow quills and shoots them at opponents. When it simply can’t afford to miss, it tugs the vine on its head to improve its focus.",
       "version": "ultra-sun"
     },
     {
@@ -59,7 +59,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "As if wielding a bow, it launches the arrow quills hidden among the feathers of its wings. Decidueye\u2019s shots never miss.",
+      "text": "As if wielding a bow, it launches the arrow quills hidden among the feathers of its wings. Decidueye’s shots never miss.",
       "version": "sword"
     }
   ],
@@ -316,5 +316,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/724.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジュナイパー",
+    "roomaji": "Junaiper",
+    "ko": "모크나이퍼",
+    "zh-Hant": "狙射樹梟",
+    "fr": "Archéduc",
+    "de": "Silvarro",
+    "es": "Decidueye",
+    "it": "Decidueye",
+    "en": "Decidueye",
+    "ja": "ジュナイパー",
+    "zh-Hans": "狙射树枭"
   }
 }

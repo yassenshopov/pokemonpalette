@@ -1,7 +1,7 @@
 {
   "id": 6,
   "name": "Charizard",
-  "species": "Flame Pok\u00e9mon",
+  "species": "Flame Pokémon",
   "type": [
     "Fire",
     "Flying"
@@ -55,11 +55,11 @@
       "version": "yellow"
     },
     {
-      "text": "If CHARIZARD be\u00ad comes furious, the flame at the tip of its tail flares up in a whitish- blue color.",
+      "text": "If CHARIZARD be­ comes furious, the flame at the tip of its tail flares up in a whitish- blue color.",
       "version": "gold"
     },
     {
-      "text": "Breathing intense, hot flames, it can melt almost any\u00ad thing. Its breath inflicts terrible pain on enemies.",
+      "text": "Breathing intense, hot flames, it can melt almost any­ thing. Its breath inflicts terrible pain on enemies.",
       "version": "silver"
     }
   ],
@@ -330,5 +330,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/6.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/6.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "リザードン",
+    "roomaji": "Lizardon",
+    "ko": "리자몽",
+    "zh-Hant": "噴火龍",
+    "fr": "Dracaufeu",
+    "de": "Glurak",
+    "es": "Charizard",
+    "it": "Charizard",
+    "en": "Charizard",
+    "ja": "リザードン",
+    "zh-Hans": "喷火龙"
   }
 }

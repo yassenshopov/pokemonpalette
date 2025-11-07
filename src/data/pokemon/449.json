@@ -1,7 +1,7 @@
 {
   "id": 449,
   "name": "Hippopotas",
-  "species": "Hippo Pok\u00e9mon",
+  "species": "Hippo Pokémon",
   "type": [
     "Ground"
   ],
@@ -294,5 +294,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/449.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/449.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ヒポポタス",
+    "roomaji": "Hipopotas",
+    "ko": "히포포타스",
+    "zh-Hant": "沙河馬",
+    "fr": "Hippopotas",
+    "de": "Hippopotas",
+    "es": "Hippopotas",
+    "it": "Hippopotas",
+    "en": "Hippopotas",
+    "ja": "ヒポポタス",
+    "zh-Hans": "沙河马"
   }
 }

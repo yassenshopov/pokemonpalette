@@ -1,7 +1,7 @@
 {
   "id": 999,
   "name": "Gimmighoul",
-  "species": "Coin Chest Pok\u00e9mon",
+  "species": "Coin Chest Pokémon",
   "type": [
     "Ghost"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 70,
     "speed": 10
   },
-  "description": "This Pok\u00e9mon was born inside a treasure chest about 1,500 years ago. It sucks the life-force out of scoundrels who try to steal the treasure.",
+  "description": "This Pokémon was born inside a treasure chest about 1,500 years ago. It sucks the life-force out of scoundrels who try to steal the treasure.",
   "flavorTexts": [
     {
-      "text": "This Pok\u00e9mon was born inside a treasure chest about 1,500 years ago. It sucks the life-force out of scoundrels who try to steal the treasure.",
+      "text": "This Pokémon was born inside a treasure chest about 1,500 years ago. It sucks the life-force out of scoundrels who try to steal the treasure.",
       "version": "scarlet"
     },
     {
-      "text": "It lives inside an old treasure chest. Sometimes it gets left in shop corners since no one realizes it\u2019s actually a Pok\u00e9mon.",
+      "text": "It lives inside an old treasure chest. Sometimes it gets left in shop corners since no one realizes it’s actually a Pokémon.",
       "version": "violet"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/999.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コレクレー",
+    "roomaji": "Collecurei",
+    "ko": "모으령",
+    "zh-Hant": "索財靈",
+    "fr": "Mordudor",
+    "de": "Gierspenst",
+    "es": "Gimmighoul",
+    "it": "Gimmighoul",
+    "en": "Gimmighoul",
+    "ja": "コレクレー",
+    "zh-Hans": "索财灵"
   }
 }

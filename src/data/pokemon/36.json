@@ -1,7 +1,7 @@
 {
   "id": 36,
   "name": "Clefable",
-  "species": "Fairy Pok\u00e9mon",
+  "species": "Fairy Pokémon",
   "type": [
     "Fairy"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 90,
     "speed": 60
   },
-  "description": "A timid fairy POK\u00e9MON that is rarely seen. It will run and hide the moment it senses people.",
+  "description": "A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people.",
   "flavorTexts": [
     {
-      "text": "A timid fairy POK\u00e9MON that is rarely seen. It will run and hide the moment it senses people.",
+      "text": "A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people.",
       "version": "red"
     },
     {
-      "text": "A timid fairy POK\u00e9MON that is rarely seen. It will run and hide the moment it senses people.",
+      "text": "A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people.",
       "version": "blue"
     },
     {
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "Its very sensitive ears lets it dis\u00ad tinguish distant sounds. As a re\u00ad sult, it prefers quiet places.",
+      "text": "Its very sensitive ears lets it dis­ tinguish distant sounds. As a re­ sult, it prefers quiet places.",
       "version": "silver"
     }
   ],
@@ -329,5 +329,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/36.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/36.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピクシー",
+    "roomaji": "Pixy",
+    "ko": "픽시",
+    "zh-Hant": "皮可西",
+    "fr": "Mélodelfe",
+    "de": "Pixi",
+    "es": "Clefable",
+    "it": "Clefable",
+    "en": "Clefable",
+    "ja": "ピクシー",
+    "zh-Hans": "皮可西"
   }
 }

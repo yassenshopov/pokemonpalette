@@ -1,7 +1,7 @@
 {
   "id": 749,
   "name": "Mudbray",
-  "species": "Donkey Pok\u00e9mon",
+  "species": "Donkey Pokémon",
   "type": [
     "Ground"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 55,
     "speed": 45
   },
-  "description": "The mud stuck to Mudbray\u2019s hooves enhances its grip and its powerful running gait.",
+  "description": "The mud stuck to Mudbray’s hooves enhances its grip and its powerful running gait.",
   "flavorTexts": [
     {
-      "text": "The mud stuck to Mudbray\u2019s hooves enhances its grip and its powerful running gait.",
+      "text": "The mud stuck to Mudbray’s hooves enhances its grip and its powerful running gait.",
       "version": "sun"
     },
     {
@@ -52,7 +52,7 @@
       "version": "moon"
     },
     {
-      "text": "It loves playing in the mud. If it isn\u2019t showered with mud on a daily basis, it gets stressed out and stops listening to its Trainer.",
+      "text": "It loves playing in the mud. If it isn’t showered with mud on a daily basis, it gets stressed out and stops listening to its Trainer.",
       "version": "ultra-sun"
     },
     {
@@ -60,7 +60,7 @@
       "version": "ultra-moon"
     },
     {
-      "text": "Loads weighing up to 50 times as much as its own body weight pose no issue for this Pok\u00e9mon. It\u2019s skilled at making use of mud.",
+      "text": "Loads weighing up to 50 times as much as its own body weight pose no issue for this Pokémon. It’s skilled at making use of mud.",
       "version": "sword"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/749.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドロバンコ",
+    "roomaji": "Dorobanko",
+    "ko": "머드나기",
+    "zh-Hant": "泥驢仔",
+    "fr": "Tiboudet",
+    "de": "Pampuli",
+    "es": "Mudbray",
+    "it": "Mudbray",
+    "en": "Mudbray",
+    "ja": "ドロバンコ",
+    "zh-Hans": "泥驴仔"
   }
 }

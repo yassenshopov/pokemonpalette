@@ -1,7 +1,7 @@
 {
   "id": 698,
   "name": "Amaura",
-  "species": "Tundra Pok\u00e9mon",
+  "species": "Tundra Pokémon",
   "type": [
     "Rock",
     "Ice"
@@ -40,26 +40,26 @@
     "specialDefense": 63,
     "speed": 46
   },
-  "description": "This ancient Pok\u00e9mon was restored from part of its body that had been frozen in ice for over 100 million years.",
+  "description": "This ancient Pokémon was restored from part of its body that had been frozen in ice for over 100 million years.",
   "flavorTexts": [
     {
-      "text": "This ancient Pok\u00e9mon was restored from part of its body that had been frozen in ice for over 100 million years.",
+      "text": "This ancient Pokémon was restored from part of its body that had been frozen in ice for over 100 million years.",
       "version": "x"
     },
     {
-      "text": "This calm Pok\u00e9mon lived in a cold land where there were no violent predators like Tyrantrum.",
+      "text": "This calm Pokémon lived in a cold land where there were no violent predators like Tyrantrum.",
       "version": "y"
     },
     {
-      "text": "This ancient Pok\u00e9mon was restored from part of its body that had been frozen in ice for over 100 million years.",
+      "text": "This ancient Pokémon was restored from part of its body that had been frozen in ice for over 100 million years.",
       "version": "omega-ruby"
     },
     {
-      "text": "This calm Pok\u00e9mon lived in a cold land where there were no violent predators like Tyrantrum.",
+      "text": "This calm Pokémon lived in a cold land where there were no violent predators like Tyrantrum.",
       "version": "alpha-sapphire"
     },
     {
-      "text": "It lived in cold areas in ancient times. It\u2019s said that when Amaura whinnies, auroras appear in the night sky.",
+      "text": "It lived in cold areas in ancient times. It’s said that when Amaura whinnies, auroras appear in the night sky.",
       "version": "ultra-sun"
     }
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/698.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アマルス",
+    "roomaji": "Amarus",
+    "ko": "아마루스",
+    "zh-Hant": "冰雪龍",
+    "fr": "Amagara",
+    "de": "Amarino",
+    "es": "Amaura",
+    "it": "Amaura",
+    "en": "Amaura",
+    "ja": "アマルス",
+    "zh-Hans": "冰雪龙"
   }
 }

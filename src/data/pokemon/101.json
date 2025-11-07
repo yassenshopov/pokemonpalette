@@ -1,7 +1,7 @@
 {
   "id": 101,
   "name": "Electrode",
-  "species": "Ball Pok\u00e9mon",
+  "species": "Ball Pokémon",
   "type": [
     "Electric"
   ],
@@ -60,7 +60,7 @@
       "version": "gold"
     },
     {
-      "text": "It stores an over\u00ad flowing amount of electric energy inside its body. Even a small shock makes it explode.",
+      "text": "It stores an over­ flowing amount of electric energy inside its body. Even a small shock makes it explode.",
       "version": "silver"
     }
   ],
@@ -307,5 +307,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/101.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/101.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "マルマイン",
+    "roomaji": "Marumine",
+    "ko": "붐볼",
+    "zh-Hant": "頑皮雷彈",
+    "fr": "Électrode",
+    "de": "Lektrobal",
+    "es": "Electrode",
+    "it": "Electrode",
+    "en": "Electrode",
+    "ja": "マルマイン",
+    "zh-Hans": "顽皮雷弹"
   }
 }

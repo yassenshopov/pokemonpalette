@@ -1,7 +1,7 @@
 {
   "id": 27,
   "name": "Sandshrew",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Ground"
   ],
@@ -50,7 +50,7 @@
       "version": "yellow"
     },
     {
-      "text": "If it fell from a great height, this POK\u00e9MON could save itself by rolling into a ball and bouncing.",
+      "text": "If it fell from a great height, this POKéMON could save itself by rolling into a ball and bouncing.",
       "version": "gold"
     },
     {
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/27.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/27.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サンド",
+    "roomaji": "Sand",
+    "ko": "모래두지",
+    "zh-Hant": "穿山鼠",
+    "fr": "Sabelette",
+    "de": "Sandan",
+    "es": "Sandshrew",
+    "it": "Sandshrew",
+    "en": "Sandshrew",
+    "ja": "サンド",
+    "zh-Hans": "穿山鼠"
   }
 }

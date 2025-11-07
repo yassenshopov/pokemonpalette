@@ -1,7 +1,7 @@
 {
   "id": 448,
   "name": "Lucario",
-  "species": "Aura Pok\u00e9mon",
+  "species": "Aura Pokémon",
   "type": [
     "Fighting",
     "Steel"
@@ -61,11 +61,11 @@
       "version": "platinum"
     },
     {
-      "text": "It\u2019s said that no foe can remain invisible to LUCARIO, since it can detect auras. Even foes it could not otherwise see.",
+      "text": "It’s said that no foe can remain invisible to LUCARIO, since it can detect auras. Even foes it could not otherwise see.",
       "version": "heartgold"
     },
     {
-      "text": "It\u2019s said that no foe can remain invisible to LUCARIO, since it can detect auras. Even foes it could not otherwise see.",
+      "text": "It’s said that no foe can remain invisible to LUCARIO, since it can detect auras. Even foes it could not otherwise see.",
       "version": "soulsilver"
     }
   ],
@@ -311,5 +311,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/448.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/448.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ルカリオ",
+    "roomaji": "Lucario",
+    "ko": "루카리오",
+    "zh-Hant": "路卡利歐",
+    "fr": "Lucario",
+    "de": "Lucario",
+    "es": "Lucario",
+    "it": "Lucario",
+    "en": "Lucario",
+    "ja": "ルカリオ",
+    "zh-Hans": "路卡利欧"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 604,
   "name": "Eelektross",
-  "species": "EleFish Pok\u00e9mon",
+  "species": "EleFish Pokémon",
   "type": [
     "Electric"
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/604.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/604.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シビルドン",
+    "roomaji": "Shibirudon",
+    "ko": "저리더프",
+    "zh-Hant": "麻麻鰻魚王",
+    "fr": "Ohmassacre",
+    "de": "Zapplarang",
+    "es": "Eelektross",
+    "it": "Eelektross",
+    "en": "Eelektross",
+    "ja": "シビルドン",
+    "zh-Hans": "麻麻鳗鱼王"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 314,
   "name": "Illumise",
-  "species": "Firefly Pok\u00e9mon",
+  "species": "Firefly Pokémon",
   "type": [
     "Bug"
   ],
@@ -48,15 +48,15 @@
       "version": "black"
     },
     {
-      "text": "ILLUMISE attracts a swarm of VOLBEAT using a sweet fragrance. Once the VOLBEAT have gathered, this POK\u00e9MON leads the lit-up swarm in drawing geometric designs on the canvas of the night sky.",
+      "text": "ILLUMISE attracts a swarm of VOLBEAT using a sweet fragrance. Once the VOLBEAT have gathered, this POKéMON leads the lit-up swarm in drawing geometric designs on the canvas of the night sky.",
       "version": "ruby"
     },
     {
-      "text": "ILLUMISE leads a flight of illuminated VOLBEAT to draw signs in the night sky. This POK\u00e9MON is said to earn greater respect from its peers by composing more complex designs in the sky.",
+      "text": "ILLUMISE leads a flight of illuminated VOLBEAT to draw signs in the night sky. This POKéMON is said to earn greater respect from its peers by composing more complex designs in the sky.",
       "version": "sapphire"
     },
     {
-      "text": "A nocturnal POK\u00e9MON that becomes active upon nightfall. It leads a VOLBEAT swarm to draw patterns in the night sky. Over 200 different patterns have been confirmed.",
+      "text": "A nocturnal POKéMON that becomes active upon nightfall. It leads a VOLBEAT swarm to draw patterns in the night sky. Over 200 different patterns have been confirmed.",
       "version": "emerald"
     },
     {
@@ -295,5 +295,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/314.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/314.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "イルミーゼ",
+    "roomaji": "Illumise",
+    "ko": "네오비트",
+    "zh-Hant": "甜甜螢",
+    "fr": "Lumivole",
+    "de": "Illumise",
+    "es": "Illumise",
+    "it": "Illumise",
+    "en": "Illumise",
+    "ja": "イルミーゼ",
+    "zh-Hans": "甜甜萤"
   }
 }

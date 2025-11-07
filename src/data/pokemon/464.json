@@ -1,7 +1,7 @@
 {
   "id": 464,
   "name": "Rhyperior",
-  "species": "Drill Pok\u00e9mon",
+  "species": "Drill Pokémon",
   "type": [
     "Ground",
     "Rock"
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/464.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/464.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドサイドン",
+    "roomaji": "Dosydon",
+    "ko": "거대코뿌리",
+    "zh-Hant": "超甲狂犀",
+    "fr": "Rhinastoc",
+    "de": "Rihornior",
+    "es": "Rhyperior",
+    "it": "Rhyperior",
+    "en": "Rhyperior",
+    "ja": "ドサイドン",
+    "zh-Hans": "超甲狂犀"
   }
 }

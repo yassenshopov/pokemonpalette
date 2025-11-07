@@ -1,7 +1,7 @@
 {
   "id": 817,
   "name": "Drizzile",
-  "species": "Water Lizard Pok\u00e9mon",
+  "species": "Water Lizard Pokémon",
   "type": [
     "Water"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 55,
     "speed": 90
   },
-  "description": "A clever combatant, this Pok\u00e9mon battles using water balloons created with moisture secreted from its palms.",
+  "description": "A clever combatant, this Pokémon battles using water balloons created with moisture secreted from its palms.",
   "flavorTexts": [
     {
-      "text": "A clever combatant, this Pok\u00e9mon battles using water balloons created with moisture secreted from its palms.",
+      "text": "A clever combatant, this Pokémon battles using water balloons created with moisture secreted from its palms.",
       "version": "sword"
     },
     {
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/817.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ジメレオン",
+    "roomaji": "Jimereon",
+    "ko": "누겔레온",
+    "zh-Hant": "變澀蜥",
+    "fr": "Arrozard",
+    "de": "Phlegleon",
+    "es": "Drizzile",
+    "it": "Drizzile",
+    "en": "Drizzile",
+    "ja": "ジメレオン",
+    "zh-Hans": "变涩蜥"
   }
 }

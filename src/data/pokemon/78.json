@@ -1,7 +1,7 @@
 {
   "id": 78,
   "name": "Rapidash",
-  "species": "Fire Horse Pok\u00e9mon",
+  "species": "Fire Horse Pokémon",
   "type": [
     "Fire"
   ],
@@ -41,22 +41,22 @@
     "specialDefense": 80,
     "speed": 105
   },
-  "description": "Very competitive, this POK\u00e9MON will chase anything that moves fast in the hopes of racing it.",
+  "description": "Very competitive, this POKéMON will chase anything that moves fast in the hopes of racing it.",
   "flavorTexts": [
     {
-      "text": "Very competitive, this POK\u00e9MON will chase anything that moves fast in the hopes of racing it.",
+      "text": "Very competitive, this POKéMON will chase anything that moves fast in the hopes of racing it.",
       "version": "red"
     },
     {
-      "text": "Very competitive, this POK\u00e9MON will chase anything that moves fast in the hopes of racing it.",
+      "text": "Very competitive, this POKéMON will chase anything that moves fast in the hopes of racing it.",
       "version": "blue"
     },
     {
-      "text": "Just loves to run. If it sees some\u00ad thing faster than itself, it will give chase at top speed.",
+      "text": "Just loves to run. If it sees some­ thing faster than itself, it will give chase at top speed.",
       "version": "yellow"
     },
     {
-      "text": "At full gallop, its four hooves barely touch the ground because it moves so incredi\u00ad bly fast.",
+      "text": "At full gallop, its four hooves barely touch the ground because it moves so incredi­ bly fast.",
       "version": "gold"
     },
     {
@@ -312,5 +312,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/78.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/78.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ギャロップ",
+    "roomaji": "Gallop",
+    "ko": "날쌩마",
+    "zh-Hant": "烈焰馬",
+    "fr": "Galopa",
+    "de": "Gallopa",
+    "es": "Rapidash",
+    "it": "Rapidash",
+    "en": "Rapidash",
+    "ja": "ギャロップ",
+    "zh-Hans": "烈焰马"
   }
 }

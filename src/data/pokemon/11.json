@@ -1,7 +1,7 @@
 {
   "id": 11,
   "name": "Metapod",
-  "species": "Cocoon Pok\u00e9mon",
+  "species": "Cocoon Pokémon",
   "type": [
     "Bug"
   ],
@@ -29,14 +29,14 @@
     "specialDefense": 25,
     "speed": 30
   },
-  "description": "This POK\u00e9MON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
+  "description": "This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
   "flavorTexts": [
     {
-      "text": "This POK\u00e9MON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
+      "text": "This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
       "version": "red"
     },
     {
-      "text": "This POK\u00e9MON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
+      "text": "This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
       "version": "blue"
     },
     {
@@ -44,11 +44,11 @@
       "version": "yellow"
     },
     {
-      "text": "Inside the shell, it is soft and weak as it pre\u00ad pares to evolve. It stays motion\u00ad less in the shell.",
+      "text": "Inside the shell, it is soft and weak as it pre­ pares to evolve. It stays motion­ less in the shell.",
       "version": "gold"
     },
     {
-      "text": "It prepares for evolution by har\u00ad dening its shell as much as possi\u00ad ble to protect its soft body.",
+      "text": "It prepares for evolution by har­ dening its shell as much as possi­ ble to protect its soft body.",
       "version": "silver"
     }
   ],
@@ -198,5 +198,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/11.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/11.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トランセル",
+    "roomaji": "Trancell",
+    "ko": "단데기",
+    "zh-Hant": "鐵甲蛹",
+    "fr": "Chrysacier",
+    "de": "Safcon",
+    "es": "Metapod",
+    "it": "Metapod",
+    "en": "Metapod",
+    "ja": "トランセル",
+    "zh-Hans": "铁甲蛹"
   }
 }

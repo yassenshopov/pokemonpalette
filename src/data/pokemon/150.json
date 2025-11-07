@@ -1,7 +1,7 @@
 {
   "id": 150,
   "name": "Mewtwo",
-  "species": "Genetic Pok\u00e9mon",
+  "species": "Genetic Pokémon",
   "type": [
     "Psychic"
   ],
@@ -46,15 +46,15 @@
       "version": "blue"
     },
     {
-      "text": "Its DNA is almost the same as MEW's. However, its size and disposition are vastly dif\u00ad ferent.",
+      "text": "Its DNA is almost the same as MEW's. However, its size and disposition are vastly dif­ ferent.",
       "version": "yellow"
     },
     {
-      "text": "Because its battle abilities were raised to the ultimate level, it thinks only of de\u00ad feating its foes.",
+      "text": "Because its battle abilities were raised to the ultimate level, it thinks only of de­ feating its foes.",
       "version": "gold"
     },
     {
-      "text": "It usually remains motionless to con\u00ad serve energy, so that it may un\u00ad leash its full power in battle.",
+      "text": "It usually remains motionless to con­ serve energy, so that it may un­ leash its full power in battle.",
       "version": "silver"
     }
   ],
@@ -298,5 +298,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/150.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/150.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ミュウツー",
+    "roomaji": "Mewtwo",
+    "ko": "뮤츠",
+    "zh-Hant": "超夢",
+    "fr": "Mewtwo",
+    "de": "Mewtu",
+    "es": "Mewtwo",
+    "it": "Mewtwo",
+    "en": "Mewtwo",
+    "ja": "ミュウツー",
+    "zh-Hans": "超梦"
   }
 }

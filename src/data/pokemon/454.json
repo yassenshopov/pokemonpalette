@@ -1,7 +1,7 @@
 {
   "id": 454,
   "name": "Toxicroak",
-  "species": "Toxic Mouth Pok\u00e9mon",
+  "species": "Toxic Mouth Pokémon",
   "type": [
     "Poison",
     "Fighting"
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/454.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/454.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ドクロッグ",
+    "roomaji": "Dokurog",
+    "ko": "독개굴",
+    "zh-Hant": "毒骷蛙",
+    "fr": "Coatox",
+    "de": "Toxiquak",
+    "es": "Toxicroak",
+    "it": "Toxicroak",
+    "en": "Toxicroak",
+    "ja": "ドクロッグ",
+    "zh-Hans": "毒骷蛙"
   }
 }

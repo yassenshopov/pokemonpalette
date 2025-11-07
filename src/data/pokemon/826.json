@@ -1,7 +1,7 @@
 {
   "id": 826,
   "name": "Orbeetle",
-  "species": "Seven Spot Pok\u00e9mon",
+  "species": "Seven Spot Pokémon",
   "type": [
     "Bug",
     "Psychic"
@@ -46,14 +46,14 @@
     "specialDefense": 120,
     "speed": 90
   },
-  "description": "It\u2019s famous for its high level of intelligence, and the large size of its brain is proof that it also possesses immense psychic power.",
+  "description": "It’s famous for its high level of intelligence, and the large size of its brain is proof that it also possesses immense psychic power.",
   "flavorTexts": [
     {
-      "text": "It\u2019s famous for its high level of intelligence, and the large size of its brain is proof that it also possesses immense psychic power.",
+      "text": "It’s famous for its high level of intelligence, and the large size of its brain is proof that it also possesses immense psychic power.",
       "version": "sword"
     },
     {
-      "text": "It emits psychic energy to observe and study what\u2019s around it\u2014and what\u2019s around it can include things over six miles away.",
+      "text": "It emits psychic energy to observe and study what’s around it—and what’s around it can include things over six miles away.",
       "version": "shield"
     }
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/826.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "イオルブ",
+    "roomaji": "Eolb",
+    "ko": "이올브",
+    "zh-Hant": "以歐路普",
+    "fr": "Astronelle",
+    "de": "Maritellit",
+    "es": "Orbeetle",
+    "it": "Orbeetle",
+    "en": "Orbeetle",
+    "ja": "イオルブ",
+    "zh-Hans": "以欧路普"
   }
 }

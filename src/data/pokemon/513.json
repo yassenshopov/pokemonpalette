@@ -1,7 +1,7 @@
 {
   "id": 513,
   "name": "Pansear",
-  "species": "High Temp Pok\u00e9mon",
+  "species": "High Temp Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 48,
     "speed": 64
   },
-  "description": "When it is angered, the temperature of its head tuft reaches 600\u00b0 F. It uses its tuft to roast berries.",
+  "description": "When it is angered, the temperature of its head tuft reaches 600° F. It uses its tuft to roast berries.",
   "flavorTexts": [
     {
-      "text": "When it is angered, the temperature of its head tuft reaches 600\u00b0 F. It uses its tuft to roast berries.",
+      "text": "When it is angered, the temperature of its head tuft reaches 600° F. It uses its tuft to roast berries.",
       "version": "black"
     },
     {
-      "text": "This Pok\u00e9mon lives in caves in volcanoes. The fire within the tuft on its head can reach 600\u00b0 F.",
+      "text": "This Pokémon lives in caves in volcanoes. The fire within the tuft on its head can reach 600° F.",
       "version": "white"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/513.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/513.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バオップ",
+    "roomaji": "Baoppu",
+    "ko": "바오프",
+    "zh-Hant": "爆香猴",
+    "fr": "Flamajou",
+    "de": "Grillmak",
+    "es": "Pansear",
+    "it": "Pansear",
+    "en": "Pansear",
+    "ja": "バオップ",
+    "zh-Hans": "爆香猴"
   }
 }

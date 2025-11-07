@@ -1,7 +1,7 @@
 {
   "id": 595,
   "name": "Joltik",
-  "species": "Attaching Pok\u00e9mon",
+  "species": "Attaching Pokémon",
   "type": [
     "Bug",
     "Electric"
@@ -53,19 +53,19 @@
       "version": "black"
     },
     {
-      "text": "They attach themselves to large-bodied Pok\u00e9mon and absorb static electricity, which they store in an electric pouch.",
+      "text": "They attach themselves to large-bodied Pokémon and absorb static electricity, which they store in an electric pouch.",
       "version": "white"
     },
     {
-      "text": "Since it can\u2019t generate its own electricity, it sticks onto large-bodied Pok\u00e9mon and absorbs static electricity.",
+      "text": "Since it can’t generate its own electricity, it sticks onto large-bodied Pokémon and absorbs static electricity.",
       "version": "black-2"
     },
     {
-      "text": "Since it can\u2019t generate its own electricity, it sticks onto large-bodied Pok\u00e9mon and absorbs static electricity.",
+      "text": "Since it can’t generate its own electricity, it sticks onto large-bodied Pokémon and absorbs static electricity.",
       "version": "white-2"
     },
     {
-      "text": "Since it can\u2019t generate its own electricity, it sticks onto large-bodied Pok\u00e9mon and absorbs static electricity.",
+      "text": "Since it can’t generate its own electricity, it sticks onto large-bodied Pokémon and absorbs static electricity.",
       "version": "x"
     }
   ],
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/595.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/595.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "バチュル",
+    "roomaji": "Bachuru",
+    "ko": "파쪼옥",
+    "zh-Hant": "電電蟲",
+    "fr": "Statitik",
+    "de": "Wattzapf",
+    "es": "Joltik",
+    "it": "Joltik",
+    "en": "Joltik",
+    "ja": "バチュル",
+    "zh-Hans": "电电虫"
   }
 }

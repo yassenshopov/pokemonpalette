@@ -1,7 +1,7 @@
 {
   "id": 28,
   "name": "Sandslash",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Ground"
   ],
@@ -318,5 +318,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/28.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/28.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "サンドパン",
+    "roomaji": "Sandpan",
+    "ko": "고지",
+    "zh-Hant": "穿山王",
+    "fr": "Sablaireau",
+    "de": "Sandamer",
+    "es": "Sandslash",
+    "it": "Sandslash",
+    "en": "Sandslash",
+    "ja": "サンドパン",
+    "zh-Hans": "穿山王"
   }
 }

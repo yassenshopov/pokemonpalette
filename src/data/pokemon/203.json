@@ -1,7 +1,7 @@
 {
   "id": 203,
   "name": "Girafarig",
-  "species": "Long Neck Pok\u00e9mon",
+  "species": "Long Neck Pokémon",
   "type": [
     "Normal",
     "Psychic"
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "GIRAFARIG\u2019s rear head also has a brain, but it is small. The rear head attacks in response to smells and sounds. Approaching this POK\u00e9MON from behind can cause the rear head to suddenly lash out and bite.",
+      "text": "GIRAFARIG’s rear head also has a brain, but it is small. The rear head attacks in response to smells and sounds. Approaching this POKéMON from behind can cause the rear head to suddenly lash out and bite.",
       "version": "ruby"
     },
     {
-      "text": "GIRAFARIG\u2019s rear head contains a tiny brain that is too small for thinking. However, the rear head doesn\u2019t need to sleep, so it can keep watch over its surroundings 24 hours a day.",
+      "text": "GIRAFARIG’s rear head contains a tiny brain that is too small for thinking. However, the rear head doesn’t need to sleep, so it can keep watch over its surroundings 24 hours a day.",
       "version": "sapphire"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/203.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/203.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "キリンリキ",
+    "roomaji": "Kirinriki",
+    "ko": "키링키",
+    "zh-Hant": "麒麟奇",
+    "fr": "Girafarig",
+    "de": "Girafarig",
+    "es": "Girafarig",
+    "it": "Girafarig",
+    "en": "Girafarig",
+    "ja": "キリンリキ",
+    "zh-Hans": "麒麟奇"
   }
 }

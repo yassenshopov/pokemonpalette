@@ -1,7 +1,7 @@
 {
   "id": 81,
   "name": "Magnemite",
-  "species": "Magnet Pok\u00e9mon",
+  "species": "Magnet Pokémon",
   "type": [
     "Electric",
     "Steel"
@@ -57,15 +57,15 @@
       "version": "blue"
     },
     {
-      "text": "It is born with the ability to defy gravity. It floats in air on powerful electro\u00ad magnetic waves.",
+      "text": "It is born with the ability to defy gravity. It floats in air on powerful electro­ magnetic waves.",
       "version": "yellow"
     },
     {
-      "text": "It is attracted by electromagnetic waves. It may approach trainers if they are using their POK\u00e9GEAR.",
+      "text": "It is attracted by electromagnetic waves. It may approach trainers if they are using their POKéGEAR.",
       "version": "gold"
     },
     {
-      "text": "The units at the sides of its body generate anti\u00ad gravity energy to keep it aloft in the air.",
+      "text": "The units at the sides of its body generate anti­ gravity energy to keep it aloft in the air.",
       "version": "silver"
     }
   ],
@@ -332,5 +332,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/81.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/81.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "コイル",
+    "roomaji": "Coil",
+    "ko": "코일",
+    "zh-Hant": "小磁怪",
+    "fr": "Magnéti",
+    "de": "Magnetilo",
+    "es": "Magnemite",
+    "it": "Magnemite",
+    "en": "Magnemite",
+    "ja": "コイル",
+    "zh-Hans": "小磁怪"
   }
 }

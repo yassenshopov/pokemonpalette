@@ -1,7 +1,7 @@
 {
   "id": 119,
   "name": "Seaking",
-  "species": "Goldfish Pok\u00e9mon",
+  "species": "Goldfish Pokémon",
   "type": [
     "Water"
   ],
@@ -48,11 +48,11 @@
       "version": "leafgreen"
     },
     {
-      "text": "In the autumn spawning season, they can be seen swimming power\u00ad fully up rivers and creeks.",
+      "text": "In the autumn spawning season, they can be seen swimming power­ fully up rivers and creeks.",
       "version": "red"
     },
     {
-      "text": "In the autumn spawning season, they can be seen swimming power\u00ad fully up rivers and creeks.",
+      "text": "In the autumn spawning season, they can be seen swimming power­ fully up rivers and creeks.",
       "version": "blue"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/119.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/119.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アズマオウ",
+    "roomaji": "Azumao",
+    "ko": "왕콘치",
+    "zh-Hant": "金魚王",
+    "fr": "Poissoroy",
+    "de": "Golking",
+    "es": "Seaking",
+    "it": "Seaking",
+    "en": "Seaking",
+    "ja": "アズマオウ",
+    "zh-Hans": "金鱼王"
   }
 }

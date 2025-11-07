@@ -1,7 +1,7 @@
 {
   "id": 1015,
   "name": "Munkidori",
-  "species": "Retainer Pok\u00e9mon",
+  "species": "Retainer Pokémon",
   "type": [
     "Poison",
     "Psychic"
@@ -40,10 +40,10 @@
     "specialDefense": 90,
     "speed": 106
   },
-  "description": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pok\u00e9mon's psychic powers to bloom.",
+  "description": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pokémon's psychic powers to bloom.",
   "flavorTexts": [
     {
-      "text": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pok\u00e9mon's psychic powers to bloom.",
+      "text": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pokémon's psychic powers to bloom.",
       "version": "scarlet"
     },
     {
@@ -277,5 +277,17 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1015.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "マシマシラ",
+    "ko": "이야후",
+    "zh-Hant": "願增猿",
+    "fr": "Fortusimia",
+    "de": "Benesaru",
+    "es": "Munkidori",
+    "it": "Munkidori",
+    "en": "Munkidori",
+    "ja": "マシマシラ",
+    "zh-Hans": "愿增猿"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 361,
   "name": "Snorunt",
-  "species": "Snow Hat Pok\u00e9mon",
+  "species": "Snow Hat Pokémon",
   "type": [
     "Ice"
   ],
@@ -41,14 +41,14 @@
     "specialDefense": 50,
     "speed": 50
   },
-  "description": "SNORUNT live in regions with heavy snowfall. In seasons without snow, such as spring and summer, this POK\u00e9MON steals away to live quietly among stalactites and stalagmites deep in caverns.",
+  "description": "SNORUNT live in regions with heavy snowfall. In seasons without snow, such as spring and summer, this POKéMON steals away to live quietly among stalactites and stalagmites deep in caverns.",
   "flavorTexts": [
     {
-      "text": "SNORUNT live in regions with heavy snowfall. In seasons without snow, such as spring and summer, this POK\u00e9MON steals away to live quietly among stalactites and stalagmites deep in caverns.",
+      "text": "SNORUNT live in regions with heavy snowfall. In seasons without snow, such as spring and summer, this POKéMON steals away to live quietly among stalactites and stalagmites deep in caverns.",
       "version": "ruby"
     },
     {
-      "text": "SNORUNT survives by eating only snow and ice. Old folklore claims that a house visited by this POK\u00e9MON is sure to prosper for many generations to come.",
+      "text": "SNORUNT survives by eating only snow and ice. Old folklore claims that a house visited by this POKéMON is sure to prosper for many generations to come.",
       "version": "sapphire"
     },
     {
@@ -320,5 +320,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/361.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/361.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ユキワラシ",
+    "roomaji": "Yukiwarashi",
+    "ko": "눈꼬마",
+    "zh-Hant": "雪童子",
+    "fr": "Stalgamin",
+    "de": "Schneppke",
+    "es": "Snorunt",
+    "it": "Snorunt",
+    "en": "Snorunt",
+    "ja": "ユキワラシ",
+    "zh-Hans": "雪童子"
   }
 }

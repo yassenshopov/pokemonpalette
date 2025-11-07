@@ -1,7 +1,7 @@
 {
   "id": 662,
   "name": "Fletchinder",
-  "species": "Ember Pok\u00e9mon",
+  "species": "Ember Pokémon",
   "type": [
     "Fire",
     "Flying"
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/662.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヒノヤコマ",
+    "roomaji": "Hinoyakoma",
+    "ko": "불화살빈",
+    "zh-Hant": "火箭雀",
+    "fr": "Braisillon",
+    "de": "Dartignis",
+    "es": "Fletchinder",
+    "it": "Fletchinder",
+    "en": "Fletchinder",
+    "ja": "ヒノヤコマ",
+    "zh-Hans": "火箭雀"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 543,
   "name": "Venipede",
-  "species": "Centipede Pok\u00e9mon",
+  "species": "Centipede Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -46,10 +46,10 @@
     "specialDefense": 39,
     "speed": 57
   },
-  "description": "Its bite injects a potent poison, enough to paralyze large bird Pok\u00e9mon that try to prey on it.",
+  "description": "Its bite injects a potent poison, enough to paralyze large bird Pokémon that try to prey on it.",
   "flavorTexts": [
     {
-      "text": "Its bite injects a potent poison, enough to paralyze large bird Pok\u00e9mon that try to prey on it.",
+      "text": "Its bite injects a potent poison, enough to paralyze large bird Pokémon that try to prey on it.",
       "version": "black"
     },
     {
@@ -57,11 +57,11 @@
       "version": "white"
     },
     {
-      "text": "Using the feelers on its head and tail, it picks up vibrations in the air to determine its prey\u2019s location and state.",
+      "text": "Using the feelers on its head and tail, it picks up vibrations in the air to determine its prey’s location and state.",
       "version": "black-2"
     },
     {
-      "text": "Using the feelers on its head and tail, it picks up vibrations in the air to determine its prey\u2019s location and state.",
+      "text": "Using the feelers on its head and tail, it picks up vibrations in the air to determine its prey’s location and state.",
       "version": "white-2"
     },
     {
@@ -324,5 +324,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/543.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/543.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "フシデ",
+    "roomaji": "Fushide",
+    "ko": "마디네",
+    "zh-Hant": "百足蜈蚣",
+    "fr": "Venipatte",
+    "de": "Toxiped",
+    "es": "Venipede",
+    "it": "Venipede",
+    "en": "Venipede",
+    "ja": "フシデ",
+    "zh-Hans": "百足蜈蚣"
   }
 }

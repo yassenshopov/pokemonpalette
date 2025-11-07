@@ -1,7 +1,7 @@
 {
   "id": 820,
   "name": "Greedent",
-  "species": "Greedy Pok\u00e9mon",
+  "species": "Greedy Pokémon",
   "type": [
     "Normal"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 75,
     "speed": 20
   },
-  "description": "It stashes berries in its tail\u2014so many berries that they fall out constantly. But this Pok\u00e9mon is a bit slow-witted, so it doesn\u2019t notice the loss.",
+  "description": "It stashes berries in its tail—so many berries that they fall out constantly. But this Pokémon is a bit slow-witted, so it doesn’t notice the loss.",
   "flavorTexts": [
     {
-      "text": "It stashes berries in its tail\u2014so many berries that they fall out constantly. But this Pok\u00e9mon is a bit slow-witted, so it doesn\u2019t notice the loss.",
+      "text": "It stashes berries in its tail—so many berries that they fall out constantly. But this Pokémon is a bit slow-witted, so it doesn’t notice the loss.",
       "version": "sword"
     },
     {
-      "text": "Common throughout the Galar region, this Pok\u00e9mon has strong teeth and can chew through the toughest of berry shells.",
+      "text": "Common throughout the Galar region, this Pokémon has strong teeth and can chew through the toughest of berry shells.",
       "version": "shield"
     }
   ],
@@ -282,5 +282,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/820.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ヨクバリス",
+    "roomaji": "Yokubarisu",
+    "ko": "요씽리스",
+    "zh-Hant": "藏飽栗鼠",
+    "fr": "Rongrigou",
+    "de": "Schlaraffel",
+    "es": "Greedent",
+    "it": "Greedent",
+    "en": "Greedent",
+    "ja": "ヨクバリス",
+    "zh-Hans": "藏饱栗鼠"
   }
 }

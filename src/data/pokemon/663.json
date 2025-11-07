@@ -1,7 +1,7 @@
 {
   "id": 663,
   "name": "Talonflame",
-  "species": "Scorching Pok\u00e9mon",
+  "species": "Scorching Pokémon",
   "type": [
     "Fire",
     "Flying"
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/663.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ファイアロー",
+    "roomaji": "Fiarrow",
+    "ko": "파이어로",
+    "zh-Hant": "烈箭鷹",
+    "fr": "Flambusard",
+    "de": "Fiaro",
+    "es": "Talonflame",
+    "it": "Talonflame",
+    "en": "Talonflame",
+    "ja": "ファイアロー",
+    "zh-Hans": "烈箭鹰"
   }
 }

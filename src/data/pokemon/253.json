@@ -1,7 +1,7 @@
 {
   "id": 253,
   "name": "Grovyle",
-  "species": "Wood Gecko Pok\u00e9mon",
+  "species": "Wood Gecko Pokémon",
   "type": [
     "Grass"
   ],
@@ -35,18 +35,18 @@
     "specialDefense": 65,
     "speed": 95
   },
-  "description": "The leaves growing out of GROVYLE\u2019s body are convenient for camouflaging it from enemies in the forest. This POK\u00e9MON is a master at climbing trees in jungles.",
+  "description": "The leaves growing out of GROVYLE’s body are convenient for camouflaging it from enemies in the forest. This POKéMON is a master at climbing trees in jungles.",
   "flavorTexts": [
     {
-      "text": "The leaves growing out of GROVYLE\u2019s body are convenient for camouflaging it from enemies in the forest. This POK\u00e9MON is a master at climbing trees in jungles.",
+      "text": "The leaves growing out of GROVYLE’s body are convenient for camouflaging it from enemies in the forest. This POKéMON is a master at climbing trees in jungles.",
       "version": "ruby"
     },
     {
-      "text": "This POK\u00e9MON adeptly flies from branch to branch in trees. In a forest, no POK\u00e9MON can ever hope to catch a fleeing GROVYLE however fast they may be.",
+      "text": "This POKéMON adeptly flies from branch to branch in trees. In a forest, no POKéMON can ever hope to catch a fleeing GROVYLE however fast they may be.",
       "version": "sapphire"
     },
     {
-      "text": "Leaves grow out of this POK\u00e9MON\u2019s body. They help obscure a GROVYLE from the eyes of its enemies while it is in a thickly overgrown forest.",
+      "text": "Leaves grow out of this POKéMON’s body. They help obscure a GROVYLE from the eyes of its enemies while it is in a thickly overgrown forest.",
       "version": "emerald"
     },
     {
@@ -304,5 +304,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/253.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/253.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジュプトル",
+    "roomaji": "Juptile",
+    "ko": "나무돌이",
+    "zh-Hant": "森林蜥蜴",
+    "fr": "Massko",
+    "de": "Reptain",
+    "es": "Grovyle",
+    "it": "Grovyle",
+    "en": "Grovyle",
+    "ja": "ジュプトル",
+    "zh-Hans": "森林蜥蜴"
   }
 }

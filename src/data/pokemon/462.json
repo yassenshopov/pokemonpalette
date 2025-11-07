@@ -1,7 +1,7 @@
 {
   "id": 462,
   "name": "Magnezone",
-  "species": "Magnet Area Pok\u00e9mon",
+  "species": "Magnet Area Pokémon",
   "type": [
     "Electric",
     "Steel"
@@ -61,11 +61,11 @@
       "version": "platinum"
     },
     {
-      "text": "Exposure to a special magnetic field changed MAGNETON\u2019s molecular structure, turning it into MAGNEZONE.",
+      "text": "Exposure to a special magnetic field changed MAGNETON’s molecular structure, turning it into MAGNEZONE.",
       "version": "heartgold"
     },
     {
-      "text": "Exposure to a special magnetic field changed MAGNETON\u2019s molecular structure, turning it into MAGNEZONE.",
+      "text": "Exposure to a special magnetic field changed MAGNETON’s molecular structure, turning it into MAGNEZONE.",
       "version": "soulsilver"
     }
   ],
@@ -332,5 +332,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/462.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/462.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ジバコイル",
+    "roomaji": "Jibacoil",
+    "ko": "자포코일",
+    "zh-Hant": "自爆磁怪",
+    "fr": "Magnézone",
+    "de": "Magnezone",
+    "es": "Magnezone",
+    "it": "Magnezone",
+    "en": "Magnezone",
+    "ja": "ジバコイル",
+    "zh-Hans": "自爆磁怪"
   }
 }

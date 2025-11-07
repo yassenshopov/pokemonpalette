@@ -1,7 +1,7 @@
 {
   "id": 722,
   "name": "Rowlet",
-  "species": "Grass Quill Pok\u00e9mon",
+  "species": "Grass Quill Pokémon",
   "type": [
     "Grass",
     "Flying"
@@ -40,10 +40,10 @@
     "specialDefense": 50,
     "speed": 42
   },
-  "description": "This wary Pok\u00e9mon uses photosynthesis to store up energy during the day, while becoming active at night.",
+  "description": "This wary Pokémon uses photosynthesis to store up energy during the day, while becoming active at night.",
   "flavorTexts": [
     {
-      "text": "This wary Pok\u00e9mon uses photosynthesis to store up energy during the day, while becoming active at night.",
+      "text": "This wary Pokémon uses photosynthesis to store up energy during the day, while becoming active at night.",
       "version": "sun"
     },
     {
@@ -55,7 +55,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "It feels relaxed in tight, dark places and has been known to use its Trainer\u2019s pocket or bag as a nest.",
+      "text": "It feels relaxed in tight, dark places and has been known to use its Trainer’s pocket or bag as a nest.",
       "version": "ultra-moon"
     },
     {
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/722.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "モクロー",
+    "roomaji": "Mokuroh",
+    "ko": "나몰빼미",
+    "zh-Hant": "木木梟",
+    "fr": "Brindibou",
+    "de": "Bauz",
+    "es": "Rowlet",
+    "it": "Rowlet",
+    "en": "Rowlet",
+    "ja": "モクロー",
+    "zh-Hans": "木木枭"
   }
 }

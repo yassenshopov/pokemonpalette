@@ -1,7 +1,7 @@
 {
   "id": 338,
   "name": "Solrock",
-  "species": "Meteorite Pok\u00e9mon",
+  "species": "Meteorite Pokémon",
   "type": [
     "Rock",
     "Psychic"
@@ -41,15 +41,15 @@
       "version": "white-2"
     },
     {
-      "text": "SOLROCK is a new species of POK\u00e9MON that is said to have fallen from space. It floats in air and moves silently. In battle, this POK\u00e9MON releases intensely bright light.",
+      "text": "SOLROCK is a new species of POKéMON that is said to have fallen from space. It floats in air and moves silently. In battle, this POKéMON releases intensely bright light.",
       "version": "ruby"
     },
     {
-      "text": "Sunlight is the source of SOLROCK\u2019s power. It is said to possess the ability to read the emotions of others. This POK\u00e9MON gives off intense heat while rotating its body.",
+      "text": "Sunlight is the source of SOLROCK’s power. It is said to possess the ability to read the emotions of others. This POKéMON gives off intense heat while rotating its body.",
       "version": "sapphire"
     },
     {
-      "text": "Solar energy is the source of this  POK\u00e9MON\u2019s power. On sunny days, groups of SOLROCK line up facing the sun and absorb its light.",
+      "text": "Solar energy is the source of this  POKéMON’s power. On sunny days, groups of SOLROCK line up facing the sun and absorb its light.",
       "version": "emerald"
     },
     {
@@ -296,5 +296,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/338.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/338.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ソルロック",
+    "roomaji": "Solrock",
+    "ko": "솔록",
+    "zh-Hant": "太陽岩",
+    "fr": "Solaroc",
+    "de": "Sonnfel",
+    "es": "Solrock",
+    "it": "Solrock",
+    "en": "Solrock",
+    "ja": "ソルロック",
+    "zh-Hans": "太阳岩"
   }
 }

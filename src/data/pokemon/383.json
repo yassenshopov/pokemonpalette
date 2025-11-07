@@ -1,7 +1,7 @@
 {
   "id": 383,
   "name": "Groudon",
-  "species": "Continent Pok\u00e9mon",
+  "species": "Continent Pokémon",
   "type": [
     "Ground"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 90,
     "speed": 90
   },
-  "description": "GROUDON has long been described in  mythology as the POK\u00e9MON that raised lands and expanded continents. This POK\u00e9MON took to sleep after a cataclysmic battle with KYOGRE.",
+  "description": "GROUDON has long been described in  mythology as the POKéMON that raised lands and expanded continents. This POKéMON took to sleep after a cataclysmic battle with KYOGRE.",
   "flavorTexts": [
     {
-      "text": "GROUDON has long been described in  mythology as the POK\u00e9MON that raised lands and expanded continents. This POK\u00e9MON took to sleep after a cataclysmic battle with KYOGRE.",
+      "text": "GROUDON has long been described in  mythology as the POKéMON that raised lands and expanded continents. This POKéMON took to sleep after a cataclysmic battle with KYOGRE.",
       "version": "ruby"
     },
     {
@@ -44,11 +44,11 @@
       "version": "emerald"
     },
     {
-      "text": "This legendary POK\u00e9MON is said to represent the land. It went to sleep after dueling KYOGRE.",
+      "text": "This legendary POKéMON is said to represent the land. It went to sleep after dueling KYOGRE.",
       "version": "firered"
     },
     {
-      "text": "This legendary POK\u00e9MON is said to represent the land. It went to sleep after dueling KYOGRE.",
+      "text": "This legendary POKéMON is said to represent the land. It went to sleep after dueling KYOGRE.",
       "version": "leafgreen"
     }
   ],
@@ -285,5 +285,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/383.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/383.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "グラードン",
+    "roomaji": "Groudon",
+    "ko": "그란돈",
+    "zh-Hant": "固拉多",
+    "fr": "Groudon",
+    "de": "Groudon",
+    "es": "Groudon",
+    "it": "Groudon",
+    "en": "Groudon",
+    "ja": "グラードン",
+    "zh-Hans": "固拉多"
   }
 }

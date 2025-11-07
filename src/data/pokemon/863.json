@@ -1,7 +1,7 @@
 {
   "id": 863,
   "name": "Perrserker",
-  "species": "Viking Pok\u00e9mon",
+  "species": "Viking Pokémon",
   "type": [
     "Steel"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 60,
     "speed": 50
   },
-  "description": "What appears to be an iron helmet is actually hardened hair. This Pok\u00e9mon lives for the thrill of battle.",
+  "description": "What appears to be an iron helmet is actually hardened hair. This Pokémon lives for the thrill of battle.",
   "flavorTexts": [
     {
-      "text": "What appears to be an iron helmet is actually hardened hair. This Pok\u00e9mon lives for the thrill of battle.",
+      "text": "What appears to be an iron helmet is actually hardened hair. This Pokémon lives for the thrill of battle.",
       "version": "sword"
     },
     {
@@ -301,5 +301,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/863.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ニャイキング",
+    "roomaji": "Nyaiking",
+    "ko": "나이킹",
+    "zh-Hant": "喵頭目",
+    "fr": "Berserkatt",
+    "de": "Mauzinger",
+    "es": "Perrserker",
+    "it": "Perrserker",
+    "en": "Perrserker",
+    "ja": "ニャイキング",
+    "zh-Hans": "喵头目"
   }
 }

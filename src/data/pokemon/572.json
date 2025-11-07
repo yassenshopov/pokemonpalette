@@ -1,7 +1,7 @@
 {
   "id": 572,
   "name": "Minccino",
-  "species": "Chinchilla Pok\u00e9mon",
+  "species": "Chinchilla Pokémon",
   "type": [
     "Normal"
   ],
@@ -48,7 +48,7 @@
       "version": "black"
     },
     {
-      "text": "These Pok\u00e9mon prefer a tidy habitat. They are always sweeping and dusting, using their tails as brooms.",
+      "text": "These Pokémon prefer a tidy habitat. They are always sweeping and dusting, using their tails as brooms.",
       "version": "white"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/572.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/572.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チラーミィ",
+    "roomaji": "Chillarmy",
+    "ko": "치라미",
+    "zh-Hant": "泡沫栗鼠",
+    "fr": "Chinchidou",
+    "de": "Picochilla",
+    "es": "Minccino",
+    "it": "Minccino",
+    "en": "Minccino",
+    "ja": "チラーミィ",
+    "zh-Hans": "泡沫栗鼠"
   }
 }

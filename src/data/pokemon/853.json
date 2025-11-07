@@ -1,7 +1,7 @@
 {
   "id": 853,
   "name": "Grapploct",
-  "species": "Jujitsu Pok\u00e9mon",
+  "species": "Jujitsu Pokémon",
   "type": [
     "Fighting"
   ],
@@ -35,10 +35,10 @@
     "specialDefense": 80,
     "speed": 42
   },
-  "description": "A body made up of nothing but muscle makes the grappling moves this Pok\u00e9mon performs with its tentacles tremendously powerful.",
+  "description": "A body made up of nothing but muscle makes the grappling moves this Pokémon performs with its tentacles tremendously powerful.",
   "flavorTexts": [
     {
-      "text": "A body made up of nothing but muscle makes the grappling moves this Pok\u00e9mon performs with its tentacles tremendously powerful.",
+      "text": "A body made up of nothing but muscle makes the grappling moves this Pokémon performs with its tentacles tremendously powerful.",
       "version": "sword"
     },
     {
@@ -281,5 +281,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/853.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "オトスパス",
+    "roomaji": "Otosupus",
+    "ko": "케오퍼스",
+    "zh-Hant": "八爪武師",
+    "fr": "Krakos",
+    "de": "Kaocto",
+    "es": "Grapploct",
+    "it": "Grapploct",
+    "en": "Grapploct",
+    "ja": "オトスパス",
+    "zh-Hans": "八爪武师"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 910,
   "name": "Crocalor",
-  "species": "Fire Croc Pok\u00e9mon",
+  "species": "Fire Croc Pokémon",
   "type": [
     "Fire"
   ],
@@ -35,14 +35,14 @@
     "specialDefense": 58,
     "speed": 49
   },
-  "description": "The combination of Crocalor\u2019s fire energy and overflowing vitality has caused an egg-shaped fireball to appear on the Pok\u00e9mon\u2019s head.",
+  "description": "The combination of Crocalor’s fire energy and overflowing vitality has caused an egg-shaped fireball to appear on the Pokémon’s head.",
   "flavorTexts": [
     {
-      "text": "The combination of Crocalor\u2019s fire energy and overflowing vitality has caused an egg-shaped fireball to appear on the Pok\u00e9mon\u2019s head.",
+      "text": "The combination of Crocalor’s fire energy and overflowing vitality has caused an egg-shaped fireball to appear on the Pokémon’s head.",
       "version": "scarlet"
     },
     {
-      "text": "The valve in Crocalor\u2019s flame sac is closely connected to its vocal cords. This Pok\u00e9mon utters a guttural cry as it spews flames every which way.",
+      "text": "The valve in Crocalor’s flame sac is closely connected to its vocal cords. This Pokémon utters a guttural cry as it spews flames every which way.",
       "version": "violet"
     }
   ],
@@ -292,5 +292,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/910.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アチゲータ",
+    "roomaji": "Achigator",
+    "ko": "악뜨거",
+    "zh-Hant": "炙燙鱷",
+    "fr": "Crocogril",
+    "de": "Lokroko",
+    "es": "Crocalor",
+    "it": "Crocalor",
+    "en": "Crocalor",
+    "ja": "アチゲータ",
+    "zh-Hans": "炙烫鳄"
   }
 }

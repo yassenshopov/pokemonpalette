@@ -1,7 +1,7 @@
 {
   "id": 342,
   "name": "Crawdaunt",
-  "species": "Rogue Pok\u00e9mon",
+  "species": "Rogue Pokémon",
   "type": [
     "Water",
     "Dark"
@@ -46,18 +46,18 @@
     "specialDefense": 55,
     "speed": 55
   },
-  "description": "CRAWDAUNT has an extremely violent nature that compels it to challenge other living things to battle. Other life-forms refuse to live in ponds inhabited by this POK\u00e9MON, making them desolate places.",
+  "description": "CRAWDAUNT has an extremely violent nature that compels it to challenge other living things to battle. Other life-forms refuse to live in ponds inhabited by this POKéMON, making them desolate places.",
   "flavorTexts": [
     {
-      "text": "CRAWDAUNT has an extremely violent nature that compels it to challenge other living things to battle. Other life-forms refuse to live in ponds inhabited by this POK\u00e9MON, making them desolate places.",
+      "text": "CRAWDAUNT has an extremely violent nature that compels it to challenge other living things to battle. Other life-forms refuse to live in ponds inhabited by this POKéMON, making them desolate places.",
       "version": "ruby"
     },
     {
-      "text": "CRAWDAUNT molts (sheds) its shell regularly. Immediately after molting, its shell is soft and tender. Until the shell hardens, this POK\u00e9MON hides in its streambed burrow to avoid attack from its foes.",
+      "text": "CRAWDAUNT molts (sheds) its shell regularly. Immediately after molting, its shell is soft and tender. Until the shell hardens, this POKéMON hides in its streambed burrow to avoid attack from its foes.",
       "version": "sapphire"
     },
     {
-      "text": "A brutish POK\u00e9MON that loves to battle. A veteran CRAWDAUNT that has prevailed in hundreds of battles has giant pincers marked with countless scars.",
+      "text": "A brutish POKéMON that loves to battle. A veteran CRAWDAUNT that has prevailed in hundreds of battles has giant pincers marked with countless scars.",
       "version": "emerald"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/342.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/342.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "シザリガー",
+    "roomaji": "Shizariger",
+    "ko": "가재장군",
+    "zh-Hant": "鐵螯龍蝦",
+    "fr": "Colhomard",
+    "de": "Krebutack",
+    "es": "Crawdaunt",
+    "it": "Crawdaunt",
+    "en": "Crawdaunt",
+    "ja": "シザリガー",
+    "zh-Hans": "铁螯龙虾"
   }
 }

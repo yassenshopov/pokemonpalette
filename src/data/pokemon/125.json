@@ -1,7 +1,7 @@
 {
   "id": 125,
   "name": "Electabuzz",
-  "species": "Electric Pok\u00e9mon",
+  "species": "Electric Pokémon",
   "type": [
     "Electric"
   ],
@@ -46,15 +46,15 @@
       "version": "blue"
     },
     {
-      "text": "If a major power outage occurs, it is certain that this POK\u00e9MON has eaten electricity at a power plant.",
+      "text": "If a major power outage occurs, it is certain that this POKéMON has eaten electricity at a power plant.",
       "version": "yellow"
     },
     {
-      "text": "Electricity runs across the surface of its body. In darkness, its en\u00ad tire body glows a whitish-blue.",
+      "text": "Electricity runs across the surface of its body. In darkness, its en­ tire body glows a whitish-blue.",
       "version": "gold"
     },
     {
-      "text": "Its body constant\u00ad ly discharges electricity. Get\u00ad ting close to it will make your hair stand on end.",
+      "text": "Its body constant­ ly discharges electricity. Get­ ting close to it will make your hair stand on end.",
       "version": "silver"
     }
   ],
@@ -309,5 +309,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/125.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/125.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エレブー",
+    "roomaji": "Eleboo",
+    "ko": "에레브",
+    "zh-Hant": "電擊獸",
+    "fr": "Élektek",
+    "de": "Elektek",
+    "es": "Electabuzz",
+    "it": "Electabuzz",
+    "en": "Electabuzz",
+    "ja": "エレブー",
+    "zh-Hans": "电击兽"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 297,
   "name": "Hariyama",
-  "species": "Arm Thrust Pok\u00e9mon",
+  "species": "Arm Thrust Pokémon",
   "type": [
     "Fighting"
   ],
@@ -41,18 +41,18 @@
     "specialDefense": 60,
     "speed": 50
   },
-  "description": "It has the habit of challenging others without hesitation to tests of strength. It\u2019s been known to stand on train tracks and stop trains using forearm thrusts.",
+  "description": "It has the habit of challenging others without hesitation to tests of strength. It’s been known to stand on train tracks and stop trains using forearm thrusts.",
   "flavorTexts": [
     {
-      "text": "It has the habit of challenging others without hesitation to tests of strength. It\u2019s been known to stand on train tracks and stop trains using forearm thrusts.",
+      "text": "It has the habit of challenging others without hesitation to tests of strength. It’s been known to stand on train tracks and stop trains using forearm thrusts.",
       "version": "emerald"
     },
     {
-      "text": "HARIYAMA practices its straight-arm slaps in any number of locations. One hit of this POK\u00e9MON\u2019s powerful, openhanded, straight-arm punches could snap a telephone pole in two.",
+      "text": "HARIYAMA practices its straight-arm slaps in any number of locations. One hit of this POKéMON’s powerful, openhanded, straight-arm punches could snap a telephone pole in two.",
       "version": "ruby"
     },
     {
-      "text": "HARIYAMA\u2019s thick body may appear fat, but it is actually a hunk of solid muscle. If this POK\u00e9MON bears down and tightens all its muscles, its body becomes as hard as a rock.",
+      "text": "HARIYAMA’s thick body may appear fat, but it is actually a hunk of solid muscle. If this POKéMON bears down and tightens all its muscles, its body becomes as hard as a rock.",
       "version": "sapphire"
     },
     {
@@ -305,5 +305,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/297.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/297.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ハリテヤマ",
+    "roomaji": "Hariteyama",
+    "ko": "하리뭉",
+    "zh-Hant": "鐵掌力士",
+    "fr": "Hariyama",
+    "de": "Hariyama",
+    "es": "Hariyama",
+    "it": "Hariyama",
+    "en": "Hariyama",
+    "ja": "ハリテヤマ",
+    "zh-Hans": "铁掌力士"
   }
 }

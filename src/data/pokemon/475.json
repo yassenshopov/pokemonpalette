@@ -1,7 +1,7 @@
 {
   "id": 475,
   "name": "Gallade",
-  "species": "Blade Pok\u00e9mon",
+  "species": "Blade Pokémon",
   "type": [
     "Psychic",
     "Fighting"
@@ -333,5 +333,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/475.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/475.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "エルレイド",
+    "roomaji": "Erlade",
+    "ko": "엘레이드",
+    "zh-Hant": "艾路雷朵",
+    "fr": "Gallame",
+    "de": "Galagladi",
+    "es": "Gallade",
+    "it": "Gallade",
+    "en": "Gallade",
+    "ja": "エルレイド",
+    "zh-Hans": "艾路雷朵"
   }
 }

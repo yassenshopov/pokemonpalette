@@ -1,7 +1,7 @@
 {
   "id": 967,
   "name": "Cyclizar",
-  "species": "Mount Pok\u00e9mon",
+  "species": "Mount Pokémon",
   "type": [
     "Dragon",
     "Normal"
@@ -47,7 +47,7 @@
       "version": "scarlet"
     },
     {
-      "text": "It can sprint at over 70 mph while carrying a human. The rider\u2019s body heat warms Cyclizar\u2019s back and lifts the Pok\u00e9mon\u2019s spirit.",
+      "text": "It can sprint at over 70 mph while carrying a human. The rider’s body heat warms Cyclizar’s back and lifts the Pokémon’s spirit.",
       "version": "violet"
     }
   ],
@@ -277,5 +277,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/967.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "モトトカゲ",
+    "roomaji": "Mototokage",
+    "ko": "모토마",
+    "zh-Hant": "摩托蜥",
+    "fr": "Motorizard",
+    "de": "Mopex",
+    "es": "Cyclizar",
+    "it": "Cyclizar",
+    "en": "Cyclizar",
+    "ja": "モトトカゲ",
+    "zh-Hans": "摩托蜥"
   }
 }

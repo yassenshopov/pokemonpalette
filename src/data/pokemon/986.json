@@ -1,7 +1,7 @@
 {
   "id": 986,
   "name": "Brute-bonnet",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Grass",
     "Dark"
@@ -34,14 +34,14 @@
     "specialDefense": 99,
     "speed": 55
   },
-  "description": "It is possible that the creature listed as Brute Bonnet in a certain book could actually be this Pok\u00e9mon.",
+  "description": "It is possible that the creature listed as Brute Bonnet in a certain book could actually be this Pokémon.",
   "flavorTexts": [
     {
-      "text": "It is possible that the creature listed as Brute Bonnet in a certain book could actually be this Pok\u00e9mon.",
+      "text": "It is possible that the creature listed as Brute Bonnet in a certain book could actually be this Pokémon.",
       "version": "scarlet"
     },
     {
-      "text": "It bears a slight resemblance to a Pok\u00e9mon described in a dubious magazine as a cross between a dinosaur and a mushroom.",
+      "text": "It bears a slight resemblance to a Pokémon described in a dubious magazine as a cross between a dinosaur and a mushroom.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/986.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "アラブルタケ",
+    "roomaji": "Araburutake",
+    "ko": "사나운버섯",
+    "zh-Hant": "猛惡菇",
+    "fr": "Fongus-Furie",
+    "de": "Wutpilz",
+    "es": "Furioseta",
+    "it": "Fungofurioso",
+    "en": "Brute Bonnet",
+    "ja": "アラブルタケ",
+    "zh-Hans": "猛恶菇"
   }
 }

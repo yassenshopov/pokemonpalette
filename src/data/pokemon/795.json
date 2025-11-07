@@ -1,7 +1,7 @@
 {
   "id": 795,
   "name": "Pheromosa",
-  "species": "Lissome Pok\u00e9mon",
+  "species": "Lissome Pokémon",
   "type": [
     "Bug",
     "Fighting"
@@ -49,7 +49,7 @@
       "version": "ultra-sun"
     },
     {
-      "text": "Although it\u2019s alien to this world and a danger here, it\u2019s apparently a common organism in the world where it normally lives.",
+      "text": "Although it’s alien to this world and a danger here, it’s apparently a common organism in the world where it normally lives.",
       "version": "ultra-moon"
     }
   ],
@@ -279,5 +279,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/795.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "フェローチェ",
+    "roomaji": "Pheroache",
+    "ko": "페로코체",
+    "zh-Hant": "費洛美螂",
+    "fr": "Cancrelove",
+    "de": "Schabelle",
+    "es": "Pheromosa",
+    "it": "Pheromosa",
+    "en": "Pheromosa",
+    "ja": "フェローチェ",
+    "zh-Hans": "费洛美螂"
   }
 }

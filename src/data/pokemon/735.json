@@ -1,8 +1,10 @@
 {
   "id": 735,
   "name": "Gumshoos",
-  "species": "Stakeout Pok\u00e9mon",
-  "type": ["Normal"],
+  "species": "Stakeout Pokémon",
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -39,22 +41,22 @@
     "specialDefense": 60,
     "speed": 45
   },
-  "description": "When it finds a trace of its prey, it patiently stakes out the location...but it\u2019s always snoozing by nightfall.",
+  "description": "When it finds a trace of its prey, it patiently stakes out the location...but it’s always snoozing by nightfall.",
   "flavorTexts": [
     {
-      "text": "When it finds a trace of its prey, it patiently stakes out the location...but it\u2019s always snoozing by nightfall.",
+      "text": "When it finds a trace of its prey, it patiently stakes out the location...but it’s always snoozing by nightfall.",
       "version": "sun"
     },
     {
-      "text": "It adores having Rattata and Raticate for dinner, but as it\u2019s diurnal, it never encounters them. This Pok\u00e9mon boasts incredible patience.",
+      "text": "It adores having Rattata and Raticate for dinner, but as it’s diurnal, it never encounters them. This Pokémon boasts incredible patience.",
       "version": "moon"
     },
     {
-      "text": "Although it wasn\u2019t originally found in Alola, this Pok\u00e9mon was brought over a long time ago when there was a huge Rattata outbreak.",
+      "text": "Although it wasn’t originally found in Alola, this Pokémon was brought over a long time ago when there was a huge Rattata outbreak.",
       "version": "ultra-sun"
     },
     {
-      "text": "Patient by nature, this Pok\u00e9mon loses control of itself and pounces when it spots its favorite meal\u2014Rattata!",
+      "text": "Patient by nature, this Pokémon loses control of itself and pounces when it spots its favorite meal—Rattata!",
       "version": "ultra-moon"
     }
   ],
@@ -64,7 +66,11 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#A8A878", "#F8D030", "#F8F8F8"]
+    "highlights": [
+      "#A8A878",
+      "#F8D030",
+      "#F8F8F8"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/735.png",
@@ -295,5 +301,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/735.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "デカグース",
+    "roomaji": "Dekagoose",
+    "ko": "형사구스",
+    "zh-Hant": "貓鼬探長",
+    "fr": "Argouste",
+    "de": "Manguspektor",
+    "es": "Gumshoos",
+    "it": "Gumshoos",
+    "en": "Gumshoos",
+    "ja": "デカグース",
+    "zh-Hans": "猫鼬探长"
   }
 }

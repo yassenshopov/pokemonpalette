@@ -1,7 +1,7 @@
 {
   "id": 665,
   "name": "Spewpa",
-  "species": "Scatterdust Pok\u00e9mon",
+  "species": "Scatterdust Pokémon",
   "type": [
     "Bug"
   ],
@@ -42,7 +42,7 @@
       "version": "x"
     },
     {
-      "text": "The beaks of bird Pok\u00e9mon can\u2019t begin to scratch its stalwart body. To defend itself, it spews powder.",
+      "text": "The beaks of bird Pokémon can’t begin to scratch its stalwart body. To defend itself, it spews powder.",
       "version": "y"
     },
     {
@@ -50,7 +50,7 @@
       "version": "omega-ruby"
     },
     {
-      "text": "The beaks of bird Pok\u00e9mon can\u2019t begin to scratch its stalwart body. To defend itself, it spews powder.",
+      "text": "The beaks of bird Pokémon can’t begin to scratch its stalwart body. To defend itself, it spews powder.",
       "version": "alpha-sapphire"
     }
   ],
@@ -553,5 +553,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/665.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "コフーライ",
+    "roomaji": "Kofuurai",
+    "ko": "분떠도리",
+    "zh-Hant": "粉蝶蛹",
+    "fr": "Pérégrain",
+    "de": "Puponcho",
+    "es": "Spewpa",
+    "it": "Spewpa",
+    "en": "Spewpa",
+    "ja": "コフーライ",
+    "zh-Hans": "粉蝶蛹"
   }
 }

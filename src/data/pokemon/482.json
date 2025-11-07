@@ -1,7 +1,7 @@
 {
   "id": 482,
   "name": "Azelf",
-  "species": "Willpower Pok\u00e9mon",
+  "species": "Willpower Pokémon",
   "type": [
     "Psychic"
   ],
@@ -29,10 +29,10 @@
     "specialDefense": 70,
     "speed": 115
   },
-  "description": "Known as \u201cThe Being of Willpower.\u201d It sleeps at the bottom of a lake to keep the world in balance.",
+  "description": "Known as “The Being of Willpower.” It sleeps at the bottom of a lake to keep the world in balance.",
   "flavorTexts": [
     {
-      "text": "Known as \u201cThe Being of Willpower.\u201d It sleeps at the bottom of a lake to keep the world in balance.",
+      "text": "Known as “The Being of Willpower.” It sleeps at the bottom of a lake to keep the world in balance.",
       "version": "diamond"
     },
     {
@@ -44,11 +44,11 @@
       "version": "platinum"
     },
     {
-      "text": "This Pok\u00e9mon is said to have endowed humans with the determination needed to face any of life\u2019s difficulties.",
+      "text": "This Pokémon is said to have endowed humans with the determination needed to face any of life’s difficulties.",
       "version": "heartgold"
     },
     {
-      "text": "This Pok\u00e9mon is said to have endowed humans with the determination needed to face any of life\u2019s difficulties.",
+      "text": "This Pokémon is said to have endowed humans with the determination needed to face any of life’s difficulties.",
       "version": "soulsilver"
     }
   ],
@@ -278,5 +278,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/482.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/482.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "アグノム",
+    "roomaji": "Agnome",
+    "ko": "아그놈",
+    "zh-Hant": "亞克諾姆",
+    "fr": "Créfadet",
+    "de": "Tobutz",
+    "es": "Azelf",
+    "it": "Azelf",
+    "en": "Azelf",
+    "ja": "アグノム",
+    "zh-Hans": "亚克诺姆"
   }
 }

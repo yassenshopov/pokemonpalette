@@ -1,7 +1,7 @@
 {
   "id": 599,
   "name": "Klink",
-  "species": "Gear Pok\u00e9mon",
+  "species": "Gear Pokémon",
   "type": [
     "Steel"
   ],
@@ -310,5 +310,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/599.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/599.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ギアル",
+    "roomaji": "Giaru",
+    "ko": "기어르",
+    "zh-Hant": "齒輪兒",
+    "fr": "Tic",
+    "de": "Klikk",
+    "es": "Klink",
+    "it": "Klink",
+    "en": "Klink",
+    "ja": "ギアル",
+    "zh-Hans": "齿轮儿"
   }
 }

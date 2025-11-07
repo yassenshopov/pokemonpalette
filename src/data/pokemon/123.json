@@ -1,7 +1,7 @@
 {
   "id": 123,
   "name": "Scyther",
-  "species": "Mantis Pok\u00e9mon",
+  "species": "Mantis Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -57,7 +57,7 @@
       "version": "blue"
     },
     {
-      "text": "Leaps out of tall grass and slices prey with its scythes. The move\u00ad ment looks like that of a ninja.",
+      "text": "Leaps out of tall grass and slices prey with its scythes. The move­ ment looks like that of a ninja.",
       "version": "yellow"
     },
     {
@@ -65,7 +65,7 @@
       "version": "gold"
     },
     {
-      "text": "When it moves, it leaves only a blur. If it hides in grass, its pro\u00ad tective colors make it invisible.",
+      "text": "When it moves, it leaves only a blur. If it hides in grass, its pro­ tective colors make it invisible.",
       "version": "silver"
     }
   ],
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/123.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/123.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ストライク",
+    "roomaji": "Strike",
+    "ko": "스라크",
+    "zh-Hant": "飛天螳螂",
+    "fr": "Insécateur",
+    "de": "Sichlor",
+    "es": "Scyther",
+    "it": "Scyther",
+    "en": "Scyther",
+    "ja": "ストライク",
+    "zh-Hans": "飞天螳螂"
   }
 }

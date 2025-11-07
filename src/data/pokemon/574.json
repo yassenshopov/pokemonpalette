@@ -1,7 +1,7 @@
 {
   "id": 574,
   "name": "Gothita",
-  "species": "Fixation Pok\u00e9mon",
+  "species": "Fixation Pokémon",
   "type": [
     "Psychic"
   ],
@@ -48,15 +48,15 @@
       "version": "black"
     },
     {
-      "text": "They intently observe both Trainers and Pok\u00e9mon. Apparently, they are looking at something that only Gothita can see.",
+      "text": "They intently observe both Trainers and Pokémon. Apparently, they are looking at something that only Gothita can see.",
       "version": "white"
     },
     {
-      "text": "It stares intently at everything. It can become so obsessed with watching that it doesn\u2019t notice attacks.",
+      "text": "It stares intently at everything. It can become so obsessed with watching that it doesn’t notice attacks.",
       "version": "black-2"
     },
     {
-      "text": "It stares intently at everything. It can become so obsessed with watching that it doesn\u2019t notice attacks.",
+      "text": "It stares intently at everything. It can become so obsessed with watching that it doesn’t notice attacks.",
       "version": "white-2"
     },
     {
@@ -315,5 +315,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/574.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/574.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ゴチム",
+    "roomaji": "Gothimu",
+    "ko": "고디탱",
+    "zh-Hant": "哥德寶寶",
+    "fr": "Scrutella",
+    "de": "Mollimorba",
+    "es": "Gothita",
+    "it": "Gothita",
+    "en": "Gothita",
+    "ja": "ゴチム",
+    "zh-Hans": "哥德宝宝"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 812,
   "name": "Rillaboom",
-  "species": "Drummer Pok\u00e9mon",
+  "species": "Drummer Pokémon",
   "type": [
     "Grass"
   ],
@@ -299,5 +299,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/812.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ゴリランダー",
+    "roomaji": "Gorirander",
+    "ko": "고릴타",
+    "zh-Hant": "轟擂金剛猩",
+    "fr": "Gorythmic",
+    "de": "Gortrom",
+    "es": "Rillaboom",
+    "it": "Rillaboom",
+    "en": "Rillaboom",
+    "ja": "ゴリランダー",
+    "zh-Hans": "轰擂金刚猩"
   }
 }

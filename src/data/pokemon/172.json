@@ -1,7 +1,7 @@
 {
   "id": 172,
   "name": "Pichu",
-  "species": "Tiny Mouse Pok\u00e9mon",
+  "species": "Tiny Mouse Pokémon",
   "type": [
     "Electric"
   ],
@@ -50,11 +50,11 @@
       "version": "crystal"
     },
     {
-      "text": "PICHU charges itself with electricity more easily on days with thunderclouds or when the air is very dry. You can hear the crackling of static electricity coming off this POK\u00e9MON.",
+      "text": "PICHU charges itself with electricity more easily on days with thunderclouds or when the air is very dry. You can hear the crackling of static electricity coming off this POKéMON.",
       "version": "ruby"
     },
     {
-      "text": "When PICHU plays with others, it may short out electricity with another PICHU, creating a shower of sparks. In that event, this POK\u00e9MON will begin crying, startled by the flash of sparks.",
+      "text": "When PICHU plays with others, it may short out electricity with another PICHU, creating a shower of sparks. In that event, this POKéMON will begin crying, startled by the flash of sparks.",
       "version": "sapphire"
     }
   ],
@@ -325,5 +325,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/172.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/172.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ピチュー",
+    "roomaji": "Pichu",
+    "ko": "피츄",
+    "zh-Hant": "皮丘",
+    "fr": "Pichu",
+    "de": "Pichu",
+    "es": "Pichu",
+    "it": "Pichu",
+    "en": "Pichu",
+    "ja": "ピチュー",
+    "zh-Hans": "皮丘"
   }
 }

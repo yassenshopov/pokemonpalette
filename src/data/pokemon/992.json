@@ -1,7 +1,7 @@
 {
   "id": 992,
   "name": "Iron-hands",
-  "species": "Paradox Pok\u00e9mon",
+  "species": "Paradox Pokémon",
   "type": [
     "Fighting",
     "Electric"
@@ -41,7 +41,7 @@
       "version": "scarlet"
     },
     {
-      "text": "This Pok\u00e9mon shares many similarities with Iron Hands, an object mentioned in a certain expedition journal.",
+      "text": "This Pokémon shares many similarities with Iron Hands, an object mentioned in a certain expedition journal.",
       "version": "violet"
     }
   ],
@@ -271,5 +271,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/992.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "テツノカイナ",
+    "roomaji": "Tetsunokaina",
+    "ko": "무쇠손",
+    "zh-Hant": "鐵臂膀",
+    "fr": "Paume-de-Fer",
+    "de": "Eisenhand",
+    "es": "Ferropalmas",
+    "it": "Manoferrea",
+    "en": "Iron Hands",
+    "ja": "テツノカイナ",
+    "zh-Hans": "铁臂膀"
   }
 }

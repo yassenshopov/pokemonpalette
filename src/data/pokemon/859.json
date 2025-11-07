@@ -1,7 +1,7 @@
 {
   "id": 859,
   "name": "Impidimp",
-  "species": "Wily Pok\u00e9mon",
+  "species": "Wily Pokémon",
   "type": [
     "Dark",
     "Fairy"
@@ -46,14 +46,14 @@
     "specialDefense": 40,
     "speed": 50
   },
-  "description": "Through its nose, it sucks in the emanations produced by people and Pok\u00e9mon when they feel annoyed. It thrives off this negative energy.",
+  "description": "Through its nose, it sucks in the emanations produced by people and Pokémon when they feel annoyed. It thrives off this negative energy.",
   "flavorTexts": [
     {
-      "text": "Through its nose, it sucks in the emanations produced by people and Pok\u00e9mon when they feel annoyed. It thrives off this negative energy.",
+      "text": "Through its nose, it sucks in the emanations produced by people and Pokémon when they feel annoyed. It thrives off this negative energy.",
       "version": "sword"
     },
     {
-      "text": "It sneaks into people\u2019s homes, stealing things and feasting on the negative energy of the frustrated occupants.",
+      "text": "It sneaks into people’s homes, stealing things and feasting on the negative energy of the frustrated occupants.",
       "version": "shield"
     }
   ],
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/859.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ベロバー",
+    "roomaji": "Beroba",
+    "ko": "메롱꿍",
+    "zh-Hant": "搗蛋小妖",
+    "fr": "Grimalin",
+    "de": "Bähmon",
+    "es": "Impidimp",
+    "it": "Impidimp",
+    "en": "Impidimp",
+    "ja": "ベロバー",
+    "zh-Hans": "捣蛋小妖"
   }
 }

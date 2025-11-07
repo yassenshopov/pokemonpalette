@@ -1,7 +1,7 @@
 {
   "id": 176,
   "name": "Togetic",
-  "species": "Happiness Pok\u00e9mon",
+  "species": "Happiness Pokémon",
   "type": [
     "Fairy",
     "Flying"
@@ -46,14 +46,14 @@
     "specialDefense": 105,
     "speed": 40
   },
-  "description": "They say that it will appear before kindhearted, car\u00ad ing people and shower them with happiness.",
+  "description": "They say that it will appear before kindhearted, car­ ing people and shower them with happiness.",
   "flavorTexts": [
     {
-      "text": "They say that it will appear before kindhearted, car\u00ad ing people and shower them with happiness.",
+      "text": "They say that it will appear before kindhearted, car­ ing people and shower them with happiness.",
       "version": "gold"
     },
     {
-      "text": "It grows dispirit\u00ad ed if it is not with kind people. It can float in midair without moving its wings.",
+      "text": "It grows dispirit­ ed if it is not with kind people. It can float in midair without moving its wings.",
       "version": "silver"
     },
     {
@@ -61,11 +61,11 @@
       "version": "crystal"
     },
     {
-      "text": "TOGETIC is said to be a POK\u00e9MON that brings good fortune. When the POK\u00e9MON spots someone who is pure of heart, it is said to appear and share its happiness with that person.",
+      "text": "TOGETIC is said to be a POKéMON that brings good fortune. When the POKéMON spots someone who is pure of heart, it is said to appear and share its happiness with that person.",
       "version": "ruby"
     },
     {
-      "text": "TOGETIC is said to be a POK\u00e9MON that brings good fortune. When the POK\u00e9MON spots someone who is pure of heart, it is said to appear and share its happiness with that person.",
+      "text": "TOGETIC is said to be a POKéMON that brings good fortune. When the POKéMON spots someone who is pure of heart, it is said to appear and share its happiness with that person.",
       "version": "sapphire"
     }
   ],
@@ -314,5 +314,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/176.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/176.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "トゲチック",
+    "roomaji": "Togechick",
+    "ko": "토게틱",
+    "zh-Hant": "波克基古",
+    "fr": "Togetic",
+    "de": "Togetic",
+    "es": "Togetic",
+    "it": "Togetic",
+    "en": "Togetic",
+    "ja": "トゲチック",
+    "zh-Hans": "波克基古"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": 414,
   "name": "Mothim",
-  "species": "Moth Pok\u00e9mon",
+  "species": "Moth Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -51,7 +51,7 @@
       "version": "pearl"
     },
     {
-      "text": "While it loves floral honey, it won\u2019t gather any itself. Instead, it plots to steal some from COMBEE.",
+      "text": "While it loves floral honey, it won’t gather any itself. Instead, it plots to steal some from COMBEE.",
       "version": "platinum"
     },
     {
@@ -350,5 +350,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/414.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/414.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "ガーメイル",
+    "roomaji": "Garmeil",
+    "ko": "나메일",
+    "zh-Hant": "紳士蛾",
+    "fr": "Papilord",
+    "de": "Moterpel",
+    "es": "Mothim",
+    "it": "Mothim",
+    "en": "Mothim",
+    "ja": "ガーメイル",
+    "zh-Hans": "绅士蛾"
   }
 }

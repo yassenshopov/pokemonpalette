@@ -1,7 +1,7 @@
 {
   "id": 980,
   "name": "Clodsire",
-  "species": "Spiny Fish Pok\u00e9mon",
+  "species": "Spiny Fish Pokémon",
   "type": [
     "Poison",
     "Ground"
@@ -46,10 +46,10 @@
     "specialDefense": 100,
     "speed": 20
   },
-  "description": "When attacked, this Pok\u00e9mon will retaliate by sticking thick spines out from its body. It\u2019s a risky move that puts everything on the line.",
+  "description": "When attacked, this Pokémon will retaliate by sticking thick spines out from its body. It’s a risky move that puts everything on the line.",
   "flavorTexts": [
     {
-      "text": "When attacked, this Pok\u00e9mon will retaliate by sticking thick spines out from its body. It\u2019s a risky move that puts everything on the line.",
+      "text": "When attacked, this Pokémon will retaliate by sticking thick spines out from its body. It’s a risky move that puts everything on the line.",
       "version": "scarlet"
     },
     {
@@ -303,5 +303,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/980.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "ドオー",
+    "roomaji": "Dooh",
+    "ko": "토오",
+    "zh-Hant": "土王",
+    "fr": "Terraiste",
+    "de": "Suelord",
+    "es": "Clodsire",
+    "it": "Clodsire",
+    "en": "Clodsire",
+    "ja": "ドオー",
+    "zh-Hans": "土王"
   }
 }

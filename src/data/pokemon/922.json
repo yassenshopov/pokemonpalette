@@ -1,7 +1,7 @@
 {
   "id": 922,
   "name": "Pawmo",
-  "species": "Mouse Pok\u00e9mon",
+  "species": "Mouse Pokémon",
   "type": [
     "Electric",
     "Fighting"
@@ -302,5 +302,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/922.ogg",
     "legacy": null
+  },
+  "names": {
+    "ja-Hrkt": "パモット",
+    "roomaji": "Pamot",
+    "ko": "빠모트",
+    "zh-Hant": "布土撥",
+    "fr": "Pohmotte",
+    "de": "Pamamo",
+    "es": "Pawmo",
+    "it": "Pawmo",
+    "en": "Pawmo",
+    "ja": "パモット",
+    "zh-Hans": "布土拨"
   }
 }

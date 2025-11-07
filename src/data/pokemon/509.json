@@ -1,7 +1,7 @@
 {
   "id": 509,
   "name": "Purrloin",
-  "species": "Devious Pok\u00e9mon",
+  "species": "Devious Pokémon",
   "type": [
     "Dark"
   ],
@@ -41,10 +41,10 @@
     "specialDefense": 37,
     "speed": 66
   },
-  "description": "They steal from people for fun, but their victims can\u2019t help but forgive them. Their deceptively cute act is perfect.",
+  "description": "They steal from people for fun, but their victims can’t help but forgive them. Their deceptively cute act is perfect.",
   "flavorTexts": [
     {
-      "text": "They steal from people for fun, but their victims can\u2019t help but forgive them. Their deceptively cute act is perfect.",
+      "text": "They steal from people for fun, but their victims can’t help but forgive them. Their deceptively cute act is perfect.",
       "version": "black"
     },
     {
@@ -300,5 +300,18 @@
   "cries": {
     "latest": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/509.ogg",
     "legacy": "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/509.ogg"
+  },
+  "names": {
+    "ja-Hrkt": "チョロネコ",
+    "roomaji": "Choroneko",
+    "ko": "쌔비냥",
+    "zh-Hant": "扒手貓",
+    "fr": "Chacripan",
+    "de": "Felilou",
+    "es": "Purrloin",
+    "it": "Purrloin",
+    "en": "Purrloin",
+    "ja": "チョロネコ",
+    "zh-Hans": "扒手猫"
   }
 }
