@@ -2,10 +2,7 @@
   "id": 1008,
   "name": "Miraidon",
   "species": "Paradox Pokémon",
-  "type": [
-    "Electric",
-    "Dragon"
-  ],
+  "type": ["Electric", "Dragon"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -51,11 +48,7 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
-    ]
+    "highlights": ["#F8D030", "#F08030", "#F8F8F8"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1008.png",
@@ -264,34 +257,6 @@
       "raw_name": "miraidon",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/1008/",
-      "type": ""
-    },
-    {
-      "name": "Miraidon low power mode",
-      "raw_name": "miraidon-low-power-mode",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10268/",
-      "type": ""
-    },
-    {
-      "name": "Miraidon drive mode",
-      "raw_name": "miraidon-drive-mode",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10269/",
-      "type": ""
-    },
-    {
-      "name": "Miraidon aquatic mode",
-      "raw_name": "miraidon-aquatic-mode",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10270/",
-      "type": ""
-    },
-    {
-      "name": "Miraidon glide mode",
-      "raw_name": "miraidon-glide-mode",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10271/",
       "type": ""
     }
   ],

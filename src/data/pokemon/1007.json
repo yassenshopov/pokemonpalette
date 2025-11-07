@@ -2,10 +2,7 @@
   "id": 1007,
   "name": "Koraidon",
   "species": "Paradox Pokémon",
-  "type": [
-    "Fighting",
-    "Dragon"
-  ],
+  "type": ["Fighting", "Dragon"],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -51,11 +48,7 @@
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+    "highlights": ["#A8A878", "#F8D030", "#F8F8F8"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1007.png",
@@ -264,34 +257,6 @@
       "raw_name": "koraidon",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/1007/",
-      "type": ""
-    },
-    {
-      "name": "Koraidon limited build",
-      "raw_name": "koraidon-limited-build",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10264/",
-      "type": ""
-    },
-    {
-      "name": "Koraidon sprinting build",
-      "raw_name": "koraidon-sprinting-build",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10265/",
-      "type": ""
-    },
-    {
-      "name": "Koraidon swimming build",
-      "raw_name": "koraidon-swimming-build",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10266/",
-      "type": ""
-    },
-    {
-      "name": "Koraidon gliding build",
-      "raw_name": "koraidon-gliding-build",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10267/",
       "type": ""
     }
   ],
