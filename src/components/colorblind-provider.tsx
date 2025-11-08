@@ -49,11 +49,9 @@ export function ColorblindProvider({
 }) {
   const [colorblindType, setColorblindTypeState] =
     useState<ColorblindType>("none");
-  const [mounted, setMounted] = useState(false);
 
   // Load preference from localStorage on mount
   useEffect(() => {
-    setMounted(true);
     const saved = localStorage.getItem("colorblind-type");
     if (saved && saved in colorblindFilters) {
       setColorblindTypeState(saved as ColorblindType);

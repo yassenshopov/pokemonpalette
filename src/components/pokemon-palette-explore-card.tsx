@@ -136,7 +136,7 @@ export function PokemonPaletteExploreCard({
       <div className="h-32 md:h-40 relative overflow-hidden">
         <div className="flex h-full">
           {colors.length > 0 ? (
-            colors.slice(0, 5).map((color, index) => (
+            colors.slice(0, 5).map((color: string, index: number) => (
               <div
                 key={index}
                 className="flex-1 h-full relative group/color"
