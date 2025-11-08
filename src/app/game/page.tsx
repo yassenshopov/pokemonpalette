@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
 import { useUser } from "@clerk/nextjs";
 import confetti from "canvas-confetti";
+import { toast } from "sonner";
 import {
   getAllPokemonMetadata,
   getPokemonById,
@@ -99,6 +100,21 @@ function getDailyShinyStatus(): boolean {
   return false;
 }
 
+function getGuessToastMessage(attempts: number): string {
+  switch (attempts) {
+    case 1:
+      return "Incredible! First try! 🎯";
+    case 2:
+      return "Excellent! Great job! 🌟";
+    case 3:
+      return "Nice work! Well done! 👍";
+    case 4:
+      return "Well done! You got it! 🎉";
+    default:
+      return "Congratulations! 🎊";
+  }
+}
+
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string | undefined): "text-white" | "text-black" => {
   if (!hex || typeof hex !== "string") {
@@ -110,6 +126,18 @@ const getTextColor = (hex: string | undefined): "text-white" | "text-black" => {
   const b = parseInt(hexClean.substring(4, 6), 16);
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.5 ? "text-black" : "text-white";
+};
+
+// Helper function to create a dimmed version of a color with opacity
+const getDimmedColor = (hex: string, opacity: number = 0.2): string => {
+  if (!hex || typeof hex !== "string") {
+    return `rgba(0, 0, 0, ${opacity})`;
+  }
+  const hexClean = hex.replace("#", "");
+  const r = parseInt(hexClean.substring(0, 2), 16);
+  const g = parseInt(hexClean.substring(2, 4), 16);
+  const b = parseInt(hexClean.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 };
 
 // Calculate color similarity between two palettes
@@ -844,7 +872,19 @@ export default function GamePage() {
 
     if (won) {
       setStatus("won");
-      setShowGameResultDialog(true);
+      // Show toast before the dialog
+      toast.success(
+        <div className="text-center w-full" style={{ width: "100%" }}>
+          {getGuessToastMessage(newAttempts)}
+        </div>,
+        {
+          duration: 3000,
+        }
+      );
+      // Small delay before showing dialog to let toast appear first
+      setTimeout(() => {
+        setShowGameResultDialog(true);
+      }, 1500);
       // Save attempt for daily mode only
       if (mode === "daily") {
         if (user) {
@@ -1851,8 +1891,8 @@ export default function GamePage() {
               {/* Content with padding */}
               <div className="relative z-10 p-4 md:p-6">
                 <div className="flex items-start justify-end gap-4">
-                  <div className="flex flex-col items-end gap-2">
-                    {/* Hints Display - Right side, in a column */}
+                  <div className="flex items-end gap-2">
+                    {/* Hints Display - Left side of button when button is visible, or right-aligned when all hints revealed */}
                     {status === "playing" &&
                       targetPokemon &&
                       revealedHints.length > 0 && (
@@ -1874,13 +1914,14 @@ export default function GamePage() {
                                 }}
                               >
                                 <Badge
-                                  variant="default"
-                                  className="border-transparent"
+                                  variant="outline"
+                                  className="border-2 rounded-full h-7 px-3 flex items-center"
                                   style={{
-                                    backgroundColor: primaryColor || undefined,
-                                    color: primaryColor
-                                      ? getTextColor(primaryColor)
+                                    borderColor: primaryColor || undefined,
+                                    backgroundColor: primaryColor
+                                      ? getDimmedColor(primaryColor, 0.15)
                                       : undefined,
+                                    color: primaryColor || undefined,
                                   }}
                                 >
                                   {hints[hintIndex]}
@@ -1890,7 +1931,7 @@ export default function GamePage() {
                           })}
                         </div>
                       )}
-                    {status === "playing" && targetPokemon && (
+                    {status === "playing" && targetPokemon && revealedHints.length < 3 && (
                       <Button
                         onClick={showNextHint}
                         variant="outline"

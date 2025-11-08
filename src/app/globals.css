@@ -195,4 +195,15 @@
   .dot-grid-pulse {
     animation: dot-grid-pulse 5s ease-in-out infinite;
   }
+
+  /* Center toast content */
+  [data-sonner-toast] [data-sonner-toast-content] {
+    text-align: center;
+    justify-content: center;
+  }
+
+  [data-sonner-toast] [data-sonner-toast-content] > div {
+    text-align: center;
+    width: 100%;
+  }
 }

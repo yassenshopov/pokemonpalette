@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ColorblindProvider } from "@/components/colorblind-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -152,6 +153,7 @@ export default function RootLayout({
           <ColorblindProvider>
             {content}
             <Analytics />
+            <Toaster position="top-center" />
           </ColorblindProvider>
         </ThemeProvider>
         {ga4Id && (

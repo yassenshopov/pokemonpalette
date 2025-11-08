@@ -1,7 +1,7 @@
 "use client";
 
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
-import { PokemonPaletteMarquee } from "@/components/pokemon-palette-marquee";
+import { GridPattern } from "@/components/grid-pattern";
 import { Sparkles } from "lucide-react";
 import { Footer } from "@/components/footer";
 
@@ -25,10 +25,10 @@ export default function ExplorePage() {
           </div>
         </div>
 
-        {/* Marquee Content */}
+        {/* Grid Content */}
         <div className="flex-1 overflow-auto">
-          <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-            <PokemonPaletteMarquee count={20} speed={250} rows={5} />
+          <div className="w-full h-full">
+            <GridPattern />
           </div>
           <Footer />
         </div>

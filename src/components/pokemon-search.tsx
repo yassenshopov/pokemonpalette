@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { PokemonMetadata } from "@/types/pokemon";
 import Image from "next/image";
@@ -43,11 +43,13 @@ export function PokemonSearch({
   placeholder = "Search Pokemon...",
 }: PokemonSearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const [suggestions, setSuggestions] = useState<PokemonMetadata[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const searchRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Load full Pokemon data for sprites
   const [pokemonSprites, setPokemonSprites] = useState<
@@ -60,6 +62,22 @@ export function PokemonSearch({
   const [pokemonLanguageNames, setPokemonLanguageNames] = useState<
     Record<number, Record<string, string>>
   >({});
+
+  // Debounce search query
+  useEffect(() => {
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+    debounceTimerRef.current = setTimeout(() => {
+      setDebouncedQuery(searchQuery);
+    }, 150); // 150ms debounce delay
+
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, [searchQuery]);
 
   // Clear sprite cache when isShiny changes
   useEffect(() => {
@@ -111,15 +129,42 @@ export function PokemonSearch({
       }
     };
 
-    // Load sprites for visible suggestions
-    suggestions.forEach((pokemon) => {
+    // Only load sprites for visible suggestions (first 30 items)
+    // This prevents loading sprites for hundreds of results
+    const visibleSuggestions = suggestions.slice(0, 30);
+    visibleSuggestions.forEach((pokemon) => {
       loadSprite(pokemon.id);
     });
   }, [suggestions, isShiny]);
 
-  // Load language names for Pokemon (for multi-language search)
+  // Memoize filtered results based on English name/ID only (fast filtering)
+  const englishFilteredResults = useMemo(() => {
+    if (!debouncedQuery.trim()) {
+      return [];
+    }
+
+    const queryLower = debouncedQuery.toLowerCase();
+    return pokemonList.filter((pokemon) => {
+      // Check English name first (most common case)
+      if (pokemon.name.toLowerCase().includes(queryLower)) {
+        return true;
+      }
+      // Check ID
+      if (pokemon.id.toString().includes(queryLower)) {
+        return true;
+      }
+      return false;
+    });
+  }, [debouncedQuery, pokemonList]);
+
+  // Load language names only for filtered results that don't match English
   useEffect(() => {
     const loadLanguageNames = async (id: number) => {
+      // Skip if already cached or currently loading
+      if (pokemonLanguageNames[id]) {
+        return;
+      }
+
       try {
         const pokemon = await getPokemonById(id);
         if (pokemon?.names) {
@@ -137,61 +182,65 @@ export function PokemonSearch({
       }
     };
 
-    // Load language names for Pokemon that don't match English name/ID
-    // This allows searching by other languages
-    if (searchQuery.trim()) {
-      const queryLower = searchQuery.toLowerCase();
-      pokemonList.forEach((pokemon) => {
-        // Only load if:
-        // 1. Not already cached
-        // 2. Doesn't match English name or ID (so we need to check languages)
-        const matchesEnglish =
-          pokemon.name.toLowerCase().includes(queryLower) ||
-          pokemon.id.toString().includes(queryLower);
+    // Load language names for Pokemon that might match via language names
+    // We only load for a limited set to avoid overwhelming the system
+    // Priority: Pokemon that are close alphabetically or by ID to the query
+    if (debouncedQuery.trim()) {
+      const queryLower = debouncedQuery.toLowerCase();
+      
+      // Find Pokemon that don't match English but might match via language
+      // Limit to first 20 Pokemon that don't have language names cached
+      const pokemonToCheck = pokemonList
+        .filter((pokemon) => {
+          // Skip if already cached
+          if (pokemonLanguageNames[pokemon.id]) return false;
+          // Skip if already in English results (they already match)
+          if (englishFilteredResults.some((p) => p.id === pokemon.id)) return false;
+          return true;
+        })
+        .slice(0, 20); // Limit to 20 to avoid too many async calls
 
-        if (!pokemonLanguageNames[pokemon.id] && !matchesEnglish) {
-          loadLanguageNames(pokemon.id);
-        }
+      // Load language names in batches
+      const batchSize = 5;
+      pokemonToCheck.slice(0, batchSize).forEach((pokemon) => {
+        loadLanguageNames(pokemon.id);
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchQuery, pokemonList]);
+  }, [debouncedQuery, englishFilteredResults]);
 
-  useEffect(() => {
-    if (searchQuery.trim() === "") {
-      setSuggestions([]);
-      return;
+  // Memoize final filtered results including language names
+  const finalFilteredResults = useMemo(() => {
+    if (!debouncedQuery.trim()) {
+      return [];
     }
 
-    const queryLower = searchQuery.toLowerCase();
+    const queryLower = debouncedQuery.toLowerCase();
 
-    const filtered = pokemonList.filter((pokemon) => {
-      // Check English name
-      if (pokemon.name.toLowerCase().includes(queryLower)) {
-        return true;
-      }
+    // Start with English-filtered results (fast path)
+    const results = new Set<PokemonMetadata>(englishFilteredResults);
 
-      // Check ID
-      if (pokemon.id.toString().includes(queryLower)) {
-        return true;
-      }
-
-      // Check language names if available
-      const languageNames = pokemonLanguageNames[pokemon.id];
-      if (languageNames) {
-        const matchesLanguage = Object.values(languageNames).some((name) =>
+    // Add Pokemon that match language names
+    Object.entries(pokemonLanguageNames).forEach(([id, names]) => {
+      const pokemonId = Number(id);
+      const pokemon = pokemonList.find((p) => p.id === pokemonId);
+      if (pokemon && !results.has(pokemon)) {
+        const matchesLanguage = Object.values(names).some((name) =>
           name.toLowerCase().includes(queryLower)
         );
         if (matchesLanguage) {
-          return true;
+          results.add(pokemon);
         }
       }
-
-      return false;
     });
 
-    setSuggestions(filtered);
-  }, [searchQuery, pokemonList, pokemonLanguageNames]);
+    return Array.from(results);
+  }, [debouncedQuery, englishFilteredResults, pokemonLanguageNames, pokemonList]);
+
+  // Update suggestions when filtered results change
+  useEffect(() => {
+    setSuggestions(finalFilteredResults);
+  }, [finalFilteredResults]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -207,14 +256,25 @@ export function PokemonSearch({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelect = (pokemonId: number) => {
+  const handleSelect = useCallback((pokemonId: number) => {
     onPokemonSelect(pokemonId);
     setSearchQuery("");
     setShowSuggestions(false);
     setSelectedIndex(0);
-  };
+  }, [onPokemonSelect]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  // Memoize generation calculations for suggestions
+  const suggestionGenerations = useMemo(() => {
+    const genMap = new Map<number, number>();
+    suggestions.forEach((p) => {
+      if (!genMap.has(p.id)) {
+        genMap.set(p.id, getGenerationFromId(p.id));
+      }
+    });
+    return genMap;
+  }, [suggestions]);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (!showSuggestions || suggestions.length === 0) return;
 
     switch (e.key) {
@@ -226,7 +286,7 @@ export function PokemonSearch({
           let attempts = 0;
           while (attempts < suggestions.length) {
             const pokemon = suggestions[next];
-            const generation = getGenerationFromId(pokemon.id);
+            const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
             const isGenerationSelected = selectedGenerations
               ? selectedGenerations.includes(generation)
               : true;
@@ -250,7 +310,7 @@ export function PokemonSearch({
           let attempts = 0;
           while (attempts < suggestions.length) {
             const pokemon = suggestions[next];
-            const generation = getGenerationFromId(pokemon.id);
+            const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
             const isGenerationSelected = selectedGenerations
               ? selectedGenerations.includes(generation)
               : true;
@@ -270,7 +330,7 @@ export function PokemonSearch({
         e.preventDefault();
         if (suggestions[selectedIndex]) {
           const pokemon = suggestions[selectedIndex];
-          const generation = getGenerationFromId(pokemon.id);
+          const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
           const isGenerationSelected = selectedGenerations
             ? selectedGenerations.includes(generation)
             : true;
@@ -284,19 +344,19 @@ export function PokemonSearch({
         setSelectedIndex(0);
         break;
     }
-  };
+  }, [showSuggestions, suggestions, selectedIndex, suggestionGenerations, selectedGenerations, guessedPokemonIds, handleSelect]);
 
   useEffect(() => {
     // Find first non-guessed and generation-selected Pokemon
     const firstAvailable = suggestions.findIndex((p) => {
-      const generation = getGenerationFromId(p.id);
+      const generation = suggestionGenerations.get(p.id) ?? getGenerationFromId(p.id);
       const isGenerationSelected = selectedGenerations
         ? selectedGenerations.includes(generation)
         : true;
       return !guessedPokemonIds.includes(p.id) && isGenerationSelected;
     });
     setSelectedIndex(firstAvailable >= 0 ? firstAvailable : 0);
-  }, [searchQuery, suggestions, guessedPokemonIds, selectedGenerations]);
+  }, [debouncedQuery, suggestions, guessedPokemonIds, selectedGenerations, suggestionGenerations]);
 
   // Sync search query with selected Pokemon
   useEffect(() => {
@@ -336,7 +396,7 @@ export function PokemonSearch({
         <div className="absolute top-full left-0 right-0 mt-2 bg-popover border rounded-md max-h-[400px] overflow-y-auto z-50">
           {suggestions.map((pokemon, index) => {
             const isGuessed = guessedPokemonIds.includes(pokemon.id);
-            const generation = getGenerationFromId(pokemon.id);
+            const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
             const isGenerationSelected = selectedGenerations
               ? selectedGenerations.includes(generation)
               : true;
