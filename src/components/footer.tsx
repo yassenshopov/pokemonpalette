@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { Github, Twitter } from "lucide-react";
+import { Github, Twitter, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -102,6 +102,14 @@ export function Footer() {
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github className="h-5 w-5" />
+              </Link>
+              <Link
+                href="https://linkedin.com/in/yassenshopov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
               </Link>
             </div>
             <ul className="space-y-2">
