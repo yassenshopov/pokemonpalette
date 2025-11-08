@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Outfit } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ColorblindProvider } from "@/components/colorblind-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -148,8 +149,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          {content}
-          <Analytics />
+          <ColorblindProvider>
+            {content}
+            <Analytics />
+          </ColorblindProvider>
         </ThemeProvider>
         {ga4Id && (
           <>

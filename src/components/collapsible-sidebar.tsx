@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark, Target } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark, Target, Sparkles } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ColorblindSettingsCompact } from "@/components/colorblind-settings";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
@@ -151,14 +152,22 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     <Target className="h-4 w-4" />
                     <span>Game</span>
                   </Link>
+                  <Link
+                    href="/explore"
+                    className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    <span>Explore</span>
+                  </Link>
                 </div>
 
                 {/* Appearance */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">Appearance</span>
                     <ThemeToggle />
                   </div>
+                  <ColorblindSettingsCompact />
                 </div>
               </div>
             </div>
@@ -263,6 +272,13 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     >
                       <Target className="h-4 w-4" />
                     </Link>
+                    <Link
+                      href="/explore"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      title="Explore"
+                    >
+                      <Sparkles className="h-4 w-4" />
+                    </Link>
                   </div>
                   <div className="flex flex-col items-center">
                     <SavedPalettesDialog 
@@ -317,6 +333,13 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                       <Target className="h-4 w-4" />
                       <span>Game</span>
                     </Link>
+                    <Link
+                      href="/explore"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                    >
+                      <Sparkles className="h-4 w-4" />
+                      <span>Explore</span>
+                    </Link>
                     <SavedPalettesDialog 
                       onPaletteSelect={onPaletteLoad}
                       trigger={
@@ -332,11 +355,12 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                   </div>
 
                   {/* Appearance */}
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium">Appearance</span>
                       <ThemeToggle />
                     </div>
+                    <ColorblindSettingsCompact />
                   </div>
                 </>
               )}
