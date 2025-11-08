@@ -245,7 +245,7 @@ export function PokemonPaletteExploreCard({
 
         {/* Color Codes */}
         <div className="flex flex-wrap gap-1 pt-2 border-t">
-          {colors.slice(0, 3).map((color, index) => (
+          {colors.slice(0, 3).map((color: string, index: number) => (
             <button
               key={index}
               onClick={(e) => handleCopyColor(color, e)}
