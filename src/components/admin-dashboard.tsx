@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { AdminUsersTab } from "@/components/admin-users-tab";
 import { AdminGameDataTab } from "@/components/admin-game-data-tab";
 import { AdminSavedPalettesTab } from "@/components/admin-saved-palettes-tab";
+import { AdminEmailsTab } from "@/components/admin-emails-tab";
 
 export function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("users");
@@ -19,10 +20,11 @@ export function AdminDashboard() {
       </Card>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="users">Users</TabsTrigger>
           <TabsTrigger value="game-data">Game Data</TabsTrigger>
           <TabsTrigger value="saved-palettes">Saved Palettes</TabsTrigger>
+          <TabsTrigger value="emails">Emails</TabsTrigger>
         </TabsList>
 
         <TabsContent value="users" className="mt-6">
@@ -35,6 +37,10 @@ export function AdminDashboard() {
 
         <TabsContent value="saved-palettes" className="mt-6">
           <AdminSavedPalettesTab />
+        </TabsContent>
+
+        <TabsContent value="emails" className="mt-6">
+          <AdminEmailsTab />
         </TabsContent>
       </Tabs>
     </div>

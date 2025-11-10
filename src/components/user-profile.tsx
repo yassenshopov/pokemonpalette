@@ -10,7 +10,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { User, LogOut, Settings } from "lucide-react";
+import { User, LogOut, Mail } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface UserProfileProps {
@@ -20,7 +21,6 @@ interface UserProfileProps {
 // Component that handles Clerk hooks - only rendered when Clerk is available
 function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
   const { user, isLoaded } = useUser();
-  const { openUserProfile } = useClerk();
 
   if (!isLoaded) {
     return (
@@ -106,14 +106,15 @@ function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
           <DropdownMenuItem asChild>
-            <Button
-              variant="ghost"
-              className="w-full justify-start p-2 h-auto"
-              onClick={() => openUserProfile()}
-            >
-              <Settings className="h-4 w-4 mr-2" />
-              Manage Account
-            </Button>
+            <Link href="/account" className="w-full">
+              <Button
+                variant="ghost"
+                className="w-full justify-start p-2 h-auto"
+              >
+                <Mail className="h-4 w-4 mr-2" />
+                Account Settings
+              </Button>
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>

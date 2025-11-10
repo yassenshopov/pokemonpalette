@@ -33,6 +33,7 @@ model User {
   updatedAt                  DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
   isDeleted                  Boolean   @default(false) @map("is_deleted")
   isAdmin                    Boolean   @default(false) @map("is_admin")
+  receivesDailyEmails        Boolean   @default(true) @map("receives_daily_emails")
   emailAddresses             Json      @default("[]") @map("email_addresses") @db.JsonB
   phoneNumbers               Json      @default("[]") @map("phone_numbers") @db.JsonB
   externalAccounts           Json      @default("[]") @map("external_accounts") @db.JsonB
@@ -44,6 +45,7 @@ model User {
   // Relations
   savedPalettes              SavedPalette[]
   dailyGameAttempts          DailyGameAttempt[]
+  emails                     Email[]
 
   @@map("users")
 }
@@ -134,4 +136,34 @@ model DailyGameAttempt {
   @@index([won], map: "idx_daily_game_attempts_won")
   @@index([createdAt], map: "idx_daily_game_attempts_created_at")
   @@map("daily_game_attempts")
+}
+
+model Email {
+  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  resendId      String?   @unique @map("resend_id")
+  userId        String?   @map("user_id")
+  recipientEmail String   @map("recipient_email")
+  senderEmail   String    @map("sender_email")
+  senderName    String?   @map("sender_name")
+  subject       String
+  templateType  String    @map("template_type")
+  htmlContent   String?   @map("html_content") @db.Text
+  textContent   String?   @map("text_content") @db.Text
+  status        String    // 'sent', 'failed', 'pending'
+  errorMessage  String?   @map("error_message") @db.Text
+  sentAt        DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("sent_at") @db.Timestamptz(6)
+  createdAt     DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  user          User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId], map: "idx_emails_user_id")
+  @@index([recipientEmail], map: "idx_emails_recipient_email")
+  @@index([resendId], map: "idx_emails_resend_id")
+  @@index([templateType], map: "idx_emails_template_type")
+  @@index([status], map: "idx_emails_status")
+  @@index([sentAt], map: "idx_emails_sent_at")
+  @@index([createdAt], map: "idx_emails_created_at")
+  @@map("emails")
 }
