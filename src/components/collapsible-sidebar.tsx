@@ -4,7 +4,16 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark, Target, Sparkles } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Menu,
+  X,
+  Home,
+  Bookmark,
+  Target,
+  Sparkles,
+} from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
@@ -35,7 +44,10 @@ interface CollapsibleSidebarProps {
   }) => void;
 }
 
-export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleSidebarProps) {
+export function CollapsibleSidebar({
+  primaryColor,
+  onPaletteLoad,
+}: CollapsibleSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -186,7 +198,10 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     className="w-full border-0 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95"
                     style={{
                       backgroundColor: primaryColor || "#f59e0b",
-                      color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
+                      color:
+                        getTextColor(primaryColor || "#f59e0b") === "text-white"
+                          ? "#ffffff"
+                          : "#000000",
                     }}
                   >
                     <Coffee className="w-4 h-4 mr-2" />
@@ -279,7 +294,7 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     </Link>
                   </div>
                   <div className="flex flex-col items-center">
-                    <SavedPalettesDialog 
+                    <SavedPalettesDialog
                       onPaletteSelect={onPaletteLoad}
                       isCollapsed={true}
                       trigger={
@@ -305,7 +320,11 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                       className="p-2 rounded-lg transition-colors cursor-pointer"
                       style={{
                         backgroundColor: primaryColor || "#f59e0b",
-                        color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
+                        color:
+                          getTextColor(primaryColor || "#f59e0b") ===
+                          "text-white"
+                            ? "#ffffff"
+                            : "#000000",
                       }}
                       title="Buy Me a Coffee"
                     >
@@ -338,7 +357,7 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                       <Sparkles className="h-4 w-4" />
                       <span>Explore</span>
                     </Link>
-                    <SavedPalettesDialog 
+                    <SavedPalettesDialog
                       onPaletteSelect={onPaletteLoad}
                       trigger={
                         <Button
@@ -381,7 +400,10 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     className="w-full border-0 cursor-pointer font-medium transition-all duration-300 hover:scale-105 active:scale-95"
                     style={{
                       backgroundColor: primaryColor || "#f59e0b",
-                      color: getTextColor(primaryColor || "#f59e0b") === "text-white" ? "#ffffff" : "#000000",
+                      color:
+                        getTextColor(primaryColor || "#f59e0b") === "text-white"
+                          ? "#ffffff"
+                          : "#000000",
                     }}
                   >
                     <Coffee className="w-4 h-4 mr-2" />

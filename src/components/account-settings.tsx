@@ -141,6 +141,7 @@ export function AccountSettings() {
                     checked={receivesDailyEmails}
                     onCheckedChange={handleEmailPreferenceChange}
                     disabled={saving}
+                    className="cursor-pointer"
                   />
                 </div>
               )}
