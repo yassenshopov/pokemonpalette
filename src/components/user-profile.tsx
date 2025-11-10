@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { User, LogOut, Mail } from "lucide-react";
+import { User, LogOut, UserCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -111,7 +111,7 @@ function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
                 variant="ghost"
                 className="w-full justify-start p-2 h-auto"
               >
-                <Mail className="h-4 w-4 mr-2" />
+                <UserCircle className="h-4 w-4 mr-2" />
                 Account Settings
               </Button>
             </Link>
