@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Menu, X, Home, Bookmark, Target, Sparkles } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { ColorblindSettingsCompact } from "@/components/colorblind-settings";
 import { UserProfileWrapper } from "@/components/user-profile-wrapper";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
@@ -167,7 +166,6 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                     <span className="text-sm font-medium">Appearance</span>
                     <ThemeToggle />
                   </div>
-                  <ColorblindSettingsCompact />
                 </div>
               </div>
             </div>
@@ -360,7 +358,6 @@ export function CollapsibleSidebar({ primaryColor, onPaletteLoad }: CollapsibleS
                       <span className="text-sm font-medium">Appearance</span>
                       <ThemeToggle />
                     </div>
-                    <ColorblindSettingsCompact />
                   </div>
                 </>
               )}

@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
+import { ColorblindSettings } from "@/components/colorblind-settings";
 
 export function AccountSettings() {
   const { user, isLoaded: userLoaded } = useUser();
@@ -145,6 +146,11 @@ export function AccountSettings() {
               )}
             </CardContent>
           </Card>
+
+          <Separator />
+
+          {/* Color Vision Settings */}
+          <ColorblindSettings />
 
           <Separator />
 
