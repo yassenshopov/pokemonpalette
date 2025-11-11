@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 2.0,
-  "weight": 300.0,
+  "height": 2,
+  "weight": 300,
   "abilities": [
     {
       "name": "Sand stream",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#eed594",
+    "secondary": "#5a5a62",
+    "accent": "#cdb439",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#eed594",
+      "#5a5a62",
+      "#cdb439"
     ]
   },
   "artwork": {

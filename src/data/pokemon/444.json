@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.4,
-  "weight": 56.0,
+  "weight": 56,
   "abilities": [
     {
       "name": "Sand veil",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#394a8b",
+    "secondary": "#5a6abd",
+    "accent": "#102952",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#394a8b",
+      "#5a6abd",
+      "#102952"
     ]
   },
   "artwork": {

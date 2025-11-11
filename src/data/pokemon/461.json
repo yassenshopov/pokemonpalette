@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.1,
-  "weight": 34.0,
+  "weight": 34,
   "abilities": [
     {
       "name": "Pressure",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c52973",
+    "secondary": "#414a83",
+    "accent": "#6a6aac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#c52973",
+      "#414a83",
+      "#6a6aac"
     ]
   },
   "artwork": {

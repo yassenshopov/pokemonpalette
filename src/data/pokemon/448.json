@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 54.0,
+  "weight": 54,
   "abilities": [
     {
       "name": "Steadfast",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#5a5a5a",
+    "secondary": "#393939",
+    "accent": "#29739c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#5a5a5a",
+      "#393939",
+      "#29739c"
     ]
   },
   "artwork": {

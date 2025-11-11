@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 430.0,
+  "weight": 430,
   "abilities": [
     {
       "name": "Flash fire",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#c5c5c5",
+    "secondary": "#949494",
+    "accent": "#ac5a41",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#c5c5c5",
+      "#949494",
+      "#ac5a41"
     ]
   },
   "artwork": {

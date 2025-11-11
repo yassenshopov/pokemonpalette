@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 4.0,
+  "weight": 4,
   "abilities": [
     {
       "name": "Victory star",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#ffe6ac",
+    "secondary": "#c59c5a",
+    "accent": "#ff6a18",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#ffe6ac",
+      "#c59c5a",
+      "#ff6a18"
     ]
   },
   "artwork": {

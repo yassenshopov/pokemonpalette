@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 140.0,
+  "weight": 140,
   "abilities": [
     {
       "name": "Own tempo",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#e67394",
+    "secondary": "#bd5273",
+    "accent": "#f67b5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#e67394",
+      "#bd5273",
+      "#f67b5a"
     ]
   },
   "artwork": {

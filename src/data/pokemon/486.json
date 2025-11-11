@@ -12,7 +12,7 @@
     }
   ],
   "height": 3.7,
-  "weight": 420.0,
+  "weight": 420,
   "abilities": [
     {
       "name": "Slow start",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c59c52",
+    "secondary": "#394a5a",
+    "accent": "#d5cdd5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#c59c52",
+      "#394a5a",
+      "#d5cdd5"
     ]
   },
   "artwork": {

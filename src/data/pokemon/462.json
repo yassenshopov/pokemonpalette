@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 180.0,
+  "weight": 180,
   "abilities": [
     {
       "name": "Magnet pull",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#6a739c",
+    "secondary": "#414152",
+    "accent": "#9cbdee",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#6a739c",
+      "#414152",
+      "#9cbdee"
     ]
   },
   "artwork": {

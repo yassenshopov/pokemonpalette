@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.7,
-  "weight": 23.0,
+  "weight": 23,
   "abilities": [
     {
       "name": "Anticipation",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#6a73d5",
+    "secondary": "#313141",
+    "accent": "#4a4a8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
+      "#6a73d5",
+      "#313141",
+      "#4a4a8b"
     ]
   },
   "artwork": {
