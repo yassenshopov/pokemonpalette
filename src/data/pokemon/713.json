@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 2.0,
-  "weight": 505.0,
+  "height": 2,
+  "weight": 505,
   "abilities": [
     {
       "name": "Own tempo",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#bff4ff",
+    "secondary": "#85d7f2",
+    "accent": "#77b8d9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#bff4ff",
+      "#85d7f2",
+      "#77b8d9"
     ]
   },
   "artwork": {

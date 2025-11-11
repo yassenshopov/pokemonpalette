@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 5.0,
+  "weight": 5,
   "abilities": [
     {
       "name": "Pickup",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#bfbfbf",
+    "secondary": "#926b4d",
+    "accent": "#8c8c8c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#bfbfbf",
+      "#926b4d",
+      "#8c8c8c"
     ]
   },
   "artwork": {

@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 5.0,
-  "weight": 305.0,
+  "height": 5,
+  "weight": 305,
   "abilities": [
     {
       "name": "Aura break",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#605860",
+    "secondary": "#a0e138",
+    "accent": "#050505",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#605860",
+      "#a0e138",
+      "#050505"
     ]
   },
   "artwork": {

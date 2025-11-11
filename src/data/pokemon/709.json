@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 71.0,
+  "weight": 71,
   "abilities": [
     {
       "name": "Natural cure",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#a37a4c",
+    "secondary": "#735738",
+    "accent": "#2d241b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#a37a4c",
+      "#735738",
+      "#2d241b"
     ]
   },
   "artwork": {

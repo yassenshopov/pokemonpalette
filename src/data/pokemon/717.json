@@ -17,7 +17,7 @@
     }
   ],
   "height": 5.8,
-  "weight": 203.0,
+  "weight": 203,
   "abilities": [
     {
       "name": "Dark aura",
@@ -54,15 +54,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#282d31",
+    "secondary": "#982e3b",
+    "accent": "#3c4247",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#282d31",
+      "#982e3b",
+      "#3c4247"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.9,
-  "weight": 31.0,
+  "weight": 31,
   "abilities": [
     {
       "name": "Sap sipper",
@@ -55,15 +55,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#998673",
+    "secondary": "#f8f8f8",
+    "accent": "#36b389",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#998673",
+      "#f8f8f8",
+      "#36b389"
     ]
   },
   "artwork": {

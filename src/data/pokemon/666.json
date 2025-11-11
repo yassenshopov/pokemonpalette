@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 17.0,
+  "weight": 17,
   "abilities": [
     {
       "name": "Shield dust",
@@ -66,15 +66,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#df6fa4",
+    "secondary": "#eaa0c2",
+    "accent": "#c86979",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#df6fa4",
+      "#eaa0c2",
+      "#c86979"
     ]
   },
   "artwork": {

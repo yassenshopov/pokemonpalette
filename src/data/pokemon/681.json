@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 53.0,
+  "weight": 53,
   "abilities": [
     {
       "name": "Stance change",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#9f8d56",
+    "secondary": "#796caf",
+    "accent": "#ebde7b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#9f8d56",
+      "#796caf",
+      "#ebde7b"
     ]
   },
   "artwork": {

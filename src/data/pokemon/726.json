@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.7,
-  "weight": 25.0,
+  "weight": 25,
   "abilities": [
     {
       "name": "Blaze",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#5f564b",
+    "secondary": "#f26b30",
+    "accent": "#b83422",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#5f564b",
+      "#f26b30",
+      "#b83422"
     ]
   },
   "artwork": {

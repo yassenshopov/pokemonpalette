@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.7,
-  "weight": 16.0,
+  "weight": 16,
   "abilities": [
     {
       "name": "Flame body",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#ffcd39",
+    "secondary": "#262626",
+    "accent": "#bb9028",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#ffcd39",
+      "#262626",
+      "#bb9028"
     ]
   },
   "artwork": {

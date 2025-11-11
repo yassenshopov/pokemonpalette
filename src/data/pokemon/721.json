@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 195.0,
+  "weight": 195,
   "abilities": [
     {
       "name": "Water absorb",
@@ -54,15 +54,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#e54545",
+    "secondary": "#b33636",
+    "accent": "#802626",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#e54545",
+      "#b33636",
+      "#802626"
     ]
   },
   "artwork": {

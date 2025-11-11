@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 6.0,
+  "weight": 6,
   "abilities": [
     {
       "name": "Stakeout",
@@ -61,15 +61,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ba836d",
+    "secondary": "#9c5b50",
+    "accent": "#f8e478",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#ba836d",
+      "#9c5b50",
+      "#f8e478"
     ]
   },
   "artwork": {

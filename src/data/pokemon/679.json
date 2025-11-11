@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.8,
-  "weight": 2.0,
+  "weight": 2,
   "abilities": [
     {
       "name": "No guard",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#316b9f",
+    "secondary": "#8dc9e2",
+    "accent": "#a8a8a8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#316b9f",
+      "#8dc9e2",
+      "#a8a8a8"
     ]
   },
   "artwork": {

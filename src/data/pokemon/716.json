@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 3.0,
-  "weight": 215.0,
+  "height": 3,
+  "weight": 215,
   "abilities": [
     {
       "name": "Fairy aura",
@@ -49,15 +49,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#4a4a4a",
+    "secondary": "#638bdd",
+    "accent": "#bea96e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#4a4a4a",
+      "#638bdd",
+      "#bea96e"
     ]
   },
   "artwork": {

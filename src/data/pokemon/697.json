@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.5,
-  "weight": 270.0,
+  "weight": 270,
   "abilities": [
     {
       "name": "Strong jaw",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#963e4e",
+    "secondary": "#fafafa",
+    "accent": "#722533",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#963e4e",
+      "#fafafa",
+      "#722533"
     ]
   },
   "artwork": {

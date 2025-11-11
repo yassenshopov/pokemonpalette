@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 85.0,
+  "weight": 85,
   "abilities": [
     {
       "name": "Frisk",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A890F0",
-    "secondary": "#E0C068",
-    "accent": "#F8F8F8",
+    "primary": "#575757",
+    "secondary": "#bd70cc",
+    "accent": "#3b3b3b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A890F0",
-      "#E0C068",
-      "#F8F8F8"
+      "#575757",
+      "#bd70cc",
+      "#3b3b3b"
     ]
   },
   "artwork": {

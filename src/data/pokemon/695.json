@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
-  "weight": 21.0,
+  "height": 1,
+  "weight": 21,
   "abilities": [
     {
       "name": "Dry skin",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#ffde3a",
+    "secondary": "#595959",
+    "accent": "#cdb22d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#ffde3a",
+      "#595959",
+      "#cdb22d"
     ]
   },
   "artwork": {

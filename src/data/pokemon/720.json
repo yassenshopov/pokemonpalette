@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 9.0,
+  "weight": 9,
   "abilities": [
     {
       "name": "Magician",
@@ -54,15 +54,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#dadaf2",
+    "secondary": "#8a8a99",
+    "accent": "#ffe14c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#dadaf2",
+      "#8a8a99",
+      "#ffe14c"
     ]
   },
   "artwork": {

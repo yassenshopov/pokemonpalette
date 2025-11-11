@@ -11,7 +11,8 @@
     "webhook:test": "node scripts/test-webhook.js curl",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:seo": "node test-seo.js"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.33.1",

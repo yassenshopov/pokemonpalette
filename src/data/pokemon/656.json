@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 7.0,
+  "weight": 7,
   "abilities": [
     {
       "name": "Torrent",
@@ -55,15 +55,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#4ca3bf",
+    "secondary": "#66d9ff",
+    "accent": "#2e6273",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#4ca3bf",
+      "#66d9ff",
+      "#2e6273"
     ]
   },
   "artwork": {

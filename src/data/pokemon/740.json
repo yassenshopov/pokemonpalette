@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 180.0,
+  "weight": 180,
   "abilities": [
     {
       "name": "Hyper cutter",
@@ -66,15 +66,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f8f8f8",
+    "secondary": "#53597b",
+    "accent": "#c2c4c9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#f8f8f8",
+      "#53597b",
+      "#c2c4c9"
     ]
   },
   "artwork": {
