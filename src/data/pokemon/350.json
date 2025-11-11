@@ -12,7 +12,7 @@
     }
   ],
   "height": 6.2,
-  "weight": 162.0,
+  "weight": 162,
   "abilities": [
     {
       "name": "Marvel scale",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#ffe6b4",
+    "secondary": "#debd8b",
+    "accent": "#b43952",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#ffe6b4",
+      "#debd8b",
+      "#b43952"
     ]
   },
   "artwork": {

@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 2.0,
-  "weight": 100.0,
+  "height": 2,
+  "weight": 100,
   "abilities": [
     {
       "name": "Chlorophyll",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#398b4a",
+    "secondary": "#52ac52",
+    "accent": "#206220",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#398b4a",
+      "#52ac52",
+      "#206220"
     ]
   },
   "artwork": {

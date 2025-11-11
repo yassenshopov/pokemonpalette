@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 205.0,
+  "weight": 205,
   "abilities": [
     {
       "name": "Clear body",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#b4acac",
+    "secondary": "#d5cdd5",
+    "accent": "#838b83",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#b4acac",
+      "#d5cdd5",
+      "#838b83"
     ]
   },
   "artwork": {

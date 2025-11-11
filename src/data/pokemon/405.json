@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.4,
-  "weight": 42.0,
+  "weight": 42,
   "abilities": [
     {
       "name": "Rivalry",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#4a4a62",
+    "secondary": "#313141",
+    "accent": "#62627b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#4a4a62",
+      "#313141",
+      "#62627b"
     ]
   },
   "artwork": {

@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.2,
-  "weight": 310.0,
+  "weight": 310,
   "abilities": [
     {
       "name": "Overgrow",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#41ac41",
+    "secondary": "#8b6a41",
+    "accent": "#318b39",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#41ac41",
+      "#8b6a41",
+      "#318b39"
     ]
   },
   "artwork": {

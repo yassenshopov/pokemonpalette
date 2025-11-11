@@ -12,7 +12,7 @@
     }
   ],
   "height": 4.5,
-  "weight": 352.0,
+  "weight": 352,
   "abilities": [
     {
       "name": "Drizzle",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#3962b4",
+    "secondary": "#295294",
+    "accent": "#313973",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#3962b4",
+      "#295294",
+      "#313973"
     ]
   },
   "artwork": {

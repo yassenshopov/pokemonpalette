@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 14.0,
+  "weight": 14,
   "abilities": [
     {
       "name": "Shadow tag",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#6abdde",
+    "secondary": "#4a9cbd",
+    "accent": "#395262",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#6abdde",
+      "#4a9cbd",
+      "#395262"
     ]
   },
   "artwork": {
