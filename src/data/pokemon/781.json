@@ -17,7 +17,7 @@
     }
   ],
   "height": 3.9,
-  "weight": 210.0,
+  "weight": 210,
   "abilities": [
     {
       "name": "Steelworker",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#025a6a",
+    "secondary": "#008b92",
+    "accent": "#020202",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#025a6a",
+      "#008b92",
+      "#020202"
     ]
   },
   "artwork": {

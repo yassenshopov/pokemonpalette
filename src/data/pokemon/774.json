@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 40.0,
+  "weight": 40,
   "abilities": [
     {
       "name": "Shields down",
@@ -54,15 +54,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#b4786b",
+    "secondary": "#080808",
+    "accent": "#914b48",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#b4786b",
+      "#080808",
+      "#914b48"
     ]
   },
   "artwork": {

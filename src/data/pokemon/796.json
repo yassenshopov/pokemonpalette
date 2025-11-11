@@ -12,7 +12,7 @@
     }
   ],
   "height": 3.8,
-  "weight": 100.0,
+  "weight": 100,
   "abilities": [
     {
       "name": "Beast boost",
@@ -49,15 +49,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#61645b",
+    "secondary": "#3e4439",
+    "accent": "#fdfdfd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#61645b",
+      "#3e4439",
+      "#fdfdfd"
     ]
   },
   "artwork": {

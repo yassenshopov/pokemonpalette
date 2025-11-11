@@ -289,6 +289,15 @@ curl http://localhost:3000/pikachu | grep -i "pikachu color palette"
 - Verify robots.txt is accessible
 - Check sitemap is accessible
 
+**Run automated tests on production:**
+```powershell
+# PowerShell:
+$env:TEST_URL="https://www.pokemonpalette.com"; npm run test:seo
+
+# Bash/Unix:
+TEST_URL=https://www.pokemonpalette.com npm run test:seo
+```
+
 ### 2. Submit to Google Search Console
 1. Go to Google Search Console
 2. Submit sitemap: `https://www.pokemonpalette.com/sitemap.xml`

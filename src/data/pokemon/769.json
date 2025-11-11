@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 70.0,
+  "weight": 70,
   "abilities": [
     {
       "name": "Water compaction",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#d9d1b8",
+    "secondary": "#403c30",
+    "accent": "#99917a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#d9d1b8",
+      "#403c30",
+      "#99917a"
     ]
   },
   "artwork": {

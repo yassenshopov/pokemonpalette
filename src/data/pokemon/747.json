@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 8.0,
+  "weight": 8,
   "abilities": [
     {
       "name": "Merciless",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#9fd9d6",
+    "secondary": "#6098b7",
+    "accent": "#ba8dbe",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
+      "#9fd9d6",
+      "#6098b7",
+      "#ba8dbe"
     ]
   },
   "artwork": {

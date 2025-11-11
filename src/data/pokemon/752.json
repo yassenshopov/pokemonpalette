@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.8,
-  "weight": 82.0,
+  "weight": 82,
   "abilities": [
     {
       "name": "Water bubble",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#b7d7e6",
+    "secondary": "#81afc9",
+    "accent": "#4d6d87",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#b7d7e6",
+      "#81afc9",
+      "#4d6d87"
     ]
   },
   "artwork": {

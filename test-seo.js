@@ -8,6 +8,8 @@
  */
 
 const http = require('http');
+const https = require('https');
+const { URL } = require('url');
 
 const BASE_URL = process.env.TEST_URL || 'http://localhost:212';
 const TESTS = [
@@ -53,7 +55,10 @@ const TESTS = [
 
 function fetchPage(url) {
   return new Promise((resolve, reject) => {
-    http.get(url, (res) => {
+    const urlObj = new URL(url);
+    const client = urlObj.protocol === 'https:' ? https : http;
+    
+    client.get(url, (res) => {
       let data = '';
       res.on('data', (chunk) => {
         data += chunk;

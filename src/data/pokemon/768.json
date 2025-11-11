@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 2.0,
-  "weight": 108.0,
+  "height": 2,
+  "weight": 108,
   "abilities": [
     {
       "name": "Emergency exit",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#c8e1cd",
+    "secondary": "#81b68e",
+    "accent": "#546b57",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#c8e1cd",
+      "#81b68e",
+      "#546b57"
     ]
   },
   "artwork": {

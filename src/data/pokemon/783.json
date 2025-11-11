@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 47.0,
+  "weight": 47,
   "abilities": [
     {
       "name": "Bulletproof",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c2c1c0",
+    "secondary": "#97938c",
+    "accent": "#f4da42",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#c2c1c0",
+      "#97938c",
+      "#f4da42"
     ]
   },
   "artwork": {

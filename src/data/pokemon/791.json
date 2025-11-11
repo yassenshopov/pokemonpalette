@@ -17,7 +17,7 @@
     }
   ],
   "height": 3.4,
-  "weight": 230.0,
+  "weight": 230,
   "abilities": [
     {
       "name": "Full metal body",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#fbf7ee",
+    "secondary": "#080808",
+    "accent": "#c2c7c6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#fbf7ee",
+      "#080808",
+      "#c2c7c6"
     ]
   },
   "artwork": {

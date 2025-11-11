@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 3.0,
-  "weight": 185.0,
+  "height": 3,
+  "weight": 185,
   "abilities": [
     {
       "name": "Berserk",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#eeeeee",
+    "secondary": "#5aa4a4",
+    "accent": "#b8b7a3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#eeeeee",
+      "#5aa4a4",
+      "#b8b7a3"
     ]
   },
   "artwork": {

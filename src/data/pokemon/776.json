@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 2.0,
-  "weight": 212.0,
+  "height": 2,
+  "weight": 212,
   "abilities": [
     {
       "name": "Shell armor",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#fadd3d",
+    "secondary": "#71171a",
+    "accent": "#080808",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#fadd3d",
+      "#71171a",
+      "#080808"
     ]
   },
   "artwork": {

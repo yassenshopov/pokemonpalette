@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.5,
-  "weight": 800.0,
+  "weight": 800,
   "abilities": [
     {
       "name": "Iron fist",
@@ -49,15 +49,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#59544e",
+    "secondary": "#3d3534",
+    "accent": "#dcdcda",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#59544e",
+      "#3d3534",
+      "#dcdcda"
     ]
   },
   "artwork": {

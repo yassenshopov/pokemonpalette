@@ -142,7 +142,14 @@ After running tests, you should see:
 Once all tests pass:
 
 1. **Deploy to production**
-2. **Test on production URL** (replace localhost:212 with your domain)
+2. **Test on production URL**:
+   ```powershell
+   # PowerShell syntax:
+   $env:TEST_URL="https://www.pokemonpalette.com"; npm run test:seo
+   
+   # Or for bash/Unix:
+   TEST_URL=https://www.pokemonpalette.com npm run test:seo
+   ```
 3. **Submit sitemap to Google Search Console**
 4. **Monitor results in 24-48 hours**
 

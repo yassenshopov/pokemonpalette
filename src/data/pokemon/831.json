@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 6.0,
+  "weight": 6,
   "abilities": [
     {
       "name": "Fluffy",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f7f1ec",
+    "secondary": "#d5bfc2",
+    "accent": "#824837",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#f7f1ec",
+      "#d5bfc2",
+      "#824837"
     ]
   },
   "artwork": {

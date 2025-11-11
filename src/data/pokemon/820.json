@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 6.0,
+  "weight": 6,
   "abilities": [
     {
       "name": "Cheek pouch",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#d49f91",
+    "secondary": "#8d4c36",
+    "accent": "#6c2f22",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#d49f91",
+      "#8d4c36",
+      "#6c2f22"
     ]
   },
   "artwork": {
