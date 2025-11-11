@@ -343,5 +343,15 @@
     "en": "Zigzagoon",
     "ja": "ジグザグマ",
     "zh-Hans": "蛇纹熊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd6231",
+      "#bda483",
+      "#ee8339"
+    ],
+    "primary": "#cd6231",
+    "secondary": "#bda483",
+    "accent": "#ee8339"
   }
 }

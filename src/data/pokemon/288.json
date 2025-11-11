@@ -311,5 +311,15 @@
     "en": "Vigoroth",
     "ja": "ヤルキモノ",
     "zh-Hans": "过动猿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eed583",
+      "#ffffee",
+      "#4a3931"
+    ],
+    "primary": "#eed583",
+    "secondary": "#ffffee",
+    "accent": "#4a3931"
   }
 }

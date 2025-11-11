@@ -311,5 +311,15 @@
     "en": "Slakoth",
     "ja": "ナマケロ",
     "zh-Hans": "懒人獭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eea4f6",
+      "#a45aac",
+      "#523929"
+    ],
+    "primary": "#eea4f6",
+    "secondary": "#a45aac",
+    "accent": "#523929"
   }
 }

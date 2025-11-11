@@ -315,5 +315,15 @@
     "en": "Heracross",
     "ja": "ヘラクロス",
     "zh-Hans": "赫拉克罗斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e683de",
+      "#b452c5",
+      "#8b2994"
+    ],
+    "primary": "#e683de",
+    "secondary": "#b452c5",
+    "accent": "#8b2994"
   }
 }

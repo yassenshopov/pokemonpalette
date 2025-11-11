@@ -297,5 +297,15 @@
     "en": "Entei",
     "ja": "エンテイ",
     "zh-Hans": "炎帝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd9462",
+      "#c5cdac",
+      "#522900"
+    ],
+    "primary": "#cd9462",
+    "secondary": "#c5cdac",
+    "accent": "#522900"
   }
 }

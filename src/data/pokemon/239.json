@@ -322,5 +322,15 @@
     "en": "Elekid",
     "ja": "エレキッド",
     "zh-Hans": "电击怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5b408",
+      "#e6de39",
+      "#736a08"
+    ],
+    "primary": "#d5b408",
+    "secondary": "#e6de39",
+    "accent": "#736a08"
   }
 }

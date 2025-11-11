@@ -332,5 +332,15 @@
     "en": "Swinub",
     "ja": "ウリムー",
     "zh-Hans": "小山猪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdd5ac",
+      "#9cb494",
+      "#7b9473"
+    ],
+    "primary": "#bdd5ac",
+    "secondary": "#9cb494",
+    "accent": "#7b9473"
   }
 }

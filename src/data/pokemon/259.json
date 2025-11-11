@@ -322,5 +322,15 @@
     "en": "Marshtomp",
     "ja": "ヌマクロー",
     "zh-Hans": "沼跃鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de7bee",
+      "#ee8bff",
+      "#622983"
+    ],
+    "primary": "#de7bee",
+    "secondary": "#ee8bff",
+    "accent": "#622983"
   }
 }

@@ -333,5 +333,15 @@
     "en": "Aron",
     "ja": "ココドラ",
     "zh-Hans": "可可多拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#a4a494",
+      "#d5d5bd"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#a4a494",
+    "accent": "#d5d5bd"
   }
 }

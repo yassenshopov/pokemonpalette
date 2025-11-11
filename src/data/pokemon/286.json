@@ -331,5 +331,15 @@
     "en": "Breloom",
     "ja": "キノガッサ",
     "zh-Hans": "斗笠菇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ac3920",
+      "#ee5a31",
+      "#ac8b5a"
+    ],
+    "primary": "#ac3920",
+    "secondary": "#ee5a31",
+    "accent": "#ac8b5a"
   }
 }

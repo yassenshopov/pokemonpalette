@@ -338,5 +338,15 @@
     "en": "Corsola",
     "ja": "サニーゴ",
     "zh-Hans": "太阳珊瑚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73e6ff",
+      "#6aaccd",
+      "#4152a4"
+    ],
+    "primary": "#73e6ff",
+    "secondary": "#6aaccd",
+    "accent": "#4152a4"
   }
 }

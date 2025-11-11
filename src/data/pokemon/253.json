@@ -317,5 +317,15 @@
     "en": "Grovyle",
     "ja": "ジュプトル",
     "zh-Hans": "森林蜥蜴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5aac83",
+      "#8be6d5",
+      "#c54a4a"
+    ],
+    "primary": "#5aac83",
+    "secondary": "#8be6d5",
+    "accent": "#c54a4a"
   }
 }

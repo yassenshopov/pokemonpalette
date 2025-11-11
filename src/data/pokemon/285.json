@@ -326,5 +326,15 @@
     "en": "Shroomish",
     "ja": "キノココ",
     "zh-Hans": "蘑蘑菇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd59c",
+      "#e6ac6a",
+      "#6a5239"
+    ],
+    "primary": "#ffd59c",
+    "secondary": "#e6ac6a",
+    "accent": "#6a5239"
   }
 }

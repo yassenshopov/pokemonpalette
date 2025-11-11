@@ -333,5 +333,15 @@
     "en": "Shiftry",
     "ja": "ダーテング",
     "zh-Hans": "狡猾天狗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9c3129",
+      "#cdbd62",
+      "#eede9c"
+    ],
+    "primary": "#9c3129",
+    "secondary": "#cdbd62",
+    "accent": "#eede9c"
   }
 }

@@ -322,5 +322,15 @@
     "en": "Yanma",
     "ja": "ヤンヤンマ",
     "zh-Hans": "蜻蜻蜓"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6ffff",
+      "#73d5ff",
+      "#94acbd"
+    ],
+    "primary": "#e6ffff",
+    "secondary": "#73d5ff",
+    "accent": "#94acbd"
   }
 }

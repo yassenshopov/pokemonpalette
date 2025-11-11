@@ -317,5 +317,15 @@
     "en": "Swellow",
     "ja": "オオスバメ",
     "zh-Hans": "大王燕"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#188362",
+      "#29a462",
+      "#ee6a00"
+    ],
+    "primary": "#188362",
+    "secondary": "#29a462",
+    "accent": "#ee6a00"
   }
 }

@@ -325,5 +325,15 @@
     "en": "Houndoom",
     "ja": "ヘルガー",
     "zh-Hans": "黑鲁加"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#627bf6",
+      "#414ac5",
+      "#a4a4b4"
+    ],
+    "primary": "#627bf6",
+    "secondary": "#414ac5",
+    "accent": "#a4a4b4"
   }
 }

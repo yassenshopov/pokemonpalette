@@ -256,5 +256,15 @@
     "en": "Wurmple",
     "ja": "ケムッソ",
     "zh-Hans": "刺尾虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4528b",
+      "#eea4ee",
+      "#dedecd"
+    ],
+    "primary": "#a4528b",
+    "secondary": "#eea4ee",
+    "accent": "#dedecd"
   }
 }

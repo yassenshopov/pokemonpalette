@@ -329,5 +329,15 @@
     "en": "Blaziken",
     "ja": "バシャーモ",
     "zh-Hans": "火焰鸡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#832008",
+      "#d58b29",
+      "#b43120"
+    ],
+    "primary": "#832008",
+    "secondary": "#d58b29",
+    "accent": "#b43120"
   }
 }

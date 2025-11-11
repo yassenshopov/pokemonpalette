@@ -322,5 +322,15 @@
     "en": "Girafarig",
     "ja": "キリンリキ",
     "zh-Hans": "麒麟奇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd508",
+      "#7b5a41",
+      "#523120"
+    ],
+    "primary": "#ffd508",
+    "secondary": "#7b5a41",
+    "accent": "#523120"
   }
 }

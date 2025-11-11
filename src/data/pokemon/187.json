@@ -328,5 +328,15 @@
     "en": "Hoppip",
     "ja": "ハネッコ",
     "zh-Hans": "毽子草"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6ac518",
+      "#bde65a",
+      "#417310"
+    ],
+    "primary": "#6ac518",
+    "secondary": "#bde65a",
+    "accent": "#417310"
   }
 }

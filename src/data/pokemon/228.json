@@ -318,5 +318,15 @@
     "en": "Houndour",
     "ja": "デルビル",
     "zh-Hans": "戴鲁比"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a6aac",
+      "#6a94de",
+      "#31528b"
+    ],
+    "primary": "#4a6aac",
+    "secondary": "#6a94de",
+    "accent": "#31528b"
   }
 }

@@ -346,5 +346,15 @@
     "en": "Gardevoir",
     "ja": "サーナイト",
     "zh-Hans": "沙奈朵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff6ff",
+      "#d5acde",
+      "#8bcde6"
+    ],
+    "primary": "#fff6ff",
+    "secondary": "#d5acde",
+    "accent": "#8bcde6"
   }
 }

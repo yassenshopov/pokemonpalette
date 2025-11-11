@@ -307,5 +307,15 @@
     "en": "Pineco",
     "ja": "クヌギダマ",
     "zh-Hans": "榛果球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#835220",
+      "#cd945a",
+      "#eec55a"
+    ],
+    "primary": "#835220",
+    "secondary": "#cd945a",
+    "accent": "#eec55a"
   }
 }

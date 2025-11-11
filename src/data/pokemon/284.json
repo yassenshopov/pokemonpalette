@@ -317,5 +317,15 @@
     "en": "Masquerain",
     "ja": "アメモース",
     "zh-Hans": "雨翅蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bd573",
+      "#f6ff7b",
+      "#bdf6ac"
+    ],
+    "primary": "#7bd573",
+    "secondary": "#f6ff7b",
+    "accent": "#bdf6ac"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Quagsire",
     "ja": "ヌオー",
     "zh-Hans": "沼王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd73de",
+      "#ee9cf6",
+      "#411852"
+    ],
+    "primary": "#cd73de",
+    "secondary": "#ee9cf6",
+    "accent": "#411852"
   }
 }

@@ -333,5 +333,15 @@
     "en": "Ludicolo",
     "ja": "ルンパッパ",
     "zh-Hans": "乐天河童"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#62a49c",
+      "#deac5a",
+      "#418b7b"
+    ],
+    "primary": "#62a49c",
+    "secondary": "#deac5a",
+    "accent": "#418b7b"
   }
 }

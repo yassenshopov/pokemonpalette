@@ -318,5 +318,15 @@
     "en": "Sunkern",
     "ja": "ヒマナッツ",
     "zh-Hans": "向日种子"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffde00",
+      "#7b4a29",
+      "#623118"
+    ],
+    "primary": "#ffde00",
+    "secondary": "#7b4a29",
+    "accent": "#623118"
   }
 }

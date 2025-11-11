@@ -317,5 +317,15 @@
     "en": "Shuckle",
     "ja": "ツボツボ",
     "zh-Hans": "壶壶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eec54a",
+      "#839ce6",
+      "#bd8b29"
+    ],
+    "primary": "#eec54a",
+    "secondary": "#839ce6",
+    "accent": "#bd8b29"
   }
 }

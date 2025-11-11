@@ -324,5 +324,15 @@
     "en": "Sceptile",
     "ja": "ジュカイン",
     "zh-Hans": "蜥蜴王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4deee",
+      "#62b49c",
+      "#5a948b"
+    ],
+    "primary": "#a4deee",
+    "secondary": "#62b49c",
+    "accent": "#5a948b"
   }
 }

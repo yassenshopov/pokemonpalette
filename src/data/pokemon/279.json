@@ -327,5 +327,15 @@
     "en": "Pelipper",
     "ja": "ペリッパー",
     "zh-Hans": "大嘴鸥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffde83",
+      "#f6bd41",
+      "#e6cdf6"
+    ],
+    "primary": "#ffde83",
+    "secondary": "#f6bd41",
+    "accent": "#e6cdf6"
   }
 }

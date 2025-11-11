@@ -317,5 +317,15 @@
     "en": "Mantine",
     "ja": "マンタイン",
     "zh-Hans": "巨翅飞鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4ace6",
+      "#cddeff",
+      "#2962de"
+    ],
+    "primary": "#a4ace6",
+    "secondary": "#cddeff",
+    "accent": "#2962de"
   }
 }

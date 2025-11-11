@@ -348,5 +348,15 @@
     "en": "Slowking",
     "ja": "ヤドキング",
     "zh-Hans": "呆呆王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de73ac",
+      "#dedecd",
+      "#aca4a4"
+    ],
+    "primary": "#de73ac",
+    "secondary": "#dedecd",
+    "accent": "#aca4a4"
   }
 }

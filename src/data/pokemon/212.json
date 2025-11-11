@@ -335,5 +335,15 @@
     "en": "Scizor",
     "ja": "ハッサム",
     "zh-Hans": "巨钳螳螂"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94a420",
+      "#cde631",
+      "#5a7310"
+    ],
+    "primary": "#94a420",
+    "secondary": "#cde631",
+    "accent": "#5a7310"
   }
 }

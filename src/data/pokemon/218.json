@@ -313,5 +313,15 @@
     "en": "Slugma",
     "ja": "マグマッグ",
     "zh-Hans": "熔岩虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#83837b",
+      "#b4b4ac",
+      "#52524a"
+    ],
+    "primary": "#83837b",
+    "secondary": "#b4b4ac",
+    "accent": "#52524a"
   }
 }

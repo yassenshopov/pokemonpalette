@@ -327,5 +327,15 @@
     "en": "Azumarill",
     "ja": "マリルリ",
     "zh-Hans": "玛力露丽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffde00",
+      "#e6ac08",
+      "#d5c5c5"
+    ],
+    "primary": "#ffde00",
+    "secondary": "#e6ac08",
+    "accent": "#d5c5c5"
   }
 }

@@ -297,5 +297,15 @@
     "en": "Suicune",
     "ja": "スイクン",
     "zh-Hans": "水君"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9cc5ff",
+      "#4162ee",
+      "#29419c"
+    ],
+    "primary": "#9cc5ff",
+    "secondary": "#4162ee",
+    "accent": "#29419c"
   }
 }

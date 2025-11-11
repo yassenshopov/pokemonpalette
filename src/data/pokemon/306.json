@@ -340,5 +340,15 @@
     "en": "Aggron",
     "ja": "ボスゴドラ",
     "zh-Hans": "波士可多拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#297b73",
+      "#7bcdc5",
+      "#52a494"
+    ],
+    "primary": "#297b73",
+    "secondary": "#7bcdc5",
+    "accent": "#52a494"
   }
 }

@@ -308,5 +308,15 @@
     "en": "Miltank",
     "ja": "ミルタンク",
     "zh-Hans": "大奶罐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94acd5",
+      "#c5deff",
+      "#6a1800"
+    ],
+    "primary": "#94acd5",
+    "secondary": "#c5deff",
+    "accent": "#6a1800"
   }
 }

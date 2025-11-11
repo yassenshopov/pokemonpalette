@@ -395,5 +395,15 @@
     "en": "Umbreon",
     "ja": "ブラッキー",
     "zh-Hans": "月亮伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52525a",
+      "#313141",
+      "#62626a"
+    ],
+    "primary": "#52525a",
+    "secondary": "#313141",
+    "accent": "#62626a"
   }
 }

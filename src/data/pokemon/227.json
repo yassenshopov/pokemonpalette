@@ -324,5 +324,15 @@
     "en": "Skarmory",
     "ja": "エアームド",
     "zh-Hans": "盔甲鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4947b",
+      "#eeeecd",
+      "#c5b49c"
+    ],
+    "primary": "#a4947b",
+    "secondary": "#eeeecd",
+    "accent": "#c5b49c"
   }
 }

@@ -312,5 +312,15 @@
     "en": "Sudowoodo",
     "ja": "ウソッキー",
     "zh-Hans": "树才怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cde65a",
+      "#839c31",
+      "#cd4120"
+    ],
+    "primary": "#cde65a",
+    "secondary": "#839c31",
+    "accent": "#cd4120"
   }
 }

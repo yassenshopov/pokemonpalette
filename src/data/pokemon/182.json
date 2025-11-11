@@ -332,5 +332,15 @@
     "en": "Bellossom",
     "ja": "キレイハナ",
     "zh-Hans": "美丽花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e65a9c",
+      "#52cd7b",
+      "#ffa4de"
+    ],
+    "primary": "#e65a9c",
+    "secondary": "#52cd7b",
+    "accent": "#ffa4de"
   }
 }

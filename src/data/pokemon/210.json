@@ -313,5 +313,15 @@
     "en": "Granbull",
     "ja": "グランブル",
     "zh-Hans": "布鲁皇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd9494",
+      "#e6cdb4",
+      "#7b4a39"
+    ],
+    "primary": "#bd9494",
+    "secondary": "#e6cdb4",
+    "accent": "#7b4a39"
   }
 }

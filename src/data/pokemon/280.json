@@ -339,5 +339,15 @@
     "en": "Ralts",
     "ja": "ラルトス",
     "zh-Hans": "拉鲁拉丝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4aa4cd",
+      "#c5f6f6",
+      "#d5acde"
+    ],
+    "primary": "#4aa4cd",
+    "secondary": "#c5f6f6",
+    "accent": "#d5acde"
   }
 }

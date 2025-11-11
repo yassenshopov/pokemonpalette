@@ -237,5 +237,15 @@
     "en": "Wobbuffet",
     "ja": "ソーナンス",
     "zh-Hans": "果然翁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd52a4",
+      "#e67bd5",
+      "#ffa4ee"
+    ],
+    "primary": "#bd52a4",
+    "secondary": "#e67bd5",
+    "accent": "#ffa4ee"
   }
 }

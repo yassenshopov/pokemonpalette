@@ -327,5 +327,15 @@
     "en": "Marill",
     "ja": "マリル",
     "zh-Hans": "玛力露"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94ff94",
+      "#4acd73",
+      "#317b39"
+    ],
+    "primary": "#94ff94",
+    "secondary": "#4acd73",
+    "accent": "#317b39"
   }
 }

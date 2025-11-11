@@ -302,5 +302,15 @@
     "en": "Lugia",
     "ja": "ルギア",
     "zh-Hans": "洛奇亚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deeeff",
+      "#ffffff",
+      "#9cb4f6"
+    ],
+    "primary": "#deeeff",
+    "secondary": "#ffffff",
+    "accent": "#9cb4f6"
   }
 }

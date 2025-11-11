@@ -297,5 +297,15 @@
     "en": "Raikou",
     "ja": "ライコウ",
     "zh-Hans": "雷公"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffa439",
+      "#6a6a6a",
+      "#d57b10"
+    ],
+    "primary": "#ffa439",
+    "secondary": "#6a6a6a",
+    "accent": "#d57b10"
   }
 }

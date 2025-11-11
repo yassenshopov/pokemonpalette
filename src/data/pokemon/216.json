@@ -332,5 +332,15 @@
     "en": "Teddiursa",
     "ja": "ヒメグマ",
     "zh-Hans": "熊宝宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4ee83",
+      "#62ac6a",
+      "#398339"
+    ],
+    "primary": "#a4ee83",
+    "secondary": "#62ac6a",
+    "accent": "#398339"
   }
 }

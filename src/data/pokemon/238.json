@@ -323,5 +323,15 @@
     "en": "Smoochum",
     "ja": "ムチュール",
     "zh-Hans": "迷唇娃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffff94",
+      "#f67394",
+      "#a43973"
+    ],
+    "primary": "#ffff94",
+    "secondary": "#f67394",
+    "accent": "#a43973"
   }
 }

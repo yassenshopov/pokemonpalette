@@ -324,5 +324,15 @@
     "en": "Mawile",
     "ja": "クチート",
     "zh-Hans": "大嘴娃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b45a83",
+      "#732041",
+      "#ffc55a"
+    ],
+    "primary": "#b45a83",
+    "secondary": "#732041",
+    "accent": "#ffc55a"
   }
 }

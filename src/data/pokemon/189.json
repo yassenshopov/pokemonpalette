@@ -328,5 +328,15 @@
     "en": "Jumpluff",
     "ja": "ワタッコ",
     "zh-Hans": "毽子棉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffa4bd",
+      "#ffdef6",
+      "#e6b4ee"
+    ],
+    "primary": "#ffa4bd",
+    "secondary": "#ffdef6",
+    "accent": "#e6b4ee"
   }
 }

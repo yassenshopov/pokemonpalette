@@ -328,5 +328,15 @@
     "en": "Skiploom",
     "ja": "ポポッコ",
     "zh-Hans": "毽子花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e673c5",
+      "#cd4abd",
+      "#ffe600"
+    ],
+    "primary": "#e673c5",
+    "secondary": "#cd4abd",
+    "accent": "#ffe600"
   }
 }

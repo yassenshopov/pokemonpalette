@@ -324,5 +324,15 @@
     "en": "Ampharos",
     "ja": "デンリュウ",
     "zh-Hans": "电龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#ffc5ee",
+      "#d5a4c5"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#ffc5ee",
+    "accent": "#d5a4c5"
   }
 }

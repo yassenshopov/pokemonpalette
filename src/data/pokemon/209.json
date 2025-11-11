@@ -313,5 +313,15 @@
     "en": "Snubbull",
     "ja": "ブルー",
     "zh-Hans": "布鲁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5c5e6",
+      "#9494b4",
+      "#626283"
+    ],
+    "primary": "#c5c5e6",
+    "secondary": "#9494b4",
+    "accent": "#626283"
   }
 }

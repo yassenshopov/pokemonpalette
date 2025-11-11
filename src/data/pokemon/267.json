@@ -351,5 +351,15 @@
     "en": "Beautifly",
     "ja": "アゲハント",
     "zh-Hans": "狩猎凤蝶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a3173",
+      "#ffff94",
+      "#e6cd9c"
+    ],
+    "primary": "#6a3173",
+    "secondary": "#ffff94",
+    "accent": "#e6cd9c"
   }
 }

@@ -333,5 +333,15 @@
     "en": "Kingdra",
     "ja": "キングドラ",
     "zh-Hans": "刺龙王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a46ac5",
+      "#d5acf6",
+      "#6a4194"
+    ],
+    "primary": "#a46ac5",
+    "secondary": "#d5acf6",
+    "accent": "#6a4194"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Mightyena",
     "ja": "グラエナ",
     "zh-Hans": "大狼犬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#623900",
+      "#835218",
+      "#cda441"
+    ],
+    "primary": "#623900",
+    "secondary": "#835218",
+    "accent": "#cda441"
   }
 }

@@ -163,5 +163,15 @@
     "en": "Smeargle",
     "ja": "ドーブル",
     "zh-Hans": "图图犬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff6a4",
+      "#e6c562",
+      "#523110"
+    ],
+    "primary": "#fff6a4",
+    "secondary": "#e6c562",
+    "accent": "#523110"
   }
 }

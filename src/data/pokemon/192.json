@@ -313,5 +313,15 @@
     "en": "Sunflora",
     "ja": "キマワリ",
     "zh-Hans": "向日花怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4bd52",
+      "#f6cd62",
+      "#949431"
+    ],
+    "primary": "#b4bd52",
+    "secondary": "#f6cd62",
+    "accent": "#949431"
   }
 }

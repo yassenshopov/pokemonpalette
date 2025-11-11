@@ -251,5 +251,15 @@
     "en": "Cascoon",
     "ja": "マユルド",
     "zh-Hans": "盾甲茧"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5ff83",
+      "#9cde62",
+      "#83c529"
+    ],
+    "primary": "#c5ff83",
+    "secondary": "#9cde62",
+    "accent": "#83c529"
   }
 }

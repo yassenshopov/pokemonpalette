@@ -313,5 +313,15 @@
     "en": "Remoraid",
     "ja": "テッポウオ",
     "zh-Hans": "铁炮鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5acee",
+      "#9c5abd",
+      "#73319c"
+    ],
+    "primary": "#d5acee",
+    "secondary": "#9c5abd",
+    "accent": "#73319c"
   }
 }

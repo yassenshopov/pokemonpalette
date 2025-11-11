@@ -312,5 +312,15 @@
     "en": "Phanpy",
     "ja": "ゴマゾウ",
     "zh-Hans": "小小象"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deffff",
+      "#8bbdee",
+      "#c5e6ff"
+    ],
+    "primary": "#deffff",
+    "secondary": "#8bbdee",
+    "accent": "#c5e6ff"
   }
 }

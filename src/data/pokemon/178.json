@@ -318,5 +318,15 @@
     "en": "Xatu",
     "ja": "ネイティオ",
     "zh-Hans": "天然鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#292929",
+      "#ffffff",
+      "#7bc539"
+    ],
+    "primary": "#292929",
+    "secondary": "#ffffff",
+    "accent": "#7bc539"
   }
 }

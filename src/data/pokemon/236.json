@@ -333,5 +333,15 @@
     "en": "Tyrogue",
     "ja": "バルキー",
     "zh-Hans": "无畏小子"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5d5bd",
+      "#62624a",
+      "#aca49c"
+    ],
+    "primary": "#d5d5bd",
+    "secondary": "#62624a",
+    "accent": "#aca49c"
   }
 }

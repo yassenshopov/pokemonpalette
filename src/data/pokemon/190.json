@@ -312,5 +312,15 @@
     "en": "Aipom",
     "ja": "エイパム",
     "zh-Hans": "长尾怪手"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd3983",
+      "#ffaca4",
+      "#940031"
+    ],
+    "primary": "#cd3983",
+    "secondary": "#ffaca4",
+    "accent": "#940031"
   }
 }

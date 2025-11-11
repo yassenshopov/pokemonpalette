@@ -339,5 +339,15 @@
     "en": "Kirlia",
     "ja": "キルリア",
     "zh-Hans": "奇鲁莉安"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a9ccd",
+      "#ffffff",
+      "#106aac"
+    ],
+    "primary": "#4a9ccd",
+    "secondary": "#ffffff",
+    "accent": "#106aac"
   }
 }

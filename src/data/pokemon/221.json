@@ -336,5 +336,15 @@
     "en": "Piloswine",
     "ja": "イノムー",
     "zh-Hans": "长毛猪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6ee73",
+      "#f6ff9c",
+      "#c5c54a"
+    ],
+    "primary": "#e6ee73",
+    "secondary": "#f6ff9c",
+    "accent": "#c5c54a"
   }
 }

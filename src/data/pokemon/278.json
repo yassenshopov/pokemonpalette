@@ -323,5 +323,15 @@
     "en": "Wingull",
     "ja": "キャモメ",
     "zh-Hans": "长翅鸥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#e6d5ff",
+      "#73e641"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#e6d5ff",
+    "accent": "#73e641"
   }
 }

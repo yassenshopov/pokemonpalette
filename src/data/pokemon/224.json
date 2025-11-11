@@ -313,5 +313,15 @@
     "en": "Octillery",
     "ja": "オクタン",
     "zh-Hans": "章鱼桶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ac8341",
+      "#cdb44a",
+      "#835a00"
+    ],
+    "primary": "#ac8341",
+    "secondary": "#cdb44a",
+    "accent": "#835a00"
   }
 }

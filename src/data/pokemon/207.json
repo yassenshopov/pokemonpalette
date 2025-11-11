@@ -318,5 +318,15 @@
     "en": "Gligar",
     "ja": "グライガー",
     "zh-Hans": "天蝎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8b9ce6",
+      "#737bcd",
+      "#414a9c"
+    ],
+    "primary": "#8b9ce6",
+    "secondary": "#737bcd",
+    "accent": "#414a9c"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Torchic",
     "ja": "アチャモ",
     "zh-Hans": "火稚鸡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffe662",
+      "#d5a452",
+      "#c54131"
+    ],
+    "primary": "#ffe662",
+    "secondary": "#d5a452",
+    "accent": "#c54131"
   }
 }

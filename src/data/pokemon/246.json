@@ -322,5 +322,15 @@
     "en": "Larvitar",
     "ja": "ヨーギラス",
     "zh-Hans": "幼基拉斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdee10",
+      "#9cac20",
+      "#626a00"
+    ],
+    "primary": "#cdee10",
+    "secondary": "#9cac20",
+    "accent": "#626a00"
   }
 }

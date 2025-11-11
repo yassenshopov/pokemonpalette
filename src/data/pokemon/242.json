@@ -331,5 +331,15 @@
     "en": "Blissey",
     "ja": "ハピナス",
     "zh-Hans": "幸福蛋"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd5d5",
+      "#dedeff",
+      "#ffacb4"
+    ],
+    "primary": "#ffd5d5",
+    "secondary": "#dedeff",
+    "accent": "#ffacb4"
   }
 }

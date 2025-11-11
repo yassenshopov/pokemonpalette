@@ -333,5 +333,15 @@
     "en": "Nuzleaf",
     "ja": "コノハナ",
     "zh-Hans": "长鼻叶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b5a73",
+      "#181818",
+      "#ff8352"
+    ],
+    "primary": "#7b5a73",
+    "secondary": "#181818",
+    "accent": "#ff8352"
   }
 }

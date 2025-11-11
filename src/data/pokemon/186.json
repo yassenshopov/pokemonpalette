@@ -338,5 +338,15 @@
     "en": "Politoed",
     "ja": "ニョロトノ",
     "zh-Hans": "蚊香蛙皇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73c5ff",
+      "#ffcdf6",
+      "#6a94d5"
+    ],
+    "primary": "#73c5ff",
+    "secondary": "#ffcdf6",
+    "accent": "#6a94d5"
   }
 }

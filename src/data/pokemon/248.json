@@ -329,5 +329,15 @@
     "en": "Tyranitar",
     "ja": "バンギラス",
     "zh-Hans": "班基拉斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6d594",
+      "#b4a473",
+      "#7b6a31"
+    ],
+    "primary": "#e6d594",
+    "secondary": "#b4a473",
+    "accent": "#7b6a31"
   }
 }

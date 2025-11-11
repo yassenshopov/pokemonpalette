@@ -335,5 +335,15 @@
     "en": "Wooper",
     "ja": "ウパー",
     "zh-Hans": "乌波"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d59ca4",
+      "#f6cdd5",
+      "#942908"
+    ],
+    "primary": "#d59ca4",
+    "secondary": "#f6cdd5",
+    "accent": "#942908"
   }
 }

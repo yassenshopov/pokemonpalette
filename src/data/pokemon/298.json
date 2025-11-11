@@ -327,5 +327,15 @@
     "en": "Azurill",
     "ja": "ルリリ",
     "zh-Hans": "露力丽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52a441",
+      "#94f683",
+      "#31734a"
+    ],
+    "primary": "#52a441",
+    "secondary": "#94f683",
+    "accent": "#31734a"
   }
 }

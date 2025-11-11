@@ -312,5 +312,15 @@
     "en": "Donphan",
     "ja": "ドンファン",
     "zh-Hans": "顿甲"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ac5a20",
+      "#cdde94",
+      "#f6ac4a"
+    ],
+    "primary": "#ac5a20",
+    "secondary": "#cdde94",
+    "accent": "#f6ac4a"
   }
 }

@@ -330,5 +330,15 @@
     "en": "Steelix",
     "ja": "ハガネール",
     "zh-Hans": "大钢蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#947b39",
+      "#cdb462",
+      "#eee67b"
+    ],
+    "primary": "#947b39",
+    "secondary": "#cdb462",
+    "accent": "#eee67b"
   }
 }

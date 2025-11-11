@@ -344,5 +344,15 @@
     "en": "Sneasel",
     "ja": "ニューラ",
     "zh-Hans": "狃拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee9cc5",
+      "#cd529c",
+      "#deac5a"
+    ],
+    "primary": "#ee9cc5",
+    "secondary": "#cd529c",
+    "accent": "#deac5a"
   }
 }

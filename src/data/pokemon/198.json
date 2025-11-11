@@ -318,5 +318,15 @@
     "en": "Murkrow",
     "ja": "ヤミカラス",
     "zh-Hans": "黑暗鸦"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4317b",
+      "#6a3162",
+      "#cd62b4"
+    ],
+    "primary": "#a4317b",
+    "secondary": "#6a3162",
+    "accent": "#cd62b4"
   }
 }

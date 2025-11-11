@@ -318,5 +318,15 @@
     "en": "Magcargo",
     "ja": "マグカルゴ",
     "zh-Hans": "熔岩蜗牛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c562bd",
+      "#9c3918",
+      "#e694de"
+    ],
+    "primary": "#c562bd",
+    "secondary": "#9c3918",
+    "accent": "#e694de"
   }
 }

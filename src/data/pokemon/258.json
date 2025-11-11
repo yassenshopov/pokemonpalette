@@ -317,5 +317,15 @@
     "en": "Mudkip",
     "ja": "ミズゴロウ",
     "zh-Hans": "水跃鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd83f6",
+      "#f6acff",
+      "#dec562"
+    ],
+    "primary": "#cd83f6",
+    "secondary": "#f6acff",
+    "accent": "#dec562"
   }
 }

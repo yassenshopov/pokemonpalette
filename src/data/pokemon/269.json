@@ -351,5 +351,15 @@
     "en": "Dustox",
     "ja": "ドクケイル",
     "zh-Hans": "毒粉蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#945208",
+      "#deb45a",
+      "#c58b39"
+    ],
+    "primary": "#945208",
+    "secondary": "#deb45a",
+    "accent": "#c58b39"
   }
 }

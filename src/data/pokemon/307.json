@@ -312,5 +312,15 @@
     "en": "Meditite",
     "ja": "アサナン",
     "zh-Hans": "玛沙那"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6def6",
+      "#d5a4d5",
+      "#834a83"
+    ],
+    "primary": "#f6def6",
+    "secondary": "#d5a4d5",
+    "accent": "#834a83"
   }
 }

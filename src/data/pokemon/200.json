@@ -306,5 +306,15 @@
     "en": "Misdreavus",
     "ja": "ムウマ",
     "zh-Hans": "梦妖"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8ba441",
+      "#c5d562",
+      "#e69c00"
+    ],
+    "primary": "#8ba441",
+    "secondary": "#c5d562",
+    "accent": "#e69c00"
   }
 }

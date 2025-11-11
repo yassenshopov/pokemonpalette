@@ -326,5 +326,15 @@
     "en": "Magby",
     "ja": "ブビィ",
     "zh-Hans": "鸭嘴宝宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee8b00",
+      "#ffde31",
+      "#ac4a00"
+    ],
+    "primary": "#ee8b00",
+    "secondary": "#ffde31",
+    "accent": "#ac4a00"
   }
 }

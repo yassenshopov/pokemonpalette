@@ -307,5 +307,15 @@
     "en": "Ho-Oh",
     "ja": "ホウオウ",
     "zh-Hans": "凤王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffc500",
+      "#e68b00",
+      "#ffac00"
+    ],
+    "primary": "#ffc500",
+    "secondary": "#e68b00",
+    "accent": "#ffac00"
   }
 }

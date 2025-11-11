@@ -329,5 +329,15 @@
     "en": "Qwilfish",
     "ja": "ハリーセン",
     "zh-Hans": "千针鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dea4e6",
+      "#cd6abd",
+      "#f6cdff"
+    ],
+    "primary": "#dea4e6",
+    "secondary": "#cd6abd",
+    "accent": "#f6cdff"
   }
 }

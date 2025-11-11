@@ -395,5 +395,15 @@
     "en": "Espeon",
     "ja": "エーフィ",
     "zh-Hans": "太阳伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bd539",
+      "#187b00",
+      "#a4ff41"
+    ],
+    "primary": "#7bd539",
+    "secondary": "#187b00",
+    "accent": "#a4ff41"
   }
 }

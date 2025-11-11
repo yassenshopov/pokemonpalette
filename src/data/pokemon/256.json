@@ -322,5 +322,15 @@
     "en": "Combusken",
     "ja": "ワカシャモ",
     "zh-Hans": "力壮鸡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffc55a",
+      "#181818",
+      "#fff694"
+    ],
+    "primary": "#ffc55a",
+    "secondary": "#181818",
+    "accent": "#fff694"
   }
 }

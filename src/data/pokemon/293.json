@@ -322,5 +322,15 @@
     "en": "Whismur",
     "ja": "ゴニョニョ",
     "zh-Hans": "咕妞妞"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6ace6",
+      "#e673b4",
+      "#62d562"
+    ],
+    "primary": "#f6ace6",
+    "secondary": "#e673b4",
+    "accent": "#62d562"
   }
 }

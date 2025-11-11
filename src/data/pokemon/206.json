@@ -312,5 +312,15 @@
     "en": "Dunsparce",
     "ja": "ノコッチ",
     "zh-Hans": "土龙弟弟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d55a8b",
+      "#f6e67b",
+      "#debd39"
+    ],
+    "primary": "#d55a8b",
+    "secondary": "#f6e67b",
+    "accent": "#debd39"
   }
 }

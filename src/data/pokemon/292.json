@@ -315,5 +315,15 @@
     "en": "Shedinja",
     "ja": "ヌケニン",
     "zh-Hans": "脱壳忍者"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eebd83",
+      "#f6e6a4",
+      "#623931"
+    ],
+    "primary": "#eebd83",
+    "secondary": "#f6e6a4",
+    "accent": "#623931"
   }
 }

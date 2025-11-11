@@ -610,5 +610,15 @@
     "en": "Unown",
     "ja": "アンノーン",
     "zh-Hans": "未知图腾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#296abd",
+      "#185294",
+      "#62a4e6"
+    ],
+    "primary": "#296abd",
+    "secondary": "#185294",
+    "accent": "#62a4e6"
   }
 }

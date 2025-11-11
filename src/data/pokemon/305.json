@@ -333,5 +333,15 @@
     "en": "Lairon",
     "ja": "コドラ",
     "zh-Hans": "可多拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5d5b4",
+      "#297b73",
+      "#08625a"
+    ],
+    "primary": "#d5d5b4",
+    "secondary": "#297b73",
+    "accent": "#08625a"
   }
 }

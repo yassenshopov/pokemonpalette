@@ -318,5 +318,15 @@
     "en": "Poochyena",
     "ja": "ポチエナ",
     "zh-Hans": "土狼犬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd9c62",
+      "#eed57b",
+      "#522000"
+    ],
+    "primary": "#cd9c62",
+    "secondary": "#eed57b",
+    "accent": "#522000"
   }
 }

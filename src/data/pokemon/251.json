@@ -301,5 +301,15 @@
     "en": "Celebi",
     "ja": "セレビィ",
     "zh-Hans": "时拉比"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdee6",
+      "#cd62a4",
+      "#a43152"
+    ],
+    "primary": "#ffdee6",
+    "secondary": "#cd62a4",
+    "accent": "#a43152"
   }
 }

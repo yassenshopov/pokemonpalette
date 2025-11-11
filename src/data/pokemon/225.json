@@ -308,5 +308,15 @@
     "en": "Delibird",
     "ja": "デリバード",
     "zh-Hans": "信使鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#e6e6a4",
+      "#bd31ac"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#e6e6a4",
+    "accent": "#bd31ac"
   }
 }

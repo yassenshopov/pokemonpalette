@@ -312,5 +312,15 @@
     "en": "Forretress",
     "ja": "フォレトス",
     "zh-Hans": "佛烈托斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5c562",
+      "#b49c41",
+      "#eee683"
+    ],
+    "primary": "#d5c562",
+    "secondary": "#b49c41",
+    "accent": "#eee683"
   }
 }

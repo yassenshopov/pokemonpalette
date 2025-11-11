@@ -251,5 +251,15 @@
     "en": "Silcoon",
     "ja": "カラサリス",
     "zh-Hans": "甲壳茧"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6eec5",
+      "#eed583",
+      "#b45a10"
+    ],
+    "primary": "#f6eec5",
+    "secondary": "#eed583",
+    "accent": "#b45a10"
   }
 }

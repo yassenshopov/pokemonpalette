@@ -326,5 +326,15 @@
     "en": "Nincada",
     "ja": "ツチニン",
     "zh-Hans": "土居忍士"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#292929",
+      "#fff683",
+      "#f69c52"
+    ],
+    "primary": "#292929",
+    "secondary": "#fff683",
+    "accent": "#f69c52"
   }
 }

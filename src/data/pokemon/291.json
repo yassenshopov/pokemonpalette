@@ -321,5 +321,15 @@
     "en": "Ninjask",
     "ja": "テッカニン",
     "zh-Hans": "铁面忍者"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#f6bd41",
+      "#e6d594"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#f6bd41",
+    "accent": "#e6d594"
   }
 }

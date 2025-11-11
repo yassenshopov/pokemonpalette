@@ -347,5 +347,15 @@
     "en": "Linoone",
     "ja": "マッスグマ",
     "zh-Hans": "直冲熊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5a494",
+      "#decdb4",
+      "#cd6220"
+    ],
+    "primary": "#c5a494",
+    "secondary": "#decdb4",
+    "accent": "#cd6220"
   }
 }

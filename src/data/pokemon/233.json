@@ -328,5 +328,15 @@
     "en": "Porygon2",
     "ja": "ポリゴン２",
     "zh-Hans": "多边兽２型"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6294ff",
+      "#395aee",
+      "#deb4d5"
+    ],
+    "primary": "#6294ff",
+    "secondary": "#395aee",
+    "accent": "#deb4d5"
   }
 }

@@ -333,5 +333,15 @@
     "en": "Hitmontop",
     "ja": "カポエラー",
     "zh-Hans": "战舞郎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#aca49c",
+      "#d5d5c5",
+      "#736a52"
+    ],
+    "primary": "#aca49c",
+    "secondary": "#d5d5c5",
+    "accent": "#736a52"
   }
 }

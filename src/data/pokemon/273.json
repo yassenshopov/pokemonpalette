@@ -328,5 +328,15 @@
     "en": "Seedot",
     "ja": "タネボー",
     "zh-Hans": "橡实果"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#acac9c",
+      "#ffeeac",
+      "#c53910"
+    ],
+    "primary": "#acac9c",
+    "secondary": "#ffeeac",
+    "accent": "#c53910"
   }
 }

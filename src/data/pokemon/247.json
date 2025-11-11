@@ -316,5 +316,15 @@
     "en": "Pupitar",
     "ja": "サナギラス",
     "zh-Hans": "沙基拉斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd94f6",
+      "#a46ad5",
+      "#6a419c"
+    ],
+    "primary": "#bd94f6",
+    "secondary": "#a46ad5",
+    "accent": "#6a419c"
   }
 }

@@ -311,5 +311,15 @@
     "en": "Slaking",
     "ja": "ケッキング",
     "zh-Hans": "请假王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#947b6a",
+      "#bda494",
+      "#735a52"
+    ],
+    "primary": "#947b6a",
+    "secondary": "#bda494",
+    "accent": "#735a52"
   }
 }

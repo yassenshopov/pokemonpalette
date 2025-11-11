@@ -317,5 +317,15 @@
     "en": "Mareep",
     "ja": "メリープ",
     "zh-Hans": "咩利羊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffcdff",
+      "#cd94b4",
+      "#9c527b"
+    ],
+    "primary": "#ffcdff",
+    "secondary": "#cd94b4",
+    "accent": "#9c527b"
   }
 }
