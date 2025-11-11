@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
-  "weight": 108.0,
+  "height": 1,
+  "weight": 108,
   "abilities": [
     {
       "name": "Pressure",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#a4529c",
+    "secondary": "#c573bd",
+    "accent": "#62b441",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#a4529c",
+      "#c573bd",
+      "#62b441"
     ]
   },
   "artwork": {
