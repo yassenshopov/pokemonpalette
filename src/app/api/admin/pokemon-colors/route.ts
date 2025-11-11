@@ -6,7 +6,7 @@ import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
 
 // GET - Get all Pokemon with their color data (admin only)
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     let userId: string | null = null;
     
