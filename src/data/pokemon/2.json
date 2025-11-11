@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
-  "weight": 13.0,
+  "height": 1,
+  "weight": 13,
   "abilities": [
     {
       "name": "Overgrow",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#209483",
+    "secondary": "#5acdbd",
+    "accent": "#317b52",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#209483",
+      "#5acdbd",
+      "#317b52"
     ]
   },
   "artwork": {

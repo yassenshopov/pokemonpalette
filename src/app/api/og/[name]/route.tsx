@@ -2,7 +2,8 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 import { getPokemonMetadataByName, getPokemonById } from "@/lib/pokemon";
 
-export const runtime = "edge";
+// Use Node.js runtime instead of Edge to avoid bundle size limits
+// Edge runtime has a 1MB limit, and importing Pokemon data exceeds this
 
 export async function GET(
   request: NextRequest,
@@ -35,7 +36,8 @@ export async function GET(
     const color3 = colors[2] || colors[1] || colors[0] || "#94a3b8";
 
     // Get official artwork URL
-    const artworkUrl = pokemon.artwork.official;
+    const artworkUrl =
+      pokemon.artwork?.official || pokemon.artwork?.front || "";
 
     return new ImageResponse(
       (
