@@ -336,5 +336,15 @@
     "en": "Venusaur",
     "ja": "フシギバナ",
     "zh-Hans": "妙蛙花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4d54a",
+      "#395a20",
+      "#ffd500"
+    ],
+    "primary": "#a4d54a",
+    "secondary": "#395a20",
+    "accent": "#ffd500"
   }
 }

@@ -322,5 +322,15 @@
     "en": "Bulbasaur",
     "ja": "フシギダネ",
     "zh-Hans": "妙蛙种子"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73a431",
+      "#9cd54a",
+      "#008320"
+    ],
+    "primary": "#73a431",
+    "secondary": "#9cd54a",
+    "accent": "#008320"
   }
 }

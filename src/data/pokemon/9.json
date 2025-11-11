@@ -331,5 +331,15 @@
     "en": "Blastoise",
     "ja": "カメックス",
     "zh-Hans": "水箭龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5b4f6",
+      "#735294",
+      "#a47bbd"
+    ],
+    "primary": "#d5b4f6",
+    "secondary": "#735294",
+    "accent": "#a47bbd"
   }
 }

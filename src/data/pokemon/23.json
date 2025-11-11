@@ -313,5 +313,15 @@
     "en": "Ekans",
     "ja": "アーボ",
     "zh-Hans": "阿柏蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#acac39",
+      "#eeee9c",
+      "#838b20"
+    ],
+    "primary": "#acac39",
+    "secondary": "#eeee9c",
+    "accent": "#838b20"
   }
 }

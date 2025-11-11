@@ -217,5 +217,15 @@
     "en": "Caterpie",
     "ja": "キャタピー",
     "zh-Hans": "绿毛虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeac29",
+      "#eed583",
+      "#ffe620"
+    ],
+    "primary": "#eeac29",
+    "secondary": "#eed583",
+    "accent": "#ffe620"
   }
 }

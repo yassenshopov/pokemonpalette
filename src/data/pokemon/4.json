@@ -317,5 +317,15 @@
     "en": "Charmander",
     "ja": "ヒトカゲ",
     "zh-Hans": "小火龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffde29",
+      "#ee9c00",
+      "#944a00"
+    ],
+    "primary": "#ffde29",
+    "secondary": "#ee9c00",
+    "accent": "#944a00"
   }
 }

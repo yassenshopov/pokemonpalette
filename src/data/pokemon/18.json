@@ -335,5 +335,15 @@
     "en": "Pidgeot",
     "ja": "ピジョット",
     "zh-Hans": "大比鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd552",
+      "#ffff7b",
+      "#b48310"
+    ],
+    "primary": "#ffd552",
+    "secondary": "#ffff7b",
+    "accent": "#b48310"
   }
 }

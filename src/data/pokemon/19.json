@@ -329,5 +329,15 @@
     "en": "Rattata",
     "ja": "コラッタ",
     "zh-Hans": "小拉达"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5c56a",
+      "#948b39",
+      "#e6e68b"
+    ],
+    "primary": "#c5c56a",
+    "secondary": "#948b39",
+    "accent": "#e6e68b"
   }
 }

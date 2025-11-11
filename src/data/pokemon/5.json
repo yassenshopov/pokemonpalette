@@ -317,5 +317,15 @@
     "en": "Charmeleon",
     "ja": "リザード",
     "zh-Hans": "火恐龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dea429",
+      "#ffe600",
+      "#ff6220"
+    ],
+    "primary": "#dea429",
+    "secondary": "#ffe600",
+    "accent": "#ff6220"
   }
 }

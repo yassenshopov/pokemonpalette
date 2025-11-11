@@ -317,5 +317,15 @@
     "en": "Wartortle",
     "ja": "カメール",
     "zh-Hans": "卡咪龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4b4f6",
+      "#8b7bbd",
+      "#ffffff"
+    ],
+    "primary": "#b4b4f6",
+    "secondary": "#8b7bbd",
+    "accent": "#ffffff"
   }
 }

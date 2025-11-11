@@ -317,5 +317,15 @@
     "en": "Fearow",
     "ja": "オニドリル",
     "zh-Hans": "大嘴雀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4bd20",
+      "#8b8b31",
+      "#d5de5a"
+    ],
+    "primary": "#b4bd20",
+    "secondary": "#8b8b31",
+    "accent": "#d5de5a"
   }
 }

@@ -216,5 +216,15 @@
     "en": "Kakuna",
     "ja": "コクーン",
     "zh-Hans": "铁壳蛹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#acff00",
+      "#83bd29",
+      "#184100"
+    ],
+    "primary": "#acff00",
+    "secondary": "#83bd29",
+    "accent": "#184100"
   }
 }

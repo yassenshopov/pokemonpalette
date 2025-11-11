@@ -317,5 +317,15 @@
     "en": "Squirtle",
     "ja": "ゼニガメ",
     "zh-Hans": "杰尼龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7ba4e6",
+      "#b4cdff",
+      "#416283"
+    ],
+    "primary": "#7ba4e6",
+    "secondary": "#b4cdff",
+    "accent": "#416283"
   }
 }

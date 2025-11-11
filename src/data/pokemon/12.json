@@ -334,5 +334,15 @@
     "en": "Butterfree",
     "ja": "バタフリー",
     "zh-Hans": "巴大蝶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffeeee",
+      "#313152",
+      "#5a4a73"
+    ],
+    "primary": "#ffeeee",
+    "secondary": "#313152",
+    "accent": "#5a4a73"
   }
 }

@@ -334,5 +334,15 @@
     "en": "Beedrill",
     "ja": "スピアー",
     "zh-Hans": "大针蜂"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#181818",
+      "#bdb4c5"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#181818",
+    "accent": "#bdb4c5"
   }
 }

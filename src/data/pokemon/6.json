@@ -343,5 +343,15 @@
     "en": "Charizard",
     "ja": "リザードン",
     "zh-Hans": "喷火龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#837b94",
+      "#5a5a6a",
+      "#831029"
+    ],
+    "primary": "#837b94",
+    "secondary": "#5a5a6a",
+    "accent": "#831029"
   }
 }

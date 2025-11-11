@@ -211,5 +211,15 @@
     "en": "Metapod",
     "ja": "トランセル",
     "zh-Hans": "铁甲蛹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c55a18",
+      "#ff7339",
+      "#943918"
+    ],
+    "primary": "#c55a18",
+    "secondary": "#ff7339",
+    "accent": "#943918"
   }
 }

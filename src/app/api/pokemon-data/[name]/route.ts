@@ -30,6 +30,7 @@ export async function GET(
       id: pokemon.id,
       name: pokemon.name,
       colorPalette: pokemon.colorPalette,
+      shinyColorPalette: pokemon.shinyColorPalette,
       artwork: pokemon.artwork,
     });
   } catch (error) {

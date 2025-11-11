@@ -328,5 +328,15 @@
     "en": "Pidgeotto",
     "ja": "ピジョン",
     "zh-Hans": "比比鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6ffac",
+      "#dede94",
+      "#738331"
+    ],
+    "primary": "#f6ffac",
+    "secondary": "#dede94",
+    "accent": "#738331"
   }
 }

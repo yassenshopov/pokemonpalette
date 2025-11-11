@@ -317,5 +317,15 @@
     "en": "Spearow",
     "ja": "オニスズメ",
     "zh-Hans": "烈雀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd500",
+      "#bdac20",
+      "#eea400"
+    ],
+    "primary": "#ffd500",
+    "secondary": "#bdac20",
+    "accent": "#eea400"
   }
 }

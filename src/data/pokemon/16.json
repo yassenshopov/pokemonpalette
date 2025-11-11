@@ -328,5 +328,15 @@
     "en": "Pidgey",
     "ja": "ポッポ",
     "zh-Hans": "波波"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdcd18",
+      "#4a3900",
+      "#8b8b10"
+    ],
+    "primary": "#cdcd18",
+    "secondary": "#4a3900",
+    "accent": "#8b8b10"
   }
 }

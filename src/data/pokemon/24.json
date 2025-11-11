@@ -318,5 +318,15 @@
     "en": "Arbok",
     "ja": "アーボック",
     "zh-Hans": "阿柏怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5b420",
+      "#a47b20",
+      "#835a00"
+    ],
+    "primary": "#d5b420",
+    "secondary": "#a47b20",
+    "accent": "#835a00"
   }
 }

@@ -212,5 +212,15 @@
     "en": "Weedle",
     "ja": "ビードル",
     "zh-Hans": "独角虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffb400",
+      "#181818",
+      "#ffee00"
+    ],
+    "primary": "#ffb400",
+    "secondary": "#181818",
+    "accent": "#ffee00"
   }
 }

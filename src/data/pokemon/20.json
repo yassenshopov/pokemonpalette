@@ -337,5 +337,15 @@
     "en": "Raticate",
     "ja": "ラッタ",
     "zh-Hans": "拉达"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b45229",
+      "#d57339",
+      "#d5e68b"
+    ],
+    "primary": "#b45229",
+    "secondary": "#d57339",
+    "accent": "#d5e68b"
   }
 }
