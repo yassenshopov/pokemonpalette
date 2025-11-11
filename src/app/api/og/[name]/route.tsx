@@ -18,21 +18,153 @@ export async function GET(
     try {
       pokemonMetadata = getPokemonMetadataByName(pokemonName);
       if (!pokemonMetadata) {
-        return new Response("Pokemon not found", { status: 404 });
+        // Return a fallback image instead of 404 text
+        return new ImageResponse(
+          (
+            <div
+              style={{
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background:
+                  "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 60,
+                  fontWeight: "bold",
+                  color: "#ffffff",
+                }}
+              >
+                Pokemon Not Found
+              </div>
+            </div>
+          ),
+          {
+            width: 1200,
+            height: 675,
+            headers: {
+              "Content-Type": "image/png",
+              "Cache-Control": "public, max-age=3600",
+            },
+          }
+        );
       }
     } catch (error) {
       console.error("Error getting Pokemon metadata:", error);
-      return new Response("Error loading Pokemon metadata", { status: 500 });
+      // Return a fallback image instead of 500 text
+      return new ImageResponse(
+        (
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background:
+                "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 60,
+                fontWeight: "bold",
+                color: "#ffffff",
+              }}
+            >
+              PokémonPalette
+            </div>
+          </div>
+        ),
+        {
+          width: 1200,
+          height: 675,
+          headers: {
+            "Content-Type": "image/png",
+            "Cache-Control": "public, max-age=3600",
+          },
+        }
+      );
     }
 
     try {
       pokemon = await getPokemonById(pokemonMetadata.id);
       if (!pokemon) {
-        return new Response("Pokemon data not found", { status: 404 });
+        // Return a fallback image instead of 404 text
+        return new ImageResponse(
+          (
+            <div
+              style={{
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background:
+                  "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 60,
+                  fontWeight: "bold",
+                  color: "#ffffff",
+                }}
+              >
+                Pokemon Data Not Found
+              </div>
+            </div>
+          ),
+          {
+            width: 1200,
+            height: 675,
+            headers: {
+              "Content-Type": "image/png",
+              "Cache-Control": "public, max-age=3600",
+            },
+          }
+        );
       }
     } catch (error) {
       console.error("Error loading Pokemon data:", error);
-      return new Response("Error loading Pokemon data", { status: 500 });
+      // Return a fallback image instead of 500 text
+      return new ImageResponse(
+        (
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background:
+                "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 60,
+                fontWeight: "bold",
+                color: "#ffffff",
+              }}
+            >
+              PokémonPalette
+            </div>
+          </div>
+        ),
+        {
+          width: 1200,
+          height: 675,
+          headers: {
+            "Content-Type": "image/png",
+            "Cache-Control": "public, max-age=3600",
+          },
+        }
+      );
     }
 
     // Get the 3 main colors from the color palette
