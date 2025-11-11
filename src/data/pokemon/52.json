@@ -356,5 +356,15 @@
     "en": "Meowth",
     "ja": "ニャース",
     "zh-Hans": "喵喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffcd83",
+      "#9c4100",
+      "#de9c39"
+    ],
+    "primary": "#ffcd83",
+    "secondary": "#9c4100",
+    "accent": "#de9c39"
   }
 }

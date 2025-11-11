@@ -325,5 +325,15 @@
     "en": "Arcanine",
     "ja": "ウインディ",
     "zh-Hans": "风速狗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5bd94",
+      "#f6e6bd",
+      "#b49c00"
+    ],
+    "primary": "#d5bd94",
+    "secondary": "#f6e6bd",
+    "accent": "#b49c00"
   }
 }

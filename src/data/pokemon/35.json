@@ -335,5 +335,15 @@
     "en": "Clefairy",
     "ja": "ピッピ",
     "zh-Hans": "皮皮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdede",
+      "#f6acac",
+      "#a44141"
+    ],
+    "primary": "#ffdede",
+    "secondary": "#f6acac",
+    "accent": "#a44141"
   }
 }

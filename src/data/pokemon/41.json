@@ -321,5 +321,15 @@
     "en": "Zubat",
     "ja": "ズバット",
     "zh-Hans": "超音蝠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a9c29",
+      "#317300",
+      "#084a00"
+    ],
+    "primary": "#6a9c29",
+    "secondary": "#317300",
+    "accent": "#084a00"
   }
 }

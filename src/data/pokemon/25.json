@@ -437,5 +437,15 @@
     "en": "Pikachu",
     "ja": "ピカチュウ",
     "zh-Hans": "皮卡丘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffc531",
+      "#ffa400",
+      "#b43100"
+    ],
+    "primary": "#ffc531",
+    "secondary": "#ffa400",
+    "accent": "#b43100"
   }
 }

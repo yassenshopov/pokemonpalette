@@ -322,5 +322,15 @@
     "en": "Weepinbell",
     "ja": "ウツドン",
     "zh-Hans": "口呆花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdee31",
+      "#bdcd31",
+      "#deff5a"
+    ],
+    "primary": "#bdee31",
+    "secondary": "#bdcd31",
+    "accent": "#deff5a"
   }
 }

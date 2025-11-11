@@ -321,5 +321,15 @@
     "en": "Golbat",
     "ja": "ゴルバット",
     "zh-Hans": "大嘴蝠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6737b",
+      "#6a9c29",
+      "#ffaca4"
+    ],
+    "primary": "#e6737b",
+    "secondary": "#6a9c29",
+    "accent": "#ffaca4"
   }
 }

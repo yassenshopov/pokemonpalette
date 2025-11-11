@@ -327,5 +327,15 @@
     "en": "Sandshrew",
     "ja": "サンド",
     "zh-Hans": "穿山鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8bb441",
+      "#acde4a",
+      "#6a834a"
+    ],
+    "primary": "#8bb441",
+    "secondary": "#acde4a",
+    "accent": "#6a834a"
   }
 }

@@ -327,5 +327,15 @@
     "en": "Mankey",
     "ja": "マンキー",
     "zh-Hans": "猴怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5ee9c",
+      "#a4b473",
+      "#b4834a"
+    ],
+    "primary": "#c5ee9c",
+    "secondary": "#a4b473",
+    "accent": "#b4834a"
   }
 }

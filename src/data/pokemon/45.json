@@ -337,5 +337,15 @@
     "en": "Vileplume",
     "ja": "ラフレシア",
     "zh-Hans": "霸王花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee8b31",
+      "#ffbd62",
+      "#417b41"
+    ],
+    "primary": "#ee8b31",
+    "secondary": "#ffbd62",
+    "accent": "#417b41"
   }
 }

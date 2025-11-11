@@ -325,5 +325,15 @@
     "en": "Diglett",
     "ja": "ディグダ",
     "zh-Hans": "地鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd7352",
+      "#b4ac73",
+      "#9c5a6a"
+    ],
+    "primary": "#bd7352",
+    "secondary": "#b4ac73",
+    "accent": "#9c5a6a"
   }
 }

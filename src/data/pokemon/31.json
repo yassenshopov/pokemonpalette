@@ -328,5 +328,15 @@
     "en": "Nidoqueen",
     "ja": "ニドクイン",
     "zh-Hans": "尼多后"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a7b29",
+      "#83a441",
+      "#394a00"
+    ],
+    "primary": "#6a7b29",
+    "secondary": "#83a441",
+    "accent": "#394a00"
   }
 }

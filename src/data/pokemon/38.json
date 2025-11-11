@@ -327,5 +327,15 @@
     "en": "Ninetales",
     "ja": "キュウコン",
     "zh-Hans": "九尾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdb4cd",
+      "#dedee6",
+      "#7b5a83"
+    ],
+    "primary": "#bdb4cd",
+    "secondary": "#dedee6",
+    "accent": "#7b5a83"
   }
 }

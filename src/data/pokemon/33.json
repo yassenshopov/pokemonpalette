@@ -323,5 +323,15 @@
     "en": "Nidorino",
     "ja": "ニドリーノ",
     "zh-Hans": "尼多力诺"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#837bbd",
+      "#acb4f6",
+      "#414a8b"
+    ],
+    "primary": "#837bbd",
+    "secondary": "#acb4f6",
+    "accent": "#414a8b"
   }
 }

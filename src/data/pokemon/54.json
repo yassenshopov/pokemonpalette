@@ -313,5 +313,15 @@
     "en": "Psyduck",
     "ja": "コダック",
     "zh-Hans": "可达鸭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9cdee6",
+      "#7bb49c",
+      "#e6ffff"
+    ],
+    "primary": "#9cdee6",
+    "secondary": "#7bb49c",
+    "accent": "#e6ffff"
   }
 }

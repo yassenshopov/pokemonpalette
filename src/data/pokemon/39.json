@@ -336,5 +336,15 @@
     "en": "Jigglypuff",
     "ja": "プリン",
     "zh-Hans": "胖丁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6cdee",
+      "#de9cc5",
+      "#7b5a73"
+    ],
+    "primary": "#f6cdee",
+    "secondary": "#de9cc5",
+    "accent": "#7b5a73"
   }
 }

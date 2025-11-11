@@ -327,5 +327,15 @@
     "en": "Vulpix",
     "ja": "ロコン",
     "zh-Hans": "六尾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeee39",
+      "#833900",
+      "#d58318"
+    ],
+    "primary": "#eeee39",
+    "secondary": "#833900",
+    "accent": "#d58318"
   }
 }

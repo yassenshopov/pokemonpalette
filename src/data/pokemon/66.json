@@ -327,5 +327,15 @@
     "en": "Machop",
     "ja": "ワンリキー",
     "zh-Hans": "腕力"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdb47b",
+      "#948b5a",
+      "#6a6239"
+    ],
+    "primary": "#bdb47b",
+    "secondary": "#948b5a",
+    "accent": "#6a6239"
   }
 }

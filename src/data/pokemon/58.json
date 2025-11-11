@@ -325,5 +325,15 @@
     "en": "Growlithe",
     "ja": "ガーディ",
     "zh-Hans": "卡蒂狗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f6b4",
+      "#c5b431",
+      "#d5cd8b"
+    ],
+    "primary": "#f6f6b4",
+    "secondary": "#c5b431",
+    "accent": "#d5cd8b"
   }
 }

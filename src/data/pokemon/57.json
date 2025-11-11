@@ -327,5 +327,15 @@
     "en": "Primeape",
     "ja": "オコリザル",
     "zh-Hans": "火暴猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de9c6a",
+      "#ffcd8b",
+      "#837b20"
+    ],
+    "primary": "#de9c6a",
+    "secondary": "#ffcd8b",
+    "accent": "#837b20"
   }
 }

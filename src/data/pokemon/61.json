@@ -338,5 +338,15 @@
     "en": "Poliwhirl",
     "ja": "ニョロゾ",
     "zh-Hans": "蚊香君"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52bdff",
+      "#ffffff",
+      "#525252"
+    ],
+    "primary": "#52bdff",
+    "secondary": "#ffffff",
+    "accent": "#525252"
   }
 }

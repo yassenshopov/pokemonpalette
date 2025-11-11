@@ -327,5 +327,15 @@
     "en": "Venomoth",
     "ja": "モルフォン",
     "zh-Hans": "摩鲁蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4deff",
+      "#6283c5",
+      "#9cbdff"
+    ],
+    "primary": "#b4deff",
+    "secondary": "#6283c5",
+    "accent": "#9cbdff"
   }
 }

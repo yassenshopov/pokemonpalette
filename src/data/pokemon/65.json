@@ -334,5 +334,15 @@
     "en": "Alakazam",
     "ja": "フーディン",
     "zh-Hans": "胡地"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd500",
+      "#d59408",
+      "#ac2973"
+    ],
+    "primary": "#ffd500",
+    "secondary": "#d59408",
+    "accent": "#ac2973"
   }
 }

@@ -331,5 +331,15 @@
     "en": "Parasect",
     "ja": "パラセクト",
     "zh-Hans": "派拉斯特"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee8b31",
+      "#ac6a41",
+      "#b46231"
+    ],
+    "primary": "#ee8b31",
+    "secondary": "#ac6a41",
+    "accent": "#b46231"
   }
 }

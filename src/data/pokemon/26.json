@@ -328,5 +328,15 @@
     "en": "Raichu",
     "ja": "ライチュウ",
     "zh-Hans": "雷丘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f67b20",
+      "#ffe6d5",
+      "#8b6210"
+    ],
+    "primary": "#f67b20",
+    "secondary": "#ffe6d5",
+    "accent": "#8b6210"
   }
 }

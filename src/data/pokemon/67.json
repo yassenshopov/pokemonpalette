@@ -327,5 +327,15 @@
     "en": "Machoke",
     "ja": "ゴーリキー",
     "zh-Hans": "豪力"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94bd73",
+      "#527329",
+      "#295a00"
+    ],
+    "primary": "#94bd73",
+    "secondary": "#527329",
+    "accent": "#295a00"
   }
 }

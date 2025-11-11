@@ -331,5 +331,15 @@
     "en": "Paras",
     "ja": "パラス",
     "zh-Hans": "派拉斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee5218",
+      "#ff8339",
+      "#c53120"
+    ],
+    "primary": "#ee5218",
+    "secondary": "#ff8339",
+    "accent": "#c53120"
   }
 }

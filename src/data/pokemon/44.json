@@ -337,5 +337,15 @@
     "en": "Gloom",
     "ja": "クサイハナ",
     "zh-Hans": "臭臭花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94b452",
+      "#527b20",
+      "#8b6a18"
+    ],
+    "primary": "#94b452",
+    "secondary": "#527b20",
+    "accent": "#8b6a18"
   }
 }

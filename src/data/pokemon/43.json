@@ -337,5 +337,15 @@
     "en": "Oddish",
     "ja": "ナゾノクサ",
     "zh-Hans": "走路草"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94c531",
+      "#c5f639",
+      "#399400"
+    ],
+    "primary": "#94c531",
+    "secondary": "#c5f639",
+    "accent": "#399400"
   }
 }

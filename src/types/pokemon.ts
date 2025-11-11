@@ -45,10 +45,11 @@ export interface ColorPalette {
   highlights: string[];
 }
 
-export interface PokemonColorPalette extends ColorPalette {}
+// Type aliases for Pokemon color palettes
+export type PokemonColorPalette = ColorPalette;
 
 // Shiny color palette (optional - may not exist for all Pokemon)
-export interface ShinyColorPalette extends ColorPalette {}
+export type ShinyColorPalette = ColorPalette;
 
 export interface PokemonArtworkExpanded {
   official: string;
@@ -137,15 +138,6 @@ export interface PokemonStats {
   specialAttack: number;
   specialDefense: number;
   speed: number;
-}
-
-export interface PokemonColorPalette {
-  primary: string;
-  secondary: string;
-  accent: string;
-  background: string;
-  text: string;
-  highlights: string[];
 }
 
 export interface PokemonArtwork {

@@ -313,5 +313,15 @@
     "en": "Golduck",
     "ja": "ゴルダック",
     "zh-Hans": "哥达鸭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6ab4ff",
+      "#627bd5",
+      "#39526a"
+    ],
+    "primary": "#6ab4ff",
+    "secondary": "#627bd5",
+    "accent": "#39526a"
   }
 }

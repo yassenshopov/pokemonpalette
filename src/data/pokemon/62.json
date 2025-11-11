@@ -343,5 +343,15 @@
     "en": "Poliwrath",
     "ja": "ニョロボン",
     "zh-Hans": "蚊香泳士"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a8b4a",
+      "#8bbd73",
+      "#ffffff"
+    ],
+    "primary": "#6a8b4a",
+    "secondary": "#8bbd73",
+    "accent": "#ffffff"
   }
 }

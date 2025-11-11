@@ -318,5 +318,15 @@
     "en": "Venonat",
     "ja": "コンパン",
     "zh-Hans": "毛球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8b6aac",
+      "#624a83",
+      "#a48bc5"
+    ],
+    "primary": "#8b6aac",
+    "secondary": "#624a83",
+    "accent": "#a48bc5"
   }
 }

@@ -331,5 +331,15 @@
     "en": "Sandslash",
     "ja": "サンドパン",
     "zh-Hans": "穿山王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd0820",
+      "#d5c57b",
+      "#4a3910"
+    ],
+    "primary": "#bd0820",
+    "secondary": "#d5c57b",
+    "accent": "#4a3910"
   }
 }

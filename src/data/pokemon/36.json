@@ -342,5 +342,15 @@
     "en": "Clefable",
     "ja": "ピクシー",
     "zh-Hans": "皮可西"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdede",
+      "#f6b4b4",
+      "#cd5a5a"
+    ],
+    "primary": "#ffdede",
+    "secondary": "#f6b4b4",
+    "accent": "#cd5a5a"
   }
 }

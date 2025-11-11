@@ -333,5 +333,15 @@
     "en": "Poliwag",
     "ja": "ニョロモ",
     "zh-Hans": "蚊香蝌蚪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5273d5",
+      "#73acff",
+      "#204aa4"
+    ],
+    "primary": "#5273d5",
+    "secondary": "#73acff",
+    "accent": "#204aa4"
   }
 }

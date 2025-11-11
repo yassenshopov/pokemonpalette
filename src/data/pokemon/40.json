@@ -336,5 +336,15 @@
     "en": "Wigglytuff",
     "ja": "プクリン",
     "zh-Hans": "胖可丁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#eeb4f6",
+      "#d594cd"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#eeb4f6",
+    "accent": "#d594cd"
   }
 }

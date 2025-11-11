@@ -323,5 +323,15 @@
     "en": "Nidoran♀",
     "ja": "ニドラン♀",
     "zh-Hans": "尼多兰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6bdee",
+      "#bd94c5",
+      "#732983"
+    ],
+    "primary": "#e6bdee",
+    "secondary": "#bd94c5",
+    "accent": "#732983"
   }
 }

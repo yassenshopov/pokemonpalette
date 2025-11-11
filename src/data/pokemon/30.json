@@ -323,5 +323,15 @@
     "en": "Nidorina",
     "ja": "ニドリーナ",
     "zh-Hans": "尼多娜"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd94c5",
+      "#b46aa4",
+      "#eedee6"
+    ],
+    "primary": "#cd94c5",
+    "secondary": "#b46aa4",
+    "accent": "#eedee6"
   }
 }

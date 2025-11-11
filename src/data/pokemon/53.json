@@ -338,5 +338,15 @@
     "en": "Persian",
     "ja": "ペルシアン",
     "zh-Hans": "猫老大"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eecd83",
+      "#fff694",
+      "#8b6a08"
+    ],
+    "primary": "#eecd83",
+    "secondary": "#fff694",
+    "accent": "#8b6a08"
   }
 }

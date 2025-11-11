@@ -329,5 +329,15 @@
     "en": "Victreebel",
     "ja": "ウツボット",
     "zh-Hans": "大食花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4945a",
+      "#c5b45a",
+      "#b4e639"
+    ],
+    "primary": "#a4945a",
+    "secondary": "#c5b45a",
+    "accent": "#b4e639"
   }
 }

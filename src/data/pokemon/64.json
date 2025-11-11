@@ -327,5 +327,15 @@
     "en": "Kadabra",
     "ja": "ユンゲラー",
     "zh-Hans": "勇基拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6b441",
+      "#fff683",
+      "#83525a"
+    ],
+    "primary": "#e6b441",
+    "secondary": "#fff683",
+    "accent": "#83525a"
   }
 }

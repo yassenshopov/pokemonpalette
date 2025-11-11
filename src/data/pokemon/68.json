@@ -334,5 +334,15 @@
     "en": "Machamp",
     "ja": "カイリキー",
     "zh-Hans": "怪力"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a8b29",
+      "#94bd4a",
+      "#4a6a10"
+    ],
+    "primary": "#6a8b29",
+    "secondary": "#94bd4a",
+    "accent": "#4a6a10"
   }
 }

@@ -322,5 +322,15 @@
     "en": "Bellsprout",
     "ja": "マダツボミ",
     "zh-Hans": "喇叭芽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a3900",
+      "#dec518",
+      "#c5a408"
+    ],
+    "primary": "#5a3900",
+    "secondary": "#dec518",
+    "accent": "#c5a408"
   }
 }

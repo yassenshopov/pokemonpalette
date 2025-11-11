@@ -328,5 +328,15 @@
     "en": "Nidoking",
     "ja": "ニドキング",
     "zh-Hans": "尼多王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#398bcd",
+      "#5abdff",
+      "#18529c"
+    ],
+    "primary": "#398bcd",
+    "secondary": "#5abdff",
+    "accent": "#18529c"
   }
 }
