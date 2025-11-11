@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 18.0,
+  "height": 1,
+  "weight": 18,
   "abilities": [
     {
       "name": "Reckless",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#41a452",
+    "secondary": "#e6e6e6",
+    "accent": "#a4a4a4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#41a452",
+      "#e6e6e6",
+      "#a4a4a4"
     ]
   },
   "artwork": {

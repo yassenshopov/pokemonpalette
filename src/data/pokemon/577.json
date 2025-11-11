@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 1.0,
+  "weight": 1,
   "abilities": [
     {
       "name": "Overcoat",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#5ab47b",
+    "secondary": "#cde6bd",
+    "accent": "#9cac8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#5ab47b",
+      "#cde6bd",
+      "#9cac8b"
     ]
   },
   "artwork": {

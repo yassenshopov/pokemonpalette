@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 21.0,
+  "weight": 21,
   "abilities": [
     {
       "name": "Plus",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#d5deee",
+    "secondary": "#6a6a73",
+    "accent": "#4a4a4a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#d5deee",
+      "#6a6a73",
+      "#4a4a4a"
     ]
   },
   "artwork": {

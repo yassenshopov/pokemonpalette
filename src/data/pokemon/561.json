@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.4,
-  "weight": 14.0,
+  "weight": 14,
   "abilities": [
     {
       "name": "Wonder skin",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#313131",
+    "secondary": "#ffc508",
+    "accent": "#4aace6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#313131",
+      "#ffc508",
+      "#4aace6"
     ]
   },
   "artwork": {

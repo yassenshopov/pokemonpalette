@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.9,
-  "weight": 345.0,
+  "weight": 345,
   "abilities": [
     {
       "name": "Teravolt",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#202029",
+    "secondary": "#313139",
+    "accent": "#181820",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#202029",
+      "#313139",
+      "#181820"
     ]
   },
   "artwork": {

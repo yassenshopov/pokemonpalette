@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 63.0,
+  "weight": 63,
   "abilities": [
     {
       "name": "Prankster",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A890F0",
-    "secondary": "#E0C068",
-    "accent": "#F8F8F8",
+    "primary": "#8341ac",
+    "secondary": "#4a9c41",
+    "accent": "#ffffff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A890F0",
-      "#E0C068",
-      "#F8F8F8"
+      "#8341ac",
+      "#4a9c41",
+      "#ffffff"
     ]
   },
   "artwork": {

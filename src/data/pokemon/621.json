@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.6,
-  "weight": 139.0,
+  "weight": 139,
   "abilities": [
     {
       "name": "Rough skin",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#104a8b",
+    "secondary": "#316aac",
+    "accent": "#d50041",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#104a8b",
+      "#316aac",
+      "#d50041"
     ]
   },
   "artwork": {

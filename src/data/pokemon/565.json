@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 81.0,
+  "weight": 81,
   "abilities": [
     {
       "name": "Solid rock",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#4a94d5",
+    "secondary": "#627383",
+    "accent": "#293139",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#4a94d5",
+      "#627383",
+      "#293139"
     ]
   },
   "artwork": {

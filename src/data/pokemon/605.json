@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 9.0,
+  "weight": 9,
   "abilities": [
     {
       "name": "Telepathy",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#a4cdbd",
+    "secondary": "#629483",
+    "accent": "#205a52",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#a4cdbd",
+      "#629483",
+      "#205a52"
     ]
   },
   "artwork": {

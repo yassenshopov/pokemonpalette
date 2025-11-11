@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.4,
-  "weight": 32.0,
+  "weight": 32,
   "abilities": [
     {
       "name": "Defeatist",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#3183f6",
+    "secondary": "#f6cd62",
+    "accent": "#31529c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#3183f6",
+      "#f6cd62",
+      "#31529c"
     ]
   },
   "artwork": {

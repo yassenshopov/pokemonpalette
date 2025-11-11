@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.6,
-  "weight": 260.0,
+  "weight": 260,
   "abilities": [
     {
       "name": "Snow cloak",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#def6ff",
+    "secondary": "#b4c5cd",
+    "accent": "#41626a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#def6ff",
+      "#b4c5cd",
+      "#41626a"
     ]
   },
   "artwork": {

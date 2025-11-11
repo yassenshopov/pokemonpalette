@@ -31,7 +31,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pokemonpalette.com"),
-  title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites | Color Generator Tool",
+  title:
+    "PokémonPalette - Extract Color Palettes from Pokémon Sprites | Color Generator Tool",
   description:
     "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors, create custom palettes, and discover the perfect color schemes for your design projects. Browse all 1000+ Pokémon with shiny variants.",
   keywords: [
@@ -88,7 +89,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PokémonPalette - Extract Color Palettes from Pokémon Sprites",
-    description: "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors and create custom palettes for design projects.",
+    description:
+      "Generate beautiful color palettes from your favorite Pokémon sprites. Extract dominant colors and create custom palettes for design projects.",
     images: ["/twitter-image.png"], // Replace with your actual image
     creator: "@yassenshopov", // Replace with your Twitter handle
   },
@@ -123,7 +125,7 @@ export const metadata: Metadata = {
   // Verification for search engines (optional)
   // verification: {
   //   google: "Add your Google Search Console verification code",
-  //   yandex: "Add your Yandex verification code if needed", 
+  //   yandex: "Add your Yandex verification code if needed",
   //   yahoo: "Add your Yahoo verification code if needed",
   // },
 };
