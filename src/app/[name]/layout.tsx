@@ -25,6 +25,7 @@ export async function generateMetadata({
       description: `Explore ${pokemonMetadata.name}'s color palette and extract beautiful colors.`,
       url: `https://www.pokemonpalette.com/${name.toLowerCase()}`,
       siteName: 'PokémonPalette',
+      // Explicitly override root layout images by providing a new array
       images: [
         {
           url: ogImageUrl,
@@ -40,8 +41,11 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${pokemonMetadata.name} - PokémonPalette`,
       description: `Explore ${pokemonMetadata.name}'s color palette and extract beautiful colors.`,
+      // Explicitly override root layout images
       images: [ogImageUrl],
     },
+    // Explicitly set metadataBase to ensure absolute URLs work correctly
+    metadataBase: new URL('https://www.pokemonpalette.com'),
   };
 }
 
