@@ -45,6 +45,11 @@ export interface ColorPalette {
   highlights: string[];
 }
 
+export interface PokemonColorPalette extends ColorPalette {}
+
+// Shiny color palette (optional - may not exist for all Pokemon)
+export interface ShinyColorPalette extends ColorPalette {}
+
 export interface PokemonArtworkExpanded {
   official: string;
   front: string | null;
@@ -162,6 +167,7 @@ export interface Pokemon {
   baseStats: PokemonStats;
   description: string;
   colorPalette: PokemonColorPalette;
+  shinyColorPalette?: ShinyColorPalette; // Optional - shiny colors may not be set yet
   artwork: PokemonArtwork | PokemonArtworkExpanded;
   evolution: PokemonEvolution;
   moves: PokemonMove[];

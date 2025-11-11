@@ -29,11 +29,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Add a route for each Pokemon (lowercase name)
   pokemon.forEach((mon) => {
+    // Normal Pokemon page
     routes.push({
       url: `${baseUrl}/${mon.name.toLowerCase()}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    });
+    // Shiny Pokemon page
+    routes.push({
+      url: `${baseUrl}/shiny/${mon.name.toLowerCase()}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   });
 

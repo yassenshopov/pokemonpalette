@@ -45,21 +45,31 @@ export async function GET() {
           const fileContent = await readFile(filePath, "utf-8");
           const pokemonData = JSON.parse(fileContent);
           
-          // Get colors from static data
+          // Get colors from static data (normal)
           const staticColors = pokemonData.colorPalette?.highlights || [
             pokemonData.colorPalette?.primary,
             pokemonData.colorPalette?.secondary,
             pokemonData.colorPalette?.accent,
           ].filter(Boolean).slice(0, 3);
           
-          // Get sprite URL for 2D sprite extraction (client-side will do this)
+          // Get shiny colors from static data
+          const staticShinyColors = pokemonData.shinyColorPalette?.highlights || [
+            pokemonData.shinyColorPalette?.primary,
+            pokemonData.shinyColorPalette?.secondary,
+            pokemonData.shinyColorPalette?.accent,
+          ].filter(Boolean).slice(0, 3);
+          
+          // Get sprite URLs for extraction
           const spriteUrl = pokemonData.artwork?.front || null;
+          const shinySpriteUrl = pokemonData.artwork?.shiny || null;
           
           return {
             id: pokemon.id,
             name: pokemon.name,
             spriteUrl,
+            shinySpriteUrl,
             staticColors: staticColors.slice(0, 3), // Top 3 from static data
+            staticShinyColors: staticShinyColors.slice(0, 3), // Top 3 from shiny static data
           };
         } catch (error) {
           console.error(`Error loading Pokemon ${pokemon.id}:`, error);
@@ -111,7 +121,7 @@ export async function PUT(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { pokemonId, colors } = body;
+    const { pokemonId, colors, isShiny } = body;
 
     if (!pokemonId || !Array.isArray(colors) || colors.length === 0) {
       return NextResponse.json(
@@ -131,26 +141,42 @@ export async function PUT(req: NextRequest) {
     const fileContent = await readFile(filePath, "utf-8");
     const pokemonData = JSON.parse(fileContent);
 
-    // Update color palette
-    if (!pokemonData.colorPalette) {
-      pokemonData.colorPalette = {};
-    }
+    if (isShiny) {
+      // Update shiny color palette
+      if (!pokemonData.shinyColorPalette) {
+        pokemonData.shinyColorPalette = {};
+      }
 
-    // Update highlights with the selected colors
-    pokemonData.colorPalette.highlights = selectedColors;
-    
-    // Also update primary, secondary, accent if they exist
-    if (selectedColors[0]) pokemonData.colorPalette.primary = selectedColors[0];
-    if (selectedColors[1]) pokemonData.colorPalette.secondary = selectedColors[1];
-    if (selectedColors[2]) pokemonData.colorPalette.accent = selectedColors[2];
+      // Update highlights with the selected colors
+      pokemonData.shinyColorPalette.highlights = selectedColors;
+      
+      // Also update primary, secondary, accent if they exist
+      if (selectedColors[0]) pokemonData.shinyColorPalette.primary = selectedColors[0];
+      if (selectedColors[1]) pokemonData.shinyColorPalette.secondary = selectedColors[1];
+      if (selectedColors[2]) pokemonData.shinyColorPalette.accent = selectedColors[2];
+    } else {
+      // Update normal color palette
+      if (!pokemonData.colorPalette) {
+        pokemonData.colorPalette = {};
+      }
+
+      // Update highlights with the selected colors
+      pokemonData.colorPalette.highlights = selectedColors;
+      
+      // Also update primary, secondary, accent if they exist
+      if (selectedColors[0]) pokemonData.colorPalette.primary = selectedColors[0];
+      if (selectedColors[1]) pokemonData.colorPalette.secondary = selectedColors[1];
+      if (selectedColors[2]) pokemonData.colorPalette.accent = selectedColors[2];
+    }
 
     // Write back to file
     await writeFile(filePath, JSON.stringify(pokemonData, null, 2), "utf-8");
 
     return NextResponse.json({
-      message: "Pokemon color palette updated successfully",
+      message: `Pokemon ${isShiny ? 'shiny ' : ''}color palette updated successfully`,
       pokemonId,
       colors: selectedColors,
+      isShiny: isShiny || false,
     });
   } catch (error) {
     console.error("Unexpected error in PUT /api/admin/pokemon-colors:", error);

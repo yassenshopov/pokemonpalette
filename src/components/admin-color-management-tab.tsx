@@ -26,7 +26,9 @@ interface PokemonColorData {
   id: number;
   name: string;
   spriteUrl: string | null;
+  shinySpriteUrl: string | null;
   staticColors: string[];
+  staticShinyColors: string[];
 }
 
 interface PokemonWithExtractedColors extends PokemonColorData {
@@ -45,6 +47,7 @@ export function AdminColorManagementTab() {
   const [updating, setUpdating] = useState<number | null>(null);
   const [batchProcessing, setBatchProcessing] = useState(false);
   const [batchProgress, setBatchProgress] = useState({ current: 0, total: 0 });
+  const [isShinyMode, setIsShinyMode] = useState(false);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -66,6 +69,8 @@ export function AdminColorManagementTab() {
         const data = await response.json();
         const pokemonWithExtracted = data.pokemon.map((p: PokemonColorData) => ({
           ...p,
+          shinySpriteUrl: p.shinySpriteUrl || null,
+          staticShinyColors: p.staticShinyColors || [],
           extractedColors: [],
           extracting: false,
           extracted: false,
@@ -83,7 +88,8 @@ export function AdminColorManagementTab() {
   }, []);
 
   const extractColorsForPokemon = async (pokemon: PokemonWithExtractedColors) => {
-    if (!pokemon.spriteUrl || pokemon.extracted) return;
+    const spriteUrl = isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl;
+    if (!spriteUrl || pokemon.extracted) return;
 
     setPokemonList((prev) =>
       prev.map((p) =>
@@ -93,7 +99,7 @@ export function AdminColorManagementTab() {
 
     try {
       const colors = await extractColorsFromImage(
-        pokemon.spriteUrl,
+        spriteUrl,
         3,
         true
       ) as ColorWithFrequency[];
@@ -116,7 +122,8 @@ export function AdminColorManagementTab() {
   };
 
   const handleUpdateColors = async (pokemon: PokemonWithExtractedColors) => {
-    if (!pokemon.spriteUrl) return;
+    const spriteUrl = isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl;
+    if (!spriteUrl) return;
 
     // Extract colors first if not already extracted
     let colorsToUpdate: string[] = [];
@@ -129,7 +136,7 @@ export function AdminColorManagementTab() {
       setUpdating(pokemon.id);
       try {
         const colors = await extractColorsFromImage(
-          pokemon.spriteUrl,
+          spriteUrl,
           3,
           true
         ) as ColorWithFrequency[];
@@ -163,6 +170,7 @@ export function AdminColorManagementTab() {
         body: JSON.stringify({
           pokemonId: pokemon.id,
           colors: colorsToUpdate,
+          isShiny: isShinyMode,
         }),
       });
 
@@ -174,7 +182,9 @@ export function AdminColorManagementTab() {
       setPokemonList((prev) =>
         prev.map((p) =>
           p.id === pokemon.id
-            ? { ...p, staticColors: colorsToUpdate.slice(0, 3) }
+            ? isShinyMode
+              ? { ...p, staticShinyColors: colorsToUpdate.slice(0, 3) }
+              : { ...p, staticColors: colorsToUpdate.slice(0, 3) }
             : p
         )
       );
@@ -218,10 +228,12 @@ export function AdminColorManagementTab() {
   }, [pokemonList, searchQuery, minId, maxId]);
 
   const handleBatchUpdate = async () => {
-    const pokemonToProcess = filteredPokemon.filter((p) => p.spriteUrl);
+    const pokemonToProcess = filteredPokemon.filter((p) => 
+      isShinyMode ? p.shinySpriteUrl : p.spriteUrl
+    );
     
     if (pokemonToProcess.length === 0) {
-      alert("No Pokemon with sprites to process");
+      alert(`No Pokemon with ${isShinyMode ? 'shiny ' : ''}sprites to process`);
       return;
     }
 
@@ -233,6 +245,8 @@ export function AdminColorManagementTab() {
       setBatchProgress({ current: i + 1, total: pokemonToProcess.length });
 
       try {
+        const spriteUrl = isShinyMode ? pokemon.shinySpriteUrl! : pokemon.spriteUrl!;
+        
         // Extract colors if not already extracted
         let colorsToUpdate: string[] = [];
         
@@ -241,7 +255,7 @@ export function AdminColorManagementTab() {
         } else {
           // Extract colors first
           const colors = await extractColorsFromImage(
-            pokemon.spriteUrl!,
+            spriteUrl,
             3,
             true
           ) as ColorWithFrequency[];
@@ -267,6 +281,7 @@ export function AdminColorManagementTab() {
           body: JSON.stringify({
             pokemonId: pokemon.id,
             colors: colorsToUpdate,
+            isShiny: isShinyMode,
           }),
         });
 
@@ -279,7 +294,9 @@ export function AdminColorManagementTab() {
         setPokemonList((prev) =>
           prev.map((p) =>
             p.id === pokemon.id
-              ? { ...p, staticColors: colorsToUpdate.slice(0, 3) }
+              ? isShinyMode
+                ? { ...p, staticShinyColors: colorsToUpdate.slice(0, 3) }
+                : { ...p, staticColors: colorsToUpdate.slice(0, 3) }
               : p
           )
         );
@@ -361,9 +378,42 @@ export function AdminColorManagementTab() {
                   min="1"
                 />
               </div>
+              <div className="flex items-center gap-2">
+                <label className="text-sm text-muted-foreground whitespace-nowrap">
+                  Shiny Mode:
+                </label>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsShinyMode(!isShinyMode);
+                    // Reset extracted colors when switching modes
+                    setPokemonList((prev) =>
+                      prev.map((p) => ({
+                        ...p,
+                        extractedColors: [],
+                        extracted: false,
+                      }))
+                    );
+                  }}
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                    isShinyMode ? "bg-yellow-500" : "bg-gray-300"
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                      isShinyMode ? "translate-x-6" : "translate-x-1"
+                    }`}
+                  />
+                </button>
+                <span className="text-sm text-muted-foreground">
+                  {isShinyMode ? "Shiny" : "Normal"}
+                </span>
+              </div>
               <Button
                 onClick={handleBatchUpdate}
-                disabled={batchProcessing || filteredPokemon.filter((p) => p.spriteUrl).length === 0}
+                disabled={batchProcessing || filteredPokemon.filter((p) => 
+                  isShinyMode ? p.shinySpriteUrl : p.spriteUrl
+                ).length === 0}
                 variant="default"
               >
                 {batchProcessing ? (
@@ -372,20 +422,24 @@ export function AdminColorManagementTab() {
                     Processing {batchProgress.current}/{batchProgress.total}...
                   </>
                 ) : (
-                  "Batch Update All"
+                  `Batch Update All ${isShinyMode ? "(Shiny)" : ""}`
                 )}
               </Button>
               {batchProcessing && (
                 <span className="text-sm text-muted-foreground">
-                  Updating colors for all Pokemon...
+                  Updating {isShinyMode ? "shiny " : ""}colors for all Pokemon...
                 </span>
               )}
             </div>
             <div className="text-sm text-muted-foreground">
               Showing {filteredPokemon.length} of {pokemonList.length} Pokemon
-              {filteredPokemon.filter((p) => p.spriteUrl).length > 0 && (
+              {filteredPokemon.filter((p) => 
+                isShinyMode ? p.shinySpriteUrl : p.spriteUrl
+              ).length > 0 && (
                 <span className="ml-2">
-                  ({filteredPokemon.filter((p) => p.spriteUrl).length} with sprites)
+                  ({filteredPokemon.filter((p) => 
+                    isShinyMode ? p.shinySpriteUrl : p.spriteUrl
+                  ).length} with {isShinyMode ? "shiny " : ""}sprites)
                 </span>
               )}
             </div>
@@ -394,14 +448,14 @@ export function AdminColorManagementTab() {
           <div className="rounded-md border">
             <Table>
               <TableHeader>
-                <TableRow>
-                  <TableHead>ID</TableHead>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Sprite</TableHead>
-                  <TableHead>Static Colors</TableHead>
-                  <TableHead>Extracted Colors</TableHead>
-                  <TableHead>Actions</TableHead>
-                </TableRow>
+                  <TableRow>
+                    <TableHead>ID</TableHead>
+                    <TableHead>Name</TableHead>
+                    <TableHead>{isShinyMode ? "Shiny " : ""}Sprite</TableHead>
+                    <TableHead>Static {isShinyMode ? "Shiny " : ""}Colors</TableHead>
+                    <TableHead>Extracted Colors</TableHead>
+                    <TableHead>Actions</TableHead>
+                  </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredPokemon.length === 0 ? (
@@ -416,11 +470,11 @@ export function AdminColorManagementTab() {
                       <TableCell className="font-mono">#{pokemon.id}</TableCell>
                       <TableCell className="font-medium">{pokemon.name}</TableCell>
                       <TableCell>
-                        {pokemon.spriteUrl ? (
+                        {(isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl) ? (
                           <div className="relative w-16 h-16 flex items-center justify-center">
                             <Image
-                              src={pokemon.spriteUrl}
-                              alt={pokemon.name}
+                              src={(isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl)!}
+                              alt={`${isShinyMode ? "Shiny " : ""}${pokemon.name}`}
                               width={64}
                               height={64}
                               className="object-contain"
@@ -436,7 +490,7 @@ export function AdminColorManagementTab() {
                       </TableCell>
                       <TableCell>
                         <div className="flex gap-1">
-                          {pokemon.staticColors.map((color, idx) => (
+                          {(isShinyMode ? pokemon.staticShinyColors : pokemon.staticColors).map((color, idx) => (
                             <div
                               key={idx}
                               className="w-8 h-8 rounded border border-gray-300"
@@ -465,7 +519,7 @@ export function AdminColorManagementTab() {
                             size="sm"
                             variant="outline"
                             onClick={() => extractColorsForPokemon(pokemon)}
-                            disabled={!pokemon.spriteUrl}
+                            disabled={!(isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl)}
                           >
                             Extract
                           </Button>
@@ -475,7 +529,7 @@ export function AdminColorManagementTab() {
                         <Button
                           size="sm"
                           onClick={() => handleUpdateColors(pokemon)}
-                          disabled={!pokemon.spriteUrl || updating === pokemon.id}
+                          disabled={!(isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl) || updating === pokemon.id}
                         >
                           {updating === pokemon.id ? (
                             <>
