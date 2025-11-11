@@ -35,46 +35,9 @@ export async function GET(
     const color2 = colors[1] || colors[0] || "#94a3b8";
     const color3 = colors[2] || colors[1] || colors[0] || "#94a3b8";
 
-    // Get official artwork URL - use official artwork for better quality
-    const artworkUrl = pokemon.artwork?.official || "";
-
-    // If no artwork URL, return a simple colored image without Pokemon
-    if (!artworkUrl) {
-      return new ImageResponse(
-        (
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: `linear-gradient(80deg, ${color1} 0%, ${color1} 33.33%, ${color2} 33.33%, ${color2} 66.66%, ${color3} 66.66%, ${color3} 100%)`,
-            }}
-          >
-            <div
-              style={{
-                fontSize: 60,
-                fontWeight: "bold",
-                color: "#ffffff",
-                textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-              }}
-            >
-              {pokemon.name}
-            </div>
-          </div>
-        ),
-        {
-          width: 1200,
-          height: 675,
-          headers: {
-            "Content-Type": "image/png",
-            "Cache-Control": "public, max-age=31536000, immutable",
-          },
-        }
-      );
-    }
-
+    // Generate OG image with Pokemon name and colors
+    // Note: External images may not work reliably in Node.js runtime with @vercel/og
+    // So we'll create a beautiful gradient with the Pokemon name instead
     return new ImageResponse(
       (
         <div
@@ -82,33 +45,48 @@ export async function GET(
             height: "100%",
             width: "100%",
             display: "flex",
-            position: "relative",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
             background: `linear-gradient(80deg, ${color1} 0%, ${color1} 33.33%, ${color2} 33.33%, ${color2} 66.66%, ${color3} 66.66%, ${color3} 100%)`,
+            position: "relative",
           }}
         >
-          {/* Pokemon silhouette in the center - absolute positioned overlay */}
+          {/* Pokemon name in the center */}
           <div
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              fontSize: 80,
+              fontWeight: "bold",
+              color: "#ffffff",
+              textShadow: "4px 4px 8px rgba(0,0,0,0.5)",
+              textAlign: "center",
+              marginBottom: 20,
             }}
           >
-            <img
-              src={artworkUrl}
-              alt={pokemon.name}
-              width={600}
-              height={600}
-              style={{
-                filter: "brightness(0)",
-                opacity: 1,
-              }}
-            />
+            {pokemon.name}
+          </div>
+
+          {/* Color swatches below the name */}
+          <div
+            style={{
+              display: "flex",
+              gap: 20,
+              marginTop: 20,
+            }}
+          >
+            {[color1, color2, color3].map((color, idx) => (
+              <div
+                key={idx}
+                style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: "50%",
+                  backgroundColor: color,
+                  border: "4px solid rgba(255,255,255,0.3)",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
+                }}
+              />
+            ))}
           </div>
         </div>
       ),
