@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 45.0,
+  "height": 1,
+  "weight": 45,
   "abilities": [
     {
       "name": "Rock head",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#946a52",
+    "secondary": "#e6e6e6",
+    "accent": "#ffffff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#946a52",
+      "#e6e6e6",
+      "#ffffff"
     ]
   },
   "artwork": {

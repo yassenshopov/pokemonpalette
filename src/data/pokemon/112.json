@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 120.0,
+  "weight": 120,
   "abilities": [
     {
       "name": "Lightning rod",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#8b8b94",
+    "secondary": "#c5c5bd",
+    "accent": "#52525a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#8b8b94",
+      "#c5c5bd",
+      "#52525a"
     ]
   },
   "artwork": {

@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 30.0,
+  "height": 1,
+  "weight": 30,
   "abilities": [
     {
       "name": "Run away",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#e65a29",
+    "secondary": "#ffeecd",
+    "accent": "#e6cd8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#e65a29",
+      "#ffeecd",
+      "#e6cd8b"
     ]
   },
   "artwork": {

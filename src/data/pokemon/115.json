@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.2,
-  "weight": 80.0,
+  "weight": 80,
   "abilities": [
     {
       "name": "Early bird",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#9c7b73",
+    "secondary": "#c5a47b",
+    "accent": "#524110",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#9c7b73",
+      "#c5a47b",
+      "#524110"
     ]
   },
   "artwork": {

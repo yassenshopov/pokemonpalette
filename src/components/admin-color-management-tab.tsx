@@ -41,6 +41,8 @@ export function AdminColorManagementTab() {
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [updating, setUpdating] = useState<number | null>(null);
+  const [batchProcessing, setBatchProcessing] = useState(false);
+  const [batchProgress, setBatchProgress] = useState({ current: 0, total: 0 });
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -111,33 +113,45 @@ export function AdminColorManagementTab() {
     }
   };
 
-  const openColorSelector = (pokemon: PokemonWithExtractedColors) => {
-    // Extract colors if not already extracted
-    if (!pokemon.extracted && pokemon.spriteUrl) {
-      extractColorsForPokemon(pokemon);
-    }
+  const handleUpdateColors = async (pokemon: PokemonWithExtractedColors) => {
+    if (!pokemon.spriteUrl) return;
+
+    // Extract colors first if not already extracted
+    let colorsToUpdate: string[] = [];
     
-    setSelectedPokemon(pokemon);
-    // Pre-select the current static colors
-    setSelectedColors([...pokemon.staticColors]);
-    setDialogOpen(true);
-  };
+    if (pokemon.extracted && pokemon.extractedColors.length > 0) {
+      // Use already extracted colors
+      colorsToUpdate = pokemon.extractedColors.slice(0, 3).map((c) => c.hex);
+    } else {
+      // Extract colors first
+      setUpdating(pokemon.id);
+      try {
+        const colors = await extractColorsFromImage(
+          pokemon.spriteUrl,
+          3,
+          true
+        ) as ColorWithFrequency[];
 
-  const handleColorToggle = (color: string) => {
-    setSelectedColors((prev) => {
-      if (prev.includes(color)) {
-        return prev.filter((c) => c !== color);
-      } else {
-        const newColors = [...prev, color];
-        return newColors.slice(0, 3); // Max 3 colors
+        // Update state with extracted colors
+        setPokemonList((prev) =>
+          prev.map((p) =>
+            p.id === pokemon.id
+              ? { ...p, extractedColors: colors, extracted: true }
+              : p
+          )
+        );
+
+        colorsToUpdate = colors.slice(0, 3).map((c) => c.hex);
+      } catch (err) {
+        console.error(`Error extracting colors for ${pokemon.name}:`, err);
+        setUpdating(null);
+        alert("Failed to extract colors. Please try again.");
+        return;
       }
-    });
-  };
+    }
 
-  const handleUpdateColors = async () => {
-    if (!selectedPokemon || selectedColors.length === 0) return;
-
-    setUpdating(selectedPokemon.id);
+    // Update with extracted colors
+    setUpdating(pokemon.id);
     try {
       const response = await fetch("/api/admin/pokemon-colors", {
         method: "PUT",
@@ -145,8 +159,8 @@ export function AdminColorManagementTab() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pokemonId: selectedPokemon.id,
-          colors: selectedColors,
+          pokemonId: pokemon.id,
+          colors: colorsToUpdate,
         }),
       });
 
@@ -157,15 +171,11 @@ export function AdminColorManagementTab() {
       // Update local state
       setPokemonList((prev) =>
         prev.map((p) =>
-          p.id === selectedPokemon.id
-            ? { ...p, staticColors: selectedColors.slice(0, 3) }
+          p.id === pokemon.id
+            ? { ...p, staticColors: colorsToUpdate.slice(0, 3) }
             : p
         )
       );
-
-      setDialogOpen(false);
-      setSelectedPokemon(null);
-      setSelectedColors([]);
     } catch (err) {
       console.error("Error updating colors:", err);
       alert("Failed to update colors. Please try again.");
@@ -184,15 +194,86 @@ export function AdminColorManagementTab() {
     );
   }, [pokemonList, searchQuery]);
 
-  const allColors = useMemo(() => {
-    if (!selectedPokemon) return [];
-    const staticSet = new Set(selectedPokemon.staticColors);
-    const extractedSet = new Set(
-      selectedPokemon.extractedColors.map((c) => c.hex)
-    );
-    const all = new Set([...staticSet, ...extractedSet]);
-    return Array.from(all);
-  }, [selectedPokemon]);
+  const handleBatchUpdate = async () => {
+    const pokemonToProcess = filteredPokemon.filter((p) => p.spriteUrl);
+    
+    if (pokemonToProcess.length === 0) {
+      alert("No Pokemon with sprites to process");
+      return;
+    }
+
+    setBatchProcessing(true);
+    setBatchProgress({ current: 0, total: pokemonToProcess.length });
+
+    for (let i = 0; i < pokemonToProcess.length; i++) {
+      const pokemon = pokemonToProcess[i];
+      setBatchProgress({ current: i + 1, total: pokemonToProcess.length });
+
+      try {
+        // Extract colors if not already extracted
+        let colorsToUpdate: string[] = [];
+        
+        if (pokemon.extracted && pokemon.extractedColors.length > 0) {
+          colorsToUpdate = pokemon.extractedColors.slice(0, 3).map((c) => c.hex);
+        } else {
+          // Extract colors first
+          const colors = await extractColorsFromImage(
+            pokemon.spriteUrl!,
+            3,
+            true
+          ) as ColorWithFrequency[];
+
+          // Update state with extracted colors
+          setPokemonList((prev) =>
+            prev.map((p) =>
+              p.id === pokemon.id
+                ? { ...p, extractedColors: colors, extracted: true }
+                : p
+            )
+          );
+
+          colorsToUpdate = colors.slice(0, 3).map((c) => c.hex);
+        }
+
+        // Update with extracted colors
+        const response = await fetch("/api/admin/pokemon-colors", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            pokemonId: pokemon.id,
+            colors: colorsToUpdate,
+          }),
+        });
+
+        if (!response.ok) {
+          console.error(`Failed to update colors for ${pokemon.name}`);
+          continue;
+        }
+
+        // Update local state
+        setPokemonList((prev) =>
+          prev.map((p) =>
+            p.id === pokemon.id
+              ? { ...p, staticColors: colorsToUpdate.slice(0, 3) }
+              : p
+          )
+        );
+
+        // Small delay to avoid overwhelming the server
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      } catch (err) {
+        console.error(`Error processing ${pokemon.name}:`, err);
+        // Continue with next Pokemon even if one fails
+      }
+    }
+
+    setBatchProcessing(false);
+    setBatchProgress({ current: 0, total: 0 });
+    alert(`Batch update completed! Processed ${pokemonToProcess.length} Pokemon.`);
+  };
+
 
   if (loading) {
     return (
@@ -227,13 +308,32 @@ export function AdminColorManagementTab() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="mb-4">
+          <div className="mb-4 flex items-center gap-4">
             <Input
               placeholder="Search by name or ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="max-w-sm"
             />
+            <Button
+              onClick={handleBatchUpdate}
+              disabled={batchProcessing || filteredPokemon.filter((p) => p.spriteUrl).length === 0}
+              variant="default"
+            >
+              {batchProcessing ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  Processing {batchProgress.current}/{batchProgress.total}...
+                </>
+              ) : (
+                "Batch Update All"
+              )}
+            </Button>
+            {batchProcessing && (
+              <span className="text-sm text-muted-foreground">
+                Updating colors for all Pokemon...
+              </span>
+            )}
           </div>
 
           <div className="rounded-md border">
@@ -319,10 +419,17 @@ export function AdminColorManagementTab() {
                       <TableCell>
                         <Button
                           size="sm"
-                          onClick={() => openColorSelector(pokemon)}
-                          disabled={!pokemon.spriteUrl}
+                          onClick={() => handleUpdateColors(pokemon)}
+                          disabled={!pokemon.spriteUrl || updating === pokemon.id}
                         >
-                          Update Colors
+                          {updating === pokemon.id ? (
+                            <>
+                              <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                              Updating...
+                            </>
+                          ) : (
+                            "Update Colors"
+                          )}
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -333,152 +440,6 @@ export function AdminColorManagementTab() {
           </div>
         </CardContent>
       </Card>
-
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>
-              Update Colors for {selectedPokemon?.name} (#{selectedPokemon?.id})
-            </DialogTitle>
-            <DialogDescription>
-              Select up to 3 colors to update in the static data
-            </DialogDescription>
-          </DialogHeader>
-
-          {selectedPokemon && (
-            <div className="space-y-4">
-              {selectedPokemon.spriteUrl && (
-                <div>
-                  <h4 className="font-semibold mb-2">2D Sprite</h4>
-                  <div className="flex items-center justify-center p-4 bg-muted rounded-lg">
-                    <div className="relative w-32 h-32 flex items-center justify-center">
-                      <Image
-                        src={selectedPokemon.spriteUrl}
-                        alt={selectedPokemon.name}
-                        width={128}
-                        height={128}
-                        className="object-contain"
-                        style={{
-                          imageRendering: "pixelated",
-                        }}
-                        unoptimized
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-              <div>
-                <h4 className="font-semibold mb-2">Static Data Colors (Current)</h4>
-                <div className="flex gap-2 flex-wrap">
-                  {selectedPokemon.staticColors.map((color, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-2 p-2 border rounded"
-                    >
-                      <div
-                        className="w-12 h-12 rounded border border-gray-300"
-                        style={{ backgroundColor: color }}
-                      />
-                      <span className="text-sm font-mono">{color}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {selectedPokemon.extracted && selectedPokemon.extractedColors.length > 0 && (
-                <div>
-                  <h4 className="font-semibold mb-2">Extracted Sprite Colors</h4>
-                  <div className="flex gap-2 flex-wrap">
-                    {selectedPokemon.extractedColors.map((color, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-2 p-2 border rounded"
-                      >
-                        <div
-                          className="w-12 h-12 rounded border border-gray-300"
-                          style={{ backgroundColor: color.hex }}
-                        />
-                        <div className="flex flex-col">
-                          <span className="text-sm font-mono">{color.hex}</span>
-                          <span className="text-xs text-muted-foreground">
-                            {color.percentage.toFixed(1)}%
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div>
-                <h4 className="font-semibold mb-2">Select Colors to Update (Max 3)</h4>
-                <div className="space-y-2 max-h-64 overflow-y-auto">
-                  {allColors.map((color) => {
-                    const isStatic = selectedPokemon.staticColors.includes(color);
-                    const extractedColor = selectedPokemon.extractedColors.find(
-                      (c) => c.hex === color
-                    );
-                    const isSelected = selectedColors.includes(color);
-
-                    return (
-                      <div
-                        key={color}
-                        className="flex items-center gap-3 p-2 border rounded hover:bg-accent cursor-pointer"
-                        onClick={() => handleColorToggle(color)}
-                      >
-                        <Checkbox
-                          checked={isSelected}
-                          onCheckedChange={() => handleColorToggle(color)}
-                        />
-                        <div
-                          className="w-10 h-10 rounded border border-gray-300"
-                          style={{ backgroundColor: color }}
-                        />
-                        <div className="flex-1">
-                          <div className="font-mono text-sm">{color}</div>
-                          <div className="text-xs text-muted-foreground">
-                            {isStatic && "Static Data"}
-                            {extractedColor && ` • ${extractedColor.percentage.toFixed(1)}%`}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="mt-2 text-sm text-muted-foreground">
-                  Selected: {selectedColors.length} / 3
-                </div>
-              </div>
-
-              <div className="flex justify-end gap-2">
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setDialogOpen(false);
-                    setSelectedPokemon(null);
-                    setSelectedColors([]);
-                  }}
-                >
-                  Cancel
-                </Button>
-                <Button
-                  onClick={handleUpdateColors}
-                  disabled={selectedColors.length === 0 || updating === selectedPokemon.id}
-                >
-                  {updating === selectedPokemon.id ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                      Updating...
-                    </>
-                  ) : (
-                    "Update Colors"
-                  )}
-                </Button>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

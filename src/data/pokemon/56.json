@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 28.0,
+  "weight": 28,
   "abilities": [
     {
       "name": "Vital spirit",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f6deb4",
+    "secondary": "#d5ac9c",
+    "accent": "#c5734a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#f6deb4",
+      "#d5ac9c",
+      "#c5734a"
     ]
   },
   "artwork": {

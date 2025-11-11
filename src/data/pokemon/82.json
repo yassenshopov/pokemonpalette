@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
-  "weight": 60.0,
+  "height": 1,
+  "weight": 60,
   "abilities": [
     {
       "name": "Magnet pull",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#393131",
+    "secondary": "#8bb4a4",
+    "accent": "#524a4a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#393131",
+      "#8bb4a4",
+      "#524a4a"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 6.0,
+  "weight": 6,
   "abilities": [
     {
       "name": "Static",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#f6e652",
+    "secondary": "#f6bd20",
+    "accent": "#9c5200",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#f6e652",
+      "#f6bd20",
+      "#9c5200"
     ]
   },
   "artwork": {

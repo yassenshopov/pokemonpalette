@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.3,
-  "weight": 40.0,
+  "weight": 40,
   "abilities": [
     {
       "name": "Cute charm",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ffc5b4",
+    "secondary": "#ee9494",
+    "accent": "#8b4a52",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#ffc5b4",
+      "#ee9494",
+      "#8b4a52"
     ]
   },
   "artwork": {

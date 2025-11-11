@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 15.0,
+  "weight": 15,
   "abilities": [
     {
       "name": "Swift swim",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#ffffff",
+    "secondary": "#d5d5de",
+    "accent": "#d54110",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#ffffff",
+      "#d5d5de",
+      "#d54110"
     ]
   },
   "artwork": {

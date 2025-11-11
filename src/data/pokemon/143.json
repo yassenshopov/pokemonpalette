@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.1,
-  "weight": 460.0,
+  "weight": 460,
   "abilities": [
     {
       "name": "Immunity",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f6e6bd",
+    "secondary": "#e6c5ac",
+    "accent": "#315a7b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#f6e6bd",
+      "#e6c5ac",
+      "#315a7b"
     ]
   },
   "artwork": {

@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.1,
-  "weight": 32.0,
+  "weight": 32,
   "abilities": [
     {
       "name": "Compound eyes",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#eeeeff",
+    "secondary": "#313152",
+    "accent": "#5a4a73",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#eeeeff",
+      "#313152",
+      "#5a4a73"
     ]
   },
   "artwork": {

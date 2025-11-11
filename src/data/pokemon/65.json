@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 48.0,
+  "weight": 48,
   "abilities": [
     {
       "name": "Synchronize",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#ffee18",
+    "secondary": "#cdb410",
+    "accent": "#7b5a08",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#ffee18",
+      "#cdb410",
+      "#7b5a08"
     ]
   },
   "artwork": {

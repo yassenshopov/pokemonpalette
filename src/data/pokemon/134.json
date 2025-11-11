@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 29.0,
+  "height": 1,
+  "weight": 29,
   "abilities": [
     {
       "name": "Water absorb",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#5ac5e6",
+    "secondary": "#104a62",
+    "accent": "#83deff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#5ac5e6",
+      "#104a62",
+      "#83deff"
     ]
   },
   "artwork": {

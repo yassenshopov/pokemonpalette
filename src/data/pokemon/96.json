@@ -11,7 +11,7 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
+  "height": 1,
   "weight": 32.4,
   "abilities": [
     {
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#f6de00",
+    "secondary": "#d5b44a",
+    "accent": "#835a41",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#f6de00",
+      "#d5b44a",
+      "#835a41"
     ]
   },
   "artwork": {

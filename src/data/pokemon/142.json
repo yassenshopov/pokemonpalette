@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.8,
-  "weight": 59.0,
+  "weight": 59,
   "abilities": [
     {
       "name": "Rock head",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#9483a4",
+    "secondary": "#acacd5",
+    "accent": "#735294",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#9483a4",
+      "#acacd5",
+      "#735294"
     ]
   },
   "artwork": {

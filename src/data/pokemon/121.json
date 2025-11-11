@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.1,
-  "weight": 80.0,
+  "weight": 80,
   "abilities": [
     {
       "name": "Illuminate",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#5a529c",
+    "secondary": "#8b73bd",
+    "accent": "#313973",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#5a529c",
+      "#8b73bd",
+      "#313973"
     ]
   },
   "artwork": {

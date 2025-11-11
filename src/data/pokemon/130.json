@@ -17,7 +17,7 @@
     }
   ],
   "height": 6.5,
-  "weight": 235.0,
+  "weight": 235,
   "abilities": [
     {
       "name": "Intimidate",
@@ -64,15 +64,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#208bac",
+    "secondary": "#181818",
+    "accent": "#41b4ee",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#208bac",
+      "#181818",
+      "#41b4ee"
     ]
   },
   "artwork": {

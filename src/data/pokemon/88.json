@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.9,
-  "weight": 30.0,
+  "weight": 30,
   "abilities": [
     {
       "name": "Stench",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#944a9c",
+    "secondary": "#cd8bc5",
+    "accent": "#bd7bbd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
+      "#944a9c",
+      "#cd8bc5",
+      "#bd7bbd"
     ]
   },
   "artwork": {

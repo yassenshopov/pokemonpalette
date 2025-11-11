@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 7.0,
+  "weight": 7,
   "abilities": [
     {
       "name": "Poison point",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#d5d5ff",
+    "secondary": "#acaccd",
+    "accent": "#414183",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
+      "#d5d5ff",
+      "#acaccd",
+      "#414183"
     ]
   },
   "artwork": {

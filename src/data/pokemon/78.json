@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 95.0,
+  "weight": 95,
   "abilities": [
     {
       "name": "Run away",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#ff9c18",
+    "secondary": "#eec58b",
+    "accent": "#e66229",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#ff9c18",
+      "#eec58b",
+      "#e66229"
     ]
   },
   "artwork": {
