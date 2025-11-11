@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 105.0,
+  "weight": 105,
   "abilities": [
     {
       "name": "Unseen fist",
@@ -46,15 +46,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#8d8c8e",
+    "secondary": "#605f4d",
+    "accent": "#6b6574",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#8d8c8e",
+      "#605f4d",
+      "#6b6574"
     ]
   },
   "artwork": {

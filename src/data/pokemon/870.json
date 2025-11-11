@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 3.0,
-  "weight": 62.0,
+  "height": 3,
+  "weight": 62,
   "abilities": [
     {
       "name": "Battle armor",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ffcd35",
+    "secondary": "#111111",
+    "accent": "#d09f2f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#ffcd35",
+      "#111111",
+      "#d09f2f"
     ]
   },
   "artwork": {

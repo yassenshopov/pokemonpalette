@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 113.0,
+  "weight": 113,
   "abilities": [
     {
       "name": "Electromorphosis",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#1ab89a",
+    "secondary": "#7f746d",
+    "accent": "#4c423e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#1ab89a",
+      "#7f746d",
+      "#4c423e"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 100.0,
+  "weight": 100,
   "abilities": [
     {
       "name": "Sheer force",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#d55139",
+    "secondary": "#fe9956",
+    "accent": "#117f7e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#d55139",
+      "#fe9956",
+      "#117f7e"
     ]
   },
   "artwork": {

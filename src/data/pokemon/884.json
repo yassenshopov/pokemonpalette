@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.8,
-  "weight": 40.0,
+  "weight": 40,
   "abilities": [
     {
       "name": "Light metal",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c4bac5",
+    "secondary": "#e4e5f1",
+    "accent": "#a893a8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#c4bac5",
+      "#e4e5f1",
+      "#a893a8"
     ]
   },
   "artwork": {

@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.4,
-  "weight": 290.0,
+  "weight": 290,
   "abilities": [
     {
       "name": "Guts",
@@ -54,15 +54,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#77655b",
+    "secondary": "#382423",
+    "accent": "#9c8d86",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#77655b",
+      "#382423",
+      "#9c8d86"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 145.0,
+  "weight": 145,
   "abilities": [
     {
       "name": "Transistor",
@@ -41,15 +41,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#e5ee1a",
+    "secondary": "#fefac7",
+    "accent": "#d7ad0d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#e5ee1a",
+      "#fefac7",
+      "#d7ad0d"
     ]
   },
   "artwork": {

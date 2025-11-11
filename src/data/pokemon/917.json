@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 4.0,
+  "weight": 4,
   "abilities": [
     {
       "name": "Insomnia",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#e5e6e5",
+    "secondary": "#aea3ac",
+    "accent": "#727881",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#e5e6e5",
+      "#aea3ac",
+      "#727881"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.8,
-  "weight": 110.0,
+  "weight": 110,
   "abilities": [
     {
       "name": "Intrepid sword",
@@ -41,15 +41,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#4999da",
+    "secondary": "#080808",
+    "accent": "#be3c45",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#4999da",
+      "#080808",
+      "#be3c45"
     ]
   },
   "artwork": {

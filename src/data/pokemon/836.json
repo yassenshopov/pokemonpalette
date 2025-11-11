@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 34.0,
+  "height": 1,
+  "weight": 34,
   "abilities": [
     {
       "name": "Strong jaw",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#5e7460",
+    "secondary": "#f2efef",
+    "accent": "#fad833",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#5e7460",
+      "#f2efef",
+      "#fad833"
     ]
   },
   "artwork": {

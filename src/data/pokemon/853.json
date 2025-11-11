@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.6,
-  "weight": 39.0,
+  "weight": 39,
   "abilities": [
     {
       "name": "Limber",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#322c4e",
+    "secondary": "#115ae3",
+    "accent": "#4a4473",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#322c4e",
+      "#115ae3",
+      "#4a4473"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.9,
-  "weight": 210.0,
+  "weight": 210,
   "abilities": [
     {
       "name": "Dauntless shield",
@@ -41,15 +41,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#eb363a",
+    "secondary": "#ae2836",
+    "accent": "#2d48a8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#eb363a",
+      "#ae2836",
+      "#2d48a8"
     ]
   },
   "artwork": {

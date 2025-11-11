@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 3.0,
-  "weight": 50.0,
+  "height": 3,
+  "weight": 50,
   "abilities": [
     {
       "name": "Clear body",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#48a9b0",
+    "secondary": "#78d4cb",
+    "accent": "#2c323f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#48a9b0",
+      "#78d4cb",
+      "#2c323f"
     ]
   },
   "artwork": {

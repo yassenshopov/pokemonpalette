@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 12.0,
+  "weight": 12,
   "abilities": [
     {
       "name": "Steam engine",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#514c49",
+    "secondary": "#2a2928",
+    "accent": "#77706c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#514c49",
+      "#2a2928",
+      "#77706c"
     ]
   },
   "artwork": {

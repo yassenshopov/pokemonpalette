@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 3.0,
-  "weight": 650.0,
+  "height": 3,
+  "weight": 650,
   "abilities": [
     {
       "name": "Sheer force",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#224236",
+    "secondary": "#225348",
+    "accent": "#396e63",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#224236",
+      "#225348",
+      "#396e63"
     ]
   },
   "artwork": {

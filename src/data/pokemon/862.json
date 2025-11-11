@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.6,
-  "weight": 46.0,
+  "weight": 46,
   "abilities": [
     {
       "name": "Reckless",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#474749",
+    "secondary": "#6f7071",
+    "accent": "#949496",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#474749",
+      "#6f7071",
+      "#949496"
     ]
   },
   "artwork": {

@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 1.0,
+  "weight": 1,
   "abilities": [
     {
       "name": "Ripen",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#ccb468",
+    "secondary": "#9b2629",
+    "accent": "#d72d31",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#ccb468",
+      "#9b2629",
+      "#d72d31"
     ]
   },
   "artwork": {

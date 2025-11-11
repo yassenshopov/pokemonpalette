@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.5,
-  "weight": 520.0,
+  "weight": 520,
   "abilities": [
     {
       "name": "Power spot",
@@ -41,15 +41,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#b0b7a7",
+    "secondary": "#73502d",
+    "accent": "#686560",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#b0b7a7",
+      "#73502d",
+      "#686560"
     ]
   },
   "artwork": {

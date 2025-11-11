@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 3.0,
+  "weight": 3,
   "abilities": [
     {
       "name": "Hunger switch",
@@ -46,15 +46,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#6c6c6c",
+    "secondary": "#d3b351",
+    "accent": "#f4f489",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#6c6c6c",
+      "#d3b351",
+      "#f4f489"
     ]
   },
   "artwork": {
