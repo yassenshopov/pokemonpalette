@@ -18,14 +18,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Checkbox } from "@/components/ui/checkbox";
 import { extractColorsFromImage, ColorWithFrequency } from "@/lib/color-extractor";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
@@ -48,10 +40,7 @@ export function AdminColorManagementTab() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedPokemon, setSelectedPokemon] = useState<PokemonWithExtractedColors | null>(null);
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [updating, setUpdating] = useState<number | null>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
     const fetchPokemon = async () => {
