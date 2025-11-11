@@ -329,5 +329,15 @@
     "en": "Farfetch’d",
     "ja": "カモネギ",
     "zh-Hans": "大葱鸭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eee6a4",
+      "#6a3931",
+      "#c5c57b"
+    ],
+    "primary": "#eee6a4",
+    "secondary": "#6a3931",
+    "accent": "#c5c57b"
   }
 }

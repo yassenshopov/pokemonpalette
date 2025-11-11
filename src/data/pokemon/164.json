@@ -318,5 +318,15 @@
     "en": "Noctowl",
     "ja": "ヨルノズク",
     "zh-Hans": "猫头夜鹰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd6a10",
+      "#a4ac31",
+      "#cdd54a"
+    ],
+    "primary": "#bd6a10",
+    "secondary": "#a4ac31",
+    "accent": "#cdd54a"
   }
 }

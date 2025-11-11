@@ -318,5 +318,15 @@
     "en": "Natu",
     "ja": "ネイティ",
     "zh-Hans": "天然雀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4d539",
+      "#292929",
+      "#cdf662"
+    ],
+    "primary": "#a4d539",
+    "secondary": "#292929",
+    "accent": "#cdf662"
   }
 }

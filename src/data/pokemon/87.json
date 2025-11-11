@@ -327,5 +327,15 @@
     "en": "Dewgong",
     "ja": "ジュゴン",
     "zh-Hans": "白海狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f6e6",
+      "#d5d5c5",
+      "#62624a"
+    ],
+    "primary": "#f6f6e6",
+    "secondary": "#d5d5c5",
+    "accent": "#62624a"
   }
 }

@@ -323,5 +323,15 @@
     "en": "Tentacool",
     "ja": "メノクラゲ",
     "zh-Hans": "玛瑙水母"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5b4e6",
+      "#947bac",
+      "#009c52"
+    ],
+    "primary": "#c5b4e6",
+    "secondary": "#947bac",
+    "accent": "#009c52"
   }
 }

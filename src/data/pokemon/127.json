@@ -310,5 +310,15 @@
     "en": "Pinsir",
     "ja": "カイロス",
     "zh-Hans": "凯罗斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#948bcd",
+      "#4a3983",
+      "#311862"
+    ],
+    "primary": "#948bcd",
+    "secondary": "#4a3983",
+    "accent": "#311862"
   }
 }

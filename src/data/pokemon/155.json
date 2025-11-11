@@ -317,5 +317,15 @@
     "en": "Cyndaquil",
     "ja": "ヒノアラシ",
     "zh-Hans": "火球鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de0000",
+      "#ff5a00",
+      "#ffde94"
+    ],
+    "primary": "#de0000",
+    "secondary": "#ff5a00",
+    "accent": "#ffde94"
   }
 }

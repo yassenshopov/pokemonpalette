@@ -320,5 +320,15 @@
     "en": "Voltorb",
     "ja": "ビリリダマ",
     "zh-Hans": "霹雳电球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#0052ff",
+      "#b4acbd",
+      "#2918bd"
+    ],
+    "primary": "#0052ff",
+    "secondary": "#b4acbd",
+    "accent": "#2918bd"
   }
 }

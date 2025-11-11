@@ -329,5 +329,15 @@
     "en": "Marowak",
     "ja": "ガラガラ",
     "zh-Hans": "嘎啦嘎啦"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a9c41",
+      "#e6dede",
+      "#ffffff"
+    ],
+    "primary": "#6a9c41",
+    "secondary": "#e6dede",
+    "accent": "#ffffff"
   }
 }

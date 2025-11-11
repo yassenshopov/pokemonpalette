@@ -323,5 +323,15 @@
     "en": "Doduo",
     "ja": "ドードー",
     "zh-Hans": "嘟嘟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#739420",
+      "#acc541",
+      "#c5e662"
+    ],
+    "primary": "#739420",
+    "secondary": "#acc541",
+    "accent": "#c5e662"
   }
 }

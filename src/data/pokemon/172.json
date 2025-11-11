@@ -338,5 +338,15 @@
     "en": "Pichu",
     "ja": "ピチュー",
     "zh-Hans": "皮丘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd500",
+      "#de9c39",
+      "#524141"
+    ],
+    "primary": "#ffd500",
+    "secondary": "#de9c39",
+    "accent": "#524141"
   }
 }

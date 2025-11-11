@@ -343,5 +343,15 @@
     "en": "Golem",
     "ja": "ゴローニャ",
     "zh-Hans": "隆隆岩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#946208",
+      "#c59c7b",
+      "#d5ac52"
+    ],
+    "primary": "#946208",
+    "secondary": "#c59c7b",
+    "accent": "#d5ac52"
   }
 }

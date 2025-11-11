@@ -309,5 +309,15 @@
     "en": "Moltres",
     "ja": "ファイヤー",
     "zh-Hans": "火焰鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee6239",
+      "#d50808",
+      "#e68ba4"
+    ],
+    "primary": "#ee6239",
+    "secondary": "#d50808",
+    "accent": "#e68ba4"
   }
 }

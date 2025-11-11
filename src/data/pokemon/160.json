@@ -324,5 +324,15 @@
     "en": "Feraligatr",
     "ja": "オーダイル",
     "zh-Hans": "大力鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4adec5",
+      "#18aca4",
+      "#4a7bff"
+    ],
+    "primary": "#4adec5",
+    "secondary": "#18aca4",
+    "accent": "#4a7bff"
   }
 }

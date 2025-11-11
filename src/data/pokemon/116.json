@@ -328,5 +328,15 @@
     "en": "Horsea",
     "ja": "タッツー",
     "zh-Hans": "墨海马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#108b8b",
+      "#29c5b4",
+      "#006a5a"
+    ],
+    "primary": "#108b8b",
+    "secondary": "#29c5b4",
+    "accent": "#006a5a"
   }
 }

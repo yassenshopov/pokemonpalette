@@ -322,5 +322,15 @@
     "en": "Shellder",
     "ja": "シェルダー",
     "zh-Hans": "大舌贝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c55a00",
+      "#de7b00",
+      "#a43100"
+    ],
+    "primary": "#c55a00",
+    "secondary": "#de7b00",
+    "accent": "#a43100"
   }
 }

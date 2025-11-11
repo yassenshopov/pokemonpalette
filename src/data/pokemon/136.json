@@ -395,5 +395,15 @@
     "en": "Flareon",
     "ja": "ブースター",
     "zh-Hans": "火伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff694",
+      "#cda452",
+      "#dea439"
+    ],
+    "primary": "#fff694",
+    "secondary": "#cda452",
+    "accent": "#dea439"
   }
 }

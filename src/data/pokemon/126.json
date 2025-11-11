@@ -326,5 +326,15 @@
     "en": "Magmar",
     "ja": "ブーバー",
     "zh-Hans": "鸭嘴火兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff6a7b",
+      "#de4152",
+      "#ffcdde"
+    ],
+    "primary": "#ff6a7b",
+    "secondary": "#de4152",
+    "accent": "#ffcdde"
   }
 }

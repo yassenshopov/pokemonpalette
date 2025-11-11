@@ -318,5 +318,15 @@
     "en": "Hoothoot",
     "ja": "ホーホー",
     "zh-Hans": "咕咕"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eed541",
+      "#f6ffc5",
+      "#414141"
+    ],
+    "primary": "#eed541",
+    "secondary": "#f6ffc5",
+    "accent": "#414141"
   }
 }

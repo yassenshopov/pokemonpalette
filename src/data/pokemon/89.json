@@ -333,5 +333,15 @@
     "en": "Muk",
     "ja": "ベトベトン",
     "zh-Hans": "臭臭泥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bac5a",
+      "#5a8b39",
+      "#94c57b"
+    ],
+    "primary": "#7bac5a",
+    "secondary": "#5a8b39",
+    "accent": "#94c57b"
   }
 }

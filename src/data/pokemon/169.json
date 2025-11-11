@@ -321,5 +321,15 @@
     "en": "Crobat",
     "ja": "クロバット",
     "zh-Hans": "叉字蝠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffb4f6",
+      "#d583cd",
+      "#9c528b"
+    ],
+    "primary": "#ffb4f6",
+    "secondary": "#d583cd",
+    "accent": "#9c528b"
   }
 }

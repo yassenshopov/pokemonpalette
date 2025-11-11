@@ -318,5 +318,15 @@
     "en": "Seel",
     "ja": "パウワウ",
     "zh-Hans": "小海狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5d5cd",
+      "#eeeee6",
+      "#b4aca4"
+    ],
+    "primary": "#d5d5cd",
+    "secondary": "#eeeee6",
+    "accent": "#b4aca4"
   }
 }

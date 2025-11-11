@@ -324,5 +324,15 @@
     "en": "Tauros",
     "ja": "ケンタロス",
     "zh-Hans": "肯泰罗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6ee4a",
+      "#cdbd29",
+      "#319c00"
+    ],
+    "primary": "#e6ee4a",
+    "secondary": "#cdbd29",
+    "accent": "#319c00"
   }
 }

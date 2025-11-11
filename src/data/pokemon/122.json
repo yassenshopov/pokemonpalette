@@ -339,5 +339,15 @@
     "en": "Mr. Mime",
     "ja": "バリヤード",
     "zh-Hans": "魔墙人偶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#105273",
+      "#83d531",
+      "#cdd5d5"
+    ],
+    "primary": "#105273",
+    "secondary": "#83d531",
+    "accent": "#cdd5d5"
   }
 }

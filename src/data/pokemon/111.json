@@ -328,5 +328,15 @@
     "en": "Rhyhorn",
     "ja": "サイホーン",
     "zh-Hans": "独角犀牛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4624a",
+      "#cd9473",
+      "#7b3120"
+    ],
+    "primary": "#a4624a",
+    "secondary": "#cd9473",
+    "accent": "#7b3120"
   }
 }

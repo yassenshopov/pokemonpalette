@@ -335,5 +335,15 @@
     "en": "Chansey",
     "ja": "ラッキー",
     "zh-Hans": "吉利蛋"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffeecd",
+      "#eecd94",
+      "#5a8341"
+    ],
+    "primary": "#ffeecd",
+    "secondary": "#eecd94",
+    "accent": "#5a8341"
   }
 }

@@ -313,5 +313,15 @@
     "en": "Krabby",
     "ja": "クラブ",
     "zh-Hans": "大钳蟹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b49c29",
+      "#e6cda4",
+      "#fff6de"
+    ],
+    "primary": "#b49c29",
+    "secondary": "#e6cda4",
+    "accent": "#fff6de"
   }
 }

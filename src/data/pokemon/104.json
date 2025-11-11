@@ -322,5 +322,15 @@
     "en": "Cubone",
     "ja": "カラカラ",
     "zh-Hans": "卡拉卡拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a6231",
+      "#292929",
+      "#ffffff"
+    ],
+    "primary": "#4a6231",
+    "secondary": "#292929",
+    "accent": "#ffffff"
   }
 }

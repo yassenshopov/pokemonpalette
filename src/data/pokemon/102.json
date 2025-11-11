@@ -317,5 +317,15 @@
     "en": "Exeggcute",
     "ja": "タマタマ",
     "zh-Hans": "蛋蛋"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffee10",
+      "#eeac00",
+      "#b47b00"
+    ],
+    "primary": "#ffee10",
+    "secondary": "#eeac00",
+    "accent": "#b47b00"
   }
 }

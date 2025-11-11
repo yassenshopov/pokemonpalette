@@ -313,5 +313,15 @@
     "en": "Drowzee",
     "ja": "スリープ",
     "zh-Hans": "催眠貘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6b4c5",
+      "#bd949c",
+      "#94294a"
+    ],
+    "primary": "#e6b4c5",
+    "secondary": "#bd949c",
+    "accent": "#94294a"
   }
 }

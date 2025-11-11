@@ -329,5 +329,15 @@
     "en": "Grimer",
     "ja": "ベトベター",
     "zh-Hans": "臭泥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#629441",
+      "#9ccd83",
+      "#83b462"
+    ],
+    "primary": "#629441",
+    "secondary": "#9ccd83",
+    "accent": "#83b462"
   }
 }

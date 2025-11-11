@@ -322,5 +322,15 @@
     "en": "Chikorita",
     "ja": "チコリータ",
     "zh-Hans": "菊草叶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6ff62",
+      "#ffde94",
+      "#eea46a"
+    ],
+    "primary": "#f6ff62",
+    "secondary": "#ffde94",
+    "accent": "#eea46a"
   }
 }

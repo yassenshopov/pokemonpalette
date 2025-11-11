@@ -317,5 +317,15 @@
     "en": "Bayleef",
     "ja": "ベイリーフ",
     "zh-Hans": "月桂叶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffbd8b",
+      "#ee9c6a",
+      "#eec531"
+    ],
+    "primary": "#ffbd8b",
+    "secondary": "#ee9c6a",
+    "accent": "#eec531"
   }
 }

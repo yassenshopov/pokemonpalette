@@ -395,5 +395,15 @@
     "en": "Vaporeon",
     "ja": "シャワーズ",
     "zh-Hans": "水伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e694e6",
+      "#621041",
+      "#ffbdff"
+    ],
+    "primary": "#e694e6",
+    "secondary": "#621041",
+    "accent": "#ffbdff"
   }
 }

@@ -333,5 +333,15 @@
     "en": "Hitmonchan",
     "ja": "エビワラー",
     "zh-Hans": "快拳郎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5d562",
+      "#94a441",
+      "#bdb4c5"
+    ],
+    "primary": "#c5d562",
+    "secondary": "#94a441",
+    "accent": "#bdb4c5"
   }
 }

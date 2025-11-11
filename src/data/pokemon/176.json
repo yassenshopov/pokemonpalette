@@ -327,5 +327,15 @@
     "en": "Togetic",
     "ja": "トゲチック",
     "zh-Hans": "波克基古"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#83735a",
+      "#c5b49c"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#83735a",
+    "accent": "#c5b49c"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Seaking",
     "ja": "アズマオウ",
     "zh-Hans": "金鱼王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdee9c",
+      "#f6fff6",
+      "#e68b31"
+    ],
+    "primary": "#cdee9c",
+    "secondary": "#f6fff6",
+    "accent": "#e68b31"
   }
 }

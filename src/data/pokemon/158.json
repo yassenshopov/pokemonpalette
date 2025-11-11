@@ -317,5 +317,15 @@
     "en": "Totodile",
     "ja": "ワニノコ",
     "zh-Hans": "小锯鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6ae6ac",
+      "#08835a",
+      "#4ab48b"
+    ],
+    "primary": "#6ae6ac",
+    "secondary": "#08835a",
+    "accent": "#4ab48b"
   }
 }

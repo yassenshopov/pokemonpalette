@@ -296,5 +296,15 @@
     "en": "Mew",
     "ja": "ミュウ",
     "zh-Hans": "梦幻"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9cdeff",
+      "#184183",
+      "#7bacd5"
+    ],
+    "primary": "#9cdeff",
+    "secondary": "#184183",
+    "accent": "#7bacd5"
   }
 }

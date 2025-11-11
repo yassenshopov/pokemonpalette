@@ -318,5 +318,15 @@
     "en": "Ledyba",
     "ja": "レディバ",
     "zh-Hans": "芭瓢虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f694",
+      "#c5bd6a",
+      "#5a5252"
+    ],
+    "primary": "#f6f694",
+    "secondary": "#c5bd6a",
+    "accent": "#5a5252"
   }
 }

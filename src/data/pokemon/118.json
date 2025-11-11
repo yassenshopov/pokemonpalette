@@ -318,5 +318,15 @@
     "en": "Goldeen",
     "ja": "トサキント",
     "zh-Hans": "角金鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#dedecd",
+      "#e66a00"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#dedecd",
+    "accent": "#e66a00"
   }
 }

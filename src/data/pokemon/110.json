@@ -325,5 +325,15 @@
     "en": "Weezing",
     "ja": "マタドガス",
     "zh-Hans": "双弹瓦斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bb4ac",
+      "#b47bb4",
+      "#de9cd5"
+    ],
+    "primary": "#7bb4ac",
+    "secondary": "#b47bb4",
+    "accent": "#de9cd5"
   }
 }

@@ -327,5 +327,15 @@
     "en": "Lanturn",
     "ja": "ランターン",
     "zh-Hans": "电灯怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a46abd",
+      "#8352a4",
+      "#eeff62"
+    ],
+    "primary": "#a46abd",
+    "secondary": "#8352a4",
+    "accent": "#eeff62"
   }
 }

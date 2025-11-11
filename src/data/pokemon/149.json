@@ -338,5 +338,15 @@
     "en": "Dragonite",
     "ja": "カイリュー",
     "zh-Hans": "快龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#527b31",
+      "#73a45a",
+      "#f6e6cd"
+    ],
+    "primary": "#527b31",
+    "secondary": "#73a45a",
+    "accent": "#f6e6cd"
   }
 }

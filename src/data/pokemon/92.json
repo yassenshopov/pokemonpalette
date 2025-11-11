@@ -315,5 +315,15 @@
     "en": "Gastly",
     "ja": "ゴース",
     "zh-Hans": "鬼斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4e6ff",
+      "#5a9cd5",
+      "#7bc5ee"
+    ],
+    "primary": "#a4e6ff",
+    "secondary": "#5a9cd5",
+    "accent": "#7bc5ee"
   }
 }

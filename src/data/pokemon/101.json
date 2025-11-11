@@ -320,5 +320,15 @@
     "en": "Electrode",
     "ja": "マルマイン",
     "zh-Hans": "顽皮雷弹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeeeee",
+      "#394ad5",
+      "#cdcdde"
+    ],
+    "primary": "#eeeeee",
+    "secondary": "#394ad5",
+    "accent": "#cdcdde"
   }
 }

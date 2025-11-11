@@ -325,5 +325,15 @@
     "en": "Ponyta",
     "ja": "ポニータ",
     "zh-Hans": "小火马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a94ee",
+      "#ffffde",
+      "#eede9c"
+    ],
+    "primary": "#4a94ee",
+    "secondary": "#ffffde",
+    "accent": "#eede9c"
   }
 }

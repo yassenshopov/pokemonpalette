@@ -332,5 +332,15 @@
     "en": "Igglybuff",
     "ja": "ププリン",
     "zh-Hans": "宝宝丁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffbdf6",
+      "#e683b4",
+      "#9c3152"
+    ],
+    "primary": "#ffbdf6",
+    "secondary": "#e683b4",
+    "accent": "#9c3152"
   }
 }

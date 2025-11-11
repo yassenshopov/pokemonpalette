@@ -318,5 +318,15 @@
     "en": "Ledian",
     "ja": "レディアン",
     "zh-Hans": "安瓢虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff9c00",
+      "#cd6229",
+      "#6a6a6a"
+    ],
+    "primary": "#ff9c00",
+    "secondary": "#cd6229",
+    "accent": "#6a6a6a"
   }
 }

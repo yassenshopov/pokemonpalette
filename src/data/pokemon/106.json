@@ -333,5 +333,15 @@
     "en": "Hitmonlee",
     "ja": "サワムラー",
     "zh-Hans": "飞腿郎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94ac29",
+      "#627b08",
+      "#292929"
+    ],
+    "primary": "#94ac29",
+    "secondary": "#627b08",
+    "accent": "#292929"
   }
 }

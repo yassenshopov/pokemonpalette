@@ -395,5 +395,15 @@
     "en": "Jolteon",
     "ja": "サンダース",
     "zh-Hans": "雷伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5ee4a",
+      "#9ccd39",
+      "#628b08"
+    ],
+    "primary": "#c5ee4a",
+    "secondary": "#9ccd39",
+    "accent": "#628b08"
   }
 }

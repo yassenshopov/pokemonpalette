@@ -327,5 +327,15 @@
     "en": "Chinchou",
     "ja": "チョンチー",
     "zh-Hans": "灯笼鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5ff31",
+      "#317bd5",
+      "#39acf6"
+    ],
+    "primary": "#c5ff31",
+    "secondary": "#317bd5",
+    "accent": "#39acf6"
   }
 }

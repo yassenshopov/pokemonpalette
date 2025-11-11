@@ -334,5 +334,15 @@
     "en": "Gengar",
     "ja": "ゲンガー",
     "zh-Hans": "耿鬼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b7b9c",
+      "#5a5a7b",
+      "#9494b4"
+    ],
+    "primary": "#7b7b9c",
+    "secondary": "#5a5a7b",
+    "accent": "#9494b4"
   }
 }

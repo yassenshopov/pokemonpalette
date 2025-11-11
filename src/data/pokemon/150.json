@@ -311,5 +311,15 @@
     "en": "Mewtwo",
     "ja": "ミュウツー",
     "zh-Hans": "超梦"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dedede",
+      "#8b8b8b",
+      "#529c00"
+    ],
+    "primary": "#dedede",
+    "secondary": "#8b8b8b",
+    "accent": "#529c00"
   }
 }

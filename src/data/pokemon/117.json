@@ -328,5 +328,15 @@
     "en": "Seadra",
     "ja": "シードラ",
     "zh-Hans": "海刺龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5252a4",
+      "#6a7bd5",
+      "#8ba4ee"
+    ],
+    "primary": "#5252a4",
+    "secondary": "#6a7bd5",
+    "accent": "#8ba4ee"
   }
 }

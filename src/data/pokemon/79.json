@@ -352,5 +352,15 @@
     "en": "Slowpoke",
     "ja": "ヤドン",
     "zh-Hans": "呆呆兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c58ba4",
+      "#e6b4c5",
+      "#ffffff"
+    ],
+    "primary": "#c58ba4",
+    "secondary": "#e6b4c5",
+    "accent": "#ffffff"
   }
 }

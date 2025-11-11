@@ -168,3 +168,12 @@ export function getAllGenerations(): number[] {
   pokemonMetadata.forEach((p) => generations.add(p.generation));
   return Array.from(generations).sort();
 }
+
+/**
+ * Get all unique rarities
+ */
+export function getAllRarities(): PokemonRarity[] {
+  const rarities = new Set<PokemonRarity>();
+  pokemonMetadata.forEach((p) => rarities.add(p.rarity));
+  return Array.from(rarities);
+}

@@ -318,5 +318,15 @@
     "en": "Ariados",
     "ja": "アリアドス",
     "zh-Hans": "阿利多斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffde41",
+      "#b429ac",
+      "#5a9cff"
+    ],
+    "primary": "#ffde41",
+    "secondary": "#b429ac",
+    "accent": "#5a9cff"
   }
 }

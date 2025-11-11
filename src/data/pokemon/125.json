@@ -322,5 +322,15 @@
     "en": "Electabuzz",
     "ja": "エレブー",
     "zh-Hans": "电击兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c57300",
+      "#ffa410",
+      "#292920"
+    ],
+    "primary": "#c57300",
+    "secondary": "#ffa410",
+    "accent": "#292920"
   }
 }

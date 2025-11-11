@@ -343,5 +343,15 @@
     "en": "Graveler",
     "ja": "ゴローン",
     "zh-Hans": "隆隆石"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd8300",
+      "#9c5a00",
+      "#5a1000"
+    ],
+    "primary": "#bd8300",
+    "secondary": "#9c5a00",
+    "accent": "#5a1000"
   }
 }

@@ -323,5 +323,15 @@
     "en": "Porygon",
     "ja": "ポリゴン",
     "zh-Hans": "多边兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd7b9c",
+      "#204ade",
+      "#529cff"
+    ],
+    "primary": "#bd7b9c",
+    "secondary": "#204ade",
+    "accent": "#529cff"
   }
 }

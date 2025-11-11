@@ -313,5 +313,15 @@
     "en": "Hypno",
     "ja": "スリーパー",
     "zh-Hans": "引梦貘人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee94b4",
+      "#cd6aa4",
+      "#ac5273"
+    ],
+    "primary": "#ee94b4",
+    "secondary": "#cd6aa4",
+    "accent": "#ac5273"
   }
 }

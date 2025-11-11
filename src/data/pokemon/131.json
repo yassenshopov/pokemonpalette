@@ -320,5 +320,15 @@
     "en": "Lapras",
     "ja": "ラプラス",
     "zh-Hans": "拉普拉斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a319c",
+      "#f6bd94",
+      "#ac83f6"
+    ],
+    "primary": "#6a319c",
+    "secondary": "#f6bd94",
+    "accent": "#ac83f6"
   }
 }

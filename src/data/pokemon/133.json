@@ -415,5 +415,15 @@
     "en": "Eevee",
     "ja": "イーブイ",
     "zh-Hans": "伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#aca49c",
+      "#d5d5c5",
+      "#d5deff"
+    ],
+    "primary": "#aca49c",
+    "secondary": "#d5d5c5",
+    "accent": "#d5deff"
   }
 }

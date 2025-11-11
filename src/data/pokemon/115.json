@@ -310,5 +310,15 @@
     "en": "Kangaskhan",
     "ja": "ガルーラ",
     "zh-Hans": "袋兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9c8b7b",
+      "#bdb49c",
+      "#736252"
+    ],
+    "primary": "#9c8b7b",
+    "secondary": "#bdb49c",
+    "accent": "#736252"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Scyther",
     "ja": "ストライク",
     "zh-Hans": "飞天螳螂"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5abd31",
+      "#314a00",
+      "#eedeb4"
+    ],
+    "primary": "#5abd31",
+    "secondary": "#314a00",
+    "accent": "#eedeb4"
   }
 }

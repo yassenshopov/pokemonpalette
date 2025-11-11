@@ -335,5 +335,15 @@
     "en": "Cleffa",
     "ja": "ピィ",
     "zh-Hans": "皮宝宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6b4d5",
+      "#ffd5f6",
+      "#94395a"
+    ],
+    "primary": "#f6b4d5",
+    "secondary": "#ffd5f6",
+    "accent": "#94395a"
   }
 }

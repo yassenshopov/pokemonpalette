@@ -319,5 +319,15 @@
     "en": "Gyarados",
     "ja": "ギャラドス",
     "zh-Hans": "暴鲤龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd1839",
+      "#181818",
+      "#e6414a"
+    ],
+    "primary": "#bd1839",
+    "secondary": "#181818",
+    "accent": "#e6414a"
   }
 }

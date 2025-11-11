@@ -322,5 +322,15 @@
     "en": "Dratini",
     "ja": "ミニリュウ",
     "zh-Hans": "迷你龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#d55abd",
+      "#ded5de"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#d55abd",
+    "accent": "#ded5de"
   }
 }

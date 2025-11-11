@@ -323,5 +323,15 @@
     "en": "Dodrio",
     "ja": "ドードリオ",
     "zh-Hans": "嘟嘟利"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#738b10",
+      "#a4bd31",
+      "#414141"
+    ],
+    "primary": "#738b10",
+    "secondary": "#a4bd31",
+    "accent": "#414141"
   }
 }

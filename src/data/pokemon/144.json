@@ -309,5 +309,15 @@
     "en": "Articuno",
     "ja": "フリーザー",
     "zh-Hans": "急冻鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#acd5ff",
+      "#1873d5",
+      "#bdeeff"
+    ],
+    "primary": "#acd5ff",
+    "secondary": "#1873d5",
+    "accent": "#bdeeff"
   }
 }

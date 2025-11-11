@@ -315,5 +315,15 @@
     "en": "Aerodactyl",
     "ja": "プテラ",
     "zh-Hans": "化石翼龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b473b4",
+      "#dea4d5",
+      "#1020bd"
+    ],
+    "primary": "#b473b4",
+    "secondary": "#dea4d5",
+    "accent": "#1020bd"
   }
 }

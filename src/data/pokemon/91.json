@@ -327,5 +327,15 @@
     "en": "Cloyster",
     "ja": "パルシェン",
     "zh-Hans": "刺甲贝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#2962ac",
+      "#5a9ce6",
+      "#003983"
+    ],
+    "primary": "#2962ac",
+    "secondary": "#5a9ce6",
+    "accent": "#003983"
   }
 }

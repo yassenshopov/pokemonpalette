@@ -355,5 +355,15 @@
     "en": "Slowbro",
     "ja": "ヤドラン",
     "zh-Hans": "呆壳兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#836abd",
+      "#181818",
+      "#ac94ff"
+    ],
+    "primary": "#836abd",
+    "secondary": "#181818",
+    "accent": "#ac94ff"
   }
 }

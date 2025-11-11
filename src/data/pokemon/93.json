@@ -320,5 +320,15 @@
     "en": "Haunter",
     "ja": "ゴースト",
     "zh-Hans": "鬼斯通"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#835a73",
+      "#ac6ad5",
+      "#52416a"
+    ],
+    "primary": "#835a73",
+    "secondary": "#ac6ad5",
+    "accent": "#52416a"
   }
 }

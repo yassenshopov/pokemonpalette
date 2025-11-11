@@ -5,13 +5,24 @@
  */
 
 interface SEOContentProps {
-  type: "home" | "pokemon";
+  type: "home" | "pokemon" | "category";
   pokemonName?: string;
   pokemonType?: string[];
   pokemonGeneration?: number;
+  categoryType?: "type" | "generation" | "rarity";
+  categoryName?: string;
+  pokemonCount?: number;
 }
 
-export function SEOContent({ type, pokemonName, pokemonType, pokemonGeneration }: SEOContentProps) {
+export function SEOContent({ 
+  type, 
+  pokemonName, 
+  pokemonType, 
+  pokemonGeneration,
+  categoryType,
+  categoryName,
+  pokemonCount 
+}: SEOContentProps) {
   if (type === "home") {
     return (
       <div className="sr-only" aria-hidden="true">
@@ -60,6 +71,32 @@ export function SEOContent({ type, pokemonName, pokemonType, pokemonGeneration }
           color schemes. Our color palette generator automatically identifies the top colors 
           used in {pokemonName}&apos;s official artwork, making it easy to incorporate these 
           colors into your creative projects.
+        </p>
+      </div>
+    );
+  }
+
+  if (type === "category" && categoryName && pokemonCount !== undefined) {
+    const categoryTypeText = categoryType === "type" 
+      ? "type" 
+      : categoryType === "generation" 
+      ? "generation" 
+      : "rarity";
+    
+    return (
+      <div className="sr-only" aria-hidden="true">
+        <h1>{categoryName} Pokémon Color Palettes</h1>
+        <p>
+          Browse {pokemonCount} {categoryName} Pokémon and explore their unique color palettes. 
+          Extract beautiful colors from {categoryName} Pokémon sprites and create custom color 
+          schemes for your design projects. Perfect for designers, artists, and Pokémon fans 
+          looking for {categoryTypeText}-specific color inspiration.
+        </p>
+        <h2>About {categoryName} Pokémon</h2>
+        <p>
+          Our color palette generator automatically extracts the dominant colors from each 
+          {categoryName} Pokémon&apos;s official artwork. Use these colors in web design, 
+          graphic design, digital art, and other creative projects.
         </p>
       </div>
     );

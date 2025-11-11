@@ -322,5 +322,15 @@
     "en": "Togepi",
     "ja": "トゲピー",
     "zh-Hans": "波克比"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6bd94",
+      "#c5b4b4",
+      "#cd8b6a"
+    ],
+    "primary": "#f6bd94",
+    "secondary": "#c5b4b4",
+    "accent": "#cd8b6a"
   }
 }

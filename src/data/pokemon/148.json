@@ -326,5 +326,15 @@
     "en": "Dragonair",
     "ja": "ハクリュー",
     "zh-Hans": "哈克龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de83c5",
+      "#ded5de",
+      "#ffffff"
+    ],
+    "primary": "#de83c5",
+    "secondary": "#ded5de",
+    "accent": "#ffffff"
   }
 }

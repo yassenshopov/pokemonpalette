@@ -339,5 +339,15 @@
     "en": "Geodude",
     "ja": "イシツブテ",
     "zh-Hans": "小拳石"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6c508",
+      "#d59400",
+      "#9c4100"
+    ],
+    "primary": "#f6c508",
+    "secondary": "#d59400",
+    "accent": "#9c4100"
   }
 }

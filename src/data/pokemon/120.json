@@ -322,5 +322,15 @@
     "en": "Staryu",
     "ja": "ヒトデマン",
     "zh-Hans": "海星星"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#838b73",
+      "#acb49c",
+      "#cd9429"
+    ],
+    "primary": "#838b73",
+    "secondary": "#acb49c",
+    "accent": "#cd9429"
   }
 }

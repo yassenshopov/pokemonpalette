@@ -207,5 +207,15 @@
     "en": "Magikarp",
     "ja": "コイキング",
     "zh-Hans": "鲤鱼王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffde00",
+      "#ffffff",
+      "#ee9c18"
+    ],
+    "primary": "#ffde00",
+    "secondary": "#ffffff",
+    "accent": "#ee9c18"
   }
 }

@@ -324,5 +324,15 @@
     "en": "Meganium",
     "ja": "メガニウム",
     "zh-Hans": "大竺葵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f608",
+      "#ff8300",
+      "#c5cd00"
+    ],
+    "primary": "#f6f608",
+    "secondary": "#ff8300",
+    "accent": "#c5cd00"
   }
 }

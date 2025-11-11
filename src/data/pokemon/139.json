@@ -318,5 +318,15 @@
     "en": "Omastar",
     "ja": "オムスター",
     "zh-Hans": "多刺菊石兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ac945a",
+      "#ac6ac5",
+      "#d5bd62"
+    ],
+    "primary": "#ac945a",
+    "secondary": "#ac6ac5",
+    "accent": "#d5bd62"
   }
 }

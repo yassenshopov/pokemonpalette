@@ -328,5 +328,15 @@
     "en": "Rhydon",
     "ja": "サイドン",
     "zh-Hans": "钻角犀兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a49c7b",
+      "#ded5b4",
+      "#736a4a"
+    ],
+    "primary": "#a49c7b",
+    "secondary": "#ded5b4",
+    "accent": "#736a4a"
   }
 }

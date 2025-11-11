@@ -323,5 +323,15 @@
     "en": "Tentacruel",
     "ja": "ドククラゲ",
     "zh-Hans": "毒刺水母"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9cace6",
+      "#bdac73",
+      "#7b83c5"
+    ],
+    "primary": "#9cace6",
+    "secondary": "#bdac73",
+    "accent": "#7b83c5"
   }
 }

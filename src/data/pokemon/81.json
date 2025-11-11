@@ -345,5 +345,15 @@
     "en": "Magnemite",
     "ja": "コイル",
     "zh-Hans": "小磁怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5b494",
+      "#524a4a",
+      "#393131"
+    ],
+    "primary": "#c5b494",
+    "secondary": "#524a4a",
+    "accent": "#393131"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Koffing",
     "ja": "ドガース",
     "zh-Hans": "瓦斯弹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b47bb4",
+      "#de9cd5",
+      "#8bb4bd"
+    ],
+    "primary": "#b47bb4",
+    "secondary": "#de9cd5",
+    "accent": "#8bb4bd"
   }
 }

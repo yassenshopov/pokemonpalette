@@ -322,5 +322,15 @@
     "en": "Furret",
     "ja": "オオタチ",
     "zh-Hans": "大尾立"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffeede",
+      "#de5a8b",
+      "#ffb4bd"
+    ],
+    "primary": "#ffeede",
+    "secondary": "#de5a8b",
+    "accent": "#ffb4bd"
   }
 }

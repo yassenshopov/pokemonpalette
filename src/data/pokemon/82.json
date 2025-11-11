@@ -349,5 +349,15 @@
     "en": "Magneton",
     "ja": "レアコイル",
     "zh-Hans": "三合一磁怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#393131",
+      "#c5b494",
+      "#524a4a"
+    ],
+    "primary": "#393131",
+    "secondary": "#c5b494",
+    "accent": "#524a4a"
   }
 }

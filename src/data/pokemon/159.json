@@ -317,5 +317,15 @@
     "en": "Croconaw",
     "ja": "アリゲイツ",
     "zh-Hans": "蓝鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5aeec5",
+      "#31bd94",
+      "#ffe662"
+    ],
+    "primary": "#5aeec5",
+    "secondary": "#31bd94",
+    "accent": "#ffe662"
   }
 }

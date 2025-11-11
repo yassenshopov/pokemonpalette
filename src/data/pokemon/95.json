@@ -323,5 +323,15 @@
     "en": "Onix",
     "ja": "イワーク",
     "zh-Hans": "大岩蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#839439",
+      "#6a7318",
+      "#acb452"
+    ],
+    "primary": "#839439",
+    "secondary": "#6a7318",
+    "accent": "#acb452"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Kabuto",
     "ja": "カブト",
     "zh-Hans": "化石盔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8be610",
+      "#bda400",
+      "#ff8bac"
+    ],
+    "primary": "#8be610",
+    "secondary": "#bda400",
+    "accent": "#ff8bac"
   }
 }

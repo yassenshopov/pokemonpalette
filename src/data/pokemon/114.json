@@ -312,5 +312,15 @@
     "en": "Tangela",
     "ja": "モンジャラ",
     "zh-Hans": "蔓藤怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#105a10",
+      "#20a420",
+      "#5acd08"
+    ],
+    "primary": "#105a10",
+    "secondary": "#20a420",
+    "accent": "#5acd08"
   }
 }

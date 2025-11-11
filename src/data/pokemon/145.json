@@ -309,5 +309,15 @@
     "en": "Zapdos",
     "ja": "サンダー",
     "zh-Hans": "闪电鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d59400",
+      "#ffc500",
+      "#732900"
+    ],
+    "primary": "#d59400",
+    "secondary": "#ffc500",
+    "accent": "#732900"
   }
 }

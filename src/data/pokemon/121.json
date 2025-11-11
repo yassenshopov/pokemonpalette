@@ -334,5 +334,15 @@
     "en": "Starmie",
     "ja": "スターミー",
     "zh-Hans": "宝石海星"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#315a8b",
+      "#527bac",
+      "#20296a"
+    ],
+    "primary": "#315a8b",
+    "secondary": "#527bac",
+    "accent": "#20296a"
   }
 }

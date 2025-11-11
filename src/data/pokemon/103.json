@@ -319,5 +319,15 @@
     "en": "Exeggutor",
     "ja": "ナッシー",
     "zh-Hans": "椰蛋树"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdac00",
+      "#c56239",
+      "#e6834a"
+    ],
+    "primary": "#cdac00",
+    "secondary": "#c56239",
+    "accent": "#e6834a"
   }
 }

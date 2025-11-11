@@ -318,5 +318,15 @@
     "en": "Spinarak",
     "ja": "イトマル",
     "zh-Hans": "圆丝蛛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8bb4ee",
+      "#d573ac",
+      "#6a83bd"
+    ],
+    "primary": "#8bb4ee",
+    "secondary": "#d573ac",
+    "accent": "#6a83bd"
   }
 }

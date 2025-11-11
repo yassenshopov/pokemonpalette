@@ -317,5 +317,15 @@
     "en": "Lickitung",
     "ja": "ベロリンガ",
     "zh-Hans": "大舌头"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5bd29",
+      "#eeee5a",
+      "#ff837b"
+    ],
+    "primary": "#c5bd29",
+    "secondary": "#eeee5a",
+    "accent": "#ff837b"
   }
 }

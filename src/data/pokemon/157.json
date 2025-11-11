@@ -324,5 +324,15 @@
     "en": "Typhlosion",
     "ja": "バクフーン",
     "zh-Hans": "火暴兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6de83",
+      "#cdb462",
+      "#de0000"
+    ],
+    "primary": "#f6de83",
+    "secondary": "#cdb462",
+    "accent": "#de0000"
   }
 }

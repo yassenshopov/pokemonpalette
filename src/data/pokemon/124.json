@@ -323,5 +323,15 @@
     "en": "Jynx",
     "ja": "ルージュラ",
     "zh-Hans": "迷唇姐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de528b",
+      "#ff7bb4",
+      "#dec594"
+    ],
+    "primary": "#de528b",
+    "secondary": "#ff7bb4",
+    "accent": "#dec594"
   }
 }

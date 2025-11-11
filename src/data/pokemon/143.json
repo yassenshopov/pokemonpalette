@@ -328,5 +328,15 @@
     "en": "Snorlax",
     "ja": "カビゴン",
     "zh-Hans": "卡比兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6e6ac",
+      "#e6cd9c",
+      "#204aa4"
+    ],
+    "primary": "#f6e6ac",
+    "secondary": "#e6cd9c",
+    "accent": "#204aa4"
   }
 }

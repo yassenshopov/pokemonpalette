@@ -166,5 +166,15 @@
     "en": "Ditto",
     "ja": "メタモン",
     "zh-Hans": "百变怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73cdff",
+      "#398bbd",
+      "#295a9c"
+    ],
+    "primary": "#73cdff",
+    "secondary": "#398bbd",
+    "accent": "#295a9c"
   }
 }

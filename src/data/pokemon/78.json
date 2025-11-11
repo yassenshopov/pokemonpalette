@@ -325,5 +325,15 @@
     "en": "Rapidash",
     "ja": "ギャロップ",
     "zh-Hans": "烈焰马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9c9cac",
+      "#eedea4",
+      "#838394"
+    ],
+    "primary": "#9c9cac",
+    "secondary": "#eedea4",
+    "accent": "#838394"
   }
 }

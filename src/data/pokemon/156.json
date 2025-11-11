@@ -317,5 +317,15 @@
     "en": "Quilava",
     "ja": "マグマラシ",
     "zh-Hans": "火岩鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff5a00",
+      "#de0000",
+      "#ffd500"
+    ],
+    "primary": "#ff5a00",
+    "secondary": "#de0000",
+    "accent": "#ffd500"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Kabutops",
     "ja": "カブトプス",
     "zh-Hans": "镰刀盔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4e641",
+      "#a4ac9c",
+      "#5a8b00"
+    ],
+    "primary": "#b4e641",
+    "secondary": "#a4ac9c",
+    "accent": "#5a8b00"
   }
 }
