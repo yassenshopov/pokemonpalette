@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 80.0,
+  "weight": 80,
   "abilities": [
     {
       "name": "Liquid ooze",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#ac83ee",
+    "secondary": "#8b6acd",
+    "accent": "#c5a4ff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
+      "#ac83ee",
+      "#8b6acd",
+      "#c5a4ff"
     ]
   },
   "artwork": {

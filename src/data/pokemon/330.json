@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 2.0,
-  "weight": 82.0,
+  "height": 2,
+  "weight": 82,
   "abilities": [
     {
       "name": "Levitate",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#b4de73",
+    "secondary": "#8ba452",
+    "accent": "#de6273",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#b4de73",
+      "#8ba452",
+      "#de6273"
     ]
   },
   "artwork": {

@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 37.0,
+  "height": 1,
+  "weight": 37,
   "abilities": [
     {
       "name": "Intimidate",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#313131",
+    "secondary": "#4a4a4a",
+    "accent": "#94949c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#313131",
+      "#4a4a4a",
+      "#94949c"
     ]
   },
   "artwork": {

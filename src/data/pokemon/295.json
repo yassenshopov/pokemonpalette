@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 84.0,
+  "weight": 84,
   "abilities": [
     {
       "name": "Soundproof",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#a4a4de",
+    "secondary": "#7b73b4",
+    "accent": "#524a8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#a4a4de",
+      "#7b73b4",
+      "#524a8b"
     ]
   },
   "artwork": {

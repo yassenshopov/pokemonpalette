@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 2.0,
-  "weight": 130.0,
+  "height": 2,
+  "weight": 130,
   "abilities": [
     {
       "name": "Water veil",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#4a83b4",
+    "secondary": "#eed5a4",
+    "accent": "#315a94",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#4a83b4",
+      "#eed5a4",
+      "#315a94"
     ]
   },
   "artwork": {

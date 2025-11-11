@@ -1,5 +1,5 @@
-import { Metadata } from 'next';
-import { getPokemonMetadataByName } from '@/lib/pokemon';
+import { Metadata } from "next";
+import { getPokemonMetadataByName } from "@/lib/pokemon";
 
 export async function generateMetadata({
   params,
@@ -11,7 +11,7 @@ export async function generateMetadata({
 
   if (!pokemonMetadata) {
     return {
-      title: 'Pokemon Not Found',
+      title: "Pokemon Not Found",
     };
   }
 
@@ -24,7 +24,7 @@ export async function generateMetadata({
       title: `${pokemonMetadata.name} - PokémonPalette`,
       description: `Explore ${pokemonMetadata.name}'s color palette and extract beautiful colors.`,
       url: `https://www.pokemonpalette.com/${name.toLowerCase()}`,
-      siteName: 'PokémonPalette',
+      siteName: "PokémonPalette",
       // Explicitly override root layout images by providing a new array
       images: [
         {
@@ -34,18 +34,18 @@ export async function generateMetadata({
           alt: `${pokemonMetadata.name} color palette`,
         },
       ],
-      locale: 'en_US',
-      type: 'website',
+      locale: "en_US",
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: `${pokemonMetadata.name} - PokémonPalette`,
       description: `Explore ${pokemonMetadata.name}'s color palette and extract beautiful colors.`,
       // Explicitly override root layout images
       images: [ogImageUrl],
     },
     // Explicitly set metadataBase to ensure absolute URLs work correctly
-    metadataBase: new URL('https://www.pokemonpalette.com'),
+    metadataBase: new URL("https://www.pokemonpalette.com"),
   };
 }
 
@@ -56,4 +56,3 @@ export default function PokemonLayout({
 }) {
   return children;
 }
-

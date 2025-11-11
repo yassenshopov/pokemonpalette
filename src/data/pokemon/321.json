@@ -12,7 +12,7 @@
     }
   ],
   "height": 14.5,
-  "weight": 398.0,
+  "weight": 398,
   "abilities": [
     {
       "name": "Water veil",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#eee6ff",
+    "secondary": "#1052cd",
+    "accent": "#2073de",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#eee6ff",
+      "#1052cd",
+      "#2073de"
     ]
   },
   "artwork": {

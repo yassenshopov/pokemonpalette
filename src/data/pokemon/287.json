@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.8,
-  "weight": 24.0,
+  "weight": 24,
   "abilities": [
     {
       "name": "Truant",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#decdbd",
+    "secondary": "#b49c7b",
+    "accent": "#523929",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#decdbd",
+      "#b49c7b",
+      "#523929"
     ]
   },
   "artwork": {

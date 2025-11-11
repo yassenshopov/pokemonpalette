@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.1,
-  "weight": 120.0,
+  "weight": 120,
   "abilities": [
     {
       "name": "Sturdy",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#4a5252",
+    "secondary": "#d5ded5",
+    "accent": "#839494",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#4a5252",
+      "#d5ded5",
+      "#839494"
     ]
   },
   "artwork": {

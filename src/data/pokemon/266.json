@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 10.0,
+  "weight": 10,
   "abilities": [
     {
       "name": "Shed skin",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#eeeee6",
+    "secondary": "#c5cdde",
+    "accent": "#62737b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#eeeee6",
+      "#c5cdde",
+      "#62737b"
     ]
   },
   "artwork": {

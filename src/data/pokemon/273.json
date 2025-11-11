@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 4.0,
+  "weight": 4,
   "abilities": [
     {
       "name": "Chlorophyll",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#7b736a",
+    "secondary": "#ffeebd",
+    "accent": "#83625a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#7b736a",
+      "#ffeebd",
+      "#83625a"
     ]
   },
   "artwork": {

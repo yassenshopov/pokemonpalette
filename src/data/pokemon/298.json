@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.2,
-  "weight": 2.0,
+  "weight": 2,
   "abilities": [
     {
       "name": "Thick fat",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#4a7be6",
+    "secondary": "#6ab4ff",
+    "accent": "#314a8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#4a7be6",
+      "#6ab4ff",
+      "#314a8b"
     ]
   },
   "artwork": {

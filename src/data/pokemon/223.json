@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 12.0,
+  "weight": 12,
   "abilities": [
     {
       "name": "Hustle",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#b4ded5",
+    "secondary": "#628ba4",
+    "accent": "#295a83",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#b4ded5",
+      "#628ba4",
+      "#295a83"
     ]
   },
   "artwork": {

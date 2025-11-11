@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 28.0,
+  "weight": 28,
   "abilities": [
     {
       "name": "Keen eye",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#ffde4a",
+    "secondary": "#f6b431",
+    "accent": "#cdd5ee",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#ffde4a",
+      "#f6b431",
+      "#cdd5ee"
     ]
   },
   "artwork": {
