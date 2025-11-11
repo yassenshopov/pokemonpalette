@@ -1,9 +1,50 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
-import { getPokemonMetadataByName, getPokemonById } from "@/lib/pokemon";
 
-// Use Node.js runtime instead of Edge to avoid bundle size limits
-// Edge runtime has a 1MB limit, and importing Pokemon data exceeds this
+// Use Edge runtime - required for @vercel/og to work
+export const runtime = "edge";
+
+// Fetch Pokemon data from internal API to avoid bundling large files
+async function getPokemonData(name: string, request: NextRequest) {
+  try {
+    // Use the request URL to determine the base URL for internal API calls
+    const url = new URL(request.url);
+    const baseUrl = `${url.protocol}//${url.host}`;
+
+    // Fetch Pokemon data from an internal API route
+    // This avoids bundling the full Pokemon library
+    const response = await fetch(
+      `${baseUrl}/api/pokemon-data/${name.toLowerCase()}`,
+      {
+        headers: {
+          "User-Agent": "OG-Image-Generator",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return (await response.json()) as {
+      id: number;
+      name: string;
+      colorPalette?: {
+        primary?: string;
+        secondary?: string;
+        accent?: string;
+        highlights?: string[];
+      };
+      artwork?: {
+        official?: string;
+        front?: string;
+      };
+    };
+  } catch (error) {
+    console.error(`Failed to fetch Pokemon data for ${name}:`, error);
+    return null;
+  }
+}
 
 export async function GET(
   request: NextRequest,
@@ -12,87 +53,10 @@ export async function GET(
   try {
     const { name: pokemonName } = await params;
 
-    let pokemonMetadata;
     let pokemon;
 
     try {
-      pokemonMetadata = getPokemonMetadataByName(pokemonName);
-      if (!pokemonMetadata) {
-        // Return a fallback image instead of 404 text
-        return new ImageResponse(
-          (
-            <div
-              style={{
-                height: "100%",
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background:
-                  "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 60,
-                  fontWeight: "bold",
-                  color: "#ffffff",
-                }}
-              >
-                Pokemon Not Found
-              </div>
-            </div>
-          ),
-          {
-            width: 1200,
-            height: 675,
-            headers: {
-              "Content-Type": "image/png",
-              "Cache-Control": "public, max-age=3600",
-            },
-          }
-        );
-      }
-    } catch (error) {
-      console.error("Error getting Pokemon metadata:", error);
-      // Return a fallback image instead of 500 text
-      return new ImageResponse(
-        (
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background:
-                "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 60,
-                fontWeight: "bold",
-                color: "#ffffff",
-              }}
-            >
-              PokémonPalette
-            </div>
-          </div>
-        ),
-        {
-          width: 1200,
-          height: 675,
-          headers: {
-            "Content-Type": "image/png",
-            "Cache-Control": "public, max-age=3600",
-          },
-        }
-      );
-    }
-
-    try {
-      pokemon = await getPokemonById(pokemonMetadata.id);
+      pokemon = await getPokemonData(pokemonName, request);
       if (!pokemon) {
         // Return a fallback image instead of 404 text
         return new ImageResponse(
@@ -115,7 +79,7 @@ export async function GET(
                   color: "#ffffff",
                 }}
               >
-                Pokemon Data Not Found
+                Pokemon Not Found
               </div>
             </div>
           ),
