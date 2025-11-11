@@ -323,5 +323,15 @@
     "en": "Klink",
     "ja": "ギアル",
     "zh-Hans": "齿轮儿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5c58b",
+      "#6a6a73",
+      "#4a4a4a"
+    ],
+    "primary": "#d5c58b",
+    "secondary": "#6a6a73",
+    "accent": "#4a4a4a"
   }
 }

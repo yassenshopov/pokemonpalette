@@ -315,5 +315,15 @@
     "en": "Annihilape",
     "ja": "コノヨザル",
     "zh-Hans": "弃世猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#979bb9",
+      "#5e6277",
+      "#fdfdfd"
+    ],
+    "primary": "#979bb9",
+    "secondary": "#5e6277",
+    "accent": "#fdfdfd"
   }
 }

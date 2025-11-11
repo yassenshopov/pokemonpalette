@@ -303,5 +303,15 @@
     "en": "Gogoat",
     "ja": "ゴーゴート",
     "zh-Hans": "坐骑山羊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4e550",
+      "#594d47",
+      "#e5dacf"
+    ],
+    "primary": "#b4e550",
+    "secondary": "#594d47",
+    "accent": "#e5dacf"
   }
 }

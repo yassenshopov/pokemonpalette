@@ -312,5 +312,15 @@
     "en": "Kricketune",
     "ja": "コロトック",
     "zh-Hans": "音箱蟀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffbd41",
+      "#8b4118",
+      "#8b7352"
+    ],
+    "primary": "#ffbd41",
+    "secondary": "#8b4118",
+    "accent": "#8b7352"
   }
 }

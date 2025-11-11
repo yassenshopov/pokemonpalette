@@ -284,5 +284,15 @@
     "en": "Iron Treads",
     "ja": "テツノワダチ",
     "zh-Hans": "铁轍迹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#606164",
+      "#91959d",
+      "#333539"
+    ],
+    "primary": "#606164",
+    "secondary": "#91959d",
+    "accent": "#333539"
   }
 }

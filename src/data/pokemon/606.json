@@ -313,5 +313,15 @@
     "en": "Beheeyem",
     "ja": "オーベム",
     "zh-Hans": "大宇怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c59c8b",
+      "#9c625a",
+      "#524131"
+    ],
+    "primary": "#c59c8b",
+    "secondary": "#9c625a",
+    "accent": "#524131"
   }
 }

@@ -301,5 +301,15 @@
     "en": "Tadbulb",
     "ja": "ズピカ",
     "zh-Hans": "光蚪仔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7e736d",
+      "#ffdf28",
+      "#ff7f6d"
+    ],
+    "primary": "#7e736d",
+    "secondary": "#ffdf28",
+    "accent": "#ff7f6d"
   }
 }

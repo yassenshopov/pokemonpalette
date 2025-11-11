@@ -298,5 +298,15 @@
     "en": "Kyogre",
     "ja": "カイオーガ",
     "zh-Hans": "盖欧卡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b439bd",
+      "#83108b",
+      "#5a0052"
+    ],
+    "primary": "#b439bd",
+    "secondary": "#83108b",
+    "accent": "#5a0052"
   }
 }

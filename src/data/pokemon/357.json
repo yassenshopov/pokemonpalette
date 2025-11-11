@@ -308,5 +308,15 @@
     "en": "Tropius",
     "ja": "トロピウス",
     "zh-Hans": "热带龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bac00",
+      "#9cd510",
+      "#417b00"
+    ],
+    "primary": "#7bac00",
+    "secondary": "#9cd510",
+    "accent": "#417b00"
   }
 }

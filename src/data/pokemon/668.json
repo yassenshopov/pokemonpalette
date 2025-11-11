@@ -325,5 +325,15 @@
     "en": "Pyroar",
     "ja": "カエンジシ",
     "zh-Hans": "火炎狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cc3b4c",
+      "#f4cb63",
+      "#fde79e"
+    ],
+    "primary": "#cc3b4c",
+    "secondary": "#f4cb63",
+    "accent": "#fde79e"
   }
 }

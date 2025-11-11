@@ -318,5 +318,15 @@
     "en": "Lumineon",
     "ja": "ネオラント",
     "zh-Hans": "霓虹鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a4a31",
+      "#f6d5ac",
+      "#313129"
+    ],
+    "primary": "#5a4a31",
+    "secondary": "#f6d5ac",
+    "accent": "#313129"
   }
 }

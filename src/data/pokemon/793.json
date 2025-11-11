@@ -292,5 +292,15 @@
     "en": "Nihilego",
     "ja": "ウツロイド",
     "zh-Hans": "虚吾伊德"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dcd2b6",
+      "#efe8e3",
+      "#b7a38b"
+    ],
+    "primary": "#dcd2b6",
+    "secondary": "#efe8e3",
+    "accent": "#b7a38b"
   }
 }

@@ -301,5 +301,15 @@
     "en": "Clawitzer",
     "ja": "ブロスター",
     "zh-Hans": "钢炮臂虾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ec4f47",
+      "#e94c44",
+      "#ed5048"
+    ],
+    "primary": "#ec4f47",
+    "secondary": "#e94c44",
+    "accent": "#ed5048"
   }
 }

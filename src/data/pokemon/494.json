@@ -296,5 +296,15 @@
     "en": "Victini",
     "ja": "ビクティニ",
     "zh-Hans": "比克提尼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#bdbdbd",
+      "#ff4118"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#bdbdbd",
+    "accent": "#ff4118"
   }
 }

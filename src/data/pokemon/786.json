@@ -298,5 +298,15 @@
     "en": "Tapu Lele",
     "ja": "カプ・テテフ",
     "zh-Hans": "卡璞・蝶蝶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3d443c",
+      "#ff8c8c",
+      "#db536f"
+    ],
+    "primary": "#3d443c",
+    "secondary": "#ff8c8c",
+    "accent": "#db536f"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Beartic",
     "ja": "ツンベアー",
     "zh-Hans": "冻原熊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cddeff",
+      "#9cbde6",
+      "#080808"
+    ],
+    "primary": "#cddeff",
+    "secondary": "#9cbde6",
+    "accent": "#080808"
   }
 }

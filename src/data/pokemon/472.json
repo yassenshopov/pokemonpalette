@@ -318,5 +318,15 @@
     "en": "Gliscor",
     "ja": "グライオン",
     "zh-Hans": "天蝎王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bb4ee",
+      "#207bac",
+      "#313139"
+    ],
+    "primary": "#7bb4ee",
+    "secondary": "#207bac",
+    "accent": "#313139"
   }
 }

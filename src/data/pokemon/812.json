@@ -312,5 +312,15 @@
     "en": "Rillaboom",
     "ja": "ゴリランダー",
     "zh-Hans": "轰擂金刚猩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5f2b35",
+      "#f6e2a1",
+      "#8cb400"
+    ],
+    "primary": "#5f2b35",
+    "secondary": "#f6e2a1",
+    "accent": "#8cb400"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Ferrothorn",
     "ja": "ナットレイ",
     "zh-Hans": "坚果哑铃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdc573",
+      "#414131",
+      "#621829"
+    ],
+    "primary": "#cdc573",
+    "secondary": "#414131",
+    "accent": "#621829"
   }
 }

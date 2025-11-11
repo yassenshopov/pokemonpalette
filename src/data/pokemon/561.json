@@ -308,5 +308,15 @@
     "en": "Sigilyph",
     "ja": "シンボラー",
     "zh-Hans": "象征鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#313131",
+      "#c5e65a",
+      "#ff8b00"
+    ],
+    "primary": "#313131",
+    "secondary": "#c5e65a",
+    "accent": "#ff8b00"
   }
 }

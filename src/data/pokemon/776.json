@@ -301,5 +301,15 @@
     "en": "Turtonator",
     "ja": "バクガメス",
     "zh-Hans": "爆焰龟兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffe359",
+      "#502505",
+      "#080808"
+    ],
+    "primary": "#ffe359",
+    "secondary": "#502505",
+    "accent": "#080808"
   }
 }

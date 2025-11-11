@@ -293,5 +293,15 @@
     "en": "Enamorus",
     "ja": "ラブトロス",
     "zh-Hans": "眷恋云"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#c4aeb9",
+      "#ed81da"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#c4aeb9",
+    "accent": "#ed81da"
   }
 }

@@ -286,5 +286,15 @@
     "en": "Eiscue",
     "ja": "コオリッポ",
     "zh-Hans": "冰砌鹅"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#edbbed",
+      "#fcfcfc",
+      "#cc8cca"
+    ],
+    "primary": "#edbbed",
+    "secondary": "#fcfcfc",
+    "accent": "#cc8cca"
   }
 }

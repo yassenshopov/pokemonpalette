@@ -312,5 +312,15 @@
     "en": "Anorith",
     "ja": "アノプス",
     "zh-Hans": "太古羽虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a6a83",
+      "#eecd83",
+      "#b4b4c5"
+    ],
+    "primary": "#6a6a83",
+    "secondary": "#eecd83",
+    "accent": "#b4b4c5"
   }
 }

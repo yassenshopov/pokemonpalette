@@ -302,5 +302,15 @@
     "en": "Zangoose",
     "ja": "ザングース",
     "zh-Hans": "猫鼬斩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dee6ee",
+      "#ffffff",
+      "#5aacff"
+    ],
+    "primary": "#dee6ee",
+    "secondary": "#ffffff",
+    "accent": "#5aacff"
   }
 }

@@ -333,5 +333,15 @@
     "en": "Sandile",
     "ja": "メグロコ",
     "zh-Hans": "黑眼鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdcd4a",
+      "#41414a",
+      "#839439"
+    ],
+    "primary": "#cdcd4a",
+    "secondary": "#41414a",
+    "accent": "#839439"
   }
 }

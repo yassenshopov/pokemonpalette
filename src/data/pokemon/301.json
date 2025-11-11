@@ -322,5 +322,15 @@
     "en": "Delcatty",
     "ja": "エネコロロ",
     "zh-Hans": "优雅猫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd4129",
+      "#ff735a",
+      "#e69c4a"
+    ],
+    "primary": "#cd4129",
+    "secondary": "#ff735a",
+    "accent": "#e69c4a"
   }
 }

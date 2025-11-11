@@ -326,5 +326,15 @@
     "en": "Solgaleo",
     "ja": "ソルガレオ",
     "zh-Hans": "索尔迦雷欧"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f52640",
+      "#080808",
+      "#ad1e3c"
+    ],
+    "primary": "#f52640",
+    "secondary": "#080808",
+    "accent": "#ad1e3c"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Volcarona",
     "ja": "ウルガモス",
     "zh-Hans": "火神蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eebd18",
+      "#cd9c10",
+      "#737394"
+    ],
+    "primary": "#eebd18",
+    "secondary": "#cd9c10",
+    "accent": "#737394"
   }
 }

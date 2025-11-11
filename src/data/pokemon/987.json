@@ -284,5 +284,15 @@
     "en": "Flutter Mane",
     "ja": "ハバタクカミ",
     "zh-Hans": "振翼发"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5d562",
+      "#8ba441",
+      "#ffc500"
+    ],
+    "primary": "#c5d562",
+    "secondary": "#8ba441",
+    "accent": "#ffc500"
   }
 }

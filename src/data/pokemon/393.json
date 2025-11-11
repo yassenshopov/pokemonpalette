@@ -317,5 +317,15 @@
     "en": "Piplup",
     "ja": "ポッチャマ",
     "zh-Hans": "波加曼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#31acbd",
+      "#62c5c5",
+      "#ffffff"
+    ],
+    "primary": "#31acbd",
+    "secondary": "#62c5c5",
+    "accent": "#ffffff"
   }
 }

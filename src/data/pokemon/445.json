@@ -334,5 +334,15 @@
     "en": "Garchomp",
     "ja": "ガブリアス",
     "zh-Hans": "烈咬陆鲨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a6a9c",
+      "#394173",
+      "#182039"
+    ],
+    "primary": "#5a6a9c",
+    "secondary": "#394173",
+    "accent": "#182039"
   }
 }

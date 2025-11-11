@@ -303,5 +303,15 @@
     "en": "Skiddo",
     "ja": "メェークル",
     "zh-Hans": "坐骑小羊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e9ceb3",
+      "#f8f8f8",
+      "#b4e550"
+    ],
+    "primary": "#e9ceb3",
+    "secondary": "#f8f8f8",
+    "accent": "#b4e550"
   }
 }

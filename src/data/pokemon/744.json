@@ -328,5 +328,15 @@
     "en": "Rockruff",
     "ja": "イワンコ",
     "zh-Hans": "岩狗狗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#92cae4",
+      "#ece8d7",
+      "#c7b3a7"
+    ],
+    "primary": "#92cae4",
+    "secondary": "#ece8d7",
+    "accent": "#c7b3a7"
   }
 }

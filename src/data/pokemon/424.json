@@ -312,5 +312,15 @@
     "en": "Ambipom",
     "ja": "エテボース",
     "zh-Hans": "双尾怪手"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c53983",
+      "#ffeed5",
+      "#940031"
+    ],
+    "primary": "#c53983",
+    "secondary": "#ffeed5",
+    "accent": "#940031"
   }
 }

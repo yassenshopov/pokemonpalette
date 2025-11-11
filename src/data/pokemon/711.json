@@ -338,5 +338,15 @@
     "en": "Gourgeist",
     "ja": "パンプジン",
     "zh-Hans": "南瓜怪人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a870c4",
+      "#434348",
+      "#2c2c30"
+    ],
+    "primary": "#a870c4",
+    "secondary": "#434348",
+    "accent": "#2c2c30"
   }
 }

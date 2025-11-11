@@ -337,5 +337,15 @@
     "en": "Venipede",
     "ja": "フシデ",
     "zh-Hans": "百足蜈蚣"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#945231",
+      "#292929",
+      "#414110"
+    ],
+    "primary": "#945231",
+    "secondary": "#292929",
+    "accent": "#414110"
   }
 }

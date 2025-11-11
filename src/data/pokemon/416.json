@@ -318,5 +318,15 @@
     "en": "Vespiquen",
     "ja": "ビークイン",
     "zh-Hans": "蜂女王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff834a",
+      "#41414a",
+      "#ac2918"
+    ],
+    "primary": "#ff834a",
+    "secondary": "#41414a",
+    "accent": "#ac2918"
   }
 }

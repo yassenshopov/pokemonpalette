@@ -317,5 +317,15 @@
     "en": "Carvanha",
     "ja": "キバニア",
     "zh-Hans": "利牙鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eebd29",
+      "#cd9429",
+      "#739c18"
+    ],
+    "primary": "#eebd29",
+    "secondary": "#cd9429",
+    "accent": "#739c18"
   }
 }

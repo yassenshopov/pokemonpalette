@@ -318,5 +318,15 @@
     "en": "Salandit",
     "ja": "ヤトウモリ",
     "zh-Hans": "夜盗火蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdc5ca",
+      "#473836",
+      "#968b91"
+    ],
+    "primary": "#cdc5ca",
+    "secondary": "#473836",
+    "accent": "#968b91"
   }
 }

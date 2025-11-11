@@ -317,5 +317,15 @@
     "en": "Grotle",
     "ja": "ハヤシガメ",
     "zh-Hans": "树林龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8bbd73",
+      "#628b4a",
+      "#83cdb4"
+    ],
+    "primary": "#8bbd73",
+    "secondary": "#628b4a",
+    "accent": "#83cdb4"
   }
 }

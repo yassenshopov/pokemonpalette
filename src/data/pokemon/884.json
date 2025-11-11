@@ -308,5 +308,15 @@
     "en": "Duraludon",
     "ja": "ジュラルドン",
     "zh-Hans": "铝钢龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b5c1b8",
+      "#e8eddc",
+      "#8fa597"
+    ],
+    "primary": "#b5c1b8",
+    "secondary": "#e8eddc",
+    "accent": "#8fa597"
   }
 }

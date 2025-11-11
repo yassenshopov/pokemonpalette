@@ -312,5 +312,15 @@
     "en": "Fomantis",
     "ja": "カリキリ",
     "zh-Hans": "伪螳草"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#69bf94",
+      "#fff0a6",
+      "#5ba668"
+    ],
+    "primary": "#69bf94",
+    "secondary": "#fff0a6",
+    "accent": "#5ba668"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Popplio",
     "ja": "アシマリ",
     "zh-Hans": "球球海狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4358bf",
+      "#31408c",
+      "#242f66"
+    ],
+    "primary": "#4358bf",
+    "secondary": "#31408c",
+    "accent": "#242f66"
   }
 }

@@ -295,5 +295,15 @@
     "en": "Finizen",
     "ja": "ナミイルカ",
     "zh-Hans": "波普海豚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a9abef",
+      "#a3b3b6",
+      "#7070c5"
+    ],
+    "primary": "#a9abef",
+    "secondary": "#a3b3b6",
+    "accent": "#7070c5"
   }
 }

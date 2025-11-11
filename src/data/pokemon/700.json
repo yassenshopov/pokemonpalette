@@ -395,5 +395,15 @@
     "en": "Sylveon",
     "ja": "ニンフィア",
     "zh-Hans": "仙子伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f5f5ff",
+      "#76dbf1",
+      "#44a6be"
+    ],
+    "primary": "#f5f5ff",
+    "secondary": "#76dbf1",
+    "accent": "#44a6be"
   }
 }

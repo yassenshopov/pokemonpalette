@@ -300,5 +300,15 @@
     "en": "Varoom",
     "ja": "ブロロン",
     "zh-Hans": "噗隆隆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f7ea8f",
+      "#1c1c1c",
+      "#55495a"
+    ],
+    "primary": "#f7ea8f",
+    "secondary": "#1c1c1c",
+    "accent": "#55495a"
   }
 }

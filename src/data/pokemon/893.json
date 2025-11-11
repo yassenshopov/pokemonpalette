@@ -291,5 +291,15 @@
     "en": "Zarude",
     "ja": "ザルード",
     "zh-Hans": "萨戮德"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#494d4e",
+      "#353839",
+      "#2b282d"
+    ],
+    "primary": "#494d4e",
+    "secondary": "#353839",
+    "accent": "#2b282d"
   }
 }

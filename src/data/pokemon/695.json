@@ -318,5 +318,15 @@
     "en": "Heliolisk",
     "ja": "エレザード",
     "zh-Hans": "光电伞蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff4c4c",
+      "#595959",
+      "#cc3d3d"
+    ],
+    "primary": "#ff4c4c",
+    "secondary": "#595959",
+    "accent": "#cc3d3d"
   }
 }

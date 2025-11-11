@@ -310,5 +310,15 @@
     "en": "Kyurem",
     "ja": "キュレム",
     "zh-Hans": "酋雷姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdd5ff",
+      "#4a6a7b",
+      "#5a6ac5"
+    ],
+    "primary": "#cdd5ff",
+    "secondary": "#4a6a7b",
+    "accent": "#5a6ac5"
   }
 }

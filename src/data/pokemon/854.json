@@ -312,5 +312,15 @@
     "en": "Sinistea",
     "ja": "ヤバチャ",
     "zh-Hans": "来悲茶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cf58aa",
+      "#fc9ee0",
+      "#5e401f"
+    ],
+    "primary": "#cf58aa",
+    "secondary": "#fc9ee0",
+    "accent": "#5e401f"
   }
 }

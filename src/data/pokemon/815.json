@@ -312,5 +312,15 @@
     "en": "Cinderace",
     "ja": "エースバーン",
     "zh-Hans": "闪焰王牌"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b3baaf",
+      "#e47713",
+      "#fcfcfc"
+    ],
+    "primary": "#b3baaf",
+    "secondary": "#e47713",
+    "accent": "#fcfcfc"
   }
 }

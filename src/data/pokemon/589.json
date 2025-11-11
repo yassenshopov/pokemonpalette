@@ -317,5 +317,15 @@
     "en": "Escavalier",
     "ja": "シュバルゴ",
     "zh-Hans": "骑士蜗牛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdcdb4",
+      "#bd1883",
+      "#9c9c62"
+    ],
+    "primary": "#cdcdb4",
+    "secondary": "#bd1883",
+    "accent": "#9c9c62"
   }
 }

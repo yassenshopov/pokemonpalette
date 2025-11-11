@@ -291,5 +291,15 @@
     "en": "Kubfu",
     "ja": "ダクマ",
     "zh-Hans": "熊徒弟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b0ac97",
+      "#d2cdb9",
+      "#6e676b"
+    ],
+    "primary": "#b0ac97",
+    "secondary": "#d2cdb9",
+    "accent": "#6e676b"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Lickilicky",
     "ja": "ベロベルト",
     "zh-Hans": "大舌舔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f662",
+      "#cdbd4a",
+      "#f67b5a"
+    ],
+    "primary": "#f6f662",
+    "secondary": "#cdbd4a",
+    "accent": "#f67b5a"
   }
 }

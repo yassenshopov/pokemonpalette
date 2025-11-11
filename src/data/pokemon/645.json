@@ -309,5 +309,15 @@
     "en": "Landorus",
     "ja": "ランドロス",
     "zh-Hans": "土地云"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#6a4129",
+      "#a4bda4"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#6a4129",
+    "accent": "#a4bda4"
   }
 }

@@ -288,5 +288,15 @@
     "en": "Poipole",
     "ja": "ベベノム",
     "zh-Hans": "毒贝比"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f9f9f9",
+      "#cacbc5",
+      "#ffd01d"
+    ],
+    "primary": "#f9f9f9",
+    "secondary": "#cacbc5",
+    "accent": "#ffd01d"
   }
 }

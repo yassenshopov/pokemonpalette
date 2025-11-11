@@ -313,5 +313,15 @@
     "en": "Mienfoo",
     "ja": "コジョフー",
     "zh-Hans": "功夫鼬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeeecd",
+      "#4a4acd",
+      "#6a62f6"
+    ],
+    "primary": "#eeeecd",
+    "secondary": "#4a4acd",
+    "accent": "#6a62f6"
   }
 }

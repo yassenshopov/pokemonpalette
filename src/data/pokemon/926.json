@@ -295,5 +295,15 @@
     "en": "Fidough",
     "ja": "パピモッチ",
     "zh-Hans": "狗仔包"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a78265",
+      "#f2c4a4",
+      "#f3d236"
+    ],
+    "primary": "#a78265",
+    "secondary": "#f2c4a4",
+    "accent": "#f3d236"
   }
 }

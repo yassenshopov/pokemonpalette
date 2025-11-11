@@ -301,5 +301,15 @@
     "en": "Wugtrio",
     "ja": "ウミトリオ",
     "zh-Hans": "三海地鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4d59f7",
+      "#4040d0",
+      "#58768f"
+    ],
+    "primary": "#4d59f7",
+    "secondary": "#4040d0",
+    "accent": "#58768f"
   }
 }

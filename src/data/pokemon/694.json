@@ -318,5 +318,15 @@
     "en": "Helioptile",
     "ja": "エリキテル",
     "zh-Hans": "伞电蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff4c4c",
+      "#595959",
+      "#cc3d3d"
+    ],
+    "primary": "#ff4c4c",
+    "secondary": "#595959",
+    "accent": "#cc3d3d"
   }
 }

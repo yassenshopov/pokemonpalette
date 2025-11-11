@@ -316,5 +316,15 @@
     "en": "Hydreigon",
     "ja": "サザンドラ",
     "zh-Hans": "三首恶龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#625a52",
+      "#392929",
+      "#524141"
+    ],
+    "primary": "#625a52",
+    "secondary": "#392929",
+    "accent": "#524141"
   }
 }

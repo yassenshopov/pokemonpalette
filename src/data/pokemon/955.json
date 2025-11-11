@@ -301,5 +301,15 @@
     "en": "Flittle",
     "ja": "ヒラヒナ",
     "zh-Hans": "飘飘雏"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd11c",
+      "#b4a225",
+      "#e7ebed"
+    ],
+    "primary": "#ffd11c",
+    "secondary": "#b4a225",
+    "accent": "#e7ebed"
   }
 }

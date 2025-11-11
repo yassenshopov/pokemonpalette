@@ -336,5 +336,15 @@
     "en": "Roselia",
     "ja": "ロゼリア",
     "zh-Hans": "毒蔷薇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#316a00",
+      "#73ac20",
+      "#41394a"
+    ],
+    "primary": "#316a00",
+    "secondary": "#73ac20",
+    "accent": "#41394a"
   }
 }

@@ -301,5 +301,15 @@
     "en": "Wyrdeer",
     "ja": "アヤシシ",
     "zh-Hans": "诡角鹿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeedd5",
+      "#aeb780",
+      "#cbcda7"
+    ],
+    "primary": "#eeedd5",
+    "secondary": "#aeb780",
+    "accent": "#cbcda7"
   }
 }

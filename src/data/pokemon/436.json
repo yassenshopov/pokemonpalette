@@ -323,5 +323,15 @@
     "en": "Bronzor",
     "ja": "ドーミラー",
     "zh-Hans": "铜镜怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#316a31",
+      "#4a9441",
+      "#204a29"
+    ],
+    "primary": "#316a31",
+    "secondary": "#4a9441",
+    "accent": "#204a29"
   }
 }

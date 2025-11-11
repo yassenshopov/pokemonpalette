@@ -309,5 +309,15 @@
     "en": "Dialga",
     "ja": "ディアルガ",
     "zh-Hans": "帝牙卢卡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#086a7b",
+      "#bdcdac",
+      "#9cac73"
+    ],
+    "primary": "#086a7b",
+    "secondary": "#bdcdac",
+    "accent": "#9cac73"
   }
 }

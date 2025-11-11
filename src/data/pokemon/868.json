@@ -294,5 +294,15 @@
     "en": "Milcery",
     "ja": "マホミル",
     "zh-Hans": "小仙奶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f5f1f2",
+      "#a3a480",
+      "#cebbb7"
+    ],
+    "primary": "#f5f1f2",
+    "secondary": "#a3a480",
+    "accent": "#cebbb7"
   }
 }

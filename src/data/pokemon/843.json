@@ -301,5 +301,15 @@
     "en": "Silicobra",
     "ja": "スナヘビ",
     "zh-Hans": "沙包蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c1bfa8",
+      "#5d6848",
+      "#37322b"
+    ],
+    "primary": "#c1bfa8",
+    "secondary": "#5d6848",
+    "accent": "#37322b"
   }
 }

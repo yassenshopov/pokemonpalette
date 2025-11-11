@@ -299,5 +299,15 @@
     "en": "Hoopa",
     "ja": "フーパ",
     "zh-Hans": "胡帕"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffec8c",
+      "#a6995b",
+      "#ffe14c"
+    ],
+    "primary": "#ffec8c",
+    "secondary": "#a6995b",
+    "accent": "#ffe14c"
   }
 }

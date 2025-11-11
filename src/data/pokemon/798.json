@@ -292,5 +292,15 @@
     "en": "Kartana",
     "ja": "カミツルギ",
     "zh-Hans": "纸御剑"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fdfdfd",
+      "#cfcfcf",
+      "#646471"
+    ],
+    "primary": "#fdfdfd",
+    "secondary": "#cfcfcf",
+    "accent": "#646471"
   }
 }

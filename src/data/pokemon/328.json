@@ -328,5 +328,15 @@
     "en": "Trapinch",
     "ja": "ナックラー",
     "zh-Hans": "大颚蚁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bac9c",
+      "#5a7b6a",
+      "#202020"
+    ],
+    "primary": "#7bac9c",
+    "secondary": "#5a7b6a",
+    "accent": "#202020"
   }
 }

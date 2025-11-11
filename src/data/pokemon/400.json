@@ -327,5 +327,15 @@
     "en": "Bibarel",
     "ja": "ビーダル",
     "zh-Hans": "大尾狸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5a452",
+      "#7b4a52",
+      "#eee6bd"
+    ],
+    "primary": "#c5a452",
+    "secondary": "#7b4a52",
+    "accent": "#eee6bd"
   }
 }

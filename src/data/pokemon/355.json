@@ -326,5 +326,15 @@
     "en": "Duskull",
     "ja": "ヨマワル",
     "zh-Hans": "夜巡灵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#830000",
+      "#d5cda4",
+      "#b42908"
+    ],
+    "primary": "#830000",
+    "secondary": "#d5cda4",
+    "accent": "#b42908"
   }
 }

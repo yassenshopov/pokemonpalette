@@ -308,5 +308,15 @@
     "en": "Druddigon",
     "ja": "クリムガン",
     "zh-Hans": "赤面龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#187310",
+      "#109c18",
+      "#ff9c08"
+    ],
+    "primary": "#187310",
+    "secondary": "#109c18",
+    "accent": "#ff9c08"
   }
 }

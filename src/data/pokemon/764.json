@@ -308,5 +308,15 @@
     "en": "Comfey",
     "ja": "キュワワー",
     "zh-Hans": "花疗环环"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bfbfbf",
+      "#e5b045",
+      "#7ec3e5"
+    ],
+    "primary": "#bfbfbf",
+    "secondary": "#e5b045",
+    "accent": "#7ec3e5"
   }
 }

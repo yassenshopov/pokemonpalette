@@ -297,5 +297,15 @@
     "en": "Regirock",
     "ja": "レジロック",
     "zh-Hans": "雷吉洛克"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a3918",
+      "#9c6a52",
+      "#522000"
+    ],
+    "primary": "#6a3918",
+    "secondary": "#9c6a52",
+    "accent": "#522000"
   }
 }

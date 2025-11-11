@@ -320,5 +320,15 @@
     "en": "Meowstic",
     "ja": "ニャオニクス",
     "zh-Hans": "超能妙喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f1d96a",
+      "#bdaa52",
+      "#f8f8f8"
+    ],
+    "primary": "#f1d96a",
+    "secondary": "#bdaa52",
+    "accent": "#f8f8f8"
   }
 }

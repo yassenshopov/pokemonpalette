@@ -300,5 +300,15 @@
     "en": "Archaludon",
     "ja": "ブリジュラス",
     "zh-Hans": "铝钢桥龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#677a8d",
+      "#8d9ca7",
+      "#136389"
+    ],
+    "primary": "#677a8d",
+    "secondary": "#8d9ca7",
+    "accent": "#136389"
   }
 }

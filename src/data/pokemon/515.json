@@ -316,5 +316,15 @@
     "en": "Panpour",
     "ja": "ヒヤップ",
     "zh-Hans": "冷水猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#18debd",
+      "#ffd594",
+      "#18b4ac"
+    ],
+    "primary": "#18debd",
+    "secondary": "#ffd594",
+    "accent": "#18b4ac"
   }
 }

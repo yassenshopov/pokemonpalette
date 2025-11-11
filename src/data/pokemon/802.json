@@ -296,5 +296,15 @@
     "en": "Marshadow",
     "ja": "マーシャドー",
     "zh-Hans": "玛夏多"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#747778",
+      "#4e5356",
+      "#2d3137"
+    ],
+    "primary": "#747778",
+    "secondary": "#4e5356",
+    "accent": "#2d3137"
   }
 }

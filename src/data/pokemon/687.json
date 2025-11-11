@@ -325,5 +325,15 @@
     "en": "Malamar",
     "ja": "カラマネロ",
     "zh-Hans": "乌贼王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bf994c",
+      "#806633",
+      "#caeba8"
+    ],
+    "primary": "#bf994c",
+    "secondary": "#806633",
+    "accent": "#caeba8"
   }
 }

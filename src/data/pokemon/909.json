@@ -305,5 +305,15 @@
     "en": "Fuecoco",
     "ja": "ホゲータ",
     "zh-Hans": "呆火鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ef5891",
+      "#fff8df",
+      "#ab415f"
+    ],
+    "primary": "#ef5891",
+    "secondary": "#fff8df",
+    "accent": "#ab415f"
   }
 }

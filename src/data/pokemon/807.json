@@ -287,5 +287,15 @@
     "en": "Zeraora",
     "ja": "ゼラオラ",
     "zh-Hans": "捷拉奥拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fafafa",
+      "#a4a4a4",
+      "#424242"
+    ],
+    "primary": "#fafafa",
+    "secondary": "#a4a4a4",
+    "accent": "#424242"
   }
 }

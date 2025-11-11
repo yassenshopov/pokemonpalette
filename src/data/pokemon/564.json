@@ -318,5 +318,15 @@
     "en": "Tirtouga",
     "ja": "プロトーガ",
     "zh-Hans": "原盖海龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#62cdbd",
+      "#6a6273",
+      "#312939"
+    ],
+    "primary": "#62cdbd",
+    "secondary": "#6a6273",
+    "accent": "#312939"
   }
 }

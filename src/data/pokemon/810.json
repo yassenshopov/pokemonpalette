@@ -305,5 +305,15 @@
     "en": "Grookey",
     "ja": "サルノリ",
     "zh-Hans": "敲音猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b8d751",
+      "#91a848",
+      "#9e9a50"
+    ],
+    "primary": "#b8d751",
+    "secondary": "#91a848",
+    "accent": "#9e9a50"
   }
 }

@@ -300,5 +300,15 @@
     "en": "Revavroom",
     "ja": "ブロロローム",
     "zh-Hans": "普隆隆姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3e303c",
+      "#f7ea8f",
+      "#2c292c"
+    ],
+    "primary": "#3e303c",
+    "secondary": "#f7ea8f",
+    "accent": "#2c292c"
   }
 }

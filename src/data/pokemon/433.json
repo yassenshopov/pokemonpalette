@@ -309,5 +309,15 @@
     "en": "Chingling",
     "ja": "リーシャン",
     "zh-Hans": "铃铛响"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f662",
+      "#bdb452",
+      "#8b3900"
+    ],
+    "primary": "#f6f662",
+    "secondary": "#bdb452",
+    "accent": "#8b3900"
   }
 }

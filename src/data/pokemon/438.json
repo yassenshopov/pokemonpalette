@@ -312,5 +312,15 @@
     "en": "Bonsly",
     "ja": "ウソハチ",
     "zh-Hans": "盆才怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdac5a",
+      "#e65a73",
+      "#c52962"
+    ],
+    "primary": "#bdac5a",
+    "secondary": "#e65a73",
+    "accent": "#c52962"
   }
 }

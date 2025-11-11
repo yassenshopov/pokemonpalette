@@ -309,5 +309,15 @@
     "en": "Palkia",
     "ja": "パルキア",
     "zh-Hans": "帕路奇亚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdeee",
+      "#dea4a4",
+      "#cd6a73"
+    ],
+    "primary": "#ffdeee",
+    "secondary": "#dea4a4",
+    "accent": "#cd6a73"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Trevenant",
     "ja": "オーロット",
     "zh-Hans": "朽木妖"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d9d9d9",
+      "#a6a6a6",
+      "#595959"
+    ],
+    "primary": "#d9d9d9",
+    "secondary": "#a6a6a6",
+    "accent": "#595959"
   }
 }

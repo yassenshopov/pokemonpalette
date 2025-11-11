@@ -323,5 +323,15 @@
     "en": "Luxray",
     "ja": "レントラー",
     "zh-Hans": "伦琴猫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4a62",
+      "#313141",
+      "#62627b"
+    ],
+    "primary": "#4a4a62",
+    "secondary": "#313141",
+    "accent": "#62627b"
   }
 }

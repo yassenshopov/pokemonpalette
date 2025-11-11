@@ -311,5 +311,15 @@
     "en": "Naclstack",
     "ja": "ジオヅム",
     "zh-Hans": "盐石垒"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c3927b",
+      "#e9b894",
+      "#96675a"
+    ],
+    "primary": "#c3927b",
+    "secondary": "#e9b894",
+    "accent": "#96675a"
   }
 }

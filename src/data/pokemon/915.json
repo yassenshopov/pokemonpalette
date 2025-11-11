@@ -301,5 +301,15 @@
     "en": "Lechonk",
     "ja": "グルトン",
     "zh-Hans": "爱吃豚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd5f6",
+      "#f6b4d5",
+      "#050505"
+    ],
+    "primary": "#ffd5f6",
+    "secondary": "#f6b4d5",
+    "accent": "#050505"
   }
 }

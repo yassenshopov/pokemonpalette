@@ -295,5 +295,15 @@
     "en": "Greavard",
     "ja": "ボチ",
     "zh-Hans": "墓仔狗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deb156",
+      "#5c462e",
+      "#ffe968"
+    ],
+    "primary": "#deb156",
+    "secondary": "#5c462e",
+    "accent": "#ffe968"
   }
 }

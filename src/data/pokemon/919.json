@@ -295,5 +295,15 @@
     "en": "Nymble",
     "ja": "マメバッタ",
     "zh-Hans": "豆蟋蟀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e9e488",
+      "#9f9851",
+      "#58511c"
+    ],
+    "primary": "#e9e488",
+    "secondary": "#9f9851",
+    "accent": "#58511c"
   }
 }

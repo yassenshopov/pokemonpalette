@@ -315,5 +315,15 @@
     "en": "Kingambit",
     "ja": "ドドゲザン",
     "zh-Hans": "仆刀将军"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4a52",
+      "#1e1e1e",
+      "#313131"
+    ],
+    "primary": "#4a4a52",
+    "secondary": "#1e1e1e",
+    "accent": "#313131"
   }
 }

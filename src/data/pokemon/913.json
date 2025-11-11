@@ -305,5 +305,15 @@
     "en": "Quaxwell",
     "ja": "ウェルカモ",
     "zh-Hans": "涌跃鸭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#79ffe8",
+      "#fcfcfc",
+      "#6fc6b3"
+    ],
+    "primary": "#79ffe8",
+    "secondary": "#fcfcfc",
+    "accent": "#6fc6b3"
   }
 }

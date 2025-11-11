@@ -310,5 +310,15 @@
     "en": "Armarouge",
     "ja": "グレンアルマ",
     "zh-Hans": "红莲铠骑"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fdd01e",
+      "#c4a306",
+      "#e42212"
+    ],
+    "primary": "#fdd01e",
+    "secondary": "#c4a306",
+    "accent": "#e42212"
   }
 }

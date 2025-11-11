@@ -296,5 +296,15 @@
     "en": "Manaphy",
     "ja": "マナフィ",
     "zh-Hans": "玛纳霏"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73ded5",
+      "#31bdbd",
+      "#397b94"
+    ],
+    "primary": "#73ded5",
+    "secondary": "#31bdbd",
+    "accent": "#397b94"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Vanillite",
     "ja": "バニプッチ",
     "zh-Hans": "迷你冰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#deb4b4",
+      "#d5a4e6"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#deb4b4",
+    "accent": "#d5a4e6"
   }
 }

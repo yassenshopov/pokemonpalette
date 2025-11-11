@@ -308,5 +308,15 @@
     "en": "Maushold",
     "ja": "イッカネズミ",
     "zh-Hans": "一家鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f9f9f9",
+      "#b8b9c0",
+      "#393a44"
+    ],
+    "primary": "#f9f9f9",
+    "secondary": "#b8b9c0",
+    "accent": "#393a44"
   }
 }

@@ -312,5 +312,15 @@
     "en": "Aurorus",
     "ja": "アマルルガ",
     "zh-Hans": "冰雪巨龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e9fdf1",
+      "#f9f9c0",
+      "#b1cbcd"
+    ],
+    "primary": "#e9fdf1",
+    "secondary": "#f9f9c0",
+    "accent": "#b1cbcd"
   }
 }

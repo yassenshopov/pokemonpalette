@@ -320,5 +320,15 @@
     "en": "Stunfisk",
     "ja": "マッギョ",
     "zh-Hans": "泥巴鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5b483",
+      "#41cdee",
+      "#081018"
+    ],
+    "primary": "#d5b483",
+    "secondary": "#41cdee",
+    "accent": "#081018"
   }
 }

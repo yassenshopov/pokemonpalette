@@ -319,5 +319,15 @@
     "en": "Audino",
     "ja": "タブンネ",
     "zh-Hans": "差不多娃娃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdeb4",
+      "#a47bb4",
+      "#deb48b"
+    ],
+    "primary": "#ffdeb4",
+    "secondary": "#a47bb4",
+    "accent": "#deb48b"
   }
 }

@@ -284,5 +284,15 @@
     "en": "Blacephalon",
     "ja": "ズガドーン",
     "zh-Hans": "砰头小丑"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#0f30c5",
+      "#0d2281",
+      "#ee5acc"
+    ],
+    "primary": "#0f30c5",
+    "secondary": "#0d2281",
+    "accent": "#ee5acc"
   }
 }

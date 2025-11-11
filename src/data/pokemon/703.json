@@ -302,5 +302,15 @@
     "en": "Carbink",
     "ja": "メレシー",
     "zh-Hans": "小碎钻"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#65656a",
+      "#49494b",
+      "#85e0f2"
+    ],
+    "primary": "#65656a",
+    "secondary": "#49494b",
+    "accent": "#85e0f2"
   }
 }

@@ -313,5 +313,15 @@
     "en": "Quilladin",
     "ja": "ハリボーグ",
     "zh-Hans": "胖胖哈力"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b8413b",
+      "#4f261d",
+      "#7f4032"
+    ],
+    "primary": "#b8413b",
+    "secondary": "#4f261d",
+    "accent": "#7f4032"
   }
 }

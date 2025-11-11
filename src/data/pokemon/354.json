@@ -325,5 +325,15 @@
     "en": "Banette",
     "ja": "ジュペッタ",
     "zh-Hans": "诅咒娃娃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#29627b",
+      "#4a839c",
+      "#73a4c5"
+    ],
+    "primary": "#29627b",
+    "secondary": "#4a839c",
+    "accent": "#73a4c5"
   }
 }

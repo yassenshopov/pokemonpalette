@@ -316,5 +316,15 @@
     "en": "Pansear",
     "ja": "バオップ",
     "zh-Hans": "爆香猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff8320",
+      "#ffdea4",
+      "#834110"
+    ],
+    "primary": "#ff8320",
+    "secondary": "#ffdea4",
+    "accent": "#834110"
   }
 }

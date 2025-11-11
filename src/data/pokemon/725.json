@@ -317,5 +317,15 @@
     "en": "Litten",
     "ja": "ニャビー",
     "zh-Hans": "火斑喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e5e5e5",
+      "#b3b3b3",
+      "#f25b3d"
+    ],
+    "primary": "#e5e5e5",
+    "secondary": "#b3b3b3",
+    "accent": "#f25b3d"
   }
 }

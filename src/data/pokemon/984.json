@@ -284,5 +284,15 @@
     "en": "Great Tusk",
     "ja": "イダイナキバ",
     "zh-Hans": "雄伟牙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6d453d",
+      "#f4f0db",
+      "#502c1e"
+    ],
+    "primary": "#6d453d",
+    "secondary": "#f4f0db",
+    "accent": "#502c1e"
   }
 }

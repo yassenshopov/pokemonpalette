@@ -318,5 +318,15 @@
     "en": "Mudsdale",
     "ja": "バンバドロ",
     "zh-Hans": "重泥挽马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#1e4980",
+      "#ad463a",
+      "#ffac22"
+    ],
+    "primary": "#1e4980",
+    "secondary": "#ad463a",
+    "accent": "#ffac22"
   }
 }

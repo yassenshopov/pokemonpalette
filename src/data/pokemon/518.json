@@ -313,5 +313,15 @@
     "en": "Musharna",
     "ja": "ムシャーナ",
     "zh-Hans": "梦梦蚀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9c73cd",
+      "#529cc5",
+      "#ffb4c5"
+    ],
+    "primary": "#9c73cd",
+    "secondary": "#529cc5",
+    "accent": "#ffb4c5"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Oshawott",
     "ja": "ミジュマル",
     "zh-Hans": "水水獭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffee",
+      "#cdd5a4",
+      "#628bde"
+    ],
+    "primary": "#ffffee",
+    "secondary": "#cdd5a4",
+    "accent": "#628bde"
   }
 }

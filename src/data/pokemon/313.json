@@ -308,5 +308,15 @@
     "en": "Volbeat",
     "ja": "バルビート",
     "zh-Hans": "电萤虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4a52",
+      "#d59cee",
+      "#a46abd"
+    ],
+    "primary": "#4a4a52",
+    "secondary": "#d59cee",
+    "accent": "#a46abd"
   }
 }

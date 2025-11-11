@@ -322,5 +322,15 @@
     "en": "Fletchinder",
     "ja": "ヒノヤコマ",
     "zh-Hans": "火箭雀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e8d157",
+      "#3a1e1e",
+      "#b19a3c"
+    ],
+    "primary": "#e8d157",
+    "secondary": "#3a1e1e",
+    "accent": "#b19a3c"
   }
 }

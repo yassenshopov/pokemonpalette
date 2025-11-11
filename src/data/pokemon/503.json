@@ -324,5 +324,15 @@
     "en": "Samurott",
     "ja": "ダイケンキ",
     "zh-Hans": "大剑鬼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#183962",
+      "#de9c83",
+      "#202039"
+    ],
+    "primary": "#183962",
+    "secondary": "#de9c83",
+    "accent": "#202039"
   }
 }

@@ -345,5 +345,15 @@
     "en": "Magnezone",
     "ja": "ジバコイル",
     "zh-Hans": "自爆磁怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4b4bd",
+      "#523952",
+      "#dee6e6"
+    ],
+    "primary": "#b4b4bd",
+    "secondary": "#523952",
+    "accent": "#dee6e6"
   }
 }

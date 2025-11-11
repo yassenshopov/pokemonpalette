@@ -314,5 +314,15 @@
     "en": "Gumshoos",
     "ja": "デカグース",
     "zh-Hans": "猫鼬探长"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ba665a",
+      "#e47cae",
+      "#9c403a"
+    ],
+    "primary": "#ba665a",
+    "secondary": "#e47cae",
+    "accent": "#9c403a"
   }
 }

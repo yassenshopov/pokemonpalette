@@ -312,5 +312,15 @@
     "en": "Karrablast",
     "ja": "カブルモ",
     "zh-Hans": "盖盖虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#08ac94",
+      "#4a4a4a",
+      "#b4ff10"
+    ],
+    "primary": "#08ac94",
+    "secondary": "#4a4a4a",
+    "accent": "#b4ff10"
   }
 }

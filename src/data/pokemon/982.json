@@ -307,5 +307,15 @@
     "en": "Dudunsparce",
     "ja": "ノココッチ",
     "zh-Hans": "土龙节节"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6e67b",
+      "#debd39",
+      "#d55a8b"
+    ],
+    "primary": "#f6e67b",
+    "secondary": "#debd39",
+    "accent": "#d55a8b"
   }
 }

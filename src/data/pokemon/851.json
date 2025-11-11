@@ -313,5 +313,15 @@
     "en": "Centiskorch",
     "ja": "マルヤクデ",
     "zh-Hans": "焚焰蚣"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#25585b",
+      "#f89e08",
+      "#ff5839"
+    ],
+    "primary": "#25585b",
+    "secondary": "#f89e08",
+    "accent": "#ff5839"
   }
 }

@@ -324,5 +324,15 @@
     "en": "Lucario",
     "ja": "ルカリオ",
     "zh-Hans": "路卡利欧"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#527383",
+      "#39525a",
+      "#aca429"
+    ],
+    "primary": "#527383",
+    "secondary": "#39525a",
+    "accent": "#aca429"
   }
 }

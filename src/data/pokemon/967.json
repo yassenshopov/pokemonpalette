@@ -290,5 +290,15 @@
     "en": "Cyclizar",
     "ja": "モトトカゲ",
     "zh-Hans": "摩托蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#615f47",
+      "#8a8a70",
+      "#323943"
+    ],
+    "primary": "#615f47",
+    "secondary": "#8a8a70",
+    "accent": "#323943"
   }
 }

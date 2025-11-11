@@ -294,5 +294,15 @@
     "en": "Melmetal",
     "ja": "メルメタル",
     "zh-Hans": "美录梅塔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#59544e",
+      "#3d3534",
+      "#dcdcda"
+    ],
+    "primary": "#59544e",
+    "secondary": "#3d3534",
+    "accent": "#dcdcda"
   }
 }

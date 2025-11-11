@@ -291,5 +291,15 @@
     "en": "Darkrai",
     "ja": "ダークライ",
     "zh-Hans": "达克莱伊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#29104a",
+      "#000010",
+      "#39187b"
+    ],
+    "primary": "#29104a",
+    "secondary": "#000010",
+    "accent": "#39187b"
   }
 }

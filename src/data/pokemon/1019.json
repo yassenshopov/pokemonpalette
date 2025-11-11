@@ -325,5 +325,15 @@
     "en": "Hydrapple",
     "ja": "カミツオロチ",
     "zh-Hans": "蜜集大蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#1f1f11",
+      "#fdcd10",
+      "#9de15f"
+    ],
+    "primary": "#1f1f11",
+    "secondary": "#fdcd10",
+    "accent": "#9de15f"
   }
 }

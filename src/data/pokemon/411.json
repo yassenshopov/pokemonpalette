@@ -312,5 +312,15 @@
     "en": "Bastiodon",
     "ja": "トリデプス",
     "zh-Hans": "护城龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#41628b",
+      "#31295a",
+      "#d5d5d5"
+    ],
+    "primary": "#41628b",
+    "secondary": "#31295a",
+    "accent": "#d5d5d5"
   }
 }

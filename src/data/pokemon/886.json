@@ -316,5 +316,15 @@
     "en": "Drakloak",
     "ja": "ドロンチ",
     "zh-Hans": "多龙奇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7fb3b1",
+      "#444e62",
+      "#566f89"
+    ],
+    "primary": "#7fb3b1",
+    "secondary": "#444e62",
+    "accent": "#566f89"
   }
 }

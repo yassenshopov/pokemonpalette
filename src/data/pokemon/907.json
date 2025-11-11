@@ -305,5 +305,15 @@
     "en": "Floragato",
     "ja": "ニャローテ",
     "zh-Hans": "蒂蕾喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d8efc6",
+      "#3f5f56",
+      "#7b926d"
+    ],
+    "primary": "#d8efc6",
+    "secondary": "#3f5f56",
+    "accent": "#7b926d"
   }
 }

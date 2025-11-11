@@ -317,5 +317,15 @@
     "en": "Squawkabilly",
     "ja": "イキリンコ",
     "zh-Hans": "怒鹦哥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#64da2c",
+      "#589d2f",
+      "#fcfcfc"
+    ],
+    "primary": "#64da2c",
+    "secondary": "#589d2f",
+    "accent": "#fcfcfc"
   }
 }

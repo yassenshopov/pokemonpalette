@@ -316,5 +316,15 @@
     "en": "Doublade",
     "ja": "ニダンギル",
     "zh-Hans": "双剑鞘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#db3d50",
+      "#622680",
+      "#a92835"
+    ],
+    "primary": "#db3d50",
+    "secondary": "#622680",
+    "accent": "#a92835"
   }
 }

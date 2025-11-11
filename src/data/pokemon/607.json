@@ -328,5 +328,15 @@
     "en": "Litwick",
     "ja": "ヒトモシ",
     "zh-Hans": "烛光灵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5bdb4",
+      "#ffffff",
+      "#ace6f6"
+    ],
+    "primary": "#c5bdb4",
+    "secondary": "#ffffff",
+    "accent": "#ace6f6"
   }
 }

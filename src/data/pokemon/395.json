@@ -322,5 +322,15 @@
     "en": "Empoleon",
     "ja": "エンペルト",
     "zh-Hans": "帝王拿波"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#085262",
+      "#207b94",
+      "#62bdac"
+    ],
+    "primary": "#085262",
+    "secondary": "#207b94",
+    "accent": "#62bdac"
   }
 }

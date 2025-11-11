@@ -323,5 +323,15 @@
     "en": "Toxapex",
     "ja": "ドヒドイデ",
     "zh-Hans": "超坏星"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d77188",
+      "#364a54",
+      "#bb425a"
+    ],
+    "primary": "#d77188",
+    "secondary": "#364a54",
+    "accent": "#bb425a"
   }
 }

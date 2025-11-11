@@ -323,5 +323,15 @@
     "en": "Darumaka",
     "ja": "ダルマッカ",
     "zh-Hans": "火红不倒翁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e68b9c",
+      "#a4526a",
+      "#ffe66a"
+    ],
+    "primary": "#e68b9c",
+    "secondary": "#a4526a",
+    "accent": "#ffe66a"
   }
 }

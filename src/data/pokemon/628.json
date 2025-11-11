@@ -325,5 +325,15 @@
     "en": "Braviary",
     "ja": "ウォーグル",
     "zh-Hans": "勇士雄鹰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a5241",
+      "#206aac",
+      "#413120"
+    ],
+    "primary": "#6a5241",
+    "secondary": "#206aac",
+    "accent": "#413120"
   }
 }

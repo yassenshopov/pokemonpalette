@@ -320,5 +320,15 @@
     "en": "Sableye",
     "ja": "ヤミラミ",
     "zh-Hans": "勾魂眼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#735231",
+      "#d59452",
+      "#ffcd6a"
+    ],
+    "primary": "#735231",
+    "secondary": "#d59452",
+    "accent": "#ffcd6a"
   }
 }

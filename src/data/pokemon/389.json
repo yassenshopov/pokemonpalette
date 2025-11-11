@@ -322,5 +322,15 @@
     "en": "Torterra",
     "ja": "ドダイトス",
     "zh-Hans": "土台龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8bbd73",
+      "#838331",
+      "#628b4a"
+    ],
+    "primary": "#8bbd73",
+    "secondary": "#838331",
+    "accent": "#628b4a"
   }
 }

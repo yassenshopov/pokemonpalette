@@ -328,5 +328,15 @@
     "en": "Vanilluxe",
     "ja": "バイバニラ",
     "zh-Hans": "双倍多多冰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#838bee",
+      "#bdbdde"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#838bee",
+    "accent": "#bdbdde"
   }
 }

@@ -309,5 +309,15 @@
     "en": "Solrock",
     "ja": "ソルロック",
     "zh-Hans": "太阳岩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deb418",
+      "#c59441",
+      "#624a18"
+    ],
+    "primary": "#deb418",
+    "secondary": "#c59441",
+    "accent": "#624a18"
   }
 }

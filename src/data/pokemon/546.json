@@ -323,5 +323,15 @@
     "en": "Cottonee",
     "ja": "モンメン",
     "zh-Hans": "木棉球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f6c5",
+      "#ee9420",
+      "#ffffff"
+    ],
+    "primary": "#f6f6c5",
+    "secondary": "#ee9420",
+    "accent": "#ffffff"
   }
 }

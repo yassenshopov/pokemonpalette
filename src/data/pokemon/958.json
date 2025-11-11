@@ -316,5 +316,15 @@
     "en": "Tinkatuff",
     "ja": "ナカヌチャン",
     "zh-Hans": "巧锻匠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ecd0d0",
+      "#3f2319",
+      "#cb836c"
+    ],
+    "primary": "#ecd0d0",
+    "secondary": "#3f2319",
+    "accent": "#cb836c"
   }
 }

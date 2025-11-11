@@ -322,5 +322,15 @@
     "en": "Gurdurr",
     "ja": "ドテッコツ",
     "zh-Hans": "铁骨土人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5c583",
+      "#832939",
+      "#b49c62"
+    ],
+    "primary": "#d5c583",
+    "secondary": "#832939",
+    "accent": "#b49c62"
   }
 }

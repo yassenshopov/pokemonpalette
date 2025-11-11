@@ -318,5 +318,15 @@
     "en": "Swanna",
     "ja": "スワンナ",
     "zh-Hans": "舞天鹅"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#cdbde6",
+      "#313152"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#cdbde6",
+    "accent": "#313152"
   }
 }

@@ -306,5 +306,15 @@
     "en": "Kilowattrel",
     "ja": "タイカイデン",
     "zh-Hans": "大电海燕"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffcd37",
+      "#8d526b",
+      "#663542"
+    ],
+    "primary": "#ffcd37",
+    "secondary": "#8d526b",
+    "accent": "#663542"
   }
 }

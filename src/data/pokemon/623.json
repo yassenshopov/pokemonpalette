@@ -323,5 +323,15 @@
     "en": "Golurk",
     "ja": "ゴルーグ",
     "zh-Hans": "泥偶巨人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b8b8b",
+      "#a4bdbd",
+      "#5a6a6a"
+    ],
+    "primary": "#7b8b8b",
+    "secondary": "#a4bdbd",
+    "accent": "#5a6a6a"
   }
 }

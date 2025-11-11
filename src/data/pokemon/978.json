@@ -304,5 +304,15 @@
     "en": "Tatsugiri",
     "ja": "シャリタツ",
     "zh-Hans": "米立龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#af6750",
+      "#dc7a54",
+      "#adafb8"
+    ],
+    "primary": "#af6750",
+    "secondary": "#dc7a54",
+    "accent": "#adafb8"
   }
 }

@@ -324,5 +324,15 @@
     "en": "Sharpedo",
     "ja": "サメハダー",
     "zh-Hans": "巨牙鲨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ac18ac",
+      "#d541d5",
+      "#5a005a"
+    ],
+    "primary": "#ac18ac",
+    "secondary": "#d541d5",
+    "accent": "#5a005a"
   }
 }

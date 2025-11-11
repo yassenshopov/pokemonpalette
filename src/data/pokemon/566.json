@@ -306,5 +306,15 @@
     "en": "Archen",
     "ja": "アーケン",
     "zh-Hans": "始祖小鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffe66a",
+      "#e6834a",
+      "#10d54a"
+    ],
+    "primary": "#ffe66a",
+    "secondary": "#e6834a",
+    "accent": "#10d54a"
   }
 }

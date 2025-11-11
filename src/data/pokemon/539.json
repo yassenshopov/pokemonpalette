@@ -312,5 +312,15 @@
     "en": "Sawk",
     "ja": "ダゲキ",
     "zh-Hans": "打击鬼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5f6ee",
+      "#41414a",
+      "#293141"
+    ],
+    "primary": "#d5f6ee",
+    "secondary": "#41414a",
+    "accent": "#293141"
   }
 }

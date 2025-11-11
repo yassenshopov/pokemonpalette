@@ -322,5 +322,15 @@
     "en": "Fletchling",
     "ja": "ヤヤコマ",
     "zh-Hans": "小箭雀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#624141",
+      "#f78656",
+      "#e5b27e"
+    ],
+    "primary": "#624141",
+    "secondary": "#f78656",
+    "accent": "#e5b27e"
   }
 }

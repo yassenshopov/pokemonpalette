@@ -364,5 +364,15 @@
     "en": "Genesect",
     "ja": "ゲノセクト",
     "zh-Hans": "盖诺赛克特"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5414a",
+      "#943129",
+      "#522018"
+    ],
+    "primary": "#d5414a",
+    "secondary": "#943129",
+    "accent": "#522018"
   }
 }

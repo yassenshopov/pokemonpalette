@@ -322,5 +322,15 @@
     "en": "Timburr",
     "ja": "ドッコラー",
     "zh-Hans": "搬运小匠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5c583",
+      "#b49c62",
+      "#836231"
+    ],
+    "primary": "#d5c583",
+    "secondary": "#b49c62",
+    "accent": "#836231"
   }
 }

@@ -313,5 +313,15 @@
     "en": "Chatot",
     "ja": "ペラップ",
     "zh-Hans": "聒噪鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#314a7b",
+      "#293952",
+      "#ffffff"
+    ],
+    "primary": "#314a7b",
+    "secondary": "#293952",
+    "accent": "#ffffff"
   }
 }

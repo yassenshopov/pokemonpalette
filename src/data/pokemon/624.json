@@ -327,5 +327,15 @@
     "en": "Pawniard",
     "ja": "コマタナ",
     "zh-Hans": "驹刀小兵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4152bd",
+      "#ffffff",
+      "#292931"
+    ],
+    "primary": "#4152bd",
+    "secondary": "#ffffff",
+    "accent": "#292931"
   }
 }

@@ -313,5 +313,15 @@
     "en": "Chespin",
     "ja": "ハリマロン",
     "zh-Hans": "哈力栗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b8413b",
+      "#592320",
+      "#f7b58d"
+    ],
+    "primary": "#b8413b",
+    "secondary": "#592320",
+    "accent": "#f7b58d"
   }
 }

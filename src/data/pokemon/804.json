@@ -293,5 +293,15 @@
     "en": "Naganadel",
     "ja": "アーゴヨン",
     "zh-Hans": "四颚针龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3c4543",
+      "#ffca2a",
+      "#b88619"
+    ],
+    "primary": "#3c4543",
+    "secondary": "#ffca2a",
+    "accent": "#b88619"
   }
 }

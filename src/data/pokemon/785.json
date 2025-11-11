@@ -298,5 +298,15 @@
     "en": "Tapu Koko",
     "ja": "カプ・コケコ",
     "zh-Hans": "卡璞・鸣鸣"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#41444b",
+      "#2b2c31",
+      "#282c28"
+    ],
+    "primary": "#41444b",
+    "secondary": "#2b2c31",
+    "accent": "#282c28"
   }
 }

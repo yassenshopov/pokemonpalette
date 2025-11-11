@@ -318,5 +318,15 @@
     "en": "Finneon",
     "ja": "ケイコウオ",
     "zh-Hans": "荧光鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a4a31",
+      "#f6d5ac",
+      "#de416a"
+    ],
+    "primary": "#5a4a31",
+    "secondary": "#f6d5ac",
+    "accent": "#de416a"
   }
 }

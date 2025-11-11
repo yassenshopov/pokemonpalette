@@ -318,5 +318,15 @@
     "en": "Salazzle",
     "ja": "エンニュート",
     "zh-Hans": "焰后蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdc5ca",
+      "#776066",
+      "#080808"
+    ],
+    "primary": "#cdc5ca",
+    "secondary": "#776066",
+    "accent": "#080808"
   }
 }

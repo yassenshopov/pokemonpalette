@@ -329,5 +329,15 @@
     "en": "Toucannon",
     "ja": "ドデカバシ",
     "zh-Hans": "铳嘴大鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#404040",
+      "#f8f8f8",
+      "#262626"
+    ],
+    "primary": "#404040",
+    "secondary": "#f8f8f8",
+    "accent": "#262626"
   }
 }

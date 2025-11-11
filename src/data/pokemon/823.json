@@ -323,5 +323,15 @@
     "en": "Corviknight",
     "ja": "アーマーガア",
     "zh-Hans": "钢铠鸦"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#838383",
+      "#353535",
+      "#4d4d4d"
+    ],
+    "primary": "#838383",
+    "secondary": "#353535",
+    "accent": "#4d4d4d"
   }
 }

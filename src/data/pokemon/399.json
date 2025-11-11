@@ -313,5 +313,15 @@
     "en": "Bidoof",
     "ja": "ビッパ",
     "zh-Hans": "大牙狸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deb45a",
+      "#b48b31",
+      "#413110"
+    ],
+    "primary": "#deb45a",
+    "secondary": "#b48b31",
+    "accent": "#413110"
   }
 }

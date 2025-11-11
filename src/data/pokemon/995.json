@@ -284,5 +284,15 @@
     "en": "Iron Thorns",
     "ja": "テツノイバラ",
     "zh-Hans": "铁荆棘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5c8cb",
+      "#91959d",
+      "#333539"
+    ],
+    "primary": "#c5c8cb",
+    "secondary": "#91959d",
+    "accent": "#333539"
   }
 }

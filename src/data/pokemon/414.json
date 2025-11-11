@@ -363,5 +363,15 @@
     "en": "Mothim",
     "ja": "ガーメイル",
     "zh-Hans": "绅士蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeee73",
+      "#52a4d5",
+      "#297b9c"
+    ],
+    "primary": "#eeee73",
+    "secondary": "#52a4d5",
+    "accent": "#297b9c"
   }
 }

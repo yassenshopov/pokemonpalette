@@ -597,5 +597,15 @@
     "en": "Arceus",
     "ja": "アルセウス",
     "zh-Hans": "阿尔宙斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff68b",
+      "#dec539",
+      "#837300"
+    ],
+    "primary": "#fff68b",
+    "secondary": "#dec539",
+    "accent": "#837300"
   }
 }

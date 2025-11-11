@@ -311,5 +311,15 @@
     "en": "Hattrem",
     "ja": "テブリム",
     "zh-Hans": "提布莉姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ead5d0",
+      "#c0a6bb",
+      "#181818"
+    ],
+    "primary": "#ead5d0",
+    "secondary": "#c0a6bb",
+    "accent": "#181818"
   }
 }

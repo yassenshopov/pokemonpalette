@@ -307,5 +307,15 @@
     "en": "Hippopotas",
     "ja": "ヒポポタス",
     "zh-Hans": "沙河马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6dea4",
+      "#948b31",
+      "#c5b483"
+    ],
+    "primary": "#e6dea4",
+    "secondary": "#948b31",
+    "accent": "#c5b483"
   }
 }

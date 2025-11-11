@@ -318,5 +318,15 @@
     "en": "Rufflet",
     "ja": "ワシボン",
     "zh-Hans": "毛头小鹰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6eed5",
+      "#ac8b5a",
+      "#9c5a29"
+    ],
+    "primary": "#f6eed5",
+    "secondary": "#ac8b5a",
+    "accent": "#9c5a29"
   }
 }

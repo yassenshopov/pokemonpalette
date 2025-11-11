@@ -292,5 +292,15 @@
     "en": "Buzzwole",
     "ja": "マッシブーン",
     "zh-Hans": "爆肌蚊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff2d32",
+      "#15e630",
+      "#1a912c"
+    ],
+    "primary": "#ff2d32",
+    "secondary": "#15e630",
+    "accent": "#1a912c"
   }
 }

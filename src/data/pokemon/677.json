@@ -313,5 +313,15 @@
     "en": "Espurr",
     "ja": "ニャスパー",
     "zh-Hans": "妙喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f2c2da",
+      "#bf99ac",
+      "#806673"
+    ],
+    "primary": "#f2c2da",
+    "secondary": "#bf99ac",
+    "accent": "#806673"
   }
 }

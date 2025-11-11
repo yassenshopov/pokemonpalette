@@ -300,5 +300,15 @@
     "en": "Type: Null",
     "ja": "タイプ：ヌル",
     "zh-Hans": "属性：空"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#080808",
+      "#cfbe9a",
+      "#60472d"
+    ],
+    "primary": "#080808",
+    "secondary": "#cfbe9a",
+    "accent": "#60472d"
   }
 }

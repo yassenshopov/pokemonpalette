@@ -325,5 +325,15 @@
     "en": "Foongus",
     "ja": "タマゲタケ",
     "zh-Hans": "哎呀球菇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff6e6",
+      "#cdac8b",
+      "#4a5a31"
+    ],
+    "primary": "#fff6e6",
+    "secondary": "#cdac8b",
+    "accent": "#4a5a31"
   }
 }

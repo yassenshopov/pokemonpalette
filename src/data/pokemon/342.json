@@ -318,5 +318,15 @@
     "en": "Crawdaunt",
     "ja": "シザリガー",
     "zh-Hans": "铁螯龙虾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de6a08",
+      "#ff9400",
+      "#c5cdee"
+    ],
+    "primary": "#de6a08",
+    "secondary": "#ff9400",
+    "accent": "#c5cdee"
   }
 }

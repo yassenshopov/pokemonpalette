@@ -316,5 +316,15 @@
     "en": "Dragapult",
     "ja": "ドラパルト",
     "zh-Hans": "多龙巴鲁托"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#48a9b0",
+      "#78d4cb",
+      "#2c323f"
+    ],
+    "primary": "#48a9b0",
+    "secondary": "#78d4cb",
+    "accent": "#2c323f"
   }
 }

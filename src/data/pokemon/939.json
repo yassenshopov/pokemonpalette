@@ -301,5 +301,15 @@
     "en": "Bellibolt",
     "ja": "ハラバリー",
     "zh-Hans": "电肚蛙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fbfd4e",
+      "#7e736d",
+      "#4d4440"
+    ],
+    "primary": "#fbfd4e",
+    "secondary": "#7e736d",
+    "accent": "#4d4440"
   }
 }

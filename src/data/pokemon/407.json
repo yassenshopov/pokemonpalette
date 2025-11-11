@@ -336,5 +336,15 @@
     "en": "Roserade",
     "ja": "ロズレイド",
     "zh-Hans": "罗丝雷朵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#73a46a",
+      "#528300"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#73a46a",
+    "accent": "#528300"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Araquanid",
     "ja": "オニシズクモ",
     "zh-Hans": "滴蛛霸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b7d7e6",
+      "#81afc9",
+      "#3b616d"
+    ],
+    "primary": "#b7d7e6",
+    "secondary": "#81afc9",
+    "accent": "#3b616d"
   }
 }

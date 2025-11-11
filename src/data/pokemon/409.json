@@ -307,5 +307,15 @@
     "en": "Rampardos",
     "ja": "ラムパルド",
     "zh-Hans": "战槌龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8b8373",
+      "#62624a",
+      "#414131"
+    ],
+    "primary": "#8b8373",
+    "secondary": "#62624a",
+    "accent": "#414131"
   }
 }

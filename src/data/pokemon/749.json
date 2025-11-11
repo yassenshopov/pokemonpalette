@@ -318,5 +318,15 @@
     "en": "Mudbray",
     "ja": "ドロバンコ",
     "zh-Hans": "泥驴仔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#df9513",
+      "#c89993",
+      "#a76911"
+    ],
+    "primary": "#df9513",
+    "secondary": "#c89993",
+    "accent": "#a76911"
   }
 }

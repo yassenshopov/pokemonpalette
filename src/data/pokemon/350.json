@@ -319,5 +319,15 @@
     "en": "Milotic",
     "ja": "ミロカロス",
     "zh-Hans": "美纳斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdea4",
+      "#d5ac7b",
+      "#524139"
+    ],
+    "primary": "#ffdea4",
+    "secondary": "#d5ac7b",
+    "accent": "#524139"
   }
 }

@@ -283,5 +283,15 @@
     "en": "Iron Crown",
     "ja": "テツノカシラ",
     "zh-Hans": "鐵頭殼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#92969e",
+      "#c6c9cc",
+      "#606164"
+    ],
+    "primary": "#92969e",
+    "secondary": "#c6c9cc",
+    "accent": "#606164"
   }
 }

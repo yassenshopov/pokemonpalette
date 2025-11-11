@@ -312,5 +312,15 @@
     "en": "Sneasler",
     "ja": "オオニューラ",
     "zh-Hans": "大狃拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cec067",
+      "#0f110d",
+      "#353654"
+    ],
+    "primary": "#cec067",
+    "secondary": "#0f110d",
+    "accent": "#353654"
   }
 }

@@ -301,5 +301,15 @@
     "en": "Gossifleur",
     "ja": "ヒメンカ",
     "zh-Hans": "幼棉棉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#81a4a5",
+      "#e36f99",
+      "#ec94b5"
+    ],
+    "primary": "#81a4a5",
+    "secondary": "#e36f99",
+    "accent": "#ec94b5"
   }
 }

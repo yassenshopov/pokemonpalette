@@ -327,5 +327,15 @@
     "en": "Metang",
     "ja": "メタング",
     "zh-Hans": "金属怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b7383",
+      "#aca4b4",
+      "#cdcdd5"
+    ],
+    "primary": "#7b7383",
+    "secondary": "#aca4b4",
+    "accent": "#cdcdd5"
   }
 }

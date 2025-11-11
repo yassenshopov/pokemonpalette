@@ -308,5 +308,15 @@
     "en": "Heatmor",
     "ja": "クイタラン",
     "zh-Hans": "熔蚁兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a5252",
+      "#6a3131",
+      "#393131"
+    ],
+    "primary": "#5a5252",
+    "secondary": "#6a3131",
+    "accent": "#393131"
   }
 }

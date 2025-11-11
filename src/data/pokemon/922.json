@@ -315,5 +315,15 @@
     "en": "Pawmo",
     "ja": "パモット",
     "zh-Hans": "布土拨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee999d",
+      "#bc6371",
+      "#ffedc0"
+    ],
+    "primary": "#ee999d",
+    "secondary": "#bc6371",
+    "accent": "#ffedc0"
   }
 }

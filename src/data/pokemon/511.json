@@ -316,5 +316,15 @@
     "en": "Pansage",
     "ja": "ヤナップ",
     "zh-Hans": "花椰猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52b431",
+      "#ffe67b",
+      "#207310"
+    ],
+    "primary": "#52b431",
+    "secondary": "#ffe67b",
+    "accent": "#207310"
   }
 }

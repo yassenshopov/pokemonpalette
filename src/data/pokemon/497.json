@@ -317,5 +317,15 @@
     "en": "Serperior",
     "ja": "ジャローダ",
     "zh-Hans": "君主蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#417b9c",
+      "#acee6a",
+      "#294a6a"
+    ],
+    "primary": "#417b9c",
+    "secondary": "#acee6a",
+    "accent": "#294a6a"
   }
 }

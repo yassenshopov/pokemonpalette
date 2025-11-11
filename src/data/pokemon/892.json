@@ -317,5 +317,15 @@
     "en": "Urshifu",
     "ja": "ウーラオス",
     "zh-Hans": "武道熊师"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8d8c8e",
+      "#605f4d",
+      "#6b6574"
+    ],
+    "primary": "#8d8c8e",
+    "secondary": "#605f4d",
+    "accent": "#6b6574"
   }
 }

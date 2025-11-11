@@ -296,5 +296,15 @@
     "en": "Cryogonal",
     "ja": "フリージオ",
     "zh-Hans": "几何雪花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#528bc5",
+      "#3162a4",
+      "#29415a"
+    ],
+    "primary": "#528bc5",
+    "secondary": "#3162a4",
+    "accent": "#29415a"
   }
 }

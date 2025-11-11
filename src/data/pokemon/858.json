@@ -323,5 +323,15 @@
     "en": "Hatterene",
     "ja": "ブリムオン",
     "zh-Hans": "布莉姆温"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ead5d0",
+      "#fc99ac",
+      "#90748a"
+    ],
+    "primary": "#ead5d0",
+    "secondary": "#fc99ac",
+    "accent": "#90748a"
   }
 }

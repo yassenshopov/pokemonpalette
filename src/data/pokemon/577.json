@@ -328,5 +328,15 @@
     "en": "Solosis",
     "ja": "ユニラン",
     "zh-Hans": "单卵细胞球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5ab4ac",
+      "#dee6ac",
+      "#acac7b"
+    ],
+    "primary": "#5ab4ac",
+    "secondary": "#dee6ac",
+    "accent": "#acac7b"
   }
 }

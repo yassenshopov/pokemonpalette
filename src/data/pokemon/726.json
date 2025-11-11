@@ -317,5 +317,15 @@
     "en": "Torracat",
     "ja": "ニャヒート",
     "zh-Hans": "炎热喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f9f9f9",
+      "#f26b30",
+      "#b83422"
+    ],
+    "primary": "#f9f9f9",
+    "secondary": "#f26b30",
+    "accent": "#b83422"
   }
 }

@@ -300,5 +300,15 @@
     "en": "Toedscool",
     "ja": "ノノクラゲ",
     "zh-Hans": "原野水母"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cfcbba",
+      "#1b1b1b",
+      "#a8a495"
+    ],
+    "primary": "#cfcbba",
+    "secondary": "#1b1b1b",
+    "accent": "#a8a495"
   }
 }

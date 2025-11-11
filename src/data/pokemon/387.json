@@ -317,5 +317,15 @@
     "en": "Turtwig",
     "ja": "ナエトル",
     "zh-Hans": "草苗龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#83cdb4",
+      "#5aac94",
+      "#c5c539"
+    ],
+    "primary": "#83cdb4",
+    "secondary": "#5aac94",
+    "accent": "#c5c539"
   }
 }

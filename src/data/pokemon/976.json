@@ -290,5 +290,15 @@
     "en": "Veluza",
     "ja": "ミガルーサ",
     "zh-Hans": "轻身鳕"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6bc870",
+      "#adaead",
+      "#438b4d"
+    ],
+    "primary": "#6bc870",
+    "secondary": "#adaead",
+    "accent": "#438b4d"
   }
 }

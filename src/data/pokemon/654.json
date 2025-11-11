@@ -313,5 +313,15 @@
     "en": "Braixen",
     "ja": "テールナー",
     "zh-Hans": "长尾火狐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d195e5",
+      "#f8f8f8",
+      "#513a59"
+    ],
+    "primary": "#d195e5",
+    "secondary": "#f8f8f8",
+    "accent": "#513a59"
   }
 }

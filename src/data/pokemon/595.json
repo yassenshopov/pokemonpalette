@@ -318,5 +318,15 @@
     "en": "Joltik",
     "ja": "バチュル",
     "zh-Hans": "电电虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dee652",
+      "#626208",
+      "#bdbd18"
+    ],
+    "primary": "#dee652",
+    "secondary": "#626208",
+    "accent": "#bdbd18"
   }
 }

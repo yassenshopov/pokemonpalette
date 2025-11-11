@@ -313,5 +313,15 @@
     "en": "Wailord",
     "ja": "ホエルオー",
     "zh-Hans": "吼鲸王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eee6ff",
+      "#9452a4",
+      "#a473c5"
+    ],
+    "primary": "#eee6ff",
+    "secondary": "#9452a4",
+    "accent": "#a473c5"
   }
 }

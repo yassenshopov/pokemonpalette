@@ -313,5 +313,15 @@
     "en": "Purrloin",
     "ja": "チョロネコ",
     "zh-Hans": "扒手猫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#526283",
+      "#f6eec5",
+      "#ac73e6"
+    ],
+    "primary": "#526283",
+    "secondary": "#f6eec5",
+    "accent": "#ac73e6"
   }
 }

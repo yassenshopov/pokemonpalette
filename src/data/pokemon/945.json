@@ -306,5 +306,15 @@
     "en": "Grafaiai",
     "ja": "タギングル",
     "zh-Hans": "涂标客"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7f7f60",
+      "#323d4a",
+      "#54543d"
+    ],
+    "primary": "#7f7f60",
+    "secondary": "#323d4a",
+    "accent": "#54543d"
   }
 }

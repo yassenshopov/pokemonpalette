@@ -317,5 +317,15 @@
     "en": "Mantyke",
     "ja": "タマンタ",
     "zh-Hans": "小球飞鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#0083ac",
+      "#9cd5ee",
+      "#6aacde"
+    ],
+    "primary": "#0083ac",
+    "secondary": "#9cd5ee",
+    "accent": "#6aacde"
   }
 }

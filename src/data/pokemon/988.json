@@ -284,5 +284,15 @@
     "en": "Slither Wing",
     "ja": "チヲハウハネ",
     "zh-Hans": "爬地翅"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd356",
+      "#f1f7f7",
+      "#181820"
+    ],
+    "primary": "#ffd356",
+    "secondary": "#f1f7f7",
+    "accent": "#181820"
   }
 }

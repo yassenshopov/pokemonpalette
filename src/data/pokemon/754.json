@@ -312,5 +312,15 @@
     "en": "Lurantis",
     "ja": "ラランテス",
     "zh-Hans": "兰螳花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a3cc52",
+      "#fff0a6",
+      "#526629"
+    ],
+    "primary": "#a3cc52",
+    "secondary": "#fff0a6",
+    "accent": "#526629"
   }
 }

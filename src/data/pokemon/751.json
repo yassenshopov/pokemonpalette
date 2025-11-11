@@ -317,5 +317,15 @@
     "en": "Dewpider",
     "ja": "シズクモ",
     "zh-Hans": "滴蛛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e8e8ea",
+      "#8895ac",
+      "#a355c4"
+    ],
+    "primary": "#e8e8ea",
+    "secondary": "#8895ac",
+    "accent": "#a355c4"
   }
 }

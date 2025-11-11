@@ -291,5 +291,15 @@
     "en": "Carnivine",
     "ja": "マスキッパ",
     "zh-Hans": "尖牙笼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdde62",
+      "#bd9408",
+      "#a4ac31"
+    ],
+    "primary": "#cdde62",
+    "secondary": "#bd9408",
+    "accent": "#a4ac31"
   }
 }

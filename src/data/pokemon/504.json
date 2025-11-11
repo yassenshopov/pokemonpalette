@@ -313,5 +313,15 @@
     "en": "Patrat",
     "ja": "ミネズミ",
     "zh-Hans": "探探鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a4a4a",
+      "#8b7b62",
+      "#decd94"
+    ],
+    "primary": "#5a4a4a",
+    "secondary": "#8b7b62",
+    "accent": "#decd94"
   }
 }

@@ -339,5 +339,15 @@
     "en": "Greninja",
     "ja": "ゲッコウガ",
     "zh-Hans": "甲贺忍蛙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3d3d40",
+      "#505059",
+      "#242426"
+    ],
+    "primary": "#3d3d40",
+    "secondary": "#505059",
+    "accent": "#242426"
   }
 }

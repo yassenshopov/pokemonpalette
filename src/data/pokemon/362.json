@@ -340,5 +340,15 @@
     "en": "Glalie",
     "ja": "オニゴーリ",
     "zh-Hans": "冰鬼护"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#292939",
+      "#deeeee",
+      "#9cb4b4"
+    ],
+    "primary": "#292939",
+    "secondary": "#deeeee",
+    "accent": "#9cb4b4"
   }
 }

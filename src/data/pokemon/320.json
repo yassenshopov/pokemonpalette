@@ -313,5 +313,15 @@
     "en": "Wailmer",
     "ja": "ホエルコ",
     "zh-Hans": "吼吼鲸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd94e6",
+      "#eed5a4",
+      "#a473bd"
+    ],
+    "primary": "#bd94e6",
+    "secondary": "#eed5a4",
+    "accent": "#a473bd"
   }
 }

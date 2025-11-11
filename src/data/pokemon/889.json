@@ -286,5 +286,15 @@
     "en": "Zamazenta",
     "ja": "ザマゼンタ",
     "zh-Hans": "藏玛然特"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee51c2",
+      "#ae3695",
+      "#a22c47"
+    ],
+    "primary": "#ee51c2",
+    "secondary": "#ae3695",
+    "accent": "#a22c47"
   }
 }

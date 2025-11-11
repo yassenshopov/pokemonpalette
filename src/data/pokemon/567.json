@@ -306,5 +306,15 @@
     "en": "Archeops",
     "ja": "アーケオス",
     "zh-Hans": "始祖大鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#10a494",
+      "#ffb462",
+      "#087362"
+    ],
+    "primary": "#10a494",
+    "secondary": "#ffb462",
+    "accent": "#087362"
   }
 }

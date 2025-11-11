@@ -318,5 +318,15 @@
     "en": "Cinccino",
     "ja": "チラチーノ",
     "zh-Hans": "奇诺栗鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdbd8b",
+      "#ffffff",
+      "#b49473"
+    ],
+    "primary": "#cdbd8b",
+    "secondary": "#ffffff",
+    "accent": "#b49473"
   }
 }

@@ -346,5 +346,15 @@
     "en": "Gallade",
     "ja": "エルレイド",
     "zh-Hans": "艾路雷朵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6cdf6",
+      "#7bacee",
+      "#5273e6"
+    ],
+    "primary": "#e6cdf6",
+    "secondary": "#7bacee",
+    "accent": "#5273e6"
   }
 }

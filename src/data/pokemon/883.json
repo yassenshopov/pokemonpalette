@@ -296,5 +296,15 @@
     "en": "Arctovish",
     "ja": "ウオチルドン",
     "zh-Hans": "鳃鱼海兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d6d6d6",
+      "#edf3f2",
+      "#9a9a9a"
+    ],
+    "primary": "#d6d6d6",
+    "secondary": "#edf3f2",
+    "accent": "#9a9a9a"
   }
 }

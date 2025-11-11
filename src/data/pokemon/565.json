@@ -318,5 +318,15 @@
     "en": "Carracosta",
     "ja": "アバゴーラ",
     "zh-Hans": "肋骨海龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#527ba4",
+      "#20414a",
+      "#081818"
+    ],
+    "primary": "#527ba4",
+    "secondary": "#20414a",
+    "accent": "#081818"
   }
 }

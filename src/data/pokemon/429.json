@@ -301,5 +301,15 @@
     "en": "Mismagius",
     "ja": "ムウマージ",
     "zh-Hans": "梦妖魔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4a431",
+      "#6a6a29",
+      "#313120"
+    ],
+    "primary": "#a4a431",
+    "secondary": "#6a6a29",
+    "accent": "#313120"
   }
 }

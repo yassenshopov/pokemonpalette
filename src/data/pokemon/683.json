@@ -307,5 +307,15 @@
     "en": "Aromatisse",
     "ja": "フレフワン",
     "zh-Hans": "芳香精"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b88ae5",
+      "#d94c7b",
+      "#8a62b3"
+    ],
+    "primary": "#b88ae5",
+    "secondary": "#d94c7b",
+    "accent": "#8a62b3"
   }
 }

@@ -331,5 +331,15 @@
     "en": "Boldore",
     "ja": "ガントル",
     "zh-Hans": "地幔岩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a418b",
+      "#41296a",
+      "#201031"
+    ],
+    "primary": "#5a418b",
+    "secondary": "#41296a",
+    "accent": "#201031"
   }
 }

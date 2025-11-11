@@ -300,5 +300,15 @@
     "en": "Glimmora",
     "ja": "キラフロル",
     "zh-Hans": "晶光花"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#2df4d7",
+      "#1bbeaa",
+      "#218773"
+    ],
+    "primary": "#2df4d7",
+    "secondary": "#1bbeaa",
+    "accent": "#218773"
   }
 }

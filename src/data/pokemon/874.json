@@ -279,5 +279,15 @@
     "en": "Stonjourner",
     "ja": "イシヘンジン",
     "zh-Hans": "巨石丁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#626961",
+      "#73502d",
+      "#373635"
+    ],
+    "primary": "#626961",
+    "secondary": "#73502d",
+    "accent": "#373635"
   }
 }

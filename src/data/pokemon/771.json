@@ -297,5 +297,15 @@
     "en": "Pyukumuku",
     "ja": "ナマコブシ",
     "zh-Hans": "拳海参"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#36b35f",
+      "#ffc44c",
+      "#268044"
+    ],
+    "primary": "#36b35f",
+    "secondary": "#ffc44c",
+    "accent": "#268044"
   }
 }

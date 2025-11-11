@@ -316,5 +316,15 @@
     "en": "Simipour",
     "ja": "ヒヤッキー",
     "zh-Hans": "冷水猿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a73d5",
+      "#eebd73",
+      "#312062"
+    ],
+    "primary": "#5a73d5",
+    "secondary": "#eebd73",
+    "accent": "#312062"
   }
 }

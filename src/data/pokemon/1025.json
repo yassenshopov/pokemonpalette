@@ -283,5 +283,15 @@
     "en": "Pecharunt",
     "ja": "モモワロウ",
     "zh-Hans": "桃歹郎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff85c6",
+      "#ae4189",
+      "#413f42"
+    ],
+    "primary": "#ff85c6",
+    "secondary": "#ae4189",
+    "accent": "#413f42"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Galvantula",
     "ja": "デンチュラ",
     "zh-Hans": "电蜘蛛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd552",
+      "#eea400",
+      "#104162"
+    ],
+    "primary": "#ffd552",
+    "secondary": "#eea400",
+    "accent": "#104162"
   }
 }

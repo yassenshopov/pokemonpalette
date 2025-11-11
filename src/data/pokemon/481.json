@@ -291,5 +291,15 @@
     "en": "Mesprit",
     "ja": "エムリット",
     "zh-Hans": "艾姆利多"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff6a7b",
+      "#ffe69c",
+      "#625231"
+    ],
+    "primary": "#ff6a7b",
+    "secondary": "#ffe69c",
+    "accent": "#625231"
   }
 }

@@ -296,5 +296,15 @@
     "en": "Dracozolt",
     "ja": "パッチラゴン",
     "zh-Hans": "雷鸟龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#edf3f2",
+      "#8b7874",
+      "#3d4a53"
+    ],
+    "primary": "#edf3f2",
+    "secondary": "#8b7874",
+    "accent": "#3d4a53"
   }
 }

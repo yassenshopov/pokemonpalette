@@ -284,5 +284,15 @@
     "en": "Koraidon",
     "ja": "コライドン",
     "zh-Hans": "故勒顿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#53546f",
+      "#181818",
+      "#eceae5"
+    ],
+    "primary": "#53546f",
+    "secondary": "#181818",
+    "accent": "#eceae5"
   }
 }

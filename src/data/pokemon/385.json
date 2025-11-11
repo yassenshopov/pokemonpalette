@@ -301,5 +301,15 @@
     "en": "Jirachi",
     "ja": "ジラーチ",
     "zh-Hans": "基拉祈"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eec54a",
+      "#f6f68b",
+      "#f6dede"
+    ],
+    "primary": "#eec54a",
+    "secondary": "#f6f68b",
+    "accent": "#f6dede"
   }
 }

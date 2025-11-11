@@ -299,5 +299,15 @@
     "en": "Rabsca",
     "ja": "ベラカス",
     "zh-Hans": "虫甲圣"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e310fb",
+      "#750082",
+      "#f73983"
+    ],
+    "primary": "#e310fb",
+    "secondary": "#750082",
+    "accent": "#f73983"
   }
 }

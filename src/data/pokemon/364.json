@@ -328,5 +328,15 @@
     "en": "Sealeo",
     "ja": "トドグラー",
     "zh-Hans": "海魔狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d58be6",
+      "#f6de8b",
+      "#f6b4ff"
+    ],
+    "primary": "#d58be6",
+    "secondary": "#f6de8b",
+    "accent": "#f6b4ff"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Combee",
     "ja": "ミツハニー",
     "zh-Hans": "三蜜蜂"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff834a",
+      "#eeeeff",
+      "#393941"
+    ],
+    "primary": "#ff834a",
+    "secondary": "#eeeeff",
+    "accent": "#393941"
   }
 }

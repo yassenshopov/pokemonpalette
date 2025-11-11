@@ -331,5 +331,15 @@
     "en": "Gigalith",
     "ja": "ギガイアス",
     "zh-Hans": "庞岩怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a418b",
+      "#41296a",
+      "#297b9c"
+    ],
+    "primary": "#5a418b",
+    "secondary": "#41296a",
+    "accent": "#297b9c"
   }
 }

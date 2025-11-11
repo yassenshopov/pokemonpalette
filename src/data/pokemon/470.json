@@ -395,5 +395,15 @@
     "en": "Leafeon",
     "ja": "リーフィア",
     "zh-Hans": "叶伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6d594",
+      "#18c573",
+      "#d5944a"
+    ],
+    "primary": "#f6d594",
+    "secondary": "#18c573",
+    "accent": "#d5944a"
   }
 }

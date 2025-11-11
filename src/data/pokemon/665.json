@@ -566,5 +566,15 @@
     "en": "Spewpa",
     "ja": "コフーライ",
     "zh-Hans": "粉蝶蛹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#767676",
+      "#585858",
+      "#d4d4d4"
+    ],
+    "primary": "#767676",
+    "secondary": "#585858",
+    "accent": "#d4d4d4"
   }
 }

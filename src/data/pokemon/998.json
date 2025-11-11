@@ -310,5 +310,15 @@
     "en": "Baxcalibur",
     "ja": "セグレイブ",
     "zh-Hans": "戟脊龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#33645c",
+      "#478175",
+      "#93bdb9"
+    ],
+    "primary": "#33645c",
+    "secondary": "#478175",
+    "accent": "#93bdb9"
   }
 }

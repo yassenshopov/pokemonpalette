@@ -319,5 +319,15 @@
     "en": "Altaria",
     "ja": "チルタリス",
     "zh-Hans": "七夕青鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdbdd5",
+      "#eef6ff",
+      "#deac5a"
+    ],
+    "primary": "#bdbdd5",
+    "secondary": "#eef6ff",
+    "accent": "#deac5a"
   }
 }

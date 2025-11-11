@@ -309,5 +309,15 @@
     "en": "Chimecho",
     "ja": "チリーン",
     "zh-Hans": "风铃铃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdffcd",
+      "#ffbd29",
+      "#94e694"
+    ],
+    "primary": "#cdffcd",
+    "secondary": "#ffbd29",
+    "accent": "#94e694"
   }
 }

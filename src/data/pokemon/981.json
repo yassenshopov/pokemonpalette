@@ -305,5 +305,15 @@
     "en": "Farigiraf",
     "ja": "リキキリン",
     "zh-Hans": "奇麒麟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ec654d",
+      "#43341e",
+      "#6f5431"
+    ],
+    "primary": "#ec654d",
+    "secondary": "#43341e",
+    "accent": "#6f5431"
   }
 }

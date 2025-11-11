@@ -295,5 +295,15 @@
     "en": "Yamper",
     "ja": "ワンパチ",
     "zh-Hans": "来电汪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5a2b0",
+      "#f7da11",
+      "#cf9529"
+    ],
+    "primary": "#d5a2b0",
+    "secondary": "#f7da11",
+    "accent": "#cf9529"
   }
 }

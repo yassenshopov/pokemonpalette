@@ -308,5 +308,15 @@
     "en": "Torkoal",
     "ja": "コータス",
     "zh-Hans": "煤炭龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdaca4",
+      "#f6e6de",
+      "#d5cdc5"
+    ],
+    "primary": "#bdaca4",
+    "secondary": "#f6e6de",
+    "accent": "#d5cdc5"
   }
 }

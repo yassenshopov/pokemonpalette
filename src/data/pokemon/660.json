@@ -318,5 +318,15 @@
     "en": "Diggersby",
     "ja": "ホルード",
     "zh-Hans": "掘地兔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ecf0ec",
+      "#b8c0b8",
+      "#acb0ac"
+    ],
+    "primary": "#ecf0ec",
+    "secondary": "#b8c0b8",
+    "accent": "#acb0ac"
   }
 }

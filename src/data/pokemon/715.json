@@ -318,5 +318,15 @@
     "en": "Noivern",
     "ja": "オンバーン",
     "zh-Hans": "音波龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#77db93",
+      "#765f5c",
+      "#5d976d"
+    ],
+    "primary": "#77db93",
+    "secondary": "#765f5c",
+    "accent": "#5d976d"
   }
 }

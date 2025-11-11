@@ -294,5 +294,15 @@
     "en": "Grapploct",
     "ja": "オトスパス",
     "zh-Hans": "八爪武师"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ba9a99",
+      "#e3111a",
+      "#f4eee8"
+    ],
+    "primary": "#ba9a99",
+    "secondary": "#e3111a",
+    "accent": "#f4eee8"
   }
 }

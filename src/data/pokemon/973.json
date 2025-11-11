@@ -296,5 +296,15 @@
     "en": "Flamigo",
     "ja": "カラミンゴ",
     "zh-Hans": "纏红鹤"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#aa8a8d",
+      "#ddbdc0",
+      "#292829"
+    ],
+    "primary": "#aa8a8d",
+    "secondary": "#ddbdc0",
+    "accent": "#292829"
   }
 }

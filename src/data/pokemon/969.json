@@ -300,5 +300,15 @@
     "en": "Glimmet",
     "ja": "キラーメ",
     "zh-Hans": "晶光芽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5573b8",
+      "#8aadf2",
+      "#2df4d7"
+    ],
+    "primary": "#5573b8",
+    "secondary": "#8aadf2",
+    "accent": "#2df4d7"
   }
 }

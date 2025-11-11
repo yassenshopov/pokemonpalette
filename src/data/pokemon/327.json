@@ -308,5 +308,15 @@
     "en": "Spinda",
     "ja": "パッチール",
     "zh-Hans": "晃晃斑"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6d5a4",
+      "#cda473",
+      "#a4cd10"
+    ],
+    "primary": "#e6d5a4",
+    "secondary": "#cda473",
+    "accent": "#a4cd10"
   }
 }

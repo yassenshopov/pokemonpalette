@@ -296,5 +296,15 @@
     "en": "Dracovish",
     "ja": "ウオノラゴン",
     "zh-Hans": "鳃鱼龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d6d6d6",
+      "#8b7874",
+      "#3d4a53"
+    ],
+    "primary": "#d6d6d6",
+    "secondary": "#8b7874",
+    "accent": "#3d4a53"
   }
 }

@@ -284,5 +284,15 @@
     "en": "Iron Jugulis",
     "ja": "テツノコウベ",
     "zh-Hans": "铁脖颈"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#91959d",
+      "#ff4dcb",
+      "#282828"
+    ],
+    "primary": "#91959d",
+    "secondary": "#ff4dcb",
+    "accent": "#282828"
   }
 }

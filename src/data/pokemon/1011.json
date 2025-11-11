@@ -325,5 +325,15 @@
     "en": "Dipplin",
     "ja": "カミッチュ",
     "zh-Hans": "裹蜜虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fdcc17",
+      "#d58902",
+      "#181818"
+    ],
+    "primary": "#fdcc17",
+    "secondary": "#d58902",
+    "accent": "#181818"
   }
 }

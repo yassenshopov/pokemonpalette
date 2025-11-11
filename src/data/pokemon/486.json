@@ -291,5 +291,15 @@
     "en": "Regigigas",
     "ja": "レジギガス",
     "zh-Hans": "雷吉奇卡斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a6283",
+      "#394a5a",
+      "#b4d5de"
+    ],
+    "primary": "#5a6283",
+    "secondary": "#394a5a",
+    "accent": "#b4d5de"
   }
 }

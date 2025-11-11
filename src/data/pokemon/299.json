@@ -330,5 +330,15 @@
     "en": "Nosepass",
     "ja": "ノズパス",
     "zh-Hans": "朝北鼻"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c59c52",
+      "#836a29",
+      "#181818"
+    ],
+    "primary": "#c59c52",
+    "secondary": "#836a29",
+    "accent": "#181818"
   }
 }

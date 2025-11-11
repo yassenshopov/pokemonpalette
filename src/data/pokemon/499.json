@@ -16,7 +16,7 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
+  "height": 1,
   "weight": 55.5,
   "abilities": [
     {
@@ -322,5 +322,15 @@
     "en": "Pignite",
     "ja": "チャオブー",
     "zh-Hans": "炒炒猪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eea420",
+      "#31394a",
+      "#bd9431"
+    ],
+    "primary": "#eea420",
+    "secondary": "#31394a",
+    "accent": "#bd9431"
   }
 }

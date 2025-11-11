@@ -313,5 +313,15 @@
     "en": "Corphish",
     "ja": "ヘイガニ",
     "zh-Hans": "龙虾小兵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd6a83",
+      "#eecd94",
+      "#ac4a4a"
+    ],
+    "primary": "#cd6a83",
+    "secondary": "#eecd94",
+    "accent": "#ac4a4a"
   }
 }

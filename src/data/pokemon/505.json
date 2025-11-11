@@ -313,5 +313,15 @@
     "en": "Watchog",
     "ja": "ミルホッグ",
     "zh-Hans": "步哨鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#943962",
+      "#73315a",
+      "#8be6a4"
+    ],
+    "primary": "#943962",
+    "secondary": "#73315a",
+    "accent": "#8be6a4"
   }
 }

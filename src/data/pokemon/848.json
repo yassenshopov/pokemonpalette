@@ -306,5 +306,15 @@
     "en": "Toxel",
     "ja": "エレズン",
     "zh-Hans": "电音婴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d3447b",
+      "#772149",
+      "#b62257"
+    ],
+    "primary": "#d3447b",
+    "secondary": "#772149",
+    "accent": "#b62257"
   }
 }

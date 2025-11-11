@@ -318,5 +318,15 @@
     "en": "Whiscash",
     "ja": "ナマズン",
     "zh-Hans": "鲶鱼王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#39415a",
+      "#7b3900",
+      "#de5a08"
+    ],
+    "primary": "#39415a",
+    "secondary": "#7b3900",
+    "accent": "#de5a08"
   }
 }

@@ -316,5 +316,15 @@
     "en": "Tinkaton",
     "ja": "デカヌチャン",
     "zh-Hans": "巨锻匠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8b5745",
+      "#ecd0d0",
+      "#3f2319"
+    ],
+    "primary": "#8b5745",
+    "secondary": "#ecd0d0",
+    "accent": "#3f2319"
   }
 }

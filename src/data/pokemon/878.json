@@ -295,5 +295,15 @@
     "en": "Cufant",
     "ja": "ゾウドウ",
     "zh-Hans": "铜象"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cb8e3a",
+      "#ffc855",
+      "#158246"
+    ],
+    "primary": "#cb8e3a",
+    "secondary": "#ffc855",
+    "accent": "#158246"
   }
 }

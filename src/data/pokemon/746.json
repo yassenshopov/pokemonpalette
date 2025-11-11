@@ -298,5 +298,15 @@
     "en": "Wishiwashi",
     "ja": "ヨワシ",
     "zh-Hans": "弱丁鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f1f1c0",
+      "#8c9c9d",
+      "#4764c9"
+    ],
+    "primary": "#f1f1c0",
+    "secondary": "#8c9c9d",
+    "accent": "#4764c9"
   }
 }

@@ -284,5 +284,15 @@
     "en": "Iron Moth",
     "ja": "テツノドクガ",
     "zh-Hans": "铁毒蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f29c46",
+      "#313139",
+      "#181820"
+    ],
+    "primary": "#f29c46",
+    "secondary": "#313139",
+    "accent": "#181820"
   }
 }

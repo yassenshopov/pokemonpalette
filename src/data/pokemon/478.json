@@ -335,5 +335,15 @@
     "en": "Froslass",
     "ja": "ユキメノコ",
     "zh-Hans": "雪妖女"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#b4c5cd",
+      "#395a6a"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#b4c5cd",
+    "accent": "#395a6a"
   }
 }

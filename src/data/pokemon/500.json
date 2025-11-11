@@ -329,5 +329,15 @@
     "en": "Emboar",
     "ja": "エンブオー",
     "zh-Hans": "炎武王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#313131",
+      "#202020",
+      "#c5eeff"
+    ],
+    "primary": "#313131",
+    "secondary": "#202020",
+    "accent": "#c5eeff"
   }
 }

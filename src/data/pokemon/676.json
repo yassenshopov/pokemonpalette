@@ -444,5 +444,15 @@
     "en": "Furfrou",
     "ja": "トリミアン",
     "zh-Hans": "多丽米亚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5b5969",
+      "#42414f",
+      "#12101e"
+    ],
+    "primary": "#5b5969",
+    "secondary": "#42414f",
+    "accent": "#12101e"
   }
 }

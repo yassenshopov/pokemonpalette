@@ -292,5 +292,15 @@
     "en": "Falinks",
     "ja": "タイレーツ",
     "zh-Hans": "列阵兵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b6886e",
+      "#111111",
+      "#8b5845"
+    ],
+    "primary": "#b6886e",
+    "secondary": "#111111",
+    "accent": "#8b5845"
   }
 }

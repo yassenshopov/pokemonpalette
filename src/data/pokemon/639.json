@@ -296,5 +296,15 @@
     "en": "Terrakion",
     "ja": "テラキオン",
     "zh-Hans": "代拉基翁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bda473",
+      "#ac1810",
+      "#8b7b52"
+    ],
+    "primary": "#bda473",
+    "secondary": "#ac1810",
+    "accent": "#8b7b52"
   }
 }

@@ -295,5 +295,15 @@
     "en": "Greedent",
     "ja": "ヨクバリス",
     "zh-Hans": "藏饱栗鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d9b49b",
+      "#c57283",
+      "#9f444a"
+    ],
+    "primary": "#d9b49b",
+    "secondary": "#c57283",
+    "accent": "#9f444a"
   }
 }

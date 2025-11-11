@@ -306,5 +306,15 @@
     "en": "Wimpod",
     "ja": "コソクムシ",
     "zh-Hans": "胆小虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e7ebea",
+      "#e84038",
+      "#080808"
+    ],
+    "primary": "#e7ebea",
+    "secondary": "#e84038",
+    "accent": "#080808"
   }
 }

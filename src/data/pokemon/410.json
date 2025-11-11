@@ -312,5 +312,15 @@
     "en": "Shieldon",
     "ja": "タテトプス",
     "zh-Hans": "盾甲龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#395a8b",
+      "#31296a",
+      "#bdc531"
+    ],
+    "primary": "#395a8b",
+    "secondary": "#31296a",
+    "accent": "#bdc531"
   }
 }

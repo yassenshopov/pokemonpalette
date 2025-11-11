@@ -284,5 +284,15 @@
     "en": "Chi-Yu",
     "ja": "イーユイ",
     "zh-Hans": "古玉鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5e5e5e",
+      "#bafefd",
+      "#454344"
+    ],
+    "primary": "#5e5e5e",
+    "secondary": "#bafefd",
+    "accent": "#454344"
   }
 }

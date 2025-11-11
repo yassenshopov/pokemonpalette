@@ -333,5 +333,15 @@
     "en": "Snorunt",
     "ja": "ユキワラシ",
     "zh-Hans": "雪童子"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#83e6ff",
+      "#524a4a",
+      "#292020"
+    ],
+    "primary": "#83e6ff",
+    "secondary": "#524a4a",
+    "accent": "#292020"
   }
 }

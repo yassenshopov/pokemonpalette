@@ -323,5 +323,15 @@
     "en": "Klinklang",
     "ja": "ギギギアル",
     "zh-Hans": "齿轮怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5c58b",
+      "#9c9473",
+      "#4a4a4a"
+    ],
+    "primary": "#d5c58b",
+    "secondary": "#9c9473",
+    "accent": "#4a4a4a"
   }
 }

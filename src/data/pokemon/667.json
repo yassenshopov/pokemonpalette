@@ -318,5 +318,15 @@
     "en": "Litleo",
     "ja": "シシコ",
     "zh-Hans": "小狮狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b29377",
+      "#e6d0ba",
+      "#8b6951"
+    ],
+    "primary": "#b29377",
+    "secondary": "#e6d0ba",
+    "accent": "#8b6951"
   }
 }

@@ -327,5 +327,15 @@
     "en": "Togekiss",
     "ja": "トゲキッス",
     "zh-Hans": "波克基斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#d5d59c",
+      "#83735a"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#d5d59c",
+    "accent": "#83735a"
   }
 }

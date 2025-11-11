@@ -321,5 +321,15 @@
     "en": "Cacturne",
     "ja": "ノクタス",
     "zh-Hans": "梦歌仙人掌"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eed583",
+      "#bd8b29",
+      "#8b2920"
+    ],
+    "primary": "#eed583",
+    "secondary": "#bd8b29",
+    "accent": "#8b2920"
   }
 }

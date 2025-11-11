@@ -335,5 +335,15 @@
     "en": "Sliggoo",
     "ja": "ヌメイル",
     "zh-Hans": "黏美儿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffa6",
+      "#cccc85",
+      "#cc8f7a"
+    ],
+    "primary": "#ffffa6",
+    "secondary": "#cccc85",
+    "accent": "#cc8f7a"
   }
 }

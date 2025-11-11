@@ -291,5 +291,15 @@
     "en": "Dondozo",
     "ja": "ヘイラッシャ",
     "zh-Hans": "吃吼霸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fcef56",
+      "#babcbf",
+      "#dadada"
+    ],
+    "primary": "#fcef56",
+    "secondary": "#babcbf",
+    "accent": "#dadada"
   }
 }

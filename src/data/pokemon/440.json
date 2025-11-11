@@ -335,5 +335,15 @@
     "en": "Happiny",
     "ja": "ピンプク",
     "zh-Hans": "小福蛋"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd5f6",
+      "#e694cd",
+      "#ffffff"
+    ],
+    "primary": "#ffd5f6",
+    "secondary": "#e694cd",
+    "accent": "#ffffff"
   }
 }

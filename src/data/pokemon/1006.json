@@ -284,5 +284,15 @@
     "en": "Iron Valiant",
     "ja": "テツノブジン",
     "zh-Hans": "铁武者"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#646771",
+      "#91949b",
+      "#d5d5d5"
+    ],
+    "primary": "#646771",
+    "secondary": "#91949b",
+    "accent": "#d5d5d5"
   }
 }

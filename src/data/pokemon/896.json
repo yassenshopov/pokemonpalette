@@ -279,5 +279,15 @@
     "en": "Glastrier",
     "ja": "ブリザポス",
     "zh-Hans": "雪暴马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeeef2",
+      "#cac0cb",
+      "#c2c2f8"
+    ],
+    "primary": "#eeeef2",
+    "secondary": "#cac0cb",
+    "accent": "#c2c2f8"
   }
 }

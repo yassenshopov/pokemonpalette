@@ -316,5 +316,15 @@
     "en": "Clodsire",
     "ja": "ドオー",
     "zh-Hans": "土王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6b637d",
+      "#9795b3",
+      "#535269"
+    ],
+    "primary": "#6b637d",
+    "secondary": "#9795b3",
+    "accent": "#535269"
   }
 }

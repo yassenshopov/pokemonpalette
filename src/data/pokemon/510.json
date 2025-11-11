@@ -313,5 +313,15 @@
     "en": "Liepard",
     "ja": "レパルダス",
     "zh-Hans": "酷豹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#732031",
+      "#520820",
+      "#e6cd8b"
+    ],
+    "primary": "#732031",
+    "secondary": "#520820",
+    "accent": "#e6cd8b"
   }
 }

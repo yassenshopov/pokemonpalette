@@ -313,5 +313,15 @@
     "en": "Bergmite",
     "ja": "カチコール",
     "zh-Hans": "冰宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b3eaf8",
+      "#a5c4d2",
+      "#719aa9"
+    ],
+    "primary": "#b3eaf8",
+    "secondary": "#a5c4d2",
+    "accent": "#719aa9"
   }
 }

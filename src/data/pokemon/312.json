@@ -302,5 +302,15 @@
     "en": "Minun",
     "ja": "マイナン",
     "zh-Hans": "負电拍拍"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffeea4",
+      "#52a46a",
+      "#f6cd6a"
+    ],
+    "primary": "#ffeea4",
+    "secondary": "#52a46a",
+    "accent": "#f6cd6a"
   }
 }

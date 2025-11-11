@@ -302,5 +302,15 @@
     "en": "Luvdisc",
     "ja": "ラブカス",
     "zh-Hans": "爱心鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeb400",
+      "#fff600",
+      "#ffff8b"
+    ],
+    "primary": "#eeb400",
+    "secondary": "#fff600",
+    "accent": "#ffff8b"
   }
 }

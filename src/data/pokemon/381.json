@@ -303,5 +303,15 @@
     "en": "Latios",
     "ja": "ラティオス",
     "zh-Hans": "拉帝欧斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#209c7b",
+      "#cdd5de",
+      "#73eecd"
+    ],
+    "primary": "#209c7b",
+    "secondary": "#cdd5de",
+    "accent": "#73eecd"
   }
 }

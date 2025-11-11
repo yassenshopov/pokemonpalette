@@ -320,5 +320,15 @@
     "en": "Avalugg",
     "ja": "クレベース",
     "zh-Hans": "冰岩怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bff4ff",
+      "#85d7f2",
+      "#77b8d9"
+    ],
+    "primary": "#bff4ff",
+    "secondary": "#85d7f2",
+    "accent": "#77b8d9"
   }
 }

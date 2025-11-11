@@ -294,5 +294,15 @@
     "en": "Clobbopus",
     "ja": "タタッコ",
     "zh-Hans": "拳拳蛸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#98a6cd",
+      "#fd7647",
+      "#e3d3c7"
+    ],
+    "primary": "#98a6cd",
+    "secondary": "#fd7647",
+    "accent": "#e3d3c7"
   }
 }

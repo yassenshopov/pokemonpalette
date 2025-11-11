@@ -338,5 +338,15 @@
     "en": "Pumpkaboo",
     "ja": "バケッチャ",
     "zh-Hans": "南瓜精"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#595959",
+      "#262626",
+      "#805380"
+    ],
+    "primary": "#595959",
+    "secondary": "#262626",
+    "accent": "#805380"
   }
 }

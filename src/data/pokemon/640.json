@@ -296,5 +296,15 @@
     "en": "Virizion",
     "ja": "ビリジオン",
     "zh-Hans": "毕力吉翁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ee8ba4",
+      "#f6f6d5",
+      "#94395a"
+    ],
+    "primary": "#ee8ba4",
+    "secondary": "#f6f6d5",
+    "accent": "#94395a"
   }
 }

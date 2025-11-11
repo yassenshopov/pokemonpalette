@@ -298,5 +298,15 @@
     "en": "Cramorant",
     "ja": "ウッウ",
     "zh-Hans": "古月鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bb560b",
+      "#e17804",
+      "#dcd6cd"
+    ],
+    "primary": "#bb560b",
+    "secondary": "#e17804",
+    "accent": "#dcd6cd"
   }
 }

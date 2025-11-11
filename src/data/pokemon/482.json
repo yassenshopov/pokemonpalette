@@ -291,5 +291,15 @@
     "en": "Azelf",
     "ja": "アグノム",
     "zh-Hans": "亚克诺姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eebd62",
+      "#ffe69c",
+      "#4173de"
+    ],
+    "primary": "#eebd62",
+    "secondary": "#ffe69c",
+    "accent": "#4173de"
   }
 }

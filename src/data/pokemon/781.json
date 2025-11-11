@@ -296,5 +296,15 @@
     "en": "Dhelmise",
     "ja": "ダダリン",
     "zh-Hans": "破破舵轮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d82838",
+      "#ef5a5a",
+      "#020202"
+    ],
+    "primary": "#d82838",
+    "secondary": "#ef5a5a",
+    "accent": "#020202"
   }
 }

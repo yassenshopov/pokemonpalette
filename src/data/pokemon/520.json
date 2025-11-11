@@ -328,5 +328,15 @@
     "en": "Tranquill",
     "ja": "ハトーボー",
     "zh-Hans": "咕咕鸽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdffbd",
+      "#4a834a",
+      "#94d594"
+    ],
+    "primary": "#bdffbd",
+    "secondary": "#4a834a",
+    "accent": "#94d594"
   }
 }

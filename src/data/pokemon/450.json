@@ -307,5 +307,15 @@
     "en": "Hippowdon",
     "ja": "カバルドン",
     "zh-Hans": "河马兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eed594",
+      "#6a6a4a",
+      "#cdc573"
+    ],
+    "primary": "#eed594",
+    "secondary": "#6a6a4a",
+    "accent": "#cdc573"
   }
 }

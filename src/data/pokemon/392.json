@@ -322,5 +322,15 @@
     "en": "Infernape",
     "ja": "ゴウカザル",
     "zh-Hans": "烈焰猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e63941",
+      "#f6ee9c",
+      "#d53162"
+    ],
+    "primary": "#e63941",
+    "secondary": "#f6ee9c",
+    "accent": "#d53162"
   }
 }

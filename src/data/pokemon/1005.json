@@ -284,5 +284,15 @@
     "en": "Roaring Moon",
     "ja": "トドロクツキ",
     "zh-Hans": "轰鸣月"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b52427",
+      "#346942",
+      "#181818"
+    ],
+    "primary": "#b52427",
+    "secondary": "#346942",
+    "accent": "#181818"
   }
 }

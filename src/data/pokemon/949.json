@@ -300,5 +300,15 @@
     "en": "Toedscruel",
     "ja": "リククラゲ",
     "zh-Hans": "陆地水母"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5e1738",
+      "#f253d2",
+      "#242738"
+    ],
+    "primary": "#5e1738",
+    "secondary": "#f253d2",
+    "accent": "#242738"
   }
 }

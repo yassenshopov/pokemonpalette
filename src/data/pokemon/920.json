@@ -300,5 +300,15 @@
     "en": "Lokix",
     "ja": "エクスレッグ",
     "zh-Hans": "烈腿蝗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#726f31",
+      "#595737",
+      "#abb042"
+    ],
+    "primary": "#726f31",
+    "secondary": "#595737",
+    "accent": "#abb042"
   }
 }

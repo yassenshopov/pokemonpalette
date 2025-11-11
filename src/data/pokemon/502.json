@@ -317,5 +317,15 @@
     "en": "Dewott",
     "ja": "フタチマル",
     "zh-Hans": "双刃丸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52d5bd",
+      "#4a4a4a",
+      "#41b49c"
+    ],
+    "primary": "#52d5bd",
+    "secondary": "#4a4a4a",
+    "accent": "#41b49c"
   }
 }

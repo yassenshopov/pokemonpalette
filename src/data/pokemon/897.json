@@ -279,5 +279,15 @@
     "en": "Spectrier",
     "ja": "レイスポス",
     "zh-Hans": "灵幽马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d05a82",
+      "#894061",
+      "#525852"
+    ],
+    "primary": "#d05a82",
+    "secondary": "#894061",
+    "accent": "#525852"
   }
 }

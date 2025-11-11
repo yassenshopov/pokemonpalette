@@ -322,5 +322,15 @@
     "en": "Yamask",
     "ja": "デスマス",
     "zh-Hans": "哭哭面具"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4a83",
+      "#29294a",
+      "#626262"
+    ],
+    "primary": "#4a4a83",
+    "secondary": "#29294a",
+    "accent": "#626262"
   }
 }

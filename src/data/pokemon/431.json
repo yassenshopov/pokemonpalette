@@ -318,5 +318,15 @@
     "en": "Glameow",
     "ja": "ニャルマー",
     "zh-Hans": "魅力喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b47bc5",
+      "#393152",
+      "#8b628b"
+    ],
+    "primary": "#b47bc5",
+    "secondary": "#393152",
+    "accent": "#8b628b"
   }
 }

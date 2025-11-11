@@ -330,5 +330,15 @@
     "en": "Scrafty",
     "ja": "ズルズキン",
     "zh-Hans": "头巾混混"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#202020",
+      "#f6d518",
+      "#52a439"
+    ],
+    "primary": "#202020",
+    "secondary": "#f6d518",
+    "accent": "#52a439"
   }
 }

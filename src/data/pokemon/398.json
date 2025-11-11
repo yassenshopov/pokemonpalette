@@ -327,5 +327,15 @@
     "en": "Staraptor",
     "ja": "ムクホーク",
     "zh-Hans": "姆克鹰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#624131",
+      "#a47352",
+      "#c59c83"
+    ],
+    "primary": "#624131",
+    "secondary": "#a47352",
+    "accent": "#c59c83"
   }
 }

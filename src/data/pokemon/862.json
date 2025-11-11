@@ -316,5 +316,15 @@
     "en": "Obstagoon",
     "ja": "タチフサグマ",
     "zh-Hans": "堵拦熊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cb1a59",
+      "#2a9c94",
+      "#5bfdf6"
+    ],
+    "primary": "#cb1a59",
+    "secondary": "#2a9c94",
+    "accent": "#5bfdf6"
   }
 }

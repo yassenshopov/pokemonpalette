@@ -284,5 +284,15 @@
     "en": "Miraidon",
     "ja": "ミライドン",
     "zh-Hans": "密勒顿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4ba5cf",
+      "#c8c8c8",
+      "#c883d1"
+    ],
+    "primary": "#4ba5cf",
+    "secondary": "#c8c8c8",
+    "accent": "#c883d1"
   }
 }

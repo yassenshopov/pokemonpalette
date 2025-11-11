@@ -323,5 +323,15 @@
     "en": "Cutiefly",
     "ja": "アブリー",
     "zh-Hans": "萌虻"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f8f8f8",
+      "#b37d47",
+      "#737373"
+    ],
+    "primary": "#f8f8f8",
+    "secondary": "#b37d47",
+    "accent": "#737373"
   }
 }

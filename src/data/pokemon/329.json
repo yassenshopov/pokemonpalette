@@ -316,5 +316,15 @@
     "en": "Vibrava",
     "ja": "ビブラーバ",
     "zh-Hans": "超音波幼虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#525252",
+      "#ee7b41",
+      "#cd5a20"
+    ],
+    "primary": "#525252",
+    "secondary": "#ee7b41",
+    "accent": "#cd5a20"
   }
 }

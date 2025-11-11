@@ -305,5 +305,15 @@
     "en": "Raboot",
     "ja": "ラビフット",
     "zh-Hans": "腾蹴小将"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b3baaf",
+      "#504d49",
+      "#ed6b2c"
+    ],
+    "primary": "#b3baaf",
+    "secondary": "#504d49",
+    "accent": "#ed6b2c"
   }
 }

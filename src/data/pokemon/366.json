@@ -330,5 +330,15 @@
     "en": "Clamperl",
     "ja": "パールル",
     "zh-Hans": "珍珠贝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9410bd",
+      "#5a8bde",
+      "#c5ded5"
+    ],
+    "primary": "#9410bd",
+    "secondary": "#5a8bde",
+    "accent": "#c5ded5"
   }
 }

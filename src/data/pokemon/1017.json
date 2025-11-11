@@ -299,5 +299,15 @@
     "en": "Ogerpon",
     "ja": "オーガポン",
     "zh-Hans": "厄诡椪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#61a71b",
+      "#2c2b29",
+      "#09a49c"
+    ],
+    "primary": "#61a71b",
+    "secondary": "#2c2b29",
+    "accent": "#09a49c"
   }
 }

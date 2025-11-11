@@ -310,5 +310,15 @@
     "en": "Pawmi",
     "ja": "パモ",
     "zh-Hans": "布拨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff7793",
+      "#ed5252",
+      "#e4a789"
+    ],
+    "primary": "#ff7793",
+    "secondary": "#ed5252",
+    "accent": "#e4a789"
   }
 }

@@ -286,5 +286,15 @@
     "en": "Zacian",
     "ja": "ザシアン",
     "zh-Hans": "苍响"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#34bdd6",
+      "#080808",
+      "#345ab1"
+    ],
+    "primary": "#34bdd6",
+    "secondary": "#080808",
+    "accent": "#345ab1"
   }
 }

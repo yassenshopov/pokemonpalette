@@ -295,5 +295,15 @@
     "en": "Skwovet",
     "ja": "ホシガリス",
     "zh-Hans": "贪心栗鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a77880",
+      "#9c4a56",
+      "#835561"
+    ],
+    "primary": "#a77880",
+    "secondary": "#9c4a56",
+    "accent": "#835561"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Gothitelle",
     "ja": "ゴチルゼル",
     "zh-Hans": "哥德小姐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#414173",
+      "#29294a",
+      "#202031"
+    ],
+    "primary": "#414173",
+    "secondary": "#29294a",
+    "accent": "#202031"
   }
 }

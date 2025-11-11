@@ -313,5 +313,15 @@
     "en": "Bunnelby",
     "ja": "ホルビー",
     "zh-Hans": "掘掘兔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b3b3b3",
+      "#e5e5e5",
+      "#808080"
+    ],
+    "primary": "#b3b3b3",
+    "secondary": "#e5e5e5",
+    "accent": "#808080"
   }
 }

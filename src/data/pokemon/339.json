@@ -318,5 +318,15 @@
     "en": "Barboach",
     "ja": "ドジョッチ",
     "zh-Hans": "泥泥鳅"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6c500",
+      "#9c6a00",
+      "#b4b4bd"
+    ],
+    "primary": "#e6c500",
+    "secondary": "#9c6a00",
+    "accent": "#b4b4bd"
   }
 }

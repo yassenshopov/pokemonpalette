@@ -323,5 +323,15 @@
     "en": "Bronzong",
     "ja": "ドータクン",
     "zh-Hans": "青铜钟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#316a31",
+      "#73bd6a",
+      "#204a29"
+    ],
+    "primary": "#316a31",
+    "secondary": "#73bd6a",
+    "accent": "#204a29"
   }
 }

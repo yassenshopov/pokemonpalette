@@ -306,5 +306,15 @@
     "en": "Cherubi",
     "ja": "チェリンボ",
     "zh-Hans": "樱花宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff9473",
+      "#e65a52",
+      "#d5ee39"
+    ],
+    "primary": "#ff9473",
+    "secondary": "#e65a52",
+    "accent": "#d5ee39"
   }
 }

@@ -582,5 +582,15 @@
     "en": "Scatterbug",
     "ja": "コフキムシ",
     "zh-Hans": "粉蝶虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d2d2d2",
+      "#9a9a9a",
+      "#585858"
+    ],
+    "primary": "#d2d2d2",
+    "secondary": "#9a9a9a",
+    "accent": "#585858"
   }
 }

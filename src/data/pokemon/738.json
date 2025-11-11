@@ -319,5 +319,15 @@
     "en": "Vikavolt",
     "ja": "クワガノン",
     "zh-Hans": "锹农炮虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fdfdfd",
+      "#a99f9f",
+      "#d7d3d5"
+    ],
+    "primary": "#fdfdfd",
+    "secondary": "#a99f9f",
+    "accent": "#d7d3d5"
   }
 }

@@ -313,5 +313,15 @@
     "en": "Frogadier",
     "ja": "ゲコガシラ",
     "zh-Hans": "呱头蛙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#1d448b",
+      "#bfbfbf",
+      "#aaecf9"
+    ],
+    "primary": "#1d448b",
+    "secondary": "#bfbfbf",
+    "accent": "#aaecf9"
   }
 }

@@ -284,5 +284,15 @@
     "en": "Walking Wake",
     "ja": "ウネルミナモ",
     "zh-Hans": "波荡水"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4162ee",
+      "#29419c",
+      "#7b94d5"
+    ],
+    "primary": "#4162ee",
+    "secondary": "#29419c",
+    "accent": "#7b94d5"
   }
 }

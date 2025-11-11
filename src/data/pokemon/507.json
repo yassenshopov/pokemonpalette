@@ -323,5 +323,15 @@
     "en": "Herdier",
     "ja": "ハーデリア",
     "zh-Hans": "哈约克"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9c9c9c",
+      "#9c7341",
+      "#6a6a6a"
+    ],
+    "primary": "#9c9c9c",
+    "secondary": "#9c7341",
+    "accent": "#6a6a6a"
   }
 }

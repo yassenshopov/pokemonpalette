@@ -317,5 +317,15 @@
     "en": "Phantump",
     "ja": "ボクレー",
     "zh-Hans": "小木灵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d9d9d9",
+      "#595959",
+      "#2b303c"
+    ],
+    "primary": "#d9d9d9",
+    "secondary": "#595959",
+    "accent": "#2b303c"
   }
 }

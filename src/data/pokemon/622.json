@@ -323,5 +323,15 @@
     "en": "Golett",
     "ja": "ゴビット",
     "zh-Hans": "泥偶小人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94bdbd",
+      "#6a9c94",
+      "#181820"
+    ],
+    "primary": "#94bdbd",
+    "secondary": "#6a9c94",
+    "accent": "#181820"
   }
 }

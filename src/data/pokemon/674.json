@@ -318,5 +318,15 @@
     "en": "Pancham",
     "ja": "ヤンチャム",
     "zh-Hans": "顽皮熊猫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffd9",
+      "#803333",
+      "#bfbfa3"
+    ],
+    "primary": "#ffffd9",
+    "secondary": "#803333",
+    "accent": "#bfbfa3"
   }
 }

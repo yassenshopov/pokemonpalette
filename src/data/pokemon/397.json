@@ -327,5 +327,15 @@
     "en": "Staravia",
     "ja": "ムクバード",
     "zh-Hans": "姆克鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#624131",
+      "#391818",
+      "#ffffff"
+    ],
+    "primary": "#624131",
+    "secondary": "#391818",
+    "accent": "#ffffff"
   }
 }

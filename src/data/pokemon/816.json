@@ -305,5 +305,15 @@
     "en": "Sobble",
     "ja": "メッソン",
     "zh-Hans": "泪眼蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6498ab",
+      "#88bfc7",
+      "#4b628b"
+    ],
+    "primary": "#6498ab",
+    "secondary": "#88bfc7",
+    "accent": "#4b628b"
   }
 }

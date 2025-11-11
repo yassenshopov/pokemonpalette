@@ -314,5 +314,15 @@
     "en": "Perrserker",
     "ja": "ニャイキング",
     "zh-Hans": "喵头目"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cf8f44",
+      "#3d4547",
+      "#272d2e"
+    ],
+    "primary": "#cf8f44",
+    "secondary": "#3d4547",
+    "accent": "#272d2e"
   }
 }

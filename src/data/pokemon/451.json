@@ -323,5 +323,15 @@
     "en": "Skorupi",
     "ja": "スコルピ",
     "zh-Hans": "钳尾蝎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b42020",
+      "#ee5a5a",
+      "#622908"
+    ],
+    "primary": "#b42020",
+    "secondary": "#ee5a5a",
+    "accent": "#622908"
   }
 }

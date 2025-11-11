@@ -323,5 +323,15 @@
     "en": "Drapion",
     "ja": "ドラピオン",
     "zh-Hans": "龙王蝎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a1818",
+      "#9c395a",
+      "#e64a83"
+    ],
+    "primary": "#6a1818",
+    "secondary": "#9c395a",
+    "accent": "#e64a83"
   }
 }

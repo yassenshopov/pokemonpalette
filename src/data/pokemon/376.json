@@ -334,5 +334,15 @@
     "en": "Metagross",
     "ja": "メタグロス",
     "zh-Hans": "巨金怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#736a7b",
+      "#a49cac",
+      "#c5c5cd"
+    ],
+    "primary": "#736a7b",
+    "secondary": "#a49cac",
+    "accent": "#c5c5cd"
   }
 }

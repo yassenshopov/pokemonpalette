@@ -191,5 +191,15 @@
     "en": "Cosmoem",
     "ja": "コスモウム",
     "zh-Hans": "科斯莫姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e8a61e",
+      "#8a5911",
+      "#faf54e"
+    ],
+    "primary": "#e8a61e",
+    "secondary": "#8a5911",
+    "accent": "#faf54e"
   }
 }

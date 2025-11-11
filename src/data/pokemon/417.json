@@ -303,5 +303,15 @@
     "en": "Pachirisu",
     "ja": "パチリス",
     "zh-Hans": "帕奇利兹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f6f6",
+      "#ee9ce6",
+      "#cdc5c5"
+    ],
+    "primary": "#f6f6f6",
+    "secondary": "#ee9ce6",
+    "accent": "#cdc5c5"
   }
 }

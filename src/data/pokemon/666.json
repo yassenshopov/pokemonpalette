@@ -647,5 +647,15 @@
     "en": "Vivillon",
     "ja": "ビビヨン",
     "zh-Hans": "彩粉蝶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e66fad",
+      "#f3a0ca",
+      "#b4295a"
+    ],
+    "primary": "#e66fad",
+    "secondary": "#f3a0ca",
+    "accent": "#b4295a"
   }
 }

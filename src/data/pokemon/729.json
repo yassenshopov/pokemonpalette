@@ -317,5 +317,15 @@
     "en": "Brionne",
     "ja": "オシャマリ",
     "zh-Hans": "花漾海狮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8a8ae5",
+      "#f8f8f8",
+      "#bfbfbf"
+    ],
+    "primary": "#8a8ae5",
+    "secondary": "#f8f8f8",
+    "accent": "#bfbfbf"
   }
 }

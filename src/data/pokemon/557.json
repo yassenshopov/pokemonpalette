@@ -327,5 +327,15 @@
     "en": "Dwebble",
     "ja": "イシズマイ",
     "zh-Hans": "石居蟹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73736a",
+      "#ee7b4a",
+      "#5a5252"
+    ],
+    "primary": "#73736a",
+    "secondary": "#ee7b4a",
+    "accent": "#5a5252"
   }
 }

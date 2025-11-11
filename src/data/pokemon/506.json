@@ -323,5 +323,15 @@
     "en": "Lillipup",
     "ja": "ヨーテリー",
     "zh-Hans": "小约克"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6de9c",
+      "#bd834a",
+      "#eeb45a"
+    ],
+    "primary": "#f6de9c",
+    "secondary": "#bd834a",
+    "accent": "#eeb45a"
   }
 }

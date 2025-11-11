@@ -316,5 +316,15 @@
     "en": "Morgrem",
     "ja": "ギモー",
     "zh-Hans": "诈唬魔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5586c9",
+      "#ddd7df",
+      "#36465d"
+    ],
+    "primary": "#5586c9",
+    "secondary": "#ddd7df",
+    "accent": "#36465d"
   }
 }

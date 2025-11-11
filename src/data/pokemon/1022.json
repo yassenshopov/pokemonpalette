@@ -283,5 +283,15 @@
     "en": "Iron Boulder",
     "ja": "テツノイワオ",
     "zh-Hans": "鐵磐岩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e0aa36",
+      "#b7bbbf",
+      "#8b8f8b"
+    ],
+    "primary": "#e0aa36",
+    "secondary": "#b7bbbf",
+    "accent": "#8b8f8b"
   }
 }

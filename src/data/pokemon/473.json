@@ -327,5 +327,15 @@
     "en": "Mamoswine",
     "ja": "マンムー",
     "zh-Hans": "象牙猪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4b420",
+      "#6a7b20",
+      "#eef6f6"
+    ],
+    "primary": "#a4b420",
+    "secondary": "#6a7b20",
+    "accent": "#eef6f6"
   }
 }

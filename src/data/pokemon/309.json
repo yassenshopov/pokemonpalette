@@ -313,5 +313,15 @@
     "en": "Electrike",
     "ja": "ラクライ",
     "zh-Hans": "落雷兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4183b4",
+      "#7bcdff",
+      "#186a9c"
+    ],
+    "primary": "#4183b4",
+    "secondary": "#7bcdff",
+    "accent": "#186a9c"
   }
 }

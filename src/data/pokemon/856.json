@@ -311,5 +311,15 @@
     "en": "Hatenna",
     "ja": "ミブリム",
     "zh-Hans": "迷布莉姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ead5d0",
+      "#c0a6bb",
+      "#654b5f"
+    ],
+    "primary": "#ead5d0",
+    "secondary": "#c0a6bb",
+    "accent": "#654b5f"
   }
 }

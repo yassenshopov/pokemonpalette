@@ -325,5 +325,15 @@
     "en": "Lilligant",
     "ja": "ドレディア",
     "zh-Hans": "裙儿小姐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5ee7b",
+      "#6ac5cd",
+      "#acb462"
+    ],
+    "primary": "#d5ee7b",
+    "secondary": "#6ac5cd",
+    "accent": "#acb462"
   }
 }

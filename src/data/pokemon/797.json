@@ -292,5 +292,15 @@
     "en": "Celesteela",
     "ja": "テッカグヤ",
     "zh-Hans": "铁火辉夜"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d4e6db",
+      "#95bcb6",
+      "#2b584b"
+    ],
+    "primary": "#d4e6db",
+    "secondary": "#95bcb6",
+    "accent": "#2b584b"
   }
 }

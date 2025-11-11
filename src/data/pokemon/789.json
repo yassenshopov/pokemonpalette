@@ -191,5 +191,15 @@
     "en": "Cosmog",
     "ja": "コスモッグ",
     "zh-Hans": "科斯莫古"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#169fda",
+      "#503896",
+      "#8c49a9"
+    ],
+    "primary": "#169fda",
+    "secondary": "#503896",
+    "accent": "#8c49a9"
   }
 }

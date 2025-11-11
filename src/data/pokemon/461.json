@@ -331,5 +331,15 @@
     "en": "Weavile",
     "ja": "マニューラ",
     "zh-Hans": "玛狃拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deac5a",
+      "#cd529c",
+      "#e67ba4"
+    ],
+    "primary": "#deac5a",
+    "secondary": "#cd529c",
+    "accent": "#e67ba4"
   }
 }

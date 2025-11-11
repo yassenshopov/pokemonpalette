@@ -291,5 +291,15 @@
     "en": "Uxie",
     "ja": "ユクシー",
     "zh-Hans": "由克希"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eebd62",
+      "#ffac62",
+      "#414141"
+    ],
+    "primary": "#eebd62",
+    "secondary": "#ffac62",
+    "accent": "#414141"
   }
 }

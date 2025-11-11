@@ -333,5 +333,15 @@
     "en": "Krokorok",
     "ja": "ワルビル",
     "zh-Hans": "混混鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6d55a",
+      "#735a39",
+      "#5a4131"
+    ],
+    "primary": "#e6d55a",
+    "secondary": "#735a39",
+    "accent": "#5a4131"
   }
 }

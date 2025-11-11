@@ -322,5 +322,15 @@
     "en": "Spoink",
     "ja": "バネブー",
     "zh-Hans": "跳跳猪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6c5ac",
+      "#cda494",
+      "#5a5a73"
+    ],
+    "primary": "#f6c5ac",
+    "secondary": "#cda494",
+    "accent": "#5a5a73"
   }
 }

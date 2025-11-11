@@ -322,5 +322,15 @@
     "en": "Talonflame",
     "ja": "ファイアロー",
     "zh-Hans": "烈箭鹰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e5b27e",
+      "#ff4c4c",
+      "#992e2e"
+    ],
+    "primary": "#e5b27e",
+    "secondary": "#ff4c4c",
+    "accent": "#992e2e"
   }
 }

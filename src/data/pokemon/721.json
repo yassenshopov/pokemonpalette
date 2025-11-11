@@ -292,5 +292,15 @@
     "en": "Volcanion",
     "ja": "ボルケニオン",
     "zh-Hans": "波尔凯尼恩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffe14c",
+      "#ccb43d",
+      "#807126"
+    ],
+    "primary": "#ffe14c",
+    "secondary": "#ccb43d",
+    "accent": "#807126"
   }
 }

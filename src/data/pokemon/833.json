@@ -301,5 +301,15 @@
     "en": "Chewtle",
     "ja": "カムカメ",
     "zh-Hans": "咬咬龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#49e962",
+      "#3b9d52",
+      "#2f6642"
+    ],
+    "primary": "#49e962",
+    "secondary": "#3b9d52",
+    "accent": "#2f6642"
   }
 }

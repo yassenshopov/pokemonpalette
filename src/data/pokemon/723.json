@@ -322,5 +322,15 @@
     "en": "Dartrix",
     "ja": "フクスロー",
     "zh-Hans": "投羽枭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f8f8f8",
+      "#3c828e",
+      "#51c9d2"
+    ],
+    "primary": "#f8f8f8",
+    "secondary": "#3c828e",
+    "accent": "#51c9d2"
   }
 }

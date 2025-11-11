@@ -318,5 +318,15 @@
     "en": "Cubchoo",
     "ja": "クマシュン",
     "zh-Hans": "喷嚏熊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5a4f6",
+      "#ffffff",
+      "#4a7373"
+    ],
+    "primary": "#c5a4f6",
+    "secondary": "#ffffff",
+    "accent": "#4a7373"
   }
 }

@@ -337,5 +337,15 @@
     "en": "Whirlipede",
     "ja": "ホイーガ",
     "zh-Hans": "车轮球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#625283",
+      "#836aa4",
+      "#31314a"
+    ],
+    "primary": "#625283",
+    "secondary": "#836aa4",
+    "accent": "#31314a"
   }
 }

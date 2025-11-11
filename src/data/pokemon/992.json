@@ -284,5 +284,15 @@
     "en": "Iron Hands",
     "ja": "テツノカイナ",
     "zh-Hans": "铁臂膀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fcd216",
+      "#c5c8cb",
+      "#91959d"
+    ],
+    "primary": "#fcd216",
+    "secondary": "#c5c8cb",
+    "accent": "#91959d"
   }
 }

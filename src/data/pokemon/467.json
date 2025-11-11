@@ -322,5 +322,15 @@
     "en": "Magmortar",
     "ja": "ブーバーン",
     "zh-Hans": "鸭嘴炎兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffb4cd",
+      "#a43952",
+      "#f66273"
+    ],
+    "primary": "#ffb4cd",
+    "secondary": "#a43952",
+    "accent": "#f66273"
   }
 }

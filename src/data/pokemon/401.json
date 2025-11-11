@@ -312,5 +312,15 @@
     "en": "Kricketot",
     "ja": "コロボーシ",
     "zh-Hans": "圆法师"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffeeac",
+      "#8b734a",
+      "#f6cd5a"
+    ],
+    "primary": "#ffeeac",
+    "secondary": "#8b734a",
+    "accent": "#f6cd5a"
   }
 }

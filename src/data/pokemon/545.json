@@ -344,5 +344,15 @@
     "en": "Scolipede",
     "ja": "ペンドラー",
     "zh-Hans": "蜈蚣王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9c0000",
+      "#cd2900",
+      "#39bdb4"
+    ],
+    "primary": "#9c0000",
+    "secondary": "#cd2900",
+    "accent": "#39bdb4"
   }
 }

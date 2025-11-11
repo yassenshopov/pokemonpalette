@@ -326,5 +326,15 @@
     "en": "Gulpin",
     "ja": "ゴクリン",
     "zh-Hans": "溶食兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8bbdff",
+      "#5273c5",
+      "#f67b29"
+    ],
+    "primary": "#8bbdff",
+    "secondary": "#5273c5",
+    "accent": "#f67b29"
   }
 }

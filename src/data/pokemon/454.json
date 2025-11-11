@@ -323,5 +323,15 @@
     "en": "Toxicroak",
     "ja": "ドクロッグ",
     "zh-Hans": "毒骷蛙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73c5cd",
+      "#527b83",
+      "#313141"
+    ],
+    "primary": "#73c5cd",
+    "secondary": "#527b83",
+    "accent": "#313141"
   }
 }

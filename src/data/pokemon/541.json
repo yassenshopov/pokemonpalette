@@ -332,5 +332,15 @@
     "en": "Swadloon",
     "ja": "クルマユ",
     "zh-Hans": "宝包茧"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4d500",
+      "#7b9c08",
+      "#ffffff"
+    ],
+    "primary": "#b4d500",
+    "secondary": "#7b9c08",
+    "accent": "#ffffff"
   }
 }

@@ -332,5 +332,15 @@
     "en": "Tympole",
     "ja": "オタマロ",
     "zh-Hans": "圆蝌蚪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffdebd",
+      "#414141",
+      "#ffd57b"
+    ],
+    "primary": "#ffdebd",
+    "secondary": "#414141",
+    "accent": "#ffd57b"
   }
 }

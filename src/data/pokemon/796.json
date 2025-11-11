@@ -287,5 +287,15 @@
     "en": "Xurkitree",
     "ja": "デンジュモク",
     "zh-Hans": "电束木"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#298ab8",
+      "#185c80",
+      "#fdfdfd"
+    ],
+    "primary": "#298ab8",
+    "secondary": "#185c80",
+    "accent": "#fdfdfd"
   }
 }

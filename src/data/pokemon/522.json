@@ -318,5 +318,15 @@
     "en": "Blitzle",
     "ja": "シママ",
     "zh-Hans": "斑斑马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#315273",
+      "#ffffff",
+      "#cdcdcd"
+    ],
+    "primary": "#315273",
+    "secondary": "#ffffff",
+    "accent": "#cdcdcd"
   }
 }

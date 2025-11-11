@@ -291,5 +291,15 @@
     "en": "Eternatus",
     "ja": "ムゲンダイナ",
     "zh-Hans": "无极汰那"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4f1046",
+      "#a91cad",
+      "#6f206c"
+    ],
+    "primary": "#4f1046",
+    "secondary": "#a91cad",
+    "accent": "#6f206c"
   }
 }

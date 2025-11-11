@@ -311,5 +311,15 @@
     "en": "Sinistcha",
     "ja": "ヤバソチャ",
     "zh-Hans": "来悲粗茶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6e1db",
+      "#6a5b20",
+      "#a09750"
+    ],
+    "primary": "#e6e1db",
+    "secondary": "#6a5b20",
+    "accent": "#a09750"
   }
 }

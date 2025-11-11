@@ -298,5 +298,15 @@
     "en": "Groudon",
     "ja": "グラードン",
     "zh-Hans": "固拉多"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73625a",
+      "#c5cd31",
+      "#415a08"
+    ],
+    "primary": "#73625a",
+    "secondary": "#c5cd31",
+    "accent": "#415a08"
   }
 }

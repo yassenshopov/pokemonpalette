@@ -312,5 +312,15 @@
     "en": "Amaura",
     "ja": "アマルス",
     "zh-Hans": "冰雪龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e9fdf1",
+      "#f8faba",
+      "#b3747e"
+    ],
+    "primary": "#e9fdf1",
+    "secondary": "#f8faba",
+    "accent": "#b3747e"
   }
 }

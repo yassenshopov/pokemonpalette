@@ -312,5 +312,15 @@
     "en": "Riolu",
     "ja": "リオル",
     "zh-Hans": "利欧路"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#527383",
+      "#e6ee7b",
+      "#aca429"
+    ],
+    "primary": "#527383",
+    "secondary": "#e6ee7b",
+    "accent": "#aca429"
   }
 }

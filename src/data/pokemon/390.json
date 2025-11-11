@@ -317,5 +317,15 @@
     "en": "Chimchar",
     "ja": "ヒコザル",
     "zh-Hans": "小火焰猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6ee9c",
+      "#d53162",
+      "#dec55a"
+    ],
+    "primary": "#f6ee9c",
+    "secondary": "#d53162",
+    "accent": "#dec55a"
   }
 }

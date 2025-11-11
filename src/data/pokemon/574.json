@@ -328,5 +328,15 @@
     "en": "Gothita",
     "ja": "ゴチム",
     "zh-Hans": "哥德宝宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#181818",
+      "#ffffff",
+      "#41415a"
+    ],
+    "primary": "#181818",
+    "secondary": "#ffffff",
+    "accent": "#41415a"
   }
 }

@@ -337,5 +337,15 @@
     "en": "Palpitoad",
     "ja": "ガマガル",
     "zh-Hans": "蓝蟾蜍"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#626262",
+      "#ffded5",
+      "#ffac10"
+    ],
+    "primary": "#626262",
+    "secondary": "#ffded5",
+    "accent": "#ffac10"
   }
 }

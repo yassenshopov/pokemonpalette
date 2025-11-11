@@ -297,5 +297,15 @@
     "en": "Passimian",
     "ja": "ナゲツケサル",
     "zh-Hans": "投掷猴"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#433527",
+      "#d27622",
+      "#726942"
+    ],
+    "primary": "#433527",
+    "secondary": "#d27622",
+    "accent": "#726942"
   }
 }

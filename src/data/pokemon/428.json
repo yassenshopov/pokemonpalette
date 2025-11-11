@@ -328,5 +328,15 @@
     "en": "Lopunny",
     "ja": "ミミロップ",
     "zh-Hans": "长耳兔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6aca4",
+      "#d57b9c",
+      "#9c6a73"
+    ],
+    "primary": "#f6aca4",
+    "secondary": "#d57b9c",
+    "accent": "#9c6a73"
   }
 }

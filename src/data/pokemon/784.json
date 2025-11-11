@@ -333,5 +333,15 @@
     "en": "Kommo-o",
     "ja": "ジャラランガ",
     "zh-Hans": "杖尾鳞甲龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cad500",
+      "#f18bb9",
+      "#a29d06"
+    ],
+    "primary": "#cad500",
+    "secondary": "#f18bb9",
+    "accent": "#a29d06"
   }
 }

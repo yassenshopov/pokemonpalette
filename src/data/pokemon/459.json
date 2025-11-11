@@ -317,5 +317,15 @@
     "en": "Snover",
     "ja": "ユキカブリ",
     "zh-Hans": "雪笠怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#cddede",
+      "#625a41"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#cddede",
+    "accent": "#625a41"
   }
 }

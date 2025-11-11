@@ -310,5 +310,15 @@
     "en": "Arctibax",
     "ja": "セゴール",
     "zh-Hans": "冻脊龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#43c2af",
+      "#e3fffd",
+      "#445f74"
+    ],
+    "primary": "#43c2af",
+    "secondary": "#e3fffd",
+    "accent": "#445f74"
   }
 }

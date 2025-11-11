@@ -315,5 +315,15 @@
     "en": "Pawmot",
     "ja": "パーモット",
     "zh-Hans": "巴布土拨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ec8085",
+      "#f5e1b1",
+      "#bf3e4a"
+    ],
+    "primary": "#ec8085",
+    "secondary": "#f5e1b1",
+    "accent": "#bf3e4a"
   }
 }

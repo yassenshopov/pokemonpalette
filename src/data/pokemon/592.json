@@ -318,5 +318,15 @@
     "en": "Frillish",
     "ja": "プルリル",
     "zh-Hans": "轻飘飘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bdec5",
+      "#4a9c8b",
+      "#395241"
+    ],
+    "primary": "#7bdec5",
+    "secondary": "#4a9c8b",
+    "accent": "#395241"
   }
 }

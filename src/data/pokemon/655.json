@@ -325,5 +325,15 @@
     "en": "Delphox",
     "ja": "マフォクシー",
     "zh-Hans": "妖火红狐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#663f73",
+      "#885499",
+      "#f24949"
+    ],
+    "primary": "#663f73",
+    "secondary": "#885499",
+    "accent": "#f24949"
   }
 }

@@ -323,5 +323,15 @@
     "en": "Grimmsnarl",
     "ja": "オーロンゲ",
     "zh-Hans": "长毛巨魔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ddd7df",
+      "#a39da5",
+      "#433f45"
+    ],
+    "primary": "#ddd7df",
+    "secondary": "#a39da5",
+    "accent": "#433f45"
   }
 }

@@ -322,5 +322,15 @@
     "en": "Incineroar",
     "ja": "ガオガエン",
     "zh-Hans": "炽焰咆哮虎"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f13521",
+      "#aa1710",
+      "#bbada2"
+    ],
+    "primary": "#f13521",
+    "secondary": "#aa1710",
+    "accent": "#bbada2"
   }
 }

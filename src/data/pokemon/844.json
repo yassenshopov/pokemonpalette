@@ -308,5 +308,15 @@
     "en": "Sandaconda",
     "ja": "サダイジャ",
     "zh-Hans": "沙螺蟒"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#656d61",
+      "#9fa57c",
+      "#52554b"
+    ],
+    "primary": "#656d61",
+    "secondary": "#9fa57c",
+    "accent": "#52554b"
   }
 }

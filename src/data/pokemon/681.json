@@ -323,5 +323,15 @@
     "en": "Aegislash",
     "ja": "ギルガルド",
     "zh-Hans": "坚盾剑怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b29a4c",
+      "#e4c93e",
+      "#958888"
+    ],
+    "primary": "#b29a4c",
+    "secondary": "#e4c93e",
+    "accent": "#958888"
   }
 }

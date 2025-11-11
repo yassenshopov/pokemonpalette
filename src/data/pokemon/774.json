@@ -388,5 +388,15 @@
     "en": "Minior",
     "ja": "メテノ",
     "zh-Hans": "小陨星"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#595959",
+      "#f3f3f3",
+      "#9999a2"
+    ],
+    "primary": "#595959",
+    "secondary": "#f3f3f3",
+    "accent": "#9999a2"
   }
 }

@@ -302,5 +302,15 @@
     "en": "Palafin",
     "ja": "イルカマン",
     "zh-Hans": "海豚侠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a9abef",
+      "#7070c5",
+      "#a3b3b6"
+    ],
+    "primary": "#a9abef",
+    "secondary": "#7070c5",
+    "accent": "#a3b3b6"
   }
 }

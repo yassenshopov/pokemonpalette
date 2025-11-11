@@ -327,5 +327,15 @@
     "en": "Gabite",
     "ja": "ガバイト",
     "zh-Hans": "尖牙陆鲨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3129a4",
+      "#4141cd",
+      "#101052"
+    ],
+    "primary": "#3129a4",
+    "secondary": "#4141cd",
+    "accent": "#101052"
   }
 }

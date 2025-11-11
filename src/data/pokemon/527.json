@@ -317,5 +317,15 @@
     "en": "Woobat",
     "ja": "コロモリ",
     "zh-Hans": "滚滚蝙蝠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5eea4",
+      "#7bbd39",
+      "#293141"
+    ],
+    "primary": "#c5eea4",
+    "secondary": "#7bbd39",
+    "accent": "#293141"
   }
 }

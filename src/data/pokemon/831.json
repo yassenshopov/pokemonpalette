@@ -301,5 +301,15 @@
     "en": "Wooloo",
     "ja": "ウールー",
     "zh-Hans": "毛辫羊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#583e3f",
+      "#362021",
+      "#ead9d9"
+    ],
+    "primary": "#583e3f",
+    "secondary": "#362021",
+    "accent": "#ead9d9"
   }
 }

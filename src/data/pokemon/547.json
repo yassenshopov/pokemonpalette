@@ -323,5 +323,15 @@
     "en": "Whimsicott",
     "ja": "エルフーン",
     "zh-Hans": "风妖精"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff6ee",
+      "#c5c5bd",
+      "#6a5a52"
+    ],
+    "primary": "#fff6ee",
+    "secondary": "#c5c5bd",
+    "accent": "#6a5a52"
   }
 }

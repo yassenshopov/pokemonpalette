@@ -326,5 +326,15 @@
     "en": "Lunala",
     "ja": "ルナアーラ",
     "zh-Hans": "露奈雅拉"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#831d2f",
+      "#c72c47",
+      "#e5da7f"
+    ],
+    "primary": "#831d2f",
+    "secondary": "#c72c47",
+    "accent": "#e5da7f"
   }
 }

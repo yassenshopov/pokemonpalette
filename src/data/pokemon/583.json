@@ -328,5 +328,15 @@
     "en": "Vanillish",
     "ja": "バニリッチ",
     "zh-Hans": "多多冰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#ac83ee",
+      "#bdbdf6"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#ac83ee",
+    "accent": "#bdbdf6"
   }
 }

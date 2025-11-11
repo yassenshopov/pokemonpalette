@@ -309,5 +309,15 @@
     "en": "Thundurus",
     "ja": "ボルトロス",
     "zh-Hans": "雷电云"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#b4b49c",
+      "#839ccd"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#b4b49c",
+    "accent": "#839ccd"
   }
 }

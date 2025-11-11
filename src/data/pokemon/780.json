@@ -320,5 +320,15 @@
     "en": "Drampa",
     "ja": "ジジーロン",
     "zh-Hans": "老翁龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeeeee",
+      "#e0b172",
+      "#b8b7a3"
+    ],
+    "primary": "#eeeeee",
+    "secondary": "#e0b172",
+    "accent": "#b8b7a3"
   }
 }

@@ -330,5 +330,15 @@
     "en": "Goodra",
     "ja": "ヌメルゴン",
     "zh-Hans": "黏美龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6f6af",
+      "#ffb399",
+      "#a6a66c"
+    ],
+    "primary": "#f6f6af",
+    "secondary": "#ffb399",
+    "accent": "#a6a66c"
   }
 }

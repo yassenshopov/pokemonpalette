@@ -320,5 +320,15 @@
     "en": "Manectric",
     "ja": "ライボルト",
     "zh-Hans": "雷电兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dea431",
+      "#ffde4a",
+      "#737b8b"
+    ],
+    "primary": "#dea431",
+    "secondary": "#ffde4a",
+    "accent": "#737b8b"
   }
 }

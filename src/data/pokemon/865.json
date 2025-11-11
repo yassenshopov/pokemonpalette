@@ -294,5 +294,15 @@
     "en": "Sirfetch’d",
     "ja": "ネギガナイト",
     "zh-Hans": "葱游兵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a6cb6b",
+      "#f29c34",
+      "#ffdb4d"
+    ],
+    "primary": "#a6cb6b",
+    "secondary": "#f29c34",
+    "accent": "#ffdb4d"
   }
 }

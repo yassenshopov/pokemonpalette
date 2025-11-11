@@ -315,5 +315,15 @@
     "en": "Cofagrigus",
     "ja": "デスカーン",
     "zh-Hans": "迭失棺"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#39396a",
+      "#c5cdd5",
+      "#835294"
+    ],
+    "primary": "#39396a",
+    "secondary": "#c5cdd5",
+    "accent": "#835294"
   }
 }

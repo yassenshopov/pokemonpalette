@@ -306,5 +306,15 @@
     "en": "Sizzlipede",
     "ja": "ヤクデ",
     "zh-Hans": "烧火蚣"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff5839",
+      "#bf3922",
+      "#681607"
+    ],
+    "primary": "#ff5839",
+    "secondary": "#bf3922",
+    "accent": "#681607"
   }
 }

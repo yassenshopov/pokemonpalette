@@ -323,5 +323,15 @@
     "en": "Scraggy",
     "ja": "ズルッグ",
     "zh-Hans": "滑滑小子"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#202020",
+      "#ffa400",
+      "#c58300"
+    ],
+    "primary": "#202020",
+    "secondary": "#ffa400",
+    "accent": "#c58300"
   }
 }

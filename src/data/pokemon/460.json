@@ -324,5 +324,15 @@
     "en": "Abomasnow",
     "ja": "ユキノオー",
     "zh-Hans": "暴雪王"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#c5d5de",
+      "#202931"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#c5d5de",
+    "accent": "#202931"
   }
 }

@@ -308,5 +308,15 @@
     "en": "Durant",
     "ja": "アイアント",
     "zh-Hans": "铁蚁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#201818",
+      "#debdac",
+      "#9c7b73"
+    ],
+    "primary": "#201818",
+    "secondary": "#debdac",
+    "accent": "#9c7b73"
   }
 }

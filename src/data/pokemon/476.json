@@ -335,5 +335,15 @@
     "en": "Probopass",
     "ja": "ダイノーズ",
     "zh-Hans": "大朝北鼻"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e64a5a",
+      "#29394a",
+      "#cda45a"
+    ],
+    "primary": "#e64a5a",
+    "secondary": "#29394a",
+    "accent": "#cda45a"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Gothorita",
     "ja": "ゴチミル",
     "zh-Hans": "哥德小童"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#41415a",
+      "#202031",
+      "#181818"
+    ],
+    "primary": "#41415a",
+    "secondary": "#202031",
+    "accent": "#181818"
   }
 }

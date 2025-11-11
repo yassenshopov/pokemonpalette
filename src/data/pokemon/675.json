@@ -323,5 +323,15 @@
     "en": "Pangoro",
     "ja": "ゴロンダ",
     "zh-Hans": "霸道熊猫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#996b5c",
+      "#66473d",
+      "#ffffd9"
+    ],
+    "primary": "#996b5c",
+    "secondary": "#66473d",
+    "accent": "#ffffd9"
   }
 }

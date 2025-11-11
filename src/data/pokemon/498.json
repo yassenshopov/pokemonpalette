@@ -317,5 +317,15 @@
     "en": "Tepig",
     "ja": "ポカブ",
     "zh-Hans": "暖暖猪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eecd31",
+      "#733931",
+      "#411818"
+    ],
+    "primary": "#eecd31",
+    "secondary": "#733931",
+    "accent": "#411818"
   }
 }

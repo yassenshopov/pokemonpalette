@@ -319,5 +319,15 @@
     "en": "Feebas",
     "ja": "ヒンバス",
     "zh-Hans": "丑丑鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c59cc5",
+      "#181818",
+      "#9c9cac"
+    ],
+    "primary": "#c59cc5",
+    "secondary": "#181818",
+    "accent": "#9c9cac"
   }
 }

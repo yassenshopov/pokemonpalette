@@ -322,5 +322,15 @@
     "en": "Huntail",
     "ja": "ハンテール",
     "zh-Hans": "猎斑鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a9c5a",
+      "#e69c00",
+      "#7bde8b"
+    ],
+    "primary": "#4a9c5a",
+    "secondary": "#e69c00",
+    "accent": "#7bde8b"
   }
 }

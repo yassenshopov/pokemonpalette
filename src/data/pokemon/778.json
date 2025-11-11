@@ -308,5 +308,15 @@
     "en": "Mimikyu",
     "ja": "ミミッキュ",
     "zh-Hans": "谜拟丘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e5e5e5",
+      "#a6a6a6",
+      "#595959"
+    ],
+    "primary": "#e5e5e5",
+    "secondary": "#a6a6a6",
+    "accent": "#595959"
   }
 }

@@ -309,5 +309,15 @@
     "en": "Lunatone",
     "ja": "ルナトーン",
     "zh-Hans": "月石"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5ac62",
+      "#decd5a",
+      "#836a41"
+    ],
+    "primary": "#c5ac62",
+    "secondary": "#decd5a",
+    "accent": "#836a41"
   }
 }

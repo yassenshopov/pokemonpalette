@@ -309,5 +309,15 @@
     "en": "Bruxish",
     "ja": "ハギギシリ",
     "zh-Hans": "磨牙彩皮鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e8382f",
+      "#e7dfd1",
+      "#cda552"
+    ],
+    "primary": "#e8382f",
+    "secondary": "#e7dfd1",
+    "accent": "#cda552"
   }
 }

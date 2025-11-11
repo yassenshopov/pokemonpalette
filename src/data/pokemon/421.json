@@ -323,5 +323,15 @@
     "en": "Cherrim",
     "ja": "チェリム",
     "zh-Hans": "樱花儿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#415a7b",
+      "#4a9cbd",
+      "#29cd62"
+    ],
+    "primary": "#415a7b",
+    "secondary": "#4a9cbd",
+    "accent": "#29cd62"
   }
 }

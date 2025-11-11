@@ -311,5 +311,15 @@
     "en": "Poltchageist",
     "ja": "チャデス",
     "zh-Hans": "斯魔茶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#20480d",
+      "#e6e1db",
+      "#c1b9ae"
+    ],
+    "primary": "#20480d",
+    "secondary": "#e6e1db",
+    "accent": "#c1b9ae"
   }
 }

@@ -306,5 +306,15 @@
     "en": "Scovillain",
     "ja": "スコヴィラン",
     "zh-Hans": "狠辣椒"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4865b0",
+      "#f0dc68",
+      "#51c444"
+    ],
+    "primary": "#4865b0",
+    "secondary": "#f0dc68",
+    "accent": "#51c444"
   }
 }

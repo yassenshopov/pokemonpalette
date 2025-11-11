@@ -323,5 +323,15 @@
     "en": "Stoutland",
     "ja": "ムーランド",
     "zh-Hans": "长毛狗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6bd41",
+      "#cdbd9c",
+      "#315241"
+    ],
+    "primary": "#f6bd41",
+    "secondary": "#cdbd9c",
+    "accent": "#315241"
   }
 }

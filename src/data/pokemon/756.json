@@ -327,5 +327,15 @@
     "en": "Shiinotic",
     "ja": "マシェード",
     "zh-Hans": "灯罩夜菇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#97b371",
+      "#c5775c",
+      "#994f44"
+    ],
+    "primary": "#97b371",
+    "secondary": "#c5775c",
+    "accent": "#994f44"
   }
 }

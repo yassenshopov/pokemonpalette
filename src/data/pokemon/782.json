@@ -328,5 +328,15 @@
     "en": "Jangmo-o",
     "ja": "ジャラコ",
     "zh-Hans": "心鳞宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e0fd3e",
+      "#ff7dc1",
+      "#4b5348"
+    ],
+    "primary": "#e0fd3e",
+    "secondary": "#ff7dc1",
+    "accent": "#4b5348"
   }
 }

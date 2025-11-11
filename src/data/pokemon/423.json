@@ -335,5 +335,15 @@
     "en": "Gastrodon",
     "ja": "トリトドン",
     "zh-Hans": "海兔兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6a5a39",
+      "#ffaca4",
+      "#e66a62"
+    ],
+    "primary": "#6a5a39",
+    "secondary": "#ffaca4",
+    "accent": "#e66a62"
   }
 }

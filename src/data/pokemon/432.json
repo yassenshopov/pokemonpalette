@@ -318,5 +318,15 @@
     "en": "Purugly",
     "ja": "ブニャット",
     "zh-Hans": "东施喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b47bc5",
+      "#eeffff",
+      "#8b628b"
+    ],
+    "primary": "#b47bc5",
+    "secondary": "#eeffff",
+    "accent": "#8b628b"
   }
 }

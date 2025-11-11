@@ -286,5 +286,15 @@
     "en": "Applin",
     "ja": "カジッチュ",
     "zh-Hans": "啃果虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#51b947",
+      "#3b9043",
+      "#a4d84a"
+    ],
+    "primary": "#51b947",
+    "secondary": "#3b9043",
+    "accent": "#a4d84a"
   }
 }

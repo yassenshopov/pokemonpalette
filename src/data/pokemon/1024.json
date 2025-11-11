@@ -292,5 +292,15 @@
     "en": "Terapagos",
     "ja": "テラパゴス",
     "zh-Hans": "太乐巴戈斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#060606",
+      "#049dd1",
+      "#9be5bb"
+    ],
+    "primary": "#060606",
+    "secondary": "#049dd1",
+    "accent": "#9be5bb"
   }
 }

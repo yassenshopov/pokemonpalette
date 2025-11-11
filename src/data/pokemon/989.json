@@ -284,5 +284,15 @@
     "en": "Sandy Shocks",
     "ja": "スナノケガワ",
     "zh-Hans": "沙铁皮"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#393131",
+      "#2b2424",
+      "#524a4a"
+    ],
+    "primary": "#393131",
+    "secondary": "#2b2424",
+    "accent": "#524a4a"
   }
 }

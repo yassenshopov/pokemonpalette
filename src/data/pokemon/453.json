@@ -323,5 +323,15 @@
     "en": "Croagunk",
     "ja": "グレッグル",
     "zh-Hans": "不良蛙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73c5cd",
+      "#313141",
+      "#527b83"
+    ],
+    "primary": "#73c5cd",
+    "secondary": "#313141",
+    "accent": "#527b83"
   }
 }

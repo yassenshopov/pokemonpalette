@@ -305,5 +305,15 @@
     "en": "Crocalor",
     "ja": "アチゲータ",
     "zh-Hans": "炙烫鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fe9827",
+      "#ec42a4",
+      "#fff8df"
+    ],
+    "primary": "#fe9827",
+    "secondary": "#ec42a4",
+    "accent": "#fff8df"
   }
 }

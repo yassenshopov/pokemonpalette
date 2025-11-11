@@ -283,5 +283,15 @@
     "en": "Gouging Fire",
     "ja": "ウガツホムラ",
     "zh-Hans": "破空焰"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f8d393",
+      "#c26d23",
+      "#6c3e17"
+    ],
+    "primary": "#f8d393",
+    "secondary": "#c26d23",
+    "accent": "#6c3e17"
   }
 }

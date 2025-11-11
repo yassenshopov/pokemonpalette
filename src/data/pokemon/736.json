@@ -314,5 +314,15 @@
     "en": "Grubbin",
     "ja": "アゴジムシ",
     "zh-Hans": "强颚鸡母虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff9580",
+      "#e54c2e",
+      "#dae6f2"
+    ],
+    "primary": "#ff9580",
+    "secondary": "#e54c2e",
+    "accent": "#dae6f2"
   }
 }

@@ -313,5 +313,15 @@
     "en": "Togedemaru",
     "ja": "トゲデマル",
     "zh-Hans": "托戈德玛尔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f8f8f8",
+      "#ffd9cc",
+      "#bfbfbf"
+    ],
+    "primary": "#f8f8f8",
+    "secondary": "#ffd9cc",
+    "accent": "#bfbfbf"
   }
 }

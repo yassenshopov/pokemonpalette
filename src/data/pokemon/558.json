@@ -327,5 +327,15 @@
     "en": "Crustle",
     "ja": "イワパレス",
     "zh-Hans": "岩殿居蟹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#625a52",
+      "#837b73",
+      "#4a4139"
+    ],
+    "primary": "#625a52",
+    "secondary": "#837b73",
+    "accent": "#4a4139"
   }
 }

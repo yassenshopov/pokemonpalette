@@ -295,5 +295,15 @@
     "en": "Arrokuda",
     "ja": "サシカマス",
     "zh-Hans": "刺梭鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#717593",
+      "#bbb9ba",
+      "#5c5981"
+    ],
+    "primary": "#717593",
+    "secondary": "#bbb9ba",
+    "accent": "#5c5981"
   }
 }

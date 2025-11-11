@@ -317,5 +317,15 @@
     "en": "Castform",
     "ja": "ポワルン",
     "zh-Hans": "飘浮泡泡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#debde6",
+      "#bd94bd",
+      "#ffee00"
+    ],
+    "primary": "#debde6",
+    "secondary": "#bd94bd",
+    "accent": "#ffee00"
   }
 }

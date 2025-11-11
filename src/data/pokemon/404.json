@@ -323,5 +323,15 @@
     "en": "Luxio",
     "ja": "ルクシオ",
     "zh-Hans": "勒克猫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4a62",
+      "#313141",
+      "#ffd552"
+    ],
+    "primary": "#4a4a62",
+    "secondary": "#313141",
+    "accent": "#ffd552"
   }
 }

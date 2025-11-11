@@ -323,5 +323,15 @@
     "en": "Coalossal",
     "ja": "セキタンザン",
     "zh-Hans": "巨炭山"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#58707c",
+      "#475258",
+      "#323a3f"
+    ],
+    "primary": "#58707c",
+    "secondary": "#475258",
+    "accent": "#323a3f"
   }
 }

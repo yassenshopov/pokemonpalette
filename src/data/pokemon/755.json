@@ -327,5 +327,15 @@
     "en": "Morelull",
     "ja": "ネマシュ",
     "zh-Hans": "睡睡菇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f7967d",
+      "#cab9ac",
+      "#65604b"
+    ],
+    "primary": "#f7967d",
+    "secondary": "#cab9ac",
+    "accent": "#65604b"
   }
 }

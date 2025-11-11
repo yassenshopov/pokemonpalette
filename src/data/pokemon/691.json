@@ -325,5 +325,15 @@
     "en": "Dragalge",
     "ja": "ドラミドロ",
     "zh-Hans": "毒藻龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#874179",
+      "#2f0e32",
+      "#4b214b"
+    ],
+    "primary": "#874179",
+    "secondary": "#2f0e32",
+    "accent": "#4b214b"
   }
 }

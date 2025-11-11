@@ -301,5 +301,15 @@
     "en": "Maschiff",
     "ja": "オラチフ",
     "zh-Hans": "偶叫獒"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ab8bc9",
+      "#665c72",
+      "#77606e"
+    ],
+    "primary": "#ab8bc9",
+    "secondary": "#665c72",
+    "accent": "#77606e"
   }
 }

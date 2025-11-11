@@ -299,5 +299,15 @@
     "en": "Brambleghast",
     "ja": "アノホラグサ",
     "zh-Hans": "怖纳噬草"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3c3120",
+      "#a09b7e",
+      "#dbd8b5"
+    ],
+    "primary": "#3c3120",
+    "secondary": "#a09b7e",
+    "accent": "#dbd8b5"
   }
 }

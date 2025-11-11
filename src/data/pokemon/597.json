@@ -311,5 +311,15 @@
     "en": "Ferroseed",
     "ja": "テッシード",
     "zh-Hans": "种子铁球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4bdcd",
+      "#7b8ba4",
+      "#4a5a7b"
+    ],
+    "primary": "#b4bdcd",
+    "secondary": "#7b8ba4",
+    "accent": "#4a5a7b"
   }
 }

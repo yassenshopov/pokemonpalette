@@ -284,5 +284,15 @@
     "en": "Iron Leaves",
     "ja": "テツノイサハ",
     "zh-Hans": "铁斑叶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5c8cb",
+      "#adb0b6",
+      "#606164"
+    ],
+    "primary": "#c5c8cb",
+    "secondary": "#adb0b6",
+    "accent": "#606164"
   }
 }

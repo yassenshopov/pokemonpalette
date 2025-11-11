@@ -589,5 +589,15 @@
     "en": "Silvally",
     "ja": "シルヴァディ",
     "zh-Hans": "银伴战兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#faefc9",
+      "#080808",
+      "#f9f9f9"
+    ],
+    "primary": "#faefc9",
+    "secondary": "#080808",
+    "accent": "#f9f9f9"
   }
 }

@@ -331,5 +331,15 @@
     "en": "Rotom",
     "ja": "ロトム",
     "zh-Hans": "洛托姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6bd8b",
+      "#eea473",
+      "#c50041"
+    ],
+    "primary": "#f6bd8b",
+    "secondary": "#eea473",
+    "accent": "#c50041"
   }
 }

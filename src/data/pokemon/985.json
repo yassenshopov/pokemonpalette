@@ -284,5 +284,15 @@
     "en": "Scream Tail",
     "ja": "サケブシッポ",
     "zh-Hans": "吼叫尾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f2c6de",
+      "#c776aa",
+      "#ffdfed"
+    ],
+    "primary": "#f2c6de",
+    "secondary": "#c776aa",
+    "accent": "#ffdfed"
   }
 }

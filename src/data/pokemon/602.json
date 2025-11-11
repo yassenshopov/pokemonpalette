@@ -241,5 +241,15 @@
     "en": "Tynamo",
     "ja": "シビシラス",
     "zh-Hans": "麻麻小鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eeffff",
+      "#8bbdcd",
+      "#c5e6ee"
+    ],
+    "primary": "#eeffff",
+    "secondary": "#8bbdcd",
+    "accent": "#c5e6ee"
   }
 }

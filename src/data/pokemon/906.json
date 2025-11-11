@@ -305,5 +305,15 @@
     "en": "Sprigatito",
     "ja": "ニャオハ",
     "zh-Hans": "新叶喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94b88f",
+      "#bbe7ba",
+      "#3d755a"
+    ],
+    "primary": "#94b88f",
+    "secondary": "#bbe7ba",
+    "accent": "#3d755a"
   }
 }

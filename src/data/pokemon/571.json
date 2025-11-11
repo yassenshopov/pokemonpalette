@@ -308,5 +308,15 @@
     "en": "Zoroark",
     "ja": "ゾロアーク",
     "zh-Hans": "索罗亚克"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#62626a",
+      "#41299c",
+      "#7331c5"
+    ],
+    "primary": "#62626a",
+    "secondary": "#41299c",
+    "accent": "#7331c5"
   }
 }

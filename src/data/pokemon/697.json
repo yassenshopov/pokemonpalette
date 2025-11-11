@@ -312,5 +312,15 @@
     "en": "Tyrantrum",
     "ja": "ガチゴラス",
     "zh-Hans": "怪颚龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#3d5eb6",
+      "#fafafa",
+      "#2c4686"
+    ],
+    "primary": "#3d5eb6",
+    "secondary": "#fafafa",
+    "accent": "#2c4686"
   }
 }

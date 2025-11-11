@@ -316,5 +316,15 @@
     "en": "Cacnea",
     "ja": "サボネア",
     "zh-Hans": "刺球仙人掌"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f6c56a",
+      "#bd9418",
+      "#835a00"
+    ],
+    "primary": "#f6c56a",
+    "secondary": "#bd9418",
+    "accent": "#835a00"
   }
 }

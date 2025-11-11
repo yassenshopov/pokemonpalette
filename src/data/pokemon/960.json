@@ -301,5 +301,15 @@
     "en": "Wiglett",
     "ja": "ウミディグダ",
     "zh-Hans": "海地鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d99922",
+      "#efae27",
+      "#7a7474"
+    ],
+    "primary": "#d99922",
+    "secondary": "#efae27",
+    "accent": "#7a7474"
   }
 }

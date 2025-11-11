@@ -317,5 +317,15 @@
     "en": "Snivy",
     "ja": "ツタージャ",
     "zh-Hans": "藤藤蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#009c9c",
+      "#e6ffbd",
+      "#080808"
+    ],
+    "primary": "#009c9c",
+    "secondary": "#e6ffbd",
+    "accent": "#080808"
   }
 }

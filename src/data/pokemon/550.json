@@ -331,5 +331,15 @@
     "en": "Basculin",
     "ja": "バスラオ",
     "zh-Hans": "野蛮鲈鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7bc552",
+      "#eeeec5",
+      "#a4a483"
+    ],
+    "primary": "#7bc552",
+    "secondary": "#eeeec5",
+    "accent": "#a4a483"
   }
 }

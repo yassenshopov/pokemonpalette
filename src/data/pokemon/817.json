@@ -305,5 +305,15 @@
     "en": "Drizzile",
     "ja": "ジメレオン",
     "zh-Hans": "变涩蜥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6ca0c8",
+      "#427097",
+      "#f57bb4"
+    ],
+    "primary": "#6ca0c8",
+    "secondary": "#427097",
+    "accent": "#f57bb4"
   }
 }

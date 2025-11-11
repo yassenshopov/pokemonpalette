@@ -310,5 +310,15 @@
     "en": "Skeledirge",
     "ja": "ラウドボーン",
     "zh-Hans": "骨纹巨声鳄"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9fa0a2",
+      "#ff3c80",
+      "#fcfcfc"
+    ],
+    "primary": "#9fa0a2",
+    "secondary": "#ff3c80",
+    "accent": "#fcfcfc"
   }
 }

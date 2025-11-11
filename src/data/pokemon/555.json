@@ -337,5 +337,15 @@
     "en": "Darmanitan",
     "ja": "ヒヒダルマ",
     "zh-Hans": "达摩狒狒"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b314a",
+      "#4a1820",
+      "#201010"
+    ],
+    "primary": "#7b314a",
+    "secondary": "#4a1820",
+    "accent": "#201010"
   }
 }

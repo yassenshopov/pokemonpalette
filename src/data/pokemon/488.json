@@ -291,5 +291,15 @@
     "en": "Cresselia",
     "ja": "クレセリア",
     "zh-Hans": "克雷色利亚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52acc5",
+      "#ffd573",
+      "#944aac"
+    ],
+    "primary": "#52acc5",
+    "secondary": "#ffd573",
+    "accent": "#944aac"
   }
 }

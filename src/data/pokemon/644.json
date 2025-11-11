@@ -296,5 +296,15 @@
     "en": "Zekrom",
     "ja": "ゼクロム",
     "zh-Hans": "捷克罗姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#313939",
+      "#395a62",
+      "#202920"
+    ],
+    "primary": "#313939",
+    "secondary": "#395a62",
+    "accent": "#202920"
   }
 }

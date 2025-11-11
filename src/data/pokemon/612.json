@@ -323,5 +323,15 @@
     "en": "Haxorus",
     "ja": "オノノクス",
     "zh-Hans": "双斧战龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4a41",
+      "#6a6a6a",
+      "#525262"
+    ],
+    "primary": "#4a4a41",
+    "secondary": "#6a6a6a",
+    "accent": "#525262"
   }
 }

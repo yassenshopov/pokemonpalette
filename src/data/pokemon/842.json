@@ -333,5 +333,15 @@
     "en": "Appletun",
     "ja": "タルップル",
     "zh-Hans": "丰蜜龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fcff86",
+      "#39a45f",
+      "#2c743e"
+    ],
+    "primary": "#fcff86",
+    "secondary": "#39a45f",
+    "accent": "#2c743e"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Pidove",
     "ja": "マメパト",
     "zh-Hans": "豆豆鸽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b4bdbd",
+      "#41527b",
+      "#eeeeee"
+    ],
+    "primary": "#b4bdbd",
+    "secondary": "#41527b",
+    "accent": "#eeeeee"
   }
 }

@@ -307,5 +307,15 @@
     "en": "Cranidos",
     "ja": "ズガイドス",
     "zh-Hans": "头盖龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd4152",
+      "#9c9c83",
+      "#838362"
+    ],
+    "primary": "#bd4152",
+    "secondary": "#9c9c83",
+    "accent": "#838362"
   }
 }

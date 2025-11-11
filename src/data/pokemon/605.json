@@ -313,5 +313,15 @@
     "en": "Elgyem",
     "ja": "リグレー",
     "zh-Hans": "小灰怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9cbdbd",
+      "#628b94",
+      "#315a73"
+    ],
+    "primary": "#9cbdbd",
+    "secondary": "#628b94",
+    "accent": "#315a73"
   }
 }

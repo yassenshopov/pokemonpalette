@@ -322,5 +322,15 @@
     "en": "Gorebyss",
     "ja": "サクラビス",
     "zh-Hans": "樱花鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffc531",
+      "#e69408",
+      "#8b52a4"
+    ],
+    "primary": "#ffc531",
+    "secondary": "#e69408",
+    "accent": "#8b52a4"
   }
 }

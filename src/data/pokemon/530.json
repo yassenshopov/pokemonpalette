@@ -325,5 +325,15 @@
     "en": "Excadrill",
     "ja": "ドリュウズ",
     "zh-Hans": "龙头地鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b44162",
+      "#9c9cc5",
+      "#7b3141"
+    ],
+    "primary": "#b44162",
+    "secondary": "#9c9cc5",
+    "accent": "#7b3141"
   }
 }

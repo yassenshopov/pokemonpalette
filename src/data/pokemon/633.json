@@ -316,5 +316,15 @@
     "en": "Deino",
     "ja": "モノズ",
     "zh-Hans": "单首龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#625a52",
+      "#5a6a31",
+      "#524141"
+    ],
+    "primary": "#625a52",
+    "secondary": "#5a6a31",
+    "accent": "#524141"
   }
 }

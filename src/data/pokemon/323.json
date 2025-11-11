@@ -330,5 +330,15 @@
     "en": "Camerupt",
     "ja": "バクーダ",
     "zh-Hans": "喷火驼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73738b",
+      "#4a4a62",
+      "#181818"
+    ],
+    "primary": "#73738b",
+    "secondary": "#4a4a62",
+    "accent": "#181818"
   }
 }

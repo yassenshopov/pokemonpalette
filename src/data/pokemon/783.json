@@ -333,5 +333,15 @@
     "en": "Hakamo-o",
     "ja": "ジャランゴ",
     "zh-Hans": "鳞甲龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e2da08",
+      "#aa9d0c",
+      "#f18bb9"
+    ],
+    "primary": "#e2da08",
+    "secondary": "#aa9d0c",
+    "accent": "#f18bb9"
   }
 }

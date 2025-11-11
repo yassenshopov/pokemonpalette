@@ -295,5 +295,15 @@
     "en": "Dachsbun",
     "ja": "バウッツェル",
     "zh-Hans": "麻花犬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eda187",
+      "#b27865",
+      "#bb6f55"
+    ],
+    "primary": "#eda187",
+    "secondary": "#b27865",
+    "accent": "#bb6f55"
   }
 }

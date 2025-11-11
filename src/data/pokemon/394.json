@@ -317,5 +317,15 @@
     "en": "Prinplup",
     "ja": "ポッタイシ",
     "zh-Hans": "波皇子"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#207b94",
+      "#62bdac",
+      "#105a73"
+    ],
+    "primary": "#207b94",
+    "secondary": "#62bdac",
+    "accent": "#105a73"
   }
 }

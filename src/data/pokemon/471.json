@@ -395,5 +395,15 @@
     "en": "Glaceon",
     "ja": "グレイシア",
     "zh-Hans": "冰伊布"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6ffff",
+      "#1073c5",
+      "#a4c5cd"
+    ],
+    "primary": "#e6ffff",
+    "secondary": "#1073c5",
+    "accent": "#a4c5cd"
   }
 }

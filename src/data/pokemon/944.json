@@ -306,5 +306,15 @@
     "en": "Shroodle",
     "ja": "シルシュルー",
     "zh-Hans": "滋汁鼹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7d7976",
+      "#484441",
+      "#272523"
+    ],
+    "primary": "#7d7976",
+    "secondary": "#484441",
+    "accent": "#272523"
   }
 }

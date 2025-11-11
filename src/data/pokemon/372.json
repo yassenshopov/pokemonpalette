@@ -326,5 +326,15 @@
     "en": "Shelgon",
     "ja": "コモルー",
     "zh-Hans": "甲壳龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8bc58b",
+      "#b4d5b4",
+      "#181818"
+    ],
+    "primary": "#8bc58b",
+    "secondary": "#b4d5b4",
+    "accent": "#181818"
   }
 }

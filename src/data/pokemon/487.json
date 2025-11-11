@@ -309,5 +309,15 @@
     "en": "Giratina",
     "ja": "ギラティナ",
     "zh-Hans": "骑拉帝纳"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#312920",
+      "#eed5ac",
+      "#b4bdc5"
+    ],
+    "primary": "#312920",
+    "secondary": "#eed5ac",
+    "accent": "#b4bdc5"
   }
 }

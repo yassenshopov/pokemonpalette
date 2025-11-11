@@ -323,5 +323,15 @@
     "en": "Skuntank",
     "ja": "スカタンク",
     "zh-Hans": "坦克臭鼬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd1852",
+      "#ffd5a4",
+      "#7b1041"
+    ],
+    "primary": "#bd1852",
+    "secondary": "#ffd5a4",
+    "accent": "#7b1041"
   }
 }

@@ -291,5 +291,15 @@
     "en": "Morpeko",
     "ja": "モルペコ",
     "zh-Hans": "莫鲁贝可"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#6c6c6c",
+      "#d1bbb9",
+      "#faf3f3"
+    ],
+    "primary": "#6c6c6c",
+    "secondary": "#d1bbb9",
+    "accent": "#faf3f3"
   }
 }

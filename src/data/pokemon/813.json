@@ -305,5 +305,15 @@
     "en": "Scorbunny",
     "ja": "ヒバニー",
     "zh-Hans": "炎兔儿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f5f4ed",
+      "#c7c6b4",
+      "#919080"
+    ],
+    "primary": "#f5f4ed",
+    "secondary": "#c7c6b4",
+    "accent": "#919080"
   }
 }

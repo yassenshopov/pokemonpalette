@@ -399,5 +399,15 @@
     "en": "Floette",
     "ja": "フラエッテ",
     "zh-Hans": "花叶蒂"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d94c4c",
+      "#f8f8f8",
+      "#7869bf"
+    ],
+    "primary": "#d94c4c",
+    "secondary": "#f8f8f8",
+    "accent": "#7869bf"
   }
 }

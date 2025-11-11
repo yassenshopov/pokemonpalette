@@ -303,5 +303,15 @@
     "en": "Runerigus",
     "ja": "デスバーン",
     "zh-Hans": "迭失板"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#29294a",
+      "#c5b9bb",
+      "#927e90"
+    ],
+    "primary": "#29294a",
+    "secondary": "#c5b9bb",
+    "accent": "#927e90"
   }
 }

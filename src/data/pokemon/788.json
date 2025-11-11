@@ -298,5 +298,15 @@
     "en": "Tapu Fini",
     "ja": "カプ・レヒレ",
     "zh-Hans": "卡璞・鳍鳍"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#41444b",
+      "#2b2c31",
+      "#aadafd"
+    ],
+    "primary": "#41444b",
+    "secondary": "#2b2c31",
+    "accent": "#aadafd"
   }
 }

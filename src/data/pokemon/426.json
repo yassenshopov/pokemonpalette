@@ -323,5 +323,15 @@
     "en": "Drifblim",
     "ja": "フワライド",
     "zh-Hans": "随风球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#decd08",
+      "#eee652",
+      "#62d5ee"
+    ],
+    "primary": "#decd08",
+    "secondary": "#eee652",
+    "accent": "#62d5ee"
   }
 }

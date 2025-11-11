@@ -335,5 +335,15 @@
     "en": "Lycanroc",
     "ja": "ルガルガン",
     "zh-Hans": "鬃岩狼人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c7b3a7",
+      "#ece8d7",
+      "#8ba9cd"
+    ],
+    "primary": "#c7b3a7",
+    "secondary": "#ece8d7",
+    "accent": "#8ba9cd"
   }
 }

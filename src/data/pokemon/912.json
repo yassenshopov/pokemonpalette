@@ -305,5 +305,15 @@
     "en": "Quaxly",
     "ja": "クワッス",
     "zh-Hans": "润水鸭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#49e095",
+      "#f6fbfc",
+      "#30a970"
+    ],
+    "primary": "#49e095",
+    "secondary": "#f6fbfc",
+    "accent": "#30a970"
   }
 }

@@ -327,5 +327,15 @@
     "en": "Gible",
     "ja": "フカマル",
     "zh-Hans": "圆陆鲨"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#1883c5",
+      "#085283",
+      "#082962"
+    ],
+    "primary": "#1883c5",
+    "secondary": "#085283",
+    "accent": "#082962"
   }
 }

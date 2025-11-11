@@ -329,5 +329,15 @@
     "en": "Pikipek",
     "ja": "ツツケラ",
     "zh-Hans": "小笃儿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#404040",
+      "#f23d79",
+      "#f8f8f8"
+    ],
+    "primary": "#404040",
+    "secondary": "#f23d79",
+    "accent": "#f8f8f8"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Zebstrika",
     "ja": "ゼブライカ",
     "zh-Hans": "雷电斑马"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#624173",
+      "#b4d5ee",
+      "#ffffff"
+    ],
+    "primary": "#624173",
+    "secondary": "#b4d5ee",
+    "accent": "#ffffff"
   }
 }

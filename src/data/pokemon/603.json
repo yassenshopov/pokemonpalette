@@ -311,5 +311,15 @@
     "en": "Eelektrik",
     "ja": "シビビール",
     "zh-Hans": "麻麻鳗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#2973b4",
+      "#184a9c",
+      "#9ccd62"
+    ],
+    "primary": "#2973b4",
+    "secondary": "#184a9c",
+    "accent": "#9ccd62"
   }
 }

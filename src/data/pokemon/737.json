@@ -324,5 +324,15 @@
     "en": "Charjabug",
     "ja": "デンヂムシ",
     "zh-Hans": "虫电宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dd3c3c",
+      "#731717",
+      "#a52121"
+    ],
+    "primary": "#dd3c3c",
+    "secondary": "#731717",
+    "accent": "#a52121"
   }
 }

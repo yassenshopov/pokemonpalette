@@ -310,5 +310,15 @@
     "en": "Arboliva",
     "ja": "オリーヴァ",
     "zh-Hans": "奥利瓦"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#2c8d38",
+      "#163111",
+      "#2d672d"
+    ],
+    "primary": "#2c8d38",
+    "secondary": "#163111",
+    "accent": "#2d672d"
   }
 }

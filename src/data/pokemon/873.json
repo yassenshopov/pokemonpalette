@@ -299,5 +299,15 @@
     "en": "Frosmoth",
     "ja": "モスノウ",
     "zh-Hans": "雪绒蛾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dce6dc",
+      "#fdfdfd",
+      "#bdb9af"
+    ],
+    "primary": "#dce6dc",
+    "secondary": "#fdfdfd",
+    "accent": "#bdb9af"
   }
 }

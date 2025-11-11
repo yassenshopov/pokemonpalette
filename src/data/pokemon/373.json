@@ -338,5 +338,15 @@
     "en": "Salamence",
     "ja": "ボーマンダ",
     "zh-Hans": "暴飞龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b46a41",
+      "#94ee83",
+      "#de7b52"
+    ],
+    "primary": "#b46a41",
+    "secondary": "#94ee83",
+    "accent": "#de7b52"
   }
 }

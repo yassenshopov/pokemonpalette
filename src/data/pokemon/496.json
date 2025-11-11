@@ -317,5 +317,15 @@
     "en": "Servine",
     "ja": "ジャノビー",
     "zh-Hans": "青藤蛇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#299cac",
+      "#f6ffde",
+      "#20314a"
+    ],
+    "primary": "#299cac",
+    "secondary": "#f6ffde",
+    "accent": "#20314a"
   }
 }

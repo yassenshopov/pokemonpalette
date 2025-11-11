@@ -303,5 +303,15 @@
     "en": "Shaymin",
     "ja": "シェイミ",
     "zh-Hans": "谢米"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#62debd",
+      "#399441",
+      "#41736a"
+    ],
+    "primary": "#62debd",
+    "secondary": "#399441",
+    "accent": "#41736a"
   }
 }

@@ -316,5 +316,15 @@
     "en": "Flygon",
     "ja": "フライゴン",
     "zh-Hans": "沙漠蜻蜓"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#acde73",
+      "#7bac5a",
+      "#ffb410"
+    ],
+    "primary": "#acde73",
+    "secondary": "#7bac5a",
+    "accent": "#ffb410"
   }
 }

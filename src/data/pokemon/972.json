@@ -295,5 +295,15 @@
     "en": "Houndstone",
     "ja": "ハカドッグ",
     "zh-Hans": "墓扬犬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bfbfbf",
+      "#bfac73",
+      "#dcd3af"
+    ],
+    "primary": "#bfbfbf",
+    "secondary": "#bfac73",
+    "accent": "#dcd3af"
   }
 }

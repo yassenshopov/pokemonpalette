@@ -301,5 +301,15 @@
     "en": "Clauncher",
     "ja": "ウデッポウ",
     "zh-Hans": "铁臂枪虾"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff8359",
+      "#f8f8f8",
+      "#bfbfbf"
+    ],
+    "primary": "#ff8359",
+    "secondary": "#f8f8f8",
+    "accent": "#bfbfbf"
   }
 }

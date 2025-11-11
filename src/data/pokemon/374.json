@@ -257,5 +257,15 @@
     "en": "Beldum",
     "ja": "ダンバル",
     "zh-Hans": "铁哑铃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b7383",
+      "#aca4b4",
+      "#5a5262"
+    ],
+    "primary": "#7b7383",
+    "secondary": "#aca4b4",
+    "accent": "#5a5262"
   }
 }

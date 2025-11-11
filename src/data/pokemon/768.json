@@ -306,5 +306,15 @@
     "en": "Golisopod",
     "ja": "グソクムシャ",
     "zh-Hans": "具甲武者"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eae8ea",
+      "#aca6aa",
+      "#5b5558"
+    ],
+    "primary": "#eae8ea",
+    "secondary": "#aca6aa",
+    "accent": "#5b5558"
   }
 }

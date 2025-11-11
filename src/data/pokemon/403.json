@@ -323,5 +323,15 @@
     "en": "Shinx",
     "ja": "コリンク",
     "zh-Hans": "小猫怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd552",
+      "#ac9431",
+      "#624139"
+    ],
+    "primary": "#ffd552",
+    "secondary": "#ac9431",
+    "accent": "#624139"
   }
 }

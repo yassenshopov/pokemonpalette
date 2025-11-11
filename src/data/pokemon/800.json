@@ -312,5 +312,15 @@
     "en": "Necrozma",
     "ja": "ネクロズマ",
     "zh-Hans": "奈克洛兹玛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#262a6f",
+      "#191c4c",
+      "#0a0b24"
+    ],
+    "primary": "#262a6f",
+    "secondary": "#191c4c",
+    "accent": "#0a0b24"
   }
 }

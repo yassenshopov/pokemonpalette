@@ -316,5 +316,15 @@
     "en": "Tinkatink",
     "ja": "カヌチャン",
     "zh-Hans": "小锻匠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ec558c",
+      "#522e45",
+      "#a74167"
+    ],
+    "primary": "#ec558c",
+    "secondary": "#522e45",
+    "accent": "#a74167"
   }
 }

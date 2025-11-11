@@ -326,5 +326,15 @@
     "en": "Dusknoir",
     "ja": "ヨノワール",
     "zh-Hans": "黑夜魔灵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#20395a",
+      "#94acb4",
+      "#315a7b"
+    ],
+    "primary": "#20395a",
+    "secondary": "#94acb4",
+    "accent": "#315a7b"
   }
 }

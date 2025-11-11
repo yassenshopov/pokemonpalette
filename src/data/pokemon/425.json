@@ -318,5 +318,15 @@
     "en": "Drifloon",
     "ja": "フワンテ",
     "zh-Hans": "飘飘球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffee6a",
+      "#e6c510",
+      "#ffffff"
+    ],
+    "primary": "#ffee6a",
+    "secondary": "#e6c510",
+    "accent": "#ffffff"
   }
 }

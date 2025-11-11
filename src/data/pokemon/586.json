@@ -369,5 +369,15 @@
     "en": "Sawsbuck",
     "ja": "メブキジカ",
     "zh-Hans": "萌芽鹿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b46a20",
+      "#4a1008",
+      "#eedea4"
+    ],
+    "primary": "#b46a20",
+    "secondary": "#4a1008",
+    "accent": "#eedea4"
   }
 }

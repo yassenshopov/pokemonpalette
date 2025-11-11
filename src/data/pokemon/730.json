@@ -322,5 +322,15 @@
     "en": "Primarina",
     "ja": "アシレーヌ",
     "zh-Hans": "西狮海壬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd9d9",
+      "#f8f8f8",
+      "#727481"
+    ],
+    "primary": "#ffd9d9",
+    "secondary": "#f8f8f8",
+    "accent": "#727481"
   }
 }

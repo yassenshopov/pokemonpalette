@@ -322,5 +322,15 @@
     "en": "Conkeldurr",
     "ja": "ローブシン",
     "zh-Hans": "修建老匠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8b8b83",
+      "#cd8b73",
+      "#6a6a62"
+    ],
+    "primary": "#8b8b83",
+    "secondary": "#cd8b73",
+    "accent": "#6a6a62"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Goomy",
     "ja": "ヌメラ",
     "zh-Hans": "黏黏宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffa6",
+      "#ffb399",
+      "#8c8c62"
+    ],
+    "primary": "#ffffa6",
+    "secondary": "#ffb399",
+    "accent": "#8c8c62"
   }
 }

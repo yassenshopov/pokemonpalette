@@ -295,5 +295,15 @@
     "en": "Boltund",
     "ja": "パルスワン",
     "zh-Hans": "逐电犬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#654359",
+      "#f2efef",
+      "#d7d765"
+    ],
+    "primary": "#654359",
+    "secondary": "#f2efef",
+    "accent": "#d7d765"
   }
 }

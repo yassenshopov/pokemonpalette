@@ -311,5 +311,15 @@
     "en": "Nacli",
     "ja": "コジオ",
     "zh-Hans": "盐石宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c0937c",
+      "#8e5f57",
+      "#eead6c"
+    ],
+    "primary": "#c0937c",
+    "secondary": "#8e5f57",
+    "accent": "#eead6c"
   }
 }

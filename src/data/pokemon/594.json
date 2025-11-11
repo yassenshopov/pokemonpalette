@@ -303,5 +303,15 @@
     "en": "Alomomola",
     "ja": "ママンボウ",
     "zh-Hans": "保姆曼波"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dec5ee",
+      "#c57bcd",
+      "#9c52a4"
+    ],
+    "primary": "#dec5ee",
+    "secondary": "#c57bcd",
+    "accent": "#9c52a4"
   }
 }

@@ -320,5 +320,15 @@
     "en": "Hawlucha",
     "ja": "ルチャブル",
     "zh-Hans": "摔角鹰人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#887acc",
+      "#595959",
+      "#665c99"
+    ],
+    "primary": "#887acc",
+    "secondary": "#595959",
+    "accent": "#665c99"
   }
 }

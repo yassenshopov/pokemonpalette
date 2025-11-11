@@ -295,5 +295,15 @@
     "en": "Spidops",
     "ja": "ワナイダー",
     "zh-Hans": "操陷蛛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9d5376",
+      "#cc7ca0",
+      "#687f96"
+    ],
+    "primary": "#9d5376",
+    "secondary": "#cc7ca0",
+    "accent": "#687f96"
   }
 }

@@ -317,5 +317,15 @@
     "en": "Munchlax",
     "ja": "ゴンベ",
     "zh-Hans": "小卡比兽"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4183de",
+      "#3962bd",
+      "#314a83"
+    ],
+    "primary": "#4183de",
+    "secondary": "#3962bd",
+    "accent": "#314a83"
   }
 }

@@ -316,5 +316,15 @@
     "en": "Dreepy",
     "ja": "ドラメシヤ",
     "zh-Hans": "多龙梅西亚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#308b86",
+      "#2d6363",
+      "#addcbc"
+    ],
+    "primary": "#308b86",
+    "secondary": "#2d6363",
+    "accent": "#addcbc"
   }
 }

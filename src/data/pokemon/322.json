@@ -323,5 +323,15 @@
     "en": "Numel",
     "ja": "ドンメル",
     "zh-Hans": "呆火驼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bda462",
+      "#eed594",
+      "#181818"
+    ],
+    "primary": "#bda462",
+    "secondary": "#eed594",
+    "accent": "#181818"
   }
 }

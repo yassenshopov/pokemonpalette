@@ -302,5 +302,15 @@
     "en": "Spiritomb",
     "ja": "ミカルゲ",
     "zh-Hans": "花岩怪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#52a4b4",
+      "#73c5cd",
+      "#bd41cd"
+    ],
+    "primary": "#52a4b4",
+    "secondary": "#73c5cd",
+    "accent": "#bd41cd"
   }
 }

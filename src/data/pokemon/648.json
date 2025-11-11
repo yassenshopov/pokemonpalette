@@ -308,5 +308,15 @@
     "en": "Meloetta",
     "ja": "メロエッタ",
     "zh-Hans": "美洛耶塔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#a4f6c5",
+      "#fffff6",
+      "#73ac9c"
+    ],
+    "primary": "#a4f6c5",
+    "secondary": "#fffff6",
+    "accent": "#73ac9c"
   }
 }

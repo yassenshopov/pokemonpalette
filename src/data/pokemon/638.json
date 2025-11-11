@@ -296,5 +296,15 @@
     "en": "Cobalion",
     "ja": "コバルオン",
     "zh-Hans": "勾帕路翁"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#186ab4",
+      "#c5f6e6",
+      "#205283"
+    ],
+    "primary": "#186ab4",
+    "secondary": "#c5f6e6",
+    "accent": "#205283"
   }
 }

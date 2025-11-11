@@ -295,5 +295,15 @@
     "en": "Tarountula",
     "ja": "タマンチュラ",
     "zh-Hans": "团珠蛛"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eb503f",
+      "#cc3d2d",
+      "#943227"
+    ],
+    "primary": "#eb503f",
+    "secondary": "#cc3d2d",
+    "accent": "#943227"
   }
 }

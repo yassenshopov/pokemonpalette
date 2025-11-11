@@ -385,5 +385,15 @@
     "en": "Florges",
     "ja": "フラージェス",
     "zh-Hans": "花洁夫人"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#836bb3",
+      "#ff7373",
+      "#4b3d66"
+    ],
+    "primary": "#836bb3",
+    "secondary": "#ff7373",
+    "accent": "#4b3d66"
   }
 }

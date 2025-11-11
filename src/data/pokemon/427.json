@@ -321,5 +321,15 @@
     "en": "Buneary",
     "ja": "ミミロル",
     "zh-Hans": "卷卷耳"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd947b",
+      "#f6aca4",
+      "#d57b9c"
+    ],
+    "primary": "#bd947b",
+    "secondary": "#f6aca4",
+    "accent": "#d57b9c"
   }
 }

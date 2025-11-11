@@ -304,5 +304,15 @@
     "en": "Xerneas",
     "ja": "ゼルネアス",
     "zh-Hans": "哲尔尼亚斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bababa",
+      "#5e91c4",
+      "#6699dd"
+    ],
+    "primary": "#bababa",
+    "secondary": "#5e91c4",
+    "accent": "#6699dd"
   }
 }

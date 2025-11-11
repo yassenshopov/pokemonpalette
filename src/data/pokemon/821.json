@@ -311,5 +311,15 @@
     "en": "Rookidee",
     "ja": "ココガラ",
     "zh-Hans": "稚山雀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a4f55",
+      "#171519",
+      "#f6e08c"
+    ],
+    "primary": "#4a4f55",
+    "secondary": "#171519",
+    "accent": "#f6e08c"
   }
 }

@@ -302,5 +302,15 @@
     "en": "Heatran",
     "ja": "ヒードラン",
     "zh-Hans": "席多蓝恩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5cdb4",
+      "#a48b52",
+      "#d54118"
+    ],
+    "primary": "#d5cdb4",
+    "secondary": "#a48b52",
+    "accent": "#d54118"
   }
 }

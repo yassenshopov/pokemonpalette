@@ -312,5 +312,15 @@
     "en": "Floatzel",
     "ja": "フローゼル",
     "zh-Hans": "浮潜鼬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffcd",
+      "#e6d531",
+      "#b49c31"
+    ],
+    "primary": "#ffffcd",
+    "secondary": "#e6d531",
+    "accent": "#b49c31"
   }
 }

@@ -328,5 +328,15 @@
     "en": "Lampent",
     "ja": "ランプラー",
     "zh-Hans": "灯火幽灵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#524a39",
+      "#393120",
+      "#c5cdd5"
+    ],
+    "primary": "#524a39",
+    "secondary": "#393120",
+    "accent": "#c5cdd5"
   }
 }

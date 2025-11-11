@@ -283,5 +283,15 @@
     "en": "Raging Bolt",
     "ja": "タケルライコ",
     "zh-Hans": "猛雷鼓"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a5a62",
+      "#070707",
+      "#e7ce5a"
+    ],
+    "primary": "#5a5a62",
+    "secondary": "#070707",
+    "accent": "#e7ce5a"
   }
 }

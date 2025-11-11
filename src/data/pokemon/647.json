@@ -303,5 +303,15 @@
     "en": "Keldeo",
     "ja": "ケルディオ",
     "zh-Hans": "凯路迪欧"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#202020",
+      "#e66229",
+      "#6ae694"
+    ],
+    "primary": "#202020",
+    "secondary": "#e66229",
+    "accent": "#6ae694"
   }
 }

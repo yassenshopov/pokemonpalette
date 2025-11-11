@@ -327,5 +327,15 @@
     "en": "Tsareena",
     "ja": "アマージョ",
     "zh-Hans": "甜冷美后"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dfa0ef",
+      "#b76bcf",
+      "#fafdab"
+    ],
+    "primary": "#dfa0ef",
+    "secondary": "#b76bcf",
+    "accent": "#fafdab"
   }
 }

@@ -327,5 +327,15 @@
     "en": "Bisharp",
     "ja": "キリキザン",
     "zh-Hans": "劈斩司令"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#dedec5",
+      "#5241de",
+      "#414141"
+    ],
+    "primary": "#dedec5",
+    "secondary": "#5241de",
+    "accent": "#414141"
   }
 }

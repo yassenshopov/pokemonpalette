@@ -310,5 +310,15 @@
     "en": "Meowscarada",
     "ja": "マスカーニャ",
     "zh-Hans": "魔幻假面喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e9f9dc",
+      "#2c4945",
+      "#1a302d"
+    ],
+    "primary": "#e9f9dc",
+    "secondary": "#2c4945",
+    "accent": "#1a302d"
   }
 }

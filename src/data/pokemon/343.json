@@ -311,5 +311,15 @@
     "en": "Baltoy",
     "ja": "ヤジロン",
     "zh-Hans": "天秤偶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eee620",
+      "#a49410",
+      "#736200"
+    ],
+    "primary": "#eee620",
+    "secondary": "#a49410",
+    "accent": "#736200"
   }
 }

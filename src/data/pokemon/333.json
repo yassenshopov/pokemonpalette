@@ -312,5 +312,15 @@
     "en": "Swablu",
     "ja": "チルット",
     "zh-Hans": "青绵鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#cdcde6",
+      "#ffee7b"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#cdcde6",
+    "accent": "#ffee7b"
   }
 }

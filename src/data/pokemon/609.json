@@ -335,5 +335,15 @@
     "en": "Chandelure",
     "ja": "シャンデラ",
     "zh-Hans": "水晶灯火灵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#313929",
+      "#ff8b10",
+      "#bd5218"
+    ],
+    "primary": "#313929",
+    "secondary": "#ff8b10",
+    "accent": "#bd5218"
   }
 }

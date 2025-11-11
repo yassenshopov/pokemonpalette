@@ -299,5 +299,15 @@
     "en": "Snom",
     "ja": "ユキハミ",
     "zh-Hans": "雪吞虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e3f2c8",
+      "#acc3cc",
+      "#d8e9f0"
+    ],
+    "primary": "#e3f2c8",
+    "secondary": "#acc3cc",
+    "accent": "#d8e9f0"
   }
 }

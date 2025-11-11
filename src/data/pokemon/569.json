@@ -337,5 +337,15 @@
     "en": "Garbodor",
     "ja": "ダストダス",
     "zh-Hans": "灰尘山"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#948b83",
+      "#29a4a4",
+      "#6a6a62"
+    ],
+    "primary": "#948b83",
+    "secondary": "#29a4a4",
+    "accent": "#6a6a62"
   }
 }

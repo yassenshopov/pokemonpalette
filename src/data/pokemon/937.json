@@ -310,5 +310,15 @@
     "en": "Ceruledge",
     "ja": "ソウブレイズ",
     "zh-Hans": "苍炎刃鬼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#645aa3",
+      "#343467",
+      "#a5b8de"
+    ],
+    "primary": "#645aa3",
+    "secondary": "#343467",
+    "accent": "#a5b8de"
   }
 }

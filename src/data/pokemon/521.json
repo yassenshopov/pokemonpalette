@@ -328,5 +328,15 @@
     "en": "Unfezant",
     "ja": "ケンホロウ",
     "zh-Hans": "高傲雉鸡"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5a4129",
+      "#cd5ad5",
+      "#cdcdb4"
+    ],
+    "primary": "#5a4129",
+    "secondary": "#cd5ad5",
+    "accent": "#cdcdb4"
   }
 }

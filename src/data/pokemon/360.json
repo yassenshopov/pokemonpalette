@@ -237,5 +237,15 @@
     "en": "Wynaut",
     "ja": "ソーナノ",
     "zh-Hans": "小果然"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e67bd5",
+      "#bd41c5",
+      "#73005a"
+    ],
+    "primary": "#e67bd5",
+    "secondary": "#bd41c5",
+    "accent": "#73005a"
   }
 }

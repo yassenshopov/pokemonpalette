@@ -322,5 +322,15 @@
     "en": "Skitty",
     "ja": "エネコ",
     "zh-Hans": "向尾喵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d55a29",
+      "#ff735a",
+      "#ffcd52"
+    ],
+    "primary": "#d55a29",
+    "secondary": "#ff735a",
+    "accent": "#ffcd52"
   }
 }

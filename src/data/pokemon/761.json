@@ -327,5 +327,15 @@
     "en": "Bounsweet",
     "ja": "アマカジ",
     "zh-Hans": "甜竹竹"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e55c8a",
+      "#ccb2ff",
+      "#665980"
+    ],
+    "primary": "#e55c8a",
+    "secondary": "#ccb2ff",
+    "accent": "#665980"
   }
 }

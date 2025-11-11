@@ -330,5 +330,15 @@
     "en": "Shellos",
     "ja": "カラナクシ",
     "zh-Hans": "无壳海兔"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ff948b",
+      "#b4b4c5",
+      "#eeeeee"
+    ],
+    "primary": "#ff948b",
+    "secondary": "#b4b4c5",
+    "accent": "#eeeeee"
   }
 }

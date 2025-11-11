@@ -284,5 +284,15 @@
     "en": "Iron Bundle",
     "ja": "テツノツツミ",
     "zh-Hans": "铁包袱"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5c8cb",
+      "#91959d",
+      "#606164"
+    ],
+    "primary": "#c5c8cb",
+    "secondary": "#91959d",
+    "accent": "#606164"
   }
 }

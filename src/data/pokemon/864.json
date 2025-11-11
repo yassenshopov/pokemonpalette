@@ -295,5 +295,15 @@
     "en": "Cursola",
     "ja": "サニゴーン",
     "zh-Hans": "魔灵珊瑚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f9f2fc",
+      "#bcb9be",
+      "#6c7275"
+    ],
+    "primary": "#f9f2fc",
+    "secondary": "#bcb9be",
+    "accent": "#6c7275"
   }
 }

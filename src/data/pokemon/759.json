@@ -318,5 +318,15 @@
     "en": "Stufful",
     "ja": "ヌイコグマ",
     "zh-Hans": "童偶熊"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffc44c",
+      "#f8f8f8",
+      "#080808"
+    ],
+    "primary": "#ffc44c",
+    "secondary": "#f8f8f8",
+    "accent": "#080808"
   }
 }

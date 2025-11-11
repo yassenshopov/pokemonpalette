@@ -313,5 +313,15 @@
     "en": "Drednaw",
     "ja": "カジリガメ",
     "zh-Hans": "暴噬龟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#31573d",
+      "#ec841d",
+      "#467154"
+    ],
+    "primary": "#31573d",
+    "secondary": "#ec841d",
+    "accent": "#467154"
   }
 }

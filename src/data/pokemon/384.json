@@ -303,5 +303,15 @@
     "en": "Rayquaza",
     "ja": "レックウザ",
     "zh-Hans": "烈空坐"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a524a",
+      "#737b73",
+      "#181818"
+    ],
+    "primary": "#4a524a",
+    "secondary": "#737b73",
+    "accent": "#181818"
   }
 }

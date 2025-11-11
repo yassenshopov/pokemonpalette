@@ -312,5 +312,15 @@
     "en": "Inteleon",
     "ja": "インテレオン",
     "zh-Hans": "千面避役"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e95f92",
+      "#004472",
+      "#0060a4"
+    ],
+    "primary": "#e95f92",
+    "secondary": "#004472",
+    "accent": "#0060a4"
   }
 }

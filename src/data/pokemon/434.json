@@ -323,5 +323,15 @@
     "en": "Stunky",
     "ja": "スカンプー",
     "zh-Hans": "臭鼬噗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd1852",
+      "#7b1041",
+      "#ffd5a4"
+    ],
+    "primary": "#bd1852",
+    "secondary": "#7b1041",
+    "accent": "#ffd5a4"
   }
 }

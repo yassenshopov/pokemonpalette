@@ -302,5 +302,15 @@
     "en": "Plusle",
     "ja": "プラスル",
     "zh-Hans": "正电拍拍"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cd3929",
+      "#ffe69c",
+      "#eebd62"
+    ],
+    "primary": "#cd3929",
+    "secondary": "#ffe69c",
+    "accent": "#eebd62"
   }
 }

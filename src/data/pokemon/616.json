@@ -312,5 +312,15 @@
     "en": "Shelmet",
     "ja": "チョボマキ",
     "zh-Hans": "小嘴蜗"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deded5",
+      "#b4ac9c",
+      "#4a4120"
+    ],
+    "primary": "#deded5",
+    "secondary": "#b4ac9c",
+    "accent": "#4a4120"
   }
 }

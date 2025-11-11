@@ -343,5 +343,15 @@
     "en": "Wormadam",
     "ja": "ミノマダム",
     "zh-Hans": "结草贵妇"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#7b9c4a",
+      "#527341",
+      "#4a734a"
+    ],
+    "primary": "#7b9c4a",
+    "secondary": "#527341",
+    "accent": "#4a734a"
   }
 }

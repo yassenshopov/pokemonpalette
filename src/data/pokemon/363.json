@@ -328,5 +328,15 @@
     "en": "Spheal",
     "ja": "タマザラシ",
     "zh-Hans": "海豹球"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fff6bd",
+      "#eeacf6",
+      "#b462ac"
+    ],
+    "primary": "#fff6bd",
+    "secondary": "#eeacf6",
+    "accent": "#b462ac"
   }
 }

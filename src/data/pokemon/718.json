@@ -331,5 +331,15 @@
     "en": "Zygarde",
     "ja": "ジガルデ",
     "zh-Hans": "基格尔德"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#2baf8e",
+      "#2aae8d"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#2baf8e",
+    "accent": "#2aae8d"
   }
 }

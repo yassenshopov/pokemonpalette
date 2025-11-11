@@ -312,5 +312,15 @@
     "en": "Polteageist",
     "ja": "ポットデス",
     "zh-Hans": "怖思壶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fc9ee0",
+      "#c3bfe0",
+      "#cf58aa"
+    ],
+    "primary": "#fc9ee0",
+    "secondary": "#c3bfe0",
+    "accent": "#cf58aa"
   }
 }

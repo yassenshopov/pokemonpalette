@@ -313,5 +313,15 @@
     "en": "Fennekin",
     "ja": "フォッコ",
     "zh-Hans": "火狐狸"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d9d9d9",
+      "#f24949",
+      "#a6a6a6"
+    ],
+    "primary": "#d9d9d9",
+    "secondary": "#f24949",
+    "accent": "#a6a6a6"
   }
 }

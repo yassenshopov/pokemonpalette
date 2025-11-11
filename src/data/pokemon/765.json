@@ -308,5 +308,15 @@
     "en": "Oranguru",
     "ja": "ヤレユータン",
     "zh-Hans": "智挥猩"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e0bed5",
+      "#1bc953",
+      "#685453"
+    ],
+    "primary": "#e0bed5",
+    "secondary": "#1bc953",
+    "accent": "#685453"
   }
 }

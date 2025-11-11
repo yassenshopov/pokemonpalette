@@ -316,5 +316,15 @@
     "en": "Carkol",
     "ja": "トロッゴン",
     "zh-Hans": "大炭车"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#58707c",
+      "#1f1418",
+      "#323a3f"
+    ],
+    "primary": "#58707c",
+    "secondary": "#1f1418",
+    "accent": "#323a3f"
   }
 }

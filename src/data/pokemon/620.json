@@ -313,5 +313,15 @@
     "en": "Mienshao",
     "ja": "コジョンド",
     "zh-Hans": "师父鼬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6dee6",
+      "#de5aa4",
+      "#9c94ac"
+    ],
+    "primary": "#e6dee6",
+    "secondary": "#de5aa4",
+    "accent": "#9c94ac"
   }
 }

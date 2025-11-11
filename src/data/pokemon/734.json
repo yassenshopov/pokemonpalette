@@ -314,5 +314,15 @@
     "en": "Yungoos",
     "ja": "ヤングース",
     "zh-Hans": "猫鼬少"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c48379",
+      "#b1534e",
+      "#e1a6e0"
+    ],
+    "primary": "#c48379",
+    "secondary": "#b1534e",
+    "accent": "#e1a6e0"
   }
 }

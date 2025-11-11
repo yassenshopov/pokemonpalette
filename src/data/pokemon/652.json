@@ -325,5 +325,15 @@
     "en": "Chesnaught",
     "ja": "ブリガロン",
     "zh-Hans": "布里卡隆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#62944f",
+      "#486d3a",
+      "#8c3f3f"
+    ],
+    "primary": "#62944f",
+    "secondary": "#486d3a",
+    "accent": "#8c3f3f"
   }
 }

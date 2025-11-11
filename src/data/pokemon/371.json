@@ -326,5 +326,15 @@
     "en": "Bagon",
     "ja": "タツベイ",
     "zh-Hans": "宝贝龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#5ad54a",
+      "#181818",
+      "#83ff8b"
+    ],
+    "primary": "#5ad54a",
+    "secondary": "#181818",
+    "accent": "#83ff8b"
   }
 }

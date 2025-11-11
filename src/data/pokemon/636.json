@@ -312,5 +312,15 @@
     "en": "Larvesta",
     "ja": "メラルバ",
     "zh-Hans": "燃烧虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#101018",
+      "#ffcd31"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#101018",
+    "accent": "#ffcd31"
   }
 }

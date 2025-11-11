@@ -317,5 +317,15 @@
     "en": "Relicanth",
     "ja": "ジーランス",
     "zh-Hans": "古空棘鱼"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#cdb48b",
+      "#7bcdd5",
+      "#399483"
+    ],
+    "primary": "#cdb48b",
+    "secondary": "#7bcdd5",
+    "accent": "#399483"
   }
 }

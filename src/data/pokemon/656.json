@@ -313,5 +313,15 @@
     "en": "Froakie",
     "ja": "ケロマツ",
     "zh-Hans": "呱呱泡蛙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8fb7bf",
+      "#bff4ff",
+      "#566e73"
+    ],
+    "primary": "#8fb7bf",
+    "secondary": "#bff4ff",
+    "accent": "#566e73"
   }
 }

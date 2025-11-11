@@ -311,5 +311,15 @@
     "en": "Claydol",
     "ja": "ネンドール",
     "zh-Hans": "念力土偶"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#73626a",
+      "#8b8b83",
+      "#4a414a"
+    ],
+    "primary": "#73626a",
+    "secondary": "#8b8b83",
+    "accent": "#4a414a"
   }
 }

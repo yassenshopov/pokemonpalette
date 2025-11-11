@@ -293,5 +293,15 @@
     "en": "Gholdengo",
     "ja": "サーフゴー",
     "zh-Hans": "赛富豪"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffd52d",
+      "#d5a431",
+      "#484415"
+    ],
+    "primary": "#ffd52d",
+    "secondary": "#d5a431",
+    "accent": "#484415"
   }
 }

@@ -319,5 +319,15 @@
     "en": "Medicham",
     "ja": "チャーレム",
     "zh-Hans": "恰雷姆"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9cb4ff",
+      "#3962ac",
+      "#ffe6a4"
+    ],
+    "primary": "#9cb4ff",
+    "secondary": "#3962ac",
+    "accent": "#ffe6a4"
   }
 }

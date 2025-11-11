@@ -308,5 +308,15 @@
     "en": "Oinkologne",
     "ja": "パフュートン",
     "zh-Hans": "飘香豚"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#fbbbee",
+      "#f084ba",
+      "#dcc0d1"
+    ],
+    "primary": "#fbbbee",
+    "secondary": "#f084ba",
+    "accent": "#dcc0d1"
   }
 }

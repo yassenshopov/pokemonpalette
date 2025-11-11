@@ -328,5 +328,15 @@
     "en": "Reuniclus",
     "ja": "ランクルス",
     "zh-Hans": "人造细胞卵"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8b9cd5",
+      "#dee6ac",
+      "#31417b"
+    ],
+    "primary": "#8b9cd5",
+    "secondary": "#dee6ac",
+    "accent": "#31417b"
   }
 }

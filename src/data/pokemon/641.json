@@ -304,5 +304,15 @@
     "en": "Tornadus",
     "ja": "トルネロス",
     "zh-Hans": "龙卷云"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4a417b",
+      "#6aa418",
+      "#ffffff"
+    ],
+    "primary": "#4a417b",
+    "secondary": "#6aa418",
+    "accent": "#ffffff"
   }
 }

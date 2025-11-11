@@ -316,5 +316,15 @@
     "en": "Honedge",
     "ja": "ヒトツキ",
     "zh-Hans": "独剑鞘"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d9415a",
+      "#8597f2",
+      "#a92835"
+    ],
+    "primary": "#d9415a",
+    "secondary": "#8597f2",
+    "accent": "#a92835"
   }
 }

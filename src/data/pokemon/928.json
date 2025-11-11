@@ -310,5 +310,15 @@
     "en": "Smoliv",
     "ja": "ミニーブ",
     "zh-Hans": "迷你芙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#eca646",
+      "#bc7b34",
+      "#93425a"
+    ],
+    "primary": "#eca646",
+    "secondary": "#bc7b34",
+    "accent": "#93425a"
   }
 }

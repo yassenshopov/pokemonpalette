@@ -328,5 +328,15 @@
     "en": "Rhyperior",
     "ja": "ドサイドン",
     "zh-Hans": "超甲狂犀"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bdbda4",
+      "#94947b",
+      "#e6de39"
+    ],
+    "primary": "#bdbda4",
+    "secondary": "#94947b",
+    "accent": "#e6de39"
   }
 }

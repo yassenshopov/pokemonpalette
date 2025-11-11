@@ -322,5 +322,15 @@
     "en": "Rowlet",
     "ja": "モクロー",
     "zh-Hans": "木木枭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#9df2c8",
+      "#f8f8f8",
+      "#74b393"
+    ],
+    "primary": "#9df2c8",
+    "secondary": "#f8f8f8",
+    "accent": "#74b393"
   }
 }

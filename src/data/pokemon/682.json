@@ -307,5 +307,15 @@
     "en": "Spritzee",
     "ja": "シュシュプ",
     "zh-Hans": "粉香香"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#b88ae5",
+      "#8a62b3",
+      "#e5e5e5"
+    ],
+    "primary": "#b88ae5",
+    "secondary": "#8a62b3",
+    "accent": "#e5e5e5"
   }
 }

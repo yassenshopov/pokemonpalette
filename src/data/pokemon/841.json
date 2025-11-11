@@ -333,5 +333,15 @@
     "en": "Flapple",
     "ja": "アップリュー",
     "zh-Hans": "苹裹龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ccb468",
+      "#299b26",
+      "#2fcb2a"
+    ],
+    "primary": "#ccb468",
+    "secondary": "#299b26",
+    "accent": "#2fcb2a"
   }
 }

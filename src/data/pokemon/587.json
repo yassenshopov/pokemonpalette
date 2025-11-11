@@ -307,5 +307,15 @@
     "en": "Emolga",
     "ja": "エモンガ",
     "zh-Hans": "电飞鼠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffffff",
+      "#a47352",
+      "#101008"
+    ],
+    "primary": "#ffffff",
+    "secondary": "#a47352",
+    "accent": "#101008"
   }
 }

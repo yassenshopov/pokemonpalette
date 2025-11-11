@@ -329,5 +329,15 @@
     "en": "Decidueye",
     "ja": "ジュナイパー",
     "zh-Hans": "狙射树枭"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#1d88a7",
+      "#455248",
+      "#f7eae1"
+    ],
+    "primary": "#1d88a7",
+    "secondary": "#455248",
+    "accent": "#f7eae1"
   }
 }

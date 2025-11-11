@@ -317,5 +317,15 @@
     "en": "Swoobat",
     "ja": "ココロモリ",
     "zh-Hans": "心蝙蝠"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#623110",
+      "#4a2000",
+      "#d5ffcd"
+    ],
+    "primary": "#623110",
+    "secondary": "#4a2000",
+    "accent": "#d5ffcd"
   }
 }

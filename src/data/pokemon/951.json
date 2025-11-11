@@ -301,5 +301,15 @@
     "en": "Capsakid",
     "ja": "カプサイジ",
     "zh-Hans": "热辣娃"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ecf04f",
+      "#a69846",
+      "#554715"
+    ],
+    "primary": "#ecf04f",
+    "secondary": "#a69846",
+    "accent": "#554715"
   }
 }

@@ -316,5 +316,15 @@
     "en": "Zweilous",
     "ja": "ジヘッド",
     "zh-Hans": "双首暴龙"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#625a52",
+      "#524141",
+      "#392929"
+    ],
+    "primary": "#625a52",
+    "secondary": "#524141",
+    "accent": "#392929"
   }
 }

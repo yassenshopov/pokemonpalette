@@ -211,5 +211,15 @@
     "en": "Blipbug",
     "ja": "サッチムシ",
     "zh-Hans": "索侦虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#4e46ac",
+      "#231b50",
+      "#3d3568"
+    ],
+    "primary": "#4e46ac",
+    "secondary": "#231b50",
+    "accent": "#3d3568"
   }
 }

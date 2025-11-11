@@ -317,5 +317,15 @@
     "en": "Lileep",
     "ja": "リリーラ",
     "zh-Hans": "触手百合"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#bd6210",
+      "#ffd58b",
+      "#ffac6a"
+    ],
+    "primary": "#bd6210",
+    "secondary": "#ffd58b",
+    "accent": "#ffac6a"
   }
 }

@@ -305,5 +305,15 @@
     "en": "Charcadet",
     "ja": "カルボウ",
     "zh-Hans": "炭小侍"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#464444",
+      "#e42212",
+      "#8a2f2f"
+    ],
+    "primary": "#464444",
+    "secondary": "#e42212",
+    "accent": "#8a2f2f"
   }
 }

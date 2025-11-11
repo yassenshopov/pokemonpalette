@@ -296,5 +296,15 @@
     "en": "Bombirdier",
     "ja": "オトシドリ",
     "zh-Hans": "下石鸟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#efe3e1",
+      "#342930",
+      "#b9aaaf"
+    ],
+    "primary": "#efe3e1",
+    "secondary": "#342930",
+    "accent": "#b9aaaf"
   }
 }

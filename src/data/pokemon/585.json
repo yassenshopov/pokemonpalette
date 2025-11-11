@@ -369,5 +369,15 @@
     "en": "Deerling",
     "ja": "シキジカ",
     "zh-Hans": "四季鹿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffeebd",
+      "#ff9cac",
+      "#ffd5f6"
+    ],
+    "primary": "#ffeebd",
+    "secondary": "#ff9cac",
+    "accent": "#ffd5f6"
   }
 }

@@ -312,5 +312,15 @@
     "en": "Buizel",
     "ja": "ブイゼル",
     "zh-Hans": "泳圈鼬"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e6d531",
+      "#b49c31",
+      "#181818"
+    ],
+    "primary": "#e6d531",
+    "secondary": "#b49c31",
+    "accent": "#181818"
   }
 }

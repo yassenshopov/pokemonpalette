@@ -332,5 +332,15 @@
     "en": "Leavanny",
     "ja": "ハハコモリ",
     "zh-Hans": "保姆虫"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#deff08",
+      "#b4bd10",
+      "#ffd56a"
+    ],
+    "primary": "#deff08",
+    "secondary": "#b4bd10",
+    "accent": "#ffd56a"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Ducklett",
     "ja": "コアルヒー",
     "zh-Hans": "鸭宝宝"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#ffb4bd",
+      "#9c5aac",
+      "#624a83"
+    ],
+    "primary": "#ffb4bd",
+    "secondary": "#9c5aac",
+    "accent": "#624a83"
   }
 }

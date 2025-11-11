@@ -306,5 +306,15 @@
     "en": "Wattrel",
     "ja": "カイデン",
     "zh-Hans": "电海燕"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#8d526b",
+      "#ffcd37",
+      "#91a5c3"
+    ],
+    "primary": "#8d526b",
+    "secondary": "#ffcd37",
+    "accent": "#91a5c3"
   }
 }

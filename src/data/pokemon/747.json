@@ -323,5 +323,15 @@
     "en": "Mareanie",
     "ja": "ヒドイデ",
     "zh-Hans": "好坏星"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#e96ba0",
+      "#c43c75",
+      "#f16b54"
+    ],
+    "primary": "#e96ba0",
+    "secondary": "#c43c75",
+    "accent": "#f16b54"
   }
 }

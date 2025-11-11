@@ -312,5 +312,15 @@
     "en": "Deoxys",
     "ja": "デオキシス",
     "zh-Hans": "代欧奇希斯"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#c5c541",
+      "#ffee41",
+      "#181818"
+    ],
+    "primary": "#c5c541",
+    "secondary": "#ffee41",
+    "accent": "#181818"
   }
 }

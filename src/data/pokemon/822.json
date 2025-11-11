@@ -311,5 +311,15 @@
     "en": "Corvisquire",
     "ja": "アオガラス",
     "zh-Hans": "蓝鸦"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#505038",
+      "#403524",
+      "#8d8682"
+    ],
+    "primary": "#505038",
+    "secondary": "#403524",
+    "accent": "#8d8682"
   }
 }

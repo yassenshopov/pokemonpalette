@@ -318,5 +318,15 @@
     "en": "Inkay",
     "ja": "マーイーカ",
     "zh-Hans": "好啦鱿"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f8f8f8",
+      "#e9a6ff",
+      "#e5c050"
+    ],
+    "primary": "#f8f8f8",
+    "secondary": "#e9a6ff",
+    "accent": "#e5c050"
   }
 }

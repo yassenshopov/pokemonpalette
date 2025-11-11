@@ -326,5 +326,15 @@
     "en": "Trubbish",
     "ja": "ヤブクロン",
     "zh-Hans": "破破袋"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#294a6a",
+      "#10294a",
+      "#101831"
+    ],
+    "primary": "#294a6a",
+    "secondary": "#10294a",
+    "accent": "#101831"
   }
 }

@@ -318,5 +318,15 @@
     "en": "Jellicent",
     "ja": "ブルンゲル",
     "zh-Hans": "胖嘟嘟"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#d5e6ff",
+      "#20d58b",
+      "#9cbdb4"
+    ],
+    "primary": "#d5e6ff",
+    "secondary": "#20d58b",
+    "accent": "#9cbdb4"
   }
 }

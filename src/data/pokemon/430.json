@@ -318,5 +318,15 @@
     "en": "Honchkrow",
     "ja": "ドンカラス",
     "zh-Hans": "乌鸦头头"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#94317b",
+      "#d54acd",
+      "#eeeef6"
+    ],
+    "primary": "#94317b",
+    "secondary": "#d54acd",
+    "accent": "#eeeef6"
   }
 }

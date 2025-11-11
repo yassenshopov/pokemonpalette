@@ -317,5 +317,15 @@
     "en": "Cradily",
     "ja": "ユレイドル",
     "zh-Hans": "摇篮百合"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#de839c",
+      "#bd5a94",
+      "#f6acc5"
+    ],
+    "primary": "#de839c",
+    "secondary": "#bd5a94",
+    "accent": "#f6acc5"
   }
 }

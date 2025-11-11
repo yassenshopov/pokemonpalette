@@ -308,5 +308,15 @@
     "en": "Illumise",
     "ja": "イルミーゼ",
     "zh-Hans": "甜甜萤"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#62b4f6",
+      "#94e6ff",
+      "#4a4a4a"
+    ],
+    "primary": "#62b4f6",
+    "secondary": "#94e6ff",
+    "accent": "#4a4a4a"
   }
 }

@@ -294,5 +294,15 @@
     "en": "Rellor",
     "ja": "シガロコ",
     "zh-Hans": "虫滚泥"
+  },
+  "shinyColorPalette": {
+    "highlights": [
+      "#f9f857",
+      "#d7b324",
+      "#37332b"
+    ],
+    "primary": "#f9f857",
+    "secondary": "#d7b324",
+    "accent": "#37332b"
   }
 }
