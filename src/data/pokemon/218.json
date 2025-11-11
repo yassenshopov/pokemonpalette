@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.7,
-  "weight": 35.0,
+  "weight": 35,
   "abilities": [
     {
       "name": "Magma armor",
@@ -65,15 +65,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#cd3918",
+    "secondary": "#f66231",
+    "accent": "#7b1800",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#cd3918",
+      "#f66231",
+      "#7b1800"
     ]
   },
   "artwork": {

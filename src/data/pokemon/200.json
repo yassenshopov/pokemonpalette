@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.7,
-  "weight": 1.0,
+  "weight": 1,
   "abilities": [
     {
       "name": "Levitate",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#314a62",
+    "secondary": "#4a83a4",
+    "accent": "#9c394a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#314a62",
+      "#4a83a4",
+      "#9c394a"
     ]
   },
   "artwork": {

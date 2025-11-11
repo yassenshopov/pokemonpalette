@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.9,
-  "weight": 28.0,
+  "weight": 28,
   "abilities": [
     {
       "name": "Inner focus",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#3994ac",
+    "secondary": "#316273",
+    "accent": "#c52973",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#3994ac",
+      "#316273",
+      "#c52973"
     ]
   },
   "artwork": {

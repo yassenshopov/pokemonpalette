@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 38.0,
+  "weight": 38,
   "abilities": [
     {
       "name": "Speed boost",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#e6ffff",
+    "secondary": "#ffbd9c",
+    "accent": "#94acbd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#e6ffff",
+      "#ffbd9c",
+      "#94acbd"
     ]
   },
   "artwork": {

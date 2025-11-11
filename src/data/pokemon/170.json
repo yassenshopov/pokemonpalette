@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 12.0,
+  "weight": 12,
   "abilities": [
     {
       "name": "Volt absorb",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#ffcd52",
+    "secondary": "#5a73c5",
+    "accent": "#6aa4e6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#ffcd52",
+      "#5a73c5",
+      "#6aa4e6"
     ]
   },
   "artwork": {

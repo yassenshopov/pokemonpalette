@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.8,
-  "weight": 118.0,
+  "weight": 118,
   "abilities": [
     {
       "name": "Swarm",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#a42929",
+    "secondary": "#d53939",
+    "accent": "#622929",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#a42929",
+      "#d53939",
+      "#622929"
     ]
   },
   "artwork": {
