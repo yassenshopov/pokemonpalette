@@ -40,6 +40,8 @@ export function AdminColorManagementTab() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [minId, setMinId] = useState<string>("");
+  const [maxId, setMaxId] = useState<string>("");
   const [updating, setUpdating] = useState<number | null>(null);
   const [batchProcessing, setBatchProcessing] = useState(false);
   const [batchProgress, setBatchProgress] = useState({ current: 0, total: 0 });
@@ -185,14 +187,35 @@ export function AdminColorManagementTab() {
   };
 
   const filteredPokemon = useMemo(() => {
-    if (!searchQuery) return pokemonList;
-    const query = searchQuery.toLowerCase();
-    return pokemonList.filter(
-      (p) =>
-        p.name.toLowerCase().includes(query) ||
-        p.id.toString().includes(query)
-    );
-  }, [pokemonList, searchQuery]);
+    let filtered = pokemonList;
+
+    // Filter by search query
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (p) =>
+          p.name.toLowerCase().includes(query) ||
+          p.id.toString().includes(query)
+      );
+    }
+
+    // Filter by ID range
+    if (minId) {
+      const min = parseInt(minId, 10);
+      if (!isNaN(min)) {
+        filtered = filtered.filter((p) => p.id >= min);
+      }
+    }
+
+    if (maxId) {
+      const max = parseInt(maxId, 10);
+      if (!isNaN(max)) {
+        filtered = filtered.filter((p) => p.id <= max);
+      }
+    }
+
+    return filtered;
+  }, [pokemonList, searchQuery, minId, maxId]);
 
   const handleBatchUpdate = async () => {
     const pokemonToProcess = filteredPokemon.filter((p) => p.spriteUrl);
@@ -308,32 +331,64 @@ export function AdminColorManagementTab() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="mb-4 flex items-center gap-4">
-            <Input
-              placeholder="Search by name or ID..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="max-w-sm"
-            />
-            <Button
-              onClick={handleBatchUpdate}
-              disabled={batchProcessing || filteredPokemon.filter((p) => p.spriteUrl).length === 0}
-              variant="default"
-            >
-              {batchProcessing ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                  Processing {batchProgress.current}/{batchProgress.total}...
-                </>
-              ) : (
-                "Batch Update All"
+          <div className="mb-4 space-y-3">
+            <div className="flex items-center gap-4 flex-wrap">
+              <Input
+                placeholder="Search by name or ID..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="max-w-sm"
+              />
+              <div className="flex items-center gap-2">
+                <label className="text-sm text-muted-foreground whitespace-nowrap">
+                  ID Range:
+                </label>
+                <Input
+                  type="number"
+                  placeholder="Min ID"
+                  value={minId}
+                  onChange={(e) => setMinId(e.target.value)}
+                  className="w-24"
+                  min="1"
+                />
+                <span className="text-muted-foreground">-</span>
+                <Input
+                  type="number"
+                  placeholder="Max ID"
+                  value={maxId}
+                  onChange={(e) => setMaxId(e.target.value)}
+                  className="w-24"
+                  min="1"
+                />
+              </div>
+              <Button
+                onClick={handleBatchUpdate}
+                disabled={batchProcessing || filteredPokemon.filter((p) => p.spriteUrl).length === 0}
+                variant="default"
+              >
+                {batchProcessing ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                    Processing {batchProgress.current}/{batchProgress.total}...
+                  </>
+                ) : (
+                  "Batch Update All"
+                )}
+              </Button>
+              {batchProcessing && (
+                <span className="text-sm text-muted-foreground">
+                  Updating colors for all Pokemon...
+                </span>
               )}
-            </Button>
-            {batchProcessing && (
-              <span className="text-sm text-muted-foreground">
-                Updating colors for all Pokemon...
-              </span>
-            )}
+            </div>
+            <div className="text-sm text-muted-foreground">
+              Showing {filteredPokemon.length} of {pokemonList.length} Pokemon
+              {filteredPokemon.filter((p) => p.spriteUrl).length > 0 && (
+                <span className="ml-2">
+                  ({filteredPokemon.filter((p) => p.spriteUrl).length} with sprites)
+                </span>
+              )}
+            </div>
           </div>
 
           <div className="rounded-md border">

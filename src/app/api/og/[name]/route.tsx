@@ -79,6 +79,10 @@ export async function GET(
       {
         width: 1200,
         height: 675, // 16:9 aspect ratio
+        headers: {
+          "Content-Type": "image/png",
+          "Cache-Control": "public, max-age=31536000, immutable",
+        },
       }
     );
   } catch (e: any) {
