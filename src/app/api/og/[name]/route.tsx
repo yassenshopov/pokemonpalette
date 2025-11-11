@@ -11,16 +11,28 @@ export async function GET(
 ) {
   try {
     const { name: pokemonName } = await params;
-    const pokemonMetadata = getPokemonMetadataByName(pokemonName);
 
-    if (!pokemonMetadata) {
-      return new Response("Pokemon not found", { status: 404 });
+    let pokemonMetadata;
+    let pokemon;
+
+    try {
+      pokemonMetadata = getPokemonMetadataByName(pokemonName);
+      if (!pokemonMetadata) {
+        return new Response("Pokemon not found", { status: 404 });
+      }
+    } catch (error) {
+      console.error("Error getting Pokemon metadata:", error);
+      return new Response("Error loading Pokemon metadata", { status: 500 });
     }
 
-    const pokemon = await getPokemonById(pokemonMetadata.id);
-
-    if (!pokemon) {
-      return new Response("Pokemon data not found", { status: 404 });
+    try {
+      pokemon = await getPokemonById(pokemonMetadata.id);
+      if (!pokemon) {
+        return new Response("Pokemon data not found", { status: 404 });
+      }
+    } catch (error) {
+      console.error("Error loading Pokemon data:", error);
+      return new Response("Error loading Pokemon data", { status: 500 });
     }
 
     // Get the 3 main colors from the color palette
@@ -35,45 +47,9 @@ export async function GET(
     const color2 = colors[1] || colors[0] || "#94a3b8";
     const color3 = colors[2] || colors[1] || colors[0] || "#94a3b8";
 
-    // Get official artwork URL - use official artwork for better quality
-    const artworkUrl = pokemon.artwork?.official || "";
-
-    // If no artwork URL, return a simple colored image without Pokemon
-    if (!artworkUrl) {
-      return new ImageResponse(
-        (
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: `linear-gradient(80deg, ${color1} 0%, ${color1} 33.33%, ${color2} 33.33%, ${color2} 66.66%, ${color3} 66.66%, ${color3} 100%)`,
-            }}
-          >
-            <div
-              style={{
-                fontSize: 60,
-                fontWeight: "bold",
-                color: "#ffffff",
-                textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-              }}
-            >
-              {pokemon.name}
-            </div>
-          </div>
-        ),
-        {
-          width: 1200,
-          height: 675,
-          headers: {
-            "Content-Type": "image/png",
-            "Cache-Control": "public, max-age=31536000, immutable",
-          },
-        }
-      );
-    }
+    // Get official artwork URL
+    const artworkUrl =
+      pokemon.artwork?.official || pokemon.artwork?.front || "";
 
     return new ImageResponse(
       (
@@ -87,29 +63,31 @@ export async function GET(
           }}
         >
           {/* Pokemon silhouette in the center - absolute positioned overlay */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              src={artworkUrl}
-              alt={pokemon.name}
-              width={600}
-              height={600}
+          {artworkUrl && (
+            <div
               style={{
-                filter: "brightness(0)",
-                opacity: 1,
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            />
-          </div>
+            >
+              <img
+                src={artworkUrl}
+                alt={pokemon.name}
+                width={600}
+                height={600}
+                style={{
+                  filter: "brightness(0)",
+                  opacity: 1,
+                }}
+              />
+            </div>
+          )}
         </div>
       ),
       {
@@ -123,8 +101,40 @@ export async function GET(
     );
   } catch (e: any) {
     console.error("Error generating OG image:", e);
-    return new Response(`Failed to generate image: ${e.message}`, {
-      status: 500,
-    });
+    console.error("Error stack:", e.stack);
+    // Return a fallback image instead of error
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background:
+              "linear-gradient(80deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+          }}
+        >
+          <div
+            style={{
+              fontSize: 60,
+              fontWeight: "bold",
+              color: "#ffffff",
+            }}
+          >
+            PokémonPalette
+          </div>
+        </div>
+      ),
+      {
+        width: 1200,
+        height: 675,
+        headers: {
+          "Content-Type": "image/png",
+          "Cache-Control": "public, max-age=3600",
+        },
+      }
+    );
   }
 }
