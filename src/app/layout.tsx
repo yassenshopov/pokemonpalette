@@ -7,6 +7,7 @@ import { ColorblindProvider } from "@/components/colorblind-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/sonner";
+import { StructuredData } from "@/components/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -114,6 +115,11 @@ export const metadata: Metadata = {
 
   manifest: "/site.webmanifest", // Create and replace with your manifest file
 
+  // Canonical URL
+  alternates: {
+    canonical: "https://www.pokemonpalette.com",
+  },
+
   // Verification for search engines (optional)
   // verification: {
   //   google: "Add your Google Search Console verification code",
@@ -144,6 +150,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${outfit.variable} antialiased`}
       >
+        <StructuredData />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

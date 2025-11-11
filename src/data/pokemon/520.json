@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 15.0,
+  "weight": 15,
   "abilities": [
     {
       "name": "Big pecks",
@@ -70,15 +70,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#dedede",
+    "secondary": "#4a4a4a",
+    "accent": "#a4a4a4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#dedede",
+      "#4a4a4a",
+      "#a4a4a4"
     ]
   },
   "artwork": {

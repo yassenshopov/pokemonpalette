@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 1.0,
-  "weight": 28.0,
+  "height": 1,
+  "weight": 28,
   "abilities": [
     {
       "name": "Gluttony",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#e65241",
+    "secondary": "#bd4139",
+    "accent": "#ffcd7b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#e65241",
+      "#bd4139",
+      "#ffcd7b"
     ]
   },
   "artwork": {

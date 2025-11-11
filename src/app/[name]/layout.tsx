@@ -46,6 +46,10 @@ export async function generateMetadata({
     },
     // Explicitly set metadataBase to ensure absolute URLs work correctly
     metadataBase: new URL("https://www.pokemonpalette.com"),
+    // Canonical URL
+    alternates: {
+      canonical: `https://www.pokemonpalette.com/${name.toLowerCase()}`,
+    },
   };
 }
 

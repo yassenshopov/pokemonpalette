@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 11.0,
+  "weight": 11,
   "abilities": [
     {
       "name": "Gluttony",
@@ -59,15 +59,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#e65241",
+    "secondary": "#ffcd7b",
+    "accent": "#7b3131",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#e65241",
+      "#ffcd7b",
+      "#7b3131"
     ]
   },
   "artwork": {
