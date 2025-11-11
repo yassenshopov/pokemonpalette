@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
-  "weight": 35.0,
+  "height": 1,
+  "weight": 35,
   "abilities": [
     {
       "name": "Overcoat",
@@ -52,15 +52,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c4c2c4",
+    "secondary": "#060606",
+    "accent": "#151515",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#c4c2c4",
+      "#060606",
+      "#151515"
     ]
   },
   "artwork": {

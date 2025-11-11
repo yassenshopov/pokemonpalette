@@ -12,7 +12,7 @@
     }
   ],
   "height": 2.5,
-  "weight": 310.0,
+  "weight": 310,
   "abilities": [
     {
       "name": "Earth eater",
@@ -47,15 +47,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f7645a",
+    "secondary": "#823434",
+    "accent": "#be4749",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#f7645a",
+      "#823434",
+      "#be4749"
     ]
   },
   "artwork": {

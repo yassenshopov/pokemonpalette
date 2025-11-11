@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 5.0,
+  "weight": 5,
   "abilities": [
     {
       "name": "Rattled",
@@ -41,15 +41,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#846c53",
+    "secondary": "#ad4253",
+    "accent": "#c0a43c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#846c53",
+      "#ad4253",
+      "#c0a43c"
     ]
   },
   "artwork": {

@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 90.0,
+  "weight": 90,
   "abilities": [
     {
       "name": "Opportunist",
@@ -53,15 +53,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#ffbe63",
+    "secondary": "#c68b51",
+    "accent": "#c6b6bd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#ffbe63",
+      "#c68b51",
+      "#c6b6bd"
     ]
   },
   "artwork": {

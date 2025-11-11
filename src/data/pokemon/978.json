@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 8.0,
+  "weight": 8,
   "abilities": [
     {
       "name": "Commander",
@@ -52,15 +52,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ff692b",
+    "secondary": "#ffac85",
+    "accent": "#060606",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#ff692b",
+      "#ffac85",
+      "#060606"
     ]
   },
   "artwork": {

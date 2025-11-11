@@ -2,7 +2,10 @@
   "id": 1008,
   "name": "Miraidon",
   "species": "Paradox Pokémon",
-  "type": ["Electric", "Dragon"],
+  "type": [
+    "Electric",
+    "Dragon"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -14,7 +17,7 @@
     }
   ],
   "height": 3.5,
-  "weight": 240.0,
+  "weight": 240,
   "abilities": [
     {
       "name": "Hadron engine",
@@ -43,12 +46,16 @@
     }
   ],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#4aa7d0",
+    "secondary": "#643da4",
+    "accent": "#c984d2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#F8D030", "#F08030", "#F8F8F8"]
+    "highlights": [
+      "#4aa7d0",
+      "#643da4",
+      "#c984d2"
+    ]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1008.png",

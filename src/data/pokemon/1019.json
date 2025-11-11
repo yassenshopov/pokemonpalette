@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.8,
-  "weight": 93.0,
+  "weight": 93,
   "abilities": [
     {
       "name": "Supersweet syrup",
@@ -58,15 +58,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#1f1f11",
+    "secondary": "#d53c29",
+    "accent": "#9de15f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
+      "#1f1f11",
+      "#d53c29",
+      "#9de15f"
     ]
   },
   "artwork": {

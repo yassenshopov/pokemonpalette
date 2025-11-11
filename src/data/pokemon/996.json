@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 17.0,
+  "weight": 17,
   "abilities": [
     {
       "name": "Thermal exchange",
@@ -52,15 +52,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#909aa5",
+    "secondary": "#666872",
+    "accent": "#060606",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#909aa5",
+      "#666872",
+      "#060606"
     ]
   },
   "artwork": {

@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 58.0,
+  "weight": 58,
   "abilities": [
     {
       "name": "Mycelium might",
@@ -52,15 +52,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#070707",
+    "secondary": "#fefe41",
+    "accent": "#5e5e5e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#070707",
+      "#fefe41",
+      "#5e5e5e"
     ]
   },
   "artwork": {

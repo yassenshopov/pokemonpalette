@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 30.0,
+  "weight": 30,
   "abilities": [
     {
       "name": "Good as gold",
@@ -46,15 +46,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ffd629",
+    "secondary": "#d6a52d",
+    "accent": "#46420d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#ffd629",
+      "#d6a52d",
+      "#46420d"
     ]
   },
   "artwork": {

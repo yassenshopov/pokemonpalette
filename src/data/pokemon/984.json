@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.2,
-  "weight": 320.0,
+  "weight": 320,
   "abilities": [
     {
       "name": "Protosynthesis",
@@ -46,15 +46,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#3a3058",
+    "secondary": "#070707",
+    "accent": "#f4f0dc",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#3a3058",
+      "#070707",
+      "#f4f0dc"
     ]
   },
   "artwork": {

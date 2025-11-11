@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.6,
-  "weight": 11.0,
+  "weight": 11,
   "abilities": [
     {
       "name": "Quark drive",
@@ -46,15 +46,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#fcfcfc",
+    "secondary": "#070707",
+    "accent": "#36292e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#fcfcfc",
+      "#070707",
+      "#36292e"
     ]
   },
   "artwork": {

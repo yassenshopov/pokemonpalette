@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 45.0,
+  "weight": 45,
   "abilities": [
     {
       "name": "Toxic debris",
@@ -52,15 +52,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#B8A038",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#2e52d7",
+    "secondary": "#28339b",
+    "accent": "#21276b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#B8A038",
-      "#A040A0",
-      "#F8D030"
+      "#2e52d7",
+      "#28339b",
+      "#21276b"
     ]
   },
   "artwork": {

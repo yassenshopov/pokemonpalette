@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.5,
-  "weight": 90.0,
+  "weight": 90,
   "abilities": [
     {
       "name": "Mold breaker",
@@ -52,15 +52,15 @@
     }
   ],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#fc76ff",
+    "secondary": "#aeb0af",
+    "accent": "#b43eb5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#fc76ff",
+      "#aeb0af",
+      "#b43eb5"
     ]
   },
   "artwork": {
