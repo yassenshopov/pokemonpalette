@@ -25,6 +25,7 @@ export function PokemonPageClient({ pokemonMetadata }: PokemonPageClientProps) {
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
   const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(null);
+  const [selectedFormName, setSelectedFormName] = useState<string | null>(null);
 
   // If Pokemon not found, show 404
   useEffect(() => {
@@ -43,6 +44,7 @@ export function PokemonPageClient({ pokemonMetadata }: PokemonPageClientProps) {
     setIsShiny(palette.isShiny);
     setPokemonColors(palette.colors);
     setSelectedVarietyId(null); // Reset variety when loading a palette
+    setSelectedFormName(null); // Reset form when loading a palette
   };
 
   // Load Pokemon menu collapsed state from localStorage on mount
@@ -84,6 +86,8 @@ export function PokemonPageClient({ pokemonMetadata }: PokemonPageClientProps) {
             selectedPokemonId={selectedPokemonId}
             onVarietySelect={setSelectedVarietyId}
             selectedVarietyId={selectedVarietyId}
+            onFormSelect={setSelectedFormName}
+            selectedFormName={selectedFormName}
           />
           {/* Separator line - horizontal on mobile, vertical on desktop */}
           {!isPokemonMenuCollapsed && (
@@ -104,6 +108,7 @@ export function PokemonPageClient({ pokemonMetadata }: PokemonPageClientProps) {
             colors={pokemonColors}
             onPaletteLoad={handlePaletteLoad}
             varietyId={selectedVarietyId}
+            formName={selectedFormName}
           />
           {pokemonColors.length > 0 && (
             <>
@@ -113,6 +118,7 @@ export function PokemonPageClient({ pokemonMetadata }: PokemonPageClientProps) {
                 isShiny={isShiny}
                 colors={pokemonColors}
                 varietyId={selectedVarietyId}
+                formName={selectedFormName}
               />
               <ColorShowcase
                 primaryColor={pokemonColors[0]}

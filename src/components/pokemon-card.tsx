@@ -31,6 +31,7 @@ interface PokemonCardProps {
   isShiny?: boolean;
   colors?: string[];
   varietyId?: number | null;
+  formName?: string | null;
 }
 
 export function PokemonCard({
@@ -38,6 +39,7 @@ export function PokemonCard({
   isShiny = false,
   colors = [],
   varietyId,
+  formName,
 }: PokemonCardProps) {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [basePokemon, setBasePokemon] = useState<Pokemon | null>(null);
@@ -126,6 +128,12 @@ export function PokemonCard({
   };
 
   const getOfficialArtwork = (pokemon: Pokemon) => {
+    // If a form is selected, construct the artwork URL from the form name
+    if (formName) {
+      const shinyPath = isShiny ? "/shiny" : "";
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemon.id}-${formName}.png`;
+    }
+    
     // If a variety is selected, construct the artwork URL from the variety ID
     if (varietyId) {
       const shinyPath = isShiny ? "/shiny" : "";

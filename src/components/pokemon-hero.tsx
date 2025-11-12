@@ -38,6 +38,7 @@ interface PokemonHeroProps {
     colors: string[];
   }) => void;
   varietyId?: number | null;
+  formName?: string | null;
 }
 
 export function PokemonHero({
@@ -47,6 +48,7 @@ export function PokemonHero({
   colors,
   onPaletteLoad,
   varietyId,
+  formName,
 }: PokemonHeroProps) {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
@@ -86,10 +88,20 @@ export function PokemonHero({
     }
   }, [pokemonId]);
 
-  // Update image src when pokemon, shiny state, or variety changes
+  // Update image src when pokemon, shiny state, variety, or form changes
   useEffect(() => {
-    // If a variety is selected, use that variety's official artwork
-    if (varietyId) {
+    // If a form is selected, use that form's official artwork
+    if (formName && pokemon) {
+      const shinyPath = isShiny ? "/shiny" : "";
+      const newSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemon.id}-${formName}.png`;
+      
+      if (newSrc !== currentImageSrc) {
+        setImageLoading(true);
+        setCurrentImageSrc(newSrc);
+        onImageSrcChange?.(newSrc);
+      }
+    } else if (varietyId) {
+      // If a variety is selected, use that variety's official artwork
       const shinyPath = isShiny ? "/shiny" : "";
       const newSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${varietyId}.png`;
       
@@ -122,7 +134,7 @@ export function PokemonHero({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pokemon, isShiny, varietyId]);
+  }, [pokemon, isShiny, varietyId, formName]);
 
   // Extract colors from the official artwork when image src changes
   useEffect(() => {

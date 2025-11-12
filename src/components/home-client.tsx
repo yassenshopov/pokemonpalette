@@ -19,6 +19,7 @@ export function HomeClient() {
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
   const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(null);
+  const [selectedFormName, setSelectedFormName] = useState<string | null>(null);
 
   // Handle loading a saved palette
   const handlePaletteLoad = (palette: {
@@ -30,6 +31,7 @@ export function HomeClient() {
     setIsShiny(palette.isShiny);
     setPokemonColors(palette.colors);
     setSelectedVarietyId(null); // Reset variety when loading a palette
+    setSelectedFormName(null); // Reset form when loading a palette
   };
 
   // Load Pokemon menu collapsed state from localStorage on mount
@@ -66,6 +68,8 @@ export function HomeClient() {
             selectedPokemonId={selectedPokemonId}
             onVarietySelect={setSelectedVarietyId}
             selectedVarietyId={selectedVarietyId}
+            onFormSelect={setSelectedFormName}
+            selectedFormName={selectedFormName}
           />
           {/* Separator line - horizontal on mobile, vertical on desktop */}
           {!isPokemonMenuCollapsed && (
@@ -86,6 +90,7 @@ export function HomeClient() {
             colors={pokemonColors}
             onPaletteLoad={handlePaletteLoad}
             varietyId={selectedVarietyId}
+            formName={selectedFormName}
           />
           {pokemonColors.length > 0 && (
             <>
@@ -95,6 +100,7 @@ export function HomeClient() {
                 isShiny={isShiny}
                 colors={pokemonColors}
                 varietyId={selectedVarietyId}
+                formName={selectedFormName}
               />
               <ColorShowcase
                 primaryColor={pokemonColors[0]}

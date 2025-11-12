@@ -131,6 +131,8 @@ interface PokemonMenuProps {
   selectedPokemonId?: number | null;
   onVarietySelect?: (varietyId: number | null) => void;
   selectedVarietyId?: number | null;
+  onFormSelect?: (formName: string | null) => void;
+  selectedFormName?: string | null;
 }
 
 export function PokemonMenu({
@@ -143,6 +145,8 @@ export function PokemonMenu({
   selectedPokemonId,
   onVarietySelect,
   selectedVarietyId: selectedVarietyIdProp,
+  onFormSelect,
+  selectedFormName: selectedFormNameProp,
 }: PokemonMenuProps) {
   const pokemonList = getAllPokemonMetadata();
   const [selectedPokemon, setSelectedPokemon] = useState<number | null>(
@@ -166,9 +170,22 @@ export function PokemonMenu({
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(
     selectedVarietyIdProp || null
   );
+  const [selectedFormIndex, setSelectedFormIndex] = useState<number | null>(
+    null
+  );
+  const [selectedFormName, setSelectedFormName] = useState<string | null>(
+    selectedFormNameProp || null
+  );
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isUpdatingFromDebounceRef = useRef<boolean>(false);
+
+  // Helper function to check if form is an object
+  const isFormObject = (
+    form: string | any
+  ): form is { name: string; sprites?: any } => {
+    return typeof form === "object" && "name" in form;
+  };
 
   // Sync selectedPokemonId prop with internal state
   useEffect(() => {
@@ -179,18 +196,49 @@ export function PokemonMenu({
     ) {
       setSelectedPokemon(selectedPokemonId);
       setDexNumberInput(selectedPokemonId.toString());
-      // Reset variety selection when Pokemon changes
+      // Reset variety and form selection when Pokemon changes
       setSelectedVarietyId(null);
       onVarietySelect?.(null);
+      setSelectedFormIndex(null);
+      setSelectedFormName(null);
+      onFormSelect?.(null);
     }
-  }, [selectedPokemonId, selectedPokemon, onVarietySelect]);
+  }, [selectedPokemonId, selectedPokemon, onVarietySelect, onFormSelect]);
 
   // Sync selectedVarietyId prop with internal state
   useEffect(() => {
-    if (selectedVarietyIdProp !== undefined && selectedVarietyIdProp !== selectedVarietyId) {
+    if (
+      selectedVarietyIdProp !== undefined &&
+      selectedVarietyIdProp !== selectedVarietyId
+    ) {
       setSelectedVarietyId(selectedVarietyIdProp);
     }
   }, [selectedVarietyIdProp, selectedVarietyId]);
+
+  // Sync selectedFormName prop with internal state
+  useEffect(() => {
+    if (
+      selectedFormNameProp !== undefined &&
+      selectedFormNameProp !== selectedFormName
+    ) {
+      setSelectedFormName(selectedFormNameProp);
+      // Find the form index based on the form name
+      if (pokemonData?.forms && selectedFormNameProp) {
+        const formIndex = pokemonData.forms.findIndex((form) => {
+          if (isFormObject(form)) {
+            return (
+              form.form_name === selectedFormNameProp ||
+              form.raw_name === selectedFormNameProp
+            );
+          }
+          return false;
+        });
+        setSelectedFormIndex(formIndex >= 0 ? formIndex : null);
+      } else {
+        setSelectedFormIndex(null);
+      }
+    }
+  }, [selectedFormNameProp, selectedFormName, pokemonData?.forms]);
 
   // Sync dexNumberInput with selectedPokemon when it changes externally
   // (but not when it changes from debounced user input)
@@ -225,12 +273,12 @@ export function PokemonMenu({
     }
   }, [selectedPokemon, onPokemonSelect]);
 
-  // Reset sprite image error when pokemon, shiny state, or variety changes
+  // Reset sprite image error when pokemon, shiny state, variety, or form changes
   useEffect(() => {
     setSpriteImageError(false);
-  }, [pokemonData?.id, isShiny, selectedVarietyId]);
+  }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex]);
 
-  // Extract colors from sprite when pokemonData, isShiny, or selectedVarietyId changes
+  // Extract colors from sprite when pokemonData, isShiny, selectedVarietyId, or selectedFormIndex changes
   useEffect(() => {
     if (pokemonData) {
       const spriteUrl = getSpriteUrl(pokemonData, isShiny);
@@ -315,16 +363,19 @@ export function PokemonMenu({
           });
       }
     }
-  }, [pokemonData?.id, isShiny, selectedVarietyId]); // Include selectedVarietyId to re-extract colors when variety changes
+  }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex]); // Include selectedVarietyId and selectedFormIndex to re-extract colors when variety/form changes
 
   const handleSelect = (pokemonId: number) => {
     // Clear any pending debounce timer to prevent race conditions
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current);
     }
-    // Reset variety selection when Pokemon changes
+    // Reset variety and form selection when Pokemon changes
     setSelectedVarietyId(null);
     onVarietySelect?.(null);
+    setSelectedFormIndex(null);
+    setSelectedFormName(null);
+    onFormSelect?.(null);
     setSelectedPokemon(pokemonId);
     onPokemonSelect?.(pokemonId);
   };
@@ -478,12 +529,25 @@ export function PokemonMenu({
 
   // Helper function to get sprite URL
   const getSpriteUrl = (pokemon: Pokemon, shiny: boolean): string | null => {
+    // If a form is selected, use that form's sprite
+    if (selectedFormIndex !== null && pokemon.forms) {
+      const form = pokemon.forms[selectedFormIndex];
+      if (isFormObject(form) && form.sprites) {
+        if (shiny && form.sprites.front_shiny) {
+          return form.sprites.front_shiny;
+        }
+        if (form.sprites.front_default) {
+          return form.sprites.front_default;
+        }
+      }
+    }
+
     // If a variety is selected, use that variety's sprite
     if (selectedVarietyId) {
       const shinyPath = shiny ? "shiny/" : "";
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${shinyPath}${selectedVarietyId}.png`;
     }
-    
+
     if (typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
       // Use the 2D sprite (front) for color extraction
       if (shiny && pokemon.artwork.shiny) {
@@ -559,7 +623,9 @@ export function PokemonMenu({
         <div className="flex flex-col items-center gap-2 mt-4 md:mt-8">
           <div className="relative w-[200px] h-[200px] md:w-[200px] md:h-[200px]">
             <Image
-              key={`${pokemonData.id}-${isShiny}-${selectedVarietyId || 'default'}`}
+              key={`${pokemonData.id}-${isShiny}-${
+                selectedVarietyId || "default"
+              }-${selectedFormIndex !== null ? selectedFormIndex : "default"}`}
               src={
                 spriteImageError || !getSpriteUrl(pokemonData, isShiny)
                   ? MISSINGNO_IMAGE_URL
@@ -931,11 +997,143 @@ export function PokemonMenu({
                 </div>
               )}
 
-            {/* Forms/Varieties */}
+            {/* Forms */}
+            {pokemonData.forms &&
+              pokemonData.forms.length > 0 &&
+              (() => {
+                // Filter out non-object forms and check if we have more than just the default form
+                const validForms = pokemonData.forms.filter((form) =>
+                  isFormObject(form)
+                );
+                const hasMultipleForms = validForms.length > 1;
+                const hasNonDefaultForm = validForms.some((form) => {
+                  const formData = isFormObject(form) ? form : null;
+                  return formData && !formData.is_default;
+                });
+
+                // Only show if there are multiple forms OR if there's a non-default form
+                if (!hasMultipleForms && !hasNonDefaultForm) {
+                  return null;
+                }
+
+                return (
+                  <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
+                    <Separator className="mb-2 md:mb-3" />
+                    <h3 className="text-sm font-semibold mb-2">Forms</h3>
+                    <div className="flex flex-col gap-2">
+                      {pokemonData.forms.map((form, index) => {
+                        const formData = isFormObject(form) ? form : null;
+                        if (!formData) return null;
+
+                        const isSelected = selectedFormIndex === index;
+                        const formSprite = formData.sprites
+                          ? isShiny && formData.sprites.front_shiny
+                            ? formData.sprites.front_shiny
+                            : formData.sprites.front_default
+                          : null;
+
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => {
+                              // If clicking the same form, deselect it
+                              if (selectedFormIndex === index) {
+                                setSelectedFormIndex(null);
+                                setSelectedFormName(null);
+                                onFormSelect?.(null);
+                                return;
+                              }
+                              setSelectedFormIndex(index);
+                              // Get form name for the URL - prefer form_name, fallback to extracting from raw_name
+                              const formName =
+                                formData.form_name ||
+                                (formData.raw_name?.includes("-")
+                                  ? formData.raw_name
+                                      .split("-")
+                                      .slice(1)
+                                      .join("-")
+                                  : formData.raw_name);
+                              setSelectedFormName(formName || null);
+                              onFormSelect?.(formName || null);
+                            }}
+                            className={`flex items-center gap-3 p-3 rounded border transition-all cursor-pointer hover:opacity-80 ${
+                              isSelected ? "ring-2" : ""
+                            }`}
+                            style={
+                              isSelected
+                                ? {
+                                    borderColor:
+                                      (extractedColors[0] ||
+                                        pokemonData.colorPalette?.primary ||
+                                        "#000") + "40",
+                                    backgroundColor:
+                                      (extractedColors[0] ||
+                                        pokemonData.colorPalette?.primary ||
+                                        "#000") + "10",
+                                  }
+                                : {}
+                            }
+                          >
+                            <Image
+                              src={formSprite || MISSINGNO_IMAGE_URL}
+                              alt={formData.name}
+                              width={40}
+                              height={40}
+                              className="w-10 h-10 object-contain"
+                              style={{
+                                imageRendering: formSprite
+                                  ? "pixelated"
+                                  : "auto",
+                              }}
+                              unoptimized
+                              onError={(e) => {
+                                const target = e.currentTarget;
+                                if (target.src !== MISSINGNO_IMAGE_URL) {
+                                  target.src = MISSINGNO_IMAGE_URL;
+                                  target.style.imageRendering = "auto";
+                                }
+                              }}
+                            />
+                            <div className="flex-1 text-left">
+                              <div className="text-sm font-medium">
+                                {formData.name}
+                              </div>
+                              <div className="flex gap-1 flex-wrap mt-1">
+                                {formData.is_default && (
+                                  <span className="text-xs text-muted-foreground">
+                                    Default
+                                  </span>
+                                )}
+                                {formData.is_mega && (
+                                  <span className="text-xs text-muted-foreground">
+                                    Mega
+                                  </span>
+                                )}
+                                {formData.is_gigantamax && (
+                                  <span className="text-xs text-muted-foreground">
+                                    G-Max
+                                  </span>
+                                )}
+                                {formData.is_battle_only && (
+                                  <span className="text-xs text-muted-foreground">
+                                    Battle Only
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })()}
+
+            {/* Varieties */}
             {pokemonData.varieties && pokemonData.varieties.length > 1 && (
               <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
                 <Separator className="mb-2 md:mb-3" />
-                <h3 className="text-sm font-semibold mb-2">Forms/Varieties</h3>
+                <h3 className="text-sm font-semibold mb-2">Varieties</h3>
                 <div className="flex flex-col gap-2">
                   {pokemonData.varieties.map((variety, index) => {
                     const isSelected =
@@ -960,11 +1158,13 @@ export function PokemonMenu({
                             onVarietySelect?.(null);
                             return;
                           }
-                          
+
                           // Extract Pokemon ID from variety URL (format: .../pokemon/10157/)
                           const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
-                          const varietyId = urlMatch ? parseInt(urlMatch[1]) : null;
-                          
+                          const varietyId = urlMatch
+                            ? parseInt(urlMatch[1])
+                            : null;
+
                           if (varietyId) {
                             setSelectedVarietyId(varietyId);
                             onVarietySelect?.(varietyId);
@@ -979,16 +1179,28 @@ export function PokemonMenu({
                           }
                         }}
                         className={`flex items-center gap-3 p-3 rounded border transition-all cursor-pointer hover:opacity-80 ${
-                          isSelected || (selectedVarietyId && variety.url && (() => {
-                            const match = variety.url.match(/\/(\d+)\/?$/);
-                            return match ? parseInt(match[1]) === selectedVarietyId : false;
-                          })()) ? "ring-2" : ""
+                          isSelected ||
+                          (selectedVarietyId &&
+                            variety.url &&
+                            (() => {
+                              const match = variety.url.match(/\/(\d+)\/?$/);
+                              return match
+                                ? parseInt(match[1]) === selectedVarietyId
+                                : false;
+                            })())
+                            ? "ring-2"
+                            : ""
                         }`}
                         style={
-                          isSelected || (selectedVarietyId && variety.url && (() => {
-                            const match = variety.url.match(/\/(\d+)\/?$/);
-                            return match ? parseInt(match[1]) === selectedVarietyId : false;
-                          })())
+                          isSelected ||
+                          (selectedVarietyId &&
+                            variety.url &&
+                            (() => {
+                              const match = variety.url.match(/\/(\d+)\/?$/);
+                              return match
+                                ? parseInt(match[1]) === selectedVarietyId
+                                : false;
+                            })())
                             ? {
                                 borderColor:
                                   (extractedColors[0] ||
