@@ -2,10 +2,7 @@
   "id": 861,
   "name": "Grimmsnarl",
   "species": "Bulk Up Pokémon",
-  "type": [
-    "Dark",
-    "Fairy"
-  ],
+  "type": ["Dark", "Fairy"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -63,11 +60,7 @@
     "accent": "#2f184e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5d4694",
-      "#433568",
-      "#2f184e"
-    ]
+    "highlights": ["#5d4694", "#433568", "#2f184e"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/861.png",
@@ -299,7 +292,7 @@
       "type": ""
     },
     {
-      "name": "Grimmsnarl gmax",
+      "name": "G-Max Grimmsnarl",
       "raw_name": "grimmsnarl-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10222/",
@@ -325,11 +318,7 @@
     "zh-Hans": "长毛巨魔"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ddd7df",
-      "#a39da5",
-      "#433f45"
-    ],
+    "highlights": ["#ddd7df", "#a39da5", "#433f45"],
     "primary": "#ddd7df",
     "secondary": "#a39da5",
     "accent": "#433f45"

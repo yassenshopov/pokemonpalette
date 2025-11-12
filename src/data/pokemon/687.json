@@ -2,10 +2,7 @@
   "id": 687,
   "name": "Malamar",
   "species": "Overturning Pokémon",
-  "type": [
-    "Dark",
-    "Psychic"
-  ],
+  "type": ["Dark", "Psychic"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -75,11 +72,7 @@
     "accent": "#c5c5f3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5c81cc",
-      "#3f598c",
-      "#c5c5f3"
-    ]
+    "highlights": ["#5c81cc", "#3f598c", "#c5c5f3"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/687.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/687/",
       "type": ""
-    },
-    {
-      "name": "Malamar mega",
-      "raw_name": "malamar-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10297/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -327,11 +313,7 @@
     "zh-Hans": "乌贼王"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bf994c",
-      "#806633",
-      "#caeba8"
-    ],
+    "highlights": ["#bf994c", "#806633", "#caeba8"],
     "primary": "#bf994c",
     "secondary": "#806633",
     "accent": "#caeba8"

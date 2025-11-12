@@ -2,9 +2,7 @@
   "id": 713,
   "name": "Avalugg",
   "species": "Iceberg Pokémon",
-  "type": [
-    "Ice"
-  ],
+  "type": ["Ice"],
   "typeDetails": [
     {
       "name": "Ice",
@@ -70,11 +68,7 @@
     "accent": "#77b8d9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#bff4ff",
-      "#85d7f2",
-      "#77b8d9"
-    ]
+    "highlights": ["#bff4ff", "#85d7f2", "#77b8d9"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Avalugg hisui",
+      "name": "Hisuian Avalugg",
       "raw_name": "avalugg-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10243/",
@@ -322,11 +316,7 @@
     "zh-Hans": "冰岩怪"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bff4ff",
-      "#85d7f2",
-      "#77b8d9"
-    ],
+    "highlights": ["#bff4ff", "#85d7f2", "#77b8d9"],
     "primary": "#bff4ff",
     "secondary": "#85d7f2",
     "accent": "#77b8d9"

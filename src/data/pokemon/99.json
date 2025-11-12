@@ -2,9 +2,7 @@
   "id": 99,
   "name": "Kingler",
   "species": "Pincer Pokémon",
-  "type": [
-    "Water"
-  ],
+  "type": ["Water"],
   "typeDetails": [
     {
       "name": "Water",
@@ -70,11 +68,7 @@
     "accent": "#eebd8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c56a5a",
-      "#ee8b4a",
-      "#eebd8b"
-    ]
+    "highlights": ["#c56a5a", "#ee8b4a", "#eebd8b"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/99.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Kingler gmax",
+      "name": "G-Max Kingler",
       "raw_name": "kingler-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10203/",
@@ -322,11 +316,7 @@
     "zh-Hans": "巨钳蟹"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#6a7331",
-      "#8b9c4a",
-      "#cdd573"
-    ],
+    "highlights": ["#6a7331", "#8b9c4a", "#cdd573"],
     "primary": "#6a7331",
     "secondary": "#8b9c4a",
     "accent": "#cdd573"

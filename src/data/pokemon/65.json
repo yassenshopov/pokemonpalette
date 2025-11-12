@@ -2,9 +2,7 @@
   "id": 65,
   "name": "Alakazam",
   "species": "Psi Pokémon",
-  "type": [
-    "Psychic"
-  ],
+  "type": ["Psychic"],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -70,11 +68,7 @@
     "accent": "#7b5a08",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffee18",
-      "#cdb410",
-      "#7b5a08"
-    ]
+    "highlights": ["#ffee18", "#cdb410", "#7b5a08"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
@@ -305,7 +299,7 @@
       "type": ""
     },
     {
-      "name": "Alakazam mega",
+      "name": "Mega Alakazam",
       "raw_name": "alakazam-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10037/",
@@ -336,11 +330,7 @@
     "zh-Hans": "胡地"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffd500",
-      "#d59408",
-      "#ac2973"
-    ],
+    "highlights": ["#ffd500", "#d59408", "#ac2973"],
     "primary": "#ffd500",
     "secondary": "#d59408",
     "accent": "#ac2973"

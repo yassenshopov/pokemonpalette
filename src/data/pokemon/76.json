@@ -2,10 +2,7 @@
   "id": 76,
   "name": "Golem",
   "species": "Megaton Pokémon",
-  "type": [
-    "Rock",
-    "Ground"
-  ],
+  "type": ["Rock", "Ground"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -75,11 +72,7 @@
     "accent": "#b4bd62",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#626a20",
-      "#9c8b52",
-      "#b4bd62"
-    ]
+    "highlights": ["#626a20", "#9c8b52", "#b4bd62"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png",
@@ -310,7 +303,7 @@
       "type": ""
     },
     {
-      "name": "Golem alola",
+      "name": "Alolan Golem",
       "raw_name": "golem-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10111/",
@@ -345,11 +338,7 @@
     "zh-Hans": "隆隆岩"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#946208",
-      "#c59c7b",
-      "#d5ac52"
-    ],
+    "highlights": ["#946208", "#c59c7b", "#d5ac52"],
     "primary": "#946208",
     "secondary": "#c59c7b",
     "accent": "#d5ac52"

@@ -2,10 +2,7 @@
   "id": 302,
   "name": "Sableye",
   "species": "Darkness Pokémon",
-  "type": [
-    "Dark",
-    "Ghost"
-  ],
+  "type": ["Dark", "Ghost"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -75,11 +72,7 @@
     "accent": "#aca4f6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5a4a94",
-      "#8b73d5",
-      "#aca4f6"
-    ]
+    "highlights": ["#5a4a94", "#8b73d5", "#aca4f6"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/302.png",
@@ -291,7 +284,7 @@
       "type": ""
     },
     {
-      "name": "Sableye mega",
+      "name": "Mega Sableye",
       "raw_name": "sableye-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10066/",
@@ -322,11 +315,7 @@
     "zh-Hans": "勾魂眼"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#735231",
-      "#d59452",
-      "#ffcd6a"
-    ],
+    "highlights": ["#735231", "#d59452", "#ffcd6a"],
     "primary": "#735231",
     "secondary": "#d59452",
     "accent": "#ffcd6a"

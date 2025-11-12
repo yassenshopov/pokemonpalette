@@ -2,9 +2,7 @@
   "id": 110,
   "name": "Weezing",
   "species": "Poison Gas Pokémon",
-  "type": [
-    "Poison"
-  ],
+  "type": ["Poison"],
   "typeDetails": [
     {
       "name": "Poison",
@@ -70,11 +68,7 @@
     "accent": "#f6ee94",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#bd8bcd",
-      "#eed56a",
-      "#f6ee94"
-    ]
+    "highlights": ["#bd8bcd", "#eed56a", "#f6ee94"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/110.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Weezing galar",
+      "name": "Galarian Weezing",
       "raw_name": "weezing-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10167/",
@@ -327,11 +321,7 @@
     "zh-Hans": "双弹瓦斯"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#7bb4ac",
-      "#b47bb4",
-      "#de9cd5"
-    ],
+    "highlights": ["#7bb4ac", "#b47bb4", "#de9cd5"],
     "primary": "#7bb4ac",
     "secondary": "#b47bb4",
     "accent": "#de9cd5"

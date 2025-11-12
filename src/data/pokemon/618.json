@@ -2,10 +2,7 @@
   "id": 618,
   "name": "Stunfisk",
   "species": "Trap Pokémon",
-  "type": [
-    "Ground",
-    "Electric"
-  ],
+  "type": ["Ground", "Electric"],
   "typeDetails": [
     {
       "name": "Ground",
@@ -75,11 +72,7 @@
     "accent": "#081018",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#d59c83",
-      "#ffff00",
-      "#081018"
-    ]
+    "highlights": ["#d59c83", "#ffff00", "#081018"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/618.png",
@@ -291,7 +284,7 @@
       "type": ""
     },
     {
-      "name": "Stunfisk galar",
+      "name": "Galarian Stunfisk",
       "raw_name": "stunfisk-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10180/",
@@ -322,11 +315,7 @@
     "zh-Hans": "泥巴鱼"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d5b483",
-      "#41cdee",
-      "#081018"
-    ],
+    "highlights": ["#d5b483", "#41cdee", "#081018"],
     "primary": "#d5b483",
     "secondary": "#41cdee",
     "accent": "#081018"

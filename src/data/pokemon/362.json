@@ -2,9 +2,7 @@
   "id": 362,
   "name": "Glalie",
   "species": "Face Pokémon",
-  "type": [
-    "Ice"
-  ],
+  "type": ["Ice"],
   "typeDetails": [
     {
       "name": "Ice",
@@ -70,11 +68,7 @@
     "accent": "#393941",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#e6e6f6",
-      "#acaccd",
-      "#393941"
-    ]
+    "highlights": ["#e6e6f6", "#acaccd", "#393941"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/362.png",
@@ -307,7 +301,7 @@
       "type": ""
     },
     {
-      "name": "Glalie mega",
+      "name": "Mega Glalie",
       "raw_name": "glalie-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10074/",
@@ -342,11 +336,7 @@
     "zh-Hans": "冰鬼护"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#292939",
-      "#deeeee",
-      "#9cb4b4"
-    ],
+    "highlights": ["#292939", "#deeeee", "#9cb4b4"],
     "primary": "#292939",
     "secondary": "#deeeee",
     "accent": "#9cb4b4"

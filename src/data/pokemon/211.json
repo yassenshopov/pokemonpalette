@@ -2,10 +2,7 @@
   "id": 211,
   "name": "Qwilfish",
   "species": "Balloon Pokémon",
-  "type": [
-    "Water",
-    "Poison"
-  ],
+  "type": ["Water", "Poison"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#dede94",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#a4ac6a",
-      "#418394",
-      "#dede94"
-    ]
+    "highlights": ["#a4ac6a", "#418394", "#dede94"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/211.png",
@@ -300,7 +293,7 @@
       "type": ""
     },
     {
-      "name": "Qwilfish hisui",
+      "name": "Hisuian Qwilfish",
       "raw_name": "qwilfish-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10234/",
@@ -331,11 +324,7 @@
     "zh-Hans": "千针鱼"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#dea4e6",
-      "#cd6abd",
-      "#f6cdff"
-    ],
+    "highlights": ["#dea4e6", "#cd6abd", "#f6cdff"],
     "primary": "#dea4e6",
     "secondary": "#cd6abd",
     "accent": "#f6cdff"

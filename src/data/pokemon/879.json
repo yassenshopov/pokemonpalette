@@ -2,9 +2,7 @@
   "id": 879,
   "name": "Copperajah",
   "species": "Copperderm Pokémon",
-  "type": [
-    "Steel"
-  ],
+  "type": ["Steel"],
   "typeDetails": [
     {
       "name": "Steel",
@@ -52,11 +50,7 @@
     "accent": "#396e63",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#224236",
-      "#225348",
-      "#396e63"
-    ]
+    "highlights": ["#224236", "#225348", "#396e63"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/879.png",
@@ -278,7 +272,7 @@
       "type": ""
     },
     {
-      "name": "Copperajah gmax",
+      "name": "G-Max Copperajah",
       "raw_name": "copperajah-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10224/",
@@ -304,11 +298,7 @@
     "zh-Hans": "大王铜象"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#253f2c",
-      "#274e37",
-      "#3e6950"
-    ],
+    "highlights": ["#253f2c", "#274e37", "#3e6950"],
     "primary": "#253f2c",
     "secondary": "#274e37",
     "accent": "#3e6950"

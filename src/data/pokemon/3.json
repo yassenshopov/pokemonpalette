@@ -2,10 +2,7 @@
   "id": 3,
   "name": "Venusaur",
   "species": "Seed Pokémon",
-  "type": [
-    "Grass",
-    "Poison"
-  ],
+  "type": ["Grass", "Poison"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -69,11 +66,7 @@
     "accent": "#ff7b73",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#20b49c",
-      "#105241",
-      "#ff7b73"
-    ]
+    "highlights": ["#20b49c", "#105241", "#ff7b73"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
@@ -305,14 +298,14 @@
       "type": ""
     },
     {
-      "name": "Venusaur mega",
+      "name": "Mega Venusaur",
       "raw_name": "venusaur-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10033/",
       "type": "Mega"
     },
     {
-      "name": "Venusaur gmax",
+      "name": "G-Max Venusaur",
       "raw_name": "venusaur-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10195/",
@@ -338,11 +331,7 @@
     "zh-Hans": "妙蛙花"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#a4d54a",
-      "#395a20",
-      "#ffd500"
-    ],
+    "highlights": ["#a4d54a", "#395a20", "#ffd500"],
     "primary": "#a4d54a",
     "secondary": "#395a20",
     "accent": "#ffd500"

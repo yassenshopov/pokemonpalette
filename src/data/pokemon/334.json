@@ -2,10 +2,7 @@
   "id": 334,
   "name": "Altaria",
   "species": "Humming Pokémon",
-  "type": [
-    "Dragon",
-    "Flying"
-  ],
+  "type": ["Dragon", "Flying"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -69,11 +66,7 @@
     "accent": "#109ccd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#cdcde6",
-      "#ffffff",
-      "#109ccd"
-    ]
+    "highlights": ["#cdcde6", "#ffffff", "#109ccd"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/334.png",
@@ -295,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Altaria mega",
+      "name": "Mega Altaria",
       "raw_name": "altaria-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10067/",
@@ -321,11 +314,7 @@
     "zh-Hans": "七夕青鸟"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bdbdd5",
-      "#eef6ff",
-      "#deac5a"
-    ],
+    "highlights": ["#bdbdd5", "#eef6ff", "#deac5a"],
     "primary": "#bdbdd5",
     "secondary": "#eef6ff",
     "accent": "#deac5a"

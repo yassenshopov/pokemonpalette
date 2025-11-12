@@ -2,10 +2,7 @@
   "id": 229,
   "name": "Houndoom",
   "species": "Dark Pokémon",
-  "type": [
-    "Dark",
-    "Fire"
-  ],
+  "type": ["Dark", "Fire"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -75,11 +72,7 @@
     "accent": "#a49cac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#4a4a52",
-      "#313139",
-      "#a49cac"
-    ]
+    "highlights": ["#4a4a52", "#313139", "#a49cac"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/229.png",
@@ -301,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Houndoom mega",
+      "name": "Mega Houndoom",
       "raw_name": "houndoom-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10048/",
@@ -327,11 +320,7 @@
     "zh-Hans": "黑鲁加"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#627bf6",
-      "#414ac5",
-      "#a4a4b4"
-    ],
+    "highlights": ["#627bf6", "#414ac5", "#a4a4b4"],
     "primary": "#627bf6",
     "secondary": "#414ac5",
     "accent": "#a4a4b4"

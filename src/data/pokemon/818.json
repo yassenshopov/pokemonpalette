@@ -2,9 +2,7 @@
   "id": 818,
   "name": "Inteleon",
   "species": "Secret Agent Pokémon",
-  "type": [
-    "Water"
-  ],
+  "type": ["Water"],
   "typeDetails": [
     {
       "name": "Water",
@@ -52,11 +50,7 @@
     "accent": "#549bc3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#e9cd5f",
-      "#003e6a",
-      "#549bc3"
-    ]
+    "highlights": ["#e9cd5f", "#003e6a", "#549bc3"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/818.png",
@@ -288,7 +282,7 @@
       "type": ""
     },
     {
-      "name": "Inteleon gmax",
+      "name": "G-Max Inteleon",
       "raw_name": "inteleon-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10211/",
@@ -314,11 +308,7 @@
     "zh-Hans": "千面避役"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#e95f92",
-      "#004472",
-      "#0060a4"
-    ],
+    "highlights": ["#e95f92", "#004472", "#0060a4"],
     "primary": "#e95f92",
     "secondary": "#004472",
     "accent": "#0060a4"

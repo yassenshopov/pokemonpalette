@@ -2,10 +2,7 @@
   "id": 689,
   "name": "Barbaracle",
   "species": "Collective Pokémon",
-  "type": [
-    "Rock",
-    "Water"
-  ],
+  "type": ["Rock", "Water"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -75,11 +72,7 @@
     "accent": "#604a33",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c2c8d6",
-      "#896c44",
-      "#604a33"
-    ]
+    "highlights": ["#c2c8d6", "#896c44", "#604a33"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/689.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/689/",
       "type": ""
-    },
-    {
-      "name": "Barbaracle mega",
-      "raw_name": "barbaracle-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10298/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -327,11 +313,7 @@
     "zh-Hans": "龟足巨铠"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#c2c8d6",
-      "#628352",
-      "#435c37"
-    ],
+    "highlights": ["#c2c8d6", "#628352", "#435c37"],
     "primary": "#c2c8d6",
     "secondary": "#628352",
     "accent": "#435c37"

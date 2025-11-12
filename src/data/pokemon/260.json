@@ -2,10 +2,7 @@
   "id": 260,
   "name": "Swampert",
   "species": "Mud Fish Pokémon",
-  "type": [
-    "Water",
-    "Ground"
-  ],
+  "type": ["Water", "Ground"],
   "typeDetails": [
     {
       "name": "Water",
@@ -69,11 +66,7 @@
     "accent": "#5a83c5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#181818",
-      "#524a52",
-      "#5a83c5"
-    ]
+    "highlights": ["#181818", "#524a52", "#5a83c5"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/260.png",
@@ -305,7 +298,7 @@
       "type": ""
     },
     {
-      "name": "Swampert mega",
+      "name": "Mega Swampert",
       "raw_name": "swampert-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10064/",
@@ -331,11 +324,7 @@
     "zh-Hans": "巨沼怪"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#181818",
-      "#7b2094",
-      "#bd52bd"
-    ],
+    "highlights": ["#181818", "#7b2094", "#bd52bd"],
     "primary": "#181818",
     "secondary": "#7b2094",
     "accent": "#bd52bd"

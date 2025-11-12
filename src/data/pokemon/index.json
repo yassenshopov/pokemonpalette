@@ -225,7 +225,7 @@
   },
   {
     "id": 29,
-    "name": "Nidoran-f",
+    "name": "Nidoran-F",
     "species": "Poison Pin Pok\u00e9mon",
     "type": ["Poison"],
     "generation": 1,
@@ -249,7 +249,7 @@
   },
   {
     "id": 32,
-    "name": "Nidoran-m",
+    "name": "Nidoran-M",
     "species": "Poison Pin Pok\u00e9mon",
     "type": ["Poison"],
     "generation": 1,
@@ -969,7 +969,7 @@
   },
   {
     "id": 122,
-    "name": "Mr-mime",
+    "name": "Mr. Mime",
     "species": "Barrier Pok\u00e9mon",
     "type": ["Psychic", "Fairy"],
     "generation": 1,
@@ -1993,7 +1993,7 @@
   },
   {
     "id": 250,
-    "name": "Ho-oh",
+    "name": "Ho-Oh",
     "species": "Rainbow Pok\u00e9mon",
     "type": ["Fire", "Flying"],
     "generation": 1,
@@ -3081,7 +3081,7 @@
   },
   {
     "id": 386,
-    "name": "Deoxys-normal",
+    "name": "Deoxys",
     "species": "DNA Pok\u00e9mon",
     "type": ["Psychic"],
     "generation": 1,
@@ -3297,7 +3297,7 @@
   },
   {
     "id": 413,
-    "name": "Wormadam-plant",
+    "name": "Wormadam",
     "species": "Bagworm Pok\u00e9mon",
     "type": ["Bug", "Grass"],
     "generation": 1,
@@ -3505,7 +3505,7 @@
   },
   {
     "id": 439,
-    "name": "Mime-jr",
+    "name": "Mime Jr.",
     "species": "Mime Pok\u00e9mon",
     "type": ["Psychic", "Fairy"],
     "generation": 1,
@@ -3785,7 +3785,7 @@
   },
   {
     "id": 474,
-    "name": "Porygon-z",
+    "name": "Porygon-Z",
     "species": "Virtual Pok\u00e9mon",
     "type": ["Normal"],
     "generation": 1,
@@ -3889,7 +3889,7 @@
   },
   {
     "id": 487,
-    "name": "Giratina-altered",
+    "name": "Giratina",
     "species": "Renegade Pok\u00e9mon",
     "type": ["Ghost", "Dragon"],
     "generation": 1,
@@ -3929,7 +3929,7 @@
   },
   {
     "id": 492,
-    "name": "Shaymin-land",
+    "name": "Shaymin",
     "species": "Gratitude Pok\u00e9mon",
     "type": ["Grass"],
     "generation": 1,
@@ -4393,7 +4393,7 @@
   },
   {
     "id": 550,
-    "name": "Basculin-red-striped",
+    "name": "Basculin",
     "species": "Hostile Pok\u00e9mon",
     "type": ["Water"],
     "generation": 1,
@@ -4433,7 +4433,7 @@
   },
   {
     "id": 555,
-    "name": "Darmanitan-standard",
+    "name": "Darmanitan",
     "species": "Blazing Pok\u00e9mon",
     "type": ["Fire"],
     "generation": 1,
@@ -5121,7 +5121,7 @@
   },
   {
     "id": 641,
-    "name": "Tornadus-incarnate",
+    "name": "Tornadus",
     "species": "Cyclone Pok\u00e9mon",
     "type": ["Flying"],
     "generation": 1,
@@ -5129,7 +5129,7 @@
   },
   {
     "id": 642,
-    "name": "Thundurus-incarnate",
+    "name": "Thundurus",
     "species": "Bolt Strike Pok\u00e9mon",
     "type": ["Electric", "Flying"],
     "generation": 1,
@@ -5153,7 +5153,7 @@
   },
   {
     "id": 645,
-    "name": "Landorus-incarnate",
+    "name": "Landorus",
     "species": "Abundance Pok\u00e9mon",
     "type": ["Ground", "Flying"],
     "generation": 1,
@@ -5169,7 +5169,7 @@
   },
   {
     "id": 647,
-    "name": "Keldeo-ordinary",
+    "name": "Keldeo",
     "species": "Colt Pok\u00e9mon",
     "type": ["Water", "Fighting"],
     "generation": 1,
@@ -5177,7 +5177,7 @@
   },
   {
     "id": 648,
-    "name": "Meloetta-aria",
+    "name": "Meloetta",
     "species": "Melody Pok\u00e9mon",
     "type": ["Normal", "Psychic"],
     "generation": 1,
@@ -5417,7 +5417,7 @@
   },
   {
     "id": 678,
-    "name": "Meowstic-male",
+    "name": "Meowstic",
     "species": "Constraint Pok\u00e9mon",
     "type": ["Psychic"],
     "generation": 1,
@@ -5441,7 +5441,7 @@
   },
   {
     "id": 681,
-    "name": "Aegislash-shield",
+    "name": "Aegislash",
     "species": "Royal Sword Pok\u00e9mon",
     "type": ["Steel", "Ghost"],
     "generation": 1,
@@ -5498,7 +5498,7 @@
   {
     "id": 688,
     "name": "Binacle",
-    "species": "Two-Handed Pok\u00e9mon",
+    "species": "Two-Hand Pok\u00e9mon",
     "type": ["Rock", "Water"],
     "generation": 1,
     "rarity": "Common"
@@ -5673,7 +5673,7 @@
   },
   {
     "id": 710,
-    "name": "Pumpkaboo-average",
+    "name": "Pumpkaboo",
     "species": "Pumpkin Pok\u00e9mon",
     "type": ["Ghost", "Grass"],
     "generation": 1,
@@ -5681,7 +5681,7 @@
   },
   {
     "id": 711,
-    "name": "Gourgeist-average",
+    "name": "Gourgeist",
     "species": "Pumpkin Pok\u00e9mon",
     "type": ["Ghost", "Grass"],
     "generation": 1,
@@ -5737,7 +5737,7 @@
   },
   {
     "id": 718,
-    "name": "Zygarde-50",
+    "name": "Zygarde",
     "species": "Order Pok\u00e9mon",
     "type": ["Dragon", "Ground"],
     "generation": 1,
@@ -5921,7 +5921,7 @@
   },
   {
     "id": 741,
-    "name": "Oricorio-baile",
+    "name": "Oricorio",
     "species": "Dancing Pok\u00e9mon",
     "type": ["Fire", "Flying"],
     "generation": 1,
@@ -5953,7 +5953,7 @@
   },
   {
     "id": 745,
-    "name": "Lycanroc-midday",
+    "name": "Lycanroc",
     "species": "Wolf Pok\u00e9mon",
     "type": ["Rock"],
     "generation": 1,
@@ -5961,7 +5961,7 @@
   },
   {
     "id": 746,
-    "name": "Wishiwashi-solo",
+    "name": "Wishiwashi",
     "species": "Small Fry Pok\u00e9mon",
     "type": ["Water"],
     "generation": 1,
@@ -6169,7 +6169,7 @@
   },
   {
     "id": 772,
-    "name": "Type-null",
+    "name": "Type: Null",
     "species": "Synthetic Pok\u00e9mon",
     "type": ["Normal"],
     "generation": 1,
@@ -6185,7 +6185,7 @@
   },
   {
     "id": 774,
-    "name": "Minior-red-meteor",
+    "name": "Minior",
     "species": "Meteor Pok\u00e9mon",
     "type": ["Rock", "Flying"],
     "generation": 1,
@@ -6273,7 +6273,7 @@
   },
   {
     "id": 785,
-    "name": "Tapu-koko",
+    "name": "Tapu Koko",
     "species": "Land Spirit Pok\u00e9mon",
     "type": ["Electric", "Fairy"],
     "generation": 1,
@@ -6281,7 +6281,7 @@
   },
   {
     "id": 786,
-    "name": "Tapu-lele",
+    "name": "Tapu Lele",
     "species": "Land Spirit Pok\u00e9mon",
     "type": ["Psychic", "Fairy"],
     "generation": 1,
@@ -6289,7 +6289,7 @@
   },
   {
     "id": 787,
-    "name": "Tapu-bulu",
+    "name": "Tapu Bulu",
     "species": "Land Spirit Pok\u00e9mon",
     "type": ["Grass", "Fairy"],
     "generation": 1,
@@ -6297,7 +6297,7 @@
   },
   {
     "id": 788,
-    "name": "Tapu-fini",
+    "name": "Tapu Fini",
     "species": "Land Spirit Pok\u00e9mon",
     "type": ["Water", "Fairy"],
     "generation": 1,
@@ -6785,7 +6785,7 @@
   },
   {
     "id": 849,
-    "name": "Toxtricity-amped",
+    "name": "Toxtricity",
     "species": "Punk Pok\u00e9mon",
     "type": ["Electric", "Poison"],
     "generation": 1,
@@ -6921,7 +6921,7 @@
   },
   {
     "id": 866,
-    "name": "Mr-rime",
+    "name": "Mr. Rime",
     "species": "Comedian Pok\u00e9mon",
     "type": ["Ice", "Psychic"],
     "generation": 1,
@@ -6993,7 +6993,7 @@
   },
   {
     "id": 875,
-    "name": "Eiscue-ice",
+    "name": "Eiscue",
     "species": "Penguin Pok\u00e9mon",
     "type": ["Ice"],
     "generation": 1,
@@ -7001,7 +7001,7 @@
   },
   {
     "id": 876,
-    "name": "Indeedee-male",
+    "name": "Indeedee",
     "species": "Emotion Pok\u00e9mon",
     "type": ["Psychic", "Normal"],
     "generation": 1,
@@ -7009,7 +7009,7 @@
   },
   {
     "id": 877,
-    "name": "Morpeko-full-belly",
+    "name": "Morpeko",
     "species": "Two-Sided Pok\u00e9mon",
     "type": ["Electric", "Dark"],
     "generation": 1,
@@ -7129,7 +7129,7 @@
   },
   {
     "id": 892,
-    "name": "Urshifu-single-strike",
+    "name": "Urshifu",
     "species": "Wushu Pok\u00e9mon",
     "type": ["Fighting", "Dark"],
     "generation": 1,
@@ -7209,7 +7209,7 @@
   },
   {
     "id": 902,
-    "name": "Basculegion-male",
+    "name": "Basculegion",
     "species": "Big Fish Pok\u00e9mon",
     "type": ["Water", "Ghost"],
     "generation": 1,
@@ -7233,7 +7233,7 @@
   },
   {
     "id": 905,
-    "name": "Enamorus-incarnate",
+    "name": "Enamorus",
     "species": "Love-Hate Pok\u00e9mon",
     "type": ["Fairy", "Flying"],
     "generation": 1,
@@ -7321,7 +7321,7 @@
   },
   {
     "id": 916,
-    "name": "Oinkologne-male",
+    "name": "Oinkologne",
     "species": "Hog Pok\u00e9mon",
     "type": ["Normal"],
     "generation": 1,
@@ -7393,7 +7393,7 @@
   },
   {
     "id": 925,
-    "name": "Maushold-family-of-four",
+    "name": "Maushold",
     "species": "Family Pok\u00e9mon",
     "type": ["Normal"],
     "generation": 1,
@@ -7441,7 +7441,7 @@
   },
   {
     "id": 931,
-    "name": "Squawkabilly-green-plumage",
+    "name": "Squawkabilly",
     "species": "Parrot Pok\u00e9mon",
     "type": ["Normal", "Flying"],
     "generation": 1,
@@ -7705,7 +7705,7 @@
   },
   {
     "id": 964,
-    "name": "Palafin-zero",
+    "name": "Palafin",
     "species": "Dolphin Pok\u00e9mon",
     "type": ["Water"],
     "generation": 1,
@@ -7817,7 +7817,7 @@
   },
   {
     "id": 978,
-    "name": "Tatsugiri-curly",
+    "name": "Tatsugiri",
     "species": "Mimicry Pok\u00e9mon",
     "type": ["Dragon", "Water"],
     "generation": 1,
@@ -7849,7 +7849,7 @@
   },
   {
     "id": 982,
-    "name": "Dudunsparce-two-segment",
+    "name": "Dudunsparce",
     "species": "Land Snake Pok\u00e9mon",
     "type": ["Normal"],
     "generation": 1,
@@ -7865,7 +7865,7 @@
   },
   {
     "id": 984,
-    "name": "Great-tusk",
+    "name": "Great Tusk",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Ground", "Fighting"],
     "generation": 1,
@@ -7873,7 +7873,7 @@
   },
   {
     "id": 985,
-    "name": "Scream-tail",
+    "name": "Scream Tail",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Fairy", "Psychic"],
     "generation": 1,
@@ -7881,7 +7881,7 @@
   },
   {
     "id": 986,
-    "name": "Brute-bonnet",
+    "name": "Brute Bonnet",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Grass", "Dark"],
     "generation": 1,
@@ -7889,7 +7889,7 @@
   },
   {
     "id": 987,
-    "name": "Flutter-mane",
+    "name": "Flutter Mane",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Ghost", "Fairy"],
     "generation": 1,
@@ -7897,7 +7897,7 @@
   },
   {
     "id": 988,
-    "name": "Slither-wing",
+    "name": "Slither Wing",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Bug", "Fighting"],
     "generation": 1,
@@ -7905,7 +7905,7 @@
   },
   {
     "id": 989,
-    "name": "Sandy-shocks",
+    "name": "Sandy Shocks",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Electric", "Ground"],
     "generation": 1,
@@ -7913,7 +7913,7 @@
   },
   {
     "id": 990,
-    "name": "Iron-treads",
+    "name": "Iron Treads",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Ground", "Steel"],
     "generation": 1,
@@ -7921,7 +7921,7 @@
   },
   {
     "id": 991,
-    "name": "Iron-bundle",
+    "name": "Iron Bundle",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Ice", "Water"],
     "generation": 1,
@@ -7929,7 +7929,7 @@
   },
   {
     "id": 992,
-    "name": "Iron-hands",
+    "name": "Iron Hands",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Fighting", "Electric"],
     "generation": 1,
@@ -7937,7 +7937,7 @@
   },
   {
     "id": 993,
-    "name": "Iron-jugulis",
+    "name": "Iron Jugulis",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Dark", "Flying"],
     "generation": 1,
@@ -7945,7 +7945,7 @@
   },
   {
     "id": 994,
-    "name": "Iron-moth",
+    "name": "Iron Moth",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Fire", "Poison"],
     "generation": 1,
@@ -7953,7 +7953,7 @@
   },
   {
     "id": 995,
-    "name": "Iron-thorns",
+    "name": "Iron Thorns",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Rock", "Electric"],
     "generation": 1,
@@ -8001,7 +8001,7 @@
   },
   {
     "id": 1001,
-    "name": "Wo-chien",
+    "name": "Wo-Chien",
     "species": "Ruinous Pok\u00e9mon",
     "type": ["Dark", "Grass"],
     "generation": 1,
@@ -8009,7 +8009,7 @@
   },
   {
     "id": 1002,
-    "name": "Chien-pao",
+    "name": "Chien-Pao",
     "species": "Ruinous Pok\u00e9mon",
     "type": ["Dark", "Ice"],
     "generation": 1,
@@ -8017,7 +8017,7 @@
   },
   {
     "id": 1003,
-    "name": "Ting-lu",
+    "name": "Ting-Lu",
     "species": "Ruinous Pok\u00e9mon",
     "type": ["Dark", "Ground"],
     "generation": 1,
@@ -8025,7 +8025,7 @@
   },
   {
     "id": 1004,
-    "name": "Chi-yu",
+    "name": "Chi-Yu",
     "species": "Ruinous Pok\u00e9mon",
     "type": ["Dark", "Fire"],
     "generation": 1,
@@ -8033,7 +8033,7 @@
   },
   {
     "id": 1005,
-    "name": "Roaring-moon",
+    "name": "Roaring Moon",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Dragon", "Dark"],
     "generation": 1,
@@ -8041,7 +8041,7 @@
   },
   {
     "id": 1006,
-    "name": "Iron-valiant",
+    "name": "Iron Valiant",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Fairy", "Fighting"],
     "generation": 1,
@@ -8065,7 +8065,7 @@
   },
   {
     "id": 1009,
-    "name": "Walking-wake",
+    "name": "Walking Wake",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Water", "Dragon"],
     "generation": 1,
@@ -8073,7 +8073,7 @@
   },
   {
     "id": 1010,
-    "name": "Iron-leaves",
+    "name": "Iron Leaves",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Grass", "Psychic"],
     "generation": 1,
@@ -8153,7 +8153,7 @@
   },
   {
     "id": 1020,
-    "name": "Gouging-fire",
+    "name": "Gouging Fire",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Fire", "Dragon"],
     "generation": 1,
@@ -8161,7 +8161,7 @@
   },
   {
     "id": 1021,
-    "name": "Raging-bolt",
+    "name": "Raging Bolt",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Electric", "Dragon"],
     "generation": 1,
@@ -8169,7 +8169,7 @@
   },
   {
     "id": 1022,
-    "name": "Iron-boulder",
+    "name": "Iron Boulder",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Rock", "Psychic"],
     "generation": 1,
@@ -8177,7 +8177,7 @@
   },
   {
     "id": 1023,
-    "name": "Iron-crown",
+    "name": "Iron Crown",
     "species": "Paradox Pok\u00e9mon",
     "type": ["Steel", "Psychic"],
     "generation": 1,

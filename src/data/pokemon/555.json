@@ -2,9 +2,7 @@
   "id": 555,
   "name": "Darmanitan-standard",
   "species": "Blazing Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -64,11 +62,7 @@
     "accent": "#621818",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ac2018",
-      "#8b1829",
-      "#621818"
-    ]
+    "highlights": ["#ac2018", "#8b1829", "#621818"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/555.png",
@@ -287,28 +281,28 @@
   ],
   "varieties": [
     {
-      "name": "Darmanitan standard",
+      "name": "Darmanitan - Standard",
       "raw_name": "darmanitan-standard",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/555/",
       "type": ""
     },
     {
-      "name": "Darmanitan zen",
+      "name": "Darmanitan - Zen",
       "raw_name": "darmanitan-zen",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10017/",
       "type": ""
     },
     {
-      "name": "Darmanitan galar standard",
+      "name": "Galarian Darmanitan - Standard",
       "raw_name": "darmanitan-galar-standard",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10177/",
       "type": "Galarian"
     },
     {
-      "name": "Darmanitan galar zen",
+      "name": "Galarian Darmanitan - Zen",
       "raw_name": "darmanitan-galar-zen",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10178/",
@@ -339,11 +333,7 @@
     "zh-Hans": "达摩狒狒"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#7b314a",
-      "#4a1820",
-      "#201010"
-    ],
+    "highlights": ["#7b314a", "#4a1820", "#201010"],
     "primary": "#7b314a",
     "secondary": "#4a1820",
     "accent": "#201010"

@@ -2,9 +2,7 @@
   "id": 181,
   "name": "Ampharos",
   "species": "Light Pokémon",
-  "type": [
-    "Electric"
-  ],
+  "type": ["Electric"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -64,11 +62,7 @@
     "accent": "#ffc510",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffffff",
-      "#ffee4a",
-      "#ffc510"
-    ]
+    "highlights": ["#ffffff", "#ffee4a", "#ffc510"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png",
@@ -300,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Ampharos mega",
+      "name": "Mega Ampharos",
       "raw_name": "ampharos-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10045/",
@@ -326,11 +320,7 @@
     "zh-Hans": "电龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffffff",
-      "#ffc5ee",
-      "#d5a4c5"
-    ],
+    "highlights": ["#ffffff", "#ffc5ee", "#d5a4c5"],
     "primary": "#ffffff",
     "secondary": "#ffc5ee",
     "accent": "#d5a4c5"

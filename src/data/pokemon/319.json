@@ -2,10 +2,7 @@
   "id": 319,
   "name": "Sharpedo",
   "species": "Brutal Pokémon",
-  "type": [
-    "Water",
-    "Dark"
-  ],
+  "type": ["Water", "Dark"],
   "typeDetails": [
     {
       "name": "Water",
@@ -69,11 +66,7 @@
     "accent": "#293952",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#395294",
-      "#5273bd",
-      "#293952"
-    ]
+    "highlights": ["#395294", "#5273bd", "#293952"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/319.png",
@@ -295,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Sharpedo mega",
+      "name": "Mega Sharpedo",
       "raw_name": "sharpedo-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10070/",
@@ -326,11 +319,7 @@
     "zh-Hans": "巨牙鲨"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ac18ac",
-      "#d541d5",
-      "#5a005a"
-    ],
+    "highlights": ["#ac18ac", "#d541d5", "#5a005a"],
     "primary": "#ac18ac",
     "secondary": "#d541d5",
     "accent": "#5a005a"

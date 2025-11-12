@@ -2,9 +2,7 @@
   "id": 101,
   "name": "Electrode",
   "species": "Ball Pokémon",
-  "type": [
-    "Electric"
-  ],
+  "type": ["Electric"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -70,11 +68,7 @@
     "accent": "#cdcdde",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#eeeeee",
-      "#c52941",
-      "#cdcdde"
-    ]
+    "highlights": ["#eeeeee", "#c52941", "#cdcdde"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Electrode hisui",
+      "name": "Hisuian Electrode",
       "raw_name": "electrode-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10232/",
@@ -322,11 +316,7 @@
     "zh-Hans": "顽皮雷弹"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#eeeeee",
-      "#394ad5",
-      "#cdcdde"
-    ],
+    "highlights": ["#eeeeee", "#394ad5", "#cdcdde"],
     "primary": "#eeeeee",
     "secondary": "#394ad5",
     "accent": "#cdcdde"

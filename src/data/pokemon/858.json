@@ -2,10 +2,7 @@
   "id": 858,
   "name": "Hatterene",
   "species": "Silent Pokémon",
-  "type": [
-    "Psychic",
-    "Fairy"
-  ],
+  "type": ["Psychic", "Fairy"],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -63,11 +60,7 @@
     "accent": "#948fc2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c8e9ff",
-      "#f5bac2",
-      "#948fc2"
-    ]
+    "highlights": ["#c8e9ff", "#f5bac2", "#948fc2"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png",
@@ -299,7 +292,7 @@
       "type": ""
     },
     {
-      "name": "Hatterene gmax",
+      "name": "G-Max Hatterene",
       "raw_name": "hatterene-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10221/",
@@ -325,11 +318,7 @@
     "zh-Hans": "布莉姆温"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ead5d0",
-      "#fc99ac",
-      "#90748a"
-    ],
+    "highlights": ["#ead5d0", "#fc99ac", "#90748a"],
     "primary": "#ead5d0",
     "secondary": "#fc99ac",
     "accent": "#90748a"

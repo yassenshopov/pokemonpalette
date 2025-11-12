@@ -2,9 +2,7 @@
   "id": 26,
   "name": "Raichu",
   "species": "Mouse Pokémon",
-  "type": [
-    "Electric"
-  ],
+  "type": ["Electric"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -64,11 +62,7 @@
     "accent": "#8b6210",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#f6ac29",
-      "#ffeed5",
-      "#8b6210"
-    ]
+    "highlights": ["#f6ac29", "#ffeed5", "#8b6210"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
@@ -299,7 +293,7 @@
       "type": ""
     },
     {
-      "name": "Raichu alola",
+      "name": "Alolan Raichu",
       "raw_name": "raichu-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10100/",
@@ -330,11 +324,7 @@
     "zh-Hans": "雷丘"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#f67b20",
-      "#ffe6d5",
-      "#8b6210"
-    ],
+    "highlights": ["#f67b20", "#ffe6d5", "#8b6210"],
     "primary": "#f67b20",
     "secondary": "#ffe6d5",
     "accent": "#8b6210"

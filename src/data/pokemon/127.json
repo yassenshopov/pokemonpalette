@@ -2,9 +2,7 @@
   "id": 127,
   "name": "Pinsir",
   "species": "Stag Beetle Pokémon",
-  "type": [
-    "Bug"
-  ],
+  "type": ["Bug"],
   "typeDetails": [
     {
       "name": "Bug",
@@ -70,11 +68,7 @@
     "accent": "#5a4131",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c5ac8b",
-      "#836a52",
-      "#5a4131"
-    ]
+    "highlights": ["#c5ac8b", "#836a52", "#5a4131"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/127.png",
@@ -286,7 +280,7 @@
       "type": ""
     },
     {
-      "name": "Pinsir mega",
+      "name": "Mega Pinsir",
       "raw_name": "pinsir-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10040/",
@@ -312,11 +306,7 @@
     "zh-Hans": "凯罗斯"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#948bcd",
-      "#4a3983",
-      "#311862"
-    ],
+    "highlights": ["#948bcd", "#4a3983", "#311862"],
     "primary": "#948bcd",
     "secondary": "#4a3983",
     "accent": "#311862"

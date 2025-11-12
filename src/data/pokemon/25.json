@@ -2,9 +2,7 @@
   "id": 25,
   "name": "Pikachu",
   "species": "Mouse Pokémon",
-  "type": [
-    "Electric"
-  ],
+  "type": ["Electric"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -64,11 +62,7 @@
     "accent": "#9c5200",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#f6e652",
-      "#f6bd20",
-      "#9c5200"
-    ]
+    "highlights": ["#f6e652", "#f6bd20", "#9c5200"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
@@ -299,112 +293,105 @@
       "type": ""
     },
     {
-      "name": "Pikachu rock star",
+      "name": "Rock Star Pikachu",
       "raw_name": "pikachu-rock-star",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10080/",
       "type": ""
     },
     {
-      "name": "Pikachu belle",
+      "name": "Belle Pikachu",
       "raw_name": "pikachu-belle",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10081/",
       "type": ""
     },
     {
-      "name": "Pikachu pop star",
+      "name": "Pop Star Pikachu",
       "raw_name": "pikachu-pop-star",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10082/",
       "type": ""
     },
     {
-      "name": "Pikachu phd",
+      "name": "PhD Pikachu",
       "raw_name": "pikachu-phd",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10083/",
       "type": ""
     },
     {
-      "name": "Pikachu libre",
+      "name": "Libre Pikachu",
       "raw_name": "pikachu-libre",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10084/",
       "type": ""
     },
     {
-      "name": "Pikachu cosplay",
+      "name": "Cosplay Pikachu",
       "raw_name": "pikachu-cosplay",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10085/",
       "type": ""
     },
     {
-      "name": "Pikachu original cap",
+      "name": "Original Cap Pikachu",
       "raw_name": "pikachu-original-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10094/",
       "type": ""
     },
     {
-      "name": "Pikachu hoenn cap",
+      "name": "Hoenn Cap Pikachu",
       "raw_name": "pikachu-hoenn-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10095/",
       "type": ""
     },
     {
-      "name": "Pikachu sinnoh cap",
+      "name": "Sinnoh Cap Pikachu",
       "raw_name": "pikachu-sinnoh-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10096/",
       "type": ""
     },
     {
-      "name": "Pikachu unova cap",
+      "name": "Unova Cap Pikachu",
       "raw_name": "pikachu-unova-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10097/",
       "type": ""
     },
     {
-      "name": "Pikachu kalos cap",
+      "name": "Kalos Cap Pikachu",
       "raw_name": "pikachu-kalos-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10098/",
       "type": ""
     },
     {
-      "name": "Pikachu alola cap",
+      "name": "Alola Cap Pikachu",
       "raw_name": "pikachu-alola-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10099/",
       "type": "Alolan"
     },
     {
-      "name": "Pikachu partner cap",
+      "name": "Partner Cap Pikachu",
       "raw_name": "pikachu-partner-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10148/",
       "type": ""
     },
     {
-      "name": "Pikachu starter",
-      "raw_name": "pikachu-starter",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10158/",
-      "type": ""
-    },
-    {
-      "name": "Pikachu world cap",
+      "name": "World Cap Pikachu",
       "raw_name": "pikachu-world-cap",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10160/",
       "type": ""
     },
     {
-      "name": "Pikachu gmax",
+      "name": "G-Max Pikachu",
       "raw_name": "pikachu-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10199/",
@@ -439,11 +426,7 @@
     "zh-Hans": "皮卡丘"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffc531",
-      "#ffa400",
-      "#b43100"
-    ],
+    "highlights": ["#ffc531", "#ffa400", "#b43100"],
     "primary": "#ffc531",
     "secondary": "#ffa400",
     "accent": "#b43100"

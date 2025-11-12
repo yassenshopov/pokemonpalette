@@ -2,10 +2,7 @@
   "id": 628,
   "name": "Braviary",
   "species": "Valiant Pokémon",
-  "type": [
-    "Normal",
-    "Flying"
-  ],
+  "type": ["Normal", "Flying"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -75,11 +72,7 @@
     "accent": "#31314a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#525273",
-      "#a43131",
-      "#31314a"
-    ]
+    "highlights": ["#525273", "#a43131", "#31314a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/628.png",
@@ -301,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Braviary hisui",
+      "name": "Hisuian Braviary",
       "raw_name": "braviary-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10240/",
@@ -327,11 +320,7 @@
     "zh-Hans": "勇士雄鹰"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#6a5241",
-      "#206aac",
-      "#413120"
-    ],
+    "highlights": ["#6a5241", "#206aac", "#413120"],
     "primary": "#6a5241",
     "secondary": "#206aac",
     "accent": "#413120"

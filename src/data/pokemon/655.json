@@ -2,10 +2,7 @@
   "id": 655,
   "name": "Delphox",
   "species": "Fox Pokémon",
-  "type": [
-    "Fire",
-    "Psychic"
-  ],
+  "type": ["Fire", "Psychic"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -65,11 +62,7 @@
     "accent": "#f95a26",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#893027",
-      "#ae3d32",
-      "#f95a26"
-    ]
+    "highlights": ["#893027", "#ae3d32", "#f95a26"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/655.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/655/",
       "type": ""
-    },
-    {
-      "name": "Delphox mega",
-      "raw_name": "delphox-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10293/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -327,11 +313,7 @@
     "zh-Hans": "妖火红狐"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#663f73",
-      "#885499",
-      "#f24949"
-    ],
+    "highlights": ["#663f73", "#885499", "#f24949"],
     "primary": "#663f73",
     "secondary": "#885499",
     "accent": "#f24949"

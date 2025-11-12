@@ -2,10 +2,7 @@
   "id": 103,
   "name": "Exeggutor",
   "species": "Coconut Pokémon",
-  "type": [
-    "Grass",
-    "Psychic"
-  ],
+  "type": ["Grass", "Psychic"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -69,11 +66,7 @@
     "accent": "#9cd54a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#8b7341",
-      "#73ac31",
-      "#9cd54a"
-    ]
+    "highlights": ["#8b7341", "#73ac31", "#9cd54a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/103.png",
@@ -295,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Exeggutor alola",
+      "name": "Alolan Exeggutor",
       "raw_name": "exeggutor-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10114/",
@@ -321,11 +314,7 @@
     "zh-Hans": "椰蛋树"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#cdac00",
-      "#c56239",
-      "#e6834a"
-    ],
+    "highlights": ["#cdac00", "#c56239", "#e6834a"],
     "primary": "#cdac00",
     "secondary": "#c56239",
     "accent": "#e6834a"

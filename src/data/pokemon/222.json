@@ -2,10 +2,7 @@
   "id": 222,
   "name": "Corsola",
   "species": "Coral Pokémon",
-  "type": [
-    "Water",
-    "Rock"
-  ],
+  "type": ["Water", "Rock"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#bd004a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffa4c5",
-      "#e66294",
-      "#bd004a"
-    ]
+    "highlights": ["#ffa4c5", "#e66294", "#bd004a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/222.png",
@@ -301,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Corsola galar",
+      "name": "Galarian Corsola",
       "raw_name": "corsola-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10173/",
@@ -340,11 +333,7 @@
     "zh-Hans": "太阳珊瑚"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#73e6ff",
-      "#6aaccd",
-      "#4152a4"
-    ],
+    "highlights": ["#73e6ff", "#6aaccd", "#4152a4"],
     "primary": "#73e6ff",
     "secondary": "#6aaccd",
     "accent": "#4152a4"

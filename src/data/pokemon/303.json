@@ -2,10 +2,7 @@
   "id": 303,
   "name": "Mawile",
   "species": "Deceiver Pokémon",
-  "type": [
-    "Steel",
-    "Fairy"
-  ],
+  "type": ["Steel", "Fairy"],
   "typeDetails": [
     {
       "name": "Steel",
@@ -75,11 +72,7 @@
     "accent": "#ffc55a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#737373",
-      "#4a4a4a",
-      "#ffc55a"
-    ]
+    "highlights": ["#737373", "#4a4a4a", "#ffc55a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/303.png",
@@ -291,7 +284,7 @@
       "type": ""
     },
     {
-      "name": "Mawile mega",
+      "name": "Mega Mawile",
       "raw_name": "mawile-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10052/",
@@ -326,11 +319,7 @@
     "zh-Hans": "大嘴娃"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#b45a83",
-      "#732041",
-      "#ffc55a"
-    ],
+    "highlights": ["#b45a83", "#732041", "#ffc55a"],
     "primary": "#b45a83",
     "secondary": "#732041",
     "accent": "#ffc55a"

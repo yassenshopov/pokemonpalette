@@ -2,9 +2,7 @@
   "id": 36,
   "name": "Clefable",
   "species": "Fairy Pokémon",
-  "type": [
-    "Fairy"
-  ],
+  "type": ["Fairy"],
   "typeDetails": [
     {
       "name": "Fairy",
@@ -70,11 +68,7 @@
     "accent": "#8b4a52",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffc5b4",
-      "#ee9494",
-      "#8b4a52"
-    ]
+    "highlights": ["#ffc5b4", "#ee9494", "#8b4a52"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
@@ -303,13 +297,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/36/",
       "type": ""
-    },
-    {
-      "name": "Clefable mega",
-      "raw_name": "clefable-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10278/",
-      "type": "Mega"
     }
   ],
   "heldItems": [
@@ -344,11 +331,7 @@
     "zh-Hans": "皮可西"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffdede",
-      "#f6b4b4",
-      "#cd5a5a"
-    ],
+    "highlights": ["#ffdede", "#f6b4b4", "#cd5a5a"],
     "primary": "#ffdede",
     "secondary": "#f6b4b4",
     "accent": "#cd5a5a"

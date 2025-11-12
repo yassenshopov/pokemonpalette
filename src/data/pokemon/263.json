@@ -2,9 +2,7 @@
   "id": 263,
   "name": "Zigzagoon",
   "species": "Tiny Raccoon Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#b49c8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#947b6a",
-      "#bdac9c",
-      "#b49c8b"
-    ]
+    "highlights": ["#947b6a", "#bdac9c", "#b49c8b"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/263.png",
@@ -306,7 +300,7 @@
       "type": ""
     },
     {
-      "name": "Zigzagoon galar",
+      "name": "Galarian Zigzagoon",
       "raw_name": "zigzagoon-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10174/",
@@ -345,11 +339,7 @@
     "zh-Hans": "蛇纹熊"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#cd6231",
-      "#bda483",
-      "#ee8339"
-    ],
+    "highlights": ["#cd6231", "#bda483", "#ee8339"],
     "primary": "#cd6231",
     "secondary": "#bda483",
     "accent": "#ee8339"

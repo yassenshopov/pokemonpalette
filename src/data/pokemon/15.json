@@ -2,10 +2,7 @@
   "id": 15,
   "name": "Beedrill",
   "species": "Poison Bee Pokémon",
-  "type": [
-    "Bug",
-    "Poison"
-  ],
+  "type": ["Bug", "Poison"],
   "typeDetails": [
     {
       "name": "Bug",
@@ -69,11 +66,7 @@
     "accent": "#bdacc5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffffff",
-      "#181818",
-      "#bdacc5"
-    ]
+    "highlights": ["#ffffff", "#181818", "#bdacc5"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
@@ -305,7 +298,7 @@
       "type": ""
     },
     {
-      "name": "Beedrill mega",
+      "name": "Mega Beedrill",
       "raw_name": "beedrill-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10090/",
@@ -336,11 +329,7 @@
     "zh-Hans": "大针蜂"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffffff",
-      "#181818",
-      "#bdb4c5"
-    ],
+    "highlights": ["#ffffff", "#181818", "#bdb4c5"],
     "primary": "#ffffff",
     "secondary": "#181818",
     "accent": "#bdb4c5"

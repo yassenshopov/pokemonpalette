@@ -2,9 +2,7 @@
   "id": 154,
   "name": "Meganium",
   "species": "Herb Pokémon",
-  "type": [
-    "Grass"
-  ],
+  "type": ["Grass"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -64,11 +62,7 @@
     "accent": "#62bd41",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#9ce652",
-      "#ff395a",
-      "#62bd41"
-    ]
+    "highlights": ["#9ce652", "#ff395a", "#62bd41"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/154.png",
@@ -298,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/154/",
       "type": ""
-    },
-    {
-      "name": "Meganium mega",
-      "raw_name": "meganium-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10282/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -326,11 +313,7 @@
     "zh-Hans": "大竺葵"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#f6f608",
-      "#ff8300",
-      "#c5cd00"
-    ],
+    "highlights": ["#f6f608", "#ff8300", "#c5cd00"],
     "primary": "#f6f608",
     "secondary": "#ff8300",
     "accent": "#c5cd00"

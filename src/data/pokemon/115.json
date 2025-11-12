@@ -2,9 +2,7 @@
   "id": 115,
   "name": "Kangaskhan",
   "species": "Parent Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#524110",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#9c7b73",
-      "#c5a47b",
-      "#524110"
-    ]
+    "highlights": ["#9c7b73", "#c5a47b", "#524110"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png",
@@ -286,7 +280,7 @@
       "type": ""
     },
     {
-      "name": "Kangaskhan mega",
+      "name": "Mega Kangaskhan",
       "raw_name": "kangaskhan-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10039/",
@@ -312,11 +306,7 @@
     "zh-Hans": "袋兽"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#9c8b7b",
-      "#bdb49c",
-      "#736252"
-    ],
+    "highlights": ["#9c8b7b", "#bdb49c", "#736252"],
     "primary": "#9c8b7b",
     "secondary": "#bdb49c",
     "accent": "#736252"

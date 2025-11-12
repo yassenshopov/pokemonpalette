@@ -2,10 +2,7 @@
   "id": 384,
   "name": "Rayquaza",
   "species": "Sky High Pokémon",
-  "type": [
-    "Dragon",
-    "Flying"
-  ],
+  "type": ["Dragon", "Flying"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -63,11 +60,7 @@
     "accent": "#295241",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#4a8373",
-      "#5abd8b",
-      "#295241"
-    ]
+    "highlights": ["#4a8373", "#5abd8b", "#295241"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
@@ -279,7 +272,7 @@
       "type": ""
     },
     {
-      "name": "Rayquaza mega",
+      "name": "Mega Rayquaza",
       "raw_name": "rayquaza-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10079/",
@@ -305,11 +298,7 @@
     "zh-Hans": "烈空坐"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#4a524a",
-      "#737b73",
-      "#181818"
-    ],
+    "highlights": ["#4a524a", "#737b73", "#181818"],
     "primary": "#4a524a",
     "secondary": "#737b73",
     "accent": "#181818"

@@ -2,9 +2,7 @@
   "id": 705,
   "name": "Sliggoo",
   "species": "Soft Tissue Pokémon",
-  "type": [
-    "Dragon"
-  ],
+  "type": ["Dragon"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -70,11 +68,7 @@
     "accent": "#8f7db3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#f2daf2",
-      "#bfacbf",
-      "#8f7db3"
-    ]
+    "highlights": ["#f2daf2", "#bfacbf", "#8f7db3"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/705.png",
@@ -306,7 +300,7 @@
       "type": ""
     },
     {
-      "name": "Sliggoo hisui",
+      "name": "Hisuian Sliggoo",
       "raw_name": "sliggoo-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10241/",
@@ -337,11 +331,7 @@
     "zh-Hans": "黏美儿"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffffa6",
-      "#cccc85",
-      "#cc8f7a"
-    ],
+    "highlights": ["#ffffa6", "#cccc85", "#cc8f7a"],
     "primary": "#ffffa6",
     "secondary": "#cccc85",
     "accent": "#cc8f7a"

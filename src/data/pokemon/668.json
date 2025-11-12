@@ -2,10 +2,7 @@
   "id": 668,
   "name": "Pyroar",
   "species": "Royal Pokémon",
-  "type": [
-    "Fire",
-    "Normal"
-  ],
+  "type": ["Fire", "Normal"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -75,11 +72,7 @@
     "accent": "#a82b29",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#dc3a2f",
-      "#f7cd4b",
-      "#a82b29"
-    ]
+    "highlights": ["#dc3a2f", "#f7cd4b", "#a82b29"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/668.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/668/",
       "type": ""
-    },
-    {
-      "name": "Pyroar mega",
-      "raw_name": "pyroar-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10295/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -327,11 +313,7 @@
     "zh-Hans": "火炎狮"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#cc3b4c",
-      "#f4cb63",
-      "#fde79e"
-    ],
+    "highlights": ["#cc3b4c", "#f4cb63", "#fde79e"],
     "primary": "#cc3b4c",
     "secondary": "#f4cb63",
     "accent": "#fde79e"

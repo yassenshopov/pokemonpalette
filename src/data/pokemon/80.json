@@ -2,10 +2,7 @@
   "id": 80,
   "name": "Slowbro",
   "species": "Hermit Crab Pokémon",
-  "type": [
-    "Water",
-    "Psychic"
-  ],
+  "type": ["Water", "Psychic"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#ff9494",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#e66a7b",
-      "#181818",
-      "#ff9494"
-    ]
+    "highlights": ["#e66a7b", "#181818", "#ff9494"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
@@ -319,14 +312,14 @@
       "type": ""
     },
     {
-      "name": "Slowbro mega",
+      "name": "Mega Slowbro",
       "raw_name": "slowbro-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10071/",
       "type": "Mega"
     },
     {
-      "name": "Slowbro galar",
+      "name": "Galarian Slowbro",
       "raw_name": "slowbro-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10165/",
@@ -357,11 +350,7 @@
     "zh-Hans": "呆壳兽"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#836abd",
-      "#181818",
-      "#ac94ff"
-    ],
+    "highlights": ["#836abd", "#181818", "#ac94ff"],
     "primary": "#836abd",
     "secondary": "#181818",
     "accent": "#ac94ff"

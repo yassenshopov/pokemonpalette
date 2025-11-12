@@ -2,9 +2,7 @@
   "id": 78,
   "name": "Rapidash",
   "species": "Fire Horse Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -70,11 +68,7 @@
     "accent": "#e66229",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ff9c18",
-      "#eec58b",
-      "#e66229"
-    ]
+    "highlights": ["#ff9c18", "#eec58b", "#e66229"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Rapidash galar",
+      "name": "Galarian Rapidash",
       "raw_name": "rapidash-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10163/",
@@ -327,11 +321,7 @@
     "zh-Hans": "烈焰马"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#9c9cac",
-      "#eedea4",
-      "#838394"
-    ],
+    "highlights": ["#9c9cac", "#eedea4", "#838394"],
     "primary": "#9c9cac",
     "secondary": "#eedea4",
     "accent": "#838394"

@@ -2,10 +2,7 @@
   "id": 460,
   "name": "Abomasnow",
   "species": "Frost Tree Pokémon",
-  "type": [
-    "Grass",
-    "Ice"
-  ],
+  "type": ["Grass", "Ice"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -69,11 +66,7 @@
     "accent": "#202931",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffffff",
-      "#c5d5de",
-      "#202931"
-    ]
+    "highlights": ["#ffffff", "#c5d5de", "#202931"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/460.png",
@@ -295,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Abomasnow mega",
+      "name": "Mega Abomasnow",
       "raw_name": "abomasnow-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10060/",
@@ -326,11 +319,7 @@
     "zh-Hans": "暴雪王"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffffff",
-      "#c5d5de",
-      "#202931"
-    ],
+    "highlights": ["#ffffff", "#c5d5de", "#202931"],
     "primary": "#ffffff",
     "secondary": "#c5d5de",
     "accent": "#202931"

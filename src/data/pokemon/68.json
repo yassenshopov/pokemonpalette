@@ -2,9 +2,7 @@
   "id": 68,
   "name": "Machamp",
   "species": "Superpower Pokémon",
-  "type": [
-    "Fighting"
-  ],
+  "type": ["Fighting"],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -70,11 +68,7 @@
     "accent": "#415262",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#838b94",
-      "#a4b4b4",
-      "#415262"
-    ]
+    "highlights": ["#838b94", "#a4b4b4", "#415262"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png",
@@ -305,7 +299,7 @@
       "type": ""
     },
     {
-      "name": "Machamp gmax",
+      "name": "G-Max Machamp",
       "raw_name": "machamp-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10201/",
@@ -336,11 +330,7 @@
     "zh-Hans": "怪力"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#6a8b29",
-      "#94bd4a",
-      "#4a6a10"
-    ],
+    "highlights": ["#6a8b29", "#94bd4a", "#4a6a10"],
     "primary": "#6a8b29",
     "secondary": "#94bd4a",
     "accent": "#4a6a10"

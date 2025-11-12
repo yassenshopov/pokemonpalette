@@ -2,10 +2,7 @@
   "id": 323,
   "name": "Camerupt",
   "species": "Eruption Pokémon",
-  "type": [
-    "Fire",
-    "Ground"
-  ],
+  "type": ["Fire", "Ground"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -75,11 +72,7 @@
     "accent": "#181818",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ee6a4a",
-      "#c53920",
-      "#181818"
-    ]
+    "highlights": ["#ee6a4a", "#c53920", "#181818"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/323.png",
@@ -301,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Camerupt mega",
+      "name": "Mega Camerupt",
       "raw_name": "camerupt-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10087/",
@@ -332,11 +325,7 @@
     "zh-Hans": "喷火驼"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#73738b",
-      "#4a4a62",
-      "#181818"
-    ],
+    "highlights": ["#73738b", "#4a4a62", "#181818"],
     "primary": "#73738b",
     "secondary": "#4a4a62",
     "accent": "#181818"

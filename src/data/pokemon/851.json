@@ -2,10 +2,7 @@
   "id": 851,
   "name": "Centiskorch",
   "species": "Radiator Pokémon",
-  "type": [
-    "Fire",
-    "Bug"
-  ],
+  "type": ["Fire", "Bug"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -63,11 +60,7 @@
     "accent": "#ff5839",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5b2f26",
-      "#f89e08",
-      "#ff5839"
-    ]
+    "highlights": ["#5b2f26", "#f89e08", "#ff5839"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/851.png",
@@ -289,7 +282,7 @@
       "type": ""
     },
     {
-      "name": "Centiskorch gmax",
+      "name": "G-Max Centiskorch",
       "raw_name": "centiskorch-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10220/",
@@ -315,11 +308,7 @@
     "zh-Hans": "焚焰蚣"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#25585b",
-      "#f89e08",
-      "#ff5839"
-    ],
+    "highlights": ["#25585b", "#f89e08", "#ff5839"],
     "primary": "#25585b",
     "secondary": "#f89e08",
     "accent": "#ff5839"

@@ -2,10 +2,7 @@
   "id": 609,
   "name": "Chandelure",
   "species": "Luring Pokémon",
-  "type": [
-    "Ghost",
-    "Fire"
-  ],
+  "type": ["Ghost", "Fire"],
   "typeDetails": [
     {
       "name": "Ghost",
@@ -75,11 +72,7 @@
     "accent": "#4129b4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#313131",
-      "#7352e6",
-      "#4129b4"
-    ]
+    "highlights": ["#313131", "#7352e6", "#4129b4"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/609.png",
@@ -309,13 +302,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/609/",
       "type": ""
-    },
-    {
-      "name": "Chandelure mega",
-      "raw_name": "chandelure-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10291/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -337,11 +323,7 @@
     "zh-Hans": "水晶灯火灵"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#313929",
-      "#ff8b10",
-      "#bd5218"
-    ],
+    "highlights": ["#313929", "#ff8b10", "#bd5218"],
     "primary": "#313929",
     "secondary": "#ff8b10",
     "accent": "#bd5218"

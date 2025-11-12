@@ -2,9 +2,7 @@
   "id": 51,
   "name": "Dugtrio",
   "species": "Mole Pokémon",
-  "type": [
-    "Ground"
-  ],
+  "type": ["Ground"],
   "typeDetails": [
     {
       "name": "Ground",
@@ -70,11 +68,7 @@
     "accent": "#b4ac73",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c57341",
-      "#a45a5a",
-      "#b4ac73"
-    ]
+    "highlights": ["#c57341", "#a45a5a", "#b4ac73"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Dugtrio alola",
+      "name": "Alolan Dugtrio",
       "raw_name": "dugtrio-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10106/",
@@ -327,11 +321,7 @@
     "zh-Hans": "三地鼠"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bd7352",
-      "#9c5a6a",
-      "#b4ac73"
-    ],
+    "highlights": ["#bd7352", "#9c5a6a", "#b4ac73"],
     "primary": "#bd7352",
     "secondary": "#9c5a6a",
     "accent": "#b4ac73"

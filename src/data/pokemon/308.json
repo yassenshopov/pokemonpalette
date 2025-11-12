@@ -2,10 +2,7 @@
   "id": 308,
   "name": "Medicham",
   "species": "Meditate Pokémon",
-  "type": [
-    "Fighting",
-    "Psychic"
-  ],
+  "type": ["Fighting", "Psychic"],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -69,11 +66,7 @@
     "accent": "#dedede",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#e6738b",
-      "#83414a",
-      "#dedede"
-    ]
+    "highlights": ["#e6738b", "#83414a", "#dedede"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/308.png",
@@ -295,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Medicham mega",
+      "name": "Mega Medicham",
       "raw_name": "medicham-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10054/",
@@ -321,11 +314,7 @@
     "zh-Hans": "恰雷姆"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#9cb4ff",
-      "#3962ac",
-      "#ffe6a4"
-    ],
+    "highlights": ["#9cb4ff", "#3962ac", "#ffe6a4"],
     "primary": "#9cb4ff",
     "secondary": "#3962ac",
     "accent": "#ffe6a4"

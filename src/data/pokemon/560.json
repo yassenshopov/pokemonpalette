@@ -2,10 +2,7 @@
   "id": 560,
   "name": "Scrafty",
   "species": "Hoodlum Pokémon",
-  "type": [
-    "Dark",
-    "Fighting"
-  ],
+  "type": ["Dark", "Fighting"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -75,11 +72,7 @@
     "accent": "#b49418",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#202020",
-      "#f67b20",
-      "#b49418"
-    ]
+    "highlights": ["#202020", "#f67b20", "#b49418"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/560.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/560/",
       "type": ""
-    },
-    {
-      "name": "Scrafty mega",
-      "raw_name": "scrafty-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10289/",
-      "type": "Mega"
     }
   ],
   "heldItems": [
@@ -332,11 +318,7 @@
     "zh-Hans": "头巾混混"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#202020",
-      "#f6d518",
-      "#52a439"
-    ],
+    "highlights": ["#202020", "#f6d518", "#52a439"],
     "primary": "#202020",
     "secondary": "#f6d518",
     "accent": "#52a439"

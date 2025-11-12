@@ -2,10 +2,7 @@
   "id": 500,
   "name": "Emboar",
   "species": "Mega Fire Pig Pokémon",
-  "type": [
-    "Fire",
-    "Fighting"
-  ],
+  "type": ["Fire", "Fighting"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -69,11 +66,7 @@
     "accent": "#eebd08",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#313131",
-      "#202020",
-      "#eebd08"
-    ]
+    "highlights": ["#313131", "#202020", "#eebd08"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/500.png",
@@ -303,13 +296,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/500/",
       "type": ""
-    },
-    {
-      "name": "Emboar mega",
-      "raw_name": "emboar-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10286/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -331,11 +317,7 @@
     "zh-Hans": "炎武王"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#313131",
-      "#202020",
-      "#c5eeff"
-    ],
+    "highlights": ["#313131", "#202020", "#c5eeff"],
     "primary": "#313131",
     "secondary": "#202020",
     "accent": "#c5eeff"

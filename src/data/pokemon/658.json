@@ -2,10 +2,7 @@
   "id": 658,
   "name": "Greninja",
   "species": "Ninja Pokémon",
-  "type": [
-    "Water",
-    "Dark"
-  ],
+  "type": ["Water", "Dark"],
   "typeDetails": [
     {
       "name": "Water",
@@ -65,11 +62,7 @@
     "accent": "#1b2a59",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#2e4999",
-      "#3d61cc",
-      "#1b2a59"
-    ]
+    "highlights": ["#2e4999", "#3d61cc", "#1b2a59"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png",
@@ -301,25 +294,11 @@
       "type": ""
     },
     {
-      "name": "Greninja battle bond",
+      "name": "Battle Bond Greninja",
       "raw_name": "greninja-battle-bond",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10116/",
       "type": ""
-    },
-    {
-      "name": "Greninja ash",
-      "raw_name": "greninja-ash",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10117/",
-      "type": ""
-    },
-    {
-      "name": "Greninja mega",
-      "raw_name": "greninja-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10294/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -341,11 +320,7 @@
     "zh-Hans": "甲贺忍蛙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#3d3d40",
-      "#505059",
-      "#242426"
-    ],
+    "highlights": ["#3d3d40", "#505059", "#242426"],
     "primary": "#3d3d40",
     "secondary": "#505059",
     "accent": "#242426"

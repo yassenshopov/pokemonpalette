@@ -2,10 +2,7 @@
   "id": 149,
   "name": "Dragonite",
   "species": "Dragon Pokémon",
-  "type": [
-    "Dragon",
-    "Flying"
-  ],
+  "type": ["Dragon", "Flying"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -69,11 +66,7 @@
     "accent": "#ffeebd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#de7339",
-      "#ee9c39",
-      "#ffeebd"
-    ]
+    "highlights": ["#de7339", "#ee9c39", "#ffeebd"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
@@ -303,13 +296,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/149/",
       "type": ""
-    },
-    {
-      "name": "Dragonite mega",
-      "raw_name": "dragonite-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10281/",
-      "type": "Mega"
     }
   ],
   "heldItems": [
@@ -340,11 +326,7 @@
     "zh-Hans": "快龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#527b31",
-      "#73a45a",
-      "#f6e6cd"
-    ],
+    "highlights": ["#527b31", "#73a45a", "#f6e6cd"],
     "primary": "#527b31",
     "secondary": "#73a45a",
     "accent": "#f6e6cd"

@@ -1,11 +1,8 @@
 {
   "id": 718,
-  "name": "Zygarde-50",
+  "name": "Zygarde",
   "species": "Order Pokémon",
-  "type": [
-    "Dragon",
-    "Ground"
-  ],
+  "type": ["Dragon", "Ground"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -63,11 +60,7 @@
     "accent": "#050505",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#605860",
-      "#a0e138",
-      "#050505"
-    ]
+    "highlights": ["#605860", "#a0e138", "#050505"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/718.png",
@@ -253,7 +246,7 @@
   "genderRate": -1,
   "forms": [
     {
-      "name": "Zygarde 50",
+      "name": "Zygarde",
       "raw_name": "zygarde-50",
       "form_name": "50",
       "is_mega": false,
@@ -272,46 +265,25 @@
   ],
   "varieties": [
     {
-      "name": "Zygarde 50",
+      "name": "Zygarde",
       "raw_name": "zygarde-50",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/718/",
       "type": ""
     },
     {
-      "name": "Zygarde 10 power construct",
+      "name": "Zygarde - 10%",
       "raw_name": "zygarde-10-power-construct",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10118/",
       "type": ""
     },
     {
-      "name": "Zygarde 50 power construct",
-      "raw_name": "zygarde-50-power-construct",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10119/",
-      "type": ""
-    },
-    {
-      "name": "Zygarde complete",
+      "name": "Zygarde - Complete",
       "raw_name": "zygarde-complete",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10120/",
       "type": ""
-    },
-    {
-      "name": "Zygarde 10",
-      "raw_name": "zygarde-10",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10181/",
-      "type": ""
-    },
-    {
-      "name": "Zygarde mega",
-      "raw_name": "zygarde-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10301/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -333,11 +305,7 @@
     "zh-Hans": "基格尔德"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffffff",
-      "#2baf8e",
-      "#2aae8d"
-    ],
+    "highlights": ["#ffffff", "#2baf8e", "#2aae8d"],
     "primary": "#ffffff",
     "secondary": "#2baf8e",
     "accent": "#2aae8d"

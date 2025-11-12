@@ -2,10 +2,7 @@
   "id": 144,
   "name": "Articuno",
   "species": "Freeze Pokémon",
-  "type": [
-    "Ice",
-    "Flying"
-  ],
+  "type": ["Ice", "Flying"],
   "typeDetails": [
     {
       "name": "Ice",
@@ -69,11 +66,7 @@
     "accent": "#94c5ff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#6aacf6",
-      "#005273",
-      "#94c5ff"
-    ]
+    "highlights": ["#6aacf6", "#005273", "#94c5ff"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png",
@@ -285,7 +278,7 @@
       "type": ""
     },
     {
-      "name": "Articuno galar",
+      "name": "Galarian Articuno",
       "raw_name": "articuno-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10169/",
@@ -311,11 +304,7 @@
     "zh-Hans": "急冻鸟"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#acd5ff",
-      "#1873d5",
-      "#bdeeff"
-    ],
+    "highlights": ["#acd5ff", "#1873d5", "#bdeeff"],
     "primary": "#acd5ff",
     "secondary": "#1873d5",
     "accent": "#bdeeff"

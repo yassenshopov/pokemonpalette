@@ -2,10 +2,7 @@
   "id": 6,
   "name": "Charizard",
   "species": "Flame Pokémon",
-  "type": [
-    "Fire",
-    "Flying"
-  ],
+  "type": ["Fire", "Flying"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -69,11 +66,7 @@
     "accent": "#084152",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ee8329",
-      "#cd5241",
-      "#084152"
-    ]
+    "highlights": ["#ee8329", "#cd5241", "#084152"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
@@ -305,21 +298,21 @@
       "type": ""
     },
     {
-      "name": "Charizard mega x",
+      "name": "Mega Charizard X",
       "raw_name": "charizard-mega-x",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10034/",
       "type": "Mega"
     },
     {
-      "name": "Charizard mega y",
+      "name": "Mega Charizard Y",
       "raw_name": "charizard-mega-y",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10035/",
       "type": "Mega"
     },
     {
-      "name": "Charizard gmax",
+      "name": "G-Max Charizard",
       "raw_name": "charizard-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10196/",
@@ -345,11 +338,7 @@
     "zh-Hans": "喷火龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#837b94",
-      "#5a5a6a",
-      "#831029"
-    ],
+    "highlights": ["#837b94", "#5a5a6a", "#831029"],
     "primary": "#837b94",
     "secondary": "#5a5a6a",
     "accent": "#831029"

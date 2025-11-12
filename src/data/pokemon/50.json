@@ -2,9 +2,7 @@
   "id": 50,
   "name": "Diglett",
   "species": "Mole Pokémon",
-  "type": [
-    "Ground"
-  ],
+  "type": ["Ground"],
   "typeDetails": [
     {
       "name": "Ground",
@@ -70,11 +68,7 @@
     "accent": "#a45a5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c57341",
-      "#b4ac73",
-      "#a45a5a"
-    ]
+    "highlights": ["#c57341", "#b4ac73", "#a45a5a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Diglett alola",
+      "name": "Alolan Diglett",
       "raw_name": "diglett-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10105/",
@@ -327,11 +321,7 @@
     "zh-Hans": "地鼠"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bd7352",
-      "#b4ac73",
-      "#9c5a6a"
-    ],
+    "highlights": ["#bd7352", "#b4ac73", "#9c5a6a"],
     "primary": "#bd7352",
     "secondary": "#b4ac73",
     "accent": "#9c5a6a"

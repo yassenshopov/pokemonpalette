@@ -2,10 +2,7 @@
   "id": 839,
   "name": "Coalossal",
   "species": "Coal Pokémon",
-  "type": [
-    "Rock",
-    "Fire"
-  ],
+  "type": ["Rock", "Fire"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -63,11 +60,7 @@
     "accent": "#373337",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#54514c",
-      "#42403c",
-      "#373337"
-    ]
+    "highlights": ["#54514c", "#42403c", "#373337"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/839.png",
@@ -299,7 +292,7 @@
       "type": ""
     },
     {
-      "name": "Coalossal gmax",
+      "name": "G-Max Coalossal",
       "raw_name": "coalossal-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10215/",
@@ -325,11 +318,7 @@
     "zh-Hans": "巨炭山"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#58707c",
-      "#475258",
-      "#323a3f"
-    ],
+    "highlights": ["#58707c", "#475258", "#323a3f"],
     "primary": "#58707c",
     "secondary": "#475258",
     "accent": "#323a3f"

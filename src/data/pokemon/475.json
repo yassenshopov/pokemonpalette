@@ -2,10 +2,7 @@
   "id": 475,
   "name": "Gallade",
   "species": "Blade Pokémon",
-  "type": [
-    "Psychic",
-    "Fighting"
-  ],
+  "type": ["Psychic", "Fighting"],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -75,11 +72,7 @@
     "accent": "#41835a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c5cdde",
-      "#5ab46a",
-      "#41835a"
-    ]
+    "highlights": ["#c5cdde", "#5ab46a", "#41835a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/475.png",
@@ -322,7 +315,7 @@
       "type": ""
     },
     {
-      "name": "Gallade mega",
+      "name": "Mega Gallade",
       "raw_name": "gallade-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10068/",
@@ -348,11 +341,7 @@
     "zh-Hans": "艾路雷朵"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#e6cdf6",
-      "#7bacee",
-      "#5273e6"
-    ],
+    "highlights": ["#e6cdf6", "#7bacee", "#5273e6"],
     "primary": "#e6cdf6",
     "secondary": "#7bacee",
     "accent": "#5273e6"

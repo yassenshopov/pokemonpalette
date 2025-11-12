@@ -2,10 +2,7 @@
   "id": 212,
   "name": "Scizor",
   "species": "Pincer Pokémon",
-  "type": [
-    "Bug",
-    "Steel"
-  ],
+  "type": ["Bug", "Steel"],
   "typeDetails": [
     {
       "name": "Bug",
@@ -75,11 +72,7 @@
     "accent": "#622929",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#a42929",
-      "#d53939",
-      "#622929"
-    ]
+    "highlights": ["#a42929", "#d53939", "#622929"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/212.png",
@@ -311,7 +304,7 @@
       "type": ""
     },
     {
-      "name": "Scizor mega",
+      "name": "Mega Scizor",
       "raw_name": "scizor-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10046/",
@@ -337,11 +330,7 @@
     "zh-Hans": "巨钳螳螂"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#94a420",
-      "#cde631",
-      "#5a7310"
-    ],
+    "highlights": ["#94a420", "#cde631", "#5a7310"],
     "primary": "#94a420",
     "secondary": "#cde631",
     "accent": "#5a7310"

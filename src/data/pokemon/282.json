@@ -2,10 +2,7 @@
   "id": 282,
   "name": "Gardevoir",
   "species": "Embrace Pokémon",
-  "type": [
-    "Psychic",
-    "Fairy"
-  ],
+  "type": ["Psychic", "Fairy"],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -75,11 +72,7 @@
     "accent": "#8be68b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#eeeeff",
-      "#cdcde6",
-      "#8be68b"
-    ]
+    "highlights": ["#eeeeff", "#cdcde6", "#8be68b"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/282.png",
@@ -322,7 +315,7 @@
       "type": ""
     },
     {
-      "name": "Gardevoir mega",
+      "name": "Mega Gardevoir",
       "raw_name": "gardevoir-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10051/",
@@ -348,11 +341,7 @@
     "zh-Hans": "沙奈朵"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#fff6ff",
-      "#d5acde",
-      "#8bcde6"
-    ],
+    "highlights": ["#fff6ff", "#d5acde", "#8bcde6"],
     "primary": "#fff6ff",
     "secondary": "#d5acde",
     "accent": "#8bcde6"

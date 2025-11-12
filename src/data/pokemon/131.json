@@ -2,10 +2,7 @@
   "id": 131,
   "name": "Lapras",
   "species": "Transport Pokémon",
-  "type": [
-    "Water",
-    "Ice"
-  ],
+  "type": ["Water", "Ice"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#41a4e6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#397ba4",
-      "#dec583",
-      "#41a4e6"
-    ]
+    "highlights": ["#397ba4", "#dec583", "#41a4e6"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png",
@@ -291,7 +284,7 @@
       "type": ""
     },
     {
-      "name": "Lapras gmax",
+      "name": "G-Max Lapras",
       "raw_name": "lapras-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10204/",
@@ -322,11 +315,7 @@
     "zh-Hans": "拉普拉斯"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#6a319c",
-      "#f6bd94",
-      "#ac83f6"
-    ],
+    "highlights": ["#6a319c", "#f6bd94", "#ac83f6"],
     "primary": "#6a319c",
     "secondary": "#f6bd94",
     "accent": "#ac83f6"

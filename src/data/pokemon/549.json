@@ -2,9 +2,7 @@
   "id": 549,
   "name": "Lilligant",
   "species": "Flowering Pokémon",
-  "type": [
-    "Grass"
-  ],
+  "type": ["Grass"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -70,11 +68,7 @@
     "accent": "#9cb462",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c5ee7b",
-      "#39ac39",
-      "#9cb462"
-    ]
+    "highlights": ["#c5ee7b", "#39ac39", "#9cb462"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/549.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Lilligant hisui",
+      "name": "Hisuian Lilligant",
       "raw_name": "lilligant-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10237/",
@@ -327,11 +321,7 @@
     "zh-Hans": "裙儿小姐"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d5ee7b",
-      "#6ac5cd",
-      "#acb462"
-    ],
+    "highlights": ["#d5ee7b", "#6ac5cd", "#acb462"],
     "primary": "#d5ee7b",
     "secondary": "#6ac5cd",
     "accent": "#acb462"

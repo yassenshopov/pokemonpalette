@@ -2,9 +2,7 @@
   "id": 812,
   "name": "Rillaboom",
   "species": "Drummer Pokémon",
-  "type": [
-    "Grass"
-  ],
+  "type": ["Grass"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -52,11 +50,7 @@
     "accent": "#008445",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#684440",
-      "#f6e2a1",
-      "#008445"
-    ]
+    "highlights": ["#684440", "#f6e2a1", "#008445"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/812.png",
@@ -288,7 +282,7 @@
       "type": ""
     },
     {
-      "name": "Rillaboom gmax",
+      "name": "G-Max Rillaboom",
       "raw_name": "rillaboom-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10209/",
@@ -314,11 +308,7 @@
     "zh-Hans": "轰擂金刚猩"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#5f2b35",
-      "#f6e2a1",
-      "#8cb400"
-    ],
+    "highlights": ["#5f2b35", "#f6e2a1", "#8cb400"],
     "primary": "#5f2b35",
     "secondary": "#f6e2a1",
     "accent": "#8cb400"

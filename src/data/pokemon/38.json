@@ -2,9 +2,7 @@
   "id": 38,
   "name": "Ninetales",
   "species": "Fox Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -64,11 +62,7 @@
     "accent": "#836218",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#e6c552",
-      "#f6e67b",
-      "#836218"
-    ]
+    "highlights": ["#e6c552", "#f6e67b", "#836218"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png",
@@ -294,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Ninetales alola",
+      "name": "Alolan Ninetales",
       "raw_name": "ninetales-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10104/",
@@ -329,11 +323,7 @@
     "zh-Hans": "九尾"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bdb4cd",
-      "#dedee6",
-      "#7b5a83"
-    ],
+    "highlights": ["#bdb4cd", "#dedee6", "#7b5a83"],
     "primary": "#bdb4cd",
     "secondary": "#dedee6",
     "accent": "#7b5a83"

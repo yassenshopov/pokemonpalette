@@ -2,10 +2,7 @@
   "id": 719,
   "name": "Diancie",
   "species": "Jewel Pokémon",
-  "type": [
-    "Rock",
-    "Fairy"
-  ],
+  "type": ["Rock", "Fairy"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -59,11 +56,7 @@
     "accent": "#fff9fb",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#b3a1b3",
-      "#f291b2",
-      "#fff9fb"
-    ]
+    "highlights": ["#b3a1b3", "#f291b2", "#fff9fb"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/719.png",
@@ -273,13 +266,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/719/",
       "type": ""
-    },
-    {
-      "name": "Diancie mega",
-      "raw_name": "diancie-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10075/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -301,11 +287,7 @@
     "zh-Hans": "蒂安希"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#4c4c4c",
-      "#4a4a4a",
-      "#484848"
-    ],
+    "highlights": ["#4c4c4c", "#4a4a4a", "#484848"],
     "primary": "#4c4c4c",
     "secondary": "#4a4a4a",
     "accent": "#484848"

@@ -2,10 +2,7 @@
   "id": 248,
   "name": "Tyranitar",
   "species": "Armor Pokémon",
-  "type": [
-    "Rock",
-    "Dark"
-  ],
+  "type": ["Rock", "Dark"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -69,11 +66,7 @@
     "accent": "#4a5a39",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#accd9c",
-      "#739c62",
-      "#4a5a39"
-    ]
+    "highlights": ["#accd9c", "#739c62", "#4a5a39"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png",
@@ -305,7 +298,7 @@
       "type": ""
     },
     {
-      "name": "Tyranitar mega",
+      "name": "Mega Tyranitar",
       "raw_name": "tyranitar-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10049/",
@@ -331,11 +324,7 @@
     "zh-Hans": "班基拉斯"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#e6d594",
-      "#b4a473",
-      "#7b6a31"
-    ],
+    "highlights": ["#e6d594", "#b4a473", "#7b6a31"],
     "primary": "#e6d594",
     "secondary": "#b4a473",
     "accent": "#7b6a31"

@@ -2,10 +2,7 @@
   "id": 146,
   "name": "Moltres",
   "species": "Flame Pokémon",
-  "type": [
-    "Fire",
-    "Flying"
-  ],
+  "type": ["Fire", "Flying"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -69,11 +66,7 @@
     "accent": "#de9410",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ee6239",
-      "#d50808",
-      "#de9410"
-    ]
+    "highlights": ["#ee6239", "#d50808", "#de9410"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/146.png",
@@ -285,7 +278,7 @@
       "type": ""
     },
     {
-      "name": "Moltres galar",
+      "name": "Galarian Moltres",
       "raw_name": "moltres-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10171/",
@@ -311,11 +304,7 @@
     "zh-Hans": "火焰鸟"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ee6239",
-      "#d50808",
-      "#e68ba4"
-    ],
+    "highlights": ["#ee6239", "#d50808", "#e68ba4"],
     "primary": "#ee6239",
     "secondary": "#d50808",
     "accent": "#e68ba4"

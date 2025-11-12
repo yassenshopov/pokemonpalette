@@ -2,10 +2,7 @@
   "id": 75,
   "name": "Graveler",
   "species": "Rock Pokémon",
-  "type": [
-    "Rock",
-    "Ground"
-  ],
+  "type": ["Rock", "Ground"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -75,11 +72,7 @@
     "accent": "#4a4131",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#b4b49c",
-      "#948b7b",
-      "#4a4131"
-    ]
+    "highlights": ["#b4b49c", "#948b7b", "#4a4131"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png",
@@ -310,7 +303,7 @@
       "type": ""
     },
     {
-      "name": "Graveler alola",
+      "name": "Alolan Graveler",
       "raw_name": "graveler-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10110/",
@@ -345,11 +338,7 @@
     "zh-Hans": "隆隆石"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bd8300",
-      "#9c5a00",
-      "#5a1000"
-    ],
+    "highlights": ["#bd8300", "#9c5a00", "#5a1000"],
     "primary": "#bd8300",
     "secondary": "#9c5a00",
     "accent": "#5a1000"

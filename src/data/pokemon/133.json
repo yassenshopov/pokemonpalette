@@ -2,9 +2,7 @@
   "id": 133,
   "name": "Eevee",
   "species": "Evolution Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#e6c594",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#a4624a",
-      "#d59c4a",
-      "#e6c594"
-    ]
+    "highlights": ["#a4624a", "#d59c4a", "#e6c594"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
@@ -391,7 +385,7 @@
       "type": ""
     },
     {
-      "name": "Eevee gmax",
+      "name": "G-Max Eevee",
       "raw_name": "eevee-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10205/",
@@ -417,11 +411,7 @@
     "zh-Hans": "伊布"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#aca49c",
-      "#d5d5c5",
-      "#d5deff"
-    ],
+    "highlights": ["#aca49c", "#d5d5c5", "#d5deff"],
     "primary": "#aca49c",
     "secondary": "#d5d5c5",
     "accent": "#d5deff"

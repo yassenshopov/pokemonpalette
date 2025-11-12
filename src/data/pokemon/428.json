@@ -2,9 +2,7 @@
   "id": 428,
   "name": "Lopunny",
   "species": "Rabbit Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#8b5a41",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#eedea4",
-      "#c5a47b",
-      "#8b5a41"
-    ]
+    "highlights": ["#eedea4", "#c5a47b", "#8b5a41"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/428.png",
@@ -295,7 +289,7 @@
       "type": ""
     },
     {
-      "name": "Lopunny mega",
+      "name": "Mega Lopunny",
       "raw_name": "lopunny-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10088/",
@@ -330,11 +324,7 @@
     "zh-Hans": "长耳兔"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#f6aca4",
-      "#d57b9c",
-      "#9c6a73"
-    ],
+    "highlights": ["#f6aca4", "#d57b9c", "#9c6a73"],
     "primary": "#f6aca4",
     "secondary": "#d57b9c",
     "accent": "#9c6a73"

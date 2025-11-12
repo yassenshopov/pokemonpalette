@@ -2,10 +2,7 @@
   "id": 701,
   "name": "Hawlucha",
   "species": "Wrestling Pokémon",
-  "type": [
-    "Fighting",
-    "Flying"
-  ],
+  "type": ["Fighting", "Flying"],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -75,11 +72,7 @@
     "accent": "#3d997a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#52cca3",
-      "#d93651",
-      "#3d997a"
-    ]
+    "highlights": ["#52cca3", "#d93651", "#3d997a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/701.png",
@@ -289,13 +282,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/701/",
       "type": ""
-    },
-    {
-      "name": "Hawlucha mega",
-      "raw_name": "hawlucha-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10300/",
-      "type": "Mega"
     }
   ],
   "heldItems": [
@@ -322,11 +308,7 @@
     "zh-Hans": "摔角鹰人"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#887acc",
-      "#595959",
-      "#665c99"
-    ],
+    "highlights": ["#887acc", "#595959", "#665c99"],
     "primary": "#887acc",
     "secondary": "#595959",
     "accent": "#665c99"

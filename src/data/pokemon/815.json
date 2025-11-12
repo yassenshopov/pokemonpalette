@@ -2,9 +2,7 @@
   "id": 815,
   "name": "Cinderace",
   "species": "Striker Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -52,11 +50,7 @@
     "accent": "#004194",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#f8f8f8",
-      "#de481d",
-      "#004194"
-    ]
+    "highlights": ["#f8f8f8", "#de481d", "#004194"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/815.png",
@@ -288,7 +282,7 @@
       "type": ""
     },
     {
-      "name": "Cinderace gmax",
+      "name": "G-Max Cinderace",
       "raw_name": "cinderace-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10210/",
@@ -314,11 +308,7 @@
     "zh-Hans": "闪焰王牌"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#b3baaf",
-      "#e47713",
-      "#fcfcfc"
-    ],
+    "highlights": ["#b3baaf", "#e47713", "#fcfcfc"],
     "primary": "#b3baaf",
     "secondary": "#e47713",
     "accent": "#fcfcfc"

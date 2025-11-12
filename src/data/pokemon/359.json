@@ -2,9 +2,7 @@
   "id": 359,
   "name": "Absol",
   "species": "Disaster Pokémon",
-  "type": [
-    "Dark"
-  ],
+  "type": ["Dark"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -70,11 +68,7 @@
     "accent": "#737bac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#b4b4d5",
-      "#ffffff",
-      "#737bac"
-    ]
+    "highlights": ["#b4b4d5", "#ffffff", "#737bac"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/359.png",
@@ -286,7 +280,7 @@
       "type": ""
     },
     {
-      "name": "Absol mega",
+      "name": "Mega Absol",
       "raw_name": "absol-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10057/",
@@ -317,11 +311,7 @@
     "zh-Hans": "阿勃梭鲁"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#debdee",
-      "#ffffff",
-      "#e68b7b"
-    ],
+    "highlights": ["#debdee", "#ffffff", "#e68b7b"],
     "primary": "#debdee",
     "secondary": "#ffffff",
     "accent": "#e68b7b"

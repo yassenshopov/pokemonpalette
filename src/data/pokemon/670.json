@@ -2,9 +2,7 @@
   "id": 670,
   "name": "Floette",
   "species": "Single Bloom Pokémon",
-  "type": [
-    "Fairy"
-  ],
+  "type": ["Fairy"],
   "typeDetails": [
     {
       "name": "Fairy",
@@ -64,11 +62,7 @@
     "accent": "#50996f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#fefefe",
-      "#208050",
-      "#50996f"
-    ]
+    "highlights": ["#fefefe", "#208050", "#50996f"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/670.png",
@@ -368,18 +362,11 @@
       "type": ""
     },
     {
-      "name": "Floette eternal",
+      "name": "Eternal Floette",
       "raw_name": "floette-eternal",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10061/",
       "type": ""
-    },
-    {
-      "name": "Floette mega",
-      "raw_name": "floette-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10296/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -401,11 +388,7 @@
     "zh-Hans": "花叶蒂"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d94c4c",
-      "#f8f8f8",
-      "#7869bf"
-    ],
+    "highlights": ["#d94c4c", "#f8f8f8", "#7869bf"],
     "primary": "#d94c4c",
     "secondary": "#f8f8f8",
     "accent": "#7869bf"

@@ -2,10 +2,7 @@
   "id": 448,
   "name": "Lucario",
   "species": "Aura Pokémon",
-  "type": [
-    "Fighting",
-    "Steel"
-  ],
+  "type": ["Fighting", "Steel"],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -75,11 +72,7 @@
     "accent": "#29739c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5a5a5a",
-      "#393939",
-      "#29739c"
-    ]
+    "highlights": ["#5a5a5a", "#393939", "#29739c"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png",
@@ -300,7 +293,7 @@
       "type": ""
     },
     {
-      "name": "Lucario mega",
+      "name": "Mega Lucario",
       "raw_name": "lucario-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10059/",
@@ -326,11 +319,7 @@
     "zh-Hans": "路卡利欧"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#527383",
-      "#39525a",
-      "#aca429"
-    ],
+    "highlights": ["#527383", "#39525a", "#aca429"],
     "primary": "#527383",
     "secondary": "#39525a",
     "accent": "#aca429"

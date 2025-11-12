@@ -2,9 +2,7 @@
   "id": 571,
   "name": "Zoroark",
   "species": "Illusion Fox Pokémon",
-  "type": [
-    "Dark"
-  ],
+  "type": ["Dark"],
   "typeDetails": [
     {
       "name": "Dark",
@@ -58,11 +56,7 @@
     "accent": "#7b2941",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#202031",
-      "#62626a",
-      "#7b2941"
-    ]
+    "highlights": ["#202031", "#62626a", "#7b2941"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png",
@@ -284,7 +278,7 @@
       "type": ""
     },
     {
-      "name": "Zoroark hisui",
+      "name": "Hisuian Zoroark",
       "raw_name": "zoroark-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10239/",
@@ -310,11 +304,7 @@
     "zh-Hans": "索罗亚克"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#62626a",
-      "#41299c",
-      "#7331c5"
-    ],
+    "highlights": ["#62626a", "#41299c", "#7331c5"],
     "primary": "#62626a",
     "secondary": "#41299c",
     "accent": "#7331c5"

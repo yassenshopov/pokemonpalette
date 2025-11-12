@@ -2,10 +2,7 @@
   "id": 18,
   "name": "Pidgeot",
   "species": "Bird Pokémon",
-  "type": [
-    "Normal",
-    "Flying"
-  ],
+  "type": ["Normal", "Flying"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -75,11 +72,7 @@
     "accent": "#ac7b5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#e6b462",
-      "#ffe68b",
-      "#ac7b5a"
-    ]
+    "highlights": ["#e6b462", "#ffe68b", "#ac7b5a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
@@ -311,7 +304,7 @@
       "type": ""
     },
     {
-      "name": "Pidgeot mega",
+      "name": "Mega Pidgeot",
       "raw_name": "pidgeot-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10073/",
@@ -337,11 +330,7 @@
     "zh-Hans": "大比鸟"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffd552",
-      "#ffff7b",
-      "#b48310"
-    ],
+    "highlights": ["#ffd552", "#ffff7b", "#b48310"],
     "primary": "#ffd552",
     "secondary": "#ffff7b",
     "accent": "#b48310"

@@ -2,10 +2,7 @@
   "id": 142,
   "name": "Aerodactyl",
   "species": "Fossil Pokémon",
-  "type": [
-    "Rock",
-    "Flying"
-  ],
+  "type": ["Rock", "Flying"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -75,11 +72,7 @@
     "accent": "#735294",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#9483a4",
-      "#acacd5",
-      "#735294"
-    ]
+    "highlights": ["#9483a4", "#acacd5", "#735294"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png",
@@ -291,7 +284,7 @@
       "type": ""
     },
     {
-      "name": "Aerodactyl mega",
+      "name": "Mega Aerodactyl",
       "raw_name": "aerodactyl-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10042/",
@@ -317,11 +310,7 @@
     "zh-Hans": "化石翼龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#b473b4",
-      "#dea4d5",
-      "#1020bd"
-    ],
+    "highlights": ["#b473b4", "#dea4d5", "#1020bd"],
     "primary": "#b473b4",
     "secondary": "#dea4d5",
     "accent": "#1020bd"

@@ -2,10 +2,7 @@
   "id": 841,
   "name": "Flapple",
   "species": "Apple Wing Pokémon",
-  "type": [
-    "Grass",
-    "Dragon"
-  ],
+  "type": ["Grass", "Dragon"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -63,11 +60,7 @@
     "accent": "#d72d31",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ccb468",
-      "#9b2629",
-      "#d72d31"
-    ]
+    "highlights": ["#ccb468", "#9b2629", "#d72d31"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/841.png",
@@ -309,7 +302,7 @@
       "type": ""
     },
     {
-      "name": "Flapple gmax",
+      "name": "G-Max Flapple",
       "raw_name": "flapple-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10216/",
@@ -335,11 +328,7 @@
     "zh-Hans": "苹裹龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ccb468",
-      "#299b26",
-      "#2fcb2a"
-    ],
+    "highlights": ["#ccb468", "#299b26", "#2fcb2a"],
     "primary": "#ccb468",
     "secondary": "#299b26",
     "accent": "#2fcb2a"

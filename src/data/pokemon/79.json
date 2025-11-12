@@ -2,10 +2,7 @@
   "id": 79,
   "name": "Slowpoke",
   "species": "Dopey Pokémon",
-  "type": [
-    "Water",
-    "Psychic"
-  ],
+  "type": ["Water", "Psychic"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#ffffff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#de627b",
-      "#ff8394",
-      "#ffffff"
-    ]
+    "highlights": ["#de627b", "#ff8394", "#ffffff"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png",
@@ -319,7 +312,7 @@
       "type": ""
     },
     {
-      "name": "Slowpoke galar",
+      "name": "Galarian Slowpoke",
       "raw_name": "slowpoke-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10164/",
@@ -354,11 +347,7 @@
     "zh-Hans": "呆呆兽"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#c58ba4",
-      "#e6b4c5",
-      "#ffffff"
-    ],
+    "highlights": ["#c58ba4", "#e6b4c5", "#ffffff"],
     "primary": "#c58ba4",
     "secondary": "#e6b4c5",
     "accent": "#ffffff"

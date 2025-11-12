@@ -2,9 +2,7 @@
   "id": 569,
   "name": "Garbodor",
   "species": "Trash Heap Pokémon",
-  "type": [
-    "Poison"
-  ],
+  "type": ["Poison"],
   "typeDetails": [
     {
       "name": "Poison",
@@ -70,11 +68,7 @@
     "accent": "#7b6a5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#a48b73",
-      "#296a4a",
-      "#7b6a5a"
-    ]
+    "highlights": ["#a48b73", "#296a4a", "#7b6a5a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/569.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Garbodor gmax",
+      "name": "G-Max Garbodor",
       "raw_name": "garbodor-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10207/",
@@ -339,11 +333,7 @@
     "zh-Hans": "灰尘山"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#948b83",
-      "#29a4a4",
-      "#6a6a62"
-    ],
+    "highlights": ["#948b83", "#29a4a4", "#6a6a62"],
     "primary": "#948b83",
     "secondary": "#29a4a4",
     "accent": "#6a6a62"

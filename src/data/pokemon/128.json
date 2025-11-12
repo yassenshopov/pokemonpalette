@@ -2,9 +2,7 @@
   "id": 128,
   "name": "Tauros",
   "species": "Wild Bull Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#624a31",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#dea44a",
-      "#b48331",
-      "#624a31"
-    ]
+    "highlights": ["#dea44a", "#b48331", "#624a31"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
@@ -286,21 +280,21 @@
       "type": ""
     },
     {
-      "name": "Tauros paldea combat breed",
+      "name": "Paldean Tauros - Combat Breed",
       "raw_name": "tauros-paldea-combat-breed",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10250/",
       "type": "Paldean"
     },
     {
-      "name": "Tauros paldea blaze breed",
+      "name": "Paldean Tauros - Blaze Breed",
       "raw_name": "tauros-paldea-blaze-breed",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10251/",
       "type": "Paldean"
     },
     {
-      "name": "Tauros paldea aqua breed",
+      "name": "Paldean Tauros - Aqua Breed",
       "raw_name": "tauros-paldea-aqua-breed",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10252/",
@@ -326,11 +320,7 @@
     "zh-Hans": "肯泰罗"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#e6ee4a",
-      "#cdbd29",
-      "#319c00"
-    ],
+    "highlights": ["#e6ee4a", "#cdbd29", "#319c00"],
     "primary": "#e6ee4a",
     "secondary": "#cdbd29",
     "accent": "#319c00"

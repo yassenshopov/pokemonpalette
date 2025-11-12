@@ -2,9 +2,7 @@
   "id": 157,
   "name": "Typhlosion",
   "species": "Volcano Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -64,11 +62,7 @@
     "accent": "#de0000",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffee94",
-      "#d5c573",
-      "#de0000"
-    ]
+    "highlights": ["#ffee94", "#d5c573", "#de0000"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/157.png",
@@ -300,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Typhlosion hisui",
+      "name": "Hisuian Typhlosion",
       "raw_name": "typhlosion-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10233/",
@@ -326,11 +320,7 @@
     "zh-Hans": "火暴兽"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#f6de83",
-      "#cdb462",
-      "#de0000"
-    ],
+    "highlights": ["#f6de83", "#cdb462", "#de0000"],
     "primary": "#f6de83",
     "secondary": "#cdb462",
     "accent": "#de0000"

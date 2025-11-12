@@ -2,9 +2,7 @@
   "id": 9,
   "name": "Blastoise",
   "species": "Shellfish Pokémon",
-  "type": [
-    "Water"
-  ],
+  "type": ["Water"],
   "typeDetails": [
     {
       "name": "Water",
@@ -64,11 +62,7 @@
     "accent": "#2062ac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5a8bcd",
-      "#083962",
-      "#2062ac"
-    ]
+    "highlights": ["#5a8bcd", "#083962", "#2062ac"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
@@ -300,14 +294,14 @@
       "type": ""
     },
     {
-      "name": "Blastoise mega",
+      "name": "Mega Blastoise",
       "raw_name": "blastoise-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10036/",
       "type": "Mega"
     },
     {
-      "name": "Blastoise gmax",
+      "name": "G-Max Blastoise",
       "raw_name": "blastoise-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10197/",
@@ -333,11 +327,7 @@
     "zh-Hans": "水箭龟"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d5b4f6",
-      "#735294",
-      "#a47bbd"
-    ],
+    "highlights": ["#d5b4f6", "#735294", "#a47bbd"],
     "primary": "#d5b4f6",
     "secondary": "#735294",
     "accent": "#a47bbd"

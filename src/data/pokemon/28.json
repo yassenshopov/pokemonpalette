@@ -2,9 +2,7 @@
   "id": 28,
   "name": "Sandslash",
   "species": "Mouse Pokémon",
-  "type": [
-    "Ground"
-  ],
+  "type": ["Ground"],
   "typeDetails": [
     {
       "name": "Ground",
@@ -64,11 +62,7 @@
     "accent": "#4a3910",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#8b6218",
-      "#f6d520",
-      "#4a3910"
-    ]
+    "highlights": ["#8b6218", "#f6d520", "#4a3910"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/28.png",
@@ -294,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Sandslash alola",
+      "name": "Alolan Sandslash",
       "raw_name": "sandslash-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10102/",
@@ -333,11 +327,7 @@
     "zh-Hans": "穿山王"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bd0820",
-      "#d5c57b",
-      "#4a3910"
-    ],
+    "highlights": ["#bd0820", "#d5c57b", "#4a3910"],
     "primary": "#bd0820",
     "secondary": "#d5c57b",
     "accent": "#4a3910"

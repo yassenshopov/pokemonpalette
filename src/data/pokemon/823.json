@@ -2,10 +2,7 @@
   "id": 823,
   "name": "Corviknight",
   "species": "Raven Pokémon",
-  "type": [
-    "Flying",
-    "Steel"
-  ],
+  "type": ["Flying", "Steel"],
   "typeDetails": [
     {
       "name": "Flying",
@@ -63,11 +60,7 @@
     "accent": "#303360",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#434475",
-      "#251d4e",
-      "#303360"
-    ]
+    "highlights": ["#434475", "#251d4e", "#303360"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/823.png",
@@ -299,7 +292,7 @@
       "type": ""
     },
     {
-      "name": "Corviknight gmax",
+      "name": "G-Max Corviknight",
       "raw_name": "corviknight-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10212/",
@@ -325,11 +318,7 @@
     "zh-Hans": "钢铠鸦"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#838383",
-      "#353535",
-      "#4d4d4d"
-    ],
+    "highlights": ["#838383", "#353535", "#4d4d4d"],
     "primary": "#838383",
     "secondary": "#353535",
     "accent": "#4d4d4d"

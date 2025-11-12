@@ -2,9 +2,7 @@
   "id": 53,
   "name": "Persian",
   "species": "Classy Cat Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#835200",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#deb46a",
-      "#ffe683",
-      "#835200"
-    ]
+    "highlights": ["#deb46a", "#ffe683", "#835200"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/53.png",
@@ -309,7 +303,7 @@
       "type": ""
     },
     {
-      "name": "Persian alola",
+      "name": "Alolan Persian",
       "raw_name": "persian-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10108/",
@@ -340,11 +334,7 @@
     "zh-Hans": "猫老大"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#eecd83",
-      "#fff694",
-      "#8b6a08"
-    ],
+    "highlights": ["#eecd83", "#fff694", "#8b6a08"],
     "primary": "#eecd83",
     "secondary": "#fff694",
     "accent": "#8b6a08"

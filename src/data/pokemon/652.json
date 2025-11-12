@@ -2,10 +2,7 @@
   "id": 652,
   "name": "Chesnaught",
   "species": "Spiny Armor Pokémon",
-  "type": [
-    "Grass",
-    "Fighting"
-  ],
+  "type": ["Grass", "Fighting"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -65,11 +62,7 @@
     "accent": "#6dc650",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#f7dbaa",
-      "#b59a7a",
-      "#6dc650"
-    ]
+    "highlights": ["#f7dbaa", "#b59a7a", "#6dc650"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/652.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/652/",
       "type": ""
-    },
-    {
-      "name": "Chesnaught mega",
-      "raw_name": "chesnaught-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10292/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -327,11 +313,7 @@
     "zh-Hans": "布里卡隆"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#62944f",
-      "#486d3a",
-      "#8c3f3f"
-    ],
+    "highlights": ["#62944f", "#486d3a", "#8c3f3f"],
     "primary": "#62944f",
     "secondary": "#486d3a",
     "accent": "#8c3f3f"

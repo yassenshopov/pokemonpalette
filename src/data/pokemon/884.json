@@ -2,10 +2,7 @@
   "id": 884,
   "name": "Duraludon",
   "species": "Alloy Pokémon",
-  "type": [
-    "Steel",
-    "Dragon"
-  ],
+  "type": ["Steel", "Dragon"],
   "typeDetails": [
     {
       "name": "Steel",
@@ -63,11 +60,7 @@
     "accent": "#a893a8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#c4bac5",
-      "#e4e5f1",
-      "#a893a8"
-    ]
+    "highlights": ["#c4bac5", "#e4e5f1", "#a893a8"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/884.png",
@@ -284,7 +277,7 @@
       "type": ""
     },
     {
-      "name": "Duraludon gmax",
+      "name": "G-Max Duraludon",
       "raw_name": "duraludon-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10225/",
@@ -310,11 +303,7 @@
     "zh-Hans": "铝钢龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#b5c1b8",
-      "#e8eddc",
-      "#8fa597"
-    ],
+    "highlights": ["#b5c1b8", "#e8eddc", "#8fa597"],
     "primary": "#b5c1b8",
     "secondary": "#e8eddc",
     "accent": "#8fa597"

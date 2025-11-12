@@ -2,9 +2,7 @@
   "id": 844,
   "name": "Sandaconda",
   "species": "Sand Snake Pokémon",
-  "type": [
-    "Ground"
-  ],
+  "type": ["Ground"],
   "typeDetails": [
     {
       "name": "Ground",
@@ -58,11 +56,7 @@
     "accent": "#715b2f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#898c42",
-      "#b4a36d",
-      "#715b2f"
-    ]
+    "highlights": ["#898c42", "#b4a36d", "#715b2f"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/844.png",
@@ -284,7 +278,7 @@
       "type": ""
     },
     {
-      "name": "Sandaconda gmax",
+      "name": "G-Max Sandaconda",
       "raw_name": "sandaconda-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10218/",
@@ -310,11 +304,7 @@
     "zh-Hans": "沙螺蟒"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#656d61",
-      "#9fa57c",
-      "#52554b"
-    ],
+    "highlights": ["#656d61", "#9fa57c", "#52554b"],
     "primary": "#656d61",
     "secondary": "#9fa57c",
     "accent": "#52554b"

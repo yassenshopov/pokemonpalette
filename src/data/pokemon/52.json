@@ -2,9 +2,7 @@
   "id": 52,
   "name": "Meowth",
   "species": "Scratch Cat Pokémon",
-  "type": [
-    "Normal"
-  ],
+  "type": ["Normal"],
   "typeDetails": [
     {
       "name": "Normal",
@@ -70,11 +68,7 @@
     "accent": "#debd39",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#ffe683",
-      "#8b6a00",
-      "#debd39"
-    ]
+    "highlights": ["#ffe683", "#8b6a00", "#debd39"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
@@ -309,21 +303,21 @@
       "type": ""
     },
     {
-      "name": "Meowth alola",
+      "name": "Alolan Meowth",
       "raw_name": "meowth-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10107/",
       "type": "Alolan"
     },
     {
-      "name": "Meowth galar",
+      "name": "Galarian Meowth",
       "raw_name": "meowth-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10161/",
       "type": "Galarian"
     },
     {
-      "name": "Meowth gmax",
+      "name": "G-Max Meowth",
       "raw_name": "meowth-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10200/",
@@ -358,11 +352,7 @@
     "zh-Hans": "喵喵"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#ffcd83",
-      "#9c4100",
-      "#de9c39"
-    ],
+    "highlights": ["#ffcd83", "#9c4100", "#de9c39"],
     "primary": "#ffcd83",
     "secondary": "#9c4100",
     "accent": "#de9c39"

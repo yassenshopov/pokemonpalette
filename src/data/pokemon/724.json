@@ -2,10 +2,7 @@
   "id": 724,
   "name": "Decidueye",
   "species": "Arrow Quill Pokémon",
-  "type": [
-    "Grass",
-    "Ghost"
-  ],
+  "type": ["Grass", "Ghost"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -69,11 +66,7 @@
     "accent": "#f7eae1",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#01a87a",
-      "#dca87a",
-      "#f7eae1"
-    ]
+    "highlights": ["#01a87a", "#dca87a", "#f7eae1"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
@@ -305,7 +298,7 @@
       "type": ""
     },
     {
-      "name": "Decidueye hisui",
+      "name": "Hisuian Decidueye",
       "raw_name": "decidueye-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10244/",
@@ -331,11 +324,7 @@
     "zh-Hans": "狙射树枭"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#1d88a7",
-      "#455248",
-      "#f7eae1"
-    ],
+    "highlights": ["#1d88a7", "#455248", "#f7eae1"],
     "primary": "#1d88a7",
     "secondary": "#455248",
     "accent": "#f7eae1"

@@ -2,9 +2,7 @@
   "id": 254,
   "name": "Sceptile",
   "species": "Forest Pokémon",
-  "type": [
-    "Grass"
-  ],
+  "type": ["Grass"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -64,11 +62,7 @@
     "accent": "#204a20",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#83cd6a",
-      "#419c41",
-      "#204a20"
-    ]
+    "highlights": ["#83cd6a", "#419c41", "#204a20"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/254.png",
@@ -300,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Sceptile mega",
+      "name": "Mega Sceptile",
       "raw_name": "sceptile-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10065/",
@@ -326,11 +320,7 @@
     "zh-Hans": "蜥蜴王"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#a4deee",
-      "#62b49c",
-      "#5a948b"
-    ],
+    "highlights": ["#a4deee", "#62b49c", "#5a948b"],
     "primary": "#a4deee",
     "secondary": "#62b49c",
     "accent": "#5a948b"

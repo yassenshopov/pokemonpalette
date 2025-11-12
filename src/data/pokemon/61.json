@@ -2,9 +2,7 @@
   "id": 61,
   "name": "Poliwhirl",
   "species": "Tadpole Pokémon",
-  "type": [
-    "Water"
-  ],
+  "type": ["Water"],
   "typeDetails": [
     {
       "name": "Water",
@@ -70,11 +68,7 @@
     "accent": "#525252",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5283c5",
-      "#ffffff",
-      "#525252"
-    ]
+    "highlights": ["#5283c5", "#ffffff", "#525252"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
@@ -340,11 +334,7 @@
     "zh-Hans": "蚊香君"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#52bdff",
-      "#ffffff",
-      "#525252"
-    ],
+    "highlights": ["#52bdff", "#ffffff", "#525252"],
     "primary": "#52bdff",
     "secondary": "#ffffff",
     "accent": "#525252"

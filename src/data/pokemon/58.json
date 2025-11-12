@@ -2,9 +2,7 @@
   "id": 58,
   "name": "Growlithe",
   "species": "Puppy Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -70,11 +68,7 @@
     "accent": "#decd7b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#fff6a4",
-      "#c55252",
-      "#decd7b"
-    ]
+    "highlights": ["#fff6a4", "#c55252", "#decd7b"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Growlithe hisui",
+      "name": "Hisuian Growlithe",
       "raw_name": "growlithe-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10229/",
@@ -327,11 +321,7 @@
     "zh-Hans": "卡蒂狗"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#f6f6b4",
-      "#c5b431",
-      "#d5cd8b"
-    ],
+    "highlights": ["#f6f6b4", "#c5b431", "#d5cd8b"],
     "primary": "#f6f6b4",
     "secondary": "#c5b431",
     "accent": "#d5cd8b"

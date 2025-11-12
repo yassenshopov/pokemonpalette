@@ -2,9 +2,7 @@
   "id": 88,
   "name": "Grimer",
   "species": "Sludge Pokémon",
-  "type": [
-    "Poison"
-  ],
+  "type": ["Poison"],
   "typeDetails": [
     {
       "name": "Poison",
@@ -70,11 +68,7 @@
     "accent": "#bd7bbd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#944a9c",
-      "#cd8bc5",
-      "#bd7bbd"
-    ]
+    "highlights": ["#944a9c", "#cd8bc5", "#bd7bbd"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/88.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Grimer alola",
+      "name": "Alolan Grimer",
       "raw_name": "grimer-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10112/",
@@ -331,11 +325,7 @@
     "zh-Hans": "臭泥"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#629441",
-      "#9ccd83",
-      "#83b462"
-    ],
+    "highlights": ["#629441", "#9ccd83", "#83b462"],
     "primary": "#629441",
     "secondary": "#9ccd83",
     "accent": "#83b462"

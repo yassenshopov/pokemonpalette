@@ -2,9 +2,7 @@
   "id": 809,
   "name": "Melmetal",
   "species": "Hex Nut Pokémon",
-  "type": [
-    "Steel"
-  ],
+  "type": ["Steel"],
   "typeDetails": [
     {
       "name": "Steel",
@@ -54,11 +52,7 @@
     "accent": "#dcdcda",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#59544e",
-      "#3d3534",
-      "#dcdcda"
-    ]
+    "highlights": ["#59544e", "#3d3534", "#dcdcda"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/809.png",
@@ -270,7 +264,7 @@
       "type": ""
     },
     {
-      "name": "Melmetal gmax",
+      "name": "G-Max Melmetal",
       "raw_name": "melmetal-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10208/",
@@ -296,11 +290,7 @@
     "zh-Hans": "美录梅塔"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#59544e",
-      "#3d3534",
-      "#dcdcda"
-    ],
+    "highlights": ["#59544e", "#3d3534", "#dcdcda"],
     "primary": "#59544e",
     "secondary": "#3d3534",
     "accent": "#dcdcda"

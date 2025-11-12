@@ -2,10 +2,7 @@
   "id": 194,
   "name": "Wooper",
   "species": "Water Fish Pokémon",
-  "type": [
-    "Water",
-    "Ground"
-  ],
+  "type": ["Water", "Ground"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#62396a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#397bc5",
-      "#73bdff",
-      "#62396a"
-    ]
+    "highlights": ["#397bc5", "#73bdff", "#62396a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/194.png",
@@ -311,7 +304,7 @@
       "type": ""
     },
     {
-      "name": "Wooper paldea",
+      "name": "Paldean Wooper",
       "raw_name": "wooper-paldea",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10253/",
@@ -337,11 +330,7 @@
     "zh-Hans": "乌波"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d59ca4",
-      "#f6cdd5",
-      "#942908"
-    ],
+    "highlights": ["#d59ca4", "#f6cdd5", "#942908"],
     "primary": "#d59ca4",
     "secondary": "#f6cdd5",
     "accent": "#942908"

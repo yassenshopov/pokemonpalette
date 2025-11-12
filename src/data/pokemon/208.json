@@ -2,10 +2,7 @@
   "id": 208,
   "name": "Steelix",
   "species": "Iron Snake Pokémon",
-  "type": [
-    "Steel",
-    "Ground"
-  ],
+  "type": ["Steel", "Ground"],
   "typeDetails": [
     {
       "name": "Steel",
@@ -75,11 +72,7 @@
     "accent": "#bdcdc5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#4a628b",
-      "#7b94a4",
-      "#bdcdc5"
-    ]
+    "highlights": ["#4a628b", "#7b94a4", "#bdcdc5"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png",
@@ -301,7 +294,7 @@
       "type": ""
     },
     {
-      "name": "Steelix mega",
+      "name": "Mega Steelix",
       "raw_name": "steelix-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10072/",
@@ -332,11 +325,7 @@
     "zh-Hans": "大钢蛇"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#947b39",
-      "#cdb462",
-      "#eee67b"
-    ],
+    "highlights": ["#947b39", "#cdb462", "#eee67b"],
     "primary": "#947b39",
     "secondary": "#cdb462",
     "accent": "#eee67b"

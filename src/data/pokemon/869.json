@@ -2,9 +2,7 @@
   "id": 869,
   "name": "Alcremie",
   "species": "Cream Pokémon",
-  "type": [
-    "Fairy"
-  ],
+  "type": ["Fairy"],
   "typeDetails": [
     {
       "name": "Fairy",
@@ -52,11 +50,7 @@
     "accent": "#855459",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#fde4d0",
-      "#f28a95",
-      "#855459"
-    ]
+    "highlights": ["#fde4d0", "#f28a95", "#855459"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/869.png",
@@ -251,7 +245,7 @@
   "genderRate": 8,
   "forms": [
     {
-      "name": "Alcremie vanilla cream strawberry sweet",
+      "name": "Alcremie - Vanilla Cream Strawberry Sweet",
       "raw_name": "alcremie-vanilla-cream-strawberry-sweet",
       "form_name": "vanilla-cream-strawberry-sweet",
       "is_mega": false,
@@ -268,7 +262,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream strawberry sweet",
+      "name": "Alcremie - Ruby Cream Strawberry Sweet",
       "raw_name": "alcremie-ruby-cream-strawberry-sweet",
       "form_name": "ruby-cream-strawberry-sweet",
       "is_mega": false,
@@ -285,7 +279,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream strawberry sweet",
+      "name": "Alcremie - Matcha Cream Strawberry Sweet",
       "raw_name": "alcremie-matcha-cream-strawberry-sweet",
       "form_name": "matcha-cream-strawberry-sweet",
       "is_mega": false,
@@ -302,7 +296,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream strawberry sweet",
+      "name": "Alcremie - Mint Cream Strawberry Sweet",
       "raw_name": "alcremie-mint-cream-strawberry-sweet",
       "form_name": "mint-cream-strawberry-sweet",
       "is_mega": false,
@@ -319,7 +313,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream strawberry sweet",
+      "name": "Alcremie - Lemon Cream Strawberry Sweet",
       "raw_name": "alcremie-lemon-cream-strawberry-sweet",
       "form_name": "lemon-cream-strawberry-sweet",
       "is_mega": false,
@@ -336,7 +330,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream strawberry sweet",
+      "name": "Alcremie - Salted Cream Strawberry Sweet",
       "raw_name": "alcremie-salted-cream-strawberry-sweet",
       "form_name": "salted-cream-strawberry-sweet",
       "is_mega": false,
@@ -353,7 +347,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl strawberry sweet",
+      "name": "Alcremie - Ruby Swirl Strawberry Sweet",
       "raw_name": "alcremie-ruby-swirl-strawberry-sweet",
       "form_name": "ruby-swirl-strawberry-sweet",
       "is_mega": false,
@@ -370,7 +364,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl strawberry sweet",
+      "name": "Alcremie - Caramel Swirl Strawberry Sweet",
       "raw_name": "alcremie-caramel-swirl-strawberry-sweet",
       "form_name": "caramel-swirl-strawberry-sweet",
       "is_mega": false,
@@ -387,7 +381,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl strawberry sweet",
+      "name": "Alcremie - Rainbow Swirl Strawberry Sweet",
       "raw_name": "alcremie-rainbow-swirl-strawberry-sweet",
       "form_name": "rainbow-swirl-strawberry-sweet",
       "is_mega": false,
@@ -404,7 +398,7 @@
       }
     },
     {
-      "name": "Alcremie vanilla cream berry sweet",
+      "name": "Alcremie - Vanilla Cream Berry Sweet",
       "raw_name": "alcremie-vanilla-cream-berry-sweet",
       "form_name": "vanilla-cream-berry-sweet",
       "is_mega": false,
@@ -421,7 +415,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream berry sweet",
+      "name": "Alcremie - Ruby Cream Berry Sweet",
       "raw_name": "alcremie-ruby-cream-berry-sweet",
       "form_name": "ruby-cream-berry-sweet",
       "is_mega": false,
@@ -438,7 +432,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream berry sweet",
+      "name": "Alcremie - Matcha Cream Berry Sweet",
       "raw_name": "alcremie-matcha-cream-berry-sweet",
       "form_name": "matcha-cream-berry-sweet",
       "is_mega": false,
@@ -455,7 +449,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream berry sweet",
+      "name": "Alcremie - Mint Cream Berry Sweet",
       "raw_name": "alcremie-mint-cream-berry-sweet",
       "form_name": "mint-cream-berry-sweet",
       "is_mega": false,
@@ -472,7 +466,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream berry sweet",
+      "name": "Alcremie - Lemon Cream Berry Sweet",
       "raw_name": "alcremie-lemon-cream-berry-sweet",
       "form_name": "lemon-cream-berry-sweet",
       "is_mega": false,
@@ -489,7 +483,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream berry sweet",
+      "name": "Alcremie - Salted Cream Berry Sweet",
       "raw_name": "alcremie-salted-cream-berry-sweet",
       "form_name": "salted-cream-berry-sweet",
       "is_mega": false,
@@ -506,7 +500,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl berry sweet",
+      "name": "Alcremie - Ruby Swirl Berry Sweet",
       "raw_name": "alcremie-ruby-swirl-berry-sweet",
       "form_name": "ruby-swirl-berry-sweet",
       "is_mega": false,
@@ -523,7 +517,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl berry sweet",
+      "name": "Alcremie - Caramel Swirl Berry Sweet",
       "raw_name": "alcremie-caramel-swirl-berry-sweet",
       "form_name": "caramel-swirl-berry-sweet",
       "is_mega": false,
@@ -540,7 +534,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl berry sweet",
+      "name": "Alcremie - Rainbow Swirl Berry Sweet",
       "raw_name": "alcremie-rainbow-swirl-berry-sweet",
       "form_name": "rainbow-swirl-berry-sweet",
       "is_mega": false,
@@ -557,7 +551,7 @@
       }
     },
     {
-      "name": "Alcremie vanilla cream love sweet",
+      "name": "Alcremie - Vanilla Cream Love Sweet",
       "raw_name": "alcremie-vanilla-cream-love-sweet",
       "form_name": "vanilla-cream-love-sweet",
       "is_mega": false,
@@ -574,7 +568,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream love sweet",
+      "name": "Alcremie - Ruby Cream Love Sweet",
       "raw_name": "alcremie-ruby-cream-love-sweet",
       "form_name": "ruby-cream-love-sweet",
       "is_mega": false,
@@ -591,7 +585,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream love sweet",
+      "name": "Alcremie - Matcha Cream Love Sweet",
       "raw_name": "alcremie-matcha-cream-love-sweet",
       "form_name": "matcha-cream-love-sweet",
       "is_mega": false,
@@ -608,7 +602,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream love sweet",
+      "name": "Alcremie - Mint Cream Love Sweet",
       "raw_name": "alcremie-mint-cream-love-sweet",
       "form_name": "mint-cream-love-sweet",
       "is_mega": false,
@@ -625,7 +619,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream love sweet",
+      "name": "Alcremie - Lemon Cream Love Sweet",
       "raw_name": "alcremie-lemon-cream-love-sweet",
       "form_name": "lemon-cream-love-sweet",
       "is_mega": false,
@@ -642,7 +636,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream love sweet",
+      "name": "Alcremie - Salted Cream Love Sweet",
       "raw_name": "alcremie-salted-cream-love-sweet",
       "form_name": "salted-cream-love-sweet",
       "is_mega": false,
@@ -659,7 +653,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl love sweet",
+      "name": "Alcremie - Ruby Swirl Love Sweet",
       "raw_name": "alcremie-ruby-swirl-love-sweet",
       "form_name": "ruby-swirl-love-sweet",
       "is_mega": false,
@@ -676,7 +670,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl love sweet",
+      "name": "Alcremie - Caramel Swirl Love Sweet",
       "raw_name": "alcremie-caramel-swirl-love-sweet",
       "form_name": "caramel-swirl-love-sweet",
       "is_mega": false,
@@ -693,7 +687,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl love sweet",
+      "name": "Alcremie - Rainbow Swirl Love Sweet",
       "raw_name": "alcremie-rainbow-swirl-love-sweet",
       "form_name": "rainbow-swirl-love-sweet",
       "is_mega": false,
@@ -710,7 +704,7 @@
       }
     },
     {
-      "name": "Alcremie vanilla cream star sweet",
+      "name": "Alcremie - Vanilla Cream Star Sweet",
       "raw_name": "alcremie-vanilla-cream-star-sweet",
       "form_name": "vanilla-cream-star-sweet",
       "is_mega": false,
@@ -727,7 +721,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream star sweet",
+      "name": "Alcremie - Ruby Cream Star Sweet",
       "raw_name": "alcremie-ruby-cream-star-sweet",
       "form_name": "ruby-cream-star-sweet",
       "is_mega": false,
@@ -744,7 +738,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream star sweet",
+      "name": "Alcremie - Matcha Cream Star Sweet",
       "raw_name": "alcremie-matcha-cream-star-sweet",
       "form_name": "matcha-cream-star-sweet",
       "is_mega": false,
@@ -761,7 +755,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream star sweet",
+      "name": "Alcremie - Mint Cream Star Sweet",
       "raw_name": "alcremie-mint-cream-star-sweet",
       "form_name": "mint-cream-star-sweet",
       "is_mega": false,
@@ -778,7 +772,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream star sweet",
+      "name": "Alcremie - Lemon Cream Star Sweet",
       "raw_name": "alcremie-lemon-cream-star-sweet",
       "form_name": "lemon-cream-star-sweet",
       "is_mega": false,
@@ -795,7 +789,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream star sweet",
+      "name": "Alcremie - Salted Cream Star Sweet",
       "raw_name": "alcremie-salted-cream-star-sweet",
       "form_name": "salted-cream-star-sweet",
       "is_mega": false,
@@ -812,7 +806,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl star sweet",
+      "name": "Alcremie - Ruby Swirl Star Sweet",
       "raw_name": "alcremie-ruby-swirl-star-sweet",
       "form_name": "ruby-swirl-star-sweet",
       "is_mega": false,
@@ -829,7 +823,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl star sweet",
+      "name": "Alcremie - Caramel Swirl Star Sweet",
       "raw_name": "alcremie-caramel-swirl-star-sweet",
       "form_name": "caramel-swirl-star-sweet",
       "is_mega": false,
@@ -846,7 +840,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl star sweet",
+      "name": "Alcremie - Rainbow Swirl Star Sweet",
       "raw_name": "alcremie-rainbow-swirl-star-sweet",
       "form_name": "rainbow-swirl-star-sweet",
       "is_mega": false,
@@ -863,7 +857,7 @@
       }
     },
     {
-      "name": "Alcremie vanilla cream clover sweet",
+      "name": "Alcremie - Vanilla Cream Clover Sweet",
       "raw_name": "alcremie-vanilla-cream-clover-sweet",
       "form_name": "vanilla-cream-clover-sweet",
       "is_mega": false,
@@ -880,7 +874,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream clover sweet",
+      "name": "Alcremie - Ruby Cream Clover Sweet",
       "raw_name": "alcremie-ruby-cream-clover-sweet",
       "form_name": "ruby-cream-clover-sweet",
       "is_mega": false,
@@ -897,7 +891,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream clover sweet",
+      "name": "Alcremie - Matcha Cream Clover Sweet",
       "raw_name": "alcremie-matcha-cream-clover-sweet",
       "form_name": "matcha-cream-clover-sweet",
       "is_mega": false,
@@ -914,7 +908,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream clover sweet",
+      "name": "Alcremie - Mint Cream Clover Sweet",
       "raw_name": "alcremie-mint-cream-clover-sweet",
       "form_name": "mint-cream-clover-sweet",
       "is_mega": false,
@@ -931,7 +925,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream clover sweet",
+      "name": "Alcremie - Lemon Cream Clover Sweet",
       "raw_name": "alcremie-lemon-cream-clover-sweet",
       "form_name": "lemon-cream-clover-sweet",
       "is_mega": false,
@@ -948,7 +942,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream clover sweet",
+      "name": "Alcremie - Salted Cream Clover Sweet",
       "raw_name": "alcremie-salted-cream-clover-sweet",
       "form_name": "salted-cream-clover-sweet",
       "is_mega": false,
@@ -965,7 +959,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl clover sweet",
+      "name": "Alcremie - Ruby Swirl Clover Sweet",
       "raw_name": "alcremie-ruby-swirl-clover-sweet",
       "form_name": "ruby-swirl-clover-sweet",
       "is_mega": false,
@@ -982,7 +976,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl clover sweet",
+      "name": "Alcremie - Caramel Swirl Clover Sweet",
       "raw_name": "alcremie-caramel-swirl-clover-sweet",
       "form_name": "caramel-swirl-clover-sweet",
       "is_mega": false,
@@ -999,7 +993,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl clover sweet",
+      "name": "Alcremie - Rainbow Swirl Clover Sweet",
       "raw_name": "alcremie-rainbow-swirl-clover-sweet",
       "form_name": "rainbow-swirl-clover-sweet",
       "is_mega": false,
@@ -1016,7 +1010,7 @@
       }
     },
     {
-      "name": "Alcremie vanilla cream flower sweet",
+      "name": "Alcremie - Vanilla Cream Flower Sweet",
       "raw_name": "alcremie-vanilla-cream-flower-sweet",
       "form_name": "vanilla-cream-flower-sweet",
       "is_mega": false,
@@ -1033,7 +1027,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream flower sweet",
+      "name": "Alcremie - Ruby Cream Flower Sweet",
       "raw_name": "alcremie-ruby-cream-flower-sweet",
       "form_name": "ruby-cream-flower-sweet",
       "is_mega": false,
@@ -1050,7 +1044,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream flower sweet",
+      "name": "Alcremie - Matcha Cream Flower Sweet",
       "raw_name": "alcremie-matcha-cream-flower-sweet",
       "form_name": "matcha-cream-flower-sweet",
       "is_mega": false,
@@ -1067,7 +1061,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream flower sweet",
+      "name": "Alcremie - Mint Cream Flower Sweet",
       "raw_name": "alcremie-mint-cream-flower-sweet",
       "form_name": "mint-cream-flower-sweet",
       "is_mega": false,
@@ -1084,7 +1078,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream flower sweet",
+      "name": "Alcremie - Lemon Cream Flower Sweet",
       "raw_name": "alcremie-lemon-cream-flower-sweet",
       "form_name": "lemon-cream-flower-sweet",
       "is_mega": false,
@@ -1101,7 +1095,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream flower sweet",
+      "name": "Alcremie - Salted Cream Flower Sweet",
       "raw_name": "alcremie-salted-cream-flower-sweet",
       "form_name": "salted-cream-flower-sweet",
       "is_mega": false,
@@ -1118,7 +1112,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl flower sweet",
+      "name": "Alcremie - Ruby Swirl Flower Sweet",
       "raw_name": "alcremie-ruby-swirl-flower-sweet",
       "form_name": "ruby-swirl-flower-sweet",
       "is_mega": false,
@@ -1135,7 +1129,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl flower sweet",
+      "name": "Alcremie - Caramel Swirl Flower Sweet",
       "raw_name": "alcremie-caramel-swirl-flower-sweet",
       "form_name": "caramel-swirl-flower-sweet",
       "is_mega": false,
@@ -1152,7 +1146,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl flower sweet",
+      "name": "Alcremie - Rainbow Swirl Flower Sweet",
       "raw_name": "alcremie-rainbow-swirl-flower-sweet",
       "form_name": "rainbow-swirl-flower-sweet",
       "is_mega": false,
@@ -1169,7 +1163,7 @@
       }
     },
     {
-      "name": "Alcremie vanilla cream ribbon sweet",
+      "name": "Alcremie - Vanilla Cream Ribbon Sweet",
       "raw_name": "alcremie-vanilla-cream-ribbon-sweet",
       "form_name": "vanilla-cream-ribbon-sweet",
       "is_mega": false,
@@ -1186,7 +1180,7 @@
       }
     },
     {
-      "name": "Alcremie ruby cream ribbon sweet",
+      "name": "Alcremie - Ruby Cream Ribbon Sweet",
       "raw_name": "alcremie-ruby-cream-ribbon-sweet",
       "form_name": "ruby-cream-ribbon-sweet",
       "is_mega": false,
@@ -1203,7 +1197,7 @@
       }
     },
     {
-      "name": "Alcremie matcha cream ribbon sweet",
+      "name": "Alcremie - Matcha Cream Ribbon Sweet",
       "raw_name": "alcremie-matcha-cream-ribbon-sweet",
       "form_name": "matcha-cream-ribbon-sweet",
       "is_mega": false,
@@ -1220,7 +1214,7 @@
       }
     },
     {
-      "name": "Alcremie mint cream ribbon sweet",
+      "name": "Alcremie - Mint Cream Ribbon Sweet",
       "raw_name": "alcremie-mint-cream-ribbon-sweet",
       "form_name": "mint-cream-ribbon-sweet",
       "is_mega": false,
@@ -1237,7 +1231,7 @@
       }
     },
     {
-      "name": "Alcremie lemon cream ribbon sweet",
+      "name": "Alcremie - Lemon Cream Ribbon Sweet",
       "raw_name": "alcremie-lemon-cream-ribbon-sweet",
       "form_name": "lemon-cream-ribbon-sweet",
       "is_mega": false,
@@ -1254,7 +1248,7 @@
       }
     },
     {
-      "name": "Alcremie salted cream ribbon sweet",
+      "name": "Alcremie - Salted Cream Ribbon Sweet",
       "raw_name": "alcremie-salted-cream-ribbon-sweet",
       "form_name": "salted-cream-ribbon-sweet",
       "is_mega": false,
@@ -1271,7 +1265,7 @@
       }
     },
     {
-      "name": "Alcremie ruby swirl ribbon sweet",
+      "name": "Alcremie - Ruby Swirl Ribbon Sweet",
       "raw_name": "alcremie-ruby-swirl-ribbon-sweet",
       "form_name": "ruby-swirl-ribbon-sweet",
       "is_mega": false,
@@ -1288,7 +1282,7 @@
       }
     },
     {
-      "name": "Alcremie caramel swirl ribbon sweet",
+      "name": "Alcremie - Caramel Swirl Ribbon Sweet",
       "raw_name": "alcremie-caramel-swirl-ribbon-sweet",
       "form_name": "caramel-swirl-ribbon-sweet",
       "is_mega": false,
@@ -1305,7 +1299,7 @@
       }
     },
     {
-      "name": "Alcremie rainbow swirl ribbon sweet",
+      "name": "Alcremie - Rainbow Swirl Ribbon Sweet",
       "raw_name": "alcremie-rainbow-swirl-ribbon-sweet",
       "form_name": "rainbow-swirl-ribbon-sweet",
       "is_mega": false,
@@ -1331,7 +1325,7 @@
       "type": ""
     },
     {
-      "name": "Alcremie gmax",
+      "name": "G-Max Alcremie",
       "raw_name": "alcremie-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10223/",
@@ -1357,11 +1351,7 @@
     "zh-Hans": "霜奶仙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#989d98",
-      "#5e5f62",
-      "#4f514f"
-    ],
+    "highlights": ["#989d98", "#5e5f62", "#4f514f"],
     "primary": "#989d98",
     "secondary": "#5e5f62",
     "accent": "#4f514f"

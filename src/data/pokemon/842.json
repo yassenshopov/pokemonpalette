@@ -2,10 +2,7 @@
   "id": 842,
   "name": "Appletun",
   "species": "Apple Nectar Pokémon",
-  "type": [
-    "Grass",
-    "Dragon"
-  ],
+  "type": ["Grass", "Dragon"],
   "typeDetails": [
     {
       "name": "Grass",
@@ -63,11 +60,7 @@
     "accent": "#2c743e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#fcff86",
-      "#39a45f",
-      "#2c743e"
-    ]
+    "highlights": ["#fcff86", "#39a45f", "#2c743e"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/842.png",
@@ -309,7 +302,7 @@
       "type": ""
     },
     {
-      "name": "Appletun gmax",
+      "name": "G-Max Appletun",
       "raw_name": "appletun-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10217/",
@@ -335,11 +328,7 @@
     "zh-Hans": "丰蜜龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#fcff86",
-      "#39a45f",
-      "#2c743e"
-    ],
+    "highlights": ["#fcff86", "#39a45f", "#2c743e"],
     "primary": "#fcff86",
     "secondary": "#39a45f",
     "accent": "#2c743e"

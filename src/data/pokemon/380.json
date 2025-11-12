@@ -2,10 +2,7 @@
   "id": 380,
   "name": "Latias",
   "species": "Eon Pokémon",
-  "type": [
-    "Dragon",
-    "Psychic"
-  ],
+  "type": ["Dragon", "Psychic"],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -63,11 +60,7 @@
     "accent": "#ff6262",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#cdcdee",
-      "#bd4141",
-      "#ff6262"
-    ]
+    "highlights": ["#cdcdee", "#bd4141", "#ff6262"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/380.png",
@@ -279,7 +272,7 @@
       "type": ""
     },
     {
-      "name": "Latias mega",
+      "name": "Mega Latias",
       "raw_name": "latias-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10062/",
@@ -305,11 +298,7 @@
     "zh-Hans": "拉帝亚斯"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#cdcde6",
-      "#e68300",
-      "#ffde00"
-    ],
+    "highlights": ["#cdcde6", "#e68300", "#ffde00"],
     "primary": "#cdcde6",
     "secondary": "#e68300",
     "accent": "#ffde00"

@@ -2,10 +2,7 @@
   "id": 892,
   "name": "Urshifu-single-strike",
   "species": "Wushu Pokémon",
-  "type": [
-    "Fighting",
-    "Dark"
-  ],
+  "type": ["Fighting", "Dark"],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -51,11 +48,7 @@
     "accent": "#6b6574",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#8d8c8e",
-      "#605f4d",
-      "#6b6574"
-    ]
+    "highlights": ["#8d8c8e", "#605f4d", "#6b6574"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/892.png",
@@ -253,7 +246,7 @@
   "genderRate": 1,
   "forms": [
     {
-      "name": "Urshifu single strike",
+      "name": "Urshifu",
       "raw_name": "urshifu-single-strike",
       "form_name": "single-strike",
       "is_mega": false,
@@ -272,28 +265,28 @@
   ],
   "varieties": [
     {
-      "name": "Urshifu single strike",
+      "name": "Urshifu - Single Strike",
       "raw_name": "urshifu-single-strike",
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/892/",
       "type": ""
     },
     {
-      "name": "Urshifu rapid strike",
+      "name": "Urshifu - Rapid Strike",
       "raw_name": "urshifu-rapid-strike",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10191/",
       "type": ""
     },
     {
-      "name": "Urshifu single strike gmax",
+      "name": "G-Max Urshifu - Single Strike",
       "raw_name": "urshifu-single-strike-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10226/",
       "type": "Gigantamax"
     },
     {
-      "name": "Urshifu rapid strike gmax",
+      "name": "G-Max Urshifu - Rapid Strike",
       "raw_name": "urshifu-rapid-strike-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10227/",
@@ -319,11 +312,7 @@
     "zh-Hans": "武道熊师"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#8d8c8e",
-      "#605f4d",
-      "#6b6574"
-    ],
+    "highlights": ["#8d8c8e", "#605f4d", "#6b6574"],
     "primary": "#8d8c8e",
     "secondary": "#605f4d",
     "accent": "#6b6574"

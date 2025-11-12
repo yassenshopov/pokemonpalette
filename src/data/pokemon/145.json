@@ -2,10 +2,7 @@
   "id": 145,
   "name": "Zapdos",
   "species": "Electric Pokémon",
-  "type": [
-    "Electric",
-    "Flying"
-  ],
+  "type": ["Electric", "Flying"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -69,11 +66,7 @@
     "accent": "#523910",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#d5ac08",
-      "#ffd541",
-      "#523910"
-    ]
+    "highlights": ["#d5ac08", "#ffd541", "#523910"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/145.png",
@@ -285,7 +278,7 @@
       "type": ""
     },
     {
-      "name": "Zapdos galar",
+      "name": "Galarian Zapdos",
       "raw_name": "zapdos-galar",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10170/",
@@ -311,11 +304,7 @@
     "zh-Hans": "闪电鸟"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d59400",
-      "#ffc500",
-      "#732900"
-    ],
+    "highlights": ["#d59400", "#ffc500", "#732900"],
     "primary": "#d59400",
     "secondary": "#ffc500",
     "accent": "#732900"

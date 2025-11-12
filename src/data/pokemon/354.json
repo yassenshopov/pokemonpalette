@@ -2,9 +2,7 @@
   "id": 354,
   "name": "Banette",
   "species": "Marionette Pokémon",
-  "type": [
-    "Ghost"
-  ],
+  "type": ["Ghost"],
   "typeDetails": [
     {
       "name": "Ghost",
@@ -70,11 +68,7 @@
     "accent": "#9c9ca4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5a5262",
-      "#7b7b83",
-      "#9c9ca4"
-    ]
+    "highlights": ["#5a5262", "#7b7b83", "#9c9ca4"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/354.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Banette mega",
+      "name": "Mega Banette",
       "raw_name": "banette-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10056/",
@@ -327,11 +321,7 @@
     "zh-Hans": "诅咒娃娃"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#29627b",
-      "#4a839c",
-      "#73a4c5"
-    ],
+    "highlights": ["#29627b", "#4a839c", "#73a4c5"],
     "primary": "#29627b",
     "secondary": "#4a839c",
     "accent": "#73a4c5"

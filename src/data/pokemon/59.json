@@ -2,9 +2,7 @@
   "id": 59,
   "name": "Arcanine",
   "species": "Legendary Pokémon",
-  "type": [
-    "Fire"
-  ],
+  "type": ["Fire"],
   "typeDetails": [
     {
       "name": "Fire",
@@ -70,11 +68,7 @@
     "accent": "#c5525a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#d5a48b",
-      "#ffdeac",
-      "#c5525a"
-    ]
+    "highlights": ["#d5a48b", "#ffdeac", "#c5525a"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
@@ -296,7 +290,7 @@
       "type": ""
     },
     {
-      "name": "Arcanine hisui",
+      "name": "Hisuian Arcanine",
       "raw_name": "arcanine-hisui",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10230/",
@@ -327,11 +321,7 @@
     "zh-Hans": "风速狗"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#d5bd94",
-      "#f6e6bd",
-      "#b49c00"
-    ],
+    "highlights": ["#d5bd94", "#f6e6bd", "#b49c00"],
     "primary": "#d5bd94",
     "secondary": "#f6e6bd",
     "accent": "#b49c00"

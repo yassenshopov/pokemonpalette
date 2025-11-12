@@ -2,10 +2,7 @@
   "id": 74,
   "name": "Geodude",
   "species": "Rock Pokémon",
-  "type": [
-    "Rock",
-    "Ground"
-  ],
+  "type": ["Rock", "Ground"],
   "typeDetails": [
     {
       "name": "Rock",
@@ -75,11 +72,7 @@
     "accent": "#413931",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#b4b49c",
-      "#9c9483",
-      "#413931"
-    ]
+    "highlights": ["#b4b49c", "#9c9483", "#413931"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png",
@@ -310,7 +303,7 @@
       "type": ""
     },
     {
-      "name": "Geodude alola",
+      "name": "Alolan Geodude",
       "raw_name": "geodude-alola",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10109/",
@@ -341,11 +334,7 @@
     "zh-Hans": "小拳石"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#f6c508",
-      "#d59400",
-      "#9c4100"
-    ],
+    "highlights": ["#f6c508", "#d59400", "#9c4100"],
     "primary": "#f6c508",
     "secondary": "#d59400",
     "accent": "#9c4100"

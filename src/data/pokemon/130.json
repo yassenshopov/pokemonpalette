@@ -2,10 +2,7 @@
   "id": 130,
   "name": "Gyarados",
   "species": "Atrocious Pokémon",
-  "type": [
-    "Water",
-    "Flying"
-  ],
+  "type": ["Water", "Flying"],
   "typeDetails": [
     {
       "name": "Water",
@@ -69,11 +66,7 @@
     "accent": "#41b4ee",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#208bac",
-      "#181818",
-      "#41b4ee"
-    ]
+    "highlights": ["#208bac", "#181818", "#41b4ee"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
@@ -295,7 +288,7 @@
       "type": ""
     },
     {
-      "name": "Gyarados mega",
+      "name": "Mega Gyarados",
       "raw_name": "gyarados-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10041/",
@@ -321,11 +314,7 @@
     "zh-Hans": "暴鲤龙"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#bd1839",
-      "#181818",
-      "#e6414a"
-    ],
+    "highlights": ["#bd1839", "#181818", "#e6414a"],
     "primary": "#bd1839",
     "secondary": "#181818",
     "accent": "#e6414a"

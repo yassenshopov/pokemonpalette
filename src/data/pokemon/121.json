@@ -2,10 +2,7 @@
   "id": 121,
   "name": "Starmie",
   "species": "Mysterious Pokémon",
-  "type": [
-    "Water",
-    "Psychic"
-  ],
+  "type": ["Water", "Psychic"],
   "typeDetails": [
     {
       "name": "Water",
@@ -75,11 +72,7 @@
     "accent": "#313973",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#5a529c",
-      "#8b73bd",
-      "#313973"
-    ]
+    "highlights": ["#5a529c", "#8b73bd", "#313973"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png",
@@ -299,13 +292,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/121/",
       "type": ""
-    },
-    {
-      "name": "Starmie mega",
-      "raw_name": "starmie-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10280/",
-      "type": "Mega"
     }
   ],
   "heldItems": [
@@ -336,11 +322,7 @@
     "zh-Hans": "宝石海星"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#315a8b",
-      "#527bac",
-      "#20296a"
-    ],
+    "highlights": ["#315a8b", "#527bac", "#20296a"],
     "primary": "#315a8b",
     "secondary": "#527bac",
     "accent": "#20296a"

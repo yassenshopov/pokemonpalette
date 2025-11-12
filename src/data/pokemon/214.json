@@ -2,10 +2,7 @@
   "id": 214,
   "name": "Heracross",
   "species": "Single Horn Pokémon",
-  "type": [
-    "Bug",
-    "Fighting"
-  ],
+  "type": ["Bug", "Fighting"],
   "typeDetails": [
     {
       "name": "Bug",
@@ -75,11 +72,7 @@
     "accent": "#313962",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#6a94c5",
-      "#416294",
-      "#313962"
-    ]
+    "highlights": ["#6a94c5", "#416294", "#313962"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/214.png",
@@ -291,7 +284,7 @@
       "type": ""
     },
     {
-      "name": "Heracross mega",
+      "name": "Mega Heracross",
       "raw_name": "heracross-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10047/",
@@ -317,11 +310,7 @@
     "zh-Hans": "赫拉克罗斯"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#e683de",
-      "#b452c5",
-      "#8b2994"
-    ],
+    "highlights": ["#e683de", "#b452c5", "#8b2994"],
     "primary": "#e683de",
     "secondary": "#b452c5",
     "accent": "#8b2994"

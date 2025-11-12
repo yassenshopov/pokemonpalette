@@ -2,10 +2,7 @@
   "id": 94,
   "name": "Gengar",
   "species": "Shadow Pokémon",
-  "type": [
-    "Ghost",
-    "Poison"
-  ],
+  "type": ["Ghost", "Poison"],
   "typeDetails": [
     {
       "name": "Ghost",
@@ -63,11 +60,7 @@
     "accent": "#b48bbd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#9473b4",
-      "#5a4a9c",
-      "#b48bbd"
-    ]
+    "highlights": ["#9473b4", "#5a4a9c", "#b48bbd"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
@@ -298,14 +291,14 @@
       "type": ""
     },
     {
-      "name": "Gengar mega",
+      "name": "Mega Gengar",
       "raw_name": "gengar-mega",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10038/",
       "type": "Mega"
     },
     {
-      "name": "Gengar gmax",
+      "name": "G-Max Gengar",
       "raw_name": "gengar-gmax",
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10202/",
@@ -336,11 +329,7 @@
     "zh-Hans": "耿鬼"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#7b7b9c",
-      "#5a5a7b",
-      "#9494b4"
-    ],
+    "highlights": ["#7b7b9c", "#5a5a7b", "#9494b4"],
     "primary": "#7b7b9c",
     "secondary": "#5a5a7b",
     "accent": "#9494b4"

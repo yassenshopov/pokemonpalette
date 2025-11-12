@@ -2,9 +2,7 @@
   "id": 604,
   "name": "Eelektross",
   "species": "EleFish Pokémon",
-  "type": [
-    "Electric"
-  ],
+  "type": ["Electric"],
   "typeDetails": [
     {
       "name": "Electric",
@@ -58,11 +56,7 @@
     "accent": "#103141",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": [
-      "#206273",
-      "#101018",
-      "#103141"
-    ]
+    "highlights": ["#206273", "#101018", "#103141"]
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/604.png",
@@ -292,13 +286,6 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/604/",
       "type": ""
-    },
-    {
-      "name": "Eelektross mega",
-      "raw_name": "eelektross-mega",
-      "is_default": false,
-      "url": "https://pokeapi.co/api/v2/pokemon/10290/",
-      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -320,11 +307,7 @@
     "zh-Hans": "麻麻鳗鱼王"
   },
   "shinyColorPalette": {
-    "highlights": [
-      "#31a473",
-      "#181820",
-      "#107352"
-    ],
+    "highlights": ["#31a473", "#181820", "#107352"],
     "primary": "#31a473",
     "secondary": "#181820",
     "accent": "#107352"
