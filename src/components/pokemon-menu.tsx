@@ -129,6 +129,8 @@ interface PokemonMenuProps {
   isCollapsed?: boolean;
   onToggleCollapse?: (collapsed: boolean) => void;
   selectedPokemonId?: number | null;
+  onVarietySelect?: (varietyId: number | null) => void;
+  selectedVarietyId?: number | null;
 }
 
 export function PokemonMenu({
@@ -139,6 +141,8 @@ export function PokemonMenu({
   isCollapsed = false,
   onToggleCollapse,
   selectedPokemonId,
+  onVarietySelect,
+  selectedVarietyId: selectedVarietyIdProp,
 }: PokemonMenuProps) {
   const pokemonList = getAllPokemonMetadata();
   const [selectedPokemon, setSelectedPokemon] = useState<number | null>(
@@ -159,6 +163,9 @@ export function PokemonMenu({
   const [dexNumberInput, setDexNumberInput] = useState<string>(
     (selectedPokemonId || DEFAULT_POKEMON_ID).toString()
   );
+  const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(
+    selectedVarietyIdProp || null
+  );
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isUpdatingFromDebounceRef = useRef<boolean>(false);
@@ -172,8 +179,18 @@ export function PokemonMenu({
     ) {
       setSelectedPokemon(selectedPokemonId);
       setDexNumberInput(selectedPokemonId.toString());
+      // Reset variety selection when Pokemon changes
+      setSelectedVarietyId(null);
+      onVarietySelect?.(null);
     }
-  }, [selectedPokemonId, selectedPokemon]);
+  }, [selectedPokemonId, selectedPokemon, onVarietySelect]);
+
+  // Sync selectedVarietyId prop with internal state
+  useEffect(() => {
+    if (selectedVarietyIdProp !== undefined && selectedVarietyIdProp !== selectedVarietyId) {
+      setSelectedVarietyId(selectedVarietyIdProp);
+    }
+  }, [selectedVarietyIdProp, selectedVarietyId]);
 
   // Sync dexNumberInput with selectedPokemon when it changes externally
   // (but not when it changes from debounced user input)
@@ -208,12 +225,12 @@ export function PokemonMenu({
     }
   }, [selectedPokemon, onPokemonSelect]);
 
-  // Reset sprite image error when pokemon or shiny state changes
+  // Reset sprite image error when pokemon, shiny state, or variety changes
   useEffect(() => {
     setSpriteImageError(false);
-  }, [pokemonData?.id, isShiny]);
+  }, [pokemonData?.id, isShiny, selectedVarietyId]);
 
-  // Extract colors from sprite when pokemonData changes
+  // Extract colors from sprite when pokemonData, isShiny, or selectedVarietyId changes
   useEffect(() => {
     if (pokemonData) {
       const spriteUrl = getSpriteUrl(pokemonData, isShiny);
@@ -298,13 +315,16 @@ export function PokemonMenu({
           });
       }
     }
-  }, [pokemonData?.id, isShiny]); // Only depend on id and isShiny to avoid infinite loop
+  }, [pokemonData?.id, isShiny, selectedVarietyId]); // Include selectedVarietyId to re-extract colors when variety changes
 
   const handleSelect = (pokemonId: number) => {
     // Clear any pending debounce timer to prevent race conditions
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current);
     }
+    // Reset variety selection when Pokemon changes
+    setSelectedVarietyId(null);
+    onVarietySelect?.(null);
     setSelectedPokemon(pokemonId);
     onPokemonSelect?.(pokemonId);
   };
@@ -458,6 +478,12 @@ export function PokemonMenu({
 
   // Helper function to get sprite URL
   const getSpriteUrl = (pokemon: Pokemon, shiny: boolean): string | null => {
+    // If a variety is selected, use that variety's sprite
+    if (selectedVarietyId) {
+      const shinyPath = shiny ? "shiny/" : "";
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${shinyPath}${selectedVarietyId}.png`;
+    }
+    
     if (typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
       // Use the 2D sprite (front) for color extraction
       if (shiny && pokemon.artwork.shiny) {
@@ -533,6 +559,7 @@ export function PokemonMenu({
         <div className="flex flex-col items-center gap-2 mt-4 md:mt-8">
           <div className="relative w-[200px] h-[200px] md:w-[200px] md:h-[200px]">
             <Image
+              key={`${pokemonData.id}-${isShiny}-${selectedVarietyId || 'default'}`}
               src={
                 spriteImageError || !getSpriteUrl(pokemonData, isShiny)
                   ? MISSINGNO_IMAGE_URL
@@ -914,28 +941,54 @@ export function PokemonMenu({
                     const isSelected =
                       getPokemonMetadataByName(variety.name)?.id ===
                       selectedPokemon;
-                    const varietySprite = variety.url
+                    // Extract Pokemon ID from variety URL for sprite
+                    const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
+                    const varietySpriteId = urlMatch ? urlMatch[1] : null;
+                    const varietySprite = varietySpriteId
                       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                           isShiny ? "shiny/" : ""
-                        }${variety.url.split("/").slice(-2, -1)[0]}.png`
+                        }${varietySpriteId}.png`
                       : null;
 
                     return (
                       <button
                         key={index}
                         onClick={() => {
-                          const varietyMetadata = getPokemonMetadataByName(
-                            variety.name
-                          );
-                          if (varietyMetadata) {
-                            handleSelect(varietyMetadata.id);
+                          // If clicking the default form, reset variety selection
+                          if (variety.is_default) {
+                            setSelectedVarietyId(null);
+                            onVarietySelect?.(null);
+                            return;
+                          }
+                          
+                          // Extract Pokemon ID from variety URL (format: .../pokemon/10157/)
+                          const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
+                          const varietyId = urlMatch ? parseInt(urlMatch[1]) : null;
+                          
+                          if (varietyId) {
+                            setSelectedVarietyId(varietyId);
+                            onVarietySelect?.(varietyId);
+                          } else {
+                            // Fallback: if we can't extract ID, try to get metadata by name
+                            const varietyMetadata = getPokemonMetadataByName(
+                              variety.name
+                            );
+                            if (varietyMetadata) {
+                              handleSelect(varietyMetadata.id);
+                            }
                           }
                         }}
                         className={`flex items-center gap-3 p-3 rounded border transition-all cursor-pointer hover:opacity-80 ${
-                          isSelected ? "ring-2" : ""
+                          isSelected || (selectedVarietyId && variety.url && (() => {
+                            const match = variety.url.match(/\/(\d+)\/?$/);
+                            return match ? parseInt(match[1]) === selectedVarietyId : false;
+                          })()) ? "ring-2" : ""
                         }`}
                         style={
-                          isSelected
+                          isSelected || (selectedVarietyId && variety.url && (() => {
+                            const match = variety.url.match(/\/(\d+)\/?$/);
+                            return match ? parseInt(match[1]) === selectedVarietyId : false;
+                          })())
                             ? {
                                 borderColor:
                                   (extractedColors[0] ||

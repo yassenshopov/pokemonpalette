@@ -30,24 +30,44 @@ interface PokemonCardProps {
   pokemonId: number | null;
   isShiny?: boolean;
   colors?: string[];
+  varietyId?: number | null;
 }
 
 export function PokemonCard({
   pokemonId,
   isShiny = false,
   colors = [],
+  varietyId,
 }: PokemonCardProps) {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+  const [basePokemon, setBasePokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
   const [isPlayingCry, setIsPlayingCry] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Load base Pokemon data for description
   useEffect(() => {
     if (pokemonId) {
+      getPokemonById(pokemonId)
+        .then((data) => {
+          setBasePokemon(data);
+        })
+        .catch((error) => {
+          console.error("Failed to load base Pokemon:", error);
+        });
+    } else {
+      setBasePokemon(null);
+    }
+  }, [pokemonId]);
+
+  // Load Pokemon data - use varietyId if provided, otherwise use pokemonId
+  useEffect(() => {
+    const idToLoad = varietyId || pokemonId;
+    if (idToLoad) {
       setLoading(true);
       setIsVisible(false);
-      getPokemonById(pokemonId)
+      getPokemonById(idToLoad)
         .then((data) => {
           setPokemon(data);
           // Smooth fade in after data loads
@@ -56,8 +76,10 @@ export function PokemonCard({
         .finally(() => {
           setLoading(false);
         });
+    } else {
+      setPokemon(null);
     }
-  }, [pokemonId]);
+  }, [pokemonId, varietyId]);
 
   const playCry = () => {
     if (pokemon?.cries?.latest && !isPlayingCry) {
@@ -104,7 +126,20 @@ export function PokemonCard({
   };
 
   const getOfficialArtwork = (pokemon: Pokemon) => {
+    // If a variety is selected, construct the artwork URL from the variety ID
+    if (varietyId) {
+      const shinyPath = isShiny ? "/shiny" : "";
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${varietyId}.png`;
+    }
+    
+    // Otherwise, use the Pokemon's artwork with shiny support
     if (typeof pokemon.artwork === "object" && "official" in pokemon.artwork) {
+      if (isShiny) {
+        return pokemon.artwork.official.replace(
+          "/other/official-artwork/",
+          "/other/official-artwork/shiny/"
+        );
+      }
       return pokemon.artwork.official;
     }
     return null;
@@ -285,7 +320,7 @@ export function PokemonCard({
                   Pokédex Entry
                 </h3>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {pokemon.description}
+                  {(basePokemon?.description || pokemon?.description) || "No description available."}
                 </p>
               </div>
 

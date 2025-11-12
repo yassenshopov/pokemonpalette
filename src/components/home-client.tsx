@@ -18,6 +18,7 @@ export function HomeClient() {
   const [currentImageSrc, setCurrentImageSrc] = useState<string | null>(null);
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
   const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
+  const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(null);
 
   // Handle loading a saved palette
   const handlePaletteLoad = (palette: {
@@ -28,6 +29,7 @@ export function HomeClient() {
     setSelectedPokemonId(palette.pokemonId);
     setIsShiny(palette.isShiny);
     setPokemonColors(palette.colors);
+    setSelectedVarietyId(null); // Reset variety when loading a palette
   };
 
   // Load Pokemon menu collapsed state from localStorage on mount
@@ -62,6 +64,8 @@ export function HomeClient() {
             isCollapsed={isPokemonMenuCollapsed}
             onToggleCollapse={setIsPokemonMenuCollapsed}
             selectedPokemonId={selectedPokemonId}
+            onVarietySelect={setSelectedVarietyId}
+            selectedVarietyId={selectedVarietyId}
           />
           {/* Separator line - horizontal on mobile, vertical on desktop */}
           {!isPokemonMenuCollapsed && (
@@ -81,6 +85,7 @@ export function HomeClient() {
             onImageSrcChange={setCurrentImageSrc}
             colors={pokemonColors}
             onPaletteLoad={handlePaletteLoad}
+            varietyId={selectedVarietyId}
           />
           {pokemonColors.length > 0 && (
             <>
@@ -89,6 +94,7 @@ export function HomeClient() {
                 pokemonId={selectedPokemonId}
                 isShiny={isShiny}
                 colors={pokemonColors}
+                varietyId={selectedVarietyId}
               />
               <ColorShowcase
                 primaryColor={pokemonColors[0]}
