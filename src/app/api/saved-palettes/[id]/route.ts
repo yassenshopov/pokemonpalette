@@ -19,13 +19,16 @@ export async function DELETE(
 ) {
   try {
     let userId: string | null = null;
-    
+
     try {
       const authResult = await auth();
       userId = authResult.userId;
     } catch (authError) {
       console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
+      return NextResponse.json(
+        { error: "Authentication service unavailable" },
+        { status: 503 }
+      );
     }
 
     if (!userId) {
@@ -49,10 +52,7 @@ export async function DELETE(
       .single();
 
     if (fetchError || !palette) {
-      return NextResponse.json(
-        { error: "Palette not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Palette not found" }, { status: 404 });
     }
 
     if (palette.user_id !== userId) {
@@ -80,7 +80,10 @@ export async function DELETE(
       message: "Palette deleted successfully",
     });
   } catch (error) {
-    console.error("Unexpected error in DELETE /api/saved-palettes/[id]:", error);
+    console.error(
+      "Unexpected error in DELETE /api/saved-palettes/[id]:",
+      error
+    );
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
