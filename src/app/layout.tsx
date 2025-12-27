@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ColorblindProvider } from "@/components/colorblind-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { StructuredData } from "@/components/structured-data";
 
@@ -162,6 +163,7 @@ export default function RootLayout({
           <ColorblindProvider>
             {content}
             <Analytics />
+            <SpeedInsights />
             <Toaster position="top-center" />
           </ColorblindProvider>
         </ThemeProvider>
