@@ -98,21 +98,21 @@ export function LegendsZABanner({
       }}
     >
       <div className="px-4 flex items-center justify-between gap-4">
-        <div className="flex-1 text-sm font-heading">
-          <span className="font-semibold">New!</span>
-          {" "}
-          <span className="opacity-90">Mega evolutions from Pokémon Legends Z-A and the DLCs are now available!</span>
-        </div>
         <Button
           variant="ghost"
           size="icon"
-          className="h-6 w-6 flex-shrink-0 hover:opacity-70"
+          className="h-6 w-6 flex-shrink-0 hover:opacity-70 order-first md:order-last"
           style={{ color: textColor }}
           onClick={handleDismiss}
           aria-label="Dismiss banner"
         >
           <X className="h-4 w-4" />
         </Button>
+        <div className="flex-1 text-sm font-heading order-last md:order-first">
+          <span className="font-semibold">New!</span>
+          {" "}
+          <span className="opacity-90">Mega evolutions from Pokémon Legends Z-A and the DLCs are now available!</span>
+        </div>
       </div>
     </div>
   );
