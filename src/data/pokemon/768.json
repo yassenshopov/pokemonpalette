@@ -287,6 +287,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/768/",
       "type": ""
+    },
+    {
+      "name": "Mega Golisopod",
+      "raw_name": "golisopod-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10316/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

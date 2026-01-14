@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/687/",
       "type": ""
+    },
+    {
+      "name": "Mega Malamar",
+      "raw_name": "malamar-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10297/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

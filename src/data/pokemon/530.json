@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/530/",
       "type": ""
+    },
+    {
+      "name": "Mega Excadrill",
+      "raw_name": "excadrill-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10287/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

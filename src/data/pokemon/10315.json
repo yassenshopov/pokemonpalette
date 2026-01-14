@@ -1,0 +1,79 @@
+{
+  "id": 10315,
+  "name": "Crabominable-mega",
+  "species": "Pokémon",
+  "type": [
+    "Fighting",
+    "Ice"
+  ],
+  "typeDetails": [
+    {
+      "name": "Fighting",
+      "slot": 1
+    },
+    {
+      "name": "Ice",
+      "slot": 2
+    }
+  ],
+  "height": 2.6,
+  "weight": 252.8,
+  "abilities": [],
+  "baseStats": {
+    "hp": 97,
+    "attack": 157,
+    "defense": 122,
+    "specialAttack": 62,
+    "specialDefense": 107,
+    "speed": 33
+  },
+  "description": "",
+  "flavorTexts": [],
+  "colorPalette": {
+    "primary": "#C03028",
+    "secondary": "#A8A878",
+    "accent": "#F8D030",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#C03028",
+      "#A8A878",
+      "#F8D030"
+    ]
+  },
+  "artwork": {
+    "official": "/pokemon/10315.png",
+    "front": null,
+    "back": null,
+    "shiny": null,
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": {
+    "stage": 1,
+    "generation": 1
+  },
+  "moves": [],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": null,
+  "order": -1,
+  "isDefault": false,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [],
+  "varieties": [],
+  "heldItems": [],
+  "cries": {
+    "latest": null,
+    "legacy": null
+  }
+}

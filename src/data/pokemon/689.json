@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/689/",
       "type": ""
+    },
+    {
+      "name": "Mega Barbaracle",
+      "raw_name": "barbaracle-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10298/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

@@ -291,6 +291,13 @@
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10120/",
       "type": ""
+    },
+    {
+      "name": "Mega Zygarde",
+      "raw_name": "zygarde-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10301/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

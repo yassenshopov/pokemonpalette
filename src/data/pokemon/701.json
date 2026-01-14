@@ -289,6 +289,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/701/",
       "type": ""
+    },
+    {
+      "name": "Mega Hawlucha",
+      "raw_name": "hawlucha-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10300/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

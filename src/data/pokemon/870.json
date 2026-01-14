@@ -266,6 +266,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/870/",
       "type": ""
+    },
+    {
+      "name": "Mega Falinks",
+      "raw_name": "mega-falinks",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10303/",
+      "type": ""
     }
   ],
   "heldItems": [],

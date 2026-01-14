@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/560/",
       "type": ""
+    },
+    {
+      "name": "Mega Scrafty",
+      "raw_name": "scrafty-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10289/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

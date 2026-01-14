@@ -289,6 +289,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/227/",
       "type": ""
+    },
+    {
+      "name": "Mega Skarmory",
+      "raw_name": "skarmory-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10284/",
+      "type": ""
     }
   ],
   "heldItems": [

@@ -281,6 +281,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/358/",
       "type": ""
+    },
+    {
+      "name": "Mega Chimecho",
+      "raw_name": "mega-chimecho",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10306/",
+      "type": ""
     }
   ],
   "heldItems": [

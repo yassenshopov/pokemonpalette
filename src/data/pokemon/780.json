@@ -289,6 +289,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/780/",
       "type": ""
+    },
+    {
+      "name": "Mega Drampa",
+      "raw_name": "drampa-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10302/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

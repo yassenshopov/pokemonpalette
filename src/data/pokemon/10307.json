@@ -1,0 +1,79 @@
+{
+  "id": 10307,
+  "name": "Absol-mega-z",
+  "species": "Pokémon",
+  "type": [
+    "Dark",
+    "Ghost"
+  ],
+  "typeDetails": [
+    {
+      "name": "Dark",
+      "slot": 1
+    },
+    {
+      "name": "Ghost",
+      "slot": 2
+    }
+  ],
+  "height": 1.2,
+  "weight": 49.0,
+  "abilities": [],
+  "baseStats": {
+    "hp": 65,
+    "attack": 154,
+    "defense": 60,
+    "specialAttack": 75,
+    "specialDefense": 60,
+    "speed": 151
+  },
+  "description": "",
+  "flavorTexts": [],
+  "colorPalette": {
+    "primary": "#705848",
+    "secondary": "#A040A0",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#705848",
+      "#A040A0",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "/pokemon/10307.png",
+    "front": null,
+    "back": null,
+    "shiny": null,
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": {
+    "stage": 1,
+    "generation": 1
+  },
+  "moves": [],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": null,
+  "order": -1,
+  "isDefault": false,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [],
+  "varieties": [],
+  "heldItems": [],
+  "cries": {
+    "latest": null,
+    "legacy": null
+  }
+}

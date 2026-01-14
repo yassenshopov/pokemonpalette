@@ -1,4 +1,4 @@
-{
+  {
   "id": 740,
   "name": "Crabominable",
   "species": "Woolly Crab Pokémon",
@@ -294,6 +294,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/740/",
       "type": ""
+    },
+    {
+      "name": "Mega Crabominable",
+      "raw_name": "crabominable-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10315/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

@@ -303,6 +303,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/36/",
       "type": ""
+    },
+    {
+      "name": "Mega Clefable",
+      "raw_name": "clefable-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10278/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

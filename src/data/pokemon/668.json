@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/668/",
       "type": ""
+    },
+    {
+      "name": "Mega Pyroar",
+      "raw_name": "pyroar-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10295/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

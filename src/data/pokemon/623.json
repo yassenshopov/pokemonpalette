@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/623/",
       "type": ""
+    },
+    {
+      "name": "Mega Golurk",
+      "raw_name": "golurk-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10313/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

@@ -301,6 +301,13 @@
       "type": ""
     },
     {
+      "name": "Mega Greninja",
+      "raw_name": "greninja-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10294/",
+      "type": "Mega"
+    },
+    {
       "name": "Battle Bond Greninja",
       "raw_name": "greninja-battle-bond",
       "is_default": false,

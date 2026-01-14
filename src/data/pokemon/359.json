@@ -291,6 +291,13 @@
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10057/",
       "type": "Mega"
+    },
+    {
+      "name": "Mega Absol Z",
+      "raw_name": "absol-mega-z",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10307/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

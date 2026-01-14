@@ -177,6 +177,9 @@ export function PokemonMenu({
   const [selectedFormName, setSelectedFormName] = useState<string | null>(
     selectedFormNameProp || null
   );
+  const [isEvolutionExpanded, setIsEvolutionExpanded] = useState(true);
+  const [isFormsExpanded, setIsFormsExpanded] = useState(true);
+  const [isVarietiesExpanded, setIsVarietiesExpanded] = useState(true);
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isUpdatingFromDebounceRef = useRef<boolean>(false);
@@ -985,18 +988,30 @@ export function PokemonMenu({
             {pokemonData.evolution &&
               Array.isArray(pokemonData.evolution) &&
               pokemonData.evolution.length > 0 && (
-                <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
+                <div className="px-1 md:px-2">
                   <Separator className="mb-2 md:mb-3" />
-                  <h3 className="text-sm font-semibold mb-2 md:mb-3">
-                    Evolution Chain
-                  </h3>
-                  <EvolutionChain
-                    pokemonData={pokemonData}
-                    selectedPokemon={selectedPokemon}
-                    isShiny={isShiny}
-                    extractedColors={extractedColors}
-                    onPokemonSelect={handleSelect}
-                  />
+                  <button
+                    onClick={() => setIsEvolutionExpanded(!isEvolutionExpanded)}
+                    className="flex items-center justify-between w-full mb-2 md:mb-3 cursor-pointer hover:opacity-80 transition-opacity"
+                  >
+                    <h3 className="text-sm font-semibold">Evolution Chain</h3>
+                    {isEvolutionExpanded ? (
+                      <ChevronDown className="w-4 h-4" />
+                    ) : (
+                      <ChevronRight className="w-4 h-4" />
+                    )}
+                  </button>
+                  {isEvolutionExpanded && (
+                    <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto">
+                      <EvolutionChain
+                        pokemonData={pokemonData}
+                        selectedPokemon={selectedPokemon}
+                        isShiny={isShiny}
+                        extractedColors={extractedColors}
+                        onPokemonSelect={handleSelect}
+                      />
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -1020,11 +1035,23 @@ export function PokemonMenu({
                 }
 
                 return (
-                  <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
+                  <div className="px-1 md:px-2">
                     <Separator className="mb-2 md:mb-3" />
-                    <h3 className="text-sm font-semibold mb-2">Forms</h3>
-                    <div className="flex flex-col gap-2">
-                      {pokemonData.forms.map((form, index) => {
+                    <button
+                      onClick={() => setIsFormsExpanded(!isFormsExpanded)}
+                      className="flex items-center justify-between w-full mb-2 cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                      <h3 className="text-sm font-semibold">Forms</h3>
+                      {isFormsExpanded ? (
+                        <ChevronDown className="w-4 h-4" />
+                      ) : (
+                        <ChevronRight className="w-4 h-4" />
+                      )}
+                    </button>
+                    {isFormsExpanded && (
+                      <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto">
+                        <div className="flex flex-col gap-2">
+                          {pokemonData.forms.map((form, index) => {
                         const formData = isFormObject(form) ? form : null;
                         if (!formData) return null;
 
@@ -1126,20 +1153,34 @@ export function PokemonMenu({
                               </div>
                             </div>
                           </button>
-                        );
-                      })}
-                    </div>
+                          );
+                        })}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })()}
 
             {/* Varieties */}
             {pokemonData.varieties && pokemonData.varieties.length > 1 && (
-              <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto px-1 md:px-2">
+              <div className="px-1 md:px-2">
                 <Separator className="mb-2 md:mb-3" />
-                <h3 className="text-sm font-semibold mb-2">Varieties</h3>
-                <div className="flex flex-col gap-2">
-                  {pokemonData.varieties.map((variety, index) => {
+                <button
+                  onClick={() => setIsVarietiesExpanded(!isVarietiesExpanded)}
+                  className="flex items-center justify-between w-full mb-2 cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <h3 className="text-sm font-semibold">Varieties</h3>
+                  {isVarietiesExpanded ? (
+                    <ChevronDown className="w-4 h-4" />
+                  ) : (
+                    <ChevronRight className="w-4 h-4" />
+                  )}
+                </button>
+                {isVarietiesExpanded && (
+                  <div className="max-h-[300px] md:max-h-[450px] overflow-y-auto">
+                    <div className="flex flex-col gap-2">
+                      {pokemonData.varieties.map((variety, index) => {
                     const isSelected =
                       getPokemonMetadataByName(variety.name)?.id ===
                       selectedPokemon;
@@ -1239,9 +1280,11 @@ export function PokemonMenu({
                           )}
                         </div>
                       </button>
-                    );
-                  })}
-                </div>
+                      );
+                    })}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </TabsContent>

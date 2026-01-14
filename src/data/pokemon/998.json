@@ -291,6 +291,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/998/",
       "type": ""
+    },
+    {
+      "name": "Mega Baxcalibur",
+      "raw_name": "baxcalibur-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10325/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

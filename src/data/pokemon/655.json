@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/655/",
       "type": ""
+    },  
+    {
+      "name": "Mega Delphox",
+      "raw_name": "delphox-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10293/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

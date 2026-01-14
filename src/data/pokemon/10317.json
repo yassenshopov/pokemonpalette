@@ -1,0 +1,79 @@
+{
+  "id": 10317,
+  "name": "Magearna-mega",
+  "species": "Pokémon",
+  "type": [
+    "Steel",
+    "Fairy"
+  ],
+  "typeDetails": [
+    {
+      "name": "Steel",
+      "slot": 1
+    },
+    {
+      "name": "Fairy",
+      "slot": 2
+    }
+  ],
+  "height": 1.3,
+  "weight": 248.1,
+  "abilities": [],
+  "baseStats": {
+    "hp": 80,
+    "attack": 125,
+    "defense": 115,
+    "specialAttack": 170,
+    "specialDefense": 115,
+    "speed": 95
+  },
+  "description": "",
+  "flavorTexts": [],
+  "colorPalette": {
+    "primary": "#B8B8D0",
+    "secondary": "#A8A878",
+    "accent": "#F8F8F8",
+    "background": "#F8F8F8",
+    "text": "#2C2C2C",
+    "highlights": [
+      "#B8B8D0",
+      "#A8A878",
+      "#F8F8F8"
+    ]
+  },
+  "artwork": {
+    "official": "/pokemon/10317.png",
+    "front": null,
+    "back": null,
+    "shiny": null,
+    "back_shiny": null,
+    "front_female": null,
+    "back_female": null,
+    "front_shiny_female": null,
+    "back_shiny_female": null
+  },
+  "evolution": {
+    "stage": 1,
+    "generation": 1
+  },
+  "moves": [],
+  "habitat": "Unknown",
+  "generation": 1,
+  "rarity": "Common",
+  "baseExperience": null,
+  "order": -1,
+  "isDefault": false,
+  "captureRate": 45,
+  "baseHappiness": 70,
+  "growthRate": "medium",
+  "hatchCounter": 20,
+  "hasGenderDifferences": false,
+  "genderRate": -1,
+  "forms": [],
+  "varieties": [],
+  "heldItems": [],
+  "cries": {
+    "latest": null,
+    "legacy": null
+  }
+}

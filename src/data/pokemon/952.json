@@ -287,6 +287,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/952/",
       "type": ""
+    },
+    {
+      "name": "Mega Scovillain",
+      "raw_name": "scovillain-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10320/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

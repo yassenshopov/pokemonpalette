@@ -301,6 +301,13 @@
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10025/",
       "type": ""
+    },
+    {
+      "name": "Mega Meowstic",
+      "raw_name": "meowstic-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10314/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

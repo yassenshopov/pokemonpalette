@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/121/",
       "type": ""
+    },
+    {
+      "name": "Mega Starmie",
+      "raw_name": "starmie-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10280/",
+      "type": "Mega"
     }
   ],
   "heldItems": [

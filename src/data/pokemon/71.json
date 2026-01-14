@@ -303,6 +303,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/71/",
       "type": ""
+    },
+    {
+      "name": "Victreebel-mega",
+      "raw_name": "victreebel-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10279/",
+      "type": ""
     }
   ],
   "heldItems": [],

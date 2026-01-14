@@ -283,6 +283,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/485/",
       "type": ""
+    },
+    {
+      "name": "Mega Heatran",
+      "raw_name": "heatran-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10311/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

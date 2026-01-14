@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/691/",
       "type": ""
+    },
+    {
+      "name": "Mega Dragalge",
+      "raw_name": "dragalge-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10299/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

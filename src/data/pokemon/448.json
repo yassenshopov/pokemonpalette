@@ -305,6 +305,13 @@
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10059/",
       "type": "Mega"
+    },
+    {
+      "name": "Mega Lucario Z",
+      "raw_name": "lucario-mega-z",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10310/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

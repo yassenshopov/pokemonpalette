@@ -281,6 +281,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/970/",
       "type": ""
+    },
+    {
+      "name": "Mega Glimmora",
+      "raw_name": "glimmora-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10321/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

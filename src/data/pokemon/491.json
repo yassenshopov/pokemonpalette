@@ -272,6 +272,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/491/",
       "type": ""
+    },
+    {
+      "name": "Mega Darkrai",
+      "raw_name": "mega-darkrai",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10312/",
+      "type": ""
     }
   ],
   "heldItems": [],

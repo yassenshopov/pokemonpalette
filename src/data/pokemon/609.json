@@ -309,6 +309,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/609/",
       "type": ""
+    },
+    {
+      "name": "Mega Chandelure",
+      "raw_name": "chandelure-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10291/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

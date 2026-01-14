@@ -285,6 +285,13 @@
       "is_default": false,
       "url": "https://pokeapi.co/api/v2/pokemon/10259/",
       "type": ""
+    },
+    {
+      "name": "Mega Tatsugiri",
+      "raw_name": "tatsugiri-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10322/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],

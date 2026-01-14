@@ -299,6 +299,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/652/",
       "type": ""
+    },
+    {
+      "name": "Mega Chesnaught",
+      "raw_name": "chesnaught-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10292/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],
