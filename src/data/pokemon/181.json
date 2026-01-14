@@ -2,7 +2,9 @@
   "id": 181,
   "name": "Ampharos",
   "species": "Light Pokémon",
-  "type": ["Electric"],
+  "type": [
+    "Electric"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -62,14 +64,18 @@
     "accent": "#ffc510",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ffffff", "#ffee4a", "#ffc510"]
+    "highlights": [
+      "#ffffff",
+      "#ffee4a",
+      "#ffc510"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/181.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/181.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/181.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/181.png",
+    "official": "/pokemon/181.png",
+    "front": "/pokemon/sprites/181.png",
+    "back": "/pokemon/sprites/back/181.png",
+    "shiny": "/pokemon/sprites/shiny/181.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/181.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -320,7 +326,11 @@
     "zh-Hans": "电龙"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffffff", "#ffc5ee", "#d5a4c5"],
+    "highlights": [
+      "#ffffff",
+      "#ffc5ee",
+      "#d5a4c5"
+    ],
     "primary": "#ffffff",
     "secondary": "#ffc5ee",
     "accent": "#d5a4c5"

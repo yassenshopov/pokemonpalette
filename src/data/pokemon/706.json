@@ -2,7 +2,9 @@
   "id": 706,
   "name": "Goodra",
   "species": "Dragon Pokémon",
-  "type": ["Dragon"],
+  "type": [
+    "Dragon"
+  ],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -68,13 +70,17 @@
     "accent": "#998a99",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e6d4e7", "#b791f0", "#998a99"]
+    "highlights": [
+      "#e6d4e7",
+      "#b791f0",
+      "#998a99"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/706.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png",
+    "official": "/pokemon/706.png",
+    "front": "/pokemon/sprites/706.png",
     "back": null,
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/706.png",
+    "shiny": "/pokemon/sprites/shiny/706.png",
     "back_shiny": null,
     "front_female": null,
     "back_female": null,
@@ -326,7 +332,11 @@
     "zh-Hans": "黏美龙"
   },
   "shinyColorPalette": {
-    "highlights": ["#f6f6af", "#ffb399", "#a6a66c"],
+    "highlights": [
+      "#f6f6af",
+      "#ffb399",
+      "#a6a66c"
+    ],
     "primary": "#f6f6af",
     "secondary": "#ffb399",
     "accent": "#a6a66c"

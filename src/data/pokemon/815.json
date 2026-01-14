@@ -2,7 +2,9 @@
   "id": 815,
   "name": "Cinderace",
   "species": "Striker Pokémon",
-  "type": ["Fire"],
+  "type": [
+    "Fire"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -50,14 +52,18 @@
     "accent": "#004194",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#f8f8f8", "#de481d", "#004194"]
+    "highlights": [
+      "#f8f8f8",
+      "#de481d",
+      "#004194"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/815.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/815.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/815.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/815.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/815.png",
+    "official": "/pokemon/815.png",
+    "front": "/pokemon/sprites/815.png",
+    "back": "/pokemon/sprites/back/815.png",
+    "shiny": "/pokemon/sprites/shiny/815.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/815.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -308,7 +314,11 @@
     "zh-Hans": "闪焰王牌"
   },
   "shinyColorPalette": {
-    "highlights": ["#b3baaf", "#e47713", "#fcfcfc"],
+    "highlights": [
+      "#b3baaf",
+      "#e47713",
+      "#fcfcfc"
+    ],
     "primary": "#b3baaf",
     "secondary": "#e47713",
     "accent": "#fcfcfc"

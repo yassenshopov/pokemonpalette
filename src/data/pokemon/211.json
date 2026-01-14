@@ -2,7 +2,10 @@
   "id": 211,
   "name": "Qwilfish",
   "species": "Balloon Pokémon",
-  "type": ["Water", "Poison"],
+  "type": [
+    "Water",
+    "Poison"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -72,14 +75,18 @@
     "accent": "#dede94",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#a4ac6a", "#418394", "#dede94"]
+    "highlights": [
+      "#a4ac6a",
+      "#418394",
+      "#dede94"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/211.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/211.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/211.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/211.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/211.png",
+    "official": "/pokemon/211.png",
+    "front": "/pokemon/sprites/211.png",
+    "back": "/pokemon/sprites/back/211.png",
+    "shiny": "/pokemon/sprites/shiny/211.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/211.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -324,7 +331,11 @@
     "zh-Hans": "千针鱼"
   },
   "shinyColorPalette": {
-    "highlights": ["#dea4e6", "#cd6abd", "#f6cdff"],
+    "highlights": [
+      "#dea4e6",
+      "#cd6abd",
+      "#f6cdff"
+    ],
     "primary": "#dea4e6",
     "secondary": "#cd6abd",
     "accent": "#f6cdff"

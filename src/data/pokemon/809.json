@@ -2,7 +2,9 @@
   "id": 809,
   "name": "Melmetal",
   "species": "Hex Nut Pokémon",
-  "type": ["Steel"],
+  "type": [
+    "Steel"
+  ],
   "typeDetails": [
     {
       "name": "Steel",
@@ -52,14 +54,18 @@
     "accent": "#dcdcda",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#59544e", "#3d3534", "#dcdcda"]
+    "highlights": [
+      "#59544e",
+      "#3d3534",
+      "#dcdcda"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/809.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/809.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/809.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/809.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/809.png",
+    "official": "/pokemon/809.png",
+    "front": "/pokemon/sprites/809.png",
+    "back": "/pokemon/sprites/back/809.png",
+    "shiny": "/pokemon/sprites/shiny/809.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/809.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -290,7 +296,11 @@
     "zh-Hans": "美录梅塔"
   },
   "shinyColorPalette": {
-    "highlights": ["#59544e", "#3d3534", "#dcdcda"],
+    "highlights": [
+      "#59544e",
+      "#3d3534",
+      "#dcdcda"
+    ],
     "primary": "#59544e",
     "secondary": "#3d3534",
     "accent": "#dcdcda"

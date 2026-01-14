@@ -2,7 +2,9 @@
   "id": 150,
   "name": "Mewtwo",
   "species": "Genetic Pokémon",
-  "type": ["Psychic"],
+  "type": [
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -62,14 +64,18 @@
     "accent": "#6a319c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ded5e6", "#837b9c", "#6a319c"]
+    "highlights": [
+      "#ded5e6",
+      "#837b9c",
+      "#6a319c"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/150.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/150.png",
+    "official": "/pokemon/150.png",
+    "front": "/pokemon/sprites/150.png",
+    "back": "/pokemon/sprites/back/150.png",
+    "shiny": "/pokemon/sprites/shiny/150.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/150.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -307,7 +313,11 @@
     "zh-Hans": "超梦"
   },
   "shinyColorPalette": {
-    "highlights": ["#dedede", "#8b8b8b", "#529c00"],
+    "highlights": [
+      "#dedede",
+      "#8b8b8b",
+      "#529c00"
+    ],
     "primary": "#dedede",
     "secondary": "#8b8b8b",
     "accent": "#529c00"

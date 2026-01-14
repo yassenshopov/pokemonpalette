@@ -2,7 +2,9 @@
   "id": 503,
   "name": "Samurott",
   "species": "Formidable Pokémon",
-  "type": ["Water"],
+  "type": [
+    "Water"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -62,14 +64,18 @@
     "accent": "#203962",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#205a9c", "#d5c57b", "#203962"]
+    "highlights": [
+      "#205a9c",
+      "#d5c57b",
+      "#203962"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/503.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/503.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/503.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/503.png",
+    "official": "/pokemon/503.png",
+    "front": "/pokemon/sprites/503.png",
+    "back": "/pokemon/sprites/back/503.png",
+    "shiny": "/pokemon/sprites/shiny/503.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/503.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -320,7 +326,11 @@
     "zh-Hans": "大剑鬼"
   },
   "shinyColorPalette": {
-    "highlights": ["#183962", "#de9c83", "#202039"],
+    "highlights": [
+      "#183962",
+      "#de9c83",
+      "#202039"
+    ],
     "primary": "#183962",
     "secondary": "#de9c83",
     "accent": "#202039"

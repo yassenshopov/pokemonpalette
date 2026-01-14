@@ -2,7 +2,10 @@
   "id": 80,
   "name": "Slowbro",
   "species": "Hermit Crab Pokémon",
-  "type": ["Water", "Psychic"],
+  "type": [
+    "Water",
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -72,14 +75,18 @@
     "accent": "#ff9494",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e66a7b", "#181818", "#ff9494"]
+    "highlights": [
+      "#e66a7b",
+      "#181818",
+      "#ff9494"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/80.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/80.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/80.png",
+    "official": "/pokemon/80.png",
+    "front": "/pokemon/sprites/80.png",
+    "back": "/pokemon/sprites/back/80.png",
+    "shiny": "/pokemon/sprites/shiny/80.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/80.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -350,7 +357,11 @@
     "zh-Hans": "呆壳兽"
   },
   "shinyColorPalette": {
-    "highlights": ["#836abd", "#181818", "#ac94ff"],
+    "highlights": [
+      "#836abd",
+      "#181818",
+      "#ac94ff"
+    ],
     "primary": "#836abd",
     "secondary": "#181818",
     "accent": "#ac94ff"

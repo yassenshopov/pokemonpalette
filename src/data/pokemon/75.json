@@ -2,7 +2,10 @@
   "id": 75,
   "name": "Graveler",
   "species": "Rock Pokémon",
-  "type": ["Rock", "Ground"],
+  "type": [
+    "Rock",
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Rock",
@@ -72,14 +75,18 @@
     "accent": "#4a4131",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#b4b49c", "#948b7b", "#4a4131"]
+    "highlights": [
+      "#b4b49c",
+      "#948b7b",
+      "#4a4131"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/75.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/75.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/75.png",
+    "official": "/pokemon/75.png",
+    "front": "/pokemon/sprites/75.png",
+    "back": "/pokemon/sprites/back/75.png",
+    "shiny": "/pokemon/sprites/shiny/75.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/75.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -338,7 +345,11 @@
     "zh-Hans": "隆隆石"
   },
   "shinyColorPalette": {
-    "highlights": ["#bd8300", "#9c5a00", "#5a1000"],
+    "highlights": [
+      "#bd8300",
+      "#9c5a00",
+      "#5a1000"
+    ],
     "primary": "#bd8300",
     "secondary": "#9c5a00",
     "accent": "#5a1000"

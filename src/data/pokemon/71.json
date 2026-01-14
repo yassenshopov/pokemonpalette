@@ -2,7 +2,10 @@
   "id": 71,
   "name": "Victreebel",
   "species": "Flycatcher Pokémon",
-  "type": ["Grass", "Poison"],
+  "type": [
+    "Grass",
+    "Poison"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -66,14 +69,18 @@
     "accent": "#debd52",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#4aa47b", "#8bc57b", "#debd52"]
+    "highlights": [
+      "#4aa47b",
+      "#8bc57b",
+      "#debd52"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/71.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/71.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/71.png",
+    "official": "/pokemon/71.png",
+    "front": "/pokemon/sprites/71.png",
+    "back": "/pokemon/sprites/back/71.png",
+    "shiny": "/pokemon/sprites/shiny/71.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/71.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -317,7 +324,11 @@
     "zh-Hans": "大食花"
   },
   "shinyColorPalette": {
-    "highlights": ["#a4945a", "#c5b45a", "#b4e639"],
+    "highlights": [
+      "#a4945a",
+      "#c5b45a",
+      "#b4e639"
+    ],
     "primary": "#a4945a",
     "secondary": "#c5b45a",
     "accent": "#b4e639"

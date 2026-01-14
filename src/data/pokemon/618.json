@@ -2,7 +2,10 @@
   "id": 618,
   "name": "Stunfisk",
   "species": "Trap Pokémon",
-  "type": ["Ground", "Electric"],
+  "type": [
+    "Ground",
+    "Electric"
+  ],
   "typeDetails": [
     {
       "name": "Ground",
@@ -72,14 +75,18 @@
     "accent": "#081018",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#d59c83", "#ffff00", "#081018"]
+    "highlights": [
+      "#d59c83",
+      "#ffff00",
+      "#081018"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/618.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/618.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/618.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/618.png",
+    "official": "/pokemon/618.png",
+    "front": "/pokemon/sprites/618.png",
+    "back": "/pokemon/sprites/back/618.png",
+    "shiny": "/pokemon/sprites/shiny/618.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/618.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -315,7 +322,11 @@
     "zh-Hans": "泥巴鱼"
   },
   "shinyColorPalette": {
-    "highlights": ["#d5b483", "#41cdee", "#081018"],
+    "highlights": [
+      "#d5b483",
+      "#41cdee",
+      "#081018"
+    ],
     "primary": "#d5b483",
     "secondary": "#41cdee",
     "accent": "#081018"

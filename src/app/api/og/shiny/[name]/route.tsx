@@ -155,10 +155,20 @@ export async function GET(
     // Construct by replacing "/other/official-artwork/" with "/other/official-artwork/shiny/"
     let artworkUrl = "";
     if (pokemon.artwork?.official) {
-      artworkUrl = pokemon.artwork.official.replace(
-        "/other/official-artwork/",
-        "/other/official-artwork/shiny/"
-      );
+      const officialUrl = pokemon.artwork.official;
+      // Handle both PokeAPI URLs and local paths
+      if (officialUrl.startsWith("/pokemon/") && !officialUrl.includes("/shiny/")) {
+        // Local path: /pokemon/10282.png -> /pokemon/shiny/10282.png
+        artworkUrl = officialUrl.replace("/pokemon/", "/pokemon/shiny/");
+      } else if (officialUrl.includes("/other/official-artwork/")) {
+        // PokeAPI URL: replace the path segment
+        artworkUrl = officialUrl.replace(
+          "/other/official-artwork/",
+          "/other/official-artwork/shiny/"
+        );
+      } else {
+        artworkUrl = officialUrl;
+      }
     } else if (pokemon.artwork?.front) {
       // Fallback: construct from front sprite if official not available
       artworkUrl = pokemon.artwork.front.replace(

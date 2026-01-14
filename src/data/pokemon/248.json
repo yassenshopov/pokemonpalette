@@ -2,7 +2,10 @@
   "id": 248,
   "name": "Tyranitar",
   "species": "Armor Pokémon",
-  "type": ["Rock", "Dark"],
+  "type": [
+    "Rock",
+    "Dark"
+  ],
   "typeDetails": [
     {
       "name": "Rock",
@@ -66,14 +69,18 @@
     "accent": "#4a5a39",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#accd9c", "#739c62", "#4a5a39"]
+    "highlights": [
+      "#accd9c",
+      "#739c62",
+      "#4a5a39"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/248.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/248.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/248.png",
+    "official": "/pokemon/248.png",
+    "front": "/pokemon/sprites/248.png",
+    "back": "/pokemon/sprites/back/248.png",
+    "shiny": "/pokemon/sprites/shiny/248.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/248.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -324,7 +331,11 @@
     "zh-Hans": "班基拉斯"
   },
   "shinyColorPalette": {
-    "highlights": ["#e6d594", "#b4a473", "#7b6a31"],
+    "highlights": [
+      "#e6d594",
+      "#b4a473",
+      "#7b6a31"
+    ],
     "primary": "#e6d594",
     "secondary": "#b4a473",
     "accent": "#7b6a31"

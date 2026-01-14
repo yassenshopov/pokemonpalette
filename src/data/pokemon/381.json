@@ -2,7 +2,10 @@
   "id": 381,
   "name": "Latios",
   "species": "Eon Pokémon",
-  "type": ["Dragon", "Psychic"],
+  "type": [
+    "Dragon",
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -60,14 +63,18 @@
     "accent": "#5aa4ff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#4a62b4", "#b4b4ac", "#5aa4ff"]
+    "highlights": [
+      "#4a62b4",
+      "#b4b4ac",
+      "#5aa4ff"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/381.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/381.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/381.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/381.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/381.png",
+    "official": "/pokemon/381.png",
+    "front": "/pokemon/sprites/381.png",
+    "back": "/pokemon/sprites/back/381.png",
+    "shiny": "/pokemon/sprites/shiny/381.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/381.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -298,7 +305,11 @@
     "zh-Hans": "拉帝欧斯"
   },
   "shinyColorPalette": {
-    "highlights": ["#209c7b", "#cdd5de", "#73eecd"],
+    "highlights": [
+      "#209c7b",
+      "#cdd5de",
+      "#73eecd"
+    ],
     "primary": "#209c7b",
     "secondary": "#cdd5de",
     "accent": "#73eecd"

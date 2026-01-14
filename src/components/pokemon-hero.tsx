@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Pokemon } from "@/types/pokemon";
 import { getPokemonById } from "@/lib/pokemon";
 import { extractColorsFromImage } from "@/lib/color-extractor";
+import { getOfficialArtworkUrl } from "@/lib/sprite-utils";
 import Image from "next/image";
 import { LoaderOverlay } from "@/components/loader-overlay";
 import { Button } from "@/components/ui/button";
@@ -92,8 +93,12 @@ export function PokemonHero({
   useEffect(() => {
     // If a form is selected, use that form's official artwork
     if (formName && pokemon) {
-      const shinyPath = isShiny ? "/shiny" : "";
-      const newSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemon.id}-${formName}.png`;
+      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+        isShiny ? "/shiny" : ""
+      }/${pokemon.id}-${formName}.png`;
+      // Try local path first (forms use {id}-{formName}.png naming)
+      const localPath = `/pokemon/${isShiny ? "shiny/" : ""}${pokemon.id}-${formName}.png`;
+      const newSrc = localPath; // Try local first, browser will fallback on error
       
       if (newSrc !== currentImageSrc) {
         setImageLoading(true);
@@ -102,8 +107,10 @@ export function PokemonHero({
       }
     } else if (varietyId) {
       // If a variety is selected, use that variety's official artwork
-      const shinyPath = isShiny ? "/shiny" : "";
-      const newSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${varietyId}.png`;
+      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+        isShiny ? "/shiny" : ""
+      }/${varietyId}.png`;
+      const newSrc = getOfficialArtworkUrl(varietyId, isShiny, fallbackUrl);
       
       if (newSrc !== currentImageSrc) {
         setImageLoading(true);
@@ -115,12 +122,20 @@ export function PokemonHero({
       typeof pokemon.artwork === "object" &&
       "official" in pokemon.artwork
     ) {
-      const newSrc = isShiny
-        ? pokemon.artwork.official.replace(
+      let newSrc = pokemon.artwork.official;
+      if (isShiny) {
+        // Handle both PokeAPI URLs and local paths
+        if (newSrc.startsWith("/pokemon/") && !newSrc.includes("/shiny/")) {
+          // Local path: /pokemon/10282.png -> /pokemon/shiny/10282.png
+          newSrc = newSrc.replace("/pokemon/", "/pokemon/shiny/");
+        } else if (newSrc.includes("/other/official-artwork/")) {
+          // PokeAPI URL: replace the path segment
+          newSrc = newSrc.replace(
             "/other/official-artwork/",
             "/other/official-artwork/shiny/"
-          )
-        : pokemon.artwork.official;
+          );
+        }
+      }
 
       if (newSrc !== currentImageSrc) {
         setImageLoading(true);
@@ -486,8 +501,9 @@ export function PokemonHero({
           "official" in pokemon.artwork &&
           currentImageSrc ? (
             <div className="relative w-full h-full flex items-center justify-center">
-              <Image
+              <HeroImage
                 src={currentImageSrc}
+                fallbackUrl={getFallbackUrl(pokemon, varietyId, formName, isShiny)}
                 alt={pokemon.name}
                 width={450}
                 height={450}
@@ -508,5 +524,76 @@ export function PokemonHero({
         </div>
       )}
     </div>
+  );
+}
+
+// Helper function to get fallback URL for varieties/forms
+function getFallbackUrl(
+  pokemon: Pokemon | null,
+  varietyId: number | null | undefined,
+  formName: string | null | undefined,
+  isShiny: boolean
+): string | null {
+  if (formName && pokemon) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+      isShiny ? "/shiny" : ""
+    }/${pokemon.id}-${formName}.png`;
+  }
+  if (varietyId) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+      isShiny ? "/shiny" : ""
+    }/${varietyId}.png`;
+  }
+  return null;
+}
+
+// Component to handle hero image with fallback
+function HeroImage({
+  src,
+  fallbackUrl,
+  alt,
+  width,
+  height,
+  className,
+  onLoad,
+  unoptimized,
+}: {
+  src: string;
+  fallbackUrl: string | null;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+  onLoad?: () => void;
+  unoptimized?: boolean;
+}) {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  // Reset when src changes
+  useEffect(() => {
+    setImgSrc(src);
+    setHasError(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!hasError && fallbackUrl && imgSrc !== fallbackUrl && imgSrc.startsWith('/pokemon/')) {
+      setHasError(true);
+      setImgSrc(fallbackUrl);
+    }
+  };
+
+  return (
+    <Image
+      key={imgSrc}
+      src={imgSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      onLoad={onLoad}
+      unoptimized={unoptimized}
+      onError={handleError}
+    />
   );
 }

@@ -2,7 +2,10 @@
   "id": 780,
   "name": "Drampa",
   "species": "Placid Pokémon",
-  "type": ["Normal", "Dragon"],
+  "type": [
+    "Normal",
+    "Dragon"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -72,14 +75,18 @@
     "accent": "#b8b7a3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#eeeeee", "#5aa4a4", "#b8b7a3"]
+    "highlights": [
+      "#eeeeee",
+      "#5aa4a4",
+      "#b8b7a3"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/780.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/780.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/780.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/780.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/780.png",
+    "official": "/pokemon/780.png",
+    "front": "/pokemon/sprites/780.png",
+    "back": "/pokemon/sprites/back/780.png",
+    "shiny": "/pokemon/sprites/shiny/780.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/780.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -308,7 +315,11 @@
     "zh-Hans": "老翁龙"
   },
   "shinyColorPalette": {
-    "highlights": ["#eeeeee", "#e0b172", "#b8b7a3"],
+    "highlights": [
+      "#eeeeee",
+      "#e0b172",
+      "#b8b7a3"
+    ],
     "primary": "#eeeeee",
     "secondary": "#e0b172",
     "accent": "#b8b7a3"

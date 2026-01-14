@@ -2,7 +2,9 @@
   "id": 19,
   "name": "Rattata",
   "species": "Mouse Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,18 +70,22 @@
     "accent": "#d59cd5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#b473bd", "#8b4a8b", "#d59cd5"]
+    "highlights": [
+      "#b473bd",
+      "#8b4a8b",
+      "#d59cd5"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/19.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/19.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/19.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/19.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/19.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/19.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/19.png"
+    "official": "/pokemon/19.png",
+    "front": "/pokemon/sprites/19.png",
+    "back": "/pokemon/sprites/back/19.png",
+    "shiny": "/pokemon/sprites/shiny/19.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/19.png",
+    "front_female": "/pokemon/sprites/female/19.png",
+    "back_female": "/pokemon/sprites/back/female/19.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/19.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/19.png"
   },
   "evolution": [
     {
@@ -325,7 +331,11 @@
     "zh-Hans": "小拉达"
   },
   "shinyColorPalette": {
-    "highlights": ["#c5c56a", "#948b39", "#e6e68b"],
+    "highlights": [
+      "#c5c56a",
+      "#948b39",
+      "#e6e68b"
+    ],
     "primary": "#c5c56a",
     "secondary": "#948b39",
     "accent": "#e6e68b"

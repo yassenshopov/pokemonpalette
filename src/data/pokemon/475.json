@@ -2,7 +2,10 @@
   "id": 475,
   "name": "Gallade",
   "species": "Blade Pokémon",
-  "type": ["Psychic", "Fighting"],
+  "type": [
+    "Psychic",
+    "Fighting"
+  ],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -72,14 +75,18 @@
     "accent": "#41835a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#c5cdde", "#5ab46a", "#41835a"]
+    "highlights": [
+      "#c5cdde",
+      "#5ab46a",
+      "#41835a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/475.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/475.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/475.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/475.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/475.png",
+    "official": "/pokemon/475.png",
+    "front": "/pokemon/sprites/475.png",
+    "back": "/pokemon/sprites/back/475.png",
+    "shiny": "/pokemon/sprites/shiny/475.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/475.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -341,7 +348,11 @@
     "zh-Hans": "艾路雷朵"
   },
   "shinyColorPalette": {
-    "highlights": ["#e6cdf6", "#7bacee", "#5273e6"],
+    "highlights": [
+      "#e6cdf6",
+      "#7bacee",
+      "#5273e6"
+    ],
     "primary": "#e6cdf6",
     "secondary": "#7bacee",
     "accent": "#5273e6"

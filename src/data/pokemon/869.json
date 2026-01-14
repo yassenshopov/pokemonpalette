@@ -2,7 +2,9 @@
   "id": 869,
   "name": "Alcremie",
   "species": "Cream Pokémon",
-  "type": ["Fairy"],
+  "type": [
+    "Fairy"
+  ],
   "typeDetails": [
     {
       "name": "Fairy",
@@ -50,14 +52,18 @@
     "accent": "#855459",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#fde4d0", "#f28a95", "#855459"]
+    "highlights": [
+      "#fde4d0",
+      "#f28a95",
+      "#855459"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/869.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/869.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/869.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/869.png",
+    "official": "/pokemon/869.png",
+    "front": "/pokemon/sprites/869.png",
+    "back": "/pokemon/sprites/back/869.png",
+    "shiny": "/pokemon/sprites/shiny/869.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/869.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -1351,7 +1357,11 @@
     "zh-Hans": "霜奶仙"
   },
   "shinyColorPalette": {
-    "highlights": ["#989d98", "#5e5f62", "#4f514f"],
+    "highlights": [
+      "#989d98",
+      "#5e5f62",
+      "#4f514f"
+    ],
     "primary": "#989d98",
     "secondary": "#5e5f62",
     "accent": "#4f514f"

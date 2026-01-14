@@ -2,7 +2,9 @@
   "id": 569,
   "name": "Garbodor",
   "species": "Trash Heap Pokémon",
-  "type": ["Poison"],
+  "type": [
+    "Poison"
+  ],
   "typeDetails": [
     {
       "name": "Poison",
@@ -68,14 +70,18 @@
     "accent": "#7b6a5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#a48b73", "#296a4a", "#7b6a5a"]
+    "highlights": [
+      "#a48b73",
+      "#296a4a",
+      "#7b6a5a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/569.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/569.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/569.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/569.png",
+    "official": "/pokemon/569.png",
+    "front": "/pokemon/sprites/569.png",
+    "back": "/pokemon/sprites/back/569.png",
+    "shiny": "/pokemon/sprites/shiny/569.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/569.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -333,7 +339,11 @@
     "zh-Hans": "灰尘山"
   },
   "shinyColorPalette": {
-    "highlights": ["#948b83", "#29a4a4", "#6a6a62"],
+    "highlights": [
+      "#948b83",
+      "#29a4a4",
+      "#6a6a62"
+    ],
     "primary": "#948b83",
     "secondary": "#29a4a4",
     "accent": "#6a6a62"

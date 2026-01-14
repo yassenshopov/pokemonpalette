@@ -2,7 +2,10 @@
   "id": 18,
   "name": "Pidgeot",
   "species": "Bird Pokémon",
-  "type": ["Normal", "Flying"],
+  "type": [
+    "Normal",
+    "Flying"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -72,14 +75,18 @@
     "accent": "#ac7b5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e6b462", "#ffe68b", "#ac7b5a"]
+    "highlights": [
+      "#e6b462",
+      "#ffe68b",
+      "#ac7b5a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/18.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/18.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/18.png",
+    "official": "/pokemon/18.png",
+    "front": "/pokemon/sprites/18.png",
+    "back": "/pokemon/sprites/back/18.png",
+    "shiny": "/pokemon/sprites/shiny/18.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/18.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -330,7 +337,11 @@
     "zh-Hans": "大比鸟"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffd552", "#ffff7b", "#b48310"],
+    "highlights": [
+      "#ffd552",
+      "#ffff7b",
+      "#b48310"
+    ],
     "primary": "#ffd552",
     "secondary": "#ffff7b",
     "accent": "#b48310"

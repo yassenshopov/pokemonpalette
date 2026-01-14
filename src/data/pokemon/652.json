@@ -2,7 +2,10 @@
   "id": 652,
   "name": "Chesnaught",
   "species": "Spiny Armor Pokémon",
-  "type": ["Grass", "Fighting"],
+  "type": [
+    "Grass",
+    "Fighting"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -62,14 +65,18 @@
     "accent": "#6dc650",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#f7dbaa", "#b59a7a", "#6dc650"]
+    "highlights": [
+      "#f7dbaa",
+      "#b59a7a",
+      "#6dc650"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/652.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/652.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/652.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/652.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/652.png",
+    "official": "/pokemon/652.png",
+    "front": "/pokemon/sprites/652.png",
+    "back": "/pokemon/sprites/back/652.png",
+    "shiny": "/pokemon/sprites/shiny/652.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/652.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -313,7 +320,11 @@
     "zh-Hans": "布里卡隆"
   },
   "shinyColorPalette": {
-    "highlights": ["#62944f", "#486d3a", "#8c3f3f"],
+    "highlights": [
+      "#62944f",
+      "#486d3a",
+      "#8c3f3f"
+    ],
     "primary": "#62944f",
     "secondary": "#486d3a",
     "accent": "#8c3f3f"

@@ -2,7 +2,9 @@
   "id": 128,
   "name": "Tauros",
   "species": "Wild Bull Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#624a31",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#dea44a", "#b48331", "#624a31"]
+    "highlights": [
+      "#dea44a",
+      "#b48331",
+      "#624a31"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/128.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/128.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/128.png",
+    "official": "/pokemon/128.png",
+    "front": "/pokemon/sprites/128.png",
+    "back": "/pokemon/sprites/back/128.png",
+    "shiny": "/pokemon/sprites/shiny/128.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/128.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -320,7 +326,11 @@
     "zh-Hans": "肯泰罗"
   },
   "shinyColorPalette": {
-    "highlights": ["#e6ee4a", "#cdbd29", "#319c00"],
+    "highlights": [
+      "#e6ee4a",
+      "#cdbd29",
+      "#319c00"
+    ],
     "primary": "#e6ee4a",
     "secondary": "#cdbd29",
     "accent": "#319c00"

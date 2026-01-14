@@ -2,7 +2,9 @@
   "id": 870,
   "name": "Falinks",
   "species": "Formation Pokémon",
-  "type": ["Fighting"],
+  "type": [
+    "Fighting"
+  ],
   "typeDetails": [
     {
       "name": "Fighting",
@@ -50,14 +52,18 @@
     "accent": "#d09f2f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ffcd35", "#111111", "#d09f2f"]
+    "highlights": [
+      "#ffcd35",
+      "#111111",
+      "#d09f2f"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/870.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/870.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/870.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/870.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/870.png",
+    "official": "/pokemon/870.png",
+    "front": "/pokemon/sprites/870.png",
+    "back": "/pokemon/sprites/back/870.png",
+    "shiny": "/pokemon/sprites/shiny/870.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/870.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -281,7 +287,11 @@
     "zh-Hans": "列阵兵"
   },
   "shinyColorPalette": {
-    "highlights": ["#b6886e", "#111111", "#8b5845"],
+    "highlights": [
+      "#b6886e",
+      "#111111",
+      "#8b5845"
+    ],
     "primary": "#b6886e",
     "secondary": "#111111",
     "accent": "#8b5845"

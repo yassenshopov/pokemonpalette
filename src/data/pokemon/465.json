@@ -77,15 +77,15 @@
     ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/465.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/465.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/465.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/465.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/465.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/465.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/465.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/465.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/465.png"
+    "official": "/pokemon/465.png",
+    "front": "/pokemon/sprites/465.png",
+    "back": "/pokemon/sprites/back/465.png",
+    "shiny": "/pokemon/sprites/shiny/465.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/465.png",
+    "front_female": "/pokemon/sprites/female/465.png",
+    "back_female": "/pokemon/sprites/back/female/465.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/465.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/465.png"
   },
   "evolution": [
     {

@@ -2,7 +2,10 @@
   "id": 826,
   "name": "Orbeetle",
   "species": "Seven Spot Pokémon",
-  "type": ["Bug", "Psychic"],
+  "type": [
+    "Bug",
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Bug",
@@ -60,14 +63,18 @@
     "accent": "#493da3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#fd2636", "#9c2e46", "#493da3"]
+    "highlights": [
+      "#fd2636",
+      "#9c2e46",
+      "#493da3"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/826.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/826.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/826.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/826.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/826.png",
+    "official": "/pokemon/826.png",
+    "front": "/pokemon/sprites/826.png",
+    "back": "/pokemon/sprites/back/826.png",
+    "shiny": "/pokemon/sprites/shiny/826.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/826.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -318,7 +325,11 @@
     "zh-Hans": "以欧路普"
   },
   "shinyColorPalette": {
-    "highlights": ["#7578cf", "#5154ab", "#493da3"],
+    "highlights": [
+      "#7578cf",
+      "#5154ab",
+      "#493da3"
+    ],
     "primary": "#7578cf",
     "secondary": "#5154ab",
     "accent": "#493da3"

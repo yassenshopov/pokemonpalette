@@ -2,7 +2,9 @@
   "id": 100,
   "name": "Voltorb",
   "species": "Ball Pokémon",
-  "type": ["Electric"],
+  "type": [
+    "Electric"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -68,14 +70,18 @@
     "accent": "#d53141",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ff5220", "#b4acbd", "#d53141"]
+    "highlights": [
+      "#ff5220",
+      "#b4acbd",
+      "#d53141"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/100.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/100.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/100.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/100.png",
+    "official": "/pokemon/100.png",
+    "front": "/pokemon/sprites/100.png",
+    "back": "/pokemon/sprites/back/100.png",
+    "shiny": "/pokemon/sprites/shiny/100.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/100.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -316,7 +322,11 @@
     "zh-Hans": "霹雳电球"
   },
   "shinyColorPalette": {
-    "highlights": ["#0052ff", "#b4acbd", "#2918bd"],
+    "highlights": [
+      "#0052ff",
+      "#b4acbd",
+      "#2918bd"
+    ],
     "primary": "#0052ff",
     "secondary": "#b4acbd",
     "accent": "#2918bd"

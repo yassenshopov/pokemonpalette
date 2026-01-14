@@ -2,7 +2,9 @@
   "id": 264,
   "name": "Linoone",
   "species": "Rushing Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#836a5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ac9c8b", "#decdbd", "#836a5a"]
+    "highlights": [
+      "#ac9c8b",
+      "#decdbd",
+      "#836a5a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/264.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/264.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/264.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/264.png",
+    "official": "/pokemon/264.png",
+    "front": "/pokemon/sprites/264.png",
+    "back": "/pokemon/sprites/back/264.png",
+    "shiny": "/pokemon/sprites/shiny/264.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/264.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -343,7 +349,11 @@
     "zh-Hans": "直冲熊"
   },
   "shinyColorPalette": {
-    "highlights": ["#c5a494", "#decdb4", "#cd6220"],
+    "highlights": [
+      "#c5a494",
+      "#decdb4",
+      "#cd6220"
+    ],
     "primary": "#c5a494",
     "secondary": "#decdb4",
     "accent": "#cd6220"

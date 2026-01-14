@@ -9,6 +9,7 @@ import { PokemonCard } from "@/components/pokemon-card";
 import { ColorShowcase } from "@/components/color-showcase";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
+import { LegendsZABanner } from "@/components/legends-za-banner";
 
 export function HomeClient() {
   const [selectedPokemonId, setSelectedPokemonId] = useState<number | null>(
@@ -48,10 +49,15 @@ export function HomeClient() {
   }, [isPokemonMenuCollapsed]);
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      <CoffeeCTA primaryColor={pokemonColors[0]} />
-      <CollapsibleSidebar primaryColor={pokemonColors[0]} onPaletteLoad={handlePaletteLoad} />
-      <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden">
+      <LegendsZABanner 
+        primaryColor={pokemonColors[0]} 
+        secondaryColor={pokemonColors[1] || pokemonColors[0]} 
+      />
+      <div className="flex flex-1 overflow-hidden">
+        <CoffeeCTA primaryColor={pokemonColors[0]} />
+        <CollapsibleSidebar primaryColor={pokemonColors[0]} onPaletteLoad={handlePaletteLoad} />
+        <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
         {/* Pokemon Menu - Full width on mobile, collapsible on desktop */}
         <div className={`${
           isPokemonMenuCollapsed 
@@ -110,6 +116,7 @@ export function HomeClient() {
           )}
           <Footer />
         </div>
+      </div>
       </div>
     </div>
   );

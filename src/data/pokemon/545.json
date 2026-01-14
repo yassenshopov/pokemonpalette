@@ -2,7 +2,10 @@
   "id": 545,
   "name": "Scolipede",
   "species": "Megapede Pokémon",
-  "type": ["Bug", "Poison"],
+  "type": [
+    "Bug",
+    "Poison"
+  ],
   "typeDetails": [
     {
       "name": "Bug",
@@ -72,14 +75,18 @@
     "accent": "#8b399c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#9c1041", "#c5185a", "#8b399c"]
+    "highlights": [
+      "#9c1041",
+      "#c5185a",
+      "#8b399c"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/545.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/545.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/545.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/545.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/545.png",
+    "official": "/pokemon/545.png",
+    "front": "/pokemon/sprites/545.png",
+    "back": "/pokemon/sprites/back/545.png",
+    "shiny": "/pokemon/sprites/shiny/545.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/545.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -332,7 +339,11 @@
     "zh-Hans": "蜈蚣王"
   },
   "shinyColorPalette": {
-    "highlights": ["#9c0000", "#cd2900", "#39bdb4"],
+    "highlights": [
+      "#9c0000",
+      "#cd2900",
+      "#39bdb4"
+    ],
     "primary": "#9c0000",
     "secondary": "#cd2900",
     "accent": "#39bdb4"

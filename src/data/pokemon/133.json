@@ -2,7 +2,9 @@
   "id": 133,
   "name": "Eevee",
   "species": "Evolution Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,18 +70,22 @@
     "accent": "#e6c594",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#a4624a", "#d59c4a", "#e6c594"]
+    "highlights": [
+      "#a4624a",
+      "#d59c4a",
+      "#e6c594"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/133.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/133.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/133.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/133.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/133.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/133.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/133.png"
+    "official": "/pokemon/133.png",
+    "front": "/pokemon/sprites/133.png",
+    "back": "/pokemon/sprites/back/133.png",
+    "shiny": "/pokemon/sprites/shiny/133.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/133.png",
+    "front_female": "/pokemon/sprites/female/133.png",
+    "back_female": "/pokemon/sprites/back/female/133.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/133.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/133.png"
   },
   "evolution": [
     {
@@ -411,7 +417,11 @@
     "zh-Hans": "伊布"
   },
   "shinyColorPalette": {
-    "highlights": ["#aca49c", "#d5d5c5", "#d5deff"],
+    "highlights": [
+      "#aca49c",
+      "#d5d5c5",
+      "#d5deff"
+    ],
     "primary": "#aca49c",
     "secondary": "#d5d5c5",
     "accent": "#d5deff"

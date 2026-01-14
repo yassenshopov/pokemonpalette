@@ -40,6 +40,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
+import { getFrontSpriteUrl, getOfficialArtworkUrl } from "@/lib/sprite-utils";
 
 // MissingNo fallback image URL
 const MISSINGNO_IMAGE_URL =
@@ -544,8 +545,10 @@ export function PokemonMenu({
 
     // If a variety is selected, use that variety's sprite
     if (selectedVarietyId) {
-      const shinyPath = shiny ? "shiny/" : "";
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${shinyPath}${selectedVarietyId}.png`;
+      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+        shiny ? "shiny/" : ""
+      }${selectedVarietyId}.png`;
+      return getFrontSpriteUrl(selectedVarietyId, shiny, fallbackUrl);
     }
 
     if (typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
@@ -1075,6 +1078,7 @@ export function PokemonMenu({
                             }
                           >
                             <Image
+                              key={`${formData.name}-${isShiny}-${index}`}
                               src={formSprite || MISSINGNO_IMAGE_URL}
                               alt={formData.name}
                               width={40}
@@ -1141,11 +1145,14 @@ export function PokemonMenu({
                       selectedPokemon;
                     // Extract Pokemon ID from variety URL for sprite
                     const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
-                    const varietySpriteId = urlMatch ? urlMatch[1] : null;
-                    const varietySprite = varietySpriteId
+                    const varietySpriteId = urlMatch ? parseInt(urlMatch[1]) : null;
+                    const fallbackUrl = varietySpriteId
                       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                           isShiny ? "shiny/" : ""
                         }${varietySpriteId}.png`
+                      : null;
+                    const varietySprite = varietySpriteId
+                      ? getFrontSpriteUrl(varietySpriteId, isShiny, fallbackUrl)
                       : null;
 
                     return (
@@ -1214,25 +1221,12 @@ export function PokemonMenu({
                             : {}
                         }
                       >
-                        <Image
+                        <VarietySprite
                           src={varietySprite || MISSINGNO_IMAGE_URL}
+                          fallbackUrl={fallbackUrl}
                           alt={variety.name}
                           width={40}
                           height={40}
-                          className="w-10 h-10 object-contain"
-                          style={{
-                            imageRendering: varietySprite
-                              ? "pixelated"
-                              : "auto",
-                          }}
-                          unoptimized
-                          onError={(e) => {
-                            const target = e.currentTarget;
-                            if (target.src !== MISSINGNO_IMAGE_URL) {
-                              target.src = MISSINGNO_IMAGE_URL;
-                              target.style.imageRendering = "auto";
-                            }
-                          }}
                         />
                         <div className="flex-1 text-left">
                           <div className="text-sm font-medium">
@@ -1267,5 +1261,55 @@ export function PokemonMenu({
         title="Edit Color"
       />
     </div>
+  );
+}
+
+// Component to handle variety sprite with fallback
+function VarietySprite({
+  src,
+  fallbackUrl,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  fallbackUrl: string | null;
+  alt: string;
+  width: number;
+  height: number;
+}) {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  // Update imgSrc when src prop changes (e.g., when isShiny toggles)
+  useEffect(() => {
+    setImgSrc(src);
+    setHasError(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!hasError && fallbackUrl && imgSrc !== fallbackUrl && imgSrc.startsWith('/pokemon/')) {
+      setHasError(true);
+      setImgSrc(fallbackUrl);
+    } else if (!hasError && imgSrc !== MISSINGNO_IMAGE_URL) {
+      setHasError(true);
+      setImgSrc(MISSINGNO_IMAGE_URL);
+    }
+  };
+
+  return (
+    <Image
+      key={imgSrc}
+      src={imgSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className="w-10 h-10 object-contain"
+      style={{
+        imageRendering: imgSrc !== MISSINGNO_IMAGE_URL ? "pixelated" : "auto",
+      }}
+      unoptimized
+      onError={handleError}
+    />
   );
 }

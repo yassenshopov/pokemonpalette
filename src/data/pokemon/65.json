@@ -2,7 +2,9 @@
   "id": 65,
   "name": "Alakazam",
   "species": "Psi Pokémon",
-  "type": ["Psychic"],
+  "type": [
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -68,18 +70,22 @@
     "accent": "#7b5a08",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ffee18", "#cdb410", "#7b5a08"]
+    "highlights": [
+      "#ffee18",
+      "#cdb410",
+      "#7b5a08"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/65.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/65.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/65.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/65.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/65.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/65.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/65.png"
+    "official": "/pokemon/65.png",
+    "front": "/pokemon/sprites/65.png",
+    "back": "/pokemon/sprites/back/65.png",
+    "shiny": "/pokemon/sprites/shiny/65.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/65.png",
+    "front_female": "/pokemon/sprites/female/65.png",
+    "back_female": "/pokemon/sprites/back/female/65.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/65.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/65.png"
   },
   "evolution": [
     {
@@ -330,7 +336,11 @@
     "zh-Hans": "胡地"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffd500", "#d59408", "#ac2973"],
+    "highlights": [
+      "#ffd500",
+      "#d59408",
+      "#ac2973"
+    ],
     "primary": "#ffd500",
     "secondary": "#d59408",
     "accent": "#ac2973"

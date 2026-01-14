@@ -2,7 +2,9 @@
   "id": 154,
   "name": "Meganium",
   "species": "Herb Pokémon",
-  "type": ["Grass"],
+  "type": [
+    "Grass"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -62,18 +64,22 @@
     "accent": "#62bd41",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#9ce652", "#ff395a", "#62bd41"]
+    "highlights": [
+      "#9ce652",
+      "#ff395a",
+      "#62bd41"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/154.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/154.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/154.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/154.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/154.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/154.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/154.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/154.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/154.png"
+    "official": "/pokemon/154.png",
+    "front": "/pokemon/sprites/154.png",
+    "back": "/pokemon/sprites/back/154.png",
+    "shiny": "/pokemon/sprites/shiny/154.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/154.png",
+    "front_female": "/pokemon/sprites/female/154.png",
+    "back_female": "/pokemon/sprites/back/female/154.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/154.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/154.png"
   },
   "evolution": [
     {
@@ -292,6 +298,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/154/",
       "type": ""
+    },
+    {
+      "name": "Mega Meganium",
+      "raw_name": "meganium-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10282/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -313,7 +326,11 @@
     "zh-Hans": "大竺葵"
   },
   "shinyColorPalette": {
-    "highlights": ["#f6f608", "#ff8300", "#c5cd00"],
+    "highlights": [
+      "#f6f608",
+      "#ff8300",
+      "#c5cd00"
+    ],
     "primary": "#f6f608",
     "secondary": "#ff8300",
     "accent": "#c5cd00"

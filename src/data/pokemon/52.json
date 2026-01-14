@@ -2,7 +2,9 @@
   "id": 52,
   "name": "Meowth",
   "species": "Scratch Cat Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#debd39",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ffe683", "#8b6a00", "#debd39"]
+    "highlights": [
+      "#ffe683",
+      "#8b6a00",
+      "#debd39"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/52.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/52.png",
+    "official": "/pokemon/52.png",
+    "front": "/pokemon/sprites/52.png",
+    "back": "/pokemon/sprites/back/52.png",
+    "shiny": "/pokemon/sprites/shiny/52.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/52.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -352,7 +358,11 @@
     "zh-Hans": "喵喵"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffcd83", "#9c4100", "#de9c39"],
+    "highlights": [
+      "#ffcd83",
+      "#9c4100",
+      "#de9c39"
+    ],
     "primary": "#ffcd83",
     "secondary": "#9c4100",
     "accent": "#de9c39"

@@ -2,7 +2,9 @@
   "id": 37,
   "name": "Vulpix",
   "species": "Fox Pokémon",
-  "type": ["Fire"],
+  "type": [
+    "Fire"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -62,14 +64,18 @@
     "accent": "#bd4a29",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e6946a", "#732000", "#bd4a29"]
+    "highlights": [
+      "#e6946a",
+      "#732000",
+      "#bd4a29"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/37.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/37.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/37.png",
+    "official": "/pokemon/37.png",
+    "front": "/pokemon/sprites/37.png",
+    "back": "/pokemon/sprites/back/37.png",
+    "shiny": "/pokemon/sprites/shiny/37.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/37.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -323,7 +329,11 @@
     "zh-Hans": "六尾"
   },
   "shinyColorPalette": {
-    "highlights": ["#eeee39", "#833900", "#d58318"],
+    "highlights": [
+      "#eeee39",
+      "#833900",
+      "#d58318"
+    ],
     "primary": "#eeee39",
     "secondary": "#833900",
     "accent": "#d58318"

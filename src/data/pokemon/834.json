@@ -2,7 +2,10 @@
   "id": 834,
   "name": "Drednaw",
   "species": "Bite Pokémon",
-  "type": ["Water", "Rock"],
+  "type": [
+    "Water",
+    "Rock"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -60,14 +63,18 @@
     "accent": "#65d0bc",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#4da49b", "#f6be13", "#65d0bc"]
+    "highlights": [
+      "#4da49b",
+      "#f6be13",
+      "#65d0bc"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/834.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/834.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/834.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/834.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/834.png",
+    "official": "/pokemon/834.png",
+    "front": "/pokemon/sprites/834.png",
+    "back": "/pokemon/sprites/back/834.png",
+    "shiny": "/pokemon/sprites/shiny/834.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/834.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -308,7 +315,11 @@
     "zh-Hans": "暴噬龟"
   },
   "shinyColorPalette": {
-    "highlights": ["#31573d", "#ec841d", "#467154"],
+    "highlights": [
+      "#31573d",
+      "#ec841d",
+      "#467154"
+    ],
     "primary": "#31573d",
     "secondary": "#ec841d",
     "accent": "#467154"

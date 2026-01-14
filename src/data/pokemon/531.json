@@ -2,7 +2,9 @@
   "id": 531,
   "name": "Audino",
   "species": "Hearing Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#cdb483",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#f6e6ac", "#de8b94", "#cdb483"]
+    "highlights": [
+      "#f6e6ac",
+      "#de8b94",
+      "#cdb483"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/531.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/531.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/531.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/531.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/531.png",
+    "official": "/pokemon/531.png",
+    "front": "/pokemon/sprites/531.png",
+    "back": "/pokemon/sprites/back/531.png",
+    "shiny": "/pokemon/sprites/shiny/531.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/531.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -315,7 +321,11 @@
     "zh-Hans": "差不多娃娃"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffdeb4", "#a47bb4", "#deb48b"],
+    "highlights": [
+      "#ffdeb4",
+      "#a47bb4",
+      "#deb48b"
+    ],
     "primary": "#ffdeb4",
     "secondary": "#a47bb4",
     "accent": "#deb48b"

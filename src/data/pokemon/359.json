@@ -2,7 +2,9 @@
   "id": 359,
   "name": "Absol",
   "species": "Disaster Pokémon",
-  "type": ["Dark"],
+  "type": [
+    "Dark"
+  ],
   "typeDetails": [
     {
       "name": "Dark",
@@ -68,14 +70,18 @@
     "accent": "#737bac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#b4b4d5", "#ffffff", "#737bac"]
+    "highlights": [
+      "#b4b4d5",
+      "#ffffff",
+      "#737bac"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/359.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/359.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/359.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/359.png",
+    "official": "/pokemon/359.png",
+    "front": "/pokemon/sprites/359.png",
+    "back": "/pokemon/sprites/back/359.png",
+    "shiny": "/pokemon/sprites/shiny/359.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/359.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -311,7 +317,11 @@
     "zh-Hans": "阿勃梭鲁"
   },
   "shinyColorPalette": {
-    "highlights": ["#debdee", "#ffffff", "#e68b7b"],
+    "highlights": [
+      "#debdee",
+      "#ffffff",
+      "#e68b7b"
+    ],
     "primary": "#debdee",
     "secondary": "#ffffff",
     "accent": "#e68b7b"

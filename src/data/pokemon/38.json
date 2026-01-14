@@ -2,7 +2,9 @@
   "id": 38,
   "name": "Ninetales",
   "species": "Fox Pokémon",
-  "type": ["Fire"],
+  "type": [
+    "Fire"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -62,14 +64,18 @@
     "accent": "#836218",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e6c552", "#f6e67b", "#836218"]
+    "highlights": [
+      "#e6c552",
+      "#f6e67b",
+      "#836218"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/38.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/38.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/38.png",
+    "official": "/pokemon/38.png",
+    "front": "/pokemon/sprites/38.png",
+    "back": "/pokemon/sprites/back/38.png",
+    "shiny": "/pokemon/sprites/shiny/38.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/38.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -323,7 +329,11 @@
     "zh-Hans": "九尾"
   },
   "shinyColorPalette": {
-    "highlights": ["#bdb4cd", "#dedee6", "#7b5a83"],
+    "highlights": [
+      "#bdb4cd",
+      "#dedee6",
+      "#7b5a83"
+    ],
     "primary": "#bdb4cd",
     "secondary": "#dedee6",
     "accent": "#7b5a83"

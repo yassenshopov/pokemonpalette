@@ -2,7 +2,10 @@
   "id": 83,
   "name": "Farfetchd",
   "species": "Wild Duck Pokémon",
-  "type": ["Normal", "Flying"],
+  "type": [
+    "Normal",
+    "Flying"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -72,14 +75,18 @@
     "accent": "#c5cd83",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e6e6a4", "#5a3900", "#c5cd83"]
+    "highlights": [
+      "#e6e6a4",
+      "#5a3900",
+      "#c5cd83"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/83.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/83.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/83.png",
+    "official": "/pokemon/83.png",
+    "front": "/pokemon/sprites/83.png",
+    "back": "/pokemon/sprites/back/83.png",
+    "shiny": "/pokemon/sprites/shiny/83.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/83.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -324,7 +331,11 @@
     "zh-Hans": "大葱鸭"
   },
   "shinyColorPalette": {
-    "highlights": ["#eee6a4", "#6a3931", "#c5c57b"],
+    "highlights": [
+      "#eee6a4",
+      "#6a3931",
+      "#c5c57b"
+    ],
     "primary": "#eee6a4",
     "secondary": "#6a3931",
     "accent": "#c5c57b"

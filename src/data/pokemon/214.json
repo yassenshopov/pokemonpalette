@@ -2,7 +2,10 @@
   "id": 214,
   "name": "Heracross",
   "species": "Single Horn Pokémon",
-  "type": ["Bug", "Fighting"],
+  "type": [
+    "Bug",
+    "Fighting"
+  ],
   "typeDetails": [
     {
       "name": "Bug",
@@ -72,18 +75,22 @@
     "accent": "#313962",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#6a94c5", "#416294", "#313962"]
+    "highlights": [
+      "#6a94c5",
+      "#416294",
+      "#313962"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/214.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/214.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/214.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/214.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/214.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/214.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/214.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/214.png"
+    "official": "/pokemon/214.png",
+    "front": "/pokemon/sprites/214.png",
+    "back": "/pokemon/sprites/back/214.png",
+    "shiny": "/pokemon/sprites/shiny/214.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/214.png",
+    "front_female": "/pokemon/sprites/female/214.png",
+    "back_female": "/pokemon/sprites/back/female/214.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/214.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/214.png"
   },
   "evolution": [
     {
@@ -310,7 +317,11 @@
     "zh-Hans": "赫拉克罗斯"
   },
   "shinyColorPalette": {
-    "highlights": ["#e683de", "#b452c5", "#8b2994"],
+    "highlights": [
+      "#e683de",
+      "#b452c5",
+      "#8b2994"
+    ],
     "primary": "#e683de",
     "secondary": "#b452c5",
     "accent": "#8b2994"

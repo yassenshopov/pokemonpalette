@@ -2,7 +2,10 @@
   "id": 79,
   "name": "Slowpoke",
   "species": "Dopey Pokémon",
-  "type": ["Water", "Psychic"],
+  "type": [
+    "Water",
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -72,14 +75,18 @@
     "accent": "#ffffff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#de627b", "#ff8394", "#ffffff"]
+    "highlights": [
+      "#de627b",
+      "#ff8394",
+      "#ffffff"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/79.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/79.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/79.png",
+    "official": "/pokemon/79.png",
+    "front": "/pokemon/sprites/79.png",
+    "back": "/pokemon/sprites/back/79.png",
+    "shiny": "/pokemon/sprites/shiny/79.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/79.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -347,7 +354,11 @@
     "zh-Hans": "呆呆兽"
   },
   "shinyColorPalette": {
-    "highlights": ["#c58ba4", "#e6b4c5", "#ffffff"],
+    "highlights": [
+      "#c58ba4",
+      "#e6b4c5",
+      "#ffffff"
+    ],
     "primary": "#c58ba4",
     "secondary": "#e6b4c5",
     "accent": "#ffffff"

@@ -2,7 +2,10 @@
   "id": 208,
   "name": "Steelix",
   "species": "Iron Snake Pokémon",
-  "type": ["Steel", "Ground"],
+  "type": [
+    "Steel",
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Steel",
@@ -72,18 +75,22 @@
     "accent": "#bdcdc5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#4a628b", "#7b94a4", "#bdcdc5"]
+    "highlights": [
+      "#4a628b",
+      "#7b94a4",
+      "#bdcdc5"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/208.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/208.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/208.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/208.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/208.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/208.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/208.png"
+    "official": "/pokemon/208.png",
+    "front": "/pokemon/sprites/208.png",
+    "back": "/pokemon/sprites/back/208.png",
+    "shiny": "/pokemon/sprites/shiny/208.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/208.png",
+    "front_female": "/pokemon/sprites/female/208.png",
+    "back_female": "/pokemon/sprites/back/female/208.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/208.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/208.png"
   },
   "evolution": [
     {
@@ -325,7 +332,11 @@
     "zh-Hans": "大钢蛇"
   },
   "shinyColorPalette": {
-    "highlights": ["#947b39", "#cdb462", "#eee67b"],
+    "highlights": [
+      "#947b39",
+      "#cdb462",
+      "#eee67b"
+    ],
     "primary": "#947b39",
     "secondary": "#cdb462",
     "accent": "#eee67b"

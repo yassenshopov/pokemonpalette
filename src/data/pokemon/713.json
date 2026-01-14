@@ -2,7 +2,9 @@
   "id": 713,
   "name": "Avalugg",
   "species": "Iceberg Pokémon",
-  "type": ["Ice"],
+  "type": [
+    "Ice"
+  ],
   "typeDetails": [
     {
       "name": "Ice",
@@ -68,13 +70,17 @@
     "accent": "#77b8d9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#bff4ff", "#85d7f2", "#77b8d9"]
+    "highlights": [
+      "#bff4ff",
+      "#85d7f2",
+      "#77b8d9"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png",
+    "official": "/pokemon/713.png",
+    "front": "/pokemon/sprites/713.png",
     "back": null,
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/713.png",
+    "shiny": "/pokemon/sprites/shiny/713.png",
     "back_shiny": null,
     "front_female": null,
     "back_female": null,
@@ -316,7 +322,11 @@
     "zh-Hans": "冰岩怪"
   },
   "shinyColorPalette": {
-    "highlights": ["#bff4ff", "#85d7f2", "#77b8d9"],
+    "highlights": [
+      "#bff4ff",
+      "#85d7f2",
+      "#77b8d9"
+    ],
     "primary": "#bff4ff",
     "secondary": "#85d7f2",
     "accent": "#77b8d9"

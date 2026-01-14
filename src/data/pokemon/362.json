@@ -2,7 +2,9 @@
   "id": 362,
   "name": "Glalie",
   "species": "Face Pokémon",
-  "type": ["Ice"],
+  "type": [
+    "Ice"
+  ],
   "typeDetails": [
     {
       "name": "Ice",
@@ -68,14 +70,18 @@
     "accent": "#393941",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#e6e6f6", "#acaccd", "#393941"]
+    "highlights": [
+      "#e6e6f6",
+      "#acaccd",
+      "#393941"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/362.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/362.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/362.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/362.png",
+    "official": "/pokemon/362.png",
+    "front": "/pokemon/sprites/362.png",
+    "back": "/pokemon/sprites/back/362.png",
+    "shiny": "/pokemon/sprites/shiny/362.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/362.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -336,7 +342,11 @@
     "zh-Hans": "冰鬼护"
   },
   "shinyColorPalette": {
-    "highlights": ["#292939", "#deeeee", "#9cb4b4"],
+    "highlights": [
+      "#292939",
+      "#deeeee",
+      "#9cb4b4"
+    ],
     "primary": "#292939",
     "secondary": "#deeeee",
     "accent": "#9cb4b4"

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { POKEMON_CONSTANTS } from "@/constants/pokemon";
+import { getOfficialArtworkUrl } from "@/lib/sprite-utils";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "text-white" | "text-black" => {
@@ -130,25 +131,39 @@ export function PokemonCard({
   const getOfficialArtwork = (pokemon: Pokemon) => {
     // If a form is selected, construct the artwork URL from the form name
     if (formName) {
-      const shinyPath = isShiny ? "/shiny" : "";
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemon.id}-${formName}.png`;
+      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+        isShiny ? "/shiny" : ""
+      }/${pokemon.id}-${formName}.png`;
+      // Try local path first (forms use {id}-{formName}.png naming)
+      const localPath = `/pokemon/${isShiny ? "shiny/" : ""}${pokemon.id}-${formName}.png`;
+      return localPath; // Try local first, browser will fallback on error
     }
     
     // If a variety is selected, construct the artwork URL from the variety ID
     if (varietyId) {
-      const shinyPath = isShiny ? "/shiny" : "";
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${varietyId}.png`;
+      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+        isShiny ? "/shiny" : ""
+      }/${varietyId}.png`;
+      return getOfficialArtworkUrl(varietyId, isShiny, fallbackUrl);
     }
     
     // Otherwise, use the Pokemon's artwork with shiny support
     if (typeof pokemon.artwork === "object" && "official" in pokemon.artwork) {
+      let artworkUrl = pokemon.artwork.official;
       if (isShiny) {
-        return pokemon.artwork.official.replace(
-          "/other/official-artwork/",
-          "/other/official-artwork/shiny/"
-        );
+        // Handle both PokeAPI URLs and local paths
+        if (artworkUrl.startsWith("/pokemon/") && !artworkUrl.includes("/shiny/")) {
+          // Local path: /pokemon/10282.png -> /pokemon/shiny/10282.png
+          artworkUrl = artworkUrl.replace("/pokemon/", "/pokemon/shiny/");
+        } else if (artworkUrl.includes("/other/official-artwork/")) {
+          // PokeAPI URL: replace the path segment
+          artworkUrl = artworkUrl.replace(
+            "/other/official-artwork/",
+            "/other/official-artwork/shiny/"
+          );
+        }
       }
-      return pokemon.artwork.official;
+      return artworkUrl;
     }
     return null;
   };

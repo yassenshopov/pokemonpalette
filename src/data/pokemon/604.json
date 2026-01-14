@@ -2,7 +2,9 @@
   "id": 604,
   "name": "Eelektross",
   "species": "EleFish Pokémon",
-  "type": ["Electric"],
+  "type": [
+    "Electric"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -56,14 +58,18 @@
     "accent": "#103141",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#206273", "#101018", "#103141"]
+    "highlights": [
+      "#206273",
+      "#101018",
+      "#103141"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/604.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/604.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/604.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/604.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/604.png",
+    "official": "/pokemon/604.png",
+    "front": "/pokemon/sprites/604.png",
+    "back": "/pokemon/sprites/back/604.png",
+    "shiny": "/pokemon/sprites/shiny/604.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/604.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -307,7 +313,11 @@
     "zh-Hans": "麻麻鳗鱼王"
   },
   "shinyColorPalette": {
-    "highlights": ["#31a473", "#181820", "#107352"],
+    "highlights": [
+      "#31a473",
+      "#181820",
+      "#107352"
+    ],
     "primary": "#31a473",
     "secondary": "#181820",
     "accent": "#107352"

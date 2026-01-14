@@ -2,7 +2,9 @@
   "id": 879,
   "name": "Copperajah",
   "species": "Copperderm Pokémon",
-  "type": ["Steel"],
+  "type": [
+    "Steel"
+  ],
   "typeDetails": [
     {
       "name": "Steel",
@@ -50,14 +52,18 @@
     "accent": "#396e63",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#224236", "#225348", "#396e63"]
+    "highlights": [
+      "#224236",
+      "#225348",
+      "#396e63"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/879.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/879.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/879.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/879.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/879.png",
+    "official": "/pokemon/879.png",
+    "front": "/pokemon/sprites/879.png",
+    "back": "/pokemon/sprites/back/879.png",
+    "shiny": "/pokemon/sprites/shiny/879.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/879.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -298,7 +304,11 @@
     "zh-Hans": "大王铜象"
   },
   "shinyColorPalette": {
-    "highlights": ["#253f2c", "#274e37", "#3e6950"],
+    "highlights": [
+      "#253f2c",
+      "#274e37",
+      "#3e6950"
+    ],
     "primary": "#253f2c",
     "secondary": "#274e37",
     "accent": "#3e6950"

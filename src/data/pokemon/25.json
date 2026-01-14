@@ -2,7 +2,9 @@
   "id": 25,
   "name": "Pikachu",
   "species": "Mouse Pokémon",
-  "type": ["Electric"],
+  "type": [
+    "Electric"
+  ],
   "typeDetails": [
     {
       "name": "Electric",
@@ -62,18 +64,22 @@
     "accent": "#9c5200",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#f6e652", "#f6bd20", "#9c5200"]
+    "highlights": [
+      "#f6e652",
+      "#f6bd20",
+      "#9c5200"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/25.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/25.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/25.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/25.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/25.png"
+    "official": "/pokemon/25.png",
+    "front": "/pokemon/sprites/25.png",
+    "back": "/pokemon/sprites/back/25.png",
+    "shiny": "/pokemon/sprites/shiny/25.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/25.png",
+    "front_female": "/pokemon/sprites/female/25.png",
+    "back_female": "/pokemon/sprites/back/female/25.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/25.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/25.png"
   },
   "evolution": [
     {
@@ -426,7 +432,11 @@
     "zh-Hans": "皮卡丘"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffc531", "#ffa400", "#b43100"],
+    "highlights": [
+      "#ffc531",
+      "#ffa400",
+      "#b43100"
+    ],
     "primary": "#ffc531",
     "secondary": "#ffa400",
     "accent": "#b43100"

@@ -2,7 +2,10 @@
   "id": 376,
   "name": "Metagross",
   "species": "Iron Leg Pokémon",
-  "type": ["Steel", "Psychic"],
+  "type": [
+    "Steel",
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Steel",
@@ -66,14 +69,18 @@
     "accent": "#7ba4f6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#416294", "#4a83c5", "#7ba4f6"]
+    "highlights": [
+      "#416294",
+      "#4a83c5",
+      "#7ba4f6"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/376.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/376.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/376.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/376.png",
+    "official": "/pokemon/376.png",
+    "front": "/pokemon/sprites/376.png",
+    "back": "/pokemon/sprites/back/376.png",
+    "shiny": "/pokemon/sprites/shiny/376.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/376.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -329,7 +336,11 @@
     "zh-Hans": "巨金怪"
   },
   "shinyColorPalette": {
-    "highlights": ["#736a7b", "#a49cac", "#c5c5cd"],
+    "highlights": [
+      "#736a7b",
+      "#a49cac",
+      "#c5c5cd"
+    ],
     "primary": "#736a7b",
     "secondary": "#a49cac",
     "accent": "#c5c5cd"

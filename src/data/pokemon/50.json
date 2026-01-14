@@ -2,7 +2,9 @@
   "id": 50,
   "name": "Diglett",
   "species": "Mole Pokémon",
-  "type": ["Ground"],
+  "type": [
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Ground",
@@ -68,14 +70,18 @@
     "accent": "#a45a5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#c57341", "#b4ac73", "#a45a5a"]
+    "highlights": [
+      "#c57341",
+      "#b4ac73",
+      "#a45a5a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/50.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/50.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/50.png",
+    "official": "/pokemon/50.png",
+    "front": "/pokemon/sprites/50.png",
+    "back": "/pokemon/sprites/back/50.png",
+    "shiny": "/pokemon/sprites/shiny/50.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/50.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -321,7 +327,11 @@
     "zh-Hans": "地鼠"
   },
   "shinyColorPalette": {
-    "highlights": ["#bd7352", "#b4ac73", "#9c5a6a"],
+    "highlights": [
+      "#bd7352",
+      "#b4ac73",
+      "#9c5a6a"
+    ],
     "primary": "#bd7352",
     "secondary": "#b4ac73",
     "accent": "#9c5a6a"

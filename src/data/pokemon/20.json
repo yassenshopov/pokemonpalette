@@ -2,7 +2,9 @@
   "id": 20,
   "name": "Raticate",
   "species": "Mouse Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,18 +70,22 @@
     "accent": "#eecd73",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#a47329", "#c59439", "#eecd73"]
+    "highlights": [
+      "#a47329",
+      "#c59439",
+      "#eecd73"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/20.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/20.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/20.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/20.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/20.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/20.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/20.png"
+    "official": "/pokemon/20.png",
+    "front": "/pokemon/sprites/20.png",
+    "back": "/pokemon/sprites/back/20.png",
+    "shiny": "/pokemon/sprites/shiny/20.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/20.png",
+    "front_female": "/pokemon/sprites/female/20.png",
+    "back_female": "/pokemon/sprites/back/female/20.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/20.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/20.png"
   },
   "evolution": [
     {
@@ -333,7 +339,11 @@
     "zh-Hans": "拉达"
   },
   "shinyColorPalette": {
-    "highlights": ["#b45229", "#d57339", "#d5e68b"],
+    "highlights": [
+      "#b45229",
+      "#d57339",
+      "#d5e68b"
+    ],
     "primary": "#b45229",
     "secondary": "#d57339",
     "accent": "#d5e68b"

@@ -2,7 +2,9 @@
   "id": 549,
   "name": "Lilligant",
   "species": "Flowering Pokémon",
-  "type": ["Grass"],
+  "type": [
+    "Grass"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -68,14 +70,18 @@
     "accent": "#9cb462",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#c5ee7b", "#39ac39", "#9cb462"]
+    "highlights": [
+      "#c5ee7b",
+      "#39ac39",
+      "#9cb462"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/549.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/549.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/549.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/549.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/549.png",
+    "official": "/pokemon/549.png",
+    "front": "/pokemon/sprites/549.png",
+    "back": "/pokemon/sprites/back/549.png",
+    "shiny": "/pokemon/sprites/shiny/549.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/549.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -321,7 +327,11 @@
     "zh-Hans": "裙儿小姐"
   },
   "shinyColorPalette": {
-    "highlights": ["#d5ee7b", "#6ac5cd", "#acb462"],
+    "highlights": [
+      "#d5ee7b",
+      "#6ac5cd",
+      "#acb462"
+    ],
     "primary": "#d5ee7b",
     "secondary": "#6ac5cd",
     "accent": "#acb462"

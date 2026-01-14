@@ -2,7 +2,10 @@
   "id": 530,
   "name": "Excadrill",
   "species": "Subterrene Pokémon",
-  "type": ["Ground", "Steel"],
+  "type": [
+    "Ground",
+    "Steel"
+  ],
   "typeDetails": [
     {
       "name": "Ground",
@@ -72,14 +75,18 @@
     "accent": "#413129",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#5a4a41", "#a4a4a4", "#413129"]
+    "highlights": [
+      "#5a4a41",
+      "#a4a4a4",
+      "#413129"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/530.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/530.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/530.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/530.png",
+    "official": "/pokemon/530.png",
+    "front": "/pokemon/sprites/530.png",
+    "back": "/pokemon/sprites/back/530.png",
+    "shiny": "/pokemon/sprites/shiny/530.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/530.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -313,7 +320,11 @@
     "zh-Hans": "龙头地鼠"
   },
   "shinyColorPalette": {
-    "highlights": ["#b44162", "#9c9cc5", "#7b3141"],
+    "highlights": [
+      "#b44162",
+      "#9c9cc5",
+      "#7b3141"
+    ],
     "primary": "#b44162",
     "secondary": "#9c9cc5",
     "accent": "#7b3141"

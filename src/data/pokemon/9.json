@@ -2,7 +2,9 @@
   "id": 9,
   "name": "Blastoise",
   "species": "Shellfish Pokémon",
-  "type": ["Water"],
+  "type": [
+    "Water"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -62,14 +64,18 @@
     "accent": "#2062ac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#5a8bcd", "#083962", "#2062ac"]
+    "highlights": [
+      "#5a8bcd",
+      "#083962",
+      "#2062ac"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/9.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/9.png",
+    "official": "/pokemon/9.png",
+    "front": "/pokemon/sprites/9.png",
+    "back": "/pokemon/sprites/back/9.png",
+    "shiny": "/pokemon/sprites/shiny/9.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/9.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -327,7 +333,11 @@
     "zh-Hans": "水箭龟"
   },
   "shinyColorPalette": {
-    "highlights": ["#d5b4f6", "#735294", "#a47bbd"],
+    "highlights": [
+      "#d5b4f6",
+      "#735294",
+      "#a47bbd"
+    ],
     "primary": "#d5b4f6",
     "secondary": "#735294",
     "accent": "#a47bbd"

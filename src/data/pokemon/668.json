@@ -2,7 +2,10 @@
   "id": 668,
   "name": "Pyroar",
   "species": "Royal Pokémon",
-  "type": ["Fire", "Normal"],
+  "type": [
+    "Fire",
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -72,17 +75,21 @@
     "accent": "#a82b29",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#dc3a2f", "#f7cd4b", "#a82b29"]
+    "highlights": [
+      "#dc3a2f",
+      "#f7cd4b",
+      "#a82b29"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/668.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/668.png",
+    "official": "/pokemon/668.png",
+    "front": "/pokemon/sprites/668.png",
     "back": null,
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/668.png",
+    "shiny": "/pokemon/sprites/shiny/668.png",
     "back_shiny": null,
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/668.png",
+    "front_female": "/pokemon/sprites/female/668.png",
     "back_female": null,
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/668.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/668.png",
     "back_shiny_female": null
   },
   "evolution": [
@@ -313,7 +320,11 @@
     "zh-Hans": "火炎狮"
   },
   "shinyColorPalette": {
-    "highlights": ["#cc3b4c", "#f4cb63", "#fde79e"],
+    "highlights": [
+      "#cc3b4c",
+      "#f4cb63",
+      "#fde79e"
+    ],
     "primary": "#cc3b4c",
     "secondary": "#f4cb63",
     "accent": "#fde79e"

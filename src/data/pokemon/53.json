@@ -2,7 +2,9 @@
   "id": 53,
   "name": "Persian",
   "species": "Classy Cat Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#835200",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#deb46a", "#ffe683", "#835200"]
+    "highlights": [
+      "#deb46a",
+      "#ffe683",
+      "#835200"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/53.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/53.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/53.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/53.png",
+    "official": "/pokemon/53.png",
+    "front": "/pokemon/sprites/53.png",
+    "back": "/pokemon/sprites/back/53.png",
+    "shiny": "/pokemon/sprites/shiny/53.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/53.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -334,7 +340,11 @@
     "zh-Hans": "猫老大"
   },
   "shinyColorPalette": {
-    "highlights": ["#eecd83", "#fff694", "#8b6a08"],
+    "highlights": [
+      "#eecd83",
+      "#fff694",
+      "#8b6a08"
+    ],
     "primary": "#eecd83",
     "secondary": "#fff694",
     "accent": "#8b6a08"

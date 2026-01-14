@@ -2,7 +2,9 @@
   "id": 844,
   "name": "Sandaconda",
   "species": "Sand Snake Pokémon",
-  "type": ["Ground"],
+  "type": [
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Ground",
@@ -56,14 +58,18 @@
     "accent": "#715b2f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#898c42", "#b4a36d", "#715b2f"]
+    "highlights": [
+      "#898c42",
+      "#b4a36d",
+      "#715b2f"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/844.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/844.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/844.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/844.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/844.png",
+    "official": "/pokemon/844.png",
+    "front": "/pokemon/sprites/844.png",
+    "back": "/pokemon/sprites/back/844.png",
+    "shiny": "/pokemon/sprites/shiny/844.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/844.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -304,7 +310,11 @@
     "zh-Hans": "沙螺蟒"
   },
   "shinyColorPalette": {
-    "highlights": ["#656d61", "#9fa57c", "#52554b"],
+    "highlights": [
+      "#656d61",
+      "#9fa57c",
+      "#52554b"
+    ],
     "primary": "#656d61",
     "secondary": "#9fa57c",
     "accent": "#52554b"

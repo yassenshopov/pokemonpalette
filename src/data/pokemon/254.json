@@ -2,7 +2,9 @@
   "id": 254,
   "name": "Sceptile",
   "species": "Forest Pokémon",
-  "type": ["Grass"],
+  "type": [
+    "Grass"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -62,14 +64,18 @@
     "accent": "#204a20",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#83cd6a", "#419c41", "#204a20"]
+    "highlights": [
+      "#83cd6a",
+      "#419c41",
+      "#204a20"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/254.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/254.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/254.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/254.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/254.png",
+    "official": "/pokemon/254.png",
+    "front": "/pokemon/sprites/254.png",
+    "back": "/pokemon/sprites/back/254.png",
+    "shiny": "/pokemon/sprites/shiny/254.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/254.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -320,7 +326,11 @@
     "zh-Hans": "蜥蜴王"
   },
   "shinyColorPalette": {
-    "highlights": ["#a4deee", "#62b49c", "#5a948b"],
+    "highlights": [
+      "#a4deee",
+      "#62b49c",
+      "#5a948b"
+    ],
     "primary": "#a4deee",
     "secondary": "#62b49c",
     "accent": "#5a948b"

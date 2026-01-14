@@ -2,7 +2,9 @@
   "id": 143,
   "name": "Snorlax",
   "species": "Sleeping Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#315a7b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#f6e6bd", "#e6c5ac", "#315a7b"]
+    "highlights": [
+      "#f6e6bd",
+      "#e6c5ac",
+      "#315a7b"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/143.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/143.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/143.png",
+    "official": "/pokemon/143.png",
+    "front": "/pokemon/sprites/143.png",
+    "back": "/pokemon/sprites/back/143.png",
+    "shiny": "/pokemon/sprites/shiny/143.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/143.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -324,7 +330,11 @@
     "zh-Hans": "卡比兽"
   },
   "shinyColorPalette": {
-    "highlights": ["#f6e6ac", "#e6cd9c", "#204aa4"],
+    "highlights": [
+      "#f6e6ac",
+      "#e6cd9c",
+      "#204aa4"
+    ],
     "primary": "#f6e6ac",
     "secondary": "#e6cd9c",
     "accent": "#204aa4"

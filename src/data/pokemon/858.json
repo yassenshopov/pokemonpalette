@@ -2,7 +2,10 @@
   "id": 858,
   "name": "Hatterene",
   "species": "Silent Pokémon",
-  "type": ["Psychic", "Fairy"],
+  "type": [
+    "Psychic",
+    "Fairy"
+  ],
   "typeDetails": [
     {
       "name": "Psychic",
@@ -60,14 +63,18 @@
     "accent": "#948fc2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#c8e9ff", "#f5bac2", "#948fc2"]
+    "highlights": [
+      "#c8e9ff",
+      "#f5bac2",
+      "#948fc2"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/858.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/858.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/858.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/858.png",
+    "official": "/pokemon/858.png",
+    "front": "/pokemon/sprites/858.png",
+    "back": "/pokemon/sprites/back/858.png",
+    "shiny": "/pokemon/sprites/shiny/858.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/858.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -318,7 +325,11 @@
     "zh-Hans": "布莉姆温"
   },
   "shinyColorPalette": {
-    "highlights": ["#ead5d0", "#fc99ac", "#90748a"],
+    "highlights": [
+      "#ead5d0",
+      "#fc99ac",
+      "#90748a"
+    ],
     "primary": "#ead5d0",
     "secondary": "#fc99ac",
     "accent": "#90748a"

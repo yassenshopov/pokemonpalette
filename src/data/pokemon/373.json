@@ -2,7 +2,10 @@
   "id": 373,
   "name": "Salamence",
   "species": "Dragon Pokémon",
-  "type": ["Dragon", "Flying"],
+  "type": [
+    "Dragon",
+    "Flying"
+  ],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -66,14 +69,18 @@
     "accent": "#bd526a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#a4394a", "#83cde6", "#bd526a"]
+    "highlights": [
+      "#a4394a",
+      "#83cde6",
+      "#bd526a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/373.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/373.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/373.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/373.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/373.png",
+    "official": "/pokemon/373.png",
+    "front": "/pokemon/sprites/373.png",
+    "back": "/pokemon/sprites/back/373.png",
+    "shiny": "/pokemon/sprites/shiny/373.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/373.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -333,7 +340,11 @@
     "zh-Hans": "暴飞龙"
   },
   "shinyColorPalette": {
-    "highlights": ["#b46a41", "#94ee83", "#de7b52"],
+    "highlights": [
+      "#b46a41",
+      "#94ee83",
+      "#de7b52"
+    ],
     "primary": "#b46a41",
     "secondary": "#94ee83",
     "accent": "#de7b52"

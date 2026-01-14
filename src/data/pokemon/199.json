@@ -2,7 +2,10 @@
   "id": 199,
   "name": "Slowking",
   "species": "Royal Pokémon",
-  "type": ["Water", "Psychic"],
+  "type": [
+    "Water",
+    "Psychic"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -72,14 +75,18 @@
     "accent": "#aca4a4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ee736a", "#d5d5d5", "#aca4a4"]
+    "highlights": [
+      "#ee736a",
+      "#d5d5d5",
+      "#aca4a4"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/199.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/199.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/199.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/199.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/199.png",
+    "official": "/pokemon/199.png",
+    "front": "/pokemon/sprites/199.png",
+    "back": "/pokemon/sprites/back/199.png",
+    "shiny": "/pokemon/sprites/shiny/199.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/199.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -343,7 +350,11 @@
     "zh-Hans": "呆呆王"
   },
   "shinyColorPalette": {
-    "highlights": ["#de73ac", "#dedecd", "#aca4a4"],
+    "highlights": [
+      "#de73ac",
+      "#dedecd",
+      "#aca4a4"
+    ],
     "primary": "#de73ac",
     "secondary": "#dedecd",
     "accent": "#aca4a4"

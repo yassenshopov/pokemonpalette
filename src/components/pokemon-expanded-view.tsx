@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Pokemon, EvolutionDetail } from "@/types/pokemon";
+import { getOfficialArtworkUrl } from "@/lib/sprite-utils";
 import {
   Card,
   CardContent,
@@ -73,8 +74,10 @@ export function PokemonExpandedView({
       let officialUrl: string | null = null;
 
       // Construct the official artwork URL for the selected Pokemon
-      const shinyPath = isShiny ? "/shiny" : "";
-      officialUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemonId}.png`;
+      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
+        isShiny ? "/shiny" : ""
+      }/${pokemonId}.png`;
+      officialUrl = getOfficialArtworkUrl(pokemonId, isShiny, fallbackUrl);
 
       return officialUrl;
     }

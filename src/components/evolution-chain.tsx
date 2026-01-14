@@ -2,8 +2,10 @@
 
 import { Pokemon } from "@/types/pokemon";
 import { getPokemonMetadataByName } from "@/lib/pokemon";
+import { getFrontSpriteUrl } from "@/lib/sprite-utils";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface EvolutionChainProps {
   pokemonData: Pokemon;
@@ -59,10 +61,13 @@ export function EvolutionChain({
             >
               {evosAtLevel.map((evo, evoIndex) => {
                 const evoMetadata = getPokemonMetadataByName(evo.name);
-                const evoSprite = evoMetadata?.id
+                const fallbackUrl = evoMetadata?.id
                   ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                       isShiny ? "shiny/" : ""
                     }${evoMetadata.id}.png`
+                  : null;
+                const evoSprite = evoMetadata?.id
+                  ? getFrontSpriteUrl(evoMetadata.id, isShiny, fallbackUrl)
                   : null;
                 const isSelected = evoMetadata?.id === selectedPokemon;
 
@@ -97,18 +102,15 @@ export function EvolutionChain({
                       }
                     >
                       {evoSprite ? (
-                        <Image
+                        <EvolutionSprite
                           src={evoSprite}
+                          fallbackUrl={fallbackUrl}
                           alt={evo.name}
                           width={isBranch ? 48 : 64}
                           height={isBranch ? 48 : 64}
                           className={`${
                             isBranch ? "w-12 h-12" : "w-16 h-16"
                           } object-contain`}
-                          style={{
-                            imageRendering: "pixelated",
-                          }}
-                          unoptimized
                         />
                       ) : (
                         <div className="w-12 h-12 bg-muted rounded flex items-center justify-center text-xs">
@@ -164,5 +166,54 @@ export function EvolutionChain({
         </div>
       )}
     </div>
+  );
+}
+
+// Component to handle sprite with fallback
+function EvolutionSprite({
+  src,
+  fallbackUrl,
+  alt,
+  width,
+  height,
+  className,
+}: {
+  src: string;
+  fallbackUrl: string | null;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}) {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  // Update imgSrc when src prop changes (e.g., when isShiny toggles)
+  useEffect(() => {
+    setImgSrc(src);
+    setHasError(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!hasError && fallbackUrl && imgSrc !== fallbackUrl) {
+      setHasError(true);
+      setImgSrc(fallbackUrl);
+    }
+  };
+
+  return (
+    <Image
+      key={imgSrc}
+      src={imgSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      style={{
+        imageRendering: "pixelated",
+      }}
+      unoptimized
+      onError={handleError}
+    />
   );
 }

@@ -2,7 +2,10 @@
   "id": 460,
   "name": "Abomasnow",
   "species": "Frost Tree Pokémon",
-  "type": ["Grass", "Ice"],
+  "type": [
+    "Grass",
+    "Ice"
+  ],
   "typeDetails": [
     {
       "name": "Grass",
@@ -66,17 +69,21 @@
     "accent": "#202931",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ffffff", "#c5d5de", "#202931"]
+    "highlights": [
+      "#ffffff",
+      "#c5d5de",
+      "#202931"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/460.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/460.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/460.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/460.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/460.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/460.png",
+    "official": "/pokemon/460.png",
+    "front": "/pokemon/sprites/460.png",
+    "back": "/pokemon/sprites/back/460.png",
+    "shiny": "/pokemon/sprites/shiny/460.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/460.png",
+    "front_female": "/pokemon/sprites/female/460.png",
     "back_female": null,
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/460.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/460.png",
     "back_shiny_female": null
   },
   "evolution": [
@@ -319,7 +326,11 @@
     "zh-Hans": "暴雪王"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffffff", "#c5d5de", "#202931"],
+    "highlights": [
+      "#ffffff",
+      "#c5d5de",
+      "#202931"
+    ],
     "primary": "#ffffff",
     "secondary": "#c5d5de",
     "accent": "#202931"

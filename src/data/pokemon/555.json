@@ -2,7 +2,9 @@
   "id": 555,
   "name": "Darmanitan-standard",
   "species": "Blazing Pokémon",
-  "type": ["Fire"],
+  "type": [
+    "Fire"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -62,14 +64,18 @@
     "accent": "#621818",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ac2018", "#8b1829", "#621818"]
+    "highlights": [
+      "#ac2018",
+      "#8b1829",
+      "#621818"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/555.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/555.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/555.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/555.png",
+    "official": "/pokemon/555.png",
+    "front": "/pokemon/sprites/555.png",
+    "back": "/pokemon/sprites/back/555.png",
+    "shiny": "/pokemon/sprites/shiny/555.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/555.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -333,7 +339,11 @@
     "zh-Hans": "达摩狒狒"
   },
   "shinyColorPalette": {
-    "highlights": ["#7b314a", "#4a1820", "#201010"],
+    "highlights": [
+      "#7b314a",
+      "#4a1820",
+      "#201010"
+    ],
     "primary": "#7b314a",
     "secondary": "#4a1820",
     "accent": "#201010"

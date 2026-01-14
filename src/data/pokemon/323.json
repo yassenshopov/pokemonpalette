@@ -2,7 +2,10 @@
   "id": 323,
   "name": "Camerupt",
   "species": "Eruption Pokémon",
-  "type": ["Fire", "Ground"],
+  "type": [
+    "Fire",
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -72,18 +75,22 @@
     "accent": "#181818",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ee6a4a", "#c53920", "#181818"]
+    "highlights": [
+      "#ee6a4a",
+      "#c53920",
+      "#181818"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/323.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/323.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/323.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/323.png",
-    "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/323.png",
-    "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/323.png",
-    "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/323.png",
-    "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/323.png"
+    "official": "/pokemon/323.png",
+    "front": "/pokemon/sprites/323.png",
+    "back": "/pokemon/sprites/back/323.png",
+    "shiny": "/pokemon/sprites/shiny/323.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/323.png",
+    "front_female": "/pokemon/sprites/female/323.png",
+    "back_female": "/pokemon/sprites/back/female/323.png",
+    "front_shiny_female": "/pokemon/sprites/shiny/female/323.png",
+    "back_shiny_female": "/pokemon/sprites/back/shiny/female/323.png"
   },
   "evolution": [
     {
@@ -325,7 +332,11 @@
     "zh-Hans": "喷火驼"
   },
   "shinyColorPalette": {
-    "highlights": ["#73738b", "#4a4a62", "#181818"],
+    "highlights": [
+      "#73738b",
+      "#4a4a62",
+      "#181818"
+    ],
     "primary": "#73738b",
     "secondary": "#4a4a62",
     "accent": "#181818"

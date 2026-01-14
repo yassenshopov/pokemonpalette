@@ -2,7 +2,9 @@
   "id": 36,
   "name": "Clefable",
   "species": "Fairy Pokémon",
-  "type": ["Fairy"],
+  "type": [
+    "Fairy"
+  ],
   "typeDetails": [
     {
       "name": "Fairy",
@@ -68,14 +70,18 @@
     "accent": "#8b4a52",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ffc5b4", "#ee9494", "#8b4a52"]
+    "highlights": [
+      "#ffc5b4",
+      "#ee9494",
+      "#8b4a52"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/36.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/36.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/36.png",
+    "official": "/pokemon/36.png",
+    "front": "/pokemon/sprites/36.png",
+    "back": "/pokemon/sprites/back/36.png",
+    "shiny": "/pokemon/sprites/shiny/36.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/36.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -331,7 +337,11 @@
     "zh-Hans": "皮可西"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffdede", "#f6b4b4", "#cd5a5a"],
+    "highlights": [
+      "#ffdede",
+      "#f6b4b4",
+      "#cd5a5a"
+    ],
     "primary": "#ffdede",
     "secondary": "#f6b4b4",
     "accent": "#cd5a5a"

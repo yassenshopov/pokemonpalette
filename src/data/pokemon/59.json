@@ -2,7 +2,9 @@
   "id": 59,
   "name": "Arcanine",
   "species": "Legendary Pokémon",
-  "type": ["Fire"],
+  "type": [
+    "Fire"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -68,14 +70,18 @@
     "accent": "#c5525a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#d5a48b", "#ffdeac", "#c5525a"]
+    "highlights": [
+      "#d5a48b",
+      "#ffdeac",
+      "#c5525a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/59.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/59.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/59.png",
+    "official": "/pokemon/59.png",
+    "front": "/pokemon/sprites/59.png",
+    "back": "/pokemon/sprites/back/59.png",
+    "shiny": "/pokemon/sprites/shiny/59.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/59.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -321,7 +327,11 @@
     "zh-Hans": "风速狗"
   },
   "shinyColorPalette": {
-    "highlights": ["#d5bd94", "#f6e6bd", "#b49c00"],
+    "highlights": [
+      "#d5bd94",
+      "#f6e6bd",
+      "#b49c00"
+    ],
     "primary": "#d5bd94",
     "secondary": "#f6e6bd",
     "accent": "#b49c00"

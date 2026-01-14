@@ -2,7 +2,10 @@
   "id": 6,
   "name": "Charizard",
   "species": "Flame Pokémon",
-  "type": ["Fire", "Flying"],
+  "type": [
+    "Fire",
+    "Flying"
+  ],
   "typeDetails": [
     {
       "name": "Fire",
@@ -66,14 +69,18 @@
     "accent": "#084152",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#ee8329", "#cd5241", "#084152"]
+    "highlights": [
+      "#ee8329",
+      "#cd5241",
+      "#084152"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/6.png",
+    "official": "/pokemon/6.png",
+    "front": "/pokemon/sprites/6.png",
+    "back": "/pokemon/sprites/back/6.png",
+    "shiny": "/pokemon/sprites/shiny/6.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/6.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -338,7 +345,11 @@
     "zh-Hans": "喷火龙"
   },
   "shinyColorPalette": {
-    "highlights": ["#837b94", "#5a5a6a", "#831029"],
+    "highlights": [
+      "#837b94",
+      "#5a5a6a",
+      "#831029"
+    ],
     "primary": "#837b94",
     "secondary": "#5a5a6a",
     "accent": "#831029"

@@ -2,7 +2,9 @@
   "id": 51,
   "name": "Dugtrio",
   "species": "Mole Pokémon",
-  "type": ["Ground"],
+  "type": [
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Ground",
@@ -68,14 +70,18 @@
     "accent": "#b4ac73",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#c57341", "#a45a5a", "#b4ac73"]
+    "highlights": [
+      "#c57341",
+      "#a45a5a",
+      "#b4ac73"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/51.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/51.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/51.png",
+    "official": "/pokemon/51.png",
+    "front": "/pokemon/sprites/51.png",
+    "back": "/pokemon/sprites/back/51.png",
+    "shiny": "/pokemon/sprites/shiny/51.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/51.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -321,7 +327,11 @@
     "zh-Hans": "三地鼠"
   },
   "shinyColorPalette": {
-    "highlights": ["#bd7352", "#9c5a6a", "#b4ac73"],
+    "highlights": [
+      "#bd7352",
+      "#9c5a6a",
+      "#b4ac73"
+    ],
     "primary": "#bd7352",
     "secondary": "#9c5a6a",
     "accent": "#b4ac73"

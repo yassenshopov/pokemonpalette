@@ -2,7 +2,9 @@
   "id": 27,
   "name": "Sandshrew",
   "species": "Mouse Pokémon",
-  "type": ["Ground"],
+  "type": [
+    "Ground"
+  ],
   "typeDetails": [
     {
       "name": "Ground",
@@ -62,14 +64,18 @@
     "accent": "#b48310",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#cdb400", "#eede10", "#b48310"]
+    "highlights": [
+      "#cdb400",
+      "#eede10",
+      "#b48310"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/27.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/27.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/27.png",
+    "official": "/pokemon/27.png",
+    "front": "/pokemon/sprites/27.png",
+    "back": "/pokemon/sprites/back/27.png",
+    "shiny": "/pokemon/sprites/shiny/27.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/27.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -323,7 +329,11 @@
     "zh-Hans": "穿山鼠"
   },
   "shinyColorPalette": {
-    "highlights": ["#8bb441", "#acde4a", "#6a834a"],
+    "highlights": [
+      "#8bb441",
+      "#acde4a",
+      "#6a834a"
+    ],
     "primary": "#8bb441",
     "secondary": "#acde4a",
     "accent": "#6a834a"

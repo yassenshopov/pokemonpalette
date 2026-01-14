@@ -76,11 +76,11 @@
     ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/707.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/707.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/707.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/707.png",
+    "official": "/pokemon/707.png",
+    "front": "/pokemon/sprites/707.png",
+    "back": "/pokemon/sprites/back/707.png",
+    "shiny": "/pokemon/sprites/shiny/707.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/707.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,

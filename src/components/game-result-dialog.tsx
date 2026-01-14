@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -22,7 +23,6 @@ import {
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
-import Image from "next/image";
 import Link from "next/link";
 
 // Get generation from Pokemon ID
@@ -44,15 +44,18 @@ function getSpriteUrl(pokemon: Pokemon, isShiny: boolean): string {
   const generation = getGenerationFromId(pokemon.id);
   const pokemonId = pokemon.id;
 
-  if (generation <= 5) {
-    // Use animated BW2 sprite for Gen V and earlier
-    const shinyPath = isShiny ? "shiny/" : "";
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${shinyPath}${pokemonId}.gif`;
-  } else {
-    // Use regular sprite for Gen VI and later
-    const shinyPath = isShiny ? "shiny/" : "";
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${shinyPath}${pokemonId}.png`;
+  // For Gen VI+, try local first, then fallback to URL
+  if (generation > 5) {
+    const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+      isShiny ? "shiny/" : ""
+    }${pokemonId}.png`;
+    // Try local sprite first (browser will handle 404 fallback via onError)
+    return `/pokemon/sprites/${isShiny ? "shiny/" : ""}${pokemonId}.png`;
   }
+  
+  // For Gen V and earlier, use animated sprites (no local version available)
+  const shinyPath = isShiny ? "shiny/" : "";
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${shinyPath}${pokemonId}.gif`;
 }
 
 interface UserStats {
@@ -108,6 +111,13 @@ export function GameResultDialog({
     targetPokemon && isShiny !== null
       ? getSpriteUrl(targetPokemon, isShiny === true)
       : null;
+  
+  // Get fallback URL for Gen VI+ sprites
+  const fallbackSpriteUrl = targetPokemon && isShiny !== null && getGenerationFromId(targetPokemon.id) > 5
+    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+        isShiny === true ? "shiny/" : ""
+      }${targetPokemon.id}.png`
+    : spriteUrl;
 
   // Determine if this is an animated BW2 sprite (Gen V and earlier)
   const isAnimatedBW2Sprite =
@@ -227,8 +237,9 @@ export function GameResultDialog({
           {spriteUrl && targetPokemon && (
             <div className="flex justify-center items-center py-4 flex-1">
               <div className="relative">
-                <Image
+                <GameSprite
                   src={spriteUrl}
+                  fallbackUrl={fallbackSpriteUrl || null}
                   alt={targetPokemon.name}
                   width={isAnimatedBW2Sprite ? 144 : 192}
                   height={isAnimatedBW2Sprite ? 144 : 192}
@@ -237,8 +248,6 @@ export function GameResultDialog({
                       ? "w-36 h-36 object-contain"
                       : "w-48 h-48 object-contain"
                   }
-                  style={{ imageRendering: "pixelated" }}
-                  unoptimized
                 />
               </div>
             </div>
@@ -385,5 +394,45 @@ export function GameResultDialog({
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+// Component to handle sprite with fallback
+function GameSprite({
+  src,
+  fallbackUrl,
+  alt,
+  width,
+  height,
+  className,
+}: {
+  src: string;
+  fallbackUrl: string | null;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}) {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  const handleError = () => {
+    if (!hasError && fallbackUrl && imgSrc !== fallbackUrl && imgSrc.startsWith('/pokemon/')) {
+      setHasError(true);
+      setImgSrc(fallbackUrl);
+    }
+  };
+
+  return (
+    <Image
+      src={imgSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      style={{ imageRendering: "pixelated" }}
+      unoptimized
+      onError={handleError}
+    />
   );
 }

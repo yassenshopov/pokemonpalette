@@ -2,7 +2,10 @@
   "id": 861,
   "name": "Grimmsnarl",
   "species": "Bulk Up Pokémon",
-  "type": ["Dark", "Fairy"],
+  "type": [
+    "Dark",
+    "Fairy"
+  ],
   "typeDetails": [
     {
       "name": "Dark",
@@ -60,14 +63,18 @@
     "accent": "#2f184e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#5d4694", "#433568", "#2f184e"]
+    "highlights": [
+      "#5d4694",
+      "#433568",
+      "#2f184e"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/861.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/861.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/861.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/861.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/861.png",
+    "official": "/pokemon/861.png",
+    "front": "/pokemon/sprites/861.png",
+    "back": "/pokemon/sprites/back/861.png",
+    "shiny": "/pokemon/sprites/shiny/861.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/861.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -318,7 +325,11 @@
     "zh-Hans": "长毛巨魔"
   },
   "shinyColorPalette": {
-    "highlights": ["#ddd7df", "#a39da5", "#433f45"],
+    "highlights": [
+      "#ddd7df",
+      "#a39da5",
+      "#433f45"
+    ],
     "primary": "#ddd7df",
     "secondary": "#a39da5",
     "accent": "#433f45"

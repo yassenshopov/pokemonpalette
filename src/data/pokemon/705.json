@@ -2,7 +2,9 @@
   "id": 705,
   "name": "Sliggoo",
   "species": "Soft Tissue Pokémon",
-  "type": ["Dragon"],
+  "type": [
+    "Dragon"
+  ],
   "typeDetails": [
     {
       "name": "Dragon",
@@ -68,13 +70,17 @@
     "accent": "#8f7db3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#f2daf2", "#bfacbf", "#8f7db3"]
+    "highlights": [
+      "#f2daf2",
+      "#bfacbf",
+      "#8f7db3"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/705.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/705.png",
+    "official": "/pokemon/705.png",
+    "front": "/pokemon/sprites/705.png",
     "back": null,
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/705.png",
+    "shiny": "/pokemon/sprites/shiny/705.png",
     "back_shiny": null,
     "front_female": null,
     "back_female": null,
@@ -331,7 +337,11 @@
     "zh-Hans": "黏美儿"
   },
   "shinyColorPalette": {
-    "highlights": ["#ffffa6", "#cccc85", "#cc8f7a"],
+    "highlights": [
+      "#ffffa6",
+      "#cccc85",
+      "#cc8f7a"
+    ],
     "primary": "#ffffa6",
     "secondary": "#cccc85",
     "accent": "#cc8f7a"

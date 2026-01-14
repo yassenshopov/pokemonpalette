@@ -2,7 +2,9 @@
   "id": 571,
   "name": "Zoroark",
   "species": "Illusion Fox Pokémon",
-  "type": ["Dark"],
+  "type": [
+    "Dark"
+  ],
   "typeDetails": [
     {
       "name": "Dark",
@@ -56,14 +58,18 @@
     "accent": "#7b2941",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#202031", "#62626a", "#7b2941"]
+    "highlights": [
+      "#202031",
+      "#62626a",
+      "#7b2941"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/571.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/571.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/571.png",
+    "official": "/pokemon/571.png",
+    "front": "/pokemon/sprites/571.png",
+    "back": "/pokemon/sprites/back/571.png",
+    "shiny": "/pokemon/sprites/shiny/571.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/571.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -304,7 +310,11 @@
     "zh-Hans": "索罗亚克"
   },
   "shinyColorPalette": {
-    "highlights": ["#62626a", "#41299c", "#7331c5"],
+    "highlights": [
+      "#62626a",
+      "#41299c",
+      "#7331c5"
+    ],
     "primary": "#62626a",
     "secondary": "#41299c",
     "accent": "#7331c5"

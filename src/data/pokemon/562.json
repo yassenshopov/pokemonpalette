@@ -2,7 +2,9 @@
   "id": 562,
   "name": "Yamask",
   "species": "Spirit Pokémon",
-  "type": ["Ghost"],
+  "type": [
+    "Ghost"
+  ],
   "typeDetails": [
     {
       "name": "Ghost",
@@ -56,14 +58,18 @@
     "accent": "#8b5a20",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#525252", "#313131", "#8b5a20"]
+    "highlights": [
+      "#525252",
+      "#313131",
+      "#8b5a20"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/562.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/562.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/562.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/562.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/562.png",
+    "official": "/pokemon/562.png",
+    "front": "/pokemon/sprites/562.png",
+    "back": "/pokemon/sprites/back/562.png",
+    "shiny": "/pokemon/sprites/shiny/562.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/562.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -318,7 +324,11 @@
     "zh-Hans": "哭哭面具"
   },
   "shinyColorPalette": {
-    "highlights": ["#4a4a83", "#29294a", "#626262"],
+    "highlights": [
+      "#4a4a83",
+      "#29294a",
+      "#626262"
+    ],
     "primary": "#4a4a83",
     "secondary": "#29294a",
     "accent": "#626262"

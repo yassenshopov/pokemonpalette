@@ -2,7 +2,10 @@
   "id": 306,
   "name": "Aggron",
   "species": "Iron Armor Pokémon",
-  "type": ["Steel", "Rock"],
+  "type": [
+    "Steel",
+    "Rock"
+  ],
   "typeDetails": [
     {
       "name": "Steel",
@@ -72,14 +75,18 @@
     "accent": "#cdcdcd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#52524a", "#6a6a6a", "#cdcdcd"]
+    "highlights": [
+      "#52524a",
+      "#6a6a6a",
+      "#cdcdcd"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/306.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/306.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/306.png",
+    "official": "/pokemon/306.png",
+    "front": "/pokemon/sprites/306.png",
+    "back": "/pokemon/sprites/back/306.png",
+    "shiny": "/pokemon/sprites/shiny/306.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/306.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -335,7 +342,11 @@
     "zh-Hans": "波士可多拉"
   },
   "shinyColorPalette": {
-    "highlights": ["#297b73", "#7bcdc5", "#52a494"],
+    "highlights": [
+      "#297b73",
+      "#7bcdc5",
+      "#52a494"
+    ],
     "primary": "#297b73",
     "secondary": "#7bcdc5",
     "accent": "#52a494"

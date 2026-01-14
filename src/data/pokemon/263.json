@@ -2,7 +2,9 @@
   "id": 263,
   "name": "Zigzagoon",
   "species": "Tiny Raccoon Pokémon",
-  "type": ["Normal"],
+  "type": [
+    "Normal"
+  ],
   "typeDetails": [
     {
       "name": "Normal",
@@ -68,14 +70,18 @@
     "accent": "#b49c8b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#947b6a", "#bdac9c", "#b49c8b"]
+    "highlights": [
+      "#947b6a",
+      "#bdac9c",
+      "#b49c8b"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/263.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/263.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/263.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/263.png",
+    "official": "/pokemon/263.png",
+    "front": "/pokemon/sprites/263.png",
+    "back": "/pokemon/sprites/back/263.png",
+    "shiny": "/pokemon/sprites/shiny/263.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/263.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -339,7 +345,11 @@
     "zh-Hans": "蛇纹熊"
   },
   "shinyColorPalette": {
-    "highlights": ["#cd6231", "#bda483", "#ee8339"],
+    "highlights": [
+      "#cd6231",
+      "#bda483",
+      "#ee8339"
+    ],
     "primary": "#cd6231",
     "secondary": "#bda483",
     "accent": "#ee8339"

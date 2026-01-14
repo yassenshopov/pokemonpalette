@@ -2,7 +2,9 @@
   "id": 160,
   "name": "Feraligatr",
   "species": "Big Jaw Pokémon",
-  "type": ["Water"],
+  "type": [
+    "Water"
+  ],
   "typeDetails": [
     {
       "name": "Water",
@@ -62,14 +64,18 @@
     "accent": "#f6525a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
-    "highlights": ["#5ab4f6", "#398bcd", "#f6525a"]
+    "highlights": [
+      "#5ab4f6",
+      "#398bcd",
+      "#f6525a"
+    ]
   },
   "artwork": {
-    "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
-    "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/160.png",
-    "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/160.png",
-    "shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/160.png",
-    "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/160.png",
+    "official": "/pokemon/160.png",
+    "front": "/pokemon/sprites/160.png",
+    "back": "/pokemon/sprites/back/160.png",
+    "shiny": "/pokemon/sprites/shiny/160.png",
+    "back_shiny": "/pokemon/sprites/back/shiny/160.png",
     "front_female": null,
     "back_female": null,
     "front_shiny_female": null,
@@ -292,6 +298,13 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/160/",
       "type": ""
+    },
+    {
+      "name": "Mega Feraligatr",
+      "raw_name": "feraligatr-mega",
+      "is_default": false,
+      "url": "https://pokeapi.co/api/v2/pokemon/10283/",
+      "type": "Mega"
     }
   ],
   "heldItems": [],
@@ -313,7 +326,11 @@
     "zh-Hans": "大力鳄"
   },
   "shinyColorPalette": {
-    "highlights": ["#4adec5", "#18aca4", "#4a7bff"],
+    "highlights": [
+      "#4adec5",
+      "#18aca4",
+      "#4a7bff"
+    ],
     "primary": "#4adec5",
     "secondary": "#18aca4",
     "accent": "#4a7bff"
