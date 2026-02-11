@@ -39,7 +39,8 @@ import {
   Palette,
   Sparkles,
 } from "lucide-react";
-import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
+import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS, type PaletteSize } from "@/constants/pokemon";
+import { usePaletteSize } from "@/hooks/use-palette-size";
 import { getFrontSpriteUrl, getOfficialArtworkUrl } from "@/lib/sprite-utils";
 
 // MissingNo fallback image URL
@@ -180,6 +181,7 @@ export function PokemonMenu({
   const [isEvolutionExpanded, setIsEvolutionExpanded] = useState(true);
   const [isFormsExpanded, setIsFormsExpanded] = useState(true);
   const [isVarietiesExpanded, setIsVarietiesExpanded] = useState(true);
+  const [paletteSize] = usePaletteSize();
   const colorTextRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isUpdatingFromDebounceRef = useRef<boolean>(false);
@@ -289,85 +291,81 @@ export function PokemonMenu({
       if (spriteUrl) {
         extractColorsFromImage(spriteUrl, POKEMON_CONSTANTS.COLORS_TO_EXTRACT)
           .then((colors) => {
-            // Convert ColorWithFrequency[] to string[] if needed
             const colorStrings = colors.map((c) =>
               typeof c === "string" ? c : c.hex
             );
-            const top3Colors = colorStrings.slice(
+            const fullColors = colorStrings.slice(
               0,
-              POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+              POKEMON_CONSTANTS.COLORS_TO_EXTRACT
             );
+            const displayed = fullColors.slice(0, paletteSize);
 
-            // Preserve locked colors and only update unlocked ones
-            const newColors = [...extractedColors];
-            top3Colors.forEach((color, index) => {
-              if (index < lockedColors.length && !lockedColors[index]) {
-                newColors[index] = color;
-              } else if (index >= lockedColors.length) {
-                newColors[index] = color;
-              }
-            });
+            setExtractedColors(fullColors.length > 0 ? fullColors : displayed);
+            setLockedColors(new Array(paletteSize).fill(false));
+            onColorsExtracted?.(displayed);
 
-            // If we have fewer new colors than existing, keep the existing ones
-            const finalColors = newColors.length > 0 ? newColors : top3Colors;
-            setExtractedColors(finalColors);
-            onColorsExtracted?.(finalColors);
-
-            // Initialize lock states if not already set
-            setLockedColors((prevLocked) => {
-              if (prevLocked.length === 0) {
-                return new Array(top3Colors.length).fill(false);
-              }
-              // Extend lock array if we have more colors now
-              if (prevLocked.length < top3Colors.length) {
-                return [
-                  ...prevLocked,
-                  ...new Array(top3Colors.length - prevLocked.length).fill(
-                    false
-                  ),
-                ];
-              }
-              return prevLocked;
-            });
-            // Also update the pokemonData's colorPalette with extracted colors
-            if (pokemonData && top3Colors.length > 0) {
-              // Only update if colors actually changed to avoid infinite loop
+            if (pokemonData && displayed.length > 0) {
               const newPalette = {
                 ...pokemonData.colorPalette,
-                primary: top3Colors[0] || pokemonData.colorPalette.primary,
-                secondary: top3Colors[1] || pokemonData.colorPalette.secondary,
-                accent: top3Colors[2] || pokemonData.colorPalette.accent,
-                highlights: top3Colors,
+                primary: displayed[0] || pokemonData.colorPalette.primary,
+                secondary: displayed[1] || pokemonData.colorPalette.secondary,
+                accent: displayed[2] || pokemonData.colorPalette.accent,
+                highlights: displayed,
               };
-
-              // Check if colors are different to avoid infinite update
               if (
                 JSON.stringify(newPalette.highlights) !==
                 JSON.stringify(pokemonData.colorPalette.highlights)
               ) {
-                if (pokemonData) {
-                  setPokemonData({
-                    ...pokemonData,
-                    colorPalette: newPalette,
-                  });
-                }
+                setPokemonData({
+                  ...pokemonData,
+                  colorPalette: newPalette,
+                });
               }
             }
           })
           .catch((error) => {
             console.error("Failed to extract colors:", error);
-            // Fallback to default colors if extraction fails
-            const fallbackColors =
-              pokemonData.colorPalette?.highlights?.slice(
-                0,
-                POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-              ) || [];
-            setExtractedColors(fallbackColors);
-            onColorsExtracted?.(fallbackColors);
+            const fallbackHighlights =
+              pokemonData.colorPalette?.highlights?.slice(0, paletteSize) || [];
+            setExtractedColors(fallbackHighlights);
+            onColorsExtracted?.(fallbackHighlights);
           });
       }
     }
-  }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex]); // Include selectedVarietyId and selectedFormIndex to re-extract colors when variety/form changes
+  }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex, paletteSize]);
+
+  // When user changes palette size (3/4/5), update lock array and notify parent without re-extracting
+  useEffect(() => {
+    setLockedColors((prev) => {
+      if (prev.length === paletteSize) return prev;
+      if (prev.length < paletteSize) {
+        return [...prev, ...new Array(paletteSize - prev.length).fill(false)];
+      }
+      return prev.slice(0, paletteSize);
+    });
+  }, [paletteSize]);
+
+  // Sync displayed colors (slice by paletteSize) to parent and palette when paletteSize or extractedColors change
+  useEffect(() => {
+    const displayed = extractedColors.slice(0, paletteSize);
+    if (displayed.length === 0) return;
+    onColorsExtracted?.(displayed);
+    if (pokemonData) {
+      setPokemonData((p) => {
+        if (!p) return p;
+        const newPalette = {
+          ...p.colorPalette,
+          primary: displayed[0] || p.colorPalette.primary,
+          secondary: displayed[1] || p.colorPalette.secondary,
+          accent: displayed[2] || p.colorPalette.accent,
+          highlights: displayed,
+        };
+        return JSON.stringify(newPalette.highlights) !== JSON.stringify(p.colorPalette.highlights)
+          ? { ...p, colorPalette: newPalette }
+          : p;
+      });
+    }
+  }, [paletteSize, extractedColors]); // eslint-disable-line react-hooks/exhaustive-deps -- onColorsExtracted, pokemonData omitted to avoid loops
 
   const handleSelect = (pokemonId: number) => {
     // Clear any pending debounce timer to prevent race conditions
@@ -499,7 +497,7 @@ export function PokemonMenu({
 
     setExtractedColors(newColors);
     setLockedColors(newLocked);
-    onColorsExtracted?.(newColors);
+    onColorsExtracted?.(newColors.slice(0, paletteSize));
     setDragOverIndex(null);
   };
 
@@ -518,7 +516,7 @@ export function PokemonMenu({
     const newColors = [...extractedColors];
     newColors[colorPickerIndex] = newColor;
     setExtractedColors(newColors);
-    onColorsExtracted?.(newColors);
+    onColorsExtracted?.(newColors.slice(0, paletteSize));
     setColorPickerIndex(null);
   };
 
@@ -890,13 +888,14 @@ export function PokemonMenu({
               </Select>
             </div>
 
-            {(extractedColors.length > 0
-              ? extractedColors
-              : pokemonData.colorPalette?.highlights?.slice(
-                  0,
-                  POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                ) || []
-            ).map((color, index) => {
+            {(() => {
+              const displayed =
+                extractedColors.length > 0
+                  ? extractedColors.slice(0, paletteSize)
+                  : pokemonData.colorPalette?.highlights?.slice(0, paletteSize) ||
+                    [];
+              return displayed;
+            })().map((color, index) => {
               const isLocked = lockedColors[index] || false;
               return (
                 <div

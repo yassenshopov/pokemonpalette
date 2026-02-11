@@ -378,7 +378,7 @@ export function PokemonHero({
           </h1>
           <p className="text-base md:text-lg text-muted-foreground mb-6">
             This website allows you to enter a Pokemon&apos;s name (or simply
-            its number in the Pokedex), and its top 3 colours will be extracted.
+            its number in the Pokedex), and you can extract a palette of 3, 4, 5, or 6 colours.
           </p>
 
           {/* Save/Unsave Palette Button */}

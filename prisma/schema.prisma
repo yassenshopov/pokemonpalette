@@ -34,6 +34,7 @@ model User {
   isDeleted                  Boolean   @default(false) @map("is_deleted")
   isAdmin                    Boolean   @default(false) @map("is_admin")
   receivesDailyEmails        Boolean   @default(true) @map("receives_daily_emails")
+  paletteSize                Int       @default(3) @map("palette_size")
   emailAddresses             Json      @default("[]") @map("email_addresses") @db.JsonB
   phoneNumbers               Json      @default("[]") @map("phone_numbers") @db.JsonB
   externalAccounts           Json      @default("[]") @map("external_accounts") @db.JsonB

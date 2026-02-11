@@ -47,7 +47,7 @@ export function GridPattern() {
         if (colors.length > 0 && pokemon) {
           return {
             pokemon: pokemon,
-            colors: colors.slice(0, 5), // Limit to 5 colors
+            colors: colors.slice(0, 6), // Up to 6 colors
           };
         }
       }

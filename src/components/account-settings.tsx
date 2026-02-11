@@ -7,12 +7,20 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
-import { Loader2, Mail, Settings, User } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Loader2, Mail, Palette, Settings, User } from "lucide-react";
 import { toast } from "sonner";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
 import { ColorblindSettings } from "@/components/colorblind-settings";
+import { PALETTE_SIZE_OPTIONS, type PaletteSize } from "@/constants/pokemon";
 
 export function AccountSettings() {
   const { user, isLoaded: userLoaded } = useUser();
@@ -20,10 +28,14 @@ export function AccountSettings() {
   const [receivesDailyEmails, setReceivesDailyEmails] = useState<boolean>(true);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [paletteSize, setPaletteSize] = useState<PaletteSize>(3);
+  const [paletteSizeLoading, setPaletteSizeLoading] = useState(true);
+  const [paletteSizeSaving, setPaletteSizeSaving] = useState(false);
 
   useEffect(() => {
     if (userLoaded && user?.id) {
       fetchEmailPreference();
+      fetchPalettePreference();
     }
   }, [userLoaded, user?.id]);
 
@@ -75,6 +87,51 @@ export function AccountSettings() {
       setReceivesDailyEmails(!checked);
     } finally {
       setSaving(false);
+    }
+  };
+
+  const fetchPalettePreference = async () => {
+    try {
+      setPaletteSizeLoading(true);
+      const response = await fetch("/api/account/palette-preference");
+      if (!response.ok) throw new Error("Failed to fetch palette preference");
+      const data = await response.json();
+      const n = data.paletteSize;
+      if (typeof n === "number" && PALETTE_SIZE_OPTIONS.includes(n as PaletteSize)) {
+        setPaletteSize(n as PaletteSize);
+      }
+    } catch (error) {
+      console.error("Error fetching palette preference:", error);
+      toast.error("Failed to load palette preference");
+    } finally {
+      setPaletteSizeLoading(false);
+    }
+  };
+
+  const handlePaletteSizeChange = async (value: string) => {
+    const n = parseInt(value, 10) as PaletteSize;
+    if (!PALETTE_SIZE_OPTIONS.includes(n)) return;
+    try {
+      setPaletteSizeSaving(true);
+      const response = await fetch("/api/account/palette-preference", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ paletteSize: n }),
+      });
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.error || "Failed to update palette preference");
+      }
+      setPaletteSize(n);
+      window.dispatchEvent(new CustomEvent("palette-preference-changed", { detail: n }));
+      toast.success(`Palette set to ${n} colours`);
+    } catch (error) {
+      console.error("Error updating palette preference:", error);
+      toast.error(
+        error instanceof Error ? error.message : "Failed to update palette preference"
+      );
+    } finally {
+      setPaletteSizeSaving(false);
     }
   };
 
@@ -143,6 +200,54 @@ export function AccountSettings() {
                     disabled={saving}
                     className="cursor-pointer"
                   />
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Palette size */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Palette className="h-5 w-5" />
+                Palette
+              </CardTitle>
+              <CardDescription>
+                How many colours to extract and show per Pokémon (e.g. for palettes or scientific illustrations)
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {paletteSizeLoading ? (
+                <div className="flex items-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <span className="text-sm text-muted-foreground">Loading...</span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label htmlFor="palette-size" className="text-base">
+                      Number of colours
+                    </Label>
+                    <p className="text-sm text-muted-foreground">
+                      Show 3, 4, 5, or 6 colours in the palette
+                    </p>
+                  </div>
+                  <Select
+                    value={String(paletteSize)}
+                    onValueChange={handlePaletteSizeChange}
+                    disabled={paletteSizeSaving}
+                  >
+                    <SelectTrigger id="palette-size" className="w-24">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {PALETTE_SIZE_OPTIONS.map((n) => (
+                        <SelectItem key={n} value={String(n)}>
+                          {n}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               )}
             </CardContent>

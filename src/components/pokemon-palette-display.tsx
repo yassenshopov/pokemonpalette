@@ -132,6 +132,12 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
     return null;
   }
 
+  // Fill row layout: 1×3 for 3, 1×4 for 4, 2 rows for 5 (3+2) and 6 (3+3)
+  const gridCols =
+    colors.length === 4
+      ? "grid-cols-4"
+      : "grid-cols-3"; // 3, 5, 6 all use 3 columns (5 → 2 rows, 6 → 2 rows)
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-6 md:py-12">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 md:mb-6 gap-3">
@@ -153,7 +159,7 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
         </Select>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+      <div className={`grid ${gridCols} gap-3 md:gap-4`}>
         {colors.map((color, index) => {
           const colorValue = convertColor(color, colorFormat);
           return (
