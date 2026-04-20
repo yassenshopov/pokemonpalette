@@ -95,6 +95,13 @@ const PokemonSearch = dynamic(
     })),
   { ssr: false }
 );
+const GameLeaderboardSection = dynamic(
+  () =>
+    import("@/components/game-leaderboard-section").then((m) => ({
+      default: m.GameLeaderboardSection,
+    })),
+  { ssr: false }
+);
 
 // gsap is ~70KB. Load it on demand rather than ship it in the initial /game
 // chunk.
@@ -2122,6 +2129,9 @@ export default function GamePage() {
                 mode === "unlimited" ? availableGenerations : undefined
               }
               userStats={mode === "daily" ? userStats : undefined}
+              guesses={guesses}
+              attempts={attempts}
+              hintsUsed={revealedHints.length}
             />
           )}
 
@@ -2430,6 +2440,10 @@ export default function GamePage() {
               </div>
             </div>
           </div>
+
+          {/* Leaderboard - daily mode only. Edge-cached via /api so viral
+              traffic hits the origin at most once per minute per sort. */}
+          {mode === "daily" && <GameLeaderboardSection />}
         </div>
         <Footer />
       </div>

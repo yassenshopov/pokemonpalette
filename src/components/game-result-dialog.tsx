@@ -19,11 +19,20 @@ import {
   Calendar,
   Clock,
   Sparkles,
+  Share2,
 } from "lucide-react";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
 import Link from "next/link";
+import { toast } from "sonner";
+import { track } from "@vercel/analytics";
+import {
+  buildShareText,
+  getDailyGameNumber,
+  shareOrCopy,
+  type ShareGridGuess,
+} from "@/lib/game/share";
 
 // Get generation from Pokemon ID
 function getGenerationFromId(id: number): number {
@@ -86,6 +95,10 @@ interface GameResultDialogProps {
   }) => void;
   availableGenerations?: number[];
   userStats?: UserStats | null;
+  // Used by the daily-mode Wordle-style share grid.
+  guesses?: ShareGridGuess[];
+  attempts?: number;
+  hintsUsed?: number;
 }
 
 export function GameResultDialog({
@@ -102,6 +115,9 @@ export function GameResultDialog({
   onUnlimitedSettingsChange,
   availableGenerations = [],
   userStats,
+  guesses = [],
+  attempts = 0,
+  hintsUsed = 0,
 }: GameResultDialogProps) {
   const isWon = status === "won";
   const title = isWon ? "🎉 You Won!" : "Game Over";
@@ -134,6 +150,33 @@ export function GameResultDialog({
     const b = parseInt(hexClean.substring(4, 6), 16);
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
     return luminance > 0.5 ? "#000000" : "#ffffff";
+  };
+
+  const handleShare = async () => {
+    if (mode !== "daily" || !targetPokemon) return;
+    const shareText = buildShareText({
+      gameNumber: getDailyGameNumber(),
+      attempts,
+      won: isWon,
+      hintsUsed,
+      targetColors: targetColors.map((c) => c.hex),
+      guesses,
+      url: "https://pokemonpalette.com/game",
+    });
+    const result = await shareOrCopy(shareText);
+    if (result === "copied") {
+      toast.success("Result copied to clipboard!", {
+        description: "Paste it anywhere to share.",
+      });
+    } else if (result === "failed") {
+      toast.error("Couldn't share. Try selecting and copying manually.");
+    }
+    track("share_grid_clicked", {
+      won: isWon,
+      attempts,
+      hints_used: hintsUsed,
+      outcome: result,
+    });
   };
 
   // Calculate time until next puzzle (midnight UTC)
@@ -347,6 +390,15 @@ export function GameResultDialog({
             {/* Daily mode buttons */}
             {mode === "daily" && (
               <>
+                {guesses.length > 0 && (
+                  <Button
+                    onClick={handleShare}
+                    className="w-full sm:w-auto cursor-pointer"
+                  >
+                    <Share2 className="w-4 h-4 mr-2" />
+                    Share result
+                  </Button>
+                )}
                 {targetPokemon && (
                   <Link
                     href={`/${targetPokemon.name.toLowerCase()}`}
@@ -370,7 +422,7 @@ export function GameResultDialog({
                 )}
                 {!user && (
                   <SignInButton mode="modal">
-                    <Button className="w-full cursor-pointer">
+                    <Button variant="outline" className="w-full sm:w-auto cursor-pointer">
                       <LogIn className="w-4 h-4 mr-2" />
                       Sign In to Save Progress
                     </Button>

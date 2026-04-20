@@ -8,9 +8,16 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
+      "src": "/logo.png",
+      "sizes": "1080x1080",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "1080x1080",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
