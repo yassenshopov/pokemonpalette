@@ -1,32 +1,24 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
+import { getPokemonMetadataByName, getPokemonById } from "@/lib/pokemon";
 
-// Use Edge runtime - required for @vercel/og to work
-export const runtime = "edge";
+// Node runtime so we can read the local Pokemon data directly instead of
+// round-tripping through an internal /api/pokemon-data request (which
+// counted as a second edge invocation per OG image).
+export const runtime = "nodejs";
 
-// Fetch Pokemon data from internal API to avoid bundling large files
-async function getPokemonData(name: string, request: NextRequest) {
+async function getPokemonData(name: string, _request: NextRequest) {
   try {
-    // Use the request URL to determine the base URL for internal API calls
-    const url = new URL(request.url);
-    const baseUrl = `${url.protocol}//${url.host}`;
-
-    // Fetch Pokemon data from an internal API route
-    // This avoids bundling the full Pokemon library
-    const response = await fetch(
-      `${baseUrl}/api/pokemon-data/${name.toLowerCase()}`,
-      {
-        headers: {
-          "User-Agent": "OG-Image-Generator",
-        },
-      }
-    );
-
-    if (!response.ok) {
-      return null;
-    }
-
-    return (await response.json()) as {
+    const metadata = getPokemonMetadataByName(name);
+    if (!metadata) return null;
+    const pokemon = await getPokemonById(metadata.id);
+    if (!pokemon) return null;
+    return {
+      id: pokemon.id,
+      name: pokemon.name,
+      colorPalette: pokemon.colorPalette,
+      artwork: pokemon.artwork,
+    } as {
       id: number;
       name: string;
       colorPalette?: {
@@ -41,7 +33,7 @@ async function getPokemonData(name: string, request: NextRequest) {
       };
     };
   } catch (error) {
-    console.error(`Failed to fetch Pokemon data for ${name}:`, error);
+    console.error(`Failed to load Pokemon data for ${name}:`, error);
     return null;
   }
 }

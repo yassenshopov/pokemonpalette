@@ -177,10 +177,7 @@ export function GameResultDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="sm:max-w-2xl p-0 overflow-hidden !fixed !top-[45%] !left-[50%] !translate-x-[-50%] !translate-y-[-50%] !right-auto !m-0"
-        style={{
-          minHeight: "400px",
-        }}
+        className="sm:max-w-2xl p-0 overflow-hidden max-h-[90vh] flex flex-col"
         showCloseButton={false}
       >
         {/* Color Bar Background - full dialog with angled gradient */}
@@ -219,8 +216,8 @@ export function GameResultDialog({
           />
         )}
 
-        {/* Content on top */}
-        <div className="relative z-10 p-6 flex flex-col h-full min-h-[400px]">
+        {/* Content on top - scrollable if it exceeds viewport */}
+        <div className="relative z-10 p-6 flex flex-col flex-1 min-h-0 overflow-y-auto">
           <DialogHeader>
             <DialogTitle className={`${titleClassName} font-heading`}>
               {title}

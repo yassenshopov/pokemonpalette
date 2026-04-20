@@ -12,6 +12,7 @@ import { useUser, SignInButton } from "@clerk/nextjs";
 import { toast } from "sonner";
 import { Save, Bookmark } from "lucide-react";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
+import { useSavedPalettes } from "@/hooks/use-saved-palettes";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "#ffffff" | "#000000" => {
@@ -57,11 +58,16 @@ export function PokemonHero({
   const [currentImageSrc, setCurrentImageSrc] = useState<string | null>(null);
   const [extractedColors, setExtractedColors] = useState<string[]>([]);
   const [savingPalette, setSavingPalette] = useState(false);
-  const [checkingExisting, setCheckingExisting] = useState(false);
   const [existingPaletteId, setExistingPaletteId] = useState<string | null>(
     null
   );
   const { user, isLoaded } = useUser();
+  const {
+    palettes: savedPalettes,
+    loading: checkingExisting,
+    refetch: refetchSavedPalettes,
+    mutate: mutateSavedPalettes,
+  } = useSavedPalettes();
 
   useEffect(() => {
     if (pokemonId) {
@@ -184,52 +190,25 @@ export function PokemonHero({
       ? colors.slice(0, 2)
       : colorPalette?.highlights?.slice(0, 2) || [primaryColor, secondaryColor];
 
-  // Check for existing palette
-  const checkExistingPalette = async () => {
-    if (!user || !pokemon) return;
-
-    setCheckingExisting(true);
-    try {
-      const response = await fetch("/api/saved-palettes");
-      const data = await response.json();
-
-      if (response.ok && data.palettes) {
-        // Get form name - handle both string[] and PokemonForm[] types
-        const firstForm = pokemon.forms?.[0];
-        const formName =
-          typeof firstForm === "string" ? firstForm : firstForm?.name || null;
-
-        const existing = data.palettes.find(
-          (p: any) =>
-            p.pokemon_id === pokemon.id &&
-            p.is_shiny === isShiny &&
-            (p.pokemon_form || null) === formName
-        );
-        setExistingPaletteId(existing ? existing.id : null);
-      } else if (response.status === 503) {
-        // Authentication service unavailable - silently fail
-        console.warn("Authentication service unavailable");
-        setExistingPaletteId(null);
-      } else if (response.status === 401) {
-        // User not authenticated - this is expected, silently fail
-        setExistingPaletteId(null);
-      }
-    } catch (error) {
-      console.error("Error checking existing palette:", error);
-      setExistingPaletteId(null);
-    } finally {
-      setCheckingExisting(false);
-    }
-  };
-
-  // Check for existing palette when pokemon or shiny state changes
+  // Check for existing palette whenever the cached saved-palettes list or the
+  // current selection changes. No network request of our own - the shared
+  // hook already fetches at most once per session.
   useEffect(() => {
-    if (user && pokemon && colors && colors.length > 0) {
-      checkExistingPalette();
-    } else {
+    if (!user || !pokemon || !colors || colors.length === 0) {
       setExistingPaletteId(null);
+      return;
     }
-  }, [user, pokemon, isShiny, colors]);
+    const firstForm = pokemon.forms?.[0];
+    const formName =
+      typeof firstForm === "string" ? firstForm : firstForm?.name || null;
+    const existing = savedPalettes.find(
+      (p) =>
+        p.pokemon_id === pokemon.id &&
+        p.is_shiny === isShiny &&
+        (p.pokemon_form || null) === formName
+    );
+    setExistingPaletteId(existing ? existing.id : null);
+  }, [user, pokemon, isShiny, colors, savedPalettes]);
 
   // Save palette function
   const handleSavePalette = async () => {
@@ -274,8 +253,8 @@ export function PokemonHero({
 
       if (response.ok) {
         toast.success(result.message || "Palette saved successfully!");
-        // Refresh existing palette check
-        checkExistingPalette();
+        // Invalidate the shared cache so all consumers see the new palette.
+        refetchSavedPalettes();
       } else if (response.status === 503) {
         toast.error(
           "Authentication service is currently unavailable. Please try again later."
@@ -309,6 +288,10 @@ export function PokemonHero({
       if (response.ok) {
         toast.success("Palette removed successfully!");
         setExistingPaletteId(null);
+        // Drop the removed palette from the shared cache optimistically.
+        mutateSavedPalettes((prev) =>
+          prev.filter((p) => p.id !== existingPaletteId)
+        );
       } else if (response.status === 503) {
         toast.error(
           "Authentication service is currently unavailable. Please try again later."
@@ -583,6 +566,12 @@ function HeroImage({
     }
   };
 
+  // Local /pokemon/** sprites are pre-sized static PNGs - no need to run them
+  // through Next's optimizer (saves edge requests + optimization compute).
+  const isLocalSprite =
+    typeof imgSrc === "string" && imgSrc.startsWith("/pokemon/");
+  const shouldUnoptimize = unoptimized || isLocalSprite;
+
   return (
     <Image
       key={imgSrc}
@@ -592,7 +581,7 @@ function HeroImage({
       height={height}
       className={className}
       onLoad={onLoad}
-      unoptimized={unoptimized}
+      unoptimized={shouldUnoptimize}
       onError={handleError}
     />
   );

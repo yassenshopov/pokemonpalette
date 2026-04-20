@@ -104,7 +104,7 @@ function ColorPreview({ type }: { type: ColorblindType }) {
           title={p.name}
         >
           <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${p.id}.png`}
+            src={`/pokemon/${p.id}.png`}
             alt={p.name}
             className="w-full h-full object-contain"
             loading="lazy"

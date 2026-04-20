@@ -42,6 +42,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useSavedPalettes } from "@/hooks/use-saved-palettes";
 
 // Helper function to determine if text should be dark or light based on background
 const getTextColor = (hex: string): "#ffffff" | "#000000" => {
@@ -85,8 +86,14 @@ export function SavedPalettesDialog({
   isCollapsed = false,
 }: SavedPalettesDialogProps) {
   const [open, setOpen] = useState(false);
-  const [palettes, setPalettes] = useState<SavedPalette[]>([]);
-  const [loading, setLoading] = useState(false);
+  const {
+    palettes: rawPalettes,
+    loading,
+    refetch: refetchPalettes,
+    mutate: mutatePalettes,
+  } = useSavedPalettes();
+  // The shared hook returns untyped rows; cast once here for local typing.
+  const palettes = rawPalettes as unknown as SavedPalette[];
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -99,37 +106,13 @@ export function SavedPalettesDialog({
   const dialogContentRef = useRef<HTMLDivElement>(null);
   const { user, isLoaded } = useUser();
 
-  // Fetch saved palettes when dialog opens
+  // Force a refresh the first time the dialog is opened, to pick up any
+  // palettes that were saved elsewhere during this session.
   useEffect(() => {
     if (open && user) {
-      fetchPalettes();
+      refetchPalettes();
     }
-  }, [open, user]);
-
-  const fetchPalettes = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/saved-palettes");
-      const data = await response.json();
-
-      if (response.ok) {
-        setPalettes(data.palettes || []);
-      } else if (response.status === 503) {
-        toast.error(
-          "Authentication service is currently unavailable. Please try again later."
-        );
-      } else if (response.status === 401) {
-        toast.error("Please sign in to view saved palettes");
-      } else {
-        toast.error(data.error || "Failed to fetch saved palettes");
-      }
-    } catch (error) {
-      console.error("Error fetching palettes:", error);
-      toast.error("Failed to fetch saved palettes");
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [open, user, refetchPalettes]);
 
   const handleDeletePalette = async (paletteId: string) => {
     setDeletingId(paletteId);
@@ -141,7 +124,7 @@ export function SavedPalettesDialog({
       const result = await response.json();
 
       if (response.ok) {
-        setPalettes(palettes.filter((p) => p.id !== paletteId));
+        mutatePalettes((prev) => prev.filter((p) => p.id !== paletteId));
         toast.success("Palette deleted successfully");
       } else if (response.status === 503) {
         toast.error(

@@ -186,6 +186,7 @@ export function PokemonPaletteExploreCard({
                 fill
                 className="object-contain"
                 onError={() => setImageError(true)}
+                unoptimized
               />
             </div>
           </div>

@@ -1,15 +1,36 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
+import dynamic from "next/dynamic";
 import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
-import { PokemonCard } from "@/components/pokemon-card";
-import { ColorShowcase } from "@/components/color-showcase";
 import { Footer } from "@/components/footer";
-import { CoffeeCTA } from "@/components/coffee-cta";
 import { PokemonMetadata } from "@/types/pokemon";
+
+const CollapsibleSidebar = dynamic(
+  () =>
+    import("@/components/collapsible-sidebar").then((m) => ({
+      default: m.CollapsibleSidebar,
+    })),
+  { ssr: false }
+);
+const PokemonCard = dynamic(
+  () =>
+    import("@/components/pokemon-card").then((m) => ({ default: m.PokemonCard })),
+  { ssr: false }
+);
+const ColorShowcase = dynamic(
+  () =>
+    import("@/components/color-showcase").then((m) => ({
+      default: m.ColorShowcase,
+    })),
+  { ssr: false }
+);
+const CoffeeCTA = dynamic(
+  () => import("@/components/coffee-cta").then((m) => ({ default: m.CoffeeCTA })),
+  { ssr: false }
+);
 
 interface ShinyPokemonPageClientProps {
   pokemonMetadata: PokemonMetadata;

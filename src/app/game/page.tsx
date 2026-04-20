@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
-import { gsap } from "gsap";
+import dynamic from "next/dynamic";
+import type { gsap } from "gsap";
 import { useUser } from "@clerk/nextjs";
-import confetti from "canvas-confetti";
 import { toast } from "sonner";
 import {
   getAllPokemonMetadata,
@@ -15,7 +15,17 @@ import {
   type ColorWithFrequency,
 } from "@/lib/color-extractor";
 import { Pokemon } from "@/types/pokemon";
-import { PokemonSearch } from "@/components/pokemon-search";
+import {
+  calculateSimilarity,
+  getDailyPokemonId,
+  getDailyShinyStatus,
+  getGuessToastMessage,
+} from "@/lib/game/similarity";
+import {
+  getContrastTextClass,
+  getContrastHex,
+  getDimmedColor,
+} from "@/lib/game/colors";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -40,11 +50,9 @@ import {
   Calendar,
   Infinity as InfinityIcon,
 } from "lucide-react";
-import { GameResultDialog } from "@/components/game-result-dialog";
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
 import { AnimatedDotGrid } from "@/components/animated-dot-grid";
-import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
 import {
   Dialog,
   DialogContent,
@@ -64,6 +72,53 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+// Lazy-load the heaviest leaf components - they only render after user action
+// or at end-of-game. Keeps the initial /game chunk smaller.
+const GameResultDialog = dynamic(
+  () =>
+    import("@/components/game-result-dialog").then((m) => ({
+      default: m.GameResultDialog,
+    })),
+  { ssr: false }
+);
+const UnlimitedModeSettingsDialog = dynamic(
+  () =>
+    import("@/components/unlimited-mode-settings").then((m) => ({
+      default: m.UnlimitedModeSettingsDialog,
+    })),
+  { ssr: false }
+);
+const PokemonSearch = dynamic(
+  () =>
+    import("@/components/pokemon-search").then((m) => ({
+      default: m.PokemonSearch,
+    })),
+  { ssr: false }
+);
+
+// gsap is ~70KB. Load it on demand rather than ship it in the initial /game
+// chunk.
+type GsapModule = typeof gsap;
+let gsapPromise: Promise<GsapModule> | null = null;
+function loadGsap(): Promise<GsapModule> {
+  if (!gsapPromise) {
+    gsapPromise = import("gsap").then((m) => m.gsap);
+  }
+  return gsapPromise;
+}
+
+// canvas-confetti is only used on a win.
+type ConfettiFn = (options: Record<string, unknown>) => void;
+let confettiPromise: Promise<ConfettiFn> | null = null;
+function loadConfetti(): Promise<ConfettiFn> {
+  if (!confettiPromise) {
+    confettiPromise = import("canvas-confetti").then(
+      (m) => m.default as unknown as ConfettiFn
+    );
+  }
+  return confettiPromise;
+}
+
 type GameMode = "daily" | "unlimited";
 type GameStatus = "playing" | "won" | "lost";
 
@@ -75,127 +130,9 @@ interface Guess {
   spriteUrl: string | null;
 }
 
-// Simple hash function for daily seed
-function hashString(str: string): number {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash; // Convert to 32bit integer
-  }
-  return Math.abs(hash);
-}
-
-function getDailyPokemonId(totalPokemon: number, isShiny: boolean): number {
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}-${
-    isShiny ? "shiny" : "normal"
-  }`;
-  const hash = hashString(dateStr);
-  return (hash % totalPokemon) + 1;
-}
-
-function getDailyShinyStatus(): boolean {
-  // Daily mode is non-shiny only for now
-  return false;
-}
-
-function getGuessToastMessage(attempts: number): string {
-  switch (attempts) {
-    case 1:
-      return "Incredible! First try! 🎯";
-    case 2:
-      return "Excellent! Great job! 🌟";
-    case 3:
-      return "Nice work! Well done! 👍";
-    case 4:
-      return "Well done! You got it! 🎉";
-    default:
-      return "Congratulations! 🎊";
-  }
-}
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string | undefined): "text-white" | "text-black" => {
-  if (!hex || typeof hex !== "string") {
-    return "text-black";
-  }
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
-
-// Helper function to create a dimmed version of a color with opacity
-const getDimmedColor = (hex: string, opacity: number = 0.2): string => {
-  if (!hex || typeof hex !== "string") {
-    return `rgba(0, 0, 0, ${opacity})`;
-  }
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-};
-
-// Calculate color similarity between two palettes
-function calculateSimilarity(
-  colors1: string[] | ColorWithFrequency[],
-  colors2: string[]
-): number {
-  // Convert ColorWithFrequency[] to string[] if needed
-  const color1Strings = colors1.map((c) => (typeof c === "string" ? c : c.hex));
-  if (colors1.length === 0 || colors2.length === 0) return 0;
-
-  // Convert hex to RGB
-  const hexToRgb = (hex: string) => {
-    const hexClean = hex.replace("#", "");
-    return {
-      r: parseInt(hexClean.substring(0, 2), 16),
-      g: parseInt(hexClean.substring(2, 4), 16),
-      b: parseInt(hexClean.substring(4, 6), 16),
-    };
-  };
-
-  // Calculate Euclidean distance between two colors
-  const colorDistance = (c1: string, c2: string) => {
-    const rgb1 = hexToRgb(c1);
-    const rgb2 = hexToRgb(c2);
-    return Math.sqrt(
-      Math.pow(rgb1.r - rgb2.r, 2) +
-        Math.pow(rgb1.g - rgb2.g, 2) +
-        Math.pow(rgb1.b - rgb2.b, 2)
-    );
-  };
-
-  // Find best matches for each color
-  let totalSimilarity = 0;
-  // Use a more realistic max distance threshold (250 instead of theoretical max ~442)
-  // This makes the similarity calculation more strict and discriminating
-  const effectiveMaxDistance = 250;
-  const theoreticalMaxDistance = Math.sqrt(255 * 255 * 3); // ~442
-
-  colors1.forEach((color1) => {
-    const color1Hex = typeof color1 === "string" ? color1 : color1.hex;
-    let minDistance = Infinity;
-    colors2.forEach((color2) => {
-      const dist = colorDistance(color1Hex, color2);
-      if (dist < minDistance) {
-        minDistance = dist;
-      }
-    });
-    // Convert distance to similarity with a steeper curve
-    // Use effectiveMaxDistance for most colors, but cap at theoretical max
-    const normalizedDistance = Math.min(minDistance / effectiveMaxDistance, 1);
-    // Apply a power curve (1.5) to make the falloff steeper - colors need to be closer to score high
-    const similarity = Math.pow(1 - normalizedDistance, 1.5);
-    totalSimilarity += similarity;
-  });
-
-  return totalSimilarity / colors1.length;
-}
+// Local alias: keep old callsites working while all text-class lookups go
+// through the shared helper.
+const getTextColor = getContrastTextClass;
 
 function getSpriteUrl(pokemon: Pokemon, shiny: boolean): string | null {
   if (typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
@@ -450,15 +387,21 @@ export default function GamePage() {
         return;
       }
 
-      // Check API for signed-in users
+      // Check API for signed-in users. Fetch stats in the same request so
+      // we don't need a second round-trip on mount.
       try {
         const response = await fetch(
-          `/api/daily-game-attempts?date=${dateStr}`
+          `/api/daily-game-attempts?stats=true`
         );
         if (response.ok) {
           const data = await response.json();
-          if (data.attempts && data.attempts.length > 0) {
-            const todayAttempt = data.attempts[0];
+          if (data.stats) {
+            setUserStats(data.stats);
+          }
+          const todayAttempt = (data.attempts || []).find(
+            (a: any) => a.date === dateStr
+          );
+          if (todayAttempt) {
 
             // User has already played today - load their attempt
             const targetPokemonData = await getPokemonById(
@@ -722,72 +665,74 @@ export default function GamePage() {
     initializeGame();
   }, [mode, pokemonList.length, checkingAuth, unlimitedSettings]);
 
-  // Trigger confetti on win with palette colors
+  // Trigger confetti on win with palette colors. We lazy-load the library so
+  // it only enters the client bundle for players who actually win.
   useEffect(() => {
-    if (status === "won" && targetColors.length > 0) {
-      // Extract hex colors from targetColors
-      const colors = targetColors.map((c) => c.hex);
+    if (status !== "won" || targetColors.length === 0) return;
 
-      // Create confetti with the palette colors
-      const duration = 3000;
-      const animationEnd = Date.now() + duration;
-      const defaults = {
-        startVelocity: 30,
-        spread: 360,
-        ticks: 60,
-        zIndex: 9999,
-      };
+    const colors = targetColors.map((c) => c.hex);
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+    const defaults = {
+      startVelocity: 30,
+      spread: 360,
+      ticks: 60,
+      zIndex: 9999,
+    };
 
-      function randomInRange(min: number, max: number) {
-        return Math.random() * (max - min) + min;
-      }
+    function randomInRange(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
 
-      const interval: NodeJS.Timeout = setInterval(() => {
+    let interval: NodeJS.Timeout | null = null;
+    let cancelled = false;
+
+    loadConfetti().then((confetti) => {
+      if (cancelled) return;
+      interval = setInterval(() => {
         const timeLeft = animationEnd - Date.now();
-
         if (timeLeft <= 0) {
-          return clearInterval(interval);
+          if (interval) clearInterval(interval);
+          return;
         }
-
         const particleCount = 50 * (timeLeft / duration);
-
         confetti({
           ...defaults,
           particleCount,
           origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-          colors: colors,
+          colors,
         });
         confetti({
           ...defaults,
           particleCount,
           origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-          colors: colors,
+          colors,
         });
       }, 250);
+    });
 
-      // Cleanup function to clear interval if component unmounts or status changes
-      return () => {
-        clearInterval(interval);
-      };
-    }
+    return () => {
+      cancelled = true;
+      if (interval) clearInterval(interval);
+    };
   }, [status, targetColors]);
 
-  // Fetch user stats for daily mode
+  // Refresh user stats only after a game ends. The initial stats payload is
+  // fetched together with today's attempt in `checkTodayAttempt` above, so
+  // we don't need to hit the network on mount.
   useEffect(() => {
+    if (mode !== "daily") {
+      setUserStats(null);
+      return;
+    }
+    if (!user) {
+      setUserStats(null);
+      return;
+    }
+    if (status === "playing") return;
+
     const fetchStats = async () => {
-      if (mode !== "daily") {
-        setUserStats(null);
-        return;
-      }
-
-      // Only fetch user stats if signed in
-      if (!user) {
-        setUserStats(null);
-        return;
-      }
-
       try {
-        // Fetch user stats
         const statsResponse = await fetch(
           "/api/daily-game-attempts?stats=true"
         );
@@ -803,7 +748,7 @@ export default function GamePage() {
     };
 
     fetchStats();
-  }, [mode, user, status]); // Refresh when game status changes
+  }, [mode, user, status]);
 
   const handleGuess = async (pokemonId: number) => {
     if (status !== "playing" || loadingGuess) return;
@@ -1425,104 +1370,105 @@ export default function GamePage() {
 
   // Animate hints when they are revealed
   useEffect(() => {
-    if (revealedHints.length > 0 && targetPokemon) {
-      const lastRevealedIndex = revealedHints[revealedHints.length - 1];
-      const hintElement = hintRefs.current[lastRevealedIndex];
-
-      if (hintElement) {
-        // Set initial state
-        gsap.set(hintElement, { opacity: 0, y: -20, scale: 0.8 });
-
-        // Animate in
-        gsap.to(hintElement, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          ease: "back.out(1.7)",
-        });
-      }
-    }
+    if (revealedHints.length === 0 || !targetPokemon) return;
+    const lastRevealedIndex = revealedHints[revealedHints.length - 1];
+    const hintElement = hintRefs.current[lastRevealedIndex];
+    if (!hintElement) return;
+    let cancelled = false;
+    loadGsap().then((gsap) => {
+      if (cancelled) return;
+      gsap.set(hintElement, { opacity: 0, y: -20, scale: 0.8 });
+      gsap.to(hintElement, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [revealedHints, targetPokemon]);
 
   // Animate guesses when they are added
   useEffect(() => {
-    if (guesses.length > 0) {
-      const lastGuessIndex = guesses.length - 1;
-      const guessElement = guessRefs.current[lastGuessIndex];
-
-      if (guessElement) {
-        // Set initial state
-        gsap.set(guessElement, { opacity: 0, x: 50, scale: 0.9 });
-
-        // Animate in
-        gsap.to(guessElement, {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.6,
-          ease: "power3.out",
-        });
-      }
-    }
+    if (guesses.length === 0) return;
+    const lastGuessIndex = guesses.length - 1;
+    const guessElement = guessRefs.current[lastGuessIndex];
+    if (!guessElement) return;
+    let cancelled = false;
+    loadGsap().then((gsap) => {
+      if (cancelled) return;
+      gsap.set(guessElement, { opacity: 0, x: 50, scale: 0.9 });
+      gsap.to(guessElement, {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: "power3.out",
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [guesses]);
 
   // Animate color bar when colors are loaded
   useEffect(() => {
-    if (targetColors.length > 0 && colorBarRef.current) {
-      const colorBar = colorBarRef.current;
+    if (targetColors.length === 0 || !colorBarRef.current) return;
+    const colorBar = colorBarRef.current;
+    let cancelled = false;
+    loadGsap().then((gsap) => {
+      if (cancelled) return;
       const colorDivs = colorBar.querySelectorAll<HTMLElement>("div");
-
-      // Set initial state
       gsap.set(colorDivs, { scaleX: 0, transformOrigin: "left center" });
-
-      // Animate in with stagger
       gsap.to(colorDivs, {
         scaleX: 1,
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.1,
       });
-    }
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [targetColors]);
 
   // Animate full palette expansion when third hint is revealed
   useEffect(() => {
     if (
-      revealedHints.includes(2) &&
-      allTargetColors.length > targetColors.length &&
-      colorBarRef.current &&
-      !hasAnimatedFullPaletteRef.current
+      !revealedHints.includes(2) ||
+      allTargetColors.length <= targetColors.length ||
+      !colorBarRef.current ||
+      hasAnimatedFullPaletteRef.current
     ) {
-      // Mark that we've animated to prevent re-animating
-      hasAnimatedFullPaletteRef.current = true;
-
-      // Wait for DOM to update with new color divs (use double RAF for reliability)
+      return;
+    }
+    hasAnimatedFullPaletteRef.current = true;
+    let cancelled = false;
+    requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          if (!colorBarRef.current) return;
-
-          const colorBar = colorBarRef.current;
-          const allDivs = colorBar.querySelectorAll<HTMLElement>("div");
-
-          if (allDivs.length > targetColors.length) {
-            // Get the new divs (the ones beyond the initial 3)
-            const newDivs = Array.from(allDivs).slice(targetColors.length);
-
-            // Set initial state for new divs
-            gsap.set(newDivs, { scaleX: 0, transformOrigin: "left center" });
-
-            // Animate in new divs with stagger (same animation as initial load)
-            gsap.to(newDivs, {
-              scaleX: 1,
-              duration: 0.8,
-              ease: "power3.out",
-              stagger: 0.1,
-            });
-          }
+        if (cancelled || !colorBarRef.current) return;
+        const colorBar = colorBarRef.current;
+        const allDivs = colorBar.querySelectorAll<HTMLElement>("div");
+        if (allDivs.length <= targetColors.length) return;
+        const newDivs = Array.from(allDivs).slice(targetColors.length);
+        loadGsap().then((gsap) => {
+          if (cancelled) return;
+          gsap.set(newDivs, { scaleX: 0, transformOrigin: "left center" });
+          gsap.to(newDivs, {
+            scaleX: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.1,
+          });
         });
       });
-    }
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [revealedHints, allTargetColors.length, targetColors.length]);
 
   // Reset animation flag when game resets or Pokemon changes
@@ -1532,11 +1478,16 @@ export default function GamePage() {
 
   // Animate Pokemon artwork with subtle wiggle every few seconds
   useEffect(() => {
-    if (status !== "playing" && pokemonArtworkRef.current) {
-      const artworkElement = pokemonArtworkRef.current;
+    if (status === "playing" || !pokemonArtworkRef.current) return;
+    const artworkElement = pokemonArtworkRef.current;
+    let cancelled = false;
+    let interval: NodeJS.Timeout | null = null;
+    let initialTimeout: NodeJS.Timeout | null = null;
+    let wiggleAnimation: gsap.core.Timeline | null = null;
 
-      // Create a more interesting wiggle animation with rotation, scale, and position
-      const wiggleAnimation = gsap.timeline({ paused: true });
+    loadGsap().then((gsap) => {
+      if (cancelled) return;
+      wiggleAnimation = gsap.timeline({ paused: true });
       wiggleAnimation
         .to(artworkElement, {
           rotation: 4,
@@ -1567,23 +1518,19 @@ export default function GamePage() {
           ease: "power2.inOut",
         });
 
-      // Function to trigger wiggle
       const triggerWiggle = () => {
-        wiggleAnimation.restart();
+        wiggleAnimation?.restart();
       };
+      interval = setInterval(triggerWiggle, 2500);
+      initialTimeout = setTimeout(triggerWiggle, 800);
+    });
 
-      // Trigger wiggle every 2.5 seconds (more frequent)
-      const interval = setInterval(triggerWiggle, 2500);
-
-      // Initial wiggle after a short delay
-      const initialTimeout = setTimeout(triggerWiggle, 800);
-
-      return () => {
-        clearInterval(interval);
-        clearTimeout(initialTimeout);
-        wiggleAnimation.kill();
-      };
-    }
+    return () => {
+      cancelled = true;
+      if (interval) clearInterval(interval);
+      if (initialTimeout) clearTimeout(initialTimeout);
+      wiggleAnimation?.kill();
+    };
   }, [status, targetPokemon]);
 
   const handleGiveUp = () => {

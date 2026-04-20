@@ -1,8 +1,18 @@
 import { notFound } from "next/navigation";
-import { getPokemonMetadataByName } from "@/lib/pokemon";
+import { getPokemonMetadataByName, getAllPokemonMetadata } from "@/lib/pokemon";
 import { ShinyPokemonPageClient } from "@/components/shiny-pokemon-page-client";
 import { SEOContent } from "@/components/seo-content";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+
+// Fully statically generate all known shiny Pokemon pages at build time.
+export const dynamicParams = true;
+export const revalidate = false;
+
+export async function generateStaticParams() {
+  return getAllPokemonMetadata().map((p) => ({
+    name: p.name.toLowerCase(),
+  }));
+}
 
 // Server Component - fetches data on server for SEO
 // All interactivity is handled by PokemonPageClient component

@@ -379,7 +379,7 @@ export function PokemonExpandedView({
                           <div className="bg-muted rounded-lg p-3 mb-2">
                             {evoId ? (
                               <img
-                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                                src={`/pokemon/sprites/${
                                   isShiny ? "shiny/" : ""
                                 }${evoId}.png`}
                                 alt={evo.name}
@@ -652,7 +652,7 @@ export function PokemonExpandedView({
                         <div className="flex items-center gap-3">
                           {varietyId && (
                             <img
-                              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                              src={`/pokemon/sprites/${
                                 isShiny ? "shiny/" : ""
                               }${varietyId}.png`}
                               alt={`${variety.name}${

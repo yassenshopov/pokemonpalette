@@ -606,7 +606,7 @@ export function PokemonMenu({
   }
 
   return (
-    <div className="h-auto md:h-full p-4 md:p-8 flex flex-col items-center justify-start gap-4 md:gap-6 relative w-full xl:max-w-2xl xl:mx-auto">
+    <div className="h-auto md:h-full md:overflow-y-auto p-4 md:p-8 flex flex-col items-center justify-start gap-4 md:gap-6 relative w-full xl:max-w-2xl xl:mx-auto">
       <LoaderOverlay loading={loading} text="Loading Pokemon..." />
 
       {/* Collapse button - desktop only */}

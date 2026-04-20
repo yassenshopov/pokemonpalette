@@ -1,9 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
-import { GridPattern } from "@/components/grid-pattern";
 import { Sparkles } from "lucide-react";
 import { Footer } from "@/components/footer";
+
+// GridPattern pulls in gsap + the full Pokemon index. Load it on demand so
+// the /explore route ships a tiny shell first and streams the grid in.
+const GridPattern = dynamic(
+  () =>
+    import("@/components/grid-pattern").then((m) => ({ default: m.GridPattern })),
+  { ssr: false }
+);
 
 export default function ExplorePage() {
   return (
