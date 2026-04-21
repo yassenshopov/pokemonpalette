@@ -6,6 +6,22 @@ import { getPokemonMetadataByName, getPokemonById } from "@/lib/pokemon";
 // round-tripping through an internal /api/pokemon-data request.
 export const runtime = "nodejs";
 
+// Satori fetches <img> sources over the network and requires absolute URLs.
+// Relative paths (e.g. "/pokemon/shiny/716.png") silently fail during
+// streaming and surface as "failed to pipe response" 500s on Vercel.
+function toAbsoluteUrl(url: string, request: NextRequest): string {
+  if (!url) return url;
+  if (/^https?:\/\//i.test(url)) return url;
+  const origin =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : new URL(request.url).origin);
+  return url.startsWith("/") ? `${origin}${url}` : `${origin}/${url}`;
+}
+
 async function getPokemonData(name: string, _request: NextRequest) {
   try {
     const metadata = getPokemonMetadataByName(name);
@@ -169,6 +185,9 @@ export async function GET(
       );
     }
 
+    // Satori needs an absolute URL to fetch the image.
+    const absoluteArtworkUrl = toAbsoluteUrl(artworkUrl, request);
+
     try {
       return new ImageResponse(
         (
@@ -182,7 +201,7 @@ export async function GET(
             }}
           >
             {/* Pokemon silhouette in the center - absolute positioned overlay */}
-            {artworkUrl && (
+            {absoluteArtworkUrl && (
               <div
                 style={{
                   position: "absolute",
@@ -196,7 +215,7 @@ export async function GET(
                 }}
               >
                 <img
-                  src={artworkUrl}
+                  src={absoluteArtworkUrl}
                   alt={`Shiny ${pokemon.name}`}
                   width={600}
                   height={600}
@@ -225,7 +244,7 @@ export async function GET(
       console.error("Pokemon:", {
         id: pokemon.id,
         name: pokemon.name,
-        artworkUrl,
+        artworkUrl: absoluteArtworkUrl,
       });
 
       // Fallback: return image without Pokemon artwork if ImageResponse fails

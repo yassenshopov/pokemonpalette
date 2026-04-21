@@ -7,6 +7,22 @@ import { getPokemonMetadataByName, getPokemonById } from "@/lib/pokemon";
 // counted as a second edge invocation per OG image).
 export const runtime = "nodejs";
 
+// Satori fetches <img> sources over the network and requires absolute URLs.
+// Relative paths (e.g. "/pokemon/716.png") silently fail during streaming
+// and surface as "failed to pipe response" 500s on Vercel.
+function toAbsoluteUrl(url: string, request: NextRequest): string {
+  if (!url) return url;
+  if (/^https?:\/\//i.test(url)) return url;
+  const origin =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : new URL(request.url).origin);
+  return url.startsWith("/") ? `${origin}${url}` : `${origin}/${url}`;
+}
+
 async function getPokemonData(name: string, _request: NextRequest) {
   try {
     const metadata = getPokemonMetadataByName(name);
@@ -135,9 +151,12 @@ export async function GET(
     const color2 = colors[1] || colors[0] || "#94a3b8";
     const color3 = colors[2] || colors[1] || colors[0] || "#94a3b8";
 
-    // Get official artwork URL
-    const artworkUrl =
+    // Get official artwork URL. Satori (used by @vercel/og) needs absolute
+    // URLs to fetch <img> sources; relative paths like "/pokemon/716.png"
+    // fail mid-render with "failed to pipe response".
+    const rawArtworkUrl =
       pokemon.artwork?.official || pokemon.artwork?.front || "";
+    const artworkUrl = toAbsoluteUrl(rawArtworkUrl, request);
 
     try {
       return new ImageResponse(
