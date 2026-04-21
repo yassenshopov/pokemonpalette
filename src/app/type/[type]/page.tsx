@@ -29,9 +29,11 @@ export default async function TypePage({
     notFound();
   }
 
+  // /types is not a real route — swap to /explore which is the closest
+  // actual hub page.
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Types", href: "/types" },
+    { label: "Explore", href: "/explore" },
     { label: typeName, href: `/type/${type.toLowerCase()}` },
   ];
 

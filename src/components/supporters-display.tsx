@@ -2,6 +2,7 @@
 
 import { Heart, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getContrastTextClass as getTextColor } from "@/lib/game/colors";
 
 interface Supporter {
   name: string;
@@ -12,20 +13,6 @@ interface SupportersDisplayProps {
   primaryColor: string;
   secondaryColor: string;
 }
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "text-white" | "text-black" => {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
 
 // Mock data - replace with real API call later
 const mockSupporters: Supporter[] = [

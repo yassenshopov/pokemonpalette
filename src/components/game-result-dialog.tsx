@@ -33,6 +33,7 @@ import {
   shareOrCopy,
   type ShareGridGuess,
 } from "@/lib/game/share";
+import { getContrastHex } from "@/lib/game/colors";
 
 // Get generation from Pokemon ID
 function getGenerationFromId(id: number): number {
@@ -142,15 +143,8 @@ export function GameResultDialog({
   // Get primary color and calculate contrast text color
   const primaryColor =
     targetColors.length > 0 ? targetColors[0].hex : undefined;
-  const getTextColor = (hex: string | undefined): "#ffffff" | "#000000" => {
-    if (!hex) return "#000000";
-    const hexClean = hex.replace("#", "");
-    const r = parseInt(hexClean.substring(0, 2), 16);
-    const g = parseInt(hexClean.substring(2, 4), 16);
-    const b = parseInt(hexClean.substring(4, 6), 16);
-    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-    return luminance > 0.5 ? "#000000" : "#ffffff";
-  };
+  const getTextColor = (hex: string | undefined): "#ffffff" | "#000000" =>
+    hex ? getContrastHex(hex) : "#000000";
 
   const handleShare = async () => {
     if (mode !== "daily" || !targetPokemon) return;

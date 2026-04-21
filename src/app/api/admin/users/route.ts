@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { Prisma, prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
-import {
-  buildIlikeOr,
-  parseAdminQuery,
-  rangeFor,
-  toCsv,
-} from "@/lib/admin/query";
+import { parseAdminQuery, toCsv } from "@/lib/admin/query";
+import { logger } from "@/lib/logger";
 
 const SORTABLE = [
   "created_at",
@@ -15,6 +11,14 @@ const SORTABLE = [
   "email",
   "username",
 ] as const;
+
+const SORT_MAP: Record<(typeof SORTABLE)[number], keyof Prisma.UserOrderByWithRelationInput> = {
+  created_at: "createdAt",
+  last_active_at: "lastActiveAt",
+  last_sign_in_at: "lastSignInAt",
+  email: "email",
+  username: "username",
+};
 
 const FILTER_KEYS = [
   "status",
@@ -25,8 +29,6 @@ const FILTER_KEYS = [
 ] as const;
 
 type FilterKey = (typeof FILTER_KEYS)[number];
-
-const SEARCH_COLUMNS = ["email", "username", "first_name", "last_name", "id"];
 
 const CSV_COLUMNS = [
   { key: "id", header: "ID" },
@@ -45,77 +47,172 @@ const CSV_COLUMNS = [
 
 const CSV_ROW_LIMIT = 50_000;
 
+// We return rows with snake_case keys because that's what the admin UI and
+// CSV exports expect. Prisma gives us camelCase; serialize once.
+function serializeUser(u: {
+  id: string;
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  username: string | null;
+  imageUrl: string | null;
+  profileImageUrl: string | null;
+  hasImage: boolean;
+  primaryEmailAddressId: string | null;
+  primaryPhoneNumberId: string | null;
+  banned: boolean;
+  locked: boolean;
+  backupCodeEnabled: boolean;
+  twoFactorEnabled: boolean;
+  totpEnabled: boolean;
+  passwordEnabled: boolean;
+  createOrganizationEnabled: boolean;
+  deleteSelfEnabled: boolean;
+  lastActiveAt: Date | null;
+  lastSignInAt: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
+  isDeleted: boolean;
+  isAdmin: boolean;
+  receivesDailyEmails: boolean;
+  paletteSize: number;
+  emailAddresses: unknown;
+  phoneNumbers: unknown;
+  externalAccounts: unknown;
+  publicMetadata: unknown;
+  privateMetadata: unknown;
+  unsafeMetadata: unknown;
+}) {
+  return {
+    id: u.id,
+    email: u.email,
+    first_name: u.firstName,
+    last_name: u.lastName,
+    username: u.username,
+    image_url: u.imageUrl,
+    profile_image_url: u.profileImageUrl,
+    has_image: u.hasImage,
+    primary_email_address_id: u.primaryEmailAddressId,
+    primary_phone_number_id: u.primaryPhoneNumberId,
+    banned: u.banned,
+    locked: u.locked,
+    backup_code_enabled: u.backupCodeEnabled,
+    two_factor_enabled: u.twoFactorEnabled,
+    totp_enabled: u.totpEnabled,
+    password_enabled: u.passwordEnabled,
+    create_organization_enabled: u.createOrganizationEnabled,
+    delete_self_enabled: u.deleteSelfEnabled,
+    last_active_at: u.lastActiveAt?.toISOString() ?? null,
+    last_sign_in_at: u.lastSignInAt?.toISOString() ?? null,
+    created_at: u.createdAt.toISOString(),
+    updated_at: u.updatedAt.toISOString(),
+    is_deleted: u.isDeleted,
+    is_admin: u.isAdmin,
+    receives_daily_emails: u.receivesDailyEmails,
+    palette_size: u.paletteSize,
+    email_addresses: u.emailAddresses,
+    phone_numbers: u.phoneNumbers,
+    external_accounts: u.externalAccounts,
+    public_metadata: u.publicMetadata,
+    private_metadata: u.privateMetadata,
+    unsafe_metadata: u.unsafeMetadata,
+  };
+}
+
 export async function GET(req: NextRequest) {
+  const gate = await requireAdmin();
+  if (!gate.ok) return gate.response;
+
+  const query = parseAdminQuery<FilterKey>(req.nextUrl.searchParams, {
+    sortable: SORTABLE,
+    defaultSort: { field: "created_at", dir: "desc" },
+    filterKeys: FILTER_KEYS,
+  });
+
+  const pageSize = query.format === "csv" ? CSV_ROW_LIMIT : query.pageSize;
+  const page = query.format === "csv" ? 1 : query.page;
+
+  const where: Prisma.UserWhereInput = { isDeleted: false };
+  if (query.q) {
+    where.OR = [
+      { email: { contains: query.q, mode: "insensitive" } },
+      { username: { contains: query.q, mode: "insensitive" } },
+      { firstName: { contains: query.q, mode: "insensitive" } },
+      { lastName: { contains: query.q, mode: "insensitive" } },
+      { id: { contains: query.q, mode: "insensitive" } },
+    ];
+  }
+
+  const { status, two_factor, is_admin, created_from, created_to } =
+    query.filters;
+
+  if (status === "banned") where.banned = true;
+  else if (status === "locked") where.locked = true;
+  else if (status === "active") {
+    where.banned = false;
+    where.locked = false;
+  }
+
+  if (two_factor === "true") {
+    const twoFaOr: Prisma.UserWhereInput[] = [
+      { twoFactorEnabled: true },
+      { totpEnabled: true },
+    ];
+    // Compose with existing OR without clobbering the search OR.
+    if (where.OR) {
+      where.AND = [{ OR: where.OR }, { OR: twoFaOr }];
+      delete where.OR;
+    } else {
+      where.OR = twoFaOr;
+    }
+  } else if (two_factor === "false") {
+    where.twoFactorEnabled = false;
+    where.totpEnabled = false;
+  }
+
+  if (is_admin === "true") where.isAdmin = true;
+  else if (is_admin === "false") where.isAdmin = false;
+
+  if (created_from) {
+    const d = new Date(created_from);
+    if (!Number.isNaN(d.getTime())) {
+      where.createdAt = { ...(where.createdAt as object), gte: d };
+    }
+  }
+  if (created_to) {
+    const d = new Date(created_to);
+    if (!Number.isNaN(d.getTime())) {
+      where.createdAt = { ...(where.createdAt as object), lte: d };
+    }
+  }
+
+  // Nullable columns (email, username, last_*) support `nulls: "last"`; the
+  // non-nullable `createdAt` column does not. Keep the option off to satisfy
+  // Prisma's discriminated union, at the cost of nulls bubbling to the top
+  // on desc sorts — acceptable since we default-sort by created_at.
+  const orderBy: Prisma.UserOrderByWithRelationInput = {};
+  if (query.sort) {
+    const field = SORT_MAP[query.sort.field as (typeof SORTABLE)[number]];
+    if (field) {
+      (orderBy as Record<string, Prisma.SortOrder>)[field] = query.sort.dir;
+    }
+  }
+
   try {
-    const gate = await requireAdmin();
-    if (!gate.ok) return gate.response;
+    const [records, total] = await Promise.all([
+      prisma.user.findMany({
+        where,
+        orderBy,
+        skip: (page - 1) * pageSize,
+        take: pageSize,
+      }),
+      prisma.user.count({ where }),
+    ]);
 
-    const query = parseAdminQuery<FilterKey>(req.nextUrl.searchParams, {
-      sortable: SORTABLE,
-      defaultSort: { field: "created_at", dir: "desc" },
-      filterKeys: FILTER_KEYS,
-    });
-
-    const pageSize =
-      query.format === "csv"
-        ? CSV_ROW_LIMIT
-        : query.pageSize;
-    const page = query.format === "csv" ? 1 : query.page;
-    const [from, to] = rangeFor(page, pageSize);
-
-    let builder = supabaseAdmin
-      .from("users")
-      .select("*", { count: "exact" })
-      .eq("is_deleted", false);
-
-    if (query.q) {
-      builder = builder.or(buildIlikeOr(query.q, SEARCH_COLUMNS));
-    }
-
-    // Filters
-    const { status, two_factor, is_admin, created_from, created_to } =
-      query.filters;
-
-    if (status === "banned") builder = builder.eq("banned", true);
-    else if (status === "locked") builder = builder.eq("locked", true);
-    else if (status === "active") {
-      builder = builder.eq("banned", false).eq("locked", false);
-    }
-
-    if (two_factor === "true") {
-      builder = builder.or("two_factor_enabled.eq.true,totp_enabled.eq.true");
-    } else if (two_factor === "false") {
-      builder = builder
-        .eq("two_factor_enabled", false)
-        .eq("totp_enabled", false);
-    }
-
-    if (is_admin === "true") builder = builder.eq("is_admin", true);
-    else if (is_admin === "false") builder = builder.eq("is_admin", false);
-
-    if (created_from) builder = builder.gte("created_at", created_from);
-    if (created_to) builder = builder.lte("created_at", created_to);
-
-    if (query.sort) {
-      builder = builder.order(query.sort.field, {
-        ascending: query.sort.dir === "asc",
-        nullsFirst: false,
-      });
-    }
-
-    builder = builder.range(from, to);
-
-    const { data, error, count } = await builder;
-    if (error) {
-      console.error("Error fetching users:", error);
-      return NextResponse.json(
-        { error: "Failed to fetch users" },
-        { status: 500 },
-      );
-    }
+    const rows = records.map(serializeUser);
 
     if (query.format === "csv") {
-      const csv = toCsv(data ?? [], CSV_COLUMNS);
+      const csv = toCsv(rows, CSV_COLUMNS);
       return new NextResponse(csv, {
         status: 200,
         headers: {
@@ -126,15 +223,17 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json({
-      rows: data ?? [],
-      total: count ?? 0,
+      rows,
+      total,
       page: query.page,
       pageSize: query.pageSize,
     });
   } catch (err) {
-    console.error("Unexpected error in GET /api/admin/users:", err);
+    logger.error("admin.users.list_failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to fetch users" },
       { status: 500 },
     );
   }

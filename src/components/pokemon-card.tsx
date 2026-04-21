@@ -10,22 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { POKEMON_CONSTANTS } from "@/constants/pokemon";
 import { getOfficialArtworkUrl } from "@/lib/sprite-utils";
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "text-white" | "text-black" => {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
-
-// We'll use theme colors instead of custom type colors
+import { getContrastTextClass as getTextColor } from "@/lib/game/colors";
 
 interface PokemonCardProps {
   pokemonId: number | null;
@@ -292,6 +277,8 @@ export function PokemonCard({
                   variant="outline"
                   size="sm"
                   className="cursor-pointer w-full sm:w-auto"
+                  aria-label={isPlayingCry ? "Stop Pokémon cry" : "Play Pokémon cry"}
+                  aria-pressed={isPlayingCry}
                   style={{
                     borderColor: primaryColor + "40",
                     backgroundColor: isPlayingCry
@@ -300,9 +287,9 @@ export function PokemonCard({
                   }}
                 >
                   {isPlayingCry ? (
-                    <VolumeX className="w-4 h-4" />
+                    <VolumeX className="w-4 h-4" aria-hidden="true" />
                   ) : (
-                    <Volume2 className="w-4 h-4" />
+                    <Volume2 className="w-4 h-4" aria-hidden="true" />
                   )}
                 </Button>
               )}

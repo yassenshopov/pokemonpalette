@@ -91,25 +91,28 @@ export function Footer() {
                 href="https://twitter.com/yassenshopov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Twitter (opens in new tab)"
+                className="text-muted-foreground hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                <Twitter className="h-5 w-5" />
+                <Twitter className="h-5 w-5" aria-hidden="true" />
               </Link>
               <Link
                 href="https://github.com/yassenshopov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="GitHub (opens in new tab)"
+                className="text-muted-foreground hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                <Github className="h-5 w-5" />
+                <Github className="h-5 w-5" aria-hidden="true" />
               </Link>
               <Link
                 href="https://linkedin.com/in/yassenshopov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="LinkedIn (opens in new tab)"
+                className="text-muted-foreground hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
               </Link>
             </div>
             <ul className="space-y-2">

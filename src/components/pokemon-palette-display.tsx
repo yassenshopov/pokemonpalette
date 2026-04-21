@@ -65,19 +65,7 @@ const convertColor = (hex: string, format: "hex" | "hsl" | "rgb"): string => {
   return `hsl(${h}, ${s}%, ${l}%)`;
 };
 
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): string => {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
+import { getContrastTextClass as getTextColor } from "@/lib/game/colors";
 
 export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
   const [colorFormat, setColorFormat] = useState<"hex" | "hsl" | "rgb">("hex");

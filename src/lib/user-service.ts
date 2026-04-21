@@ -1,260 +1,190 @@
+import type { User } from "@prisma/client";
+import { clerkClient } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
-import { supabaseAdmin } from "@/lib/supabase";
-import { User } from "@prisma/client";
+import { logger } from "@/lib/logger";
 
-export interface CreateUserData {
+/**
+ * Canonical Clerk → database sync layer.
+ *
+ * Everything that touches the `users` table in response to a Clerk event
+ * goes through this file. The webhook handler, server actions, and any
+ * backfill scripts all call these functions — the goal is to have exactly
+ * one place where the Clerk payload shape is mapped to our schema.
+ *
+ * Prior to this refactor, `src/app/api/webhooks/clerk/route.ts` did its
+ * own `supabaseAdmin.upsert(...)` and omitted a bunch of fields (e.g. it
+ * always took email_addresses[0] instead of matching
+ * `primary_email_address_id`). Those inconsistencies are fixed here.
+ */
+
+export type ClerkEmailAddress = {
   id: string;
-  email?: string | null;
-  firstName?: string | null;
-  lastName?: string | null;
+  email_address: string;
+};
+
+export type ClerkUserPayload = {
+  id: string;
   username?: string | null;
-  imageUrl?: string | null;
-  profileImageUrl?: string | null;
-  hasImage?: boolean;
-  primaryEmailAddressId?: string | null;
-  primaryPhoneNumberId?: string | null;
+  first_name?: string | null;
+  last_name?: string | null;
+  image_url?: string;
+  profile_image_url?: string;
+  has_image?: boolean;
+  primary_email_address_id?: string | null;
+  primary_phone_number_id?: string | null;
   banned?: boolean;
   locked?: boolean;
-  backupCodeEnabled?: boolean;
-  twoFactorEnabled?: boolean;
-  totpEnabled?: boolean;
-  passwordEnabled?: boolean;
-  createOrganizationEnabled?: boolean;
-  deleteSelfEnabled?: boolean;
-  lastActiveAt?: Date | null;
-  lastSignInAt?: Date | null;
-  createdAt?: Date;
-  updatedAt?: Date;
-  emailAddresses?: any;
-  phoneNumbers?: any;
-  externalAccounts?: any;
-  publicMetadata?: any;
-  privateMetadata?: any;
-  unsafeMetadata?: any;
+  backup_code_enabled?: boolean;
+  two_factor_enabled?: boolean;
+  totp_enabled?: boolean;
+  password_enabled?: boolean;
+  create_organization_enabled?: boolean;
+  delete_self_enabled?: boolean;
+  last_active_at?: number | null;
+  last_sign_in_at?: number | null;
+  created_at?: number;
+  updated_at?: number;
+  email_addresses?: ClerkEmailAddress[];
+  phone_numbers?: unknown[];
+  external_accounts?: unknown[];
+  public_metadata?: Record<string, unknown>;
+  private_metadata?: Record<string, unknown>;
+  unsafe_metadata?: Record<string, unknown>;
+};
+
+/** Resolve the primary email by matching `primary_email_address_id` — the
+ *  previous implementation always picked index 0, which silently picked the
+ *  wrong email when a user rearranged their addresses. */
+export function resolvePrimaryEmail(
+  payload: Pick<ClerkUserPayload, "email_addresses" | "primary_email_address_id">
+): string | null {
+  const list = payload.email_addresses ?? [];
+  if (list.length === 0) return null;
+  const byPrimary = payload.primary_email_address_id
+    ? list.find((e) => e.id === payload.primary_email_address_id)
+    : null;
+  return (byPrimary ?? list[0])?.email_address ?? null;
 }
 
-export interface UpdateUserData {
-  email?: string | null;
-  firstName?: string | null;
-  lastName?: string | null;
-  username?: string | null;
-  imageUrl?: string | null;
-  profileImageUrl?: string | null;
-  hasImage?: boolean;
-  primaryEmailAddressId?: string | null;
-  primaryPhoneNumberId?: string | null;
-  banned?: boolean;
-  locked?: boolean;
-  backupCodeEnabled?: boolean;
-  twoFactorEnabled?: boolean;
-  totpEnabled?: boolean;
-  passwordEnabled?: boolean;
-  createOrganizationEnabled?: boolean;
-  deleteSelfEnabled?: boolean;
-  lastActiveAt?: Date | null;
-  lastSignInAt?: Date | null;
-  updatedAt?: Date;
-  emailAddresses?: any;
-  phoneNumbers?: any;
-  externalAccounts?: any;
-  publicMetadata?: any;
-  privateMetadata?: any;
-  unsafeMetadata?: any;
+function toDate(unix: number | null | undefined): Date | null {
+  if (unix == null) return null;
+  return new Date(unix);
 }
 
 /**
- * Create a new user in the database
+ * Upsert a user from a Clerk payload. Idempotent — safe to call on the
+ * same payload repeatedly.
  */
-export async function createUser(userData: CreateUserData): Promise<User> {
-  try {
-    const user = await prisma.user.create({
-      data: {
-        id: userData.id,
-        email: userData.email,
-        firstName: userData.firstName,
-        lastName: userData.lastName,
-        imageUrl: userData.imageUrl,
-        createdAt: userData.createdAt || new Date(),
-        updatedAt: userData.updatedAt || new Date(),
-        isDeleted: false,
-      },
-    });
+export async function syncUserFromClerk(payload: ClerkUserPayload): Promise<User> {
+  const primaryEmail = resolvePrimaryEmail(payload);
 
-    console.log(`User created successfully: ${user.id}`);
-    return user;
-  } catch (error) {
-    console.error("Error creating user:", error);
-    throw new Error(`Failed to create user: ${error}`);
-  }
+  const base = {
+    email: primaryEmail,
+    firstName: payload.first_name ?? null,
+    lastName: payload.last_name ?? null,
+    username: payload.username ?? null,
+    imageUrl: payload.image_url ?? null,
+    profileImageUrl: payload.profile_image_url ?? null,
+    hasImage: payload.has_image ?? false,
+    primaryEmailAddressId: payload.primary_email_address_id ?? null,
+    primaryPhoneNumberId: payload.primary_phone_number_id ?? null,
+    banned: payload.banned ?? false,
+    locked: payload.locked ?? false,
+    backupCodeEnabled: payload.backup_code_enabled ?? false,
+    twoFactorEnabled: payload.two_factor_enabled ?? false,
+    totpEnabled: payload.totp_enabled ?? false,
+    passwordEnabled: payload.password_enabled ?? false,
+    createOrganizationEnabled: payload.create_organization_enabled ?? true,
+    deleteSelfEnabled: payload.delete_self_enabled ?? true,
+    lastActiveAt: toDate(payload.last_active_at),
+    lastSignInAt: toDate(payload.last_sign_in_at),
+    emailAddresses: (payload.email_addresses ?? []) as unknown as object,
+    phoneNumbers: (payload.phone_numbers ?? []) as unknown as object,
+    externalAccounts: (payload.external_accounts ?? []) as unknown as object,
+    publicMetadata: (payload.public_metadata ?? {}) as unknown as object,
+    privateMetadata: (payload.private_metadata ?? {}) as unknown as object,
+    unsafeMetadata: (payload.unsafe_metadata ?? {}) as unknown as object,
+    isDeleted: false,
+  };
+
+  const createdAt = toDate(payload.created_at) ?? new Date();
+  const updatedAt = toDate(payload.updated_at) ?? new Date();
+
+  const user = await prisma.user.upsert({
+    where: { id: payload.id },
+    update: {
+      ...base,
+      updatedAt,
+    },
+    create: {
+      id: payload.id,
+      ...base,
+      createdAt,
+      updatedAt,
+    },
+  });
+
+  logger.info("user.synced", { userId: user.id });
+  return user;
 }
 
-/**
- * Update an existing user in the database
- */
-export async function updateUser(
-  userId: string,
-  userData: UpdateUserData
-): Promise<User> {
-  try {
-    const user = await prisma.user.update({
-      where: { id: userId },
-      data: {
-        ...userData,
-        updatedAt: new Date(),
-      },
-    });
-
-    console.log(`User updated successfully: ${user.id}`);
-    return user;
-  } catch (error) {
-    console.error("Error updating user:", error);
-    throw new Error(`Failed to update user: ${error}`);
-  }
+/** Soft-delete a user. Hard deletes cascade to saved_palettes /
+ *  daily_game_attempts, which we don't want. */
+export async function softDeleteUser(userId: string): Promise<User> {
+  const user = await prisma.user.update({
+    where: { id: userId },
+    data: { isDeleted: true, updatedAt: new Date() },
+  });
+  logger.info("user.soft_deleted", { userId: user.id });
+  return user;
 }
 
-/**
- * Soft delete a user (set isDeleted to true)
- */
-export async function deleteUser(userId: string): Promise<User> {
-  try {
-    const user = await prisma.user.update({
-      where: { id: userId },
-      data: {
-        isDeleted: true,
-        updatedAt: new Date(),
-      },
-    });
-
-    console.log(`User soft deleted successfully: ${user.id}`);
-    return user;
-  } catch (error) {
-    console.error("Error deleting user:", error);
-    throw new Error(`Failed to delete user: ${error}`);
-  }
-}
-
-/**
- * Get a user by ID
- */
+/** Fetch a non-deleted user by id. */
 export async function getUserById(userId: string): Promise<User | null> {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { 
-        id: userId,
-        isDeleted: false, // Only return non-deleted users
-      },
-    });
-
-    return user;
-  } catch (error) {
-    console.error("Error fetching user:", error);
-    throw new Error(`Failed to fetch user: ${error}`);
-  }
+  return prisma.user.findFirst({
+    where: { id: userId, isDeleted: false },
+  });
 }
 
-/**
- * Get a user by email
- */
+/** Fetch a non-deleted user by email. */
 export async function getUserByEmail(email: string): Promise<User | null> {
-  try {
-    const user = await prisma.user.findFirst({
-      where: { 
-        email: email,
-        isDeleted: false, // Only return non-deleted users
-      },
-    });
-
-    return user;
-  } catch (error) {
-    console.error("Error fetching user by email:", error);
-    throw new Error(`Failed to fetch user by email: ${error}`);
-  }
+  return prisma.user.findFirst({
+    where: { email, isDeleted: false },
+  });
 }
 
-/**
- * Get all active users
- */
-export async function getAllUsers(): Promise<User[]> {
-  try {
-    const users = await prisma.user.findMany({
-      where: {
-        isDeleted: false,
-      },
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
-
-    return users;
-  } catch (error) {
-    console.error("Error fetching users:", error);
-    throw new Error(`Failed to fetch users: ${error}`);
-  }
-}
-
-/**
- * Check if a user exists
- */
+/** Existence check used by middleware / admin. */
 export async function userExists(userId: string): Promise<boolean> {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { 
-        id: userId,
-        isDeleted: false,
-      },
-      select: { id: true }, // Only select ID for performance
-    });
-
-    return !!user;
-  } catch (error) {
-    console.error("Error checking user existence:", error);
-    return false;
-  }
+  const u = await prisma.user.findFirst({
+    where: { id: userId, isDeleted: false },
+    select: { id: true },
+  });
+  return u !== null;
 }
 
 /**
- * Sync user data from Clerk to database (upsert operation)
+ * Mirror the admin flag into Clerk `publicMetadata.isAdmin` so it flows into
+ * the session JWT. The JWT is what `requireAdmin()` reads on the hot path,
+ * avoiding a DB hit per admin request (see H12 in the audit plan).
+ *
+ * Safe to call redundantly. Logs and swallows Clerk errors — the DB remains
+ * the source of truth, so a failed metadata push just delays the optimization
+ * for that user until the next sync.
  */
-export async function syncUserFromClerk(clerkUserData: {
-  id: string;
-  email_addresses: Array<{ email_address: string; id: string }>;
-  first_name: string | null;
-  last_name: string | null;
-  image_url: string;
-  created_at: number;
-  updated_at: number;
-}): Promise<User> {
-  const primaryEmail = clerkUserData.email_addresses.find(
-    (email) => email.id === clerkUserData.email_addresses[0]?.id
-  );
-
+export async function pushAdminToClerk(
+  userId: string,
+  isAdmin: boolean,
+): Promise<void> {
   try {
-    const user = await prisma.user.upsert({
-      where: { id: clerkUserData.id },
-      update: {
-        email: primaryEmail?.email_address || null,
-        firstName: clerkUserData.first_name,
-        lastName: clerkUserData.last_name,
-        imageUrl: clerkUserData.image_url,
-        updatedAt: new Date(clerkUserData.updated_at),
-        isDeleted: false, // Ensure user is marked as active
-      },
-      create: {
-        id: clerkUserData.id,
-        email: primaryEmail?.email_address || null,
-        firstName: clerkUserData.first_name,
-        lastName: clerkUserData.last_name,
-        imageUrl: clerkUserData.image_url,
-        createdAt: new Date(clerkUserData.created_at),
-        updatedAt: new Date(clerkUserData.updated_at),
-        isDeleted: false,
-      },
+    const client = await clerkClient();
+    await client.users.updateUserMetadata(userId, {
+      publicMetadata: { isAdmin },
     });
-
-    console.log(`User synced from Clerk: ${user.id}`);
-    return user;
-  } catch (error) {
-    console.error("Error syncing user from Clerk:", error);
-    throw new Error(`Failed to sync user from Clerk: ${error}`);
+    logger.info("user.admin_claim_synced", { userId });
+  } catch (err) {
+    logger.error("user.admin_claim_sync_failed", {
+      userId,
+      error: err instanceof Error ? err.message : String(err),
+    });
   }
 }

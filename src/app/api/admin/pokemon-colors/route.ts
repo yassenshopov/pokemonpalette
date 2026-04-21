@@ -1,189 +1,168 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/admin/auth";
 import { getAllPokemonMetadata } from "@/lib/pokemon";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
 
-// GET - Get all Pokemon with their color data (admin only)
+// Pokemon JSON files are served from /public/data/pokemon/{id}.json. That
+// directory is both the build-time static source AND the runtime public
+// asset path, so reads here and browser fetches hit the same bytes.
+const POKEMON_DATA_DIR = join(process.cwd(), "public", "data", "pokemon");
+
+/**
+ * Validates and normalizes a Pokemon ID from an untrusted source.
+ * Returns null if the value is not a positive integer within the expected
+ * range. This is the defense against path traversal below — `pokemonId` is
+ * interpolated into a filesystem path, so we MUST ensure it's an integer.
+ */
+function parsePokemonId(raw: unknown): number | null {
+  const id = typeof raw === "number" ? raw : Number(raw);
+  if (!Number.isInteger(id) || id < 1 || id > 100000) return null;
+  return id;
+}
+
+// GET — Return every Pokemon with its current stored palette (admin only)
 export async function GET() {
-  try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
+  const authResult = await requireAdmin();
+  if (!authResult.ok) return authResult.response;
 
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+  const allPokemon = getAllPokemonMetadata();
 
-    // Check if user is admin using Supabase
-    const { data: currentUser, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("is_admin")
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .single();
+  const pokemonWithColors = await Promise.all(
+    allPokemon.map(async (pokemon) => {
+      try {
+        const filePath = join(POKEMON_DATA_DIR, `${pokemon.id}.json`);
+        const fileContent = await readFile(filePath, "utf-8");
+        const pokemonData = JSON.parse(fileContent);
 
-    if (userError || !currentUser || !currentUser.is_admin) {
-      return NextResponse.json({ error: "Forbidden: Admin access required" }, { status: 403 });
-    }
-
-    // Get all Pokemon metadata
-    const allPokemon = getAllPokemonMetadata();
-    
-    // Load color data for each Pokemon
-    const pokemonWithColors = await Promise.all(
-      allPokemon.map(async (pokemon) => {
-        try {
-          const filePath = join(process.cwd(), "src", "data", "pokemon", `${pokemon.id}.json`);
-          const fileContent = await readFile(filePath, "utf-8");
-          const pokemonData = JSON.parse(fileContent);
-          
-          // Get colors from static data (normal)
-          const staticColors = pokemonData.colorPalette?.highlights || [
+        const staticColors = pokemonData.colorPalette?.highlights ||
+          [
             pokemonData.colorPalette?.primary,
             pokemonData.colorPalette?.secondary,
             pokemonData.colorPalette?.accent,
-          ].filter(Boolean).slice(0, 3);
-          
-          // Get shiny colors from static data
-          const staticShinyColors = pokemonData.shinyColorPalette?.highlights || [
+          ]
+            .filter(Boolean)
+            .slice(0, 3);
+
+        const staticShinyColors = pokemonData.shinyColorPalette?.highlights ||
+          [
             pokemonData.shinyColorPalette?.primary,
             pokemonData.shinyColorPalette?.secondary,
             pokemonData.shinyColorPalette?.accent,
-          ].filter(Boolean).slice(0, 3);
-          
-          // Get sprite URLs for extraction
-          const spriteUrl = pokemonData.artwork?.front || null;
-          const shinySpriteUrl = pokemonData.artwork?.shiny || null;
-          
-          return {
-            id: pokemon.id,
-            name: pokemon.name,
-            spriteUrl,
-            shinySpriteUrl,
-            staticColors: staticColors.slice(0, 3), // Top 3 from static data
-            staticShinyColors: staticShinyColors.slice(0, 3), // Top 3 from shiny static data
-          };
-        } catch (error) {
-          console.error(`Error loading Pokemon ${pokemon.id}:`, error);
-          return null;
-        }
-      })
-    );
+          ]
+            .filter(Boolean)
+            .slice(0, 3);
 
-    // Filter out nulls
-    const validPokemon = pokemonWithColors.filter((p): p is NonNullable<typeof p> => p !== null);
+        return {
+          id: pokemon.id,
+          name: pokemon.name,
+          spriteUrl: pokemonData.artwork?.front || null,
+          shinySpriteUrl: pokemonData.artwork?.shiny || null,
+          staticColors: staticColors.slice(0, 3),
+          staticShinyColors: staticShinyColors.slice(0, 3),
+        };
+      } catch {
+        return null;
+      }
+    })
+  );
 
-    return NextResponse.json({ pokemon: validPokemon });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/admin/pokemon-colors:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
-  }
+  const validPokemon = pokemonWithColors.filter(
+    (p): p is NonNullable<typeof p> => p !== null
+  );
+
+  return NextResponse.json({ pokemon: validPokemon });
 }
 
-// PUT - Update Pokemon color palette (admin only)
+// PUT — Update a Pokemon's stored palette (admin only)
+//
+// NOTE: on Vercel the function filesystem is read-only, so writes here only
+// persist in local dev. A durable override path (DB table read at runtime)
+// is planned as part of the Prisma migration.
 export async function PUT(req: NextRequest) {
-  try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
+  const authResult = await requireAdmin();
+  if (!authResult.ok) return authResult.response;
 
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+  const body = await req.json();
+  const { pokemonId: rawPokemonId, colors, isShiny } = body ?? {};
 
-    // Check if user is admin using Supabase
-    const { data: currentUser, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("is_admin")
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .single();
-
-    if (userError || !currentUser || !currentUser.is_admin) {
-      return NextResponse.json({ error: "Forbidden: Admin access required" }, { status: 403 });
-    }
-
-    const body = await req.json();
-    const { pokemonId, colors, isShiny } = body;
-
-    if (!pokemonId || !Array.isArray(colors) || colors.length === 0) {
-      return NextResponse.json(
-        { error: "Invalid request: pokemonId and colors array required" },
-        { status: 400 }
-      );
-    }
-
-    // Ensure we have exactly 3 colors
-    const selectedColors = colors.slice(0, 3);
-    while (selectedColors.length < 3) {
-      selectedColors.push(selectedColors[selectedColors.length - 1] || "#94a3b8");
-    }
-
-    // Read the Pokemon file
-    const filePath = join(process.cwd(), "src", "data", "pokemon", `${pokemonId}.json`);
-    const fileContent = await readFile(filePath, "utf-8");
-    const pokemonData = JSON.parse(fileContent);
-
-    if (isShiny) {
-      // Update shiny color palette
-      if (!pokemonData.shinyColorPalette) {
-        pokemonData.shinyColorPalette = {};
-      }
-
-      // Update highlights with the selected colors
-      pokemonData.shinyColorPalette.highlights = selectedColors;
-      
-      // Also update primary, secondary, accent if they exist
-      if (selectedColors[0]) pokemonData.shinyColorPalette.primary = selectedColors[0];
-      if (selectedColors[1]) pokemonData.shinyColorPalette.secondary = selectedColors[1];
-      if (selectedColors[2]) pokemonData.shinyColorPalette.accent = selectedColors[2];
-    } else {
-      // Update normal color palette
-      if (!pokemonData.colorPalette) {
-        pokemonData.colorPalette = {};
-      }
-
-      // Update highlights with the selected colors
-      pokemonData.colorPalette.highlights = selectedColors;
-      
-      // Also update primary, secondary, accent if they exist
-      if (selectedColors[0]) pokemonData.colorPalette.primary = selectedColors[0];
-      if (selectedColors[1]) pokemonData.colorPalette.secondary = selectedColors[1];
-      if (selectedColors[2]) pokemonData.colorPalette.accent = selectedColors[2];
-    }
-
-    // Write back to file
-    await writeFile(filePath, JSON.stringify(pokemonData, null, 2), "utf-8");
-
-    return NextResponse.json({
-      message: `Pokemon ${isShiny ? 'shiny ' : ''}color palette updated successfully`,
-      pokemonId,
-      colors: selectedColors,
-      isShiny: isShiny || false,
-    });
-  } catch (error) {
-    console.error("Unexpected error in PUT /api/admin/pokemon-colors:", error);
+  const pokemonId = parsePokemonId(rawPokemonId);
+  if (pokemonId === null) {
     return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
+      { error: "Invalid pokemonId: must be a positive integer" },
+      { status: 400 }
     );
   }
-}
 
+  if (!Array.isArray(colors) || colors.length === 0) {
+    return NextResponse.json(
+      { error: "Invalid request: colors array required" },
+      { status: 400 }
+    );
+  }
+
+  const HEX = /^#[0-9a-fA-F]{6}$/;
+  const cleaned = colors.filter(
+    (c): c is string => typeof c === "string" && HEX.test(c)
+  );
+  if (cleaned.length === 0) {
+    return NextResponse.json(
+      { error: "Invalid request: no valid hex colors (expected #RRGGBB)" },
+      { status: 400 }
+    );
+  }
+
+  const selectedColors = cleaned.slice(0, 3);
+  while (selectedColors.length < 3) {
+    selectedColors.push(selectedColors[selectedColors.length - 1] || "#94a3b8");
+  }
+
+  // Build path from the validated integer — no string interpolation of
+  // untrusted input.
+  const filePath = join(POKEMON_DATA_DIR, `${pokemonId}.json`);
+
+  let pokemonData: Record<string, unknown> & {
+    colorPalette?: Record<string, unknown>;
+    shinyColorPalette?: Record<string, unknown>;
+  };
+  try {
+    const fileContent = await readFile(filePath, "utf-8");
+    pokemonData = JSON.parse(fileContent);
+  } catch {
+    return NextResponse.json(
+      { error: `Pokemon ${pokemonId} not found` },
+      { status: 404 }
+    );
+  }
+
+  const paletteKey = isShiny ? "shinyColorPalette" : "colorPalette";
+  if (!pokemonData[paletteKey]) {
+    pokemonData[paletteKey] = {};
+  }
+  const palette = pokemonData[paletteKey] as Record<string, unknown>;
+
+  palette.highlights = selectedColors;
+  palette.primary = selectedColors[0];
+  palette.secondary = selectedColors[1];
+  palette.accent = selectedColors[2];
+
+  try {
+    await writeFile(filePath, JSON.stringify(pokemonData, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Error writing palette override:", err);
+    return NextResponse.json(
+      {
+        error:
+          "Filesystem is read-only in this environment. Palette overrides cannot be persisted in production yet.",
+      },
+      { status: 501 }
+    );
+  }
+
+  return NextResponse.json({
+    message: `Pokemon ${isShiny ? "shiny " : ""}color palette updated successfully`,
+    pokemonId,
+    colors: selectedColors,
+    isShiny: Boolean(isShiny),
+  });
+}

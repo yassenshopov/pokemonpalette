@@ -1,77 +1,54 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/admin/auth";
+import { logger } from "@/lib/logger";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // GET - Get users with emails for email sending (admin only)
-export async function GET(req: NextRequest) {
+export async function GET() {
+  const admin = await requireAdmin();
+  if (!admin.ok) return admin.response;
+
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
+    const users = await prisma.user.findMany({
+      where: { isDeleted: false, email: { not: null } },
+      orderBy: { createdAt: "desc" },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        username: true,
+        imageUrl: true,
+        profileImageUrl: true,
+      },
+    });
 
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // Check if user is admin
-    const { data: currentUser, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("is_admin")
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .single();
-
-    if (userError || !currentUser || !currentUser.is_admin) {
-      return NextResponse.json({ error: "Forbidden: Admin access required" }, { status: 403 });
-    }
-
-    // Get users with emails
-    const { data: users, error: usersError } = await supabaseAdmin
-      .from("users")
-      .select(
-        "id, email, first_name, last_name, username, image_url, profile_image_url",
-      )
-      .eq("is_deleted", false)
-      .not("email", "is", null)
-      .order("created_at", { ascending: false });
-
-    if (usersError) {
-      console.error("Error fetching users:", usersError);
-      return NextResponse.json(
-        { error: "Failed to fetch users" },
-        { status: 500 }
-      );
-    }
-
-    // Filter out invalid emails and format response
-    const validUsers = (users || [])
-      .filter((user) => user.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email))
-      .map((user) => ({
-        id: user.id,
-        email: user.email,
-        name: user.first_name || user.last_name
-          ? `${user.first_name || ""} ${user.last_name || ""}`.trim()
-          : user.username || user.email?.split("@")[0] || "User",
-        first_name: user.first_name ?? null,
-        last_name: user.last_name ?? null,
-        username: user.username ?? null,
-        image_url: user.image_url ?? null,
-        profile_image_url: user.profile_image_url ?? null,
+    const validUsers = users
+      .filter((u) => u.email && EMAIL_RE.test(u.email))
+      .map((u) => ({
+        id: u.id,
+        email: u.email,
+        name:
+          u.firstName || u.lastName
+            ? `${u.firstName ?? ""} ${u.lastName ?? ""}`.trim()
+            : u.username || u.email?.split("@")[0] || "User",
+        first_name: u.firstName ?? null,
+        last_name: u.lastName ?? null,
+        username: u.username ?? null,
+        image_url: u.imageUrl ?? null,
+        profile_image_url: u.profileImageUrl ?? null,
       }));
 
     return NextResponse.json({ users: validUsers });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/admin/emails/users:", error);
+  } catch (err) {
+    logger.error("admin.emails.users.fetch_failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to fetch users" },
       { status: 500 }
     );
   }
 }
-

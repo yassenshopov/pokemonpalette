@@ -29,9 +29,11 @@ export default async function RarityPage({
   // Get all unique rarities from the data
   const allRarities = getAllRarities();
 
+  // /rarity is not a real route — we skip the intermediate crumb rather
+  // than send crawlers (and keyboard users) at a 404.
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Rarity", href: "/rarity" },
+    { label: "Explore", href: "/explore" },
     { label: rarityName, href: `/rarity/${rarity.toLowerCase()}` },
   ];
 

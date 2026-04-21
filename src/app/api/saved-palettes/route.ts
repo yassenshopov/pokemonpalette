@@ -1,174 +1,214 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
-import { createClient } from "@supabase/supabase-js";
+import { z } from "zod";
+import { prisma } from "@/lib/prisma";
+import { rateLimit } from "@/lib/rate-limit";
+import { logger } from "@/lib/logger";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-
-const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false,
-  },
+// 60 saves/hour per user — generous for a palette-hoarding power user,
+// and still far below what a scripted attacker could use to DOS the DB.
+const writeLimiter = rateLimit("saved-palettes-post", {
+  requests: 60,
+  window: "1 h",
 });
 
-export interface SavedPaletteData {
+function serializePalette(p: {
+  id: string;
+  userId: string;
   pokemonId: number;
   pokemonName: string;
-  pokemonForm?: string;
+  pokemonForm: string | null;
   isShiny: boolean;
-  colors: string[];
-  imageUrl?: string;
-  paletteName?: string;
+  colors: unknown;
+  imageUrl: string | null;
+  paletteName: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+}) {
+  return {
+    id: p.id,
+    user_id: p.userId,
+    pokemon_id: p.pokemonId,
+    pokemon_name: p.pokemonName,
+    pokemon_form: p.pokemonForm,
+    is_shiny: p.isShiny,
+    colors: p.colors,
+    image_url: p.imageUrl,
+    palette_name: p.paletteName,
+    created_at: p.createdAt.toISOString(),
+    updated_at: p.updatedAt.toISOString(),
+  };
 }
 
 // GET - Retrieve user's saved palettes
 export async function GET() {
+  let userId: string | null = null;
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const { data: palettes, error } = await supabaseAdmin
-      .from("saved_palettes")
-      .select("*")
-      .eq("user_id", userId)
-      .order("created_at", { ascending: false });
-
-    if (error) {
-      console.error("Error fetching saved palettes:", error);
-      return NextResponse.json(
-        { error: "Failed to fetch saved palettes" },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({ palettes });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/saved-palettes:", error);
+    const authResult = await auth();
+    userId = authResult.userId;
+  } catch (authError) {
+    logger.error("auth.service_unavailable", {
+      route: "GET /api/saved-palettes",
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Authentication service unavailable" },
+      { status: 503 }
+    );
+  }
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  try {
+    const palettes = await prisma.savedPalette.findMany({
+      where: { userId },
+      orderBy: { createdAt: "desc" },
+      take: 500,
+    });
+    return NextResponse.json({ palettes: palettes.map(serializePalette) });
+  } catch (err) {
+    logger.error("saved-palettes.fetch_failed", {
+      userId,
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return NextResponse.json(
+      { error: "Failed to fetch saved palettes" },
       { status: 500 }
     );
   }
 }
 
-// POST - Save a new palette
+// POST - Save a new palette (or update if same Pokemon configuration exists)
+const HEX = /^#[0-9a-fA-F]{6}$/;
+
+const PostBodySchema = z.object({
+  pokemonId: z.number().int().min(1).max(100000),
+  pokemonName: z.string().min(1).max(100),
+  pokemonForm: z.string().max(100).nullish(),
+  isShiny: z.boolean(),
+  // Cap palette length so a single user can't dump large blobs into JSONB.
+  colors: z
+    .array(z.string().regex(HEX, "Expected hex color #RRGGBB"))
+    .min(1)
+    .max(12),
+  imageUrl: z.string().url().nullish(),
+  paletteName: z.string().max(100).nullish(),
+});
+
 export async function POST(req: NextRequest) {
+  let userId: string | null = null;
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const body: SavedPaletteData = await req.json();
-    const {
-      pokemonId,
-      pokemonName,
-      pokemonForm,
-      isShiny,
-      colors,
-      imageUrl,
-      paletteName,
-    } = body;
-
-    // Validate required fields
-    if (!pokemonId || !pokemonName || !colors || colors.length === 0) {
-      return NextResponse.json(
-        { error: "Missing required fields: pokemonId, pokemonName, colors" },
-        { status: 400 }
-      );
-    }
-
-    // Check if user already has a palette for this exact Pokemon configuration
-    const { data: existingPalette } = await supabaseAdmin
-      .from("saved_palettes")
-      .select("id")
-      .eq("user_id", userId)
-      .eq("pokemon_id", pokemonId)
-      .eq("pokemon_form", pokemonForm || null)
-      .eq("is_shiny", isShiny)
-      .single();
-
-    if (existingPalette) {
-      // Update existing palette
-      const { data: updatedPalette, error } = await supabaseAdmin
-        .from("saved_palettes")
-        .update({
-          colors: colors,
-          image_url: imageUrl,
-          palette_name: paletteName,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", existingPalette.id)
-        .select()
-        .single();
-
-      if (error) {
-        console.error("Error updating saved palette:", error);
-        return NextResponse.json(
-          { error: "Failed to update palette" },
-          { status: 500 }
-        );
-      }
-
-      return NextResponse.json({
-        message: "Palette updated successfully",
-        palette: updatedPalette,
-      });
-    } else {
-      // Create new palette
-      const { data: newPalette, error } = await supabaseAdmin
-        .from("saved_palettes")
-        .insert({
-          user_id: userId,
-          pokemon_id: pokemonId,
-          pokemon_name: pokemonName,
-          pokemon_form: pokemonForm,
-          is_shiny: isShiny,
-          colors: colors,
-          image_url: imageUrl,
-          palette_name: paletteName,
-        })
-        .select()
-        .single();
-
-      if (error) {
-        console.error("Error saving palette:", error);
-        return NextResponse.json(
-          { error: "Failed to save palette" },
-          { status: 500 }
-        );
-      }
-
-      return NextResponse.json({
-        message: "Palette saved successfully",
-        palette: newPalette,
-      });
-    }
-  } catch (error) {
-    console.error("Unexpected error in POST /api/saved-palettes:", error);
+    const authResult = await auth();
+    userId = authResult.userId;
+  } catch (authError) {
+    logger.error("auth.service_unavailable", {
+      route: "POST /api/saved-palettes",
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Authentication service unavailable" },
+      { status: 503 }
+    );
+  }
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const rl = await writeLimiter.check(userId);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests" },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": Math.max(
+            1,
+            Math.ceil((rl.resetAt - Date.now()) / 1000)
+          ).toString(),
+        },
+      }
+    );
+  }
+
+  let rawBody: unknown;
+  try {
+    rawBody = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  const parsed = PostBodySchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Invalid body", details: parsed.error.flatten() },
+      { status: 400 }
+    );
+  }
+  const {
+    pokemonId,
+    pokemonName,
+    pokemonForm,
+    isShiny,
+    colors,
+    imageUrl,
+    paletteName,
+  } = parsed.data;
+
+  // Dedupe by (user_id, pokemon_id, pokemon_form, is_shiny). The DB has no
+  // unique constraint on this tuple (only the PK), so Prisma's `upsert`
+  // helper isn't usable here. We wrap the find+mutate pair in a transaction
+  // so concurrent writers don't create duplicate rows. updateMany() returns
+  // a count so we can tell whether we actually hit an existing row.
+  try {
+    const palette = await prisma.$transaction(async (tx) => {
+      const existing = await tx.savedPalette.findFirst({
+        where: {
+          userId,
+          pokemonId,
+          isShiny,
+          pokemonForm: pokemonForm ?? null,
+        },
+        select: { id: true },
+      });
+
+      if (existing) {
+        return tx.savedPalette.update({
+          where: { id: existing.id },
+          data: {
+            colors,
+            imageUrl: imageUrl ?? null,
+            paletteName: paletteName ?? null,
+            updatedAt: new Date(),
+          },
+        });
+      }
+
+      return tx.savedPalette.create({
+        data: {
+          userId,
+          pokemonId,
+          pokemonName,
+          pokemonForm: pokemonForm ?? null,
+          isShiny,
+          colors,
+          imageUrl: imageUrl ?? null,
+          paletteName: paletteName ?? null,
+        },
+      });
+    });
+
+    return NextResponse.json({
+      message: "Palette saved successfully",
+      palette: serializePalette(palette),
+    });
+  } catch (err) {
+    logger.error("saved-palettes.save_failed", {
+      userId,
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return NextResponse.json(
+      { error: "Failed to save palette" },
       { status: 500 }
     );
   }

@@ -30,9 +30,11 @@ export default async function ShinyPokemonPage({
     notFound();
   }
 
+  // /shiny doesn't have a hub page — link directly to the normal Pokémon
+  // page instead so the breadcrumb stays navigable.
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Shiny", href: "/shiny" },
+    { label: pokemonMetadata.name, href: `/${name.toLowerCase()}` },
     { label: `Shiny ${pokemonMetadata.name}`, href: `/shiny/${name.toLowerCase()}` },
   ];
 

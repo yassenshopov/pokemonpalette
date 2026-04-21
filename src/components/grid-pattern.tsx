@@ -57,22 +57,31 @@ export function GridPattern() {
     return null;
   };
 
-  // Load palettes for cells that should have them
+  // Load palettes for cells that should have them. The 24 fetches are
+  // kicked off in parallel (Promise.all) instead of the previous
+  // sequential await loop — drops the mount-to-paint time on slower
+  // networks from ~24 * RTT down to ~1 * RTT.
   useEffect(() => {
+    let cancelled = false;
     const loadPalettes = async () => {
+      const results = await Promise.all(
+        cellsWithPalettes.map((cellIndex) =>
+          loadPalette(cellIndex).then((palette) =>
+            palette ? ([cellIndex, palette] as const) : null
+          )
+        )
+      );
+      if (cancelled) return;
       const newPalettes = new Map<number, CellPalette>();
-      
-      for (const cellIndex of cellsWithPalettes) {
-        const palette = await loadPalette(cellIndex);
-        if (palette) {
-          newPalettes.set(cellIndex, palette);
-        }
+      for (const entry of results) {
+        if (entry) newPalettes.set(entry[0], entry[1]);
       }
-      
       setPalettes(newPalettes);
     };
-
     loadPalettes();
+    return () => {
+      cancelled = true;
+    };
   }, [cellsWithPalettes, allMetadata]);
 
   // Randomize some palettes every few seconds
@@ -80,21 +89,22 @@ export function GridPattern() {
     if (palettes.size === 0) return;
 
     const interval = setInterval(async () => {
-      // Randomly select 3-5 cells to randomize
       const cellsToUpdate = [...cellsWithPalettes]
         .sort(() => Math.random() - 0.5)
-        .slice(0, Math.floor(Math.random() * 3) + 3); // 3-5 cells
+        .slice(0, Math.floor(Math.random() * 3) + 3)
+        .filter((cellIndex) => cellIndex !== hoveredCell);
 
+      // Fetch all replacement palettes in parallel.
+      const results = await Promise.all(
+        cellsToUpdate.map((cellIndex) =>
+          loadPalette(cellIndex).then((p) =>
+            p ? ([cellIndex, p] as const) : null
+          )
+        )
+      );
       const updates = new Map<number, CellPalette>();
-      
-      for (const cellIndex of cellsToUpdate) {
-        // Skip if currently hovered
-        if (cellIndex === hoveredCell) continue;
-        
-        const newPalette = await loadPalette(cellIndex);
-        if (newPalette) {
-          updates.set(cellIndex, newPalette);
-        }
+      for (const entry of results) {
+        if (entry) updates.set(entry[0], entry[1]);
       }
 
       if (updates.size > 0) {

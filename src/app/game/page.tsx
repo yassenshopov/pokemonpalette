@@ -20,6 +20,7 @@ import {
   getDailyPokemonId,
   getDailyShinyStatus,
   getGuessToastMessage,
+  todayUtcDateString,
 } from "@/lib/game/similarity";
 import {
   getContrastTextClass,
@@ -205,15 +206,10 @@ export default function GamePage() {
 
   const PENDING_ATTEMPTS_KEY = "pokemon-palette-pending-attempts";
 
-  // Helper function to calculate contrast text color
-  const getTextColor = (hex: string): "#ffffff" | "#000000" => {
-    const hexClean = hex.replace("#", "");
-    const r = parseInt(hexClean.substring(0, 2), 16);
-    const g = parseInt(hexClean.substring(2, 4), 16);
-    const b = parseInt(hexClean.substring(4, 6), 16);
-    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-    return luminance > 0.5 ? "#000000" : "#ffffff";
-  };
+  // Alias the shared helper locally so the existing getTextColor(...) call
+  // sites don't all need to churn. The real implementation lives in
+  // src/lib/game/colors.ts.
+  const getTextColor = getContrastHex;
 
   // Get generation from Pokemon ID (since JSON data has incorrect generation)
   const getGenerationFromId = (id: number): number => {
@@ -280,10 +276,7 @@ export default function GamePage() {
         return;
       }
 
-      const today = new Date();
-      const dateStr = `${today.getFullYear()}-${String(
-        today.getMonth() + 1
-      ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+      const dateStr = todayUtcDateString();
 
       // Check localStorage for signed-out users
       if (!user) {
@@ -647,10 +640,7 @@ export default function GamePage() {
             const pending = localStorage.getItem(PENDING_ATTEMPTS_KEY);
             if (pending) {
               const attempts = JSON.parse(pending);
-              const today = new Date();
-              const dateStr = `${today.getFullYear()}-${String(
-                today.getMonth() + 1
-              ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+              const dateStr = todayUtcDateString();
               return attempts.some((a: any) => a.date === dateStr);
             }
           } catch {
@@ -897,10 +887,7 @@ export default function GamePage() {
   ) => {
     if (mode !== "daily" || !targetPokemonId) return;
 
-    const today = new Date();
-    const dateStr = `${today.getFullYear()}-${String(
-      today.getMonth() + 1
-    ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+    const dateStr = todayUtcDateString();
 
     const attemptData = {
       date: dateStr,
@@ -944,10 +931,7 @@ export default function GamePage() {
 
     setSavingAttempt(true);
     try {
-      const today = new Date();
-      const dateStr = `${today.getFullYear()}-${String(
-        today.getMonth() + 1
-      ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+      const dateStr = todayUtcDateString();
 
       const attemptData = {
         date: dateStr,
@@ -1664,7 +1648,7 @@ export default function GamePage() {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <main id="main" className="flex h-screen overflow-hidden">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -1679,10 +1663,16 @@ export default function GamePage() {
                 transform: translateX(100%);
               }
             }
-            
+
             .shine-animation {
               animation: shine 6s ease-in-out infinite;
               animation-delay: 3s;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .shine-animation {
+                animation: none;
+              }
             }
           `,
         }}
@@ -2447,6 +2437,6 @@ export default function GamePage() {
         </div>
         <Footer />
       </div>
-    </div>
+    </main>
   );
 }

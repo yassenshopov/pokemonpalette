@@ -1,305 +1,272 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
-import { createClient } from "@supabase/supabase-js";
+import { z } from "zod";
+import { prisma } from "@/lib/prisma";
+import { supabaseAdmin } from "@/lib/supabase";
+import {
+  DAILY_POOL_SIZE,
+  getDailyPokemonIdForDate,
+  parseUtcDate,
+  todayUtcDateString,
+} from "@/lib/game/similarity";
+import { rateLimit } from "@/lib/rate-limit";
+import { logger } from "@/lib/logger";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-
-const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false,
-  },
+// 30 writes/min per user is generous for legitimate play (game allows 4
+// guesses/day) and tight enough to kill pathological retry loops or abuse.
+const writeLimiter = rateLimit("daily-game-attempts-post", {
+  requests: 30,
+  window: "1 m",
 });
 
-export interface DailyGameAttemptData {
-  date: string; // ISO date string (YYYY-MM-DD)
-  targetPokemonId: number;
-  isShiny: boolean;
-  guesses: number[]; // Array of Pokemon IDs guessed
-  attempts: number; // Number of attempts made (1-4)
-  won: boolean;
-  pokemonGuessed?: number; // The Pokemon ID they guessed (if won)
-  hintsUsed?: number; // Number of hints used (0-3)
-}
+// -----------------------------------------------------------------------------
+// GET — fetch the caller's game history (bounded) + optional server-computed
+// stats. Stats come from the user_game_stats SQL RPC (migration 015) so we
+// don't ship the whole history just to recount it.
+// -----------------------------------------------------------------------------
 
-// GET - Retrieve user's game attempts (with optional stats)
+const GetQuerySchema = z.object({
+  stats: z.enum(["true", "false"]).optional(),
+  // Server-enforced upper bound on page size — prevents an attacker from
+  // pulling a power user's entire history.
+  limit: z.coerce.number().int().min(1).max(60).optional(),
+  date: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
+    .optional(),
+});
+
 export async function GET(req: NextRequest) {
+  let userId: string | null = null;
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
+    const authResult = await auth();
+    userId = authResult.userId;
+  } catch (authError) {
+    logger.error("auth.service_unavailable", {
+      route: "/api/daily-game-attempts",
+      error: authError instanceof Error ? authError.message : String(authError),
+    });
+    return NextResponse.json(
+      { error: "Authentication service unavailable" },
+      { status: 503 }
+    );
+  }
 
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
-    const searchParams = req.nextUrl.searchParams;
-    const includeStats = searchParams.get("stats") === "true";
-    const limit = searchParams.get("limit") ? parseInt(searchParams.get("limit")!) : null;
-    const dateFilter = searchParams.get("date"); // Filter by specific date (YYYY-MM-DD)
+  const parsed = GetQuerySchema.safeParse({
+    stats: req.nextUrl.searchParams.get("stats") ?? undefined,
+    limit: req.nextUrl.searchParams.get("limit") ?? undefined,
+    date: req.nextUrl.searchParams.get("date") ?? undefined,
+  });
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Invalid query", details: parsed.error.flatten() },
+      { status: 400 }
+    );
+  }
+  const { stats, limit = 60, date: dateFilter } = parsed.data;
+  const includeStats = stats === "true";
 
-    let query = supabaseAdmin
-      .from("daily_game_attempts")
-      .select("*")
-      .eq("user_id", userId)
-      .order("date", { ascending: false });
+  // Raw fetch — bounded history. We map back to snake_case keys below so
+  // existing client code that references `is_shiny`, `target_pokemon_id`,
+  // etc. keeps working.
+  const attemptsRaw = await prisma.dailyGameAttempt.findMany({
+    where: {
+      userId,
+      ...(dateFilter
+        ? { date: parseUtcDate(dateFilter) }
+        : {}),
+    },
+    orderBy: { date: "desc" },
+    take: limit,
+  });
 
-    if (dateFilter) {
-      query = query.eq("date", dateFilter);
-    }
+  const attempts = attemptsRaw.map((a) => ({
+    id: a.id,
+    user_id: a.userId,
+    date: a.date.toISOString().slice(0, 10),
+    target_pokemon_id: a.targetPokemonId,
+    is_shiny: a.isShiny,
+    guesses: a.guesses,
+    attempts: a.attempts,
+    won: a.won,
+    pokemon_guessed: a.pokemonGuessed,
+    hints_used: a.hintsUsed,
+    created_at: a.createdAt.toISOString(),
+    updated_at: a.updatedAt.toISOString(),
+  }));
 
-    if (limit) {
-      query = query.limit(limit);
-    }
-
-    const { data: attempts, error } = await query;
-
-    if (error) {
-      console.error("Error fetching game attempts:", error);
-      return NextResponse.json(
-        { error: "Failed to fetch game attempts" },
-        { status: 500 }
-      );
-    }
-
-    // If stats requested, calculate additional statistics
-    if (includeStats && attempts) {
-      const stats = {
-        totalGames: attempts.length,
-        totalWins: attempts.filter((a: any) => a.won).length,
-        totalLosses: attempts.filter((a: any) => a.won === false).length,
-        winRate: attempts.length > 0 
-          ? (attempts.filter((a: any) => a.won).length / attempts.length) * 100 
-          : 0,
-        averageAttempts: attempts.length > 0
-          ? attempts.reduce((sum: number, a: any) => sum + a.attempts, 0) / attempts.length
-          : 0,
-        currentStreak: calculateCurrentStreak(attempts),
-        longestStreak: calculateLongestStreak(attempts),
-      };
-
-      return NextResponse.json({ attempts, stats });
-    }
-
+  if (!includeStats) {
     return NextResponse.json({ attempts });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/daily-game-attempts:", error);
+  }
+
+  const { data: statsData, error: statsError } = await supabaseAdmin.rpc(
+    "user_game_stats",
+    { p_user_id: userId }
+  );
+  if (statsError) {
+    logger.error("daily-game-attempts.stats_rpc_failed", {
+      userId,
+      error: statsError.message,
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to compute stats" },
       { status: 500 }
     );
   }
+
+  return NextResponse.json({ attempts, stats: statsData });
 }
 
-// POST - Save or update a daily game attempt
+// -----------------------------------------------------------------------------
+// POST — record or overwrite a daily attempt. The server is authoritative:
+// it recomputes targetPokemonId, attempts, and won from the submitted date
+// and guesses. Previously the client could claim any outcome.
+// -----------------------------------------------------------------------------
+
+const PostBodySchema = z.object({
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD"),
+  isShiny: z.boolean().optional().default(false),
+  // Cap guesses: the game allows 4 attempts. Cap at 8 defensively so stale
+  // clients with a bug still can't dump arbitrary data into JSONB.
+  guesses: z.array(z.number().int().min(1).max(100000)).min(1).max(8),
+  hintsUsed: z.number().int().min(0).max(10).optional().default(0),
+});
+
 export async function POST(req: NextRequest) {
+  let userId: string | null = null;
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const body: DailyGameAttemptData = await req.json();
-    const {
-      date,
-      targetPokemonId,
-      isShiny,
-      guesses,
-      attempts,
-      won,
-      pokemonGuessed,
-      hintsUsed = 0,
-    } = body;
-
-    // Validate required fields
-    if (!date || !targetPokemonId || !guesses || attempts === undefined || won === undefined) {
-      return NextResponse.json(
-        { error: "Missing required fields: date, targetPokemonId, guesses, attempts, won" },
-        { status: 400 }
-      );
-    }
-
-    // Validate attempts is between 1 and 4
-    if (attempts < 1 || attempts > 4) {
-      return NextResponse.json(
-        { error: "Attempts must be between 1 and 4" },
-        { status: 400 }
-      );
-    }
-
-    // Check if user already has an attempt for this date
-    const { data: existingAttempt } = await supabaseAdmin
-      .from("daily_game_attempts")
-      .select("id")
-      .eq("user_id", userId)
-      .eq("date", date)
-      .single();
-
-    if (existingAttempt) {
-      // Update existing attempt
-      const { data: updatedAttempt, error } = await supabaseAdmin
-        .from("daily_game_attempts")
-        .update({
-          target_pokemon_id: targetPokemonId,
-          is_shiny: isShiny,
-          guesses: guesses,
-          attempts: attempts,
-          won: won,
-          pokemon_guessed: pokemonGuessed || null,
-          hints_used: hintsUsed || 0,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", existingAttempt.id)
-        .select()
-        .single();
-
-      if (error) {
-        console.error("Error updating game attempt:", error);
-        return NextResponse.json(
-          { error: "Failed to update game attempt" },
-          { status: 500 }
-        );
-      }
-
-      return NextResponse.json({
-        message: "Game attempt updated successfully",
-        attempt: updatedAttempt,
-      });
-    } else {
-      // Create new attempt
-      const { data: newAttempt, error } = await supabaseAdmin
-        .from("daily_game_attempts")
-        .insert({
-          user_id: userId,
-          date: date,
-          target_pokemon_id: targetPokemonId,
-          is_shiny: isShiny,
-          guesses: guesses,
-          attempts: attempts,
-          won: won,
-          pokemon_guessed: pokemonGuessed || null,
-          hints_used: hintsUsed || 0,
-        })
-        .select()
-        .single();
-
-      if (error) {
-        console.error("Error saving game attempt:", error);
-        return NextResponse.json(
-          { error: "Failed to save game attempt" },
-          { status: 500 }
-        );
-      }
-
-      return NextResponse.json({
-        message: "Game attempt saved successfully",
-        attempt: newAttempt,
-      });
-    }
-  } catch (error) {
-    console.error("Unexpected error in POST /api/daily-game-attempts:", error);
+    const authResult = await auth();
+    userId = authResult.userId;
+  } catch (authError) {
+    logger.error("auth.service_unavailable", {
+      route: "POST /api/daily-game-attempts",
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Authentication service unavailable" },
+      { status: 503 }
+    );
+  }
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const rl = await writeLimiter.check(userId);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests" },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": Math.max(
+            1,
+            Math.ceil((rl.resetAt - Date.now()) / 1000)
+          ).toString(),
+        },
+      }
+    );
+  }
+
+  let rawBody: unknown;
+  try {
+    rawBody = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  const parsed = PostBodySchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Invalid body", details: parsed.error.flatten() },
+      { status: 400 }
+    );
+  }
+  const { date, isShiny, guesses, hintsUsed } = parsed.data;
+
+  // Only today or yesterday UTC are acceptable. Yesterday is allowed so a
+  // client finishing a game as midnight rolls over doesn't lose their
+  // play. Any other date is clock skew or cheating.
+  const todayStr = todayUtcDateString();
+  const todayDate = parseUtcDate(todayStr);
+  const yesterdayDate = new Date(todayDate.getTime() - 24 * 60 * 60 * 1000);
+  const yesterdayStr = [
+    yesterdayDate.getUTCFullYear(),
+    String(yesterdayDate.getUTCMonth() + 1).padStart(2, "0"),
+    String(yesterdayDate.getUTCDate()).padStart(2, "0"),
+  ].join("-");
+
+  if (date !== todayStr && date !== yesterdayStr) {
+    return NextResponse.json(
+      { error: "Attempts may only be recorded for today or yesterday (UTC)" },
+      { status: 400 }
+    );
+  }
+
+  // Server-authoritative outcome — client `won`, `attempts`, `targetPokemonId`
+  // are all ignored.
+  const parsedDate = parseUtcDate(date);
+  const targetPokemonId = getDailyPokemonIdForDate(
+    parsedDate,
+    DAILY_POOL_SIZE,
+    isShiny
+  );
+  const attempts = guesses.length;
+  const won = guesses.includes(targetPokemonId);
+  const pokemonGuessed = won ? targetPokemonId : null;
+
+  try {
+    const attempt = await prisma.dailyGameAttempt.upsert({
+      where: { userId_date: { userId, date: parsedDate } },
+      update: {
+        targetPokemonId,
+        isShiny,
+        guesses,
+        attempts,
+        won,
+        pokemonGuessed,
+        hintsUsed,
+        updatedAt: new Date(),
+      },
+      create: {
+        userId,
+        date: parsedDate,
+        targetPokemonId,
+        isShiny,
+        guesses,
+        attempts,
+        won,
+        pokemonGuessed,
+        hintsUsed,
+      },
+    });
+
+    return NextResponse.json({
+      message: "Game attempt saved successfully",
+      attempt: {
+        id: attempt.id,
+        user_id: attempt.userId,
+        date: attempt.date.toISOString().slice(0, 10),
+        target_pokemon_id: attempt.targetPokemonId,
+        is_shiny: attempt.isShiny,
+        guesses: attempt.guesses,
+        attempts: attempt.attempts,
+        won: attempt.won,
+        pokemon_guessed: attempt.pokemonGuessed,
+        hints_used: attempt.hintsUsed,
+      },
+    });
+  } catch (err) {
+    logger.error("daily-game-attempts.upsert_failed", {
+      userId,
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return NextResponse.json(
+      { error: "Failed to save game attempt" },
       { status: 500 }
     );
   }
 }
-
-// Helper function to calculate current streak
-function calculateCurrentStreak(attempts: any[]): number {
-  if (attempts.length === 0) return 0;
-
-  // Sort by date descending
-  const sorted = [...attempts].sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-
-  let streak = 0;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  // Check if they played today or yesterday
-  let expectedDate = new Date(today);
-  let foundYesterday = false;
-
-  for (const attempt of sorted) {
-    const attemptDate = new Date(attempt.date);
-    attemptDate.setHours(0, 0, 0, 0);
-    
-    const daysDiff = Math.floor((today.getTime() - attemptDate.getTime()) / (1000 * 60 * 60 * 24));
-
-    if (daysDiff === 0) {
-      // Played today
-      streak = 1;
-      expectedDate = new Date(attemptDate);
-      expectedDate.setDate(expectedDate.getDate() - 1);
-      foundYesterday = true;
-    } else if (daysDiff === 1 && foundYesterday) {
-      // Played yesterday (continuation of streak)
-      streak++;
-      expectedDate = new Date(attemptDate);
-      expectedDate.setDate(expectedDate.getDate() - 1);
-    } else if (daysDiff === streak && foundYesterday) {
-      // Consecutive day
-      streak++;
-      expectedDate = new Date(attemptDate);
-      expectedDate.setDate(expectedDate.getDate() - 1);
-    } else {
-      // Streak broken
-      break;
-    }
-  }
-
-  return streak;
-}
-
-// Helper function to calculate longest streak
-function calculateLongestStreak(attempts: any[]): number {
-  if (attempts.length === 0) return 0;
-
-  // Sort by date ascending
-  const sorted = [...attempts].sort((a, b) => 
-    new Date(a.date).getTime() - new Date(b.date).getTime()
-  );
-
-  let longestStreak = 1;
-  let currentStreak = 1;
-
-  for (let i = 1; i < sorted.length; i++) {
-    const prevDate = new Date(sorted[i - 1].date);
-    const currDate = new Date(sorted[i].date);
-    
-    prevDate.setHours(0, 0, 0, 0);
-    currDate.setHours(0, 0, 0, 0);
-    
-    const daysDiff = Math.floor((currDate.getTime() - prevDate.getTime()) / (1000 * 60 * 60 * 24));
-
-    if (daysDiff === 1) {
-      // Consecutive day
-      currentStreak++;
-      longestStreak = Math.max(longestStreak, currentStreak);
-    } else {
-      // Streak broken
-      currentStreak = 1;
-    }
-  }
-
-  return longestStreak;
-}
-

@@ -16,18 +16,6 @@ interface PokemonWithData {
   colors: string[];
 }
 
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "text-white" | "text-black" => {
-  if (!hex) return "text-white";
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
-
 interface PokemonPaletteMarqueeProps {
   count?: number;
   speed?: number;

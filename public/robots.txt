@@ -9,6 +9,9 @@ Disallow: /admin
 Disallow: /account
 Disallow: /api
 
+# Allow dynamic Open Graph images so they surface in image search / previews
+Allow: /api/og/
+
 # Disallow Next.js internal routes (if any)
 Disallow: /_next/
 

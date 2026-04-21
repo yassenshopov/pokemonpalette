@@ -79,7 +79,7 @@ export function HomeClient() {
   }, [isPokemonMenuCollapsed]);
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <main id="main" className="flex flex-col h-screen overflow-hidden">
       <LegendsZABanner 
         primaryColor={pokemonColors[0]} 
         secondaryColor={pokemonColors[1] || pokemonColors[0]} 
@@ -148,7 +148,7 @@ export function HomeClient() {
         </div>
       </div>
       </div>
-    </div>
+    </main>
   );
 }
 

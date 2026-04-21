@@ -15,25 +15,11 @@ import {
   Sparkles,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { UserProfileWrapper } from "@/components/user-profile-wrapper";
+import { UserProfile } from "@/components/user-profile";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 import { Coffee } from "lucide-react";
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "text-white" | "text-black" => {
-  if (!hex) return "text-white";
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
+import { getContrastTextClass as getTextColor } from "@/lib/game/colors";
 
 interface CollapsibleSidebarProps {
   primaryColor?: string;
@@ -106,8 +92,9 @@ export function CollapsibleSidebar({
             size="sm"
             onClick={toggleSidebar}
             className="fixed top-4 right-4 z-50 md:hidden"
+            aria-label="Open navigation menu"
           >
-            <Menu className="h-4 w-4" />
+            <Menu className="h-4 w-4" aria-hidden="true" />
           </Button>
         )}
 
@@ -139,8 +126,13 @@ export function CollapsibleSidebar({
               </Link>
 
               {/* Close Button */}
-              <Button variant="ghost" size="sm" onClick={toggleSidebar}>
-                <X className="h-4 w-4" />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleSidebar}
+                aria-label="Close navigation menu"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
 
@@ -184,7 +176,7 @@ export function CollapsibleSidebar({
 
             {/* Footer */}
             <div className="border-t">
-              <UserProfileWrapper />
+              <UserProfile />
               <div className="p-4 pt-2 space-y-3">
                 {/* Coffee CTA */}
                 <a
@@ -256,11 +248,13 @@ export function CollapsibleSidebar({
               size="sm"
               onClick={toggleSidebar}
               className={isCollapsed ? "mt-4" : "ml-auto"}
+              aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+              aria-expanded={!isCollapsed}
             >
               {isCollapsed ? (
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-4 w-4" aria-hidden="true" />
               ) : (
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               )}
             </Button>
           </div>
@@ -303,8 +297,9 @@ export function CollapsibleSidebar({
                           size="sm"
                           className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                           title="Saved Palettes"
+                          aria-label="Open saved palettes"
                         >
-                          <Bookmark className="h-4 w-4" />
+                          <Bookmark className="h-4 w-4" aria-hidden="true" />
                         </Button>
                       }
                     />
@@ -385,7 +380,7 @@ export function CollapsibleSidebar({
 
           {/* Footer */}
           <div className="border-t">
-            <UserProfileWrapper isCollapsed={isCollapsed} />
+            <UserProfile isCollapsed={isCollapsed} />
             {!isCollapsed && (
               <div className="p-4 pt-2 space-y-3">
                 {/* Coffee CTA */}

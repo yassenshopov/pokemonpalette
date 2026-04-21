@@ -1,10 +1,37 @@
+// Prisma schema for Pokemon Palette.
+//
+// The app uses Supabase for the storage layer but Prisma as the primary
+// ORM for all table queries. The only callers of the supabase client are
+// the six SECURITY DEFINER RPCs (admin analytics + stats) where an RPC
+// trip is genuinely simpler than the same SQL in Prisma.
+//
+// Models mirror the SQL migrations under `supabase/migrations/`. Keep the
+// following invariants when editing:
+//   - PKs, columns, defaults, and `@map` names must match the live table.
+//   - `@db.Timestamptz(6)` matches `TIMESTAMPTZ` + microsecond precision.
+//   - Indexes declared with `@@index(..., map: "...")` must use the same
+//     name as the CREATE INDEX in the migration, so Prisma does not try
+//     to re-create them on `prisma migrate deploy`.
+//
+// Migration strategy: we continue to own the schema via raw SQL files in
+// supabase/migrations (they also encode RLS policies and RPCs that
+// Prisma cannot express). Prisma is used only for typed queries, NOT for
+// migrations. This is the officially supported "introspection-only" mode.
+
 generator client {
   provider = "prisma-client-js"
+  // Generating into the default node_modules location; the previous
+  // output in src/generated/prisma is not needed and was gitignored.
 }
 
 datasource db {
   provider  = "postgresql"
+  // Runtime url — use the Supabase pgbouncer pooler (port 6543,
+  // transaction mode) on serverless deployments to avoid connection
+  // exhaustion. See .env.example / docs for the exact URL.
   url       = env("DATABASE_URL")
+  // Direct url — only used by `prisma migrate` / `db push`. Not used at
+  // runtime.
   directUrl = env("DIRECT_URL")
 }
 
@@ -25,70 +52,35 @@ model User {
   twoFactorEnabled           Boolean   @default(false) @map("two_factor_enabled")
   totpEnabled                Boolean   @default(false) @map("totp_enabled")
   passwordEnabled            Boolean   @default(false) @map("password_enabled")
-  createOrganizationEnabled  Boolean   @default(true) @map("create_organization_enabled")
-  deleteSelfEnabled          Boolean   @default(true) @map("delete_self_enabled")
+  createOrganizationEnabled  Boolean   @default(true)  @map("create_organization_enabled")
+  deleteSelfEnabled          Boolean   @default(true)  @map("delete_self_enabled")
   lastActiveAt               DateTime? @map("last_active_at") @db.Timestamptz(6)
   lastSignInAt               DateTime? @map("last_sign_in_at") @db.Timestamptz(6)
   createdAt                  DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
   updatedAt                  DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
   isDeleted                  Boolean   @default(false) @map("is_deleted")
   isAdmin                    Boolean   @default(false) @map("is_admin")
-  receivesDailyEmails        Boolean   @default(true) @map("receives_daily_emails")
-  paletteSize                Int       @default(3) @map("palette_size")
-  emailAddresses             Json      @default("[]") @map("email_addresses") @db.JsonB
-  phoneNumbers               Json      @default("[]") @map("phone_numbers") @db.JsonB
+  receivesDailyEmails        Boolean   @default(true)  @map("receives_daily_emails")
+  paletteSize                Int       @default(3)     @map("palette_size")
+  emailAddresses             Json      @default("[]") @map("email_addresses")   @db.JsonB
+  phoneNumbers               Json      @default("[]") @map("phone_numbers")     @db.JsonB
   externalAccounts           Json      @default("[]") @map("external_accounts") @db.JsonB
-  publicMetadata             Json      @default("{}") @map("public_metadata") @db.JsonB
-  privateMetadata            Json      @default("{}") @map("private_metadata") @db.JsonB
-  unsafeMetadata             Json      @default("{}") @map("unsafe_metadata") @db.JsonB
-  notionDatabases            Json      @default("[]") @map("notion_databases") @db.JsonB
+  publicMetadata             Json      @default("{}") @map("public_metadata")   @db.JsonB
+  privateMetadata            Json      @default("{}") @map("private_metadata")  @db.JsonB
+  unsafeMetadata             Json      @default("{}") @map("unsafe_metadata")   @db.JsonB
+  savedPalettes     SavedPalette[]
+  dailyGameAttempts DailyGameAttempt[]
+  emails            Email[]
 
-  // Relations
-  savedPalettes              SavedPalette[]
-  dailyGameAttempts          DailyGameAttempt[]
-  emails                     Email[]
-
+  // Indexes declared in migrations 001 + 010.
+  @@index([email],                  map: "idx_users_email")
+  @@index([createdAt],               map: "idx_users_created_at")
+  @@index([isDeleted],               map: "idx_users_is_deleted")
+  @@index([primaryEmailAddressId],   map: "idx_users_primary_email_address_id")
+  @@index([lastActiveAt],            map: "idx_users_last_active_at")
+  @@index([banned],                  map: "idx_users_banned")
+  @@index([locked],                  map: "idx_users_locked")
   @@map("users")
-}
-
-model DailyTracking {
-  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  userId      String   @map("user_id")
-  date        DateTime @db.Date
-  mood        Int?
-  energyLevel Int?     @map("energy_level")
-  notes       String?
-  createdAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
-  updatedAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
-
-  @@unique([userId, date])
-  @@index([date], map: "idx_daily_tracking_date")
-  @@index([userId], map: "idx_daily_tracking_user_id")
-  @@map("daily_tracking")
-}
-
-model StravaCredentials {
-  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  userId       String   @unique @map("user_id")
-  accessToken  String   @map("access_token")
-  refreshToken String   @map("refresh_token")
-  expiresAt    DateTime @map("expires_at") @db.Timestamptz(6)
-  createdAt    DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
-  updatedAt    DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
-
-  @@index([userId], map: "idx_strava_credentials_user_id")
-  @@map("strava_credentials")
-}
-
-model UserPreferences {
-  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  userId    String   @unique @map("user_id")
-  timezone  String?  @default("UTC")
-  createdAt DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
-  updatedAt DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
-
-  @@index([userId], map: "idx_user_preferences_user_id")
-  @@map("user_preferences")
 }
 
 model SavedPalette {
@@ -98,18 +90,17 @@ model SavedPalette {
   pokemonName String   @map("pokemon_name")
   pokemonForm String?  @map("pokemon_form")
   isShiny     Boolean  @default(false) @map("is_shiny")
-  colors      Json     @db.JsonB // Array of color hex values
+  colors      Json     @db.JsonB
   imageUrl    String?  @map("image_url")
   paletteName String?  @map("palette_name")
   createdAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
   updatedAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
 
-  // Relations
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([userId], map: "idx_saved_palettes_user_id")
-  @@index([pokemonId], map: "idx_saved_palettes_pokemon_id")
-  @@index([createdAt], map: "idx_saved_palettes_created_at")
+  @@index([userId],      map: "idx_saved_palettes_user_id")
+  @@index([pokemonId],   map: "idx_saved_palettes_pokemon_id")
+  @@index([createdAt],   map: "idx_saved_palettes_created_at")
   @@index([pokemonName], map: "idx_saved_palettes_pokemon_name")
   @@map("saved_palettes")
 }
@@ -117,54 +108,53 @@ model SavedPalette {
 model DailyGameAttempt {
   id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   userId          String   @map("user_id")
-  date            DateTime @db.Date // The game date (not when they played)
+  date            DateTime @db.Date
   targetPokemonId Int      @map("target_pokemon_id")
   isShiny         Boolean  @default(false) @map("is_shiny")
-  guesses         Json     @db.JsonB // Array of Pokemon IDs guessed
-  attempts        Int      // Number of attempts made (1-4)
-  won             Boolean  @default(false) // Did they guess correctly?
-  pokemonGuessed  Int?     @map("pokemon_guessed") // The Pokemon ID they guessed (if won)
-  hintsUsed       Int      @default(0) @map("hints_used") // Number of hints used (0-3)
+  guesses         Json     @db.JsonB
+  attempts        Int
+  won             Boolean  @default(false)
+  pokemonGuessed  Int?     @map("pokemon_guessed")
+  hintsUsed       Int      @default(0) @map("hints_used")
   createdAt       DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
   updatedAt       DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
 
-  // Relations
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([userId, date]) // One attempt per user per day
-  @@index([userId], map: "idx_daily_game_attempts_user_id")
-  @@index([date], map: "idx_daily_game_attempts_date")
-  @@index([won], map: "idx_daily_game_attempts_won")
-  @@index([createdAt], map: "idx_daily_game_attempts_created_at")
+  // Unique + indexes match migrations 003 / 009 / 010 / 016.
+  @@unique([userId, date])
+  @@index([userId, date(sort: Desc)], map: "idx_daily_game_attempts_user_date_desc")
+  @@index([userId, createdAt(sort: Desc)], map: "idx_dga_user_created_at_desc")
+  @@index([createdAt(sort: Desc)], map: "idx_dga_created_at_desc")
+  @@index([targetPokemonId], map: "idx_dga_target_pokemon_id")
   @@map("daily_game_attempts")
 }
 
 model Email {
-  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  resendId      String?   @unique @map("resend_id")
-  userId        String?   @map("user_id")
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  resendId       String?  @unique @map("resend_id")
+  userId         String?  @map("user_id")
   recipientEmail String   @map("recipient_email")
-  senderEmail   String    @map("sender_email")
-  senderName    String?   @map("sender_name")
-  subject       String
-  templateType  String    @map("template_type")
-  htmlContent   String?   @map("html_content") @db.Text
-  textContent   String?   @map("text_content") @db.Text
-  status        String    // 'sent', 'failed', 'pending'
-  errorMessage  String?   @map("error_message") @db.Text
-  sentAt        DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("sent_at") @db.Timestamptz(6)
-  createdAt     DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
-  updatedAt     DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  senderEmail    String   @map("sender_email")
+  senderName     String?  @map("sender_name")
+  subject        String
+  templateType   String   @map("template_type")
+  htmlContent    String?  @map("html_content") @db.Text
+  textContent    String?  @map("text_content") @db.Text
+  status         String
+  errorMessage   String?  @map("error_message") @db.Text
+  sentAt         DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("sent_at")    @db.Timestamptz(6)
+  createdAt      DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime @default(dbgenerated("timezone('utc'::text, now())")) @updatedAt         @map("updated_at") @db.Timestamptz(6)
 
-  // Relations
-  user          User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
-  @@index([userId], map: "idx_emails_user_id")
+  @@index([userId],         map: "idx_emails_user_id")
   @@index([recipientEmail], map: "idx_emails_recipient_email")
-  @@index([resendId], map: "idx_emails_resend_id")
-  @@index([templateType], map: "idx_emails_template_type")
-  @@index([status], map: "idx_emails_status")
-  @@index([sentAt], map: "idx_emails_sent_at")
-  @@index([createdAt], map: "idx_emails_created_at")
+  @@index([resendId],       map: "idx_emails_resend_id")
+  @@index([templateType],   map: "idx_emails_template_type")
+  @@index([status],         map: "idx_emails_status")
+  @@index([sentAt],         map: "idx_emails_sent_at")
+  @@index([createdAt],      map: "idx_emails_created_at")
   @@map("emails")
 }

@@ -166,8 +166,11 @@ export function PokemonExpandedView({
                   size="icon"
                   onClick={() => setIsShiny(!isShiny)}
                   title={isShiny ? "Show Normal" : "Show Shiny"}
+                  aria-label={isShiny ? "Show normal sprite" : "Show shiny sprite"}
+                  aria-pressed={isShiny}
                 >
                   <Star
+                    aria-hidden="true"
                     className={`h-4 w-4 ${
                       isShiny ? "fill-yellow-400 text-yellow-400" : ""
                     }`}
@@ -183,8 +186,9 @@ export function PokemonExpandedView({
                       size="icon"
                       onClick={() => playCry(pokemon.cries!.latest, "latest")}
                       disabled={playingAudio === "latest"}
+                      aria-label="Play latest Pokémon cry"
                     >
-                      <Volume2 className="h-4 w-4" />
+                      <Volume2 className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   )}
                   {pokemon.cries.legacy && (
@@ -193,8 +197,9 @@ export function PokemonExpandedView({
                       size="icon"
                       onClick={() => playCry(pokemon.cries!.legacy, "legacy")}
                       disabled={playingAudio === "legacy"}
+                      aria-label="Play legacy Pokémon cry"
                     >
-                      <Volume2 className="h-4 w-4" />
+                      <Volume2 className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   )}
                 </>

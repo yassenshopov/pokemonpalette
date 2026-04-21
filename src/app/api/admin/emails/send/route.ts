@@ -1,40 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
-import { supabaseAdmin } from "@/lib/supabase";
-import { EmailService, EmailTemplate, EmailTemplateData } from "@/lib/email-service";
+import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/admin/auth";
+import {
+  EmailService,
+  EmailTemplate,
+  EmailTemplateData,
+} from "@/lib/email-service";
+import { logger } from "@/lib/logger";
 
 const TEMPLATE_SUBJECTS: Record<EmailTemplate, string> = {
   "daily-nudge": "🎮 Don't forget today's Pokémon Palette challenge!",
 };
 
+type RecipientUser = {
+  id: string;
+  email: string;
+  firstName: string | null;
+  lastName: string | null;
+  receivesDailyEmails: boolean;
+};
+
 export async function POST(req: NextRequest) {
+  const gate = await requireAdmin();
+  if (!gate.ok) return gate.response;
+
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // Check if user is admin
-    const { data: currentUser, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("is_admin")
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .single();
-
-    if (userError || !currentUser || !currentUser.is_admin) {
-      return NextResponse.json({ error: "Forbidden: Admin access required" }, { status: 403 });
-    }
-
     const body = await req.json();
     const { template, data, to, userIds } = body as {
       template: EmailTemplate;
@@ -44,94 +34,86 @@ export async function POST(req: NextRequest) {
     };
 
     if (!template) {
-      return NextResponse.json({ error: "Template is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Template is required" },
+        { status: 400 },
+      );
     }
 
-    // Get base URL from environment or use default
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com";
-    
-    // Ensure gameUrl is set for daily-nudge template
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com";
+
     if (template === "daily-nudge") {
       const nudgeData = data as EmailTemplateData["daily-nudge"];
       nudgeData.gameUrl = `${baseUrl}/game`;
     }
 
     let recipients: string[] = [];
-    let users: Array<{ 
-      id: string;
-      email: string; 
-      first_name: string | null; 
-      last_name: string | null;
-      receives_daily_emails?: boolean;
-    }> = [];
+    let users: RecipientUser[] = [];
 
-    // If userIds are provided, fetch their emails
     if (userIds && userIds.length > 0) {
-      // For daily-nudge template, filter by receives_daily_emails preference
-      let query = supabaseAdmin
-        .from("users")
-        .select("id, email, first_name, last_name, receives_daily_emails")
-        .in("id", userIds)
-        .eq("is_deleted", false)
-        .not("email", "is", null);
-
-      // Filter by email preference for daily-nudge template
-      if (template === "daily-nudge") {
-        query = query.eq("receives_daily_emails", true);
-      }
-
-      const { data: fetchedUsers, error: usersError } = await query;
-
-      if (usersError) {
-        return NextResponse.json(
-          { error: "Failed to fetch user emails" },
-          { status: 500 }
-        );
-      }
-
-      users = (fetchedUsers || []) as Array<{ 
-        id: string;
-        email: string; 
-        first_name: string | null; 
-        last_name: string | null;
-        receives_daily_emails?: boolean;
-      }>;
+      const rows = await prisma.user.findMany({
+        where: {
+          id: { in: userIds },
+          isDeleted: false,
+          email: { not: null },
+          ...(template === "daily-nudge"
+            ? { receivesDailyEmails: true }
+            : {}),
+        },
+        select: {
+          id: true,
+          email: true,
+          firstName: true,
+          lastName: true,
+          receivesDailyEmails: true,
+        },
+      });
+      users = rows
+        .filter((r): r is RecipientUser & { email: string } =>
+          r.email !== null,
+        )
+        .map((r) => ({
+          id: r.id,
+          email: r.email as string,
+          firstName: r.firstName,
+          lastName: r.lastName,
+          receivesDailyEmails: r.receivesDailyEmails,
+        }));
       recipients = users
-        .map((user) => user.email)
-        .filter((email): email is string => email !== null && EmailService.isValidEmail(email));
+        .map((u) => u.email)
+        .filter((e): e is string => EmailService.isValidEmail(e));
     }
-    
-    // Add custom email addresses if provided
+
     if (to) {
       const customEmails = Array.isArray(to) ? to : [to];
-      const validCustomEmails = customEmails.filter((email) => EmailService.isValidEmail(email));
+      const validCustomEmails = customEmails.filter((email) =>
+        EmailService.isValidEmail(email),
+      );
       recipients = [...recipients, ...validCustomEmails];
     }
 
-    // Deduplicate recipients (case-insensitive)
     const uniqueRecipients = Array.from(
       new Map(
-        recipients.map((email) => [email.toLowerCase(), email])
-      ).values()
+        recipients.map((email) => [email.toLowerCase(), email]),
+      ).values(),
     );
 
     if (uniqueRecipients.length === 0) {
       return NextResponse.json(
         { error: "No valid email addresses found" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    // Use deduplicated list
     recipients = uniqueRecipients;
 
-    // Send emails with rate limiting (Resend allows 2 requests per second)
-    // Process in batches of 2 with 500ms delay between batches
+    // Resend allows 2 requests per second — send in batches of 2 every 500ms.
     const batchSize = 2;
-    const delayBetweenBatches = 500; // 500ms = 0.5 seconds, so 2 requests per second
-    const results: Array<{ 
-      success: boolean; 
-      messageId?: string; 
+    const delayBetweenBatches = 500;
+    const results: Array<{
+      success: boolean;
+      messageId?: string;
       error?: string;
       html?: string;
       text?: string;
@@ -142,19 +124,19 @@ export async function POST(req: NextRequest) {
 
     for (let i = 0; i < recipients.length; i += batchSize) {
       const batch = recipients.slice(i, i + batchSize);
-      
+
       const batchResults = await Promise.all(
         batch.map(async (email) => {
-          // For daily-nudge, personalize with user name if available
           let personalizedData = { ...data };
           if (template === "daily-nudge") {
             const user = users.find((u) => u.email === email);
             if (user) {
               personalizedData = {
                 ...personalizedData,
-                userName: user.first_name || user.last_name 
-                  ? `${user.first_name || ""} ${user.last_name || ""}`.trim()
-                  : undefined,
+                userName:
+                  user.firstName || user.lastName
+                    ? `${user.firstName ?? ""} ${user.lastName ?? ""}`.trim()
+                    : undefined,
               } as EmailTemplateData[EmailTemplate];
             }
           }
@@ -164,45 +146,57 @@ export async function POST(req: NextRequest) {
             template,
             data: personalizedData,
           });
-        })
+        }),
       );
 
       results.push(...batchResults);
 
-      // Add delay between batches (except for the last batch)
       if (i + batchSize < recipients.length) {
         await new Promise((resolve) => setTimeout(resolve, delayBetweenBatches));
       }
     }
 
-    // Log all emails to database
     const emailLogs = await Promise.all(
       results.map(async (result, index) => {
         const email = recipients[index];
         const user = users.find((u) => u.email === email);
-        
-        const { error: logError } = await supabaseAdmin
-          .from("emails")
-          .insert({
-            resend_id: result.messageId || null,
-            user_id: user?.id || null,
-            recipient_email: email,
-            sender_email: result.fromEmail || process.env.RESEND_FROM_EMAIL || "noreply@pokemonpalette.com",
-            sender_name: result.fromName || process.env.RESEND_FROM_NAME || "Yasssen Shopov",
-            subject: result.subject || TEMPLATE_SUBJECTS[template],
-            template_type: template,
-            html_content: result.html || null,
-            text_content: result.text || null,
-            status: result.success ? "sent" : "failed",
-            error_message: result.error || null,
-          });
 
-        if (logError) {
-          console.error(`Failed to log email for ${email}:`, logError);
+        try {
+          await prisma.email.create({
+            data: {
+              resendId: result.messageId ?? null,
+              userId: user?.id ?? null,
+              recipientEmail: email,
+              senderEmail:
+                result.fromEmail ||
+                process.env.RESEND_FROM_EMAIL ||
+                "noreply@pokemonpalette.com",
+              senderName:
+                result.fromName ||
+                process.env.RESEND_FROM_NAME ||
+                "Yasssen Shopov",
+              subject: result.subject || TEMPLATE_SUBJECTS[template],
+              templateType: template,
+              htmlContent: result.html ?? null,
+              textContent: result.text ?? null,
+              status: result.success ? "sent" : "failed",
+              errorMessage: result.error ?? null,
+            },
+          });
+        } catch (err) {
+          logger.error("admin.emails.send.log_failed", {
+            recipient: email,
+            error: err instanceof Error ? err.message : String(err),
+          });
         }
 
-        return { email, success: result.success, messageId: result.messageId, error: result.error };
-      })
+        return {
+          email,
+          success: result.success,
+          messageId: result.messageId,
+          error: result.error,
+        };
+      }),
     );
 
     const successCount = emailLogs.filter((r) => r.success).length;
@@ -215,12 +209,13 @@ export async function POST(req: NextRequest) {
       total: recipients.length,
       results: emailLogs,
     });
-  } catch (error) {
-    console.error("Error sending emails:", error);
+  } catch (err) {
+    logger.error("admin.emails.send.failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
       { error: "Failed to send emails" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-

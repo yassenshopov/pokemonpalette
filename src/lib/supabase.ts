@@ -1,45 +1,36 @@
 import { createClient } from "@supabase/supabase-js";
+import { clientEnv, serverEnv } from "./env";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+/**
+ * Supabase clients.
+ *
+ * NOTE on scope: we use Supabase ONLY for calling the SECURITY DEFINER
+ * RPCs under `supabase/migrations/011-015`. All table CRUD goes through
+ * Prisma (see `src/lib/prisma.ts`). That keeps types honest and connection
+ * pooling consolidated.
+ */
 
-// Client-side Supabase client (with anon key)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Anon client for the browser. Reads hit RLS; writes require an auth'd
+// session. Avoid using this on the server — use `supabaseAdmin` or Prisma.
+export const supabase = createClient(
+  clientEnv.NEXT_PUBLIC_SUPABASE_URL,
+  clientEnv.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+);
 
-// Server-side Supabase client (with service role key for admin operations)
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false
-  }
-});
-
-// Database types for TypeScript support
-export interface Database {
-  public: {
-    Tables: {
-      [key: string]: {
-        Row: Record<string, any>;
-        Insert: Record<string, any>;
-        Update: Record<string, any>;
-        Relationships: any[];
-      };
-    };
-    Views: {
-      [key: string]: {
-        Row: Record<string, any>;
-        Relationships: any[];
-      };
-    };
-    Functions: {
-      [key: string]: {
-        Args: Record<string, any>;
-        Returns: any;
-      };
-    };
-    Enums: {
-      [key: string]: string;
-    };
-  };
-}
+// Service-role client, server-only. Used for SECURITY DEFINER RPC calls
+// where we want to bypass RLS on aggregate queries that the admin UI
+// depends on. Accessing `serverEnv` on the client throws — so this export
+// is only safe to consume from server modules.
+export const supabaseAdmin =
+  typeof window === "undefined"
+    ? createClient(
+        clientEnv.NEXT_PUBLIC_SUPABASE_URL,
+        serverEnv.SUPABASE_SERVICE_ROLE_KEY,
+        {
+          auth: {
+            autoRefreshToken: false,
+            persistSession: false,
+          },
+        },
+      )
+    : (null as never);

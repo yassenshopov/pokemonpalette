@@ -26,7 +26,7 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { UserProfileWrapper } from "@/components/user-profile-wrapper";
+import { UserProfile } from "@/components/user-profile";
 
 type NavItem = {
   label: string;
@@ -174,7 +174,7 @@ export function AdminSidebar() {
         </SidebarMenu>
         <div className="flex items-center gap-1 group-data-[collapsible=icon]:flex-col group-data-[collapsible=icon]:gap-2">
           <div className="min-w-0 flex-1 group-data-[collapsible=icon]:hidden">
-            <UserProfileWrapper />
+            <UserProfile />
           </div>
           <div className="shrink-0 pr-2 group-data-[collapsible=icon]:pr-0">
             <ThemeToggle />

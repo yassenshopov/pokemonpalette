@@ -7,6 +7,7 @@ import {
   getPokemonMetadataByName,
 } from "@/lib/pokemon";
 import { extractColorsFromImage } from "@/lib/color-extractor";
+import { logger } from "@/lib/logger";
 import { Pokemon } from "@/types/pokemon";
 import Image from "next/image";
 import { LoaderOverlay } from "@/components/loader-overlay";
@@ -42,38 +43,14 @@ import {
 import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS, type PaletteSize } from "@/constants/pokemon";
 import { usePaletteSize } from "@/hooks/use-palette-size";
 import { getFrontSpriteUrl, getOfficialArtworkUrl } from "@/lib/sprite-utils";
+import {
+  getContrastTextClass as getTextColor,
+  getContrastHex as getContrastTextColor,
+} from "@/lib/game/colors";
 
 // MissingNo fallback image URL
 const MISSINGNO_IMAGE_URL =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/MissingNo.svg/514px-MissingNo.svg.png";
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "text-white" | "text-black" => {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "text-black" : "text-white";
-};
-
-// Helper function to get contrast text color value for inline styles
-const getContrastTextColor = (hex: string): string => {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "#000000" : "#ffffff";
-};
 
 // Helper function to convert colors
 const convertColor = (hex: string, format: "hex" | "hsl" | "rgb"): string => {
@@ -284,54 +261,79 @@ export function PokemonMenu({
     setSpriteImageError(false);
   }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex]);
 
-  // Extract colors from sprite when pokemonData, isShiny, selectedVarietyId, or selectedFormIndex changes
+  // Palette resolution strategy (see audit H6):
+  //   1. If we're on the default variant (no shiny, no variety, no form) and
+  //      the Pokémon JSON already carries precomputed `colorPalette.highlights`,
+  //      use those directly. This skips the ~475x475 canvas decode +
+  //      pixel-scan on the main thread — the hot path for ~95% of users.
+  //   2. Otherwise we fall back to extractColorsFromImage, which we still
+  //      need for shiny / form / variety sprites because we don't ship
+  //      stored palettes for those.
   useEffect(() => {
-    if (pokemonData) {
-      const spriteUrl = getSpriteUrl(pokemonData, isShiny);
-      if (spriteUrl) {
-        extractColorsFromImage(spriteUrl, POKEMON_CONSTANTS.COLORS_TO_EXTRACT)
-          .then((colors) => {
-            const colorStrings = colors.map((c) =>
-              typeof c === "string" ? c : c.hex
-            );
-            const fullColors = colorStrings.slice(
-              0,
-              POKEMON_CONSTANTS.COLORS_TO_EXTRACT
-            );
-            const displayed = fullColors.slice(0, paletteSize);
+    if (!pokemonData) return;
+    const spriteUrl = getSpriteUrl(pokemonData, isShiny);
+    if (!spriteUrl) return;
 
-            setExtractedColors(fullColors.length > 0 ? fullColors : displayed);
-            setLockedColors(new Array(paletteSize).fill(false));
-            onColorsExtracted?.(displayed);
+    const stored = pokemonData.colorPalette?.highlights ?? [];
+    const canUseStored =
+      !isShiny &&
+      selectedVarietyId == null &&
+      selectedFormIndex === 0 &&
+      stored.length >= POKEMON_CONSTANTS.COLORS_TO_EXTRACT;
 
-            if (pokemonData && displayed.length > 0) {
-              const newPalette = {
-                ...pokemonData.colorPalette,
-                primary: displayed[0] || pokemonData.colorPalette.primary,
-                secondary: displayed[1] || pokemonData.colorPalette.secondary,
-                accent: displayed[2] || pokemonData.colorPalette.accent,
-                highlights: displayed,
-              };
-              if (
-                JSON.stringify(newPalette.highlights) !==
-                JSON.stringify(pokemonData.colorPalette.highlights)
-              ) {
-                setPokemonData({
-                  ...pokemonData,
-                  colorPalette: newPalette,
-                });
-              }
-            }
-          })
-          .catch((error) => {
-            console.error("Failed to extract colors:", error);
-            const fallbackHighlights =
-              pokemonData.colorPalette?.highlights?.slice(0, paletteSize) || [];
-            setExtractedColors(fallbackHighlights);
-            onColorsExtracted?.(fallbackHighlights);
-          });
-      }
+    if (canUseStored) {
+      const fullColors = stored.slice(0, POKEMON_CONSTANTS.COLORS_TO_EXTRACT);
+      const displayed = fullColors.slice(0, paletteSize);
+      setExtractedColors(fullColors);
+      setLockedColors(new Array(paletteSize).fill(false));
+      onColorsExtracted?.(displayed);
+      return;
     }
+
+    extractColorsFromImage(spriteUrl, POKEMON_CONSTANTS.COLORS_TO_EXTRACT)
+      .then((colors) => {
+        const colorStrings = colors.map((c) =>
+          typeof c === "string" ? c : c.hex
+        );
+        const fullColors = colorStrings.slice(
+          0,
+          POKEMON_CONSTANTS.COLORS_TO_EXTRACT
+        );
+        const displayed = fullColors.slice(0, paletteSize);
+
+        setExtractedColors(fullColors.length > 0 ? fullColors : displayed);
+        setLockedColors(new Array(paletteSize).fill(false));
+        onColorsExtracted?.(displayed);
+
+        if (pokemonData && displayed.length > 0) {
+          const newPalette = {
+            ...pokemonData.colorPalette,
+            primary: displayed[0] || pokemonData.colorPalette.primary,
+            secondary: displayed[1] || pokemonData.colorPalette.secondary,
+            accent: displayed[2] || pokemonData.colorPalette.accent,
+            highlights: displayed,
+          };
+          if (
+            JSON.stringify(newPalette.highlights) !==
+            JSON.stringify(pokemonData.colorPalette.highlights)
+          ) {
+            setPokemonData({
+              ...pokemonData,
+              colorPalette: newPalette,
+            });
+          }
+        }
+      })
+      .catch((error) => {
+        logger.error("pokemon.color_extraction_failed", {
+          pokemonId: pokemonData.id,
+          error: error instanceof Error ? error.message : String(error),
+        });
+        const fallbackHighlights =
+          pokemonData.colorPalette?.highlights?.slice(0, paletteSize) || [];
+        setExtractedColors(fallbackHighlights);
+        onColorsExtracted?.(fallbackHighlights);
+      });
   }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex, paletteSize]);
 
   // When user changes palette size (3/4/5), update lock array and notify parent without re-extracting
@@ -671,6 +673,7 @@ export function PokemonMenu({
           variant="outline"
           className="w-8 px-0 cursor-pointer font-heading"
           disabled={!selectedPokemon || selectedPokemon <= 1}
+          aria-label="Previous Pokémon"
           style={{
             backgroundColor:
               extractedColors[1] ||
@@ -687,7 +690,7 @@ export function PokemonMenu({
             ),
           }}
         >
-          <ChevronDown className="h-4 w-4" />
+          <ChevronDown className="h-4 w-4" aria-hidden="true" />
         </Button>
         <Input
           type="number"
@@ -697,12 +700,15 @@ export function PokemonMenu({
           className="text-center"
           min={1}
           max={pokemonList.length}
+          aria-label="Pokémon National Dex number"
+          title="Pokémon National Dex number"
         />
         <Button
           onClick={handleIncrement}
           variant="outline"
           className="w-8 px-0 cursor-pointer font-heading"
           disabled={!selectedPokemon || selectedPokemon >= pokemonList.length}
+          aria-label="Next Pokémon"
           style={{
             backgroundColor:
               extractedColors[1] ||
@@ -719,7 +725,7 @@ export function PokemonMenu({
             ),
           }}
         >
-          <ChevronUp className="h-4 w-4" />
+          <ChevronUp className="h-4 w-4" aria-hidden="true" />
         </Button>
       </div>
 

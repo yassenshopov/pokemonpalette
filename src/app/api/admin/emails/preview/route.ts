@@ -1,36 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/admin/auth";
 import { EmailService, EmailTemplate, EmailTemplateData } from "@/lib/email-service";
+import { logger } from "@/lib/logger";
 
 export async function POST(req: NextRequest) {
+  const admin = await requireAdmin();
+  if (!admin.ok) return admin.response;
+
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // Check if user is admin
-    const { data: currentUser, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("is_admin")
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .single();
-
-    if (userError || !currentUser || !currentUser.is_admin) {
-      return NextResponse.json({ error: "Forbidden: Admin access required" }, { status: 403 });
-    }
-
     const body = await req.json();
     const { template, data } = body as {
       template: EmailTemplate;
@@ -41,10 +18,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Template is required" }, { status: 400 });
     }
 
-    // Get base URL from environment or use default
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com";
-    
-    // Ensure gameUrl is set for daily-nudge template
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com";
+
     if (template === "daily-nudge") {
       const nudgeData = data as EmailTemplateData["daily-nudge"];
       nudgeData.gameUrl = `${baseUrl}/game`;
@@ -54,11 +30,12 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ preview });
   } catch (error) {
-    console.error("Error previewing email:", error);
+    logger.error("admin.emails.preview.failed", {
+      error: error instanceof Error ? error.message : String(error),
+    });
     return NextResponse.json(
       { error: "Failed to preview email" },
       { status: 500 }
     );
   }
 }
-

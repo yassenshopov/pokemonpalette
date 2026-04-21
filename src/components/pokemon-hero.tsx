@@ -13,21 +13,7 @@ import { toast } from "sonner";
 import { Save, Bookmark } from "lucide-react";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 import { useSavedPalettes } from "@/hooks/use-saved-palettes";
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "#ffffff" | "#000000" => {
-  if (!hex) return "#ffffff";
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "#000000" : "#ffffff";
-};
+import { getContrastHex as getTextColor } from "@/lib/game/colors";
 
 interface PokemonHeroProps {
   pokemonId?: number | null;
@@ -157,29 +143,36 @@ export function PokemonHero({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokemon, isShiny, varietyId, formName]);
 
-  // Extract colors from the official artwork when image src changes
+  // Extract colors from the official artwork when image src changes.
+  // Fast path (audit H6): use the pre-computed `colorPalette.highlights`
+  // shipped with the Pokémon JSON so the default (non-shiny) hero image
+  // never triggers a runtime canvas decode on the main thread. We only fall
+  // back to extractColorsFromImage for shiny sprites, which don't have
+  // stored palettes.
   useEffect(() => {
-    if (currentImageSrc) {
-      // Small delay to ensure image is loaded
-      const timer = setTimeout(() => {
-        extractColorsFromImage(currentImageSrc, 2)
-          .then((colors) => {
-            // Convert ColorWithFrequency[] to string[] if needed
-            const colorStrings = colors.map((c) =>
-              typeof c === "string" ? c : c.hex
-            );
-            setExtractedColors(colorStrings);
-          })
-          .catch((error) => {
-            console.error("Failed to extract colors:", error);
-            // Fallback to default colors
-            setExtractedColors([]);
-          });
-      }, 100);
+    if (!currentImageSrc) return;
 
-      return () => clearTimeout(timer);
+    const storedHighlights = pokemon?.colorPalette?.highlights ?? [];
+    if (!isShiny && storedHighlights.length >= 2) {
+      setExtractedColors(storedHighlights.slice(0, 2));
+      return;
     }
-  }, [currentImageSrc]);
+
+    const timer = setTimeout(() => {
+      extractColorsFromImage(currentImageSrc, 2)
+        .then((colors) => {
+          const colorStrings = colors.map((c) =>
+            typeof c === "string" ? c : c.hex
+          );
+          setExtractedColors(colorStrings);
+        })
+        .catch(() => {
+          setExtractedColors([]);
+        });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [currentImageSrc, isShiny, pokemon?.colorPalette?.highlights]);
 
   // Get colors - use passed colors from pokemon menu (source of truth)
   const colorPalette = pokemon?.colorPalette;

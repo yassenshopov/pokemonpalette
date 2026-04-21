@@ -14,15 +14,41 @@ export function hashString(str: string): number {
 // Derive the deterministic daily Pokemon id for a specific calendar date.
 // `isShiny` is mixed into the seed so daily shiny mode can produce a
 // different pick than daily normal mode on the same day.
+//
+// IMPORTANT: uses UTC date components so the server and every client see
+// the same daily pick regardless of local timezone. Changing this would
+// split the leaderboard across timezones.
 export function getDailyPokemonIdForDate(
   date: Date,
   totalPokemon: number,
   isShiny: boolean,
 ): number {
-  const dateStr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${
+  const dateStr = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}-${
     isShiny ? "shiny" : "normal"
   }`;
   return (hashString(dateStr) % totalPokemon) + 1;
+}
+
+// Today's UTC date as a YYYY-MM-DD string. Clients and the server use this
+// so the `date` column in daily_game_attempts is consistent everywhere.
+export function todayUtcDateString(): string {
+  const now = new Date();
+  const y = now.getUTCFullYear();
+  const m = String(now.getUTCMonth() + 1).padStart(2, "0");
+  const d = String(now.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+// Parse a YYYY-MM-DD string into a UTC Date (midnight). Prefer this over
+// `new Date("YYYY-MM-DD")` + `parseISO` because those can drift depending
+// on the runtime's TZ handling.
+export function parseUtcDate(dateStr: string): Date {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
+  if (!m) throw new Error(`Invalid date (expected YYYY-MM-DD): ${dateStr}`);
+  const y = Number(m[1]);
+  const mo = Number(m[2]) - 1;
+  const d = Number(m[3]);
+  return new Date(Date.UTC(y, mo, d));
 }
 
 // Derive the deterministic daily Pokemon id from today's date. `isShiny` is

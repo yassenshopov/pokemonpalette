@@ -25,9 +25,11 @@ export default async function GenerationPage({
     notFound();
   }
 
+  // /generations is not a real route — point at /explore instead so the
+  // middle crumb still takes visitors somewhere useful.
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Generations", href: "/generations" },
+    { label: "Explore", href: "/explore" },
     { label: `Generation ${generation}`, href: `/generation/${generation}` },
   ];
 

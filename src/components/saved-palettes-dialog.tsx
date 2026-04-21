@@ -43,20 +43,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useSavedPalettes } from "@/hooks/use-saved-palettes";
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string): "#ffffff" | "#000000" => {
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  // Calculate luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-  // Return white for dark colors, black for light colors
-  return luminance > 0.5 ? "#000000" : "#ffffff";
-};
+import { getContrastHex as getTextColor } from "@/lib/game/colors";
 
 interface SavedPalette {
   id: string;
@@ -378,12 +365,17 @@ export function SavedPalettesDialog({
         <div className="space-y-4 pb-4">
           <div className="flex items-center gap-2">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <Search
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4"
+                aria-hidden="true"
+              />
               <Input
                 placeholder="Search by name or hex code..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
+                aria-label="Search saved palettes by name or hex code"
+                type="search"
               />
             </div>
             <DropdownMenu>

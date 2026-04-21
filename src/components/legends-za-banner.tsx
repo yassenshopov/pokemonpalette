@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getContrastHex as getTextColor } from "@/lib/game/colors";
 
 const BANNER_COOKIE_NAME = "legends_za_banner_dismissed";
 const BANNER_COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
@@ -16,21 +17,6 @@ const getCookie = (name: string): string | null => {
     return parts.pop()?.split(";").shift() || null;
   }
   return null;
-};
-
-// Helper function to determine if text should be dark or light based on background
-const getTextColor = (hex: string | undefined): string => {
-  if (!hex || typeof hex !== "string") {
-    return "#000000";
-  }
-
-  const hexClean = hex.replace("#", "");
-  const r = parseInt(hexClean.substring(0, 2), 16);
-  const g = parseInt(hexClean.substring(2, 4), 16);
-  const b = parseInt(hexClean.substring(4, 6), 16);
-
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5 ? "#000000" : "#ffffff";
 };
 
 interface LegendsZABannerProps {

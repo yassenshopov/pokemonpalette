@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -117,6 +117,21 @@ export const metadata: Metadata = {
   // },
 };
 
+// Separate viewport export (required since Next 14 — previously bundled into
+// `metadata`). Theme color matches the CSS tokens used by `body` so the
+// mobile browser chrome blends into the page in both light and dark mode.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // Do NOT set maximumScale or userScalable: false — disabling zoom is an
+  // accessibility failure per WCAG 1.4.4.
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
+  colorScheme: "light dark",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -139,6 +154,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
       >
+        {/* Skip link — visible only when focused. Keyboard users tab here
+            first and can jump past the header to the page content. Pages
+            should render their primary content inside `<main id="main">`. */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         <StructuredData />
         <ThemeProvider
           attribute="class"

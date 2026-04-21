@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { prisma } from "@/lib/prisma";
 import { AdminShell } from "@/components/admin/admin-shell";
+import { logger } from "@/lib/logger";
 
 export default async function AdminLayout({
   children,
@@ -14,21 +15,21 @@ export default async function AdminLayout({
     const authResult = await auth();
     userId = authResult.userId;
   } catch (authError) {
-    console.error("Auth error:", authError);
+    logger.error("admin.layout.auth_failed", {
+      error: authError instanceof Error ? authError.message : String(authError),
+    });
   }
 
   if (!userId) {
     redirect("/");
   }
 
-  const { data: user, error } = await supabaseAdmin
-    .from("users")
-    .select("is_admin")
-    .eq("id", userId)
-    .eq("is_deleted", false)
-    .single();
+  const user = await prisma.user.findFirst({
+    where: { id: userId, isDeleted: false },
+    select: { isAdmin: true },
+  });
 
-  if (error || !user || !user.is_admin) {
+  if (!user?.isAdmin) {
     redirect("/");
   }
 

@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
 import { getPokemonById } from "@/lib/pokemon";
 import {
   DAILY_POOL_SIZE,
   getDailyPokemonIdForDate,
+  parseUtcDate,
 } from "@/lib/game/similarity";
 import { FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
+import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
 
@@ -55,29 +58,32 @@ export async function GET(
 
   try {
     // Aggregates + recent plays in parallel; both are scoped to the date.
-    const [statsRes, recentRes] = await Promise.all([
+    const parsedDateForQuery = parseUtcDate(date);
+    const [statsRes, recentRows] = await Promise.all([
       supabaseAdmin.rpc("admin_daily_puzzle_stats", { p_date: date }),
-      supabaseAdmin
-        .from("daily_game_attempts")
-        .select(
-          "id, user_id, attempts, won, hints_used, is_shiny, pokemon_guessed, created_at",
-        )
-        .eq("date", date)
-        .order("created_at", { ascending: false })
-        .limit(8),
+      prisma.dailyGameAttempt.findMany({
+        where: { date: parsedDateForQuery },
+        orderBy: { createdAt: "desc" },
+        take: 8,
+        select: {
+          id: true,
+          userId: true,
+          attempts: true,
+          won: true,
+          hintsUsed: true,
+          isShiny: true,
+          pokemonGuessed: true,
+          createdAt: true,
+        },
+      }),
     ]);
 
     if (statsRes.error) {
-      console.error("admin_daily_puzzle_stats failed:", statsRes.error);
+      logger.error("admin.daily.stats_rpc_failed", {
+        error: statsRes.error.message,
+      });
       return NextResponse.json(
         { error: "Failed to load daily stats" },
-        { status: 500 },
-      );
-    }
-    if (recentRes.error) {
-      console.error("recent attempts query failed:", recentRes.error);
-      return NextResponse.json(
-        { error: "Failed to load recent attempts" },
         { status: 500 },
       );
     }
@@ -134,7 +140,7 @@ export async function GET(
 
     // Enrich recent attempts with display info for each player.
     const userIds = Array.from(
-      new Set((recentRes.data ?? []).map((r) => r.user_id).filter(Boolean)),
+      new Set(recentRows.map((r) => r.userId).filter(Boolean)),
     );
     const usersById = new Map<
       string,
@@ -149,17 +155,40 @@ export async function GET(
       }
     >();
     if (userIds.length > 0) {
-      const { data: userRows } = await supabaseAdmin
-        .from("users")
-        .select(
-          "id, email, username, first_name, last_name, image_url, profile_image_url",
-        )
-        .in("id", userIds);
-      for (const u of userRows ?? []) usersById.set(u.id, u);
+      const userRows = await prisma.user.findMany({
+        where: { id: { in: userIds } },
+        select: {
+          id: true,
+          email: true,
+          username: true,
+          firstName: true,
+          lastName: true,
+          imageUrl: true,
+          profileImageUrl: true,
+        },
+      });
+      for (const u of userRows) {
+        usersById.set(u.id, {
+          id: u.id,
+          email: u.email,
+          username: u.username,
+          first_name: u.firstName,
+          last_name: u.lastName,
+          image_url: u.imageUrl,
+          profile_image_url: u.profileImageUrl,
+        });
+      }
     }
-    const recent = (recentRes.data ?? []).map((r) => ({
-      ...r,
-      user: usersById.get(r.user_id) ?? null,
+    const recent = recentRows.map((r) => ({
+      id: r.id,
+      user_id: r.userId,
+      attempts: r.attempts,
+      won: r.won,
+      hints_used: r.hintsUsed,
+      is_shiny: r.isShiny,
+      pokemon_guessed: r.pokemonGuessed,
+      created_at: r.createdAt.toISOString(),
+      user: usersById.get(r.userId) ?? null,
     }));
 
     // Derived convenience metrics.
@@ -187,7 +216,9 @@ export async function GET(
       recent,
     });
   } catch (err) {
-    console.error("Unexpected error in GET daily puzzle stats:", err);
+    logger.error("admin.daily.failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },

@@ -1,116 +1,100 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { z } from "zod";
+import { prisma } from "@/lib/prisma";
+import { logger } from "@/lib/logger";
 
-// GET - Get user's email preference
-export async function GET(req: NextRequest) {
+// GET - Get user's daily-email preference
+export async function GET() {
+  let userId: string | null = null;
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // Get user's email preference
-    const { data: user, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("receives_daily_emails")
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .single();
-
-    if (userError) {
-      console.error("Error fetching user:", userError);
-      return NextResponse.json(
-        { error: "Failed to fetch email preference" },
-        { status: 500 }
-      );
-    }
-
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
-
-    return NextResponse.json({
-      receivesDailyEmails: user.receives_daily_emails ?? true,
+    const authResult = await auth();
+    userId = authResult.userId;
+  } catch (err) {
+    logger.error("auth.service_unavailable", {
+      route: "/api/account/email-preference",
     });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/account/email-preference:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
+      { error: "Authentication service unavailable" },
+      { status: 503 }
     );
   }
+
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const user = await prisma.user.findFirst({
+    where: { id: userId, isDeleted: false },
+    select: { receivesDailyEmails: true },
+  });
+
+  if (!user) {
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  }
+
+  return NextResponse.json({
+    receivesDailyEmails: user.receivesDailyEmails ?? true,
+  });
 }
 
-// PUT - Update user's email preference
+const PutSchema = z.object({ receivesDailyEmails: z.boolean() });
+
+// PUT - Update user's daily-email preference
 export async function PUT(req: NextRequest) {
+  let userId: string | null = null;
   try {
-    let userId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      userId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
+    const authResult = await auth();
+    userId = authResult.userId;
+  } catch {
+    return NextResponse.json(
+      { error: "Authentication service unavailable" },
+      { status: 503 }
+    );
+  }
 
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
-    const body = await req.json();
-    const { receivesDailyEmails } = body as {
-      receivesDailyEmails: boolean;
-    };
+  let rawBody: unknown;
+  try {
+    rawBody = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+  const parsed = PutSchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "receivesDailyEmails must be a boolean" },
+      { status: 400 }
+    );
+  }
 
-    if (typeof receivesDailyEmails !== "boolean") {
-      return NextResponse.json(
-        { error: "receivesDailyEmails must be a boolean" },
-        { status: 400 }
-      );
-    }
+  try {
+    const user = await prisma.user.update({
+      where: { id: userId },
+      data: { receivesDailyEmails: parsed.data.receivesDailyEmails },
+      select: { receivesDailyEmails: true, isDeleted: true },
+    });
 
-    // Update user's email preference
-    const { data: user, error: updateError } = await supabaseAdmin
-      .from("users")
-      .update({ receives_daily_emails: receivesDailyEmails })
-      .eq("id", userId)
-      .eq("is_deleted", false)
-      .select()
-      .single();
-
-    if (updateError) {
-      console.error("Error updating user:", updateError);
-      return NextResponse.json(
-        { error: "Failed to update email preference" },
-        { status: 500 }
-      );
-    }
-
-    if (!user) {
+    // Guard against touching a soft-deleted user — Prisma's `update` has
+    // no compound where clause option, so we enforce it here.
+    if (user.isDeleted) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     return NextResponse.json({
       success: true,
-      receivesDailyEmails: user.receives_daily_emails,
+      receivesDailyEmails: user.receivesDailyEmails,
     });
-  } catch (error) {
-    console.error("Unexpected error in PUT /api/account/email-preference:", error);
+  } catch (err) {
+    logger.error("account.email_preference.update_failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Failed to update email preference" },
       { status: 500 }
     );
   }
 }
-

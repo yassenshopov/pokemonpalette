@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import { requireAdmin } from "@/lib/admin/auth";
+import { logger } from "@/lib/logger";
 
 export async function GET() {
-  try {
-    const gate = await requireAdmin();
-    if (!gate.ok) return gate.response;
+  const gate = await requireAdmin();
+  if (!gate.ok) return gate.response;
 
+  try {
     const { data, error } = await supabaseAdmin.rpc("admin_palette_stats");
     if (error) {
-      console.error("palette stats rpc error", error);
+      logger.error("admin.palette-stats.rpc_failed", { error: error.message });
       return NextResponse.json(
         { error: "Failed to compute palette stats" },
         { status: 500 },
@@ -17,7 +18,9 @@ export async function GET() {
     }
     return NextResponse.json(data ?? {});
   } catch (err) {
-    console.error("Unexpected error in GET palette stats:", err);
+    logger.error("admin.palette-stats.failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },

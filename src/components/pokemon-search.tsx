@@ -379,7 +379,7 @@ export function PokemonSearch({
   return (
     <div className="w-full relative" ref={searchRef}>
       <Input
-        type="text"
+        type="search"
         placeholder={placeholder}
         value={searchQuery}
         onChange={(e) => {
@@ -390,6 +390,10 @@ export function PokemonSearch({
         onFocus={() => setShowSuggestions(true)}
         className="w-full"
         autoFocus={autoFocus}
+        aria-label={placeholder}
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded={showSuggestions}
       />
 
       {showSuggestions && suggestions.length > 0 && (

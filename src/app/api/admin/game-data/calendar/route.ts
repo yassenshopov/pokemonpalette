@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import { requireAdmin } from "@/lib/admin/auth";
 import { parseIsoDate, toIsoDate } from "@/lib/admin/range";
+import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
 
@@ -63,7 +64,7 @@ export async function GET(req: NextRequest) {
     });
 
     if (error) {
-      console.error("admin_game_calendar error:", error);
+      logger.error("admin.calendar.rpc_failed", { error: error.message });
       return NextResponse.json(
         { error: "Failed to load calendar." },
         { status: 500 },
@@ -76,8 +77,10 @@ export async function GET(req: NextRequest) {
       to: toIsoDate(to),
       days: rows,
     });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/admin/game-data/calendar:", error);
+  } catch (err) {
+    logger.error("admin.calendar.failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },
