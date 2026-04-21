@@ -9,6 +9,7 @@ import {
   Clock,
   Copy,
   ExternalLink,
+  Flag,
   HelpCircle,
   Lightbulb,
   Search,
@@ -36,6 +37,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { formatAbsolute } from "@/lib/admin/format";
 import { RelativeTime } from "@/components/admin/relative-time";
+import {
+  getContrastHex,
+  getDimmedColor,
+} from "@/lib/game/colors";
 import type { ColorPalette } from "@/types/pokemon";
 
 interface DailyPuzzleSheetProps {
@@ -204,7 +209,7 @@ export function DailyPuzzleSheet({
         side="right"
         className={cn(
           // Wider than the default 24rem; comfortable for charts + mock.
-          "w-full gap-0 p-0 sm:max-w-xl lg:max-w-2xl",
+          "w-full gap-0 overflow-hidden p-0 sm:max-w-xl lg:max-w-2xl",
           // Prevent page-scroll chaining into the sheet on iOS.
           "overscroll-contain",
         )}
@@ -216,7 +221,10 @@ export function DailyPuzzleSheet({
               data={data}
               loading={loading && !data}
             />
-            <ScrollArea className="flex-1">
+            {/* `min-h-0` is critical: without it, flex children in a column
+                refuse to shrink below their content and the ScrollArea never
+                actually scrolls. */}
+            <ScrollArea className="min-h-0 flex-1">
               <div className="flex flex-col gap-5 px-5 pb-8 pt-2">
                 {error ? (
                   <Card role="alert">
@@ -336,8 +344,21 @@ function DailyPuzzleBody({ data }: { data: DailyPuzzleResponse }) {
 }
 
 // --------------------------------------------------------------------------
-// "As players saw it" — mock
+// "As players saw it" — faithful read-only preview of /game
 // --------------------------------------------------------------------------
+
+/**
+ * Approximates the width distribution produced by the sprite color extractor
+ * at game time. Players always see the palette weighted by prevalence rather
+ * than evenly, so an equal-width strip would misrepresent the challenge.
+ * Normalized to 100% for the number of colors supplied.
+ */
+function weightedWidths(count: number): number[] {
+  // Rough geometric decay; roughly matches distributions we see in practice.
+  const raw = Array.from({ length: count }, (_, i) => 1 / (i + 1.2));
+  const sum = raw.reduce((a, b) => a + b, 0);
+  return raw.map((r) => (r / sum) * 100);
+}
 
 function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
   const [shiny, setShiny] = React.useState(false);
@@ -352,12 +373,14 @@ function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
 
   const swatches = React.useMemo<string[]>(() => {
     if (!activePalette) return [];
-    // Use primary / secondary / accent, then the unique highlights (up to 6 total).
+    // `highlights` are what the extractor produced at game time (ordered by
+    // frequency). Fall back to primary/secondary/accent if highlights is
+    // thin. De-dupe and cap at 6 to match the game's palette strip.
     const ordered = [
+      ...activePalette.highlights,
       activePalette.primary,
       activePalette.secondary,
       activePalette.accent,
-      ...activePalette.highlights,
     ].filter(Boolean);
     const seen = new Set<string>();
     const unique: string[] = [];
@@ -370,16 +393,41 @@ function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
     return unique.slice(0, 6);
   }, [activePalette]);
 
-  const bgPrimary = activePalette?.primary ?? "#e5e7eb";
+  const widths = React.useMemo(() => weightedWidths(swatches.length), [
+    swatches.length,
+  ]);
+
+  const primary = activePalette?.primary ?? swatches[0] ?? "#e5e7eb";
+  const onPrimary = getContrastHex(primary);
+
+  // Faux hint lines — the real game shows vague/medium/specific hints. For
+  // the preview we render plausible stand-ins built from the Pokemon data so
+  // admins can see the exact layout players encounter.
+  const previewHints = React.useMemo(() => {
+    if (!p) return [] as string[];
+    const typeLine =
+      p.type.length === 1
+        ? `This Pokémon is a ${p.type[0]}-type Pokémon.`
+        : `This Pokémon is a part-${p.type[0]} type Pokémon.`;
+    const genLine = `Introduced in Generation ${p.generation}.`;
+    const idLine = `Pokédex #${p.id.toString().padStart(3, "0")}.`;
+    return [typeLine, genLine, idLine];
+  }, [p]);
 
   return (
     <Card className="overflow-hidden">
       <div className="flex items-center justify-between gap-2 border-b px-4 py-2">
         <div className="flex items-center gap-2">
-          <Target className="size-3.5 text-muted-foreground" aria-hidden="true" />
+          <Target
+            className="size-3.5 text-muted-foreground"
+            aria-hidden="true"
+          />
           <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             As players saw it
           </h3>
+          <Badge variant="outline" className="h-5 px-1.5 text-[10px]">
+            Preview
+          </Badge>
         </div>
         <div className="flex items-center gap-1">
           {p?.shinyColorPalette ? (
@@ -408,117 +456,199 @@ function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
         </div>
       </div>
 
-      <div
-        className="relative isolate grid grid-cols-[auto,1fr] gap-4 p-4"
-        style={{
-          background: `linear-gradient(135deg, ${withAlpha(bgPrimary, 0.18)}, transparent 70%)`,
-        }}
-      >
-        {/* Silhouette / reveal */}
-        <div className="relative size-36 shrink-0 overflow-hidden rounded-lg bg-muted/30 shadow-inner">
-          {p ? (
-            <Image
-              src={officialArtworkUrl(p.id, shiny)}
-              alt={revealed ? `${p.name} artwork` : ""}
-              aria-hidden={revealed ? undefined : "true"}
-              fill
-              sizes="144px"
-              className={cn(
-                "object-contain transition-all duration-300",
-                !revealed && "brightness-0 dark:invert opacity-70",
-              )}
-              unoptimized
-            />
-          ) : (
-            <Skeleton className="size-full" />
-          )}
-          <span
-            className="pointer-events-none absolute bottom-1 left-1 rounded bg-background/80 px-1.5 py-0.5 font-mono text-[10px] tabular-nums text-foreground backdrop-blur-sm"
-            translate="no"
-          >
-            #{(p?.id ?? 0).toString().padStart(4, "0")}
-          </span>
+      {/* === The actual mock starts here === */}
+      {/* Mimics the "Target Palette Display" card from /game:
+          - weighted color bar at top
+          - padded content area with hints + search + action row         */}
+      <div className="m-3 overflow-hidden rounded-lg border bg-card">
+        {/* Weighted color bar */}
+        <div
+          className="relative flex h-20 w-full overflow-hidden sm:h-24"
+          aria-label="Color palette players see"
+          role="img"
+        >
+          {swatches.length === 0
+            ? Array.from({ length: 5 }).map((_, i) => (
+                <Skeleton
+                  key={i}
+                  className="h-full flex-1 rounded-none border-0"
+                />
+              ))
+            : swatches.map((hex, i) => (
+                <button
+                  key={`${hex}-${i}`}
+                  type="button"
+                  onClick={() => copy(hex.toUpperCase(), "Hex")}
+                  className="group relative h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0"
+                  style={{
+                    backgroundColor: hex,
+                    width: `${widths[i]}%`,
+                  }}
+                  title={`${hex.toUpperCase()} — click to copy`}
+                  aria-label={`Copy hex ${hex.toUpperCase()}`}
+                >
+                  <span
+                    className="pointer-events-none absolute inset-x-0 bottom-1 truncate px-1 text-center font-mono text-[9px] tabular-nums opacity-0 transition-opacity group-hover:opacity-100"
+                    style={{ color: getContrastHex(hex) }}
+                    translate="no"
+                  >
+                    {hex.toUpperCase()}
+                  </span>
+                </button>
+              ))}
+          {data.kpis.shiny_attempts > 0 || shiny ? (
+            <div className="absolute right-2 top-2 z-10 sm:right-3 sm:top-3">
+              <Badge
+                className="gap-1 border-transparent"
+                style={{ backgroundColor: primary, color: onPrimary }}
+              >
+                <Sparkles className="size-3" aria-hidden="true" />
+                Shiny
+              </Badge>
+            </div>
+          ) : null}
         </div>
 
-        {/* Palette */}
-        <div className="flex min-w-0 flex-col gap-2">
-          <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-            Color palette
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {swatches.length === 0
-              ? Array.from({ length: 5 }).map((_, i) => (
-                  <Skeleton key={i} className="size-10 rounded-md" />
-                ))
-              : swatches.map((hex, i) => (
-                  <Swatch key={`${hex}-${i}`} hex={hex} />
-                ))}
+        {/* Content — padding matches /game's p-4 md:p-6 proportionally. */}
+        <div className="space-y-3 p-4">
+          {/* Hints row — three badges stacked in the real UI; kept compact here. */}
+          <div className="flex flex-wrap items-center justify-end gap-1.5">
+            {previewHints.map((hint, i) => (
+              <Badge
+                key={i}
+                variant="outline"
+                className="h-6 rounded-full border-2 px-2 text-[11px] font-normal"
+                style={{
+                  borderColor: primary,
+                  backgroundColor: getDimmedColor(primary, 0.12),
+                  color: primary,
+                }}
+              >
+                {hint}
+              </Badge>
+            ))}
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              disabled
+              className="h-6 px-2 text-[11px]"
+            >
+              <Lightbulb
+                className="mr-1 size-3"
+                aria-hidden="true"
+              />
+              All hints revealed
+            </Button>
           </div>
 
-          {/* Mock search bar — matches the game's text input visually. */}
-          <div className="mt-1 flex h-9 items-center gap-2 rounded-md border bg-background/80 px-2.5 text-xs text-muted-foreground shadow-sm">
-            <Search className="size-3.5" aria-hidden="true" />
-            <span className="truncate">Type a Pokémon name…</span>
-            <span className="ml-auto rounded border bg-muted px-1.5 font-mono text-[10px]">
-              Enter
-            </span>
-          </div>
+          {/* Artwork + info row — visible only once revealed, mirroring
+              the real game which only shows the Pokémon after a result. */}
+          {revealed && p ? (
+            <div className="flex flex-col items-center gap-3 border-t pt-3 sm:flex-row sm:items-start sm:gap-5">
+              <div className="relative size-32 shrink-0 sm:size-36">
+                <Image
+                  src={officialArtworkUrl(p.id, shiny)}
+                  alt={`${p.name} artwork`}
+                  fill
+                  sizes="144px"
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+              <div className="min-w-0 flex-1 text-center sm:text-left">
+                <h4 className="text-xl font-bold" translate="no">
+                  {p.name}
+                </h4>
+                <div className="mt-1.5 flex flex-wrap justify-center gap-1.5 sm:justify-start">
+                  {p.type.map((t, i) => {
+                    const bg = swatches[i] ?? primary;
+                    return (
+                      <Badge
+                        key={t}
+                        className="font-medium"
+                        style={{
+                          backgroundColor: bg,
+                          color: getContrastHex(bg),
+                          borderColor: "transparent",
+                        }}
+                      >
+                        {t}
+                      </Badge>
+                    );
+                  })}
+                </div>
+                <div
+                  className="mt-2 text-xs text-muted-foreground tabular-nums"
+                  translate="no"
+                >
+                  #{p.id.toString().padStart(3, "0")} · Generation{" "}
+                  {p.generation} · {p.rarity}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-center gap-3 border-t py-4 text-sm text-muted-foreground">
+              <div className="relative size-16 shrink-0 opacity-80">
+                {p ? (
+                  <Image
+                    src={officialArtworkUrl(p.id, shiny)}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    sizes="64px"
+                    className="object-contain brightness-0 dark:invert"
+                    unoptimized
+                  />
+                ) : null}
+              </div>
+              <span>Pokémon hidden while players are guessing.</span>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Revealed Pokémon details strip. */}
-      {p ? (
-        <div className="flex flex-wrap items-center gap-2 border-t bg-muted/30 px-4 py-2 text-xs">
-          <span className="font-medium" translate="no">
-            {revealed ? p.name : "???"}
+      {/* Mock search + action row — placed outside the inner card to echo
+          the /game page structure where search lives below the target card. */}
+      <div className="space-y-2 border-t px-4 py-3">
+        <label
+          htmlFor="daily-puzzle-mock-search"
+          className="sr-only"
+        >
+          Search Pokémon (preview)
+        </label>
+        <div
+          id="daily-puzzle-mock-search"
+          className="flex h-10 items-center gap-2 rounded-md border bg-background px-3 text-sm text-muted-foreground shadow-sm"
+          role="presentation"
+        >
+          <Search className="size-4" aria-hidden="true" />
+          <span className="truncate">Enter Pokémon name or number…</span>
+          <span className="ml-auto rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px]">
+            Enter
           </span>
-          {revealed ? (
-            <>
-              {p.type.map((t) => (
-                <Badge key={t} variant="secondary" className="h-5 text-[10px]">
-                  {t}
-                </Badge>
-              ))}
-              <span className="text-muted-foreground">
-                Gen {p.generation} · {p.rarity}
-              </span>
-            </>
-          ) : (
-            <span className="text-muted-foreground">
-              Click “Reveal answer” to show
-            </span>
-          )}
         </div>
-      ) : null}
+        <p className="text-[11px] text-muted-foreground">
+          Tip: Search works in multiple languages (日本語, Français, Deutsch,
+          Español, and more).
+        </p>
+        <div className="flex items-center justify-between gap-2 pt-1">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            disabled
+            className="h-7 border-red-300 px-2 text-[11px] text-red-600 dark:border-red-800 dark:text-red-400"
+          >
+            <Flag className="mr-1 size-3" aria-hidden="true" />
+            Give Up
+          </Button>
+          <span className="font-mono text-[10px] text-muted-foreground tabular-nums">
+            Read-only preview
+          </span>
+        </div>
+      </div>
     </Card>
-  );
-}
-
-function Swatch({ hex }: { hex: string }) {
-  const label = hex.toUpperCase();
-  return (
-    <button
-      type="button"
-      onClick={() => copy(label, "Hex")}
-      className="group relative flex flex-col items-center gap-1 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
-      aria-label={`Copy hex ${label}`}
-    >
-      <span
-        className="size-10 rounded-md border shadow-sm transition-transform group-hover:scale-105"
-        style={{ backgroundColor: hex }}
-        aria-hidden="true"
-      />
-      <span
-        className="font-mono text-[10px] tabular-nums text-muted-foreground"
-        translate="no"
-      >
-        {label}
-      </span>
-      <Copy
-        className="absolute right-0 top-0 size-2.5 opacity-0 transition-opacity group-hover:opacity-60"
-        aria-hidden="true"
-      />
-    </button>
   );
 }
 
@@ -956,14 +1086,3 @@ function LoadingState() {
   );
 }
 
-/** Append an 8-bit alpha suffix (0..1) onto a #rrggbb string. Returns the
- *  input unchanged if it isn't a recognizable hex. */
-function withAlpha(hex: string, alpha: number): string {
-  if (!/^#[0-9a-fA-F]{6}$/.test(hex)) return hex;
-  const a = Math.round(
-    Math.max(0, Math.min(1, alpha)) * 255,
-  )
-    .toString(16)
-    .padStart(2, "0");
-  return `${hex}${a}`;
-}
