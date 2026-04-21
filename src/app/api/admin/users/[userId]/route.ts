@@ -1,103 +1,188 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/admin/auth";
 
-// GET - Get detailed user data including game attempts and saved palettes (admin only)
+// GET - Get user + aggregate stats (detail view data).
+// Embedded lists (games, palettes) fetch their own data via the list APIs
+// filtered by user_id so they inherit sort/search/pagination.
 export async function GET(
-  req: NextRequest,
-  { params }: { params: Promise<{ userId: string }> }
+  _req: NextRequest,
+  { params }: { params: Promise<{ userId: string }> },
 ) {
   try {
-    let adminUserId: string | null = null;
-    
-    try {
-      const authResult = await auth();
-      adminUserId = authResult.userId;
-    } catch (authError) {
-      console.error("Auth error:", authError);
-      return NextResponse.json({ error: "Authentication service unavailable" }, { status: 503 });
-    }
-
-    if (!adminUserId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // Check if user is admin
-    const { data: currentUser, error: userError } = await supabaseAdmin
-      .from("users")
-      .select("is_admin")
-      .eq("id", adminUserId)
-      .eq("is_deleted", false)
-      .single();
-
-    if (userError || !currentUser || !currentUser.is_admin) {
-      return NextResponse.json({ error: "Forbidden: Admin access required" }, { status: 403 });
-    }
+    const gate = await requireAdmin();
+    if (!gate.ok) return gate.response;
 
     const { userId } = await params;
 
-    // Get user details
-    const { data: user, error: userFetchError } = await supabaseAdmin
+    const { data: user, error: userErr } = await supabaseAdmin
       .from("users")
       .select("*")
       .eq("id", userId)
       .eq("is_deleted", false)
       .single();
 
-    if (userFetchError || !user) {
+    if (userErr || !user) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    // Get game attempts
-    const { data: gameAttempts, error: attemptsError } = await supabaseAdmin
+    const [
+      { count: totalGames },
+      { count: totalWins },
+      { count: totalPalettes },
+    ] = await Promise.all([
+      supabaseAdmin
+        .from("daily_game_attempts")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", userId),
+      supabaseAdmin
+        .from("daily_game_attempts")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", userId)
+        .eq("won", true),
+      supabaseAdmin
+        .from("saved_palettes")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", userId),
+    ]);
+
+    const games = totalGames ?? 0;
+    const wins = totalWins ?? 0;
+    const losses = games - wins;
+    const winRate = games > 0 ? (wins / games) * 100 : 0;
+
+    // Pull a slim recent-attempts list (last 30) for overview sparkline.
+    const { data: recentAttempts } = await supabaseAdmin
       .from("daily_game_attempts")
-      .select("*")
+      .select("id, date, won, attempts, hints_used, created_at")
       .eq("user_id", userId)
-      .order("date", { ascending: false })
-      .limit(50);
-
-    if (attemptsError) {
-      console.error("Error fetching game attempts:", attemptsError);
-    }
-
-    // Calculate game stats
-    const totalGames = gameAttempts?.length || 0;
-    const totalWins = gameAttempts?.filter((a: any) => a.won).length || 0;
-    const totalLosses = totalGames - totalWins;
-    const winRate = totalGames > 0 ? (totalWins / totalGames) * 100 : 0;
-    const averageAttempts = gameAttempts && gameAttempts.length > 0
-      ? gameAttempts.reduce((sum: number, a: any) => sum + a.attempts, 0) / gameAttempts.length
-      : 0;
-
-    // Get saved palettes
-    const { data: savedPalettes, error: palettesError } = await supabaseAdmin
-      .from("saved_palettes")
-      .select("*")
-      .eq("user_id", userId)
-      .order("created_at", { ascending: false });
-
-    if (palettesError) {
-      console.error("Error fetching saved palettes:", palettesError);
-    }
+      .order("created_at", { ascending: false })
+      .limit(30);
 
     return NextResponse.json({
       user,
-      gameAttempts: gameAttempts || [],
-      gameStats: {
-        totalGames,
-        totalWins,
-        totalLosses,
+      stats: {
+        totalGames: games,
+        totalWins: wins,
+        totalLosses: losses,
         winRate: Math.round(winRate * 100) / 100,
-        averageAttempts: Math.round(averageAttempts * 100) / 100,
+        totalPalettes: totalPalettes ?? 0,
       },
-      savedPalettes: savedPalettes || [],
+      recentAttempts: recentAttempts ?? [],
     });
-  } catch (error) {
-    console.error("Unexpected error in GET /api/admin/users/[userId]:", error);
+  } catch (err) {
+    console.error("Unexpected error in GET /api/admin/users/[userId]:", err);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
+// PATCH - Update mutable admin fields.
+// Body: { banned?, locked?, is_admin? }
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: Promise<{ userId: string }> },
+) {
+  try {
+    const gate = await requireAdmin();
+    if (!gate.ok) return gate.response;
+
+    const { userId } = await params;
+
+    let body: { banned?: unknown; locked?: unknown; is_admin?: unknown };
+    try {
+      body = (await req.json()) as typeof body;
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid JSON body" },
+        { status: 400 },
+      );
+    }
+
+    if (userId === gate.adminUserId && body.is_admin === false) {
+      return NextResponse.json(
+        { error: "Admins cannot demote themselves." },
+        { status: 400 },
+      );
+    }
+
+    const patch: Record<string, boolean> = {};
+    if (typeof body.banned === "boolean") patch.banned = body.banned;
+    if (typeof body.locked === "boolean") patch.locked = body.locked;
+    if (typeof body.is_admin === "boolean") patch.is_admin = body.is_admin;
+
+    if (Object.keys(patch).length === 0) {
+      return NextResponse.json(
+        { error: "No valid fields to update." },
+        { status: 400 },
+      );
+    }
+
+    const { data, error } = await supabaseAdmin
+      .from("users")
+      .update(patch)
+      .eq("id", userId)
+      .eq("is_deleted", false)
+      .select("*")
+      .single();
+
+    if (error || !data) {
+      console.error("Error updating user:", error);
+      return NextResponse.json(
+        { error: "Failed to update user" },
+        { status: 500 },
+      );
+    }
+
+    return NextResponse.json({ user: data });
+  } catch (err) {
+    console.error("Unexpected error in PATCH /api/admin/users/[userId]:", err);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
+}
+
+// DELETE - Soft-delete a user (is_deleted = true).
+export async function DELETE(
+  _req: NextRequest,
+  { params }: { params: Promise<{ userId: string }> },
+) {
+  try {
+    const gate = await requireAdmin();
+    if (!gate.ok) return gate.response;
+
+    const { userId } = await params;
+
+    if (userId === gate.adminUserId) {
+      return NextResponse.json(
+        { error: "Admins cannot delete themselves." },
+        { status: 400 },
+      );
+    }
+
+    const { error } = await supabaseAdmin
+      .from("users")
+      .update({ is_deleted: true })
+      .eq("id", userId);
+
+    if (error) {
+      console.error("Error deleting user:", error);
+      return NextResponse.json(
+        { error: "Failed to delete user" },
+        { status: 500 },
+      );
+    }
+
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Unexpected error in DELETE /api/admin/users/[userId]:", err);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
+}

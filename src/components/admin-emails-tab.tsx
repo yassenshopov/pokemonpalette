@@ -18,7 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Mail, Send, Loader2, CheckCircle2, XCircle } from "lucide-react";
+import { Send, Loader2, CheckCircle2, X, XCircle } from "lucide-react";
 import { toast } from "sonner";
 import type { EmailTemplate, EmailTemplateData } from "@/lib/email-service";
 
@@ -258,210 +258,266 @@ export function AdminEmailsTab() {
     setTimeout(() => setShowSuggestions(false), 200);
   };
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="text-muted-foreground">Loading email management...</div>
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Mail className="h-5 w-5" />
-            Email Management
-          </CardTitle>
-          <CardDescription>
-            Preview and send emails to users using templates
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {/* Template Selection */}
-          <div className="space-y-2">
-            <Label>Email Template</Label>
-            <div className="flex flex-wrap gap-2">
-              {EMAIL_TEMPLATES.map((template) => (
-                <Badge
-                  key={template.value}
-                  variant={selectedTemplate === template.value ? "default" : "outline"}
-                  className="cursor-pointer px-4 py-2 text-sm"
-                  onClick={() => setSelectedTemplate(template.value)}
-                >
-                  {template.label}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          <Separator />
-
-          {/* Recipient Selection */}
-          <div className="space-y-2">
-            <Label htmlFor="emailInput">Recipients</Label>
-            <div className="relative">
-              <Input
-                id="emailInput"
-                placeholder="Type email address or search users..."
-                value={emailInput}
-                onChange={(e) => handleEmailInputChange(e.target.value)}
-                onKeyDown={handleEmailInputKeyDown}
-                onFocus={() => setShowSuggestions(true)}
-                onBlur={handleEmailInputBlur}
-              />
-              
-              {/* User Suggestions */}
-              {showSuggestions && filteredUsers.length > 0 && (
-                <div className="absolute z-10 w-full mt-1 bg-popover border rounded-md shadow-lg max-h-[200px] overflow-auto">
-                  {filteredUsers.map((user) => (
-                    <div
-                      key={user.id}
-                      className="px-4 py-2 hover:bg-muted cursor-pointer text-sm"
-                      onMouseDown={(e) => {
-                        e.preventDefault();
-                        handleSelectUser(user);
-                      }}
-                    >
-                      <div className="font-medium">{user.name}</div>
-                      <div className="text-muted-foreground text-xs">{user.email}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Selected Emails */}
-            {selectedEmails.length > 0 && (
-              <div className="flex flex-wrap gap-2 mt-2">
-                {selectedEmails.map((email) => {
-                  const user = users.find((u) => u.email === email);
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Compose</CardTitle>
+            <CardDescription>
+              Pick a template, choose recipients, and send.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-2">
+              <Label id="email-template-label">Email Template</Label>
+              <div
+                role="radiogroup"
+                aria-labelledby="email-template-label"
+                className="flex flex-wrap gap-2"
+              >
+                {EMAIL_TEMPLATES.map((template) => {
+                  const isSelected = selectedTemplate === template.value;
                   return (
-                    <Badge
-                      key={email}
-                      variant="secondary"
-                      className="px-3 py-1"
+                    <button
+                      key={template.value}
+                      type="button"
+                      role="radio"
+                      aria-checked={isSelected}
+                      onClick={() => setSelectedTemplate(template.value)}
+                      className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
                     >
-                      {user?.name || email}
-                      <button
-                        className="ml-2 hover:text-destructive"
-                        onClick={() => handleRemoveEmail(email)}
+                      <Badge
+                        variant={isSelected ? "default" : "outline"}
+                        className="cursor-pointer px-4 py-2 text-sm"
                       >
-                        ×
-                      </button>
-                    </Badge>
+                        {template.label}
+                      </Badge>
+                    </button>
                   );
                 })}
               </div>
-            )}
-          </div>
-
-          <Separator />
-
-          {/* Send Button */}
-          <Button
-            onClick={() => setShowConfirmDialog(true)}
-            disabled={sending || selectedEmails.length === 0}
-            className="w-full"
-          >
-            {sending ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Sending...
-              </>
-            ) : (
-              <>
-                <Send className="mr-2 h-4 w-4" />
-                Send Email ({selectedEmails.length})
-              </>
-            )}
-          </Button>
-
-          {/* Send Results */}
-          {sendResults && (
-            <div className="space-y-2 p-4 border rounded-lg">
-              <Label>Send Results</Label>
-              <ScrollArea className="h-[150px]">
-                <div className="space-y-2">
-                  {sendResults.map((result, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-2 bg-muted rounded"
-                    >
-                      <span className="text-sm">{result.email}</span>
-                      {result.success ? (
-                        <Badge variant="default" className="bg-green-500">
-                          <CheckCircle2 className="mr-1 h-3 w-3" />
-                          Sent
-                        </Badge>
-                      ) : (
-                        <Badge variant="destructive">
-                          <XCircle className="mr-1 h-3 w-3" />
-                          {result.error || "Failed"}
-                        </Badge>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </ScrollArea>
             </div>
-          )}
 
-          <Separator />
+            <Separator />
 
-          {/* Email Preview */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <Label>Email Preview</Label>
-              {previewLoading && (
-                <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+            <div className="space-y-2">
+              <Label htmlFor="emailInput">Recipients</Label>
+              <div className="relative">
+                <Input
+                  id="emailInput"
+                  type="email"
+                  inputMode="email"
+                  autoComplete="off"
+                  spellCheck={false}
+                  placeholder="e.g. jane@example.com…"
+                  aria-describedby="email-input-help"
+                  value={emailInput}
+                  disabled={loading}
+                  onChange={(e) => handleEmailInputChange(e.target.value)}
+                  onKeyDown={handleEmailInputKeyDown}
+                  onFocus={() => setShowSuggestions(true)}
+                  onBlur={handleEmailInputBlur}
+                />
+                <p
+                  id="email-input-help"
+                  className="mt-1 text-xs text-muted-foreground"
+                >
+                  Press Enter to add. Start typing a name or email to search registered users.
+                </p>
+
+                {showSuggestions && filteredUsers.length > 0 && (
+                  <div
+                    role="listbox"
+                    className="absolute z-10 mt-1 max-h-[240px] w-full overflow-auto rounded-md border bg-popover shadow-lg"
+                  >
+                    {filteredUsers.slice(0, 50).map((user) => (
+                      <div
+                        key={user.id}
+                        role="option"
+                        aria-selected="false"
+                        tabIndex={0}
+                        className="cursor-pointer px-4 py-2 text-sm hover:bg-muted focus:bg-muted focus:outline-none"
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          handleSelectUser(user);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            handleSelectUser(user);
+                          }
+                        }}
+                      >
+                        <div className="font-medium">{user.name}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {user.email}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {selectedEmails.length > 0 && (
+                <ul
+                  className="mt-2 flex flex-wrap gap-2"
+                  aria-label="Selected recipients"
+                >
+                  {selectedEmails.map((email) => {
+                    const user = users.find((u) => u.email === email);
+                    return (
+                      <li key={email}>
+                        <Badge variant="secondary" className="gap-1 px-3 py-1">
+                          <span>{user?.name || email}</span>
+                          <button
+                            type="button"
+                            className="ml-1 inline-flex size-4 items-center justify-center rounded-sm hover:bg-background/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                            aria-label={`Remove ${email}`}
+                            onClick={() => handleRemoveEmail(email)}
+                          >
+                            <X aria-hidden="true" className="size-3" />
+                          </button>
+                        </Badge>
+                      </li>
+                    );
+                  })}
+                </ul>
               )}
             </div>
 
+            <Separator />
+
+            <Button
+              onClick={() => setShowConfirmDialog(true)}
+              disabled={sending || selectedEmails.length === 0}
+              className="w-full"
+            >
+              {sending ? (
+                <>
+                  <Loader2
+                    className="mr-2 size-4 animate-spin"
+                    aria-hidden="true"
+                  />
+                  Sending…
+                </>
+              ) : (
+                <>
+                  <Send className="mr-2 size-4" aria-hidden="true" />
+                  Send Email ({selectedEmails.length})
+                </>
+              )}
+            </Button>
+
+            {sendResults && (
+              <div
+                className="space-y-2 rounded-lg border p-4"
+                role="status"
+                aria-live="polite"
+              >
+                <Label>Send Results</Label>
+                <ScrollArea className="h-[150px]">
+                  <div className="space-y-2">
+                    {sendResults.map((result, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between rounded bg-muted p-2"
+                      >
+                        <span className="text-sm">{result.email}</span>
+                        {result.success ? (
+                          <Badge variant="default">
+                            <CheckCircle2
+                              className="mr-1 size-3"
+                              aria-hidden="true"
+                            />
+                            Sent
+                          </Badge>
+                        ) : (
+                          <Badge variant="destructive">
+                            <XCircle
+                              className="mr-1 size-3"
+                              aria-hidden="true"
+                            />
+                            {result.error || "Failed"}
+                          </Badge>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-base">Preview</CardTitle>
+                <CardDescription>
+                  Live render for the selected template.
+                </CardDescription>
+              </div>
+              {previewLoading && (
+                <Loader2
+                  className="size-4 animate-spin text-muted-foreground"
+                  aria-hidden="true"
+                />
+              )}
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
             {previewSubject && (
-              <div className="p-4 border rounded-lg">
+              <div className="rounded-lg border p-4">
                 <Label className="text-xs text-muted-foreground">Subject</Label>
                 <p className="font-medium">{previewSubject}</p>
               </div>
             )}
 
             {previewHtml ? (
-              <div className="space-y-4">
+              <>
                 <div>
-                  <Label className="text-xs text-muted-foreground mb-2 block">
+                  <Label className="mb-2 block text-xs text-muted-foreground">
                     HTML Preview
                   </Label>
-                  <div className="border rounded-lg overflow-hidden">
+                  <div className="overflow-hidden rounded-lg border">
                     <iframe
                       srcDoc={previewHtml}
-                      className="w-full h-[400px] border-0"
-                      title="Email HTML Preview"
+                      className="h-[420px] w-full border-0"
+                      title="Email HTML preview"
                     />
                   </div>
                 </div>
 
                 {previewText && (
                   <div>
-                    <Label className="text-xs text-muted-foreground mb-2 block">
+                    <Label className="mb-2 block text-xs text-muted-foreground">
                       Plain Text Version
                     </Label>
-                    <ScrollArea className="h-[150px] border rounded-lg p-4">
-                      <pre className="text-sm whitespace-pre-wrap font-mono">
+                    <ScrollArea className="h-[150px] rounded-lg border p-4">
+                      <pre className="whitespace-pre-wrap font-mono text-sm">
                         {previewText}
                       </pre>
                     </ScrollArea>
                   </div>
                 )}
-              </div>
+              </>
             ) : (
-              <div className="p-8 text-center text-muted-foreground border rounded-lg">
-                {previewLoading ? "Generating preview..." : "No preview available"}
+              <div
+                className="rounded-lg border p-8 text-center text-muted-foreground"
+                aria-live="polite"
+              >
+                {loading
+                  ? "Loading email management…"
+                  : previewLoading
+                    ? "Generating preview…"
+                    : "No preview available."}
               </div>
             )}
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Confirmation Dialog */}
       <AlertDialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>

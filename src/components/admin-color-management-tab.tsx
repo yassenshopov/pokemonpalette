@@ -9,13 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { extractColorsFromImage, ColorWithFrequency } from "@/lib/color-extractor";
@@ -319,9 +313,16 @@ export function AdminColorManagementTab() {
     return (
       <Card>
         <CardContent className="p-6">
-          <div className="flex items-center justify-center">
-            <Loader2 className="h-6 w-6 animate-spin" />
-            <span className="ml-2">Loading Pokemon data...</span>
+          <div
+            className="flex items-center justify-center"
+            role="status"
+            aria-live="polite"
+          >
+            <Loader2
+              className="size-6 animate-spin"
+              aria-hidden="true"
+            />
+            <span className="ml-2">Loading Pokémon data…</span>
           </div>
         </CardContent>
       </Card>
@@ -330,77 +331,98 @@ export function AdminColorManagementTab() {
 
   if (error) {
     return (
-      <Card>
+      <Card role="alert" aria-live="polite">
         <CardContent className="p-6">
-          <div className="text-red-500">{error}</div>
+          <div className="text-destructive">{error}</div>
         </CardContent>
       </Card>
     );
   }
 
+  const spriteCount = filteredPokemon.filter((p) =>
+    isShinyMode ? p.shinySpriteUrl : p.spriteUrl,
+  ).length;
+
   return (
     <div className="space-y-6">
       <Card>
-        <CardHeader>
-          <CardTitle>Pokemon Color Management</CardTitle>
-          <CardDescription>
-            Compare static data colors with extracted sprite colors and update as needed
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="mb-4 space-y-3">
-            <div className="flex items-center gap-4 flex-wrap">
+        <CardContent className="space-y-4">
+          <div className="flex flex-wrap items-end gap-4">
+            <div className="flex-1 min-w-[220px] space-y-1.5">
+              <label
+                htmlFor="color-search"
+                className="text-xs font-medium uppercase tracking-wide text-muted-foreground"
+              >
+                Search
+              </label>
               <Input
-                placeholder="Search by name or ID..."
+                id="color-search"
+                type="search"
+                inputMode="search"
+                spellCheck={false}
+                autoComplete="off"
+                placeholder="Name or ID, e.g. pikachu or 25…"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="max-w-sm"
               />
+            </div>
+            <div className="space-y-1.5">
+              <span className="block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                ID Range
+              </span>
               <div className="flex items-center gap-2">
-                <label className="text-sm text-muted-foreground whitespace-nowrap">
-                  ID Range:
-                </label>
                 <Input
+                  aria-label="Minimum Pokémon ID"
                   type="number"
-                  placeholder="Min ID"
+                  inputMode="numeric"
+                  placeholder="Min"
                   value={minId}
                   onChange={(e) => setMinId(e.target.value)}
-                  className="w-24"
+                  className="w-24 tabular-nums"
                   min="1"
                 />
-                <span className="text-muted-foreground">-</span>
+                <span aria-hidden="true" className="text-muted-foreground">
+                  –
+                </span>
                 <Input
+                  aria-label="Maximum Pokémon ID"
                   type="number"
-                  placeholder="Max ID"
+                  inputMode="numeric"
+                  placeholder="Max"
                   value={maxId}
                   onChange={(e) => setMaxId(e.target.value)}
-                  className="w-24"
+                  className="w-24 tabular-nums"
                   min="1"
                 />
               </div>
+            </div>
+            <div className="space-y-1.5">
+              <span className="block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                Shiny Mode
+              </span>
               <div className="flex items-center gap-2">
-                <label className="text-sm text-muted-foreground whitespace-nowrap">
-                  Shiny Mode:
-                </label>
                 <button
                   type="button"
+                  role="switch"
+                  aria-checked={isShinyMode}
+                  aria-label="Toggle shiny mode"
                   onClick={() => {
                     setIsShinyMode(!isShinyMode);
-                    // Reset extracted colors when switching modes
                     setPokemonList((prev) =>
                       prev.map((p) => ({
                         ...p,
                         extractedColors: [],
                         extracted: false,
-                      }))
+                      })),
                     );
                   }}
-                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                    isShinyMode ? "bg-yellow-500" : "bg-gray-300"
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                    isShinyMode ? "bg-yellow-500" : "bg-muted"
                   }`}
                 >
                   <span
-                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    aria-hidden="true"
+                    className={`inline-block size-4 transform rounded-full bg-white transition-transform ${
                       isShinyMode ? "translate-x-6" : "translate-x-1"
                     }`}
                   />
@@ -409,40 +431,41 @@ export function AdminColorManagementTab() {
                   {isShinyMode ? "Shiny" : "Normal"}
                 </span>
               </div>
-              <Button
-                onClick={handleBatchUpdate}
-                disabled={batchProcessing || filteredPokemon.filter((p) => 
-                  isShinyMode ? p.shinySpriteUrl : p.spriteUrl
-                ).length === 0}
-                variant="default"
-              >
-                {batchProcessing ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                    Processing {batchProgress.current}/{batchProgress.total}...
-                  </>
-                ) : (
-                  `Batch Update All ${isShinyMode ? "(Shiny)" : ""}`
-                )}
-              </Button>
-              {batchProcessing && (
-                <span className="text-sm text-muted-foreground">
-                  Updating {isShinyMode ? "shiny " : ""}colors for all Pokemon...
-                </span>
-              )}
             </div>
-            <div className="text-sm text-muted-foreground">
-              Showing {filteredPokemon.length} of {pokemonList.length} Pokemon
-              {filteredPokemon.filter((p) => 
-                isShinyMode ? p.shinySpriteUrl : p.spriteUrl
-              ).length > 0 && (
-                <span className="ml-2">
-                  ({filteredPokemon.filter((p) => 
-                    isShinyMode ? p.shinySpriteUrl : p.spriteUrl
-                  ).length} with {isShinyMode ? "shiny " : ""}sprites)
-                </span>
+            <Button
+              onClick={handleBatchUpdate}
+              disabled={batchProcessing || spriteCount === 0}
+              variant="default"
+            >
+              {batchProcessing ? (
+                <>
+                  <Loader2
+                    className="mr-2 size-4 animate-spin"
+                    aria-hidden="true"
+                  />
+                  <span className="tabular-nums">
+                    Processing {batchProgress.current}/{batchProgress.total}…
+                  </span>
+                </>
+              ) : (
+                `Batch Update All${isShinyMode ? " (Shiny)" : ""}`
               )}
-            </div>
+            </Button>
+          </div>
+          <div
+            className="text-sm text-muted-foreground tabular-nums"
+            aria-live="polite"
+          >
+            Showing {filteredPokemon.length.toLocaleString()} of{" "}
+            {pokemonList.length.toLocaleString()} Pokémon
+            {spriteCount > 0
+              ? ` · ${spriteCount.toLocaleString()} with ${
+                  isShinyMode ? "shiny " : ""
+                }sprites`
+              : ""}
+            {batchProcessing
+              ? ` · Updating ${isShinyMode ? "shiny " : ""}colors…`
+              : ""}
           </div>
 
           <div className="rounded-md border">
@@ -461,14 +484,14 @@ export function AdminColorManagementTab() {
                 {filteredPokemon.length === 0 ? (
                   <TableRow>
                     <TableCell colSpan={6} className="text-center text-muted-foreground">
-                      No Pokemon found
+                      No Pokémon found.
                     </TableCell>
                   </TableRow>
                 ) : (
                   filteredPokemon.map((pokemon) => (
                     <TableRow key={pokemon.id}>
-                      <TableCell className="font-mono">#{pokemon.id}</TableCell>
-                      <TableCell className="font-medium">{pokemon.name}</TableCell>
+                      <TableCell className="font-mono tabular-nums" translate="no">#{pokemon.id}</TableCell>
+                      <TableCell className="font-medium capitalize">{pokemon.name}</TableCell>
                       <TableCell>
                         {(isShinyMode ? pokemon.shinySpriteUrl : pokemon.spriteUrl) ? (
                           <div className="relative w-16 h-16 flex items-center justify-center">
@@ -493,24 +516,29 @@ export function AdminColorManagementTab() {
                           {(isShinyMode ? pokemon.staticShinyColors : pokemon.staticColors).map((color, idx) => (
                             <div
                               key={idx}
-                              className="w-8 h-8 rounded border border-gray-300"
+                              className="size-8 rounded border"
                               style={{ backgroundColor: color }}
                               title={color}
+                              aria-label={`Static color ${idx + 1}: ${color}`}
                             />
                           ))}
                         </div>
                       </TableCell>
                       <TableCell>
                         {pokemon.extracting ? (
-                          <Loader2 className="h-4 w-4 animate-spin" />
+                          <Loader2
+                            className="size-4 animate-spin"
+                            aria-label="Extracting colors"
+                          />
                         ) : pokemon.extracted && pokemon.extractedColors.length > 0 ? (
                           <div className="flex gap-1">
                             {pokemon.extractedColors.slice(0, 3).map((color, idx) => (
                               <div
                                 key={idx}
-                                className="w-8 h-8 rounded border border-gray-300"
+                                className="size-8 rounded border"
                                 style={{ backgroundColor: color.hex }}
                                 title={`${color.hex} (${color.percentage.toFixed(1)}%)`}
+                                aria-label={`Extracted color ${idx + 1}: ${color.hex}, ${color.percentage.toFixed(1)}%`}
                               />
                             ))}
                           </div>
@@ -533,8 +561,11 @@ export function AdminColorManagementTab() {
                         >
                           {updating === pokemon.id ? (
                             <>
-                              <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                              Updating...
+                              <Loader2
+                                className="mr-2 size-4 animate-spin"
+                                aria-hidden="true"
+                              />
+                              Updating…
                             </>
                           ) : (
                             "Update Colors"

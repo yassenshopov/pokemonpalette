@@ -1,16 +1,29 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+  Copy,
+  ExternalLink,
+  Eye,
+  Gamepad2,
+  Lock,
+  LockOpen,
+  Palette,
+  ShieldCheck,
+  ShieldOff,
+  Trash2,
+  UserCheck,
+  UserX,
+} from "lucide-react";
+import { toast } from "sonner";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
@@ -19,17 +32,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-  PaginationEllipsis,
-} from "@/components/ui/pagination";
+  DataTable,
+  type ColumnDef,
+} from "@/components/admin/data-table";
+import { RelativeTime } from "@/components/admin/relative-time";
+import type { RowAction } from "@/components/admin/row-actions";
+import type { BulkAction } from "@/components/admin/bulk-action-bar";
 import { UserSheet } from "@/components/user-sheet";
+import { useAdminTable } from "@/hooks/use-admin-table";
 
-// User type matching Supabase response (snake_case)
 interface User {
   id: string;
   email: string | null;
@@ -42,385 +53,452 @@ interface User {
   locked: boolean;
   two_factor_enabled: boolean;
   totp_enabled: boolean;
+  is_admin: boolean;
   last_active_at: string | null;
   last_sign_in_at: string | null;
   created_at: string;
 }
 
-export function AdminUsersTab() {
-  const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState<number | "all">(25);
-  const [showAll, setShowAll] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
-  const [sheetOpen, setSheetOpen] = useState(false);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/admin/users");
-        
-        if (!response.ok) {
-          if (response.status === 403) {
-            setError("Access denied. Admin privileges required.");
-          } else if (response.status === 401) {
-            setError("Unauthorized. Please sign in.");
-          } else {
-            setError("Failed to fetch users");
-          }
-          return;
-        }
-
-        const data = await response.json();
-        setUsers(data.users || []);
-      } catch (err) {
-        console.error("Error fetching users:", err);
-        setError("Failed to load users");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUsers();
-  }, []);
-
-  // Calculate pagination - moved before conditional returns to follow Rules of Hooks
-  const totalUsers = users.length;
-  const effectivePageSize = showAll || pageSize === "all" ? totalUsers : pageSize;
-  const totalPages = effectivePageSize === totalUsers ? 1 : Math.ceil(totalUsers / effectivePageSize);
-  
-  const displayedUsers = useMemo(() => {
-    if (showAll || pageSize === "all") {
-      return users;
-    }
-    const startIndex = (currentPage - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-    return users.slice(startIndex, endIndex);
-  }, [users, currentPage, pageSize, showAll]);
-
-  // Reset to first page when page size changes
-  useEffect(() => {
-    if (!showAll && pageSize !== "all") {
-      const maxPage = Math.ceil(totalUsers / pageSize);
-      if (currentPage > maxPage) {
-        setCurrentPage(1);
-      }
-    }
-  }, [pageSize, totalUsers, showAll, currentPage]);
-
-  const formatDate = (date: Date | string | null) => {
-    if (!date) return "N/A";
-    const d = typeof date === "string" ? new Date(date) : date;
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    }).format(d);
-  };
-
-  const getUserDisplayName = (user: User) => {
-    if (user.first_name || user.last_name) {
-      return `${user.first_name || ""} ${user.last_name || ""}`.trim();
-    }
-    if (user.username) {
-      return user.username;
-    }
-    if (user.email) {
-      return user.email.split("@")[0];
-    }
-    return "User";
-  };
-
-  const getUserInitials = (user: User) => {
-    if (user.first_name || user.last_name) {
-      return `${user.first_name?.[0] || ""}${user.last_name?.[0] || ""}`.toUpperCase() || "U";
-    }
-    if (user.username) {
-      return user.username.substring(0, 2).toUpperCase();
-    }
-    if (user.email) {
-      return user.email.substring(0, 2).toUpperCase();
-    }
-    return "U";
-  };
-
-  const handlePageSizeChange = (value: string) => {
-    if (value === "all") {
-      setPageSize("all");
-      setShowAll(true);
-      setCurrentPage(1);
-    } else {
-      setPageSize(Number(value));
-      setShowAll(false);
-      setCurrentPage(1);
-    }
-  };
-
-  const getPageNumbers = () => {
-    const pages: (number | "ellipsis")[] = [];
-    const maxVisible = 5;
-    
-    if (totalPages <= maxVisible) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      if (currentPage <= 3) {
-        for (let i = 1; i <= 4; i++) {
-          pages.push(i);
-        }
-        pages.push("ellipsis");
-        pages.push(totalPages);
-      } else if (currentPage >= totalPages - 2) {
-        pages.push(1);
-        pages.push("ellipsis");
-        for (let i = totalPages - 3; i <= totalPages; i++) {
-          pages.push(i);
-        }
-      } else {
-        pages.push(1);
-        pages.push("ellipsis");
-        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-          pages.push(i);
-        }
-        pages.push("ellipsis");
-        pages.push(totalPages);
-      }
-    }
-    
-    return pages;
-  };
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="text-muted-foreground">Loading users...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="text-destructive">{error}</div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle>Users</CardTitle>
-              <CardDescription>
-                Total users: {totalUsers}
-                {!showAll && pageSize !== "all" && (
-                  <> • Showing {displayedUsers.length} of {totalUsers} (Page {currentPage} of {totalPages})</>
-                )}
-              </CardDescription>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Show:</span>
-              <Select
-                value={showAll ? "all" : String(pageSize)}
-                onValueChange={handlePageSizeChange}
-              >
-                <SelectTrigger className="w-[120px]">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="10">10 per page</SelectItem>
-                  <SelectItem value="25">25 per page</SelectItem>
-                  <SelectItem value="50">50 per page</SelectItem>
-                  <SelectItem value="100">100 per page</SelectItem>
-                  <SelectItem value="all">Show all</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>User</TableHead>
-                <TableHead>Username</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Banned</TableHead>
-                <TableHead>Locked</TableHead>
-                <TableHead>2FA</TableHead>
-                <TableHead>Last Active</TableHead>
-                <TableHead>Last Sign In</TableHead>
-                <TableHead>Created</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {displayedUsers.length === 0 ? (
-                <TableRow>
-                  <TableCell colSpan={9} className="text-center text-muted-foreground">
-                    No users found
-                  </TableCell>
-                </TableRow>
-              ) : (
-                displayedUsers.map((user) => (
-                  <TableRow 
-                    key={user.id}
-                    className="cursor-pointer hover:bg-muted/50"
-                    onClick={() => {
-                      setSelectedUser(user);
-                      setSheetOpen(true);
-                    }}
-                  >
-                    <TableCell>
-                      <div className="flex items-center gap-3">
-                        <Avatar className="h-10 w-10">
-                          <AvatarImage
-                            src={user.image_url || user.profile_image_url || undefined}
-                            alt={getUserDisplayName(user)}
-                          />
-                          <AvatarFallback>
-                            {getUserInitials(user)}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col min-w-0">
-                          <span className="font-medium text-sm truncate">
-                            {getUserDisplayName(user)}
-                          </span>
-                          <span className="text-xs text-muted-foreground truncate">
-                            {user.email || "No email"}
-                          </span>
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <span className="text-sm">{user.username || "N/A"}</span>
-                    </TableCell>
-                    <TableCell>
-                      <span className="text-xs font-mono text-muted-foreground truncate block max-w-[120px]">
-                        {user.id}
-                      </span>
-                    </TableCell>
-                    <TableCell>
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-                          user.banned
-                            ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                            : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
-                        }`}
-                      >
-                        {user.banned ? "Yes" : "No"}
-                      </span>
-                    </TableCell>
-                    <TableCell>
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-                          user.locked
-                            ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                            : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
-                        }`}
-                      >
-                        {user.locked ? "Yes" : "No"}
-                      </span>
-                    </TableCell>
-                    <TableCell>
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-                          user.two_factor_enabled || user.totp_enabled
-                            ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                            : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
-                        }`}
-                      >
-                        {user.two_factor_enabled || user.totp_enabled ? "Yes" : "No"}
-                      </span>
-                    </TableCell>
-                    <TableCell className="text-xs text-muted-foreground">
-                      {formatDate(user.last_active_at)}
-                    </TableCell>
-                    <TableCell className="text-xs text-muted-foreground">
-                      {formatDate(user.last_sign_in_at)}
-                    </TableCell>
-                    <TableCell className="text-xs text-muted-foreground">
-                      {formatDate(user.created_at)}
-                    </TableCell>
-                  </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
-          
-          {/* Pagination Controls */}
-          {!showAll && pageSize !== "all" && totalPages > 1 && (
-            <div className="flex items-center justify-between mt-4 pt-4 border-t">
-              <div className="text-sm text-muted-foreground">
-                Showing {((currentPage - 1) * (pageSize as number)) + 1} to {Math.min(currentPage * (pageSize as number), totalUsers)} of {totalUsers} users
-              </div>
-              <Pagination>
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (currentPage > 1) {
-                          setCurrentPage((prev) => prev - 1);
-                        }
-                      }}
-                      className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
-                    />
-                  </PaginationItem>
-                  
-                  {getPageNumbers().map((page, index) => (
-                    <PaginationItem key={index}>
-                      {page === "ellipsis" ? (
-                        <PaginationEllipsis />
-                      ) : (
-                        <PaginationLink
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setCurrentPage(page);
-                          }}
-                          isActive={currentPage === page}
-                          className="cursor-pointer"
-                        >
-                          {page}
-                        </PaginationLink>
-                      )}
-                    </PaginationItem>
-                  ))}
-                  
-                  <PaginationItem>
-                    <PaginationNext
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (currentPage < totalPages) {
-                          setCurrentPage((prev) => prev + 1);
-                        }
-                      }}
-                      className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
-                    />
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
-      <UserSheet
-        user={selectedUser}
-        open={sheetOpen}
-        onOpenChange={setSheetOpen}
-      />
-    </div>
-  );
+function getUserDisplayName(user: User) {
+  const name = `${user.first_name ?? ""} ${user.last_name ?? ""}`.trim();
+  if (name) return name;
+  if (user.username) return user.username;
+  if (user.email) return user.email.split("@")[0];
+  return "User";
 }
 
+function getUserInitials(user: User) {
+  if (user.first_name || user.last_name) {
+    return `${user.first_name?.[0] ?? ""}${user.last_name?.[0] ?? ""}`
+      .toUpperCase() || "U";
+  }
+  if (user.username) return user.username.slice(0, 2).toUpperCase();
+  if (user.email) return user.email.slice(0, 2).toUpperCase();
+  return "U";
+}
+
+async function copy(text: string, label: string) {
+  try {
+    await navigator.clipboard.writeText(text);
+    toast.success(`${label} copied`);
+  } catch {
+    toast.error(`Couldn’t copy ${label}`);
+  }
+}
+
+export function AdminUsersTab() {
+  const router = useRouter();
+
+  const table = useAdminTable<User>({
+    endpoint: "/api/admin/users",
+    filterKeys: [
+      "status",
+      "two_factor",
+      "is_admin",
+      "created_from",
+      "created_to",
+    ],
+    sortableFields: [
+      "created_at",
+      "last_active_at",
+      "last_sign_in_at",
+      "email",
+      "username",
+    ],
+    defaultSort: { field: "created_at", dir: "desc" },
+    getRowId: (row) => row.id,
+  });
+
+  const [sheetUser, setSheetUser] = useState<User | null>(null);
+  const [sheetOpen, setSheetOpen] = useState(false);
+
+  const openSheet = (user: User) => {
+    setSheetUser(user);
+    setSheetOpen(true);
+  };
+
+  const mutate = async (
+    path: string,
+    init: RequestInit,
+    successMessage: string,
+  ) => {
+    try {
+      const res = await fetch(path, init);
+      const data = res.headers
+        .get("content-type")
+        ?.includes("application/json")
+        ? await res.json()
+        : null;
+      if (!res.ok) {
+        throw new Error(data?.error ?? `Request failed (${res.status})`);
+      }
+      toast.success(successMessage);
+      table.refetch();
+    } catch (err) {
+      toast.error((err as Error).message || "Something went wrong.");
+    }
+  };
+
+  const patchUser = (id: string, body: Record<string, unknown>, msg: string) =>
+    mutate(
+      `/api/admin/users/${id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      },
+      msg,
+    );
+
+  const deleteUser = (id: string) =>
+    mutate(`/api/admin/users/${id}`, { method: "DELETE" }, "User deleted");
+
+  const bulkUsers = (ids: string[], op: string, msg: string) =>
+    mutate(
+      `/api/admin/users/bulk`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids, op }),
+      },
+      msg,
+    );
+
+  const columns = useMemo<ColumnDef<User>[]>(
+    () => [
+      {
+        id: "user",
+        header: "User",
+        accessorFn: (row) => getUserDisplayName(row),
+        cell: ({ row }) => {
+          const user = row.original;
+          return (
+            <div className="flex min-w-0 items-center gap-3">
+              <Avatar className="size-9">
+                <AvatarImage
+                  src={user.image_url ?? user.profile_image_url ?? undefined}
+                  alt=""
+                />
+                <AvatarFallback>{getUserInitials(user)}</AvatarFallback>
+              </Avatar>
+              <div className="flex min-w-0 flex-col">
+                <span className="truncate text-sm font-medium">
+                  {getUserDisplayName(user)}
+                </span>
+                <span className="truncate text-xs text-muted-foreground">
+                  {user.email ?? "No email"}
+                </span>
+              </div>
+            </div>
+          );
+        },
+        meta: { label: "User" },
+      },
+      {
+        id: "username",
+        header: "Username",
+        accessorFn: (row) => row.username ?? "",
+        cell: ({ row }) => (
+          <span className="text-sm">{row.original.username ?? "—"}</span>
+        ),
+        meta: { label: "Username", sortField: "username" },
+      },
+      {
+        id: "id",
+        header: "ID",
+        accessorFn: (row) => row.id,
+        cell: ({ row }) => (
+          <span
+            className="block max-w-[140px] truncate font-mono text-xs text-muted-foreground"
+            translate="no"
+            title={row.original.id}
+          >
+            {row.original.id}
+          </span>
+        ),
+        meta: { label: "ID", defaultHidden: true },
+      },
+      {
+        id: "status",
+        header: "Status",
+        cell: ({ row }) => {
+          const u = row.original;
+          return (
+            <div className="flex flex-wrap gap-1">
+              {u.banned ? (
+                <Badge variant="destructive">Banned</Badge>
+              ) : u.locked ? (
+                <Badge variant="destructive">Locked</Badge>
+              ) : (
+                <Badge variant="secondary">Active</Badge>
+              )}
+              {u.is_admin ? <Badge variant="default">Admin</Badge> : null}
+            </div>
+          );
+        },
+        meta: { label: "Status" },
+      },
+      {
+        id: "two_factor",
+        header: "2FA",
+        cell: ({ row }) => {
+          const on =
+            row.original.two_factor_enabled || row.original.totp_enabled;
+          return (
+            <Badge variant={on ? "default" : "outline"}>
+              {on ? "On" : "Off"}
+            </Badge>
+          );
+        },
+        meta: { label: "2FA" },
+      },
+      {
+        id: "last_active_at",
+        header: "Last Active",
+        cell: ({ row }) => (
+          <RelativeTime
+            value={row.original.last_active_at}
+            className="text-xs text-muted-foreground"
+          />
+        ),
+        meta: { label: "Last Active", sortField: "last_active_at" },
+      },
+      {
+        id: "last_sign_in_at",
+        header: "Last Sign In",
+        cell: ({ row }) => (
+          <RelativeTime
+            value={row.original.last_sign_in_at}
+            className="text-xs text-muted-foreground"
+          />
+        ),
+        meta: {
+          label: "Last Sign In",
+          sortField: "last_sign_in_at",
+          defaultHidden: true,
+        },
+      },
+      {
+        id: "created_at",
+        header: "Created",
+        cell: ({ row }) => (
+          <RelativeTime
+            value={row.original.created_at}
+            className="text-xs text-muted-foreground"
+          />
+        ),
+        meta: { label: "Created", sortField: "created_at" },
+      },
+    ],
+    [],
+  );
+
+  const rowActions = (user: User): RowAction[] => [
+    {
+      id: "view",
+      label: "View details",
+      icon: <Eye className="size-4" aria-hidden="true" />,
+      onSelect: () => openSheet(user),
+    },
+    {
+      id: "open-full",
+      label: "Open full page",
+      icon: <ExternalLink className="size-4" aria-hidden="true" />,
+      onSelect: () => router.push(`/admin/users/${user.id}`),
+    },
+    {
+      id: "copy-id",
+      label: "Copy ID",
+      icon: <Copy className="size-4" aria-hidden="true" />,
+      onSelect: () => copy(user.id, "ID"),
+    },
+    ...(user.email
+      ? [
+          {
+            id: "copy-email",
+            label: "Copy email",
+            icon: <Copy className="size-4" aria-hidden="true" />,
+            onSelect: () => copy(user.email as string, "Email"),
+          },
+        ]
+      : []),
+    {
+      id: "open-games",
+      label: "View games",
+      icon: <Gamepad2 className="size-4" aria-hidden="true" />,
+      onSelect: () => router.push(`/admin/game?user_id=${user.id}`),
+      separatorBefore: true,
+    },
+    {
+      id: "open-palettes",
+      label: "View palettes",
+      icon: <Palette className="size-4" aria-hidden="true" />,
+      onSelect: () => router.push(`/admin/palettes?user_id=${user.id}`),
+    },
+    user.banned
+      ? {
+          id: "unban",
+          label: "Unban user",
+          icon: <UserCheck className="size-4" aria-hidden="true" />,
+          onSelect: () =>
+            patchUser(user.id, { banned: false }, "User unbanned"),
+          separatorBefore: true,
+        }
+      : {
+          id: "ban",
+          label: "Ban user",
+          icon: <UserX className="size-4" aria-hidden="true" />,
+          onSelect: () => patchUser(user.id, { banned: true }, "User banned"),
+          separatorBefore: true,
+          destructive: true,
+        },
+    user.locked
+      ? {
+          id: "unlock",
+          label: "Unlock user",
+          icon: <LockOpen className="size-4" aria-hidden="true" />,
+          onSelect: () =>
+            patchUser(user.id, { locked: false }, "User unlocked"),
+        }
+      : {
+          id: "lock",
+          label: "Lock user",
+          icon: <Lock className="size-4" aria-hidden="true" />,
+          onSelect: () => patchUser(user.id, { locked: true }, "User locked"),
+        },
+    user.is_admin
+      ? {
+          id: "demote",
+          label: "Remove admin",
+          icon: <ShieldOff className="size-4" aria-hidden="true" />,
+          onSelect: () =>
+            patchUser(user.id, { is_admin: false }, "Admin removed"),
+        }
+      : {
+          id: "promote",
+          label: "Make admin",
+          icon: <ShieldCheck className="size-4" aria-hidden="true" />,
+          onSelect: () =>
+            patchUser(user.id, { is_admin: true }, "Promoted to admin"),
+        },
+    {
+      id: "delete",
+      label: "Delete user",
+      icon: <Trash2 className="size-4" aria-hidden="true" />,
+      onSelect: () => deleteUser(user.id),
+      destructive: true,
+      separatorBefore: true,
+    },
+  ];
+
+  const bulkActions: BulkAction[] = [
+    {
+      id: "ban",
+      label: "Ban",
+      icon: <UserX className="size-4" aria-hidden="true" />,
+      onRun: (ids) => bulkUsers(ids, "ban", `Banned ${ids.length} users`),
+      confirm: {
+        title: "Ban selected users?",
+        description: (count) =>
+          `This will ban ${count.toLocaleString()} user${count === 1 ? "" : "s"}. You can unban them later.`,
+        confirmLabel: "Ban",
+      },
+      destructive: true,
+    },
+    {
+      id: "unban",
+      label: "Unban",
+      icon: <UserCheck className="size-4" aria-hidden="true" />,
+      onRun: (ids) => bulkUsers(ids, "unban", `Unbanned ${ids.length} users`),
+    },
+    {
+      id: "delete",
+      label: "Delete",
+      icon: <Trash2 className="size-4" aria-hidden="true" />,
+      onRun: (ids) => bulkUsers(ids, "delete", `Deleted ${ids.length} users`),
+      confirm: {
+        title: "Delete selected users?",
+        description: (count) =>
+          `This will soft-delete ${count.toLocaleString()} user${count === 1 ? "" : "s"}. Their data is retained but they’ll be hidden from the app.`,
+        confirmLabel: "Delete",
+      },
+      destructive: true,
+    },
+  ];
+
+  const filtersSlot = (
+    <>
+      <Select
+        value={table.state.filters.status ?? "all"}
+        onValueChange={(v) =>
+          table.setFilter("status", v === "all" ? undefined : v)
+        }
+      >
+        <SelectTrigger className="h-9 w-[130px]" aria-label="Filter by status">
+          <SelectValue placeholder="Status" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">All statuses</SelectItem>
+          <SelectItem value="active">Active</SelectItem>
+          <SelectItem value="banned">Banned</SelectItem>
+          <SelectItem value="locked">Locked</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select
+        value={table.state.filters.two_factor ?? "all"}
+        onValueChange={(v) =>
+          table.setFilter("two_factor", v === "all" ? undefined : v)
+        }
+      >
+        <SelectTrigger className="h-9 w-[110px]" aria-label="Filter by 2FA">
+          <SelectValue placeholder="2FA" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Any 2FA</SelectItem>
+          <SelectItem value="true">2FA on</SelectItem>
+          <SelectItem value="false">2FA off</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select
+        value={table.state.filters.is_admin ?? "all"}
+        onValueChange={(v) =>
+          table.setFilter("is_admin", v === "all" ? undefined : v)
+        }
+      >
+        <SelectTrigger className="h-9 w-[110px]" aria-label="Filter by role">
+          <SelectValue placeholder="Role" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Any role</SelectItem>
+          <SelectItem value="true">Admins</SelectItem>
+          <SelectItem value="false">Users</SelectItem>
+        </SelectContent>
+      </Select>
+    </>
+  );
+
+  return (
+    <>
+      <DataTable
+        table={table}
+        columns={columns}
+        getRowId={(row) => row.id}
+        resourceLabel="users"
+        searchPlaceholder="Search name, email, username, ID…"
+        filtersSlot={filtersSlot}
+        rowActions={rowActions}
+        bulkActions={bulkActions}
+        onRowClick={openSheet}
+        storageKey="admin-users"
+        exportEndpoint="/api/admin/users"
+        exportFilename="users"
+      />
+      <UserSheet user={sheetUser} open={sheetOpen} onOpenChange={setSheetOpen} />
+      <noscript>
+        <Link href="/admin" className="text-sm underline">
+          Enable JavaScript to use the admin console.
+        </Link>
+      </noscript>
+    </>
+  );
+}

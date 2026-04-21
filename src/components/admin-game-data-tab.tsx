@@ -1,21 +1,28 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  CalendarDays,
+  Calendar,
+  Copy,
+  ExternalLink,
+  Eye,
+  Gamepad2,
+  LayoutGrid,
+  Sparkles,
+  Target,
+  Trash2,
+  Trophy,
+  User as UserIcon,
+  Users,
+} from "lucide-react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Select,
   SelectContent,
@@ -23,15 +30,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { KpiCard } from "@/components/admin/kpi-card";
+import { GameCalendar } from "@/components/admin/game-calendar";
 import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-  PaginationEllipsis,
-} from "@/components/ui/pagination";
+  DataTable,
+  type ColumnDef,
+} from "@/components/admin/data-table";
+import { RelativeTime } from "@/components/admin/relative-time";
+import { formatAbsoluteDate } from "@/lib/admin/format";
+import type { RowAction } from "@/components/admin/row-actions";
+import type { BulkAction } from "@/components/admin/bulk-action-bar";
+import { useAdminTable } from "@/hooks/use-admin-table";
+
+type ViewId = "attempts" | "calendar" | "daily" | "by_user";
 
 interface GameAttempt {
   id: string;
@@ -51,662 +62,699 @@ interface GameAttempt {
     username: string | null;
     first_name: string | null;
     last_name: string | null;
-  };
+  } | null;
+}
+
+interface DailyRow {
+  date: string;
+  target_pokemon_id: number;
+  attempts_count: number;
+  wins: number;
+  avg_attempts: number;
+  avg_hints: number;
+}
+
+interface ByUserRow {
+  user_id: string;
+  attempts_count: number;
+  wins: number;
+  last_played: string | null;
+  users?: GameAttempt["users"];
 }
 
 interface GameStats {
   totalAttempts: number;
   wins: number;
   losses: number;
-  winRate: string;
-  averageAttempts: string;
-  averageHintsUsed: string;
+  winRate: number;
+  avgAttempts: number;
+  avgHints: number;
+  uniquePlayers: number;
+  uniqueDates: number;
+  topTargets: Array<{ target_pokemon_id: number; count: number }>;
 }
 
-type ViewMode = "daily-games" | "users";
+function officialArtworkUrl(pokemonId: number, shiny = false) {
+  const suffix = shiny ? "/shiny" : "";
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${suffix}/${pokemonId}.png`;
+}
 
-export function AdminGameDataTab() {
-  const [gameAttempts, setGameAttempts] = useState<GameAttempt[]>([]);
+function ownerLabel(u: GameAttempt["users"] | null | undefined, fallback: string) {
+  if (!u) return fallback;
+  const name = `${u.first_name ?? ""} ${u.last_name ?? ""}`.trim();
+  return name || u.username || u.email || u.id || fallback;
+}
+
+async function copyText(text: string, label: string) {
+  try {
+    await navigator.clipboard.writeText(text);
+    toast.success(`${label} copied`);
+  } catch {
+    toast.error(`Couldn’t copy ${label}`);
+  }
+}
+
+function PokemonBadge({
+  id,
+  shiny,
+  size = 32,
+}: {
+  id: number;
+  shiny?: boolean;
+  size?: number;
+}) {
+  return (
+    <div
+      className="relative shrink-0 overflow-hidden rounded-md bg-muted"
+      style={{ width: size, height: size }}
+    >
+      <Image
+        src={officialArtworkUrl(id, shiny)}
+        alt=""
+        fill
+        sizes={`${size}px`}
+        className="object-contain"
+        unoptimized
+      />
+    </div>
+  );
+}
+
+function GameStatsStrip() {
   const [stats, setStats] = useState<GameStats | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState<number | "all">(25);
-  const [showAll, setShowAll] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>("daily-games");
 
   useEffect(() => {
-    const fetchGameData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/admin/game-data");
-
-        if (!response.ok) {
-          if (response.status === 403) {
-            setError("Access denied. Admin privileges required.");
-          } else if (response.status === 401) {
-            setError("Unauthorized. Please sign in.");
-          } else {
-            setError("Failed to fetch game data");
-          }
-          return;
+    let cancelled = false;
+    fetch("/api/admin/game-data/stats", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("failed"))))
+      .then((data) => {
+        if (!cancelled) {
+          setStats(data);
+          setLoading(false);
         }
-
-        const data = await response.json();
-        setGameAttempts(data.gameAttempts || []);
-        setStats(data.stats || null);
-      } catch (err) {
-        console.error("Error fetching game data:", err);
-        setError("Failed to load game data");
-      } finally {
-        setLoading(false);
-      }
+      })
+      .catch(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
     };
-
-    fetchGameData();
   }, []);
-
-  const getUserDisplayName = useCallback((user: GameAttempt["users"]) => {
-    if (!user) return "Unknown";
-    if (user.first_name || user.last_name) {
-      return `${user.first_name || ""} ${user.last_name || ""}`.trim();
-    }
-    if (user.username) {
-      return user.username;
-    }
-    if (user.email) {
-      return user.email.split("@")[0];
-    }
-    return "User";
-  }, []);
-
-  // Group by daily games (by date)
-  const groupedByDailyGames = useMemo(() => {
-    const grouped = new Map<string, GameAttempt[]>();
-
-    gameAttempts.forEach((attempt) => {
-      const dateKey = attempt.date;
-      if (!grouped.has(dateKey)) {
-        grouped.set(dateKey, []);
-      }
-      grouped.get(dateKey)!.push(attempt);
-    });
-
-    // Convert to array and sort by date (newest first)
-    return Array.from(grouped.entries())
-      .map(([date, attempts]) => ({
-        date,
-        attempts: attempts.sort(
-          (a, b) =>
-            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-        ),
-      }))
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  }, [gameAttempts]);
-
-  // Group by users
-  const groupedByUsers = useMemo(() => {
-    const grouped = new Map<
-      string,
-      { user: GameAttempt["users"]; attempts: GameAttempt[] }
-    >();
-
-    gameAttempts.forEach((attempt) => {
-      const userId = attempt.user_id;
-      if (!grouped.has(userId)) {
-        grouped.set(userId, {
-          user: attempt.users || undefined,
-          attempts: [],
-        });
-      }
-      grouped.get(userId)!.attempts.push(attempt);
-    });
-
-    // Convert to array and sort by user name
-    return Array.from(grouped.values()).sort((a, b) => {
-      const nameA = getUserDisplayName(a.user).toLowerCase();
-      const nameB = getUserDisplayName(b.user).toLowerCase();
-      return nameA.localeCompare(nameB);
-    });
-  }, [gameAttempts, getUserDisplayName]);
-
-  const totalItems =
-    viewMode === "daily-games"
-      ? groupedByDailyGames.length
-      : groupedByUsers.length;
-  const effectivePageSize =
-    showAll || pageSize === "all" ? totalItems : pageSize;
-  const totalPages =
-    effectivePageSize === totalItems
-      ? 1
-      : Math.ceil(totalItems / effectivePageSize);
-
-  const displayedItems = useMemo(() => {
-    const items =
-      viewMode === "daily-games" ? groupedByDailyGames : groupedByUsers;
-    if (showAll || pageSize === "all") {
-      return items;
-    }
-    const startIndex = (currentPage - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-    return items.slice(startIndex, endIndex);
-  }, [
-    viewMode,
-    groupedByDailyGames,
-    groupedByUsers,
-    currentPage,
-    pageSize,
-    showAll,
-  ]);
-
-  useEffect(() => {
-    if (!showAll && pageSize !== "all") {
-      const maxPage = Math.ceil(totalItems / pageSize);
-      if (currentPage > maxPage) {
-        setCurrentPage(1);
-      }
-    }
-  }, [pageSize, totalItems, showAll, currentPage, viewMode]);
-
-  // Reset to first page when view mode changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [viewMode]);
-
-  const formatDate = (date: Date | string | null) => {
-    if (!date) return "N/A";
-    const d = typeof date === "string" ? new Date(date) : date;
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }).format(d);
-  };
-
-  const formatDateTime = (date: Date | string | null) => {
-    if (!date) return "N/A";
-    const d = typeof date === "string" ? new Date(date) : date;
-    return new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    }).format(d);
-  };
-
-  const handlePageSizeChange = (value: string) => {
-    if (value === "all") {
-      setPageSize("all");
-      setShowAll(true);
-      setCurrentPage(1);
-    } else {
-      setPageSize(Number(value));
-      setShowAll(false);
-      setCurrentPage(1);
-    }
-  };
-
-  const getPageNumbers = () => {
-    const pages: (number | "ellipsis")[] = [];
-    const maxVisible = 5;
-
-    if (totalPages <= maxVisible) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      if (currentPage <= 3) {
-        for (let i = 1; i <= 4; i++) {
-          pages.push(i);
-        }
-        pages.push("ellipsis");
-        pages.push(totalPages);
-      } else if (currentPage >= totalPages - 2) {
-        pages.push(1);
-        pages.push("ellipsis");
-        for (let i = totalPages - 3; i <= totalPages; i++) {
-          pages.push(i);
-        }
-      } else {
-        pages.push(1);
-        pages.push("ellipsis");
-        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-          pages.push(i);
-        }
-        pages.push("ellipsis");
-        pages.push(totalPages);
-      }
-    }
-
-    return pages;
-  };
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center p-8">
-        <div className="text-muted-foreground">Loading game data...</div>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <Skeleton key={i} className="h-24 rounded-lg" />
+        ))}
       </div>
     );
   }
+  if (!stats) return null;
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <KpiCard
+        label="Total attempts"
+        value={stats.totalAttempts.toLocaleString()}
+        icon={<Gamepad2 className="size-4" aria-hidden="true" />}
+      />
+      <KpiCard
+        label="Win rate"
+        value={`${stats.winRate}%`}
+        icon={<Trophy className="size-4" aria-hidden="true" />}
+      />
+      <KpiCard
+        label="Avg attempts"
+        value={stats.avgAttempts.toFixed(2)}
+        icon={<Target className="size-4" aria-hidden="true" />}
+      />
+      <KpiCard
+        label="Unique players"
+        value={stats.uniquePlayers.toLocaleString()}
+        icon={<Users className="size-4" aria-hidden="true" />}
+      />
+    </div>
+  );
+}
 
-  if (error) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="text-destructive">{error}</div>
-      </div>
+// ---------------------------------------------------------------------------
+// Attempts view (default)
+// ---------------------------------------------------------------------------
+
+function AttemptsView() {
+  const router = useRouter();
+  const table = useAdminTable<GameAttempt>({
+    endpoint: "/api/admin/game-data",
+    filterKeys: [
+      "won",
+      "user_id",
+      "target_pokemon_id",
+      "date_from",
+      "date_to",
+      "created_from",
+      "created_to",
+    ],
+    sortableFields: [
+      "created_at",
+      "date",
+      "attempts",
+      "hints_used",
+      "target_pokemon_id",
+    ],
+    defaultSort: { field: "created_at", dir: "desc" },
+    extraParams: { view: "attempts" },
+    getRowId: (row) => row.id,
+  });
+
+  const mutate = async (path: string, init: RequestInit, msg: string) => {
+    try {
+      const res = await fetch(path, init);
+      const data = res.headers
+        .get("content-type")
+        ?.includes("application/json")
+        ? await res.json()
+        : null;
+      if (!res.ok) throw new Error(data?.error ?? `Request failed (${res.status})`);
+      toast.success(msg);
+      table.refetch();
+    } catch (err) {
+      toast.error((err as Error).message || "Something went wrong.");
+    }
+  };
+
+  const deleteOne = (id: string) =>
+    mutate(`/api/admin/game-data/${id}`, { method: "DELETE" }, "Attempt deleted");
+  const deleteBulk = (ids: string[]) =>
+    mutate(
+      `/api/admin/game-data/bulk`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids }),
+      },
+      `Deleted ${ids.length} attempts`,
     );
-  }
+
+  const columns = useMemo<ColumnDef<GameAttempt>[]>(
+    () => [
+      {
+        id: "target",
+        header: "Target",
+        cell: ({ row }) => {
+          const a = row.original;
+          return (
+            <div className="flex min-w-0 items-center gap-2">
+              <PokemonBadge id={a.target_pokemon_id} shiny={a.is_shiny} />
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                    #{a.target_pokemon_id.toString().padStart(4, "0")}
+                  </span>
+                  {a.is_shiny ? (
+                    <Sparkles
+                      className="size-3.5 text-amber-500"
+                      aria-label="Shiny"
+                    />
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          );
+        },
+        meta: { label: "Target", sortField: "target_pokemon_id" },
+      },
+      {
+        id: "result",
+        header: "Result",
+        cell: ({ row }) =>
+          row.original.won ? (
+            <Badge variant="default">Win</Badge>
+          ) : (
+            <Badge variant="secondary">Loss</Badge>
+          ),
+        meta: { label: "Result" },
+      },
+      {
+        id: "attempts",
+        header: "Attempts",
+        cell: ({ row }) => (
+          <span className="tabular-nums">{row.original.attempts}</span>
+        ),
+        meta: { label: "Attempts", sortField: "attempts", align: "right" },
+      },
+      {
+        id: "hints_used",
+        header: "Hints",
+        cell: ({ row }) => (
+          <span className="tabular-nums">{row.original.hints_used}</span>
+        ),
+        meta: {
+          label: "Hints",
+          sortField: "hints_used",
+          align: "right",
+          defaultHidden: true,
+        },
+      },
+      {
+        id: "user",
+        header: "Player",
+        cell: ({ row }) => {
+          const a = row.original;
+          return (
+            <div className="flex min-w-0 flex-col">
+              <span className="truncate text-sm">
+                {ownerLabel(a.users, a.user_id)}
+              </span>
+              {a.users?.email ? (
+                <span className="truncate text-xs text-muted-foreground">
+                  {a.users.email}
+                </span>
+              ) : null}
+            </div>
+          );
+        },
+        meta: { label: "Player" },
+      },
+      {
+        id: "date",
+        header: "Puzzle date",
+        cell: ({ row }) => (
+          <span className="tabular-nums text-muted-foreground">
+            {formatAbsoluteDate(row.original.date)}
+          </span>
+        ),
+        meta: { label: "Puzzle date", sortField: "date" },
+      },
+      {
+        id: "created_at",
+        header: "Played",
+        cell: ({ row }) => (
+          <RelativeTime
+            value={row.original.created_at}
+            className="text-xs text-muted-foreground"
+          />
+        ),
+        meta: { label: "Played", sortField: "created_at" },
+      },
+    ],
+    [],
+  );
+
+  const rowActions = (a: GameAttempt): RowAction[] => [
+    {
+      id: "view",
+      label: "View attempt",
+      icon: <Eye className="size-4" aria-hidden="true" />,
+      onSelect: () => router.push(`/admin/game/${a.id}`),
+    },
+    {
+      id: "open-user",
+      label: "View player",
+      icon: <UserIcon className="size-4" aria-hidden="true" />,
+      onSelect: () => router.push(`/admin/users/${a.user_id}`),
+    },
+    {
+      id: "copy-id",
+      label: "Copy attempt ID",
+      icon: <Copy className="size-4" aria-hidden="true" />,
+      onSelect: () => copyText(a.id, "Attempt ID"),
+      separatorBefore: true,
+    },
+    {
+      id: "delete",
+      label: "Delete attempt",
+      icon: <Trash2 className="size-4" aria-hidden="true" />,
+      onSelect: () => deleteOne(a.id),
+      destructive: true,
+      separatorBefore: true,
+    },
+  ];
+
+  const bulkActions: BulkAction[] = [
+    {
+      id: "delete",
+      label: "Delete",
+      icon: <Trash2 className="size-4" aria-hidden="true" />,
+      onRun: deleteBulk,
+      destructive: true,
+      confirm: {
+        title: "Delete selected attempts?",
+        description: (count) =>
+          `This permanently deletes ${count.toLocaleString()} attempt${count === 1 ? "" : "s"}. This cannot be undone.`,
+        confirmLabel: "Delete",
+      },
+    },
+  ];
+
+  const filtersSlot = (
+    <Select
+      value={table.state.filters.won ?? "all"}
+      onValueChange={(v) => table.setFilter("won", v === "all" ? undefined : v)}
+    >
+      <SelectTrigger className="h-9 w-[120px]" aria-label="Filter by result">
+        <SelectValue placeholder="Result" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="all">All results</SelectItem>
+        <SelectItem value="true">Wins only</SelectItem>
+        <SelectItem value="false">Losses only</SelectItem>
+      </SelectContent>
+    </Select>
+  );
+
+  return (
+    <DataTable
+      table={table}
+      columns={columns}
+      getRowId={(row) => row.id}
+      resourceLabel="attempts"
+      searchPlaceholder="Search by user ID…"
+      filtersSlot={filtersSlot}
+      rowActions={rowActions}
+      bulkActions={bulkActions}
+      onRowClick={(a) => router.push(`/admin/game/${a.id}`)}
+      storageKey="admin-game-attempts"
+      exportEndpoint="/api/admin/game-data"
+      exportParams={{ view: "attempts" }}
+      exportFilename="game-attempts"
+    />
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Daily puzzles view
+// ---------------------------------------------------------------------------
+
+function DailyView() {
+  const router = useRouter();
+  const table = useAdminTable<DailyRow>({
+    endpoint: "/api/admin/game-data",
+    filterKeys: [],
+    sortableFields: ["date"],
+    defaultSort: { field: "date", dir: "desc" },
+    extraParams: { view: "daily" },
+    getRowId: (row) => row.date,
+  });
+
+  const columns = useMemo<ColumnDef<DailyRow>[]>(
+    () => [
+      {
+        id: "date",
+        header: "Date",
+        cell: ({ row }) => (
+          <div className="flex items-center gap-2">
+            <Calendar
+              className="size-4 text-muted-foreground"
+              aria-hidden="true"
+            />
+            <span className="tabular-nums">
+              {formatAbsoluteDate(row.original.date)}
+            </span>
+          </div>
+        ),
+        meta: { label: "Date", sortField: "date" },
+      },
+      {
+        id: "target",
+        header: "Target",
+        cell: ({ row }) => (
+          <div className="flex items-center gap-2">
+            <PokemonBadge id={row.original.target_pokemon_id} />
+            <span className="font-mono text-xs tabular-nums text-muted-foreground">
+              #{row.original.target_pokemon_id.toString().padStart(4, "0")}
+            </span>
+          </div>
+        ),
+        meta: { label: "Target" },
+      },
+      {
+        id: "attempts_count",
+        header: "Attempts",
+        cell: ({ row }) => (
+          <span className="tabular-nums">
+            {row.original.attempts_count.toLocaleString()}
+          </span>
+        ),
+        meta: { label: "Attempts", align: "right" },
+      },
+      {
+        id: "win_rate",
+        header: "Win rate",
+        cell: ({ row }) => {
+          const rate =
+            row.original.attempts_count > 0
+              ? (row.original.wins / row.original.attempts_count) * 100
+              : 0;
+          return (
+            <span className="tabular-nums">
+              {rate.toFixed(1)}%
+              <span className="ml-2 text-xs text-muted-foreground">
+                ({row.original.wins.toLocaleString()}/
+                {row.original.attempts_count.toLocaleString()})
+              </span>
+            </span>
+          );
+        },
+        meta: { label: "Win rate", align: "right" },
+      },
+      {
+        id: "avg_attempts",
+        header: "Avg attempts",
+        cell: ({ row }) => (
+          <span className="tabular-nums">
+            {Number(row.original.avg_attempts).toFixed(2)}
+          </span>
+        ),
+        meta: { label: "Avg attempts", align: "right" },
+      },
+      {
+        id: "avg_hints",
+        header: "Avg hints",
+        cell: ({ row }) => (
+          <span className="tabular-nums">
+            {Number(row.original.avg_hints).toFixed(2)}
+          </span>
+        ),
+        meta: { label: "Avg hints", align: "right" },
+      },
+    ],
+    [],
+  );
+
+  const rowActions = (row: DailyRow): RowAction[] => [
+    {
+      id: "open-attempts",
+      label: "See all attempts",
+      icon: <ExternalLink className="size-4" aria-hidden="true" />,
+      onSelect: () =>
+        router.push(
+          `/admin/game?view=attempts&date_from=${row.date}&date_to=${row.date}`,
+        ),
+    },
+  ];
+
+  return (
+    <DataTable
+      table={table}
+      columns={columns}
+      getRowId={(row) => row.date}
+      resourceLabel="daily puzzles"
+      searchPlaceholder="Search by date (YYYY-MM-DD)…"
+      rowActions={rowActions}
+      onRowClick={(row) =>
+        router.push(
+          `/admin/game?view=attempts&date_from=${row.date}&date_to=${row.date}`,
+        )
+      }
+      storageKey="admin-game-daily"
+      exportEndpoint="/api/admin/game-data"
+      exportParams={{ view: "daily" }}
+      exportFilename="game-daily"
+    />
+  );
+}
+
+// ---------------------------------------------------------------------------
+// By-user view
+// ---------------------------------------------------------------------------
+
+function ByUserView() {
+  const router = useRouter();
+  const table = useAdminTable<ByUserRow>({
+    endpoint: "/api/admin/game-data",
+    filterKeys: [],
+    sortableFields: ["attempts_count"],
+    defaultSort: { field: "attempts_count", dir: "desc" },
+    extraParams: { view: "by_user" },
+    getRowId: (row) => row.user_id,
+  });
+
+  const columns = useMemo<ColumnDef<ByUserRow>[]>(
+    () => [
+      {
+        id: "user",
+        header: "Player",
+        cell: ({ row }) => (
+          <div className="flex min-w-0 flex-col">
+            <span className="truncate text-sm">
+              {ownerLabel(row.original.users ?? null, row.original.user_id)}
+            </span>
+            {row.original.users?.email ? (
+              <span className="truncate text-xs text-muted-foreground">
+                {row.original.users.email}
+              </span>
+            ) : null}
+          </div>
+        ),
+        meta: { label: "Player" },
+      },
+      {
+        id: "attempts_count",
+        header: "Attempts",
+        cell: ({ row }) => (
+          <span className="tabular-nums">
+            {row.original.attempts_count.toLocaleString()}
+          </span>
+        ),
+        meta: { label: "Attempts", align: "right", sortField: "attempts_count" },
+      },
+      {
+        id: "win_rate",
+        header: "Win rate",
+        cell: ({ row }) => {
+          const rate =
+            row.original.attempts_count > 0
+              ? (row.original.wins / row.original.attempts_count) * 100
+              : 0;
+          return (
+            <span className="tabular-nums">
+              {rate.toFixed(1)}%
+              <span className="ml-2 text-xs text-muted-foreground">
+                ({row.original.wins.toLocaleString()}/
+                {row.original.attempts_count.toLocaleString()})
+              </span>
+            </span>
+          );
+        },
+        meta: { label: "Win rate", align: "right" },
+      },
+      {
+        id: "last_played",
+        header: "Last played",
+        cell: ({ row }) => (
+          <RelativeTime
+            value={row.original.last_played}
+            className="text-xs text-muted-foreground"
+          />
+        ),
+        meta: { label: "Last played" },
+      },
+    ],
+    [],
+  );
+
+  const rowActions = (row: ByUserRow): RowAction[] => [
+    {
+      id: "open-user",
+      label: "View player",
+      icon: <UserIcon className="size-4" aria-hidden="true" />,
+      onSelect: () => router.push(`/admin/users/${row.user_id}`),
+    },
+    {
+      id: "open-attempts",
+      label: "See all attempts",
+      icon: <ExternalLink className="size-4" aria-hidden="true" />,
+      onSelect: () =>
+        router.push(`/admin/game?view=attempts&user_id=${row.user_id}`),
+    },
+  ];
+
+  return (
+    <DataTable
+      table={table}
+      columns={columns}
+      getRowId={(row) => row.user_id}
+      resourceLabel="players"
+      searchPlaceholder="Search players…"
+      rowActions={rowActions}
+      onRowClick={(row) =>
+        router.push(`/admin/game?view=attempts&user_id=${row.user_id}`)
+      }
+      storageKey="admin-game-by-user"
+      exportEndpoint="/api/admin/game-data"
+      exportParams={{ view: "by_user" }}
+      exportFilename="game-by-user"
+    />
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Tab container
+// ---------------------------------------------------------------------------
+
+export function AdminGameDataTab() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const rawView = searchParams?.get("view");
+  const view: ViewId =
+    rawView === "daily" ||
+    rawView === "by_user" ||
+    rawView === "calendar"
+      ? rawView
+      : "attempts";
+
+  const handleViewChange = (nextView: ViewId) => {
+    // Reset all other table params when switching view — their sort/filter
+    // fields are not shared between views.
+    const params = new URLSearchParams();
+    if (nextView !== "attempts") params.set("view", nextView);
+    router.replace(params.toString() ? `?${params.toString()}` : "?", {
+      scroll: false,
+    });
+  };
 
   return (
     <div className="space-y-6">
-      {stats && (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Total Attempts</CardDescription>
-              <CardTitle className="text-3xl">{stats.totalAttempts}</CardTitle>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Win Rate</CardDescription>
-              <CardTitle className="text-3xl">{stats.winRate}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-sm text-muted-foreground">
-                {stats.wins} wins / {stats.losses} losses
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Average Attempts</CardDescription>
-              <CardTitle className="text-3xl">
-                {stats.averageAttempts}
-              </CardTitle>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Average Hints Used</CardDescription>
-              <CardTitle className="text-3xl">
-                {stats.averageHintsUsed}
-              </CardTitle>
-            </CardHeader>
-          </Card>
-        </div>
-      )}
-
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle>Game Attempts</CardTitle>
-              <CardDescription>
-                Total {viewMode === "daily-games" ? "daily games" : "users"}:{" "}
-                {totalItems}
-                {!showAll && pageSize !== "all" && (
-                  <>
-                    {" "}
-                    • Showing {displayedItems.length} of {totalItems} (Page{" "}
-                    {currentPage} of {totalPages})
-                  </>
-                )}
-              </CardDescription>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">View:</span>
-                <Select
-                  value={viewMode}
-                  onValueChange={(value) => setViewMode(value as ViewMode)}
-                >
-                  <SelectTrigger className="w-[140px]">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="daily-games">By Daily Games</SelectItem>
-                    <SelectItem value="users">By Users</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Show:</span>
-                <Select
-                  value={showAll ? "all" : String(pageSize)}
-                  onValueChange={handlePageSizeChange}
-                >
-                  <SelectTrigger className="w-[120px]">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="10">10 per page</SelectItem>
-                    <SelectItem value="25">25 per page</SelectItem>
-                    <SelectItem value="50">50 per page</SelectItem>
-                    <SelectItem value="100">100 per page</SelectItem>
-                    <SelectItem value="all">Show all</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                {viewMode === "daily-games" ? (
-                  <>
-                    <TableHead>Game Date</TableHead>
-                    <TableHead>Target Pokemon</TableHead>
-                    <TableHead>Shiny</TableHead>
-                    <TableHead>Players</TableHead>
-                    <TableHead>Wins</TableHead>
-                    <TableHead>Losses</TableHead>
-                    <TableHead>Avg Attempts</TableHead>
-                    <TableHead>Avg Hints</TableHead>
-                    <TableHead>Guesses</TableHead>
-                  </>
-                ) : (
-                  <>
-                    <TableHead>User</TableHead>
-                    <TableHead>Total Games</TableHead>
-                    <TableHead>Wins</TableHead>
-                    <TableHead>Losses</TableHead>
-                    <TableHead>Win Rate</TableHead>
-                    <TableHead>Avg Attempts</TableHead>
-                    <TableHead>Avg Hints</TableHead>
-                  </>
-                )}
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {displayedItems.length === 0 ? (
-                <TableRow>
-                  <TableCell
-                    colSpan={viewMode === "daily-games" ? 9 : 7}
-                    className="text-center text-muted-foreground"
-                  >
-                    No game attempts found
-                  </TableCell>
-                </TableRow>
-              ) : viewMode === "daily-games" ? (
-                (displayedItems as typeof groupedByDailyGames).map((group) => {
-                  const wins = group.attempts.filter((a) => a.won).length;
-                  const losses = group.attempts.length - wins;
-                  const avgAttempts =
-                    group.attempts.reduce((sum, a) => sum + a.attempts, 0) /
-                    group.attempts.length;
-                  const avgHints =
-                    group.attempts.reduce(
-                      (sum, a) => sum + (a.hints_used || 0),
-                      0
-                    ) / group.attempts.length;
-                  const targetPokemonId = group.attempts[0]?.target_pokemon_id;
-                  const isShiny = group.attempts[0]?.is_shiny || false;
-
-                  // Group guesses by user
-                  const guessesByUser = new Map<
-                    string,
-                    { user: GameAttempt["users"]; guesses: number[] }
-                  >();
-
-                  group.attempts.forEach((attempt) => {
-                    const userId = attempt.user_id;
-                    const userGuesses: number[] = [];
-
-                    // Collect all guesses from this attempt
-                    if (Array.isArray(attempt.guesses)) {
-                      attempt.guesses.forEach((guess: number) => {
-                        if (typeof guess === "number") {
-                          userGuesses.push(guess);
-                        }
-                      });
-                    }
-                    if (attempt.pokemon_guessed) {
-                      userGuesses.push(attempt.pokemon_guessed);
-                    }
-
-                    if (!guessesByUser.has(userId)) {
-                      guessesByUser.set(userId, {
-                        user: attempt.users || undefined,
-                        guesses: [],
-                      });
-                    }
-
-                    // Add unique guesses for this user
-                    const existingGuesses = guessesByUser.get(userId)!.guesses;
-                    userGuesses.forEach((guess) => {
-                      if (!existingGuesses.includes(guess)) {
-                        existingGuesses.push(guess);
-                      }
-                    });
-                  });
-
-                  const getOfficialArtworkUrl = (
-                    pokemonId: number,
-                    shiny: boolean = false
-                  ): string => {
-                    const shinyPath = shiny ? "/shiny" : "";
-                    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${shinyPath}/${pokemonId}.png`;
-                  };
-
-                  return (
-                    <TableRow key={group.date}>
-                      <TableCell className="font-medium">
-                        {formatDate(group.date)}
-                      </TableCell>
-                      <TableCell>
-                        <div className="flex items-center gap-2">
-                          {targetPokemonId && (
-                            <img
-                              src={getOfficialArtworkUrl(
-                                targetPokemonId,
-                                isShiny
-                              )}
-                              alt={`Pokemon #${targetPokemonId}`}
-                              className="w-10 h-10 object-contain"
-                              onError={(e) => {
-                                (e.target as HTMLImageElement).style.display =
-                                  "none";
-                              }}
-                            />
-                          )}
-                          <span className="text-sm">#{targetPokemonId}</span>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <span
-                          className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-                            isShiny
-                              ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
-                              : "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
-                          }`}
-                        >
-                          {isShiny ? "Yes" : "No"}
-                        </span>
-                      </TableCell>
-                      <TableCell className="text-sm">
-                        {group.attempts.length}
-                      </TableCell>
-                      <TableCell className="text-sm text-green-600 dark:text-green-400">
-                        {wins}
-                      </TableCell>
-                      <TableCell className="text-sm text-red-600 dark:text-red-400">
-                        {losses}
-                      </TableCell>
-                      <TableCell className="text-sm">
-                        {avgAttempts.toFixed(2)}
-                      </TableCell>
-                      <TableCell className="text-sm">
-                        {avgHints.toFixed(2)}
-                      </TableCell>
-                      <TableCell>
-                        <div className="space-y-2 max-w-[300px]">
-                          {Array.from(guessesByUser.entries()).map(
-                            ([userId, data]) => (
-                              <div key={userId} className="flex flex-col gap-1">
-                                <div className="text-xs font-medium text-muted-foreground truncate">
-                                  {getUserDisplayName(data.user)}
-                                </div>
-                                <div className="flex flex-wrap gap-1">
-                                  {data.guesses.slice(0, 8).map((pokemonId) => (
-                                    <img
-                                      key={pokemonId}
-                                      src={getOfficialArtworkUrl(
-                                        pokemonId,
-                                        isShiny
-                                      )}
-                                      alt={`Pokemon #${pokemonId}`}
-                                      className="w-7 h-7 object-contain"
-                                      title={`#${pokemonId}`}
-                                      onError={(e) => {
-                                        (
-                                          e.target as HTMLImageElement
-                                        ).style.display = "none";
-                                      }}
-                                    />
-                                  ))}
-                                  {data.guesses.length > 8 && (
-                                    <span className="text-xs text-muted-foreground flex items-center">
-                                      +{data.guesses.length - 8}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                  );
-                })
-              ) : (
-                (displayedItems as typeof groupedByUsers).map((group) => {
-                  const wins = group.attempts.filter((a) => a.won).length;
-                  const losses = group.attempts.length - wins;
-                  const winRate =
-                    group.attempts.length > 0
-                      ? ((wins / group.attempts.length) * 100).toFixed(1)
-                      : "0";
-                  const avgAttempts =
-                    group.attempts.length > 0
-                      ? group.attempts.reduce((sum, a) => sum + a.attempts, 0) /
-                        group.attempts.length
-                      : 0;
-                  const avgHints =
-                    group.attempts.length > 0
-                      ? group.attempts.reduce(
-                          (sum, a) => sum + (a.hints_used || 0),
-                          0
-                        ) / group.attempts.length
-                      : 0;
-
-                  return (
-                    <TableRow key={group.user?.id || "unknown"}>
-                      <TableCell>
-                        <div className="flex flex-col min-w-0">
-                          <span className="font-medium text-sm truncate">
-                            {getUserDisplayName(group.user)}
-                          </span>
-                          <span className="text-xs text-muted-foreground truncate">
-                            {group.user?.email || group.user?.id || "Unknown"}
-                          </span>
-                        </div>
-                      </TableCell>
-                      <TableCell className="text-sm">
-                        {group.attempts.length}
-                      </TableCell>
-                      <TableCell className="text-sm text-green-600 dark:text-green-400">
-                        {wins}
-                      </TableCell>
-                      <TableCell className="text-sm text-red-600 dark:text-red-400">
-                        {losses}
-                      </TableCell>
-                      <TableCell className="text-sm">{winRate}%</TableCell>
-                      <TableCell className="text-sm">
-                        {avgAttempts.toFixed(2)}
-                      </TableCell>
-                      <TableCell className="text-sm">
-                        {avgHints.toFixed(2)}
-                      </TableCell>
-                    </TableRow>
-                  );
-                })
-              )}
-            </TableBody>
-          </Table>
-
-          {!showAll && pageSize !== "all" && totalPages > 1 && (
-            <div className="flex items-center justify-between mt-4 pt-4 border-t">
-              <div className="text-sm text-muted-foreground">
-                Showing {(currentPage - 1) * (pageSize as number) + 1} to{" "}
-                {Math.min(currentPage * (pageSize as number), totalItems)} of{" "}
-                {totalItems}{" "}
-                {viewMode === "daily-games" ? "daily games" : "users"}
-              </div>
-              <Pagination>
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (currentPage > 1) {
-                          setCurrentPage((prev) => prev - 1);
-                        }
-                      }}
-                      className={
-                        currentPage === 1
-                          ? "pointer-events-none opacity-50"
-                          : "cursor-pointer"
-                      }
-                    />
-                  </PaginationItem>
-
-                  {getPageNumbers().map((page, index) => (
-                    <PaginationItem key={index}>
-                      {page === "ellipsis" ? (
-                        <PaginationEllipsis />
-                      ) : (
-                        <PaginationLink
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setCurrentPage(page);
-                          }}
-                          isActive={currentPage === page}
-                          className="cursor-pointer"
-                        >
-                          {page}
-                        </PaginationLink>
-                      )}
-                    </PaginationItem>
-                  ))}
-
-                  <PaginationItem>
-                    <PaginationNext
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (currentPage < totalPages) {
-                          setCurrentPage((prev) => prev + 1);
-                        }
-                      }}
-                      className={
-                        currentPage === totalPages
-                          ? "pointer-events-none opacity-50"
-                          : "cursor-pointer"
-                      }
-                    />
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+      <GameStatsStrip />
+      <Tabs
+        value={view}
+        onValueChange={(v) => handleViewChange(v as ViewId)}
+        className="space-y-4"
+      >
+        <TabsList>
+          <TabsTrigger value="attempts">
+            <Gamepad2 className="mr-1.5 size-4" aria-hidden="true" />
+            Attempts
+          </TabsTrigger>
+          <TabsTrigger value="calendar">
+            <LayoutGrid className="mr-1.5 size-4" aria-hidden="true" />
+            Calendar
+          </TabsTrigger>
+          <TabsTrigger value="daily">
+            <CalendarDays className="mr-1.5 size-4" aria-hidden="true" />
+            Daily puzzles
+          </TabsTrigger>
+          <TabsTrigger value="by_user">
+            <Users className="mr-1.5 size-4" aria-hidden="true" />
+            By user
+          </TabsTrigger>
+        </TabsList>
+        {view === "attempts" ? (
+          <AttemptsView key="attempts" />
+        ) : view === "calendar" ? (
+          <GameCalendar key="calendar" />
+        ) : view === "daily" ? (
+          <DailyView key="daily" />
+        ) : (
+          <ByUserView key="by_user" />
+        )}
+      </Tabs>
+      <noscript>
+        <Link href="/admin" className="text-sm underline">
+          Enable JavaScript to use the admin console.
+        </Link>
+      </noscript>
     </div>
   );
 }

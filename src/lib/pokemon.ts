@@ -9,26 +9,63 @@ import pokemonIndex from "@/data/pokemon/index.json";
 // Type assertion for the index data
 const pokemonMetadata: PokemonMetadata[] = pokemonIndex as PokemonMetadata[];
 
+// Per-Pokemon JSON files live in `public/data/pokemon/` rather than `src/` so
+// Turbopack doesn't have to bundle ~1,350 modules and build a glob async
+// loader (which caused intermittent HMR "Expected module to match pattern"
+// errors and slowed dev startup). The index.json file stays in `src/` because
+// it's a single static import.
+
 // Cache for loaded Pokemon data
 const pokemonCache = new Map<number, Pokemon>();
 
-/**
- * Load Pokemon data by ID (with caching)
- */
+/** Resolve the full URL for a Pokemon data file. */
+function pokemonDataUrl(id: number): string {
+  // In the browser, a relative public path is enough; the Next.js static
+  // asset pipeline serves it (and gets CDN-cached in prod).
+  if (typeof window !== "undefined") {
+    return `/data/pokemon/${id}.json`;
+  }
+  // On the server, `fetch` requires an absolute URL. Prefer an explicit site
+  // URL, fall back to the Vercel preview URL, then localhost for local dev.
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
+    `http://localhost:${process.env.PORT ?? 3000}`;
+  return `${base.replace(/\/$/, "")}/data/pokemon/${id}.json`;
+}
+
+/** Load a single Pokemon's data. Reads from the filesystem on the server and
+ * via `fetch` in the browser. Results are cached per process / per session. */
 export async function getPokemonById(id: number): Promise<Pokemon | null> {
-  // Check cache first
   if (pokemonCache.has(id)) {
     return pokemonCache.get(id)!;
   }
 
   try {
-    // Dynamic import of individual Pokemon file
-    const pokemonModule = await import(`@/data/pokemon/${id}.json`);
-    const pokemon = pokemonModule.default as Pokemon;
+    let pokemon: Pokemon;
 
-    // Cache the result
+    if (typeof window === "undefined") {
+      // Server: read straight from disk — no HTTP round-trip, and no need to
+      // know the deployment URL. `public/` is included in the serverless
+      // bundle and is accessible via process.cwd().
+      const { readFile } = await import("node:fs/promises");
+      const path = await import("node:path");
+      const filePath = path.join(
+        process.cwd(),
+        "public",
+        "data",
+        "pokemon",
+        `${id}.json`,
+      );
+      const contents = await readFile(filePath, "utf8");
+      pokemon = JSON.parse(contents) as Pokemon;
+    } else {
+      const res = await fetch(pokemonDataUrl(id), { cache: "force-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      pokemon = (await res.json()) as Pokemon;
+    }
+
     pokemonCache.set(id, pokemon);
-
     return pokemon;
   } catch (error) {
     console.error(`Failed to load Pokemon ${id}:`, error);
