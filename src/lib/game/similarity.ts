@@ -11,16 +11,30 @@ export function hashString(str: string): number {
   return Math.abs(hash);
 }
 
-// Derive the deterministic daily Pokemon id from today's date. `isShiny` is
-// mixed into the seed so daily shiny mode can produce a different pick than
-// daily normal mode on the same day.
-export function getDailyPokemonId(totalPokemon: number, isShiny: boolean): number {
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}-${
+// Derive the deterministic daily Pokemon id for a specific calendar date.
+// `isShiny` is mixed into the seed so daily shiny mode can produce a
+// different pick than daily normal mode on the same day.
+export function getDailyPokemonIdForDate(
+  date: Date,
+  totalPokemon: number,
+  isShiny: boolean,
+): number {
+  const dateStr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${
     isShiny ? "shiny" : "normal"
   }`;
   return (hashString(dateStr) % totalPokemon) + 1;
 }
+
+// Derive the deterministic daily Pokemon id from today's date. `isShiny` is
+// mixed into the seed so daily shiny mode can produce a different pick than
+// daily normal mode on the same day.
+export function getDailyPokemonId(totalPokemon: number, isShiny: boolean): number {
+  return getDailyPokemonIdForDate(new Date(), totalPokemon, isShiny);
+}
+
+/** Pool of Pokemon used by daily mode. Matches the hard-coded call sites in
+ *  `src/app/game/page.tsx` (Gen 1 only, for now). */
+export const DAILY_POOL_SIZE = 151;
 
 // Daily mode is non-shiny only for now.
 export function getDailyShinyStatus(): boolean {

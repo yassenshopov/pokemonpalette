@@ -20,12 +20,18 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Send, Loader2, CheckCircle2, X, XCircle } from "lucide-react";
 import { toast } from "sonner";
+import { AdminUserAvatar } from "@/components/admin/user-cell";
 import type { EmailTemplate, EmailTemplateData } from "@/lib/email-service";
 
 interface EmailUser {
   id: string;
   email: string;
   name: string;
+  first_name?: string | null;
+  last_name?: string | null;
+  username?: string | null;
+  image_url?: string | null;
+  profile_image_url?: string | null;
 }
 
 const EMAIL_TEMPLATES: { value: EmailTemplate; label: string }[] = [
@@ -337,7 +343,7 @@ export function AdminEmailsTab() {
                         role="option"
                         aria-selected="false"
                         tabIndex={0}
-                        className="cursor-pointer px-4 py-2 text-sm hover:bg-muted focus:bg-muted focus:outline-none"
+                        className="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm hover:bg-muted focus:bg-muted focus:outline-none"
                         onMouseDown={(e) => {
                           e.preventDefault();
                           handleSelectUser(user);
@@ -349,9 +355,14 @@ export function AdminEmailsTab() {
                           }
                         }}
                       >
-                        <div className="font-medium">{user.name}</div>
-                        <div className="text-xs text-muted-foreground">
-                          {user.email}
+                        <AdminUserAvatar user={user} size="sm" />
+                        <div className="min-w-0 flex-1">
+                          <div className="truncate font-medium">
+                            {user.name}
+                          </div>
+                          <div className="truncate text-xs text-muted-foreground">
+                            {user.email}
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -368,11 +379,19 @@ export function AdminEmailsTab() {
                     const user = users.find((u) => u.email === email);
                     return (
                       <li key={email}>
-                        <Badge variant="secondary" className="gap-1 px-3 py-1">
-                          <span>{user?.name || email}</span>
+                        <Badge
+                          variant="secondary"
+                          className="gap-1.5 py-1 pl-1 pr-2"
+                        >
+                          {user ? (
+                            <AdminUserAvatar user={user} size="xs" />
+                          ) : null}
+                          <span className="truncate">
+                            {user?.name || email}
+                          </span>
                           <button
                             type="button"
-                            className="ml-1 inline-flex size-4 items-center justify-center rounded-sm hover:bg-background/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                            className="ml-0.5 inline-flex size-4 items-center justify-center rounded-sm hover:bg-background/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                             aria-label={`Remove ${email}`}
                             onClick={() => handleRemoveEmail(email)}
                           >

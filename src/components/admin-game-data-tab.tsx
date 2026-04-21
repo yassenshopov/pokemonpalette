@@ -31,7 +31,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { KpiCard } from "@/components/admin/kpi-card";
-import { GameCalendar } from "@/components/admin/game-calendar";
+import { GameCalendarView } from "@/components/admin/game-calendar-view";
 import {
   DataTable,
   type ColumnDef,
@@ -40,6 +40,7 @@ import { RelativeTime } from "@/components/admin/relative-time";
 import { formatAbsoluteDate } from "@/lib/admin/format";
 import type { RowAction } from "@/components/admin/row-actions";
 import type { BulkAction } from "@/components/admin/bulk-action-bar";
+import { AdminUserCell } from "@/components/admin/user-cell";
 import { useAdminTable } from "@/hooks/use-admin-table";
 
 type ViewId = "attempts" | "calendar" | "daily" | "by_user";
@@ -62,6 +63,8 @@ interface GameAttempt {
     username: string | null;
     first_name: string | null;
     last_name: string | null;
+    image_url: string | null;
+    profile_image_url: string | null;
   } | null;
 }
 
@@ -97,12 +100,6 @@ interface GameStats {
 function officialArtworkUrl(pokemonId: number, shiny = false) {
   const suffix = shiny ? "/shiny" : "";
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${suffix}/${pokemonId}.png`;
-}
-
-function ownerLabel(u: GameAttempt["users"] | null | undefined, fallback: string) {
-  if (!u) return fallback;
-  const name = `${u.first_name ?? ""} ${u.last_name ?? ""}`.trim();
-  return name || u.username || u.email || u.id || fallback;
 }
 
 async function copyText(text: string, label: string) {
@@ -322,16 +319,10 @@ function AttemptsView() {
         cell: ({ row }) => {
           const a = row.original;
           return (
-            <div className="flex min-w-0 flex-col">
-              <span className="truncate text-sm">
-                {ownerLabel(a.users, a.user_id)}
-              </span>
-              {a.users?.email ? (
-                <span className="truncate text-xs text-muted-foreground">
-                  {a.users.email}
-                </span>
-              ) : null}
-            </div>
+            <AdminUserCell
+              user={a.users ?? { id: a.user_id }}
+              fallbackId={a.user_id}
+            />
           );
         },
         meta: { label: "Player" },
@@ -596,16 +587,10 @@ function ByUserView() {
         id: "user",
         header: "Player",
         cell: ({ row }) => (
-          <div className="flex min-w-0 flex-col">
-            <span className="truncate text-sm">
-              {ownerLabel(row.original.users ?? null, row.original.user_id)}
-            </span>
-            {row.original.users?.email ? (
-              <span className="truncate text-xs text-muted-foreground">
-                {row.original.users.email}
-              </span>
-            ) : null}
-          </div>
+          <AdminUserCell
+            user={row.original.users ?? { id: row.original.user_id }}
+            fallbackId={row.original.user_id}
+          />
         ),
         meta: { label: "Player" },
       },
@@ -743,7 +728,7 @@ export function AdminGameDataTab() {
         {view === "attempts" ? (
           <AttemptsView key="attempts" />
         ) : view === "calendar" ? (
-          <GameCalendar key="calendar" />
+          <GameCalendarView key="calendar" />
         ) : view === "daily" ? (
           <DailyView key="daily" />
         ) : (

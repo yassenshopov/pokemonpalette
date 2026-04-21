@@ -36,6 +36,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { RelativeTime } from "@/components/admin/relative-time";
+import { AdminUserAvatar } from "@/components/admin/user-cell";
 import { formatAbsolute, formatAbsoluteDate } from "@/lib/admin/format";
 
 interface Attempt {
@@ -318,19 +319,27 @@ export function AttemptDetailPage({ id }: { id: string }) {
           <CardTitle className="text-base">Player</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center justify-between gap-3">
-          <div className="min-w-0">
-            <p className="truncate text-sm font-medium">{ownerLabel(user)}</p>
-            {user?.email ? (
-              <p className="truncate text-xs text-muted-foreground">
-                {user.email}
+          <div className="flex min-w-0 items-center gap-3">
+            <AdminUserAvatar
+              user={user ?? { id: attempt.user_id }}
+              size="lg"
+            />
+            <div className="min-w-0">
+              <p className="truncate text-sm font-medium">
+                {ownerLabel(user)}
               </p>
-            ) : null}
-            <p
-              className="truncate font-mono text-xs text-muted-foreground"
-              translate="no"
-            >
-              {attempt.user_id}
-            </p>
+              {user?.email ? (
+                <p className="truncate text-xs text-muted-foreground">
+                  {user.email}
+                </p>
+              ) : null}
+              <p
+                className="truncate font-mono text-xs text-muted-foreground"
+                translate="no"
+              >
+                {attempt.user_id}
+              </p>
+            </div>
           </div>
           <Button size="sm" variant="outline" asChild>
             <Link href={`/admin/users/${attempt.user_id}`}>

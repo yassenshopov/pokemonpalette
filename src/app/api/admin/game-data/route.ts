@@ -122,7 +122,9 @@ async function listAttempts(req: NextRequest) {
     const ids = Array.from(new Set(rows.map((r: any) => r.user_id)));
     const { data: users } = await supabaseAdmin
       .from("users")
-      .select("id, email, username, first_name, last_name")
+      .select(
+        "id, email, username, first_name, last_name, image_url, profile_image_url",
+      )
       .in("id", ids);
     const userMap = new Map((users ?? []).map((u) => [u.id, u]));
     for (const row of rows as any[]) {
@@ -184,7 +186,9 @@ async function listByUser(req: NextRequest) {
     const ids = rows.map((r) => r.user_id);
     const { data: users } = await supabaseAdmin
       .from("users")
-      .select("id, email, username, first_name, last_name")
+      .select(
+        "id, email, username, first_name, last_name, image_url, profile_image_url",
+      )
       .in("id", ids);
     const userMap = new Map((users ?? []).map((u) => [u.id, u]));
     for (const row of rows) {

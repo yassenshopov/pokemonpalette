@@ -139,31 +139,55 @@ export function DataTable<TData>({
     clearSelection,
   } = table;
 
-  const [density, setDensity] = React.useState<TableDensity>(() =>
-    loadPref<TableDensity>(`${storageKey}:density`, "comfortable"),
-  );
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>(() => {
-      const initial: VisibilityState = {};
-      for (const col of columns) {
-        if (col.meta?.defaultHidden && col.id) {
-          initial[col.id] = false;
-        }
+  // NOTE: Preferences are read from localStorage in a post-mount effect, not
+  // during useState initialization. Initializing from localStorage here would
+  // cause a hydration mismatch because the server has no localStorage and
+  // would render the defaults, while the client would render the stored
+  // values (e.g. toggling a `defaultHidden` column visible shifts all column
+  // indices and breaks hydration of the <thead>).
+  const defaultColumnVisibility = React.useMemo<VisibilityState>(() => {
+    const initial: VisibilityState = {};
+    for (const col of columns) {
+      if (col.meta?.defaultHidden && col.id) {
+        initial[col.id] = false;
       }
-      return {
-        ...initial,
-        ...loadPref<VisibilityState>(`${storageKey}:visibility`, {}),
-      };
-    });
+    }
+    return initial;
+  }, [columns]);
+
+  const [density, setDensity] = React.useState<TableDensity>("comfortable");
+  const [columnVisibility, setColumnVisibility] =
+    React.useState<VisibilityState>(defaultColumnVisibility);
+  const [prefsHydrated, setPrefsHydrated] = React.useState(false);
   const [exporting, setExporting] = React.useState(false);
 
   React.useEffect(() => {
-    savePref(`${storageKey}:density`, density);
-  }, [density, storageKey]);
+    const storedDensity = loadPref<TableDensity | null>(
+      `${storageKey}:density`,
+      null,
+    );
+    if (storedDensity) setDensity(storedDensity);
+    const storedVisibility = loadPref<VisibilityState | null>(
+      `${storageKey}:visibility`,
+      null,
+    );
+    if (storedVisibility) {
+      setColumnVisibility((prev) => ({ ...prev, ...storedVisibility }));
+    }
+    setPrefsHydrated(true);
+    // Only run once on mount; storageKey should be stable per table.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   React.useEffect(() => {
+    if (!prefsHydrated) return;
+    savePref(`${storageKey}:density`, density);
+  }, [density, storageKey, prefsHydrated]);
+
+  React.useEffect(() => {
+    if (!prefsHydrated) return;
     savePref(`${storageKey}:visibility`, columnVisibility);
-  }, [columnVisibility, storageKey]);
+  }, [columnVisibility, storageKey, prefsHydrated]);
 
   // Build the decorated column list: selection + user columns + actions.
   const decoratedColumns = React.useMemo<ColumnDef<TData, unknown>[]>(() => {

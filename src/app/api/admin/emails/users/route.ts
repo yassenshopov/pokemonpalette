@@ -34,7 +34,9 @@ export async function GET(req: NextRequest) {
     // Get users with emails
     const { data: users, error: usersError } = await supabaseAdmin
       .from("users")
-      .select("id, email, first_name, last_name, username")
+      .select(
+        "id, email, first_name, last_name, username, image_url, profile_image_url",
+      )
       .eq("is_deleted", false)
       .not("email", "is", null)
       .order("created_at", { ascending: false });
@@ -56,6 +58,11 @@ export async function GET(req: NextRequest) {
         name: user.first_name || user.last_name
           ? `${user.first_name || ""} ${user.last_name || ""}`.trim()
           : user.username || user.email?.split("@")[0] || "User",
+        first_name: user.first_name ?? null,
+        last_name: user.last_name ?? null,
+        username: user.username ?? null,
+        image_url: user.image_url ?? null,
+        profile_image_url: user.profile_image_url ?? null,
       }));
 
     return NextResponse.json({ users: validUsers });

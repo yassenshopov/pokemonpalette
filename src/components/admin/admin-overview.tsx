@@ -776,10 +776,23 @@ export function AdminOverview() {
                     key={a.id}
                     className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0"
                   >
+                    <Avatar className="size-9 shrink-0">
+                      <AvatarImage
+                        src={
+                          a.user?.image_url ??
+                          a.user?.profile_image_url ??
+                          undefined
+                        }
+                        alt=""
+                      />
+                      <AvatarFallback className="text-xs">
+                        {initials(a.user)}
+                      </AvatarFallback>
+                    </Avatar>
                     <div className="min-w-0 flex-1">
                       <Link
                         href={`/admin/game/${a.id}`}
-                        className="truncate text-sm font-medium hover:underline"
+                        className="block truncate text-sm font-medium hover:underline"
                       >
                         {displayName(a.user)}
                       </Link>
@@ -1080,6 +1093,7 @@ function AttemptsSkeleton() {
     <ul className="divide-y" role="list" aria-hidden="true">
       {Array.from({ length: 5 }).map((_, i) => (
         <li key={i} className="flex items-center gap-3 py-2.5">
+          <Skeleton className="size-9 rounded-full" />
           <div className="flex-1 space-y-1.5">
             <Skeleton className="h-3.5 w-28" />
             <Skeleton className="h-3 w-40" />

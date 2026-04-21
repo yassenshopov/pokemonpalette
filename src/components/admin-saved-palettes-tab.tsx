@@ -38,6 +38,7 @@ import {
 import { RelativeTime } from "@/components/admin/relative-time";
 import type { RowAction } from "@/components/admin/row-actions";
 import type { BulkAction } from "@/components/admin/bulk-action-bar";
+import { AdminUserCell } from "@/components/admin/user-cell";
 import { useAdminTable } from "@/hooks/use-admin-table";
 
 interface SavedPalette {
@@ -58,6 +59,8 @@ interface SavedPalette {
     username: string | null;
     first_name: string | null;
     last_name: string | null;
+    image_url: string | null;
+    profile_image_url: string | null;
   } | null;
 }
 
@@ -67,13 +70,6 @@ interface PaletteStats {
   shinyCount: number;
   regularCount: number;
   topPokemon: Array<{ name: string; count: number; pokemon_id: number }>;
-}
-
-function ownerLabel(p: SavedPalette): string {
-  const u = p.users;
-  if (!u) return p.user_id;
-  const name = `${u.first_name ?? ""} ${u.last_name ?? ""}`.trim();
-  return name || u.username || u.email || u.id;
 }
 
 async function copyText(text: string, label: string) {
@@ -328,14 +324,10 @@ export function AdminSavedPalettesTab() {
         cell: ({ row }) => {
           const p = row.original;
           return (
-            <div className="flex min-w-0 flex-col">
-              <span className="truncate text-sm">{ownerLabel(p)}</span>
-              {p.users?.email ? (
-                <span className="truncate text-xs text-muted-foreground">
-                  {p.users.email}
-                </span>
-              ) : null}
-            </div>
+            <AdminUserCell
+              user={p.users ?? { id: p.user_id }}
+              fallbackId={p.user_id}
+            />
           );
         },
         meta: { label: "Owner" },

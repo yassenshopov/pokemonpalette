@@ -3,19 +3,15 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
-  CalendarX,
   ChevronLeft,
   ChevronRight,
-  ExternalLink,
   RefreshCw,
   Trophy,
   Users,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Tooltip,
@@ -25,6 +21,10 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { toIsoDate } from "@/lib/admin/range";
+import {
+  DAILY_POOL_SIZE,
+  getDailyPokemonIdForDate,
+} from "@/lib/game/similarity";
 
 interface CalendarDay {
   day: string;
@@ -73,11 +73,25 @@ const WEEKDAY_LABELS = ["S", "M", "T", "W", "T", "F", "S"];
 interface GameCalendarProps {
   /** Initial month anchor; defaults to the current month. */
   initialMonth?: Date;
+  /** Currently-selected ISO date (for visual highlight). */
+  openDate?: string | null;
+  /** Open the detail sheet for a given day. */
+  onOpenDate: (iso: string) => void;
 }
 
-export function GameCalendar({ initialMonth }: GameCalendarProps) {
-  const router = useRouter();
+export function GameCalendar({
+  initialMonth,
+  openDate,
+  onOpenDate,
+}: GameCalendarProps) {
   const [anchor, setAnchor] = React.useState<Date>(() => {
+    // If the caller provides an `openDate`, anchor the calendar on that
+    // month so deep-links land on the right page; otherwise fall back to
+    // the explicit initialMonth or today.
+    if (openDate) {
+      const d = new Date(`${openDate}T00:00:00Z`);
+      return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1));
+    }
     const d = initialMonth ?? new Date();
     return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1));
   });
@@ -155,9 +169,6 @@ export function GameCalendar({ initialMonth }: GameCalendarProps) {
     return { attempts, wins, puzzles };
   }, [days]);
 
-  const goAttempts = (iso: string) => {
-    router.push(`/admin/game?view=attempts&date_from=${iso}&date_to=${iso}`);
-  };
 
   return (
     <TooltipProvider delayDuration={150}>
@@ -210,7 +221,8 @@ export function GameCalendar({ initialMonth }: GameCalendarProps) {
             <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground tabular-nums">
               <span className="inline-flex items-center gap-1">
                 <Users className="size-3.5" aria-hidden="true" />
-                {monthTotals.puzzles} puzzle{monthTotals.puzzles === 1 ? "" : "s"}
+                {monthTotals.puzzles} day{monthTotals.puzzles === 1 ? "" : "s"}{" "}
+                played
               </span>
               <span>{monthTotals.attempts.toLocaleString()} attempts</span>
               <span className="inline-flex items-center gap-1">
@@ -259,18 +271,25 @@ export function GameCalendar({ initialMonth }: GameCalendarProps) {
               const data = days.get(iso);
               const isToday = iso === todayIso;
               const isFuture = iso > todayIso;
+              // Deterministic daily target — mirrors the formula used in
+              // /game so every day (including future + unplayed) has a
+              // known Pokemon to display.
+              const targetId =
+                data?.target_pokemon_id ??
+                getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, false);
               return (
                 <CalendarCell
                   key={iso}
                   iso={iso}
                   date={date}
+                  targetId={targetId}
                   data={data}
                   maxAttempts={maxAttempts}
                   muted={!inMonth}
                   isToday={isToday}
                   isFuture={isFuture}
-                  loading={loading}
-                  onOpen={goAttempts}
+                  isSelected={openDate === iso}
+                  onOpen={onOpenDate}
                 />
               );
             })}
@@ -307,33 +326,32 @@ const fullDateFormatter = new Intl.DateTimeFormat("en-US", {
 interface CalendarCellProps {
   iso: string;
   date: Date;
+  targetId: number;
   data: CalendarDay | undefined;
   maxAttempts: number;
   muted: boolean;
   isToday: boolean;
   isFuture: boolean;
-  loading: boolean;
+  isSelected: boolean;
   onOpen: (iso: string) => void;
 }
 
 function CalendarCell({
   iso,
   date,
+  targetId,
   data,
   maxAttempts,
   muted,
   isToday,
   isFuture,
-  loading,
+  isSelected,
   onOpen,
 }: CalendarCellProps) {
-  const hasData = !!data && data.attempts_count > 0;
-  const ratio =
-    hasData && maxAttempts > 0 ? data!.attempts_count / maxAttempts : 0;
-  const winRate =
-    data && data.attempts_count > 0
-      ? (data.wins / data.attempts_count) * 100
-      : 0;
+  const attemptsCount = data?.attempts_count ?? 0;
+  const hasData = attemptsCount > 0;
+  const ratio = hasData && maxAttempts > 0 ? attemptsCount / maxAttempts : 0;
+  const winRate = hasData ? (data!.wins / attemptsCount) * 100 : 0;
 
   const dayNum = dayNumberFormatter.format(date);
 
@@ -342,8 +360,8 @@ function CalendarCell({
       role="gridcell"
       aria-selected={isToday ? "true" : undefined}
       aria-label={`${fullDateFormatter.format(date)}${
-        data
-          ? `: ${data.attempts_count} attempts, ${winRate.toFixed(0)}% win rate`
+        hasData
+          ? `: ${attemptsCount} attempts, ${winRate.toFixed(0)}% win rate`
           : isFuture
             ? ": upcoming"
             : ": no attempts"
@@ -351,57 +369,70 @@ function CalendarCell({
       className={cn(
         "group relative aspect-square min-h-[80px] overflow-hidden rounded-md border text-left transition-colors",
         muted ? "opacity-40" : "",
-        isToday ? "ring-2 ring-primary ring-offset-1 ring-offset-background" : "",
+        isToday
+          ? "ring-2 ring-primary ring-offset-1 ring-offset-background"
+          : "",
+        !isToday && isSelected
+          ? "ring-2 ring-primary/80 ring-offset-1 ring-offset-background"
+          : "",
         isFuture
-          ? "border-dashed bg-muted/30 text-muted-foreground"
+          ? "border-dashed bg-muted/20"
           : hasData
             ? cn(heatClass(ratio), "hover:ring-1 hover:ring-primary/50")
-            : "bg-muted/20 hover:bg-muted/40",
+            : "bg-muted/10 hover:bg-muted/30",
       )}
     >
-      <div className="flex items-start justify-between gap-1 p-1.5">
+      {/* Silhouette sprite fills the whole square. */}
+      <div className="pointer-events-none absolute inset-1">
+        <Image
+          src={officialArtworkUrl(targetId)}
+          alt=""
+          fill
+          sizes="96px"
+          className={cn(
+            "object-contain transition-opacity",
+            // `brightness-0` → pure black silhouette; `dark:invert` flips it
+            // to white on dark backgrounds. Slightly softened for readability.
+            "brightness-0 dark:invert",
+            isFuture ? "opacity-25" : hasData ? "opacity-55" : "opacity-40",
+          )}
+          unoptimized
+        />
+      </div>
+
+      {/* Day number — top-left pill. */}
+      <div className="absolute left-1 top-1">
         <span
           className={cn(
-            "text-[11px] font-semibold tabular-nums",
-            isToday && "text-primary",
+            "rounded bg-background/75 px-1 text-[11px] font-semibold tabular-nums text-foreground backdrop-blur-sm",
+            isToday && "bg-primary text-primary-foreground",
           )}
         >
           {dayNum}
         </span>
-        {data && data.attempts_count > 0 ? (
-          <span className="rounded bg-background/80 px-1 text-[10px] font-medium tabular-nums text-foreground backdrop-blur-sm">
-            {data.attempts_count}
-          </span>
-        ) : null}
       </div>
-      {data?.target_pokemon_id ? (
-        <div className="pointer-events-none absolute bottom-0.5 left-1/2 size-[44px] -translate-x-1/2">
-          <Image
-            src={officialArtworkUrl(data.target_pokemon_id)}
-            alt=""
-            fill
-            sizes="44px"
-            className="object-contain drop-shadow-sm"
-            unoptimized
-          />
-        </div>
-      ) : isFuture ? null : loading ? (
-        <div className="absolute inset-x-2 bottom-2">
-          <Skeleton className="h-4 w-full" />
-        </div>
-      ) : (
-        <div className="absolute inset-x-0 bottom-1 flex justify-center">
-          <CalendarX
-            className="size-3 text-muted-foreground/50"
-            aria-hidden="true"
-          />
-        </div>
-      )}
-      {data && data.attempts_count > 0 ? (
-        <div className="absolute inset-x-1 bottom-1 flex items-center justify-end">
+
+      {/* Attempts count — top-right pill, always shown. */}
+      <div className="absolute right-1 top-1">
+        <span
+          className={cn(
+            "rounded px-1 text-[10px] font-medium tabular-nums backdrop-blur-sm",
+            hasData
+              ? "bg-background/80 text-foreground"
+              : "bg-background/60 text-muted-foreground",
+          )}
+          aria-label={`${attemptsCount} plays`}
+        >
+          {attemptsCount.toLocaleString()}
+        </span>
+      </div>
+
+      {/* Win rate — bottom-right pill, only when we have data. */}
+      {hasData ? (
+        <div className="absolute bottom-1 right-1">
           <span
             className={cn(
-              "rounded bg-background/70 px-1 text-[10px] font-medium tabular-nums backdrop-blur-sm",
+              "rounded bg-background/80 px-1 text-[10px] font-medium tabular-nums backdrop-blur-sm",
               winRate >= 66
                 ? "text-emerald-600 dark:text-emerald-400"
                 : winRate >= 33
@@ -416,17 +447,16 @@ function CalendarCell({
     </div>
   );
 
-  if (isFuture || !hasData) {
-    return body;
-  }
-
+  // Every cell is clickable — the sheet handles empty / upcoming states so
+  // admins can still preview the deterministic target for those days.
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <button
           type="button"
           onClick={() => onOpen(iso)}
-          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
+          className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
+          aria-label={`Open details for ${fullDateFormatter.format(date)}`}
         >
           {body}
         </button>
@@ -435,29 +465,39 @@ function CalendarCell({
         <div className="space-y-0.5 text-xs">
           <div className="font-medium">{fullDateFormatter.format(date)}</div>
           <div className="text-muted-foreground">
-            #{data!.target_pokemon_id.toString().padStart(4, "0")}
-          </div>
-          <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5">
-            <span className="text-muted-foreground">Attempts</span>
-            <span className="text-right tabular-nums">
-              {data!.attempts_count.toLocaleString()}
-            </span>
-            <span className="text-muted-foreground">Win rate</span>
-            <span className="text-right tabular-nums">
-              {winRate.toFixed(1)}%
-            </span>
-            <span className="text-muted-foreground">Avg attempts</span>
-            <span className="text-right tabular-nums">
-              {Number(data!.avg_attempts).toFixed(2)}
-            </span>
-            <span className="text-muted-foreground">Players</span>
-            <span className="text-right tabular-nums">
-              {data!.unique_players.toLocaleString()}
+            Target{" "}
+            <span className="font-mono tabular-nums" translate="no">
+              #{targetId.toString().padStart(4, "0")}
             </span>
           </div>
-          <div className="mt-1 inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-            <ExternalLink className="size-3" aria-hidden="true" />
-            Click to see attempts
+          {hasData ? (
+            <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5">
+              <span className="text-muted-foreground">Attempts</span>
+              <span className="text-right tabular-nums">
+                {attemptsCount.toLocaleString()}
+              </span>
+              <span className="text-muted-foreground">Win rate</span>
+              <span className="text-right tabular-nums">
+                {winRate.toFixed(1)}%
+              </span>
+              <span className="text-muted-foreground">Avg attempts</span>
+              <span className="text-right tabular-nums">
+                {Number(data!.avg_attempts).toFixed(2)}
+              </span>
+              <span className="text-muted-foreground">Players</span>
+              <span className="text-right tabular-nums">
+                {data!.unique_players.toLocaleString()}
+              </span>
+            </div>
+          ) : (
+            <div className="mt-1 text-[11px] text-muted-foreground">
+              {isFuture
+                ? "Upcoming puzzle — no plays yet."
+                : "No plays on this day."}
+            </div>
+          )}
+          <div className="mt-1 text-[11px] text-muted-foreground">
+            Click to open details
           </div>
         </div>
       </TooltipContent>
