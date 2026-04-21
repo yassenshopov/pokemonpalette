@@ -172,11 +172,13 @@ export function AdminSidebar() {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <div className="flex items-center justify-between gap-2 px-2 pt-1 group-data-[collapsible=icon]:flex-col group-data-[collapsible=icon]:px-0">
-          <div className="group-data-[collapsible=icon]:hidden">
+        <div className="flex items-center gap-1 group-data-[collapsible=icon]:flex-col group-data-[collapsible=icon]:gap-2">
+          <div className="min-w-0 flex-1 group-data-[collapsible=icon]:hidden">
             <UserProfileWrapper />
           </div>
-          <ThemeToggle />
+          <div className="shrink-0 pr-2 group-data-[collapsible=icon]:pr-0">
+            <ThemeToggle />
+          </div>
         </div>
       </SidebarFooter>
     </Sidebar>
