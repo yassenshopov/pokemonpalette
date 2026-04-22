@@ -20,6 +20,7 @@ import {
   Clock,
   Sparkles,
   Share2,
+  Coffee,
 } from "lucide-react";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
@@ -328,6 +329,19 @@ export function GameResultDialog({
             </div>
           )}
 
+          {/* Contextual "tip the dev" ask. Only rendered on wins because asking
+              a frustrated losing player for money is a bad look. Copy adapts
+              to how impressive the win was — one-shots and long streaks get a
+              more earned-sounding ask. */}
+          {isWon && (
+            <CoffeeAsk
+              primaryColor={primaryColor}
+              attempts={attempts}
+              currentStreak={userStats?.currentStreak ?? 0}
+              mode={mode}
+            />
+          )}
+
           <DialogFooter className="flex-col sm:flex-row gap-2 pt-4 mt-auto justify-start">
             {/* Group buttons for unlimited mode */}
             {mode === "unlimited" && (
@@ -437,6 +451,112 @@ export function GameResultDialog({
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+// Contextual tip-the-dev ask shown inside the win dialog. Kept local to this
+// file because the copy/framing is tightly coupled to "just finished a game"
+// — it's not a reusable primitive.
+function CoffeeAsk({
+  primaryColor,
+  attempts,
+  currentStreak,
+  mode,
+}: {
+  primaryColor: string | undefined;
+  attempts: number;
+  currentStreak: number;
+  mode: "daily" | "unlimited";
+}) {
+  const textColor = primaryColor ? getContrastHex(primaryColor) : "#000000";
+
+  // Pick copy that feels earned based on what the player just did. The goal
+  // is for the ask to land at the emotional peak — a generic "buy me a
+  // coffee" converts worse than one that references the moment.
+  const { headline, subtext } = (() => {
+    if (mode === "daily" && currentStreak >= 7) {
+      return {
+        headline: `${currentStreak}-day streak. You're officially obsessed.`,
+        subtext:
+          "Pokémon Palette is made by one dev in their spare time. A coffee keeps it going.",
+      };
+    }
+    if (attempts === 1) {
+      return {
+        headline: "One-shot. Impressive.",
+        subtext:
+          "If this made your day, a coffee helps me make more little games like this.",
+      };
+    }
+    if (attempts === 2) {
+      return {
+        headline: "Two guesses — nicely done.",
+        subtext:
+          "Pokémon Palette is a solo project. A coffee goes a long way toward keeping it ad-free.",
+      };
+    }
+    return {
+      headline: "Enjoying Pokémon Palette?",
+      subtext:
+        "It's made by one person, on nights and weekends. A coffee means a lot.",
+    };
+  })();
+
+  const utmCampaign =
+    mode === "daily" ? "win_dialog_daily" : "win_dialog_unlimited";
+  const href = `https://buymeacoffee.com/yassenshopov?utm_source=pokemonpalette&utm_medium=win_dialog&utm_campaign=${utmCampaign}`;
+
+  const handleClick = () => {
+    track("coffee_clicked", {
+      placement: "game_result_dialog",
+      mode,
+      attempts,
+      current_streak: currentStreak,
+    });
+  };
+
+  return (
+    <div
+      className="mt-4 rounded-lg border p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+      style={{
+        borderColor: primaryColor ? `${primaryColor}55` : undefined,
+        backgroundColor: primaryColor ? `${primaryColor}12` : undefined,
+      }}
+    >
+      <div
+        className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+        style={{
+          backgroundColor: primaryColor || "#f59e0b",
+          color: textColor,
+        }}
+      >
+        <Coffee className="w-5 h-5" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-semibold font-heading">{headline}</p>
+        <p className="text-xs text-muted-foreground mt-0.5">{subtext}</p>
+      </div>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={handleClick}
+        className="w-full sm:w-auto flex-shrink-0"
+      >
+        <Button
+          size="sm"
+          className="w-full cursor-pointer font-heading transition-all duration-300 hover:scale-105 active:scale-95"
+          style={{
+            backgroundColor: primaryColor || "#f59e0b",
+            color: textColor,
+            borderColor: primaryColor || "#f59e0b",
+          }}
+        >
+          <Coffee className="w-4 h-4 mr-2" />
+          Tip the dev
+        </Button>
+      </a>
+    </div>
   );
 }
 
