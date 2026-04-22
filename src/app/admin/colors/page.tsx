@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminColorManagementTab } from "@/components/admin-color-management-tab";
 
@@ -14,7 +15,19 @@ export default function AdminColorsPage() {
         breadcrumbs={[{ label: "Color Management" }]}
       />
       <div className="p-4 sm:p-6">
-        <AdminColorManagementTab />
+        <Suspense
+          fallback={
+            <div
+              className="text-sm text-muted-foreground"
+              role="status"
+              aria-live="polite"
+            >
+              Loading workbench…
+            </div>
+          }
+        >
+          <AdminColorManagementTab />
+        </Suspense>
       </div>
     </>
   );

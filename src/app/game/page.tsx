@@ -27,6 +27,11 @@ import {
   getContrastHex,
   getDimmedColor,
 } from "@/lib/game/colors";
+import {
+  generateHints as buildGameHints,
+  getGenerationFromId as getGenerationFromIdLib,
+  type HintConfig,
+} from "@/lib/game/hints";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -212,18 +217,7 @@ export default function GamePage() {
   const getTextColor = getContrastHex;
 
   // Get generation from Pokemon ID (since JSON data has incorrect generation)
-  const getGenerationFromId = (id: number): number => {
-    if (id <= 151) return 1;
-    if (id <= 251) return 2;
-    if (id <= 386) return 3;
-    if (id <= 493) return 4;
-    if (id <= 649) return 5;
-    if (id <= 721) return 6;
-    if (id <= 809) return 7;
-    if (id <= 905) return 8;
-    if (id <= 1025) return 9;
-    return 1; // Default fallback
-  };
+  const getGenerationFromId = getGenerationFromIdLib;
 
   // Filter Pokemon list based on unlimited mode settings
   const pokemonList = useMemo(() => {
@@ -1038,289 +1032,16 @@ export default function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]); // Only sync when user ID changes (signs in)
 
-  // Generate diverse hints with varying specificity levels
+  // Wrap the shared generator so the in-component call sites don't need to
+  // thread through mode/generation settings themselves.
   const generateHints = (pokemon: Pokemon): string[] => {
-    const allHints: {
-      vague: string[];
-      medium: string[];
-      specific: string[];
-    } = {
-      vague: [],
-      medium: [],
-      specific: [],
-    };
-
-    // VAGUE HINTS (less revealing, broad categories)
-    // Type hint - vague
-    if (pokemon.type && pokemon.type.length > 0) {
-      if (pokemon.type.length === 1) {
-        allHints.vague.push(
-          `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
-        );
-      } else {
-        // For dual types, mention one of the types with "part-X type"
-        allHints.vague.push(
-          `This Pokemon is a part-${pokemon.type[0]} type Pokemon.`
-        );
-      }
-    }
-
-    // Evolution stage hint - vague
-    if (pokemon.evolution?.stage) {
-      const stage = pokemon.evolution.stage;
-      if (stage === 1) {
-        allHints.vague.push(`This Pokemon is a base-stage Pokemon.`);
-      } else if (stage === 2) {
-        allHints.vague.push(`This Pokemon is a middle-stage evolution.`);
-      } else {
-        allHints.vague.push(`This Pokemon is a final-stage evolution.`);
-      }
-    }
-
-    // MEDIUM HINTS (more specific, but still narrowing)
-    // Type hint - medium (more specific than vague)
-    if (pokemon.type && pokemon.type.length > 0) {
-      if (pokemon.type.length === 1) {
-        allHints.medium.push(
-          `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
-        );
-      } else if (pokemon.type.length === 2) {
-        allHints.medium.push(
-          `This Pokemon is a ${pokemon.type[0]}- and ${pokemon.type[1]}-type Pokemon.`
-        );
-      }
-    }
-
-    // Generation hint - medium
-    const shouldShowGenerationHint =
+    const includeGeneration =
       mode === "daily" ||
       (mode === "unlimited" &&
         unlimitedSettings.selectedGenerations.length > 1);
-
-    if (shouldShowGenerationHint) {
-      const generation = getGenerationFromId(pokemon.id);
-      if (generation) {
-        const genRoman =
-          ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][
-            generation - 1
-          ] || generation.toString();
-        allHints.medium.push(
-          `This Pokemon was introduced in Generation ${genRoman}.`
-        );
-      }
-    }
-
-    // SPECIFIC HINTS (most revealing, narrows it down significantly)
-    // Species category hint - specific
-    if (pokemon.species && pokemon.species !== "Pokémon") {
-      // Check if species already includes "Pokemon" or "Pokémon"
-      const speciesLower = pokemon.species.toLowerCase();
-      const alreadyHasPokemon =
-        speciesLower.includes("pokemon") || speciesLower.includes("pokémon");
-
-      if (alreadyHasPokemon) {
-        allHints.specific.push(
-          `This Pokemon is known as the ${pokemon.species}.`
-        );
-      } else {
-        allHints.specific.push(
-          `This Pokemon is known as the ${pokemon.species} Pokemon.`
-        );
-      }
-    }
-
-    // Description/flavor text - specific (if available)
-    if (pokemon.description) {
-      // Only use description if it's not too revealing
-      const description = pokemon.description;
-      if (
-        description.length < 200 &&
-        !description.toLowerCase().includes(pokemon.name.toLowerCase())
-      ) {
-        allHints.specific.push(description);
-      }
-    }
-
-    // Shuffle hints within each category
-    const shuffleArray = <T,>(array: T[]): T[] => {
-      const shuffled = [...array];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    };
-
-    // Select one hint from each category, ensuring progression
-    const selectedHints: string[] = [];
-
-    // Helper function to check if two hints are similar (especially for type hints)
-    const isSimilarHint = (hint1: string, hint2: string): boolean => {
-      // Exact match
-      if (hint1 === hint2) return true;
-
-      // For type hints, check if they mention the same type(s)
-      const isTypeHint1 =
-        hint1.includes("-type Pokemon") || hint1.includes("part-");
-      const isTypeHint2 =
-        hint2.includes("-type Pokemon") || hint2.includes("part-");
-
-      if (isTypeHint1 && isTypeHint2) {
-        // Extract type information from hints
-        const extractTypes = (hint: string): string[] => {
-          const types: string[] = [];
-
-          // Pattern 1: "Fire-type Pokemon" or "part-Fire type Pokemon"
-          // Pattern 2: "Fire- and Water-type Pokemon"
-
-          // First, try to match dual type pattern: "X- and Y-type"
-          const dualTypeMatch = hint.match(
-            /([A-Za-z]+)-\s*and\s*([A-Za-z]+)-type/
-          );
-          if (dualTypeMatch) {
-            types.push(dualTypeMatch[1].toLowerCase());
-            types.push(dualTypeMatch[2].toLowerCase());
-          } else {
-            // Single type pattern: look for "X-type" or "part-X type"
-            const singleTypeMatch = hint.match(
-              /(?:part-)?([A-Za-z]+)(?:-type| type)/
-            );
-            if (singleTypeMatch) {
-              types.push(singleTypeMatch[1].toLowerCase());
-            }
-          }
-
-          return types.sort();
-        };
-
-        const types1 = extractTypes(hint1);
-        const types2 = extractTypes(hint2);
-
-        // If they mention the same types, they're similar
-        if (types1.length > 0 && types2.length > 0) {
-          const types1Str = types1.join(",");
-          const types2Str = types2.join(",");
-          if (types1Str === types2Str) return true;
-        }
-      }
-
-      return false;
-    };
-
-    // Helper function to find a hint that's not similar to already selected hints
-    const findUniqueHint = (
-      hints: string[],
-      excludeHints: string[]
-    ): string | null => {
-      for (const hint of hints) {
-        const isSimilar = excludeHints.some((existing) =>
-          isSimilarHint(hint, existing)
-        );
-        if (!isSimilar) {
-          return hint;
-        }
-      }
-      return null;
-    };
-
-    // Find all type-related hints
-    const typeHints: string[] = [];
-    if (allHints.vague.length > 0) {
-      const vagueTypeHint = allHints.vague.find(
-        (h) => h.includes("-type Pokemon") || h.includes("part-")
-      );
-      if (vagueTypeHint) typeHints.push(vagueTypeHint);
-    }
-    if (allHints.medium.length > 0) {
-      const mediumTypeHints = allHints.medium.filter((h) =>
-        h.includes("-type Pokemon")
-      );
-      typeHints.push(...mediumTypeHints);
-    }
-
-    // First hint: vague (random selection, but prioritize type hint if available)
-    if (allHints.vague.length > 0) {
-      const shuffledVague = shuffleArray(allHints.vague);
-      // Try to include a type hint if we don't have one yet
-      const vagueTypeHint = shuffledVague.find(
-        (h) => h.includes("-type Pokemon") || h.includes("part-")
-      );
-      if (vagueTypeHint && typeHints.length > 0) {
-        selectedHints.push(vagueTypeHint);
-      } else {
-        selectedHints.push(shuffledVague[0]);
-      }
-    }
-
-    // Second hint: medium (random selection, but ensure it's different from first hint)
-    if (allHints.medium.length > 0) {
-      const shuffledMedium = shuffleArray(allHints.medium);
-
-      // Find a hint that's not similar to the first hint
-      const uniqueHint = findUniqueHint(shuffledMedium, selectedHints);
-
-      if (uniqueHint) {
-        selectedHints.push(uniqueHint);
-      } else {
-        // If all hints are similar, just pick the first one (shouldn't happen often)
-        selectedHints.push(shuffledMedium[0]);
-      }
-    }
-
-    // Third hint: always "Full palette shown"
-    selectedHints.push("Full palette shown");
-
-    // Ensure at least one type hint is included, but only if it's not a duplicate
-    const hasTypeHint = selectedHints.some(
-      (h) => h.includes("-type Pokemon") || h.includes("part-")
-    );
-
-    if (!hasTypeHint && typeHints.length > 0) {
-      // Find a unique type hint that's not similar to existing hints
-      const uniqueTypeHint = findUniqueHint(typeHints, selectedHints);
-
-      if (uniqueTypeHint) {
-        // Replace the first non-type hint (excluding "Full palette shown") with a type hint
-        const replaceIndex = selectedHints.findIndex(
-          (h) =>
-            h !== "Full palette shown" &&
-            !h.includes("-type Pokemon") &&
-            !h.includes("part-")
-        );
-        if (replaceIndex >= 0) {
-          selectedHints[replaceIndex] = uniqueTypeHint;
-        } else if (selectedHints.length >= 1) {
-          selectedHints[0] = uniqueTypeHint;
-        }
-      }
-    }
-
-    // Fill remaining slots if needed
-    const allAvailable = [
-      ...shuffleArray(allHints.vague),
-      ...shuffleArray(allHints.medium),
-      ...shuffleArray(allHints.specific),
-    ];
-
-    while (selectedHints.length < 3 && allAvailable.length > 0) {
-      const hint = allAvailable.shift();
-      if (hint) {
-        // Check if hint is similar to any already selected hint
-        const isSimilar = selectedHints.some((existing) =>
-          isSimilarHint(hint, existing)
-        );
-        if (!isSimilar) {
-          selectedHints.push(hint);
-        }
-      }
-    }
-
-    // Ensure we have at least 3 hints
-    while (selectedHints.length < 3) {
-      selectedHints.push("This Pokemon is a mystery!");
-    }
-
-    return selectedHints.slice(0, 3);
+    const hintConfig =
+      ((pokemon as unknown) as { hintConfig?: HintConfig }).hintConfig ?? null;
+    return buildGameHints(pokemon, { includeGeneration, hintConfig });
   };
 
   // Generate and store hints when target Pokemon, mode, or settings change
