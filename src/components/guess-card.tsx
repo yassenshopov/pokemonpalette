@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Dna, Tags } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import type { GuessRelatedness } from "@/lib/game/relatedness";
 
 interface Guess {
   pokemonId: number;
@@ -9,6 +11,7 @@ interface Guess {
   colors: string[];
   similarity: number;
   spriteUrl: string | null;
+  relatedness?: GuessRelatedness | null;
 }
 
 interface GuessCardProps {
@@ -19,6 +22,14 @@ interface GuessCardProps {
 }
 
 export function GuessCard({ guess, index, isCorrect = false, onRef }: GuessCardProps) {
+  const relatedness = guess.relatedness;
+  // Only surface relatedness hints for wrong guesses. A correct guess already
+  // says "Correct!" and piling "Same type" on top is redundant noise.
+  const showRelatedness =
+    !isCorrect &&
+    !!relatedness &&
+    (relatedness.sharedTypes.length > 0 || relatedness.sameEvolutionFamily);
+
   return (
     <div
       ref={onRef}
@@ -50,6 +61,31 @@ export function GuessCard({ guess, index, isCorrect = false, onRef }: GuessCardP
         <span className="text-xs text-muted-foreground">
           {isCorrect ? "Correct!" : `${Math.round(guess.similarity * 100)}% match`}
         </span>
+
+        {showRelatedness && relatedness && (
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {relatedness.sameEvolutionFamily && (
+              <Badge
+                variant="outline"
+                className="h-5 px-1.5 text-[10px] font-medium gap-1 border-emerald-400/60 text-emerald-700 dark:text-emerald-300 bg-emerald-500/10"
+              >
+                <Dna className="w-3 h-3" />
+                Same evolution family
+              </Badge>
+            )}
+            {relatedness.sharedTypes.length > 0 && (
+              <Badge
+                variant="outline"
+                className="h-5 px-1.5 text-[10px] font-medium gap-1 border-amber-400/60 text-amber-700 dark:text-amber-300 bg-amber-500/10"
+              >
+                <Tags className="w-3 h-3" />
+                {relatedness.sharedTypes.length === 1
+                  ? `Same type: ${relatedness.sharedTypes[0]}`
+                  : `Shared types: ${relatedness.sharedTypes.join(" / ")}`}
+              </Badge>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Colors - Rightmost */}
@@ -66,4 +102,3 @@ export function GuessCard({ guess, index, isCorrect = false, onRef }: GuessCardP
     </div>
   );
 }
-

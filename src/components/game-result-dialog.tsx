@@ -579,7 +579,7 @@ function CoffeeAsk({
           }}
         >
           <Coffee className="w-4 h-4 mr-2" />
-          Tip the dev
+          Buy me a coffee
         </Button>
       </a>
     </div>

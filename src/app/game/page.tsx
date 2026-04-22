@@ -24,6 +24,10 @@ import {
   todayUtcDateString,
 } from "@/lib/game/similarity";
 import {
+  computeGuessRelatedness,
+  type GuessRelatedness,
+} from "@/lib/game/relatedness";
+import {
   getContrastTextClass,
   getContrastHex,
   getDimmedColor,
@@ -142,6 +146,11 @@ interface Guess {
   colors: string[];
   similarity: number;
   spriteUrl: string | null;
+  // Relatedness flags help us tell the player *why* a wrong guess was warm
+  // (shares a type with the target, in the same evolution family, etc).
+  // Null while the target Pokemon's data hasn't loaded yet; the reload paths
+  // below fill this in once both sides are available.
+  relatedness?: GuessRelatedness | null;
 }
 
 // Local alias: keep old callsites working while all text-class lookups go
@@ -367,6 +376,10 @@ export default function GamePage() {
                             guessColors
                           ),
                           spriteUrl: guessSpriteUrl,
+                          relatedness: computeGuessRelatedness(
+                            guessPokemon,
+                            targetPokemonData
+                          ),
                         };
                       }
                     );
@@ -503,6 +516,10 @@ export default function GamePage() {
                     colors: guessColors,
                     similarity: 0, // Will be recalculated with actual target colors
                     spriteUrl,
+                    relatedness: computeGuessRelatedness(
+                      guessPokemon,
+                      targetPokemonData
+                    ),
                   };
                 }
               );
@@ -809,12 +826,16 @@ export default function GamePage() {
       targetColors.map((c) => c.hex),
       guessColors
     );
+    const relatedness = targetPokemon
+      ? computeGuessRelatedness(guessedPokemon, targetPokemon)
+      : null;
     const newGuess: Guess = {
       pokemonId,
       pokemonName: guessedMetadata.name,
       colors: guessColors,
       similarity,
       spriteUrl,
+      relatedness,
     };
 
     const newAttempts = attempts + 1;
@@ -833,6 +854,28 @@ export default function GamePage() {
       is_correct: won,
       hints_used_so_far: revealedHints.length,
     });
+
+    // Nudge the player when a wrong guess is still "warm" — same evolution
+    // family or a shared type. The guess card also carries these labels, but
+    // a short toast makes the feedback feel immediate and rewards near-misses
+    // without giving away the answer.
+    if (!won && !lost && relatedness) {
+      if (relatedness.sameEvolutionFamily) {
+        toast("Same evolution family — you're close!", {
+          icon: "🧬",
+          duration: 2500,
+        });
+      } else if (relatedness.sharedTypes.length > 0) {
+        const typeLabel =
+          relatedness.sharedTypes.length === 1
+            ? relatedness.sharedTypes[0]
+            : relatedness.sharedTypes.join(" / ");
+        toast(`Same type: ${typeLabel}`, {
+          icon: "🏷️",
+          duration: 2500,
+        });
+      }
+    }
 
     if (won) {
       setStatus("won");
