@@ -2253,26 +2253,22 @@ export default function GamePage() {
                         ref={(el) => {
                           guessRefs.current[index] = el;
                         }}
-                        className="flex items-center gap-4 p-3 rounded-lg border bg-card/50 opacity-50 flex-shrink-0"
+                        className="flex items-stretch rounded-lg border bg-card/50 opacity-50 flex-shrink-0 overflow-hidden"
                       >
-                        {/* Empty placeholder - Image */}
-                        <div className="relative flex-shrink-0 w-16 h-16 bg-muted rounded" />
+                        <div className="flex-1 min-w-0 flex items-center gap-4 p-3">
+                          {/* Empty placeholder - Image */}
+                          <div className="relative flex-shrink-0 w-16 h-16 bg-muted rounded" />
 
-                        {/* Empty placeholder - Name and Match */}
-                        <div className="flex-1 min-w-0">
-                          <div className="h-4 bg-muted rounded mb-2 w-24" />
-                          <div className="h-3 bg-muted rounded w-16" />
+                          {/* Empty placeholder - Name and Match */}
+                          <div className="flex-1 min-w-0">
+                            <div className="h-4 bg-muted rounded mb-2 w-24" />
+                            <div className="h-3 bg-muted rounded w-16" />
+                          </div>
                         </div>
 
-                        {/* Empty placeholder - Colors */}
-                        <div className="flex gap-1.5 items-center flex-shrink-0">
-                          {Array.from({ length: 3 }).map((_, colorIndex) => (
-                            <div
-                              key={colorIndex}
-                              className="h-10 w-10 rounded-md border-2 bg-muted"
-                            />
-                          ))}
-                        </div>
+                        {/* Empty placeholder - Colors: matches the flush-right
+                            swatch column used in filled guess cards. */}
+                        <div className="flex-shrink-0 w-10 self-stretch bg-muted" />
                       </div>
                     );
                   })}
