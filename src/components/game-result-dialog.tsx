@@ -350,6 +350,14 @@ export function GameResultDialog({
                   <Link
                     href={`/${targetPokemon.name.toLowerCase()}`}
                     className="w-full sm:w-auto"
+                    onClick={() =>
+                      track("explore_palette_clicked", {
+                        placement: "result_dialog",
+                        pokemon_id: targetPokemon.id,
+                        mode,
+                        won: isWon,
+                      })
+                    }
                   >
                     <Button
                       variant="outline"
@@ -411,6 +419,14 @@ export function GameResultDialog({
                   <Link
                     href={`/${targetPokemon.name.toLowerCase()}`}
                     className="w-full sm:w-auto"
+                    onClick={() =>
+                      track("explore_palette_clicked", {
+                        placement: "result_dialog",
+                        pokemon_id: targetPokemon.id,
+                        mode,
+                        won: isWon,
+                      })
+                    }
                   >
                     <Button
                       variant="outline"
@@ -430,7 +446,17 @@ export function GameResultDialog({
                 )}
                 {!user && (
                   <SignInButton mode="modal">
-                    <Button variant="outline" className="w-full sm:w-auto cursor-pointer">
+                    <Button
+                      variant="outline"
+                      className="w-full sm:w-auto cursor-pointer"
+                      onClick={() =>
+                        track("sign_in_from_game_clicked", {
+                          won: isWon,
+                          attempts,
+                          mode,
+                        })
+                      }
+                    >
                       <LogIn className="w-4 h-4 mr-2" />
                       Sign In to Save Progress
                     </Button>

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import type { gsap } from "gsap";
 import { useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
+import { track } from "@vercel/analytics";
 import {
   getAllPokemonMetadata,
   getPokemonById,
@@ -174,6 +175,18 @@ export default function GamePage() {
       shinyPreference: "both",
       selectedGenerations: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     });
+
+  // Wrap the setter so every change in unlimited filters gets recorded.
+  // Lets us see which generation subsets and shiny preferences players
+  // actually pick, which informs what we promote / default.
+  const updateUnlimitedSettings = (next: UnlimitedModeSettings) => {
+    track("unlimited_settings_changed", {
+      shiny_preference: next.shinyPreference,
+      generation_count: next.selectedGenerations.length,
+      generations: next.selectedGenerations.sort((a, b) => a - b).join(","),
+    });
+    setUnlimitedSettings(next);
+  };
   const [targetPokemonId, setTargetPokemonId] = useState<number | null>(null);
   const [targetPokemon, setTargetPokemon] = useState<Pokemon | null>(null);
   const [targetColors, setTargetColors] = useState<ColorWithFrequency[]>([]);
@@ -586,6 +599,13 @@ export default function GamePage() {
       }
 
       setTargetPokemonId(pokemonId);
+      track("game_started", {
+        mode,
+        pokemon_id: pokemonId,
+        is_shiny: gameShiny,
+        generation: getGenerationFromId(pokemonId),
+        is_signed_in: !!user,
+      });
       const pokemonData = await getPokemonById(pokemonId);
 
       if (pokemonData) {
@@ -806,8 +826,25 @@ export default function GamePage() {
     const won = pokemonId === targetPokemonId;
     const lost = !won && newAttempts >= MAX_ATTEMPTS;
 
+    track("guess_submitted", {
+      mode,
+      attempt_number: newAttempts,
+      similarity: Math.round(similarity),
+      is_correct: won,
+      hints_used_so_far: revealedHints.length,
+    });
+
     if (won) {
       setStatus("won");
+      track("game_completed", {
+        mode,
+        outcome: "won",
+        attempts: newAttempts,
+        hints_used: revealedHints.length,
+        is_shiny: isShiny === true,
+        pokemon_id: targetPokemonId ?? 0,
+        is_signed_in: !!user,
+      });
       // Show toast before the dialog
       toast.success(
         <div className="text-center w-full" style={{ width: "100%" }}>
@@ -844,6 +881,15 @@ export default function GamePage() {
       }
     } else if (lost) {
       setStatus("lost");
+      track("game_completed", {
+        mode,
+        outcome: "lost",
+        attempts: newAttempts,
+        hints_used: revealedHints.length,
+        is_shiny: isShiny === true,
+        pokemon_id: targetPokemonId ?? 0,
+        is_signed_in: !!user,
+      });
       setShowGameResultDialog(true);
       // Save attempt for daily mode only
       if (mode === "daily") {
@@ -991,6 +1037,14 @@ export default function GamePage() {
 
       const results = await Promise.all(syncPromises);
 
+      const successCount = results.filter(Boolean).length;
+      if (successCount > 0) {
+        track("pending_attempts_synced", {
+          attempted: results.length,
+          succeeded: successCount,
+        });
+      }
+
       // Only remove successfully synced attempts
       const failedAttempts = attempts.filter(
         (_: any, index: number) => !results[index]
@@ -1062,6 +1116,11 @@ export default function GamePage() {
     const nextHintIndex = revealedHints.length;
     setRevealedHints([...revealedHints, nextHintIndex]);
     setHintCooldown(5); // Start 5 second cooldown
+    track("hint_revealed", {
+      hint_index: nextHintIndex,
+      mode,
+      attempts_so_far: attempts,
+    });
   };
 
   // Timer countdown for hint cooldown
@@ -1249,6 +1308,15 @@ export default function GamePage() {
     if (status !== "playing" || !targetPokemon) return;
 
     setStatus("lost");
+    track("game_completed", {
+      mode,
+      outcome: "given_up",
+      attempts,
+      hints_used: revealedHints.length,
+      is_shiny: isShiny === true,
+      pokemon_id: targetPokemonId ?? 0,
+      is_signed_in: !!user,
+    });
     setShowGameResultDialog(true);
     setShowGiveUpDialog(false);
 
@@ -1327,6 +1395,14 @@ export default function GamePage() {
     }
 
     setTargetPokemonId(pokemonId);
+    track("game_started", {
+      mode,
+      pokemon_id: pokemonId,
+      is_shiny: gameShiny,
+      generation: getGenerationFromId(pokemonId),
+      is_signed_in: !!user,
+      from_reset: true,
+    });
     const pokemonData = await getPokemonById(pokemonId);
 
     if (pokemonData) {
@@ -1434,6 +1510,8 @@ export default function GamePage() {
                 value={mode}
                 onValueChange={(value) => {
                   const newMode = value as GameMode;
+                  if (newMode === mode) return;
+                  track("mode_switched", { from: mode, to: newMode });
                   // Reset game state when switching modes
                   if (newMode === "unlimited") {
                     setGuesses([]);
@@ -1713,6 +1791,14 @@ export default function GamePage() {
                       <Link
                         href={`/${targetPokemon.name.toLowerCase()}`}
                         className="mt-4"
+                        onClick={() =>
+                          track("explore_palette_clicked", {
+                            placement: "game_page_inline",
+                            pokemon_id: targetPokemon.id,
+                            mode,
+                            status,
+                          })
+                        }
                       >
                         <Button
                           variant="default"
@@ -1791,7 +1877,7 @@ export default function GamePage() {
                     {mode === "unlimited" && (
                       <UnlimitedModeSettingsDialog
                         settings={unlimitedSettings}
-                        onSettingsChange={setUnlimitedSettings}
+                        onSettingsChange={updateUnlimitedSettings}
                         availableGenerations={availableGenerations}
                       />
                     )}
@@ -1834,7 +1920,7 @@ export default function GamePage() {
                 mode === "unlimited" ? unlimitedSettings : undefined
               }
               onUnlimitedSettingsChange={
-                mode === "unlimited" ? setUnlimitedSettings : undefined
+                mode === "unlimited" ? updateUnlimitedSettings : undefined
               }
               availableGenerations={
                 mode === "unlimited" ? availableGenerations : undefined
