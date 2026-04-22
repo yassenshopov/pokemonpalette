@@ -66,14 +66,17 @@
   ],
   "colorPalette": {
     "primary": "#e6e6f6",
-    "secondary": "#acaccd",
+    "secondary": "#6bbdeb",
     "accent": "#393941",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#e6e6f6",
-      "#acaccd",
-      "#393941"
+      "#6bbdeb",
+      "#393941",
+      "#000000",
+      "#acadcc",
+      "#ffffff"
     ]
   },
   "artwork": {
