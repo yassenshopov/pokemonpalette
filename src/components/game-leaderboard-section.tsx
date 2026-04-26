@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { GameLeaderboard } from "@/components/game-leaderboard";
 
 interface LeaderboardEntry {

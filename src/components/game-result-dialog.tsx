@@ -27,7 +27,7 @@ import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
 import Link from "next/link";
 import { toast } from "sonner";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import {
   buildShareText,
   getDailyGameNumber,

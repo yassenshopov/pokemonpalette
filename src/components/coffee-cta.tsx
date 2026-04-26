@@ -1,7 +1,7 @@
 "use client";
 
 import { Coffee } from "lucide-react";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { getContrastHex } from "@/lib/game/colors";
 

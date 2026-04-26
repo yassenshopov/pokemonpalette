@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import type { gsap } from "gsap";
 import { useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import {
   getAllPokemonMetadata,
   getPokemonById,

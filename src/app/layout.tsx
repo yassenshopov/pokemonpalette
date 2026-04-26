@@ -1,14 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ColorblindProvider } from "@/components/colorblind-provider";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { StructuredData } from "@/components/structured-data";
+import {
+  GoogleAnalytics,
+  GoogleAnalyticsIdentity,
+} from "@/components/analytics/google-analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -140,9 +141,14 @@ export default function RootLayout({
   // Check if Clerk keys are available
   const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
-  // Wrap children with ClerkProvider only if keys are available
+  // Wrap children with ClerkProvider only if keys are available. The
+  // GA4 identity tracker also lives inside this branch — it depends on
+  // `useUser()` and would crash without a ClerkProvider above it.
   const content = publishableKey ? (
-    <ClerkProvider publishableKey={publishableKey}>{children}</ClerkProvider>
+    <ClerkProvider publishableKey={publishableKey}>
+      {children}
+      <GoogleAnalyticsIdentity />
+    </ClerkProvider>
   ) : (
     children
   );
@@ -172,27 +178,10 @@ export default function RootLayout({
         >
           <ColorblindProvider>
             {content}
-            <Analytics />
-            <SpeedInsights />
             <Toaster position="top-center" />
           </ColorblindProvider>
         </ThemeProvider>
-        {ga4Id && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${ga4Id}');
-              `}
-            </Script>
-          </>
-        )}
+        <GoogleAnalytics measurementId={ga4Id} />
       </body>
     </html>
   );
