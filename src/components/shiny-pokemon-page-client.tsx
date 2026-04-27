@@ -31,6 +31,13 @@ const CoffeeCTA = dynamic(
   () => import("@/components/coffee-cta").then((m) => ({ default: m.CoffeeCTA })),
   { ssr: false }
 );
+const ThemeExporter = dynamic(
+  () =>
+    import("@/components/theme-exporter").then((m) => ({
+      default: m.ThemeExporter,
+    })),
+  { ssr: false }
+);
 
 interface ShinyPokemonPageClientProps {
   pokemonMetadata: PokemonMetadata;
@@ -144,6 +151,14 @@ export function ShinyPokemonPageClient({
               <ColorShowcase
                 primaryColor={pokemonColors[0]}
                 secondaryColor={pokemonColors[1] || pokemonColors[0]}
+              />
+              <ThemeExporter
+                colors={pokemonColors}
+                pokemonName={
+                  pokemonMetadata.name
+                    ? `${pokemonMetadata.name}-shiny`
+                    : undefined
+                }
               />
             </>
           )}
