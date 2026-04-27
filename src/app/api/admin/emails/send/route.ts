@@ -6,11 +6,8 @@ import {
   EmailTemplate,
   EmailTemplateData,
 } from "@/lib/email-service";
+import { getDailyPaletteForDate } from "@/lib/game/daily-palette";
 import { logger } from "@/lib/logger";
-
-const TEMPLATE_SUBJECTS: Record<EmailTemplate, string> = {
-  "daily-nudge": "🎮 Don't forget today's Pokémon Palette challenge!",
-};
 
 type RecipientUser = {
   id: string;
@@ -46,6 +43,16 @@ export async function POST(req: NextRequest) {
     if (template === "daily-nudge") {
       const nudgeData = data as EmailTemplateData["daily-nudge"];
       nudgeData.gameUrl = `${baseUrl}/game`;
+    } else if (template === "daily-drop") {
+      const dropData = data as EmailTemplateData["daily-drop"];
+      dropData.gameUrl = `${baseUrl}/game`;
+      dropData.baseUrl = baseUrl;
+      // Resolve today's daily palette once per send so every recipient
+      // gets the same swatches that match the current /game challenge.
+      const dailyPalette = await getDailyPaletteForDate();
+      if (dailyPalette) {
+        dropData.previewColors = dailyPalette.colors;
+      }
     }
 
     let recipients: string[] = [];
@@ -57,7 +64,7 @@ export async function POST(req: NextRequest) {
           id: { in: userIds },
           isDeleted: false,
           email: { not: null },
-          ...(template === "daily-nudge"
+          ...(template === "daily-nudge" || template === "daily-drop"
             ? { receivesDailyEmails: true }
             : {}),
         },
@@ -109,17 +116,15 @@ export async function POST(req: NextRequest) {
     recipients = uniqueRecipients;
 
     // Resend allows 2 requests per second — send in batches of 2 every 500ms.
+    // EmailService.sendEmail persists each send to the `emails` table on
+    // its own; this route just collects per-recipient results for the UI.
     const batchSize = 2;
     const delayBetweenBatches = 500;
     const results: Array<{
+      email: string;
       success: boolean;
       messageId?: string;
       error?: string;
-      html?: string;
-      text?: string;
-      subject?: string;
-      fromEmail?: string;
-      fromName?: string;
     }> = [];
 
     for (let i = 0; i < recipients.length; i += batchSize) {
@@ -127,9 +132,9 @@ export async function POST(req: NextRequest) {
 
       const batchResults = await Promise.all(
         batch.map(async (email) => {
+          const user = users.find((u) => u.email === email);
           let personalizedData = { ...data };
-          if (template === "daily-nudge") {
-            const user = users.find((u) => u.email === email);
+          if (template === "daily-nudge" || template === "daily-drop") {
             if (user) {
               personalizedData = {
                 ...personalizedData,
@@ -141,73 +146,40 @@ export async function POST(req: NextRequest) {
             }
           }
 
-          return EmailService.sendEmail({
+          const result = await EmailService.sendEmail({
             to: email,
             template,
             data: personalizedData,
+            userId: user?.id,
           });
+
+          return {
+            email,
+            success: result.success,
+            messageId: result.messageId,
+            error: result.error,
+          };
         }),
       );
 
       results.push(...batchResults);
 
       if (i + batchSize < recipients.length) {
-        await new Promise((resolve) => setTimeout(resolve, delayBetweenBatches));
+        await new Promise((resolve) =>
+          setTimeout(resolve, delayBetweenBatches),
+        );
       }
     }
 
-    const emailLogs = await Promise.all(
-      results.map(async (result, index) => {
-        const email = recipients[index];
-        const user = users.find((u) => u.email === email);
-
-        try {
-          await prisma.email.create({
-            data: {
-              resendId: result.messageId ?? null,
-              userId: user?.id ?? null,
-              recipientEmail: email,
-              senderEmail:
-                result.fromEmail ||
-                process.env.RESEND_FROM_EMAIL ||
-                "noreply@pokemonpalette.com",
-              senderName:
-                result.fromName ||
-                process.env.RESEND_FROM_NAME ||
-                "Yasssen Shopov",
-              subject: result.subject || TEMPLATE_SUBJECTS[template],
-              templateType: template,
-              htmlContent: result.html ?? null,
-              textContent: result.text ?? null,
-              status: result.success ? "sent" : "failed",
-              errorMessage: result.error ?? null,
-            },
-          });
-        } catch (err) {
-          logger.error("admin.emails.send.log_failed", {
-            recipient: email,
-            error: err instanceof Error ? err.message : String(err),
-          });
-        }
-
-        return {
-          email,
-          success: result.success,
-          messageId: result.messageId,
-          error: result.error,
-        };
-      }),
-    );
-
-    const successCount = emailLogs.filter((r) => r.success).length;
-    const failedCount = emailLogs.length - successCount;
+    const successCount = results.filter((r) => r.success).length;
+    const failedCount = results.length - successCount;
 
     return NextResponse.json({
       success: true,
       sent: successCount,
       failed: failedCount,
       total: recipients.length,
-      results: emailLogs,
+      results,
     });
   } catch (err) {
     logger.error("admin.emails.send.failed", {

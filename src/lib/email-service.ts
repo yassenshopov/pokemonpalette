@@ -1,14 +1,24 @@
 import { Resend } from "resend";
 import { DailyNudgeTemplate } from "@/lib/email-templates/daily-nudge";
+import { DailyDropTemplate } from "@/lib/email-templates/daily-drop";
+import { prisma } from "@/lib/prisma";
+import { logger } from "@/lib/logger";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export type EmailTemplate = "daily-nudge";
+export type EmailTemplate = "daily-nudge" | "daily-drop";
 
 export interface EmailTemplateData {
   "daily-nudge": {
     userName?: string;
     gameUrl: string;
+  };
+  "daily-drop": {
+    userName?: string;
+    gameUrl: string;
+    baseUrl?: string;
+    date?: string;
+    previewColors?: [string, string, string];
   };
 }
 
@@ -17,41 +27,61 @@ export interface SendEmailOptions<T extends EmailTemplate> {
   template: T;
   data: EmailTemplateData[T];
   subject?: string;
+  /**
+   * Optional Clerk/Prisma user id to attach to the persisted log row.
+   * When omitted (e.g. transactional emails to non-users), the row is
+   * still written but `userId` is left null.
+   */
+  userId?: string;
+}
+
+export interface SendEmailResult {
+  success: boolean;
+  messageId?: string;
+  error?: string;
+  html?: string;
+  text?: string;
+  subject?: string;
+  fromEmail?: string;
+  fromName?: string;
+  /** Number of email rows written to the DB log (one per recipient). */
+  loggedCount?: number;
 }
 
 const TEMPLATE_SUBJECTS: Record<EmailTemplate, string> = {
   "daily-nudge": "🎮 Don't forget today's Pokémon Palette challenge!",
+  "daily-drop": "🎨 Today's Pokémon Palette is up!",
 };
 
 export class EmailService {
-  private static fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@pokemonpalette.com";
+  private static fromEmail =
+    process.env.RESEND_FROM_EMAIL || "noreply@pokemonpalette.com";
   private static fromName = process.env.RESEND_FROM_NAME || "Yasssen Shopov";
 
   /**
-   * Send an email using a template
+   * Send an email using a template.
+   *
+   * Every send (success OR failure) is persisted to the `emails` table so
+   * we have an authoritative record of every message dispatched from the
+   * platform — admin sends, scheduled jobs, transactional, etc. Callers
+   * never need to write to the table themselves.
    */
   static async sendEmail<T extends EmailTemplate>(
-    options: SendEmailOptions<T>
-  ): Promise<{ 
-    success: boolean; 
-    messageId?: string; 
-    error?: string;
-    html?: string;
-    text?: string;
-    subject?: string;
-    fromEmail?: string;
-    fromName?: string;
-  }> {
+    options: SendEmailOptions<T>,
+  ): Promise<SendEmailResult> {
+    const recipients = Array.isArray(options.to) ? options.to : [options.to];
+    const subject = options.subject || TEMPLATE_SUBJECTS[options.template];
+    let html: string | undefined;
+    let text: string | undefined;
+
     try {
       if (!process.env.RESEND_API_KEY) {
         throw new Error("RESEND_API_KEY is not configured");
       }
 
-      const recipients = Array.isArray(options.to) ? options.to : [options.to];
-      const subject = options.subject || TEMPLATE_SUBJECTS[options.template];
-
-      // Render the template
-      const { html, text } = this.renderTemplate(options.template, options.data);
+      const rendered = this.renderTemplate(options.template, options.data);
+      html = rendered.html;
+      text = rendered.text;
 
       const result = await resend.emails.send({
         from: `${this.fromName} <${this.fromEmail}>`,
@@ -62,16 +92,42 @@ export class EmailService {
       });
 
       if (result.error) {
+        const errorMessage = result.error.message || "Failed to send email";
+        const loggedCount = await this.persistLogs({
+          recipients,
+          userId: options.userId,
+          subject,
+          template: options.template,
+          html,
+          text,
+          status: "failed",
+          errorMessage,
+          messageId: null,
+        });
+
         return {
           success: false,
-          error: result.error.message || "Failed to send email",
+          error: errorMessage,
           html,
           text,
           subject,
           fromEmail: this.fromEmail,
           fromName: this.fromName,
+          loggedCount,
         };
       }
+
+      const loggedCount = await this.persistLogs({
+        recipients,
+        userId: options.userId,
+        subject,
+        template: options.template,
+        html,
+        text,
+        status: "sent",
+        errorMessage: null,
+        messageId: result.data?.id ?? null,
+      });
 
       return {
         success: true,
@@ -81,14 +137,93 @@ export class EmailService {
         subject,
         fromEmail: this.fromEmail,
         fromName: this.fromName,
+        loggedCount,
       };
     } catch (error) {
-      console.error("Email service error:", error);
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      logger.error("email_service.send_failed", {
+        template: options.template,
+        recipients: recipients.length,
+        error: errorMessage,
+      });
+
+      const loggedCount = await this.persistLogs({
+        recipients,
+        userId: options.userId,
+        subject,
+        template: options.template,
+        html,
+        text,
+        status: "failed",
+        errorMessage,
+        messageId: null,
+      });
+
       return {
         success: false,
-        error: error instanceof Error ? error.message : "Unknown error occurred",
+        error: errorMessage,
+        html,
+        text,
+        subject,
+        fromEmail: this.fromEmail,
+        fromName: this.fromName,
+        loggedCount,
       };
     }
+  }
+
+  /**
+   * Persist one row per recipient to the `emails` table.
+   *
+   * - Resend gives us a single message id for an entire send, even when
+   *   there are multiple recipients. Since `resend_id` is UNIQUE in the
+   *   schema, we attach the id to the first recipient only and leave it
+   *   null for the rest. In practice every caller in this codebase sends
+   *   to a single recipient at a time, so this is just defensive code.
+   * - Failures here are logged but never thrown — we don't want a DB
+   *   blip to mask a successful Resend delivery from the caller.
+   */
+  private static async persistLogs(input: {
+    recipients: string[];
+    userId?: string;
+    subject: string;
+    template: EmailTemplate;
+    html?: string;
+    text?: string;
+    status: "sent" | "failed";
+    errorMessage: string | null;
+    messageId: string | null;
+  }): Promise<number> {
+    let logged = 0;
+    for (const [index, recipient] of input.recipients.entries()) {
+      try {
+        await prisma.email.create({
+          data: {
+            resendId: index === 0 ? input.messageId : null,
+            userId: input.userId ?? null,
+            recipientEmail: recipient,
+            senderEmail: this.fromEmail,
+            senderName: this.fromName,
+            subject: input.subject,
+            templateType: input.template,
+            htmlContent: input.html ?? null,
+            textContent: input.text ?? null,
+            status: input.status,
+            errorMessage: input.errorMessage,
+          },
+        });
+        logged += 1;
+      } catch (err) {
+        logger.error("email_service.log_persist_failed", {
+          recipient,
+          template: input.template,
+          status: input.status,
+          error: err instanceof Error ? err.message : String(err),
+        });
+      }
+    }
+    return logged;
   }
 
   /**
@@ -96,7 +231,7 @@ export class EmailService {
    */
   static previewTemplate<T extends EmailTemplate>(
     template: T,
-    data: EmailTemplateData[T]
+    data: EmailTemplateData[T],
   ): { html: string; text: string; subject: string } {
     const { html, text } = this.renderTemplate(template, data);
     const subject = TEMPLATE_SUBJECTS[template];
@@ -109,11 +244,17 @@ export class EmailService {
    */
   private static renderTemplate<T extends EmailTemplate>(
     template: T,
-    data: EmailTemplateData[T]
+    data: EmailTemplateData[T],
   ): { html: string; text: string } {
     switch (template) {
       case "daily-nudge":
-        return DailyNudgeTemplate.render(data as EmailTemplateData["daily-nudge"]);
+        return DailyNudgeTemplate.render(
+          data as EmailTemplateData["daily-nudge"],
+        );
+      case "daily-drop":
+        return DailyDropTemplate.render(
+          data as EmailTemplateData["daily-drop"],
+        );
       default:
         throw new Error(`Unknown template: ${template}`);
     }
@@ -127,4 +268,3 @@ export class EmailService {
     return emailRegex.test(email);
   }
 }
-
