@@ -5,7 +5,8 @@ import { useUser } from "@clerk/nextjs";
 import { track } from "@/lib/analytics";
 import { GameLeaderboard } from "@/components/game-leaderboard";
 
-interface LeaderboardEntry {
+export interface LeaderboardEntry {
+  rank: number;
   userId: string;
   username: string | null;
   firstName: string | null;
@@ -19,30 +20,59 @@ interface LeaderboardEntry {
   averageAttempts: number;
 }
 
-interface LeaderboardResponse {
-  leaderboard: LeaderboardEntry[];
+export interface MeRow extends Omit<LeaderboardEntry, "rank"> {
+  rank: number | null;
+  totalRanked: number;
 }
 
-type SortBy = "currentStreak" | "winRate" | "totalWins" | "averageAttempts";
+interface LeaderboardResponse {
+  leaderboard: LeaderboardEntry[];
+  meta: {
+    sortBy: SortBy;
+    window: TimeWindow;
+    minGames: number;
+    limit: number;
+  };
+}
 
-const LIMIT = 25;
+interface MeResponse {
+  me: MeRow;
+}
 
-// Small presentational wrapper around GameLeaderboard that fetches from the
-// (edge-cached) /api/daily-game-attempts/leaderboard endpoint and computes
-// the signed-in user's position client-side. Keeping per-user data out of
-// the API response is what lets that endpoint be shared-cacheable at all -
-// see the IMPORTANT note in src/app/api/daily-game-attempts/leaderboard/route.ts.
+export type SortBy =
+  | "currentStreak"
+  | "winRate"
+  | "totalWins"
+  | "averageAttempts";
+export type TimeWindow = "all" | "week" | "today";
+
+const LIMIT = 10;
+
+// Glue layer: owns the sort + time-window state, fetches the public board
+// (edge-cached) and the caller's own rank in parallel from the per-user
+// /me endpoint. Splitting them keeps the public response shareable across
+// users — see the IMPORTANT comment in the leaderboard route.
 export function GameLeaderboardSection() {
-  const { user } = useUser();
+  const { user, isLoaded: userLoaded } = useUser();
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
+  const [me, setMe] = useState<MeRow | null>(null);
   const [loading, setLoading] = useState(true);
+  const [meLoading, setMeLoading] = useState(false);
   const [sortBy, setSortBy] = useState<SortBy>("currentStreak");
+  const [timeWindow, setTimeWindow] = useState<TimeWindow>("all");
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    fetch(`/api/daily-game-attempts/leaderboard?sortBy=${sortBy}&limit=${LIMIT}`)
-      .then((res) => (res.ok ? (res.json() as Promise<LeaderboardResponse>) : null))
+    const params = new URLSearchParams({
+      sortBy,
+      window: timeWindow,
+      limit: String(LIMIT),
+    });
+    fetch(`/api/daily-game-attempts/leaderboard?${params}`)
+      .then((res) =>
+        res.ok ? (res.json() as Promise<LeaderboardResponse>) : null
+      )
       .then((data) => {
         if (cancelled) return;
         setEntries(data?.leaderboard ?? []);
@@ -56,55 +86,56 @@ export function GameLeaderboardSection() {
     return () => {
       cancelled = true;
     };
-  }, [sortBy]);
+  }, [sortBy, timeWindow]);
+
+  // Fetch the caller's own rank in parallel with the public board. We
+  // re-key on user.id so the row clears when they sign out and refetches
+  // when they sign in. userLoaded gate avoids a flash of "Unauthorized"
+  // while Clerk is hydrating.
+  useEffect(() => {
+    if (!userLoaded) return;
+    if (!user?.id) {
+      setMe(null);
+      return;
+    }
+    let cancelled = false;
+    setMeLoading(true);
+    const params = new URLSearchParams({ sortBy, window: timeWindow });
+    fetch(`/api/daily-game-attempts/leaderboard/me?${params}`)
+      .then((res) => (res.ok ? (res.json() as Promise<MeResponse>) : null))
+      .then((data) => {
+        if (cancelled) return;
+        setMe(data?.me ?? null);
+      })
+      .catch(() => {
+        if (!cancelled) setMe(null);
+      })
+      .finally(() => {
+        if (!cancelled) setMeLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [sortBy, timeWindow, user?.id, userLoaded]);
 
   useEffect(() => {
-    track("leaderboard_viewed", { sort_by: sortBy });
-  }, [sortBy]);
-
-  const currentUserPosition = user?.id
-    ? entries.findIndex((e) => e.userId === user.id) + 1 || null
-    : null;
-
-  const tabs: { id: SortBy; label: string }[] = [
-    { id: "currentStreak", label: "Streak" },
-    { id: "winRate", label: "Win rate" },
-    { id: "totalWins", label: "Wins" },
-    { id: "averageAttempts", label: "Avg attempts" },
-  ];
+    track("leaderboard_viewed", {
+      sort_by: sortBy,
+      time_window: timeWindow,
+    });
+  }, [sortBy, timeWindow]);
 
   return (
-    <div className="w-full max-w-6xl">
-      <div className="mb-3 flex flex-wrap gap-2">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setSortBy(tab.id)}
-            className={`px-3 py-1.5 text-sm rounded-md border transition-colors cursor-pointer ${
-              sortBy === tab.id
-                ? "bg-foreground text-background border-foreground"
-                : "bg-background text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-      <GameLeaderboard
-        leaderboard={entries.map((e) => ({
-          userId: e.userId,
-          username: e.username ?? undefined,
-          firstName: e.firstName ?? undefined,
-          lastName: e.lastName ?? undefined,
-          imageUrl: e.imageUrl ?? undefined,
-          currentStreak: e.currentStreak,
-          winRate: e.winRate,
-          totalWins: e.totalWins,
-        }))}
-        loading={loading}
-        currentUserId={user?.id}
-        currentUserPosition={currentUserPosition}
-      />
-    </div>
+    <GameLeaderboard
+      entries={entries}
+      loading={loading}
+      me={me}
+      meLoading={meLoading}
+      currentUserId={user?.id}
+      sortBy={sortBy}
+      onSortByChange={setSortBy}
+      timeWindow={timeWindow}
+      onTimeWindowChange={setTimeWindow}
+    />
   );
 }
