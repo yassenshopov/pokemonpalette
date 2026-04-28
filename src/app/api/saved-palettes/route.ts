@@ -82,6 +82,27 @@ export async function GET() {
 // POST - Save a new palette (or update if same Pokemon configuration exists)
 const HEX = /^#[0-9a-fA-F]{6}$/;
 
+// The hero component prefers locally-bundled artwork (e.g. "/pokemon/25.png")
+// and only falls back to an absolute URL when the local file is missing, so
+// `imageUrl` must accept either an absolute http(s) URL or a site-relative
+// path beginning with "/". Anything else (protocol-relative, javascript:, etc.)
+// is rejected.
+const ImageUrlSchema = z
+  .string()
+  .max(2048)
+  .refine(
+    (v) => {
+      if (v.startsWith("/") && !v.startsWith("//")) return true;
+      try {
+        const u = new URL(v);
+        return u.protocol === "http:" || u.protocol === "https:";
+      } catch {
+        return false;
+      }
+    },
+    { message: "Expected an http(s) URL or a site-relative path" }
+  );
+
 const PostBodySchema = z.object({
   pokemonId: z.number().int().min(1).max(100000),
   pokemonName: z.string().min(1).max(100),
@@ -92,7 +113,7 @@ const PostBodySchema = z.object({
     .array(z.string().regex(HEX, "Expected hex color #RRGGBB"))
     .min(1)
     .max(12),
-  imageUrl: z.string().url().nullish(),
+  imageUrl: ImageUrlSchema.nullish(),
   paletteName: z.string().max(100).nullish(),
 });
 
