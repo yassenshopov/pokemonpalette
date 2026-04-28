@@ -1976,7 +1976,7 @@ export default function GamePage() {
           )}
 
           {/* Two Column Layout: Search (Left) and Guesses (Right) - 50/50 Split */}
-          <div className="mb-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="mb-6 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Column: Search */}
             <div className="lg:col-span-1">
               <div className="space-y-3 p-4 md:p-6">
