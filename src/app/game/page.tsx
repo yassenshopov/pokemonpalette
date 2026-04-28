@@ -106,10 +106,10 @@ const PokemonSearch = dynamic(
     })),
   { ssr: false }
 );
-const GameLeaderboardSection = dynamic(
+const GameLeaderboardDialog = dynamic(
   () =>
-    import("@/components/game-leaderboard-section").then((m) => ({
-      default: m.GameLeaderboardSection,
+    import("@/components/game-leaderboard-dialog").then((m) => ({
+      default: m.GameLeaderboardDialog,
     })),
   { ssr: false }
 );
@@ -1925,7 +1925,13 @@ export default function GamePage() {
                       />
                     )}
                   </div>
-                  <div>
+                  <div className="flex items-center gap-2">
+                    {/* Daily mode: leaderboard lives behind a button now
+                        rather than as an inline section at the bottom of
+                        the page. Same row as Give Up so it sits with the
+                        other game-context actions instead of being
+                        below-the-fold scroll content. */}
+                    {mode === "daily" && <GameLeaderboardDialog />}
                     {mode === "unlimited" && (
                       <Button
                         onClick={resetGame}
@@ -2277,9 +2283,11 @@ export default function GamePage() {
             </div>
           </div>
 
-          {/* Leaderboard - daily mode only. Edge-cached via /api so viral
-              traffic hits the origin at most once per minute per sort. */}
-          {mode === "daily" && <GameLeaderboardSection />}
+          {/* Leaderboard now lives in <GameLeaderboardDialog />, attached
+              to the action row above. Pulling it out of the inline scroll
+              path means the network requests only fire on user intent and
+              the page below the guesses can end on something more useful
+              than a leaderboard band. */}
         </div>
         <Footer />
       </div>

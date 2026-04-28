@@ -20,6 +20,10 @@ interface GameLeaderboardProps {
   currentUserId?: string;
   isSignedIn: boolean;
   me: MeData | null;
+  // When rendered inside a Dialog, the surrounding chrome (border, bg,
+  // padding, max-width) already comes from DialogContent. Embedded mode
+  // strips our own chrome so we don't double up.
+  embedded?: boolean;
 }
 
 const MAX_ATTEMPTS = 4;
@@ -151,6 +155,7 @@ export function GameLeaderboard({
   currentUserId,
   isSignedIn,
   me,
+  embedded = false,
 }: GameLeaderboardProps) {
   // The single rule for whether to render the sandwich: caller is signed
   // in, played today, and is past the visible top. Anything else and we
@@ -170,9 +175,19 @@ export function GameLeaderboard({
   return (
     <section
       aria-label="Today's leaderboard"
-      className="w-full max-w-2xl mx-auto mt-6 rounded-xl border bg-card"
+      className={cn(
+        "w-full",
+        // Standalone (page-level) styling. Dropped in embedded mode so
+        // the parent Dialog can supply its own border/padding/sizing.
+        !embedded && "max-w-2xl mx-auto mt-6 rounded-xl border bg-card"
+      )}
     >
-      <div className="flex items-center justify-between gap-3 px-4 py-3 border-b">
+      <div
+        className={cn(
+          "flex items-center justify-between gap-3",
+          embedded ? "pb-3" : "px-4 py-3 border-b"
+        )}
+      >
         <div className="flex items-center gap-2">
           <Trophy className="w-4 h-4 text-yellow-500" aria-hidden />
           <h2 className="text-sm font-semibold font-heading">
@@ -190,7 +205,7 @@ export function GameLeaderboard({
         </span>
       </div>
 
-      <div className="p-2">
+      <div className={cn(embedded ? "py-1" : "p-2")}>
         {loading ? (
           <div className="space-y-1">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -265,6 +280,7 @@ export function GameLeaderboard({
           isSignedIn={isSignedIn}
           me={me}
           totalPlayers={totalPlayers}
+          embedded={embedded}
         />
       )}
     </section>
@@ -275,26 +291,27 @@ function FooterNudge({
   isSignedIn,
   me,
   totalPlayers,
+  embedded,
 }: {
   isSignedIn: boolean;
   me: MeData | null;
   totalPlayers: number;
+  embedded: boolean;
 }) {
   if (totalPlayers === 0) return null;
 
+  // Padding mirrors the header logic — embedded mode lets DialogContent
+  // own the horizontal padding so we just render the divider + text.
+  const cls = cn(
+    "border-t text-xs text-muted-foreground text-center",
+    embedded ? "pt-3 mt-1" : "px-4 py-3"
+  );
+
   if (!isSignedIn) {
-    return (
-      <p className="px-4 py-3 border-t text-xs text-muted-foreground text-center">
-        Sign in to track your streak and rank.
-      </p>
-    );
+    return <p className={cls}>Sign in to track your streak and rank.</p>;
   }
   if (me && !me.played) {
-    return (
-      <p className="px-4 py-3 border-t text-xs text-muted-foreground text-center">
-        Play today&apos;s puzzle to land on the board.
-      </p>
-    );
+    return <p className={cls}>Play today&apos;s puzzle to land on the board.</p>;
   }
   // Signed in + played + in top → no footer needed; the row's already
   // highlighted above.

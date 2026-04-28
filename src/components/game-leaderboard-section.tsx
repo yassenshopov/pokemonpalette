@@ -38,10 +38,18 @@ interface MeResponse {
 const TOP_LIMIT = 10;
 const NEIGHBOR_WINDOW = 2;
 
+interface GameLeaderboardSectionProps {
+  // Strips the section's own card chrome so it can sit inside a Dialog
+  // (or anywhere else with its own surface) without nesting borders.
+  embedded?: boolean;
+}
+
 // Fetches today's leaderboard slices in parallel. The two endpoints are
 // separated on purpose — the public list is edge-cacheable, the /me row
 // is per-user. Combining them at the client keeps both characteristics.
-export function GameLeaderboardSection() {
+export function GameLeaderboardSection({
+  embedded = false,
+}: GameLeaderboardSectionProps = {}) {
   const { user, isLoaded: userLoaded } = useUser();
   const [publicData, setPublicData] = useState<PublicResponse | null>(null);
   const [meData, setMeData] = useState<MeResponse | null>(null);
@@ -103,6 +111,7 @@ export function GameLeaderboardSection() {
       currentUserId={user?.id}
       isSignedIn={!!user?.id && userLoaded}
       me={meData}
+      embedded={embedded}
     />
   );
 }
