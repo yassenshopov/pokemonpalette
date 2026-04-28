@@ -3,27 +3,26 @@ import { auth } from "@clerk/nextjs/server";
 import { z } from "zod";
 import { supabaseAdmin } from "@/lib/supabase";
 import { logger } from "@/lib/logger";
+import { todayUtcDateString } from "@/lib/game/similarity";
 
-// GET — caller's row + rank in the global leaderboard.
+// GET — the caller's row + immediate neighbors for the day's puzzle,
+// plus their all-time current streak (so the UI can show the small
+// streak badge on their row, à la LinkedIn).
 //
-// Used by the leaderboard UI to pin the signed-in user below the top-N
-// when they're not visible. NOT edge-cacheable: the response is keyed on
-// the caller's identity. We send `Cache-Control: private, no-store` to
-// belt-and-suspenders past any future caching layer.
-//
-// Sort/window/minGames must match the values the public list endpoint was
-// called with, otherwise the rank shown to the user won't match the row
-// ordering of the visible board.
+// NOT edge-cacheable: the response is keyed on the caller's identity.
+// `Cache-Control: private, no-store` belt-and-suspenders this past any
+// future caching layer.
 
 const QuerySchema = z.object({
-  sortBy: z
-    .enum(["currentStreak", "winRate", "totalWins", "averageAttempts"])
+  date: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
     .optional(),
-  window: z.enum(["all", "week", "today"]).optional(),
-  minGames: z.coerce.number().int().min(0).max(1000).optional(),
+  // ±N neighbors above and below the caller. Capped server-side so a
+  // bug in the client can't inflate the response into a full-table
+  // sandwich.
+  neighbors: z.coerce.number().int().min(0).max(5).optional(),
 });
-
-const DEFAULT_MIN_GAMES_FOR_WIN_RATE = 5;
 
 export async function GET(req: NextRequest) {
   let userId: string | null = null;
@@ -47,9 +46,8 @@ export async function GET(req: NextRequest) {
   }
 
   const parsed = QuerySchema.safeParse({
-    sortBy: req.nextUrl.searchParams.get("sortBy") ?? undefined,
-    window: req.nextUrl.searchParams.get("window") ?? undefined,
-    minGames: req.nextUrl.searchParams.get("minGames") ?? undefined,
+    date: req.nextUrl.searchParams.get("date") ?? undefined,
+    neighbors: req.nextUrl.searchParams.get("neighbors") ?? undefined,
   });
   if (!parsed.success) {
     return NextResponse.json(
@@ -57,21 +55,18 @@ export async function GET(req: NextRequest) {
       { status: 400 }
     );
   }
-  const { sortBy = "currentStreak", window = "all" } = parsed.data;
-  const minGames =
-    parsed.data.minGames ??
-    (sortBy === "winRate" ? DEFAULT_MIN_GAMES_FOR_WIN_RATE : 0);
+  const date = parsed.data.date ?? todayUtcDateString();
+  const neighbors = parsed.data.neighbors ?? 2;
 
-  const { data, error } = await supabaseAdmin.rpc("user_leaderboard_rank", {
-    p_user_id: userId,
-    p_sort_by: sortBy,
-    p_window: window,
-    p_min_games: minGames,
-  });
+  const { data, error } = await supabaseAdmin.rpc(
+    "daily_puzzle_leaderboard_me",
+    { p_date: date, p_user_id: userId, p_neighbors: neighbors }
+  );
 
   if (error) {
     logger.error("leaderboard_me.rpc_failed", {
       userId,
+      date,
       error: error.message,
     });
     return NextResponse.json(
@@ -80,8 +75,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  return NextResponse.json(
-    { me: data, meta: { sortBy, window, minGames } },
-    { headers: { "Cache-Control": "private, no-store" } }
-  );
+  return NextResponse.json(data, {
+    headers: { "Cache-Control": "private, no-store" },
+  });
 }

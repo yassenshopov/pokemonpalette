@@ -2,9 +2,23 @@
 
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer className="w-full border-t">
       <div className="w-full px-4 md:px-6 py-8 md:py-12">
@@ -16,7 +30,7 @@ export function Footer() {
                 Pokemon Palette
               </h3>
               <span className="text-muted-foreground hidden sm:inline">|</span>
-              <span className="text-muted-foreground text-sm">2025</span>
+              <span className="text-muted-foreground text-sm">{year}</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Generate beautiful color palettes from Pokemon artwork. Free
@@ -88,13 +102,13 @@ export function Footer() {
             </h4>
             <div className="flex space-x-3 mb-4">
               <Link
-                href="https://twitter.com/yassenshopov"
+                href="https://x.com/yassenshopov"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter (opens in new tab)"
+                aria-label="X (opens in new tab)"
                 className="text-muted-foreground hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                <Twitter className="h-5 w-5" aria-hidden="true" />
+                <XIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="https://github.com/yassenshopov"

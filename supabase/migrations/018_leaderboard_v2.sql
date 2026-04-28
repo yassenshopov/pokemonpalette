@@ -10,6 +10,11 @@
 -- Adds user_leaderboard_rank() so /api/daily-game-attempts/leaderboard/me
 -- can pin the caller's row below the top-N when they're not visible. That
 -- endpoint is per-user and NOT edge-cacheable — keep it that way.
+--
+-- NOTE: superseded by migration 019, which simplifies the leaderboard down
+-- to a single daily-puzzle ranking. The functions defined here are dropped
+-- in 019; the file is kept on disk because it has been applied to prod and
+-- migration history is append-only.
 
 -- Old (text, int) signature is replaced. CREATE OR REPLACE can't change a
 -- function's signature in Postgres, so drop and recreate.

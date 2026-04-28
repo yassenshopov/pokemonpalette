@@ -5,80 +5,59 @@ import { useUser } from "@clerk/nextjs";
 import { track } from "@/lib/analytics";
 import { GameLeaderboard } from "@/components/game-leaderboard";
 
-export interface LeaderboardEntry {
+// Single row in the daily leaderboard — same shape on the public board
+// and inside the per-user `neighbors` payload. `won=false` represents a
+// loss / give-up; UI renders that as "X" rather than "n/4".
+export interface DailyEntry {
   rank: number;
   userId: string;
   username: string | null;
   firstName: string | null;
   lastName: string | null;
   imageUrl: string | null;
-  totalGames: number;
-  totalWins: number;
-  winRate: number;
-  currentStreak: number;
-  longestStreak: number;
-  averageAttempts: number;
+  attempts: number;
+  hintsUsed: number;
+  won: boolean;
 }
 
-export interface MeRow extends Omit<LeaderboardEntry, "rank"> {
-  rank: number | null;
-  totalRanked: number;
-}
-
-interface LeaderboardResponse {
-  leaderboard: LeaderboardEntry[];
-  meta: {
-    sortBy: SortBy;
-    window: TimeWindow;
-    minGames: number;
-    limit: number;
-  };
+interface PublicResponse {
+  date: string;
+  totalPlayers: number;
+  entries: DailyEntry[];
 }
 
 interface MeResponse {
-  me: MeRow;
+  date: string;
+  totalPlayers: number;
+  rank: number | null;
+  played: boolean;
+  currentStreak: number;
+  neighbors: DailyEntry[];
 }
 
-export type SortBy =
-  | "currentStreak"
-  | "winRate"
-  | "totalWins"
-  | "averageAttempts";
-export type TimeWindow = "all" | "week" | "today";
+const TOP_LIMIT = 10;
+const NEIGHBOR_WINDOW = 2;
 
-const LIMIT = 10;
-
-// Glue layer: owns the sort + time-window state, fetches the public board
-// (edge-cached) and the caller's own rank in parallel from the per-user
-// /me endpoint. Splitting them keeps the public response shareable across
-// users — see the IMPORTANT comment in the leaderboard route.
+// Fetches today's leaderboard slices in parallel. The two endpoints are
+// separated on purpose — the public list is edge-cacheable, the /me row
+// is per-user. Combining them at the client keeps both characteristics.
 export function GameLeaderboardSection() {
   const { user, isLoaded: userLoaded } = useUser();
-  const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
-  const [me, setMe] = useState<MeRow | null>(null);
+  const [publicData, setPublicData] = useState<PublicResponse | null>(null);
+  const [meData, setMeData] = useState<MeResponse | null>(null);
   const [loading, setLoading] = useState(true);
-  const [meLoading, setMeLoading] = useState(false);
-  const [sortBy, setSortBy] = useState<SortBy>("currentStreak");
-  const [timeWindow, setTimeWindow] = useState<TimeWindow>("all");
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    const params = new URLSearchParams({
-      sortBy,
-      window: timeWindow,
-      limit: String(LIMIT),
-    });
-    fetch(`/api/daily-game-attempts/leaderboard?${params}`)
-      .then((res) =>
-        res.ok ? (res.json() as Promise<LeaderboardResponse>) : null
-      )
+    fetch(`/api/daily-game-attempts/leaderboard?limit=${TOP_LIMIT}`)
+      .then((res) => (res.ok ? (res.json() as Promise<PublicResponse>) : null))
       .then((data) => {
         if (cancelled) return;
-        setEntries(data?.leaderboard ?? []);
+        setPublicData(data);
       })
       .catch(() => {
-        if (!cancelled) setEntries([]);
+        if (!cancelled) setPublicData(null);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -86,56 +65,44 @@ export function GameLeaderboardSection() {
     return () => {
       cancelled = true;
     };
-  }, [sortBy, timeWindow]);
+  }, []);
 
-  // Fetch the caller's own rank in parallel with the public board. We
-  // re-key on user.id so the row clears when they sign out and refetches
-  // when they sign in. userLoaded gate avoids a flash of "Unauthorized"
-  // while Clerk is hydrating.
+  // Re-key on user.id so signing in/out flips the row cleanly. Gated on
+  // userLoaded to avoid a flash of "Unauthorized" while Clerk hydrates.
   useEffect(() => {
-    if (!userLoaded) return;
-    if (!user?.id) {
-      setMe(null);
+    if (!userLoaded || !user?.id) {
+      setMeData(null);
       return;
     }
     let cancelled = false;
-    setMeLoading(true);
-    const params = new URLSearchParams({ sortBy, window: timeWindow });
-    fetch(`/api/daily-game-attempts/leaderboard/me?${params}`)
+    fetch(
+      `/api/daily-game-attempts/leaderboard/me?neighbors=${NEIGHBOR_WINDOW}`
+    )
       .then((res) => (res.ok ? (res.json() as Promise<MeResponse>) : null))
       .then((data) => {
         if (cancelled) return;
-        setMe(data?.me ?? null);
+        setMeData(data);
       })
       .catch(() => {
-        if (!cancelled) setMe(null);
-      })
-      .finally(() => {
-        if (!cancelled) setMeLoading(false);
+        if (!cancelled) setMeData(null);
       });
     return () => {
       cancelled = true;
     };
-  }, [sortBy, timeWindow, user?.id, userLoaded]);
+  }, [user?.id, userLoaded]);
 
   useEffect(() => {
-    track("leaderboard_viewed", {
-      sort_by: sortBy,
-      time_window: timeWindow,
-    });
-  }, [sortBy, timeWindow]);
+    track("leaderboard_viewed", { variant: "daily_simple" });
+  }, []);
 
   return (
     <GameLeaderboard
-      entries={entries}
       loading={loading}
-      me={me}
-      meLoading={meLoading}
+      entries={publicData?.entries ?? []}
+      totalPlayers={publicData?.totalPlayers ?? 0}
       currentUserId={user?.id}
-      sortBy={sortBy}
-      onSortByChange={setSortBy}
-      timeWindow={timeWindow}
-      onTimeWindowChange={setTimeWindow}
+      isSignedIn={!!user?.id && userLoaded}
+      me={meData}
     />
   );
 }
