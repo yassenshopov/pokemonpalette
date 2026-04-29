@@ -55,8 +55,12 @@ export async function GET(req: NextRequest) {
       `,
     ]);
 
-    const locatedUsers = Number(locatedRows[0]?.count ?? 0n);
-    const totalUsers = Number(totalRows[0]?.count ?? 0n);
+    // count(*)::bigint comes back as a JS BigInt — Number() narrows it for
+    // the JSON response. The fallback is the plain literal 0 (not 0n)
+    // because tsconfig targets ES2017, which doesn't allow BigInt literal
+    // syntax.
+    const locatedUsers = Number(locatedRows[0]?.count ?? 0);
+    const totalUsers = Number(totalRows[0]?.count ?? 0);
 
     if (error) {
       logger.error("admin.insights.geography.rpc_failed", {
