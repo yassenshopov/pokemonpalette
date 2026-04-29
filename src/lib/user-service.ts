@@ -110,6 +110,12 @@ export async function syncUserFromClerk(payload: ClerkUserPayload): Promise<User
   const createdAt = toDate(payload.created_at) ?? new Date();
   const updatedAt = toDate(payload.updated_at) ?? new Date();
 
+  // Geo fields (`country_code`, `timezone`, `geo_updated_at`) are populated
+  // by `POST /api/me/geo` from request headers, not by Clerk. We must
+  // therefore omit them from the update path so a webhook event doesn't
+  // overwrite them with NULL. They're also intentionally absent from the
+  // `create` path so a brand-new row starts NULL and is filled in on the
+  // user's first authenticated request.
   const user = await prisma.user.upsert({
     where: { id: payload.id },
     update: {

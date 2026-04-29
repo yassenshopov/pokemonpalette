@@ -10,6 +10,7 @@ import {
   GoogleAnalytics,
   GoogleAnalyticsIdentity,
 } from "@/components/analytics/google-analytics";
+import { GeoCapture } from "@/components/analytics/geo-capture";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -148,6 +149,7 @@ export default function RootLayout({
     <ClerkProvider publishableKey={publishableKey}>
       {children}
       <GoogleAnalyticsIdentity />
+      <GeoCapture />
     </ClerkProvider>
   ) : (
     children

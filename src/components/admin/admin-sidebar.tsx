@@ -8,6 +8,7 @@ import {
   Gauge,
   Gamepad2,
   Mail,
+  Map as MapIcon,
   Palette,
   Paintbrush,
   Users,
@@ -46,6 +47,7 @@ const MANAGEMENT: NavItem[] = [
   { label: "Users", href: "/admin/users", icon: Users },
   { label: "Game Data", href: "/admin/game", icon: Gamepad2 },
   { label: "Saved Palettes", href: "/admin/palettes", icon: Palette },
+  { label: "Insights", href: "/admin/insights", icon: MapIcon },
 ];
 
 const OPERATIONS: NavItem[] = [
