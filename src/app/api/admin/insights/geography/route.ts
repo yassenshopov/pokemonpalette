@@ -27,18 +27,36 @@ export async function GET(req: NextRequest) {
     const range: RangeValue = rangeFromSearchParams(req.nextUrl.searchParams);
     const resolved = resolveRange(range);
 
-    const [{ data, error }, locatedUsers, totalUsers] = await Promise.all([
+    // The coverage counts use $queryRaw on purpose: they reference the
+    // `country_code` column added in migration 021. Going through the
+    // generated Prisma client would force every consumer of this codebase
+    // to re-run `prisma generate` (which fights with the dev server's
+    // engine-DLL lock on Windows). $queryRaw asks the DB directly and
+    // doesn't care about the typed client schema.
+    const [
+      { data, error },
+      locatedRows,
+      totalRows,
+    ] = await Promise.all([
       supabaseAdmin.rpc("admin_user_geography", {
         p_from: resolved.fromISO,
         p_to: resolved.toISO,
       }),
-      // Total users with a country code populated — drives the "geo
-      // coverage" indicator on the map card.
-      prisma.user.count({
-        where: { isDeleted: false, countryCode: { not: null } },
-      }),
-      prisma.user.count({ where: { isDeleted: false } }),
+      prisma.$queryRaw<Array<{ count: bigint }>>`
+        SELECT count(*)::bigint AS count
+        FROM public.users
+        WHERE is_deleted = false
+          AND country_code IS NOT NULL
+      `,
+      prisma.$queryRaw<Array<{ count: bigint }>>`
+        SELECT count(*)::bigint AS count
+        FROM public.users
+        WHERE is_deleted = false
+      `,
     ]);
+
+    const locatedUsers = Number(locatedRows[0]?.count ?? 0n);
+    const totalUsers = Number(totalRows[0]?.count ?? 0n);
 
     if (error) {
       logger.error("admin.insights.geography.rpc_failed", {

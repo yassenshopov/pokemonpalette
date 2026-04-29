@@ -84,26 +84,37 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, captured: false });
   }
 
+  // The reads/writes below use $queryRaw / $executeRaw because they touch
+  // columns added in migration 021 (`country_code`, `timezone`,
+  // `geo_updated_at`). Going through the typed Prisma client would force
+  // every consumer to re-run `prisma generate`, which fights with the dev
+  // server's engine-DLL lock on Windows. The DB is the source of truth;
+  // these statements work whether or not the generated client has caught up.
   try {
-    const existing = await prisma.user.findUnique({
-      where: { id: userId },
-      select: {
-        countryCode: true,
-        timezone: true,
-        geoUpdatedAt: true,
-        isDeleted: true,
-      },
-    });
+    const rows = await prisma.$queryRaw<
+      Array<{
+        country_code: string | null;
+        timezone: string | null;
+        geo_updated_at: Date | null;
+        is_deleted: boolean;
+      }>
+    >`
+      SELECT country_code, timezone, geo_updated_at, is_deleted
+      FROM public.users
+      WHERE id = ${userId}
+      LIMIT 1
+    `;
+    const existing = rows[0];
 
-    if (!existing || existing.isDeleted) {
+    if (!existing || existing.is_deleted) {
       return NextResponse.json({ ok: false }, { status: 404 });
     }
 
     const fresh =
-      existing.geoUpdatedAt &&
-      Date.now() - existing.geoUpdatedAt.getTime() < REFRESH_INTERVAL_MS;
+      existing.geo_updated_at &&
+      Date.now() - existing.geo_updated_at.getTime() < REFRESH_INTERVAL_MS;
     const sameCountry =
-      safeCountry === null || existing.countryCode === safeCountry;
+      safeCountry === null || existing.country_code === safeCountry;
     const sameTimezone =
       safeTimezone === null || existing.timezone === safeTimezone;
 
@@ -111,14 +122,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true, captured: false, fresh: true });
     }
 
-    await prisma.user.update({
-      where: { id: userId },
-      data: {
-        countryCode: safeCountry ?? existing.countryCode,
-        timezone: safeTimezone ?? existing.timezone,
-        geoUpdatedAt: new Date(),
-      },
-    });
+    const nextCountry = safeCountry ?? existing.country_code;
+    const nextTimezone = safeTimezone ?? existing.timezone;
+
+    await prisma.$executeRaw`
+      UPDATE public.users
+      SET country_code   = ${nextCountry},
+          timezone       = ${nextTimezone},
+          geo_updated_at = now()
+      WHERE id = ${userId}
+    `;
 
     return NextResponse.json({ ok: true, captured: true });
   } catch (err) {

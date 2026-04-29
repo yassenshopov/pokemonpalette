@@ -178,13 +178,21 @@ function toCumulative(points: SparkPoint[]): SparkPoint[] {
   });
 }
 
-/** Merge two same-length time series into chart-ready rows. */
+/**
+ * Merge two same-length time series into chart-ready rows of the shape
+ * `{ date: string, [aKey]: number, [bKey]: number }`. We can't express that
+ * with `{ date: string } & Record<string, number>` (the index signature
+ * would force `date` to be a number too), so the row type is the union
+ * `string | number` and Recharts narrows it back to numbers via dataKey.
+ */
+type MergedRow = { date: string } & { [k: string]: string | number };
+
 function mergeSeries(
   a: SparkPoint[],
   b: SparkPoint[],
   aKey: string,
   bKey: string,
-): Array<{ date: string } & Record<string, number>> {
+): MergedRow[] {
   const map = new Map<string, Record<string, number>>();
   for (const p of a) map.set(p.date, { [aKey]: p.count, [bKey]: 0 });
   for (const p of b) {
@@ -194,7 +202,7 @@ function mergeSeries(
   }
   return Array.from(map.entries())
     .sort(([x], [y]) => (x < y ? -1 : x > y ? 1 : 0))
-    .map(([date, row]) => ({ date, ...(row as Record<string, number>) }));
+    .map(([date, row]) => ({ date, ...row }));
 }
 
 // --- component -------------------------------------------------------------
