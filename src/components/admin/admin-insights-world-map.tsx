@@ -27,7 +27,6 @@ import {
   ISO_COUNTRIES,
   NUMERIC_TO_ALPHA2,
   countryName,
-  flagEmoji,
 } from "@/lib/data/iso-countries";
 import {
   rangeFromSearchParams,
@@ -106,9 +105,10 @@ async function loadWorldData(): Promise<WorldData> {
       );
       const path = geoPath(projection);
 
-      const features: CountryFeature[] = geo.features.map((f) => {
-        const id = String(f.id ?? "").padStart(3, "0");
-        const alpha2 = NUMERIC_TO_ALPHA2[id] ?? null;
+      const features: CountryFeature[] = geo.features.map((f, idx) => {
+        const numericId = String(f.id ?? "").padStart(3, "0");
+        const id = f.id ? numericId : `_${idx}`;
+        const alpha2 = NUMERIC_TO_ALPHA2[numericId] ?? null;
         const props = (f.properties ?? {}) as { name?: string };
         const name = alpha2
           ? (ISO_COUNTRIES[alpha2]?.name ?? props.name ?? "Unknown")
@@ -261,20 +261,20 @@ function WorldMapBody({
     <TooltipProvider delayDuration={120}>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <div className="space-y-2">
-          <div className="rounded-lg border bg-muted/20 p-2">
+          <div className="overflow-hidden rounded-lg border p-2" style={{ background: "hsl(var(--primary) / 0.04)" }}>
             <svg
               role="img"
               aria-label="World map of user countries"
               viewBox={`0 0 ${world.projectionWidth} ${world.projectionHeight}`}
               className="block h-auto w-full text-primary"
             >
-              {/* Backdrop ocean color follows the muted token. */}
+              {/* Ocean fill — subtly tinted so land stands out. */}
               <rect
                 x={0}
                 y={0}
                 width={world.projectionWidth}
                 height={world.projectionHeight}
-                className="fill-muted/30"
+                style={{ fill: "hsl(var(--primary) / 0.06)" }}
               />
               {world.features.map((f) => {
                 const row = f.alpha2 ? byAlpha2.get(f.alpha2) : undefined;
@@ -321,12 +321,7 @@ function WorldMapBody({
                     <span className="w-4 shrink-0 text-xs font-medium tabular-nums text-muted-foreground">
                       {idx + 1}
                     </span>
-                    <span
-                      aria-hidden="true"
-                      className="text-base leading-none"
-                    >
-                      {flagEmoji(row.country_code) || "🏳"}
-                    </span>
+                    <FlagImage code={row.country_code} size={20} />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium">
                         {countryName(row.country_code)}
@@ -366,29 +361,28 @@ function CountryShape({
 }) {
   if (!f.d) return null;
 
-  const fillStyle: React.CSSProperties = {
-    fill: bucket === 0 ? undefined : "hsl(var(--primary))",
-    fillOpacity: HEAT_OPACITY[bucket],
-  };
+  // bucket 0 = no users → solid neutral land fill.
+  // bucket 1–5 = has users → primary-tinted heat.
+  const fillStyle: React.CSSProperties =
+    bucket === 0
+      ? { fill: "hsl(var(--muted-foreground) / 0.18)" }
+      : { fill: "hsl(var(--primary))", fillOpacity: HEAT_OPACITY[bucket] };
 
   const path = (
     <path
       d={f.d}
       style={fillStyle}
       className={cn(
-        "stroke-background transition-[fill-opacity] duration-200",
-        bucket === 0 ? "fill-muted/60" : "",
-        row
-          ? "cursor-pointer hover:[fill-opacity:1]"
-          : "pointer-events-none",
+        "transition-[fill-opacity,fill] duration-200 cursor-pointer",
+        bucket === 0
+          ? "stroke-background/80 hover:fill-[hsl(var(--muted-foreground)/0.3)]"
+          : "stroke-background hover:[fill-opacity:1]",
       )}
-      strokeWidth={0.4}
+      strokeWidth={0.5}
       vectorEffect="non-scaling-stroke"
-      aria-label={f.alpha2 ? `${f.name}` : f.name}
+      aria-label={f.name}
     />
   );
-
-  if (!row) return path;
 
   return (
     <Tooltip>
@@ -396,32 +390,63 @@ function CountryShape({
       <TooltipContent side="top" className="max-w-[16rem]">
         <div className="space-y-0.5 text-xs">
           <div className="flex items-center gap-1.5 font-medium">
-            <span aria-hidden="true">
-              {f.alpha2 ? flagEmoji(f.alpha2) : ""}
-            </span>
+            {f.alpha2 ? (
+              <FlagImage code={f.alpha2} size={16} />
+            ) : null}
             <span>{f.name}</span>
           </div>
-          <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5">
-            <span className="text-muted-foreground">Users</span>
-            <span className="text-right tabular-nums">
-              {numberFormatter.format(row.users)}
-            </span>
-            <span className="text-muted-foreground">Active</span>
-            <span className="text-right tabular-nums">
-              {numberFormatter.format(row.active_in_range)}
-            </span>
-            <span className="text-muted-foreground">Attempts</span>
-            <span className="text-right tabular-nums">
-              {numberFormatter.format(row.attempts_in_range)}
-            </span>
-            <span className="text-muted-foreground">Palettes</span>
-            <span className="text-right tabular-nums">
-              {numberFormatter.format(row.palettes_in_range)}
-            </span>
-          </div>
+          {row ? (
+            <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5">
+              <span className="text-muted-foreground">Users</span>
+              <span className="text-right tabular-nums">
+                {numberFormatter.format(row.users)}
+              </span>
+              <span className="text-muted-foreground">Active</span>
+              <span className="text-right tabular-nums">
+                {numberFormatter.format(row.active_in_range)}
+              </span>
+              <span className="text-muted-foreground">Attempts</span>
+              <span className="text-right tabular-nums">
+                {numberFormatter.format(row.attempts_in_range)}
+              </span>
+              <span className="text-muted-foreground">Palettes</span>
+              <span className="text-right tabular-nums">
+                {numberFormatter.format(row.palettes_in_range)}
+              </span>
+            </div>
+          ) : (
+            <p className="mt-1 text-muted-foreground">No users yet.</p>
+          )}
         </div>
       </TooltipContent>
     </Tooltip>
+  );
+}
+
+// --- flag image ------------------------------------------------------------
+
+/**
+ * Renders a country flag as an `<img>` loaded from flagcdn.com, a free CDN
+ * that hosts every ISO 3166-1 alpha-2 flag as an SVG. Falls back to the
+ * alpha-2 code as text if the image fails.
+ */
+function FlagImage({ code, size = 16 }: { code: string; size?: number }) {
+  const lower = code.toLowerCase();
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`https://flagcdn.com/${lower}.svg`}
+      alt={`${countryName(code)} flag`}
+      width={Math.round(size * 1.33)}
+      height={size}
+      loading="lazy"
+      className="inline-block shrink-0 rounded-[2px] object-cover"
+      style={{ width: Math.round(size * 1.33), height: size }}
+      onError={(e) => {
+        const target = e.currentTarget;
+        target.style.display = "none";
+      }}
+    />
   );
 }
 
@@ -446,6 +471,11 @@ function MapLegend({ max }: { max: number }) {
       </span>
       <span className="inline-flex items-center gap-1.5">
         <span>0</span>
+        <span
+          aria-hidden="true"
+          className="inline-block size-3 rounded-sm"
+          style={{ backgroundColor: "hsl(var(--muted-foreground) / 0.18)" }}
+        />
         {HEAT_OPACITY.slice(1).map((op, i) => (
           <span
             key={i}
