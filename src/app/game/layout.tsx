@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pokémon Color Guessing Game - Daily Challenge | PokémonPalette",
   description:
-    "Test your Pokémon knowledge with our daily color guessing game! Guess the Pokémon based on its color palette. Play daily challenges or unlimited mode. Compete on the leaderboard and improve your skills.",
+    "Test your Pokémon knowledge with our daily color guessing game! Guess the Pokémon based on its color palette. Play daily challenges, unlimited mode, or challenge friends in multiplayer. Compete on the leaderboard and improve your skills.",
   keywords: [
     "pokemon guessing game",
     "pokemon color game",
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "pokemon quiz",
     "color palette game",
     "pokemon trivia",
+    "pokemon multiplayer",
   ],
   openGraph: {
     title: "Pokémon Color Guessing Game - Daily Challenge | PokémonPalette",

@@ -71,9 +71,12 @@ model User {
   publicMetadata             Json      @default("{}") @map("public_metadata")   @db.JsonB
   privateMetadata            Json      @default("{}") @map("private_metadata")  @db.JsonB
   unsafeMetadata             Json      @default("{}") @map("unsafe_metadata")   @db.JsonB
-  savedPalettes     SavedPalette[]
-  dailyGameAttempts DailyGameAttempt[]
-  emails            Email[]
+  savedPalettes        SavedPalette[]
+  dailyGameAttempts    DailyGameAttempt[]
+  emails               Email[]
+  hostedRooms          MultiplayerRoom[]   @relation("RoomHost")
+  wonRooms             MultiplayerRoom[]   @relation("RoomWinner")
+  multiplayerPlayers   MultiplayerPlayer[]
 
   // Indexes declared in migrations 001 + 010.
   @@index([email],                  map: "idx_users_email")
@@ -161,4 +164,51 @@ model Email {
   @@index([sentAt],         map: "idx_emails_sent_at")
   @@index([createdAt],      map: "idx_emails_created_at")
   @@map("emails")
+}
+
+model MultiplayerRoom {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  roomCode        String    @unique @map("room_code") @db.VarChar(6)
+  hostUserId      String    @map("host_user_id")
+  targetPokemonId Int       @map("target_pokemon_id")
+  isShiny         Boolean   @default(false) @map("is_shiny")
+  status          String    @default("waiting") @db.VarChar(20)
+  winnerUserId    String?   @map("winner_user_id")
+  createdAt       DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  startedAt       DateTime? @map("started_at") @db.Timestamptz(6)
+  finishedAt      DateTime? @map("finished_at") @db.Timestamptz(6)
+  expiresAt       DateTime  @map("expires_at") @db.Timestamptz(6)
+
+  host    User  @relation("RoomHost", fields: [hostUserId], references: [id], onDelete: Cascade)
+  winner  User? @relation("RoomWinner", fields: [winnerUserId], references: [id], onDelete: SetNull)
+  players MultiplayerPlayer[]
+
+  @@index([roomCode],    map: "idx_mp_rooms_room_code")
+  @@index([hostUserId],  map: "idx_mp_rooms_host_user_id")
+  @@index([status],      map: "idx_mp_rooms_status")
+  @@index([expiresAt],   map: "idx_mp_rooms_expires_at")
+  @@map("multiplayer_rooms")
+}
+
+model MultiplayerPlayer {
+  id             String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  roomId         String    @map("room_id") @db.Uuid
+  userId         String    @map("user_id")
+  username       String?
+  imageUrl       String?   @map("image_url")
+  guesses        Json      @default("[]") @db.JsonB
+  attempts       Int       @default(0)
+  won            Boolean   @default(false)
+  bestSimilarity Float     @default(0) @map("best_similarity")
+  hintsUsed      Int       @default(0) @map("hints_used")
+  finishedAt     DateTime? @map("finished_at") @db.Timestamptz(6)
+  joinedAt       DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("joined_at") @db.Timestamptz(6)
+
+  room MultiplayerRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  user User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([roomId, userId])
+  @@index([roomId], map: "idx_mp_players_room_id")
+  @@index([userId], map: "idx_mp_players_user_id")
+  @@map("multiplayer_players")
 }

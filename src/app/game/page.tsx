@@ -60,6 +60,7 @@ import {
   Search,
   Calendar,
   Infinity as InfinityIcon,
+  Users,
 } from "lucide-react";
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
@@ -113,6 +114,13 @@ const GameLeaderboardDialog = dynamic(
     })),
   { ssr: false }
 );
+const MultiplayerGame = dynamic(
+  () =>
+    import("@/components/multiplayer-game").then((m) => ({
+      default: m.MultiplayerGame,
+    })),
+  { ssr: false }
+);
 
 // gsap is ~70KB. Load it on demand rather than ship it in the initial /game
 // chunk.
@@ -137,7 +145,7 @@ function loadConfetti(): Promise<ConfettiFn> {
   return confettiPromise;
 }
 
-type GameMode = "daily" | "unlimited";
+type GameMode = "daily" | "unlimited" | "multiplayer";
 type GameStatus = "playing" | "won" | "lost";
 
 interface Guess {
@@ -1535,19 +1543,25 @@ export default function GamePage() {
         {/* Animated dot grid background */}
         <AnimatedDotGrid colors={targetColors} />
 
-        <LoaderOverlay
-          loading={checkingAuth || loading}
-          text={checkingAuth ? "Checking authentication..." : "Loading game..."}
-        />
+        {mode !== "multiplayer" && (
+          <LoaderOverlay
+            loading={checkingAuth || loading}
+            text={checkingAuth ? "Checking authentication..." : "Loading game..."}
+          />
+        )}
 
         <div className="w-full max-w-4xl mx-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 md:gap-8 flex-1 relative z-10 pt-8 md:pt-8">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 mt-8 md:mt-12 font-heading px-4 md:px-0">
-            {mode === "daily" ? "Daily Game" : "Unlimited Mode"}
+            {mode === "daily"
+              ? "Daily Game"
+              : mode === "unlimited"
+              ? "Unlimited Mode"
+              : "Multiplayer"}
           </h1>
 
           {/* Game Number, Date, and Mode Selection */}
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <GameDateHeader mode={mode} />
+            {mode !== "multiplayer" && <GameDateHeader mode={mode} />}
             <div className="flex-shrink-0">
               <Tabs
                 value={mode}
@@ -1555,7 +1569,6 @@ export default function GamePage() {
                   const newMode = value as GameMode;
                   if (newMode === mode) return;
                   track("mode_switched", { from: mode, to: newMode });
-                  // Reset game state when switching modes
                   if (newMode === "unlimited") {
                     setGuesses([]);
                     setAttempts(0);
@@ -1565,7 +1578,7 @@ export default function GamePage() {
                 }}
                 className="w-full"
               >
-                <TabsList className="grid grid-cols-2 font-heading">
+                <TabsList className="grid grid-cols-3 font-heading">
                   <TabsTrigger
                     value="daily"
                     className="cursor-pointer font-heading data-[state=active]:text-white data-[state=active]:dark:text-white"
@@ -1600,13 +1613,36 @@ export default function GamePage() {
                     <InfinityIcon className="w-4 h-4 mr-2" />
                     Unlimited
                   </TabsTrigger>
+                  <TabsTrigger
+                    value="multiplayer"
+                    className="cursor-pointer font-heading data-[state=active]:text-white data-[state=active]:dark:text-white"
+                    style={
+                      mode === "multiplayer" &&
+                      targetColors.length > 0 &&
+                      targetColors[0]?.hex
+                        ? {
+                            backgroundColor: targetColors[0].hex,
+                            color: getTextColor(targetColors[0].hex),
+                          }
+                        : undefined
+                    }
+                  >
+                    <Users className="w-4 h-4 mr-2" />
+                    <span className="hidden sm:inline">Multiplayer</span>
+                    <span className="sm:hidden">1v1</span>
+                  </TabsTrigger>
                 </TabsList>
               </Tabs>
             </div>
           </div>
 
-          {/* Target Palette Display */}
-          {targetColors.length > 0 && (
+          {/* Multiplayer Mode */}
+          {mode === "multiplayer" && (
+            <MultiplayerGame />
+          )}
+
+          {/* Target Palette Display (daily/unlimited only) */}
+          {mode !== "multiplayer" && targetColors.length > 0 && (
             <div className="mb-6 w-full max-w-6xl rounded-lg border bg-card shadow-none relative overflow-hidden">
               {/* Color bar - at the top, outside padding */}
               <div
@@ -1953,8 +1989,8 @@ export default function GamePage() {
             </div>
           )}
 
-          {/* Game Status Dialog */}
-          {(status === "won" || status === "lost") && (
+          {/* Game Status Dialog (daily/unlimited only) */}
+          {mode !== "multiplayer" && (status === "won" || status === "lost") && (
             <GameResultDialog
               open={showGameResultDialog}
               onOpenChange={setShowGameResultDialog}
@@ -1981,8 +2017,8 @@ export default function GamePage() {
             />
           )}
 
-          {/* Two Column Layout: Search (Left) and Guesses (Right) - 50/50 Split */}
-          <div className="mb-6 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Two Column Layout: Search (Left) and Guesses (Right) - 50/50 Split (daily/unlimited only) */}
+          {mode !== "multiplayer" && <div className="mb-6 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Column: Search */}
             <div className="lg:col-span-1">
               <div className="space-y-3 p-4 md:p-6">
@@ -2281,12 +2317,11 @@ export default function GamePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div>}
 
-          {/* Leaderboard now lives in <GameLeaderboardDialog />, attached
-              to the action row above. Pulling it out of the inline scroll
-              path means the network requests only fire on user intent and
-              the page below the guesses can end on something more useful
+          {/* Leaderboard now lives in GameLeaderboardDialog, attached
+              to the action row above. Network requests only fire on
+              user intent and the page ends on something more useful
               than a leaderboard band. */}
         </div>
         <Footer />
