@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Pokemon } from "@/types/pokemon";
 import { getPokemonById } from "@/lib/pokemon";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -114,14 +113,10 @@ export function PokemonCard({
   };
 
   const getOfficialArtwork = (pokemon: Pokemon) => {
-    // If a form is selected, construct the artwork URL from the form name
+    // If a form is selected, construct the artwork URL from the form name.
+    // Try local path first; the browser will fall back via the onError handler.
     if (formName) {
-      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
-        isShiny ? "/shiny" : ""
-      }/${pokemon.id}-${formName}.png`;
-      // Try local path first (forms use {id}-{formName}.png naming)
-      const localPath = `/pokemon/${isShiny ? "shiny/" : ""}${pokemon.id}-${formName}.png`;
-      return localPath; // Try local first, browser will fallback on error
+      return `/pokemon/${isShiny ? "shiny/" : ""}${pokemon.id}-${formName}.png`;
     }
     
     // If a variety is selected, construct the artwork URL from the variety ID

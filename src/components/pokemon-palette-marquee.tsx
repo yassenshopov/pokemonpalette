@@ -148,7 +148,7 @@ export function PokemonPaletteMarquee({
       setCopiedColor(color);
       setTimeout(() => setCopiedColor(null), 2000);
       toast.success("Color copied!");
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy color");
     }
   };
@@ -194,7 +194,6 @@ export function PokemonPaletteMarquee({
   return (
     <div className="w-full space-y-6 md:space-y-8 overflow-hidden">
       {Array.from({ length: rows }).map((_, rowIndex) => {
-        const isLeftToRight = rowIndex % 2 === 0;
         const rowItems = getRowItems(rowIndex);
         
         return (

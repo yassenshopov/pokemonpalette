@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Check } from "lucide-react";
 import { gsap } from "gsap";
@@ -111,7 +110,7 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
 
       setTimeout(() => setCopiedIndex(null), 2000);
       toast.success("Color copied!");
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy color");
     }
   };

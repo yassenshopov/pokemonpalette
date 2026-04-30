@@ -49,7 +49,7 @@ export function PokemonPageClient({ pokemonMetadata }: PokemonPageClientProps) {
     pokemonMetadata?.id ?? null
   );
   const [isShiny, setIsShiny] = useState(false);
-  const [currentImageSrc, setCurrentImageSrc] = useState<string | null>(null);
+  const [, setCurrentImageSrc] = useState<string | null>(null);
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
   const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(null);

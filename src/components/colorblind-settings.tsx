@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useColorblind, ColorblindType } from "./colorblind-provider";
 import {
   Select,
@@ -103,11 +104,14 @@ function ColorPreview({ type }: { type: ColorblindType }) {
           className="relative w-12 h-12 overflow-hidden"
           title={p.name}
         >
-          <img
+          <Image
             src={`/pokemon/${p.id}.png`}
             alt={p.name}
-            className="w-full h-full object-contain"
+            fill
+            sizes="48px"
+            className="object-contain"
             loading="lazy"
+            unoptimized
           />
         </div>
       ))}

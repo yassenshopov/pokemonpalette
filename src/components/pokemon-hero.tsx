@@ -10,7 +10,7 @@ import { LoaderOverlay } from "@/components/loader-overlay";
 import { Button } from "@/components/ui/button";
 import { useUser, SignInButton } from "@clerk/nextjs";
 import { toast } from "sonner";
-import { Save, Bookmark } from "lucide-react";
+import { Bookmark } from "lucide-react";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 import { useSavedPalettes } from "@/hooks/use-saved-palettes";
 import { getContrastHex as getTextColor } from "@/lib/game/colors";
@@ -42,7 +42,7 @@ export function PokemonHero({
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const [currentImageSrc, setCurrentImageSrc] = useState<string | null>(null);
-  const [extractedColors, setExtractedColors] = useState<string[]>([]);
+  const [, setExtractedColors] = useState<string[]>([]);
   const [savingPalette, setSavingPalette] = useState(false);
   const [existingPaletteId, setExistingPaletteId] = useState<string | null>(
     null
@@ -83,15 +83,11 @@ export function PokemonHero({
 
   // Update image src when pokemon, shiny state, variety, or form changes
   useEffect(() => {
-    // If a form is selected, use that form's official artwork
+    // If a form is selected, use that form's official artwork.
+    // Try local path first; the browser will fall back via the onError handler.
     if (formName && pokemon) {
-      const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${
-        isShiny ? "/shiny" : ""
-      }/${pokemon.id}-${formName}.png`;
-      // Try local path first (forms use {id}-{formName}.png naming)
-      const localPath = `/pokemon/${isShiny ? "shiny/" : ""}${pokemon.id}-${formName}.png`;
-      const newSrc = localPath; // Try local first, browser will fallback on error
-      
+      const newSrc = `/pokemon/${isShiny ? "shiny/" : ""}${pokemon.id}-${formName}.png`;
+
       if (newSrc !== currentImageSrc) {
         setImageLoading(true);
         setCurrentImageSrc(newSrc);
@@ -265,8 +261,9 @@ export function PokemonHero({
     }
   };
 
-  // Unsave palette function
-  const handleUnsavePalette = async () => {
+  // Unsave palette function (kept for parity with the saved-palettes UI; not
+  // wired into this hero anymore but the dialog passes through the same path)
+  const _handleUnsavePalette = async () => {
     if (!existingPaletteId) return;
 
     setSavingPalette(true);

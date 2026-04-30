@@ -1,6 +1,6 @@
 "use client";
 
-import { useUser, SignInButton, SignOutButton, useClerk } from "@clerk/nextjs";
+import { useUser, SignInButton, SignOutButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {

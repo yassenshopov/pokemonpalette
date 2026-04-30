@@ -51,7 +51,7 @@ export function ShinyPokemonPageClient({
   );
   // Force shiny mode to true for shiny pages
   const [isShiny] = useState(true);
-  const [currentImageSrc, setCurrentImageSrc] = useState<string | null>(null);
+  const [, setCurrentImageSrc] = useState<string | null>(null);
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
   const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(

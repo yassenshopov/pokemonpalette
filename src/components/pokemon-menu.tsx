@@ -36,13 +36,12 @@ import {
   Lock,
   Unlock,
   ChevronRight,
-  Menu,
   Palette,
   Sparkles,
 } from "lucide-react";
-import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS, type PaletteSize } from "@/constants/pokemon";
+import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
 import { usePaletteSize } from "@/hooks/use-palette-size";
-import { getFrontSpriteUrl, getOfficialArtworkUrl } from "@/lib/sprite-utils";
+import { getFrontSpriteUrl } from "@/lib/sprite-utils";
 import {
   getContrastTextClass as getTextColor,
   getContrastHex as getContrastTextColor,
@@ -334,6 +333,10 @@ export function PokemonMenu({
         setExtractedColors(fallbackHighlights);
         onColorsExtracted?.(fallbackHighlights);
       });
+    // We intentionally key off pokemonData?.id rather than pokemonData itself,
+    // and onColorsExtracted is stable per parent. getSpriteUrl is a local
+    // helper that closes over the same identity inputs.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex, paletteSize]);
 
   // When user changes palette size (3/4/5), update lock array and notify parent without re-extracting

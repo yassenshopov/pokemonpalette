@@ -76,7 +76,7 @@ export function PokemonPaletteExploreCard({
       setCopiedColor(color);
       setTimeout(() => setCopiedColor(null), 2000);
       toast.success("Color copied!");
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy color");
     }
   };

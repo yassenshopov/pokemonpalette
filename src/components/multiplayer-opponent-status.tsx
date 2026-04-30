@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { User, Trophy, Target, Clock, Loader2, Swords } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -64,10 +65,13 @@ function PlayerCard({
             }}
           >
             {player.imageUrl ? (
-              <img
+              <Image
                 src={player.imageUrl}
                 alt={displayName}
+                width={32}
+                height={32}
                 className="w-8 h-8 rounded-full object-cover"
+                unoptimized
               />
             ) : (
               <User className="w-4 h-4" aria-hidden="true" />

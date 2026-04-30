@@ -1,5 +1,11 @@
 "use client";
 
+// This view renders many small auxiliary sprite/artwork URLs sourced from
+// PokeAPI. Migrating each call site to next/image would require remote
+// loader configuration and tightly-controlled box sizing per surface;
+// keeping native <img> here is intentional.
+/* eslint-disable @next/next/no-img-element */
+
 import { useState } from "react";
 import { Pokemon, EvolutionDetail } from "@/types/pokemon";
 import { getOfficialArtworkUrl } from "@/lib/sprite-utils";
@@ -18,7 +24,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -49,7 +54,6 @@ export function PokemonExpandedView({
   pokemon,
   onEvolutionClick,
   onVarietyClick,
-  availablePokemonIds = [],
   pokemonNameToId,
 }: PokemonExpandedViewProps) {
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);

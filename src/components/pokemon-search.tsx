@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { PokemonMetadata } from "@/types/pokemon";
 import Image from "next/image";
-import { Pokemon } from "@/types/pokemon";
 import { getPokemonById } from "@/lib/pokemon";
 
 interface PokemonSearchProps {
@@ -177,7 +176,7 @@ export function PokemonSearch({
             };
           });
         }
-      } catch (error) {
+      } catch {
         // Silently fail - language names are optional
       }
     };
@@ -186,7 +185,6 @@ export function PokemonSearch({
     // We only load for a limited set to avoid overwhelming the system
     // Priority: Pokemon that are close alphabetically or by ID to the query
     if (debouncedQuery.trim()) {
-      const queryLower = debouncedQuery.toLowerCase();
       
       // Find Pokemon that don't match English but might match via language
       // Limit to first 20 Pokemon that don't have language names cached

@@ -48,7 +48,6 @@ export function MultiplayerResultDialog({
   winnerUserId,
   currentUserId,
   targetColors,
-  roomCode,
   onPlayAgain,
   onLeave,
 }: MultiplayerResultDialogProps) {
