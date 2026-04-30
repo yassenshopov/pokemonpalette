@@ -21,7 +21,7 @@ interface GuessCardProps {
   onRef?: (el: HTMLDivElement | null) => void;
 }
 
-export function GuessCard({ guess, index, isCorrect = false, onRef }: GuessCardProps) {
+export function GuessCard({ guess, isCorrect = false, onRef }: GuessCardProps) {
   const relatedness = guess.relatedness;
   // Only surface relatedness hints for wrong guesses. A correct guess already
   // says "Correct!" and piling "Same type" on top is redundant noise.

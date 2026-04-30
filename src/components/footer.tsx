@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin } from "lucide-react";
 
 function XIcon({ className }: { className?: string }) {

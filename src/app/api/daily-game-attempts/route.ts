@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
   try {
     const authResult = await auth();
     userId = authResult.userId;
-  } catch (authError) {
+  } catch {
     logger.error("auth.service_unavailable", {
       route: "POST /api/daily-game-attempts",
     });

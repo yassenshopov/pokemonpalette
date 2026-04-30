@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,32 +30,37 @@ export function GridPattern() {
   }, [totalCells]);
 
   // Helper function to load a single palette
-  const loadPalette = async (cellIndex: number): Promise<CellPalette | null> => {
-    const randomMetadata = allMetadata[Math.floor(Math.random() * allMetadata.length)];
-    if (!randomMetadata) return null;
+  const loadPalette = useCallback(
+    async (cellIndex: number): Promise<CellPalette | null> => {
+      const randomMetadata =
+        allMetadata[Math.floor(Math.random() * allMetadata.length)];
+      if (!randomMetadata) return null;
 
-    try {
-      const pokemon = await getPokemonById(randomMetadata.id);
-      if (pokemon?.colorPalette) {
-        const palette = pokemon.colorPalette;
-        const colors = palette.highlights || [
-          palette.primary,
-          palette.secondary,
-          palette.accent,
-        ].filter(Boolean) || [];
-        
-        if (colors.length > 0 && pokemon) {
-          return {
-            pokemon: pokemon,
-            colors: colors.slice(0, 6), // Up to 6 colors
-          };
+      try {
+        const pokemon = await getPokemonById(randomMetadata.id);
+        if (pokemon?.colorPalette) {
+          const palette = pokemon.colorPalette;
+          const colors =
+            palette.highlights ||
+            [palette.primary, palette.secondary, palette.accent].filter(
+              Boolean
+            ) ||
+            [];
+
+          if (colors.length > 0 && pokemon) {
+            return {
+              pokemon: pokemon,
+              colors: colors.slice(0, 6), // Up to 6 colors
+            };
+          }
         }
+      } catch (error) {
+        console.error(`Failed to load palette for cell ${cellIndex}:`, error);
       }
-    } catch (error) {
-      console.error(`Failed to load palette for cell ${cellIndex}:`, error);
-    }
-    return null;
-  };
+      return null;
+    },
+    [allMetadata]
+  );
 
   // Load palettes for cells that should have them. The 24 fetches are
   // kicked off in parallel (Promise.all) instead of the previous
@@ -82,7 +87,7 @@ export function GridPattern() {
     return () => {
       cancelled = true;
     };
-  }, [cellsWithPalettes, allMetadata]);
+  }, [cellsWithPalettes, loadPalette]);
 
   // Randomize some palettes every few seconds
   useEffect(() => {
@@ -112,8 +117,6 @@ export function GridPattern() {
         updates.forEach((newPalette, cellIndex) => {
           const paletteDiv = paletteRefs.current[cellIndex];
           if (paletteDiv) {
-            const colorDivs = paletteDiv.querySelectorAll<HTMLElement>("div[style*='background-color']");
-            
             // Fade out
             gsap.to(paletteDiv, {
               opacity: 0.1,
@@ -141,7 +144,7 @@ export function GridPattern() {
     }, 4000); // Randomize every 4 seconds
 
     return () => clearInterval(interval);
-  }, [palettes, cellsWithPalettes, hoveredCell, allMetadata]);
+  }, [palettes, cellsWithPalettes, hoveredCell, loadPalette]);
 
   // Calculate cell dimensions
   const cellWidth = 100 / cols;

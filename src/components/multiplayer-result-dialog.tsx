@@ -20,7 +20,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { getContrastHex } from "@/lib/game/colors";

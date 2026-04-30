@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { rateLimit } from "@/lib/rate-limit";
@@ -18,7 +18,7 @@ function generateRoomCode(): string {
   return code;
 }
 
-export async function POST(req: NextRequest) {
+export async function POST() {
   let userId: string | null = null;
   try {
     const authResult = await auth();

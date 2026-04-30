@@ -57,10 +57,6 @@ function getSpriteUrl(pokemon: Pokemon, isShiny: boolean): string {
 
   // For Gen VI+, try local first, then fallback to URL
   if (generation > 5) {
-    const fallbackUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-      isShiny ? "shiny/" : ""
-    }${pokemonId}.png`;
-    // Try local sprite first (browser will handle 404 fallback via onError)
     return `/pokemon/sprites/${isShiny ? "shiny/" : ""}${pokemonId}.png`;
   }
   

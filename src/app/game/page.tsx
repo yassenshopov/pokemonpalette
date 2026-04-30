@@ -27,19 +27,15 @@ import {
   computeGuessRelatedness,
   type GuessRelatedness,
 } from "@/lib/game/relatedness";
-import {
-  getContrastTextClass,
-  getContrastHex,
-  getDimmedColor,
-} from "@/lib/game/colors";
+import { getContrastHex, getDimmedColor } from "@/lib/game/colors";
 import {
   generateHints as buildGameHints,
-  getGenerationFromId as getGenerationFromIdLib,
+  getGenerationFromId,
   type HintConfig,
 } from "@/lib/game/hints";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
   CardContent,
@@ -48,7 +44,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { LoaderOverlay } from "@/components/loader-overlay";
-import { POKEMON_CONSTANTS, FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
+import { POKEMON_CONSTANTS } from "@/constants/pokemon";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
@@ -161,10 +157,6 @@ interface Guess {
   relatedness?: GuessRelatedness | null;
 }
 
-// Local alias: keep old callsites working while all text-class lookups go
-// through the shared helper.
-const getTextColor = getContrastTextClass;
-
 function getSpriteUrl(pokemon: Pokemon, shiny: boolean): string | null {
   if (typeof pokemon.artwork === "object" && "front" in pokemon.artwork) {
     if (shiny && pokemon.artwork.shiny) {
@@ -255,7 +247,7 @@ export default function GamePage() {
     totalWins: number;
     winRate: number;
   } | null>(null);
-  const [pendingAttempts, setPendingAttempts] = useState<any[]>([]);
+  const [_pendingAttempts, setPendingAttempts] = useState<any[]>([]);
   const [checkingAuth, setCheckingAuth] = useState(true);
   const [revealedHints, setRevealedHints] = useState<number[]>([]);
   const [hintCooldown, setHintCooldown] = useState(0); // Cooldown in seconds (0-5)
@@ -277,9 +269,6 @@ export default function GamePage() {
   // sites don't all need to churn. The real implementation lives in
   // src/lib/game/colors.ts.
   const getTextColor = getContrastHex;
-
-  // Get generation from Pokemon ID (since JSON data has incorrect generation)
-  const getGenerationFromId = getGenerationFromIdLib;
 
   // Filter Pokemon list based on unlimited mode settings
   const pokemonList = useMemo(() => {
@@ -541,7 +530,7 @@ export default function GamePage() {
                       guessColors = colors
                         .slice(0, POKEMON_CONSTANTS.PALETTE_COLORS_COUNT)
                         .map((c) => (typeof c === "string" ? c : c.hex));
-                    } catch (error) {
+                    } catch {
                       guessColors =
                         guessPokemon.colorPalette?.highlights?.slice(
                           0,
@@ -604,6 +593,10 @@ export default function GamePage() {
     // Reset hints when mode or Pokemon changes
     setRevealedHints([]);
     generatedHintsRef.current = [];
+    // We intentionally key off user?.id rather than the full user object so we
+    // don't re-fetch the daily attempt every time Clerk hands us a new user
+    // reference.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, user?.id, userLoaded]);
 
   // Initialize game
@@ -725,6 +718,9 @@ export default function GamePage() {
     };
 
     initializeGame();
+    // We intentionally avoid retriggering initialization on every guess change
+    // or status flip; the relevant inputs are mode, list size, and auth gate.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, pokemonList.length, checkingAuth, unlimitedSettings]);
 
   // Trigger confetti on win with palette colors. We lazy-load the library so

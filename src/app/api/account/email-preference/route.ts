@@ -10,7 +10,7 @@ export async function GET() {
   try {
     const authResult = await auth();
     userId = authResult.userId;
-  } catch (err) {
+  } catch {
     logger.error("auth.service_unavailable", {
       route: "/api/account/email-preference",
     });

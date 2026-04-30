@@ -23,7 +23,7 @@ function toAbsoluteUrl(url: string, request: NextRequest): string {
   return url.startsWith("/") ? `${origin}${url}` : `${origin}/${url}`;
 }
 
-async function getPokemonData(name: string, _request: NextRequest) {
+async function getPokemonData(name: string) {
   try {
     const metadata = getPokemonMetadataByName(name);
     if (!metadata) return null;
@@ -64,7 +64,7 @@ export async function GET(
     let pokemon;
 
     try {
-      pokemon = await getPokemonData(pokemonName, request);
+      pokemon = await getPokemonData(pokemonName);
       if (!pokemon) {
         // Return a fallback image instead of 404 text
         return new ImageResponse(
@@ -184,6 +184,8 @@ export async function GET(
                   justifyContent: "center",
                 }}
               >
+                {/* Satori (used by ImageResponse) requires the native img element */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={artworkUrl}
                   alt={pokemon.name}
