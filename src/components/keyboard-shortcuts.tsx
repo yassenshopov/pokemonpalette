@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
+import { startThemeTransition } from "@/lib/theme-transition";
 
 interface KeyboardShortcutsProps {
   onSidebarToggle: () => void;
@@ -19,7 +20,9 @@ export function KeyboardShortcuts({
       // Theme toggle: Ctrl + Shift + L
       if (event.ctrlKey && event.shiftKey && event.key === "L") {
         event.preventDefault();
-        setTheme(theme === "dark" ? "light" : "dark");
+        startThemeTransition(() =>
+          setTheme(theme === "dark" ? "light" : "dark"),
+        );
       }
 
       // Sidebar toggle: Ctrl + B (desktop only)
