@@ -49,11 +49,17 @@ export async function POST(
   }
 
   if (room.players.some((p) => p.userId === userId)) {
+    if (room.status === "waiting") {
+      await prisma.multiplayerRoom.update({
+        where: { id: room.id },
+        data: { status: "playing", startedAt: new Date() },
+      });
+    }
     return NextResponse.json({
       message: "Already in room",
       roomCode: room.roomCode,
       roomId: room.id,
-      status: room.status,
+      status: room.status === "waiting" ? "playing" : room.status,
     });
   }
 

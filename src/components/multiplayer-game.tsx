@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { useUser } from "@clerk/nextjs";
 import { SignInButton } from "@clerk/nextjs";
 import { toast } from "sonner";
-import { track } from "@/lib/analytics";
 import {
   getAllPokemonMetadata,
   getPokemonById,
@@ -21,10 +20,9 @@ import {
   computeGuessRelatedness,
   type GuessRelatedness,
 } from "@/lib/game/relatedness";
-import { getContrastHex, getDimmedColor } from "@/lib/game/colors";
+import { getDimmedColor } from "@/lib/game/colors";
 import {
   generateHints as buildGameHints,
-  getGenerationFromId,
   type HintConfig,
 } from "@/lib/game/hints";
 import { Button } from "@/components/ui/button";
@@ -32,7 +30,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -62,7 +59,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { useMultiplayer, type MultiplayerPlayer } from "@/hooks/use-multiplayer";
+import { useMultiplayer } from "@/hooks/use-multiplayer";
 import {
   MultiplayerLobby,
   WaitingRoom,
@@ -135,15 +132,24 @@ export function MultiplayerGame() {
   const colorBarRef = useRef<HTMLDivElement | null>(null);
   const hintRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const currentPlayer = useMemo(() => {
+    if (!user?.id) return null;
+    return mp.players.find((p) => p.userId === user.id) ?? null;
+  }, [mp.players, user?.id]);
+
   const opponent = useMemo(() => {
     if (!user?.id) return null;
     return mp.players.find((p) => p.userId !== user.id) ?? null;
   }, [mp.players, user?.id]);
 
-  // Load target Pokemon palette when the game starts or finishes.
-  // Uses the /palette endpoint which returns the pokemonId for participants.
+  // Load target Pokemon palette when room exists (waiting, playing, or finished).
   useEffect(() => {
-    if (mp.status !== "playing" && mp.status !== "finished") return;
+    if (
+      mp.status !== "waiting" &&
+      mp.status !== "playing" &&
+      mp.status !== "finished"
+    )
+      return;
     if (!mp.roomCode) return;
     if (targetPokemon) return;
 
@@ -210,18 +216,17 @@ export function MultiplayerGame() {
     loadReveal();
   }, [mp.status, mp.targetPokemonId, targetPokemon]);
 
-  // Show result dialog when game finishes
   useEffect(() => {
     if (mp.status === "finished") {
       setShowResultDialog(true);
     }
   }, [mp.status]);
 
-  // Generate hints
   useEffect(() => {
     if (targetPokemon) {
       const hintConfig =
-        ((targetPokemon as unknown) as { hintConfig?: HintConfig }).hintConfig ?? null;
+        ((targetPokemon as unknown) as { hintConfig?: HintConfig })
+          .hintConfig ?? null;
       generatedHintsRef.current = buildGameHints(targetPokemon, {
         includeGeneration: true,
         hintConfig,
@@ -233,7 +238,6 @@ export function MultiplayerGame() {
     setHintCooldown(0);
   }, [targetPokemon]);
 
-  // Hint cooldown timer
   useEffect(() => {
     if (hintCooldown <= 0) return;
     const interval = setInterval(() => {
@@ -310,7 +314,6 @@ export function MultiplayerGame() {
     setGuesses(allGuesses);
     setAttempts(newAttempts);
 
-    // Submit to server
     const result = await mp.submitGuess(pokemonId, similarity);
 
     if (result) {
@@ -321,8 +324,8 @@ export function MultiplayerGame() {
         setLocalStatus("lost");
       } else if (relatedness) {
         if (relatedness.sameEvolutionFamily) {
-          toast("Same evolution family — you're close!", {
-            icon: "🧬",
+          toast("Same evolution family \u2014 you\u2019re close!", {
+            icon: "\uD83E\uDDEC",
             duration: 2500,
           });
         } else if (relatedness.sharedTypes.length > 0) {
@@ -331,7 +334,7 @@ export function MultiplayerGame() {
               ? relatedness.sharedTypes[0]
               : relatedness.sharedTypes.join(" / ");
           toast(`Same type: ${typeLabel}`, {
-            icon: "🏷️",
+            icon: "\uD83C\uDFF7\uFE0F",
             duration: 2500,
           });
         }
@@ -365,9 +368,8 @@ export function MultiplayerGame() {
     mp.leaveRoom();
   };
 
-  // Not signed in
   if (!userLoaded) {
-    return <LoaderOverlay loading text="Loading..." />;
+    return <LoaderOverlay loading text="Loading\u2026" />;
   }
 
   if (!user) {
@@ -376,17 +378,17 @@ export function MultiplayerGame() {
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-xl font-heading flex items-center justify-center gap-2">
-              <Users className="w-5 h-5" />
+              <Users className="w-5 h-5" aria-hidden="true" />
               Sign In Required
             </CardTitle>
-            <CardDescription>
-              You need to be signed in to play multiplayer mode.
-            </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-2">
+            <p className="text-sm text-muted-foreground text-center text-pretty">
+              You need to be signed in to play multiplayer mode.
+            </p>
             <SignInButton mode="modal">
               <Button className="w-full cursor-pointer" size="lg">
-                <LogIn className="w-4 h-4 mr-2" />
+                <LogIn className="w-4 h-4 mr-2" aria-hidden="true" />
                 Sign In to Play
               </Button>
             </SignInButton>
@@ -396,7 +398,6 @@ export function MultiplayerGame() {
     );
   }
 
-  // Lobby state
   if (mp.status === "idle") {
     return (
       <MultiplayerLobby
@@ -408,25 +409,24 @@ export function MultiplayerGame() {
     );
   }
 
-  // Waiting for opponent
-  if (mp.status === "waiting") {
+  if (mp.status === "waiting" && !targetColors.length) {
     return (
       <WaitingRoom roomCode={mp.roomCode!} onCancel={mp.leaveRoom} />
     );
   }
 
-  const getTextColor = getContrastHex;
   const myPlayerFinished =
     mp.players.find((p) => p.userId === user.id)?.finished ?? false;
   const gameActive =
-    mp.status === "playing" && localStatus === "playing" && !myPlayerFinished;
+    (mp.status === "playing" || mp.status === "waiting") &&
+    localStatus === "playing" &&
+    !myPlayerFinished;
 
-  // Playing or finished states
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6">
-      <LoaderOverlay loading={loadingPokemon} text="Loading game..." />
+      <LoaderOverlay loading={loadingPokemon} text="Loading game\u2026" />
 
-      {/* Room code badge */}
+      {/* Room code + live indicator */}
       <div className="flex items-center justify-center gap-2">
         <Badge
           variant="outline"
@@ -436,15 +436,20 @@ export function MultiplayerGame() {
         </Badge>
         {mp.status === "playing" && (
           <Badge variant="secondary" className="text-xs">
-            <Users className="w-3 h-3 mr-1" />
+            <Users className="w-3 h-3 mr-1" aria-hidden="true" />
             Live
+          </Badge>
+        )}
+        {mp.status === "waiting" && (
+          <Badge variant="outline" className="text-xs text-muted-foreground">
+            Waiting for opponent{"\u2026"}
           </Badge>
         )}
       </div>
 
-      {/* Target Palette Display */}
+      {/* Target Palette */}
       {targetColors.length > 0 && (
-        <div className="w-full rounded-lg border bg-card shadow-none relative overflow-hidden">
+        <div className="w-full rounded-lg border bg-card relative overflow-hidden">
           <div
             ref={colorBarRef}
             className="relative z-10 w-full flex h-24 md:h-32 overflow-hidden"
@@ -476,7 +481,7 @@ export function MultiplayerGame() {
                     backgroundColor: color.hex,
                     width: `${color.normalizedPercentage}%`,
                   }}
-                  title={`${color.hex} - ${color.percentage.toFixed(1)}%`}
+                  title={`${color.hex} \u2013 ${color.percentage.toFixed(1)}%`}
                 />
               ));
             })()}
@@ -484,7 +489,7 @@ export function MultiplayerGame() {
             {mp.isShiny && (
               <div className="absolute top-2 right-2 z-20">
                 <Badge variant="default" className="font-heading">
-                  <Sparkles className="w-3 h-3 mr-1" />
+                  <Sparkles className="w-3 h-3 mr-1" aria-hidden="true" />
                   Shiny
                 </Badge>
               </div>
@@ -500,10 +505,7 @@ export function MultiplayerGame() {
                   revealedHints.length > 0 && (
                     <div className="flex flex-col gap-2 items-end">
                       {revealedHints.map((hintIndex) => {
-                        const hints =
-                          generatedHintsRef.current.length > 0
-                            ? generatedHintsRef.current
-                            : [];
+                        const hints = generatedHintsRef.current;
                         const primaryColor =
                           targetColors.length > 0
                             ? targetColors[0].hex
@@ -544,23 +546,24 @@ export function MultiplayerGame() {
                         revealedHints.length >= 3 || hintCooldown > 0
                       }
                       className="text-xs relative overflow-hidden cursor-pointer"
+                      aria-label={`Reveal hint ${revealedHints.length + 1} of 3`}
                     >
                       {hintCooldown > 0 && (
                         <div
-                          className="absolute inset-y-0 left-0 bg-primary opacity-30 transition-all duration-1000 ease-linear"
+                          className="absolute inset-y-0 left-0 bg-primary opacity-30 transition-[width] duration-1000 ease-linear"
                           style={{
                             width: `${((5 - hintCooldown) / 5) * 100}%`,
                             borderRadius: "inherit",
                           }}
                         />
                       )}
-                      <Lightbulb className="w-3 h-3 mr-1.5 relative z-10" />
+                      <Lightbulb className="w-3 h-3 mr-1.5 relative z-10" aria-hidden="true" />
                       <span className="relative z-10">
                         {revealedHints.length === 0
-                          ? "Show me a hint"
+                          ? "Show Me a Hint"
                           : revealedHints.length === 1
-                          ? "Show another hint"
-                          : "Show final hint"}
+                          ? "Show Another Hint"
+                          : "Show Final Hint"}
                       </span>
                     </Button>
                   )}
@@ -577,7 +580,7 @@ export function MultiplayerGame() {
                       variant="outline"
                       className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/20 border-red-300 dark:border-red-700 cursor-pointer"
                     >
-                      <Flag className="w-4 h-4 mr-2" />
+                      <Flag className="w-4 h-4 mr-2" aria-hidden="true" />
                       Give Up
                     </Button>
                     <AlertDialog
@@ -588,8 +591,8 @@ export function MultiplayerGame() {
                         <AlertDialogHeader>
                           <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                           <AlertDialogDescription>
-                            Are you sure you want to give up? Your opponent
-                            will continue playing.
+                            Giving up ends your turn. Your opponent will
+                            continue playing.
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
@@ -630,12 +633,11 @@ export function MultiplayerGame() {
         />
       )}
 
-      {/* Two column layout: Search + Guesses (left), Opponent Status (right) */}
+      {/* Main layout: Search + Guesses on left, Players panel on right */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: Search and guesses */}
         <div className="lg:col-span-2 space-y-4">
-          {/* Search */}
-          <div className="p-4 md:p-6 space-y-3">
+          <div className="space-y-3">
             {gameActive ? (
               <>
                 <div className="hidden lg:block">
@@ -645,7 +647,7 @@ export function MultiplayerGame() {
                     onPokemonSelect={handleGuess}
                     isShiny={mp.isShiny}
                     guessedPokemonIds={guesses.map((g) => g.pokemonId)}
-                    placeholder="Enter Pokemon name or number..."
+                    placeholder="Enter Pok\u00e9mon name or number\u2026"
                   />
                 </div>
                 <div className="lg:hidden">
@@ -654,8 +656,8 @@ export function MultiplayerGame() {
                     className="w-full cursor-pointer"
                     variant="outline"
                   >
-                    <Search className="w-4 h-4 mr-2" />
-                    Search Pokemon
+                    <Search className="w-4 h-4 mr-2" aria-hidden="true" />
+                    Search Pok\u00e9mon
                   </Button>
                   <Dialog
                     open={showSearchDialog}
@@ -663,7 +665,7 @@ export function MultiplayerGame() {
                   >
                     <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-lg">
                       <DialogHeader>
-                        <DialogTitle>Search Pokemon</DialogTitle>
+                        <DialogTitle>Search Pok\u00e9mon</DialogTitle>
                       </DialogHeader>
                       <div className="mt-4">
                         <PokemonSearch
@@ -672,30 +674,30 @@ export function MultiplayerGame() {
                           onPokemonSelect={handleGuessWithDialog}
                           isShiny={mp.isShiny}
                           guessedPokemonIds={guesses.map((g) => g.pokemonId)}
-                          placeholder="Enter Pokemon name or number..."
+                          placeholder="Enter Pok\u00e9mon name or number\u2026"
                         />
                       </div>
                     </DialogContent>
                   </Dialog>
                 </div>
                 {loadingGuess && (
-                  <p className="text-sm text-muted-foreground">
-                    Analyzing guess...
+                  <p className="text-sm text-muted-foreground" aria-live="polite">
+                    Analyzing guess{"\u2026"}
                   </p>
                 )}
               </>
             ) : (
               !mp.targetPokemonId && (
                 <p className="text-sm text-muted-foreground text-center">
-                  Waiting for game to finish...
+                  Waiting for game to finish{"\u2026"}
                 </p>
               )
             )}
           </div>
 
           {/* Guesses */}
-          <div className="p-4 md:p-6 space-y-3">
-            <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto">
+          <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               {Array.from({ length: MAX_ATTEMPTS }).map((_, index) => {
                 const guess = guesses[index];
                 const isCorrect =
@@ -735,23 +737,24 @@ export function MultiplayerGame() {
           </div>
         </div>
 
-        {/* Right: Opponent status */}
+        {/* Right: Players panel */}
         <div className="lg:col-span-1 space-y-4">
           <OpponentStatus
+            currentPlayer={currentPlayer}
             opponent={opponent}
             maxAttempts={MAX_ATTEMPTS}
             primaryColor={
               targetColors.length > 0 ? targetColors[0].hex : undefined
             }
+            isWaitingForOpponent={mp.status === "waiting"}
           />
 
-          {/* Game rules (compact) */}
           {gameActive && (
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Sparkles className="w-3 h-3" />
-                  How it works
+                  <Sparkles className="w-3 h-3" aria-hidden="true" />
+                  How It Works
                 </CardTitle>
               </CardHeader>
               <CardContent>

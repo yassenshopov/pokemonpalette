@@ -116,6 +116,7 @@ export function useMultiplayer(userId: string | null | undefined) {
                     : data.status === "playing"
                     ? "playing"
                     : prev.status,
+                isShiny: data.isShiny ?? prev.isShiny,
                 players: data.players ?? prev.players,
               }));
             }
@@ -178,7 +179,7 @@ export function useMultiplayer(userId: string | null | undefined) {
                 : data.status === "playing"
                 ? "playing"
                 : prev.status;
-            return {
+            const updated = {
               ...prev,
               status: newStatus,
               players: data.players ?? prev.players,
@@ -186,9 +187,14 @@ export function useMultiplayer(userId: string | null | undefined) {
               targetPokemonId:
                 data.targetPokemonId ?? prev.targetPokemonId,
             };
+            if (newStatus === "finished" && pollRef.current) {
+              clearInterval(pollRef.current);
+              pollRef.current = null;
+            }
+            return updated;
           });
         }
-      }, 5000);
+      }, 15000);
     },
     [cleanup, fetchRoomState]
   );
@@ -221,6 +227,7 @@ export function useMultiplayer(userId: string | null | undefined) {
         status: "waiting",
         roomCode: data.roomCode,
         roomId: data.roomId,
+        isShiny: data.isShiny ?? false,
         loading: false,
         players: [
           {

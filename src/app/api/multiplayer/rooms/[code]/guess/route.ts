@@ -67,9 +67,9 @@ export async function POST(
     return NextResponse.json({ error: "Room not found" }, { status: 404 });
   }
 
-  if (room.status !== "playing") {
+  if (room.status === "finished") {
     return NextResponse.json(
-      { error: "Game is not in progress" },
+      { error: "Game is already finished" },
       { status: 400 }
     );
   }

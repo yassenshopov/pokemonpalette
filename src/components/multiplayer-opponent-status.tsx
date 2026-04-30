@@ -1,32 +1,61 @@
 "use client";
 
-import { User, Trophy, Target, Clock } from "lucide-react";
+import { User, Trophy, Target, Clock, Loader2, Swords } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import type { MultiplayerPlayer } from "@/hooks/use-multiplayer";
 
-interface OpponentStatusProps {
-  opponent: MultiplayerPlayer | null;
+interface PlayerCardProps {
+  player: MultiplayerPlayer | null;
   maxAttempts: number;
   primaryColor?: string;
+  label: string;
+  isYou?: boolean;
+  isWaiting?: boolean;
 }
 
-export function OpponentStatus({
-  opponent,
+function PlayerCard({
+  player,
   maxAttempts,
   primaryColor,
-}: OpponentStatusProps) {
-  if (!opponent) return null;
+  label,
+  isYou,
+  isWaiting,
+}: PlayerCardProps) {
+  if (isWaiting || !player) {
+    return (
+      <div className="flex-1 rounded-lg border border-dashed bg-card/50 p-4 space-y-3">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+            <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
+          </div>
+          <div>
+            <p className="text-sm font-medium text-muted-foreground">
+              Waiting{"\u2026"}
+            </p>
+            <p className="text-xs text-muted-foreground">{label}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-  const progressPercent = (opponent.attempts / maxAttempts) * 100;
-  const displayName = opponent.username || "Opponent";
+  const progressPercent = (player.attempts / maxAttempts) * 100;
+  const displayName = player.username || (isYou ? "You" : "Opponent");
 
   return (
-    <div className="rounded-lg border bg-card p-4 space-y-3">
+    <div
+      className="flex-1 rounded-lg border bg-card p-4 space-y-3"
+      style={
+        isYou && primaryColor
+          ? { borderColor: `${primaryColor}40` }
+          : undefined
+      }
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div
-            className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
+            className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold overflow-hidden"
             style={{
               backgroundColor: primaryColor
                 ? `${primaryColor}20`
@@ -34,71 +63,112 @@ export function OpponentStatus({
               color: primaryColor || "hsl(var(--muted-foreground))",
             }}
           >
-            {opponent.imageUrl ? (
+            {player.imageUrl ? (
               <img
-                src={opponent.imageUrl}
+                src={player.imageUrl}
                 alt={displayName}
                 className="w-8 h-8 rounded-full object-cover"
               />
             ) : (
-              <User className="w-4 h-4" />
+              <User className="w-4 h-4" aria-hidden="true" />
             )}
           </div>
           <div>
-            <p className="text-sm font-medium">{displayName}</p>
-            <p className="text-xs text-muted-foreground">Opponent</p>
+            <p className="text-sm font-medium">
+              {displayName}
+              {isYou && (
+                <span className="text-xs text-muted-foreground ml-1">
+                  (you)
+                </span>
+              )}
+            </p>
+            <p className="text-xs text-muted-foreground">{label}</p>
           </div>
         </div>
 
-        {opponent.finished && (
+        {player.finished ? (
           <Badge
-            variant={opponent.won ? "default" : "secondary"}
+            variant={player.won ? "default" : "secondary"}
             className="text-xs"
             style={
-              opponent.won && primaryColor
+              player.won && primaryColor
                 ? { backgroundColor: primaryColor, color: "white" }
                 : undefined
             }
           >
-            {opponent.won ? (
+            {player.won ? (
               <>
-                <Trophy className="w-3 h-3 mr-1" />
+                <Trophy className="w-3 h-3 mr-1" aria-hidden="true" />
                 Got it!
               </>
             ) : (
               "Finished"
             )}
           </Badge>
-        )}
-
-        {!opponent.finished && (
+        ) : (
           <Badge variant="outline" className="text-xs">
-            <Clock className="w-3 h-3 mr-1" />
-            Playing...
+            <Clock className="w-3 h-3 mr-1" aria-hidden="true" />
+            Playing{"\u2026"}
           </Badge>
         )}
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-1.5">
         <div className="flex justify-between text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
-            <Target className="w-3 h-3" />
-            Guesses: {opponent.attempts}/{maxAttempts}
+            <Target className="w-3 h-3" aria-hidden="true" />
+            Guesses: {player.attempts}/{maxAttempts}
           </span>
-          {opponent.attempts > 0 && (
-            <span>
-              Best: {Math.round(opponent.bestSimilarity * 100)}%
-            </span>
+          {player.attempts > 0 && (
+            <span>Best: {Math.round(player.bestSimilarity * 100)}%</span>
           )}
         </div>
-        <Progress
-          value={progressPercent}
-          className="h-2"
-          style={
-            primaryColor
-              ? ({ "--progress-color": primaryColor } as React.CSSProperties)
-              : undefined
-          }
+        <Progress value={progressPercent} className="h-2" />
+      </div>
+    </div>
+  );
+}
+
+interface OpponentStatusProps {
+  currentPlayer: MultiplayerPlayer | null;
+  opponent: MultiplayerPlayer | null;
+  maxAttempts: number;
+  primaryColor?: string;
+  isWaitingForOpponent?: boolean;
+}
+
+export function OpponentStatus({
+  currentPlayer,
+  opponent,
+  maxAttempts,
+  primaryColor,
+  isWaitingForOpponent,
+}: OpponentStatusProps) {
+  return (
+    <div className="space-y-3">
+      <h3 className="text-sm font-medium text-muted-foreground flex items-center gap-1.5">
+        <Swords className="w-4 h-4" aria-hidden="true" />
+        Players
+      </h3>
+      <div className="flex flex-col gap-3">
+        <PlayerCard
+          player={currentPlayer}
+          maxAttempts={maxAttempts}
+          primaryColor={primaryColor}
+          label="Player 1"
+          isYou
+        />
+        <div className="flex items-center justify-center">
+          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            vs
+          </span>
+        </div>
+        <PlayerCard
+          player={opponent}
+          maxAttempts={maxAttempts}
+          primaryColor={primaryColor}
+          label="Player 2"
+          isWaiting={isWaitingForOpponent}
         />
       </div>
     </div>

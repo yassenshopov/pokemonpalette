@@ -88,6 +88,7 @@ export async function POST(req: NextRequest) {
       roomCode: room.roomCode,
       roomId: room.id,
       status: room.status,
+      isShiny: room.isShiny,
       expiresAt: room.expiresAt.toISOString(),
     });
   } catch (err) {

@@ -98,17 +98,17 @@ export function MultiplayerResultDialog({
           <DialogTitle className="text-center text-2xl font-heading flex items-center justify-center gap-2">
             {isWinner ? (
               <>
-                <Trophy className="w-6 h-6 text-yellow-500" />
+                <Trophy className="w-6 h-6 text-yellow-500" aria-hidden="true" />
                 You Win!
               </>
             ) : isDraw ? (
               <>
-                <Users className="w-6 h-6" />
-                It&apos;s a Draw!
+                <Users className="w-6 h-6" aria-hidden="true" />
+                It\u2019s a Draw!
               </>
             ) : (
               <>
-                <Medal className="w-6 h-6 text-gray-400" />
+                <Medal className="w-6 h-6 text-gray-400" aria-hidden="true" />
                 You Lost
               </>
             )}
@@ -157,7 +157,7 @@ export function MultiplayerResultDialog({
           {/* Player results */}
           <div className="space-y-2">
             <h4 className="text-sm font-medium text-muted-foreground flex items-center gap-1">
-              <Target className="w-3 h-3" />
+              <Target className="w-3 h-3" aria-hidden="true" />
               Results
             </h4>
             {sortedPlayers.map((player, index) => {
@@ -174,7 +174,7 @@ export function MultiplayerResultDialog({
                 >
                   <div className="flex items-center gap-2">
                     {isPlayerWinner && (
-                      <Trophy className="w-4 h-4 text-yellow-500 flex-shrink-0" />
+                      <Trophy className="w-4 h-4 text-yellow-500 flex-shrink-0" aria-hidden="true" />
                     )}
                     {!isPlayerWinner && (
                       <span className="w-4 h-4 flex items-center justify-center text-xs text-muted-foreground flex-shrink-0">
@@ -200,7 +200,7 @@ export function MultiplayerResultDialog({
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-medium">
+                    <p className="text-sm font-medium tabular-nums">
                       {Math.round(player.bestSimilarity * 100)}%
                     </p>
                     <p className="text-xs text-muted-foreground">best match</p>
@@ -219,9 +219,9 @@ export function MultiplayerResultDialog({
               className="flex-1 cursor-pointer"
             >
               {copied ? (
-                <Check className="w-4 h-4 mr-2 text-green-500" />
+                <Check className="w-4 h-4 mr-2 text-green-500" aria-hidden="true" />
               ) : (
-                <Copy className="w-4 h-4 mr-2" />
+                <Copy className="w-4 h-4 mr-2" aria-hidden="true" />
               )}
               {copied ? "Copied!" : "Share Result"}
             </Button>
@@ -233,7 +233,7 @@ export function MultiplayerResultDialog({
               className="flex-1 cursor-pointer font-heading"
               style={{ backgroundColor: primaryColor, color: textColor }}
             >
-              <ArrowRight className="w-4 h-4 mr-2" />
+              <ArrowRight className="w-4 h-4 mr-2" aria-hidden="true" />
               Play Again
             </Button>
           </div>

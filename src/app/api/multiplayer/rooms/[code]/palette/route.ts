@@ -46,15 +46,9 @@ export async function GET(
     return NextResponse.json({ error: "Not a participant" }, { status: 403 });
   }
 
-  if (room.status === "waiting") {
-    return NextResponse.json(
-      { error: "Game has not started yet" },
-      { status: 400 }
-    );
-  }
-
   return NextResponse.json({
     pokemonId: room.targetPokemonId,
     isShiny: room.isShiny,
+    status: room.status,
   });
 }
