@@ -41,7 +41,7 @@ export function MultiplayerLobby({
             Multiplayer
           </CardTitle>
           <CardDescription className="text-pretty">
-            Challenge a friend to guess the same Pok\u00e9mon from its color
+            Challenge a friend to guess the same Pokémon from its color
             palette. Race to see who can identify it first!
           </CardDescription>
         </CardHeader>

@@ -182,6 +182,38 @@ interface UnlimitedModeSettings {
   selectedGenerations: number[];
 }
 
+/**
+ * Resolve today's daily target via the server, which checks for an admin
+ * override before falling back to the deterministic hash. On any failure
+ * (network, 5xx, etc.) we degrade gracefully to the same client-side hash
+ * the resolver uses, so the game keeps working offline / under load.
+ */
+async function fetchDailyTarget(
+  fallbackShiny: boolean,
+): Promise<{ pokemonId: number; isShiny: boolean }> {
+  try {
+    const res = await fetch("/api/daily-target", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as {
+      pokemonId: number;
+      isShiny: boolean;
+    };
+    if (
+      typeof data.pokemonId !== "number" ||
+      typeof data.isShiny !== "boolean"
+    ) {
+      throw new Error("Malformed daily-target response");
+    }
+    return { pokemonId: data.pokemonId, isShiny: data.isShiny };
+  } catch (err) {
+    console.warn("daily-target fetch failed, using deterministic fallback", err);
+    return {
+      pokemonId: getDailyPokemonId(151, fallbackShiny),
+      isShiny: fallbackShiny,
+    };
+  }
+}
+
 export default function GamePage() {
   const { user, isLoaded: userLoaded } = useUser();
   const allPokemonList = getAllPokemonMetadata();
@@ -589,10 +621,15 @@ export default function GamePage() {
 
       setLoading(true);
 
-      // Determine shiny status for this game
+      // Determine shiny status + target pokemon for this game.
+      // Daily mode resolves via the server so admin overrides are honored.
       let gameShiny: boolean;
+      let pokemonId: number;
+
       if (mode === "daily") {
-        gameShiny = getDailyShinyStatus(); // Deterministic for daily based on date
+        const target = await fetchDailyTarget(getDailyShinyStatus());
+        gameShiny = target.isShiny;
+        pokemonId = target.pokemonId;
       } else {
         // Use settings for unlimited mode
         if (unlimitedSettings.shinyPreference === "shiny") {
@@ -602,19 +639,7 @@ export default function GamePage() {
         } else {
           gameShiny = getRandomShiny(); // Random if "both"
         }
-      }
-
-      setIsShiny(gameShiny);
-
-      let pokemonId: number;
-
-      if (mode === "daily") {
-        // Daily mode limited to Gen 1 Pokemon (IDs 1-151) for now
-        pokemonId = getDailyPokemonId(151, gameShiny);
-      } else {
-        // Unlimited mode: choose from filtered list based on settings
         if (pokemonList.length === 0) {
-          // Fallback if no Pokemon match filters
           const randomIndex = Math.floor(Math.random() * allPokemonList.length);
           pokemonId = allPokemonList[randomIndex].id;
         } else {
@@ -623,6 +648,7 @@ export default function GamePage() {
         }
       }
 
+      setIsShiny(gameShiny);
       setTargetPokemonId(pokemonId);
       track("game_started", {
         mode,
@@ -1412,12 +1438,16 @@ export default function GamePage() {
     setHintCooldown(0);
     setLoading(true);
 
-    // Determine shiny status for this game
+    // Determine shiny status + target pokemon for this game.
+    // Daily mode resolves via the server so admin overrides are honored.
     let gameShiny: boolean;
+    let pokemonId: number;
+
     if (mode === "daily") {
-      gameShiny = getDailyShinyStatus(); // Deterministic for daily based on date
+      const target = await fetchDailyTarget(getDailyShinyStatus());
+      gameShiny = target.isShiny;
+      pokemonId = target.pokemonId;
     } else {
-      // Use settings for unlimited mode
       if (unlimitedSettings.shinyPreference === "shiny") {
         gameShiny = true;
       } else if (unlimitedSettings.shinyPreference === "normal") {
@@ -1425,18 +1455,7 @@ export default function GamePage() {
       } else {
         gameShiny = getRandomShiny(); // Random if "both"
       }
-    }
-
-    setIsShiny(gameShiny);
-
-    let pokemonId: number;
-    if (mode === "daily") {
-      // Daily mode limited to Gen 1 Pokemon (IDs 1-151) for now
-      pokemonId = getDailyPokemonId(151, gameShiny);
-    } else {
-      // Unlimited mode: choose from filtered list based on settings
       if (pokemonList.length === 0) {
-        // Fallback if no Pokemon match filters
         const randomIndex = Math.floor(Math.random() * allPokemonList.length);
         pokemonId = allPokemonList[randomIndex].id;
       } else {
@@ -1445,6 +1464,7 @@ export default function GamePage() {
       }
     }
 
+    setIsShiny(gameShiny);
     setTargetPokemonId(pokemonId);
     track("game_started", {
       mode,

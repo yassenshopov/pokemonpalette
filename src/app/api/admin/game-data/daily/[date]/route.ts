@@ -3,11 +3,8 @@ import { supabaseAdmin } from "@/lib/supabase";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
 import { getPokemonById } from "@/lib/pokemon";
-import {
-  DAILY_POOL_SIZE,
-  getDailyPokemonIdForDate,
-  parseUtcDate,
-} from "@/lib/game/similarity";
+import { parseUtcDate } from "@/lib/game/similarity";
+import { resolveDailyTarget } from "@/lib/game/daily-target";
 import { FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
 import { logger } from "@/lib/logger";
 
@@ -109,11 +106,13 @@ export async function GET(
       top_wrong_guesses: [],
     }) as StatsRpcResult;
 
-    // Fall back to the deterministic daily pick when nobody has played yet.
+    // Resolve the effective target — admin overrides take precedence over
+    // the deterministic pick, but we still prefer the actual recorded
+    // target_pokemon_id when there are real plays (so retroactive
+    // override edits don't appear to rewrite history players experienced).
     const parsedDate = new Date(`${date}T00:00:00Z`);
-    const targetId =
-      stats.kpis.target_pokemon_id ??
-      getDailyPokemonIdForDate(parsedDate, DAILY_POOL_SIZE, false);
+    const resolvedTarget = await resolveDailyTarget(parsedDate);
+    const targetId = stats.kpis.target_pokemon_id ?? resolvedTarget.pokemonId;
 
     // Pokémon data for the mock + top-guesses previews.
     const extraIds = stats.top_wrong_guesses.map((g) => g.pokemon_id);
@@ -205,6 +204,13 @@ export async function GET(
       target_pokemon_id: targetId,
       pokemon: pokemonById[targetId] ?? null,
       pokemon_by_id: pokemonById,
+      override: resolvedTarget.isOverride
+        ? {
+            pokemon_id: resolvedTarget.pokemonId,
+            is_shiny: resolvedTarget.isShiny,
+            note: resolvedTarget.note,
+          }
+        : null,
       kpis: {
         ...stats.kpis,
         target_pokemon_id: targetId,

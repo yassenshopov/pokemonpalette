@@ -6,7 +6,9 @@ import Link from "next/link";
 import {
   ChevronLeft,
   ChevronRight,
+  Pin,
   RefreshCw,
+  Sparkles,
   Trophy,
   Users,
 } from "lucide-react";
@@ -25,6 +27,7 @@ import {
   DAILY_POOL_SIZE,
   getDailyPokemonIdForDate,
 } from "@/lib/game/similarity";
+import { DAILY_OVERRIDE_CHANGED_EVENT } from "@/components/admin/daily-puzzle-sheet";
 
 interface CalendarDay {
   day: string;
@@ -33,6 +36,13 @@ interface CalendarDay {
   wins: number;
   unique_players: number;
   avg_attempts: number;
+}
+
+interface OverrideRow {
+  date: string;
+  pokemon_id: number;
+  is_shiny: boolean;
+  note: string | null;
 }
 
 function officialArtworkUrl(pokemonId: number) {
@@ -96,10 +106,21 @@ export function GameCalendar({
     return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1));
   });
   const [days, setDays] = React.useState<Map<string, CalendarDay>>(new Map());
+  const [overrides, setOverrides] = React.useState<Map<string, OverrideRow>>(
+    new Map(),
+  );
   const [loading, setLoading] = React.useState(true);
   const [refreshing, setRefreshing] = React.useState(false);
 
   const { from, to } = React.useMemo(() => monthBounds(anchor), [anchor]);
+  // Account for the calendar grid's leading/trailing days from adjacent
+  // months so override badges show on those cells too.
+  const { gridFrom, gridTo } = React.useMemo(() => {
+    const startWeekday = from.getUTCDay();
+    const start = new Date(from.getTime() - startWeekday * 86_400_000);
+    const end = new Date(start.getTime() + 41 * 86_400_000);
+    return { gridFrom: start, gridTo: end };
+  }, [from]);
   const todayIso = React.useMemo(() => toIsoDate(new Date()), []);
   const isFutureMonth = React.useMemo(() => {
     const now = new Date();
@@ -111,32 +132,65 @@ export function GameCalendar({
 
   const load = React.useCallback(async () => {
     try {
-      const params = new URLSearchParams({
+      const calParams = new URLSearchParams({
         from: toIsoDate(from),
         to: toIsoDate(to),
       });
-      const res = await fetch(`/api/admin/game-data/calendar?${params.toString()}`, {
-        cache: "no-store",
+      const overrideParams = new URLSearchParams({
+        from: toIsoDate(gridFrom),
+        to: toIsoDate(gridTo),
       });
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
+      const [calRes, overrideRes] = await Promise.all([
+        fetch(`/api/admin/game-data/calendar?${calParams.toString()}`, {
+          cache: "no-store",
+        }),
+        fetch(`/api/admin/daily-overrides?${overrideParams.toString()}`, {
+          cache: "no-store",
+        }),
+      ]);
+      if (!calRes.ok) {
+        const data = await calRes.json().catch(() => null);
         throw new Error(data?.error ?? "Failed to load calendar");
       }
-      const data = (await res.json()) as { days: CalendarDay[] };
+      const calData = (await calRes.json()) as { days: CalendarDay[] };
       const map = new Map<string, CalendarDay>();
-      for (const d of data.days) map.set(d.day, d);
+      for (const d of calData.days) map.set(d.day, d);
       setDays(map);
+
+      // Override fetch failure is non-fatal — the calendar still renders
+      // without badges. Surface a soft toast but keep the existing data.
+      if (overrideRes.ok) {
+        const overrideData = (await overrideRes.json()) as {
+          overrides: OverrideRow[];
+        };
+        const omap = new Map<string, OverrideRow>();
+        for (const o of overrideData.overrides) omap.set(o.date, o);
+        setOverrides(omap);
+      } else {
+        setOverrides(new Map());
+      }
     } catch (err) {
       toast.error((err as Error).message ?? "Couldn’t load calendar");
     } finally {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [from, to]);
+  }, [from, to, gridFrom, gridTo]);
 
   React.useEffect(() => {
     setLoading(true);
     load();
+  }, [load]);
+
+  // Refresh overrides when the daily puzzle sheet broadcasts a change.
+  // We re-run the full loader so the override map and silhouettes stay
+  // in lockstep with the calendar data.
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handler = () => load();
+    window.addEventListener(DAILY_OVERRIDE_CHANGED_EVENT, handler);
+    return () =>
+      window.removeEventListener(DAILY_OVERRIDE_CHANGED_EVENT, handler);
   }, [load]);
 
   const grid = React.useMemo(() => buildGrid(anchor), [anchor]);
@@ -269,13 +323,16 @@ export function GameCalendar({
             {grid.map(({ date, inMonth }) => {
               const iso = toIsoDate(date);
               const data = days.get(iso);
+              const override = overrides.get(iso);
               const isToday = iso === todayIso;
               const isFuture = iso > todayIso;
-              // Deterministic daily target — mirrors the formula used in
-              // /game so every day (including future + unplayed) has a
-              // known Pokemon to display.
+              // Resolution order matches the server-side resolver:
+              //   1. Recorded plays (the ground truth for past days)
+              //   2. Admin override (pinned schedule)
+              //   3. Deterministic hash (default)
               const targetId =
                 data?.target_pokemon_id ??
+                override?.pokemon_id ??
                 getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, false);
               return (
                 <CalendarCell
@@ -284,6 +341,7 @@ export function GameCalendar({
                   date={date}
                   targetId={targetId}
                   data={data}
+                  override={override ?? null}
                   maxAttempts={maxAttempts}
                   muted={!inMonth}
                   isToday={isToday}
@@ -328,6 +386,7 @@ interface CalendarCellProps {
   date: Date;
   targetId: number;
   data: CalendarDay | undefined;
+  override: OverrideRow | null;
   maxAttempts: number;
   muted: boolean;
   isToday: boolean;
@@ -341,6 +400,7 @@ function CalendarCell({
   date,
   targetId,
   data,
+  override,
   maxAttempts,
   muted,
   isToday,
@@ -355,6 +415,9 @@ function CalendarCell({
 
   const dayNum = dayNumberFormatter.format(date);
 
+  const hasOverride = Boolean(override);
+  const overrideShiny = override?.is_shiny ?? false;
+
   const body = (
     <div
       role="gridcell"
@@ -365,7 +428,7 @@ function CalendarCell({
           : isFuture
             ? ": upcoming"
             : ": no attempts"
-      }`}
+      }${hasOverride ? ", admin override active" : ""}`}
       className={cn(
         "group relative aspect-square min-h-[80px] overflow-hidden rounded-md border text-left transition-colors",
         muted ? "opacity-40" : "",
@@ -374,6 +437,11 @@ function CalendarCell({
           : "",
         !isToday && isSelected
           ? "ring-2 ring-primary/80 ring-offset-1 ring-offset-background"
+          : "",
+        // Override gets a warmer accent border so it's visible at a glance
+        // even before the corner pin lands. Stops short of being noisy.
+        hasOverride && !isToday && !isSelected
+          ? "border-amber-500/60 dark:border-amber-400/50"
           : "",
         isFuture
           ? "border-dashed bg-muted/20"
@@ -385,7 +453,7 @@ function CalendarCell({
       {/* Silhouette sprite fills the whole square. */}
       <div className="pointer-events-none absolute inset-1">
         <Image
-          src={officialArtworkUrl(targetId)}
+          src={officialArtworkUrl(targetId, overrideShiny)}
           alt=""
           fill
           sizes="96px"
@@ -401,7 +469,7 @@ function CalendarCell({
       </div>
 
       {/* Day number — top-left pill. */}
-      <div className="absolute left-1 top-1">
+      <div className="absolute left-1 top-1 flex items-center gap-1">
         <span
           className={cn(
             "rounded bg-background/75 px-1 text-[11px] font-semibold tabular-nums text-foreground backdrop-blur-sm",
@@ -410,6 +478,21 @@ function CalendarCell({
         >
           {dayNum}
         </span>
+        {hasOverride ? (
+          <span
+            className="inline-flex size-4 items-center justify-center rounded-full bg-amber-500 text-amber-50 shadow-sm"
+            aria-label="Admin override"
+            title="Admin override"
+          >
+            <Pin className="size-2.5" aria-hidden="true" />
+          </span>
+        ) : null}
+        {hasOverride && overrideShiny ? (
+          <Sparkles
+            className="size-3 text-amber-500 drop-shadow"
+            aria-label="Shiny override"
+          />
+        ) : null}
       </div>
 
       {/* Attempts count — top-right pill, always shown. */}
@@ -469,7 +552,22 @@ function CalendarCell({
             <span className="font-mono tabular-nums" translate="no">
               #{targetId.toString().padStart(4, "0")}
             </span>
+            {overrideShiny ? " (shiny)" : ""}
           </div>
+          {hasOverride ? (
+            <div className="mt-1 flex items-start gap-1 rounded-sm bg-amber-500/15 px-1.5 py-1 text-[11px] text-amber-700 dark:text-amber-300">
+              <Pin
+                className="mt-0.5 size-2.5 shrink-0"
+                aria-hidden="true"
+              />
+              <div className="min-w-0">
+                <span className="font-medium">Admin override</span>
+                {override?.note ? (
+                  <span className="block truncate">{override.note}</span>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
           {hasData ? (
             <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5">
               <span className="text-muted-foreground">Attempts</span>
@@ -507,15 +605,26 @@ function CalendarCell({
 
 function CalendarLegend() {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-[11px] text-muted-foreground">
-      <div className="flex items-center gap-1.5">
-        <span>Low</span>
-        <span className="inline-block size-3 rounded-sm bg-primary/10" aria-hidden />
-        <span className="inline-block size-3 rounded-sm bg-primary/25" aria-hidden />
-        <span className="inline-block size-3 rounded-sm bg-primary/40" aria-hidden />
-        <span className="inline-block size-3 rounded-sm bg-primary/60" aria-hidden />
-        <span className="inline-block size-3 rounded-sm bg-primary/80" aria-hidden />
-        <span>High</span>
+    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 pt-1 text-[11px] text-muted-foreground">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <div className="flex items-center gap-1.5">
+          <span>Low</span>
+          <span className="inline-block size-3 rounded-sm bg-primary/10" aria-hidden />
+          <span className="inline-block size-3 rounded-sm bg-primary/25" aria-hidden />
+          <span className="inline-block size-3 rounded-sm bg-primary/40" aria-hidden />
+          <span className="inline-block size-3 rounded-sm bg-primary/60" aria-hidden />
+          <span className="inline-block size-3 rounded-sm bg-primary/80" aria-hidden />
+          <span>High</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span
+            className="inline-flex size-3.5 items-center justify-center rounded-full bg-amber-500 text-amber-50"
+            aria-hidden="true"
+          >
+            <Pin className="size-2" aria-hidden="true" />
+          </span>
+          <span>Override</span>
+        </div>
       </div>
       <Link
         href="/admin/game?view=daily"

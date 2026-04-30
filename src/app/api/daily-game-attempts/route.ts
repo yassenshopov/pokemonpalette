@@ -4,11 +4,10 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { supabaseAdmin } from "@/lib/supabase";
 import {
-  DAILY_POOL_SIZE,
-  getDailyPokemonIdForDate,
   parseUtcDate,
   todayUtcDateString,
 } from "@/lib/game/similarity";
+import { resolveDailyTarget } from "@/lib/game/daily-target";
 import { rateLimit } from "@/lib/rate-limit";
 import { logger } from "@/lib/logger";
 
@@ -207,13 +206,14 @@ export async function POST(req: NextRequest) {
   }
 
   // Server-authoritative outcome — client `won`, `attempts`, `targetPokemonId`
-  // are all ignored.
+  // are all ignored. Admin overrides take precedence over the
+  // deterministic hash, so we route through the daily-target resolver.
+  // Shiny mode is forced when the override pins it on; otherwise the
+  // client's choice (normal/shiny in unlimited mixing) is honored.
   const parsedDate = parseUtcDate(date);
-  const targetPokemonId = getDailyPokemonIdForDate(
-    parsedDate,
-    DAILY_POOL_SIZE,
-    isShiny
-  );
+  const dailyTarget = await resolveDailyTarget(parsedDate);
+  const effectiveShiny = dailyTarget.isOverride ? dailyTarget.isShiny : isShiny;
+  const targetPokemonId = dailyTarget.pokemonId;
   const attempts = guesses.length;
   const won = guesses.includes(targetPokemonId);
   const pokemonGuessed = won ? targetPokemonId : null;
@@ -223,7 +223,7 @@ export async function POST(req: NextRequest) {
       where: { userId_date: { userId, date: parsedDate } },
       update: {
         targetPokemonId,
-        isShiny,
+        isShiny: effectiveShiny,
         guesses,
         attempts,
         won,
@@ -235,7 +235,7 @@ export async function POST(req: NextRequest) {
         userId,
         date: parsedDate,
         targetPokemonId,
-        isShiny,
+        isShiny: effectiveShiny,
         guesses,
         attempts,
         won,

@@ -369,7 +369,7 @@ export function MultiplayerGame() {
   };
 
   if (!userLoaded) {
-    return <LoaderOverlay loading text="Loading\u2026" />;
+    return <LoaderOverlay loading text="Loading…" />;
   }
 
   if (!user) {
@@ -424,7 +424,7 @@ export function MultiplayerGame() {
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6">
-      <LoaderOverlay loading={loadingPokemon} text="Loading game\u2026" />
+      <LoaderOverlay loading={loadingPokemon} text="Loading game…" />
 
       {/* Room code + live indicator */}
       <div className="flex items-center justify-center gap-2">
@@ -442,7 +442,7 @@ export function MultiplayerGame() {
         )}
         {mp.status === "waiting" && (
           <Badge variant="outline" className="text-xs text-muted-foreground">
-            Waiting for opponent{"\u2026"}
+            Waiting for opponent{"…"}
           </Badge>
         )}
       </div>
@@ -647,7 +647,7 @@ export function MultiplayerGame() {
                     onPokemonSelect={handleGuess}
                     isShiny={mp.isShiny}
                     guessedPokemonIds={guesses.map((g) => g.pokemonId)}
-                    placeholder="Enter Pok\u00e9mon name or number\u2026"
+                    placeholder="Enter Pokémon name or number…"
                   />
                 </div>
                 <div className="lg:hidden">
@@ -657,7 +657,7 @@ export function MultiplayerGame() {
                     variant="outline"
                   >
                     <Search className="w-4 h-4 mr-2" aria-hidden="true" />
-                    Search Pok\u00e9mon
+                    Search Pokémon
                   </Button>
                   <Dialog
                     open={showSearchDialog}
@@ -665,7 +665,7 @@ export function MultiplayerGame() {
                   >
                     <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-lg">
                       <DialogHeader>
-                        <DialogTitle>Search Pok\u00e9mon</DialogTitle>
+                        <DialogTitle>Search Pokémon</DialogTitle>
                       </DialogHeader>
                       <div className="mt-4">
                         <PokemonSearch
@@ -674,7 +674,7 @@ export function MultiplayerGame() {
                           onPokemonSelect={handleGuessWithDialog}
                           isShiny={mp.isShiny}
                           guessedPokemonIds={guesses.map((g) => g.pokemonId)}
-                          placeholder="Enter Pok\u00e9mon name or number\u2026"
+                          placeholder="Enter Pokémon name or number…"
                         />
                       </div>
                     </DialogContent>
@@ -682,14 +682,14 @@ export function MultiplayerGame() {
                 </div>
                 {loadingGuess && (
                   <p className="text-sm text-muted-foreground" aria-live="polite">
-                    Analyzing guess{"\u2026"}
+                    Analyzing guess{"…"}
                   </p>
                 )}
               </>
             ) : (
               !mp.targetPokemonId && (
                 <p className="text-sm text-muted-foreground text-center">
-                  Waiting for game to finish{"\u2026"}
+                  Waiting for game to finish{"…"}
                 </p>
               )
             )}

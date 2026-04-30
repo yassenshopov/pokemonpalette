@@ -12,6 +12,7 @@ import {
   Flag,
   HelpCircle,
   Lightbulb,
+  Pin,
   Search,
   Sparkles,
   Target,
@@ -42,6 +43,14 @@ import {
   getDimmedColor,
 } from "@/lib/game/colors";
 import type { ColorPalette } from "@/types/pokemon";
+import {
+  DailyOverrideDialog,
+  type DailyOverrideValue,
+} from "@/components/admin/daily-override-dialog";
+import {
+  DAILY_POOL_SIZE,
+  getDailyPokemonIdForDate,
+} from "@/lib/game/similarity";
 
 interface DailyPuzzleSheetProps {
   /** ISO date (YYYY-MM-DD) to show, or null when closed. */
@@ -85,6 +94,11 @@ interface DailyPuzzleResponse {
   target_pokemon_id: number;
   pokemon: PokemonSummary | null;
   pokemon_by_id: Record<string, PokemonSummary>;
+  override: {
+    pokemon_id: number;
+    is_shiny: boolean;
+    note: string | null;
+  } | null;
   kpis: {
     attempts: number;
     unique_players: number;
@@ -105,6 +119,21 @@ interface DailyPuzzleResponse {
   hints_histogram: Array<{ bucket: number; count: number }>;
   top_wrong_guesses: Array<{ pokemon_id: number; count: number }>;
   recent: RecentAttempt[];
+}
+
+/**
+ * Broadcast helper — when an override is created, edited, or removed, the
+ * calendar should refresh to show / hide the badge. Custom events are a
+ * lightweight alternative to threading callbacks all the way down the
+ * sheet's component tree.
+ */
+export const DAILY_OVERRIDE_CHANGED_EVENT = "admin:daily-override-changed";
+
+function notifyOverrideChanged(date: string) {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(
+    new CustomEvent(DAILY_OVERRIDE_CHANGED_EVENT, { detail: { date } }),
+  );
 }
 
 function officialArtworkUrl(pokemonId: number, shiny = false) {
@@ -203,6 +232,32 @@ export function DailyPuzzleSheet({
     return () => ctrl.abort();
   }, [date]);
 
+  const handleOverrideChanged = React.useCallback(
+    (next: DailyOverrideValue | null) => {
+      if (!date) return;
+      // Optimistically patch the local data so the sheet UI reflects the
+      // override change without a re-fetch round-trip; the calendar will
+      // refresh via the broadcast event below.
+      setData((prev) =>
+        prev
+          ? {
+              ...prev,
+              override: next
+                ? {
+                    pokemon_id: next.pokemonId,
+                    is_shiny: next.isShiny,
+                    note: next.note,
+                  }
+                : null,
+              target_pokemon_id: next?.pokemonId ?? prev.target_pokemon_id,
+            }
+          : prev,
+      );
+      notifyOverrideChanged(date);
+    },
+    [date],
+  );
+
   return (
     <Sheet open={Boolean(date)} onOpenChange={onOpenChange}>
       <SheetContent
@@ -220,6 +275,7 @@ export function DailyPuzzleSheet({
               date={date}
               data={data}
               loading={loading && !data}
+              onOverrideChanged={handleOverrideChanged}
             />
             {/* `min-h-0` is critical: without it, flex children in a column
                 refuse to shrink below their content and the ScrollArea never
@@ -235,7 +291,10 @@ export function DailyPuzzleSheet({
                 ) : loading && !data ? (
                   <LoadingState />
                 ) : data ? (
-                  <DailyPuzzleBody data={data} />
+                  <DailyPuzzleBody
+                    data={data}
+                    onOverrideChanged={handleOverrideChanged}
+                  />
                 ) : null}
               </div>
             </ScrollArea>
@@ -254,13 +313,28 @@ function SheetHeaderBlock({
   date,
   data,
   loading,
+  onOverrideChanged,
 }: {
   date: string;
   data: DailyPuzzleResponse | null;
   loading: boolean;
+  onOverrideChanged: (next: DailyOverrideValue | null) => void;
 }) {
   const when = compareToToday(date);
   const dateLabel = fullDateLabel(date);
+  const [overrideOpen, setOverrideOpen] = React.useState(false);
+  const hasOverride = Boolean(data?.override);
+  // Algorithmic pick — same formula every other consumer uses, surfaced
+  // here so the dialog can show "matches algorithmic pick" hints.
+  const algorithmicPokemonId = React.useMemo(
+    () =>
+      getDailyPokemonIdForDate(
+        new Date(`${date}T00:00:00Z`),
+        DAILY_POOL_SIZE,
+        false,
+      ),
+    [date],
+  );
 
   return (
     <SheetHeader className="gap-2 border-b px-5 py-4">
@@ -305,6 +379,15 @@ function SheetHeaderBlock({
               Past
             </Badge>
           )}
+          {hasOverride ? (
+            <Badge
+              variant="default"
+              className="gap-1 bg-amber-500 text-amber-50 hover:bg-amber-500/90"
+            >
+              <Pin className="size-3" aria-hidden="true" />
+              Override
+            </Badge>
+          ) : null}
           {data && data.kpis.shiny_attempts > 0 ? (
             <Badge variant="outline" className="gap-1">
               <Sparkles className="size-3" aria-hidden="true" />
@@ -313,6 +396,63 @@ function SheetHeaderBlock({
           ) : null}
         </div>
       </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+        <div className="min-w-0 text-[11px] text-muted-foreground">
+          {hasOverride && data?.override ? (
+            <span>
+              Pinned to{" "}
+              <span className="font-mono tabular-nums" translate="no">
+                #{data.override.pokemon_id.toString().padStart(4, "0")}
+              </span>
+              {data.override.is_shiny ? " (shiny)" : ""}
+              {data.override.note ? ` — ${data.override.note}` : ""}
+            </span>
+          ) : (
+            <span>
+              Algorithmic pick:{" "}
+              <span className="font-mono tabular-nums" translate="no">
+                #{algorithmicPokemonId.toString().padStart(4, "0")}
+              </span>
+            </span>
+          )}
+        </div>
+        <Button
+          type="button"
+          variant={hasOverride ? "default" : "outline"}
+          size="sm"
+          className={cn(
+            "h-7 gap-1.5 px-2 text-xs",
+            hasOverride && "bg-amber-500 text-amber-50 hover:bg-amber-500/90",
+          )}
+          onClick={() => setOverrideOpen(true)}
+          aria-label={
+            hasOverride
+              ? "Edit override for this date"
+              : "Schedule override for this date"
+          }
+        >
+          <Pin className="size-3" aria-hidden="true" />
+          {hasOverride ? "Edit override" : "Override"}
+        </Button>
+      </div>
+
+      <DailyOverrideDialog
+        date={date}
+        current={
+          data?.override
+            ? {
+                pokemonId: data.override.pokemon_id,
+                isShiny: data.override.is_shiny,
+                note: data.override.note,
+              }
+            : null
+        }
+        algorithmicPokemonId={algorithmicPokemonId}
+        open={overrideOpen}
+        onOpenChange={setOverrideOpen}
+        onChanged={onOverrideChanged}
+      />
     </SheetHeader>
   );
 }
@@ -321,7 +461,15 @@ function SheetHeaderBlock({
 // Body
 // --------------------------------------------------------------------------
 
-function DailyPuzzleBody({ data }: { data: DailyPuzzleResponse }) {
+function DailyPuzzleBody({
+  data,
+}: {
+  data: DailyPuzzleResponse;
+  // Keep the optional override-changed handler in the signature so future
+  // body-level controls (e.g. an inline override card) can fan out to the
+  // sheet's optimistic-update logic without restructuring.
+  onOverrideChanged?: (next: DailyOverrideValue | null) => void;
+}) {
   const hasPlays = data.kpis.attempts > 0;
   const when = compareToToday(data.date);
 

@@ -73,6 +73,7 @@ model User {
   unsafeMetadata             Json      @default("{}") @map("unsafe_metadata")   @db.JsonB
   savedPalettes        SavedPalette[]
   dailyGameAttempts    DailyGameAttempt[]
+  dailyOverrides       DailyOverride[]
   emails               Email[]
   hostedRooms          MultiplayerRoom[]   @relation("RoomHost")
   wonRooms             MultiplayerRoom[]   @relation("RoomWinner")
@@ -135,6 +136,22 @@ model DailyGameAttempt {
   @@index([createdAt(sort: Desc)], map: "idx_dga_created_at_desc")
   @@index([targetPokemonId], map: "idx_dga_target_pokemon_id")
   @@map("daily_game_attempts")
+}
+
+model DailyOverride {
+  date        DateTime @id @db.Date
+  pokemonId   Int      @map("pokemon_id")
+  isShiny     Boolean  @default(false) @map("is_shiny")
+  createdBy   String   @map("created_by")
+  note        String?
+  createdAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("updated_at") @db.Timestamptz(6)
+
+  creator User @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+
+  @@index([date],      map: "idx_daily_overrides_date")
+  @@index([createdBy], map: "idx_daily_overrides_created_by")
+  @@map("daily_overrides")
 }
 
 model Email {

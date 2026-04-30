@@ -1,8 +1,4 @@
-import {
-  DAILY_POOL_SIZE,
-  getDailyPokemonIdForDate,
-  getDailyShinyStatus,
-} from "@/lib/game/similarity";
+import { resolveDailyTarget } from "@/lib/game/daily-target";
 import { getPokemonById } from "@/lib/pokemon";
 
 export interface DailyPaletteInfo {
@@ -34,12 +30,19 @@ const FALLBACK_COLORS: [string, string, string] = [
 export async function getDailyPaletteForDate(
   date: Date = new Date(),
 ): Promise<DailyPaletteInfo | null> {
-  const isShiny = getDailyShinyStatus();
-  const id = getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, isShiny);
+  // Admin overrides take precedence over the deterministic pick so a
+  // scheduled "Pikachu Day" email actually shows Pikachu.
+  const target = await resolveDailyTarget(date);
+  const { pokemonId: id, isShiny } = target;
   const pokemon = await getPokemonById(id);
   if (!pokemon) return null;
 
-  const palette = pokemon.colorPalette;
+  // Use the shiny palette when the resolved target is shiny so the email
+  // teaser matches what players will see in `/game`.
+  const palette =
+    isShiny && pokemon.shinyColorPalette
+      ? pokemon.shinyColorPalette
+      : pokemon.colorPalette;
   const highlights = palette?.highlights ?? [];
 
   const colors: [string, string, string] = [
