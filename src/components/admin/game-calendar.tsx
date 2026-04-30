@@ -45,8 +45,9 @@ interface OverrideRow {
   note: string | null;
 }
 
-function officialArtworkUrl(pokemonId: number) {
-  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
+function officialArtworkUrl(pokemonId: number, shiny = false) {
+  const suffix = shiny ? "/shiny" : "";
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork${suffix}/${pokemonId}.png`;
 }
 
 function monthLabel(date: Date): string {

@@ -350,8 +350,8 @@ export function DailyOverrideDialog({
               <span className="font-mono tabular-nums" translate="no">
                 #{algorithmicPokemonId.toString().padStart(4, "0")}
               </span>
-              ). Players who have already finished today's puzzle keep their
-              recorded result.
+              ). Players who have already finished today&apos;s puzzle keep
+              their recorded result.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
