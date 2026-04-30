@@ -261,29 +261,49 @@ export function PokemonMenu({
   }, [pokemonData?.id, isShiny, selectedVarietyId, selectedFormIndex]);
 
   // Palette resolution strategy (see audit H6):
-  //   1. If we're on the default variant (no shiny, no variety, no form) and
-  //      the Pokémon JSON already carries precomputed `colorPalette.highlights`,
-  //      use those directly. This skips the ~475x475 canvas decode +
-  //      pixel-scan on the main thread — the hot path for ~95% of users.
-  //   2. Otherwise we fall back to extractColorsFromImage, which we still
-  //      need for shiny / form / variety sprites because we don't ship
-  //      stored palettes for those.
+  //   1. Prefer the admin-curated palette shipped on the Pokémon JSON
+  //      (`colorPalette.highlights` for normal, `shinyColorPalette.highlights`
+  //      for shiny). The admin Color Management workbench writes here, so
+  //      whatever the admin picked is the source of truth — and using it
+  //      also skips the ~475x475 canvas decode + pixel-scan on the main
+  //      thread, which is the hot path for ~95% of users.
+  //   2. Only fall back to extractColorsFromImage when no stored palette is
+  //      available for the current variant (e.g. a non-default form, an
+  //      alternate variety, or a shiny that has no `shinyColorPalette` yet),
+  //      or when the stored palette is too short to fill the user's
+  //      `paletteSize` selection.
   useEffect(() => {
     if (!pokemonData) return;
     const spriteUrl = getSpriteUrl(pokemonData, isShiny);
     if (!spriteUrl) return;
 
-    const stored = pokemonData.colorPalette?.highlights ?? [];
-    const canUseStored =
-      !isShiny &&
+    // `selectedFormIndex` is `null` when the user hasn't picked a form (the
+    // default state for most Pokémon) and `0` when they explicitly clicked
+    // the default form. Both render the canonical sprite, so both are
+    // eligible for the stored palette.
+    const isDefaultVariant =
       selectedVarietyId == null &&
-      selectedFormIndex === 0 &&
-      stored.length >= POKEMON_CONSTANTS.COLORS_TO_EXTRACT;
+      (selectedFormIndex === null || selectedFormIndex === 0);
+
+    const stored = isShiny
+      ? pokemonData.shinyColorPalette?.highlights ?? []
+      : pokemonData.colorPalette?.highlights ?? [];
+
+    const canUseStored = isDefaultVariant && stored.length >= paletteSize;
 
     if (canUseStored) {
-      const fullColors = stored.slice(0, POKEMON_CONSTANTS.COLORS_TO_EXTRACT);
-      const displayed = fullColors.slice(0, paletteSize);
-      setExtractedColors(fullColors);
+      // Pad up to COLORS_TO_EXTRACT so the rest of the menu (which keeps a
+      // full 6-slot buffer in `extractedColors`) doesn't see undefined
+      // entries when the admin saved a shorter legacy palette.
+      const fullColors = [...stored];
+      while (fullColors.length < POKEMON_CONSTANTS.COLORS_TO_EXTRACT) {
+        fullColors.push(
+          fullColors[fullColors.length - 1] ?? "#94a3b8"
+        );
+      }
+      const trimmed = fullColors.slice(0, POKEMON_CONSTANTS.COLORS_TO_EXTRACT);
+      const displayed = trimmed.slice(0, paletteSize);
+      setExtractedColors(trimmed);
       setLockedColors(new Array(paletteSize).fill(false));
       onColorsExtracted?.(displayed);
       return;
