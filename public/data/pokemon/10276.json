@@ -1,7 +1,7 @@
 {
   "id": 10276,
   "name": "Terapagos-terastal",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Normal"
   ],
@@ -12,7 +12,7 @@
     }
   ],
   "height": 0.3,
-  "weight": 16.0,
+  "weight": 16,
   "abilities": [
     {
       "name": "Tera shell",
@@ -32,15 +32,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#3b338e",
+    "secondary": "#b0fdb4",
+    "accent": "#5ddcca",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#3b338e",
+      "#b0fdb4",
+      "#5ddcca",
+      "#4ca0f2",
+      "#3c5ceb",
+      "#da3c8d"
     ]
   },
   "artwork": {

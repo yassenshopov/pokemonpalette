@@ -1,7 +1,7 @@
 {
   "id": 10026,
   "name": "Aegislash-blade",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Steel",
     "Ghost"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 53.0,
+  "weight": 53,
   "abilities": [
     {
       "name": "Stance change",
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#eadd82",
+    "secondary": "#393941",
+    "accent": "#786ead",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#eadd82",
+      "#393941",
+      "#786ead",
+      "#514686",
+      "#ececec",
+      "#9e8d5a"
     ]
   },
   "artwork": {

@@ -1,7 +1,7 @@
 {
   "id": 10277,
   "name": "Terapagos-stellar",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Normal"
   ],
@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 77.0,
+  "weight": 77,
   "abilities": [
     {
       "name": "Teraform zero",
@@ -32,15 +32,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#5245b2",
+    "secondary": "#4ad1b1",
+    "accent": "#abe49d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#5245b2",
+      "#4ad1b1",
+      "#abe49d",
+      "#4786ef",
+      "#3d4bc3",
+      "#eefbff"
     ]
   },
   "artwork": {

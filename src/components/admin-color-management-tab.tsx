@@ -29,8 +29,21 @@ import {
   type EditorTab,
   type PokemonColorRow,
   type Variant,
+  type VarietyKind,
 } from "@/components/admin/colors/types";
 import type { HintConfig } from "@/lib/game/hints";
+
+interface AdminColorsApiVarietyRow {
+  id: number;
+  name: string;
+  spriteUrl: string | null;
+  shinySpriteUrl: string | null;
+  staticColors?: string[];
+  staticShinyColors?: string[];
+  hintConfig?: HintConfig | null;
+  varietyKind: VarietyKind;
+  speciesId: number;
+}
 
 interface AdminColorsApiResponse {
   pokemon: Array<{
@@ -41,6 +54,8 @@ interface AdminColorsApiResponse {
     staticColors?: string[];
     staticShinyColors?: string[];
     hintConfig?: HintConfig | null;
+    speciesId?: number;
+    varieties?: AdminColorsApiVarietyRow[];
   }>;
 }
 
@@ -79,12 +94,25 @@ export function AdminColorManagementTab() {
   const selectedId = Number.isInteger(parsedId) && parsedId > 0 ? parsedId : null;
 
   const [editorDirty, setEditorDirty] = React.useState(false);
+
+  // Flat lookup keyed by id covering both species rows and their nested
+  // variety rows (megas, gmax, regionals, misc forms). The picker shows a
+  // tree, but the editor only ever needs to find one row by id, so this
+  // saves a recursive search every render.
+  const rowsById = React.useMemo(() => {
+    const map = new Map<number, PokemonColorRow>();
+    for (const species of pokemonList) {
+      map.set(species.id, species);
+      for (const variety of species.varieties ?? []) {
+        map.set(variety.id, variety);
+      }
+    }
+    return map;
+  }, [pokemonList]);
+
   const selectedRow = React.useMemo(
-    () =>
-      selectedId !== null
-        ? pokemonList.find((p) => p.id === selectedId) ?? null
-        : null,
-    [pokemonList, selectedId],
+    () => (selectedId !== null ? rowsById.get(selectedId) ?? null : null),
+    [rowsById, selectedId],
   );
 
   React.useEffect(() => {
@@ -114,6 +142,18 @@ export function AdminColorManagementTab() {
           staticColors: p.staticColors ?? [],
           staticShinyColors: p.staticShinyColors ?? [],
           hintConfig: p.hintConfig ?? null,
+          speciesId: p.speciesId ?? p.id,
+          varieties: (p.varieties ?? []).map((v) => ({
+            id: v.id,
+            name: v.name,
+            spriteUrl: v.spriteUrl,
+            shinySpriteUrl: v.shinySpriteUrl,
+            staticColors: v.staticColors ?? [],
+            staticShinyColors: v.staticShinyColors ?? [],
+            hintConfig: v.hintConfig ?? null,
+            varietyKind: v.varietyKind,
+            speciesId: v.speciesId,
+          })),
         }));
         normalized.sort((a, b) => a.id - b.id);
         setPokemonList(normalized);
@@ -186,12 +226,38 @@ export function AdminColorManagementTab() {
 
   const handleRowSaved = (updated: PokemonColorRow) => {
     setPokemonList((prev) =>
-      prev.map((p) => (p.id === updated.id ? { ...p, ...updated } : p)),
+      prev.map((species) => {
+        if (species.id === updated.id) {
+          // Preserve the species' nested varieties — the editor doesn't
+          // know about them, so its `updated` payload omits the field.
+          return { ...species, ...updated, varieties: species.varieties };
+        }
+        if (species.varieties?.some((v) => v.id === updated.id)) {
+          return {
+            ...species,
+            varieties: species.varieties.map((v) =>
+              v.id === updated.id
+                ? { ...v, ...updated, varietyKind: v.varietyKind, speciesId: v.speciesId }
+                : v,
+            ),
+          };
+        }
+        return species;
+      }),
     );
   };
 
   const runBatchExtract = async () => {
-    const candidates = pokemonList.filter((p) =>
+    // Flatten species + their alt-form varieties so the batch covers
+    // every row the picker exposes, not just default forms.
+    const flattened: PokemonColorRow[] = [];
+    for (const species of pokemonList) {
+      flattened.push(species);
+      for (const variety of species.varieties ?? []) {
+        flattened.push(variety);
+      }
+    }
+    const candidates = flattened.filter((p) =>
       batchVariant === "shiny" ? p.shinySpriteUrl : p.spriteUrl,
     );
     if (candidates.length === 0) {
@@ -233,14 +299,25 @@ export function AdminColorManagementTab() {
           | { colors?: string[] }
           | null;
         const persisted = j?.colors ?? colors;
+        const patchRow = (p: PokemonColorRow): PokemonColorRow =>
+          batchVariant === "shiny"
+            ? { ...p, staticShinyColors: persisted }
+            : { ...p, staticColors: persisted };
         setPokemonList((prev) =>
-          prev.map((p) =>
-            p.id === pokemon.id
-              ? batchVariant === "shiny"
-                ? { ...p, staticShinyColors: persisted }
-                : { ...p, staticColors: persisted }
-              : p,
-          ),
+          prev.map((species) => {
+            if (species.id === pokemon.id) {
+              return { ...patchRow(species), varieties: species.varieties };
+            }
+            if (species.varieties?.some((v) => v.id === pokemon.id)) {
+              return {
+                ...species,
+                varieties: species.varieties.map((v) =>
+                  v.id === pokemon.id ? patchRow(v) : v,
+                ),
+              };
+            }
+            return species;
+          }),
         );
         successCount++;
         await new Promise((resolve) => setTimeout(resolve, 60));

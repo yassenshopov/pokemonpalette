@@ -81,6 +81,110 @@ function parseHintConfig(raw: unknown): HintConfig | null {
   return { disabled, overrides };
 }
 
+// Variety classification used by the admin picker UI. Mirrors the
+// `VarietyKind` union in `src/components/admin/colors/types.ts` — keep both
+// in sync. Anything we don't recognise falls back to the catch-all "form"
+// bucket so unusual entries (Deoxys-attack, Rotom-fan, Calyrex-shadow,
+// etc.) still show up under their species.
+type VarietyKind =
+  | "mega"
+  | "gigantamax"
+  | "alolan"
+  | "galarian"
+  | "hisuian"
+  | "paldean"
+  | "form";
+
+function classifyVarietyType(raw: unknown): VarietyKind {
+  if (typeof raw !== "string") return "form";
+  switch (raw.toLowerCase()) {
+    case "mega":
+      return "mega";
+    case "gigantamax":
+      return "gigantamax";
+    case "alolan":
+      return "alolan";
+    case "galarian":
+      return "galarian";
+    case "hisuian":
+      return "hisuian";
+    case "paldean":
+      return "paldean";
+    default:
+      return "form";
+  }
+}
+
+/** Pull a numeric Pokemon id out of a PokeAPI variety URL like
+ * `https://pokeapi.co/api/v2/pokemon/10034/`. Returns null when the URL
+ * doesn't match — defensive guard against ever path-traversing the
+ * filesystem read below. */
+function parseVarietyId(url: unknown): number | null {
+  if (typeof url !== "string") return null;
+  const match = url.match(/\/pokemon\/(\d+)\/?$/);
+  if (!match) return null;
+  const id = Number(match[1]);
+  if (!Number.isInteger(id) || id < 1 || id > 100000) return null;
+  return id;
+}
+
+interface VarietyRefRaw {
+  is_default?: unknown;
+  url?: unknown;
+  type?: unknown;
+}
+
+interface VarietyRow {
+  id: number;
+  name: string;
+  spriteUrl: string | null;
+  shinySpriteUrl: string | null;
+  staticColors: string[];
+  staticShinyColors: string[];
+  hintConfig: HintConfig | null;
+  varietyKind: VarietyKind;
+  speciesId: number;
+}
+
+/** Read a single alt-form Pokemon JSON and shape it for the admin UI.
+ * Returns null when the file is missing or unreadable so we silently skip
+ * stale variety references rather than poisoning the whole species row. */
+async function readVarietyRow(
+  varietyId: number,
+  speciesId: number,
+  varietyKind: VarietyKind,
+  fallbackName: string,
+): Promise<VarietyRow | null> {
+  try {
+    const filePath = join(POKEMON_DATA_DIR, `${varietyId}.json`);
+    const fileContent = await readFile(filePath, "utf-8");
+    const data = JSON.parse(fileContent) as Record<string, unknown>;
+
+    const staticColors = normalizeHighlights(data.colorPalette);
+    const staticShinyColors = normalizeHighlights(data.shinyColorPalette);
+    const artwork = (data.artwork ?? {}) as Record<string, unknown>;
+    const hintConfig = parseHintConfig(data.hintConfig);
+    const name =
+      typeof data.name === "string" && data.name.length > 0
+        ? data.name
+        : fallbackName;
+
+    return {
+      id: varietyId,
+      name,
+      spriteUrl: typeof artwork.front === "string" ? artwork.front : null,
+      shinySpriteUrl: typeof artwork.shiny === "string" ? artwork.shiny : null,
+      staticColors,
+      staticShinyColors,
+      hintConfig,
+      varietyKind,
+      speciesId,
+    };
+  } catch {
+    return null;
+  }
+}
+
 // GET — Return every Pokemon with its current stored palette (admin only)
 export async function GET() {
   const authResult = await requireAdmin();
@@ -104,6 +208,49 @@ export async function GET() {
 
         const hintConfig = parseHintConfig(pokemonData.hintConfig);
 
+        // Resolve alt-form varieties (megas, gmax, regionals, misc forms).
+        // We deliberately drop the default-variety entry because it points
+        // back at the species itself and the UI already has that row.
+        const rawVarieties = Array.isArray(pokemonData.varieties)
+          ? (pokemonData.varieties as VarietyRefRaw[])
+          : [];
+        const varietyTasks = rawVarieties
+          .filter((v) => !v?.is_default)
+          .map((v) => {
+            const varietyId = parseVarietyId(v.url);
+            if (varietyId === null || varietyId === pokemon.id) return null;
+            const kind = classifyVarietyType(v.type);
+            return readVarietyRow(
+              varietyId,
+              pokemon.id,
+              kind,
+              `${pokemon.name} ${kind}`,
+            );
+          })
+          .filter((task): task is Promise<VarietyRow | null> => task !== null);
+
+        const resolvedVarieties = (await Promise.all(varietyTasks)).filter(
+          (row): row is VarietyRow => row !== null,
+        );
+
+        // Stable order — group by kind, then by id, so Mega X comes before
+        // Mega Y and regional forms cluster together.
+        const KIND_ORDER: VarietyKind[] = [
+          "mega",
+          "gigantamax",
+          "alolan",
+          "galarian",
+          "hisuian",
+          "paldean",
+          "form",
+        ];
+        resolvedVarieties.sort((a, b) => {
+          const ka = KIND_ORDER.indexOf(a.varietyKind);
+          const kb = KIND_ORDER.indexOf(b.varietyKind);
+          if (ka !== kb) return ka - kb;
+          return a.id - b.id;
+        });
+
         return {
           id: pokemon.id,
           name: pokemon.name,
@@ -114,6 +261,8 @@ export async function GET() {
           staticColors,
           staticShinyColors,
           hintConfig,
+          speciesId: pokemon.id,
+          varieties: resolvedVarieties,
         };
       } catch {
         return null;

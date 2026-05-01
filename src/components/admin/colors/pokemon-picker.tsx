@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Filter, Search, Sparkles, X } from "lucide-react";
+import { ChevronRight, Filter, Search, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import type { PokemonColorRow, Variant } from "./types";
+import type { PokemonColorRow, Variant, VarietyKind } from "./types";
 
 interface PokemonPickerProps {
   pokemon: PokemonColorRow[];
@@ -38,13 +38,46 @@ const EMPTY_FILTER: FilterState = {
   onlyUnsaved: false,
 };
 
-function statusForRow(row: PokemonColorRow, variant: Variant): {
+const VARIETY_KIND_LABEL: Record<VarietyKind, string> = {
+  mega: "Mega",
+  gigantamax: "G-Max",
+  alolan: "Alolan",
+  galarian: "Galarian",
+  hisuian: "Hisuian",
+  paldean: "Paldean",
+  form: "Form",
+};
+
+/** Tailwind classes per variety kind. The picker uses a coloured pill so an
+ * admin can scan a long list and immediately spot what kind of alt form
+ * they're looking at. */
+const VARIETY_KIND_BADGE: Record<VarietyKind, string> = {
+  mega: "bg-fuchsia-500/15 text-fuchsia-700 dark:text-fuchsia-300",
+  gigantamax: "bg-rose-500/15 text-rose-700 dark:text-rose-300",
+  alolan: "bg-amber-500/15 text-amber-700 dark:text-amber-300",
+  galarian: "bg-indigo-500/15 text-indigo-700 dark:text-indigo-300",
+  hisuian: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300",
+  paldean: "bg-orange-500/15 text-orange-700 dark:text-orange-300",
+  form: "bg-muted text-muted-foreground",
+};
+
+function rowSprite(row: PokemonColorRow, variant: Variant): string | null {
+  return variant === "shiny" ? row.shinySpriteUrl : row.spriteUrl;
+}
+
+function rowColors(row: PokemonColorRow, variant: Variant): string[] {
+  return variant === "shiny" ? row.staticShinyColors : row.staticColors;
+}
+
+function statusForRow(
+  row: PokemonColorRow,
+  variant: Variant,
+): {
   tone: "ok" | "default" | "warn" | "missing";
   label: string;
 } {
-  const sprite = variant === "shiny" ? row.shinySpriteUrl : row.spriteUrl;
-  const colors =
-    variant === "shiny" ? row.staticShinyColors : row.staticColors;
+  const sprite = rowSprite(row, variant);
+  const colors = rowColors(row, variant);
   if (!sprite) return { tone: "missing", label: "No sprite available" };
   if (colors.length === 0)
     return { tone: "warn", label: "Using defaults — no stored palette" };
@@ -53,34 +86,86 @@ function statusForRow(row: PokemonColorRow, variant: Variant): {
   return { tone: "ok", label: "Full palette stored" };
 }
 
-function filterPokemon(
+function rowMatchesQuery(row: PokemonColorRow, q: string): boolean {
+  if (!q) return true;
+  return (
+    row.name.toLowerCase().includes(q) || String(row.id).includes(q)
+  );
+}
+
+function rowMatchesFilters(
+  row: PokemonColorRow,
+  filters: FilterState,
+  variant: Variant,
+): boolean {
+  const min = filters.minId === "" ? null : Number(filters.minId);
+  const max = filters.maxId === "" ? null : Number(filters.maxId);
+  if (min !== null && !Number.isNaN(min) && row.id < min) return false;
+  if (max !== null && !Number.isNaN(max) && row.id > max) return false;
+  if (filters.onlyWithSprite && !rowSprite(row, variant)) return false;
+  if (filters.onlyUnsaved) {
+    const colors = rowColors(row, variant);
+    if (colors.length >= 6) return false;
+  }
+  return true;
+}
+
+interface VisibleSpecies {
+  species: PokemonColorRow;
+  varieties: PokemonColorRow[];
+  /** When true, the variety list was reduced by an active search/filter and
+   * the species should render as expanded regardless of the user's manual
+   * collapse state — otherwise the matching alt form would be hidden. */
+  forceExpanded: boolean;
+}
+
+/** Compute which species + varieties are visible given the current search,
+ * filters, and (for default expansion) the manually expanded ids. We do
+ * this once per change instead of in render so the row map stays stable. */
+function buildVisible(
   list: PokemonColorRow[],
   query: string,
   filters: FilterState,
   variant: Variant,
-): PokemonColorRow[] {
+): VisibleSpecies[] {
   const q = query.trim().toLowerCase().replace(/^#/, "");
-  const min = filters.minId === "" ? null : Number(filters.minId);
-  const max = filters.maxId === "" ? null : Number(filters.maxId);
-  return list.filter((p) => {
-    if (q) {
-      const nameMatch = p.name.toLowerCase().includes(q);
-      const idMatch = String(p.id).includes(q);
-      if (!nameMatch && !idMatch) return false;
+  const out: VisibleSpecies[] = [];
+  const filtering =
+    q.length > 0 ||
+    filters.minId !== "" ||
+    filters.maxId !== "" ||
+    filters.onlyWithSprite ||
+    filters.onlyUnsaved;
+
+  for (const species of list) {
+    const speciesPasses =
+      rowMatchesQuery(species, q) && rowMatchesFilters(species, filters, variant);
+    const varieties = species.varieties ?? [];
+    const matchingVarieties = varieties.filter(
+      (v) => rowMatchesQuery(v, q) && rowMatchesFilters(v, filters, variant),
+    );
+    const includeSpecies = speciesPasses || matchingVarieties.length > 0;
+    if (!includeSpecies) continue;
+
+    if (filtering) {
+      // When filtering, we want the UI to reveal exactly why this species
+      // is in the list. Show only matching varieties; if the species
+      // matched but no varieties did, leave varieties hidden (they'll
+      // come back when the admin clears the search).
+      out.push({
+        species,
+        varieties: speciesPasses ? matchingVarieties : matchingVarieties,
+        forceExpanded: matchingVarieties.length > 0,
+      });
+    } else {
+      out.push({
+        species,
+        varieties,
+        forceExpanded: false,
+      });
     }
-    if (min !== null && !Number.isNaN(min) && p.id < min) return false;
-    if (max !== null && !Number.isNaN(max) && p.id > max) return false;
-    if (filters.onlyWithSprite) {
-      const sprite = variant === "shiny" ? p.shinySpriteUrl : p.spriteUrl;
-      if (!sprite) return false;
-    }
-    if (filters.onlyUnsaved) {
-      const colors =
-        variant === "shiny" ? p.staticShinyColors : p.staticColors;
-      if (colors.length >= 6) return false;
-    }
-    return true;
-  });
+  }
+  return out;
 }
 
 export function PokemonPicker({
@@ -92,13 +177,60 @@ export function PokemonPicker({
   const [query, setQuery] = React.useState("");
   const [filters, setFilters] = React.useState<FilterState>(EMPTY_FILTER);
   const [filterOpen, setFilterOpen] = React.useState(false);
+  // Manually expanded species ids. Persisted in component state only —
+  // refreshing the page collapses everything back to species, which keeps
+  // the picker tidy by default for the common case.
+  const [expandedIds, setExpandedIds] = React.useState<Set<number>>(
+    () => new Set(),
+  );
 
   const listRef = React.useRef<HTMLUListElement | null>(null);
 
-  const filtered = React.useMemo(
-    () => filterPokemon(pokemon, query, filters, variant),
+  const visibleSpecies = React.useMemo(
+    () => buildVisible(pokemon, query, filters, variant),
     [pokemon, query, filters, variant],
   );
+
+  // Flatten the visible tree into a single array of "render rows" so
+  // keyboard navigation and the rendered list share one source of truth.
+  type RenderRow =
+    | { kind: "species"; row: PokemonColorRow; expanded: boolean; canExpand: boolean }
+    | { kind: "variety"; row: PokemonColorRow };
+
+  const renderRows = React.useMemo<RenderRow[]>(() => {
+    const rows: RenderRow[] = [];
+    for (const entry of visibleSpecies) {
+      const canExpand = (entry.species.varieties?.length ?? 0) > 0;
+      const expanded =
+        entry.forceExpanded || expandedIds.has(entry.species.id);
+      rows.push({
+        kind: "species",
+        row: entry.species,
+        expanded,
+        canExpand,
+      });
+      if (expanded) {
+        for (const v of entry.varieties) {
+          rows.push({ kind: "variety", row: v });
+        }
+      }
+    }
+    return rows;
+  }, [visibleSpecies, expandedIds]);
+
+  const totalCount = React.useMemo(() => {
+    let n = pokemon.length;
+    for (const species of pokemon) n += species.varieties?.length ?? 0;
+    return n;
+  }, [pokemon]);
+
+  const visibleCount = React.useMemo(() => {
+    let n = 0;
+    for (const entry of visibleSpecies) {
+      n += 1 + entry.varieties.length;
+    }
+    return n;
+  }, [visibleSpecies]);
 
   const activeFilterCount =
     (filters.minId ? 1 : 0) +
@@ -106,8 +238,25 @@ export function PokemonPicker({
     (filters.onlyWithSprite ? 1 : 0) +
     (filters.onlyUnsaved ? 1 : 0);
 
+  // When the parent picks a row that lives under a species (e.g. a deep
+  // link to ?id=10034), make sure the species above it is expanded so the
+  // selected row is actually visible in the list.
+  React.useEffect(() => {
+    if (selectedId === null) return;
+    const parent = pokemon.find((s) =>
+      s.varieties?.some((v) => v.id === selectedId),
+    );
+    if (parent && !expandedIds.has(parent.id)) {
+      setExpandedIds((prev) => {
+        const next = new Set(prev);
+        next.add(parent.id);
+        return next;
+      });
+    }
+  }, [selectedId, pokemon, expandedIds]);
+
   // Scroll the selected row into view when it changes from outside (e.g.
-  // URL deep-link) so the admin isn't hunting through 1000+ rows.
+  // URL deep-link) so the admin isn't hunting through 1300+ rows.
   React.useEffect(() => {
     if (selectedId === null || !listRef.current) return;
     const node = listRef.current.querySelector<HTMLElement>(
@@ -116,20 +265,51 @@ export function PokemonPicker({
     if (node) {
       node.scrollIntoView({ block: "nearest" });
     }
-  }, [selectedId]);
+  }, [selectedId, renderRows]);
+
+  const toggleExpanded = React.useCallback((id: number) => {
+    setExpandedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }, []);
 
   const handleKeyDown = (
     e: React.KeyboardEvent<HTMLUListElement>,
     currentId: number,
   ) => {
-    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
-    e.preventDefault();
-    const idx = filtered.findIndex((p) => p.id === currentId);
+    if (
+      e.key !== "ArrowDown" &&
+      e.key !== "ArrowUp" &&
+      e.key !== "ArrowRight" &&
+      e.key !== "ArrowLeft"
+    ) {
+      return;
+    }
+
+    const idx = renderRows.findIndex((r) => r.row.id === currentId);
     if (idx === -1) return;
-    const nextIdx = e.key === "ArrowDown" ? idx + 1 : idx - 1;
-    const next = filtered[nextIdx];
-    if (next) {
-      onSelect(next.id);
+
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      const nextIdx = e.key === "ArrowDown" ? idx + 1 : idx - 1;
+      const next = renderRows[nextIdx];
+      if (next) onSelect(next.row.id);
+      return;
+    }
+
+    // Right/Left expand or collapse the current species. Mirrors the
+    // standard ARIA tree pattern so admins comfortable with file pickers
+    // can navigate quickly.
+    const current = renderRows[idx];
+    if (current.kind !== "species" || !current.canExpand) return;
+    e.preventDefault();
+    if (e.key === "ArrowRight" && !current.expanded) {
+      toggleExpanded(current.row.id);
+    } else if (e.key === "ArrowLeft" && current.expanded) {
+      toggleExpanded(current.row.id);
     }
   };
 
@@ -153,7 +333,7 @@ export function PokemonPicker({
             inputMode="search"
             spellCheck={false}
             autoComplete="off"
-            placeholder="Search name or ID, e.g. pikachu or 25…"
+            placeholder="Search name or ID, e.g. pikachu, mega, 25…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="pl-9 pr-9"
@@ -284,21 +464,21 @@ export function PokemonPicker({
             className="text-xs tabular-nums text-muted-foreground"
             aria-live="polite"
           >
-            {numberFormat.format(filtered.length)} of{" "}
-            {numberFormat.format(pokemon.length)}
+            {numberFormat.format(visibleCount)} of{" "}
+            {numberFormat.format(totalCount)}
           </span>
         </div>
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
-        {filtered.length === 0 ? (
+        {renderRows.length === 0 ? (
           <div className="flex h-full items-center justify-center p-6 text-center text-sm text-muted-foreground">
             No Pokémon match that search.
           </div>
         ) : (
           <ul
             ref={listRef}
-            role="listbox"
+            role="tree"
             aria-label="Pokémon results"
             aria-activedescendant={
               selectedId !== null ? `pokemon-row-${selectedId}` : undefined
@@ -306,16 +486,30 @@ export function PokemonPicker({
             className="py-1"
             tabIndex={-1}
           >
-            {filtered.map((row) => (
-              <PickerRow
-                key={row.id}
-                row={row}
-                variant={variant}
-                selected={row.id === selectedId}
-                onSelect={() => onSelect(row.id)}
-                onKeyDown={(e) => handleKeyDown(e, row.id)}
-              />
-            ))}
+            {renderRows.map((entry) =>
+              entry.kind === "species" ? (
+                <SpeciesRow
+                  key={`species-${entry.row.id}`}
+                  row={entry.row}
+                  variant={variant}
+                  selected={entry.row.id === selectedId}
+                  expanded={entry.expanded}
+                  canExpand={entry.canExpand}
+                  onSelect={() => onSelect(entry.row.id)}
+                  onToggleExpand={() => toggleExpanded(entry.row.id)}
+                  onKeyDown={(e) => handleKeyDown(e, entry.row.id)}
+                />
+              ) : (
+                <VarietyRow
+                  key={`variety-${entry.row.id}`}
+                  row={entry.row}
+                  variant={variant}
+                  selected={entry.row.id === selectedId}
+                  onSelect={() => onSelect(entry.row.id)}
+                  onKeyDown={(e) => handleKeyDown(e, entry.row.id)}
+                />
+              ),
+            )}
           </ul>
         )}
       </div>
@@ -323,7 +517,162 @@ export function PokemonPicker({
   );
 }
 
-interface PickerRowProps {
+interface SpeciesRowProps {
+  row: PokemonColorRow;
+  variant: Variant;
+  selected: boolean;
+  expanded: boolean;
+  canExpand: boolean;
+  onSelect: () => void;
+  onToggleExpand: () => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLUListElement>) => void;
+}
+
+function SpeciesRow({
+  row,
+  variant,
+  selected,
+  expanded,
+  canExpand,
+  onSelect,
+  onToggleExpand,
+  onKeyDown,
+}: SpeciesRowProps) {
+  const sprite = variant === "shiny" ? row.shinySpriteUrl : row.spriteUrl;
+  const colors = variant === "shiny" ? row.staticShinyColors : row.staticColors;
+  const status = statusForRow(row, variant);
+  const altCount = row.varieties?.length ?? 0;
+
+  return (
+    <li
+      id={`pokemon-row-${row.id}`}
+      data-pokemon-id={row.id}
+      role="treeitem"
+      aria-selected={selected}
+      aria-expanded={canExpand ? expanded : undefined}
+      aria-level={1}
+      // `content-visibility: auto` lets the browser skip offscreen rows —
+      // this is the cheap replacement for a virtualization library for
+      // the ~1300-row picker (guideline: virtualize large lists).
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "56px",
+      }}
+    >
+      <div
+        className={cn(
+          "group relative flex w-full items-center gap-1 pr-3",
+          "hover:bg-muted/60",
+          selected && "bg-muted",
+        )}
+      >
+        {canExpand ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleExpand();
+            }}
+            tabIndex={-1}
+            aria-label={
+              expanded
+                ? `Collapse ${row.name} forms`
+                : `Expand ${row.name} forms (${altCount})`
+            }
+            className="ml-1 flex size-6 shrink-0 items-center justify-center rounded-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          >
+            <ChevronRight
+              className={cn(
+                "size-3.5 transition-transform",
+                expanded && "rotate-90",
+              )}
+              aria-hidden="true"
+            />
+          </button>
+        ) : (
+          // Reserve the same width so species with and without alt forms
+          // align the same on a row-by-row basis.
+          <span
+            aria-hidden="true"
+            className="ml-1 inline-block size-6 shrink-0"
+          />
+        )}
+
+        <button
+          type="button"
+          onClick={onSelect}
+          onKeyDown={(e) => {
+            onKeyDown(e as unknown as React.KeyboardEvent<HTMLUListElement>);
+          }}
+          className={cn(
+            "flex min-w-0 flex-1 items-center gap-2.5 py-2 pr-1 text-left",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+          )}
+          aria-label={`${row.name}, number ${row.id}. ${status.label}.${
+            altCount > 0
+              ? ` ${altCount} alt form${altCount === 1 ? "" : "s"} available.`
+              : ""
+          }`}
+          style={{ touchAction: "manipulation" }}
+        >
+          <div className="relative flex size-10 shrink-0 items-center justify-center rounded-md bg-muted/40">
+            {sprite ? (
+              <Image
+                src={sprite}
+                alt=""
+                width={40}
+                height={40}
+                className="size-10 object-contain"
+                style={{ imageRendering: "pixelated" }}
+                unoptimized
+                loading="lazy"
+              />
+            ) : (
+              <span className="text-[10px] text-muted-foreground">N/A</span>
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-1.5">
+              <span
+                className="min-w-0 truncate text-sm font-medium capitalize"
+                translate="no"
+              >
+                {row.name}
+              </span>
+              <span
+                className="font-mono text-[10px] tabular-nums text-muted-foreground"
+                translate="no"
+              >
+                #{row.id}
+              </span>
+              {variant === "shiny" ? (
+                <Sparkles
+                  className="size-3 text-amber-500"
+                  aria-label="Shiny variant"
+                />
+              ) : null}
+              {altCount > 0 ? (
+                <span
+                  className="ml-auto inline-flex items-center rounded-sm bg-muted px-1 text-[10px] font-medium tabular-nums text-muted-foreground"
+                  aria-label={`${altCount} alt form${altCount === 1 ? "" : "s"}`}
+                  title={`${altCount} alt form${altCount === 1 ? "" : "s"}`}
+                >
+                  +{altCount}
+                </span>
+              ) : null}
+            </div>
+            <div className="mt-1 flex items-center gap-1.5">
+              <MiniPalette colors={colors} />
+              <StatusDot tone={status.tone} label={status.label} />
+            </div>
+          </div>
+        </button>
+      </div>
+    </li>
+  );
+}
+
+interface VarietyRowProps {
   row: PokemonColorRow;
   variant: Variant;
   selected: boolean;
@@ -331,70 +680,65 @@ interface PickerRowProps {
   onKeyDown: (e: React.KeyboardEvent<HTMLUListElement>) => void;
 }
 
-function PickerRow({
+function VarietyRow({
   row,
   variant,
   selected,
   onSelect,
   onKeyDown,
-}: PickerRowProps) {
+}: VarietyRowProps) {
   const sprite = variant === "shiny" ? row.shinySpriteUrl : row.spriteUrl;
   const colors = variant === "shiny" ? row.staticShinyColors : row.staticColors;
   const status = statusForRow(row, variant);
+  const kind = row.varietyKind ?? "form";
 
   return (
     <li
       id={`pokemon-row-${row.id}`}
       data-pokemon-id={row.id}
-      role="option"
+      role="treeitem"
       aria-selected={selected}
-      // `content-visibility: auto` lets the browser skip offscreen rows —
-      // this is the cheap replacement for a virtualization library for
-      // the ~1000-row picker (guideline: virtualize large lists).
+      aria-level={2}
       style={{
         contentVisibility: "auto",
-        containIntrinsicSize: "56px",
+        containIntrinsicSize: "52px",
       }}
     >
       <button
         type="button"
         onClick={onSelect}
         onKeyDown={(e) => {
-          if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-            onKeyDown(
-              e as unknown as React.KeyboardEvent<HTMLUListElement>,
-            );
-          }
+          onKeyDown(e as unknown as React.KeyboardEvent<HTMLUListElement>);
         }}
         className={cn(
-          "group flex w-full items-center gap-2.5 px-3 py-2 text-left",
+          "group flex w-full items-center gap-2.5 py-1.5 pl-9 pr-3 text-left",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
           "hover:bg-muted/60",
           selected && "bg-muted",
         )}
-        aria-label={`${row.name}, number ${row.id}. ${status.label}.`}
+        aria-label={`${row.name}, ${VARIETY_KIND_LABEL[kind]} form, number ${row.id}. ${status.label}.`}
         style={{ touchAction: "manipulation" }}
       >
-        <div className="relative flex size-10 shrink-0 items-center justify-center rounded-md bg-muted/40">
+        <div className="relative flex size-8 shrink-0 items-center justify-center rounded-md bg-muted/40">
           {sprite ? (
             <Image
               src={sprite}
               alt=""
-              width={40}
-              height={40}
-              className="size-10 object-contain"
+              width={32}
+              height={32}
+              className="size-8 object-contain"
               style={{ imageRendering: "pixelated" }}
               unoptimized
               loading="lazy"
             />
           ) : (
-            <span className="text-[10px] text-muted-foreground">N/A</span>
+            <span className="text-[9px] text-muted-foreground">N/A</span>
           )}
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5">
             <span
-              className="min-w-0 truncate text-sm font-medium capitalize"
+              className="min-w-0 truncate text-[13px] font-medium capitalize"
               translate="no"
             >
               {row.name}
@@ -405,15 +749,17 @@ function PickerRow({
             >
               #{row.id}
             </span>
-            {variant === "shiny" ? (
-              <Sparkles
-                className="size-3 text-amber-500"
-                aria-label="Shiny variant"
-              />
-            ) : null}
           </div>
-          <div className="mt-1 flex items-center gap-1.5">
-            <MiniPalette colors={colors} />
+          <div className="mt-0.5 flex items-center gap-1.5">
+            <span
+              className={cn(
+                "inline-flex h-3.5 items-center rounded-sm px-1 text-[9px] font-semibold uppercase tracking-wide",
+                VARIETY_KIND_BADGE[kind],
+              )}
+            >
+              {VARIETY_KIND_LABEL[kind]}
+            </span>
+            <MiniPalette colors={colors} compact />
             <StatusDot tone={status.tone} label={status.label} />
           </div>
         </div>
@@ -422,21 +768,29 @@ function PickerRow({
   );
 }
 
-function MiniPalette({ colors }: { colors: string[] }) {
+function MiniPalette({
+  colors,
+  compact = false,
+}: {
+  colors: string[];
+  compact?: boolean;
+}) {
   const padded = [...colors];
   while (padded.length < 6) padded.push("");
+  const swatchWidth = compact ? 8 : 10;
+  const totalWidth = swatchWidth * 6;
   return (
     <div
       aria-hidden="true"
       className="flex h-3 overflow-hidden rounded-sm border"
-      style={{ width: "60px" }}
+      style={{ width: `${totalWidth}px` }}
     >
       {padded.slice(0, 6).map((hex, i) => (
         <span
           key={i}
           className="h-full"
           style={{
-            width: "10px",
+            width: `${swatchWidth}px`,
             backgroundColor: hex || "transparent",
             backgroundImage: hex
               ? undefined
