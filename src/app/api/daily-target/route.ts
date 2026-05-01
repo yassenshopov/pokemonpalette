@@ -58,11 +58,13 @@ export async function GET(req: NextRequest) {
         isOverride: target.isOverride,
       },
       {
-        // Short edge cache — the resolver hits the DB but the result is
-        // stable per-day. Browsers also re-fetch when the page mounts.
+        // The daily target is identical for every visitor on a given UTC day.
+        // Shared CDN cache (s-maxage) lets Vercel serve thousands of requests
+        // from a single function call per region. Admin overrides propagate
+        // within 10 min; the browser also re-fetches on page mount.
         headers: {
           "Cache-Control":
-            "private, max-age=30, stale-while-revalidate=60",
+            "public, s-maxage=600, stale-while-revalidate=86400",
         },
       },
     );

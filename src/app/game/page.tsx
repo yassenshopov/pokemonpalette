@@ -184,7 +184,7 @@ async function fetchDailyTarget(
   fallbackShiny: boolean,
 ): Promise<{ pokemonId: number; isShiny: boolean }> {
   try {
-    const res = await fetch("/api/daily-target", { cache: "no-store" });
+    const res = await fetch("/api/daily-target");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = (await res.json()) as {
       pokemonId: number;

@@ -74,6 +74,24 @@ export async function getPokemonById(id: number): Promise<Pokemon | null> {
 }
 
 /**
+ * Load multiple Pokemon by ID in parallel. Intended for server-side use in
+ * category pages so the data is embedded in the static HTML and clients never
+ * issue per-card fetches.
+ */
+export async function batchGetPokemonById(
+  ids: number[],
+): Promise<Map<number, Pokemon>> {
+  const results = await Promise.all(
+    ids.map((id) => getPokemonById(id).then((p) => [id, p] as const)),
+  );
+  const map = new Map<number, Pokemon>();
+  for (const [id, pokemon] of results) {
+    if (pokemon) map.set(id, pokemon);
+  }
+  return map;
+}
+
+/**
  * Get Pokemon metadata by ID (synchronous)
  */
 export function getPokemonMetadataById(

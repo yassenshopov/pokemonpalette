@@ -117,7 +117,14 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  return NextResponse.json({ attempts, stats: statsData });
+  return NextResponse.json(
+    { attempts, stats: statsData },
+    {
+      headers: {
+        "Cache-Control": "private, max-age=60",
+      },
+    },
+  );
 }
 
 // -----------------------------------------------------------------------------

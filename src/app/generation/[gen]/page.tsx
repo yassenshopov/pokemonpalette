@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPokemonMetadataByGeneration, getAllGenerations } from "@/lib/pokemon";
+import { getPokemonMetadataByGeneration, getAllGenerations, batchGetPokemonById } from "@/lib/pokemon";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PokemonPaletteExploreCard } from "@/components/pokemon-palette-explore-card";
 import Link from "next/link";
@@ -25,8 +25,8 @@ export default async function GenerationPage({
     notFound();
   }
 
-  // /generations is not a real route — point at /explore instead so the
-  // middle crumb still takes visitors somewhere useful.
+  const pokemonDataMap = await batchGetPokemonById(pokemon.map((p) => p.id));
+
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Explore", href: "/explore" },
@@ -56,7 +56,7 @@ export default async function GenerationPage({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {pokemon.map((mon) => (
-            <PokemonPaletteExploreCard key={mon.id} metadata={mon} />
+            <PokemonPaletteExploreCard key={mon.id} metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
           ))}
         </div>
 

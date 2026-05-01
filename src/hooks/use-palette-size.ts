@@ -31,15 +31,13 @@ export function usePaletteSize(): [PaletteSize, (size: PaletteSize) => void] {
       .catch(() => {});
   }, [user?.id]);
 
-  // Load from API (signed in) or localStorage (signed out); refetch on focus so changes in Account Settings apply
+  // Load from API (signed in) or localStorage (signed out). Cross-tab
+  // updates are handled by the palette-preference-changed CustomEvent below.
   useEffect(() => {
     if (!isLoaded) return;
 
     if (user?.id) {
       fetchFromApi();
-      const onFocus = () => fetchFromApi();
-      window.addEventListener("focus", onFocus);
-      return () => window.removeEventListener("focus", onFocus);
     } else {
       setPaletteSizeState(getStoredPaletteSize());
     }

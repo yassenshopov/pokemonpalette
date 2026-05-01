@@ -13,22 +13,28 @@ import { getContrastTextClass as getTextColor } from "@/lib/game/colors";
 
 interface PokemonPaletteExploreCardProps {
   metadata: PokemonMetadata;
+  /** Pre-loaded Pokemon data. When provided the card renders immediately
+   *  without any client-side fetch or IntersectionObserver. */
+  pokemonData?: any;
   onLoad?: (pokemon: any) => void;
 }
 
 export function PokemonPaletteExploreCard({
   metadata,
+  pokemonData,
   onLoad,
 }: PokemonPaletteExploreCardProps) {
-  const [pokemon, setPokemon] = useState<any>(null);
+  const [pokemon, setPokemon] = useState<any>(pokemonData ?? null);
   const [loading, setLoading] = useState(false);
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
   const [imageError, setImageError] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(!!pokemonData);
 
-  // Lazy load Pokemon data when card comes into view
+  // Lazy load Pokemon data when card comes into view — skipped when
+  // pokemonData is provided by a server component.
   useEffect(() => {
+    if (pokemonData) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -38,7 +44,7 @@ export function PokemonPaletteExploreCard({
           }
         });
       },
-      { rootMargin: "100px" } // Start loading 100px before card is visible
+      { rootMargin: "100px" }
     );
 
     if (cardRef.current) {
@@ -46,10 +52,10 @@ export function PokemonPaletteExploreCard({
     }
 
     return () => observer.disconnect();
-  }, [pokemon, loading]);
+  }, [pokemon, loading, pokemonData]);
 
-  // Load Pokemon data when visible
   useEffect(() => {
+    if (pokemonData) return;
     if (!isVisible || pokemon) return;
 
     const loadPokemon = async () => {
@@ -67,7 +73,7 @@ export function PokemonPaletteExploreCard({
       }
     };
     loadPokemon();
-  }, [isVisible, metadata.id, onLoad, pokemon]);
+  }, [isVisible, metadata.id, onLoad, pokemon, pokemonData]);
 
   const handleCopyColor = async (color: string, e: React.MouseEvent) => {
     e.stopPropagation();

@@ -66,7 +66,14 @@ export async function GET() {
       orderBy: { createdAt: "desc" },
       take: 500,
     });
-    return NextResponse.json({ palettes: palettes.map(serializePalette) });
+    return NextResponse.json(
+      { palettes: palettes.map(serializePalette) },
+      {
+        headers: {
+          "Cache-Control": "private, max-age=30",
+        },
+      },
+    );
   } catch (err) {
     logger.error("saved-palettes.fetch_failed", {
       userId,

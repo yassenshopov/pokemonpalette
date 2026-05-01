@@ -194,7 +194,7 @@ export function useMultiplayer(userId: string | null | undefined) {
             return updated;
           });
         }
-      }, 15000);
+      }, 60000);
     },
     [cleanup, fetchRoomState]
   );

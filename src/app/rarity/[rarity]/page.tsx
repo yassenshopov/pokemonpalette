@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { PokemonRarity } from "@/types/pokemon";
-import { getPokemonMetadataByRarity, getAllRarities } from "@/lib/pokemon";
+import { getPokemonMetadataByRarity, getAllRarities, batchGetPokemonById } from "@/lib/pokemon";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PokemonPaletteExploreCard } from "@/components/pokemon-palette-explore-card";
 import Link from "next/link";
@@ -26,7 +26,8 @@ export default async function RarityPage({
     notFound();
   }
 
-  // Get all unique rarities from the data
+  const pokemonDataMap = await batchGetPokemonById(pokemon.map((p) => p.id));
+
   const allRarities = getAllRarities();
 
   // /rarity is not a real route — we skip the intermediate crumb rather
@@ -60,7 +61,7 @@ export default async function RarityPage({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {pokemon.map((mon) => (
-            <PokemonPaletteExploreCard key={mon.id} metadata={mon} />
+            <PokemonPaletteExploreCard key={mon.id} metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
           ))}
         </div>
 

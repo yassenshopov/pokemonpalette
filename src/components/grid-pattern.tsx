@@ -12,6 +12,8 @@ interface CellPalette {
   colors: string[];
 }
 
+const POOL_SIZE = 96;
+
 export function GridPattern() {
   const rows = 8;
   const cols = 3;
@@ -23,114 +25,90 @@ export function GridPattern() {
   const paletteRefs = useRef<(HTMLDivElement | null)[]>([]);
   const expandedRefs = useRef<(HTMLDivElement | null)[]>([]);
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const poolRef = useRef<CellPalette[]>([]);
 
-  // All cells should have palettes
   const cellsWithPalettes = useMemo(() => {
     return Array.from({ length: totalCells }, (_, i) => i);
   }, [totalCells]);
 
-  // Helper function to load a single palette
-  const loadPalette = useCallback(
-    async (cellIndex: number): Promise<CellPalette | null> => {
-      const randomMetadata =
-        allMetadata[Math.floor(Math.random() * allMetadata.length)];
-      if (!randomMetadata) return null;
+  const toPalette = useCallback((pokemon: Pokemon): CellPalette | null => {
+    if (!pokemon?.colorPalette) return null;
+    const p = pokemon.colorPalette;
+    const colors =
+      p.highlights ||
+      [p.primary, p.secondary, p.accent].filter(Boolean) ||
+      [];
+    if (colors.length === 0) return null;
+    return { pokemon, colors: colors.slice(0, 6) };
+  }, []);
 
-      try {
-        const pokemon = await getPokemonById(randomMetadata.id);
-        if (pokemon?.colorPalette) {
-          const palette = pokemon.colorPalette;
-          const colors =
-            palette.highlights ||
-            [palette.primary, palette.secondary, palette.accent].filter(
-              Boolean
-            ) ||
-            [];
-
-          if (colors.length > 0 && pokemon) {
-            return {
-              pokemon: pokemon,
-              colors: colors.slice(0, 6), // Up to 6 colors
-            };
-          }
-        }
-      } catch (error) {
-        console.error(`Failed to load palette for cell ${cellIndex}:`, error);
-      }
-      return null;
-    },
-    [allMetadata]
-  );
-
-  // Load palettes for cells that should have them. The 24 fetches are
-  // kicked off in parallel (Promise.all) instead of the previous
-  // sequential await loop — drops the mount-to-paint time on slower
-  // networks from ~24 * RTT down to ~1 * RTT.
+  // Load a large pool of palettes once on mount. The first `totalCells`
+  // entries populate the visible grid; the rest serve as a swap pool so
+  // the animation interval never needs to fetch again.
   useEffect(() => {
     let cancelled = false;
-    const loadPalettes = async () => {
+    const load = async () => {
+      const shuffled = [...allMetadata].sort(() => Math.random() - 0.5);
+      const selected = shuffled.slice(0, Math.min(POOL_SIZE, shuffled.length));
+
       const results = await Promise.all(
-        cellsWithPalettes.map((cellIndex) =>
-          loadPalette(cellIndex).then((palette) =>
-            palette ? ([cellIndex, palette] as const) : null
-          )
-        )
+        selected.map((m) => getPokemonById(m.id)),
       );
       if (cancelled) return;
-      const newPalettes = new Map<number, CellPalette>();
-      for (const entry of results) {
-        if (entry) newPalettes.set(entry[0], entry[1]);
-      }
-      setPalettes(newPalettes);
-    };
-    loadPalettes();
-    return () => {
-      cancelled = true;
-    };
-  }, [cellsWithPalettes, loadPalette]);
 
-  // Randomize some palettes every few seconds
+      const pool: CellPalette[] = [];
+      for (const mon of results) {
+        if (mon) {
+          const entry = toPalette(mon);
+          if (entry) pool.push(entry);
+        }
+      }
+      poolRef.current = pool;
+
+      const initial = new Map<number, CellPalette>();
+      for (let i = 0; i < totalCells && i < pool.length; i++) {
+        initial.set(i, pool[i]);
+      }
+      setPalettes(initial);
+    };
+    load();
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Swap a few cells every 4 s using the preloaded pool — no network calls.
   useEffect(() => {
     if (palettes.size === 0) return;
 
-    const interval = setInterval(async () => {
+    const interval = setInterval(() => {
+      const pool = poolRef.current;
+      if (pool.length <= totalCells) return;
+
       const cellsToUpdate = [...cellsWithPalettes]
         .sort(() => Math.random() - 0.5)
         .slice(0, Math.floor(Math.random() * 3) + 3)
         .filter((cellIndex) => cellIndex !== hoveredCell);
 
-      // Fetch all replacement palettes in parallel.
-      const results = await Promise.all(
-        cellsToUpdate.map((cellIndex) =>
-          loadPalette(cellIndex).then((p) =>
-            p ? ([cellIndex, p] as const) : null
-          )
-        )
-      );
       const updates = new Map<number, CellPalette>();
-      for (const entry of results) {
-        if (entry) updates.set(entry[0], entry[1]);
+      for (const cellIndex of cellsToUpdate) {
+        const pick = pool[Math.floor(Math.random() * pool.length)];
+        if (pick) updates.set(cellIndex, pick);
       }
 
       if (updates.size > 0) {
-        // Animate color transitions smoothly
         updates.forEach((newPalette, cellIndex) => {
           const paletteDiv = paletteRefs.current[cellIndex];
           if (paletteDiv) {
-            // Fade out
             gsap.to(paletteDiv, {
               opacity: 0.1,
               duration: 0.4,
               ease: "power2.in",
               onComplete: () => {
-                // Update palette
                 setPalettes((prev) => {
                   const updated = new Map(prev);
                   updated.set(cellIndex, newPalette);
                   return updated;
                 });
-                
-                // Fade back in to dim
                 gsap.to(paletteDiv, {
                   opacity: 0.25,
                   duration: 0.4,
@@ -141,10 +119,10 @@ export function GridPattern() {
           }
         });
       }
-    }, 4000); // Randomize every 4 seconds
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [palettes, cellsWithPalettes, hoveredCell, loadPalette]);
+  }, [palettes, cellsWithPalettes, hoveredCell, totalCells]);
 
   // Calculate cell dimensions
   const cellWidth = 100 / cols;

@@ -3,6 +3,7 @@ import { PokemonType } from "@/types/pokemon";
 import {
   getPokemonMetadataByType,
   getAllTypes,
+  batchGetPokemonById,
 } from "@/lib/pokemon";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PokemonPaletteExploreCard } from "@/components/pokemon-palette-explore-card";
@@ -29,8 +30,8 @@ export default async function TypePage({
     notFound();
   }
 
-  // /types is not a real route — swap to /explore which is the closest
-  // actual hub page.
+  const pokemonDataMap = await batchGetPokemonById(pokemon.map((p) => p.id));
+
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Explore", href: "/explore" },
@@ -60,7 +61,7 @@ export default async function TypePage({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {pokemon.map((mon) => (
-            <PokemonPaletteExploreCard key={mon.id} metadata={mon} />
+            <PokemonPaletteExploreCard key={mon.id} metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
           ))}
         </div>
 
