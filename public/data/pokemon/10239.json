@@ -1,7 +1,7 @@
 {
   "id": 10239,
   "name": "Zoroark-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Normal",
     "Ghost"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.6,
-  "weight": 73.0,
+  "weight": 73,
   "abilities": [
     {
       "name": "Illusion",
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#cbcfd8",
+    "secondary": "#fafafa",
+    "accent": "#ea7679",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#cbcfd8",
+      "#fafafa",
+      "#ea7679",
+      "#cf4043",
+      "#90282d",
+      "#6b4e62"
     ]
   },
   "artwork": {

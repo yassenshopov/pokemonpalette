@@ -1,7 +1,7 @@
 {
   "id": 10287,
   "name": "Excadrill-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ground",
     "Steel"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.9,
-  "weight": 60.0,
+  "weight": 60,
   "abilities": [],
   "baseStats": {
     "hp": 110,
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#594a42",
+    "secondary": "#c04d30",
+    "accent": "#d5d5d5",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#594a42",
+      "#c04d30",
+      "#d5d5d5",
+      "#a4a4a4",
+      "#b84545",
+      "#f4f0f0"
     ]
   },
   "artwork": {

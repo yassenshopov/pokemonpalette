@@ -1,7 +1,7 @@
 {
   "id": 10245,
   "name": "Dialga-origin",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Steel",
     "Dragon"
@@ -16,7 +16,7 @@
       "slot": 2
     }
   ],
-  "height": 7.0,
+  "height": 7,
   "weight": 848.7,
   "abilities": [
     {
@@ -43,15 +43,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#407cb2",
+    "secondary": "#205b92",
+    "accent": "#1c4369",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#407cb2",
+      "#205b92",
+      "#1c4369",
+      "#677081",
+      "#a1d6f5",
+      "#69a5c4"
     ]
   },
   "artwork": {

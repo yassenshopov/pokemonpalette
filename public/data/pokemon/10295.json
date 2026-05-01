@@ -1,7 +1,7 @@
 {
   "id": 10295,
   "name": "Pyroar-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fire",
     "Normal"
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#fcc835",
+    "secondary": "#dd402f",
+    "accent": "#efbc8a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#fcc835",
+      "#dd402f",
+      "#efbc8a",
+      "#b78a5f",
+      "#634b40",
+      "#46322e"
     ]
   },
   "artwork": {

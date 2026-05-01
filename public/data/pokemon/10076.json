@@ -1,7 +1,7 @@
 {
   "id": 10076,
   "name": "Metagross-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Steel",
     "Psychic"
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#4f84c2",
+    "secondary": "#fdd435",
+    "accent": "#e29c29",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#4f84c2",
+      "#fdd435",
+      "#e29c29",
+      "#e7e7e7",
+      "#F8F8F8",
+      "#313a60"
     ]
   },
   "artwork": {

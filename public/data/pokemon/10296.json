@@ -1,7 +1,7 @@
 {
   "id": 10296,
   "name": "Floette-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fairy"
   ],
@@ -25,15 +25,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#484250",
+    "secondary": "#342e4c",
+    "accent": "#538ed2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#484250",
+      "#342e4c",
+      "#538ed2",
+      "#eb515d",
+      "#f1fcff",
+      "#5f8ac2"
     ]
   },
   "artwork": {

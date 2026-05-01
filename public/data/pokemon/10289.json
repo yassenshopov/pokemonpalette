@@ -1,7 +1,7 @@
 {
   "id": 10289,
   "name": "Scrafty-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dark",
     "Fighting"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.1,
-  "weight": 31.0,
+  "weight": 31,
   "abilities": [],
   "baseStats": {
     "hp": 65,
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f68944",
+    "secondary": "#d94f2d",
+    "accent": "#e3e3e3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#f68944",
+      "#d94f2d",
+      "#e3e3e3",
+      "#dbd7df",
+      "#e03337",
+      "#707070"
     ]
   },
   "artwork": {

@@ -1,7 +1,7 @@
 {
   "id": 10246,
   "name": "Palkia-origin",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Dragon"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 6.3,
-  "weight": 659.0,
+  "weight": 659,
   "abilities": [
     {
       "name": "Pressure",
@@ -43,15 +43,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#edd9f0",
+    "secondary": "#c8b5d2",
+    "accent": "#b86ed2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#edd9f0",
+      "#c8b5d2",
+      "#b86ed2",
+      "#f2a59e",
+      "#d7e3e5",
+      "#e3d4ce"
     ]
   },
   "artwork": {

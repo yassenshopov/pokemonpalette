@@ -1,7 +1,7 @@
 {
   "id": 10236,
   "name": "Samurott-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Dark"
@@ -43,15 +43,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#255c98",
+    "secondary": "#2a4c79",
+    "accent": "#fafcf9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#255c98",
+      "#2a4c79",
+      "#fafcf9",
+      "#c7c7c7",
+      "#a33149",
+      "#283060"
     ]
   },
   "artwork": {

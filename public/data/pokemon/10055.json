@@ -1,7 +1,7 @@
 {
   "id": 10055,
   "name": "Manectric-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Electric"
   ],
@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.8,
-  "weight": 44.0,
+  "weight": 44,
   "abilities": [
     {
       "name": "Intimidate",
@@ -32,15 +32,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#feef78",
+    "secondary": "#cea450",
+    "accent": "#5ba8d2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
+      "#feef78",
+      "#cea450",
+      "#5ba8d2",
+      "#4e759f",
+      "#ed4949",
+      "#305073"
     ]
   },
   "artwork": {

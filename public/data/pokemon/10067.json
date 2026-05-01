@@ -1,7 +1,7 @@
 {
   "id": 10067,
   "name": "Altaria-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Fairy"
@@ -37,14 +37,17 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#9ad1e4",
+    "secondary": "#fcfcfc",
+    "accent": "#eae9f1",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
+      "#9ad1e4",
+      "#fcfcfc",
+      "#eae9f1",
+      "#fbc7ed",
+      "#78a3b2",
       "#F8F8F8"
     ]
   },

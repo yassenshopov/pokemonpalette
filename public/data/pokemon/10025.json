@@ -1,7 +1,7 @@
 {
   "id": 10025,
   "name": "Meowstic-female",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Psychic"
   ],
@@ -44,15 +44,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#ffffff",
+    "secondary": "#c1c8c8",
+    "accent": "#3a759e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
+      "#ffffff",
+      "#c1c8c8",
+      "#3a759e",
+      "#24577a",
+      "#F8F8F8",
+      "#e8c54a"
     ]
   },
   "artwork": {

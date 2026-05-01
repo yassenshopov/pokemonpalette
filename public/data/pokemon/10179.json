@@ -1,7 +1,7 @@
 {
   "id": 10179,
   "name": "Yamask-galar",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ground",
     "Ghost"
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#525252",
+    "secondary": "#313131",
+    "accent": "#c4b9bb",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
+      "#525252",
+      "#313131",
+      "#c4b9bb",
+      "#e5ddde",
+      "#c5464e",
+      "#a642ce"
     ]
   },
   "artwork": {

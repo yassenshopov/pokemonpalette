@@ -1,7 +1,7 @@
 {
   "id": 10015,
   "name": "Castform-snowy",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ice"
   ],
@@ -32,15 +32,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#8976d2",
+    "secondary": "#91ccad",
+    "accent": "#77a38c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#8976d2",
+      "#91ccad",
+      "#77a38c",
+      "#c0e6e6",
+      "#c4b6fc",
+      "#4b524a"
     ]
   },
   "artwork": {

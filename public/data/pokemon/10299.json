@@ -1,7 +1,7 @@
 {
   "id": 10299,
   "name": "Dragalge-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Poison",
     "Dragon"
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#7f5d3c",
+    "secondary": "#5c3f30",
+    "accent": "#b787be",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
+      "#7f5d3c",
+      "#5c3f30",
+      "#b787be",
+      "#745774",
+      "#da496c",
+      "#829253"
     ]
   },
   "artwork": {

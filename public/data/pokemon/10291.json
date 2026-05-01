@@ -1,7 +1,7 @@
 {
   "id": 10291,
   "name": "Chandelure-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ghost",
     "Fire"
@@ -30,18 +30,21 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#313131",
+    "secondary": "#c5a564",
+    "accent": "#7058e2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#313131",
+      "#c5a564",
+      "#7058e2",
+      "#aba6f3",
+      "#c6d5d5",
+      "#fee542"
     ]
   },
-  "artwork": {  
+  "artwork": {
     "official": "/pokemon/10291.png",
     "front": "/pokemon/sprites/10291.png",
     "back": "/pokemon/sprites/back/10291.png",

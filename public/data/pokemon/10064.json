@@ -1,7 +1,7 @@
 {
   "id": 10064,
   "name": "Swampert-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Ground"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 102.0,
+  "weight": 102,
   "abilities": [
     {
       "name": "Swift swim",
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#85a5db",
+    "secondary": "#5d84c2",
+    "accent": "#e3794f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
+      "#85a5db",
+      "#5d84c2",
+      "#e3794f",
+      "#514a52",
+      "#6a6b8a",
+      "#dfeee6"
     ]
   },
   "artwork": {

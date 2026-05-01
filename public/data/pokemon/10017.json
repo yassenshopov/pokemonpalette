@@ -1,7 +1,7 @@
 {
   "id": 10017,
   "name": "Darmanitan-zen",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fire",
     "Psychic"
@@ -43,15 +43,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#5a9cab",
+    "secondary": "#407b8a",
+    "accent": "#b6d5ed",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
+      "#5a9cab",
+      "#407b8a",
+      "#b6d5ed",
+      "#7ea4bc",
+      "#e2a468",
+      "#be9874"
     ]
   },
   "artwork": {
