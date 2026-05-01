@@ -78,6 +78,8 @@ model User {
   hostedRooms          MultiplayerRoom[]   @relation("RoomHost")
   wonRooms             MultiplayerRoom[]   @relation("RoomWinner")
   multiplayerPlayers   MultiplayerPlayer[]
+  apiCustomer          ApiCustomer?
+  apiKeys              ApiKey[]
 
   // Indexes declared in migrations 001 + 010.
   @@index([email],                  map: "idx_users_email")
@@ -228,4 +230,37 @@ model MultiplayerPlayer {
   @@index([roomId], map: "idx_mp_players_room_id")
   @@index([userId], map: "idx_mp_players_user_id")
   @@map("multiplayer_players")
+}
+
+model ApiCustomer {
+  userId           String   @id @map("user_id")
+  stripeCustomerId String?  @map("stripe_customer_id")
+  stripeSessionId  String?  @map("stripe_session_id")
+  purchasedAt      DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("purchased_at") @db.Timestamptz(6)
+  status           String   @default("active")
+  amountCents      Int      @map("amount_cents")
+  currency         String   @default("usd")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([stripeCustomerId], map: "idx_api_customers_stripe_customer_id")
+  @@index([status],           map: "idx_api_customers_status")
+  @@map("api_customers")
+}
+
+model ApiKey {
+  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId     String    @map("user_id")
+  keyHash    String    @unique @map("key_hash")
+  keyPrefix  String    @map("key_prefix")
+  name       String?
+  lastUsedAt DateTime? @map("last_used_at") @db.Timestamptz(6)
+  revokedAt  DateTime? @map("revoked_at")   @db.Timestamptz(6)
+  createdAt  DateTime  @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId],  map: "idx_api_keys_user_id")
+  @@index([keyHash], map: "idx_api_keys_key_hash")
+  @@map("api_keys")
 }

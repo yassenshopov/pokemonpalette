@@ -13,6 +13,8 @@ import {
   Bookmark,
   Target,
   Sparkles,
+  Code,
+  User,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfile } from "@/components/user-profile";
@@ -162,6 +164,20 @@ export function CollapsibleSidebar({
                     <Sparkles className="h-4 w-4" />
                     <span>Explore</span>
                   </Link>
+                  <Link
+                    href="/api-access"
+                    className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <Code className="h-4 w-4" />
+                    <span>API</span>
+                  </Link>
+                  <Link
+                    href="/account"
+                    className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <User className="h-4 w-4" />
+                    <span>Account</span>
+                  </Link>
                 </div>
 
                 {/* Appearance */}
@@ -197,7 +213,7 @@ export function CollapsibleSidebar({
                     }}
                   >
                     <Coffee className="w-4 h-4 mr-2" />
-                    Buy Me a Coffee!
+                    Support the project
                   </Button>
                 </a>
               </div>
@@ -286,6 +302,20 @@ export function CollapsibleSidebar({
                     >
                       <Sparkles className="h-4 w-4" />
                     </Link>
+                    <Link
+                      href="/api-access"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      title="API"
+                    >
+                      <Code className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      href="/account"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      title="Account"
+                    >
+                      <User className="h-4 w-4" />
+                    </Link>
                   </div>
                   <div className="flex flex-col items-center">
                     <SavedPalettesDialog
@@ -321,7 +351,7 @@ export function CollapsibleSidebar({
                             ? "#ffffff"
                             : "#000000",
                       }}
-                      title="Buy Me a Coffee"
+                      title="Support the project"
                     >
                       <Coffee className="h-4 w-4" />
                     </a>
@@ -351,6 +381,20 @@ export function CollapsibleSidebar({
                     >
                       <Sparkles className="h-4 w-4" />
                       <span>Explore</span>
+                    </Link>
+                    <Link
+                      href="/api-access"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                    >
+                      <Code className="h-4 w-4" />
+                      <span>API</span>
+                    </Link>
+                    <Link
+                      href="/account"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                    >
+                      <User className="h-4 w-4" />
+                      <span>Account</span>
                     </Link>
                     <SavedPalettesDialog
                       onPaletteSelect={onPaletteLoad}
@@ -402,7 +446,7 @@ export function CollapsibleSidebar({
                     }}
                   >
                     <Coffee className="w-4 h-4 mr-2" />
-                    Buy Me a Coffee!
+                    Support the project
                   </Button>
                 </a>
               </div>

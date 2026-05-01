@@ -88,7 +88,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Buy Me a Coffee
+                  Support the project
                 </Link>
               </li>
             </ul>

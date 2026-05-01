@@ -575,7 +575,7 @@ function CoffeeAsk({
           }}
         >
           <Coffee className="w-4 h-4 mr-2" />
-          Buy me a coffee
+          Support the project
         </Button>
       </a>
     </div>
