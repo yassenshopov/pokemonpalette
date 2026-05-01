@@ -1,7 +1,7 @@
 {
   "id": 10301,
   "name": "Zygarde-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 7.7,
-  "weight": 610.0,
+  "weight": 610,
   "abilities": [],
   "baseStats": {
     "hp": 216,
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#8bef32",
+    "secondary": "#564b48",
+    "accent": "#38312e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#8bef32",
+      "#564b48",
+      "#38312e",
+      "#e72d5a",
+      "#1a59bd",
+      "#f76a98"
     ]
   },
   "artwork": {

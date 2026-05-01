@@ -1,7 +1,7 @@
 {
   "id": 10243,
   "name": "Avalugg-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ice",
     "Rock"
@@ -49,15 +49,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c3f4fe",
+    "secondary": "#8dd7f0",
+    "accent": "#907865",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#c3f4fe",
+      "#8dd7f0",
+      "#907865",
+      "#543e34",
+      "#e8e8e8",
+      "#fbffff"
     ]
   },
   "artwork": {

@@ -1,7 +1,7 @@
 {
   "id": 10120,
   "name": "Zygarde-complete",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 4.5,
-  "weight": 610.0,
+  "weight": 610,
   "abilities": [
     {
       "name": "Power construct",
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#564748",
+    "secondary": "#38302e",
+    "accent": "#b2cd5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#564748",
+      "#38302e",
+      "#b2cd5a",
+      "#e54e52",
+      "#5a8cd9",
+      "#f2f2e8"
     ]
   },
   "artwork": {

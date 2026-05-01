@@ -1,7 +1,7 @@
 {
   "id": 10302,
   "name": "Drampa-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Normal",
     "Dragon"
@@ -16,7 +16,7 @@
       "slot": 2
     }
   ],
-  "height": 3.0,
+  "height": 3,
   "weight": 240.5,
   "abilities": [],
   "baseStats": {
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#fffef5",
+    "secondary": "#3eaf88",
+    "accent": "#4e5666",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#fffef5",
+      "#3eaf88",
+      "#4e5666",
+      "#343641",
+      "#97aad1",
+      "#687791"
     ]
   },
   "artwork": {

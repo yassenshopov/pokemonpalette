@@ -1,7 +1,7 @@
 {
   "id": 10118,
   "name": "Zygarde-10-power-construct",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#554748",
+    "secondary": "#38302e",
+    "accent": "#b2cd5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#554748",
+      "#38302e",
+      "#b2cd5a",
+      "#829e2e",
+      "#F8F8F8",
+      "#e54e52"
     ]
   },
   "artwork": {
