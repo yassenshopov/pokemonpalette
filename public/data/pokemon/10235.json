@@ -1,7 +1,7 @@
 {
   "id": 10235,
   "name": "Sneasel-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fighting",
     "Poison"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.9,
-  "weight": 27.0,
+  "weight": 27,
   "abilities": [
     {
       "name": "Inner focus",
@@ -49,15 +49,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#dcdcf6",
+    "secondary": "#9c9ccc",
+    "accent": "#926fbc",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#dcdcf6",
+      "#9c9ccc",
+      "#926fbc",
+      "#704fa0",
+      "#F8F8F8",
+      "#e8b52c"
     ]
   },
   "artwork": {

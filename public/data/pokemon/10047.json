@@ -1,7 +1,7 @@
 {
   "id": 10047,
   "name": "Heracross-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Bug",
     "Fighting"
@@ -37,15 +37,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#4989b0",
+    "secondary": "#29698f",
+    "accent": "#f15049",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
+      "#4989b0",
+      "#29698f",
+      "#f15049",
+      "#b83030",
+      "#223961",
+      "#dfb611"
     ]
   },
   "artwork": {

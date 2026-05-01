@@ -1,7 +1,7 @@
 {
   "id": 10284,
   "name": "Skarmory-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Steel",
     "Flying"
@@ -30,15 +30,18 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#fff489",
+    "secondary": "#fee949",
+    "accent": "#403d6d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
+      "#fff489",
+      "#fee949",
+      "#403d6d",
+      "#231c31",
+      "#101010",
+      "#dd222c"
     ]
   },
   "artwork": {
