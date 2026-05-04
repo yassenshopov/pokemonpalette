@@ -380,7 +380,6 @@ export function GameResultDialog({
                       onResetGame();
                     }}
                     availableGenerations={availableGenerations}
-                    showBadges={false}
                   />
                 )}
                 <Button
