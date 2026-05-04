@@ -37,16 +37,16 @@ export default async function PokemonPage({
 
   return (
     <>
-      <div className="container mx-auto px-4 md:px-6 pt-4 pb-2">
-        <Breadcrumbs items={breadcrumbs} />
-      </div>
       <SEOContent
         type="pokemon"
         pokemonName={pokemonMetadata.name}
         pokemonType={pokemonMetadata.type}
         pokemonGeneration={pokemonMetadata.generation}
       />
-      <PokemonPageClient pokemonMetadata={pokemonMetadata} />
+      <PokemonPageClient
+        pokemonMetadata={pokemonMetadata}
+        breadcrumbs={<Breadcrumbs items={breadcrumbs} />}
+      />
     </>
   );
 }

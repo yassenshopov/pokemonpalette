@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
@@ -41,10 +41,12 @@ const ThemeExporter = dynamic(
 
 interface ShinyPokemonPageClientProps {
   pokemonMetadata: PokemonMetadata;
+  breadcrumbs?: ReactNode;
 }
 
 export function ShinyPokemonPageClient({
   pokemonMetadata,
+  breadcrumbs,
 }: ShinyPokemonPageClientProps) {
   const [selectedPokemonId, setSelectedPokemonId] = useState<number | null>(
     pokemonMetadata?.id ?? null
@@ -91,10 +93,7 @@ export function ShinyPokemonPageClient({
   return (
     <div className="flex h-screen overflow-hidden">
       <CoffeeCTA primaryColor={pokemonColors[0]} />
-      <CollapsibleSidebar
-        primaryColor={pokemonColors[0]}
-        onPaletteLoad={handlePaletteLoad}
-      />
+      <CollapsibleSidebar primaryColor={pokemonColors[0]} />
       <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
         {/* Pokemon Menu - Full width on mobile, collapsible on desktop */}
         <div
@@ -127,8 +126,13 @@ export function ShinyPokemonPageClient({
         <div
           className={`${
             isPokemonMenuCollapsed ? "w-full" : "w-full md:w-3/4"
-          } flex flex-col h-auto md:h-full md:overflow-auto px-0 transition-all duration-300`}
+          } relative flex flex-col h-auto md:h-full md:overflow-auto px-0 transition-all duration-300`}
         >
+          {breadcrumbs && (
+            <div className="absolute top-3 left-4 md:left-12 z-20 max-w-[calc(100%-2rem)]">
+              {breadcrumbs}
+            </div>
+          )}
           <PokemonHero
             pokemonId={selectedPokemonId}
             isShiny={isShiny}

@@ -1,47 +1,57 @@
-"use client";
+import { Suspense } from "react";
 
-import dynamic from "next/dynamic";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
-import { Sparkles } from "lucide-react";
+import { ExploreClient } from "@/components/explore-client";
 import { Footer } from "@/components/footer";
+import { SEOContent } from "@/components/seo-content";
+import {
+  batchGetPokemonById,
+  getAllPokemonMetadata,
+  getAllRarities,
+} from "@/lib/pokemon";
 
-// GridPattern pulls in gsap + the full Pokemon index. Load it on demand so
-// the /explore route ships a tiny shell first and streams the grid in.
-const GridPattern = dynamic(
-  () =>
-    import("@/components/grid-pattern").then((m) => ({ default: m.GridPattern })),
-  { ssr: false }
-);
+// Pre-load the first page of cards on the server. Anything beyond this
+// streams in via the card's IntersectionObserver — the user only pays the
+// per-card JSON fetch when they actually scroll to it.
+const INITIAL_PAGE_SIZE = 60;
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+  const allMetadata = getAllPokemonMetadata();
+  const rarities = getAllRarities();
+
+  // Default sort is dex-number ascending, so preloading the first
+  // INITIAL_PAGE_SIZE entries by ID matches the initial visible set.
+  const initialIds = allMetadata
+    .slice()
+    .sort((a, b) => a.id - b.id)
+    .slice(0, INITIAL_PAGE_SIZE)
+    .map((m) => m.id);
+
+  const initialDataMap = await batchGetPokemonById(initialIds);
+  const initialPokemonData = Array.from(initialDataMap.entries());
+
   return (
     <div className="flex h-screen overflow-hidden">
       <CollapsibleSidebar />
-      <div className="flex-1 flex flex-col h-full overflow-hidden">
-        {/* Header */}
-        <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-10">
-          <div className="container mx-auto px-4 md:px-6 py-4 md:py-6">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <h1 className="text-2xl md:text-3xl font-bold">
-                Explore Palettes
-              </h1>
-            </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              Discover beautiful color palettes from randomly selected Pokémon
-            </p>
-          </div>
-        </div>
-
-        {/* Grid Content */}
-        <div className="flex-1 overflow-auto">
-          <div className="w-full h-full">
-            <GridPattern />
-          </div>
-          <Footer />
-        </div>
+      <div className="flex flex-1 flex-col overflow-auto">
+        <main id="main" className="flex-1">
+          <SEOContent type="home" />
+          <Suspense
+            fallback={
+              <div className="container mx-auto px-4 py-10 md:px-6">
+                <div className="h-8 w-64 animate-pulse rounded bg-muted" />
+              </div>
+            }
+          >
+            <ExploreClient
+              allMetadata={allMetadata}
+              rarities={rarities}
+              initialPokemonData={initialPokemonData}
+            />
+          </Suspense>
+        </main>
+        <Footer />
       </div>
     </div>
   );
 }
-

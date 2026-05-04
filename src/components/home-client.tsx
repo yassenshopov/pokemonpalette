@@ -93,7 +93,7 @@ export function HomeClient() {
       />
       <div className="flex flex-1 overflow-hidden">
         <CoffeeCTA primaryColor={pokemonColors[0]} />
-        <CollapsibleSidebar primaryColor={pokemonColors[0]} onPaletteLoad={handlePaletteLoad} />
+        <CollapsibleSidebar primaryColor={pokemonColors[0]} />
         <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
         {/* Pokemon Menu - Full width on mobile, collapsible on desktop */}
         <div className={`${

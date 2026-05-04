@@ -40,16 +40,16 @@ export default async function ShinyPokemonPage({
 
   return (
     <>
-      <div className="container mx-auto px-4 md:px-6 pt-4 pb-2">
-        <Breadcrumbs items={breadcrumbs} />
-      </div>
       <SEOContent
         type="pokemon"
         pokemonName={`Shiny ${pokemonMetadata.name}`}
         pokemonType={pokemonMetadata.type}
         pokemonGeneration={pokemonMetadata.generation}
       />
-      <ShinyPokemonPageClient pokemonMetadata={pokemonMetadata} />
+      <ShinyPokemonPageClient
+        pokemonMetadata={pokemonMetadata}
+        breadcrumbs={<Breadcrumbs items={breadcrumbs} />}
+      />
     </>
   );
 }

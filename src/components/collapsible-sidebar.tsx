@@ -11,32 +11,27 @@ import {
   X,
   Home,
   Bookmark,
-  Target,
-  Sparkles,
+  Gamepad2,
+  Compass,
   Code,
   User,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserProfile } from "@/components/user-profile";
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
-import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 import { Coffee } from "lucide-react";
 import { getContrastTextClass as getTextColor } from "@/lib/game/colors";
+import { useSidebarState } from "@/components/sidebar-state-provider";
 
 interface CollapsibleSidebarProps {
   primaryColor?: string;
-  onPaletteLoad?: (palette: {
-    pokemonId: number;
-    isShiny: boolean;
-    colors: string[];
-  }) => void;
 }
 
-export function CollapsibleSidebar({
-  primaryColor,
-  onPaletteLoad,
-}: CollapsibleSidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+export function CollapsibleSidebar({ primaryColor }: CollapsibleSidebarProps) {
+  // Collapsed state is provided by the root layout (cookie-backed) so it
+  // persists across route changes and sessions without a hydration flash.
+  const { isCollapsed, toggleCollapsed: handleSidebarToggle } =
+    useSidebarState();
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -50,26 +45,6 @@ export function CollapsibleSidebar({
 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
-  const handleSidebarToggle = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
-  // Load sidebar state from localStorage on mount
-  useEffect(() => {
-    const savedState = localStorage.getItem("sidebar-collapsed");
-    if (savedState !== null) {
-      setIsCollapsed(JSON.parse(savedState));
-    } else {
-      // Default to collapsed if no saved state
-      setIsCollapsed(true);
-    }
-  }, []);
-
-  // Save sidebar state to localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem("sidebar-collapsed", JSON.stringify(isCollapsed));
-  }, [isCollapsed]);
 
   const toggleSidebar = () => {
     if (isMobile) {
@@ -154,15 +129,22 @@ export function CollapsibleSidebar({
                     href="/game"
                     className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
                   >
-                    <Target className="h-4 w-4" />
+                    <Gamepad2 className="h-4 w-4" />
                     <span>Game</span>
                   </Link>
                   <Link
                     href="/explore"
                     className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
                   >
-                    <Sparkles className="h-4 w-4" />
+                    <Compass className="h-4 w-4" />
                     <span>Explore</span>
+                  </Link>
+                  <Link
+                    href="/saved-palettes"
+                    className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <Bookmark className="h-4 w-4" />
+                    <span>Saved Palettes</span>
                   </Link>
                   <Link
                     href="/api-access"
@@ -293,14 +275,21 @@ export function CollapsibleSidebar({
                       className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                       title="Game"
                     >
-                      <Target className="h-4 w-4" />
+                      <Gamepad2 className="h-4 w-4" />
                     </Link>
                     <Link
                       href="/explore"
                       className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                       title="Explore"
                     >
-                      <Sparkles className="h-4 w-4" />
+                      <Compass className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      href="/saved-palettes"
+                      className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      title="Saved Palettes"
+                    >
+                      <Bookmark className="h-4 w-4" />
                     </Link>
                     <Link
                       href="/api-access"
@@ -316,23 +305,6 @@ export function CollapsibleSidebar({
                     >
                       <User className="h-4 w-4" />
                     </Link>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <SavedPalettesDialog
-                      onPaletteSelect={onPaletteLoad}
-                      isCollapsed={true}
-                      trigger={
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
-                          title="Saved Palettes"
-                          aria-label="Open saved palettes"
-                        >
-                          <Bookmark className="h-4 w-4" aria-hidden="true" />
-                        </Button>
-                      }
-                    />
                   </div>
                   <div className="flex flex-col items-center">
                     <ThemeToggle />
@@ -372,15 +344,22 @@ export function CollapsibleSidebar({
                       href="/game"
                       className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                     >
-                      <Target className="h-4 w-4" />
+                      <Gamepad2 className="h-4 w-4" />
                       <span>Game</span>
                     </Link>
                     <Link
                       href="/explore"
                       className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
                     >
-                      <Sparkles className="h-4 w-4" />
+                      <Compass className="h-4 w-4" />
                       <span>Explore</span>
+                    </Link>
+                    <Link
+                      href="/saved-palettes"
+                      className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                    >
+                      <Bookmark className="h-4 w-4" />
+                      <span>Saved Palettes</span>
                     </Link>
                     <Link
                       href="/api-access"
@@ -396,18 +375,6 @@ export function CollapsibleSidebar({
                       <User className="h-4 w-4" />
                       <span>Account</span>
                     </Link>
-                    <SavedPalettesDialog
-                      onPaletteSelect={onPaletteLoad}
-                      trigger={
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
-                        >
-                          <Bookmark className="h-4 w-4 mr-3" />
-                          <span>Saved Palettes</span>
-                        </Button>
-                      }
-                    />
                   </div>
 
                   {/* Appearance */}

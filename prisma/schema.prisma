@@ -74,6 +74,7 @@ model User {
   savedPalettes        SavedPalette[]
   dailyGameAttempts    DailyGameAttempt[]
   dailyOverrides       DailyOverride[]
+  pokedexEntries       PokedexEntry[]
   emails               Email[]
   hostedRooms          MultiplayerRoom[]   @relation("RoomHost")
   wonRooms             MultiplayerRoom[]   @relation("RoomWinner")
@@ -138,6 +139,26 @@ model DailyGameAttempt {
   @@index([createdAt(sort: Desc)], map: "idx_dga_created_at_desc")
   @@index([targetPokemonId], map: "idx_dga_target_pokemon_id")
   @@map("daily_game_attempts")
+}
+
+model PokedexEntry {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId     String   @map("user_id")
+  pokemonId  Int      @map("pokemon_id")
+  isShiny    Boolean  @default(false) @map("is_shiny")
+  // 'daily' | 'unlimited'. Multiplayer is excluded — see migration 025.
+  mode       String
+  attempts   Int
+  hintsUsed  Int      @default(0) @map("hints_used")
+  caughtAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("caught_at") @db.Timestamptz(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, pokemonId, isShiny])
+  @@index([userId],                           map: "idx_pokedex_entries_user_id")
+  @@index([userId, caughtAt(sort: Desc)],     map: "idx_pokedex_entries_user_caught_at_desc")
+  @@index([pokemonId],                        map: "idx_pokedex_entries_pokemon_id")
+  @@map("pokedex_entries")
 }
 
 model DailyOverride {

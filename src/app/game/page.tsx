@@ -52,6 +52,7 @@ import {
   HelpCircle,
   Infinity as InfinityIcon,
   Users,
+  BookMarked,
 } from "lucide-react";
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
@@ -317,6 +318,16 @@ export default function GamePage() {
   const [hintCooldown, setHintCooldown] = useState(0); // Cooldown in seconds (0-5)
   const [showGameResultDialog, setShowGameResultDialog] = useState(false);
   const [showGiveUpDialog, setShowGiveUpDialog] = useState(false);
+  // Outcome of the Pokedex catch for the most-recent win. Resolved
+  // asynchronously after `recordPokedexCatch` returns so the result
+  // dialog can show a "new entry!" banner only when the catch was
+  // genuinely new. `null` means: no catch attempted (loss/give-up,
+  // multiplayer, or pre-resolution).
+  const [pokedexCatchResult, setPokedexCatchResult] = useState<{
+    isNew: boolean;
+    isShiny: boolean;
+    pokemonName: string;
+  } | null>(null);
   // The "How to Play" modal opens automatically on a player's first
   // visit and can be re-opened any time via the help icon button. We
   // persist a single boolean marker in localStorage so we don't pester
@@ -332,6 +343,7 @@ export default function GamePage() {
   const MAX_ATTEMPTS = 4;
 
   const PENDING_ATTEMPTS_KEY = "pokemon-palette-pending-attempts";
+  const PENDING_POKEDEX_KEY = "pokemon-palette-pending-pokedex";
   const HOW_TO_PLAY_STORAGE_KEY = "pokemon-palette-game-tutorial-seen";
 
   // Alias the shared helper locally so the existing getTextColor(...) call
@@ -983,6 +995,25 @@ export default function GamePage() {
         pokemon_id: targetPokemonId ?? 0,
         is_signed_in: !!user,
       });
+      // Record the catch in the player's Pokedex for both daily and
+      // unlimited modes. Best-effort — failures are logged but don't
+      // block the win flow. We reset `pokedexCatchResult` before the
+      // call so a stale "new entry" banner from a previous round
+      // doesn't flash into the dialog before the API responds.
+      setPokedexCatchResult(null);
+      if (mode !== "multiplayer" && targetPokemonId !== null && targetPokemon) {
+        recordPokedexCatch(
+          {
+            pokemonId: targetPokemonId,
+            isShiny: isShiny === true,
+            mode,
+            attempts: newAttempts,
+            hintsUsed: revealedHints.length,
+            date: mode === "daily" ? todayUtcDateString() : undefined,
+          },
+          targetPokemon.name
+        );
+      }
       // Show toast before the dialog
       toast.success(
         <div className="text-center w-full" style={{ width: "100%" }}>
@@ -1140,6 +1171,156 @@ export default function GamePage() {
     }
   };
 
+  // -------------------------------------------------------------------
+  // Pokedex catches.
+  //
+  // Every correct guess in `daily` or `unlimited` mode counts towards the
+  // player's Pokedex. Each (pokemon_id, is_shiny) combo is a distinct
+  // entry, so a normal-mode catch and a shiny-mode catch of the same
+  // species are recorded separately. Multiplayer wins are intentionally
+  // excluded — that mode is competitive and shouldn't fast-track Pokedex
+  // completion for either player.
+  //
+  // Mirrors the daily-attempt persistence pattern: signed-in users hit
+  // the API directly; signed-out users queue catches in localStorage and
+  // we sync them on sign-in via `syncPendingPokedex`.
+  // -------------------------------------------------------------------
+
+  type PendingPokedexCatch = {
+    pokemonId: number;
+    isShiny: boolean;
+    mode: "daily" | "unlimited";
+    attempts: number;
+    hintsUsed: number;
+    date?: string; // YYYY-MM-DD UTC, daily mode only.
+  };
+
+  const queuePendingPokedexCatch = (entry: PendingPokedexCatch) => {
+    try {
+      const existingRaw = localStorage.getItem(PENDING_POKEDEX_KEY);
+      const existing: PendingPokedexCatch[] = existingRaw
+        ? JSON.parse(existingRaw)
+        : [];
+      // Dedupe on (pokemonId, isShiny) — first catch wins, just like the
+      // server-side unique constraint.
+      const alreadyQueued = existing.some(
+        (e) => e.pokemonId === entry.pokemonId && e.isShiny === entry.isShiny
+      );
+      if (!alreadyQueued) {
+        existing.push(entry);
+        localStorage.setItem(PENDING_POKEDEX_KEY, JSON.stringify(existing));
+      }
+    } catch {
+      // localStorage unavailable — silently drop. The catch is a nice-to-
+      // have, not load-bearing.
+    }
+  };
+
+  const recordPokedexCatch = async (
+    entry: PendingPokedexCatch,
+    pokemonName: string
+  ) => {
+    if (mode === "multiplayer") return;
+    if (!user) {
+      queuePendingPokedexCatch(entry);
+      // Still surface a banner so signed-out players see that we'll
+      // save the catch on sign-in. We don't know whether this is
+      // genuinely new without the server — assume new since the user
+      // just won, and leave it to the post-sign-in sync to dedupe.
+      setPokedexCatchResult({
+        isNew: true,
+        isShiny: entry.isShiny,
+        pokemonName,
+      });
+      return;
+    }
+    try {
+      const res = await fetch("/api/pokedex", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(entry),
+      });
+      if (!res.ok) {
+        // 401 between mount and first guess is rare but possible if the
+        // session expires mid-game; queue in localStorage so the catch
+        // isn't lost on the next sign-in.
+        if (res.status === 401) {
+          queuePendingPokedexCatch(entry);
+          return;
+        }
+        // Soft-fail: a 5xx here shouldn't break the win flow. We log so
+        // we still notice if the API starts erroring globally.
+        console.error("Failed to record Pokedex catch:", res.status);
+        return;
+      }
+      const data = (await res.json().catch(() => null)) as
+        | { isNew?: boolean }
+        | null;
+      setPokedexCatchResult({
+        isNew: !!data?.isNew,
+        isShiny: entry.isShiny,
+        pokemonName,
+      });
+      if (data?.isNew) {
+        track("pokedex_entry_added", {
+          pokemon_id: entry.pokemonId,
+          is_shiny: entry.isShiny,
+          mode: entry.mode,
+          attempts: entry.attempts,
+          hints_used: entry.hintsUsed,
+        });
+      }
+    } catch (error) {
+      console.error("Error recording Pokedex catch:", error);
+      queuePendingPokedexCatch(entry);
+    }
+  };
+
+  // Sync pending pokedex catches when user signs in. Runs alongside
+  // syncPendingAttempts. Each successfully synced catch is removed; failed
+  // ones stay in localStorage for the next attempt.
+  const syncPendingPokedex = async () => {
+    if (!user) return;
+    let pending: PendingPokedexCatch[] = [];
+    try {
+      const raw = localStorage.getItem(PENDING_POKEDEX_KEY);
+      if (!raw) return;
+      pending = JSON.parse(raw);
+    } catch {
+      return;
+    }
+    if (pending.length === 0) return;
+
+    const results = await Promise.all(
+      pending.map(async (entry) => {
+        try {
+          const res = await fetch("/api/pokedex", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(entry),
+          });
+          // Treat 200 and 4xx-validation as "drained" — a permanently
+          // invalid entry shouldn't loop forever. Only 5xx / network
+          // failures are worth retrying.
+          return res.ok || (res.status >= 400 && res.status < 500);
+        } catch {
+          return false;
+        }
+      })
+    );
+
+    const remaining = pending.filter((_, i) => !results[i]);
+    try {
+      if (remaining.length > 0) {
+        localStorage.setItem(PENDING_POKEDEX_KEY, JSON.stringify(remaining));
+      } else {
+        localStorage.removeItem(PENDING_POKEDEX_KEY);
+      }
+    } catch {
+      // ignore
+    }
+  };
+
   // Sync pending attempts when user signs in
   const syncPendingAttempts = async () => {
     if (!user) return;
@@ -1219,6 +1400,20 @@ export default function GamePage() {
       const pending = localStorage.getItem(PENDING_ATTEMPTS_KEY);
       if (pending && JSON.parse(pending).length > 0) {
         syncPendingAttempts();
+      }
+      // Drain queued Pokedex catches recorded while the player was
+      // signed out. Independent of the daily-attempt sync above — they
+      // can legitimately have one without the other (e.g. caught in
+      // unlimited mode only).
+      const pendingPokedex = localStorage.getItem(PENDING_POKEDEX_KEY);
+      if (pendingPokedex) {
+        try {
+          if ((JSON.parse(pendingPokedex) as unknown[]).length > 0) {
+            syncPendingPokedex();
+          }
+        } catch {
+          // ignore
+        }
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1547,6 +1742,7 @@ export default function GamePage() {
     setStatus("playing");
     setRevealedHints([]);
     setHintCooldown(0);
+    setPokedexCatchResult(null);
     setLoading(true);
 
     // Determine shiny status + target pokemon for this game.
@@ -2085,6 +2281,31 @@ export default function GamePage() {
                     >
                       <HelpCircle className="w-4 h-4" />
                     </Button>
+                    {/* Pokedex shortcut. Lives in the game-context action
+                        row (alongside Help and the daily leaderboard) so
+                        players who just won have a one-tap path to see
+                        their growing collection. The page itself is a
+                        sub-route of /game so the Pokedex stays scoped to
+                        the game flow rather than the global sidebar. */}
+                    <Link
+                      href="/game/pokedex"
+                      onClick={() =>
+                        track("pokedex_opened", {
+                          placement: "game_action_row",
+                          mode,
+                          status,
+                        })
+                      }
+                    >
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        aria-label="Open Pokedex"
+                        className="cursor-pointer"
+                      >
+                        <BookMarked className="w-4 h-4" />
+                      </Button>
+                    </Link>
                     {/* Daily mode: leaderboard lives behind a button now
                         rather than as an inline section at the bottom of
                         the page. Same row as Give Up so it sits with the
@@ -2209,6 +2430,7 @@ export default function GamePage() {
               guesses={guesses}
               attempts={attempts}
               hintsUsed={revealedHints.length}
+              pokedexCatch={pokedexCatchResult}
             />
           )}
 

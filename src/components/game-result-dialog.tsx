@@ -21,6 +21,7 @@ import {
   Sparkles,
   Share2,
   Coffee,
+  BookMarked,
 } from "lucide-react";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
@@ -97,6 +98,15 @@ interface GameResultDialogProps {
   guesses?: ShareGridGuess[];
   attempts?: number;
   hintsUsed?: number;
+  // Result of the Pokedex catch recorded for this win, if any. Resolved
+  // asynchronously after the dialog opens — the parent updates this when
+  // the /api/pokedex response arrives. `isNew` distinguishes a first
+  // catch from a re-catch so we only celebrate genuinely new entries.
+  pokedexCatch?: {
+    isNew: boolean;
+    isShiny: boolean;
+    pokemonName: string;
+  } | null;
 }
 
 export function GameResultDialog({
@@ -116,6 +126,7 @@ export function GameResultDialog({
   guesses = [],
   attempts = 0,
   hintsUsed = 0,
+  pokedexCatch = null,
 }: GameResultDialogProps) {
   const isWon = status === "won";
   const title = isWon ? "🎉 You Won!" : "Game Over";
@@ -323,6 +334,18 @@ export function GameResultDialog({
                 )}
               </div>
             </div>
+          )}
+
+          {/* Pokedex catch banner — only shown for genuinely new entries
+              (re-catches are silent so we don't fire celebratory copy on
+              every repeat win). Lands at the emotional peak right under
+              the sprite, before the coffee ask. */}
+          {isWon && pokedexCatch?.isNew && (
+            <PokedexCatchBanner
+              primaryColor={primaryColor}
+              pokemonName={pokedexCatch.pokemonName}
+              isShiny={pokedexCatch.isShiny}
+            />
           )}
 
           {/* Contextual "tip the dev" ask. Only rendered on wins because asking
@@ -577,6 +600,68 @@ function CoffeeAsk({
           Support the project
         </Button>
       </a>
+    </div>
+  );
+}
+
+// Banner shown inside the win dialog when the win produced a fresh Pokedex
+// entry. Rendered alongside CoffeeAsk and reuses the same "color-tinted
+// rounded card" layout for visual continuity.
+function PokedexCatchBanner({
+  primaryColor,
+  pokemonName,
+  isShiny,
+}: {
+  primaryColor: string | undefined;
+  pokemonName: string;
+  isShiny: boolean;
+}) {
+  const textColor = primaryColor ? getContrastHex(primaryColor) : "#000000";
+  return (
+    <div
+      className="mt-4 rounded-lg border p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+      style={{
+        borderColor: primaryColor ? `${primaryColor}55` : undefined,
+        backgroundColor: primaryColor ? `${primaryColor}12` : undefined,
+      }}
+    >
+      <div
+        className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+        style={{
+          backgroundColor: primaryColor || "#f59e0b",
+          color: textColor,
+        }}
+      >
+        <BookMarked className="w-5 h-5" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-semibold font-heading flex items-center gap-1.5 flex-wrap">
+          New Pokedex entry — {pokemonName}!
+          {isShiny && (
+            <span className="inline-flex items-center gap-0.5 text-yellow-500">
+              <Sparkles className="w-3.5 h-3.5" />
+              Shiny
+            </span>
+          )}
+        </p>
+        <p className="text-xs text-muted-foreground mt-0.5">
+          Added to your Pokedex. Catch the {isShiny ? "normal" : "shiny"}{" "}
+          variant to complete this entry.
+        </p>
+      </div>
+      <Link href="/game/pokedex" className="w-full sm:w-auto flex-shrink-0">
+        <Button
+          size="sm"
+          variant="outline"
+          className="w-full cursor-pointer font-heading"
+          style={{
+            borderColor: primaryColor || undefined,
+            color: primaryColor || undefined,
+          }}
+        >
+          View Pokedex
+        </Button>
+      </Link>
     </div>
   );
 }

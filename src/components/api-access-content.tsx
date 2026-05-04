@@ -533,7 +533,7 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
         <FloatingToc activeId={activeTocId} />
 
-        <div className="flex-1 overflow-auto">
+        <div className="flex-1 overflow-auto scroll-smooth">
           {/* Hero */}
           <section className="relative overflow-hidden border-b">
             <div className="absolute inset-0 opacity-[0.07] transition-colors duration-1000" style={{

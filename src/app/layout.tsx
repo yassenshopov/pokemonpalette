@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ColorblindProvider } from "@/components/colorblind-provider";
@@ -11,6 +12,11 @@ import {
   GoogleAnalyticsIdentity,
 } from "@/components/analytics/google-analytics";
 import { GeoCapture } from "@/components/analytics/geo-capture";
+import { SidebarStateProvider } from "@/components/sidebar-state-provider";
+import {
+  SIDEBAR_COOKIE_NAME,
+  parseSidebarCookie,
+} from "@/lib/sidebar-cookie";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -134,13 +140,21 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   // Check if Clerk keys are available
   const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  // Read the persisted sidebar state from the cookie so the layout renders
+  // with the correct width on first paint, avoiding a layout shift after
+  // hydration. Defaults to collapsed when no cookie has been set yet.
+  const cookieStore = await cookies();
+  const sidebarCollapsed = parseSidebarCookie(
+    cookieStore.get(SIDEBAR_COOKIE_NAME)?.value
+  );
 
   // Wrap children with ClerkProvider only if keys are available. The
   // GA4 identity tracker also lives inside this branch — it depends on
@@ -179,7 +193,9 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <ColorblindProvider>
-            {content}
+            <SidebarStateProvider defaultCollapsed={sidebarCollapsed}>
+              {content}
+            </SidebarStateProvider>
             <Toaster position="top-center" />
           </ColorblindProvider>
         </ThemeProvider>
