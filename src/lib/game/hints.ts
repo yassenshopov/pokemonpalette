@@ -9,6 +9,8 @@ export const HINT_CATEGORIES = [
   "generation",
   "species",
   "description",
+  "first_letter",
+  "weight_class",
 ] as const;
 
 export type HintCategory = (typeof HINT_CATEGORIES)[number];
@@ -37,6 +39,24 @@ export interface HintCandidate {
   overridden: boolean;
 }
 
+/**
+ * Facts the player has already learned from their previous guesses' relatedness
+ * output. Used by `buildCandidates` to filter out hints that would just
+ * regurgitate information the badges/toasts already revealed.
+ *
+ * - `sharedTypes` should be lowercase type names; aggregate the union across
+ *   every prior guess that shared at least one type with the target.
+ * - `sameEvolutionFamily` is true if any prior guess landed in the target's
+ *   evolution family.
+ * - `sameGeneration` is true if any prior guess was from the same generation
+ *   as the target.
+ */
+export interface KnownFacts {
+  sharedTypes: string[];
+  sameEvolutionFamily: boolean;
+  sameGeneration: boolean;
+}
+
 export interface GenerateHintsOptions {
   /**
    * Include the "introduced in Generation X" hint. In daily mode this is
@@ -45,6 +65,12 @@ export interface GenerateHintsOptions {
    */
   includeGeneration?: boolean;
   hintConfig?: HintConfig | null;
+  /**
+   * Facts the player already knows from prior guess relatedness. Hints that
+   * would only restate these facts are skipped. Optional — when omitted the
+   * generator behaves as it always has.
+   */
+  knownFacts?: KnownFacts | null;
 }
 
 export function getGenerationFromId(id: number): number {
@@ -71,9 +97,18 @@ export function buildCandidates(
   pokemon: Pokemon,
   options: GenerateHintsOptions = {},
 ): HintCandidate[] {
-  const { includeGeneration = true, hintConfig } = options;
+  const { includeGeneration = true, hintConfig, knownFacts } = options;
   const disabled = new Set<HintCategory>(hintConfig?.disabled ?? []);
   const overrides = hintConfig?.overrides ?? {};
+
+  // Normalize the player's known facts so casing differences (e.g. "Grass"
+  // from a guess vs the target's `pokemon.type` array) don't cause us to miss
+  // a redundancy.
+  const knownTypes = new Set(
+    (knownFacts?.sharedTypes ?? []).map((t) => t.toLowerCase()),
+  );
+  const knownsSameFamily = Boolean(knownFacts?.sameEvolutionFamily);
+  const knownsSameGen = Boolean(knownFacts?.sameGeneration);
 
   const apply = (
     category: HintCategory,
@@ -97,18 +132,25 @@ export function buildCandidates(
 
   const out: HintCandidate[] = [];
 
-  // Type — vague
+  // Type — vague. Skip when the type name the vague hint would mention is
+  // already known from a same-type guess. For dual-types the vague variant
+  // only mentions the primary type, so we only need that one to be known.
   if (pokemon.type && pokemon.type.length > 0) {
+    const primaryKnown = knownTypes.has(pokemon.type[0].toLowerCase());
     const vagueType =
       pokemon.type.length === 1
         ? `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
         : `This Pokemon is a part-${pokemon.type[0]} type Pokemon.`;
-    const c = apply("type", "vague", vagueType);
-    if (c) out.push(c);
+    if (!primaryKnown) {
+      const c = apply("type", "vague", vagueType);
+      if (c) out.push(c);
+    }
   }
 
-  // Evolution stage — vague
-  if (pokemon.evolution?.stage) {
+  // Evolution stage — vague. Skip when the player already has a same-family
+  // guess; once they're in the family the stage is essentially implied and
+  // surfacing it adds nothing on top of the badge they saw.
+  if (pokemon.evolution?.stage && !knownsSameFamily) {
     const stage = pokemon.evolution.stage;
     const text =
       stage === 1
@@ -120,22 +162,27 @@ export function buildCandidates(
     if (c) out.push(c);
   }
 
-  // Type — medium (more specific than the vague variant)
+  // Type — medium. The medium variant lists every type, so we only skip when
+  // *every* type is already known from prior guesses.
   if (pokemon.type && pokemon.type.length > 0) {
+    const allTypesKnown = pokemon.type.every((t) =>
+      knownTypes.has(t.toLowerCase()),
+    );
     const mediumType =
       pokemon.type.length === 1
         ? `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
         : pokemon.type.length === 2
           ? `This Pokemon is a ${pokemon.type[0]}- and ${pokemon.type[1]}-type Pokemon.`
           : null;
-    if (mediumType) {
+    if (mediumType && !allTypesKnown) {
       const c = apply("type", "medium", mediumType);
       if (c) out.push(c);
     }
   }
 
-  // Generation — medium
-  if (includeGeneration) {
+  // Generation — medium. Skipped when a previous guess shared the target's
+  // generation: the same-generation badge already conveys this.
+  if (includeGeneration && !knownsSameGen) {
     const gen = getGenerationFromId(pokemon.id);
     if (gen) {
       const roman = ROMAN[gen - 1] ?? String(gen);
@@ -171,7 +218,54 @@ export function buildCandidates(
     }
   }
 
+  // Fallback pool — surfaced when the obvious type/generation/evolution hints
+  // have been filtered out by `knownFacts`. Both are safe (no name leak) and
+  // available for every Pokemon, so they keep us at three hints in tough
+  // edge cases (e.g. dual-type filtered + generation filtered).
+  if (pokemon.name && pokemon.name.length > 0) {
+    const letter = pokemon.name.trim().charAt(0).toUpperCase();
+    if (letter) {
+      const c = apply(
+        "first_letter",
+        "vague",
+        `This Pokemon's name starts with the letter ${letter}.`,
+      );
+      if (c) out.push(c);
+    }
+  }
+
+  if (typeof pokemon.weight === "number" && pokemon.weight > 0) {
+    const text = describeWeightClass(pokemon.weight);
+    if (text) {
+      const c = apply("weight_class", "vague", text);
+      if (c) out.push(c);
+    }
+  }
+
   return out;
+}
+
+/**
+ * Buckets a Pokemon's weight (in kilograms) into a coarse description. The
+ * thresholds are chosen so each bucket has a meaningful population across the
+ * full Pokedex — most starters land in the lightweight/midweight buckets,
+ * pseudo-legendaries in the heavy bucket, and the truly massive (Wailord,
+ * Steelix, etc.) in the very-heavy bucket.
+ */
+function describeWeightClass(weightKg: number): string | null {
+  if (weightKg < 10) {
+    return "This Pokemon weighs less than 10 kilograms.";
+  }
+  if (weightKg < 50) {
+    return "This Pokemon weighs between 10 and 50 kilograms.";
+  }
+  if (weightKg < 100) {
+    return "This Pokemon weighs between 50 and 100 kilograms.";
+  }
+  if (weightKg < 250) {
+    return "This Pokemon weighs between 100 and 250 kilograms.";
+  }
+  return "This Pokemon weighs more than 250 kilograms.";
 }
 
 /**
@@ -193,6 +287,8 @@ export function buildCategoryPreview(
     generation: null,
     species: null,
     description: null,
+    first_letter: null,
+    weight_class: null,
   };
   // Prefer the most specific bucket per category so the preview matches what
   // a well-played game would surface (e.g. dual-type line over the vague one).
@@ -280,53 +376,58 @@ export function generateHints(
     .filter((c) => c.bucket === "specific")
     .map((c) => c.text);
 
-  const selected: string[] = [];
-
   const typeHints: string[] = [];
   const vagueType = vague.find(isTypeHint);
   if (vagueType) typeHints.push(vagueType);
   typeHints.push(...medium.filter(isTypeHint));
 
-  // First: a vague hint, preferring a type line when available.
+  // We build the two "informative" slots first, then append the always-
+  // terminal palette reveal. Doing it in this order means the fallback loop
+  // below can't accidentally push the palette line into slot 1 when knownFacts
+  // (or rare data shapes) leave the medium bucket empty.
+  const informative: string[] = [];
+
+  // First slot: a vague hint, preferring a type line when available.
   if (vague.length > 0) {
     const shuffled = shuffle(vague);
     const pickType = shuffled.find(isTypeHint);
-    selected.push(pickType && typeHints.length > 0 ? pickType : shuffled[0]);
+    informative.push(pickType && typeHints.length > 0 ? pickType : shuffled[0]);
   }
 
-  // Second: a medium hint that's not similar to the first.
+  // Second slot: a medium hint that's not similar to the first.
   if (medium.length > 0) {
     const shuffled = shuffle(medium);
-    const unique = findUnique(shuffled, selected);
-    selected.push(unique ?? shuffled[0]);
+    const unique = findUnique(shuffled, informative);
+    informative.push(unique ?? shuffled[0]);
   }
 
-  // Third: the palette reveal line is terminal.
-  selected.push("Full palette shown");
-
-  const hasType = selected.some(isTypeHint);
+  // Type-hint guarantee. When type candidates exist but neither informative
+  // slot ended up as a type hint, swap one in. This silently no-ops when
+  // knownFacts has filtered every type candidate out (`typeHints` is empty).
+  const hasType = informative.some(isTypeHint);
   if (!hasType && typeHints.length > 0) {
-    const uniqueType = findUnique(typeHints, selected);
+    const uniqueType = findUnique(typeHints, informative);
     if (uniqueType) {
-      const replaceIdx = selected.findIndex(
-        (h) => h !== "Full palette shown" && !isTypeHint(h),
-      );
-      if (replaceIdx >= 0) selected[replaceIdx] = uniqueType;
-      else if (selected.length >= 1) selected[0] = uniqueType;
+      const replaceIdx = informative.findIndex((h) => !isTypeHint(h));
+      if (replaceIdx >= 0) informative[replaceIdx] = uniqueType;
+      else if (informative.length >= 1) informative[0] = uniqueType;
     }
   }
 
+  // Fill remaining informative slots from the broader pool (vague →
+  // medium → specific). This is what surfaces fallback hints like
+  // first-letter / weight-class when knownFacts removed the obvious picks.
   const all = [...shuffle(vague), ...shuffle(medium), ...shuffle(specific)];
-  while (selected.length < 3 && all.length > 0) {
+  while (informative.length < 2 && all.length > 0) {
     const hint = all.shift();
     if (!hint) break;
-    if (!selected.some((e) => isSimilarHint(hint, e))) selected.push(hint);
+    if (!informative.some((e) => isSimilarHint(hint, e))) informative.push(hint);
   }
-  while (selected.length < 3) {
-    selected.push("This Pokemon is a mystery!");
+  while (informative.length < 2) {
+    informative.push("This Pokemon is a mystery!");
   }
 
-  return selected.slice(0, 3);
+  return [...informative.slice(0, 2), "Full palette shown"];
 }
 
 /** Human label for a category — used in the admin UI. */
@@ -336,6 +437,8 @@ export const HINT_CATEGORY_LABELS: Record<HintCategory, string> = {
   generation: "Generation",
   species: "Species",
   description: "Pokédex description",
+  first_letter: "First letter",
+  weight_class: "Weight class",
 };
 
 export const HINT_CATEGORY_BUCKETS: Record<HintCategory, HintBucket> = {
@@ -344,4 +447,6 @@ export const HINT_CATEGORY_BUCKETS: Record<HintCategory, HintBucket> = {
   generation: "medium",
   species: "specific",
   description: "specific",
+  first_letter: "vague",
+  weight_class: "vague",
 };
