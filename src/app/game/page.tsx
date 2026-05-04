@@ -32,6 +32,7 @@ import {
   generateHints as buildGameHints,
   getGenerationFromId,
   type HintConfig,
+  type KnownFacts,
 } from "@/lib/game/hints";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -1159,30 +1160,85 @@ export default function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]); // Only sync when user ID changes (signs in)
 
+  // Aggregate everything the player has already learned from the relatedness
+  // badges/toasts on prior guesses. We feed this into `buildGameHints` so the
+  // next hint reveal won't just restate "Same type: Normal" or
+  // "Same evolution family" (information already on screen).
+  const knownFacts = useMemo<KnownFacts>(() => {
+    const sharedTypes = new Set<string>();
+    let sameEvolutionFamily = false;
+    let sameGeneration = false;
+    for (const guess of guesses) {
+      const r = guess.relatedness;
+      if (!r) continue;
+      for (const t of r.sharedTypes) sharedTypes.add(t.toLowerCase());
+      if (r.sameEvolutionFamily) sameEvolutionFamily = true;
+      if (r.sameGeneration) sameGeneration = true;
+    }
+    return {
+      sharedTypes: Array.from(sharedTypes),
+      sameEvolutionFamily,
+      sameGeneration,
+    };
+  }, [guesses]);
+
   // Wrap the shared generator so the in-component call sites don't need to
-  // thread through mode/generation settings themselves.
-  const generateHints = (pokemon: Pokemon): string[] => {
+  // thread through mode/generation settings themselves. Callers pass the
+  // current `knownFacts` (or null at game start) so the builder can drop
+  // hints that would just repeat what the player already saw on a guess.
+  const generateHints = (
+    pokemon: Pokemon,
+    facts: KnownFacts | null = null,
+  ): string[] => {
     const includeGeneration =
       mode === "daily" ||
       (mode === "unlimited" &&
         unlimitedSettings.selectedGenerations.length > 1);
     const hintConfig =
       ((pokemon as unknown) as { hintConfig?: HintConfig }).hintConfig ?? null;
-    return buildGameHints(pokemon, { includeGeneration, hintConfig });
+    return buildGameHints(pokemon, {
+      includeGeneration,
+      hintConfig,
+      knownFacts: facts,
+    });
   };
 
-  // Generate and store hints when target Pokemon, mode, or settings change
+  // Reset hints when the target Pokemon, mode, or unlimited settings change.
+  // The Pokemon itself changing implies a brand new game, so we wipe both the
+  // revealed indices and the cached hint strings.
   useEffect(() => {
     if (targetPokemon) {
-      generatedHintsRef.current = generateHints(targetPokemon);
+      generatedHintsRef.current = generateHints(targetPokemon, knownFacts);
     } else {
       generatedHintsRef.current = [];
     }
-    // Reset revealed hints when Pokemon or settings change
     setRevealedHints([]);
     setHintCooldown(0);
+    // We intentionally omit `knownFacts` here so this effect only fires on a
+    // game-level reset; the next effect handles in-game refreshes without
+    // clobbering revealed hints.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetPokemon, mode, unlimitedSettings]);
+
+  // When new guesses change `knownFacts` mid-game, refresh ONLY the unrevealed
+  // hint slots. Already-shown hints stay stable (a hint that was relevant when
+  // shown shouldn't suddenly disappear from the UI), but the next reveal will
+  // pick from a fresh pool that respects the latest known facts.
+  useEffect(() => {
+    if (!targetPokemon) return;
+    const fresh = generateHints(targetPokemon, knownFacts);
+    const previous = generatedHintsRef.current;
+    const keepCount = Math.min(revealedHints.length, previous.length);
+    const merged = previous.slice(0, keepCount);
+    for (let i = keepCount; i < fresh.length; i++) {
+      merged.push(fresh[i]);
+    }
+    generatedHintsRef.current = merged;
+    // `revealedHints` is intentionally read but not in the dep list — we only
+    // want this to fire when knownFacts or the target changes. Including it
+    // would re-run after every reveal click and shuffle the *next* hint.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [knownFacts, targetPokemon]);
 
   const showNextHint = () => {
     if (!targetPokemon || revealedHints.length >= 3 || hintCooldown > 0) return;
