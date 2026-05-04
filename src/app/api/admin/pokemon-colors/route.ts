@@ -387,6 +387,11 @@ export async function PUT(req: NextRequest) {
     palette.primary = selectedColors[0];
     palette.secondary = selectedColors[1];
     palette.accent = selectedColors[2];
+    // Mark this variant's palette as authoritative — the game reads this
+    // flag to skip runtime sprite extraction and use these admin-curated
+    // colors directly. Set on every admin save (single edit and batch
+    // re-extract alike) since both originate from an admin action.
+    palette.locked = true;
   }
 
   if (hintConfigUpdate) {
