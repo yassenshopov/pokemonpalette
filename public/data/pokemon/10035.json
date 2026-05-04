@@ -1,7 +1,7 @@
 {
   "id": 10035,
   "name": "Charizard-mega-y",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fire",
     "Flying"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#e98439",
+    "secondary": "#d3734a",
+    "accent": "#fbea7e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
-    ]
+      "#e98439",
+      "#d3734a",
+      "#fbea7e",
+      "#ebb463",
+      "#2c7392",
+      "#f2a430"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10035.png",
