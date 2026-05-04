@@ -167,6 +167,73 @@ function getSpriteUrl(pokemon: Pokemon, shiny: boolean): string | null {
   return null;
 }
 
+/**
+ * Build a ColorWithFrequency[] from a flat hex list using linearly
+ * decreasing weights (first color dominant). Mirrors the synthesized
+ * frequency / percentage shape the existing extraction-failure fallback
+ * uses so the proportional color bar keeps rendering the same way.
+ */
+function paletteHighlightsToColorsWithFreq(
+  highlights: string[],
+): ColorWithFrequency[] {
+  return highlights.map((hex, idx) => ({
+    hex,
+    frequency: 100 - idx * 10,
+    percentage: ((100 - idx * 10) / highlights.length) * 100,
+  }));
+}
+
+/**
+ * Resolve the target Pokemon's display palette as a `ColorWithFrequency[]`.
+ *
+ * Order of preference:
+ *   1. Admin-locked palette for the active variant (`colorPalette.locked` /
+ *      `shinyColorPalette.locked` set by the Color Management admin tab).
+ *      Returned directly so admin curation isn't undone by runtime
+ *      sprite extraction. Locks are per-variant — a normal-mode lock is
+ *      ignored when the target rendered as shiny, and vice versa.
+ *   2. Live extraction from the active sprite via
+ *      `extractColorsFromImage(...)` — the historical default.
+ *   3. Static `colorPalette.highlights` fallback when extraction fails
+ *      (CORS, transient network error, etc).
+ *
+ * Always returns the full extracted set (up to `COLORS_TO_EXTRACT`); the
+ * caller is responsible for slicing down to `PALETTE_COLORS_COUNT` for the
+ * top-N display.
+ */
+async function loadTargetColors(
+  pokemon: Pokemon,
+  shiny: boolean,
+): Promise<ColorWithFrequency[]> {
+  const variantPalette = shiny
+    ? pokemon.shinyColorPalette
+    : pokemon.colorPalette;
+  if (
+    variantPalette?.locked === true &&
+    Array.isArray(variantPalette.highlights) &&
+    variantPalette.highlights.length > 0
+  ) {
+    return paletteHighlightsToColorsWithFreq(variantPalette.highlights);
+  }
+
+  const spriteUrl = getSpriteUrl(pokemon, shiny);
+  if (!spriteUrl) {
+    return [];
+  }
+
+  try {
+    return (await extractColorsFromImage(
+      spriteUrl,
+      POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
+      true,
+    )) as ColorWithFrequency[];
+  } catch (error) {
+    console.error("Failed to extract colors:", error);
+    const fallback = pokemon.colorPalette?.highlights ?? [];
+    return paletteHighlightsToColorsWithFreq(fallback);
+  }
+}
+
 type ShinyPreference = "both" | "shiny" | "normal";
 
 interface UnlimitedModeSettings {
@@ -341,19 +408,20 @@ export default function GamePage() {
                 setTargetPokemon(targetPokemonData);
                 setIsShiny(todayAttempt.isShiny);
 
-                // Load target colors
+                // Load target colors — honors admin-locked palette
+                // overrides via loadTargetColors before falling back to
+                // sprite extraction.
                 const spriteUrl = getSpriteUrl(
                   targetPokemonData,
                   todayAttempt.isShiny
                 );
                 if (spriteUrl) {
                   try {
-                    const colors = (await extractColorsFromImage(
-                      spriteUrl,
-                      POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
-                      true
-                    )) as ColorWithFrequency[];
-                    setAllTargetColors(colors); // Store all colors
+                    const colors = await loadTargetColors(
+                      targetPokemonData,
+                      todayAttempt.isShiny
+                    );
+                    setAllTargetColors(colors);
                     const topColors = colors.slice(
                       0,
                       POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
@@ -461,42 +529,24 @@ export default function GamePage() {
               setTargetPokemon(targetPokemonData);
               setIsShiny(todayAttempt.is_shiny);
 
-              // Load the target colors
+              // Load the target colors — honors admin-locked palette
+              // overrides via loadTargetColors before falling back to
+              // sprite extraction.
               const spriteUrl = getSpriteUrl(
                 targetPokemonData,
                 todayAttempt.is_shiny
               );
               if (spriteUrl) {
-                try {
-                  const colors = (await extractColorsFromImage(
-                    spriteUrl,
-                    POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
-                    true
-                  )) as ColorWithFrequency[];
-                  const topColors = colors.slice(
-                    0,
-                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                  );
-                  setTargetColors(topColors);
-                } catch (error) {
-                  console.error("Failed to extract colors:", error);
-                  const allFallbackColors =
-                    targetPokemonData.colorPalette?.highlights || [];
-                  // Convert fallback colors to ColorWithFrequency format
-                  const allFallbackWithFreq: ColorWithFrequency[] =
-                    allFallbackColors.map((hex, idx) => ({
-                      hex,
-                      frequency: 100 - idx * 10, // Dummy frequencies for fallback
-                      percentage:
-                        ((100 - idx * 10) / allFallbackColors.length) * 100,
-                    }));
-                  setAllTargetColors(allFallbackWithFreq); // Store all colors
-                  const fallbackColors = allFallbackWithFreq.slice(
-                    0,
-                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                  );
-                  setTargetColors(fallbackColors);
-                }
+                const colors = await loadTargetColors(
+                  targetPokemonData,
+                  todayAttempt.is_shiny
+                );
+                setAllTargetColors(colors);
+                const topColors = colors.slice(
+                  0,
+                  POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+                );
+                setTargetColors(topColors);
               }
 
               // Wait for target colors to be loaded before loading guesses
@@ -656,36 +706,13 @@ export default function GamePage() {
         setTargetPokemon(pokemonData);
         const spriteUrl = getSpriteUrl(pokemonData, gameShiny);
         if (spriteUrl) {
-          try {
-            const colors = (await extractColorsFromImage(
-              spriteUrl,
-              POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
-              true
-            )) as ColorWithFrequency[];
-            setAllTargetColors(colors); // Store all colors
-            const topColors = colors.slice(
-              0,
-              POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-            );
-            setTargetColors(topColors);
-          } catch (error) {
-            console.error("Failed to extract colors:", error);
-            const allFallbackColors =
-              pokemonData.colorPalette?.highlights || [];
-            // Convert fallback colors to ColorWithFrequency format
-            const allFallbackWithFreq: ColorWithFrequency[] =
-              allFallbackColors.map((hex, idx) => ({
-                hex,
-                frequency: 100 - idx * 10, // Dummy frequencies for fallback
-                percentage: ((100 - idx * 10) / allFallbackColors.length) * 100,
-              }));
-            setAllTargetColors(allFallbackWithFreq); // Store all colors
-            const fallbackColors = allFallbackWithFreq.slice(
-              0,
-              POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-            );
-            setTargetColors(fallbackColors);
-          }
+          const colors = await loadTargetColors(pokemonData, gameShiny);
+          setAllTargetColors(colors);
+          const topColors = colors.slice(
+            0,
+            POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+          );
+          setTargetColors(topColors);
         }
       }
 
@@ -1476,35 +1503,13 @@ export default function GamePage() {
       setTargetPokemon(pokemonData);
       const spriteUrl = getSpriteUrl(pokemonData, gameShiny);
       if (spriteUrl) {
-        try {
-          const colors = (await extractColorsFromImage(
-            spriteUrl,
-            POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
-            true
-          )) as ColorWithFrequency[];
-          setAllTargetColors(colors); // Store all colors
-          const topColors = colors.slice(
-            0,
-            POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-          );
-          setTargetColors(topColors);
-        } catch (error) {
-          console.error("Failed to extract colors:", error);
-          const allFallbackColors = pokemonData.colorPalette?.highlights || [];
-          // Convert fallback colors to ColorWithFrequency format
-          const allFallbackWithFreq: ColorWithFrequency[] =
-            allFallbackColors.map((hex, idx) => ({
-              hex,
-              frequency: 100 - idx * 10, // Dummy frequencies for fallback
-              percentage: ((100 - idx * 10) / allFallbackColors.length) * 100,
-            }));
-          setAllTargetColors(allFallbackWithFreq); // Store all colors
-          const fallbackColors = allFallbackWithFreq.slice(
-            0,
-            POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-          );
-          setTargetColors(fallbackColors);
-        }
+        const colors = await loadTargetColors(pokemonData, gameShiny);
+        setAllTargetColors(colors);
+        const topColors = colors.slice(
+          0,
+          POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
+        );
+        setTargetColors(topColors);
       }
     }
 

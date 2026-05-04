@@ -43,6 +43,17 @@ export interface ColorPalette {
   background: string;
   text: string;
   highlights: string[];
+  /**
+   * Set to true by the Color Management admin tab whenever an admin saves
+   * a palette for this variant. The game uses this as the signal that the
+   * stored palette is authoritative — it skips runtime sprite extraction
+   * and renders the admin-curated colors directly. Absent / false means
+   * the palette was auto-generated at build time and the game should
+   * re-extract from the live sprite (with the static highlights as the
+   * extraction-failure fallback). Recorded per variant — `colorPalette`
+   * and `shinyColorPalette` carry independent locks.
+   */
+  locked?: boolean;
 }
 
 // Type aliases for Pokemon color palettes
