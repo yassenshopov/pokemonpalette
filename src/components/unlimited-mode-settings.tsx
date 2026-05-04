@@ -1,23 +1,38 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
-import { Settings } from "lucide-react";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { SlidersHorizontal } from "lucide-react";
+
+// Make the difference between selected and unselected unmistakable, even when
+// every option is on (the default for gens). Off items fade out and desaturate;
+// on items get a primary-tinted background and border. `shadow-none` strips
+// the `shadow-xs` baked into the shadcn outline toggle variant so items read
+// as flat surfaces.
+const TOGGLE_ITEM_CLASSES =
+  "shadow-none transition-[opacity,background-color,border-color] " +
+  "data-[state=off]:opacity-40 data-[state=off]:grayscale " +
+  "data-[state=on]:border-primary/50 data-[state=on]:bg-primary/10 " +
+  "hover:data-[state=off]:opacity-100 hover:data-[state=off]:grayscale-0";
+
+// The shadcn ToggleGroup root applies `data-[variant=outline]:shadow-xs`,
+// and tailwind-merge treats data-prefixed and unprefixed shadow utilities as
+// separate conflict groups — so a plain `shadow-none` does NOT cancel it.
+// Match the prefix here so the override actually wins.
+const TOGGLE_GROUP_CLASSES =
+  "w-full shadow-none data-[variant=outline]:shadow-none";
 
 type ShinyPreference = "both" | "shiny" | "normal";
 
@@ -30,232 +45,279 @@ interface UnlimitedModeSettingsDialogProps {
   settings: UnlimitedModeSettings;
   onSettingsChange: (settings: UnlimitedModeSettings) => void;
   availableGenerations: number[];
-  showBadges?: boolean;
+}
+
+const GEN_ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+
+// Grass-type starter from each generation — recognizable, evenly weighted
+// across gens, and rendered as the standard 96px PokeAPI sprite.
+const GEN_REPS: Record<number, { id: number; name: string }> = {
+  1: { id: 1, name: "Bulbasaur" },
+  2: { id: 152, name: "Chikorita" },
+  3: { id: 252, name: "Treecko" },
+  4: { id: 387, name: "Turtwig" },
+  5: { id: 495, name: "Snivy" },
+  6: { id: 650, name: "Chespin" },
+  7: { id: 722, name: "Rowlet" },
+  8: { id: 810, name: "Grookey" },
+  9: { id: 906, name: "Sprigatito" },
+};
+
+const SPRITE_BASE =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
+
+const DEFAULT_SHINY: ShinyPreference = "both";
+
+function spriteFor(id: number, shiny = false): string {
+  return shiny
+    ? `${SPRITE_BASE}/shiny/${id}.png`
+    : `${SPRITE_BASE}/${id}.png`;
+}
+
+function sameSettings(a: UnlimitedModeSettings, b: UnlimitedModeSettings) {
+  if (a.shinyPreference !== b.shinyPreference) return false;
+  if (a.selectedGenerations.length !== b.selectedGenerations.length) return false;
+  const aSet = new Set(a.selectedGenerations);
+  return b.selectedGenerations.every((g) => aSet.has(g));
+}
+
+function isDefault(
+  s: UnlimitedModeSettings,
+  availableGens: number[]
+): boolean {
+  if (s.shinyPreference !== DEFAULT_SHINY) return false;
+  if (s.selectedGenerations.length !== availableGens.length) return false;
+  const set = new Set(s.selectedGenerations);
+  return availableGens.every((g) => set.has(g));
 }
 
 export function UnlimitedModeSettingsDialog({
   settings,
   onSettingsChange,
   availableGenerations,
-  showBadges = true,
 }: UnlimitedModeSettingsDialogProps) {
   const [open, setOpen] = useState(false);
-  const [localSettings, setLocalSettings] = useState<UnlimitedModeSettings>(settings);
+  // Keep a draft so toggling individual options doesn't reset the in-progress
+  // game on every click — we only commit when the dialog closes.
+  const [draft, setDraft] = useState<UnlimitedModeSettings>(settings);
 
-  // Sync local settings when props change
   useEffect(() => {
-    setLocalSettings(settings);
-  }, [settings]);
+    setDraft(settings);
+  }, [settings, open]);
 
-  const handleSave = () => {
-    onSettingsChange(localSettings);
-    setOpen(false);
+  const allSelected =
+    draft.selectedGenerations.length === availableGenerations.length;
+  const filtersActive = !isDefault(settings, availableGenerations);
+
+  const handleOpenChange = (next: boolean) => {
+    if (!next && !sameSettings(draft, settings)) {
+      onSettingsChange(draft);
+    }
+    setOpen(next);
   };
 
-  const handleCancel = () => {
-    setLocalSettings(settings);
-    setOpen(false);
+  const onShinyChange = (value: string) => {
+    if (!value) return;
+    setDraft((prev) => ({ ...prev, shinyPreference: value as ShinyPreference }));
   };
 
-  const toggleGeneration = (gen: number) => {
-    setLocalSettings((prev) => {
-      const newGens = prev.selectedGenerations.includes(gen)
-        ? prev.selectedGenerations.filter((g) => g !== gen)
-        : [...prev.selectedGenerations, gen];
-      
-      // Ensure at least one generation is selected
-      if (newGens.length === 0) {
-        return prev;
-      }
-      
-      return {
-        ...prev,
-        selectedGenerations: newGens,
-      };
-    });
-  };
-
-  const selectAllGenerations = () => {
-    setLocalSettings((prev) => ({
+  const onGensChange = (values: string[]) => {
+    if (values.length === 0) return;
+    setDraft((prev) => ({
       ...prev,
-      selectedGenerations: [...availableGenerations],
+      selectedGenerations: values.map((v) => Number(v)),
     }));
   };
 
-  const clearAllGenerations = () => {
-    // Keep at least one generation selected
-    if (availableGenerations.length > 0) {
-      setLocalSettings((prev) => ({
-        ...prev,
-        selectedGenerations: [availableGenerations[0]],
-      }));
-    }
-  };
-
-  // Get sorted generations for display
-  const sortedGens = [...settings.selectedGenerations].sort((a, b) => a - b);
-
-  // Format shiny preference display
-  const formatShinyPreference = () => {
-    switch (settings.shinyPreference) {
-      case "shiny":
-        return "Shiny Only";
-      case "normal":
-        return "Normal Only";
-      case "both":
-        return "Normal & Shiny";
-      default:
-        return "Normal & Shiny";
-    }
+  const toggleAll = () => {
+    setDraft((prev) => ({
+      ...prev,
+      selectedGenerations: allSelected
+        ? [availableGenerations[0]]
+        : [...availableGenerations],
+    }));
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <Button
-            variant="outline"
-            className="cursor-pointer"
-          >
-            <Settings className="w-4 h-4" />
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[500px]">
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogTrigger asChild>
+        <Button
+          variant="outline"
+          aria-label={
+            filtersActive
+              ? "Open game filters (filters active)"
+              : "Open game filters"
+          }
+          className="cursor-pointer shadow-none relative"
+        >
+          <SlidersHorizontal className="w-4 h-4" aria-hidden="true" />
+          Filters
+          {filtersActive && (
+            <span
+              className="absolute -top-1 -right-1 size-2.5 rounded-full bg-primary ring-2 ring-background"
+              aria-hidden="true"
+            />
+          )}
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle className="font-heading">Unlimited Mode Settings</DialogTitle>
+          <DialogTitle className="font-heading">Game Filters</DialogTitle>
           <DialogDescription>
-            Customize which Pokemon appear in unlimited mode
+            Choose which Pokémon can appear in unlimited mode.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
-          {/* Shiny Preference */}
-          <div className="space-y-3">
-            <Label className="text-base font-heading font-semibold">
-              Shiny Preference
-            </Label>
-            <RadioGroup
-              value={localSettings.shinyPreference}
-              onValueChange={(value) =>
-                setLocalSettings((prev) => ({
-                  ...prev,
-                  shinyPreference: value as ShinyPreference,
-                }))
-              }
+        <div className="space-y-6 py-2">
+          <div className="space-y-2">
+            <Label
+              htmlFor="variant-toggle"
+              className="text-sm font-heading font-medium"
             >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="both" id="both" />
-                <Label htmlFor="both" className="cursor-pointer font-normal">
-                  Both (Normal & Shiny)
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="shiny" id="shiny" />
-                <Label htmlFor="shiny" className="cursor-pointer font-normal">
-                  Shiny Only
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="normal" id="normal" />
-                <Label htmlFor="normal" className="cursor-pointer font-normal">
-                  Normal Only
-                </Label>
-              </div>
-            </RadioGroup>
+              Variant
+            </Label>
+            <ToggleGroup
+              id="variant-toggle"
+              type="single"
+              variant="outline"
+              value={draft.shinyPreference}
+              onValueChange={onShinyChange}
+              className={TOGGLE_GROUP_CLASSES}
+            >
+              <ToggleGroupItem
+                value="both"
+                aria-label="Any variant"
+                className={`h-24 flex-col gap-1 py-2 ${TOGGLE_ITEM_CLASSES}`}
+              >
+                <div className="flex items-center -space-x-4">
+                  <Image
+                    src={spriteFor(25, false)}
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="[image-rendering:pixelated]"
+                    unoptimized
+                  />
+                  <Image
+                    src={spriteFor(25, true)}
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="[image-rendering:pixelated]"
+                    unoptimized
+                  />
+                </div>
+                <span className="text-xs">Any</span>
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="normal"
+                aria-label="Normal only"
+                className={`h-24 flex-col gap-1 py-2 ${TOGGLE_ITEM_CLASSES}`}
+              >
+                <Image
+                  src={spriteFor(25, false)}
+                  alt=""
+                  width={60}
+                  height={60}
+                  className="[image-rendering:pixelated]"
+                  unoptimized
+                />
+                <span className="text-xs">Normal</span>
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="shiny"
+                aria-label="Shiny only"
+                className={`h-24 flex-col gap-1 py-2 data-[state=on]:text-amber-600 dark:data-[state=on]:text-amber-400 ${TOGGLE_ITEM_CLASSES}`}
+              >
+                <Image
+                  src={spriteFor(25, true)}
+                  alt=""
+                  width={60}
+                  height={60}
+                  className="[image-rendering:pixelated]"
+                  unoptimized
+                />
+                <span className="text-xs">Shiny</span>
+              </ToggleGroupItem>
+            </ToggleGroup>
           </div>
 
-          {/* Generation Selection */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <Label className="text-base font-heading font-semibold">
+              <Label
+                htmlFor="gen-toggle"
+                className="text-sm font-heading font-medium"
+              >
                 Generations
               </Label>
-              <div className="flex gap-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={selectAllGenerations}
-                  className="text-xs cursor-pointer"
-                >
-                  Select All
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={clearAllGenerations}
-                  className="text-xs cursor-pointer"
-                >
-                  Clear
-                </Button>
-              </div>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={toggleAll}
+                className="h-7 px-2 text-xs cursor-pointer"
+              >
+                {allSelected ? "Clear" : "Select all"}
+              </Button>
             </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 max-h-[200px] overflow-y-auto border rounded-md p-3">
+            <ToggleGroup
+              id="gen-toggle"
+              type="multiple"
+              variant="outline"
+              value={draft.selectedGenerations.map(String)}
+              onValueChange={onGensChange}
+              className={TOGGLE_GROUP_CLASSES}
+            >
               {availableGenerations.map((gen) => {
-                const genRoman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][gen - 1] || gen.toString();
-                const isChecked = localSettings.selectedGenerations.includes(gen);
+                const rep = GEN_REPS[gen];
+                const roman = GEN_ROMAN[gen - 1] ?? String(gen);
                 return (
-                  <div
+                  <ToggleGroupItem
                     key={gen}
-                    className="flex items-center space-x-2"
+                    value={String(gen)}
+                    aria-label={`Generation ${roman}${
+                      rep ? ` — ${rep.name}` : ""
+                    }`}
+                    className={`h-24 flex-col gap-1 px-0.5 py-2 ${TOGGLE_ITEM_CLASSES}`}
                   >
-                    <Checkbox
-                      id={`gen-${gen}`}
-                      checked={isChecked}
-                      onCheckedChange={() => toggleGeneration(gen)}
-                    />
-                    <Label
-                      htmlFor={`gen-${gen}`}
-                      className="cursor-pointer font-normal text-sm"
-                    >
-                      Gen {genRoman}
-                    </Label>
-                  </div>
+                    {rep ? (
+                      <Image
+                        src={spriteFor(rep.id)}
+                        alt=""
+                        width={56}
+                        height={56}
+                        className="[image-rendering:pixelated]"
+                        unoptimized
+                      />
+                    ) : (
+                      <span className="h-14" />
+                    )}
+                    <span className="text-[11px] font-heading tabular-nums leading-none">
+                      {roman}
+                    </span>
+                  </ToggleGroupItem>
                 );
               })}
-            </div>
+            </ToggleGroup>
+            <p
+              className="text-xs text-muted-foreground tabular-nums"
+              aria-live="polite"
+            >
+              {draft.selectedGenerations.length} of{" "}
+              {availableGenerations.length} selected
+            </p>
           </div>
         </div>
 
-        <div className="flex justify-end gap-2 pt-4 border-t">
+        <DialogFooter>
           <Button
-            variant="outline"
-            onClick={handleCancel}
-            className="cursor-pointer"
+            onClick={() => handleOpenChange(false)}
+            className="cursor-pointer shadow-none"
           >
-            Cancel
+            Done
           </Button>
-          <Button
-            onClick={handleSave}
-            variant="default"
-            className="cursor-pointer"
-          >
-            Save Settings
-          </Button>
-        </div>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
-    {showBadges && (
-      <div className="flex items-center gap-2 flex-wrap">
-        <Badge variant="secondary" className="text-xs">
-          {formatShinyPreference()}
-        </Badge>
-        {sortedGens.length === availableGenerations.length ? (
-          <Badge variant="secondary" className="text-xs">
-            All Generations
-          </Badge>
-        ) : (
-          sortedGens.map((gen) => {
-            const genRoman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][gen - 1] || gen.toString();
-            return (
-              <Badge key={gen} variant="secondary" className="text-xs">
-                Gen {genRoman}
-              </Badge>
-            );
-          })
-        )}
-      </div>
-    )}
-  </div>
   );
 }
-
