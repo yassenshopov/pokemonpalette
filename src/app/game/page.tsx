@@ -37,14 +37,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { LoaderOverlay } from "@/components/loader-overlay";
+import { RotatingTip } from "@/components/rotating-tip";
 import { POKEMON_CONSTANTS } from "@/constants/pokemon";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
@@ -54,8 +48,8 @@ import {
   Lightbulb,
   Flag,
   Sparkles,
-  Search,
   Calendar,
+  HelpCircle,
   Infinity as InfinityIcon,
   Users,
 } from "lucide-react";
@@ -65,6 +59,8 @@ import { AnimatedDotGrid } from "@/components/animated-dot-grid";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -320,8 +316,12 @@ export default function GamePage() {
   const [revealedHints, setRevealedHints] = useState<number[]>([]);
   const [hintCooldown, setHintCooldown] = useState(0); // Cooldown in seconds (0-5)
   const [showGameResultDialog, setShowGameResultDialog] = useState(false);
-  const [showSearchDialog, setShowSearchDialog] = useState(false);
   const [showGiveUpDialog, setShowGiveUpDialog] = useState(false);
+  // The "How to Play" modal opens automatically on a player's first
+  // visit and can be re-opened any time via the help icon button. We
+  // persist a single boolean marker in localStorage so we don't pester
+  // returning players. See `HOW_TO_PLAY_STORAGE_KEY` below.
+  const [showHowToPlayDialog, setShowHowToPlayDialog] = useState(false);
   const hintRefs = useRef<(HTMLDivElement | null)[]>([]);
   const guessRefs = useRef<(HTMLDivElement | null)[]>([]);
   const colorBarRef = useRef<HTMLDivElement | null>(null);
@@ -332,6 +332,7 @@ export default function GamePage() {
   const MAX_ATTEMPTS = 4;
 
   const PENDING_ATTEMPTS_KEY = "pokemon-palette-pending-attempts";
+  const HOW_TO_PLAY_STORAGE_KEY = "pokemon-palette-game-tutorial-seen";
 
   // Alias the shared helper locally so the existing getTextColor(...) call
   // sites don't all need to churn. The real implementation lives in
@@ -376,6 +377,42 @@ export default function GamePage() {
       setCheckingAuth(true);
     }
   }, [mode]);
+
+  // Auto-open the How to Play modal on a player's first visit. We default
+  // the state to closed so SSR markup matches the client first paint;
+  // only after mount do we read localStorage and possibly flip it open.
+  // The marker isn't written here — we wait until the player explicitly
+  // dismisses the modal so a quick refresh still shows it once.
+  // Multiplayer mode renders its own component flow, so skip there.
+  useEffect(() => {
+    if (mode === "multiplayer") return;
+    try {
+      const seen =
+        typeof window !== "undefined"
+          ? window.localStorage.getItem(HOW_TO_PLAY_STORAGE_KEY)
+          : "true";
+      if (!seen) {
+        setShowHowToPlayDialog(true);
+      }
+    } catch {
+      // localStorage may be unavailable (private mode, etc.). Fail
+      // silently — the help button is still always available.
+    }
+    // Intentionally run once on mount. Subsequent mode changes shouldn't
+    // re-trigger the auto-open; the help button covers that case.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleHowToPlayOpenChange = (open: boolean) => {
+    setShowHowToPlayDialog(open);
+    if (!open) {
+      try {
+        window.localStorage.setItem(HOW_TO_PLAY_STORAGE_KEY, "true");
+      } catch {
+        // ignore storage failures
+      }
+    }
+  };
 
   // Check if user has already played today's daily game
   useEffect(() => {
@@ -1499,11 +1536,6 @@ export default function GamePage() {
     }
   };
 
-  const handleGuessWithDialog = (pokemonId: number) => {
-    handleGuess(pokemonId);
-    setShowSearchDialog(false);
-  };
-
   const resetGame = async () => {
     // Don't allow reset for daily mode if already completed
     if (mode === "daily" && status !== "playing") {
@@ -2039,12 +2071,38 @@ export default function GamePage() {
                     )}
                   </div>
                   <div className="flex items-center gap-2">
+                    {/* Re-opens the How to Play modal. Lives in the
+                        action row alongside the other game-context
+                        actions so first-time players (and people who
+                        forget the rules) have a consistent place to
+                        find it. */}
+                    <Button
+                      onClick={() => setShowHowToPlayDialog(true)}
+                      variant="outline"
+                      size="icon"
+                      aria-label="How to play"
+                      className="cursor-pointer"
+                    >
+                      <HelpCircle className="w-4 h-4" />
+                    </Button>
                     {/* Daily mode: leaderboard lives behind a button now
                         rather than as an inline section at the bottom of
                         the page. Same row as Give Up so it sits with the
                         other game-context actions instead of being
-                        below-the-fold scroll content. */}
-                    {mode === "daily" && <GameLeaderboardDialog />}
+                        below-the-fold scroll content.
+
+                        Gated on `status !== "playing"` so the button only
+                        appears once today's daily run is finished
+                        (won/lost/given-up). Mid-game visitors — including
+                        returning players who haven't completed today —
+                        shouldn't see leaderboard standings before they've
+                        played. `checkTodayAttempt` already restores
+                        previously-completed runs to "won"/"lost", and the
+                        signed-out localStorage path (PENDING_ATTEMPTS_KEY)
+                        does the same, so this gate works for both. */}
+                    {mode === "daily" && status !== "playing" && (
+                      <GameLeaderboardDialog />
+                    )}
                     {mode === "unlimited" && (
                       <Button
                         onClick={resetGame}
@@ -2064,6 +2122,66 @@ export default function GamePage() {
                 </div>
               </div>
             </div>
+          )}
+
+          {/* How to Play Dialog. Auto-opens once for first-time
+              players (see the mount effect that reads localStorage)
+              and is also reachable any time via the help icon button
+              in the action row above. */}
+          {mode !== "multiplayer" && (
+            <Dialog
+              open={showHowToPlayDialog}
+              onOpenChange={handleHowToPlayOpenChange}
+            >
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-lg flex items-center gap-2">
+                    <Sparkles className="w-4 h-4" />
+                    How to Play
+                  </DialogTitle>
+                  <DialogDescription>
+                    Guess the Pokemon based on its color palette
+                  </DialogDescription>
+                </DialogHeader>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground mt-0.5">•</span>
+                    <span>
+                      You have <strong>{MAX_ATTEMPTS} attempts</strong> to
+                      guess the correct Pokemon
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground mt-0.5">•</span>
+                    <span>
+                      Use the color palette at the top to identify the Pokemon
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground mt-0.5">•</span>
+                    <span>
+                      After each guess, you&apos;ll see how similar your guess
+                      is to the target
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground mt-0.5">•</span>
+                    <span>
+                      Use hints to narrow down your options (up to 3 hints
+                      available)
+                    </span>
+                  </li>
+                </ul>
+                <DialogFooter>
+                  <Button
+                    onClick={() => handleHowToPlayOpenChange(false)}
+                    className="w-full sm:w-auto cursor-pointer"
+                  >
+                    Got it
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           )}
 
           {/* Game Status Dialog (daily/unlimited only) */}
@@ -2094,304 +2212,83 @@ export default function GamePage() {
             />
           )}
 
-          {/* Two Column Layout: Search (Left) and Guesses (Right) - 50/50 Split (daily/unlimited only) */}
-          {mode !== "multiplayer" && <div className="mb-6 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Left Column: Search */}
-            <div className="lg:col-span-1">
-              <div className="space-y-3 p-4 md:p-6">
-                {status === "playing" ? (
-                  <>
-                    {/* Desktop: Show search directly */}
-                    <div className="hidden lg:block">
-                      <PokemonSearch
-                        pokemonList={allPokemonList}
-                        selectedPokemon={null}
-                        onPokemonSelect={handleGuess}
-                        isShiny={isShiny === true}
-                        guessedPokemonIds={guesses.map((g) => g.pokemonId)}
-                        selectedGenerations={
-                          mode === "unlimited"
-                            ? unlimitedSettings.selectedGenerations
-                            : undefined
-                        }
-                        placeholder="Enter Pokemon name or number..."
-                      />
-                      <p className="text-xs text-muted-foreground mt-2 text-center">
-                        💡 Tip: Search works in multiple languages (日本語,
-                        Français, Deutsch, Español, and more!)
-                      </p>
-                    </div>
-                    {/* Mobile: Show button to open dialog */}
-                    <div className="lg:hidden">
-                      <Button
-                        onClick={() => setShowSearchDialog(true)}
-                        className="w-full cursor-pointer"
-                        variant="outline"
-                      >
-                        <Search className="w-4 h-4 mr-2" />
-                        Search Pokemon
-                      </Button>
-                      <Dialog
-                        open={showSearchDialog}
-                        onOpenChange={setShowSearchDialog}
-                      >
-                        <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-lg">
-                          <DialogHeader>
-                            <DialogTitle>Search Pokemon</DialogTitle>
-                          </DialogHeader>
-                          <div className="mt-4">
-                            <PokemonSearch
-                              pokemonList={allPokemonList}
-                              selectedPokemon={null}
-                              onPokemonSelect={handleGuessWithDialog}
-                              isShiny={isShiny === true}
-                              guessedPokemonIds={guesses.map(
-                                (g) => g.pokemonId
-                              )}
-                              selectedGenerations={
-                                mode === "unlimited"
-                                  ? unlimitedSettings.selectedGenerations
-                                  : undefined
-                              }
-                              placeholder="Enter Pokemon name or number..."
-                            />
-                            <p className="text-xs text-muted-foreground mt-2 text-center">
-                              💡 Tip: Search works in multiple languages
-                              (日本語, Français, Deutsch, Español, and more!)
-                            </p>
-                          </div>
-                        </DialogContent>
-                      </Dialog>
-                    </div>
+          {/* Single full-width column: search + tip on top, guesses below.
+              We dropped the old `lg:grid-cols-2` split (and the mobile-only
+              "Search Pokemon" dialog that worked around the cramped narrow
+              column) in favor of a vertical flex stack — guess cards now
+              breathe at every breakpoint and the search is always inline. */}
+          {mode !== "multiplayer" && <div className="mb-6 w-full max-w-xl flex flex-col gap-6">
+            <div className="space-y-3 p-4 md:p-6">
+              {status === "playing" && (
+                <>
+                  <PokemonSearch
+                    pokemonList={allPokemonList}
+                    selectedPokemon={null}
+                    onPokemonSelect={handleGuess}
+                    isShiny={isShiny === true}
+                    guessedPokemonIds={guesses.map((g) => g.pokemonId)}
+                    selectedGenerations={
+                      mode === "unlimited"
+                        ? unlimitedSettings.selectedGenerations
+                        : undefined
+                    }
+                    placeholder="Enter Pokemon name or number..."
+                  />
+                  <RotatingTip />
 
-                    {loadingGuess && (
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Analyzing guess...
-                      </p>
-                    )}
-                  </>
-                ) : (
-                  <div className="flex flex-col justify-center min-h-[400px] rounded-lg border bg-card">
-                    <div className="space-y-4 px-4">
-                      <p className="text-sm text-muted-foreground text-center">
-                        Want to keep playing? Try unlimited mode with random
-                        Pokemon!
-                      </p>
-                      <Button
-                        onClick={async () => {
-                          // Reset all game state first
-                          setGuesses([]);
-                          setAttempts(0);
-                          setStatus("playing");
-                          setRevealedHints([]);
-                          setHintCooldown(0);
-                          setTargetPokemon(null);
-                          setTargetPokemonId(null);
-                          setTargetColors([]);
-                          setAllTargetColors([]);
-                          generatedHintsRef.current = [];
-                          // Switch to unlimited mode
-                          setMode("unlimited");
-                          // Initialize new game in unlimited mode
-                          setLoading(true);
-
-                          // Determine shiny status for unlimited mode
-                          let gameShiny: boolean;
-                          if (unlimitedSettings.shinyPreference === "shiny") {
-                            gameShiny = true;
-                          } else if (
-                            unlimitedSettings.shinyPreference === "normal"
-                          ) {
-                            gameShiny = false;
-                          } else {
-                            gameShiny = getRandomShiny();
-                          }
-                          setIsShiny(gameShiny);
-
-                          // Get filtered Pokemon list for unlimited mode
-                          const filteredPokemonList = allPokemonList.filter(
-                            (p) => {
-                              const generation = getGenerationFromId(p.id);
-                              return unlimitedSettings.selectedGenerations.includes(
-                                generation
-                              );
-                            }
-                          );
-
-                          // Choose random Pokemon
-                          let pokemonId: number;
-                          if (filteredPokemonList.length === 0) {
-                            const randomIndex = Math.floor(
-                              Math.random() * allPokemonList.length
-                            );
-                            pokemonId = allPokemonList[randomIndex].id;
-                          } else {
-                            const randomIndex = Math.floor(
-                              Math.random() * filteredPokemonList.length
-                            );
-                            pokemonId = filteredPokemonList[randomIndex].id;
-                          }
-
-                          setTargetPokemonId(pokemonId);
-                          const pokemonData = await getPokemonById(pokemonId);
-
-                          if (pokemonData) {
-                            setTargetPokemon(pokemonData);
-                            const spriteUrl = getSpriteUrl(
-                              pokemonData,
-                              gameShiny
-                            );
-                            if (spriteUrl) {
-                              try {
-                                const colors = (await extractColorsFromImage(
-                                  spriteUrl,
-                                  POKEMON_CONSTANTS.COLORS_TO_EXTRACT,
-                                  true
-                                )) as ColorWithFrequency[];
-                                setAllTargetColors(colors); // Store all colors
-                                const topColors = colors.slice(
-                                  0,
-                                  POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                                );
-                                setTargetColors(topColors);
-                              } catch (error) {
-                                console.error(
-                                  "Failed to extract colors:",
-                                  error
-                                );
-                                const allFallbackColors =
-                                  pokemonData.colorPalette?.highlights || [];
-                                const allFallbackWithFreq: ColorWithFrequency[] =
-                                  allFallbackColors.map((hex, idx) => ({
-                                    hex,
-                                    frequency: 100 - idx * 10,
-                                    percentage:
-                                      ((100 - idx * 10) /
-                                        allFallbackColors.length) *
-                                      100,
-                                  }));
-                                setAllTargetColors(allFallbackWithFreq); // Store all colors
-                                const fallbackColors =
-                                  allFallbackWithFreq.slice(
-                                    0,
-                                    POKEMON_CONSTANTS.PALETTE_COLORS_COUNT
-                                  );
-                                setTargetColors(fallbackColors);
-                              }
-                            }
-                          }
-                          setLoading(false);
-                        }}
-                        className="w-full cursor-pointer"
-                      >
-                        <InfinityIcon className="w-4 h-4 mr-2" />
-                        Play Unlimited Mode
-                      </Button>
-                    </div>
-                  </div>
-                )}
-
-                {/* Game Rules Panel - Show when playing or game hasn't started, hide when game has ended */}
-                {status !== "won" && status !== "lost" && (
-                  <Card className="mt-4">
-                    <CardHeader>
-                      <CardTitle className="text-lg flex items-center gap-2">
-                        <Sparkles className="w-4 h-4" />
-                        How to Play
-                      </CardTitle>
-                      <CardDescription>
-                        Guess the Pokemon based on its color palette
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start gap-2">
-                          <span className="text-muted-foreground mt-0.5">
-                            •
-                          </span>
-                          <span>
-                            You have <strong>{MAX_ATTEMPTS} attempts</strong> to
-                            guess the correct Pokemon
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-muted-foreground mt-0.5">
-                            •
-                          </span>
-                          <span>
-                            Use the color palette at the top to identify the
-                            Pokemon
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-muted-foreground mt-0.5">
-                            •
-                          </span>
-                          <span>
-                            After each guess, you&apos;ll see how similar your
-                            guess is to the target
-                          </span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-muted-foreground mt-0.5">
-                            •
-                          </span>
-                          <span>
-                            Use hints to narrow down your options (up to 3 hints
-                            available)
-                          </span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
+                  {loadingGuess && (
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Analyzing guess...
+                    </p>
+                  )}
+                </>
+              )}
             </div>
 
-            {/* Right Column: Previous Guesses */}
-            <div className="lg:col-span-1">
-              <div className="space-y-3 p-4 md:p-6">
-                <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto">
-                  {Array.from({ length: MAX_ATTEMPTS }).map((_, index) => {
-                    const guess = guesses[index];
-                    const isCorrect =
-                      guess && guess.pokemonId === targetPokemonId;
-                    return guess ? (
-                      <GuessCard
-                        key={index}
-                        guess={guess}
-                        index={index}
-                        isCorrect={isCorrect || false}
-                        onRef={(el) => {
-                          guessRefs.current[index] = el;
-                        }}
-                      />
-                    ) : (
-                      <div
-                        key={index}
-                        ref={(el) => {
-                          guessRefs.current[index] = el;
-                        }}
-                        className="flex items-stretch rounded-lg border bg-card/50 opacity-50 flex-shrink-0 overflow-hidden"
-                      >
-                        <div className="flex-1 min-w-0 flex items-center gap-4 p-3">
-                          {/* Empty placeholder - Image */}
-                          <div className="relative flex-shrink-0 w-16 h-16 bg-muted rounded" />
+            {/* Guesses list — at most MAX_ATTEMPTS (4) cards, so we let
+                them stack naturally without a max-height/scroll cap. */}
+            <div className="space-y-3 px-4 md:px-6">
+              <div className="flex flex-col gap-3">
+                {Array.from({ length: MAX_ATTEMPTS }).map((_, index) => {
+                  const guess = guesses[index];
+                  const isCorrect =
+                    guess && guess.pokemonId === targetPokemonId;
+                  return guess ? (
+                    <GuessCard
+                      key={index}
+                      guess={guess}
+                      index={index}
+                      isCorrect={isCorrect || false}
+                      onRef={(el) => {
+                        guessRefs.current[index] = el;
+                      }}
+                    />
+                  ) : (
+                    <div
+                      key={index}
+                      ref={(el) => {
+                        guessRefs.current[index] = el;
+                      }}
+                      className="flex items-stretch rounded-lg border bg-card/50 opacity-50 flex-shrink-0 overflow-hidden"
+                    >
+                      <div className="flex-1 min-w-0 flex items-center gap-4 p-3">
+                        {/* Empty placeholder - Image */}
+                        <div className="relative flex-shrink-0 w-16 h-16 bg-muted rounded" />
 
-                          {/* Empty placeholder - Name and Match */}
-                          <div className="flex-1 min-w-0">
-                            <div className="h-4 bg-muted rounded mb-2 w-24" />
-                            <div className="h-3 bg-muted rounded w-16" />
-                          </div>
+                        {/* Empty placeholder - Name and Match */}
+                        <div className="flex-1 min-w-0">
+                          <div className="h-4 bg-muted rounded mb-2 w-24" />
+                          <div className="h-3 bg-muted rounded w-16" />
                         </div>
-
-                        {/* Empty placeholder - Colors: matches the flush-right
-                            swatch column used in filled guess cards. */}
-                        <div className="flex-shrink-0 w-10 self-stretch bg-muted" />
                       </div>
-                    );
-                  })}
-                </div>
+
+                      {/* Empty placeholder - Colors: width matches the
+                          filled GuessCard swatch column so empty + filled
+                          slots line up at the new full-width layout. */}
+                      <div className="flex-shrink-0 w-16 self-stretch bg-muted" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>}

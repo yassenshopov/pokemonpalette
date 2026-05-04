@@ -96,8 +96,9 @@ export function GuessCard({ guess, isCorrect = false, onRef }: GuessCardProps) {
 
       {/* Swatch column — flush to the card's top, bottom, and right edges so
           it reads as one continuous stripe (mirrors the big target palette
-          bar at the top of the page). */}
-      <div className="flex-shrink-0 flex flex-col w-10 self-stretch">
+          bar at the top of the page). Width is sized to read as a real
+          color band at the page's full-width layout. */}
+      <div className="flex-shrink-0 flex flex-col w-16 self-stretch">
         {guess.colors.map((color, colorIndex) => (
           <div
             key={colorIndex}
