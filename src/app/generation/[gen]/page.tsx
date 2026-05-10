@@ -1,7 +1,9 @@
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { getPokemonMetadataByGeneration, getAllGenerations, batchGetPokemonById } from "@/lib/pokemon";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PokemonPaletteExploreCard } from "@/components/pokemon-palette-explore-card";
+import { AdUnit, ADSENSE_SLOTS } from "@/components/analytics/google-adsense";
 import Link from "next/link";
 import { SEOContent } from "@/components/seo-content";
 
@@ -55,8 +57,18 @@ export default async function GenerationPage({
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-          {pokemon.map((mon) => (
-            <PokemonPaletteExploreCard key={mon.id} metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
+          {pokemon.map((mon, i) => (
+            <Fragment key={mon.id}>
+              <PokemonPaletteExploreCard metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
+              {(i === 11 || (i === 35 && pokemon.length > 35)) && (
+                <div className="col-span-full">
+                  <AdUnit
+                    slot={ADSENSE_SLOTS.listingInFeed}
+                    style={{ display: "block", minHeight: 120 }}
+                  />
+                </div>
+              )}
+            </Fragment>
           ))}
         </div>
 

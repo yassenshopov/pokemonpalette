@@ -7,6 +7,7 @@ import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
 import { Footer } from "@/components/footer";
+import { AdUnit, ADSENSE_SLOTS } from "@/components/analytics/google-adsense";
 import { PokemonMetadata } from "@/types/pokemon";
 
 const CollapsibleSidebar = dynamic(
@@ -161,6 +162,11 @@ export function PokemonPageClient({ pokemonMetadata, breadcrumbs }: PokemonPageC
               <ThemeExporter
                 colors={pokemonColors}
                 pokemonName={pokemonMetadata.name}
+              />
+              <AdUnit
+                slot={ADSENSE_SLOTS.pokemonDetailInArticle}
+                className="mt-8 px-4 md:px-12"
+                style={{ display: "block", minHeight: 280 }}
               />
             </>
           )}

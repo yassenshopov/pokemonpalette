@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useTransition } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useState, useTransition } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { PokemonPaletteExploreCard } from "@/components/pokemon-palette-explore-card";
+import { AdUnit, ADSENSE_SLOTS } from "@/components/analytics/google-adsense";
 import type { PokemonMetadata, PokemonType } from "@/types/pokemon";
 
 const ALL_TYPES: PokemonType[] = [
@@ -585,13 +586,23 @@ export function ExploreClient({
       ) : (
         <>
           <ul className="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
-            {visible.map((meta) => (
-              <li key={meta.id}>
-                <PokemonPaletteExploreCard
-                  metadata={meta}
-                  pokemonData={initialDataMap.get(meta.id)}
-                />
-              </li>
+            {visible.map((meta, i) => (
+              <Fragment key={meta.id}>
+                <li>
+                  <PokemonPaletteExploreCard
+                    metadata={meta}
+                    pokemonData={initialDataMap.get(meta.id)}
+                  />
+                </li>
+                {(i === 11 || (i === 35 && visible.length > 35)) && (
+                  <li className="col-span-full">
+                    <AdUnit
+                      slot={ADSENSE_SLOTS.exploreInFeed}
+                      style={{ display: "block", minHeight: 120 }}
+                    />
+                  </li>
+                )}
+              </Fragment>
             ))}
           </ul>
 

@@ -11,6 +11,7 @@ import {
   GoogleAnalytics,
   GoogleAnalyticsIdentity,
 } from "@/components/analytics/google-analytics";
+import { GoogleAdSense } from "@/components/analytics/google-adsense";
 import { GeoCapture } from "@/components/analytics/geo-capture";
 import { SidebarStateProvider } from "@/components/sidebar-state-provider";
 import {
@@ -170,6 +171,7 @@ export default async function RootLayout({
   );
 
   const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
+  const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -200,6 +202,7 @@ export default async function RootLayout({
           </ColorblindProvider>
         </ThemeProvider>
         <GoogleAnalytics measurementId={ga4Id} />
+        <GoogleAdSense clientId={adsenseClientId} />
       </body>
     </html>
   );
