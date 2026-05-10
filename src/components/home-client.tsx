@@ -6,6 +6,7 @@ import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
 import { Footer } from "@/components/footer";
+import { AdUnit, ADSENSE_SLOTS } from "@/components/analytics/google-adsense";
 
 // Lazy-load components that aren't needed for the initial render (only appear
 // after a color is extracted or on specific interactions). Keeps First Load JS
@@ -150,6 +151,18 @@ export function HomeClient() {
                 secondaryColor={pokemonColors[1] || pokemonColors[0]}
               />
               <ThemeExporter colors={pokemonColors} />
+              {/* Below-the-fold ad on `/`. Only mounts once the user has
+                  actually generated a palette (pokemonColors.length > 0
+                  gate above), which keeps the tool itself ad-free on
+                  first load and respects AdSense policy around app-like
+                  interactive surfaces. allowOnDeniedRoute opts past the
+                  global guard that suppresses ads on `/`. */}
+              <AdUnit
+                slot={ADSENSE_SLOTS.homeBelowTool}
+                allowOnDeniedRoute
+                className="mt-8 px-4 md:px-12"
+                style={{ display: "block", minHeight: 280 }}
+              />
             </>
           )}
           <Footer />

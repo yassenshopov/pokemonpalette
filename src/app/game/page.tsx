@@ -57,6 +57,7 @@ import {
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
 import { AnimatedDotGrid } from "@/components/animated-dot-grid";
+import { AdUnit, ADSENSE_SLOTS } from "@/components/analytics/google-adsense";
 import {
   Dialog,
   DialogContent,
@@ -2520,6 +2521,19 @@ export default function GamePage() {
               user intent and the page ends on something more useful
               than a leaderboard band. */}
         </div>
+        {/* Results-screen ad. Only mounts after the game ends in daily
+            or unlimited mode, never during gameplay and never in
+            multiplayer (active competitive flow). allowOnDeniedRoute
+            opts past the global `/game` deny-list since this is a
+            deliberate, post-interaction placement. */}
+        {mode !== "multiplayer" && status !== "playing" && (
+          <AdUnit
+            slot={ADSENSE_SLOTS.gameResults}
+            allowOnDeniedRoute
+            className="w-full max-w-4xl mx-auto mt-4 mb-8 px-4 md:px-8"
+            style={{ display: "block", minHeight: 280 }}
+          />
+        )}
         <Footer />
       </div>
     </main>

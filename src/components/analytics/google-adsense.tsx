@@ -20,6 +20,13 @@ export const ADSENSE_SLOTS = {
   pokemonDetailInArticle: process.env.NEXT_PUBLIC_ADSENSE_SLOT_DETAIL ?? "",
   listingInFeed: process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING ?? "",
   exploreInFeed: process.env.NEXT_PUBLIC_ADSENSE_SLOT_EXPLORE ?? "",
+  // `/` — rendered only once the palette tool has produced a result, well
+  // below the interactive area. Separate slot so RPM can be measured
+  // independently of the SEO content pages.
+  homeBelowTool: process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME ?? "",
+  // `/game` — rendered only on the post-game results screen, never during
+  // gameplay or in multiplayer.
+  gameResults: process.env.NEXT_PUBLIC_ADSENSE_SLOT_GAME ?? "",
 };
 
 const AD_DENIED_PREFIXES = ["/saved-palettes", "/account", "/api-access", "/admin", "/game"];
@@ -106,6 +113,15 @@ type AdUnitProps = {
    * sizing for fixed). Defaults to `{ display: "block" }`.
    */
   style?: React.CSSProperties;
+  /**
+   * Escape hatch to render on a deny-listed route (the home tool and
+   * `/game`). Pass `true` only for deliberate, below-the-fold or
+   * post-interaction placements that the global guard would otherwise
+   * suppress. Routes that should *never* show ads (admin, account,
+   * /game/pokedex, etc.) are not affected by this flag — they're
+   * filtered by a separate, harder check elsewhere if added later.
+   */
+  allowOnDeniedRoute?: boolean;
 };
 
 /**
@@ -135,13 +151,14 @@ export function AdUnit({
   layoutKey,
   className,
   style,
+  allowOnDeniedRoute = false,
 }: AdUnitProps) {
   const resolvedClientId =
     clientId ??
     process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ??
     DEFAULT_ADSENSE_CLIENT_ID;
 
-  const adsAllowed = useShouldRenderAds();
+  const adsAllowed = useShouldRenderAds() || allowOnDeniedRoute;
   const pathname = usePathname();
   const pushedKeyRef = useRef<string | null>(null);
 
