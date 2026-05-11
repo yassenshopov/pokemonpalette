@@ -1,20 +1,33 @@
 # robots.txt for pokemonpalette.com
+#
+# Rule precedence note: Google uses the longest (most specific) matching
+# Allow/Disallow rule, so the explicit Allow entries below win over the
+# broader Disallow entries for paths they cover.
 
-# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
-# Disallow admin and private areas
-Disallow: /admin
-Disallow: /account
-Disallow: /api
+# Googlebot needs static assets (CSS / JS / fonts) under /_next/static/ to
+# render pages for indexing and Core Web Vitals. Allow them explicitly even
+# though /_next/ as a whole is disallowed.
+Allow: /_next/static/
+Allow: /_next/image
 
-# Allow dynamic Open Graph images so they surface in image search / previews
+# Dynamic Open Graph images are referenced by every Pokemon page's
+# <meta property="og:image">. They must be crawlable so social platforms
+# and image search can fetch them.
 Allow: /api/og/
 
-# Disallow Next.js internal routes (if any)
+# Private / non-public surfaces
+Disallow: /admin
+Disallow: /account
+
+# Block API routes by default; /api/og/ above is the only exception.
+Disallow: /api/
+
+# Block other Next.js internals (build manifests, RSC payloads, etc).
+# Static assets are re-allowed above.
 Disallow: /_next/
 
-# Sitemap location
+# Sitemap
 Sitemap: https://www.pokemonpalette.com/sitemap.xml
-

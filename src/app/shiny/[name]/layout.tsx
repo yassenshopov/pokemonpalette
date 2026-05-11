@@ -16,6 +16,14 @@ export async function generateMetadata({
   }
 
   const ogImageUrl = `https://www.pokemonpalette.com/api/og/shiny/${name.toLowerCase()}`;
+  // Shiny variants are structurally identical to the normal Pokemon page
+  // (same template, same data, just a different palette toggle). To stop
+  // them competing for ranking signals and showing up in GSC's "Crawled -
+  // not indexed" bucket, we (a) point the canonical to the normal page so
+  // any inbound link equity flows to /[name], and (b) emit a robots
+  // `noindex, follow` so Google drops the /shiny/ URL from the index but
+  // still follows internal links.
+  const canonicalUrl = `https://www.pokemonpalette.com/${name.toLowerCase()}`;
 
   return {
     title: `Shiny ${pokemonMetadata.name} - PokémonPalette`,
@@ -44,7 +52,15 @@ export async function generateMetadata({
     },
     metadataBase: new URL("https://www.pokemonpalette.com"),
     alternates: {
-      canonical: `https://www.pokemonpalette.com/shiny/${name.toLowerCase()}`,
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+      },
     },
   };
 }

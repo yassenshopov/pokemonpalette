@@ -70,21 +70,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Add a route for each Pokemon (lowercase name)
+  // Add a route for each Pokemon (lowercase name).
+  // We deliberately do NOT include /shiny/[name] URLs here. Shiny pages are
+  // structurally identical to /[name] and now carry rel="canonical" pointing
+  // back to the normal page plus a `noindex, follow` robots directive.
+  // Listing them in the sitemap would send Google a conflicting signal
+  // ("please index this") that contradicts the canonical + noindex hints, so
+  // we leave them out and let crawlers reach them organically through
+  // internal links.
   pokemon.forEach((mon) => {
-    // Normal Pokemon page
     routes.push({
       url: `${baseUrl}/${mon.name.toLowerCase()}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
-    });
-    // Shiny Pokemon page
-    routes.push({
-      url: `${baseUrl}/shiny/${mon.name.toLowerCase()}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
     });
   });
 
