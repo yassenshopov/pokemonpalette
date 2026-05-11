@@ -1,271 +1,151 @@
-# 🎨 PokémonPalette
+# PokémonPalette
 
-> The perfect palette for your Next.js applications
+Extract color palettes from every Pokémon sprite — and play a daily Pokémon-guessing game built around them.
 
-A modern, production-ready boilerplate that combines the best ingredients for building amazing web applications. Just like a palette transforms colors into beautiful art, PokémonPalette transforms your development process into something extraordinary.
+Live at **[pokemonpalette.com](https://www.pokemonpalette.com)**.
 
-## 🌟 What's Included
+## Features
 
-This boilerplate comes pre-configured with all the essential tools and components you need to start building immediately:
+- **Palette extraction** — dominant colors for every Pokémon (1000+), including shiny variants
+- **Daily game** — Wordle-style guessing game using palette similarity as the hint signal
+- **Unlimited mode** — same game, no daily limit, configurable palette size
+- **Multiplayer** — host or join a room and race a friend on the same Pokémon
+- **Pokédex** — track which Pokémon you've caught across modes
+- **Saved palettes** — bookmark and export your favorites
+- **Public API** — paid `/api/v1/palettes` endpoint (Stripe-gated, API-key auth)
+- **Admin panel** — users, palettes, daily overrides, email campaigns, geo insights
+- **Accessibility** — colorblind modes, keyboard shortcuts, skip links, WCAG-compliant viewport
 
-- **⚡ Next.js 15** - The latest React framework with App Router
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework
-- **🧩 shadcn/ui** - Beautiful, accessible component library
-- **🔐 Clerk** - Complete authentication solution
-- **🗄️ Supabase** - PostgreSQL database with real-time features
-- **🔧 Prisma** - Type-safe database ORM with schema management
-- **🌙 Dark Mode** - Built-in theme switching
-- **📱 Mobile First** - Responsive design with collapsible sidebar
-- **⚙️ TypeScript** - Type-safe development
+## Tech stack
 
-## 🚀 Quick Start
+
+| Layer      | Tools                                                             |
+| ---------- | ----------------------------------------------------------------- |
+| Framework  | Next.js 15 (App Router, Turbopack), React 19, TypeScript          |
+| UI         | Tailwind CSS 4, shadcn/ui (Radix), Lucide, Sonner, GSAP, Recharts |
+| Auth       | Clerk                                                             |
+| Database   | Supabase (Postgres) + Prisma ORM (introspection-only)             |
+| Email      | Resend                                                            |
+| Payments   | Stripe (Checkout + webhooks)                                      |
+| Rate limit | Upstash Redis                                                     |
+| Analytics  | GA4, Google AdSense                                               |
+
+
+Schema lives in `supabase/migrations/` (source of truth, includes RLS + RPCs). Prisma is used only for typed queries — never for migrations.
+
+## Getting started
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- A Supabase project (database + auth)
+- A Clerk app (auth) — optional in dev; the app no-ops auth when keys are absent
 
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/your-username/pokemonpalette.git
-   cd pokemonpalette
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables (Optional)**
-
-   ```bash
-   cp .env.example .env.local
-   ```
-
-   Add your Clerk keys to `.env.local`:
-
-   ```env
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key_here
-   CLERK_SECRET_KEY=your_secret_key_here
-   CLERK_WEBHOOK_SECRET=your_webhook_secret_here
-   ```
-
-4. **Set up Supabase and Prisma (Optional)**
-
-   ```bash
-   cp supabase.env.example .env.local
-   ```
-
-   Add your Supabase credentials to `.env.local`:
-
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   DATABASE_URL=postgresql://postgres:password@host:port/database
-   ```
-
-   Then generate Prisma client:
-
-   ```bash
-   npx prisma generate
-   ```
-
-   > **Note:** Clerk authentication is optional. The app will work without it, but authentication features will be disabled. You can set up Clerk later by following the [Clerk setup guide](https://clerk.com/docs/quickstarts/nextjs).
-
-5. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-6. **Open your browser**
-   Navigate to [http://localhost:350](http://localhost:350) 🧪
-
-> **Why port 350?** Just like the perfect temperature for yeast fermentation (350°F), this port ensures optimal development conditions!
-
-## 🏗️ Project Structure
-
-```
-pokemonpalette/
-├── src/
-│   ├── app/                 # Next.js App Router
-│   │   ├── globals.css     # Global styles & theme variables
-│   │   ├── layout.tsx      # Root layout with providers
-│   │   └── page.tsx        # Landing page
-│   ├── components/         # Reusable components
-│   │   ├── ui/             # shadcn/ui components
-│   │   ├── collapsible-sidebar.tsx
-│   │   ├── theme-toggle.tsx
-│   │   └── user-profile.tsx
-│   └── lib/                # Utilities
-│       └── utils.ts         # Tailwind class utilities
-├── public/                 # Static assets
-└── components.json         # shadcn/ui configuration
-```
-
-## 🎨 Features
-
-### 🧪 Collapsible Sidebar
-
-- **Desktop**: Collapsible sidebar with persistent state
-- **Mobile**: Slide-out sidebar from the right
-- **Responsive**: Adapts to all screen sizes
-- **Persistence**: Remembers collapsed/expanded state
-
-### 🌙 Theme System
-
-- **System Preference**: Automatically detects light/dark mode
-- **Manual Toggle**: Easy theme switching in sidebar
-- **Smooth Transitions**: Beautiful animations between themes
-- **Customizable**: Easy to modify colors in `globals.css`
-
-### 🔐 Authentication Ready
-
-- **Clerk Integration**: Complete auth solution
-- **User Profile**: Avatar, name, email display
-- **Sign In/Out**: Modal-based authentication
-- **Protected Routes**: Ready for route protection
-
-### 📱 Mobile Optimized
-
-- **Touch Friendly**: Optimized for mobile interactions
-- **Responsive Grid**: Adapts to all screen sizes
-- **Mobile Sidebar**: Slide-out navigation
-- **Performance**: Optimized for mobile devices
-
-## 🛠️ Available Scripts
+### Setup
 
 ```bash
-# Development server (port 212)
-npm run dev
+git clone https://github.com/yassenshopov/pokemonpalette.git
+cd pokemonpalette
+npm install
+```
 
-# Development server with ngrok tunnel (for webhook testing)
+Create `.env.local` with the variables below (only Clerk + Supabase are required for core functionality):
+
+```env
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+CLERK_WEBHOOK_SECRET=
+
+# Supabase / Postgres
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+DATABASE_URL=        # pgbouncer pooler, port 6543
+DIRECT_URL=          # direct connection, port 5432 (prisma migrate only)
+
+# Optional
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=
+NEXT_PUBLIC_BASE_URL=http://localhost:212
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+STRIPE_PALETTE_API_PRICE_ID=
+NEXT_PUBLIC_GA4_ID=
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+```
+
+Run the dev server:
+
+```bash
+npm run dev          # http://localhost:212
+```
+
+For local webhook testing (Clerk, Stripe) over ngrok:
+
+```bash
 npm run dev:ngrok
-
-# Start ngrok tunnel only (if dev server is already running)
-npm run ngrok
-
-# Webhook testing utilities
-npm run webhook:info    # Show current webhook info
-npm run webhook:url     # Get webhook URL only
-npm run webhook:test    # Generate test curl command
-
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
+npm run webhook:info     # print current tunnel URL + Clerk/Stripe endpoints
 ```
 
-## 🎯 Tech Stack Details
+## Scripts
 
-### Frontend
 
-- **Next.js 15** - React framework with App Router
-- **React 19** - Latest React with concurrent features
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS 4** - Utility-first CSS framework
+| Command             | Purpose                                       |
+| ------------------- | --------------------------------------------- |
+| `npm run dev`       | Dev server on port 212 (Turbopack)            |
+| `npm run dev:ngrok` | Dev server + ngrok tunnel for webhook testing |
+| `npm run build`     | `prisma generate` + production build          |
+| `npm start`         | Run production build                          |
+| `npm run lint`      | ESLint                                        |
+| `npm run db:studio` | Open Prisma Studio                            |
+| `npm run db:pull`   | Re-introspect Postgres into `schema.prisma`   |
+| `npm run db:format` | Format `schema.prisma`                        |
+| `npm run test:seo`  | Run SEO smoke checks against the live site    |
+| `npm run webhook:*` | Inspect / test ngrok webhook URLs             |
 
-### UI Components
 
-- **shadcn/ui** - Accessible component library
-- **Radix UI** - Headless component primitives
-- **Lucide React** - Beautiful icon library
+## Project layout
 
-### Authentication
-
-- **Clerk** - Complete authentication platform
-- **Social Login** - Google, GitHub, etc.
-- **User Management** - Profiles, settings, etc.
-
-### Development
-
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Turbopack** - Fast bundling
-
-## 🎨 Customization
-
-### Colors & Themes
-
-Modify the color scheme in `src/app/globals.css`:
-
-```css
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.929 0.013 255.508);
-  /* Add your custom colors */
-}
+```
+src/
+  app/                 # Next.js App Router
+    api/               # Route handlers (admin, billing, multiplayer, v1 public API, webhooks…)
+    [name]/            # Pokémon detail page
+    shiny/[name]/      # Shiny variant detail page
+    type/[type]/       # Browse by type
+    rarity/[rarity]/   # Browse by rarity
+    generation/[gen]/  # Browse by generation
+    game/              # Daily + unlimited guessing game (+ Pokédex)
+    explore/           # Public palette feed
+    saved-palettes/    # User's saved palettes
+    account/           # Account settings, API keys
+    admin/             # Admin: users, palettes, game data, emails, insights
+    api-access/        # Stripe checkout for API access
+  components/          # Feature + UI components (shadcn/ui in components/ui)
+  lib/                 # Shared utilities, Prisma client, palette algorithms
+prisma/
+  schema.prisma        # Introspected from Supabase — DO NOT migrate from here
+supabase/
+  migrations/          # Source of truth: tables, RLS policies, SECURITY DEFINER RPCs
+public/
+  pokemon/             # Pre-extracted sprite PNGs (immutably cached)
+  data/                # Pre-built per-Pokémon JSON (immutably cached)
+scripts/               # ngrok dev helper, webhook test utilities
 ```
 
-### Adding Components
+## Database notes
 
-Install new shadcn/ui components:
+- **Migrations** are raw SQL in `supabase/migrations/` (they encode RLS + RPCs Prisma can't express).
+- **Prisma** is introspection-only — `db:pull` regenerates `schema.prisma` from the live DB.
+- The runtime `DATABASE_URL` must use the **pgbouncer pooler (port 6543, transaction mode)** to avoid connection exhaustion on serverless. `DIRECT_URL` (port 5432) is only used by `prisma migrate`/`db pull`.
 
-```bash
-npx shadcn@latest add [component-name]
-```
+## Deployment
 
-### Sidebar Customization
+Deployed on **Vercel**. The build command runs `prisma generate` before `next build`. Configure all environment variables in the Vercel project settings; Clerk and Stripe webhooks point at `https://www.pokemonpalette.com/api/webhooks/clerk` and `/api/billing/webhook` respectively.
 
-Modify `src/components/collapsible-sidebar.tsx` to add:
+## License
 
-- Navigation items
-- Custom sections
-- Additional functionality
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Connect to Vercel
-3. Add environment variables
-4. Deploy!
-
-### Other Platforms
-
-- **Netlify**: Works out of the box
-- **Railway**: Easy deployment
-- **Docker**: Container-ready
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how to get started:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Next.js Team** - For the amazing framework
-- **Tailwind CSS** - For the utility-first approach
-- **shadcn/ui** - For the beautiful components
-- **Clerk** - For the authentication solution
-- **Vercel** - For the deployment platform
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/your-username/pokemonpalette/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/pokemonpalette/discussions)
-- **Documentation**: [Wiki](https://github.com/your-username/pokemonpalette/wiki)
-
----
-
-**Happy Creating! 🎨**
-
-_PokémonPalette v0.1.0 • Built with ❤️ for developers_
+MIT © Yassen Shopov. See `[LICENSE](LICENSE)`.
