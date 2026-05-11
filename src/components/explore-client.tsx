@@ -596,8 +596,13 @@ export function ExploreClient({
                 </li>
                 {(i === 11 || (i === 35 && visible.length > 35)) && (
                   <li className="col-span-full">
+                    {/* In-feed fluid unit. Same layoutKey as the
+                        listing slot since both render inside grids of
+                        PokemonPaletteExploreCard. */}
                     <AdUnit
                       slot={ADSENSE_SLOTS.exploreInFeed}
+                      format="fluid"
+                      layoutKey="-6t+ed+2i-1n-4w"
                       style={{ display: "block", minHeight: 120 }}
                     />
                   </li>

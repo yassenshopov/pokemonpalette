@@ -163,10 +163,21 @@ export function PokemonPageClient({ pokemonMetadata, breadcrumbs }: PokemonPageC
                 colors={pokemonColors}
                 pokemonName={pokemonMetadata.name}
               />
+              {/* In-article fluid unit — slot configured in AdSense as
+                  data-ad-layout="in-article" / data-ad-format="fluid".
+                  Style mirrors Google's official snippet (centered fluid
+                  block). minHeight reserves vertical space pre-fill to
+                  avoid CLS while inventory is still ramping up. */}
               <AdUnit
                 slot={ADSENSE_SLOTS.pokemonDetailInArticle}
+                format="fluid"
+                layout="in-article"
                 className="mt-8 px-4 md:px-12"
-                style={{ display: "block", minHeight: 280 }}
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  minHeight: 280,
+                }}
               />
             </>
           )}

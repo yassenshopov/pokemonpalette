@@ -62,8 +62,13 @@ export default async function GenerationPage({
               <PokemonPaletteExploreCard metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
               {(i === 11 || (i === 35 && pokemon.length > 35)) && (
                 <div className="col-span-full">
+                  {/* Shares the listing in-feed slot with rarity and
+                      type pages. See rarity/[rarity]/page.tsx for
+                      layoutKey context. */}
                   <AdUnit
                     slot={ADSENSE_SLOTS.listingInFeed}
+                    format="fluid"
+                    layoutKey="-6t+ed+2i-1n-4w"
                     style={{ display: "block", minHeight: 120 }}
                   />
                 </div>

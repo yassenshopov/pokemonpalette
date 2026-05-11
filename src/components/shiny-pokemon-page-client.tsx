@@ -165,10 +165,19 @@ export function ShinyPokemonPageClient({
                     : undefined
                 }
               />
+              {/* Shares the in-article fluid slot with the non-shiny
+                  detail page — same unit, same configuration. See the
+                  comment in pokemon-page-client.tsx for details. */}
               <AdUnit
                 slot={ADSENSE_SLOTS.pokemonDetailInArticle}
+                format="fluid"
+                layout="in-article"
                 className="mt-8 px-4 md:px-12"
-                style={{ display: "block", minHeight: 280 }}
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  minHeight: 280,
+                }}
               />
             </>
           )}

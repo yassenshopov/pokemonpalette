@@ -177,6 +177,13 @@ export function AdUnit({
 
   if (!resolvedClientId || !slot || !adsAllowed) return null;
 
+  // Google's official fluid (in-article / in-feed) snippet omits
+  // `data-full-width-responsive` entirely — it only applies to the
+  // `auto` display format. Keeping it on a fluid unit doesn't break
+  // anything but emits a console warning and drifts from the template
+  // AdSense expects when matching unit configuration to served HTML.
+  const isFluid = format === "fluid";
+
   return (
     <div className={className} aria-hidden="true">
       <ins
@@ -185,7 +192,9 @@ export function AdUnit({
         data-ad-client={resolvedClientId}
         data-ad-slot={slot}
         data-ad-format={format}
-        data-full-width-responsive={responsive ? "true" : "false"}
+        {...(isFluid
+          ? {}
+          : { "data-full-width-responsive": responsive ? "true" : "false" })}
         {...(layout ? { "data-ad-layout": layout } : {})}
         {...(layoutKey ? { "data-ad-layout-key": layoutKey } : {})}
       />

@@ -67,8 +67,14 @@ export default async function RarityPage({
               <PokemonPaletteExploreCard metadata={mon} pokemonData={pokemonDataMap.get(mon.id)} />
               {(i === 11 || (i === 35 && pokemon.length > 35)) && (
                 <div className="col-span-full">
+                  {/* In-feed fluid unit. layoutKey is the encoded
+                      layout chosen for the unit in AdSense — must match
+                      exactly or Google falls back to a default layout
+                      that may not fit a grid card. */}
                   <AdUnit
                     slot={ADSENSE_SLOTS.listingInFeed}
+                    format="fluid"
+                    layoutKey="-6t+ed+2i-1n-4w"
                     style={{ display: "block", minHeight: 120 }}
                   />
                 </div>
