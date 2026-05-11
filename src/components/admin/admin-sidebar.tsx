@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   ArrowLeft,
+  BookMarked,
   Gauge,
   Gamepad2,
   Mail,
@@ -46,6 +47,7 @@ const OVERVIEW: NavItem = {
 const MANAGEMENT: NavItem[] = [
   { label: "Users", href: "/admin/users", icon: Users },
   { label: "Game Data", href: "/admin/game", icon: Gamepad2 },
+  { label: "Pokédex", href: "/admin/pokedex", icon: BookMarked },
   { label: "Saved Palettes", href: "/admin/palettes", icon: Palette },
   { label: "Insights", href: "/admin/insights", icon: MapIcon },
 ];
