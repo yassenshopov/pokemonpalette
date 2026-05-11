@@ -59,15 +59,19 @@
   ],
   "colorPalette": {
     "primary": "#9473b4",
-    "secondary": "#5a4a9c",
-    "accent": "#b48bbd",
+    "secondary": "#b48bbd",
+    "accent": "#5a4a9c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#9473b4",
+      "#b48bbd",
       "#5a4a9c",
-      "#b48bbd"
-    ]
+      "#ff9494",
+      "#ff5a5a",
+      "#fff6ff"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/94.png",
