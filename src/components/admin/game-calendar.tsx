@@ -27,6 +27,8 @@ import {
   DAILY_POOL_SIZE,
   getDailyPokemonIdForDate,
 } from "@/lib/game/similarity";
+import { getPokemonById } from "@/lib/pokemon";
+import type { ColorPalette } from "@/types/pokemon";
 import { DAILY_OVERRIDE_CHANGED_EVENT } from "@/components/admin/daily-puzzle-sheet";
 
 interface CalendarDay {
@@ -43,6 +45,11 @@ interface OverrideRow {
   pokemon_id: number;
   is_shiny: boolean;
   note: string | null;
+}
+
+interface PokemonPalettes {
+  normal: ColorPalette | null;
+  shiny: ColorPalette | null;
 }
 
 function officialArtworkUrl(pokemonId: number, shiny = false) {
@@ -70,8 +77,9 @@ function monthBounds(anchor: Date): { from: Date; to: Date } {
 
 function buildGrid(anchor: Date): Array<{ date: Date; inMonth: boolean }> {
   const { from } = monthBounds(anchor);
-  const startWeekday = from.getUTCDay(); // 0 = Sunday
-  const gridStart = new Date(from.getTime() - startWeekday * 24 * 60 * 60 * 1000);
+  // Week starts on Monday: shift Sunday (0) to the last column (offset 6).
+  const startOffset = (from.getUTCDay() + 6) % 7;
+  const gridStart = new Date(from.getTime() - startOffset * 24 * 60 * 60 * 1000);
   // Show 6 weeks (42 days) for a stable grid height.
   return Array.from({ length: 42 }, (_, i) => {
     const date = new Date(gridStart.getTime() + i * 24 * 60 * 60 * 1000);
@@ -79,7 +87,7 @@ function buildGrid(anchor: Date): Array<{ date: Date; inMonth: boolean }> {
   });
 }
 
-const WEEKDAY_LABELS = ["S", "M", "T", "W", "T", "F", "S"];
+const WEEKDAY_LABELS = ["M", "T", "W", "T", "F", "S", "S"];
 
 interface GameCalendarProps {
   /** Initial month anchor; defaults to the current month. */
@@ -114,11 +122,12 @@ export function GameCalendar({
   const [refreshing, setRefreshing] = React.useState(false);
 
   const { from, to } = React.useMemo(() => monthBounds(anchor), [anchor]);
-  // Account for the calendar grid's leading/trailing days from adjacent
-  // months so override badges show on those cells too.
+  // The grid renders 6 weeks (42 cells) starting from the Monday on/before
+  // the first of the month. We fetch stats + overrides across the full grid
+  // so leading/trailing days from adjacent months still show real data.
   const { gridFrom, gridTo } = React.useMemo(() => {
-    const startWeekday = from.getUTCDay();
-    const start = new Date(from.getTime() - startWeekday * 86_400_000);
+    const startOffset = (from.getUTCDay() + 6) % 7;
+    const start = new Date(from.getTime() - startOffset * 86_400_000);
     const end = new Date(start.getTime() + 41 * 86_400_000);
     return { gridFrom: start, gridTo: end };
   }, [from]);
@@ -133,19 +142,17 @@ export function GameCalendar({
 
   const load = React.useCallback(async () => {
     try {
-      const calParams = new URLSearchParams({
-        from: toIsoDate(from),
-        to: toIsoDate(to),
-      });
-      const overrideParams = new URLSearchParams({
+      // Fetch stats + overrides across the full visible grid so leading and
+      // trailing days from adjacent months also render with real data.
+      const params = new URLSearchParams({
         from: toIsoDate(gridFrom),
         to: toIsoDate(gridTo),
       });
       const [calRes, overrideRes] = await Promise.all([
-        fetch(`/api/admin/game-data/calendar?${calParams.toString()}`, {
+        fetch(`/api/admin/game-data/calendar?${params.toString()}`, {
           cache: "no-store",
         }),
-        fetch(`/api/admin/daily-overrides?${overrideParams.toString()}`, {
+        fetch(`/api/admin/daily-overrides?${params.toString()}`, {
           cache: "no-store",
         }),
       ]);
@@ -176,7 +183,7 @@ export function GameCalendar({
       setLoading(false);
       setRefreshing(false);
     }
-  }, [from, to, gridFrom, gridTo]);
+  }, [gridFrom, gridTo]);
 
   React.useEffect(() => {
     setLoading(true);
@@ -195,13 +202,53 @@ export function GameCalendar({
   }, [load]);
 
   const grid = React.useMemo(() => buildGrid(anchor), [anchor]);
-  const maxAttempts = React.useMemo(() => {
-    let max = 0;
-    for (const d of days.values()) {
-      if (d.attempts_count > max) max = d.attempts_count;
+
+  // Resolve the target Pokemon id for every visible cell up front, mirroring
+  // the per-cell resolution order: recorded plays → admin override → deterministic.
+  const targetByIso = React.useMemo(() => {
+    const map = new Map<string, { id: number; shiny: boolean }>();
+    for (const { date } of grid) {
+      const iso = toIsoDate(date);
+      const data = days.get(iso);
+      const override = overrides.get(iso);
+      const id =
+        data?.target_pokemon_id ??
+        override?.pokemon_id ??
+        getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, false);
+      map.set(iso, { id, shiny: override?.is_shiny ?? false });
     }
-    return max;
-  }, [days]);
+    return map;
+  }, [grid, days, overrides]);
+
+  // Batch-fetch palettes for unique target ids in the visible grid. Results
+  // are cached in `getPokemonById` so subsequent month navigation is cheap.
+  const [palettes, setPalettes] = React.useState<Map<number, PokemonPalettes>>(
+    new Map(),
+  );
+  React.useEffect(() => {
+    let cancelled = false;
+    const uniqueIds = Array.from(
+      new Set(Array.from(targetByIso.values()).map((t) => t.id)),
+    );
+    if (uniqueIds.length === 0) return;
+    Promise.all(uniqueIds.map((id) => getPokemonById(id))).then((results) => {
+      if (cancelled) return;
+      setPalettes((prev) => {
+        const next = new Map(prev);
+        results.forEach((p, i) => {
+          if (!p) return;
+          next.set(uniqueIds[i], {
+            normal: p.colorPalette ?? null,
+            shiny: p.shinyColorPalette ?? null,
+          });
+        });
+        return next;
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [targetByIso]);
 
   const goToMonth = (delta: number) => {
     setAnchor((prev) => {
@@ -213,16 +260,22 @@ export function GameCalendar({
   };
 
   const monthTotals = React.useMemo(() => {
+    // Restrict totals to the anchor month since `days` now covers the full
+    // 42-day grid (including leading/trailing cells from adjacent months).
+    const monthKey = `${anchor.getUTCFullYear()}-${String(
+      anchor.getUTCMonth() + 1,
+    ).padStart(2, "0")}`;
     let attempts = 0;
     let wins = 0;
     let puzzles = 0;
-    for (const d of days.values()) {
+    for (const [iso, d] of days) {
+      if (!iso.startsWith(monthKey)) continue;
       attempts += d.attempts_count;
       wins += d.wins;
       puzzles += 1;
     }
     return { attempts, wins, puzzles };
-  }, [days]);
+  }, [days, anchor]);
 
 
   return (
@@ -327,14 +380,13 @@ export function GameCalendar({
               const override = overrides.get(iso);
               const isToday = iso === todayIso;
               const isFuture = iso > todayIso;
-              // Resolution order matches the server-side resolver:
-              //   1. Recorded plays (the ground truth for past days)
-              //   2. Admin override (pinned schedule)
-              //   3. Deterministic hash (default)
-              const targetId =
-                data?.target_pokemon_id ??
-                override?.pokemon_id ??
-                getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, false);
+              const resolved = targetByIso.get(iso);
+              const targetId = resolved?.id ?? 0;
+              const palettes_ = palettes.get(targetId);
+              const palette =
+                (resolved?.shiny ? palettes_?.shiny : palettes_?.normal) ??
+                palettes_?.normal ??
+                null;
               return (
                 <CalendarCell
                   key={iso}
@@ -343,11 +395,12 @@ export function GameCalendar({
                   targetId={targetId}
                   data={data}
                   override={override ?? null}
-                  maxAttempts={maxAttempts}
+                  palette={palette}
                   muted={!inMonth}
                   isToday={isToday}
                   isFuture={isFuture}
                   isSelected={openDate === iso}
+                  loading={loading}
                   onOpen={onOpenDate}
                 />
               );
@@ -359,15 +412,6 @@ export function GameCalendar({
       </Card>
     </TooltipProvider>
   );
-}
-
-function heatClass(ratio: number): string {
-  if (ratio <= 0) return "bg-muted/40";
-  if (ratio < 0.2) return "bg-primary/10";
-  if (ratio < 0.4) return "bg-primary/25";
-  if (ratio < 0.6) return "bg-primary/40";
-  if (ratio < 0.8) return "bg-primary/60";
-  return "bg-primary/80";
 }
 
 const dayNumberFormatter = new Intl.DateTimeFormat("en-US", {
@@ -382,18 +426,47 @@ const fullDateFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
+function winRateTextClass(rate: number): string {
+  if (rate >= 66) return "text-emerald-600 dark:text-emerald-400";
+  if (rate >= 33) return "text-amber-600 dark:text-amber-400";
+  return "text-rose-600 dark:text-rose-400";
+}
+
 interface CalendarCellProps {
   iso: string;
   date: Date;
   targetId: number;
   data: CalendarDay | undefined;
   override: OverrideRow | null;
-  maxAttempts: number;
+  palette: ColorPalette | null;
   muted: boolean;
   isToday: boolean;
   isFuture: boolean;
   isSelected: boolean;
+  loading: boolean;
   onOpen: (iso: string) => void;
+}
+
+function paletteSwatchColors(palette: ColorPalette | null): string[] {
+  if (!palette) return [];
+  // Prefer the extractor highlights (ordered by prevalence) so the swatch
+  // matches what players see at game time; fall back to primary/secondary/accent.
+  const ordered = [
+    ...(palette.highlights ?? []),
+    palette.primary,
+    palette.secondary,
+    palette.accent,
+  ].filter(Boolean);
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const hex of ordered) {
+    const key = hex.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(hex);
+    if (out.length === 3) break;
+  }
+  return out;
 }
 
 function CalendarCell({
@@ -402,16 +475,16 @@ function CalendarCell({
   targetId,
   data,
   override,
-  maxAttempts,
+  palette,
   muted,
   isToday,
   isFuture,
   isSelected,
+  loading,
   onOpen,
 }: CalendarCellProps) {
   const attemptsCount = data?.attempts_count ?? 0;
   const hasData = attemptsCount > 0;
-  const ratio = hasData && maxAttempts > 0 ? attemptsCount / maxAttempts : 0;
   const winRate = hasData ? (data!.wins / attemptsCount) * 100 : 0;
 
   const dayNum = dayNumberFormatter.format(date);
@@ -424,34 +497,31 @@ function CalendarCell({
       role="gridcell"
       aria-selected={isToday ? "true" : undefined}
       aria-label={`${fullDateFormatter.format(date)}${
-        hasData
-          ? `: ${attemptsCount} attempts, ${winRate.toFixed(0)}% win rate`
-          : isFuture
-            ? ": upcoming"
-            : ": no attempts"
+        loading
+          ? ": loading"
+          : hasData
+            ? `: ${attemptsCount} attempts, ${winRate.toFixed(0)}% win rate`
+            : isFuture
+              ? ": upcoming"
+              : ": no attempts"
       }${hasOverride ? ", admin override active" : ""}`}
       className={cn(
         "group relative aspect-square min-h-[80px] overflow-hidden rounded-md border text-left transition-colors",
-        muted ? "opacity-40" : "",
+        muted && "opacity-50",
+        // Today is washed in brand red (sampled from the Pokéball logo)
+        // instead of a ring outline — calmer at a glance, still distinctive.
         isToday
-          ? "ring-2 ring-primary ring-offset-1 ring-offset-background"
-          : "",
-        !isToday && isSelected
-          ? "ring-2 ring-primary/80 ring-offset-1 ring-offset-background"
-          : "",
-        // Override gets a warmer accent border so it's visible at a glance
-        // even before the corner pin lands. Stops short of being noisy.
-        hasOverride && !isToday && !isSelected
-          ? "border-amber-500/60 dark:border-amber-400/50"
-          : "",
-        isFuture
-          ? "border-dashed bg-muted/20"
-          : hasData
-            ? cn(heatClass(ratio), "hover:ring-1 hover:ring-primary/50")
+          ? "border-brand-red/50 bg-brand-red/12"
+          : isFuture
+            ? "border-dashed bg-muted/20"
             : "bg-muted/10 hover:bg-muted/30",
+        isSelected && "ring-2 ring-primary/80 ring-offset-1 ring-offset-background",
+        // Admin override gets a warm border accent so the pinned schedule is
+        // visible at a glance even before the corner pin lands.
+        hasOverride && !isToday && !isSelected &&
+          "border-amber-500/60 dark:border-amber-400/50",
       )}
     >
-      {/* Silhouette sprite fills the whole square. */}
       <div className="pointer-events-none absolute inset-1">
         <Image
           src={officialArtworkUrl(targetId, overrideShiny)}
@@ -463,71 +533,80 @@ function CalendarCell({
             // `brightness-0` → pure black silhouette; `dark:invert` flips it
             // to white on dark backgrounds. Slightly softened for readability.
             "brightness-0 dark:invert",
-            isFuture ? "opacity-25" : hasData ? "opacity-55" : "opacity-40",
+            isFuture ? "opacity-25" : hasData ? "opacity-50" : "opacity-35",
           )}
           unoptimized
         />
       </div>
 
-      {/* Day number — top-left pill. */}
-      <div className="absolute left-1 top-1 flex items-center gap-1">
-        <span
-          className={cn(
-            "rounded bg-background/75 px-1 text-[11px] font-semibold tabular-nums text-foreground backdrop-blur-sm",
-            isToday && "bg-primary text-primary-foreground",
-          )}
-        >
-          {dayNum}
-        </span>
-        {hasOverride ? (
-          <span
-            className="inline-flex size-4 items-center justify-center rounded-full bg-amber-500 text-amber-50 shadow-sm"
-            aria-label="Admin override"
-            title="Admin override"
-          >
-            <Pin className="size-2.5" aria-hidden="true" />
-          </span>
-        ) : null}
-        {hasOverride && overrideShiny ? (
-          <Sparkles
-            className="size-3 text-amber-500 drop-shadow"
-            aria-label="Shiny override"
-          />
-        ) : null}
-      </div>
-
-      {/* Attempts count — top-right pill, always shown. */}
-      <div className="absolute right-1 top-1">
-        <span
-          className={cn(
-            "rounded px-1 text-[10px] font-medium tabular-nums backdrop-blur-sm",
-            hasData
-              ? "bg-background/80 text-foreground"
-              : "bg-background/60 text-muted-foreground",
-          )}
-          aria-label={`${attemptsCount} plays`}
-        >
-          {attemptsCount.toLocaleString()}
-        </span>
-      </div>
-
-      {/* Win rate — bottom-right pill, only when we have data. */}
-      {hasData ? (
-        <div className="absolute bottom-1 right-1">
+      {/* Top row: day number + override badges on the left, palette swatch on the right. */}
+      <div className="absolute inset-x-1 top-1 flex items-center justify-between gap-1">
+        <div className="flex items-center gap-1">
           <span
             className={cn(
-              "rounded bg-background/80 px-1 text-[10px] font-medium tabular-nums backdrop-blur-sm",
-              winRate >= 66
-                ? "text-emerald-600 dark:text-emerald-400"
-                : winRate >= 33
-                  ? "text-amber-600 dark:text-amber-400"
-                  : "text-rose-600 dark:text-rose-400",
+              "rounded bg-background/75 px-1 text-[11px] font-semibold tabular-nums text-foreground backdrop-blur-sm",
+              isToday && "bg-brand-red text-white",
             )}
           >
-            {winRate.toFixed(0)}%
+            {dayNum}
           </span>
+          {hasOverride ? (
+            <span
+              className="inline-flex size-4 items-center justify-center rounded-full bg-amber-500 text-amber-50 shadow-sm"
+              aria-label="Admin override"
+              title="Admin override"
+            >
+              <Pin className="size-2.5" aria-hidden="true" />
+            </span>
+          ) : null}
+          {hasOverride && overrideShiny ? (
+            <Sparkles
+              className="size-3 text-amber-500 drop-shadow"
+              aria-label="Shiny override"
+            />
+          ) : null}
         </div>
-      ) : null}
+        <PaletteSwatch palette={palette} muted={isFuture} />
+      </div>
+
+      {/* Bottom row: labeled play / win-rate stats (or a skeleton while loading). */}
+      <div className="absolute inset-x-1 bottom-1 flex items-center justify-between gap-1 rounded bg-background/80 px-1 py-0.5 text-[10px] backdrop-blur-sm">
+        {loading ? (
+          <span
+            className="block h-3 w-full animate-pulse rounded bg-muted/70"
+            aria-hidden="true"
+          />
+        ) : (
+          <>
+            <span
+              className="inline-flex items-center gap-0.5 text-muted-foreground"
+              title={`${attemptsCount} play${attemptsCount === 1 ? "" : "s"}`}
+            >
+              <Users className="size-2.5" aria-hidden="true" />
+              <span
+                className={cn(
+                  "tabular-nums",
+                  hasData ? "text-foreground" : "text-muted-foreground",
+                )}
+              >
+                {attemptsCount.toLocaleString()}
+              </span>
+            </span>
+            <span
+              className={cn(
+                "inline-flex items-center gap-0.5",
+                hasData ? winRateTextClass(winRate) : "text-muted-foreground",
+              )}
+              title={hasData ? `${winRate.toFixed(0)}% win rate` : "No plays"}
+            >
+              <Trophy className="size-2.5" aria-hidden="true" />
+              <span className="tabular-nums">
+                {hasData ? `${winRate.toFixed(0)}%` : "—"}
+              </span>
+            </span>
+          </>
+        )}
+      </div>
     </div>
   );
 
@@ -569,7 +648,11 @@ function CalendarCell({
               </div>
             </div>
           ) : null}
-          {hasData ? (
+          {loading ? (
+            <div className="mt-1 text-[11px] text-muted-foreground">
+              Loading…
+            </div>
+          ) : hasData ? (
             <div className="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5">
               <span className="text-muted-foreground">Attempts</span>
               <span className="text-right tabular-nums">
@@ -604,33 +687,67 @@ function CalendarCell({
   );
 }
 
+function PaletteSwatch({
+  palette,
+  muted,
+}: {
+  palette: ColorPalette | null;
+  muted?: boolean;
+}) {
+  const colors = paletteSwatchColors(palette);
+  // Reserve space while loading so the top row layout is stable.
+  if (colors.length === 0) {
+    return (
+      <span
+        className="inline-block h-3 w-7 rounded-sm bg-muted/60 ring-1 ring-background/70"
+        aria-hidden="true"
+      />
+    );
+  }
+  return (
+    <span
+      role="img"
+      aria-label={`Palette: ${colors.join(", ")}`}
+      title={colors.map((c) => c.toUpperCase()).join(" · ")}
+      className={cn(
+        "inline-flex h-3 overflow-hidden rounded-sm ring-1 ring-background/70 shadow-sm",
+        muted && "opacity-70",
+      )}
+    >
+      {colors.map((hex, i) => (
+        <span
+          key={`${hex}-${i}`}
+          className="block h-full"
+          style={{ width: 8, backgroundColor: hex }}
+        />
+      ))}
+    </span>
+  );
+}
+
 function CalendarLegend() {
   return (
     <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 pt-1 text-[11px] text-muted-foreground">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-        <div className="flex items-center gap-1.5">
-          <span>Low</span>
-          <span className="inline-block size-3 rounded-sm bg-primary/10" aria-hidden />
-          <span className="inline-block size-3 rounded-sm bg-primary/25" aria-hidden />
-          <span className="inline-block size-3 rounded-sm bg-primary/40" aria-hidden />
-          <span className="inline-block size-3 rounded-sm bg-primary/60" aria-hidden />
-          <span className="inline-block size-3 rounded-sm bg-primary/80" aria-hidden />
-          <span>High</span>
-        </div>
-        <div className="flex items-center gap-1">
+        <span className="inline-flex items-center gap-1">
+          <Users className="size-3" aria-hidden="true" />
+          Plays
+        </span>
+        <span className="inline-flex items-center gap-1">
+          <Trophy className="size-3" aria-hidden="true" />
+          Win rate
+        </span>
+        <span className="inline-flex items-center gap-1">
           <span
             className="inline-flex size-3.5 items-center justify-center rounded-full bg-amber-500 text-amber-50"
             aria-hidden="true"
           >
             <Pin className="size-2" aria-hidden="true" />
           </span>
-          <span>Override</span>
-        </div>
+          Override
+        </span>
       </div>
-      <Link
-        href="/admin/game?view=daily"
-        className="hover:underline"
-      >
+      <Link href="/admin/game?view=daily" className="hover:underline">
         View daily table →
       </Link>
     </div>

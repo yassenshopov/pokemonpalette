@@ -37,6 +37,13 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  /* Brand palette — sampled from the Pokéball logo in /public/logo.png.
+     Available as `bg-brand-red`, `text-brand-red-light`, etc. */
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-light: var(--brand-red-light);
+  --color-brand-red-dark: var(--brand-red-dark);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-ice: var(--brand-ice);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -76,6 +83,17 @@
   --sidebar-accent-foreground: hsl(240 5.9% 10%);
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
+  /* Brand palette derived from the Pokéball logo:
+     - red:        the dominant top-left wedge
+     - red-light:  the warmer top-right wedge
+     - red-dark:   the shadowed bottom-right maroon
+     - cream:      the off-white plate
+     - ice:        the cool blue-grey bottom plate                       */
+  --brand-red: oklch(0.55 0.18 25);
+  --brand-red-light: oklch(0.62 0.15 22);
+  --brand-red-dark: oklch(0.38 0.11 25);
+  --brand-cream: oklch(0.96 0.008 60);
+  --brand-ice: oklch(0.92 0.012 230);
 }
 
 .dark {
@@ -110,6 +128,13 @@
   --sidebar-accent-foreground: hsl(0 0% 90%);
   --sidebar-border: hsl(0 0% 35%);
   --sidebar-ring: hsl(0 0% 50%);
+  /* Dark-mode brand tweaks: lift lightness so the reds stay legible on
+     dark surfaces; mute the supporting tones slightly. */
+  --brand-red: oklch(0.62 0.18 25);
+  --brand-red-light: oklch(0.68 0.15 22);
+  --brand-red-dark: oklch(0.45 0.12 25);
+  --brand-cream: oklch(0.92 0.008 60);
+  --brand-ice: oklch(0.78 0.018 230);
 }
 
 @layer base {

@@ -459,10 +459,10 @@ function ContribCell({
           tabIndex={-1}
           className={cn(
             "rounded-[2px] transition-transform hover:scale-[1.3] hover:ring-1 hover:ring-primary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-            INTENSITY_CLASS[level],
-            isFuture && count === 0 && "opacity-60",
-            isToday &&
-              "ring-1 ring-primary ring-offset-1 ring-offset-background",
+            // Today is painted brand-red (sampled from the Pokéball logo) so
+            // it pops against the heatmap without adding a border.
+            isToday ? "bg-brand-red" : INTENSITY_CLASS[level],
+            isFuture && count === 0 && !isToday && "opacity-60",
             isSelected && "ring-2 ring-primary",
           )}
           style={{ width: CELL_PX, height: CELL_PX }}
