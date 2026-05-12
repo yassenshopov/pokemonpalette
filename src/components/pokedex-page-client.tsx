@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import Image from "next/image";
 import Link from "next/link";
 import { useUser, SignInButton } from "@clerk/nextjs";
@@ -244,6 +245,13 @@ export function PokedexPageClient() {
     selectedTypes.size > 0 ||
     caughtFilter !== "all";
 
+  // Scroll container for the virtualized grid. The page uses a fixed
+  // viewport-height frame (`h-screen overflow-hidden` on the root, with
+  // an inner `flex-1 overflow-auto`), so the virtualizer needs an
+  // element ref to attach its scroll listener — `useWindowVirtualizer`
+  // wouldn't fire because the window itself never scrolls.
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="flex h-screen overflow-hidden">
       <CollapsibleSidebar primaryColor="#f59e0b" />
@@ -293,7 +301,7 @@ export function PokedexPageClient() {
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-auto">
+        <div ref={scrollRef} className="flex-1 overflow-auto">
           <div className="container mx-auto px-4 md:px-6 py-6 md:py-8">
             {!isLoaded ? (
               <div className="flex items-center justify-center py-20">
@@ -471,16 +479,12 @@ export function PokedexPageClient() {
                 ) : filteredPokemon.length === 0 ? (
                   <EmptyResults hasActiveFilters={hasActiveFilters} />
                 ) : (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
-                    {filteredPokemon.map((meta) => (
-                      <PokedexCell
-                        key={meta.id}
-                        meta={meta}
-                        state={caughtMap.get(meta.id) ?? null}
-                        shinyView={shinyView}
-                      />
-                    ))}
-                  </div>
+                  <VirtualizedPokedexGrid
+                    items={filteredPokemon}
+                    caughtMap={caughtMap}
+                    shinyView={shinyView}
+                    scrollRef={scrollRef}
+                  />
                 )}
               </>
             )}
@@ -500,6 +504,145 @@ const CAUGHT_FILTER_LABELS: Record<CaughtFilter, string> = {
   missing_shiny: "No shiny",
   uncaught: "Uncaught",
 };
+
+// Virtualized grid for the Pokedex. The unvirtualized version mounted
+// every one of the 1,025 cells (each with its own `<Image>`) on every
+// render, which made initial paint and every filter change extremely
+// expensive. We chunk the flat metadata list into rows of N cells
+// (derived from the container width, matching the Tailwind breakpoints)
+// and let `@tanstack/react-virtual` render only the visible window plus
+// a small overscan buffer.
+//
+// The column count tracks the same breakpoints as the original
+// `grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8`
+// classes so the layout is visually identical to the static grid.
+const POKEDEX_GRID_BREAKPOINTS: Array<{ minWidth: number; cols: number }> = [
+  { minWidth: 1280, cols: 8 }, // xl
+  { minWidth: 1024, cols: 6 }, // lg
+  { minWidth: 768, cols: 4 }, // md
+  { minWidth: 640, cols: 3 }, // sm
+  { minWidth: 0, cols: 2 }, // base
+];
+
+function columnsForWidth(width: number): number {
+  for (const bp of POKEDEX_GRID_BREAKPOINTS) {
+    if (width >= bp.minWidth) return bp.cols;
+  }
+  return 2;
+}
+
+function VirtualizedPokedexGrid({
+  items,
+  caughtMap,
+  shinyView,
+  scrollRef,
+}: {
+  items: PokemonMetadata[];
+  caughtMap: Map<number, CaughtState>;
+  shinyView: boolean;
+  scrollRef: React.RefObject<HTMLDivElement | null>;
+}) {
+  const gridRef = useRef<HTMLDivElement>(null);
+  // Default to 8 columns so SSR markup matches the most common
+  // desktop viewport — the ResizeObserver corrects this on first paint
+  // for narrower viewports without a visible layout flash because the
+  // virtualizer hasn't measured row sizes yet.
+  const [columns, setColumns] = useState(8);
+
+  useLayoutEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    // Initial measurement on mount.
+    setColumns(columnsForWidth(el.clientWidth));
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) return;
+      setColumns(columnsForWidth(entry.contentRect.width));
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  // Group the flat list into rows so the virtualizer can treat each row
+  // as a single element. Recomputed only when `items` or `columns` change.
+  const rows = useMemo(() => {
+    const out: PokemonMetadata[][] = [];
+    for (let i = 0; i < items.length; i += columns) {
+      out.push(items.slice(i, i + columns));
+    }
+    return out;
+  }, [items, columns]);
+
+  // Estimated row height: 96px sprite + ~20px label + 12px gap. The
+  // virtualizer remeasures the actual height once the row paints, so
+  // an off-by-a-few estimate just means the scrollbar drift settles
+  // after the first pass.
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => scrollRef.current,
+    estimateSize: () => 132,
+    overscan: 4,
+  });
+
+  // When the column count changes (e.g. browser resize crosses a
+  // breakpoint), the row indices map to different cells, so the
+  // virtualizer's cached measurements are stale. `measure()` forces a
+  // re-measure; it's cheap because we only re-render visible rows.
+  useEffect(() => {
+    rowVirtualizer.measure();
+  }, [columns, rowVirtualizer]);
+
+  const totalHeight = rowVirtualizer.getTotalSize();
+  const virtualRows = rowVirtualizer.getVirtualItems();
+
+  return (
+    <div
+      ref={gridRef}
+      style={{ height: totalHeight, position: "relative", width: "100%" }}
+    >
+      {virtualRows.map((virtualRow) => {
+        const row = rows[virtualRow.index];
+        if (!row) return null;
+        return (
+          <div
+            key={virtualRow.key}
+            ref={rowVirtualizer.measureElement}
+            data-index={virtualRow.index}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              transform: `translateY(${virtualRow.start}px)`,
+            }}
+            className="grid gap-3"
+            // Inline grid-template-columns over Tailwind classes so the
+            // count matches the runtime measurement exactly. Tailwind's
+            // breakpoint utilities would otherwise lag the JS-derived
+            // value by one frame during resize.
+          >
+            <div
+              className="grid gap-3"
+              style={{
+                gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+              }}
+            >
+              {row.map((meta) => (
+                <PokedexCell
+                  key={meta.id}
+                  meta={meta}
+                  state={caughtMap.get(meta.id) ?? null}
+                  shinyView={shinyView}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function StatsBanner({
   stats,
@@ -606,7 +749,11 @@ function PokedexCell({
             grid. */}
         <Image
           src={url}
-          alt={anyCaught ? meta.name : "Unknown Pokemon"}
+          alt={
+            anyCaught
+              ? meta.name
+              : `Uncaught silhouette (#${meta.id.toString().padStart(3, "0")})`
+          }
           width={96}
           height={96}
           className={`w-16 h-16 sm:w-20 sm:h-20 object-contain transition-transform group-hover:scale-110 ${
@@ -614,7 +761,7 @@ function PokedexCell({
           }`}
           style={{ imageRendering: "pixelated" }}
           unoptimized
-          loading={anyCaught ? "lazy" : "lazy"}
+          loading="lazy"
         />
       </div>
       <div className="px-2 pb-2 text-center">

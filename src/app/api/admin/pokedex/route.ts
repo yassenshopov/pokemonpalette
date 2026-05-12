@@ -11,6 +11,45 @@ import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
 
+// Pull a single integer out of a `COUNT(DISTINCT …)` raw query. The
+// previous implementation materialized one row per distinct value via
+// `groupBy({ by: [...] }).length`, which on a Pokedex with thousands of
+// rows shipped a lot of bytes over the wire just to throw them away.
+// `COUNT(DISTINCT)` answers the same question with a single integer.
+async function countDistinctUserIds(
+  where: { caughtAt?: { gte: Date; lt: Date } } | null,
+): Promise<number> {
+  if (where?.caughtAt) {
+    const rows = await prisma.$queryRaw<Array<{ n: number }>>`
+      SELECT COUNT(DISTINCT user_id)::int AS n
+      FROM pokedex_entries
+      WHERE caught_at >= ${where.caughtAt.gte} AND caught_at < ${where.caughtAt.lt}
+    `;
+    return rows[0]?.n ?? 0;
+  }
+  const rows = await prisma.$queryRaw<Array<{ n: number }>>`
+    SELECT COUNT(DISTINCT user_id)::int AS n FROM pokedex_entries
+  `;
+  return rows[0]?.n ?? 0;
+}
+
+async function countDistinctPokemonIds(
+  where: { caughtAt?: { gte: Date; lt: Date } } | null,
+): Promise<number> {
+  if (where?.caughtAt) {
+    const rows = await prisma.$queryRaw<Array<{ n: number }>>`
+      SELECT COUNT(DISTINCT pokemon_id)::int AS n
+      FROM pokedex_entries
+      WHERE caught_at >= ${where.caughtAt.gte} AND caught_at < ${where.caughtAt.lt}
+    `;
+    return rows[0]?.n ?? 0;
+  }
+  const rows = await prisma.$queryRaw<Array<{ n: number }>>`
+    SELECT COUNT(DISTINCT pokemon_id)::int AS n FROM pokedex_entries
+  `;
+  return rows[0]?.n ?? 0;
+}
+
 // -----------------------------------------------------------------------------
 // Types
 // -----------------------------------------------------------------------------
@@ -150,12 +189,13 @@ export async function GET(req: NextRequest) {
       shiniesPrev,
       dailyCatches,
       unlimitedCatches,
-      // Distinct catchers/species via groupBy.length — cheap with the
-      // existing (user_id) / (pokemon_id) indexes.
-      catchersRange,
-      catchersPrev,
-      speciesRange,
-      speciesPrev,
+      // Distinct catchers/species — raw `COUNT(DISTINCT)` to avoid the
+      // groupBy materialization that previously shipped O(distinct) rows
+      // back to Node just to read their length.
+      catchersRangeCount,
+      catchersPrevCount,
+      speciesRangeCount,
+      speciesPrevCount,
       // Range averages
       avgAgg,
       // Daily series (single rollup, fanned out below)
@@ -163,8 +203,8 @@ export async function GET(req: NextRequest) {
       // All-time totals
       totalCatches,
       totalShinies,
-      totalCatchers,
-      totalSpecies,
+      totalCatchersCount,
+      totalSpeciesCount,
       // Leaderboards
       topCatchersRaw,
       topSpeciesRaw,
@@ -185,26 +225,10 @@ export async function GET(req: NextRequest) {
       prisma.pokedexEntry.count({
         where: { ...whereRange, mode: "unlimited" },
       }),
-      prisma.pokedexEntry.groupBy({
-        by: ["userId"],
-        where: whereRange,
-        _count: { _all: true },
-      }),
-      prisma.pokedexEntry.groupBy({
-        by: ["userId"],
-        where: wherePrev,
-        _count: { _all: true },
-      }),
-      prisma.pokedexEntry.groupBy({
-        by: ["pokemonId"],
-        where: whereRange,
-        _count: { _all: true },
-      }),
-      prisma.pokedexEntry.groupBy({
-        by: ["pokemonId"],
-        where: wherePrev,
-        _count: { _all: true },
-      }),
+      countDistinctUserIds({ caughtAt: { gte: fromDate, lt: toExclusive } }),
+      countDistinctUserIds({ caughtAt: { gte: prevFrom, lt: prevTo } }),
+      countDistinctPokemonIds({ caughtAt: { gte: fromDate, lt: toExclusive } }),
+      countDistinctPokemonIds({ caughtAt: { gte: prevFrom, lt: prevTo } }),
       prisma.pokedexEntry.aggregate({
         where: whereRange,
         _avg: { attempts: true, hintsUsed: true },
@@ -230,11 +254,8 @@ export async function GET(req: NextRequest) {
       `,
       prisma.pokedexEntry.count(),
       prisma.pokedexEntry.count({ where: { isShiny: true } }),
-      prisma.pokedexEntry.groupBy({ by: ["userId"], _count: { _all: true } }),
-      prisma.pokedexEntry.groupBy({
-        by: ["pokemonId"],
-        _count: { _all: true },
-      }),
+      countDistinctUserIds(null),
+      countDistinctPokemonIds(null),
       prisma.$queryRaw<
         Array<{
           user_id: string;
@@ -368,10 +389,10 @@ export async function GET(req: NextRequest) {
       kpis: {
         catches,
         catchesPrev,
-        catchers: catchersRange.length,
-        catchersPrev: catchersPrev.length,
-        species: speciesRange.length,
-        speciesPrev: speciesPrev.length,
+        catchers: catchersRangeCount,
+        catchersPrev: catchersPrevCount,
+        species: speciesRangeCount,
+        speciesPrev: speciesPrevCount,
         shinies,
         shiniesPrev,
         dailyCatches,
@@ -381,8 +402,8 @@ export async function GET(req: NextRequest) {
       },
       totals: {
         catches: totalCatches,
-        catchers: totalCatchers.length,
-        species: totalSpecies.length,
+        catchers: totalCatchersCount,
+        species: totalSpeciesCount,
         shinies: totalShinies,
       },
       series: {

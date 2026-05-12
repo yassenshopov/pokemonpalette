@@ -544,6 +544,52 @@ export function PokemonMenu({
     setColorPickerIndex(null);
   };
 
+  // Keyboard-driven reorder for the palette swatches. Pointer drag is the
+  // primary input but only works for sighted users with a mouse/trackpad.
+  // Arrow Up/Down (or Left/Right for muscle-memory continuity) swap the
+  // focused swatch with its neighbour; Home/End move it to the start/end.
+  // This pairs with `role="button"` + `tabIndex={0}` on the swatch wrapper
+  // so screen-reader and keyboard users discover the operation the same
+  // way they would any other button.
+  const reorderColor = (fromIndex: number, toIndex: number) => {
+    if (fromIndex === toIndex) return;
+    if (lockedColors[fromIndex]) return;
+    if (toIndex < 0 || toIndex >= extractedColors.length) return;
+    const newColors = [...extractedColors];
+    const newLocked = [...lockedColors];
+    const movedColor = newColors[fromIndex];
+    const movedLock = newLocked[fromIndex];
+    if (movedColor === undefined || movedLock === undefined) return;
+    newColors.splice(fromIndex, 1);
+    newLocked.splice(fromIndex, 1);
+    newColors.splice(toIndex, 0, movedColor);
+    newLocked.splice(toIndex, 0, movedLock);
+    setExtractedColors(newColors);
+    setLockedColors(newLocked);
+    onColorsExtracted?.(newColors.slice(0, paletteSize));
+  };
+
+  const handleSwatchKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement>,
+    index: number,
+    total: number,
+  ) => {
+    if (lockedColors[index]) return;
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      reorderColor(index, Math.max(0, index - 1));
+    } else if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+      e.preventDefault();
+      reorderColor(index, Math.min(total - 1, index + 1));
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      reorderColor(index, 0);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      reorderColor(index, total - 1);
+    }
+  };
+
   // Lock/unlock handlers
   const handleToggleLock = (index: number) => {
     setLockedColors((prev) => {
@@ -923,7 +969,7 @@ export function PokemonMenu({
                   : pokemonData.colorPalette?.highlights?.slice(0, paletteSize) ||
                     [];
               return displayed;
-            })().map((color, index) => {
+            })().map((color, index, displayed) => {
               const isLocked = lockedColors[index] || false;
               return (
                 <div
@@ -934,7 +980,18 @@ export function PokemonMenu({
                   onDragOver={(e) => handleDragOver(e, index)}
                   onDragLeave={handleDragLeave}
                   onDrop={(e) => handleDrop(e, index)}
-                  className={`w-full h-12 md:h-16 rounded-md p-2 md:p-3 flex items-center justify-between border gap-1 md:gap-2 transition-all duration-200 ${
+                  onKeyDown={(e) =>
+                    handleSwatchKeyDown(e, index, displayed.length)
+                  }
+                  role={!isLocked ? "button" : undefined}
+                  tabIndex={!isLocked ? 0 : -1}
+                  aria-label={
+                    isLocked
+                      ? `${color} locked at position ${index + 1}`
+                      : `${color} at position ${index + 1}. Use arrow keys to reorder`
+                  }
+                  aria-disabled={isLocked || undefined}
+                  className={`w-full h-12 md:h-16 rounded-md p-2 md:p-3 flex items-center justify-between border gap-1 md:gap-2 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                     !isLocked ? "cursor-move" : "cursor-default"
                   } ${draggedIndex === index ? "scale-105 shadow-lg" : ""} ${
                     dragOverIndex === index && draggedIndex !== index
@@ -949,7 +1006,9 @@ export function PokemonMenu({
                     }),
                   }}
                   title={
-                    isLocked ? "Color is locked" : "Drag to reorder colors"
+                    isLocked
+                      ? "Color is locked"
+                      : "Drag or use arrow keys to reorder colors"
                   }
                 >
                   <div className="flex items-center gap-2 flex-1">
@@ -980,11 +1039,23 @@ export function PokemonMenu({
                       onClick={() => handleToggleLock(index)}
                       className="p-1 hover:bg-black/10 dark:hover:bg-white/20 rounded transition-colors cursor-pointer"
                       title={isLocked ? "Unlock color" : "Lock color"}
+                      aria-label={
+                        isLocked
+                          ? `Unlock color ${color}`
+                          : `Lock color ${color}`
+                      }
+                      aria-pressed={isLocked}
                     >
                       {isLocked ? (
-                        <Lock className={`w-4 h-4 ${getTextColor(color)}`} />
+                        <Lock
+                          className={`w-4 h-4 ${getTextColor(color)}`}
+                          aria-hidden="true"
+                        />
                       ) : (
-                        <Unlock className={`w-4 h-4 ${getTextColor(color)}`} />
+                        <Unlock
+                          className={`w-4 h-4 ${getTextColor(color)}`}
+                          aria-hidden="true"
+                        />
                       )}
                     </button>
                     <button
@@ -997,9 +1068,17 @@ export function PokemonMenu({
                       title={
                         isLocked ? "Cannot edit locked color" : "Edit color"
                       }
+                      aria-label={
+                        isLocked
+                          ? `Color ${color} is locked, cannot edit`
+                          : `Edit color ${color}`
+                      }
                       disabled={isLocked}
                     >
-                      <Edit3 className={`w-4 h-4 ${getTextColor(color)}`} />
+                      <Edit3
+                        className={`w-4 h-4 ${getTextColor(color)}`}
+                        aria-hidden="true"
+                      />
                     </button>
                   </div>
                 </div>

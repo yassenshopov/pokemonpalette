@@ -111,6 +111,7 @@ export function ColorShowcase({
               <TrendingUp
                 className="h-8 w-8 md:h-12 md:w-12"
                 style={{ color: secondaryColor }}
+                aria-hidden="true"
               />
             </div>
           </CardContent>
@@ -141,7 +142,7 @@ export function ColorShowcase({
                 <span className="text-sm">System updated</span>
               </div>
               <div className="flex items-center gap-3">
-                <Activity className="h-4 w-4" style={{ color: primaryColor }} />
+                <Activity className="h-4 w-4" style={{ color: primaryColor }} aria-hidden="true" />
                 <span className="text-sm">Performance</span>
               </div>
             </div>

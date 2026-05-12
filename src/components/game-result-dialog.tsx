@@ -299,7 +299,7 @@ export function GameResultDialog({
             <div className="py-4 border-t border-b">
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-muted-foreground" />
+                  <Calendar className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                   <div>
                     <p className="text-xs text-muted-foreground">
                       Games Played
@@ -308,7 +308,7 @@ export function GameResultDialog({
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Flame className="w-5 h-5 text-muted-foreground" />
+                  <Flame className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                   <div>
                     <p className="text-xs text-muted-foreground">
                       Current Streak
@@ -320,7 +320,7 @@ export function GameResultDialog({
                 </div>
                 {timeUntilNext && (
                   <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-muted-foreground" />
+                    <Clock className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                     <div>
                       <p className="text-xs text-muted-foreground">
                         Next puzzle in
@@ -388,7 +388,7 @@ export function GameResultDialog({
                         borderColor: primaryColor || undefined,
                       }}
                     >
-                      <Sparkles className="w-4 h-4 mr-2" />
+                      <Sparkles className="w-4 h-4 mr-2" aria-hidden="true" />
                       Explore {targetPokemon.name}&apos;s palette
                     </Button>
                   </Link>
@@ -415,7 +415,7 @@ export function GameResultDialog({
                       : undefined,
                   }}
                 >
-                  <RefreshCw className="w-4 h-4 mr-2" />
+                  <RefreshCw className="w-4 h-4 mr-2" aria-hidden="true" />
                   {isWon ? "Play Again" : "Try Again"}
                 </Button>
               </div>
@@ -428,7 +428,7 @@ export function GameResultDialog({
                     onClick={handleShare}
                     className="w-full sm:w-auto cursor-pointer"
                   >
-                    <Share2 className="w-4 h-4 mr-2" />
+                    <Share2 className="w-4 h-4 mr-2" aria-hidden="true" />
                     Share result
                   </Button>
                 )}
@@ -456,7 +456,7 @@ export function GameResultDialog({
                         borderColor: primaryColor || undefined,
                       }}
                     >
-                      <Sparkles className="w-4 h-4 mr-2" />
+                      <Sparkles className="w-4 h-4 mr-2" aria-hidden="true" />
                       Explore {targetPokemon.name}&apos;s palette
                     </Button>
                   </Link>
@@ -474,7 +474,7 @@ export function GameResultDialog({
                         })
                       }
                     >
-                      <LogIn className="w-4 h-4 mr-2" />
+                      <LogIn className="w-4 h-4 mr-2" aria-hidden="true" />
                       Sign In to Save Progress
                     </Button>
                   </SignInButton>
@@ -573,7 +573,7 @@ function CoffeeAsk({
           color: textColor,
         }}
       >
-        <Coffee className="w-5 h-5" />
+        <Coffee className="w-5 h-5" aria-hidden="true" />
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold font-heading">{headline}</p>
@@ -595,7 +595,7 @@ function CoffeeAsk({
             borderColor: primaryColor || "#f59e0b",
           }}
         >
-          <Coffee className="w-4 h-4 mr-2" />
+          <Coffee className="w-4 h-4 mr-2" aria-hidden="true" />
           Support the project
         </Button>
       </a>
@@ -631,14 +631,14 @@ function PokedexCatchBanner({
           color: textColor,
         }}
       >
-        <BookMarked className="w-5 h-5" />
+        <BookMarked className="w-5 h-5" aria-hidden="true" />
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold font-heading flex items-center gap-1.5 flex-wrap">
           New Pokedex entry — {pokemonName}!
           {isShiny && (
             <span className="inline-flex items-center gap-0.5 text-yellow-500">
-              <Sparkles className="w-3.5 h-3.5" />
+              <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
               Shiny
             </span>
           )}

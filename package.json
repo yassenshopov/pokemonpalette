@@ -58,6 +58,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@supabase/supabase-js": "^2.45.4",
     "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-virtual": "^3.13.24",
     "@types/canvas-confetti": "^1.9.0",
     "@types/react-day-picker": "^5.2.1",
     "@upstash/ratelimit": "^2.0.8",

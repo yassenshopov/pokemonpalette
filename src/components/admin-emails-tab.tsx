@@ -211,20 +211,43 @@ export function AdminEmailsTab({
   const fetchUsers = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch("/api/admin/emails/users");
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch users");
+      // The endpoint paginates server-side to keep the response bounded
+      // (~10 MB JSON was the worst-case payload pre-pagination on a
+      // grown userbase). We page through with the cursor until the
+      // server says there's no more — typical admin sessions still
+      // resolve in a single round-trip thanks to the 1,000-row page
+      // size, but the loop guarantees we never silently truncate.
+      const aggregated: unknown[] = [];
+      let cursor: string | null = null;
+      const PAGE_SIZE = 1000;
+      // Hard cap on iterations as a safety belt against a runaway
+      // cursor; 50 pages × 1,000 rows is 50k users which exceeds any
+      // realistic recipient pool.
+      const MAX_PAGES = 50;
+      for (let i = 0; i < MAX_PAGES; i++) {
+        const params = new URLSearchParams({ pageSize: String(PAGE_SIZE) });
+        if (cursor) params.set("cursor", cursor);
+        const response = await fetch(
+          `/api/admin/emails/users?${params.toString()}`,
+        );
+        if (!response.ok) throw new Error("Failed to fetch users");
+        const data = await response.json();
+        if (Array.isArray(data.users)) {
+          aggregated.push(...data.users);
+        }
+        if (!data.hasMore || !data.nextCursor) break;
+        cursor = data.nextCursor;
       }
-
-      const data = await response.json();
-      setUsers(data.users || []);
+      setUsers(aggregated as typeof users);
     } catch (error) {
       console.error("Error fetching users:", error);
       toast.error("Failed to load users");
     } finally {
       setLoading(false);
     }
+    // setUsers/setLoading from `useState` are stable; the `users`
+    // shape reference is only used for the cast above.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchLogs = useCallback(async () => {

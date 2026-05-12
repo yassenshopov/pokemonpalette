@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { unstable_cache } from "next/cache";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { AccountSettings } from "@/components/account-settings";
@@ -9,6 +10,26 @@ export const metadata = {
   title: "Account - PokémonPalette",
   description: "Manage your PokémonPalette account preferences, API keys, and accessibility settings.",
 };
+
+// API-customer rows only change on Stripe checkout success / refund, which
+// fires off a separate webhook. Caching this lookup for 60 s eliminates
+// the DB roundtrip on every /account and /api-access visit (typical
+// pattern: user lands → flips tabs → DB read fires each time). The 60 s
+// staleness window is acceptable since the worst case is a freshly-paid
+// user not seeing the "Manage API keys" tab for a minute.
+function isApiCustomerActive(userId: string) {
+  return unstable_cache(
+    async () => {
+      const row = await prisma.apiCustomer.findUnique({
+        where: { userId },
+        select: { status: true },
+      });
+      return row?.status === "active";
+    },
+    ["api-customer-active", userId],
+    { revalidate: 60, tags: [`api-customer:${userId}`] },
+  )();
+}
 
 export default async function AccountPage() {
   let userId: string | null = null;
@@ -24,19 +45,16 @@ export default async function AccountPage() {
     redirect("/");
   }
 
-  const [user, apiCustomer] = await Promise.all([
+  const [user, apiCustomerActive] = await Promise.all([
     prisma.user.findFirst({
       where: { id: userId, isDeleted: false },
       select: { isAdmin: true },
     }),
-    prisma.apiCustomer.findUnique({
-      where: { userId, status: "active" },
-      select: { userId: true },
-    }),
+    isApiCustomerActive(userId),
   ]);
 
   const isAdmin = !!user?.isAdmin;
-  const showApiKeys = !!apiCustomer || isAdmin;
+  const showApiKeys = apiCustomerActive || isAdmin;
 
   return (
     <Suspense

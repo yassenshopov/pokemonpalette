@@ -1,7 +1,26 @@
 import { auth } from "@clerk/nextjs/server";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { ApiAccessContent } from "@/components/api-access-content";
 import type { Metadata } from "next";
+
+// Mirror of the same cached lookup used on /account — see the comment
+// there for rationale. Sharing the `api-customer:<userId>` tag means
+// either page warms the other's cache and an invalidation from the
+// billing webhook clears both.
+function isApiCustomerActive(userId: string) {
+  return unstable_cache(
+    async () => {
+      const customer = await prisma.apiCustomer.findUnique({
+        where: { userId },
+        select: { status: true },
+      });
+      return customer?.status === "active";
+    },
+    ["api-customer-active", userId],
+    { revalidate: 60, tags: [`api-customer:${userId}`] },
+  )();
+}
 
 export const metadata: Metadata = {
   title: "Pokémon Color Palette API — Lifetime Access | PokémonPalette",
@@ -42,10 +61,7 @@ export default async function ApiAccessPage() {
   try {
     const { userId } = await auth();
     if (userId) {
-      const customer = await prisma.apiCustomer.findUnique({
-        where: { userId },
-      });
-      hasPurchased = customer?.status === "active";
+      hasPurchased = await isApiCustomerActive(userId);
     }
   } catch {
     // Not signed in or auth unavailable

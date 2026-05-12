@@ -491,12 +491,13 @@ export function SavedPalettesDialog({
                               setDeleteDialogOpen(palette.id);
                             }}
                             disabled={deletingId === palette.id}
+                            aria-label={`Delete ${palette.pokemon_name}${palette.is_shiny ? " (shiny)" : ""} palette`}
                             className="absolute top-2 right-2 z-10 h-6 w-6 p-0 text-muted-foreground hover:text-destructive hover:bg-destructive/10 cursor-pointer"
                           >
                             {deletingId === palette.id ? (
-                              <Loader2 className="w-4 h-4 animate-spin" />
+                              <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                             ) : (
-                              <X className="w-4 h-4" />
+                              <X className="w-4 h-4" aria-hidden="true" />
                             )}
                           </Button>
 
@@ -640,12 +641,13 @@ export function SavedPalettesDialog({
                                 setDeleteDialogOpen(palette.id);
                               }}
                               disabled={deletingId === palette.id}
+                              aria-label={`Delete ${palette.pokemon_name}${palette.is_shiny ? " (shiny)" : ""} palette`}
                               className="absolute top-2 right-2 z-10 h-6 w-6 p-0 text-muted-foreground hover:text-destructive hover:bg-destructive/10 cursor-pointer"
                             >
                               {deletingId === palette.id ? (
-                                <Loader2 className="w-4 h-4 animate-spin" />
+                                <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                               ) : (
-                                <X className="w-4 h-4" />
+                                <X className="w-4 h-4" aria-hidden="true" />
                               )}
                             </Button>
 

@@ -14,6 +14,31 @@ export interface ColorWithFrequency {
   percentage: number;
 }
 
+// Module-scope cache keyed by `${imageUrl}|${count}|${includeFrequencies ? "f" : "h"}`.
+// extractColorsFromImage does a synchronous canvas decode + per-pixel scan,
+// which on a 475x475 sprite is in the 30-80 ms range on a mid-tier laptop
+// and several hundred ms on low-end mobile. Saved-palette grids, the game's
+// guess-history reconstruction, and color-showcase all call it repeatedly
+// with the same sprite URL — caching the result eliminates O(palettes) main-
+// thread work on revisit.
+//
+// We intentionally cache the Promise rather than the resolved value: if a
+// second caller arrives mid-decode, they share the in-flight work instead
+// of starting a duplicate canvas read. Failed promises are evicted so a
+// transient network error doesn't poison the cache forever.
+const extractionCache = new Map<
+  string,
+  Promise<string[] | ColorWithFrequency[]>
+>();
+
+function extractionCacheKey(
+  imageUrl: string,
+  count: number,
+  includeFrequencies: boolean,
+): string {
+  return `${imageUrl}|${count}|${includeFrequencies ? "f" : "h"}`;
+}
+
 /**
  * Extract the top N dominant colors from an image
  * @param imageUrl - URL of the image to analyze
@@ -25,7 +50,11 @@ export async function extractColorsFromImage(
   count: number = 3,
   includeFrequencies: boolean = false
 ): Promise<string[] | ColorWithFrequency[]> {
-  return new Promise((resolve, reject) => {
+  const cacheKey = extractionCacheKey(imageUrl, count, includeFrequencies);
+  const cached = extractionCache.get(cacheKey);
+  if (cached) return cached;
+
+  const pending = new Promise<string[] | ColorWithFrequency[]>((resolve, reject) => {
     const img = new Image();
     img.crossOrigin = "anonymous";
 
@@ -114,4 +143,14 @@ export async function extractColorsFromImage(
 
     img.src = imageUrl;
   });
+
+  extractionCache.set(cacheKey, pending);
+  pending.catch(() => {
+    // Evict failures so a transient load error doesn't break future
+    // calls for the same URL.
+    if (extractionCache.get(cacheKey) === pending) {
+      extractionCache.delete(cacheKey);
+    }
+  });
+  return pending;
 }

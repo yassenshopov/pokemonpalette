@@ -71,7 +71,7 @@ export function LegendsZABanner({
 
   return (
     <div 
-      className={`relative w-full overflow-hidden transition-all duration-300 ease-in-out ${
+      className={`relative w-full overflow-hidden transition-[opacity,transform,max-height,padding] duration-300 ease-in-out ${
         isExiting 
           ? "opacity-0 -translate-y-full max-h-0 py-0" 
           : isMounted

@@ -60,10 +60,24 @@ export async function GET() {
   }
 
   try {
+    // Explicit select keeps the response payload tight (the table has
+    // ~half a dozen audit columns the client never reads) and avoids
+    // shipping any future columns we add to clients automatically. The
+    // shape here matches the `serializeEntry` contract one-to-one.
     const entries = await prisma.pokedexEntry.findMany({
       where: { userId },
       orderBy: { caughtAt: "desc" },
       take: 5000,
+      select: {
+        id: true,
+        userId: true,
+        pokemonId: true,
+        isShiny: true,
+        mode: true,
+        attempts: true,
+        hintsUsed: true,
+        caughtAt: true,
+      },
     });
     return NextResponse.json(
       { entries: entries.map(serializeEntry) },

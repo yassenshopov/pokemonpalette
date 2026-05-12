@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag, unstable_cache } from "next/cache";
 import { requireAdmin } from "@/lib/admin/auth";
 import { getAllPokemonMetadata } from "@/lib/pokemon";
 import { readFile, writeFile } from "fs/promises";
@@ -8,6 +9,8 @@ import {
   type HintCategory,
   type HintConfig,
 } from "@/lib/game/hints";
+
+const ADMIN_POKEMON_COLORS_TAG = "admin-pokemon-colors";
 
 // Pokemon JSON files are served from /public/data/pokemon/{id}.json. That
 // directory is both the build-time static source AND the runtime public
@@ -185,15 +188,17 @@ async function readVarietyRow(
   }
 }
 
-// GET — Return every Pokemon with its current stored palette (admin only)
-export async function GET() {
-  const authResult = await requireAdmin();
-  if (!authResult.ok) return authResult.response;
+// Build the admin pokemon-colors response. Reads ~1,350 JSON files from
+// `public/data/pokemon/` and resolves all alt-form varieties — ~30-60 ms
+// in dev, much longer cold on Vercel's filesystem. Cached behind the
+// `admin-pokemon-colors` tag so consecutive admin page visits share work
+// and the PUT handler can invalidate after each save.
+const buildAdminPokemonColors = unstable_cache(
+  async () => {
+    const allPokemon = getAllPokemonMetadata();
 
-  const allPokemon = getAllPokemonMetadata();
-
-  const pokemonWithColors = await Promise.all(
-    allPokemon.map(async (pokemon) => {
+    const pokemonWithColors = await Promise.all(
+      allPokemon.map(async (pokemon) => {
       try {
         const filePath = join(POKEMON_DATA_DIR, `${pokemon.id}.json`);
         const fileContent = await readFile(filePath, "utf-8");
@@ -270,11 +275,23 @@ export async function GET() {
     }),
   );
 
-  const validPokemon = pokemonWithColors.filter(
-    (p): p is NonNullable<typeof p> => p !== null,
-  );
+    const validPokemon = pokemonWithColors.filter(
+      (p): p is NonNullable<typeof p> => p !== null,
+    );
 
-  return NextResponse.json({ pokemon: validPokemon });
+    return { pokemon: validPokemon };
+  },
+  ["admin-pokemon-colors-list"],
+  { revalidate: 3600, tags: [ADMIN_POKEMON_COLORS_TAG] },
+);
+
+// GET — Return every Pokemon with its current stored palette (admin only)
+export async function GET() {
+  const authResult = await requireAdmin();
+  if (!authResult.ok) return authResult.response;
+
+  const payload = await buildAdminPokemonColors();
+  return NextResponse.json(payload);
 }
 
 // PUT — Update a Pokemon's stored palette and/or hint config (admin only)
@@ -414,6 +431,11 @@ export async function PUT(req: NextRequest) {
       { status: 501 },
     );
   }
+
+  // Drop the cached list response so the admin UI sees the new palette
+  // on its next refresh. Without this the workbench can show stale
+  // colors for up to an hour after a save.
+  revalidateTag(ADMIN_POKEMON_COLORS_TAG);
 
   return NextResponse.json({
     message: "Pokemon entry updated successfully",

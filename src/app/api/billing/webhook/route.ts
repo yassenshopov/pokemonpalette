@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse, after } from "next/server";
+import { revalidateTag } from "next/cache";
 import { stripe } from "@/lib/stripe";
 import { prisma } from "@/lib/prisma";
 import { generateKey } from "@/lib/api-keys";
@@ -223,6 +224,12 @@ export async function POST(req: NextRequest) {
       }
     });
   }
+
+  // Drop the per-user cached `apiCustomer.status` read used by /account
+  // and /api-access so the user sees the API tab immediately after a
+  // successful purchase instead of waiting up to 60 s for the cache
+  // entry to expire.
+  revalidateTag(`api-customer:${userId}`);
 
   logger.info("billing.webhook.purchase_fulfilled", { userId, eventId: event.id });
   return NextResponse.json({ received: true });

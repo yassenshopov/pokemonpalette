@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
 import { parseUtcDate } from "@/lib/game/similarity";
+import { DAILY_TARGET_TAG } from "@/lib/game/daily-target";
 import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
@@ -153,6 +155,12 @@ export async function PUT(req: NextRequest) {
       },
     });
 
+    // Invalidate the cached daily target for this date so the game
+    // (and any other reader of `resolveDailyTarget`) picks up the new
+    // override on the very next request instead of waiting for the
+    // hourly revalidation window.
+    revalidateTag(DAILY_TARGET_TAG);
+
     return NextResponse.json({
       override: {
         date: toIsoDate(row.date),
@@ -197,6 +205,9 @@ export async function DELETE(req: NextRequest) {
     const result = await prisma.dailyOverride.deleteMany({
       where: { date: parseUtcDate(dateParam) },
     });
+    if (result.count > 0) {
+      revalidateTag(DAILY_TARGET_TAG);
+    }
     return NextResponse.json({ ok: true, affected: result.count });
   } catch (err) {
     logger.error("admin.daily-overrides.delete_failed", {

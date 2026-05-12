@@ -492,6 +492,7 @@ export function PokemonHero({
                 }`}
                 onLoad={() => setImageLoading(false)}
                 unoptimized
+                priority
               />
             </div>
           ) : null}
@@ -537,6 +538,7 @@ function HeroImage({
   className,
   onLoad,
   unoptimized,
+  priority,
 }: {
   src: string;
   fallbackUrl: string | null;
@@ -546,6 +548,7 @@ function HeroImage({
   className?: string;
   onLoad?: () => void;
   unoptimized?: boolean;
+  priority?: boolean;
 }) {
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
@@ -580,6 +583,7 @@ function HeroImage({
       onLoad={onLoad}
       unoptimized={shouldUnoptimize}
       onError={handleError}
+      priority={priority}
     />
   );
 }

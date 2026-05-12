@@ -25,7 +25,7 @@ function rgbToHsl(r: number, g: number, b: number): [number, number, number] {
   return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
 }
 
-function convertColor(hex: string, format: ColorFormat): string {
+export function convertColor(hex: string, format: ColorFormat): string {
   if (format === "hex") return hex;
   const [r, g, b] = hexToRgb(hex);
   if (format === "rgb") return `rgb(${r}, ${g}, ${b})`;
@@ -33,7 +33,7 @@ function convertColor(hex: string, format: ColorFormat): string {
   return `hsl(${h}, ${s}%, ${l}%)`;
 }
 
-function convertPalette(palette: ColorPalette, format: ColorFormat): ColorPalette {
+export function convertPalette(palette: ColorPalette, format: ColorFormat): ColorPalette {
   if (format === "hex") return palette;
   return {
     primary: convertColor(palette.primary, format),

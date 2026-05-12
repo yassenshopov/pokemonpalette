@@ -302,8 +302,9 @@ export function PokemonCard({
                   href={getBulbapediaUrl(pokemon.name)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Learn more about ${pokemon.name} on Bulbapedia (opens in a new tab)`}
                 >
-                  <ExternalLink className="w-4 h-4 mr-1" />
+                  <ExternalLink className="w-4 h-4 mr-1" aria-hidden="true" />
                   Learn More
                 </a>
               </Button>

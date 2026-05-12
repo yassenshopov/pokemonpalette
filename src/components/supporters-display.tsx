@@ -45,7 +45,7 @@ export function SupportersDisplay({
         {mockSupporters.map((supporter, index) => (
           <div
             key={index}
-            className="group relative overflow-hidden rounded-lg p-4 transition-all duration-300 hover:scale-105"
+            className="group relative overflow-hidden rounded-lg p-4 transition-transform duration-300 hover:scale-105"
             style={{
               background: `linear-gradient(135deg, ${primaryColor}15 0%, ${secondaryColor}15 100%)`,
               border: `1px solid ${primaryColor}30`,
@@ -91,7 +91,7 @@ export function SupportersDisplay({
           rel="noopener noreferrer"
         >
           <Button
-            className="shadow-none cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95"
+            className="shadow-none cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-95"
             style={{
               backgroundColor: primaryColor,
               color:

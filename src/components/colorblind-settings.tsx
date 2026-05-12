@@ -93,10 +93,17 @@ function ColorPreview({ type }: { type: ColorblindType }) {
 
   const filterStyle = getFilterStyle(type);
 
+  // The whole strip is a visual demo of the colorblind filter. The
+  // 24 Pokémon images would otherwise be announced individually by
+  // screen readers — that's noisy and useless, since the previews
+  // exist only to show the *visual* difference between filters.
+  // Mark the wrapper aria-hidden and the images alt="" so AT users
+  // skip the entire block.
   return (
-    <div 
+    <div
       className="flex items-center gap-3 rounded-lg border border-border/50 bg-muted/30 p-2"
       style={{ filter: filterStyle }}
+      aria-hidden="true"
     >
       {pokemon.map((p) => (
         <div
@@ -106,7 +113,7 @@ function ColorPreview({ type }: { type: ColorblindType }) {
         >
           <Image
             src={`/pokemon/${p.id}.png`}
-            alt={p.name}
+            alt=""
             fill
             sizes="48px"
             className="object-contain"

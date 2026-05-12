@@ -196,11 +196,12 @@ export function ApiKeysManager() {
                           variant="outline"
                           size="icon"
                           onClick={copyKey}
+                          aria-label={copied ? "API key copied" : "Copy API key to clipboard"}
                         >
                           {copied ? (
-                            <Check className="w-4 h-4 text-green-500" />
+                            <Check className="w-4 h-4 text-green-500" aria-hidden="true" />
                           ) : (
-                            <Copy className="w-4 h-4" />
+                            <Copy className="w-4 h-4" aria-hidden="true" />
                           )}
                         </Button>
                       </div>
@@ -257,8 +258,12 @@ export function ApiKeysManager() {
                           </div>
                           <AlertDialog>
                             <AlertDialogTrigger asChild>
-                              <Button variant="ghost" size="icon">
-                                <Trash2 className="w-4 h-4 text-destructive" />
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                aria-label={`Revoke API key ${k.name ? `"${k.name}"` : `pkpal_${k.keyPrefix}`}`}
+                              >
+                                <Trash2 className="w-4 h-4 text-destructive" aria-hidden="true" />
                               </Button>
                             </AlertDialogTrigger>
                             <AlertDialogContent>

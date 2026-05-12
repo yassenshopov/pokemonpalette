@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import { useId, useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { PokemonMetadata } from "@/types/pokemon";
 import Image from "next/image";
@@ -375,6 +375,19 @@ export function PokemonSearch({
     }
   }, [selectedIndex]);
 
+  // Use a stable id for the listbox + activedescendant wiring. useId
+  // gives us a hydration-safe value so SSR markup matches client markup
+  // (some screen readers cache initial ARIA tree before hydration).
+  const listboxId = useId();
+  const optionIdFor = useCallback(
+    (pokemonId: number) => `${listboxId}-opt-${pokemonId}`,
+    [listboxId],
+  );
+  const activeDescendantId =
+    showSuggestions && suggestions[selectedIndex]
+      ? optionIdFor(suggestions[selectedIndex].id)
+      : undefined;
+
   return (
     <div className="w-full relative" ref={searchRef}>
       <Input
@@ -393,10 +406,20 @@ export function PokemonSearch({
         role="combobox"
         aria-autocomplete="list"
         aria-expanded={showSuggestions}
+        aria-controls={listboxId}
+        aria-activedescendant={activeDescendantId}
+        autoComplete="off"
+        inputMode="search"
+        enterKeyHint="search"
       />
 
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-popover border rounded-md max-h-[400px] overflow-y-auto z-50">
+        <div
+          id={listboxId}
+          role="listbox"
+          aria-label="Pokémon suggestions"
+          className="absolute top-full left-0 right-0 mt-2 bg-popover border rounded-md max-h-[400px] overflow-y-auto z-50"
+        >
           {suggestions.map((pokemon, index) => {
             const isGuessed = guessedPokemonIds.includes(pokemon.id);
             const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
@@ -404,19 +427,24 @@ export function PokemonSearch({
               ? selectedGenerations.includes(generation)
               : true;
             const isDisabled = isGuessed || !isGenerationSelected;
+            const isActive = index === selectedIndex && !isDisabled;
             return (
               <button
                 key={pokemon.id}
+                id={optionIdFor(pokemon.id)}
                 ref={(el) => {
                   itemRefs.current[index] = el;
                 }}
+                role="option"
+                aria-selected={isActive}
+                aria-disabled={isDisabled || undefined}
                 onClick={() => !isDisabled && handleSelect(pokemon.id)}
                 disabled={isDisabled}
                 className={`w-full flex items-center gap-3 p-3 transition-colors text-left ${
                   isDisabled
                     ? "opacity-40 cursor-not-allowed"
                     : "cursor-pointer hover:bg-accent"
-                } ${index === selectedIndex && !isDisabled ? "bg-accent" : ""}`}
+                } ${isActive ? "bg-accent" : ""}`}
               >
                 {/* Sprite */}
                 {pokemonSprites[pokemon.id] ? (

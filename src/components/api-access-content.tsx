@@ -7,6 +7,8 @@ import Image from "next/image";
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
+import { useReducedMotion } from "@/lib/motion";
+import { getContrastHex } from "@/lib/game/colors";
 import {
   Card,
   CardContent,
@@ -132,7 +134,7 @@ function SwatchStrip({ colors, className = "" }: { colors: string[]; className?:
 function SwatchCard({ name, sprite, palette }: { name: string; sprite: string; palette: typeof SHOWCASE_POKEMON[0]["palette"] }) {
   const colors = [palette.primary, palette.secondary, palette.accent];
   return (
-    <div className="group relative rounded-xl border bg-card overflow-hidden transition-all hover:-translate-y-0.5">
+    <div className="group relative rounded-xl border bg-card overflow-hidden transition-transform hover:-translate-y-0.5">
       <div className="relative h-24 overflow-hidden">
         <SwatchStrip colors={colors} className="h-full" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -485,13 +487,39 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
   const [loading, setLoading] = useState(false);
   const [activeShowcase, setActiveShowcase] = useState(0);
   const [activeTocId, setActiveTocId] = useState("features");
+  const reducedMotion = useReducedMotion();
 
+  // Auto-advance the hero showcase every 3 s, but only when the user
+  // hasn't opted out of motion and the tab is visible. Running this in a
+  // hidden tab burns wakeups for animation no one sees, and the original
+  // unconditional `setInterval` is a vestibular-accessibility failure for
+  // users with prefers-reduced-motion. visibilitychange wakes the
+  // interval back up when the tab returns to focus.
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveShowcase((i) => (i + 1) % SHOWCASE_POKEMON.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    if (reducedMotion) return;
+    let interval: ReturnType<typeof setInterval> | null = null;
+    const start = () => {
+      if (interval) return;
+      interval = setInterval(() => {
+        setActiveShowcase((i) => (i + 1) % SHOWCASE_POKEMON.length);
+      }, 3000);
+    };
+    const stop = () => {
+      if (!interval) return;
+      clearInterval(interval);
+      interval = null;
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") start();
+      else stop();
+    };
+    if (document.visibilityState === "visible") start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      stop();
+    };
+  }, [reducedMotion]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -546,6 +574,19 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
     activePokemon.palette.accent,
   ];
 
+  // Some showcase palette primaries (Gardevoir's `#eeeeff`, Pikachu's
+  // `#f6e652`) are too light to read against the card-bg shade we use
+  // for the hero text. We swap in the darker `secondary` when the
+  // primary fails the relative-luminance check (>=0.7 → too light
+  // for #ffffff/`background`). This keeps the visual "this color"
+  // intent (the swatch beneath still shows the actual primary) while
+  // satisfying WCAG AA contrast on the headline word.
+  const headlineColor = pickReadableHex(
+    activePokemon.palette.primary,
+    activePokemon.palette.secondary,
+    activePokemon.palette.accent,
+  );
+
   return (
     <div className="flex h-screen overflow-hidden">
       <CollapsibleSidebar />
@@ -570,7 +611,7 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
                     <br />
                     <span
                       className="transition-colors duration-700"
-                      style={{ color: activePokemon.palette.primary }}
+                      style={{ color: headlineColor }}
                     >
                       every
                     </span>{" "}
@@ -613,14 +654,14 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
                           alt={activePokemon.name}
                           width={80}
                           height={80}
-                          className="opacity-15 brightness-0 dark:invert transition-all duration-500"
+                          className="opacity-15 brightness-0 dark:invert transition-opacity duration-500"
                           unoptimized
                         />
                       </div>
                     </div>
                     <div className="p-4 space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="font-semibold text-lg transition-all duration-300">
+                        <span className="font-semibold text-lg transition-colors duration-300">
                           {activePokemon.name}
                         </span>
                         <span className="text-xs text-muted-foreground font-mono">API response</span>
@@ -648,7 +689,7 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
                       <button
                         key={p.name}
                         onClick={() => setActiveShowcase(i)}
-                        className="w-2 h-2 rounded-full transition-all duration-300"
+                        className="w-2 h-2 rounded-full transition-[background-color,opacity] duration-300"
                         style={{
                           backgroundColor: i === activeShowcase ? p.palette.primary : undefined,
                           opacity: i === activeShowcase ? 1 : 0.3,
@@ -882,4 +923,32 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
       </div>
     </div>
   );
+}
+
+// Pick the first hex from the candidate list whose relative luminance is
+// dark enough to read as a foreground color against a near-white card.
+// Falls back to the foreground token (`getContrastHex("#ffffff")`) only
+// when every candidate is too light, which is rare for our curated
+// palettes. We use the same parsing as `getContrastHex` so the threshold
+// stays consistent with the rest of the app.
+function hexLuminance(hex: string): number {
+  const clean = hex.replace("#", "");
+  if (clean.length < 6) return 1;
+  const r = parseInt(clean.substring(0, 2), 16);
+  const g = parseInt(clean.substring(2, 4), 16);
+  const b = parseInt(clean.substring(4, 6), 16);
+  if ([r, g, b].some((v) => Number.isNaN(v))) return 1;
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+}
+
+function pickReadableHex(...candidates: string[]): string {
+  // Threshold of 0.65 keeps very light pastels (Gardevoir #eeeeff at ~0.94,
+  // Pikachu #f6e652 at ~0.88) out of the headline slot while still letting
+  // mid-tone primaries (Charizard #ee8329 at ~0.61) through. The fallback
+  // is the contrast color for white (`#000000`) so the headline word is
+  // always legible even if every candidate fails.
+  for (const candidate of candidates) {
+    if (hexLuminance(candidate) <= 0.65) return candidate;
+  }
+  return getContrastHex("#ffffff");
 }

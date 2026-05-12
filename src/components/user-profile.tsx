@@ -42,12 +42,13 @@ function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
             variant="outline"
             size="sm"
             className={isCollapsed ? "w-8 h-8 p-0" : "w-full"}
+            aria-label={isCollapsed ? "Sign in" : undefined}
           >
             {isCollapsed ? (
-              <User className="h-4 w-4" />
+              <User className="h-4 w-4" aria-hidden="true" />
             ) : (
               <>
-                <User className="h-4 w-4 mr-2" />
+                <User className="h-4 w-4 mr-2" aria-hidden="true" />
                 Sign In
               </>
             )}
@@ -63,6 +64,7 @@ function ClerkUserProfile({ isCollapsed = false }: UserProfileProps) {
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
+            aria-label={`Account menu for ${user.fullName || "user"}`}
             className={`${
               isCollapsed
                 ? "w-8 h-8 p-0 justify-center cursor-pointer"

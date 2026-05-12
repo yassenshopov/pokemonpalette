@@ -352,6 +352,7 @@ export function AccountSettings({
                     <button
                       key={item.id}
                       onClick={() => switchTab(item.id)}
+                      aria-current={activeTab === item.id ? "page" : undefined}
                       className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors text-left w-full ${
                         activeTab === item.id
                           ? "bg-primary/10 text-primary font-medium"

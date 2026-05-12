@@ -43,7 +43,7 @@ export function CoffeeCTA({
         >
           <Button
             size="default"
-            className="border-2 cursor-pointer font-medium font-heading transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group shadow-sm"
+            className="border-2 cursor-pointer font-medium font-heading transition-transform duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group shadow-sm"
             style={{
               backgroundColor: primaryColor,
               borderColor: primaryColor,
@@ -51,7 +51,7 @@ export function CoffeeCTA({
             }}
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            <Coffee className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-12 relative z-10" />
+            <Coffee className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-12 relative z-10" aria-hidden="true" />
             <span className="relative z-10">Support the project</span>
           </Button>
         </a>
@@ -67,14 +67,14 @@ export function CoffeeCTA({
         >
           <Button
             size="icon"
-            className="h-12 w-12 rounded-full border-2 cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
+            className="h-12 w-12 rounded-full border-2 cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105 active:scale-95"
             style={{
               backgroundColor: primaryColor,
               borderColor: primaryColor,
               color: textColor,
             }}
           >
-            <Coffee className="w-5 h-5" />
+            <Coffee className="w-5 h-5" aria-hidden="true" />
           </Button>
         </a>
       </div>

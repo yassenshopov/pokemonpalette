@@ -237,14 +237,19 @@ export function SavedPalettesPageClient() {
     return { recent, grouped, sortedGroupKeys };
   }, [filteredPalettes]);
 
-  // Stagger-in animation whenever the rendered set changes.
-  // Runs on every filter/search keystroke today — animating a 1000-
-  // card grid each time is wasteful, but the worst symptom (whole
-  // grid flashing) is gated by the user actually having that many
-  // saved palettes. Reduced-motion users skip the timeline entirely.
+  // Stagger-in animation on first mount only. Previously this re-ran on
+  // every filter/search keystroke (the dep was `[groupedPalettes]`),
+  // which re-faded the entire grid from opacity:0 on every keystroke
+  // and was very expensive at 1000+ saved palettes. The visual goal is
+  // a one-shot entry animation, not a re-mount effect, so we trigger it
+  // exactly once when cards first paint and skip subsequent dependency
+  // changes. Reduced-motion users skip the timeline entirely.
+  const hasAnimatedInRef = useRef(false);
   useEffect(() => {
+    if (hasAnimatedInRef.current) return;
     const cards = cardsRef.current.filter(Boolean);
     if (cards.length === 0) return;
+    hasAnimatedInRef.current = true;
     if (prefersReducedMotion()) return;
     let cancelled = false;
     loadGsap().then(({ gsap }) => {

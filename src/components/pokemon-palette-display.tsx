@@ -170,7 +170,7 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
               <span
                 className={`text-xs sm:text-sm font-semibold ${getTextColor(
                   color
-                )} transition-all duration-200 ${
+                )} transition-transform duration-200 ${
                   copiedIndex === index ? "scale-110" : ""
                 }`}
               >

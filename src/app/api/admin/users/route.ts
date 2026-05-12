@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Prisma, prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
-import { parseAdminQuery, toCsv } from "@/lib/admin/query";
+import { parseAdminQuery } from "@/lib/admin/query";
 import { logger } from "@/lib/logger";
 
 const SORTABLE = [
@@ -46,6 +46,127 @@ const CSV_COLUMNS = [
 ];
 
 const CSV_ROW_LIMIT = 50_000;
+const CSV_CHUNK_SIZE = 1_000;
+
+// Tight projection used only by the CSV exporter — strictly the columns
+// that appear in `CSV_COLUMNS`, skipping the four JSONB blobs (email
+// addresses, phone numbers, external accounts, public metadata) and a
+// handful of derived flags the CSV doesn't surface. Cuts the per-row
+// wire payload by roughly an order of magnitude for the typical row.
+const CSV_USER_SELECT = {
+  id: true,
+  email: true,
+  firstName: true,
+  lastName: true,
+  username: true,
+  banned: true,
+  locked: true,
+  twoFactorEnabled: true,
+  totpEnabled: true,
+  isAdmin: true,
+  createdAt: true,
+  lastActiveAt: true,
+  lastSignInAt: true,
+} as const;
+
+type CsvUserRow = {
+  id: string;
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  username: string | null;
+  banned: boolean;
+  locked: boolean;
+  twoFactorEnabled: boolean;
+  totpEnabled: boolean;
+  isAdmin: boolean;
+  createdAt: Date;
+  lastActiveAt: Date | null;
+  lastSignInAt: Date | null;
+};
+
+function toCsvField(value: unknown): string {
+  if (value === null || value === undefined) return "";
+  const str = value instanceof Date ? value.toISOString() : String(value);
+  if (/[",\n\r]/.test(str)) {
+    return `"${str.replace(/"/g, '""')}"`;
+  }
+  return str;
+}
+
+function csvRowFor(user: CsvUserRow): string {
+  // Field order must match the CSV_COLUMNS header order below.
+  return [
+    user.id,
+    user.email,
+    user.username,
+    user.firstName,
+    user.lastName,
+    user.banned,
+    user.locked,
+    user.twoFactorEnabled || user.totpEnabled,
+    user.isAdmin,
+    user.createdAt,
+    user.lastActiveAt,
+    user.lastSignInAt,
+  ]
+    .map(toCsvField)
+    .join(",");
+}
+
+function streamUsersCsv(
+  where: Prisma.UserWhereInput,
+  orderBy: Prisma.UserOrderByWithRelationInput,
+): NextResponse {
+  const encoder = new TextEncoder();
+  const headerLine = CSV_COLUMNS.map((c) => c.header).join(",");
+
+  // We page with `skip + take` for compatibility with arbitrary
+  // orderBy values (cursor pagination would require the sort key to
+  // be unique, which "email asc" isn't). The hard `CSV_ROW_LIMIT`
+  // bounds the total work; if an admin needs more we'll add a
+  // dedicated background export job.
+  const stream = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      try {
+        controller.enqueue(encoder.encode(headerLine + "\n"));
+        let fetched = 0;
+        let offset = 0;
+        while (fetched < CSV_ROW_LIMIT) {
+          const take = Math.min(CSV_CHUNK_SIZE, CSV_ROW_LIMIT - fetched);
+          const batch = (await prisma.user.findMany({
+            where,
+            orderBy,
+            skip: offset,
+            take,
+            select: CSV_USER_SELECT,
+          })) as CsvUserRow[];
+          if (batch.length === 0) break;
+          const body = batch.map(csvRowFor).join("\n") + "\n";
+          controller.enqueue(encoder.encode(body));
+          fetched += batch.length;
+          offset += batch.length;
+          if (batch.length < take) break;
+        }
+        controller.close();
+      } catch (err) {
+        logger.error("admin.users.csv_stream_failed", {
+          error: err instanceof Error ? err.message : String(err),
+        });
+        controller.error(err);
+      }
+    },
+  });
+
+  return new NextResponse(stream, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/csv; charset=utf-8",
+      "Content-Disposition": `attachment; filename="users-${new Date().toISOString().slice(0, 10)}.csv"`,
+      "Cache-Control": "no-store",
+    },
+  });
+}
 
 // SECURITY: `private_metadata` and `unsafe_metadata` are intentionally
 // omitted from this projection. Clerk's `privateMetadata` is documented
@@ -209,6 +330,16 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    if (query.format === "csv") {
+      // CSV export: stream the body chunk-by-chunk so the worker
+      // never has to hold all 50k rows in memory at once. We also
+      // tighten the projection down to the dozen columns that
+      // actually appear in CSV_COLUMNS — the full row contains
+      // four JSONB blobs (emailAddresses, phoneNumbers,
+      // externalAccounts, publicMetadata) that exporters never need.
+      return streamUsersCsv(where, orderBy);
+    }
+
     // Explicit projection: keep `private_metadata` and `unsafe_metadata`
     // out of the SQL response entirely. Previously we fetched the
     // whole row and stripped them in JS — which left them sitting in
@@ -259,17 +390,6 @@ export async function GET(req: NextRequest) {
     ]);
 
     const rows = records.map(serializeUser);
-
-    if (query.format === "csv") {
-      const csv = toCsv(rows, CSV_COLUMNS);
-      return new NextResponse(csv, {
-        status: 200,
-        headers: {
-          "Content-Type": "text/csv; charset=utf-8",
-          "Content-Disposition": `attachment; filename="users-${new Date().toISOString().slice(0, 10)}.csv"`,
-        },
-      });
-    }
 
     return NextResponse.json({
       rows,

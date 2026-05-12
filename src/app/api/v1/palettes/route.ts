@@ -1,16 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
+import { unstable_cache } from "next/cache";
 import { requireApiKey } from "@/lib/api-auth";
 import {
   getAllPokemonMetadata,
   batchGetPokemonById,
 } from "@/lib/pokemon";
 import {
+  convertPalette,
   paletteToTailwindConfig,
   paletteToCssVariables,
   parseColorFormat,
   type ColorFormat,
 } from "@/lib/palette-formats";
-import type { ColorPalette } from "@/types/pokemon";
 import {
   PUBLIC_API_CORS_HEADERS,
   publicApiPreflight,
@@ -26,48 +27,78 @@ export async function OPTIONS() {
   return publicApiPreflight();
 }
 
-function hexToRgb(hex: string): [number, number, number] {
-  const h = hex.replace("#", "");
-  return [
-    parseInt(h.substring(0, 2), 16),
-    parseInt(h.substring(2, 4), 16),
-    parseInt(h.substring(4, 6), 16),
-  ];
-}
+// Pokemon JSON ships in `public/data/pokemon/` and is immutable per
+// deploy — filter results + batched JSON reads can therefore be cached
+// for the lifetime of the deployment. The keying uses every query
+// parameter the response varies on, so the function returns a unique
+// payload per request shape while sharing all the disk-read work
+// behind a single in-process cache entry. `revalidate: false` plus the
+// `palettes-v1` tag means a hard invalidation requires either a new
+// deploy or an explicit `revalidateTag` call (e.g. from the admin
+// color-management workbench).
+const buildPaletteResponse = unstable_cache(
+  async (
+    page: number,
+    pageSize: number,
+    format: ColorFormat,
+    shiny: boolean,
+    typeFilter: string | undefined,
+    generationFilter: number | undefined,
+  ) => {
+    let allMeta = getAllPokemonMetadata();
 
-function rgbToHsl(r: number, g: number, b: number): [number, number, number] {
-  r /= 255; g /= 255; b /= 255;
-  const max = Math.max(r, g, b), min = Math.min(r, g, b);
-  const l = (max + min) / 2;
-  if (max === min) return [0, 0, Math.round(l * 100)];
-  const d = max - min;
-  const s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-  let h = 0;
-  if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
-  else if (max === g) h = ((b - r) / d + 2) / 6;
-  else h = ((r - g) / d + 4) / 6;
-  return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
-}
+    if (typeFilter) {
+      allMeta = allMeta.filter((m) =>
+        m.type.some((t) => t.toLowerCase() === typeFilter.toLowerCase()),
+      );
+    }
+    if (generationFilter) {
+      allMeta = allMeta.filter((m) => m.generation === generationFilter);
+    }
 
-function convertColor(hex: string, format: ColorFormat): string {
-  if (format === "hex") return hex;
-  const [r, g, b] = hexToRgb(hex);
-  if (format === "rgb") return `rgb(${r}, ${g}, ${b})`;
-  const [h, s, l] = rgbToHsl(r, g, b);
-  return `hsl(${h}, ${s}%, ${l}%)`;
-}
+    const total = allMeta.length;
+    const totalPages = Math.ceil(total / pageSize);
+    const slice = allMeta.slice((page - 1) * pageSize, page * pageSize);
 
-function convertPalette(palette: ColorPalette, format: ColorFormat): ColorPalette {
-  if (format === "hex") return palette;
-  return {
-    primary: convertColor(palette.primary, format),
-    secondary: convertColor(palette.secondary, format),
-    accent: convertColor(palette.accent, format),
-    background: convertColor(palette.background, format),
-    text: convertColor(palette.text, format),
-    highlights: palette.highlights.map((c) => convertColor(c, format)),
-  };
-}
+    const fullData = await batchGetPokemonById(slice.map((m) => m.id));
+
+    const data = slice.map((m) => {
+      const pokemon = fullData.get(m.id);
+      const basePalette = shiny && pokemon?.shinyColorPalette
+        ? pokemon.shinyColorPalette
+        : pokemon?.colorPalette ?? null;
+
+      const converted = basePalette ? convertPalette(basePalette, format) : null;
+      const shinyConverted = !shiny && pokemon?.shinyColorPalette
+        ? convertPalette(pokemon.shinyColorPalette, format)
+        : null;
+      const slug = shiny ? `${m.name}-shiny` : m.name;
+
+      return {
+        id: m.id,
+        name: m.name,
+        species: m.species,
+        type: m.type,
+        generation: m.generation,
+        rarity: m.rarity,
+        shiny,
+        colorFormat: format,
+        colorPalette: converted,
+        shinyColorPalette: shiny ? null : shinyConverted,
+        tailwindConfig: basePalette
+          ? paletteToTailwindConfig(slug, basePalette, format)
+          : null,
+        cssVariables: basePalette
+          ? paletteToCssVariables(slug, basePalette, format)
+          : null,
+      };
+    });
+
+    return { data, page, pageSize, total, totalPages, colorFormat: format, shiny };
+  },
+  ["api-v1-palettes-list"],
+  { revalidate: false, tags: ["palettes-v1"] },
+);
 
 export async function GET(req: NextRequest) {
   const auth = await requireApiKey(req);
@@ -84,57 +115,14 @@ export async function GET(req: NextRequest) {
     ? parseInt(url.searchParams.get("generation")!, 10)
     : undefined;
 
-  let allMeta = getAllPokemonMetadata();
-
-  if (typeFilter) {
-    allMeta = allMeta.filter((m) =>
-      m.type.some((t) => t.toLowerCase() === typeFilter.toLowerCase()),
-    );
-  }
-  if (generationFilter) {
-    allMeta = allMeta.filter((m) => m.generation === generationFilter);
-  }
-
-  const total = allMeta.length;
-  const totalPages = Math.ceil(total / pageSize);
-  const slice = allMeta.slice((page - 1) * pageSize, page * pageSize);
-
-  const fullData = await batchGetPokemonById(slice.map((m) => m.id));
-
-  const data = slice.map((m) => {
-    const pokemon = fullData.get(m.id);
-    const basePalette = shiny && pokemon?.shinyColorPalette
-      ? pokemon.shinyColorPalette
-      : pokemon?.colorPalette ?? null;
-
-    const converted = basePalette ? convertPalette(basePalette, format) : null;
-    const shinyConverted = !shiny && pokemon?.shinyColorPalette
-      ? convertPalette(pokemon.shinyColorPalette, format)
-      : null;
-    const slug = shiny ? `${m.name}-shiny` : m.name;
-
-    return {
-      id: m.id,
-      name: m.name,
-      species: m.species,
-      type: m.type,
-      generation: m.generation,
-      rarity: m.rarity,
-      shiny,
-      colorFormat: format,
-      colorPalette: converted,
-      shinyColorPalette: shiny ? null : shinyConverted,
-      tailwindConfig: basePalette
-        ? paletteToTailwindConfig(slug, basePalette, format)
-        : null,
-      cssVariables: basePalette
-        ? paletteToCssVariables(slug, basePalette, format)
-        : null,
-    };
-  });
-
-  return NextResponse.json(
-    { data, page, pageSize, total, totalPages, colorFormat: format, shiny },
-    { headers: CACHE_HEADERS },
+  const payload = await buildPaletteResponse(
+    page,
+    pageSize,
+    format,
+    shiny,
+    typeFilter,
+    generationFilter,
   );
+
+  return NextResponse.json(payload, { headers: CACHE_HEADERS });
 }
