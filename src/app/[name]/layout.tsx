@@ -35,7 +35,7 @@ export async function generateMetadata({
         },
       ],
       locale: "en_US",
-      type: "website",
+      type: "article",
     },
     twitter: {
       card: "summary_large_image",

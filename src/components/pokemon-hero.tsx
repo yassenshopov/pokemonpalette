@@ -10,7 +10,9 @@ import { LoaderOverlay } from "@/components/loader-overlay";
 import { Button } from "@/components/ui/button";
 import { useUser, SignInButton } from "@clerk/nextjs";
 import { toast } from "sonner";
-import { Bookmark } from "lucide-react";
+import { Bookmark, ExternalLink } from "lucide-react";
+import { FaPinterestP } from "react-icons/fa";
+import { track } from "@/lib/analytics";
 import { SavedPalettesDialog } from "@/components/saved-palettes-dialog";
 import { useSavedPalettes } from "@/hooks/use-saved-palettes";
 import { getContrastHex as getTextColor } from "@/lib/game/colors";
@@ -354,9 +356,9 @@ export function PokemonHero({
             its number in the Pokedex), and you can extract a palette of 3, 4, 5, or 6 colours.
           </p>
 
-          {/* Save/Unsave Palette Button */}
+          {/* Action buttons row */}
           {pokemon && colors && colors.length > 0 && (
-            <>
+            <div className="flex flex-wrap items-center gap-3">
               {existingPaletteId ? (
                 <SavedPalettesDialog
                   onPaletteSelect={onPaletteLoad}
@@ -462,7 +464,12 @@ export function PokemonHero({
                   )}
                 </>
               )}
-            </>
+
+              <PinterestPinButton
+                pokemonName={pokemon.name}
+                isShiny={isShiny}
+              />
+            </div>
           )}
         </div>
 
@@ -574,5 +581,53 @@ function HeroImage({
       unoptimized={shouldUnoptimize}
       onError={handleError}
     />
+  );
+}
+
+function PinterestPinButton({
+  pokemonName,
+  isShiny,
+}: {
+  pokemonName: string;
+  isShiny: boolean;
+}) {
+  const slug = pokemonName.toLowerCase();
+  const pageUrl = isShiny
+    ? `https://www.pokemonpalette.com/shiny/${slug}`
+    : `https://www.pokemonpalette.com/${slug}`;
+  const pinImageUrl = isShiny
+    ? `https://www.pokemonpalette.com/api/og/pin/shiny/${slug}`
+    : `https://www.pokemonpalette.com/api/og/pin/${slug}`;
+  const description = `${pokemonName} color palette — extract beautiful hex colors for your next design project. pokemonpalette.com`;
+
+  const href =
+    `https://pinterest.com/pin/create/button/` +
+    `?url=${encodeURIComponent(pageUrl)}` +
+    `&media=${encodeURIComponent(pinImageUrl)}` +
+    `&description=${encodeURIComponent(description)}`;
+
+  return (
+    <Button
+      asChild
+      variant="outline"
+      size="default"
+      className="flex items-center gap-2 cursor-pointer"
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() =>
+          track("pinterest_pin_click", {
+            pokemon: pokemonName,
+            is_shiny: isShiny,
+          })
+        }
+      >
+        <FaPinterestP className="w-4 h-4" aria-hidden="true" />
+        Pin It
+        <ExternalLink className="w-3 h-3 opacity-60" />
+      </a>
+    </Button>
   );
 }

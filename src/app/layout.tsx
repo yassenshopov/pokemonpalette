@@ -124,6 +124,17 @@ export const metadata: Metadata = {
   //   yandex: "Add your Yandex verification code if needed",
   //   yahoo: "Add your Yahoo verification code if needed",
   // },
+
+  // Pinterest Rich Pin + domain verification.
+  // "pinterest-rich-pin" tells the Rich Pin validator to parse OG tags.
+  // Replace the p:domain_verify value after claiming pokemonpalette.com
+  // in Pinterest Business (Settings > Claimed Accounts).
+  other: {
+    "pinterest-rich-pin": "true",
+    ...(process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY
+      ? { "p:domain_verify": process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY }
+      : {}),
+  },
 };
 
 // Separate viewport export (required since Next 14 — previously bundled into
