@@ -52,8 +52,19 @@ function getRedis(): Redis | null {
 
 const warned = new Set<string>();
 
+/**
+ * `RATE_LIMIT_DISABLE=1` lets us run the production build locally
+ * (`next start`) for E2E tests without provisioning real Upstash
+ * credentials. Without this escape hatch the hard-fail below would
+ * make the prod build unbootable on a dev workstation.
+ *
+ * Set this ONLY in trusted environments. CI / preview / production
+ * deployments should never carry this flag.
+ */
+const PROD_BYPASS = process.env.RATE_LIMIT_DISABLE === "1";
+
 function noop(name: string): RateLimiter {
-  if (!warned.has(name) && process.env.NODE_ENV !== "production") {
+  if (!warned.has(name)) {
     warned.add(name);
     console.warn(
       `[rate-limit] ${name}: Upstash not configured, requests will not be rate-limited. ` +
@@ -91,6 +102,21 @@ export function rateLimit(
 
   const redis = getRedis();
   if (!redis) {
+    // Hard-fail in production. The previous behaviour silently
+    // degraded to a no-op limiter, which meant a misconfigured
+    // deployment (e.g. env var typo on a new project) would lose ALL
+    // rate limiting — incl. the auth/billing surfaces — without any
+    // alert. Crashing at boot surfaces the misconfig in deploy logs
+    // immediately and is recoverable by setting the env var.
+    if (process.env.NODE_ENV === "production" && !PROD_BYPASS) {
+      throw new Error(
+        `[rate-limit] ${name}: Upstash Redis is required in production. ` +
+          `Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN (or ` +
+          `KV_REST_API_URL + KV_REST_API_TOKEN). To bypass for a local ` +
+          `production-build smoke test, set RATE_LIMIT_DISABLE=1 — never ` +
+          `in a deployed environment.`
+      );
+    }
     const limiter = noop(name);
     limiters.set(name, limiter);
     return limiter;

@@ -34,10 +34,9 @@ export function EvolutionChain({
           [level: number]: typeof pokemonData.evolution;
         } = {};
         pokemonData.evolution.forEach((evo) => {
-          if (!evosByLevel[evo.level]) {
-            evosByLevel[evo.level] = [];
-          }
-          evosByLevel[evo.level].push(evo);
+          const bucket = evosByLevel[evo.level] ?? [];
+          bucket.push(evo);
+          evosByLevel[evo.level] = bucket;
         });
 
         const levels = Object.keys(evosByLevel)
@@ -45,7 +44,7 @@ export function EvolutionChain({
           .sort((a, b) => a - b);
 
         return levels.flatMap((level, levelIndex) => {
-          const evosAtLevel = evosByLevel[level];
+          const evosAtLevel = evosByLevel[level] ?? [];
           const isLastLevel = levelIndex === levels.length - 1;
           const isBranch = evosAtLevel.length > 1;
 

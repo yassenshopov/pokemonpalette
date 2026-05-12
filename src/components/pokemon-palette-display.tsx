@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { Check } from "lucide-react";
-import { gsap } from "gsap";
+import { loadGsap, prefersReducedMotion } from "@/lib/motion";
 
 interface PokemonPaletteDisplayProps {
   colors: string[];
@@ -72,23 +72,30 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Animate cards in with stagger
-    gsap.fromTo(
-      cardsRef.current.filter(Boolean),
-      {
-        opacity: 0,
-        y: 20,
-        scale: 0.9,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.05,
-        ease: "back.out(1.7)",
-      }
-    );
+    if (prefersReducedMotion()) return;
+    let cancelled = false;
+    loadGsap().then(({ gsap }) => {
+      if (cancelled) return;
+      gsap.fromTo(
+        cardsRef.current.filter(Boolean),
+        {
+          opacity: 0,
+          y: 20,
+          scale: 0.9,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "back.out(1.7)",
+        }
+      );
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [colors]);
 
   const handleCopy = async (color: string, index: number) => {
@@ -96,15 +103,16 @@ export function PokemonPaletteDisplay({ colors }: PokemonPaletteDisplayProps) {
       await navigator.clipboard.writeText(color);
       setCopiedIndex(index);
 
-      // Animate the card when copied
       const card = cardsRef.current[index];
-      if (card) {
-        gsap.to(card, {
-          scale: 0.95,
-          duration: 0.1,
-          yoyo: true,
-          repeat: 1,
-          ease: "power2.inOut",
+      if (card && !prefersReducedMotion()) {
+        loadGsap().then(({ gsap }) => {
+          gsap.to(card, {
+            scale: 0.95,
+            duration: 0.1,
+            yoyo: true,
+            repeat: 1,
+            ease: "power2.inOut",
+          });
         });
       }
 

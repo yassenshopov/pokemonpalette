@@ -3,7 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { gsap } from "gsap";
+import type gsapNs from "gsap";
+import { loadGsap, prefersReducedMotion } from "@/lib/motion";
+
+type GsapTween = ReturnType<(typeof gsapNs)["to"]>;
 import { PokemonMetadata } from "@/types/pokemon";
 import { getPokemonById, getAllPokemonMetadata } from "@/lib/pokemon";
 import { Copy, Check } from "lucide-react";
@@ -32,7 +35,7 @@ export function PokemonPaletteMarquee({
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
   const [pausedRows, setPausedRows] = useState<Set<number>>(new Set());
   const marqueeRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const animationRefs = useRef<(gsap.core.Tween | null)[]>([]);
+  const animationRefs = useRef<(GsapTween | null)[]>([]);
 
   // Get random Pokemon - load enough for all rows
   useEffect(() => {
@@ -100,43 +103,54 @@ export function PokemonPaletteMarquee({
     });
   }, [pausedRows]);
 
-  // Animate marquees
   useEffect(() => {
     if (loading || pokemonList.length === 0) return;
+    // Honor the OS reduced-motion setting: the marquee is purely
+    // decorative, so the right thing to do is render the items
+    // statically and skip the gsap timeline entirely. This also
+    // means we never download gsap on first paint for users who
+    // prefer reduced motion — the single biggest win of the
+    // dynamic-import refactor.
+    if (prefersReducedMotion()) return;
 
-    // Small delay to ensure DOM is ready and images can start loading
-    const timeoutId = setTimeout(() => {
-      // Animate each row
-      marqueeRefs.current.forEach((ref, index) => {
-        if (!ref) return;
+    let cancelled = false;
+    // The small `setTimeout` from the previous implementation gave the
+    // browser one render cycle to paint marquee items before we read
+    // `scrollWidth`. Keep that idea but spell it `requestAnimationFrame`
+    // so we don't pin a wall-clock 100ms wait on every mount.
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      loadGsap().then(({ gsap }) => {
+        if (cancelled) return;
+        marqueeRefs.current.forEach((ref, index) => {
+          if (!ref) return;
 
-        // Calculate width based on the actual content
-        // Since we duplicate items, we need to move by half the total width
-        const totalWidth = ref.scrollWidth;
-        const width = totalWidth / 2;
-        
-        // Kill existing animation
-        if (animationRefs.current[index]) {
-          animationRefs.current[index]?.kill();
-        }
+          const totalWidth = ref.scrollWidth;
+          const width = totalWidth / 2;
 
-        // Reset position
-        gsap.set(ref, { x: 0 });
+          if (animationRefs.current[index]) {
+            animationRefs.current[index]?.kill();
+          }
 
-        // Alternate direction: even indices go left to right, odd go right to left
-        const isLeftToRight = index % 2 === 0;
-        
-        animationRefs.current[index] = gsap.to(ref, {
-          x: isLeftToRight ? -width : width,
-          duration: speed,
-          ease: "none",
-          repeat: -1,
+          gsap.set(ref, { x: 0 });
+
+          // Alternate direction: even indices go left to right, odd
+          // go right to left, so adjacent rows visibly differ.
+          const isLeftToRight = index % 2 === 0;
+
+          animationRefs.current[index] = gsap.to(ref, {
+            x: isLeftToRight ? -width : width,
+            duration: speed,
+            ease: "none",
+            repeat: -1,
+          });
         });
       });
-    }, 100);
+    });
 
     return () => {
-      clearTimeout(timeoutId);
+      cancelled = true;
+      cancelAnimationFrame(rafId);
       animationRefs.current.forEach((anim) => anim?.kill());
     };
   }, [loading, pokemonList, speed, rows]);
@@ -182,7 +196,8 @@ export function PokemonPaletteMarquee({
     for (let cycle = 0; cycle < cyclesNeeded; cycle++) {
       for (let i = 0; i < pokemonList.length; i++) {
         const index = (startOffset + i) % pokemonList.length;
-        rowItems.push(pokemonList[index]);
+        const item = pokemonList[index];
+        if (item) rowItems.push(item);
       }
     }
     

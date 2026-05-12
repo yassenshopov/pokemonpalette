@@ -17,6 +17,14 @@ export type SavedPalette = Record<string, any> & {
 // `PokemonHero`, `SavedPalettesDialog`, `CollapsibleSidebar`, etc. each
 // re-issued `GET /api/saved-palettes` on mount, producing one edge request
 // per component instance.
+//
+// The cache key is `palettes:${userId}` (with `anon` for the signed-out
+// state). Keying by userId prevents cross-user leakage in principle, but
+// without explicit eviction the previous user's entry sits in memory for
+// the lifetime of the tab — surface area for a future regression (e.g. a
+// devtools script poking at the module) and a small memory leak across
+// sessions. `evictOtherKeys` below clears all entries that don't match
+// the current user the moment the identity changes.
 type CacheEntry = {
   promise: Promise<SavedPalette[]>;
   data?: SavedPalette[];
@@ -25,6 +33,12 @@ type CacheEntry = {
 
 const cache = new Map<string, CacheEntry>();
 const subscribers = new Map<string, Set<() => void>>();
+
+function evictOtherKeys(currentKey: string) {
+  for (const key of Array.from(cache.keys())) {
+    if (key !== currentKey) cache.delete(key);
+  }
+}
 
 function notify(key: string) {
   subscribers.get(key)?.forEach((cb) => cb());
@@ -106,6 +120,11 @@ export function useSavedPalettes(): UseSavedPalettesResult {
 
   useEffect(() => {
     if (!isLoaded) return;
+    // Whenever the auth identity changes (sign-in, sign-out, sign-in
+    // as a different user), drop every entry that isn't ours. Done in
+    // a single sync pass so the next render can't observe a previous
+    // user's data via the shared map.
+    evictOtherKeys(cacheKey);
     if (!user) return;
     getOrCreateEntry(cacheKey);
   }, [cacheKey, isLoaded, user]);

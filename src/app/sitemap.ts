@@ -6,35 +6,47 @@ import {
   getAllRarities,
 } from "@/lib/pokemon";
 
+// Bake `lastModified` at *build time* (module evaluation), not on every
+// request. Sitemaps that mint a fresh `new Date()` per row on each request
+// give Google a different `lastmod` for every URL on every fetch, which
+// teaches them to ignore the field entirely (and adds work to recrawl
+// "changed" pages that haven't actually changed). Capturing one shared
+// timestamp when the build runs means every entry in the sitemap shares
+// the same deploy-anchored mtime, which is the honest signal: "these
+// pages were last published in this build."
+const BUILD_LAST_MODIFIED = new Date();
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.pokemonpalette.com";
   const pokemon = getAllPokemonMetadata();
   const types = getAllTypes();
   const generations = getAllGenerations();
 
+  const lastModified = BUILD_LAST_MODIFIED;
+
   // Home page
   const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/game`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/explore`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/api-access`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -44,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   types.forEach((type) => {
     routes.push({
       url: `${baseUrl}/type/${type.toLowerCase()}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     });
@@ -53,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   generations.forEach((gen) => {
     routes.push({
       url: `${baseUrl}/generation/${gen}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     });
@@ -64,7 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   rarities.forEach((rarity) => {
     routes.push({
       url: `${baseUrl}/rarity/${rarity.toLowerCase()}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     });
@@ -81,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   pokemon.forEach((mon) => {
     routes.push({
       url: `${baseUrl}/${mon.name.toLowerCase()}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     });

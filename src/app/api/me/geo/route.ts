@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { logger } from "@/lib/logger";
+import { rateLimit } from "@/lib/rate-limit";
+
+// Even with the 30-day DB throttle, an attacker can force a DB read
+// per call (the throttle is enforced after we've already queried for
+// the existing row). 12/min per user is comfortable for tab-spam
+// scenarios but cuts off the DB-read-amplification vector.
+const geoLimiter = rateLimit("api-me-geo", {
+  requests: 12,
+  window: "1 m",
+});
 
 /**
  * Opportunistically captures the caller's country and timezone from Vercel's
@@ -51,6 +61,11 @@ export async function POST(req: NextRequest) {
 
   if (!userId) {
     return NextResponse.json({ ok: false }, { status: 401 });
+  }
+
+  const rl = await geoLimiter.check(userId);
+  if (!rl.allowed) {
+    return NextResponse.json({ ok: false }, { status: 429 });
   }
 
   // Vercel sets these on every request from its edge network. Both lookup

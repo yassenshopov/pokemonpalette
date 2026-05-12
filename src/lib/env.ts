@@ -32,14 +32,30 @@ const serverSchema = z.object({
   RESEND_FROM_EMAIL: z.string().email().optional(),
   RESEND_FROM_NAME: z.string().min(1).optional(),
 
-  // Upstash / Vercel KV rate limiting (optional — falls back to noop).
+  // Stripe billing (optional — only required when the API checkout
+  // flow is enabled). Validated here so a typo in the dashboard
+  // surfaces at deploy time instead of silently 500-ing the first
+  // checkout attempt.
+  STRIPE_SECRET_KEY: z.string().min(1).optional(),
+  STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
+  STRIPE_PALETTE_API_PRICE_ID: z.string().min(1).optional(),
+
+  // Upstash / Vercel KV rate limiting (optional — falls back to noop
+  // in dev; rate-limit.ts hard-fails in production if neither pair is
+  // configured, so the optionality here is for local-dev convenience).
   UPSTASH_REDIS_REST_URL: z.string().url().optional(),
   UPSTASH_REDIS_REST_TOKEN: z.string().min(1).optional(),
   KV_REST_API_URL: z.string().url().optional(),
   KV_REST_API_TOKEN: z.string().min(1).optional(),
 
-  // Logger threshold.
+  // Local-dev / smoke-test escape hatch for the rate limiter. Should
+  // never be set in deployed environments — guarded against in
+  // src/lib/rate-limit.ts.
+  RATE_LIMIT_DISABLE: z.enum(["0", "1"]).optional(),
+
+  // Logger threshold + Prisma query log level (verbose, opt-in).
   LOG_LEVEL: z.enum(["debug", "info", "warn", "error"]).optional(),
+  PRISMA_LOG: z.enum(["query"]).optional(),
 });
 
 const clientSchema = z.object({

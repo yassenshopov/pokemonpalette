@@ -637,7 +637,7 @@ export function PokemonExpandedView({
                   {pokemon.varieties.map((variety, idx) => {
                     // Extract Pokemon ID from URL
                     const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
-                    const varietyId = urlMatch ? parseInt(urlMatch[1]) : null;
+                    const varietyId = urlMatch?.[1] ? parseInt(urlMatch[1]) : null;
                     const isSelected =
                       selectedVarietyId === varietyId ||
                       (selectedVarietyId === null && variety.is_default);

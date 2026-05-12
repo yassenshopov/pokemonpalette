@@ -7,14 +7,16 @@ import { cn } from "@/lib/utils";
 // Curated list of microcopy tips. Phrased second-person, concise, with
 // curly typography (', …) so they read as polished UI strings rather
 // than raw ASCII. Used only on the game page for now.
-const TIPS = [
+const TIPS: readonly [string, ...string[]] = [
   "Search works in multiple languages (日本語, Français, Deutsch, Español, and more!)",
   "You can guess by Pokédex number too — try \u201825\u2019 for Pikachu.",
   "Hints get better the more you guess — try a same-type Pok\u00e9mon first.",
   "Stuck? The Pok\u00e9mon\u2019s color palette is your biggest clue. Match the dominant tones.",
   "Use the Filters button to narrow Unlimited mode to specific generations.",
   "Press Esc to close any dialog.",
-] as const;
+];
+
+const tipAt = (i: number): string => TIPS[i] ?? TIPS[0];
 
 // Pacing knobs. The hold time is how long the fully-typed tip stays
 // on screen before we start erasing. The per-char base + jitter is what
@@ -66,7 +68,7 @@ export function RotatingTip({ className }: RotatingTipProps) {
   // inside the current tip; `indexRef` mirrors the active TIPS slot.
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const indexRef = useRef<number>(0);
-  const charPosRef = useRef<number>(TIPS[0].length);
+  const charPosRef = useRef<number>(tipAt(0).length);
   const phaseRef = useRef<Phase>("holding");
   const visibleRef = useRef<boolean>(true);
 
@@ -76,10 +78,10 @@ export function RotatingTip({ className }: RotatingTipProps) {
   useEffect(() => {
     const startIndex = Math.floor(Math.random() * TIPS.length);
     indexRef.current = startIndex;
-    charPosRef.current = TIPS[startIndex].length;
+    charPosRef.current = tipAt(startIndex).length;
     phaseRef.current = "holding";
-    setDisplayText(TIPS[startIndex]);
-    setAnnouncedTip(TIPS[startIndex]);
+    setDisplayText(tipAt(startIndex));
+    setAnnouncedTip(tipAt(startIndex));
 
     const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReducedMotion(mql.matches);
@@ -113,7 +115,7 @@ export function RotatingTip({ className }: RotatingTipProps) {
     const advanceTip = () => {
       const next = (indexRef.current + 1) % TIPS.length;
       indexRef.current = next;
-      setAnnouncedTip(TIPS[next]);
+      setAnnouncedTip(tipAt(next));
     };
 
     const tick = () => {
@@ -121,7 +123,7 @@ export function RotatingTip({ className }: RotatingTipProps) {
 
       // Reduced-motion path: full-text swap, no typing, no erasing.
       if (reducedMotion) {
-        const tip = TIPS[indexRef.current];
+        const tip = tipAt(indexRef.current);
         charPosRef.current = tip.length;
         phaseRef.current = "holding";
         setDisplayText(tip);
@@ -163,14 +165,14 @@ export function RotatingTip({ className }: RotatingTipProps) {
       }
       const newPos = pos - 1;
       charPosRef.current = newPos;
-      setDisplayText(TIPS[indexRef.current].slice(0, newPos));
+      setDisplayText(tipAt(indexRef.current).slice(0, newPos));
       schedule(ERASE_PER_CHAR_MS, eraseStep);
     };
 
     const typeStep = () => {
       if (!visibleRef.current) return;
       phaseRef.current = "typing";
-      const tip = TIPS[indexRef.current];
+      const tip = tipAt(indexRef.current);
       const pos = charPosRef.current;
       if (pos >= tip.length) {
         phaseRef.current = "holding";

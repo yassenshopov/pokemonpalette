@@ -67,7 +67,11 @@ function parseYmd(s: string): Date | null {
     const d = new Date(s);
     return Number.isNaN(d.getTime()) ? null : d;
   }
-  const [y, m, d] = s.split("-").map(Number);
+  const parts = s.split("-").map(Number);
+  const y = parts[0];
+  const m = parts[1];
+  const d = parts[2];
+  if (y === undefined || m === undefined || d === undefined) return null;
   return new Date(Date.UTC(y, m - 1, d));
 }
 

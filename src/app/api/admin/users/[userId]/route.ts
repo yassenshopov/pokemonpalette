@@ -4,6 +4,13 @@ import { requireAdmin } from "@/lib/admin/auth";
 import { pushAdminToClerk } from "@/lib/user-service";
 import { logger } from "@/lib/logger";
 
+// SECURITY: `private_metadata` and `unsafe_metadata` are intentionally
+// stripped from the admin response — see the matching comment on the
+// list endpoint at `src/app/api/admin/users/route.ts`. The TL;DR is
+// Clerk treats `privateMetadata` as server-only state and
+// `unsafeMetadata` is user-writable PII; neither belongs in every
+// admin's browser. `publicMetadata` stays because the admin UI relies
+// on it for the isAdmin flag.
 function serializeUser(u: Prisma.UserGetPayload<object>) {
   return {
     id: u.id,
@@ -36,8 +43,6 @@ function serializeUser(u: Prisma.UserGetPayload<object>) {
     phone_numbers: u.phoneNumbers,
     external_accounts: u.externalAccounts,
     public_metadata: u.publicMetadata,
-    private_metadata: u.privateMetadata,
-    unsafe_metadata: u.unsafeMetadata,
   };
 }
 

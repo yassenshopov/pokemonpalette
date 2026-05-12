@@ -130,12 +130,16 @@ export function UnlimitedModeSettingsDialog({
   };
 
   const toggleAll = () => {
-    setDraft((prev) => ({
-      ...prev,
-      selectedGenerations: allSelected
-        ? [availableGenerations[0]]
-        : [...availableGenerations],
-    }));
+    setDraft((prev) => {
+      if (allSelected) {
+        const first = availableGenerations[0];
+        return {
+          ...prev,
+          selectedGenerations: first === undefined ? [] : [first],
+        };
+      }
+      return { ...prev, selectedGenerations: [...availableGenerations] };
+    });
   };
 
   return (

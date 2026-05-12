@@ -3,6 +3,17 @@ import { z } from "zod";
 import { supabaseAdmin } from "@/lib/supabase";
 import { logger } from "@/lib/logger";
 import { todayUtcDateString } from "@/lib/game/similarity";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
+
+// Public endpoint: no auth, so we limit per client IP. The s-maxage=60
+// edge cache shields the origin for the dominant case (same date / same
+// limit), but cache busters in the query string (or coordinated
+// concurrent fetches) can still funnel uncached requests through to the
+// RPC. 60/min is well above any honest client's polling cadence.
+const leaderboardLimiter = rateLimit("daily-leaderboard", {
+  requests: 60,
+  window: "1 m",
+});
 
 // GET — top-N rows for a single day's puzzle.
 //
@@ -23,6 +34,11 @@ const QuerySchema = z.object({
 });
 
 export async function GET(req: NextRequest) {
+  const rl = await leaderboardLimiter.check(getClientIp(req));
+  if (!rl.allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const parsed = QuerySchema.safeParse({
     date: req.nextUrl.searchParams.get("date") ?? undefined,
     limit: req.nextUrl.searchParams.get("limit") ?? undefined,

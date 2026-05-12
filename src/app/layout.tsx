@@ -203,7 +203,13 @@ export default async function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange={false}
+          // Suppress the cross-fade transition during the very first
+          // dark/light swap so users with the "dark" preference don't
+          // see a one-frame light flash on hydration. The bespoke
+          // radial view-transition in `lib/theme-transition.ts` still
+          // runs for explicit user toggles; this only suppresses the
+          // automatic transition that next-themes injects.
+          disableTransitionOnChange
         >
           <ColorblindProvider>
             <SidebarStateProvider defaultCollapsed={sidebarCollapsed}>

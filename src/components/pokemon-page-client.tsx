@@ -155,10 +155,12 @@ export function PokemonPageClient({ pokemonMetadata, breadcrumbs }: PokemonPageC
                 varietyId={selectedVarietyId}
                 formName={selectedFormName}
               />
-              <ColorShowcase
-                primaryColor={pokemonColors[0]}
-                secondaryColor={pokemonColors[1] || pokemonColors[0]}
-              />
+              {pokemonColors[0] && (
+                <ColorShowcase
+                  primaryColor={pokemonColors[0]}
+                  secondaryColor={pokemonColors[1] || pokemonColors[0]}
+                />
+              )}
               <ThemeExporter
                 colors={pokemonColors}
                 pokemonName={pokemonMetadata.name}

@@ -3,8 +3,9 @@ import { DailyNudgeTemplate } from "@/lib/email-templates/daily-nudge";
 import { DailyDropTemplate } from "@/lib/email-templates/daily-drop";
 import { prisma } from "@/lib/prisma";
 import { logger } from "@/lib/logger";
+import { serverEnv } from "@/lib/env";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(serverEnv.RESEND_API_KEY);
 
 export type EmailTemplate = "daily-nudge" | "daily-drop";
 
@@ -55,8 +56,8 @@ const TEMPLATE_SUBJECTS: Record<EmailTemplate, string> = {
 
 export class EmailService {
   private static fromEmail =
-    process.env.RESEND_FROM_EMAIL || "noreply@pokemonpalette.com";
-  private static fromName = process.env.RESEND_FROM_NAME || "Yasssen Shopov";
+    serverEnv.RESEND_FROM_EMAIL || "noreply@pokemonpalette.com";
+  private static fromName = serverEnv.RESEND_FROM_NAME || "Yasssen Shopov";
 
   /**
    * Send an email using a template.
@@ -75,7 +76,7 @@ export class EmailService {
     let text: string | undefined;
 
     try {
-      if (!process.env.RESEND_API_KEY) {
+      if (!serverEnv.RESEND_API_KEY) {
         throw new Error("RESEND_API_KEY is not configured");
       }
 

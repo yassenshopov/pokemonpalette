@@ -197,7 +197,7 @@ export function GameContributions({
     for (const cell of flat) if (cell) ordered.push(cell.iso);
     for (let i = ordered.length - 1; i >= 0; i--) {
       const iso = ordered[i];
-      if (iso > todayIso) continue;
+      if (iso === undefined || iso > todayIso) continue;
       const played = (stats.get(iso)?.attempts_count ?? 0) > 0;
       if (played) runningFromToday += 1;
       else break;

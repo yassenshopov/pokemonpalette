@@ -511,12 +511,11 @@ export function PokemonMenu({
     const newLocked = [...lockedColors];
     const draggedColor = newColors[draggedIndex];
     const draggedLock = newLocked[draggedIndex];
+    if (draggedColor === undefined || draggedLock === undefined) return;
 
-    // Remove the dragged items
     newColors.splice(draggedIndex, 1);
     newLocked.splice(draggedIndex, 1);
 
-    // Insert at new position
     newColors.splice(dropIndex, 0, draggedColor);
     newLocked.splice(dropIndex, 0, draggedLock);
 
@@ -1214,7 +1213,7 @@ export function PokemonMenu({
                       selectedPokemon;
                     // Extract Pokemon ID from variety URL for sprite
                     const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
-                    const varietySpriteId = urlMatch ? parseInt(urlMatch[1]) : null;
+                    const varietySpriteId = urlMatch?.[1] ? parseInt(urlMatch[1]) : null;
                     const fallbackUrl = varietySpriteId
                       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                           isShiny ? "shiny/" : ""
@@ -1237,7 +1236,7 @@ export function PokemonMenu({
 
                           // Extract Pokemon ID from variety URL (format: .../pokemon/10157/)
                           const urlMatch = variety.url?.match(/\/(\d+)\/?$/);
-                          const varietyId = urlMatch
+                          const varietyId = urlMatch?.[1]
                             ? parseInt(urlMatch[1])
                             : null;
 
@@ -1260,7 +1259,7 @@ export function PokemonMenu({
                             variety.url &&
                             (() => {
                               const match = variety.url.match(/\/(\d+)\/?$/);
-                              return match
+                              return match?.[1]
                                 ? parseInt(match[1]) === selectedVarietyId
                                 : false;
                             })())
@@ -1273,7 +1272,7 @@ export function PokemonMenu({
                             variety.url &&
                             (() => {
                               const match = variety.url.match(/\/(\d+)\/?$/);
-                              return match
+                              return match?.[1]
                                 ? parseInt(match[1]) === selectedVarietyId
                                 : false;
                             })())

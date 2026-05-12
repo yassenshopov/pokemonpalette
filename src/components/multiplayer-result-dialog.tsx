@@ -55,8 +55,7 @@ export function MultiplayerResultDialog({
 
   if (!targetPokemon) return null;
 
-  const primaryColor =
-    targetColors.length > 0 ? targetColors[0].hex : "#f59e0b";
+  const primaryColor = targetColors[0]?.hex ?? "#f59e0b";
   const textColor = getContrastHex(primaryColor);
   const isWinner = winnerUserId === currentUserId;
   const isDraw = !winnerUserId;
@@ -102,7 +101,7 @@ export function MultiplayerResultDialog({
             ) : isDraw ? (
               <>
                 <Users className="w-6 h-6" aria-hidden="true" />
-                It\u2019s a Draw!
+                It{"\u2019"}s a Draw!
               </>
             ) : (
               <>

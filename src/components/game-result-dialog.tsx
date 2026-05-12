@@ -149,8 +149,7 @@ export function GameResultDialog({
     targetPokemon && getGenerationFromId(targetPokemon.id) <= 5;
 
   // Get primary color and calculate contrast text color
-  const primaryColor =
-    targetColors.length > 0 ? targetColors[0].hex : undefined;
+  const primaryColor = targetColors[0]?.hex;
   const getTextColor = (hex: string | undefined): "#ffffff" | "#000000" =>
     hex ? getContrastHex(hex) : "#000000";
 

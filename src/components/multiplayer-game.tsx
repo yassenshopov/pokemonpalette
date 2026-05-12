@@ -314,7 +314,9 @@ export function MultiplayerGame() {
     setGuesses(allGuesses);
     setAttempts(newAttempts);
 
-    const result = await mp.submitGuess(pokemonId, similarity);
+    // Server computes its own similarity from the canonical palette;
+    // the local `similarity` above only drives the visual feedback.
+    const result = await mp.submitGuess(pokemonId);
 
     if (result) {
       if (result.correct) {
@@ -506,10 +508,7 @@ export function MultiplayerGame() {
                     <div className="flex flex-col gap-2 items-end">
                       {revealedHints.map((hintIndex) => {
                         const hints = generatedHintsRef.current;
-                        const primaryColor =
-                          targetColors.length > 0
-                            ? targetColors[0].hex
-                            : undefined;
+                        const primaryColor = targetColors[0]?.hex;
                         return (
                           <div
                             key={hintIndex}
@@ -743,9 +742,7 @@ export function MultiplayerGame() {
             currentPlayer={currentPlayer}
             opponent={opponent}
             maxAttempts={MAX_ATTEMPTS}
-            primaryColor={
-              targetColors.length > 0 ? targetColors[0].hex : undefined
-            }
+            primaryColor={targetColors[0]?.hex}
             isWaitingForOpponent={mp.status === "waiting"}
           />
 

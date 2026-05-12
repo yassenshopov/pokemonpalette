@@ -135,12 +135,13 @@ export function buildCandidates(
   // Type — vague. Skip when the type name the vague hint would mention is
   // already known from a same-type guess. For dual-types the vague variant
   // only mentions the primary type, so we only need that one to be known.
-  if (pokemon.type && pokemon.type.length > 0) {
-    const primaryKnown = knownTypes.has(pokemon.type[0].toLowerCase());
+  const primaryType = pokemon.type?.[0];
+  if (primaryType) {
+    const primaryKnown = knownTypes.has(primaryType.toLowerCase());
     const vagueType =
       pokemon.type.length === 1
-        ? `This Pokemon is a ${pokemon.type[0]}-type Pokemon.`
-        : `This Pokemon is a part-${pokemon.type[0]} type Pokemon.`;
+        ? `This Pokemon is a ${primaryType}-type Pokemon.`
+        : `This Pokemon is a part-${primaryType} type Pokemon.`;
     if (!primaryKnown) {
       const c = apply("type", "vague", vagueType);
       if (c) out.push(c);
@@ -320,7 +321,11 @@ function shuffle<T>(array: T[]): T[] {
   const copy = [...array];
   for (let i = copy.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
+    const a = copy[i];
+    const b = copy[j];
+    if (a === undefined || b === undefined) continue;
+    copy[i] = b;
+    copy[j] = a;
   }
   return copy;
 }
@@ -331,11 +336,11 @@ function isTypeHint(text: string): boolean {
 
 function extractTypes(hint: string): string[] {
   const dual = hint.match(/([A-Za-z]+)-\s*and\s*([A-Za-z]+)-type/);
-  if (dual) {
+  if (dual && dual[1] && dual[2]) {
     return [dual[1].toLowerCase(), dual[2].toLowerCase()].sort();
   }
   const single = hint.match(/(?:part-)?([A-Za-z]+)(?:-type| type)/);
-  if (single) return [single[1].toLowerCase()];
+  if (single && single[1]) return [single[1].toLowerCase()];
   return [];
 }
 
@@ -391,14 +396,22 @@ export function generateHints(
   if (vague.length > 0) {
     const shuffled = shuffle(vague);
     const pickType = shuffled.find(isTypeHint);
-    informative.push(pickType && typeHints.length > 0 ? pickType : shuffled[0]);
+    const first = shuffled[0];
+    if (first !== undefined) {
+      informative.push(pickType && typeHints.length > 0 ? pickType : first);
+    }
   }
 
   // Second slot: a medium hint that's not similar to the first.
   if (medium.length > 0) {
     const shuffled = shuffle(medium);
     const unique = findUnique(shuffled, informative);
-    informative.push(unique ?? shuffled[0]);
+    const fallback = shuffled[0];
+    if (unique !== null) {
+      informative.push(unique);
+    } else if (fallback !== undefined) {
+      informative.push(fallback);
+    }
   }
 
   // Type-hint guarantee. When type candidates exist but neither informative

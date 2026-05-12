@@ -168,7 +168,7 @@ function displayName(user: UserMini | null | undefined): string {
   const name = `${user.first_name ?? ""} ${user.last_name ?? ""}`.trim();
   if (name) return name;
   if (user.username) return user.username;
-  if (user.email) return user.email.split("@")[0];
+  if (user.email) return user.email.split("@")[0] ?? "User";
   return "User";
 }
 

@@ -304,7 +304,7 @@ export function PokemonPicker({
     // standard ARIA tree pattern so admins comfortable with file pickers
     // can navigate quickly.
     const current = renderRows[idx];
-    if (current.kind !== "species" || !current.canExpand) return;
+    if (!current || current.kind !== "species" || !current.canExpand) return;
     e.preventDefault();
     if (e.key === "ArrowRight" && !current.expanded) {
       toggleExpanded(current.row.id);

@@ -1,3 +1,5 @@
+import { escapeHtml, escapeUrl } from "./escape";
+
 export interface DailyNudgeData {
   userName?: string;
   gameUrl: string;
@@ -5,8 +7,27 @@ export interface DailyNudgeData {
 
 export class DailyNudgeTemplate {
   static render(data: DailyNudgeData): { html: string; text: string } {
-    const greeting = data.userName ? `Hi ${data.userName},` : "Hi there,";
-    
+    // Both fields are admin-controlled when this template is sent from
+    // /api/admin/emails/send (and `userName` originates from the
+    // recipient's Clerk profile in scheduled runs). Without escaping,
+    // a crafted first name or a `javascript:` gameUrl lands as raw
+    // markup in the rendered email. Escape on the HTML side; for the
+    // text body keep the human-readable form but still strip
+    // unsafe-scheme URLs via `escapeUrl`.
+    const plainName = data.userName?.trim() || "there";
+    const safeName = escapeHtml(plainName);
+    const greeting = data.userName ? `Hi ${safeName},` : "Hi there,";
+    const plainGreeting = data.userName ? `Hi ${plainName},` : "Hi there,";
+
+    const safeGameUrl = escapeUrl(
+      data.gameUrl,
+      "https://www.pokemonpalette.com/game",
+    );
+    const safeHomeUrl = escapeUrl(
+      data.gameUrl.replace("/game", "/"),
+      "https://www.pokemonpalette.com/",
+    );
+
     const html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +67,7 @@ export class DailyNudgeTemplate {
               <table role="presentation" style="width: 100%; margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="${data.gameUrl}" style="display: inline-block; padding: 14px 32px; background-color: #3b82f6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);">
+                    <a href="${safeGameUrl}" style="display: inline-block; padding: 14px 32px; background-color: #3b82f6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);">
                       Play Now →
                     </a>
                   </td>
@@ -64,7 +85,7 @@ export class DailyNudgeTemplate {
             <td style="padding: 30px 40px; background-color: #f9fafb; border-radius: 0 0 8px 8px; border-top: 1px solid #e5e7eb;">
               <p style="margin: 0; color: #6b7280; font-size: 12px; text-align: center; line-height: 1.5;">
                 You're receiving this email because you have an account with Pokémon Palette.<br>
-                <a href="${data.gameUrl.replace('/game', '/')}" style="color: #3b82f6; text-decoration: none;">Visit Pokémon Palette</a>
+                <a href="${safeHomeUrl}" style="color: #3b82f6; text-decoration: none;">Visit Pokémon Palette</a>
               </p>
             </td>
           </tr>
@@ -77,22 +98,21 @@ export class DailyNudgeTemplate {
     `.trim();
 
     const text = `
-${greeting}
+${plainGreeting}
 
 Don't forget to play today's Pokémon Palette challenge! 🎨
 
 Can you guess today's Pokémon from its color palette? Test your knowledge and see if you can solve the puzzle!
 
-Play now: ${data.gameUrl}
+Play now: ${safeGameUrl}
 
 Good luck, and have fun! 🍀
 
 ---
 You're receiving this email because you have an account with Pokémon Palette.
-Visit: ${data.gameUrl.replace('/game', '/')}
+Visit: ${safeHomeUrl}
     `.trim();
 
     return { html, text };
   }
 }
-

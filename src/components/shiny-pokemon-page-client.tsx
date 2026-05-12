@@ -2,6 +2,7 @@
 
 import { useState, useEffect, type ReactNode } from "react";
 import dynamic from "next/dynamic";
+import { writePokemonMenuCookie } from "@/lib/pokemon-menu-cookie";
 import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
@@ -43,20 +44,26 @@ const ThemeExporter = dynamic(
 interface ShinyPokemonPageClientProps {
   pokemonMetadata: PokemonMetadata;
   breadcrumbs?: ReactNode;
+  /** Server-seeded initial value for the Pokémon-menu collapsed
+   *  state, read from the shared `pokemon_menu_collapsed` cookie. */
+  initialMenuCollapsed?: boolean;
 }
 
 export function ShinyPokemonPageClient({
   pokemonMetadata,
   breadcrumbs,
+  initialMenuCollapsed = false,
 }: ShinyPokemonPageClientProps) {
   const [selectedPokemonId, setSelectedPokemonId] = useState<number | null>(
     pokemonMetadata?.id ?? null
   );
-  // Force shiny mode to true for shiny pages
-  const [isShiny] = useState(true);
+  // Shiny pages render is forced to true and never toggles.
+  const isShiny = true;
   const [, setCurrentImageSrc] = useState<string | null>(null);
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
-  const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
+  const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(
+    initialMenuCollapsed,
+  );
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(
     null
   );
@@ -75,21 +82,42 @@ export function ShinyPokemonPageClient({
     setSelectedFormName(null); // Reset form when loading a palette
   };
 
-  // Load Pokemon menu collapsed state from localStorage on mount
+  // Persist to BOTH localStorage (legacy) and the cookie (new).
+  // Shiny pages are statically generated (1000+ entries) so we can't
+  // read the cookie server-side without opting them out of SSG;
+  // instead we mirror the value in localStorage and seed from there
+  // on mount. There's still a one-frame flash for returning visitors,
+  // but the home page (the dominant entry point) is fully fixed via
+  // the server prop, so the surface area shrinks dramatically.
   useEffect(() => {
-    const savedState = localStorage.getItem("pokemon-menu-collapsed");
-    if (savedState !== null) {
-      setIsPokemonMenuCollapsed(JSON.parse(savedState));
+    writePokemonMenuCookie(isPokemonMenuCollapsed);
+    try {
+      localStorage.setItem(
+        "pokemon-menu-collapsed",
+        JSON.stringify(isPokemonMenuCollapsed),
+      );
+    } catch {
+      // localStorage blocked (Safari private mode, storage full); fall
+      // through silently — the cookie write still happened.
+    }
+  }, [isPokemonMenuCollapsed]);
+
+  // Seed from localStorage exactly once on mount. Defensive parse so
+  // a corrupt value (someone hand-edited storage, a previous bug
+  // wrote junk) doesn't crash the page.
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("pokemon-menu-collapsed");
+      if (raw === null) return;
+      const parsed = JSON.parse(raw);
+      if (typeof parsed === "boolean") setIsPokemonMenuCollapsed(parsed);
+    } catch {
+      // Bad value — drop it so we don't keep tripping on it.
+      try {
+        localStorage.removeItem("pokemon-menu-collapsed");
+      } catch {}
     }
   }, []);
-
-  // Save Pokemon menu collapsed state to localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem(
-      "pokemon-menu-collapsed",
-      JSON.stringify(isPokemonMenuCollapsed)
-    );
-  }, [isPokemonMenuCollapsed]);
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -153,10 +181,12 @@ export function ShinyPokemonPageClient({
                 varietyId={selectedVarietyId}
                 formName={selectedFormName}
               />
-              <ColorShowcase
-                primaryColor={pokemonColors[0]}
-                secondaryColor={pokemonColors[1] || pokemonColors[0]}
-              />
+              {pokemonColors[0] && (
+                <ColorShowcase
+                  primaryColor={pokemonColors[0]}
+                  secondaryColor={pokemonColors[1] || pokemonColors[0]}
+                />
+              )}
               <ThemeExporter
                 colors={pokemonColors}
                 pokemonName={

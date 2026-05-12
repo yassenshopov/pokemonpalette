@@ -25,6 +25,16 @@ type CacheEntry = {
 const cache = new Map<string, CacheEntry>();
 const subscribers = new Map<string, Set<() => void>>();
 
+// See use-saved-palettes.ts for the rationale — when the auth identity
+// changes we eagerly drop every cache entry that isn't keyed by the
+// current user so a stale row from a previous session can't be
+// surfaced (privacy) or pin memory (leak across sign-in/out cycles).
+function evictOtherKeys(currentKey: string) {
+  for (const key of Array.from(cache.keys())) {
+    if (key !== currentKey) cache.delete(key);
+  }
+}
+
 function notify(key: string) {
   subscribers.get(key)?.forEach((cb) => cb());
 }
@@ -101,6 +111,7 @@ export function usePokedex(): UsePokedexResult {
 
   useEffect(() => {
     if (!isLoaded) return;
+    evictOtherKeys(cacheKey);
     if (!user) return;
     getOrCreateEntry(cacheKey);
   }, [cacheKey, isLoaded, user]);

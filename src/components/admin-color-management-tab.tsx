@@ -274,6 +274,7 @@ export function AdminColorManagementTab() {
     for (let i = 0; i < candidates.length; i++) {
       if (batchAbortRef.current) break;
       const pokemon = candidates[i];
+      if (!pokemon) continue;
       setBatchProgress({ current: i + 1, total: candidates.length });
       const sprite =
         batchVariant === "shiny" ? pokemon.shinySpriteUrl! : pokemon.spriteUrl!;

@@ -151,7 +151,13 @@ export function AdminEmailsTab({
     if (typeof window !== "undefined") {
       return window.location.origin;
     }
-    return process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com";
+    // SSR fallback (component is "use client" but a static render path
+    // may briefly evaluate this). Reading NEXT_PUBLIC_BASE_URL directly
+    // is fine on the client — Next inlines it at build time — but on
+    // the server the env validator (src/lib/env.ts) is authoritative.
+    return (
+      process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com"
+    );
   };
 
   const getTemplateData = useCallback((): EmailTemplateData[EmailTemplate] => {

@@ -67,14 +67,15 @@ export async function POST(
     if (allFinished) {
       let winnerUserId: string | null = null;
       const winners = otherPlayers.filter((p) => p.won);
-      if (winners.length === 1) {
+      if (winners.length === 1 && winners[0]) {
         winnerUserId = winners[0].userId;
       } else if (winners.length === 0) {
         const sorted = [...otherPlayers].sort(
           (a, b) => b.bestSimilarity - a.bestSimilarity
         );
-        if (sorted.length > 0 && sorted[0].bestSimilarity > 0) {
-          winnerUserId = sorted[0].userId;
+        const top = sorted[0];
+        if (top && top.bestSimilarity > 0) {
+          winnerUserId = top.userId;
         }
       }
 

@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
-import {
-  EmailService,
-  EmailTemplate,
-  EmailTemplateData,
-} from "@/lib/email-service";
+import { EmailService, type EmailTemplate, type EmailTemplateData } from "@/lib/email-service";
 import { getDailyPaletteForDate } from "@/lib/game/daily-palette";
 import { logger } from "@/lib/logger";
+import { rateLimit } from "@/lib/rate-limit";
+import { clientEnv } from "@/lib/env";
+import { emailSendRequestSchema } from "@/lib/email-templates/validation";
 
 type RecipientUser = {
   id: string;
@@ -17,54 +16,70 @@ type RecipientUser = {
   receivesDailyEmails: boolean;
 };
 
+// Email blasts have to be rate-limited harder than the preview path:
+// each call kicks off a Resend batch that costs money + counts against
+// the org quota, and an admin with a leaked session is the textbook
+// abuse case. 5/minute lets a real admin send a few burst campaigns
+// before the cool-down without making it trivial to spray hundreds of
+// emails.
+const sendLimiter = rateLimit("admin-emails-send", {
+  requests: 5,
+  window: "1 m",
+});
+
 export async function POST(req: NextRequest) {
   const gate = await requireAdmin();
   if (!gate.ok) return gate.response;
 
+  const rl = await sendLimiter.check(gate.adminUserId);
+  if (!rl.allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
+  let rawBody: unknown;
   try {
-    const body = await req.json();
-    const { template, data, to, userIds } = body as {
-      template: EmailTemplate;
-      data: EmailTemplateData[EmailTemplate];
-      to?: string | string[];
-      userIds?: string[];
-    };
+    rawBody = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
 
-    if (!template) {
-      return NextResponse.json(
-        { error: "Template is required" },
-        { status: 400 },
-      );
-    }
+  const parsed = emailSendRequestSchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Invalid body", details: parsed.error.flatten() },
+      { status: 400 },
+    );
+  }
 
+  try {
+    const payload = parsed.data;
     const baseUrl =
-      process.env.NEXT_PUBLIC_BASE_URL || "https://www.pokemonpalette.com";
+      clientEnv.NEXT_PUBLIC_BASE_URL ?? "https://www.pokemonpalette.com";
 
-    if (template === "daily-nudge") {
-      const nudgeData = data as EmailTemplateData["daily-nudge"];
-      nudgeData.gameUrl = `${baseUrl}/game`;
-    } else if (template === "daily-drop") {
-      const dropData = data as EmailTemplateData["daily-drop"];
-      dropData.gameUrl = `${baseUrl}/game`;
-      dropData.baseUrl = baseUrl;
+    if (payload.template === "daily-nudge") {
+      payload.data.gameUrl = `${baseUrl}/game`;
+    } else if (payload.template === "daily-drop") {
+      payload.data.gameUrl = `${baseUrl}/game`;
+      payload.data.baseUrl = baseUrl;
       // Resolve today's daily palette once per send so every recipient
       // gets the same swatches that match the current /game challenge.
       const dailyPalette = await getDailyPaletteForDate();
       if (dailyPalette) {
-        dropData.previewColors = dailyPalette.colors;
+        payload.data.previewColors = dailyPalette.colors;
       }
     }
 
     let recipients: string[] = [];
     let users: RecipientUser[] = [];
 
-    if (userIds && userIds.length > 0) {
+    if (payload.userIds && payload.userIds.length > 0) {
       const rows = await prisma.user.findMany({
         where: {
-          id: { in: userIds },
+          id: { in: payload.userIds },
           isDeleted: false,
           email: { not: null },
-          ...(template === "daily-nudge" || template === "daily-drop"
+          ...(payload.template === "daily-nudge" ||
+          payload.template === "daily-drop"
             ? { receivesDailyEmails: true }
             : {}),
         },
@@ -77,9 +92,7 @@ export async function POST(req: NextRequest) {
         },
       });
       users = rows
-        .filter((r): r is RecipientUser & { email: string } =>
-          r.email !== null,
-        )
+        .filter((r): r is RecipientUser & { email: string } => r.email !== null)
         .map((r) => ({
           id: r.id,
           email: r.email as string,
@@ -92,8 +105,8 @@ export async function POST(req: NextRequest) {
         .filter((e): e is string => EmailService.isValidEmail(e));
     }
 
-    if (to) {
-      const customEmails = Array.isArray(to) ? to : [to];
+    if (payload.to) {
+      const customEmails = Array.isArray(payload.to) ? payload.to : [payload.to];
       const validCustomEmails = customEmails.filter((email) =>
         EmailService.isValidEmail(email),
       );
@@ -101,9 +114,7 @@ export async function POST(req: NextRequest) {
     }
 
     const uniqueRecipients = Array.from(
-      new Map(
-        recipients.map((email) => [email.toLowerCase(), email]),
-      ).values(),
+      new Map(recipients.map((email) => [email.toLowerCase(), email])).values(),
     );
 
     if (uniqueRecipients.length === 0) {
@@ -133,8 +144,13 @@ export async function POST(req: NextRequest) {
       const batchResults = await Promise.all(
         batch.map(async (email) => {
           const user = users.find((u) => u.email === email);
-          let personalizedData = { ...data };
-          if (template === "daily-nudge" || template === "daily-drop") {
+          let personalizedData: EmailTemplateData[EmailTemplate] = {
+            ...payload.data,
+          } as EmailTemplateData[EmailTemplate];
+          if (
+            payload.template === "daily-nudge" ||
+            payload.template === "daily-drop"
+          ) {
             if (user) {
               personalizedData = {
                 ...personalizedData,
@@ -148,7 +164,7 @@ export async function POST(req: NextRequest) {
 
           const result = await EmailService.sendEmail({
             to: email,
-            template,
+            template: payload.template,
             data: personalizedData,
             userId: user?.id,
           });

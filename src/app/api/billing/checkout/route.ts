@@ -3,6 +3,19 @@ import { auth } from "@clerk/nextjs/server";
 import { stripe } from "@/lib/stripe";
 import { prisma } from "@/lib/prisma";
 import { logger } from "@/lib/logger";
+import { rateLimit } from "@/lib/rate-limit";
+import { clientEnv, serverEnv } from "@/lib/env";
+
+// Per-user cap on Stripe checkout session creation. Each call costs a
+// network round-trip to Stripe and creates a session that lingers in
+// the org dashboard until expiry. A leaked or shared session cookie
+// would otherwise let an attacker spam the dashboard / nudge the org
+// rate limit. 5/min is generous for legitimate flows (a user
+// retrying after closing the tab) but slams the door on abuse.
+const checkoutLimiter = rateLimit("billing-checkout", {
+  requests: 5,
+  window: "1 m",
+});
 
 export async function POST() {
   let userId: string | null = null;
@@ -20,6 +33,11 @@ export async function POST() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const rl = await checkoutLimiter.check(userId);
+  if (!rl.allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const existing = await prisma.apiCustomer.findUnique({
     where: { userId },
   });
@@ -30,7 +48,7 @@ export async function POST() {
     );
   }
 
-  const priceId = process.env.STRIPE_PALETTE_API_PRICE_ID;
+  const priceId = serverEnv.STRIPE_PALETTE_API_PRICE_ID;
   if (!priceId) {
     logger.error("billing.checkout.missing_price_id");
     return NextResponse.json(
@@ -40,7 +58,7 @@ export async function POST() {
   }
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ?? "https://www.pokemonpalette.com";
+    clientEnv.NEXT_PUBLIC_BASE_URL ?? "https://www.pokemonpalette.com";
 
   try {
     const session = await stripe.checkout.sessions.create({

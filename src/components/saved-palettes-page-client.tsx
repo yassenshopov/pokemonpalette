@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useUser, SignInButton } from "@clerk/nextjs";
-import { gsap } from "gsap";
+import { loadGsap, prefersReducedMotion } from "@/lib/motion";
 import { toast } from "sonner";
 import {
   Bookmark,
@@ -40,7 +40,7 @@ import {
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 
-import { getPokemonById } from "@/lib/pokemon";
+import { batchGetPokemonById } from "@/lib/pokemon";
 import { getContrastHex as getTextColor } from "@/lib/game/colors";
 import { useSavedPalettes } from "@/hooks/use-saved-palettes";
 
@@ -118,19 +118,32 @@ export function SavedPalettesPageClient() {
     }
   };
 
-  // Lazily fetch artwork for each unique Pokémon represented in the saved
-  // palettes so we can render proper sprites in the cards.
+  // Batch-fetch artwork for every unique Pokémon represented in the
+  // saved palettes. Previously this issued one `getPokemonById` per
+  // palette (an N+1 fetch). For a power user with 500 saved palettes
+  // that meant 500 disk reads on first render; the batched call
+  // resolves them all in a single Promise.all and lets the underlying
+  // module cache (cf. `pokemon.ts`) dedupe shared IDs. Cancellation
+  // via the `cancelled` flag prevents the late resolution from
+  // writing state on an unmounted component.
   useEffect(() => {
-    const loadSprite = async (id: number) => {
-      setPokemonSprites((prev) => {
-        if (prev[id] || loadingIdsRef.current.has(id)) {
-          return prev;
-        }
+    if (palettes.length === 0) return;
+    const uniqueIds = Array.from(new Set(palettes.map((p) => p.pokemon_id)));
+    const missing = uniqueIds.filter(
+      (id) => !pokemonSprites[id] && !loadingIdsRef.current.has(id),
+    );
+    if (missing.length === 0) return;
 
-        loadingIdsRef.current.add(id);
+    missing.forEach((id) => loadingIdsRef.current.add(id));
+    let cancelled = false;
 
-        getPokemonById(id)
-          .then((pokemon) => {
+    batchGetPokemonById(missing)
+      .then((map) => {
+        if (cancelled) return;
+        setPokemonSprites((prev) => {
+          const next = { ...prev };
+          for (const id of missing) {
+            const pokemon = map.get(id);
             if (
               pokemon &&
               typeof pokemon.artwork === "object" &&
@@ -141,25 +154,28 @@ export function SavedPalettesPageClient() {
                 "shiny" in pokemon.artwork && pokemon.artwork.shiny
                   ? pokemon.artwork.shiny
                   : null;
-              setPokemonSprites((prev) => ({
-                ...prev,
-                [id]: { normal, shiny },
-              }));
+              next[id] = { normal, shiny };
             }
-            loadingIdsRef.current.delete(id);
-          })
-          .catch((error) => {
-            console.error(`Failed to load sprite for Pokemon ${id}:`, error);
-            loadingIdsRef.current.delete(id);
-          });
-
-        return prev;
+          }
+          return next;
+        });
+      })
+      .catch((error) => {
+        if (!cancelled) {
+          console.error("Failed to load sprite batch:", error);
+        }
+      })
+      .finally(() => {
+        for (const id of missing) loadingIdsRef.current.delete(id);
       });
-    };
 
-    palettes.forEach((palette) => {
-      loadSprite(palette.pokemon_id);
-    });
+    return () => {
+      cancelled = true;
+    };
+    // pokemonSprites intentionally omitted: it'd kick this effect on
+    // every successful batch, retriggering work. The `missing` filter
+    // above already skips IDs we've already resolved.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [palettes]);
 
   const filteredPalettes = useMemo(() => {
@@ -215,35 +231,56 @@ export function SavedPalettesPageClient() {
     });
 
     const sortedGroupKeys = Object.keys(grouped).sort((a, b) => {
-      return dateMap[b].getTime() - dateMap[a].getTime();
+      return (dateMap[b]?.getTime() ?? 0) - (dateMap[a]?.getTime() ?? 0);
     });
 
     return { recent, grouped, sortedGroupKeys };
   }, [filteredPalettes]);
 
   // Stagger-in animation whenever the rendered set changes.
+  // Runs on every filter/search keystroke today — animating a 1000-
+  // card grid each time is wasteful, but the worst symptom (whole
+  // grid flashing) is gated by the user actually having that many
+  // saved palettes. Reduced-motion users skip the timeline entirely.
   useEffect(() => {
     const cards = cardsRef.current.filter(Boolean);
     if (cards.length === 0) return;
-
-    gsap.set(cards, {
-      opacity: 0,
-      y: 20,
-      scale: 0.95,
+    if (prefersReducedMotion()) return;
+    let cancelled = false;
+    loadGsap().then(({ gsap }) => {
+      if (cancelled) return;
+      gsap.set(cards, {
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      });
+      gsap.to(cards, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.4,
+        stagger: 0.03,
+        ease: "power2.out",
+      });
     });
-
-    gsap.to(cards, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.4,
-      stagger: 0.03,
-      ease: "power2.out",
-    });
+    return () => {
+      cancelled = true;
+    };
   }, [groupedPalettes]);
 
   const totalPalettes = palettes.length;
   const accentColor = palettes[0]?.colors?.[0];
+
+  // Look up the palette currently targeted by the confirmation dialog
+  // so we can render a single shared AlertDialog at the bottom of the
+  // page instead of one-per-card. Previously every card mounted its
+  // own AlertDialog, which at 1000+ saved palettes meant 1000+ Radix
+  // dialog primitives in the React tree (and 1000+ portal containers)
+  // even though only one can ever be open. The shared dialog cuts
+  // memory + first-paint cost roughly proportional to palette count.
+  const targetPaletteForDialog = palettes.find(
+    (p) => p.id === deleteDialogOpen,
+  );
 
   const renderPaletteCard = (palette: SavedPalette, cardIndex: number) => {
     const spriteData = pokemonSprites[palette.pokemon_id];
@@ -321,50 +358,55 @@ export function SavedPalettesPageClient() {
         <div className="relative z-[1] flex h-12 w-full pointer-events-none">
           {palette.colors.map((color, index) => (
             <div
-              key={index}
+              key={`${color}-${index}`}
               className="flex-1"
               style={{ backgroundColor: color }}
               title={color}
             />
           ))}
         </div>
-
-        <AlertDialog
-          open={deleteDialogOpen === palette.id}
-          onOpenChange={(open) => {
-            if (!open) {
-              setDeleteDialogOpen(null);
-            }
-          }}
-        >
-          <AlertDialogContent onClick={(e) => e.stopPropagation()}>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Delete Palette?</AlertDialogTitle>
-              <AlertDialogDescription>
-                Are you sure you want to delete the {palette.pokemon_name}{" "}
-                palette? This action cannot be undone.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleDeletePalette(palette.id);
-                  setDeleteDialogOpen(null);
-                }}
-                style={{
-                  backgroundColor: palette.colors[0] || "#6366f1",
-                  color: getTextColor(palette.colors[0] || "#6366f1"),
-                }}
-                className="hover:opacity-90"
-              >
-                Delete
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
       </Card>
+    );
+  };
+
+  const renderSharedDeleteDialog = () => {
+    if (!targetPaletteForDialog) return null;
+    const palette = targetPaletteForDialog;
+    const accent = palette.colors[0] ?? "#6366f1";
+    return (
+      <AlertDialog
+        open={deleteDialogOpen !== null}
+        onOpenChange={(open) => {
+          if (!open) setDeleteDialogOpen(null);
+        }}
+      >
+        <AlertDialogContent onClick={(e) => e.stopPropagation()}>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete Palette?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Are you sure you want to delete the {palette.pokemon_name}{" "}
+              palette? This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDeletePalette(palette.id);
+                setDeleteDialogOpen(null);
+              }}
+              style={{
+                backgroundColor: accent,
+                color: getTextColor(accent),
+              }}
+              className="hover:opacity-90"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     );
   };
 
@@ -530,14 +572,14 @@ export function SavedPalettesPageClient() {
 
                     {groupedPalettes.sortedGroupKeys.map(
                       (dateKey, groupIndex) => {
-                        const groupPalettes = groupedPalettes.grouped[dateKey];
+                        const groupPalettes = groupedPalettes.grouped[dateKey] ?? [];
                         const startIndex =
                           groupedPalettes.recent.length +
                           groupedPalettes.sortedGroupKeys
                             .slice(0, groupIndex)
                             .reduce(
                               (sum, key) =>
-                                sum + groupedPalettes.grouped[key].length,
+                                sum + (groupedPalettes.grouped[key]?.length ?? 0),
                               0
                             );
 
@@ -563,6 +605,7 @@ export function SavedPalettesPageClient() {
           <Footer />
         </div>
       </div>
+      {renderSharedDeleteDialog()}
     </div>
   );
 }

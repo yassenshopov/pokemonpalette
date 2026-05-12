@@ -36,7 +36,7 @@ import { toast } from "sonner";
 import { X, Sparkles, Loader2, Bookmark, Search, Filter } from "lucide-react";
 import Image from "next/image";
 import { getPokemonById } from "@/lib/pokemon";
-import { gsap } from "gsap";
+import { loadGsap, prefersReducedMotion } from "@/lib/motion";
 import {
   Tooltip,
   TooltipContent,
@@ -246,40 +246,47 @@ export function SavedPalettesDialog({
 
     // Sort grouped dates in descending order (newest first) using stored Date objects
     const sortedGroupKeys = Object.keys(grouped).sort((a, b) => {
-      return dateMap[b].getTime() - dateMap[a].getTime();
+      return (dateMap[b]?.getTime() ?? 0) - (dateMap[a]?.getTime() ?? 0);
     });
 
     return { recent, grouped, sortedGroupKeys };
   }, [filteredPalettes]);
 
-  // Animate palette cards when they change (filter/search)
   useEffect(() => {
     const cards = cardsRef.current.filter(Boolean);
     if (cards.length === 0) return;
-
-    // Reset cards to initial state
-    gsap.set(cards, {
-      opacity: 0,
-      y: 20,
-      scale: 0.95,
+    if (prefersReducedMotion()) return;
+    let cancelled = false;
+    loadGsap().then(({ gsap }) => {
+      if (cancelled) return;
+      gsap.set(cards, {
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      });
+      gsap.to(cards, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.4,
+        stagger: 0.03,
+        ease: "power2.out",
+      });
     });
-
-    // Animate cards in with stagger
-    gsap.to(cards, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.4,
-      stagger: 0.03,
-      ease: "power2.out",
-    });
+    return () => {
+      cancelled = true;
+    };
   }, [groupedPalettes]);
 
-  // Animate dialog content when it opens
   useEffect(() => {
-    if (open && dialogContentRef.current) {
+    if (!open || !dialogContentRef.current) return;
+    if (prefersReducedMotion()) return;
+    const node = dialogContentRef.current;
+    let cancelled = false;
+    loadGsap().then(({ gsap }) => {
+      if (cancelled) return;
       gsap.fromTo(
-        dialogContentRef.current,
+        node,
         {
           opacity: 0,
           scale: 0.95,
@@ -291,7 +298,10 @@ export function SavedPalettesDialog({
           ease: "power2.out",
         }
       );
-    }
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [open]);
 
   if (!isLoaded) {
@@ -589,13 +599,13 @@ export function SavedPalettesDialog({
 
               {/* Grouped palettes by date (older than 1 day) */}
               {groupedPalettes.sortedGroupKeys.map((dateKey, groupIndex) => {
-                const groupPalettes = groupedPalettes.grouped[dateKey];
+                const groupPalettes = groupedPalettes.grouped[dateKey] ?? [];
                 const startIndex =
                   groupedPalettes.recent.length +
                   groupedPalettes.sortedGroupKeys
                     .slice(0, groupIndex)
                     .reduce(
-                      (sum, key) => sum + groupedPalettes.grouped[key].length,
+                      (sum, key) => sum + (groupedPalettes.grouped[key]?.length ?? 0),
                       0
                     );
 

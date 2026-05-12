@@ -237,7 +237,9 @@ export function GameCalendar({
         const next = new Map(prev);
         results.forEach((p, i) => {
           if (!p) return;
-          next.set(uniqueIds[i], {
+          const id = uniqueIds[i];
+          if (id === undefined) return;
+          next.set(id, {
             normal: p.colorPalette ?? null,
             shiny: p.shinyColorPalette ?? null,
           });

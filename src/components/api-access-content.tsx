@@ -42,7 +42,14 @@ interface ApiAccessContentProps {
 const BW2_SPRITE = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`;
 
-const SHOWCASE_POKEMON = [
+type ShowcasePokemon = {
+  id: number;
+  name: string;
+  sprite: string;
+  palette: { primary: string; secondary: string; accent: string; bg: string; text: string };
+};
+
+const SHOWCASE_POKEMON: [ShowcasePokemon, ...ShowcasePokemon[]] = [
   {
     id: 6, name: "Charizard", sprite: BW2_SPRITE(6),
     palette: { primary: "#ee8329", secondary: "#cd5241", accent: "#084152", bg: "#F8F8F8", text: "#2C2C2C" },
@@ -214,7 +221,18 @@ function FloatingToc({ activeId }: { activeId: string }) {
   );
 }
 
-const API_ENDPOINTS = [
+type ApiEndpoint = {
+  id: string;
+  label: string;
+  method: string;
+  path: string;
+  params: string;
+  desc: string;
+  curl: string;
+  response: string;
+};
+
+const API_ENDPOINTS: [ApiEndpoint, ...ApiEndpoint[]] = [
   {
     id: "list",
     label: "List Palettes",
@@ -520,7 +538,8 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
     }
   };
 
-  const activePokemon = SHOWCASE_POKEMON[activeShowcase];
+  const activePokemon =
+    SHOWCASE_POKEMON[activeShowcase] ?? SHOWCASE_POKEMON[0];
   const activeColors = [
     activePokemon.palette.primary,
     activePokemon.palette.secondary,

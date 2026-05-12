@@ -146,8 +146,15 @@ export function SourcePicker({
       const ctx = canvas.getContext("2d", { willReadFrequently: true });
       if (!ctx) return null;
       const data = ctx.getImageData(cx, cy, 1, 1).data;
-      if (data[3] < 20) return null;
-      return toHex(data[0], data[1], data[2]);
+      const r = data[0];
+      const g = data[1];
+      const b = data[2];
+      const a = data[3];
+      if (r === undefined || g === undefined || b === undefined || a === undefined) {
+        return null;
+      }
+      if (a < 20) return null;
+      return toHex(r, g, b);
     },
     [],
   );

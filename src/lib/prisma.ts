@@ -1,4 +1,5 @@
 import { PrismaClient, Prisma } from "@prisma/client";
+import { serverEnv } from "@/lib/env";
 
 /**
  * Vercel-safe Prisma singleton.
@@ -24,7 +25,7 @@ type PrismaLogLevel = Prisma.LogLevel;
 
 function buildLog(): PrismaLogLevel[] {
   const level: PrismaLogLevel[] = ["error", "warn"];
-  if (process.env.PRISMA_LOG === "query") {
+  if (serverEnv.PRISMA_LOG === "query") {
     level.push("query");
   }
   return level;
@@ -40,7 +41,7 @@ export const prisma =
     log: buildLog(),
   });
 
-if (process.env.NODE_ENV !== "production") {
+if (serverEnv.NODE_ENV !== "production") {
   globalForPrisma.prisma = prisma;
 }
 

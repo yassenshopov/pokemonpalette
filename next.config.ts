@@ -97,8 +97,61 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Disable the `X-Powered-By: Next.js` header. There's no operational
+  // value in advertising the framework + version to attackers — it just
+  // narrows their CVE search.
+  poweredByHeader: false,
+
   async headers() {
     return [
+      {
+        // BASELINE security headers applied to every response. Specific
+        // routes can layer additional headers below (e.g. Cache-Control
+        // on /pokemon/*). These exist to close the gaps surfaced by
+        // the security audit (clickjacking, MIME sniffing, missing
+        // HSTS, leaky referrers, unrestricted browser features).
+        //
+        // CSP intentionally only locks down `frame-ancestors` for now —
+        // a strict `script-src` / `style-src` policy with nonces needs
+        // middleware-level wiring to issue nonces per request, and
+        // misconfiguring it bricks the entire app. `frame-ancestors`
+        // is the modern replacement for X-Frame-Options and is the
+        // single most important directive for the admin clickjacking
+        // risk called out in the audit. Both headers are emitted for
+        // belt-and-braces support of legacy user agents.
+        source: "/:path*",
+        headers: [
+          {
+            key: "Strict-Transport-Security",
+            // 2 years + subdomains + preload-eligible.
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "DENY",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            // Lock down powerful browser features we never use. Saves
+            // accidental exposure if a third-party script tries to
+            // probe geolocation / camera / etc.
+            key: "Permissions-Policy",
+            value:
+              "accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), screen-wake-lock=(), web-share=(self), xr-spatial-tracking=()",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'none'",
+          },
+        ],
+      },
       {
         // Per-Pokemon sprite PNGs under /public/pokemon/** are deterministic
         // (filename = pokemon id / form); cache aggressively. Immutable means

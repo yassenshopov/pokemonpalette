@@ -17,6 +17,26 @@ export function KeyboardShortcuts({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      // Bail out for any keypress where the focused element accepts
+      // text input. Otherwise Ctrl+B inside a contenteditable rich
+      // editor (e.g. for "bold") would fire our sidebar toggle, and
+      // Ctrl+Shift+L inside an `<input>` would silently swap themes
+      // from under the user's typing flow. The check covers the
+      // standard form fields plus contenteditable surfaces and any
+      // ARIA-tagged editable widgets (e.g. role="textbox" combobox
+      // inputs in some libraries).
+      const target = event.target as HTMLElement | null;
+      if (target) {
+        const tag = target.tagName;
+        const isEditable =
+          tag === "INPUT" ||
+          tag === "TEXTAREA" ||
+          tag === "SELECT" ||
+          target.isContentEditable ||
+          target.getAttribute("role") === "textbox";
+        if (isEditable) return;
+      }
+
       // Theme toggle: Ctrl + Shift + L
       if (event.ctrlKey && event.shiftKey && event.key === "L") {
         event.preventDefault();

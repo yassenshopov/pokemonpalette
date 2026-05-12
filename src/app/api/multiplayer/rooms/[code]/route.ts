@@ -55,6 +55,26 @@ export async function GET(
     return NextResponse.json({ error: "Room is not joinable" }, { status: 403 });
   }
 
+  // Non-participants get a redacted view: enough to render the
+  // "join this room" affordance, NOT the full roster. Pre-hardening
+  // anyone signed in could fetch usernames + avatars + scores of
+  // arbitrary waiting rooms by guessing 6-char codes (1B keyspace,
+  // brute-forceable across many runs). We now strip player identity
+  // for non-participants and only expose the slot count, room
+  // status, and host id (the host id was already round-tripped
+  // through the join flow, so this is not a new disclosure).
+  if (!isParticipant) {
+    return NextResponse.json({
+      roomCode: room.roomCode,
+      roomId: room.id,
+      hostUserId: room.hostUserId,
+      isShiny: room.isShiny,
+      status: room.status,
+      playerCount: room.players.length,
+      expiresAt: room.expiresAt.toISOString(),
+    });
+  }
+
   const players = room.players.map((p) => ({
     userId: p.userId,
     username: p.username,

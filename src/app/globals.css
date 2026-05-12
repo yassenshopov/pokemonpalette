@@ -246,6 +246,21 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* User asked the OS to suppress motion. Kill every keyframe
+     animation we ship by default (decorative grids, marquee tweens,
+     stagger reveals, etc.) plus the bespoke CSS animations below.
+     `transition-duration: 0ms !important` neutralizes the global
+     `transition` rule earlier in this file without forcing layout
+     thrash. The `!important` is necessary to override per-component
+     Tailwind utilities like `transition-all duration-500`. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation: none;

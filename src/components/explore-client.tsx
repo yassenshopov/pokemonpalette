@@ -588,7 +588,12 @@ export function ExploreClient({
           <ul className="grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
             {visible.map((meta, i) => (
               <Fragment key={meta.id}>
-                <li>
+                {/* `content-visibility: auto` lets the browser skip layout
+                    and paint work for off-screen items, the cheapest available
+                    win short of full DOM virtualization. `contain-intrinsic-size`
+                    seeds a placeholder height so the scrollbar / "Show More"
+                    sentinel positions correctly before content paints. */}
+                <li style={{ contentVisibility: "auto", containIntrinsicSize: "260px 280px" }}>
                   <PokemonPaletteExploreCard
                     metadata={meta}
                     pokemonData={initialDataMap.get(meta.id)}

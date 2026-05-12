@@ -63,17 +63,17 @@ export async function extractColorsFromImage(
           "#0f0f0f",
         ]);
 
-        // Sample every 4th pixel for performance
         for (let i = 0; i < pixels.length; i += 16) {
           const r = pixels[i];
           const g = pixels[i + 1];
           const b = pixels[i + 2];
           const a = pixels[i + 3];
 
-          // Skip transparent or very transparent pixels
+          if (r === undefined || g === undefined || b === undefined || a === undefined) {
+            continue;
+          }
           if (a < 200) continue;
 
-          // Convert to hex
           const hex = `#${[r, g, b]
             .map((x) => x.toString(16).padStart(2, "0"))
             .join("")}`;

@@ -19,10 +19,18 @@ export async function GET(
   const format = parseColorFormat(url.searchParams.get("format"));
   const shiny = url.searchParams.get("shiny") === "true";
 
-  const numericId = parseInt(id, 10);
-  const pokemon = isNaN(numericId)
-    ? await getPokemonByName(id)
-    : await getPokemonById(numericId);
+  // `parseInt("25xyz", 10)` happily returns 25 — so a request for
+  // `/api/v1/palettes/25xyz` used to silently resolve to Pikachu instead
+  // of falling through to the name-based lookup. Use `Number` (strict)
+  // and the canonical National-Dex bound so trailing-junk inputs fail
+  // the numeric branch and fall through to `getPokemonByName`, which
+  // gives the API caller the predictable "id not found" 404 they expect.
+  const numericId = /^\d+$/.test(id) ? Number(id) : Number.NaN;
+  const isValidNumericId =
+    Number.isInteger(numericId) && numericId >= 1 && numericId <= 100_000;
+  const pokemon = isValidNumericId
+    ? await getPokemonById(numericId)
+    : await getPokemonByName(id);
 
   if (!pokemon) {
     return NextResponse.json(

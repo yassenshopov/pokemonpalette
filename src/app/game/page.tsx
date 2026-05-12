@@ -7,6 +7,7 @@ import { useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
 import { track } from "@/lib/analytics";
 import {
+  batchGetPokemonById,
   getAllPokemonMetadata,
   getPokemonById,
   getPokemonMetadataById,
@@ -153,7 +154,7 @@ interface Guess {
   // (shares a type with the target, in the same evolution family, etc).
   // Null while the target Pokemon's data hasn't loaded yet; the reload paths
   // below fill this in once both sides are available.
-  relatedness?: GuessRelatedness | null;
+  relatedness: GuessRelatedness | null;
 }
 
 function getSpriteUrl(pokemon: Pokemon, shiny: boolean): string | null {
@@ -347,6 +348,33 @@ export default function GamePage() {
   const PENDING_POKEDEX_KEY = "pokemon-palette-pending-pokedex";
   const HOW_TO_PLAY_STORAGE_KEY = "pokemon-palette-game-tutorial-seen";
 
+  // Defensive read for any localStorage payload we expect to be JSON.
+  // Pre-hardening the game crashed on first paint if the saved blob
+  // was malformed — a stray browser extension, a half-completed quota
+  // eviction, or a hand-edit could leave invalid JSON in any of these
+  // keys and the unguarded `JSON.parse()` would throw inside a render
+  // effect, blowing up the whole route. We log to the console (NOT
+  // toast) because corrupt local state is a "fix yourself" condition,
+  // not user-facing news. Returning the supplied fallback restores
+  // the normal "no pending data" UI.
+  const readLocalJson = <T,>(key: string, fallback: T): T => {
+    try {
+      const raw = localStorage.getItem(key);
+      if (!raw) return fallback;
+      const parsed = JSON.parse(raw) as T;
+      return parsed ?? fallback;
+    } catch (err) {
+      console.warn(`[game] dropping corrupt localStorage entry "${key}"`, err);
+      try {
+        localStorage.removeItem(key);
+      } catch {
+        // localStorage can be inaccessible (Safari private mode, etc.) —
+        // we already returned the fallback so just give up silently.
+      }
+      return fallback;
+    }
+  };
+
   // Alias the shared helper locally so the existing getTextColor(...) call
   // sites don't all need to churn. The real implementation lives in
   // src/lib/game/colors.ts.
@@ -479,16 +507,25 @@ export default function GamePage() {
                     );
                     setTargetColors(topColors);
 
-                    // Load guesses
+                    // Load guesses. The Pokémon-record fetches used to
+                    // fire one `getPokemonById` per past guess — for an
+                    // attempt with 4 guesses, that's 4 sequential disk
+                    // reads inside `Promise.all` (so they overlap, but
+                    // the underlying I/O still spends 4× as much wall
+                    // time vs. a single batched call). `batchGetPokemonById`
+                    // resolves them all at once and lets the module
+                    // cache dedupe shared IDs across simultaneous tab
+                    // loads.
                     const guessIds = Array.isArray(todayAttempt.guesses)
-                      ? todayAttempt.guesses
+                      ? (todayAttempt.guesses as number[])
                       : [];
+                    const guessPokemonMap = await batchGetPokemonById(guessIds);
                     const guessesPromises = guessIds.map(
-                      async (pokemonId: number) => {
+                      async (pokemonId: number): Promise<Guess | null> => {
                         const guessMetadata = getPokemonMetadataById(pokemonId);
                         if (!guessMetadata) return null;
 
-                        const guessPokemon = await getPokemonById(pokemonId);
+                        const guessPokemon = guessPokemonMap.get(pokemonId);
                         if (!guessPokemon) return null;
 
                         const guessSpriteUrl = getSpriteUrl(
@@ -609,7 +646,7 @@ export default function GamePage() {
                 : [];
 
               const guessesPromises = guessPokemonIds.map(
-                async (pokemonId: number) => {
+                async (pokemonId: number): Promise<Guess | null> => {
                   const guessMetadata = getPokemonMetadataById(pokemonId);
                   if (!guessMetadata) return null;
 
@@ -735,10 +772,14 @@ export default function GamePage() {
         }
         if (pokemonList.length === 0) {
           const randomIndex = Math.floor(Math.random() * allPokemonList.length);
-          pokemonId = allPokemonList[randomIndex].id;
+          const picked = allPokemonList[randomIndex];
+          if (!picked) return;
+          pokemonId = picked.id;
         } else {
           const randomIndex = Math.floor(Math.random() * pokemonList.length);
-          pokemonId = pokemonList[randomIndex].id;
+          const picked = pokemonList[randomIndex];
+          if (!picked) return;
+          pokemonId = picked.id;
         }
       }
 
@@ -1110,9 +1151,7 @@ export default function GamePage() {
       hintsUsed: hintsUsed,
     };
 
-    // Get existing pending attempts
-    const existing = localStorage.getItem(PENDING_ATTEMPTS_KEY);
-    const pending = existing ? JSON.parse(existing) : [];
+    const pending: any[] = readLocalJson<any[]>(PENDING_ATTEMPTS_KEY, []);
 
     // Check if we already have an attempt for this date
     const existingIndex = pending.findIndex((p: any) => p.date === dateStr);
@@ -1326,11 +1365,8 @@ export default function GamePage() {
   const syncPendingAttempts = async () => {
     if (!user) return;
 
-    const pending = localStorage.getItem(PENDING_ATTEMPTS_KEY);
-    if (!pending) return;
-
-    const attempts = JSON.parse(pending);
-    if (attempts.length === 0) return;
+    const attempts: any[] = readLocalJson<any[]>(PENDING_ATTEMPTS_KEY, []);
+    if (!Array.isArray(attempts) || attempts.length === 0) return;
 
     setSavingAttempt(true);
     try {
@@ -1389,32 +1425,26 @@ export default function GamePage() {
 
   // Load pending attempts on mount
   useEffect(() => {
-    const pending = localStorage.getItem(PENDING_ATTEMPTS_KEY);
-    if (pending) {
-      setPendingAttempts(JSON.parse(pending));
+    const pending = readLocalJson<unknown[]>(PENDING_ATTEMPTS_KEY, []);
+    if (Array.isArray(pending) && pending.length > 0) {
+      setPendingAttempts(pending);
     }
   }, []);
 
   // Sync pending attempts when user signs in
   useEffect(() => {
     if (user) {
-      const pending = localStorage.getItem(PENDING_ATTEMPTS_KEY);
-      if (pending && JSON.parse(pending).length > 0) {
+      const pending = readLocalJson<unknown[]>(PENDING_ATTEMPTS_KEY, []);
+      if (Array.isArray(pending) && pending.length > 0) {
         syncPendingAttempts();
       }
       // Drain queued Pokedex catches recorded while the player was
       // signed out. Independent of the daily-attempt sync above — they
       // can legitimately have one without the other (e.g. caught in
       // unlimited mode only).
-      const pendingPokedex = localStorage.getItem(PENDING_POKEDEX_KEY);
-      if (pendingPokedex) {
-        try {
-          if ((JSON.parse(pendingPokedex) as unknown[]).length > 0) {
-            syncPendingPokedex();
-          }
-        } catch {
-          // ignore
-        }
+      const pendingPokedex = readLocalJson<unknown[]>(PENDING_POKEDEX_KEY, []);
+      if (Array.isArray(pendingPokedex) && pendingPokedex.length > 0) {
+        syncPendingPokedex();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1491,7 +1521,8 @@ export default function GamePage() {
     const keepCount = Math.min(revealedHints.length, previous.length);
     const merged = previous.slice(0, keepCount);
     for (let i = keepCount; i < fresh.length; i++) {
-      merged.push(fresh[i]);
+      const hint = fresh[i];
+      if (hint !== undefined) merged.push(hint);
     }
     generatedHintsRef.current = merged;
     // `revealedHints` is intentionally read but not in the dep list — we only
@@ -1532,6 +1563,7 @@ export default function GamePage() {
   useEffect(() => {
     if (revealedHints.length === 0 || !targetPokemon) return;
     const lastRevealedIndex = revealedHints[revealedHints.length - 1];
+    if (lastRevealedIndex === undefined) return;
     const hintElement = hintRefs.current[lastRevealedIndex];
     if (!hintElement) return;
     let cancelled = false;
@@ -1765,10 +1797,14 @@ export default function GamePage() {
       }
       if (pokemonList.length === 0) {
         const randomIndex = Math.floor(Math.random() * allPokemonList.length);
-        pokemonId = allPokemonList[randomIndex].id;
+        const picked = allPokemonList[randomIndex];
+        if (!picked) return;
+        pokemonId = picked.id;
       } else {
         const randomIndex = Math.floor(Math.random() * pokemonList.length);
-        pokemonId = pokemonList[randomIndex].id;
+        const picked = pokemonList[randomIndex];
+        if (!picked) return;
+        pokemonId = picked.id;
       }
     }
 
@@ -1999,14 +2035,10 @@ export default function GamePage() {
                       variant="default"
                       className="border-transparent font-heading"
                       style={{
-                        backgroundColor:
-                          targetColors.length > 0
-                            ? targetColors[0].hex
-                            : undefined,
-                        color:
-                          targetColors.length > 0 && targetColors[0].hex
-                            ? getTextColor(targetColors[0].hex)
-                            : undefined,
+                        backgroundColor: targetColors[0]?.hex,
+                        color: targetColors[0]?.hex
+                          ? getTextColor(targetColors[0].hex)
+                          : undefined,
                       }}
                     >
                       <Sparkles className="w-3 h-3 mr-1" />
@@ -2030,10 +2062,7 @@ export default function GamePage() {
                               generatedHintsRef.current.length > 0
                                 ? generatedHintsRef.current
                                 : generateHints(targetPokemon);
-                            const primaryColor =
-                              targetColors.length > 0
-                                ? targetColors[0].hex
-                                : undefined;
+                            const primaryColor = targetColors[0]?.hex;
                             return (
                               <div
                                 key={hintIndex}
@@ -2126,14 +2155,10 @@ export default function GamePage() {
                             variant="default"
                             className="ml-2 font-heading"
                             style={{
-                              backgroundColor:
-                                targetColors.length > 0
-                                  ? targetColors[0].hex
-                                  : undefined,
-                              color:
-                                targetColors.length > 0 && targetColors[0].hex
-                                  ? getTextColor(targetColors[0].hex)
-                                  : undefined,
+                              backgroundColor: targetColors[0]?.hex,
+                              color: targetColors[0]?.hex
+                                ? getTextColor(targetColors[0].hex)
+                                : undefined,
                             }}
                           >
                             <Sparkles className="w-3 h-3 mr-1" />
@@ -2189,18 +2214,11 @@ export default function GamePage() {
                           variant="default"
                           className="w-full md:w-auto cursor-pointer font-medium font-heading transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden group"
                           style={{
-                            backgroundColor:
-                              targetColors.length > 0
-                                ? targetColors[0].hex
-                                : undefined,
-                            color:
-                              targetColors.length > 0 && targetColors[0].hex
-                                ? getTextColor(targetColors[0].hex)
-                                : undefined,
-                            borderColor:
-                              targetColors.length > 0
-                                ? targetColors[0].hex
-                                : undefined,
+                            backgroundColor: targetColors[0]?.hex,
+                            color: targetColors[0]?.hex
+                              ? getTextColor(targetColors[0].hex)
+                              : undefined,
+                            borderColor: targetColors[0]?.hex,
                           }}
                         >
                           {/* Hover shine animation overlay */}

@@ -47,7 +47,29 @@ import {
 import { cn } from "@/lib/utils";
 import { KpiCard } from "@/components/admin/kpi-card";
 import { RangePicker } from "@/components/admin/range-picker";
-import { AdminInsightsWorldMap } from "@/components/admin/admin-insights-world-map";
+import dynamic from "next/dynamic";
+
+// d3-geo + topojson-client + topojson-specification together add
+// ~140 KB to the admin-insights bundle, and the world map sits below
+// the fold for most admins. Lazy-loading it via next/dynamic with
+// ssr:false keeps the heavy code off the initial admin-insights
+// route bundle entirely — Next splits it into its own chunk that
+// only downloads when the component mounts client-side.
+const AdminInsightsWorldMap = dynamic(
+  () =>
+    import("@/components/admin/admin-insights-world-map").then((m) => ({
+      default: m.AdminInsightsWorldMap,
+    })),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="h-[440px] w-full animate-pulse rounded-lg bg-muted/30"
+        aria-label="Loading world map"
+      />
+    ),
+  },
+);
 import {
   rangeFromSearchParams,
   rangeToSearchParams,
@@ -843,9 +865,10 @@ function YearHeatmap({
     const sorted = [...data].sort((a, b) =>
       a.date < b.date ? -1 : a.date > b.date ? 1 : 0,
     );
-    if (sorted.length === 0) return [] as Array<SparkPoint & { dow: number }>;
+    const firstSorted = sorted[0];
+    if (!firstSorted) return [] as Array<SparkPoint & { dow: number }>;
 
-    const firstDate = new Date(`${sorted[0].date}T00:00:00Z`);
+    const firstDate = new Date(`${firstSorted.date}T00:00:00Z`);
     const startDow = firstDate.getUTCDay();
     const padded: Array<{ date: string; count: number; dow: number; pad?: boolean }> = [];
     for (let i = 0; i < startDow; i++) {

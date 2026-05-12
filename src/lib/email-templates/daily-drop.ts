@@ -22,14 +22,7 @@ const MUTED_INK = "#475569";
 const SOFT_INK = "#94a3b8";
 const HAIRLINE = "#e2e8f0";
 
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
+import { escapeHtml, escapeUrl } from "./escape";
 
 function formatDate(input?: string): string {
   if (input && Number.isNaN(Date.parse(input))) {
@@ -45,13 +38,26 @@ function formatDate(input?: string): string {
 
 export class DailyDropTemplate {
   static render(data: DailyDropData): { html: string; text: string } {
-    const greeting = `Hi ${escapeHtml(data.userName?.trim() || "there")},`;
-    const dateLabel = formatDate(data.date);
-    const baseUrl =
+    const safeName = escapeHtml(data.userName?.trim() || "there");
+    const plainName = data.userName?.trim() || "there";
+    const greeting = `Hi ${safeName},`;
+    const rawDateLabel = formatDate(data.date);
+    const dateLabel = escapeHtml(rawDateLabel);
+    // Resolve baseUrl from data, falling back to derivations of the
+    // (admin-supplied) gameUrl, then a final hard-coded brand URL.
+    // Both the resolved baseUrl and the gameUrl are passed through the
+    // URL allowlist so a `javascript:` payload in either field can't
+    // escape into the email's `href` attributes.
+    const rawBase =
       data.baseUrl ??
       data.gameUrl.replace(/\/game\/?$/, "").replace(/\/$/, "") ??
       "https://www.pokemonpalette.com";
-    const logoUrl = `${baseUrl}/logo.png`;
+    const baseUrl = escapeUrl(rawBase, "https://www.pokemonpalette.com");
+    const gameUrl = escapeUrl(data.gameUrl, `${baseUrl}/game`);
+    const logoUrl = escapeUrl(
+      `${rawBase}/logo.png`,
+      "https://www.pokemonpalette.com/logo.png",
+    );
     const colors = data.previewColors ?? BRAND_COLORS;
     const [c1, c2, c3] = colors;
 
@@ -150,7 +156,7 @@ export class DailyDropTemplate {
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
                 <tr>
                   <td align="center">
-                    <a href="${escapeHtml(data.gameUrl)}" style="display: inline-block; padding: 14px 36px; background-color: ${INK}; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; letter-spacing: -0.01em;">
+                    <a href="${gameUrl}" style="display: inline-block; padding: 14px 36px; background-color: ${INK}; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; letter-spacing: -0.01em;">
                       Play today's palette &rarr;
                     </a>
                   </td>
@@ -218,14 +224,20 @@ export class DailyDropTemplate {
 </html>
     `.trim();
 
+    // Plain-text body: use the raw (unescaped) name + raw date label
+    // so the user sees `It's Friday` instead of `It&#39;s Friday`.
+    // URL still gets the allowlist treatment via `gameUrl` /
+    // `baseUrl` so admin-controlled inputs can't smuggle a
+    // `javascript:` link even into the text part (some mail clients
+    // surface plain-text URLs as clickable).
     const text = `
-${data.userName?.trim() ? `Hi ${data.userName.trim()},` : "Hi there,"}
+Hi ${plainName},
 
-Today's Pokémon Palette is up — ${dateLabel}.
+Today's Pokémon Palette is up — ${rawDateLabel}.
 
 A fresh Pokémon, three telling colors, one guess at a time. You've got until midnight to lock it in and keep the streak alive.
 
-Play now: ${data.gameUrl}
+Play now: ${gameUrl}
 
 Pro tip: Look for the secondary color first — it usually points at typing before the primary does.
 

@@ -62,24 +62,35 @@ export async function POST() {
   const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
 
   try {
-    const room = await prisma.multiplayerRoom.create({
-      data: {
-        roomCode,
-        hostUserId: userId,
-        targetPokemonId,
-        isShiny,
-        status: "waiting",
-        expiresAt,
-      },
-    });
-
-    await prisma.multiplayerPlayer.create({
-      data: {
-        roomId: room.id,
-        userId,
-        username: user?.username ?? null,
-        imageUrl: user?.imageUrl ?? null,
-      },
+    // Create the room AND seed the host as the first player in a
+    // single transaction. The previous implementation did the two
+    // inserts back-to-back without a transaction wrapper, which left
+    // the room in a "host but no players row" state any time the
+    // second insert failed (transient DB error, connection drop,
+    // function timeout, etc.). That broken state was then exposed by
+    // `/join` — the second player would see a 1-player room and join,
+    // but the host could never reconnect because their player record
+    // didn't exist.
+    const room = await prisma.$transaction(async (tx) => {
+      const created = await tx.multiplayerRoom.create({
+        data: {
+          roomCode,
+          hostUserId: userId!,
+          targetPokemonId,
+          isShiny,
+          status: "waiting",
+          expiresAt,
+        },
+      });
+      await tx.multiplayerPlayer.create({
+        data: {
+          roomId: created.id,
+          userId: userId!,
+          username: user?.username ?? null,
+          imageUrl: user?.imageUrl ?? null,
+        },
+      });
+      return created;
     });
 
     logger.info("multiplayer.room_created", { userId, roomCode });

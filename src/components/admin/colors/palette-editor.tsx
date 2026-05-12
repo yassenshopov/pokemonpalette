@@ -89,7 +89,11 @@ export function PaletteEditor({
     const target = idx + dir;
     if (target < 0 || target >= MAX_PALETTE_SIZE) return;
     const updated = [...value];
-    [updated[idx], updated[target]] = [updated[target], updated[idx]];
+    const a = updated[idx];
+    const b = updated[target];
+    if (a === undefined || b === undefined) return;
+    updated[idx] = b;
+    updated[target] = a;
     onChange(updated);
   };
 

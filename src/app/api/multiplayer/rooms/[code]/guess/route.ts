@@ -1,19 +1,42 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
+import { Prisma, prisma } from "@/lib/prisma";
 import { rateLimit } from "@/lib/rate-limit";
 import { logger } from "@/lib/logger";
+import { getPokemonById } from "@/lib/pokemon";
+import { calculateSimilarity } from "@/lib/game/similarity";
 
 const guessLimiter = rateLimit("mp-guess", {
   requests: 30,
   window: "1 m",
 });
 
+// Note: we intentionally do NOT accept `similarity` from the client.
+// Pre-hardening the route trusted whatever score the client posted,
+// which let anyone PATCH `bestSimilarity: 1` and steal the win on the
+// tiebreak path. The server now derives the score from the
+// pre-baked per-Pokemon color palette so it's deterministic and
+// tamper-proof. The client still computes its own number for the
+// "you got close" UI affordance, but the source of truth lives here.
 const GuessSchema = z.object({
   pokemonId: z.number().int().min(1).max(100000),
-  similarity: z.number().min(0).max(1),
 });
+
+/** Pull the canonical palette for similarity comparison. Mirrors the
+ *  client's behaviour of falling back to `colorPalette.highlights`
+ *  when shiny data is missing, so a shiny game whose target lacks a
+ *  shiny palette still scores correctly. */
+function palette(p: {
+  colorPalette?: { highlights?: string[] };
+  shinyColorPalette?: { highlights?: string[] };
+}, isShiny: boolean): string[] {
+  if (isShiny) {
+    const shiny = p.shinyColorPalette?.highlights;
+    if (shiny && shiny.length > 0) return shiny;
+  }
+  return p.colorPalette?.highlights ?? [];
+}
 
 export async function POST(
   req: NextRequest,
@@ -56,7 +79,7 @@ export async function POST(
     );
   }
 
-  const { pokemonId, similarity } = parsed.data;
+  const { pokemonId } = parsed.data;
 
   const room = await prisma.multiplayerRoom.findUnique({
     where: { roomCode: code.toUpperCase() },
@@ -104,6 +127,32 @@ export async function POST(
     );
   }
 
+  // Server-authoritative similarity. We load BOTH Pokemon (target +
+  // guess), pull their canonical highlight palettes (shiny variant if
+  // the room is shiny), and run the same `calculateSimilarity()` the
+  // client uses for its local visual feedback. A failed lookup
+  // (corrupt JSON, missing file, ID outside the bundled data set)
+  // scores 0 — that's the right behaviour because we can't verify the
+  // claim, and 0 won't beat any real guess on tiebreak.
+  let similarity = 0;
+  try {
+    const [target, guess] = await Promise.all([
+      getPokemonById(room.targetPokemonId),
+      getPokemonById(pokemonId),
+    ]);
+    if (target && guess) {
+      const targetColors = palette(target, room.isShiny);
+      const guessColors = palette(guess, room.isShiny);
+      similarity = calculateSimilarity(targetColors, guessColors);
+    }
+  } catch (err) {
+    logger.warn("multiplayer.similarity_compute_failed", {
+      pokemonId,
+      targetPokemonId: room.targetPokemonId,
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
+
   const won = pokemonId === room.targetPokemonId;
   const newAttempts = player.attempts + 1;
   const isLastAttempt = newAttempts >= 4;
@@ -111,25 +160,61 @@ export async function POST(
   const newGuesses = [...currentGuesses, pokemonId];
   const bestSimilarity = Math.max(player.bestSimilarity, similarity);
 
+  // Atomicity: the player update + the (optional) room finalization
+  // used to run as two separate, sequential statements. Two players
+  // finishing within the same Postgres round-trip could both observe
+  // an in-progress room state and then both write `status: finished`
+  // with different winners — last-write-wins, leaderboard scrambled.
+  // Serializable isolation forces one of the concurrent finishers to
+  // get a 40001 (P2034) and retry; the loser then sees the
+  // already-finished state and bails out gracefully.
   try {
-    await prisma.multiplayerPlayer.update({
-      where: { id: player.id },
-      data: {
-        guesses: newGuesses,
-        attempts: newAttempts,
-        won,
-        bestSimilarity,
-        finishedAt: finished ? new Date() : null,
-      },
-    });
+    await prisma.$transaction(
+      async (tx) => {
+        // Re-read the player + room INSIDE the transaction so we don't
+        // mutate state based on a snapshot taken before the lock. The
+        // outer `room` is used only for early-out validation; final
+        // state decisions all come from this fresh read.
+        const fresh = await tx.multiplayerRoom.findUnique({
+          where: { id: room.id },
+          include: { players: true },
+        });
+        if (!fresh) {
+          throw new Error("Room disappeared mid-transaction");
+        }
+        if (fresh.status === "finished") {
+          // Another participant finalised the room while we were
+          // computing similarity. Skip the writes — the outer handler
+          // still responds 200 with the values we have, which matches
+          // the client's expectation for "this round is over".
+          return;
+        }
 
-    if (finished) {
-      const otherPlayers = room.players.filter((p) => p.userId !== userId);
-      const allFinished =
-        otherPlayers.length > 0 &&
-        otherPlayers.every((p) => !!p.finishedAt);
+        const freshPlayer = fresh.players.find((p) => p.userId === userId);
+        if (!freshPlayer) {
+          throw new Error("Player vanished from room mid-transaction");
+        }
 
-      if (allFinished || won) {
+        await tx.multiplayerPlayer.update({
+          where: { id: freshPlayer.id },
+          data: {
+            guesses: newGuesses,
+            attempts: newAttempts,
+            won,
+            bestSimilarity,
+            finishedAt: finished ? new Date() : null,
+          },
+        });
+
+        if (!finished) return;
+
+        const otherPlayers = fresh.players.filter((p) => p.userId !== userId);
+        const allFinished =
+          otherPlayers.length > 0 &&
+          otherPlayers.every((p) => !!p.finishedAt);
+
+        if (!(allFinished || won)) return;
+
         let winnerUserId: string | null = null;
 
         if (won) {
@@ -143,41 +228,44 @@ export async function POST(
 
         if (!winnerUserId && allFinished) {
           const allPlayers = [
-            { ...player, won, bestSimilarity, attempts: newAttempts },
+            { ...freshPlayer, won, bestSimilarity, attempts: newAttempts },
             ...otherPlayers,
           ];
           const winners = allPlayers.filter((p) => p.won);
           if (winners.length === 1) {
-            winnerUserId = winners[0].userId;
+            const sole = winners[0];
+            if (sole) winnerUserId = sole.userId;
           } else if (winners.length === 0) {
             const sorted = [...allPlayers].sort(
               (a, b) => b.bestSimilarity - a.bestSimilarity
             );
-            if (
-              sorted[0].bestSimilarity > sorted[1]?.bestSimilarity
-            ) {
-              winnerUserId = sorted[0].userId;
+            const top = sorted[0];
+            const next = sorted[1];
+            if (top && next && top.bestSimilarity > next.bestSimilarity) {
+              winnerUserId = top.userId;
+            } else if (top && !next) {
+              winnerUserId = top.userId;
             }
           }
         }
 
-        if (allFinished || won) {
-          await prisma.multiplayerRoom.update({
-            where: { id: room.id },
-            data: {
-              status: "finished",
-              winnerUserId,
-              finishedAt: new Date(),
-            },
-          });
-        }
-      }
-    }
+        await tx.multiplayerRoom.update({
+          where: { id: fresh.id },
+          data: {
+            status: "finished",
+            winnerUserId,
+            finishedAt: new Date(),
+          },
+        });
+      },
+      { isolationLevel: Prisma.TransactionIsolationLevel.Serializable }
+    );
 
     return NextResponse.json({
       correct: won,
       attempts: newAttempts,
       finished,
+      similarity,
       bestSimilarity,
       targetPokemonId: finished ? room.targetPokemonId : undefined,
     });

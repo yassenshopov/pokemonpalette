@@ -297,16 +297,22 @@ export function useMultiplayer(userId: string | null | undefined) {
   );
 
   const submitGuess = useCallback(
-    async (pokemonId: number, similarity: number) => {
+    async (pokemonId: number) => {
       if (!state.roomCode || !userId) return null;
 
       try {
+        // We deliberately do NOT send the locally-computed similarity
+        // score — the server derives it from the canonical pre-baked
+        // palette to prevent a malicious client from sending
+        // `similarity: 1.0` and stealing the tiebreak. The local
+        // `similarity` is still computed for in-UI affordances (the
+        // "you got close" hint) but it's purely cosmetic.
         const res = await fetch(
           `/api/multiplayer/rooms/${state.roomCode}/guess`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ pokemonId, similarity }),
+            body: JSON.stringify({ pokemonId }),
           }
         );
 

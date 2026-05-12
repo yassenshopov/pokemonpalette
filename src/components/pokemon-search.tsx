@@ -284,6 +284,7 @@ export function PokemonSearch({
           let attempts = 0;
           while (attempts < suggestions.length) {
             const pokemon = suggestions[next];
+            if (!pokemon) break;
             const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
             const isGenerationSelected = selectedGenerations
               ? selectedGenerations.includes(generation)
@@ -304,10 +305,10 @@ export function PokemonSearch({
         e.preventDefault();
         setSelectedIndex((prev) => {
           let next = prev > 0 ? prev - 1 : suggestions.length - 1;
-          // Skip disabled items
           let attempts = 0;
           while (attempts < suggestions.length) {
             const pokemon = suggestions[next];
+            if (!pokemon) break;
             const generation = suggestionGenerations.get(pokemon.id) ?? getGenerationFromId(pokemon.id);
             const isGenerationSelected = selectedGenerations
               ? selectedGenerations.includes(generation)

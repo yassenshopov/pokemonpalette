@@ -47,8 +47,22 @@ const CSV_COLUMNS = [
 
 const CSV_ROW_LIMIT = 50_000;
 
-// We return rows with snake_case keys because that's what the admin UI and
-// CSV exports expect. Prisma gives us camelCase; serialize once.
+// SECURITY: `private_metadata` and `unsafe_metadata` are intentionally
+// omitted from this projection. Clerk's `privateMetadata` is documented
+// as server-only state (think internal flags, debugging notes, billing
+// tags); shipping it down to every admin's browser was leaking it into
+// dev tools, browser caches, and anyone shoulder-surfing the admin
+// console. `unsafeMetadata` is user-writable from the client and can
+// contain arbitrary PII the user uploaded for their own consumption.
+// Admins should never need either field for routine moderation; a
+// dedicated "view raw metadata" endpoint with extra auth can be added
+// later if a real workflow needs it.
+//
+// `public_metadata` stays — it's literally what Clerk surfaces in any
+// public user lookup, and the admin UI uses it for the isAdmin flag.
+//
+// We return rows with snake_case keys because that's what the admin UI
+// and CSV exports expect. Prisma gives us camelCase; serialize once.
 function serializeUser(u: {
   id: string;
   email: string | null;
@@ -80,8 +94,6 @@ function serializeUser(u: {
   phoneNumbers: unknown;
   externalAccounts: unknown;
   publicMetadata: unknown;
-  privateMetadata: unknown;
-  unsafeMetadata: unknown;
 }) {
   return {
     id: u.id,
@@ -114,8 +126,6 @@ function serializeUser(u: {
     phone_numbers: u.phoneNumbers,
     external_accounts: u.externalAccounts,
     public_metadata: u.publicMetadata,
-    private_metadata: u.privateMetadata,
-    unsafe_metadata: u.unsafeMetadata,
   };
 }
 

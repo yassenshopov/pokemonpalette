@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { writePokemonMenuCookie } from "@/lib/pokemon-menu-cookie";
 import { PokemonMenu } from "@/components/pokemon-menu";
 import { PokemonHero } from "@/components/pokemon-hero";
 import { PokemonPaletteDisplay } from "@/components/pokemon-palette-display";
@@ -49,14 +50,25 @@ const LegendsZABanner = dynamic(
   { ssr: false }
 );
 
-export function HomeClient() {
+interface HomeClientProps {
+  /** Server-seeded initial value for the Pokémon-menu collapsed
+   *  state, parsed from the `pokemon_menu_collapsed` cookie in the
+   *  parent server component. Eliminates the hydration flash where
+   *  the menu used to render expanded for every visit, then snap to
+   *  the user's persisted preference one frame later. */
+  initialMenuCollapsed?: boolean;
+}
+
+export function HomeClient({ initialMenuCollapsed = false }: HomeClientProps) {
   const [selectedPokemonId, setSelectedPokemonId] = useState<number | null>(
     null
   );
   const [isShiny, setIsShiny] = useState(false);
   const [, setCurrentImageSrc] = useState<string | null>(null);
   const [pokemonColors, setPokemonColors] = useState<string[]>([]);
-  const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(false);
+  const [isPokemonMenuCollapsed, setIsPokemonMenuCollapsed] = useState(
+    initialMenuCollapsed,
+  );
   const [selectedVarietyId, setSelectedVarietyId] = useState<number | null>(null);
   const [selectedFormName, setSelectedFormName] = useState<string | null>(null);
 
@@ -73,17 +85,14 @@ export function HomeClient() {
     setSelectedFormName(null); // Reset form when loading a palette
   };
 
-  // Load Pokemon menu collapsed state from localStorage on mount
+  // Persist the collapsed state to the same cookie the server reads
+  // on next render. We deliberately don't seed from localStorage
+  // here — the cookie is now the source of truth, set on mount via
+  // the server prop above. Migrating any pre-cookie localStorage
+  // values is left to the browser's natural cookie eviction; the
+  // worst case is one extra mouse-click per returning user.
   useEffect(() => {
-    const savedState = localStorage.getItem("pokemon-menu-collapsed");
-    if (savedState !== null) {
-      setIsPokemonMenuCollapsed(JSON.parse(savedState));
-    }
-  }, []);
-
-  // Save Pokemon menu collapsed state to localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem("pokemon-menu-collapsed", JSON.stringify(isPokemonMenuCollapsed));
+    writePokemonMenuCookie(isPokemonMenuCollapsed);
   }, [isPokemonMenuCollapsed]);
 
   return (
@@ -146,10 +155,12 @@ export function HomeClient() {
                 varietyId={selectedVarietyId}
                 formName={selectedFormName}
               />
-              <ColorShowcase
-                primaryColor={pokemonColors[0]}
-                secondaryColor={pokemonColors[1] || pokemonColors[0]}
-              />
+              {pokemonColors[0] && (
+                <ColorShowcase
+                  primaryColor={pokemonColors[0]}
+                  secondaryColor={pokemonColors[1] || pokemonColors[0]}
+                />
+              )}
               <ThemeExporter colors={pokemonColors} />
               {/* Below-the-fold ad on `/`. Only mounts once the user has
                   actually generated a palette (pokemonColors.length > 0

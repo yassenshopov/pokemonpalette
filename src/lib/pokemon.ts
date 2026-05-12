@@ -200,6 +200,7 @@ export async function getPokemonArtwork(id: number) {
 export async function getRandomPokemon(): Promise<Pokemon | null> {
   const randomIndex = Math.floor(Math.random() * pokemonMetadata.length);
   const randomMetadata = pokemonMetadata[randomIndex];
+  if (!randomMetadata) return null;
 
   return getPokemonById(randomMetadata.id);
 }

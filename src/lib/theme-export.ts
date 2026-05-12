@@ -163,7 +163,7 @@ function toHslTriplet(hex: string): string {
 
 function pickColor(colors: string[], i: number): string {
   if (colors.length === 0) return "#6366f1";
-  return colors[i % colors.length];
+  return colors[i % colors.length] ?? "#6366f1";
 }
 
 function buildLight(colors: string[]): ThemeTokens {

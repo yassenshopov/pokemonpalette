@@ -112,11 +112,16 @@ function highlightCode(text: string): ReactNode[] {
       continue;
     }
     // Coalesce consecutive plain chars in one token.
+    const ch = text[i];
+    if (ch === undefined) {
+      i++;
+      continue;
+    }
     const last = tokens[tokens.length - 1];
     if (last && last.type === "plain") {
-      last.text += text[i];
+      last.text += ch;
     } else {
-      tokens.push({ type: "plain", text: text[i] });
+      tokens.push({ type: "plain", text: ch });
     }
     i++;
   }

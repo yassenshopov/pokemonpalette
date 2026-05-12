@@ -266,6 +266,11 @@ model ApiCustomer {
 
   @@index([stripeCustomerId], map: "idx_api_customers_stripe_customer_id")
   @@index([status],           map: "idx_api_customers_status")
+  // Partial unique on stripe_session_id (WHERE stripe_session_id IS NOT NULL)
+  // matches the live index from migration 026. Prisma can't model partial
+  // uniques directly, so we expose it as a regular index here for the type
+  // surface; the live DB constraint is what guarantees uniqueness on insert.
+  @@index([stripeSessionId], map: "idx_api_customers_stripe_session_id_unique")
   @@map("api_customers")
 }
 
@@ -284,4 +289,25 @@ model ApiKey {
   @@index([userId],  map: "idx_api_keys_user_id")
   @@index([keyHash], map: "idx_api_keys_key_hash")
   @@map("api_keys")
+}
+
+// Webhook idempotency table. Both Stripe and Clerk retry deliveries on
+// 5xx; without this table our handlers would re-fulfill the same event
+// (e.g. minting a new API key per Stripe retry). The handlers must
+// insert into this table inside the same transaction as the work they
+// gate — a PK conflict signals a duplicate delivery and the handler
+// should ack with 200 without re-running side effects.
+//
+// Provider values: "stripe" | "clerk". Event IDs come from
+// `stripe.event.id` and `svix-id` respectively, both unique within
+// their provider.
+model ProcessedWebhookEvent {
+  provider   String
+  eventId    String   @map("event_id")
+  eventType  String?  @map("event_type")
+  receivedAt DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("received_at") @db.Timestamptz(6)
+
+  @@id([provider, eventId])
+  @@index([receivedAt], map: "idx_processed_webhook_events_received_at")
+  @@map("processed_webhook_events")
 }

@@ -35,22 +35,22 @@ export async function requireApiKey(req: Request): Promise<ApiAuthResult> {
   const keyHash = hashKey(plain);
   const apiKey = await prisma.apiKey.findUnique({ where: { keyHash } });
 
-  if (!apiKey) {
+  // Unify the "unknown key" and "revoked key" responses. Returning
+  // 401/"Invalid API key" for one and 403/"API key has been revoked"
+  // for the other was a small but real enumeration oracle: an attacker
+  // probing leaked keys could distinguish between "this hash was never
+  // valid" and "this hash was once valid but is now revoked", which
+  // in turn confirms that the redacted/leaked prefix really did
+  // correspond to a real account. Both paths now return the same
+  // {401, "Invalid API key"} shape — the audit log retains enough
+  // detail (revokedAt timestamp lives on the row) for an operator to
+  // tell them apart server-side.
+  if (!apiKey || apiKey.revokedAt) {
     return {
       ok: false,
       response: NextResponse.json(
         { error: "Invalid API key" },
         { status: 401 },
-      ),
-    };
-  }
-
-  if (apiKey.revokedAt) {
-    return {
-      ok: false,
-      response: NextResponse.json(
-        { error: "API key has been revoked" },
-        { status: 403 },
       ),
     };
   }
