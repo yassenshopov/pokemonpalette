@@ -114,6 +114,65 @@ async function copy(text: string, label: string) {
   }
 }
 
+/**
+ * Confirmation-wrapped action button for destructive admin operations
+ * (Ban / Lock / Make admin / Remove admin). Pre-hardening the user
+ * detail page fired these on the first click — including the elevated
+ * "Make admin" path. The single-user Delete button already wraps a
+ * dedicated AlertDialog; this helper gives the other destructive
+ * actions the same affordance without copy-pasting the dialog shell.
+ */
+function ConfirmActionButton({
+  label,
+  icon,
+  title,
+  description,
+  confirmLabel,
+  destructive,
+  onConfirm,
+}: {
+  label: string;
+  icon?: React.ReactNode;
+  title: string;
+  description: string;
+  confirmLabel: string;
+  destructive?: boolean;
+  onConfirm: () => Promise<void> | void;
+}) {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button size="sm" variant="outline">
+          {icon}
+          {label}
+        </Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{title}</AlertDialogTitle>
+          <AlertDialogDescription>{description}</AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            onClick={(e) => {
+              e.preventDefault();
+              void onConfirm();
+            }}
+            className={
+              destructive
+                ? "bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                : undefined
+            }
+          >
+            {confirmLabel}
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+}
+
 export function UserDetailHeader({
   user,
   onPatch,
@@ -199,14 +258,15 @@ export function UserDetailHeader({
             Unban
           </Button>
         ) : (
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={() => onPatch({ banned: true }, "User banned")}
-          >
-            <UserX className="mr-1.5 size-4" aria-hidden="true" />
-            Ban
-          </Button>
+          <ConfirmActionButton
+            label="Ban"
+            icon={<UserX className="mr-1.5 size-4" aria-hidden="true" />}
+            title="Ban this user?"
+            description="They’ll lose access to their account immediately. You can unban them later."
+            confirmLabel="Ban user"
+            destructive
+            onConfirm={() => onPatch({ banned: true }, "User banned")}
+          />
         )}
         {user.locked ? (
           <Button
@@ -218,33 +278,36 @@ export function UserDetailHeader({
             Unlock
           </Button>
         ) : (
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={() => onPatch({ locked: true }, "User locked")}
-          >
-            <Lock className="mr-1.5 size-4" aria-hidden="true" />
-            Lock
-          </Button>
+          <ConfirmActionButton
+            label="Lock"
+            icon={<Lock className="mr-1.5 size-4" aria-hidden="true" />}
+            title="Lock this user?"
+            description="They’ll be unable to sign in until you unlock the account."
+            confirmLabel="Lock user"
+            destructive
+            onConfirm={() => onPatch({ locked: true }, "User locked")}
+          />
         )}
         {user.is_admin ? (
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={() => onPatch({ is_admin: false }, "Admin removed")}
-          >
-            <ShieldOff className="mr-1.5 size-4" aria-hidden="true" />
-            Remove admin
-          </Button>
+          <ConfirmActionButton
+            label="Remove admin"
+            icon={<ShieldOff className="mr-1.5 size-4" aria-hidden="true" />}
+            title="Remove admin rights?"
+            description="This user will lose access to /admin on their next sign-in."
+            confirmLabel="Remove admin"
+            destructive
+            onConfirm={() => onPatch({ is_admin: false }, "Admin removed")}
+          />
         ) : (
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={() => onPatch({ is_admin: true }, "Promoted to admin")}
-          >
-            <ShieldCheck className="mr-1.5 size-4" aria-hidden="true" />
-            Make admin
-          </Button>
+          <ConfirmActionButton
+            label="Make admin"
+            icon={<ShieldCheck className="mr-1.5 size-4" aria-hidden="true" />}
+            title="Make this user an admin?"
+            description="Admins can view PII, ban accounts, and modify game data. Only grant this to people you trust."
+            confirmLabel="Make admin"
+            destructive
+            onConfirm={() => onPatch({ is_admin: true }, "Promoted to admin")}
+          />
         )}
         <AlertDialog>
           <AlertDialogTrigger asChild>

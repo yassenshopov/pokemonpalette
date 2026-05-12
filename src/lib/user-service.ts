@@ -135,14 +135,29 @@ export async function syncUserFromClerk(payload: ClerkUserPayload): Promise<User
 }
 
 /** Soft-delete a user. Hard deletes cascade to saved_palettes /
- *  daily_game_attempts, which we don't want. */
-export async function softDeleteUser(userId: string): Promise<User> {
-  const user = await prisma.user.update({
-    where: { id: userId },
+ *  daily_game_attempts, which we don't want.
+ *
+ *  We use `updateMany` instead of `update` so that calling this for a
+ *  user that doesn't exist (e.g. a Clerk webhook firing `user.deleted`
+ *  for an account our DB never saw) is a no-op rather than throwing
+ *  Prisma's P2025. The previous version bubbled P2025 up through the
+ *  webhook handler, which then 500'd Clerk and triggered a retry
+ *  storm. Returning `null` for "no row affected" lets the caller log
+ *  and ack cleanly. */
+export async function softDeleteUser(userId: string): Promise<User | null> {
+  const result = await prisma.user.updateMany({
+    where: { id: userId, isDeleted: false },
     data: { isDeleted: true, updatedAt: new Date() },
   });
-  logger.info("user.soft_deleted", { userId: user.id });
-  return user;
+  if (result.count === 0) {
+    logger.info("user.soft_delete_noop", { userId });
+    return null;
+  }
+  logger.info("user.soft_deleted", { userId });
+  // Re-read so callers still get the full row for downstream logging.
+  // The webhook handler doesn't actually use the return value, so this
+  // is a small surface change rather than a breaking one.
+  return prisma.user.findUnique({ where: { id: userId } });
 }
 
 /** Fetch a non-deleted user by id. */

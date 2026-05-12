@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { Webhook } from "svix";
+import { z } from "zod";
 import {
   softDeleteUser,
   syncUserFromClerk,
@@ -9,6 +10,21 @@ import {
 import { prisma } from "@/lib/prisma";
 import { logger } from "@/lib/logger";
 import { serverEnv } from "@/lib/env";
+
+// Loose Zod schema for the Clerk webhook envelope. We validate the
+// shape we depend on (top-level `type`, `data.id`) without locking
+// down every optional field — Clerk adds fields all the time and we
+// don't want a benign new field to brick the webhook. Anything we
+// actively read from `data.*` is in `ClerkUserPayload` and is checked
+// at the call site (e.g. `syncUserFromClerk`).
+const ClerkWebhookSchema = z.object({
+  type: z.string().min(1),
+  data: z
+    .object({
+      id: z.string().min(1).optional(),
+    })
+    .passthrough(),
+});
 
 /**
  * Clerk webhook handler.
@@ -30,6 +46,13 @@ type ClerkWebhookEvent = {
   type: string;
   data: ClerkUserPayload;
 };
+
+/** Narrow svix's verified-but-untyped payload to our schema. Throws
+ *  on schema mismatch — caller treats this as a malformed delivery. */
+function parseWebhookEvent(raw: unknown): ClerkWebhookEvent {
+  const parsed = ClerkWebhookSchema.parse(raw);
+  return parsed as ClerkWebhookEvent;
+}
 
 export async function POST(req: NextRequest) {
   const headerPayload = await headers();
@@ -53,16 +76,23 @@ export async function POST(req: NextRequest) {
   let evt: ClerkWebhookEvent;
   try {
     const wh = new Webhook(secret);
-    evt = wh.verify(payload, {
+    const verified = wh.verify(payload, {
       "svix-id": svixId,
       "svix-timestamp": svixTimestamp,
       "svix-signature": svixSignature,
-    }) as ClerkWebhookEvent;
-  } catch {
-    // Signature verification failure is the single most valuable failure
-    // mode to log. But we don't leak the reason to avoid tipping off
-    // attackers whether the timestamp or signature specifically failed.
-    logger.warn("webhook.clerk.signature_invalid");
+    });
+    evt = parseWebhookEvent(verified);
+  } catch (err) {
+    // Two distinct failure modes, one response. Either svix rejected
+    // the signature (most likely) or our Zod parse rejected the shape
+    // (extremely unlikely — would mean Clerk changed their envelope).
+    // Both are non-actionable from the attacker's perspective so we
+    // collapse the response and only branch in the log line.
+    if (err instanceof z.ZodError) {
+      logger.warn("webhook.clerk.payload_malformed");
+    } else {
+      logger.warn("webhook.clerk.signature_invalid");
+    }
     return new Response("Webhook signature verification failed", { status: 400 });
   }
 

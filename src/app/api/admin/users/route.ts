@@ -209,12 +209,51 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    // Explicit projection: keep `private_metadata` and `unsafe_metadata`
+    // out of the SQL response entirely. Previously we fetched the
+    // whole row and stripped them in JS — which left them sitting in
+    // Prisma's wire payload + Node heap, and meant pulling the entire
+    // JSONB blob across the connection for every list response. The
+    // server-side strip in `serializeUser` is still a belt-and-braces
+    // guard against accidental re-exposure.
     const [records, total] = await Promise.all([
       prisma.user.findMany({
         where,
         orderBy,
         skip: (page - 1) * pageSize,
         take: pageSize,
+        select: {
+          id: true,
+          email: true,
+          firstName: true,
+          lastName: true,
+          username: true,
+          imageUrl: true,
+          profileImageUrl: true,
+          hasImage: true,
+          primaryEmailAddressId: true,
+          primaryPhoneNumberId: true,
+          banned: true,
+          locked: true,
+          backupCodeEnabled: true,
+          twoFactorEnabled: true,
+          totpEnabled: true,
+          passwordEnabled: true,
+          createOrganizationEnabled: true,
+          deleteSelfEnabled: true,
+          lastActiveAt: true,
+          lastSignInAt: true,
+          createdAt: true,
+          updatedAt: true,
+          isDeleted: true,
+          isAdmin: true,
+          receivesDailyEmails: true,
+          paletteSize: true,
+          emailAddresses: true,
+          phoneNumbers: true,
+          externalAccounts: true,
+          publicMetadata: true,
+        },
       }),
       prisma.user.count({ where }),
     ]);

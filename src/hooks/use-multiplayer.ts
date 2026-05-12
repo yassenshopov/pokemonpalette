@@ -21,7 +21,11 @@ export interface MultiplayerPlayer {
   bestSimilarity: number;
   hintsUsed: number;
   finished: boolean;
-  guesses: number[] | number;
+  // The API populates this only for the caller's own row (the array of
+  // Pokemon IDs they've already guessed). For every other player it
+  // arrives as an empty array — their actual guess list is intra-game
+  // state we deliberately don't disclose.
+  guesses: number[];
 }
 
 export interface MultiplayerState {

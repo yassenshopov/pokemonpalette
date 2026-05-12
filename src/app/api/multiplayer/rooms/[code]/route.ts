@@ -23,6 +23,13 @@ export async function GET(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  // We deliberately do NOT select `guesses` for every player here
+  // anymore. The full guess history is sensitive intra-game state
+  // (it would let an opponent see what you've already tried in real
+  // time) and we only ever expose the caller's own list. Fetching it
+  // for the other player(s) was both a privacy leak and a wasted
+  // JSONB read on the hot path. The caller's row is fetched
+  // separately below.
   const room = await prisma.multiplayerRoom.findUnique({
     where: { roomCode: code.toUpperCase() },
     include: {
@@ -36,7 +43,6 @@ export async function GET(
           bestSimilarity: true,
           hintsUsed: true,
           finishedAt: true,
-          guesses: true,
         },
       },
     },
@@ -75,6 +81,22 @@ export async function GET(
     });
   }
 
+  // Fetch the caller's guesses in a tiny second query — single-row
+  // primary-keyed by (room_id, user_id), so the cost is negligible.
+  // Pre-hardening this endpoint returned `guesses: attempts` (i.e. a
+  // number cast as the same field) for non-caller players, lying
+  // about the type. Clients defensively `Array.isArray(...)` checked
+  // it, but the type leakage was real. We now always return a
+  // `number[]` — empty for non-caller players, populated for the
+  // caller.
+  const callerGuessesRow = await prisma.multiplayerPlayer.findUnique({
+    where: { roomId_userId: { roomId: room.id, userId } },
+    select: { guesses: true },
+  });
+  const callerGuesses = Array.isArray(callerGuessesRow?.guesses)
+    ? (callerGuessesRow.guesses as number[])
+    : [];
+
   const players = room.players.map((p) => ({
     userId: p.userId,
     username: p.username,
@@ -84,7 +106,7 @@ export async function GET(
     bestSimilarity: p.bestSimilarity,
     hintsUsed: p.hintsUsed,
     finished: !!p.finishedAt,
-    guesses: p.userId === userId ? p.guesses : p.attempts,
+    guesses: p.userId === userId ? callerGuesses : [],
   }));
 
   return NextResponse.json({

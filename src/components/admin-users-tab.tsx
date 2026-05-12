@@ -351,6 +351,12 @@ export function AdminUsersTab() {
           onSelect: () => patchUser(user.id, { banned: true }, "User banned"),
           separatorBefore: true,
           destructive: true,
+          confirm: {
+            title: "Ban this user?",
+            description:
+              "They’ll lose access to their account immediately. You can unban them later.",
+            confirmLabel: "Ban user",
+          },
         },
     user.locked
       ? {
@@ -365,6 +371,13 @@ export function AdminUsersTab() {
           label: "Lock user",
           icon: <Lock className="size-4" aria-hidden="true" />,
           onSelect: () => patchUser(user.id, { locked: true }, "User locked"),
+          destructive: true,
+          confirm: {
+            title: "Lock this user?",
+            description:
+              "They’ll be unable to sign in until you unlock the account.",
+            confirmLabel: "Lock user",
+          },
         },
     user.is_admin
       ? {
@@ -373,6 +386,13 @@ export function AdminUsersTab() {
           icon: <ShieldOff className="size-4" aria-hidden="true" />,
           onSelect: () =>
             patchUser(user.id, { is_admin: false }, "Admin removed"),
+          destructive: true,
+          confirm: {
+            title: "Remove admin rights?",
+            description:
+              "This user will lose access to /admin on their next sign-in.",
+            confirmLabel: "Remove admin",
+          },
         }
       : {
           id: "promote",
@@ -380,6 +400,13 @@ export function AdminUsersTab() {
           icon: <ShieldCheck className="size-4" aria-hidden="true" />,
           onSelect: () =>
             patchUser(user.id, { is_admin: true }, "Promoted to admin"),
+          destructive: true,
+          confirm: {
+            title: "Make this user an admin?",
+            description:
+              "Admins can view PII, ban accounts, and modify game data. Only grant this to people you trust.",
+            confirmLabel: "Make admin",
+          },
         },
     {
       id: "delete",
@@ -388,6 +415,12 @@ export function AdminUsersTab() {
       onSelect: () => deleteUser(user.id),
       destructive: true,
       separatorBefore: true,
+      confirm: {
+        title: "Delete this user?",
+        description:
+          "This soft-deletes the account. Their data is retained but they’ll no longer appear in the app.",
+        confirmLabel: "Delete user",
+      },
     },
   ];
 

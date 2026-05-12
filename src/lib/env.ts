@@ -56,6 +56,19 @@ const serverSchema = z.object({
   // Logger threshold + Prisma query log level (verbose, opt-in).
   LOG_LEVEL: z.enum(["debug", "info", "warn", "error"]).optional(),
   PRISMA_LOG: z.enum(["query"]).optional(),
+
+  // Server-side secret used to HMAC `pkpal_*` API keys before they hit the
+  // database. Without this, the DB stores plain SHA-256(plain_key) — anyone
+  // with a dump can run an offline GPU sweep across the 24-byte token space
+  // and confirm specific candidates. Mixing in a server secret turns that
+  // into "you need the DB dump AND the secret", which is the same posture
+  // we already require for everything signed (Clerk JWT, Stripe webhook).
+  //
+  // Optional at the schema level so dev/preview without billing wired up
+  // still boot. `api-keys.ts` falls back to legacy SHA-256 when this is
+  // unset and `api-auth.ts` dual-looks-up. In production with API access
+  // enabled, this MUST be set — see the runtime check in `api-keys.ts`.
+  API_KEY_HASH_SECRET: z.string().min(32).optional(),
 });
 
 const clientSchema = z.object({

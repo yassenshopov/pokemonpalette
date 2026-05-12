@@ -11,7 +11,47 @@ import { logger } from "@/lib/logger";
 // `unsafeMetadata` is user-writable PII; neither belongs in every
 // admin's browser. `publicMetadata` stays because the admin UI relies
 // on it for the isAdmin flag.
-function serializeUser(u: Prisma.UserGetPayload<object>) {
+//
+// We accept the structurally-narrowed shape rather than
+// `Prisma.UserGetPayload<object>` because the find calls below now
+// use a `select` projection that omits those JSONB columns — passing
+// the full payload type would be a lie. Listing the projected fields
+// here also makes it impossible to silently re-introduce a leak by
+// extending the select without updating the serializer.
+type ProjectedAdminUser = {
+  id: string;
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  username: string | null;
+  imageUrl: string | null;
+  profileImageUrl: string | null;
+  hasImage: boolean;
+  primaryEmailAddressId: string | null;
+  primaryPhoneNumberId: string | null;
+  banned: boolean;
+  locked: boolean;
+  backupCodeEnabled: boolean;
+  twoFactorEnabled: boolean;
+  totpEnabled: boolean;
+  passwordEnabled: boolean;
+  createOrganizationEnabled: boolean;
+  deleteSelfEnabled: boolean;
+  lastActiveAt: Date | null;
+  lastSignInAt: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
+  isDeleted: boolean;
+  isAdmin: boolean;
+  receivesDailyEmails: boolean;
+  paletteSize: number;
+  emailAddresses: Prisma.JsonValue;
+  phoneNumbers: Prisma.JsonValue;
+  externalAccounts: Prisma.JsonValue;
+  publicMetadata: Prisma.JsonValue;
+};
+
+function serializeUser(u: ProjectedAdminUser) {
   return {
     id: u.id,
     email: u.email,
@@ -57,9 +97,47 @@ export async function GET(
   const { userId } = await params;
 
   try {
+    // Same `select`-without-private-metadata projection as the list
+    // endpoint. See the comment on `src/app/api/admin/users/route.ts`
+    // for why `private_metadata` / `unsafe_metadata` never make it
+    // out of Postgres.
     const [user, totalGames, totalWins, totalPalettes, recentAttempts] =
       await Promise.all([
-        prisma.user.findFirst({ where: { id: userId, isDeleted: false } }),
+        prisma.user.findFirst({
+          where: { id: userId, isDeleted: false },
+          select: {
+            id: true,
+            email: true,
+            firstName: true,
+            lastName: true,
+            username: true,
+            imageUrl: true,
+            profileImageUrl: true,
+            hasImage: true,
+            primaryEmailAddressId: true,
+            primaryPhoneNumberId: true,
+            banned: true,
+            locked: true,
+            backupCodeEnabled: true,
+            twoFactorEnabled: true,
+            totpEnabled: true,
+            passwordEnabled: true,
+            createOrganizationEnabled: true,
+            deleteSelfEnabled: true,
+            lastActiveAt: true,
+            lastSignInAt: true,
+            createdAt: true,
+            updatedAt: true,
+            isDeleted: true,
+            isAdmin: true,
+            receivesDailyEmails: true,
+            paletteSize: true,
+            emailAddresses: true,
+            phoneNumbers: true,
+            externalAccounts: true,
+            publicMetadata: true,
+          },
+        }),
         prisma.dailyGameAttempt.count({ where: { userId } }),
         prisma.dailyGameAttempt.count({ where: { userId, won: true } }),
         prisma.savedPalette.count({ where: { userId } }),
@@ -204,8 +282,14 @@ export async function DELETE(
   }
 
   try {
+    // Filter `isDeleted: false` so a DELETE on an already-soft-deleted
+    // user surfaces as 404 instead of silently "succeeding" with
+    // count=1. Pre-hardening the call returned `{ ok: true }` either
+    // way, which lied to the audit log / admin UI: an admin who hit
+    // delete twice saw success twice and assumed two distinct rows
+    // were affected.
     const { count } = await prisma.user.updateMany({
-      where: { id: userId },
+      where: { id: userId, isDeleted: false },
       data: { isDeleted: true },
     });
     if (count === 0) {

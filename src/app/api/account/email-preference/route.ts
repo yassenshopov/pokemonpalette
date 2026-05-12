@@ -72,21 +72,23 @@ export async function PUT(req: NextRequest) {
   }
 
   try {
-    const user = await prisma.user.update({
-      where: { id: userId },
+    // `updateMany` lets us scope the write to non-deleted users in a
+    // single statement. The previous `update` + post-hoc isDeleted
+    // check still wrote to the soft-deleted row before noticing the
+    // flag — a banned/deleted user could keep mutating their stored
+    // email preference indefinitely.
+    const result = await prisma.user.updateMany({
+      where: { id: userId, isDeleted: false },
       data: { receivesDailyEmails: parsed.data.receivesDailyEmails },
-      select: { receivesDailyEmails: true, isDeleted: true },
     });
 
-    // Guard against touching a soft-deleted user — Prisma's `update` has
-    // no compound where clause option, so we enforce it here.
-    if (user.isDeleted) {
+    if (result.count === 0) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     return NextResponse.json({
       success: true,
-      receivesDailyEmails: user.receivesDailyEmails,
+      receivesDailyEmails: parsed.data.receivesDailyEmails,
     });
   } catch (err) {
     logger.error("account.email_preference.update_failed", {

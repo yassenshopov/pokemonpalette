@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { hashKey } from "@/lib/api-keys";
+import { candidateHashes } from "@/lib/api-keys";
 import { rateLimit } from "@/lib/rate-limit";
 
 const limiter = rateLimit("api-v1", { requests: 600, window: "1 m" });
@@ -32,8 +32,26 @@ export async function requireApiKey(req: Request): Promise<ApiAuthResult> {
     };
   }
 
-  const keyHash = hashKey(plain);
-  const apiKey = await prisma.apiKey.findUnique({ where: { keyHash } });
+  // Dual-lookup during the HMAC migration window. `candidateHashes`
+  // returns [hmac, legacy] when the server secret is configured, so
+  // the HMAC path is checked first (the cache-friendly hot path).
+  // `findFirst({ where: { keyHash: { in } } })` is a single indexed
+  // round-trip on the UNIQUE `keyHash` column — same cost as the
+  // previous single `findUnique`.
+  //
+  // We deliberately fetch only the columns we use. The previous
+  // implementation pulled the whole row including `keyHash` itself,
+  // which (a) makes log scrubbing harder and (b) means the hash
+  // bytes travel up into the API auth layer even though nothing
+  // there needs them.
+  const apiKey = await prisma.apiKey.findFirst({
+    where: { keyHash: { in: candidateHashes(plain) } },
+    select: {
+      id: true,
+      userId: true,
+      revokedAt: true,
+    },
+  });
 
   // Unify the "unknown key" and "revoked key" responses. Returning
   // 401/"Invalid API key" for one and 403/"API key has been revoked"

@@ -60,6 +60,36 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Last-admin guard. Bulk-banning, locking, or deleting users that
+  // happen to include every active admin (or every active admin
+  // except the caller) leaves the system with NO admins — at which
+  // point the only way back is direct DB access. We refuse the
+  // operation up front. The single-user PATCH already handles its
+  // own "you can't demote yourself" guard; this is the bulk
+  // equivalent for the demote-by-side-effect ops (lock, ban, delete
+  // all lock the target out of admin powers).
+  const isLockoutOp = op === "ban" || op === "lock" || op === "delete";
+  if (isLockoutOp) {
+    const remainingAdmins = await prisma.user.count({
+      where: {
+        isAdmin: true,
+        isDeleted: false,
+        banned: false,
+        locked: false,
+        id: { notIn: [...safeIds, gate.adminUserId] },
+      },
+    });
+    if (remainingAdmins === 0) {
+      return NextResponse.json(
+        {
+          error:
+            "Refusing to lock out every active admin. Keep at least one usable admin account.",
+        },
+        { status: 400 },
+      );
+    }
+  }
+
   const patch: Prisma.UserUpdateManyMutationInput = {};
   switch (op) {
     case "ban":
@@ -79,9 +109,18 @@ export async function POST(req: NextRequest) {
       break;
   }
 
+  // Scope `delete` to non-deleted rows so the affected count matches
+  // reality. Without this, re-running the same bulk delete returns
+  // count=N for rows that were already soft-deleted, falsely
+  // inflating the admin UI's "X rows affected" toast.
+  const targetWhere: Prisma.UserWhereInput =
+    op === "delete"
+      ? { id: { in: safeIds }, isDeleted: false }
+      : { id: { in: safeIds } };
+
   try {
     const { count } = await prisma.user.updateMany({
-      where: { id: { in: safeIds } },
+      where: targetWhere,
       data: patch,
     });
     return NextResponse.json({

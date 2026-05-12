@@ -11,10 +11,20 @@ import {
   type ColorFormat,
 } from "@/lib/palette-formats";
 import type { ColorPalette } from "@/types/pokemon";
+import {
+  PUBLIC_API_CORS_HEADERS,
+  publicApiPreflight,
+  withPublicApiCors,
+} from "@/lib/cors";
 
 const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+  ...PUBLIC_API_CORS_HEADERS,
 };
+
+export async function OPTIONS() {
+  return publicApiPreflight();
+}
 
 function hexToRgb(hex: string): [number, number, number] {
   const h = hex.replace("#", "");
@@ -61,7 +71,7 @@ function convertPalette(palette: ColorPalette, format: ColorFormat): ColorPalett
 
 export async function GET(req: NextRequest) {
   const auth = await requireApiKey(req);
-  if (!auth.ok) return auth.response;
+  if (!auth.ok) return withPublicApiCors(auth.response);
 
   const url = new URL(req.url);
   const page = Math.max(1, parseInt(url.searchParams.get("page") ?? "1", 10) || 1);
