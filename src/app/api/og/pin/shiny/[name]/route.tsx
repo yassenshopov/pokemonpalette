@@ -59,6 +59,46 @@ async function getPokemonData(name: string) {
 const PIN_WIDTH = 1000;
 const PIN_HEIGHT = 1500;
 
+function parseHex(hex: string): { r: number; g: number; b: number } | null {
+  if (!hex) return null;
+  const clean = hex.replace("#", "");
+  if (clean.length < 6) return null;
+  const r = parseInt(clean.substring(0, 2), 16);
+  const g = parseInt(clean.substring(2, 4), 16);
+  const b = parseInt(clean.substring(4, 6), 16);
+  if (Number.isNaN(r) || Number.isNaN(g) || Number.isNaN(b)) return null;
+  return { r, g, b };
+}
+
+function luminance(hex: string): number {
+  const rgb = parseHex(hex);
+  if (!rgb) return 1;
+  return (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
+}
+
+// Pick a moody background tied to the palette. Prefers the darkest swatch and
+// dims it further if it would not give white text enough contrast — that way
+// the pin always looks confidently "dark and colorful", like the reference.
+function pickBackground(swatches: string[]): string {
+  let darkestHex = swatches[0] || "#1f2937";
+  let darkestLum = 1;
+  for (const hex of swatches) {
+    const lum = luminance(hex);
+    if (lum < darkestLum) {
+      darkestLum = lum;
+      darkestHex = hex;
+    }
+  }
+  const rgb = parseHex(darkestHex);
+  if (!rgb) return "#1f2937";
+  const factor =
+    darkestLum > 0.22 ? 0.18 / Math.max(darkestLum, 0.05) : 1;
+  const clamp = (n: number) => Math.max(0, Math.min(255, Math.round(n)));
+  return `rgb(${clamp(rgb.r * factor)}, ${clamp(rgb.g * factor)}, ${clamp(
+    rgb.b * factor
+  )})`;
+}
+
 function fallbackImage(text: string) {
   return new ImageResponse(
     (
@@ -116,8 +156,7 @@ export async function GET(
       highlights[4] || highlights[1] || "#94a3b8",
     ];
 
-    const bgTop = swatches[0];
-    const bgBottom = swatches[2];
+    const bgColor = pickBackground(swatches);
 
     // Build the shiny artwork URL using the same logic as the shiny OG route.
     let artworkUrl = "";
@@ -147,6 +186,10 @@ export async function GET(
 
     const displayName =
       pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    const dexNumber = `#${String(pokemon.id).padStart(3, "0")}`;
+
+    const SWATCH_SIZE = 170;
+    const SWATCH_OVERLAP = 28;
 
     try {
       return new ImageResponse(
@@ -158,124 +201,160 @@ export async function GET(
               display: "flex",
               flexDirection: "column",
               position: "relative",
-              background: `linear-gradient(180deg, ${bgTop}30 0%, ${bgBottom}20 100%)`,
-              backgroundColor: "#ffffff",
+              backgroundColor: bgColor,
             }}
           >
-            {/* Sprite area — top 55% */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "55%",
-                width: "100%",
-                position: "relative",
-              }}
-            >
-              {absoluteArtworkUrl && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={absoluteArtworkUrl}
-                  alt={`Shiny ${pokemon.name}`}
-                  width={560}
-                  height={560}
-                  style={{ filter: "brightness(0)", opacity: 0.85 }}
-                />
-              )}
-            </div>
-
-            {/* Name + "shiny color palette" label */}
+            {/* Header — pokedex number + name with shiny eyebrow */}
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                padding: "0 40px",
+                paddingTop: 80,
+                zIndex: 2,
               }}
             >
               <div
                 style={{
-                  fontSize: 56,
+                  fontSize: 28,
                   fontWeight: 800,
-                  color: "#18181b",
-                  lineHeight: 1.1,
+                  color: "#ffd234",
+                  letterSpacing: "0.32em",
+                  textTransform: "uppercase",
+                }}
+              >
+                ✦ Shiny
+              </div>
+              <div
+                style={{
+                  fontSize: 40,
+                  fontWeight: 700,
+                  color: "rgba(255,255,255,0.7)",
+                  letterSpacing: "0.18em",
+                  marginTop: 12,
+                }}
+              >
+                {dexNumber}
+              </div>
+              <div
+                style={{
+                  fontSize: 96,
+                  fontWeight: 900,
+                  color: "#ffffff",
+                  marginTop: 4,
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1,
                 }}
               >
                 {displayName}
               </div>
-              <div
-                style={{
-                  fontSize: 24,
-                  fontWeight: 500,
-                  color: "#71717a",
-                  marginTop: 8,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Shiny Color Palette
-              </div>
             </div>
 
-            {/* Swatch row */}
+            {/* Shiny silhouette — large, faint, sitting behind the swatches */}
+            {absoluteArtworkUrl && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: 300,
+                  left: 0,
+                  right: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  zIndex: 1,
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={absoluteArtworkUrl}
+                  alt={`Shiny ${pokemon.name}`}
+                  width={820}
+                  height={820}
+                  style={{
+                    filter: "brightness(0)",
+                    opacity: 0.22,
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Swatch + hex stack — centered over the silhouette */}
             <div
               style={{
+                position: "absolute",
+                top: 780,
+                left: 0,
+                right: 0,
                 display: "flex",
-                gap: 16,
-                padding: "32px 40px 0 40px",
-                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                zIndex: 3,
               }}
             >
-              {swatches.map((hex, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 10,
-                  }}
-                >
+              <div style={{ display: "flex", alignItems: "center" }}>
+                {swatches.map((hex, i) => (
                   <div
+                    key={i}
                     style={{
-                      width: 140,
-                      height: 140,
-                      borderRadius: 20,
+                      width: SWATCH_SIZE,
+                      height: SWATCH_SIZE,
+                      borderRadius: "50%",
                       backgroundColor: hex,
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                      marginLeft: i === 0 ? 0 : -SWATCH_OVERLAP,
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
+                      border: "4px solid rgba(255,255,255,0.04)",
+                      display: "flex",
                     }}
                   />
+                ))}
+              </div>
+
+              <div style={{ display: "flex", marginTop: 28 }}>
+                {swatches.map((hex, i) => (
                   <div
+                    key={i}
                     style={{
-                      fontSize: 18,
-                      fontWeight: 600,
-                      color: "#52525b",
-                      fontFamily: "monospace",
+                      width: SWATCH_SIZE,
+                      display: "flex",
+                      justifyContent: "center",
+                      marginLeft: i === 0 ? 0 : -SWATCH_OVERLAP,
                     }}
                   >
-                    {hex.toUpperCase()}
+                    <div
+                      style={{
+                        fontSize: 24,
+                        fontWeight: 800,
+                        color: "#ffffff",
+                        fontFamily: "monospace",
+                        letterSpacing: "0.06em",
+                      }}
+                    >
+                      {hex.toUpperCase().replace("#", "")}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Footer branding */}
             <div
               style={{
+                position: "absolute",
+                bottom: 64,
+                left: 0,
+                right: 0,
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
-                marginTop: "auto",
-                paddingBottom: 32,
+                zIndex: 2,
               }}
             >
               <div
                 style={{
-                  fontSize: 20,
-                  fontWeight: 600,
-                  color: "#a1a1aa",
-                  letterSpacing: "0.04em",
+                  fontSize: 28,
+                  fontWeight: 900,
+                  color: "#ffffff",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
                 }}
               >
                 pokemonpalette.com
