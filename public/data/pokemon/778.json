@@ -60,14 +60,18 @@
   "colorPalette": {
     "primary": "#f2e291",
     "secondary": "#b3a76b",
-    "accent": "#665f3d",
+    "accent": "#b07d4c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#f2e291",
       "#b3a76b",
-      "#665f3d"
-    ]
+      "#b07d4c",
+      "#665f3d",
+      "#404040",
+      "#ed8c37"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/778.png",

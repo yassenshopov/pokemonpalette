@@ -379,6 +379,12 @@ function AttemptsView() {
       onSelect: () => deleteOne(a.id),
       destructive: true,
       separatorBefore: true,
+      confirm: {
+        title: "Delete this attempt?",
+        description:
+          "This permanently removes the daily game attempt and its history. This cannot be undone.",
+        confirmLabel: "Delete attempt",
+      },
     },
   ];
 

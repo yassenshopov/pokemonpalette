@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Prisma, prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit, type AdminAuditAction } from "@/lib/admin/audit";
 import { pushAdminToClerk } from "@/lib/user-service";
 import { logger } from "@/lib/logger";
 
@@ -228,7 +229,53 @@ export async function PATCH(
     );
   }
 
+  // Last-admin guard. Demoting (is_admin: false), banning, or locking
+  // the only remaining active admin leaves the platform with no usable
+  // admin — at which point the only way back is direct DB access.
+  // Refuse up front rather than letting the row update succeed.
+  // `gate.adminUserId !== userId` is enforced above, so we can safely
+  // exclude the caller from the "remaining admins" count (a caller
+  // demoting THEMSELVES is already blocked).
+  const isLockoutOp =
+    patch.banned === true || patch.locked === true || patch.isAdmin === false;
+  if (isLockoutOp) {
+    const remainingAdmins = await prisma.user.count({
+      where: {
+        isAdmin: true,
+        isDeleted: false,
+        banned: false,
+        locked: false,
+        id: { notIn: [userId, gate.adminUserId] },
+      },
+    });
+    if (remainingAdmins === 0) {
+      return NextResponse.json(
+        {
+          error:
+            "Refusing to remove the last usable admin. Promote another user first.",
+        },
+        { status: 400 },
+      );
+    }
+  }
+
   try {
+    // Read the pre-change snapshot for the audit log. Same projection
+    // as the serializer so the `before_json` blob matches the shape
+    // the admin UI sees.
+    const before = await prisma.user.findFirst({
+      where: { id: userId, isDeleted: false },
+      select: {
+        id: true,
+        email: true,
+        username: true,
+        banned: true,
+        locked: true,
+        isAdmin: true,
+        isDeleted: true,
+      },
+    });
+
     // updateMany so we can filter by `is_deleted: false` in the same query;
     // `update()` only accepts a unique id.
     const { count } = await prisma.user.updateMany({
@@ -250,6 +297,43 @@ export async function PATCH(
     // bubble — the DB is the source of truth.
     if (typeof body.is_admin === "boolean") {
       void pushAdminToClerk(userId, body.is_admin);
+    }
+
+    // Audit-log each semantic action so the viewer can filter by
+    // verb (ban vs unban vs promote vs demote) rather than parsing
+    // diffs. We use the same `before`/`after` snapshot for every row
+    // so a single PATCH that flips two fields produces two rows that
+    // jointly describe the change.
+    const actions: AdminAuditAction[] = [];
+    if (typeof body.banned === "boolean" && before?.banned !== body.banned) {
+      actions.push(body.banned ? "user.ban" : "user.unban");
+    }
+    if (typeof body.locked === "boolean" && before?.locked !== body.locked) {
+      actions.push(body.locked ? "user.lock" : "user.unlock");
+    }
+    if (typeof body.is_admin === "boolean" && before?.isAdmin !== body.is_admin) {
+      actions.push(body.is_admin ? "user.promote" : "user.demote");
+    }
+    // Fall back to a generic "user.update" if no semantic verb matched
+    // (e.g. patch was a no-op or only touched fields we don't classify).
+    if (actions.length === 0) actions.push("user.update");
+    for (const action of actions) {
+      void recordAudit({
+        actorUserId: gate.adminUserId,
+        action,
+        targetType: "user",
+        targetId: userId,
+        before,
+        after: {
+          id: updated.id,
+          email: updated.email,
+          username: updated.username,
+          banned: updated.banned,
+          locked: updated.locked,
+          isAdmin: updated.isAdmin,
+          isDeleted: updated.isDeleted,
+        },
+      });
     }
 
     return NextResponse.json({ user: serializeUser(updated) });
@@ -281,7 +365,51 @@ export async function DELETE(
     );
   }
 
+  // Last-admin guard. Soft-deleting the only remaining active admin
+  // leaves the platform without any usable admin — same recovery cost
+  // as the demote/ban path. We refuse before touching the row so the
+  // operation is observable + reversible.
+  const target = await prisma.user.findFirst({
+    where: { id: userId, isDeleted: false },
+    select: { isAdmin: true },
+  });
+  if (target?.isAdmin) {
+    const remainingAdmins = await prisma.user.count({
+      where: {
+        isAdmin: true,
+        isDeleted: false,
+        banned: false,
+        locked: false,
+        id: { notIn: [userId, gate.adminUserId] },
+      },
+    });
+    if (remainingAdmins === 0) {
+      return NextResponse.json(
+        {
+          error:
+            "Refusing to delete the last usable admin. Promote another user first.",
+        },
+        { status: 400 },
+      );
+    }
+  }
+
   try {
+    // Capture the pre-delete state for the audit row so an accidental
+    // bulk-delete can be reversed by hand from the audit log.
+    const before = await prisma.user.findFirst({
+      where: { id: userId, isDeleted: false },
+      select: {
+        id: true,
+        email: true,
+        username: true,
+        banned: true,
+        locked: true,
+        isAdmin: true,
+        isDeleted: true,
+      },
+    });
+
     // Filter `isDeleted: false` so a DELETE on an already-soft-deleted
     // user surfaces as 404 instead of silently "succeeding" with
     // count=1. Pre-hardening the call returned `{ ok: true }` either
@@ -295,6 +423,16 @@ export async function DELETE(
     if (count === 0) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
+
+    void recordAudit({
+      actorUserId: gate.adminUserId,
+      action: "user.delete",
+      targetType: "user",
+      targetId: userId,
+      before,
+      after: null,
+    });
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     logger.error("admin.users.delete_failed", {

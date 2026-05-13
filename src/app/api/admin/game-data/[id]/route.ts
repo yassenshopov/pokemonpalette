@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Prisma, prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit } from "@/lib/admin/audit";
 import { logger } from "@/lib/logger";
 
 export async function GET(
@@ -88,10 +89,35 @@ export async function DELETE(
   const { id } = await params;
 
   try {
+    const before = await prisma.dailyGameAttempt.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        userId: true,
+        date: true,
+        targetPokemonId: true,
+        isShiny: true,
+        attempts: true,
+        won: true,
+        hintsUsed: true,
+        createdAt: true,
+      },
+    });
+
     const result = await prisma.dailyGameAttempt.deleteMany({ where: { id } });
     if (result.count === 0) {
       return NextResponse.json({ error: "Attempt not found" }, { status: 404 });
     }
+
+    void recordAudit({
+      actorUserId: gate.adminUserId,
+      action: "game_data.delete",
+      targetType: "daily_game_attempt",
+      targetId: id,
+      before,
+      after: null,
+    });
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     if (

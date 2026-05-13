@@ -71,15 +71,19 @@
   ],
   "colorPalette": {
     "primary": "#73bd41",
-    "secondary": "#292929",
-    "accent": "#94d541",
+    "secondary": "#94d541",
+    "accent": "#b14d5a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#73bd41",
-      "#292929",
-      "#94d541"
-    ]
+      "#94d541",
+      "#b14d5a",
+      "#da5b6a",
+      "#f1d576",
+      "#333132"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/177.png",

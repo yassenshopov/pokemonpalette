@@ -60,16 +60,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#f7dbaa",
-    "secondary": "#b59a7a",
+    "primary": "#f8f8f8",
+    "secondary": "#f5dbad",
     "accent": "#6dc650",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#f7dbaa",
-      "#b59a7a",
-      "#6dc650"
-    ]
+      "#f8f8f8",
+      "#f5dbad",
+      "#6dc650",
+      "#4a8830",
+      "#5d3524",
+      "#f26571"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/652.png",

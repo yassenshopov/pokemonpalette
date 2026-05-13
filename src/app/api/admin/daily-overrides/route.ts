@@ -3,6 +3,7 @@ import { revalidateTag } from "next/cache";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit } from "@/lib/admin/audit";
 import { parseUtcDate } from "@/lib/game/similarity";
 import { DAILY_TARGET_TAG } from "@/lib/game/daily-target";
 import { logger } from "@/lib/logger";
@@ -138,6 +139,20 @@ export async function PUT(req: NextRequest) {
   const utcDate = parseUtcDate(date);
 
   try {
+    // Capture the existing row (if any) so the audit log distinguishes
+    // a fresh "create override" from an "update existing override".
+    // The `upsert` itself doesn't tell us which path it took.
+    const existing = await prisma.dailyOverride.findUnique({
+      where: { date: utcDate },
+      select: {
+        date: true,
+        pokemonId: true,
+        isShiny: true,
+        note: true,
+        createdBy: true,
+      },
+    });
+
     const row = await prisma.dailyOverride.upsert({
       where: { date: utcDate },
       update: {
@@ -160,6 +175,21 @@ export async function PUT(req: NextRequest) {
     // override on the very next request instead of waiting for the
     // hourly revalidation window.
     revalidateTag(DAILY_TARGET_TAG);
+
+    void recordAudit({
+      actorUserId: gate.adminUserId,
+      action: "daily_override.upsert",
+      targetType: "daily_override",
+      targetId: date,
+      before: existing,
+      after: {
+        date: toIsoDate(row.date),
+        pokemonId: row.pokemonId,
+        isShiny: row.isShiny,
+        note: row.note,
+        createdBy: row.createdBy,
+      },
+    });
 
     return NextResponse.json({
       override: {
@@ -202,11 +232,31 @@ export async function DELETE(req: NextRequest) {
   }
 
   try {
+    const utcDate = parseUtcDate(dateParam);
+    const before = await prisma.dailyOverride.findUnique({
+      where: { date: utcDate },
+      select: {
+        date: true,
+        pokemonId: true,
+        isShiny: true,
+        note: true,
+        createdBy: true,
+      },
+    });
+
     const result = await prisma.dailyOverride.deleteMany({
-      where: { date: parseUtcDate(dateParam) },
+      where: { date: utcDate },
     });
     if (result.count > 0) {
       revalidateTag(DAILY_TARGET_TAG);
+      void recordAudit({
+        actorUserId: gate.adminUserId,
+        action: "daily_override.delete",
+        targetType: "daily_override",
+        targetId: dateParam,
+        before,
+        after: null,
+      });
     }
     return NextResponse.json({ ok: true, affected: result.count });
   } catch (err) {

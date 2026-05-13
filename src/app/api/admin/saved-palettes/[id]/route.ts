@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Prisma, prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit } from "@/lib/admin/audit";
 import { logger } from "@/lib/logger";
 
 export async function GET(
@@ -113,10 +114,34 @@ export async function DELETE(
   const { id } = await params;
 
   try {
+    const before = await prisma.savedPalette.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        userId: true,
+        pokemonId: true,
+        pokemonName: true,
+        pokemonForm: true,
+        isShiny: true,
+        paletteName: true,
+        createdAt: true,
+      },
+    });
+
     const result = await prisma.savedPalette.deleteMany({ where: { id } });
     if (result.count === 0) {
       return NextResponse.json({ error: "Palette not found" }, { status: 404 });
     }
+
+    void recordAudit({
+      actorUserId: gate.adminUserId,
+      action: "saved_palette.delete",
+      targetType: "saved_palette",
+      targetId: id,
+      before,
+      after: null,
+    });
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     if (

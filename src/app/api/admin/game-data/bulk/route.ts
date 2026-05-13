@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit } from "@/lib/admin/audit";
 import { logger } from "@/lib/logger";
 
 const MAX_IDS = 1000;
@@ -34,9 +35,39 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    // Snapshot before delete. We keep just enough to identify the
+    // doomed rows (user, date, target, won state). The `guesses`
+    // JSON column is intentionally NOT captured here — for a 1,000-id
+    // bulk it would blow past the truncation budget without adding
+    // any forensic value beyond what the per-row admin page already
+    // shows.
+    const before = await prisma.dailyGameAttempt.findMany({
+      where: { id: { in: ids } },
+      select: {
+        id: true,
+        userId: true,
+        date: true,
+        targetPokemonId: true,
+        attempts: true,
+        won: true,
+        hintsUsed: true,
+        createdAt: true,
+      },
+    });
+
     const result = await prisma.dailyGameAttempt.deleteMany({
       where: { id: { in: ids } },
     });
+
+    void recordAudit({
+      actorUserId: gate.adminUserId,
+      action: "game_data.bulk_delete",
+      targetType: "daily_game_attempt",
+      targetId: `bulk:${result.count}`,
+      before: { ids, rows: before },
+      after: { affected: result.count },
+    });
+
     return NextResponse.json({ ok: true, affected: result.count });
   } catch (err) {
     logger.error("admin.game-data.bulk_delete_failed", {

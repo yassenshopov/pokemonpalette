@@ -69,6 +69,13 @@ const serverSchema = z.object({
   // unset and `api-auth.ts` dual-looks-up. In production with API access
   // enabled, this MUST be set — see the runtime check in `api-keys.ts`.
   API_KEY_HASH_SECRET: z.string().min(32).optional(),
+
+  // Shared secret used by Vercel Cron to authenticate scheduled job
+  // invocations against `/api/cron/*` routes. Vercel sends this as the
+  // `Authorization: Bearer ${CRON_SECRET}` header on every cron call;
+  // the cron routes refuse any request without it. Set as a "Runtime"
+  // secret in the Vercel dashboard (NOT exposed via NEXT_PUBLIC).
+  CRON_SECRET: z.string().min(16).optional(),
 });
 
 const clientSchema = z.object({

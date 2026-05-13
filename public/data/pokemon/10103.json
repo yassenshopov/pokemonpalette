@@ -1,7 +1,7 @@
 {
   "id": 10103,
   "name": "Vulpix-alola",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ice"
   ],
@@ -38,16 +38,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#fdfdfd",
+    "secondary": "#dae9f3",
+    "accent": "#72b1d9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#fdfdfd",
+      "#dae9f3",
+      "#72b1d9",
+      "#3059b8",
+      "#F8F8F8",
+      "#d8e2e9"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10103.png",

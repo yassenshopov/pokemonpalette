@@ -64,16 +64,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#aac7e6",
-    "secondary": "#f8f8f8",
-    "accent": "#727481",
+    "primary": "#f8f8f8",
+    "secondary": "#aac7e6",
+    "accent": "#4fa0b3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#aac7e6",
       "#f8f8f8",
-      "#727481"
-    ]
+      "#aac7e6",
+      "#4fa0b3",
+      "#74c8e1",
+      "#2172da",
+      "#f98798"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/730.png",

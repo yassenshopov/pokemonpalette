@@ -30,26 +30,38 @@ export interface RowActionConfirm {
   confirmLabel?: string;
 }
 
-export interface RowAction {
+// `RowAction` is a discriminated union on `destructive`: any item
+// flagged destructive MUST also pass a `confirm` payload, so a Ban /
+// Lock / Demote / Delete row entry can never sneak through without a
+// confirmation dialog. Non-destructive items keep `confirm` optional —
+// "Copy ID" and "Open in new tab" should still fire on first click.
+//
+// The runtime AlertDialog already exists below; this is the type-level
+// guard that prevents the regression at the call site.
+interface RowActionBase {
   id: string;
   label: string;
   onSelect: () => void | Promise<void>;
   icon?: React.ReactNode;
-  destructive?: boolean;
   disabled?: boolean;
   separatorBefore?: boolean;
   /** Optional group label rendered above this item. */
   groupLabel?: string;
-  /**
-   * If provided, the action surfaces an AlertDialog confirmation
-   * before invoking `onSelect`. Without this, the previous dropdown
-   * would fire the action on the first click — fine for "Copy ID"
-   * but a footgun for Ban / Lock / Demote / Delete. The single-user
-   * Delete button already wraps its own AlertDialog; this lets the
-   * dropdown variant get the same affordance for free.
-   */
+}
+
+interface RowActionDestructive extends RowActionBase {
+  destructive: true;
+  /** Required for destructive actions to enforce a confirm-before-fire UX. */
+  confirm: RowActionConfirm;
+}
+
+interface RowActionNeutral extends RowActionBase {
+  destructive?: false;
+  /** Optional for neutral actions — most don't need a confirm step. */
   confirm?: RowActionConfirm;
 }
+
+export type RowAction = RowActionDestructive | RowActionNeutral;
 
 interface RowActionsProps {
   label?: string;

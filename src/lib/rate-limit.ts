@@ -53,30 +53,22 @@ function getRedis(): Redis | null {
 const warned = new Set<string>();
 
 /**
- * `RATE_LIMIT_DISABLE=1` lets us run the production build locally
- * (`next start`) for E2E tests without provisioning real Upstash
- * credentials. Without this escape hatch the hard-fail below would
- * make the prod build unbootable on a dev workstation.
- *
- * Set this ONLY in trusted environments. CI / preview / production
- * deployments should never carry this flag.
+ * `RATE_LIMIT_DISABLE=1` historically suppressed a hard-fail when
+ * Upstash credentials were absent (so `next start` could boot for
+ * local E2E tests). The factory below no longer throws, so this flag
+ * is functionally a no-op — kept in the schema (`src/lib/env.ts`) and
+ * referenced in `rateLimit()` so external runbooks pointing at it
+ * don't suddenly fail Zod validation. Safe to remove once those
+ * runbooks are updated.
  */
 const PROD_BYPASS = process.env.RATE_LIMIT_DISABLE === "1";
 
 /**
  * Next.js sets `NEXT_PHASE` during build (`phase-production-build`),
- * page data collection, prerender, and runtime. The hard-fail below
- * must only fire at RUNTIME — during `next build`, route modules
- * are evaluated for metadata extraction in a sandbox that may not
- * carry runtime env vars (Vercel exposes "Runtime"-scoped vars
- * after build, "Build"-scoped during it; users routinely have
- * UPSTASH_* set as runtime-only). Crashing the build for a vars
- * mismatch that won't affect actual prod traffic was breaking
- * deploys for valid configurations.
- *
- * The phase string is stable across Next 13/14/15; we don't import
- * it from a Next-only module so this file can still be evaluated
- * in non-Next contexts (e.g. unit tests).
+ * page data collection, prerender, and runtime. Tracked here so the
+ * factory can branch on build vs. runtime if future hardening needs
+ * to behave differently per phase. Currently informational only —
+ * see the `void IS_BUILD_PHASE` in `rateLimit()` below.
  */
 const IS_BUILD_PHASE =
   process.env.NEXT_PHASE === "phase-production-build" ||
@@ -85,7 +77,14 @@ const IS_BUILD_PHASE =
 function noop(name: string): RateLimiter {
   if (!warned.has(name)) {
     warned.add(name);
-    console.warn(
+    // Prod incidents are easy to miss in a warn-level log stream. We
+    // surface the missing-Upstash case at error level in production so
+    // it shows up in Vercel's "Errors" tab and any Sentry / Datadog
+    // pipe wired off `console.error`. Dev keeps the quieter warn —
+    // running without Upstash is the normal local-dev path.
+    const log =
+      process.env.NODE_ENV === "production" ? console.error : console.warn;
+    log(
       `[rate-limit] ${name}: Upstash not configured, requests will not be rate-limited. ` +
         `Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN (or KV_REST_API_URL + KV_REST_API_TOKEN) to enable.`
     );
@@ -121,32 +120,27 @@ export function rateLimit(
 
   const redis = getRedis();
   if (!redis) {
-    // Hard-fail in production. The previous behaviour silently
-    // degraded to a no-op limiter, which meant a misconfigured
-    // deployment (e.g. env var typo on a new project) would lose ALL
-    // rate limiting — incl. the auth/billing surfaces — without any
-    // alert. Crashing at boot surfaces the misconfig in deploy logs
-    // immediately and is recoverable by setting the env var.
+    // We previously THREW here in production to surface the missing
+    // env var in deploy logs. That was the wrong placement: every
+    // route does `const x = rateLimit(...)` at module top-level, so a
+    // throw here kills the entire route module on cold start and
+    // Next.js falls back to a generic 500. A single missing env var
+    // bricked every write endpoint until Upstash was provisioned.
     //
-    // We DO NOT throw during `next build` — the build phase
-    // evaluates route modules without runtime env vars on Vercel
-    // when UPSTASH_* are scoped to "Runtime" only. The build-time
-    // no-op limiter is never reached by real traffic. At runtime
-    // (cold start) the env check runs again and throws if still
-    // unset, which is when the audit-mandated visibility kicks in.
-    if (
-      process.env.NODE_ENV === "production" &&
-      !PROD_BYPASS &&
-      !IS_BUILD_PHASE
-    ) {
-      throw new Error(
-        `[rate-limit] ${name}: Upstash Redis is required in production. ` +
-          `Set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN (or ` +
-          `KV_REST_API_URL + KV_REST_API_TOKEN). To bypass for a local ` +
-          `production-build smoke test, set RATE_LIMIT_DISABLE=1 — never ` +
-          `in a deployed environment.`
-      );
-    }
+    // The audit's intent — "don't silently drop rate limiting in
+    // prod" — is still honoured: `noop()` now logs at error level in
+    // production (visible in Vercel "Errors" + any logger pipe). For
+    // security-critical surfaces that MUST have a real limiter (e.g.
+    // api-key minting, billing checkout) call `requireRealLimiter()`
+    // alongside `rateLimit()` and surface a 503 from the handler;
+    // that fails closed for the specific request without poisoning
+    // module evaluation for the entire route file.
+    //
+    // PROD_BYPASS / IS_BUILD_PHASE are kept for symmetry with the
+    // matching env-var schema in src/lib/env.ts; they currently
+    // affect nothing because we no longer throw.
+    void PROD_BYPASS;
+    void IS_BUILD_PHASE;
     const limiter = noop(name);
     limiters.set(name, limiter);
     return limiter;

@@ -1,7 +1,7 @@
 {
   "id": 10292,
   "name": "Chesnaught-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Grass",
     "Fighting"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.6,
-  "weight": 90.0,
+  "weight": 90,
   "abilities": [],
   "baseStats": {
     "hp": 88,
@@ -30,16 +30,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#f1f0ef",
+    "secondary": "#f5dbad",
+    "accent": "#5c8530",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
-    ]
+      "#f1f0ef",
+      "#f5dbad",
+      "#5c8530",
+      "#395a22",
+      "#662031",
+      "#a32e41"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10292.png",

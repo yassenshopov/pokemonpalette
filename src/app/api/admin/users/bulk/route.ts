@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Prisma, prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit, type AdminAuditAction } from "@/lib/admin/audit";
 import { logger } from "@/lib/logger";
 
 type BulkOp = "ban" | "unban" | "delete" | "lock" | "unlock";
@@ -119,10 +120,45 @@ export async function POST(req: NextRequest) {
       : { id: { in: safeIds } };
 
   try {
+    // Snapshot the affected rows BEFORE the update so the audit row's
+    // `before_json` reflects the doomed state. We cap the snapshot at
+    // the safe-id list (which is already bounded by `MAX_IDS`); for
+    // very large bulk ops the snapshot still fits comfortably in the
+    // 64 KB per-row truncation budget the audit helper enforces.
+    const before = await prisma.user.findMany({
+      where: targetWhere,
+      select: {
+        id: true,
+        email: true,
+        username: true,
+        banned: true,
+        locked: true,
+        isAdmin: true,
+        isDeleted: true,
+      },
+    });
+
     const { count } = await prisma.user.updateMany({
       where: targetWhere,
       data: patch,
     });
+
+    const bulkActionMap: Record<BulkOp, AdminAuditAction> = {
+      ban: "user.bulk_ban",
+      unban: "user.bulk_unban",
+      lock: "user.bulk_lock",
+      unlock: "user.bulk_unlock",
+      delete: "user.bulk_delete",
+    };
+    void recordAudit({
+      actorUserId: gate.adminUserId,
+      action: bulkActionMap[op],
+      targetType: "user",
+      targetId: `bulk:${count}`,
+      before: { ids: safeIds, rows: before },
+      after: { patch, affected: count },
+    });
+
     return NextResponse.json({
       ok: true,
       affected: count,

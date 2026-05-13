@@ -403,6 +403,12 @@ export function AdminSavedPalettesTab() {
       onSelect: () => deleteOne(p.id),
       destructive: true,
       separatorBefore: true,
+      confirm: {
+        title: "Delete this palette?",
+        description:
+          "This permanently removes the saved palette from the user's collection. This cannot be undone.",
+        confirmLabel: "Delete palette",
+      },
     },
   ];
 

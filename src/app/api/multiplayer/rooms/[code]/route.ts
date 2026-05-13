@@ -85,10 +85,13 @@ export async function GET(
   // primary-keyed by (room_id, user_id), so the cost is negligible.
   // Pre-hardening this endpoint returned `guesses: attempts` (i.e. a
   // number cast as the same field) for non-caller players, lying
-  // about the type. Clients defensively `Array.isArray(...)` checked
-  // it, but the type leakage was real. We now always return a
-  // `number[]` — empty for non-caller players, populated for the
-  // caller.
+  // about the type. We now use two distinct fields with stable types:
+  //   - `guesses`: number[] of Pokemon IDs, only populated for the
+  //     caller's own row. Opponents never see your guess history.
+  //   - `guess_count`: number, the length of the guess list. Set on
+  //     every player (including the caller, for consistency) so the
+  //     UI can show "opponent has guessed N times" without leaking
+  //     which Pokemon they tried.
   const callerGuessesRow = await prisma.multiplayerPlayer.findUnique({
     where: { roomId_userId: { roomId: room.id, userId } },
     select: { guesses: true },
@@ -97,17 +100,21 @@ export async function GET(
     ? (callerGuessesRow.guesses as number[])
     : [];
 
-  const players = room.players.map((p) => ({
-    userId: p.userId,
-    username: p.username,
-    imageUrl: p.imageUrl,
-    attempts: p.attempts,
-    won: p.won,
-    bestSimilarity: p.bestSimilarity,
-    hintsUsed: p.hintsUsed,
-    finished: !!p.finishedAt,
-    guesses: p.userId === userId ? callerGuesses : [],
-  }));
+  const players = room.players.map((p) => {
+    const isSelf = p.userId === userId;
+    return {
+      userId: p.userId,
+      username: p.username,
+      imageUrl: p.imageUrl,
+      attempts: p.attempts,
+      won: p.won,
+      bestSimilarity: p.bestSimilarity,
+      hintsUsed: p.hintsUsed,
+      finished: !!p.finishedAt,
+      guesses: isSelf ? callerGuesses : [],
+      guessCount: isSelf ? callerGuesses.length : p.attempts,
+    };
+  });
 
   return NextResponse.json({
     roomCode: room.roomCode,

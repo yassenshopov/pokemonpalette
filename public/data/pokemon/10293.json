@@ -1,7 +1,7 @@
 {
   "id": 10293,
   "name": "Delphox-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fire",
     "Psychic"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.5,
-  "weight": 39.0,
+  "weight": 39,
   "abilities": [],
   "baseStats": {
     "hp": 75,
@@ -30,16 +30,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#fdd86f",
+    "secondary": "#f1603c",
+    "accent": "#4a3b64",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
-    ]
+      "#fdd86f",
+      "#f1603c",
+      "#4a3b64",
+      "#2c2235",
+      "#764c4e",
+      "#fbfbfb"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10293.png",

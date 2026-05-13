@@ -54,6 +54,43 @@ const TEMPLATE_SUBJECTS: Record<EmailTemplate, string> = {
   "daily-drop": "🎨 Today's Pokémon Palette is up!",
 };
 
+/**
+ * Defense-in-depth scrubber for stored email bodies.
+ *
+ * The `emails` table is intentionally not the system of record for
+ * secrets — the API-key fulfillment email (`/api/billing/webhook`)
+ * sends directly through Resend and bypasses `EmailService`
+ * entirely, so plaintext keys never reach `persistLogs`. This
+ * helper exists so a future template change can't accidentally
+ * regress that invariant: anything matching the `pkpal_*` API-key
+ * shape, or a stripe-style secret/test/restricted/publishable token,
+ * is replaced with `[REDACTED]` before the body is persisted.
+ *
+ * The retention policy (migration 028 + `/api/cron/prune-email-bodies`)
+ * still nulls bodies after 30 days. This pre-persist scrub is the
+ * other half of the audit P0 requirement: secrets never sit at rest
+ * even within the retention window.
+ */
+const SECRET_PATTERNS: RegExp[] = [
+  // PokemonPalette API keys: `pkpal_` + base64url(24 bytes) ≈ 32 chars.
+  /pkpal_[A-Za-z0-9_\-]{16,}/g,
+  // Stripe-style live / test / restricted / publishable secrets.
+  /\b(?:sk|rk|pk)_(?:test|live)_[A-Za-z0-9]{16,}/g,
+  // Generic high-entropy bearer tokens (e.g. `Bearer xxxx…`). The
+  // 32-char threshold keeps it from grabbing innocuous strings while
+  // catching anything that smells like an opaque secret.
+  /\bBearer\s+[A-Za-z0-9_\-\.]{24,}/gi,
+];
+
+function scrubSecrets(value: string | null | undefined): string | null {
+  if (!value) return value ?? null;
+  let out = value;
+  for (const re of SECRET_PATTERNS) {
+    out = out.replace(re, "[REDACTED]");
+  }
+  return out;
+}
+
 export class EmailService {
   private static fromEmail =
     serverEnv.RESEND_FROM_EMAIL || "noreply@pokemonpalette.com";
@@ -197,6 +234,11 @@ export class EmailService {
     messageId: string | null;
   }): Promise<number> {
     let logged = 0;
+    // Scrub plaintext secrets ONCE outside the per-recipient loop —
+    // every row written for this send shares the same body shape, so
+    // there's no need to re-run the regex pass for each recipient.
+    const safeHtml = scrubSecrets(input.html);
+    const safeText = scrubSecrets(input.text);
     for (const [index, recipient] of input.recipients.entries()) {
       try {
         await prisma.email.create({
@@ -208,8 +250,8 @@ export class EmailService {
             senderName: this.fromName,
             subject: input.subject,
             templateType: input.template,
-            htmlContent: input.html ?? null,
-            textContent: input.text ?? null,
+            htmlContent: safeHtml,
+            textContent: safeText,
             status: input.status,
             errorMessage: input.errorMessage,
           },

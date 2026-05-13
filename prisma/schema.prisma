@@ -301,6 +301,29 @@ model ApiKey {
 // Provider values: "stripe" | "clerk". Event IDs come from
 // `stripe.event.id` and `svix-id` respectively, both unique within
 // their provider.
+// Append-only audit trail of admin actions. Mirrors migration 027.
+//
+// Writes go through `src/lib/admin/audit.ts` so callers don't have to
+// remember the JSON serialization contract. Reads are exposed through
+// `/admin/audit` (the viewer page) with the same actor / action /
+// target / date-range filters the indexes are tuned for.
+model AdminAuditLog {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  actorUserId String   @map("actor_user_id")
+  action      String
+  targetType  String   @map("target_type")
+  targetId    String   @map("target_id")
+  beforeJson  Json?    @map("before_json") @db.JsonB
+  afterJson   Json?    @map("after_json")  @db.JsonB
+  createdAt   DateTime @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at") @db.Timestamptz(6)
+
+  @@index([actorUserId],            map: "idx_admin_audit_log_actor_user_id")
+  @@index([action],                 map: "idx_admin_audit_log_action")
+  @@index([targetType, targetId],   map: "idx_admin_audit_log_target")
+  @@index([createdAt(sort: Desc)],  map: "idx_admin_audit_log_created_at_desc")
+  @@map("admin_audit_log")
+}
+
 model ProcessedWebhookEvent {
   provider   String
   eventId    String   @map("event_id")

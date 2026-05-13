@@ -12,6 +12,7 @@ import {
   Map as MapIcon,
   Palette,
   Paintbrush,
+  ShieldAlert,
   Users,
 } from "lucide-react";
 import {
@@ -55,6 +56,7 @@ const MANAGEMENT: NavItem[] = [
 const OPERATIONS: NavItem[] = [
   { label: "Emails", href: "/admin/emails", icon: Mail },
   { label: "Color Management", href: "/admin/colors", icon: Paintbrush },
+  { label: "Audit Log", href: "/admin/audit", icon: ShieldAlert },
 ];
 
 function isActive(pathname: string, item: NavItem) {

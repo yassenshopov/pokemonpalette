@@ -1,7 +1,7 @@
 {
   "id": 10104,
   "name": "Ninetales-alola",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ice",
     "Fairy"
@@ -43,16 +43,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ebfefe",
+    "secondary": "#b3d3e9",
+    "accent": "#87c1c4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#ebfefe",
+      "#b3d3e9",
+      "#87c1c4",
+      "#a6e0dd",
+      "#6db3d5",
+      "#f0f0f0"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10104.png",

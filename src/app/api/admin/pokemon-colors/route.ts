@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidateTag, unstable_cache } from "next/cache";
 import { requireAdmin } from "@/lib/admin/auth";
+import { recordAudit } from "@/lib/admin/audit";
 import { getAllPokemonMetadata } from "@/lib/pokemon";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
@@ -302,6 +303,7 @@ export async function GET() {
 export async function PUT(req: NextRequest) {
   const authResult = await requireAdmin();
   if (!authResult.ok) return authResult.response;
+  const adminUserId = authResult.adminUserId;
 
   const body = await req.json();
   const {
@@ -390,6 +392,19 @@ export async function PUT(req: NextRequest) {
     );
   }
 
+  // Snapshot the palette + hint fields BEFORE applying any mutation
+  // so the audit row can record what the palette looked like before
+  // an admin override. We only capture the structured shape consumed
+  // by the game / saved palettes — not the full file blob — to keep
+  // the audit payload bounded.
+  const auditBefore = {
+    pokemonId,
+    isShiny: Boolean(isShiny),
+    colorPalette: pokemonData.colorPalette,
+    shinyColorPalette: pokemonData.shinyColorPalette,
+    hintConfig: pokemonData.hintConfig ?? null,
+  };
+
   if (selectedColors) {
     const paletteKey = isShiny ? "shinyColorPalette" : "colorPalette";
     if (!pokemonData[paletteKey]) {
@@ -436,6 +451,21 @@ export async function PUT(req: NextRequest) {
   // on its next refresh. Without this the workbench can show stale
   // colors for up to an hour after a save.
   revalidateTag(ADMIN_POKEMON_COLORS_TAG);
+
+  void recordAudit({
+    actorUserId: adminUserId,
+    action: "pokemon_colors.update",
+    targetType: "pokemon_colors",
+    targetId: String(pokemonId),
+    before: auditBefore,
+    after: {
+      pokemonId,
+      isShiny: Boolean(isShiny),
+      colorPalette: pokemonData.colorPalette,
+      shinyColorPalette: pokemonData.shinyColorPalette,
+      hintConfig: pokemonData.hintConfig ?? null,
+    },
+  });
 
   return NextResponse.json({
     message: "Pokemon entry updated successfully",
