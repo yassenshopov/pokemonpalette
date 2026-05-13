@@ -146,15 +146,24 @@ export async function GET(
       return fallbackImage("PokémonPalette");
     }
 
+    // Show up to 6 swatches. Highlights are the canonical multi-color list
+    // (some Pokemon shiny palettes only have 3 highlights — fall back to
+    // primary/secondary/accent, then cycle, so the pin always shows 6).
     const palette = pokemon.shinyColorPalette || pokemon.colorPalette;
     const highlights = palette?.highlights || [];
-    const swatches = [
-      highlights[0] || palette?.primary || "#94a3b8",
-      highlights[1] || palette?.secondary || "#94a3b8",
-      highlights[2] || palette?.accent || "#94a3b8",
-      highlights[3] || highlights[0] || "#94a3b8",
-      highlights[4] || highlights[1] || "#94a3b8",
-    ];
+    const fallbacks = [
+      palette?.primary,
+      palette?.secondary,
+      palette?.accent,
+    ].filter((c): c is string => Boolean(c));
+    const combined = [...highlights, ...fallbacks];
+    const SWATCH_COUNT = 6;
+    const swatches: string[] = Array.from({ length: SWATCH_COUNT }, (_, i) => {
+      const direct = combined[i];
+      if (direct) return direct;
+      if (combined.length === 0) return "#94a3b8";
+      return combined[i % combined.length] ?? "#94a3b8";
+    });
 
     const bgColor = pickBackground(swatches);
 
@@ -238,12 +247,13 @@ export async function GET(
               </div>
               <div
                 style={{
-                  fontSize: 96,
+                  fontSize: 104,
                   fontWeight: 900,
                   color: "#ffffff",
                   marginTop: 4,
-                  letterSpacing: "-0.01em",
+                  letterSpacing: "0.01em",
                   lineHeight: 1,
+                  textTransform: "uppercase",
                 }}
               >
                 {displayName}
@@ -298,11 +308,11 @@ export async function GET(
                     style={{
                       width: SWATCH_SIZE,
                       height: SWATCH_SIZE,
+                      boxSizing: "border-box",
                       borderRadius: "50%",
                       backgroundColor: hex,
                       marginLeft: i === 0 ? 0 : -SWATCH_OVERLAP,
-                      boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
-                      border: "4px solid rgba(255,255,255,0.04)",
+                      border: "8px solid #ffffff",
                       display: "flex",
                     }}
                   />
@@ -329,7 +339,9 @@ export async function GET(
                         letterSpacing: "0.06em",
                       }}
                     >
-                      {hex.toUpperCase().replace("#", "")}
+                      {hex.toUpperCase().startsWith("#")
+                        ? hex.toUpperCase()
+                        : `#${hex.toUpperCase()}`}
                     </div>
                   </div>
                 ))}
