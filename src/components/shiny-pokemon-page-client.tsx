@@ -123,14 +123,18 @@ export function ShinyPokemonPageClient({
     <div className="flex h-screen overflow-hidden">
       <CoffeeCTA primaryColor={pokemonColors[0]} />
       <CollapsibleSidebar primaryColor={pokemonColors[0]} />
-      <div className="flex-1 flex flex-col md:flex-row h-full overflow-auto md:overflow-hidden">
-        {/* Pokemon Menu - Full width on mobile, collapsible on desktop */}
+      {/* Single scroll container on desktop so `md:sticky` on the menu has
+          something to stick to. See the matching comment in
+          pokemon-page-client.tsx for why we moved off the per-column
+          overflow-auto setup. */}
+      <div className="flex-1 flex flex-col md:flex-row h-full overflow-y-auto overflow-x-hidden md:items-start">
+        {/* Pokemon Menu - Full width on mobile, sticky-left on desktop */}
         <div
           className={`${
             isPokemonMenuCollapsed
               ? "hidden md:block md:w-auto"
               : "w-full md:w-1/4"
-          } h-auto md:h-full flex flex-col md:flex-row transition-all duration-300`}
+          } h-auto md:h-screen md:sticky md:top-0 md:self-start md:flex-shrink-0 flex flex-col md:flex-row transition-all duration-300`}
         >
           <PokemonMenu
             onPokemonSelect={setSelectedPokemonId}
@@ -151,11 +155,12 @@ export function ShinyPokemonPageClient({
           )}
         </div>
 
-        {/* Hero/Example Page with Footer - Full width on mobile, responsive width on desktop */}
+        {/* Hero/Example Page with Footer - grows naturally; the parent
+            handles scroll on desktop, the sticky menu stays pinned. */}
         <div
           className={`${
             isPokemonMenuCollapsed ? "w-full" : "w-full md:w-3/4"
-          } relative flex flex-col h-auto md:h-full md:overflow-auto px-0 transition-all duration-300`}
+          } relative flex flex-col h-auto px-0 transition-all duration-300 md:min-w-0`}
         >
           {breadcrumbs && (
             <div className="absolute top-3 left-4 md:left-12 z-20 max-w-[calc(100%-2rem)]">
