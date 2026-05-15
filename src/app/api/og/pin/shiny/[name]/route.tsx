@@ -146,9 +146,19 @@ export async function GET(
       return fallbackImage("PokémonPalette");
     }
 
-    // Show up to 6 swatches. Highlights are the canonical multi-color list
-    // (some Pokemon shiny palettes only have 3 highlights — fall back to
-    // primary/secondary/accent, then cycle, so the pin always shows 6).
+    // Prefer the live page palette (passed via ?c=hex1,hex2,...) so the pin
+    // reflects exactly what the user is seeing when they click "Pin It". The
+    // static JSON palette is only the curated baseline (some shiny palettes
+    // only have 3 colors) — we fall back to it when no override is provided.
+    const overrideParam =
+      new URL(request.url).searchParams.get("c") || "";
+    const overrideColors = overrideParam
+      .split(",")
+      .map((c) => c.trim().replace(/^#/, "").toLowerCase())
+      .filter((c) => /^[0-9a-f]{6}$/.test(c))
+      .map((c) => `#${c}`)
+      .slice(0, 6);
+
     const palette = pokemon.shinyColorPalette || pokemon.colorPalette;
     const highlights = palette?.highlights || [];
     const fallbacks = [
@@ -156,7 +166,10 @@ export async function GET(
       palette?.secondary,
       palette?.accent,
     ].filter((c): c is string => Boolean(c));
-    const combined = [...highlights, ...fallbacks];
+    const combined =
+      overrideColors.length > 0
+        ? overrideColors
+        : [...highlights, ...fallbacks];
     const SWATCH_COUNT = 6;
     const swatches: string[] = Array.from({ length: SWATCH_COUNT }, (_, i) => {
       const direct = combined[i];

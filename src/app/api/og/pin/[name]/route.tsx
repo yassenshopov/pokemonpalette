@@ -139,17 +139,29 @@ export async function GET(
       return fallbackImage("PokémonPalette");
     }
 
-    // Show up to 6 swatches. Highlights are the canonical multi-color list
-    // (Pikachu has 6, some Pokemon have fewer). When fewer are present, fall
-    // back to primary/secondary/accent, then cycle to fill any remaining
-    // slots so the pin always shows a complete 6-circle row.
+    // Prefer the live page palette (passed via ?c=hex1,hex2,...) so the pin
+    // reflects exactly what the user is seeing when they click "Pin It". The
+    // static JSON palette is only the curated baseline (sometimes just 3
+    // colors) — we fall back to it when no override is provided.
+    const overrideParam =
+      new URL(request.url).searchParams.get("c") || "";
+    const overrideColors = overrideParam
+      .split(",")
+      .map((c) => c.trim().replace(/^#/, "").toLowerCase())
+      .filter((c) => /^[0-9a-f]{6}$/.test(c))
+      .map((c) => `#${c}`)
+      .slice(0, 6);
+
     const highlights = pokemon.colorPalette?.highlights || [];
     const fallbacks = [
       pokemon.colorPalette?.primary,
       pokemon.colorPalette?.secondary,
       pokemon.colorPalette?.accent,
     ].filter((c): c is string => Boolean(c));
-    const combined = [...highlights, ...fallbacks];
+    const combined =
+      overrideColors.length > 0
+        ? overrideColors
+        : [...highlights, ...fallbacks];
     const SWATCH_COUNT = 6;
     const swatches: string[] = Array.from({ length: SWATCH_COUNT }, (_, i) => {
       const direct = combined[i];

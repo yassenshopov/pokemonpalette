@@ -468,6 +468,7 @@ export function PokemonHero({
               <PinterestPinButton
                 pokemonName={pokemon.name}
                 isShiny={isShiny}
+                colors={colors}
               />
             </div>
           )}
@@ -591,17 +592,30 @@ function HeroImage({
 function PinterestPinButton({
   pokemonName,
   isShiny,
+  colors,
 }: {
   pokemonName: string;
   isShiny: boolean;
+  colors?: string[];
 }) {
   const slug = pokemonName.toLowerCase();
   const pageUrl = isShiny
     ? `https://www.pokemonpalette.com/shiny/${slug}`
     : `https://www.pokemonpalette.com/${slug}`;
+
+  // Forward whatever colors are currently on the page to the OG image so the
+  // pin reflects what the user is actually seeing. Without this, the pin route
+  // falls back to the static palette in the JSON file (which is sometimes only
+  // 3 entries and ends up cycling).
+  const validHex = (colors || [])
+    .map((c) => (c || "").replace(/^#/, "").toLowerCase())
+    .filter((c) => /^[0-9a-f]{6}$/.test(c))
+    .slice(0, 6);
+  const colorParam = validHex.length > 0 ? `?c=${validHex.join(",")}` : "";
+
   const pinImageUrl = isShiny
-    ? `https://www.pokemonpalette.com/api/og/pin/shiny/${slug}`
-    : `https://www.pokemonpalette.com/api/og/pin/${slug}`;
+    ? `https://www.pokemonpalette.com/api/og/pin/shiny/${slug}${colorParam}`
+    : `https://www.pokemonpalette.com/api/og/pin/${slug}${colorParam}`;
   const description = `${pokemonName} color palette — extract beautiful hex colors for your next design project. pokemonpalette.com`;
 
   const href =
