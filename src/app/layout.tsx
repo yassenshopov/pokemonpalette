@@ -127,13 +127,11 @@ export const metadata: Metadata = {
 
   // Pinterest Rich Pin + domain verification.
   // "pinterest-rich-pin" tells the Rich Pin validator to parse OG tags.
-  // Replace the p:domain_verify value after claiming pokemonpalette.com
-  // in Pinterest Business (Settings > Claimed Accounts).
+  // "p:domain_verify" is the code Pinterest issued when claiming
+  // pokemonpalette.com via Business > Settings > Claimed Accounts.
   other: {
     "pinterest-rich-pin": "true",
-    ...(process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY
-      ? { "p:domain_verify": process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY }
-      : {}),
+    "p:domain_verify": "b7e19d937190b7aaaa61a3f272fb2293",
   },
 };
 
