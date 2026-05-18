@@ -1,7 +1,7 @@
 {
   "id": 10189,
   "name": "Zamazenta-crowned",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fighting",
     "Steel"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.9,
-  "weight": 785.0,
+  "weight": 785,
   "abilities": [
     {
       "name": "Dauntless shield",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#e43e41",
+    "secondary": "#f1da90",
+    "accent": "#3d6fcb",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#e43e41",
+      "#f1da90",
+      "#3d6fcb",
+      "#2e4aa5",
+      "#f2f2f2",
+      "#34313e"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10189.png",

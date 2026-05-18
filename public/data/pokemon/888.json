@@ -42,15 +42,19 @@
   ],
   "colorPalette": {
     "primary": "#4999da",
-    "secondary": "#080808",
+    "secondary": "#3a72b1",
     "accent": "#be3c45",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#4999da",
-      "#080808",
-      "#be3c45"
-    ]
+      "#3a72b1",
+      "#be3c45",
+      "#ed5858",
+      "#f9e2c2",
+      "#b94048"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/888.png",

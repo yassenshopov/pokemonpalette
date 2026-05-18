@@ -47,16 +47,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#ffcd35",
-    "secondary": "#111111",
-    "accent": "#d09f2f",
+    "primary": "#fccc4a",
+    "secondary": "#cd9f3d",
+    "accent": "#292929",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#ffcd35",
-      "#111111",
-      "#d09f2f"
-    ]
+      "#fccc4a",
+      "#cd9f3d",
+      "#292929",
+      "#f3fcff",
+      "#e82828",
+      "#853024"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/870.png",

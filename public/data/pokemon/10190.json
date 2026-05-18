@@ -1,7 +1,7 @@
 {
   "id": 10190,
   "name": "Eternatus-eternamax",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Poison",
     "Dragon"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 100.0,
-  "weight": 0.0,
+  "height": 100,
+  "weight": 0,
   "abilities": [
     {
       "name": "Pressure",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#f85b5c",
+    "secondary": "#30265d",
+    "accent": "#3429a4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
-    ]
+      "#f85b5c",
+      "#30265d",
+      "#3429a4",
+      "#6363b7",
+      "#fb5050",
+      "#fde0e0"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10190.png",

@@ -48,15 +48,19 @@
   ],
   "colorPalette": {
     "primary": "#f8f2af",
-    "secondary": "#b29b57",
-    "accent": "#decb83",
+    "secondary": "#decb83",
+    "accent": "#b29b57",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#f8f2af",
+      "#decb83",
       "#b29b57",
-      "#decb83"
-    ]
+      "#f8f1b3",
+      "#e1cd84",
+      "#f2e7c0"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/868.png",

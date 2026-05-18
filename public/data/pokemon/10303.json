@@ -1,7 +1,7 @@
 {
   "id": 10303,
   "name": "Falinks-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fighting"
   ],
@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.6,
-  "weight": 99.0,
+  "weight": 99,
   "abilities": [],
   "baseStats": {
     "hp": 65,
@@ -25,16 +25,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#292929",
+    "secondary": "#fccc4a",
+    "accent": "#cd9f3d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#292929",
+      "#fccc4a",
+      "#cd9f3d",
+      "#e82828",
+      "#853024",
+      "#55b3e8"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10303.png",

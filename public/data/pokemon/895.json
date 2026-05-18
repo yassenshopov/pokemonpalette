@@ -41,16 +41,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#4b6f78",
-    "secondary": "#3f545f",
-    "accent": "#e05276",
+    "primary": "#e05276",
+    "secondary": "#b13b52",
+    "accent": "#4b6f78",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
+      "#e05276",
+      "#b13b52",
       "#4b6f78",
       "#3f545f",
-      "#e05276"
-    ]
+      "#313b3f",
+      "#5090f7"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/895.png",
