@@ -1,7 +1,7 @@
 {
   "id": 10070,
   "name": "Sharpedo-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Dark"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#e5dff5",
+    "secondary": "#5474ba",
+    "accent": "#324271",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+      "#e5dff5",
+      "#5474ba",
+      "#324271",
+      "#fddd6e",
+      "#2c2c2b",
+      "#e06d7d"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10070.png",

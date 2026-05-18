@@ -1,7 +1,7 @@
 {
   "id": 10087,
   "name": "Camerupt-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fire",
     "Ground"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#e86d51",
+    "secondary": "#bf3e2a",
+    "accent": "#3a3a3a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
-    ]
+      "#e86d51",
+      "#bf3e2a",
+      "#3a3a3a",
+      "#626262",
+      "#d5d5b6",
+      "#fa9431"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10087.png",

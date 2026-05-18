@@ -56,15 +56,19 @@
   ],
   "colorPalette": {
     "primary": "#a6d941",
-    "secondary": "#44591b",
-    "accent": "#feb183",
+    "secondary": "#789838",
+    "accent": "#b88768",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#a6d941",
-      "#44591b",
-      "#feb183"
-    ]
+      "#789838",
+      "#b88768",
+      "#feb183",
+      "#7b513a",
+      "#ec653c"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/650.png",

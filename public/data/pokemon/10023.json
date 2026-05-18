@@ -1,7 +1,7 @@
 {
   "id": 10023,
   "name": "Kyurem-white",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Ice"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 3.6,
-  "weight": 325.0,
+  "weight": 325,
   "abilities": [
     {
       "name": "Turboblaze",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ffffff",
+    "secondary": "#ebebea",
+    "accent": "#b1ddc6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#ffffff",
+      "#ebebea",
+      "#b1ddc6",
+      "#6e8b7b",
+      "#ada586",
+      "#7b7b5c"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10023.png",

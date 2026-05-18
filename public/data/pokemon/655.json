@@ -62,14 +62,18 @@
   "colorPalette": {
     "primary": "#893027",
     "secondary": "#ae3d32",
-    "accent": "#f95a26",
+    "accent": "#fdd967",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#893027",
       "#ae3d32",
+      "#fdd967",
+      "#dbb053",
+      "#f8f8f8",
       "#f95a26"
-    ]
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/655.png",
@@ -299,7 +303,7 @@
       "is_default": true,
       "url": "https://pokeapi.co/api/v2/pokemon/655/",
       "type": ""
-    },  
+    },
     {
       "name": "Mega Delphox",
       "raw_name": "delphox-mega",

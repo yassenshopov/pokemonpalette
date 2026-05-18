@@ -1,7 +1,7 @@
 {
   "id": 10020,
   "name": "Thundurus-therian",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Electric",
     "Flying"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 3.0,
-  "weight": 61.0,
+  "height": 3,
+  "weight": 61,
   "abilities": [
     {
       "name": "Volt absorb",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
-    "accent": "#F8F8F8",
+    "primary": "#6dc5fc",
+    "secondary": "#77b4da",
+    "accent": "#393c82",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
-    ]
+      "#6dc5fc",
+      "#77b4da",
+      "#393c82",
+      "#584daa",
+      "#ffffff",
+      "#212121"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png",

@@ -1,7 +1,7 @@
 {
   "id": 10240,
   "name": "Braviary-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Psychic",
     "Flying"
@@ -49,16 +49,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#ece8e6",
+    "secondary": "#b9b0aa",
+    "accent": "#373540",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
-    ]
+      "#ece8e6",
+      "#b9b0aa",
+      "#373540",
+      "#5a5767",
+      "#a769ba",
+      "#edd465"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10240.png",

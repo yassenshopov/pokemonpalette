@@ -1,7 +1,7 @@
 {
   "id": 10066,
   "name": "Sableye-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dark",
     "Ghost"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.5,
-  "weight": 161.0,
+  "weight": 161,
   "abilities": [
     {
       "name": "Magic bounce",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#f97989",
+    "secondary": "#f8515f",
+    "accent": "#8976d2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#f97989",
+      "#f8515f",
+      "#8976d2",
+      "#594c92",
+      "#e3ba4f",
+      "#c6457c"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10066.png",

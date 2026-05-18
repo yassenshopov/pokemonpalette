@@ -1,7 +1,7 @@
 {
   "id": 10018,
   "name": "Meloetta-pirouette",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Normal",
     "Fighting"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#e87658",
+    "secondary": "#a8543e",
+    "accent": "#625a53",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#e87658",
+      "#a8543e",
+      "#625a53",
+      "#82736b",
+      "#fffff6",
+      "#ef587d"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10018.png",

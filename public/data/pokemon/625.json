@@ -70,16 +70,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#dedede",
-    "secondary": "#c53131",
-    "accent": "#414141",
+    "primary": "#c53131",
+    "secondary": "#903443",
+    "accent": "#dedede",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#dedede",
       "#c53131",
-      "#414141"
-    ]
+      "#903443",
+      "#dedede",
+      "#f2f2f2",
+      "#414141",
+      "#e4bc4f"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/625.png",

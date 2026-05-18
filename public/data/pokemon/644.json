@@ -58,16 +58,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#202029",
-    "secondary": "#313139",
+    "primary": "#313139",
+    "secondary": "#202029",
     "accent": "#181820",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#202029",
       "#313139",
-      "#181820"
-    ]
+      "#202029",
+      "#181820",
+      "#25252c",
+      "#8f0d0d",
+      "#7bf5fd"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/644.png",

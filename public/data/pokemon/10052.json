@@ -1,7 +1,7 @@
 {
   "id": 10052,
   "name": "Mawile-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Steel",
     "Fairy"
@@ -16,7 +16,7 @@
       "slot": 2
     }
   ],
-  "height": 1.0,
+  "height": 1,
   "weight": 23.5,
   "abilities": [
     {
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#737373",
+    "secondary": "#525252",
+    "accent": "#ce81a9",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#737373",
+      "#525252",
+      "#ce81a9",
+      "#9c4a70",
+      "#fcc565",
+      "#da954b"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10052.png",

@@ -1,7 +1,7 @@
 {
   "id": 10155,
   "name": "Necrozma-dusk",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Psychic",
     "Steel"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 3.8,
-  "weight": 460.0,
+  "weight": 460,
   "abilities": [
     {
       "name": "Prism armor",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#fdf8e2",
+    "secondary": "#dacb93",
+    "accent": "#2c3233",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
-    ]
+      "#fdf8e2",
+      "#dacb93",
+      "#2c3233",
+      "#434a50",
+      "#f1ce61",
+      "#caa644"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10155.png",

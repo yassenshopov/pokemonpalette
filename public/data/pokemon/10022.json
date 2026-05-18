@@ -1,7 +1,7 @@
 {
   "id": 10022,
   "name": "Kyurem-black",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Ice"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 3.3,
-  "weight": 325.0,
+  "weight": 325,
   "abilities": [
     {
       "name": "Teravolt",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#31313a",
+    "secondary": "#212129",
+    "accent": "#b1ddc6",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#31313a",
+      "#212129",
+      "#b1ddc6",
+      "#6e8b7b",
+      "#ada586",
+      "#7a6b5b"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10022.png",

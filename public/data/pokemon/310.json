@@ -65,16 +65,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#c5ac5a",
-    "secondary": "#ffee62",
-    "accent": "#73b4d5",
+    "primary": "#feed6f",
+    "secondary": "#c4ab61",
+    "accent": "#99cddd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#c5ac5a",
-      "#ffee62",
-      "#73b4d5"
-    ]
+      "#feed6f",
+      "#c4ab61",
+      "#99cddd",
+      "#73b4d5",
+      "#5d83aa",
+      "#f97777"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/310.png",

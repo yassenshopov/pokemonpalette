@@ -1,7 +1,7 @@
 {
   "id": 10054,
   "name": "Medicham-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fighting",
     "Psychic"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#dedede",
+    "secondary": "#f8f8f8",
+    "accent": "#e0768c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#dedede",
+      "#f8f8f8",
+      "#e0768c",
+      "#af4d5c",
+      "#ebbd64",
+      "#31b4dd"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10054.png",

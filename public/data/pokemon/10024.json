@@ -1,7 +1,7 @@
 {
   "id": 10024,
   "name": "Keldeo-resolute",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Fighting"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#6cbdfc",
+    "secondary": "#4b69af",
+    "accent": "#d84e3a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+      "#6cbdfc",
+      "#4b69af",
+      "#d84e3a",
+      "#fff6b2",
+      "#b5ac77",
+      "#4c6dcb"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10024.png",
