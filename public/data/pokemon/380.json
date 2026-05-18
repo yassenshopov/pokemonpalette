@@ -58,16 +58,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#cdcdee",
-    "secondary": "#bd4141",
-    "accent": "#ff6262",
+    "primary": "#bd4141",
+    "secondary": "#ff6262",
+    "accent": "#eeeefe",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#cdcdee",
       "#bd4141",
-      "#ff6262"
-    ]
+      "#ff6262",
+      "#eeeefe",
+      "#cdceed",
+      "#78adeb",
+      "#cba453"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/380.png",

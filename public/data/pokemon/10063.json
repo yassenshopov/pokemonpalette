@@ -1,7 +1,7 @@
 {
   "id": 10063,
   "name": "Latios-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Psychic"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.3,
-  "weight": 70.0,
+  "weight": 70,
   "abilities": [
     {
       "name": "Levitate",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#9678c3",
+    "secondary": "#7551b6",
+    "accent": "#d3d9dc",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#9678c3",
+      "#7551b6",
+      "#d3d9dc",
+      "#a1a7a9",
+      "#F8F8F8",
+      "#cc7289"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10063.png",

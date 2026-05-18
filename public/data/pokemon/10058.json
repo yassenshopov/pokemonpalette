@@ -1,7 +1,7 @@
 {
   "id": 10058,
   "name": "Garchomp-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dragon",
     "Ground"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.9,
-  "weight": 95.0,
+  "weight": 95,
   "abilities": [
     {
       "name": "Sand force",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#5a64a9",
+    "secondary": "#414389",
+    "accent": "#e04f3a",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#5a64a9",
+      "#414389",
+      "#e04f3a",
+      "#b83e45",
+      "#fdd43c",
+      "#f5f5f5"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png",

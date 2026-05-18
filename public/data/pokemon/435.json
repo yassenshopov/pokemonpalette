@@ -71,15 +71,19 @@
   ],
   "colorPalette": {
     "primary": "#6a528b",
-    "secondary": "#eedeac",
-    "accent": "#4a395a",
+    "secondary": "#4a395a",
+    "accent": "#eedeac",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#6a528b",
+      "#4a395a",
       "#eedeac",
-      "#4a395a"
-    ]
+      "#b39c7d",
+      "#f18d53",
+      "#493a59"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/435.png",

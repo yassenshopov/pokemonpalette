@@ -66,14 +66,18 @@
   "colorPalette": {
     "primary": "#5294ac",
     "secondary": "#416a83",
-    "accent": "#314152",
+    "accent": "#d85d34",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#5294ac",
       "#416a83",
+      "#d85d34",
+      "#a73c1d",
+      "#c87575",
       "#314152"
-    ]
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/443.png",
