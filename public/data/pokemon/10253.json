@@ -1,7 +1,7 @@
 {
   "id": 10253,
   "name": "Wooper-paldea",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Poison",
     "Ground"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 0.4,
-  "weight": 11.0,
+  "weight": 11,
   "abilities": [
     {
       "name": "Poison point",
@@ -49,16 +49,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#806767",
+    "secondary": "#544342",
+    "accent": "#ecdbf4",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
-    ]
+      "#806767",
+      "#544342",
+      "#ecdbf4",
+      "#dfd0e6",
+      "#af4444",
+      "#2d2423"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10253.png",

@@ -1,7 +1,7 @@
 {
   "id": 10046,
   "name": "Scizor-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Bug",
     "Steel"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 2.0,
-  "weight": 125.0,
+  "height": 2,
+  "weight": 125,
   "abilities": [
     {
       "name": "Technician",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#cf3f3f",
+    "secondary": "#9f2e2e",
+    "accent": "#393949",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
-    ]
+      "#cf3f3f",
+      "#9f2e2e",
+      "#393949",
+      "#9494a3",
+      "#e3e3ed",
+      "#2590b2"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10046.png",

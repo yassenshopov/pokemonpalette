@@ -72,14 +72,18 @@
   "colorPalette": {
     "primary": "#83d5ff",
     "secondary": "#5aa4c5",
-    "accent": "#395a6a",
+    "accent": "#d6e6fe",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#83d5ff",
       "#5aa4c5",
-      "#395a6a"
-    ]
+      "#d6e6fe",
+      "#b5c5e4",
+      "#8ad5fd",
+      "#d73222"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/592.png",

@@ -66,14 +66,18 @@
   "colorPalette": {
     "primary": "#eee6ff",
     "secondary": "#cdb4d5",
-    "accent": "#a49cb4",
+    "accent": "#b86ed2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#eee6ff",
       "#cdb4d5",
-      "#a49cb4"
-    ]
+      "#b86ed2",
+      "#885592",
+      "#f2a59e",
+      "#dfe6ee"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/484.png",

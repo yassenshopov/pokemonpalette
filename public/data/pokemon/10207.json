@@ -1,7 +1,7 @@
 {
   "id": 10207,
   "name": "Garbodor-gmax",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Poison"
   ],
@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 21.0,
-  "weight": 1000.0,
+  "height": 21,
+  "weight": 1000,
   "abilities": [
     {
       "name": "Stench",
@@ -44,16 +44,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A040A0",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#a38b75",
+    "secondary": "#7a6a5b",
+    "accent": "#31694b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A040A0",
-      "#78C850",
-      "#F8D030"
-    ]
+      "#a38b75",
+      "#7a6a5b",
+      "#31694b",
+      "#ea94fc",
+      "#fdfdfd",
+      "#2eacd3"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10207.png",

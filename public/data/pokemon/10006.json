@@ -1,7 +1,7 @@
 {
   "id": 10006,
   "name": "Shaymin-sky",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Grass",
     "Flying"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#ffffff",
+    "secondary": "#ececf4",
+    "accent": "#a1d339",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
-    ]
+      "#ffffff",
+      "#ececf4",
+      "#a1d339",
+      "#80aa31",
+      "#ef5048",
+      "#b84d5c"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10006.png",

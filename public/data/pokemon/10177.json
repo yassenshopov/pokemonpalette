@@ -1,7 +1,7 @@
 {
   "id": 10177,
   "name": "Darmanitan-galar-standard",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ice"
   ],
@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 120.0,
+  "weight": 120,
   "abilities": [
     {
       "name": "Gorilla tactics",
@@ -38,16 +38,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#ebeee6",
+    "secondary": "#d3d8d5",
+    "accent": "#5099c7",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
+      "#ebeee6",
+      "#d3d8d5",
+      "#5099c7",
+      "#2e64aa",
+      "#45c3a9",
       "#F8F8F8"
-    ]
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png",

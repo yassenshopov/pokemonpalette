@@ -1,7 +1,7 @@
 {
   "id": 10234,
   "name": "Qwilfish-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dark",
     "Poison"
@@ -49,16 +49,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#545466",
+    "secondary": "#393945",
+    "accent": "#beb594",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#545466",
+      "#393945",
+      "#beb594",
+      "#978b5b",
+      "#ea50d1",
+      "#bd42ac"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png",

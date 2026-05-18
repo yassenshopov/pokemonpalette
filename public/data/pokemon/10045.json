@@ -1,7 +1,7 @@
 {
   "id": 10045,
   "name": "Ampharos-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Electric",
     "Dragon"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F8D030",
-    "secondary": "#F08030",
+    "primary": "#fde05c",
+    "secondary": "#e3b841",
     "accent": "#F8F8F8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F8D030",
-      "#F08030",
-      "#F8F8F8"
-    ]
+      "#fde05c",
+      "#e3b841",
+      "#F8F8F8",
+      "#bfbfbf",
+      "#f84f27",
+      "#484747"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10045.png",

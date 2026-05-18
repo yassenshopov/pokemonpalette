@@ -1,7 +1,7 @@
 {
   "id": 10180,
   "name": "Stunfisk-galar",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ground",
     "Steel"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#E0C068",
-    "secondary": "#B8A038",
-    "accent": "#F8D030",
+    "primary": "#9f9182",
+    "secondary": "#876c64",
+    "accent": "#b2f57b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#E0C068",
-      "#B8A038",
-      "#F8D030"
-    ]
+      "#9f9182",
+      "#876c64",
+      "#b2f57b",
+      "#70b749",
+      "#4e4e40",
+      "#717163"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10180.png",

@@ -1,7 +1,7 @@
 {
   "id": 10285,
   "name": "Froslass-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ice",
     "Ghost"
@@ -30,16 +30,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#fefefe",
+    "secondary": "#79b4d3",
+    "accent": "#557cb2",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#fefefe",
+      "#79b4d3",
+      "#557cb2",
+      "#8337c6",
+      "#bf3029",
+      "#c6cddd"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10285.png",

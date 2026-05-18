@@ -71,15 +71,19 @@
   ],
   "colorPalette": {
     "primary": "#4a94d5",
-    "secondary": "#627383",
+    "secondary": "#3f74a6",
     "accent": "#293139",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#4a94d5",
-      "#627383",
-      "#293139"
-    ]
+      "#3f74a6",
+      "#293139",
+      "#637382",
+      "#a7cdd4",
+      "#3f739a"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/565.png",

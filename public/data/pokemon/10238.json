@@ -1,7 +1,7 @@
 {
   "id": 10238,
   "name": "Zorua-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Normal",
     "Ghost"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#cbcfd8",
+    "secondary": "#fafafa",
+    "accent": "#ea7679",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#cbcfd8",
+      "#fafafa",
+      "#ea7679",
+      "#cf4043",
+      "#6b4e62",
+      "#fbae37"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10238.png",

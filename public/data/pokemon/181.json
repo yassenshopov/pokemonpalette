@@ -61,15 +61,15 @@
   "colorPalette": {
     "primary": "#ffee4a",
     "secondary": "#ffc510",
-    "accent": "#636a6a",
+    "accent": "#ffffff",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#ffee4a",
       "#ffc510",
-      "#636a6a",
-      "#3a3831",
-      "#f7f7f7",
+      "#ffffff",
+      "#e6e6e6",
+      "#3b3f3f",
       "#f86624"
     ],
     "locked": true

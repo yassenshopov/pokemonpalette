@@ -1,7 +1,7 @@
 {
   "id": 10197,
   "name": "Blastoise-gmax",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water"
   ],
@@ -11,8 +11,8 @@
       "slot": 1
     }
   ],
-  "height": 25.0,
-  "weight": 1000.0,
+  "height": 25,
+  "weight": 1000,
   "abilities": [
     {
       "name": "Torrent",
@@ -38,16 +38,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#2763a9",
+    "secondary": "#5e5648",
+    "accent": "#352e27",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+      "#2763a9",
+      "#5e5648",
+      "#352e27",
+      "#c2573c",
+      "#ce7d69",
+      "#cdcdd5"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10197.png",

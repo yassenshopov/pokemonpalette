@@ -1,7 +1,7 @@
 {
   "id": 10195,
   "name": "Venusaur-gmax",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 24.0,
-  "weight": 1000.0,
+  "height": 24,
+  "weight": 1000,
   "abilities": [
     {
       "name": "Overgrow",
@@ -43,16 +43,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#f97e77",
+    "secondary": "#d84747",
+    "accent": "#3cb39c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
-    ]
+      "#f97e77",
+      "#d84747",
+      "#3cb39c",
+      "#46ddbf",
+      "#8cdc80",
+      "#feed62"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10195.png",
