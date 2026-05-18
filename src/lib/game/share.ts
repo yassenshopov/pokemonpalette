@@ -1,4 +1,5 @@
 import { FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
+import type { Difficulty } from "@/lib/game/similarity";
 
 // These tunables control the Wordle-style share grid appearance.
 // They are independent of the in-game similarity gradient so we can pick
@@ -69,6 +70,13 @@ export interface BuildShareTextInput {
    * reads "PokemonPalette · Unlimited" with no daily number.
    */
   gameNumber?: number;
+  /**
+   * Daily-puzzle difficulty. Hard appends a "· Hard" tag to the header
+   * so a hard-mode share is distinguishable from the standard daily
+   * share in someone's feed. Omit for easy (the historical default) and
+   * for unlimited mode.
+   */
+  difficulty?: Difficulty;
   attempts: number;
   won: boolean;
   hintsUsed?: number;
@@ -80,13 +88,17 @@ export interface BuildShareTextInput {
 /**
  * Build Wordle-style share text.
  *
- * Daily format:
+ * Daily (easy) format:
  *   PokemonPalette #47 3/4
  *   🟥🟧🟨
  *   🟨🟧🟩
  *   🟩🟩🟩
  *
  *   pokemonpalette.com/game
+ *
+ * Daily (hard) format:
+ *   PokemonPalette #47 · Hard 3/4
+ *   …
  *
  * Unlimited format (when gameNumber is omitted):
  *   PokemonPalette · Unlimited 2/4
@@ -98,6 +110,7 @@ export interface BuildShareTextInput {
 export function buildShareText(input: BuildShareTextInput): string {
   const {
     gameNumber,
+    difficulty,
     attempts,
     won,
     hintsUsed = 0,
@@ -108,11 +121,17 @@ export function buildShareText(input: BuildShareTextInput): string {
 
   // Daily wins get "#47", unlimited wins get "· Unlimited" — both stay
   // visually anchored to "PokemonPalette" so the brand sits at the start of
-  // every shared post.
-  const label = gameNumber !== undefined ? `#${gameNumber}` : "· Unlimited";
+  // every shared post. Hard-mode dailies layer "· Hard" after the game
+  // number; easy stays bare to preserve the historical share grid.
+  const dailyLabel =
+    gameNumber !== undefined
+      ? difficulty === "hard"
+        ? `#${gameNumber} · Hard`
+        : `#${gameNumber}`
+      : "· Unlimited";
   const score = won ? `${attempts}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
   const hints = hintsUsed > 0 ? ` (${hintsUsed}💡)` : "";
-  const header = `PokemonPalette ${label} ${score}${hints}`;
+  const header = `PokemonPalette ${dailyLabel} ${score}${hints}`;
 
   const targetTop = targetColors.slice(0, 3);
   const rows: string[] = [];

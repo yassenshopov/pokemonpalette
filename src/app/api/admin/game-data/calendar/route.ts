@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import { requireAdmin } from "@/lib/admin/auth";
 import { parseIsoDate, toIsoDate } from "@/lib/admin/range";
+import { isDifficulty, type Difficulty } from "@/lib/game/similarity";
 import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
@@ -58,9 +59,26 @@ export async function GET(req: NextRequest) {
       );
     }
 
+    // Difficulty is optional in the query string; default 'easy' keeps
+    // the legacy URL surface unchanged for any caller predating the
+    // hard-mode launch. Reject unknown values explicitly so a typo
+    // doesn't quietly serve the wrong track's calendar.
+    const difficultyParam = params.get("difficulty");
+    let difficulty: Difficulty = "easy";
+    if (difficultyParam !== null) {
+      if (!isDifficulty(difficultyParam)) {
+        return NextResponse.json(
+          { error: "Invalid difficulty — expected 'easy' or 'hard'" },
+          { status: 400 },
+        );
+      }
+      difficulty = difficultyParam;
+    }
+
     const { data, error } = await supabaseAdmin.rpc("admin_game_calendar", {
       p_from: toIsoDate(from),
       p_to: toIsoDate(to),
+      p_difficulty: difficulty,
     });
 
     if (error) {
@@ -75,6 +93,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({
       from: toIsoDate(from),
       to: toIsoDate(to),
+      difficulty,
       days: rows,
     });
   } catch (err) {

@@ -178,7 +178,14 @@ async function loadProfilePayload(
       take: SHOWN_CATCHES,
       select: { pokemonId: true, isShiny: true, caughtAt: true },
     }),
-    supabaseAdmin.rpc("user_game_stats", { p_user_id: userId }),
+    // Public profile shows the legacy easy-mode totals so the numbers
+    // here stay continuous with what these users have already accumulated.
+    // Hard-mode breakdowns belong on the player's own account page where
+    // we have room for a toggle.
+    supabaseAdmin.rpc("user_game_stats", {
+      p_user_id: userId,
+      p_difficulty: "easy",
+    }),
   ]);
 
   if (rpcRes.error) {

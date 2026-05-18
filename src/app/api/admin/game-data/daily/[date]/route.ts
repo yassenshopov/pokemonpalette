@@ -3,7 +3,11 @@ import { supabaseAdmin } from "@/lib/supabase";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
 import { getPokemonById } from "@/lib/pokemon";
-import { parseUtcDate } from "@/lib/game/similarity";
+import {
+  isDifficulty,
+  parseUtcDate,
+  type Difficulty,
+} from "@/lib/game/similarity";
 import { resolveDailyTarget } from "@/lib/game/daily-target";
 import { FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
 import { logger } from "@/lib/logger";
@@ -39,7 +43,7 @@ interface StatsRpcResult {
 }
 
 export async function GET(
-  _req: NextRequest,
+  req: NextRequest,
   { params }: { params: Promise<{ date: string }> },
 ) {
   const gate = await requireAdmin();
@@ -53,13 +57,33 @@ export async function GET(
     );
   }
 
+  // Difficulty is optional in the query string; default 'easy' keeps the
+  // legacy URL surface unchanged. Reject unknown values explicitly so a
+  // typo doesn't quietly serve the wrong puzzle's stats.
+  const difficultyParam = req.nextUrl.searchParams.get("difficulty");
+  let difficulty: Difficulty = "easy";
+  if (difficultyParam !== null) {
+    if (!isDifficulty(difficultyParam)) {
+      return NextResponse.json(
+        { error: "Invalid difficulty — expected 'easy' or 'hard'" },
+        { status: 400 },
+      );
+    }
+    difficulty = difficultyParam;
+  }
+
   try {
-    // Aggregates + recent plays in parallel; both are scoped to the date.
+    // Aggregates + recent plays in parallel; both are scoped to the
+    // (date, difficulty) pair so admins can compare easy vs. hard
+    // performance on the same UTC day.
     const parsedDateForQuery = parseUtcDate(date);
     const [statsRes, recentRows] = await Promise.all([
-      supabaseAdmin.rpc("admin_daily_puzzle_stats", { p_date: date }),
+      supabaseAdmin.rpc("admin_daily_puzzle_stats", {
+        p_date: date,
+        p_difficulty: difficulty,
+      }),
       prisma.dailyGameAttempt.findMany({
-        where: { date: parsedDateForQuery },
+        where: { date: parsedDateForQuery, difficulty },
         orderBy: { createdAt: "desc" },
         take: 8,
         select: {
@@ -111,7 +135,7 @@ export async function GET(
     // target_pokemon_id when there are real plays (so retroactive
     // override edits don't appear to rewrite history players experienced).
     const parsedDate = new Date(`${date}T00:00:00Z`);
-    const resolvedTarget = await resolveDailyTarget(parsedDate);
+    const resolvedTarget = await resolveDailyTarget(parsedDate, difficulty);
     const targetId = stats.kpis.target_pokemon_id ?? resolvedTarget.pokemonId;
 
     // Pokémon data for the mock + top-guesses previews.
@@ -200,6 +224,7 @@ export async function GET(
 
     return NextResponse.json({
       date,
+      difficulty,
       game_number: gameNumber,
       target_pokemon_id: targetId,
       pokemon: pokemonById[targetId] ?? null,

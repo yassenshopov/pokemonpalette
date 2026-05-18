@@ -4,8 +4,10 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { supabaseAdmin } from "@/lib/supabase";
 import {
+  DIFFICULTIES,
   parseUtcDate,
   todayUtcDateString,
+  type Difficulty,
 } from "@/lib/game/similarity";
 import { resolveDailyTarget } from "@/lib/game/daily-target";
 import { rateLimit } from "@/lib/rate-limit";
@@ -33,6 +35,9 @@ const GetQuerySchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
     .optional(),
+  // 'easy' (default) keeps the legacy behavior for callers that haven't
+  // been updated; 'hard' scopes to the wider full-Pokedex track.
+  difficulty: z.enum(DIFFICULTIES).optional(),
 });
 
 export async function GET(req: NextRequest) {
@@ -59,6 +64,7 @@ export async function GET(req: NextRequest) {
     stats: req.nextUrl.searchParams.get("stats") ?? undefined,
     limit: req.nextUrl.searchParams.get("limit") ?? undefined,
     date: req.nextUrl.searchParams.get("date") ?? undefined,
+    difficulty: req.nextUrl.searchParams.get("difficulty") ?? undefined,
   });
   if (!parsed.success) {
     return NextResponse.json(
@@ -66,15 +72,21 @@ export async function GET(req: NextRequest) {
       { status: 400 }
     );
   }
-  const { stats, limit = 60, date: dateFilter } = parsed.data;
+  const {
+    stats,
+    limit = 60,
+    date: dateFilter,
+    difficulty = "easy" as Difficulty,
+  } = parsed.data;
   const includeStats = stats === "true";
 
-  // Raw fetch — bounded history. We map back to snake_case keys below so
-  // existing client code that references `is_shiny`, `target_pokemon_id`,
-  // etc. keeps working.
+  // Raw fetch — bounded history, scoped to the requested difficulty so
+  // hard-mode rows don't leak into the easy-mode history sidebar (and
+  // vice versa).
   const attemptsRaw = await prisma.dailyGameAttempt.findMany({
     where: {
       userId,
+      difficulty,
       ...(dateFilter
         ? { date: parseUtcDate(dateFilter) }
         : {}),
@@ -87,6 +99,7 @@ export async function GET(req: NextRequest) {
     id: a.id,
     user_id: a.userId,
     date: a.date.toISOString().slice(0, 10),
+    difficulty: a.difficulty,
     target_pokemon_id: a.targetPokemonId,
     is_shiny: a.isShiny,
     guesses: a.guesses,
@@ -102,9 +115,12 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ attempts });
   }
 
+  // Stats RPC is scoped per-difficulty too — a player's hard-mode streak
+  // shouldn't be backfilled from easy wins (the migration ships an RPC
+  // signature change to enforce this).
   const { data: statsData, error: statsError } = await supabaseAdmin.rpc(
     "user_game_stats",
-    { p_user_id: userId }
+    { p_user_id: userId, p_difficulty: difficulty }
   );
   if (statsError) {
     logger.error("daily-game-attempts.stats_rpc_failed", {
@@ -135,6 +151,9 @@ export async function GET(req: NextRequest) {
 
 const PostBodySchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD"),
+  // Default 'easy' keeps existing clients (signed-out pending attempts
+  // that pre-date this column) working without a body change.
+  difficulty: z.enum(DIFFICULTIES).optional().default("easy"),
   isShiny: z.boolean().optional().default(false),
   // Cap guesses: the game allows 4 attempts. Cap at 8 defensively so stale
   // clients with a bug still can't dump arbitrary data into JSONB.
@@ -191,7 +210,7 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     );
   }
-  const { date, isShiny, guesses, hintsUsed } = parsed.data;
+  const { date, difficulty, isShiny, guesses, hintsUsed } = parsed.data;
 
   // Only today or yesterday UTC are acceptable. Yesterday is allowed so a
   // client finishing a game as midnight rolls over doesn't lose their
@@ -214,11 +233,12 @@ export async function POST(req: NextRequest) {
 
   // Server-authoritative outcome — client `won`, `attempts`, `targetPokemonId`
   // are all ignored. Admin overrides take precedence over the
-  // deterministic hash, so we route through the daily-target resolver.
-  // Shiny mode is forced when the override pins it on; otherwise the
-  // client's choice (normal/shiny in unlimited mixing) is honored.
+  // deterministic hash, so we route through the daily-target resolver
+  // on the same difficulty the player claims to be on. Shiny mode is
+  // forced when the override pins it on; otherwise the client's choice
+  // is honored.
   const parsedDate = parseUtcDate(date);
-  const dailyTarget = await resolveDailyTarget(parsedDate);
+  const dailyTarget = await resolveDailyTarget(parsedDate, difficulty);
   const effectiveShiny = dailyTarget.isOverride ? dailyTarget.isShiny : isShiny;
   const targetPokemonId = dailyTarget.pokemonId;
   const attempts = guesses.length;
@@ -227,7 +247,9 @@ export async function POST(req: NextRequest) {
 
   try {
     const attempt = await prisma.dailyGameAttempt.upsert({
-      where: { userId_date: { userId, date: parsedDate } },
+      where: {
+        userId_date_difficulty: { userId, date: parsedDate, difficulty },
+      },
       update: {
         targetPokemonId,
         isShiny: effectiveShiny,
@@ -241,6 +263,7 @@ export async function POST(req: NextRequest) {
       create: {
         userId,
         date: parsedDate,
+        difficulty,
         targetPokemonId,
         isShiny: effectiveShiny,
         guesses,
@@ -257,6 +280,7 @@ export async function POST(req: NextRequest) {
         id: attempt.id,
         user_id: attempt.userId,
         date: attempt.date.toISOString().slice(0, 10),
+        difficulty: attempt.difficulty,
         target_pokemon_id: attempt.targetPokemonId,
         is_shiny: attempt.isShiny,
         guesses: attempt.guesses,

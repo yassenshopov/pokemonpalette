@@ -38,6 +38,40 @@ export function getDailyShinyStatus(): boolean {
   return false;
 }
 
+// Difficulty tiers for daily mode. "easy" keeps the historical themed
+// weekly pool; "hard" widens to the full Pokedex with a shiny chance so
+// loyal players have a tougher daily target. See `daily-pool.ts` /
+// `daily-target.ts` for how this flows through Pokemon selection, and
+// migration 029 for the persistence/leaderboard split.
+export type Difficulty = "easy" | "hard";
+
+export const DIFFICULTIES = ["easy", "hard"] as const satisfies readonly Difficulty[];
+
+export function isDifficulty(value: unknown): value is Difficulty {
+  return value === "easy" || value === "hard";
+}
+
+/**
+ * Normalize an arbitrary input to a valid `Difficulty`, falling back to
+ * `"easy"` (the legacy / default mode) when the value is missing or
+ * unrecognized. Used at API boundaries to keep callers that haven't
+ * been updated yet on the original behavior.
+ */
+export function normalizeDifficulty(value: unknown): Difficulty {
+  return isDifficulty(value) ? value : "easy";
+}
+
+/**
+ * Hard mode rolls a shiny target deterministically per UTC date so every
+ * player worldwide sees the same shiny status on the same day. We mix
+ * the date string with a stable salt and split on parity — roughly 50%
+ * of days end up shiny over a long window.
+ */
+export function getDailyHardShinyStatus(date: Date): boolean {
+  const dateStr = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}-hard-shiny`;
+  return hashString(dateStr) % 2 === 0;
+}
+
 function hexToRgb(hex: string) {
   const hexClean = hex.replace("#", "");
   return {

@@ -38,6 +38,7 @@ import {
   type ShareTarget,
 } from "@/lib/game/share";
 import { getContrastHex } from "@/lib/game/colors";
+import type { Difficulty } from "@/lib/game/similarity";
 
 // Get generation from Pokemon ID
 function getGenerationFromId(id: number): number {
@@ -83,6 +84,12 @@ interface GameResultDialogProps {
   targetPokemon: Pokemon | null;
   isShiny: boolean | null;
   mode: "daily" | "unlimited";
+  /**
+   * Daily-only — which difficulty track this result belongs to. Threaded
+   * through to the share-grid header (so a hard-mode share reads
+   * "PokemonPalette #47 · Hard 3/4") and the analytics events.
+   */
+  difficulty?: Difficulty;
   user: any;
   onResetGame: () => void;
   targetColors?: ColorWithFrequency[];
@@ -118,6 +125,7 @@ export function GameResultDialog({
   targetPokemon,
   isShiny,
   mode,
+  difficulty,
   user,
   onResetGame,
   targetColors = [],
@@ -161,6 +169,9 @@ export function GameResultDialog({
       // Daily wins get a game number, unlimited wins omit it so the share
       // header reads "PokemonPalette · Unlimited" instead.
       gameNumber: mode === "daily" ? getDailyGameNumber() : undefined,
+      // Hard mode adds a "· Hard" tag to the header so a hard-mode share
+      // doesn't get mistaken for an easy-mode one in someone's feed.
+      difficulty: mode === "daily" ? difficulty : undefined,
       attempts,
       won: isWon,
       hintsUsed,
@@ -194,6 +205,7 @@ export function GameResultDialog({
     track("share_grid_clicked", {
       destination: target,
       mode,
+      difficulty: mode === "daily" ? difficulty : undefined,
       won: isWon,
       attempts,
       hints_used: hintsUsed,

@@ -220,9 +220,12 @@ export async function evaluateBadges(
       // user_game_stats returns { currentStreak, longestStreak, ... } as
       // jsonb. We only care about longestStreak for streak badges —
       // longest beats current here because "I once had a 30-day streak"
-      // is a permanent achievement regardless of today's state.
+      // is a permanent achievement regardless of today's state. Pinned
+      // to the 'easy' track so existing badges (earned on the historical
+      // single-difficulty schedule) don't suddenly require a hard-mode
+      // streak. Hard-mode-specific badges can be a follow-up.
       supabaseAdmin
-        .rpc("user_game_stats", { p_user_id: userId })
+        .rpc("user_game_stats", { p_user_id: userId, p_difficulty: "easy" })
         .then((res) => res.data as { longestStreak?: number } | null),
     ]);
 

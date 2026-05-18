@@ -120,6 +120,11 @@ model DailyGameAttempt {
   id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   userId          String   @map("user_id")
   date            DateTime @db.Date
+  // 'easy' (themed weekly pool) | 'hard' (full Pokedex + shiny chance).
+  // Each user can complete both per UTC day — see migration 029. The unique
+  // constraint below extends the original (user_id, date) pair with this
+  // column.
+  difficulty      String   @default("easy")
   targetPokemonId Int      @map("target_pokemon_id")
   isShiny         Boolean  @default(false) @map("is_shiny")
   guesses         Json     @db.JsonB
@@ -132,12 +137,14 @@ model DailyGameAttempt {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  // Unique + indexes match migrations 003 / 009 / 010 / 016.
-  @@unique([userId, date])
+  // Unique + indexes match migrations 003 / 009 / 010 / 016 / 029.
+  @@unique([userId, date, difficulty])
   @@index([userId, date(sort: Desc)], map: "idx_daily_game_attempts_user_date_desc")
   @@index([userId, createdAt(sort: Desc)], map: "idx_dga_user_created_at_desc")
   @@index([createdAt(sort: Desc)], map: "idx_dga_created_at_desc")
   @@index([targetPokemonId], map: "idx_dga_target_pokemon_id")
+  @@index([userId, difficulty, date(sort: Desc)], map: "idx_dga_user_difficulty_date_desc")
+  @@index([date, difficulty], map: "idx_dga_date_difficulty")
   @@map("daily_game_attempts")
 }
 
@@ -162,7 +169,12 @@ model PokedexEntry {
 }
 
 model DailyOverride {
-  date        DateTime @id @db.Date
+  date        DateTime @db.Date
+  // 'easy' | 'hard'. Each (date, difficulty) pair can have at most one
+  // override row; admins can pin either or both modes for a given UTC day.
+  // See migration 029. Default 'easy' preserves the original PK semantics
+  // for any pre-existing override rows.
+  difficulty  String   @default("easy")
   pokemonId   Int      @map("pokemon_id")
   isShiny     Boolean  @default(false) @map("is_shiny")
   createdBy   String   @map("created_by")
@@ -172,6 +184,7 @@ model DailyOverride {
 
   creator User @relation(fields: [createdBy], references: [id], onDelete: Cascade)
 
+  @@id([date, difficulty])
   @@index([date],      map: "idx_daily_overrides_date")
   @@index([createdBy], map: "idx_daily_overrides_created_by")
   @@map("daily_overrides")

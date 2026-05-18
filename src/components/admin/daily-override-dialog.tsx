@@ -39,6 +39,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
+import type { Difficulty } from "@/lib/game/similarity";
 
 export interface DailyOverrideValue {
   pokemonId: number;
@@ -49,6 +50,13 @@ export interface DailyOverrideValue {
 interface DailyOverrideDialogProps {
   /** ISO YYYY-MM-DD; the dialog edits the override for this date. */
   date: string;
+  /**
+   * Which difficulty track this override lives on. Each (date, difficulty)
+   * combination is its own override row in the DB, so the dialog must
+   * scope its PUT / DELETE calls accordingly. Defaults to "easy" so the
+   * many pre-hard-mode call sites keep operating on the easy track.
+   */
+  difficulty?: Difficulty;
   /** Current override row, or null if the day is on the algorithmic schedule. */
   current: DailyOverrideValue | null;
   /** The deterministic Pokemon id (shown for context — "today is normally X"). */
@@ -77,6 +85,7 @@ function fullDateLabel(iso: string): string {
 
 export function DailyOverrideDialog({
   date,
+  difficulty = "easy",
   current,
   algorithmicPokemonId,
   open,
@@ -126,6 +135,7 @@ export function DailyOverrideDialog({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           date,
+          difficulty,
           pokemonId,
           isShiny,
           note: note.trim() || null,
@@ -160,10 +170,19 @@ export function DailyOverrideDialog({
     setClearing(true);
     setError(null);
     try {
-      const res = await fetch(
-        `/api/admin/daily-overrides?date=${encodeURIComponent(date)}`,
-        { method: "DELETE" },
+      // DELETE has no body, so the (date, difficulty) pair travels as
+      // query params. The API treats missing `difficulty` as 'easy' for
+      // backward compat, but we always send it explicitly to make the
+      // request unambiguous in admin server logs.
+      const deleteUrl = new URL(
+        "/api/admin/daily-overrides",
+        window.location.origin,
       );
+      deleteUrl.searchParams.set("date", date);
+      deleteUrl.searchParams.set("difficulty", difficulty);
+      const res = await fetch(deleteUrl.pathname + deleteUrl.search, {
+        method: "DELETE",
+      });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
         throw new Error(data?.error ?? `Failed (${res.status})`);

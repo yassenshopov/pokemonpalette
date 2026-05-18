@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { resolveDailyTarget } from "@/lib/game/daily-target";
-import { parseUtcDate, todayUtcDateString } from "@/lib/game/similarity";
+import {
+  isDifficulty,
+  parseUtcDate,
+  todayUtcDateString,
+  type Difficulty,
+} from "@/lib/game/similarity";
 import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
 
 /**
- * Resolve the effective daily target for today (or an explicit `?date=`).
+ * Resolve the effective daily target for today (or an explicit `?date=`)
+ * on a given difficulty track (`?difficulty=easy|hard`, default `easy`).
  *
  * Public endpoint — the game page calls this to learn which Pokemon to
  * draw and whether shiny mode is forced. Admin overrides take precedence
@@ -18,6 +24,7 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   try {
     const dateParam = req.nextUrl.searchParams.get("date");
+    const difficultyParam = req.nextUrl.searchParams.get("difficulty");
     const todayStr = todayUtcDateString();
     const todayDate = parseUtcDate(todayStr);
     const yesterdayDate = new Date(todayDate.getTime() - 24 * 60 * 60 * 1000);
@@ -49,10 +56,25 @@ export async function GET(req: NextRequest) {
       date = parseUtcDate(dateParam);
     }
 
-    const target = await resolveDailyTarget(date);
+    // Reject unknown difficulty values rather than silently falling back to
+    // easy — a typo on the client should surface as a clear 400 instead of
+    // quietly serving the wrong puzzle.
+    let difficulty: Difficulty = "easy";
+    if (difficultyParam !== null) {
+      if (!isDifficulty(difficultyParam)) {
+        return NextResponse.json(
+          { error: "Invalid difficulty — expected 'easy' or 'hard'" },
+          { status: 400 },
+        );
+      }
+      difficulty = difficultyParam;
+    }
+
+    const target = await resolveDailyTarget(date, difficulty);
     return NextResponse.json(
       {
         date: target.date,
+        difficulty: target.difficulty,
         pokemonId: target.pokemonId,
         isShiny: target.isShiny,
         isOverride: target.isOverride,

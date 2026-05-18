@@ -4,7 +4,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin/auth";
 import { recordAudit } from "@/lib/admin/audit";
-import { parseUtcDate } from "@/lib/game/similarity";
+import { DIFFICULTIES, parseUtcDate } from "@/lib/game/similarity";
 import { DAILY_TARGET_TAG } from "@/lib/game/daily-target";
 import { submitToIndexNowAsync } from "@/lib/indexnow";
 import { logger } from "@/lib/logger";
@@ -29,6 +29,10 @@ function toIsoDate(date: Date): string {
 const ListQuerySchema = z.object({
   from: z.string().regex(ISO_DATE, "Expected YYYY-MM-DD"),
   to: z.string().regex(ISO_DATE, "Expected YYYY-MM-DD"),
+  // Optional — when omitted the list returns every difficulty for the
+  // window. The admin calendar uses this to render combined badges; the
+  // sheet narrows by difficulty when editing a specific cell.
+  difficulty: z.enum(DIFFICULTIES).optional(),
 });
 
 export async function GET(req: NextRequest) {
@@ -38,6 +42,7 @@ export async function GET(req: NextRequest) {
   const parsed = ListQuerySchema.safeParse({
     from: req.nextUrl.searchParams.get("from") ?? "",
     to: req.nextUrl.searchParams.get("to") ?? "",
+    difficulty: req.nextUrl.searchParams.get("difficulty") ?? undefined,
   });
   if (!parsed.success) {
     return NextResponse.json(
@@ -48,6 +53,7 @@ export async function GET(req: NextRequest) {
 
   const from = parseUtcDate(parsed.data.from);
   const to = parseUtcDate(parsed.data.to);
+  const difficultyFilter = parsed.data.difficulty;
   if (to.getTime() < from.getTime()) {
     return NextResponse.json(
       { error: "`to` must be on or after `from`." },
@@ -66,10 +72,14 @@ export async function GET(req: NextRequest) {
 
   try {
     const rows = await prisma.dailyOverride.findMany({
-      where: { date: { gte: from, lte: to } },
-      orderBy: { date: "asc" },
+      where: {
+        date: { gte: from, lte: to },
+        ...(difficultyFilter ? { difficulty: difficultyFilter } : {}),
+      },
+      orderBy: [{ date: "asc" }, { difficulty: "asc" }],
       select: {
         date: true,
+        difficulty: true,
         pokemonId: true,
         isShiny: true,
         note: true,
@@ -82,6 +92,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({
       overrides: rows.map((r) => ({
         date: toIsoDate(r.date),
+        difficulty: r.difficulty,
         pokemon_id: r.pokemonId,
         is_shiny: r.isShiny,
         note: r.note,
@@ -107,6 +118,10 @@ export async function GET(req: NextRequest) {
 
 const PutBodySchema = z.object({
   date: z.string().regex(ISO_DATE, "Expected YYYY-MM-DD"),
+  // Each (date, difficulty) pair has its own override row — see migration
+  // 029. Default 'easy' preserves the original single-difficulty PUT
+  // contract for any client that hasn't been redeployed yet.
+  difficulty: z.enum(DIFFICULTIES).optional().default("easy"),
   // Cap above any reasonable Pokedex size so the column constraint can
   // catch the rest. The actual Pokemon JSON files only go up to ~1,350.
   pokemonId: z.number().int().min(1).max(100_000),
@@ -136,7 +151,7 @@ export async function PUT(req: NextRequest) {
       { status: 400 },
     );
   }
-  const { date, pokemonId, isShiny, note } = parsed.data;
+  const { date, difficulty, pokemonId, isShiny, note } = parsed.data;
   const utcDate = parseUtcDate(date);
 
   try {
@@ -144,9 +159,10 @@ export async function PUT(req: NextRequest) {
     // a fresh "create override" from an "update existing override".
     // The `upsert` itself doesn't tell us which path it took.
     const existing = await prisma.dailyOverride.findUnique({
-      where: { date: utcDate },
+      where: { date_difficulty: { date: utcDate, difficulty } },
       select: {
         date: true,
+        difficulty: true,
         pokemonId: true,
         isShiny: true,
         note: true,
@@ -155,7 +171,7 @@ export async function PUT(req: NextRequest) {
     });
 
     const row = await prisma.dailyOverride.upsert({
-      where: { date: utcDate },
+      where: { date_difficulty: { date: utcDate, difficulty } },
       update: {
         pokemonId,
         isShiny,
@@ -164,6 +180,7 @@ export async function PUT(req: NextRequest) {
       },
       create: {
         date: utcDate,
+        difficulty,
         pokemonId,
         isShiny,
         note,
@@ -189,10 +206,13 @@ export async function PUT(req: NextRequest) {
       actorUserId: gate.adminUserId,
       action: "daily_override.upsert",
       targetType: "daily_override",
-      targetId: date,
+      // Audit target ID encodes both date and difficulty so admins can
+      // filter the log for a specific (date, difficulty) override.
+      targetId: `${date}:${difficulty}`,
       before: existing,
       after: {
         date: toIsoDate(row.date),
+        difficulty: row.difficulty,
         pokemonId: row.pokemonId,
         isShiny: row.isShiny,
         note: row.note,
@@ -203,6 +223,7 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({
       override: {
         date: toIsoDate(row.date),
+        difficulty: row.difficulty,
         pokemon_id: row.pokemonId,
         is_shiny: row.isShiny,
         note: row.note,
@@ -214,6 +235,7 @@ export async function PUT(req: NextRequest) {
   } catch (err) {
     logger.error("admin.daily-overrides.upsert_failed", {
       date,
+      difficulty,
       error: err instanceof Error ? err.message : String(err),
     });
     return NextResponse.json(
@@ -233,19 +255,29 @@ export async function DELETE(req: NextRequest) {
   if (!gate.ok) return gate.response;
 
   const dateParam = req.nextUrl.searchParams.get("date");
+  const difficultyParam =
+    req.nextUrl.searchParams.get("difficulty") ?? "easy";
   if (!dateParam || !ISO_DATE.test(dateParam)) {
     return NextResponse.json(
       { error: "Missing or invalid `date` (expected YYYY-MM-DD)" },
       { status: 400 },
     );
   }
+  if (difficultyParam !== "easy" && difficultyParam !== "hard") {
+    return NextResponse.json(
+      { error: "Invalid `difficulty` (expected 'easy' or 'hard')" },
+      { status: 400 },
+    );
+  }
+  const difficulty = difficultyParam;
 
   try {
     const utcDate = parseUtcDate(dateParam);
     const before = await prisma.dailyOverride.findUnique({
-      where: { date: utcDate },
+      where: { date_difficulty: { date: utcDate, difficulty } },
       select: {
         date: true,
+        difficulty: true,
         pokemonId: true,
         isShiny: true,
         note: true,
@@ -254,7 +286,7 @@ export async function DELETE(req: NextRequest) {
     });
 
     const result = await prisma.dailyOverride.deleteMany({
-      where: { date: utcDate },
+      where: { date: utcDate, difficulty },
     });
     if (result.count > 0) {
       revalidateTag(DAILY_TARGET_TAG);
@@ -266,7 +298,7 @@ export async function DELETE(req: NextRequest) {
         actorUserId: gate.adminUserId,
         action: "daily_override.delete",
         targetType: "daily_override",
-        targetId: dateParam,
+        targetId: `${dateParam}:${difficulty}`,
         before,
         after: null,
       });
@@ -275,6 +307,7 @@ export async function DELETE(req: NextRequest) {
   } catch (err) {
     logger.error("admin.daily-overrides.delete_failed", {
       date: dateParam,
+      difficulty,
       error: err instanceof Error ? err.message : String(err),
     });
     return NextResponse.json(

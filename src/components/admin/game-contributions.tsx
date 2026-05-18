@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { toIsoDate } from "@/lib/admin/range";
+import type { Difficulty } from "@/lib/game/similarity";
 
 // --------------------------------------------------------------------------
 // Types
@@ -30,6 +31,14 @@ interface GameContributionsProps {
   openDate?: string | null;
   /** Open the detail sheet for a given day. */
   onOpenDate: (iso: string) => void;
+  /**
+   * Which difficulty track to render. Drives the same /api/admin/game-data/
+   * calendar endpoint as the month-grid, so the heatmap and streak
+   * tallies match whichever track is selected in the parent. Defaults
+   * to "easy" so any standalone consumer keeps showing the original
+   * single-track behavior.
+   */
+  difficulty?: Difficulty;
 }
 
 // --------------------------------------------------------------------------
@@ -114,6 +123,7 @@ const WEEKDAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""];
 export function GameContributions({
   openDate,
   onOpenDate,
+  difficulty = "easy",
 }: GameContributionsProps) {
   const currentYear = new Date().getUTCFullYear();
   const [year, setYear] = React.useState<number>(currentYear);
@@ -131,6 +141,7 @@ export function GameContributions({
       const params = new URLSearchParams({
         from: toIsoDate(from),
         to: toIsoDate(to),
+        difficulty,
       });
       const res = await fetch(
         `/api/admin/game-data/calendar?${params.toString()}`,
@@ -150,7 +161,7 @@ export function GameContributions({
       setLoading(false);
       setRefreshing(false);
     }
-  }, [from, to]);
+  }, [from, to, difficulty]);
 
   React.useEffect(() => {
     setLoading(true);

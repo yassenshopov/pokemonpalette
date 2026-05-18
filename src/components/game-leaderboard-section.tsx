@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { track } from "@/lib/analytics";
 import { GameLeaderboard } from "@/components/game-leaderboard";
+import type { Difficulty } from "@/lib/game/similarity";
 
 // Single row in the daily leaderboard — same shape on the public board
 // and inside the per-user `neighbors` payload. `won=false` represents a
@@ -42,6 +43,13 @@ interface GameLeaderboardSectionProps {
   // Strips the section's own card chrome so it can sit inside a Dialog
   // (or anywhere else with its own surface) without nesting borders.
   embedded?: boolean;
+  /**
+   * Which daily track to fetch. Each (date, difficulty) board is
+   * independent so a player's hard-mode score isn't compared against
+   * easy-mode players. Defaults to `"easy"` for the historical
+   * single-track behavior.
+   */
+  difficulty?: Difficulty;
 }
 
 // Fetches today's leaderboard slices in parallel. The two endpoints are
@@ -49,6 +57,7 @@ interface GameLeaderboardSectionProps {
 // is per-user. Combining them at the client keeps both characteristics.
 export function GameLeaderboardSection({
   embedded = false,
+  difficulty = "easy",
 }: GameLeaderboardSectionProps = {}) {
   const { user, isLoaded: userLoaded } = useUser();
   const [publicData, setPublicData] = useState<PublicResponse | null>(null);
@@ -58,7 +67,9 @@ export function GameLeaderboardSection({
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    fetch(`/api/daily-game-attempts/leaderboard?limit=${TOP_LIMIT}`)
+    fetch(
+      `/api/daily-game-attempts/leaderboard?limit=${TOP_LIMIT}&difficulty=${encodeURIComponent(difficulty)}`,
+    )
       .then((res) => (res.ok ? (res.json() as Promise<PublicResponse>) : null))
       .then((data) => {
         if (cancelled) return;
@@ -73,7 +84,7 @@ export function GameLeaderboardSection({
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [difficulty]);
 
   // Re-key on user.id so signing in/out flips the row cleanly. Gated on
   // userLoaded to avoid a flash of "Unauthorized" while Clerk hydrates.
@@ -84,7 +95,7 @@ export function GameLeaderboardSection({
     }
     let cancelled = false;
     fetch(
-      `/api/daily-game-attempts/leaderboard/me?neighbors=${NEIGHBOR_WINDOW}`
+      `/api/daily-game-attempts/leaderboard/me?neighbors=${NEIGHBOR_WINDOW}&difficulty=${encodeURIComponent(difficulty)}`,
     )
       .then((res) => (res.ok ? (res.json() as Promise<MeResponse>) : null))
       .then((data) => {
@@ -97,11 +108,11 @@ export function GameLeaderboardSection({
     return () => {
       cancelled = true;
     };
-  }, [user?.id, userLoaded]);
+  }, [user?.id, userLoaded, difficulty]);
 
   useEffect(() => {
-    track("leaderboard_viewed", { variant: "daily_simple" });
-  }, []);
+    track("leaderboard_viewed", { variant: "daily_simple", difficulty });
+  }, [difficulty]);
 
   return (
     <GameLeaderboard

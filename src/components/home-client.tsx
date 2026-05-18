@@ -42,14 +42,6 @@ const ThemeExporter = dynamic(
     })),
   { ssr: false }
 );
-const LegendsZABanner = dynamic(
-  () =>
-    import("@/components/legends-za-banner").then((m) => ({
-      default: m.LegendsZABanner,
-    })),
-  { ssr: false }
-);
-
 interface HomeClientProps {
   /** Server-seeded initial value for the Pokémon-menu collapsed
    *  state, parsed from the `pokemon_menu_collapsed` cookie in the
@@ -97,10 +89,6 @@ export function HomeClient({ initialMenuCollapsed = false }: HomeClientProps) {
 
   return (
     <main id="main" className="flex flex-col h-screen overflow-hidden">
-      <LegendsZABanner 
-        primaryColor={pokemonColors[0]} 
-        secondaryColor={pokemonColors[1] || pokemonColors[0]} 
-      />
       <div className="flex flex-1 overflow-hidden">
         <CoffeeCTA primaryColor={pokemonColors[0]} />
         <CollapsibleSidebar primaryColor={pokemonColors[0]} />

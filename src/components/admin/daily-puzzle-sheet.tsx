@@ -48,10 +48,19 @@ import {
   type DailyOverrideValue,
 } from "@/components/admin/daily-override-dialog";
 import { pickDailyPokemonId } from "@/lib/game/daily-pool";
+import type { Difficulty } from "@/lib/game/similarity";
 
 interface DailyPuzzleSheetProps {
   /** ISO date (YYYY-MM-DD) to show, or null when closed. */
   date: string | null;
+  /**
+   * Which difficulty track to load stats / override for. Each
+   * (date, difficulty) pair is its own row in the daily_game_attempts
+   * and daily_overrides tables, so the sheet is fully scoped to one
+   * combination at a time. Defaults to "easy" to match historical
+   * single-track behavior.
+   */
+  difficulty?: Difficulty;
   onOpenChange: (open: boolean) => void;
 }
 
@@ -126,10 +135,12 @@ interface DailyPuzzleResponse {
  */
 export const DAILY_OVERRIDE_CHANGED_EVENT = "admin:daily-override-changed";
 
-function notifyOverrideChanged(date: string) {
+function notifyOverrideChanged(date: string, difficulty: Difficulty) {
   if (typeof window === "undefined") return;
   window.dispatchEvent(
-    new CustomEvent(DAILY_OVERRIDE_CHANGED_EVENT, { detail: { date } }),
+    new CustomEvent(DAILY_OVERRIDE_CHANGED_EVENT, {
+      detail: { date, difficulty },
+    }),
   );
 }
 
@@ -191,6 +202,7 @@ async function copy(text: string, label: string) {
 
 export function DailyPuzzleSheet({
   date,
+  difficulty = "easy",
   onOpenChange,
 }: DailyPuzzleSheetProps) {
   const [data, setData] = React.useState<DailyPuzzleResponse | null>(null);
@@ -206,10 +218,18 @@ export function DailyPuzzleSheet({
     const ctrl = new AbortController();
     setLoading(true);
     setError(null);
-    fetch(`/api/admin/game-data/daily/${date}`, {
-      signal: ctrl.signal,
-      cache: "no-store",
-    })
+    // Always send `difficulty` explicitly even for 'easy' so the server
+    // logs make it obvious which track this request is scoped to —
+    // helps when debugging discrepancies between the two leaderboards.
+    fetch(
+      `/api/admin/game-data/daily/${date}?difficulty=${encodeURIComponent(
+        difficulty,
+      )}`,
+      {
+        signal: ctrl.signal,
+        cache: "no-store",
+      },
+    )
       .then(async (res) => {
         if (!res.ok) {
           const j = await res.json().catch(() => null);
@@ -227,7 +247,7 @@ export function DailyPuzzleSheet({
         setLoading(false);
       });
     return () => ctrl.abort();
-  }, [date]);
+  }, [date, difficulty]);
 
   const handleOverrideChanged = React.useCallback(
     (next: DailyOverrideValue | null) => {
@@ -250,9 +270,9 @@ export function DailyPuzzleSheet({
             }
           : prev,
       );
-      notifyOverrideChanged(date);
+      notifyOverrideChanged(date, difficulty);
     },
-    [date],
+    [date, difficulty],
   );
 
   return (
@@ -270,6 +290,7 @@ export function DailyPuzzleSheet({
           <>
             <SheetHeaderBlock
               date={date}
+              difficulty={difficulty}
               data={data}
               loading={loading && !data}
               onOverrideChanged={handleOverrideChanged}
@@ -308,11 +329,13 @@ export function DailyPuzzleSheet({
 
 function SheetHeaderBlock({
   date,
+  difficulty,
   data,
   loading,
   onOverrideChanged,
 }: {
   date: string;
+  difficulty: Difficulty;
   data: DailyPuzzleResponse | null;
   loading: boolean;
   onOverrideChanged: (next: DailyOverrideValue | null) => void;
@@ -322,10 +345,13 @@ function SheetHeaderBlock({
   const [overrideOpen, setOverrideOpen] = React.useState(false);
   const hasOverride = Boolean(data?.override);
   // Algorithmic pick — same formula every other consumer uses, surfaced
-  // here so the dialog can show "matches algorithmic pick" hints.
+  // here so the dialog can show "matches algorithmic pick" hints. The
+  // difficulty seed is mixed into the hash on the easy/hard tracks so
+  // the two modes resolve to independent picks on the same date.
   const algorithmicPokemonId = React.useMemo(
-    () => pickDailyPokemonId(new Date(`${date}T00:00:00Z`), false),
-    [date],
+    () =>
+      pickDailyPokemonId(new Date(`${date}T00:00:00Z`), false, difficulty),
+    [date, difficulty],
   );
 
   return (
@@ -355,6 +381,21 @@ function SheetHeaderBlock({
           </SheetDescription>
         </div>
         <div className="flex flex-wrap items-center gap-1.5 pr-7">
+          {/* Difficulty pill is always rendered so the sheet's track is
+              unambiguous — easy vs. hard rows are entirely separate in
+              the DB and the override action below would otherwise feel
+              identical between the two modes. */}
+          <Badge
+            variant={difficulty === "hard" ? "default" : "outline"}
+            className={cn(
+              "gap-1 uppercase tracking-wide",
+              difficulty === "hard" &&
+                "bg-rose-500 text-rose-50 hover:bg-rose-500/90",
+            )}
+            aria-label={`Difficulty: ${difficulty}`}
+          >
+            {difficulty}
+          </Badge>
           {when === "today" ? (
             <Badge variant="default" className="gap-1">
               <Clock className="size-3" aria-hidden="true" />
@@ -431,6 +472,7 @@ function SheetHeaderBlock({
 
       <DailyOverrideDialog
         date={date}
+        difficulty={difficulty}
         current={
           data?.override
             ? {

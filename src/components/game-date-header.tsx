@@ -2,12 +2,20 @@
 
 import { FIRST_DAILY_GAME_DATE } from "@/constants/pokemon";
 import { getDailyPoolForDate } from "@/lib/game/daily-pool";
+import type { Difficulty } from "@/lib/game/similarity";
 
 interface GameDateHeaderProps {
   mode: "daily" | "unlimited";
+  /**
+   * Daily-only — picks which pool label to display. Easy shows the
+   * active weekly theme ("Johto week"); hard shows a stable
+   * "Full Pokédex" label since the hard track doesn't rotate.
+   * Optional so unlimited/multiplayer callers don't need to know.
+   */
+  difficulty?: Difficulty;
 }
 
-export function GameDateHeader({ mode }: GameDateHeaderProps) {
+export function GameDateHeader({ mode, difficulty = "easy" }: GameDateHeaderProps) {
   if (mode !== "daily") return null;
 
   const today = new Date();
@@ -25,11 +33,13 @@ export function GameDateHeader({ mode }: GameDateHeaderProps) {
     day: "numeric",
   });
 
-  // Active weekly theme — surfaced so players can see "Johto week" / "Hoenn
-  // week" and have a reason to return when their favorite region cycles in.
-  // Derived client-side because the pool is fully date-deterministic, which
-  // sidesteps any wiring through the server fetch hook above.
-  const pool = getDailyPoolForDate(today);
+  // Pool label depends on difficulty: easy shows the active weekly theme
+  // so loyal players have a reason to return when their favorite region
+  // cycles in; hard shows the stable "Full Pokédex" label so the badge
+  // communicates the wider pool. Derived client-side because the pool is
+  // fully date-deterministic, which sidesteps any wiring through the
+  // server fetch hook above.
+  const pool = getDailyPoolForDate(today, difficulty);
 
   return (
     <div className="text-center font-heading">
@@ -47,7 +57,11 @@ export function GameDateHeader({ mode }: GameDateHeaderProps) {
         <div className="flex items-center gap-2">
           <span
             className="inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium text-foreground/80"
-            title={`This week's daily pool: ${pool.label}`}
+            title={
+              difficulty === "hard"
+                ? "Hard mode pulls from the full Pokédex"
+                : `This week's daily pool: ${pool.label}`
+            }
           >
             {pool.label}
           </span>
@@ -56,4 +70,3 @@ export function GameDateHeader({ mode }: GameDateHeaderProps) {
     </div>
   );
 }
-

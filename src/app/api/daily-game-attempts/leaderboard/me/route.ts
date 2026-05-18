@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { z } from "zod";
 import { supabaseAdmin } from "@/lib/supabase";
 import { logger } from "@/lib/logger";
-import { todayUtcDateString } from "@/lib/game/similarity";
+import { DIFFICULTIES, todayUtcDateString } from "@/lib/game/similarity";
 
 // GET — the caller's row + immediate neighbors for the day's puzzle,
 // plus their all-time current streak (so the UI can show the small
@@ -22,6 +22,7 @@ const QuerySchema = z.object({
   // bug in the client can't inflate the response into a full-table
   // sandwich.
   neighbors: z.coerce.number().int().min(0).max(5).optional(),
+  difficulty: z.enum(DIFFICULTIES).optional(),
 });
 
 export async function GET(req: NextRequest) {
@@ -48,6 +49,7 @@ export async function GET(req: NextRequest) {
   const parsed = QuerySchema.safeParse({
     date: req.nextUrl.searchParams.get("date") ?? undefined,
     neighbors: req.nextUrl.searchParams.get("neighbors") ?? undefined,
+    difficulty: req.nextUrl.searchParams.get("difficulty") ?? undefined,
   });
   if (!parsed.success) {
     return NextResponse.json(
@@ -57,16 +59,23 @@ export async function GET(req: NextRequest) {
   }
   const date = parsed.data.date ?? todayUtcDateString();
   const neighbors = parsed.data.neighbors ?? 2;
+  const difficulty = parsed.data.difficulty ?? "easy";
 
   const { data, error } = await supabaseAdmin.rpc(
     "daily_puzzle_leaderboard_me",
-    { p_date: date, p_user_id: userId, p_neighbors: neighbors }
+    {
+      p_date: date,
+      p_user_id: userId,
+      p_neighbors: neighbors,
+      p_difficulty: difficulty,
+    }
   );
 
   if (error) {
     logger.error("leaderboard_me.rpc_failed", {
       userId,
       date,
+      difficulty,
       error: error.message,
     });
     return NextResponse.json(

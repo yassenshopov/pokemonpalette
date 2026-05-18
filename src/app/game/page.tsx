@@ -19,9 +19,11 @@ import {
 import { Pokemon } from "@/types/pokemon";
 import {
   calculateSimilarity,
+  getDailyHardShinyStatus,
   getDailyShinyStatus,
   getGuessToastMessage,
   todayUtcDateString,
+  type Difficulty,
 } from "@/lib/game/similarity";
 import {
   getDailyPoolForDate,
@@ -48,6 +50,10 @@ import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 import { CoffeeCTA } from "@/components/coffee-cta";
 import {
+  HardModeBanner,
+  HARD_MODE_BANNER_DISMISS_EVENT,
+} from "@/components/hard-mode-banner";
+import {
   RefreshCw,
   Lightbulb,
   Flag,
@@ -57,6 +63,7 @@ import {
   Infinity as InfinityIcon,
   Users,
   BookMarked,
+  Skull,
 } from "lucide-react";
 import { GameDateHeader } from "@/components/game-date-header";
 import { GuessCard } from "@/components/guess-card";
@@ -249,8 +256,13 @@ interface UnlimitedModeSettings {
  * override before falling back to the deterministic hash. On any failure
  * (network, 5xx, etc.) we degrade gracefully to the same client-side hash
  * the resolver uses, so the game keeps working offline / under load.
+ *
+ * `difficulty` switches between the existing themed weekly track and the
+ * full-Pokedex hard track. Both call the same endpoint; the server picks
+ * the corresponding pool + override row.
  */
 async function fetchDailyTarget(
+  difficulty: Difficulty,
   fallbackShiny: boolean,
 ): Promise<{
   pokemonId: number;
@@ -259,7 +271,9 @@ async function fetchDailyTarget(
   poolLabel: string;
 }> {
   try {
-    const res = await fetch("/api/daily-target");
+    const res = await fetch(
+      `/api/daily-target?difficulty=${encodeURIComponent(difficulty)}`,
+    );
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = (await res.json()) as {
       pokemonId: number;
@@ -275,7 +289,7 @@ async function fetchDailyTarget(
     }
     // Fallback to the client-side pool resolver if the server omits the
     // theme fields (e.g. mid-deploy when an old function is still warm).
-    const fallbackPool = getDailyPoolForDate(new Date());
+    const fallbackPool = getDailyPoolForDate(new Date(), difficulty);
     return {
       pokemonId: data.pokemonId,
       isShiny: data.isShiny,
@@ -285,9 +299,9 @@ async function fetchDailyTarget(
   } catch (err) {
     console.warn("daily-target fetch failed, using deterministic fallback", err);
     const today = new Date();
-    const pool = getDailyPoolForDate(today);
+    const pool = getDailyPoolForDate(today, difficulty);
     return {
-      pokemonId: pickDailyPokemonId(today, fallbackShiny),
+      pokemonId: pickDailyPokemonId(today, fallbackShiny, difficulty),
       isShiny: fallbackShiny,
       poolTheme: pool.theme,
       poolLabel: pool.label,
@@ -299,6 +313,14 @@ export default function GamePage() {
   const { user, isLoaded: userLoaded } = useUser();
   const allPokemonList = getAllPokemonMetadata();
   const [mode, setMode] = useState<GameMode>("daily");
+  // Daily mode has two parallel tracks. "easy" keeps the existing themed
+  // weekly pool; "hard" widens to the full Pokedex with a shiny chance.
+  // Each is tracked independently — streaks, leaderboards, and admin
+  // overrides all live per (date, difficulty), so a player can complete
+  // both tracks each day without one backfilling into the other's stats.
+  // The selection always boots to "easy" so returning players land on
+  // their familiar puzzle.
+  const [difficulty, setDifficulty] = useState<Difficulty>("easy");
   const [isShiny, setIsShiny] = useState<boolean | null>(null);
   const [unlimitedSettings, setUnlimitedSettings] =
     useState<UnlimitedModeSettings>({
@@ -497,7 +519,13 @@ export default function GamePage() {
           const pending = localStorage.getItem(PENDING_ATTEMPTS_KEY);
           if (pending) {
             const attempts = JSON.parse(pending);
-            const todayAttempt = attempts.find((a: any) => a.date === dateStr);
+            // Older entries (pre-hard-mode) didn't store `difficulty`;
+            // those default to "easy" so loyal returning players see
+            // their original attempt as expected.
+            const todayAttempt = attempts.find(
+              (a: any) =>
+                a.date === dateStr && (a.difficulty ?? "easy") === difficulty,
+            );
 
             if (todayAttempt) {
               // User has pending attempt for today - load it
@@ -615,10 +643,12 @@ export default function GamePage() {
       }
 
       // Check API for signed-in users. Fetch stats in the same request so
-      // we don't need a second round-trip on mount.
+      // we don't need a second round-trip on mount. Scoped to the current
+      // difficulty so the sidebar stats / today's attempt match what the
+      // player has actually completed on this track.
       try {
         const response = await fetch(
-          `/api/daily-game-attempts?stats=true`
+          `/api/daily-game-attempts?stats=true&difficulty=${encodeURIComponent(difficulty)}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -753,11 +783,14 @@ export default function GamePage() {
     // Reset hints when mode or Pokemon changes
     setRevealedHints([]);
     generatedHintsRef.current = [];
+    // Toggling difficulty inside daily mode is a fresh game on a fresh
+    // track, so include it here too — it triggers the same "load
+    // today's attempt for this (date, difficulty)" path.
     // We intentionally key off user?.id rather than the full user object so we
     // don't re-fetch the daily attempt every time Clerk hands us a new user
     // reference.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, user?.id, userLoaded]);
+  }, [mode, difficulty, user?.id, userLoaded]);
 
   // Initialize game
   useEffect(() => {
@@ -780,7 +813,14 @@ export default function GamePage() {
       let pokemonId: number;
 
       if (mode === "daily") {
-        const target = await fetchDailyTarget(getDailyShinyStatus());
+        // Hard mode rolls a deterministic per-date shiny so every player
+        // sees the same shiny status on the same day. The server makes
+        // the same choice; this is just the fallback for offline / 5xx.
+        const fallbackShiny =
+          difficulty === "hard"
+            ? getDailyHardShinyStatus(new Date())
+            : getDailyShinyStatus();
+        const target = await fetchDailyTarget(difficulty, fallbackShiny);
         gameShiny = target.isShiny;
         pokemonId = target.pokemonId;
       } else {
@@ -809,6 +849,7 @@ export default function GamePage() {
       setTargetPokemonId(pokemonId);
       track("game_started", {
         mode,
+        difficulty: mode === "daily" ? difficulty : undefined,
         pokemon_id: pokemonId,
         is_shiny: gameShiny,
         generation: getGenerationFromId(pokemonId),
@@ -860,9 +901,11 @@ export default function GamePage() {
 
     initializeGame();
     // We intentionally avoid retriggering initialization on every guess change
-    // or status flip; the relevant inputs are mode, list size, and auth gate.
+    // or status flip; the relevant inputs are mode, difficulty, list size,
+    // and auth gate. Adding `difficulty` here triggers a fresh fetch when
+    // the player toggles easy/hard inside the daily tab.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, pokemonList.length, checkingAuth, unlimitedSettings]);
+  }, [mode, difficulty, pokemonList.length, checkingAuth, unlimitedSettings]);
 
   // Trigger confetti on win with palette colors. We lazy-load the library so
   // it only enters the client bundle for players who actually win.
@@ -918,7 +961,8 @@ export default function GamePage() {
 
   // Refresh user stats only after a game ends. The initial stats payload is
   // fetched together with today's attempt in `checkTodayAttempt` above, so
-  // we don't need to hit the network on mount.
+  // we don't need to hit the network on mount. Stats are per-difficulty:
+  // the player's hard-mode streak shouldn't be backfilled from easy wins.
   useEffect(() => {
     if (mode !== "daily") {
       setUserStats(null);
@@ -933,7 +977,7 @@ export default function GamePage() {
     const fetchStats = async () => {
       try {
         const statsResponse = await fetch(
-          "/api/daily-game-attempts?stats=true"
+          `/api/daily-game-attempts?stats=true&difficulty=${encodeURIComponent(difficulty)}`
         );
         if (statsResponse.ok) {
           const statsData = await statsResponse.json();
@@ -947,7 +991,7 @@ export default function GamePage() {
     };
 
     fetchStats();
-  }, [mode, user, status]);
+  }, [mode, difficulty, user, status]);
 
   const handleGuess = async (pokemonId: number) => {
     if (status !== "playing" || loadingGuess) return;
@@ -1020,6 +1064,7 @@ export default function GamePage() {
 
     track("guess_submitted", {
       mode,
+      difficulty: mode === "daily" ? difficulty : undefined,
       attempt_number: newAttempts,
       similarity: Math.round(similarity),
       is_correct: won,
@@ -1052,6 +1097,7 @@ export default function GamePage() {
       setStatus("won");
       track("game_completed", {
         mode,
+        difficulty: mode === "daily" ? difficulty : undefined,
         outcome: "won",
         attempts: newAttempts,
         hints_used: revealedHints.length,
@@ -1074,6 +1120,10 @@ export default function GamePage() {
             attempts: newAttempts,
             hintsUsed: revealedHints.length,
             date: mode === "daily" ? todayUtcDateString() : undefined,
+            // Server uses this to validate the catch against the right
+            // daily target (easy vs hard pin different Pokémon). Always
+            // sent for daily; undefined for unlimited.
+            difficulty: mode === "daily" ? difficulty : undefined,
           },
           targetPokemon.name
         );
@@ -1116,6 +1166,7 @@ export default function GamePage() {
       setStatus("lost");
       track("game_completed", {
         mode,
+        difficulty: mode === "daily" ? difficulty : undefined,
         outcome: "lost",
         attempts: newAttempts,
         hints_used: revealedHints.length,
@@ -1164,6 +1215,7 @@ export default function GamePage() {
 
     const attemptData = {
       date: dateStr,
+      difficulty,
       targetPokemonId: targetPokemonId,
       isShiny: isShiny === true,
       guesses: allGuesses.map((g) => g.pokemonId),
@@ -1175,8 +1227,14 @@ export default function GamePage() {
 
     const pending: any[] = readLocalJson<any[]>(PENDING_ATTEMPTS_KEY, []);
 
-    // Check if we already have an attempt for this date
-    const existingIndex = pending.findIndex((p: any) => p.date === dateStr);
+    // Pending entries are unique on (date, difficulty) — an existing
+    // easy-mode attempt for today shouldn't be clobbered when the player
+    // also finishes hard mode. Legacy entries without a `difficulty`
+    // field are treated as easy so they keep being updated correctly.
+    const existingIndex = pending.findIndex(
+      (p: any) =>
+        p.date === dateStr && (p.difficulty ?? "easy") === difficulty,
+    );
 
     if (existingIndex >= 0) {
       // Update existing attempt
@@ -1206,6 +1264,7 @@ export default function GamePage() {
 
       const attemptData = {
         date: dateStr,
+        difficulty,
         targetPokemonId: targetPokemonId,
         isShiny: isShiny === true,
         guesses: allGuesses.map((g) => g.pokemonId),
@@ -1255,6 +1314,10 @@ export default function GamePage() {
     attempts: number;
     hintsUsed: number;
     date?: string; // YYYY-MM-DD UTC, daily mode only.
+    // Daily mode only — picks which difficulty's target the server
+    // should validate against. Optional so older queued entries from
+    // pre-hard-mode clients still deserialize.
+    difficulty?: Difficulty;
   };
 
   const queuePendingPokedexCatch = (entry: PendingPokedexCatch) => {
@@ -1806,7 +1869,11 @@ export default function GamePage() {
     let pokemonId: number;
 
     if (mode === "daily") {
-      const target = await fetchDailyTarget(getDailyShinyStatus());
+      const fallbackShiny =
+        difficulty === "hard"
+          ? getDailyHardShinyStatus(new Date())
+          : getDailyShinyStatus();
+      const target = await fetchDailyTarget(difficulty, fallbackShiny);
       gameShiny = target.isShiny;
       pokemonId = target.pokemonId;
     } else {
@@ -1834,6 +1901,7 @@ export default function GamePage() {
     setTargetPokemonId(pokemonId);
     track("game_started", {
       mode,
+      difficulty: mode === "daily" ? difficulty : undefined,
       pokemon_id: pokemonId,
       is_shiny: gameShiny,
       generation: getGenerationFromId(pokemonId),
@@ -1860,7 +1928,22 @@ export default function GamePage() {
   };
 
   return (
-    <main id="main" className="flex h-screen overflow-hidden">
+    <main id="main" className="flex flex-col h-screen overflow-hidden">
+      {/* Hard-mode launch banner — site-wide top row, dismissible, one
+          shot. Lives at the top of `<main>` so it shows on every game
+          mode (daily / unlimited / multiplayer) until the player either
+          closes it or engages with the Hard tab. The banner reads the
+          current daily target's primary color when one is available
+          so it harmonizes with the puzzle currently on screen, falling
+          back to a calm brand red otherwise. */}
+      <HardModeBanner
+        primaryColor={
+          targetColors.length > 0 && targetColors[0]?.hex
+            ? targetColors[0].hex
+            : undefined
+        }
+      />
+      <div className="flex flex-1 overflow-hidden">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -1925,7 +2008,9 @@ export default function GamePage() {
 
           {/* Game Number, Date, and Mode Selection */}
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            {mode !== "multiplayer" && <GameDateHeader mode={mode} />}
+            {mode !== "multiplayer" && (
+              <GameDateHeader mode={mode} difficulty={difficulty} />
+            )}
             <div className="flex-shrink-0">
               <Tabs
                 value={mode}
@@ -1999,6 +2084,90 @@ export default function GamePage() {
               </Tabs>
             </div>
           </div>
+
+          {/* Difficulty switcher — only meaningful in daily mode. Easy is
+              the historical themed weekly pool; hard widens to the full
+              Pokedex with a per-date shiny chance. Each track has its own
+              streak, leaderboard, and admin override row, so toggling
+              this swaps in a different puzzle and clears the on-screen
+              guesses + status. */}
+          {mode === "daily" && (
+            <div className="w-full flex items-center justify-center -mt-4 mb-2">
+              <Tabs
+                value={difficulty}
+                onValueChange={(value) => {
+                  const next = value as Difficulty;
+                  if (next === difficulty) return;
+                  track("difficulty_switched", { from: difficulty, to: next });
+                  // Reset gameplay state so the next render doesn't briefly
+                  // show the other track's guesses / win banner. The
+                  // checkTodayAttempt + initializeGame effects then load
+                  // whatever attempt (if any) belongs to the new track.
+                  setGuesses([]);
+                  setAttempts(0);
+                  setStatus("playing");
+                  setRevealedHints([]);
+                  setHintCooldown(0);
+                  setShowGameResultDialog(false);
+                  setPokedexCatchResult(null);
+                  // Gate `initializeGame` behind the auth/attempt check the
+                  // same way the mode-switch path does. Otherwise the
+                  // initializer races the (slower) attempt fetch and
+                  // briefly flashes a fresh puzzle before swapping in the
+                  // already-recorded attempt for the new difficulty.
+                  setCheckingAuth(true);
+                  setDifficulty(next);
+                  // Engaging with the hard tab is the strongest possible
+                  // signal that the player has discovered the feature,
+                  // so retire the launch banner here too. The banner
+                  // listens for this custom event and runs its own
+                  // exit animation + localStorage write.
+                  if (next === "hard" && typeof window !== "undefined") {
+                    window.dispatchEvent(
+                      new CustomEvent(HARD_MODE_BANNER_DISMISS_EVENT),
+                    );
+                  }
+                }}
+              >
+                <TabsList className="font-heading">
+                  <TabsTrigger
+                    value="easy"
+                    className="cursor-pointer font-heading data-[state=active]:text-white data-[state=active]:dark:text-white"
+                    style={
+                      difficulty === "easy" &&
+                      targetColors.length > 0 &&
+                      targetColors[0]?.hex
+                        ? {
+                            backgroundColor: targetColors[0].hex,
+                            color: getTextColor(targetColors[0].hex),
+                          }
+                        : undefined
+                    }
+                  >
+                    <Calendar className="w-3.5 h-3.5 mr-1.5" />
+                    Easy
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="hard"
+                    className="cursor-pointer font-heading data-[state=active]:text-white data-[state=active]:dark:text-white"
+                    style={
+                      difficulty === "hard" &&
+                      targetColors.length > 0 &&
+                      targetColors[0]?.hex
+                        ? {
+                            backgroundColor: targetColors[0].hex,
+                            color: getTextColor(targetColors[0].hex),
+                          }
+                        : undefined
+                    }
+                  >
+                    <Skull className="w-3.5 h-3.5 mr-1.5" />
+                    Hard
+                  </TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
+          )}
 
           {/* Multiplayer Mode */}
           {mode === "multiplayer" && (
@@ -2363,7 +2532,7 @@ export default function GamePage() {
                         signed-out localStorage path (PENDING_ATTEMPTS_KEY)
                         does the same, so this gate works for both. */}
                     {mode === "daily" && status !== "playing" && (
-                      <GameLeaderboardDialog />
+                      <GameLeaderboardDialog difficulty={difficulty} />
                     )}
                     {mode === "unlimited" && (
                       <Button
@@ -2455,6 +2624,7 @@ export default function GamePage() {
               targetPokemon={targetPokemon}
               isShiny={isShiny}
               mode={mode}
+              difficulty={mode === "daily" ? difficulty : undefined}
               user={user}
               onResetGame={resetGame}
               targetColors={targetColors}
@@ -2575,6 +2745,7 @@ export default function GamePage() {
           />
         )}
         <Footer />
+      </div>
       </div>
     </main>
   );

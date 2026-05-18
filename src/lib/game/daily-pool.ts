@@ -17,7 +17,7 @@
  * and streak records stay consistent.
  */
 
-import { hashString } from "./similarity";
+import { hashString, type Difficulty } from "./similarity";
 
 export interface DailyPool {
   /** Pokémon IDs in this pool (1-1025 from the National Pokédex). */
@@ -85,16 +85,42 @@ const PRE_ROTATION_POOL: DailyPool = {
   ids: rangeIds(GEN_RANGES.kanto),
 };
 
+/**
+ * Hard mode's pool: the entire National Pokédex (1-1025) every day.
+ * No weekly rotation — loyal players opting into hard get full breadth
+ * by design, since the easy track already gives them themed week
+ * variety.
+ */
+const HARD_POOL: DailyPool = {
+  theme: "All regions",
+  label: "Full Pokédex",
+  ids: (() => {
+    const ranges = Object.values(GEN_RANGES);
+    const out: number[] = [];
+    for (const range of ranges) {
+      for (const id of rangeIds(range)) out.push(id);
+    }
+    return out;
+  })(),
+};
+
 const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
 
 /**
  * Resolve the daily pool for a given UTC date.
  *
- * Pre-rotation dates return the original Gen-1 pool. Post-rotation dates
- * index into POOLS by weeks-since-rotation-start, wrapping around when
- * the cycle completes.
+ * Easy mode (default): pre-rotation dates return the original Gen-1
+ * pool, post-rotation dates index into POOLS by weeks-since-rotation-start.
+ *
+ * Hard mode: always returns the full 1-1025 pool. The weekly themed
+ * rotation is intentionally an easy-only feature so the hard track
+ * stays maximally varied.
  */
-export function getDailyPoolForDate(date: Date): DailyPool {
+export function getDailyPoolForDate(
+  date: Date,
+  difficulty: Difficulty = "easy",
+): DailyPool {
+  if (difficulty === "hard") return HARD_POOL;
   if (date.getTime() < ROTATION_START_DATE.getTime()) {
     return PRE_ROTATION_POOL;
   }
@@ -110,16 +136,21 @@ export function getDailyPoolForDate(date: Date): DailyPool {
 
 /**
  * Pick the daily Pokémon ID for a date using the pool that's active for
- * that date's week. Identical determinism guarantees as the previous
- * `getDailyPokemonIdForDate(date, 151, isShiny)` — given the same UTC
- * date + shiny flag, returns the same Pokémon ID for every player.
+ * that date's week + difficulty.
  *
- * `isShiny` is mixed into the seed so daily shiny mode (when enabled)
- * surfaces a different Pokémon than daily normal mode on the same day.
+ * The seed mixes the date, the shiny flag, and the difficulty so:
+ *   - easy + normal, easy + shiny, hard + normal, hard + shiny all
+ *     resolve to independent picks on the same day.
+ *   - Every player worldwide sees the same target for a given
+ *     (date, difficulty, shiny) triple.
  */
-export function pickDailyPokemonId(date: Date, isShiny: boolean): number {
-  const pool = getDailyPoolForDate(date);
-  const dateStr = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}-${
+export function pickDailyPokemonId(
+  date: Date,
+  isShiny: boolean,
+  difficulty: Difficulty = "easy",
+): number {
+  const pool = getDailyPoolForDate(date, difficulty);
+  const dateStr = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}-${difficulty}-${
     isShiny ? "shiny" : "normal"
   }`;
   const index = hashString(dateStr) % pool.ids.length;

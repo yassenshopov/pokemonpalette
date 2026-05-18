@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { supabaseAdmin } from "@/lib/supabase";
 import { logger } from "@/lib/logger";
-import { todayUtcDateString } from "@/lib/game/similarity";
+import { DIFFICULTIES, todayUtcDateString } from "@/lib/game/similarity";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 // Public endpoint: no auth, so we limit per client IP. The s-maxage=60
@@ -31,6 +31,7 @@ const QuerySchema = z.object({
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
     .optional(),
   limit: z.coerce.number().int().min(1).max(50).optional(),
+  difficulty: z.enum(DIFFICULTIES).optional(),
 });
 
 export async function GET(req: NextRequest) {
@@ -42,6 +43,7 @@ export async function GET(req: NextRequest) {
   const parsed = QuerySchema.safeParse({
     date: req.nextUrl.searchParams.get("date") ?? undefined,
     limit: req.nextUrl.searchParams.get("limit") ?? undefined,
+    difficulty: req.nextUrl.searchParams.get("difficulty") ?? undefined,
   });
   if (!parsed.success) {
     return NextResponse.json(
@@ -51,25 +53,36 @@ export async function GET(req: NextRequest) {
   }
   const date = parsed.data.date ?? todayUtcDateString();
   const limit = parsed.data.limit ?? 10;
+  const difficulty = parsed.data.difficulty ?? "easy";
 
   const { data, error } = await supabaseAdmin.rpc("daily_puzzle_leaderboard", {
     p_date: date,
     p_limit: limit,
+    p_difficulty: difficulty,
   });
 
   if (error) {
-    logger.error("leaderboard.rpc_failed", { date, error: error.message });
+    logger.error("leaderboard.rpc_failed", {
+      date,
+      difficulty,
+      error: error.message,
+    });
     return NextResponse.json(
       { error: "Failed to fetch leaderboard data" },
       { status: 500 }
     );
   }
 
-  return NextResponse.json(data ?? { date, totalPlayers: 0, entries: [] }, {
-    headers: {
-      // Public payload, safe to share. Origin gets at most one hit per
-      // minute per (date, limit) variant during a traffic spike.
-      "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+  return NextResponse.json(
+    data ?? { date, difficulty, totalPlayers: 0, entries: [] },
+    {
+      headers: {
+        // Public payload, safe to share. Origin gets at most one hit per
+        // minute per (date, limit, difficulty) variant during a traffic
+        // spike. Vary on the query string is implicit because the cache
+        // key includes it.
+        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+      },
     },
-  });
+  );
 }

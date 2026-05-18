@@ -26,6 +26,7 @@ import { toIsoDate } from "@/lib/admin/range";
 import { pickDailyPokemonId } from "@/lib/game/daily-pool";
 import { getPokemonById } from "@/lib/pokemon";
 import type { ColorPalette } from "@/types/pokemon";
+import type { Difficulty } from "@/lib/game/similarity";
 import { DAILY_OVERRIDE_CHANGED_EVENT } from "@/components/admin/daily-puzzle-sheet";
 
 interface CalendarDay {
@@ -93,12 +94,20 @@ interface GameCalendarProps {
   openDate?: string | null;
   /** Open the detail sheet for a given day. */
   onOpenDate: (iso: string) => void;
+  /**
+   * Which difficulty track to render — drives both the per-day stats
+   * (calendar RPC is now filtered by difficulty) and the overrides
+   * map (each (date, difficulty) pair has its own override row).
+   * Defaults to "easy" so legacy callers behave as before.
+   */
+  difficulty?: Difficulty;
 }
 
 export function GameCalendar({
   initialMonth,
   openDate,
   onOpenDate,
+  difficulty = "easy",
 }: GameCalendarProps) {
   const [anchor, setAnchor] = React.useState<Date>(() => {
     // If the caller provides an `openDate`, anchor the calendar on that
@@ -141,9 +150,13 @@ export function GameCalendar({
     try {
       // Fetch stats + overrides across the full visible grid so leading and
       // trailing days from adjacent months also render with real data.
+      // Both endpoints are scoped to `difficulty` so easy and hard render
+      // their own (independent) attempt counts, win rates, and pinned
+      // overrides without one bleeding into the other.
       const params = new URLSearchParams({
         from: toIsoDate(gridFrom),
         to: toIsoDate(gridTo),
+        difficulty,
       });
       const [calRes, overrideRes] = await Promise.all([
         fetch(`/api/admin/game-data/calendar?${params.toString()}`, {
@@ -180,7 +193,7 @@ export function GameCalendar({
       setLoading(false);
       setRefreshing(false);
     }
-  }, [gridFrom, gridTo]);
+  }, [gridFrom, gridTo, difficulty]);
 
   React.useEffect(() => {
     setLoading(true);
@@ -202,6 +215,9 @@ export function GameCalendar({
 
   // Resolve the target Pokemon id for every visible cell up front, mirroring
   // the per-cell resolution order: recorded plays → admin override → deterministic.
+  // The deterministic fallback is seeded with `difficulty` because the easy
+  // and hard tracks pick from different pools (themed-week vs. full
+  // Pokédex) — rendering the easy pick on a hard cell would mislead admins.
   const targetByIso = React.useMemo(() => {
     const map = new Map<string, { id: number; shiny: boolean }>();
     for (const { date } of grid) {
@@ -211,11 +227,11 @@ export function GameCalendar({
       const id =
         data?.target_pokemon_id ??
         override?.pokemon_id ??
-        pickDailyPokemonId(date, false);
+        pickDailyPokemonId(date, false, difficulty);
       map.set(iso, { id, shiny: override?.is_shiny ?? false });
     }
     return map;
-  }, [grid, days, overrides]);
+  }, [grid, days, overrides, difficulty]);
 
   // Batch-fetch palettes for unique target ids in the visible grid. Results
   // are cached in `getPokemonById` so subsequent month navigation is cheap.

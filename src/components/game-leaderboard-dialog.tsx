@@ -11,6 +11,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { GameLeaderboardSection } from "@/components/game-leaderboard-section";
+import type { Difficulty } from "@/lib/game/similarity";
+
+interface GameLeaderboardDialogProps {
+  /**
+   * Which daily track to show. Each (date, difficulty) has its own
+   * ranking so a player's hard-mode standings don't get mixed into
+   * the historical easy-mode board. Defaults to `"easy"` so older
+   * callers that haven't been threaded through stay on the legacy
+   * board.
+   */
+  difficulty?: Difficulty;
+}
 
 // Trigger + Dialog wrapper around <GameLeaderboardSection embedded />.
 //
@@ -27,7 +39,9 @@ import { GameLeaderboardSection } from "@/components/game-leaderboard-section";
 // The `embedded` flag on the section tells <GameLeaderboard /> to drop
 // its outer card chrome — DialogContent already supplies a border,
 // background, padding, and rounded corners.
-export function GameLeaderboardDialog() {
+export function GameLeaderboardDialog({
+  difficulty = "easy",
+}: GameLeaderboardDialogProps = {}) {
   const [open, setOpen] = useState(false);
 
   // We hide the visible <DialogTitle> because the section already
@@ -40,7 +54,7 @@ export function GameLeaderboardDialog() {
       onOpenChange={(next) => {
         setOpen(next);
         if (next) {
-          track("leaderboard_dialog_opened", {});
+          track("leaderboard_dialog_opened", { difficulty });
         }
       }}
     >
@@ -65,7 +79,7 @@ export function GameLeaderboardDialog() {
             the page renders it, but the section's effects fire on
             mount — fine because the dialog is dynamic-imported on the
             page side). */}
-        <GameLeaderboardSection embedded />
+        <GameLeaderboardSection embedded difficulty={difficulty} />
       </DialogContent>
     </Dialog>
   );

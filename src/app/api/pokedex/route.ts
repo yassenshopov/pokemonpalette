@@ -6,7 +6,11 @@ import { prisma } from "@/lib/prisma";
 import { rateLimit } from "@/lib/rate-limit";
 import { logger } from "@/lib/logger";
 import { resolveDailyTarget } from "@/lib/game/daily-target";
-import { parseUtcDate, todayUtcDateString } from "@/lib/game/similarity";
+import {
+  DIFFICULTIES,
+  parseUtcDate,
+  todayUtcDateString,
+} from "@/lib/game/similarity";
 
 // 60 catches/hour per user — generous for a fast unlimited-mode session and
 // far below what scripted abuse would need to flood the table.
@@ -119,6 +123,10 @@ const PostBodySchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Expected YYYY-MM-DD")
     .optional(),
+  // Daily-only — picks which difficulty's target to cross-validate
+  // against. Default 'easy' preserves the legacy validation behavior for
+  // any signed-out catches in localStorage that pre-date this column.
+  difficulty: z.enum(DIFFICULTIES).optional().default("easy"),
 });
 
 export async function POST(req: NextRequest) {
@@ -168,12 +176,13 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     );
   }
-  const { pokemonId, isShiny, mode, attempts, hintsUsed, date } = parsed.data;
+  const { pokemonId, isShiny, mode, attempts, hintsUsed, date, difficulty } =
+    parsed.data;
 
   // For daily mode, the server resolves the canonical target for the given
-  // date and discards the client's claim if it doesn't match. We accept
-  // today or yesterday UTC so a client finishing a game across the midnight
-  // boundary doesn't lose their catch.
+  // date + difficulty and discards the client's claim if it doesn't match.
+  // We accept today or yesterday UTC so a client finishing a game across
+  // the midnight boundary doesn't lose their catch.
   let effectivePokemonId = pokemonId;
   let effectiveIsShiny = isShiny;
 
@@ -193,7 +202,10 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    const dailyTarget = await resolveDailyTarget(parseUtcDate(submittedDate));
+    const dailyTarget = await resolveDailyTarget(
+      parseUtcDate(submittedDate),
+      difficulty,
+    );
     if (dailyTarget.pokemonId !== pokemonId) {
       return NextResponse.json(
         { error: "Submitted Pokemon does not match the daily target" },
