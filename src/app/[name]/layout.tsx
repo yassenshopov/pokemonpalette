@@ -108,5 +108,9 @@ export default function PokemonLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Per-Pokémon JSON-LD is emitted by `PokemonJsonLd` inside the page
+  // component (src/components/pokemon-json-ld.tsx) — it already has access
+  // to the rich Pokemon object (abilities, height, weight, habitat) the
+  // layout would have to refetch. Layout stays a pass-through.
   return children;
 }

@@ -64,7 +64,11 @@ export interface ShareGridGuess {
 }
 
 export interface BuildShareTextInput {
-  gameNumber: number;
+  /**
+   * Daily-puzzle game number. Omit for Unlimited mode — the header then
+   * reads "PokemonPalette · Unlimited" with no daily number.
+   */
+  gameNumber?: number;
   attempts: number;
   won: boolean;
   hintsUsed?: number;
@@ -76,10 +80,17 @@ export interface BuildShareTextInput {
 /**
  * Build Wordle-style share text.
  *
- * Format:
+ * Daily format:
  *   PokemonPalette #47 3/4
  *   🟥🟧🟨
  *   🟨🟧🟩
+ *   🟩🟩🟩
+ *
+ *   pokemonpalette.com/game
+ *
+ * Unlimited format (when gameNumber is omitted):
+ *   PokemonPalette · Unlimited 2/4
+ *   🟧🟨🟨
  *   🟩🟩🟩
  *
  *   pokemonpalette.com/game
@@ -95,9 +106,13 @@ export function buildShareText(input: BuildShareTextInput): string {
     url = "pokemonpalette.com/game",
   } = input;
 
-  const header = `PokemonPalette #${gameNumber} ${won ? `${attempts}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`}${
-    hintsUsed > 0 ? ` (${hintsUsed}💡)` : ""
-  }`;
+  // Daily wins get "#47", unlimited wins get "· Unlimited" — both stay
+  // visually anchored to "PokemonPalette" so the brand sits at the start of
+  // every shared post.
+  const label = gameNumber !== undefined ? `#${gameNumber}` : "· Unlimited";
+  const score = won ? `${attempts}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
+  const hints = hintsUsed > 0 ? ` (${hintsUsed}💡)` : "";
+  const header = `PokemonPalette ${label} ${score}${hints}`;
 
   const targetTop = targetColors.slice(0, 3);
   const rows: string[] = [];
@@ -138,19 +153,113 @@ export function getDailyGameNumber(now: Date = new Date()): number {
 }
 
 /**
+ * Where to send the share. "native" uses navigator.share (best on mobile),
+ * "copy" puts the text on the clipboard, the rest open the platform's
+ * compose intent in a new tab with the text prefilled.
+ */
+export type ShareTarget = "native" | "copy" | "twitter" | "reddit" | "bluesky";
+
+/**
+ * Result returned by {@link openShareIntent} so callers can surface the
+ * appropriate toast.
+ *  - "shared": navigator.share succeeded.
+ *  - "opened": an external compose tab was opened.
+ *  - "copied": text written to clipboard.
+ *  - "failed": no path worked (popup blocked AND clipboard unavailable).
+ */
+export type ShareResult = "shared" | "opened" | "copied" | "failed";
+
+function buildTwitterUrl(text: string): string {
+  return `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
+}
+
+function buildBlueskyUrl(text: string): string {
+  return `https://bsky.app/intent/compose?text=${encodeURIComponent(text)}`;
+}
+
+function buildRedditUrl(text: string): string {
+  // Reddit's submit endpoint accepts a title + selftext body. Use the share
+  // grid's first line ("PokemonPalette #47 3/4") as the title so it scans
+  // well in a feed, and put the emoji grid in the body where formatting
+  // preserves line breaks.
+  const [titleLine, ...rest] = text.split("\n");
+  const body = rest.join("\n").trim();
+  const params = new URLSearchParams({
+    title: titleLine || "PokemonPalette",
+    selftext: "true",
+    text: body,
+  });
+  return `https://www.reddit.com/submit?${params.toString()}`;
+}
+
+function openExternal(url: string): boolean {
+  if (typeof window === "undefined") return false;
+  const w = window.open(url, "_blank", "noopener,noreferrer");
+  // Popup blockers return null — the caller falls back to clipboard.
+  return w !== null;
+}
+
+async function writeClipboard(text: string): Promise<boolean> {
+  if (typeof navigator === "undefined" || !navigator.clipboard?.writeText) {
+    return false;
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Open the share intent for the given target. Falls back to clipboard if a
+ * popup is blocked or the chosen API is unavailable, so the user always has
+ * a way to share even when nothing else works.
+ */
+export async function openShareIntent(
+  target: ShareTarget,
+  text: string
+): Promise<ShareResult> {
+  if (target === "twitter" || target === "reddit" || target === "bluesky") {
+    const url =
+      target === "twitter"
+        ? buildTwitterUrl(text)
+        : target === "reddit"
+          ? buildRedditUrl(text)
+          : buildBlueskyUrl(text);
+    if (openExternal(url)) return "opened";
+    return (await writeClipboard(text)) ? "copied" : "failed";
+  }
+
+  if (target === "native") {
+    if (
+      typeof navigator !== "undefined" &&
+      typeof navigator.share === "function"
+    ) {
+      try {
+        await navigator.share({ text });
+        return "shared";
+      } catch {
+        // User cancelled the share sheet — fall through to clipboard.
+      }
+    }
+    return (await writeClipboard(text)) ? "copied" : "failed";
+  }
+
+  return (await writeClipboard(text)) ? "copied" : "failed";
+}
+
+/**
  * Best-effort copy to clipboard, with navigator.share as a mobile-first
- * alternative when available. Returns a discriminated result so callers can
- * surface the right toast.
+ * alternative when available. Retained for backwards compatibility — new
+ * callers should prefer {@link openShareIntent} which also handles the
+ * explicit platform targets (X, Reddit, Bluesky).
  */
 export async function shareOrCopy(text: string): Promise<"shared" | "copied" | "failed"> {
   if (typeof navigator === "undefined") return "failed";
 
-  // On mobile Safari / Android Chrome, navigator.share opens the native
-  // share sheet which is a much better UX than "copied to clipboard".
   if (
     typeof navigator.share === "function" &&
-    // Only use share on touch devices; desktop Chrome also exposes it but
-    // the UX is worse than a clipboard toast.
     /Mobi|Android|iPhone|iPad/.test(navigator.userAgent)
   ) {
     try {

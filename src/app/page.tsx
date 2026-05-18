@@ -1,6 +1,8 @@
 import { cookies } from "next/headers";
 import { HomeClient } from "@/components/home-client";
 import { SEOContent } from "@/components/seo-content";
+import { SupportersDisplay } from "@/components/supporters-display";
+import { fetchSupporters } from "@/lib/buymeacoffee";
 import {
   POKEMON_MENU_COOKIE_NAME,
   parsePokemonMenuCookie,
@@ -14,7 +16,10 @@ export default async function Home() {
   // paint — no more "render expanded, snap to collapsed one frame
   // later" hydration flash for returning visitors who'd previously
   // closed the menu.
-  const cookieStore = await cookies();
+  const [cookieStore, supporters] = await Promise.all([
+    cookies(),
+    fetchSupporters(),
+  ]);
   const initialMenuCollapsed = parsePokemonMenuCookie(
     cookieStore.get(POKEMON_MENU_COOKIE_NAME)?.value,
   );
@@ -23,6 +28,11 @@ export default async function Home() {
     <>
       <SEOContent type="home" />
       <HomeClient initialMenuCollapsed={initialMenuCollapsed} />
+      <SupportersDisplay
+        primaryColor="#f59e0b"
+        secondaryColor="#fb923c"
+        supporters={supporters}
+      />
     </>
   );
 }

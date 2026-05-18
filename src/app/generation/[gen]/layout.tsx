@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { getPokemonMetadataByGeneration } from "@/lib/pokemon";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export async function generateMetadata({
   params,
@@ -40,11 +41,28 @@ export async function generateMetadata({
   };
 }
 
-export default function GenerationLayout({
+export default async function GenerationLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ gen: string }>;
 }) {
-  return children;
+  const { gen } = await params;
+  const generation = parseInt(gen);
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: "https://www.pokemonpalette.com" },
+          {
+            name: `Generation ${generation} Pokémon`,
+            url: `https://www.pokemonpalette.com/generation/${generation}`,
+          },
+        ])}
+      />
+      {children}
+    </>
+  );
 }
 

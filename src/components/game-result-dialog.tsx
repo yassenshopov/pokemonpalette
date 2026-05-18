@@ -23,6 +23,7 @@ import {
   Coffee,
   BookMarked,
 } from "lucide-react";
+import { FaXTwitter, FaRedditAlien, FaBluesky } from "react-icons/fa6";
 import { Pokemon } from "@/types/pokemon";
 import { type ColorWithFrequency } from "@/lib/color-extractor";
 import { UnlimitedModeSettingsDialog } from "@/components/unlimited-mode-settings";
@@ -32,8 +33,9 @@ import { track } from "@/lib/analytics";
 import {
   buildShareText,
   getDailyGameNumber,
-  shareOrCopy,
+  openShareIntent,
   type ShareGridGuess,
+  type ShareTarget,
 } from "@/lib/game/share";
 import { getContrastHex } from "@/lib/game/colors";
 
@@ -153,10 +155,12 @@ export function GameResultDialog({
   const getTextColor = (hex: string | undefined): "#ffffff" | "#000000" =>
     hex ? getContrastHex(hex) : "#000000";
 
-  const handleShare = async () => {
-    if (mode !== "daily" || !targetPokemon) return;
+  const handleShare = async (target: ShareTarget) => {
+    if (!targetPokemon || guesses.length === 0) return;
     const shareText = buildShareText({
-      gameNumber: getDailyGameNumber(),
+      // Daily wins get a game number, unlimited wins omit it so the share
+      // header reads "PokemonPalette · Unlimited" instead.
+      gameNumber: mode === "daily" ? getDailyGameNumber() : undefined,
       attempts,
       won: isWon,
       hintsUsed,
@@ -164,15 +168,32 @@ export function GameResultDialog({
       guesses,
       url: "https://pokemonpalette.com/game",
     });
-    const result = await shareOrCopy(shareText);
-    if (result === "copied") {
+    const result = await openShareIntent(target, shareText);
+
+    if (result === "opened") {
+      const platformLabel =
+        target === "twitter"
+          ? "X"
+          : target === "reddit"
+            ? "Reddit"
+            : target === "bluesky"
+              ? "Bluesky"
+              : "";
+      if (platformLabel) {
+        toast.success(`Opening ${platformLabel} to share your result…`);
+      }
+    } else if (result === "copied") {
       toast.success("Result copied to clipboard!", {
         description: "Paste it anywhere to share.",
       });
     } else if (result === "failed") {
       toast.error("Couldn't share. Try selecting and copying manually.");
     }
+    // "shared" (native share sheet) shows its own UI — no toast needed.
+
     track("share_grid_clicked", {
+      destination: target,
+      mode,
       won: isWon,
       attempts,
       hints_used: hintsUsed,
@@ -364,6 +385,10 @@ export function GameResultDialog({
             {/* Group buttons for unlimited mode */}
             {mode === "unlimited" && (
               <div className="flex items-center gap-2 flex-wrap">
+                <ShareButtonGroup
+                  hasResult={guesses.length > 0 && Boolean(targetPokemon)}
+                  onShare={handleShare}
+                />
                 {targetPokemon && (
                   <Link
                     href={`/${targetPokemon.name.toLowerCase()}`}
@@ -423,15 +448,10 @@ export function GameResultDialog({
             {/* Daily mode buttons */}
             {mode === "daily" && (
               <>
-                {guesses.length > 0 && (
-                  <Button
-                    onClick={handleShare}
-                    className="w-full sm:w-auto cursor-pointer"
-                  >
-                    <Share2 className="w-4 h-4 mr-2" aria-hidden="true" />
-                    Share result
-                  </Button>
-                )}
+                <ShareButtonGroup
+                  hasResult={guesses.length > 0 && Boolean(targetPokemon)}
+                  onShare={handleShare}
+                />
                 {targetPokemon && (
                   <Link
                     href={`/${targetPokemon.name.toLowerCase()}`}
@@ -494,6 +514,66 @@ export function GameResultDialog({
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+// Wordle-style share controls — a primary "Share result" button alongside
+// three platform-specific icon buttons. Direct-to-platform share intents
+// (X / Reddit / Bluesky) drive 3–5× more shares than copy-to-clipboard, and
+// the primary button still handles native share / clipboard fallback for
+// users who want to paste somewhere else (WhatsApp, Telegram, Discord).
+// Kept local to this file because it depends on the dialog's share-text
+// builder — it's not a reusable primitive.
+function ShareButtonGroup({
+  hasResult,
+  onShare,
+}: {
+  hasResult: boolean;
+  onShare: (target: ShareTarget) => void;
+}) {
+  if (!hasResult) return null;
+  return (
+    <div className="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+      <Button
+        onClick={() => onShare("native")}
+        className="flex-1 sm:flex-initial cursor-pointer"
+      >
+        <Share2 className="w-4 h-4 mr-2" aria-hidden="true" />
+        Share result
+      </Button>
+      <div className="flex items-center gap-1.5">
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={() => onShare("twitter")}
+          aria-label="Share on X"
+          title="Share on X"
+          className="cursor-pointer"
+        >
+          <FaXTwitter aria-hidden="true" />
+        </Button>
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={() => onShare("reddit")}
+          aria-label="Share on Reddit"
+          title="Share on Reddit"
+          className="cursor-pointer"
+        >
+          <FaRedditAlien aria-hidden="true" />
+        </Button>
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={() => onShare("bluesky")}
+          aria-label="Share on Bluesky"
+          title="Share on Bluesky"
+          className="cursor-pointer"
+        >
+          <FaBluesky aria-hidden="true" />
+        </Button>
+      </div>
+    </div>
   );
 }
 

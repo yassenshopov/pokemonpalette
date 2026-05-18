@@ -136,6 +136,21 @@ export function PokemonJsonLd({ pokemon, isShiny = false }: PokemonJsonLdProps) 
     ],
   };
 
+  // Include the primary type in the breadcrumb so Google sees the taxonomy
+  // path (Home → Fire type Pokémon → Charizard) instead of a flat (Home →
+  // Charizard). Exposes the /type/[type] hub pages to the rich-result crawl
+  // path. Only the first type is used — dual-types would emit two crumbs at
+  // the same level which Google rejects.
+  const primaryType = pokemon.type?.[0];
+  const typeCrumb = primaryType
+    ? {
+        "@type": "ListItem" as const,
+        position: 2,
+        name: `${primaryType} type Pokémon`,
+        item: `${baseUrl}/type/${primaryType.toLowerCase()}`,
+      }
+    : null;
+  const pokemonCrumbPosition = typeCrumb ? 3 : 2;
   const breadcrumbList = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -146,17 +161,18 @@ export function PokemonJsonLd({ pokemon, isShiny = false }: PokemonJsonLdProps) 
         name: "Home",
         item: baseUrl,
       },
+      ...(typeCrumb ? [typeCrumb] : []),
       ...(isShiny
         ? [
             {
               "@type": "ListItem" as const,
-              position: 2,
+              position: pokemonCrumbPosition,
               name: pokemon.name,
               item: `${baseUrl}/${pokemon.name.toLowerCase()}`,
             },
             {
               "@type": "ListItem" as const,
-              position: 3,
+              position: pokemonCrumbPosition + 1,
               name: displayName,
               item: pageUrl,
             },
@@ -164,7 +180,7 @@ export function PokemonJsonLd({ pokemon, isShiny = false }: PokemonJsonLdProps) 
         : [
             {
               "@type": "ListItem" as const,
-              position: 2,
+              position: pokemonCrumbPosition,
               name: pokemon.name,
               item: pageUrl,
             },

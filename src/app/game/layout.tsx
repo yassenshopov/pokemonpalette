@@ -1,4 +1,10 @@
 import { Metadata } from "next";
+import {
+  JsonLd,
+  breadcrumbSchema,
+  gameSchema,
+  howToPlaySchema,
+} from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Pokémon Color Guessing Game - Daily Challenge | PokémonPalette",
@@ -48,6 +54,20 @@ export default function GameLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <JsonLd
+        data={[
+          gameSchema(),
+          howToPlaySchema(),
+          breadcrumbSchema([
+            { name: "Home", url: "https://www.pokemonpalette.com" },
+            { name: "Game", url: "https://www.pokemonpalette.com/game" },
+          ]),
+        ]}
+      />
+      {children}
+    </>
+  );
 }
 

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PokemonType } from "@/types/pokemon";
 import { getPokemonMetadataByType } from "@/lib/pokemon";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export async function generateMetadata({
   params,
@@ -41,11 +42,28 @@ export async function generateMetadata({
   };
 }
 
-export default function TypeLayout({
+export default async function TypeLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ type: string }>;
 }) {
-  return children;
+  const { type } = await params;
+  const typeName = type.charAt(0).toUpperCase() + type.slice(1).toLowerCase();
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: "https://www.pokemonpalette.com" },
+          {
+            name: `${typeName} type Pokémon`,
+            url: `https://www.pokemonpalette.com/type/${type.toLowerCase()}`,
+          },
+        ])}
+      />
+      {children}
+    </>
+  );
 }
 

@@ -4,6 +4,8 @@ import { unstable_cache } from "next/cache";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { AccountSettings } from "@/components/account-settings";
+import { SupportersDisplay } from "@/components/supporters-display";
+import { fetchSupporters } from "@/lib/buymeacoffee";
 import { Loader2 } from "lucide-react";
 
 export const metadata = {
@@ -45,12 +47,13 @@ export default async function AccountPage() {
     redirect("/");
   }
 
-  const [user, apiCustomerActive] = await Promise.all([
+  const [user, apiCustomerActive, supporters] = await Promise.all([
     prisma.user.findFirst({
       where: { id: userId, isDeleted: false },
       select: { isAdmin: true },
     }),
     isApiCustomerActive(userId),
+    fetchSupporters(),
   ]);
 
   const isAdmin = !!user?.isAdmin;
@@ -65,6 +68,16 @@ export default async function AccountPage() {
       }
     >
       <AccountSettings showApiKeys={showApiKeys} isAdmin={isAdmin} />
+      <SupportersDisplay
+        // Amber + orange are the Buy Me a Coffee brand colors — using them
+        // here ties this section visually to the existing CoffeeAsk and the
+        // floating coffee CTA so the whole monetization surface reads as
+        // one consistent thing.
+        primaryColor="#f59e0b"
+        secondaryColor="#fb923c"
+        supporters={supporters}
+        heading="Project supporters"
+      />
     </Suspense>
   );
 }

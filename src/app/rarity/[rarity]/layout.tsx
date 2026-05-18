@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PokemonRarity } from "@/types/pokemon";
 import { getPokemonMetadataByRarity } from "@/lib/pokemon";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export async function generateMetadata({
   params,
@@ -41,11 +42,28 @@ export async function generateMetadata({
   };
 }
 
-export default function RarityLayout({
+export default async function RarityLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ rarity: string }>;
 }) {
-  return children;
+  const { rarity } = await params;
+  const rarityName = rarity.charAt(0).toUpperCase() + rarity.slice(1).toLowerCase();
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: "https://www.pokemonpalette.com" },
+          {
+            name: `${rarityName} Pokémon`,
+            url: `https://www.pokemonpalette.com/rarity/${rarity.toLowerCase()}`,
+          },
+        ])}
+      />
+      {children}
+    </>
+  );
 }
 
