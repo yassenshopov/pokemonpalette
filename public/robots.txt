@@ -13,16 +13,34 @@ Allow: /
 Allow: /_next/static/
 Allow: /_next/image
 
-# Dynamic Open Graph images are referenced by every Pokemon page's
-# <meta property="og:image">. They must be crawlable so social platforms
-# and image search can fetch them.
-Allow: /api/og/
-
 # Private / non-public surfaces
 Disallow: /admin
 Disallow: /account
 
-# Block API routes by default; /api/og/ above is the only exception.
+# Block ALL API routes, including the dynamic Open Graph image endpoints
+# under /api/og/. We deliberately do NOT carve out an exception for those:
+#
+#   * There are ~10,800 OG endpoints (1,350 Pokemon x 2 forms x 4 variants:
+#     /api/og/[name], /api/og/shiny/[name], /api/og/pin/[name],
+#     /api/og/pin/shiny/[name]). Letting Googlebot fetch all of them burns
+#     crawl budget that's better spent on the ~1,350 indexable /[name]
+#     pages (some of which currently sit in "Crawled - currently not
+#     indexed" in Search Console).
+#   * Each fetch invokes the OG generation route — a real Function call
+#     with real cost — for zero SEO benefit. `og:image` is not a ranking
+#     signal; Google only uses it for visual snippets, and it doesn't need
+#     to crawl the image to render those.
+#   * Social-media bots that DO use these previews
+#     (facebookexternalhit, Twitterbot, LinkedInBot, Pinterestbot,
+#     Slackbot, Discordbot, TelegramBot, WhatsApp) all ignore robots.txt
+#     for unfurling, so blocking here does not break link previews on any
+#     real social platform.
+#   * URL-only indexing risk is negligible: nobody links to raw
+#     /api/og/<name> URLs from external sites.
+#
+# `X-Robots-Tag: noindex` is still emitted on /api/og/ responses (see
+# next.config.ts) as defense-in-depth for any non-Googlebot fetcher that
+# happens to respect robots meta but not robots.txt.
 Disallow: /api/
 
 # Block other Next.js internals (build manifests, RSC payloads, etc).

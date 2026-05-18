@@ -178,13 +178,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // OG image endpoints are referenced from every Pokemon page's
-        // <meta property="og:image">. They must stay crawlable (robots.txt
-        // explicitly Allows /api/og/) so social platforms can fetch them,
-        // but we don't want the raw 1200x675 PNGs showing up as standalone
-        // results in Google Image Search — they only make sense in the
-        // context of the page they belong to. X-Robots-Tag: noindex lets
-        // crawlers fetch the asset but keeps it out of the index.
+        // OG image endpoints are blocked from Googlebot in robots.txt
+        // (`Disallow: /api/`) to preserve crawl budget — see the long
+        // comment block in public/robots.txt for the full reasoning. This
+        // X-Robots-Tag is defense-in-depth: any fetcher that ignores
+        // robots.txt but respects robots meta (uncommon, but possible)
+        // still gets a clear "do not index" signal. Social-platform bots
+        // (facebookexternalhit, Twitterbot, LinkedInBot, Pinterestbot,
+        // Slackbot, Discordbot, TelegramBot, WhatsApp) ignore BOTH
+        // robots.txt and X-Robots-Tag for unfurling, so link previews
+        // continue to work normally.
         source: "/api/og/:path*",
         headers: [
           {
