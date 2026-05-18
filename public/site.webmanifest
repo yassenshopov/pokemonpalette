@@ -1,23 +1,71 @@
 {
-  "name": "PokémonPalette",
+  "name": "PokémonPalette — Pokémon color palettes & daily game",
   "short_name": "PokémonPalette",
-  "description": "Extract beautiful color palettes from Pokémon sprites. Generate custom color schemes for your design projects with our intuitive color palette generator.",
-  "start_url": "/",
+  "description": "Extract beautiful color palettes from any Pokémon sprite, copy them as Tailwind configs or CSS variables, and play the daily palette-guessing game.",
+  "id": "/?source=pwa",
+  "start_url": "/?utm_source=pwa&utm_medium=installed&utm_campaign=launch",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["games", "design", "utilities", "entertainment"],
   "icons": [
     {
       "src": "/logo.png",
-      "sizes": "1080x1080",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "src": "/logo.png",
-      "sizes": "1080x1080",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Play today's daily game",
+      "short_name": "Daily game",
+      "description": "Guess today's mystery Pokémon from its color palette.",
+      "url": "/game?utm_source=pwa&utm_medium=shortcut&utm_campaign=daily",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Browse the explorer",
+      "short_name": "Explore",
+      "description": "Browse curated Pokémon color palettes by type and generation.",
+      "url": "/explore?utm_source=pwa&utm_medium=shortcut&utm_campaign=explore",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "My account",
+      "short_name": "Account",
+      "description": "View your Pokédex, streaks, and account settings.",
+      "url": "/account?utm_source=pwa&utm_medium=shortcut&utm_campaign=account",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }

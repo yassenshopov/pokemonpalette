@@ -36,10 +36,18 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { toast } from "sonner";
+import { track } from "@/lib/analytics";
 
 interface ApiAccessContentProps {
   hasPurchased: boolean;
 }
+
+/**
+ * Funnel-event placements for the API-access purchase flow. Lets us
+ * separate hero clicks from pricing-card clicks from bottom-CTA clicks in
+ * GA4 so we can tell which surface actually converts.
+ */
+type CheckoutPlacement = "hero" | "pricing_card" | "bottom_cta";
 
 const BW2_SPRITE = (id: number) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`;
@@ -163,11 +171,19 @@ function SwatchCard({ name, sprite, palette }: { name: string; sprite: string; p
   );
 }
 
-function PurchaseButton({ loading, onClick }: { loading: boolean; onClick: () => void }) {
+function PurchaseButton({
+  loading,
+  onClick,
+  placement,
+}: {
+  loading: boolean;
+  onClick: (placement: CheckoutPlacement) => void;
+  placement: CheckoutPlacement;
+}) {
   return (
     <Button
       size="lg"
-      onClick={onClick}
+      onClick={() => onClick(placement)}
       disabled={loading}
       className="h-12 px-8 text-base font-semibold"
     >
@@ -489,6 +505,20 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
   const [activeTocId, setActiveTocId] = useState("features");
   const reducedMotion = useReducedMotion();
 
+  // Page-view funnel entry. Pairs with the checkout_started / _redirected /
+  // _error events below so GA4 can compute (purchasers / viewers) by
+  // signed-in state and existing-customer state. Fires once per mount.
+  useEffect(() => {
+    track("api_access_viewed", {
+      is_signed_in: Boolean(isSignedIn),
+      has_purchased: hasPurchased,
+    });
+    // isSignedIn flips from undefined → boolean on Clerk hydration, but we
+    // explicitly want only one event per page open — capturing the initial
+    // value is the truthful funnel entry signal.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Auto-advance the hero showcase every 3 s, but only when the user
   // hasn't opted out of motion and the tab is visible. Running this in a
   // hidden tab burns wakeups for animation no one sees, and the original
@@ -539,8 +569,18 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
     return () => observer.disconnect();
   }, []);
 
-  const handlePurchase = async () => {
+  const handlePurchase = async (placement: CheckoutPlacement) => {
+    // Track intent even when the user is signed-out — the "please sign in"
+    // toast is itself a funnel step we want visibility on so we can size
+    // the "lost to auth-gate" segment vs. the "actually checked out" one.
+    track("checkout_started", {
+      placement,
+      is_signed_in: Boolean(isSignedIn),
+      product: "api_access_lifetime",
+    });
+
     if (!isSignedIn) {
+      track("checkout_blocked_signed_out", { placement });
       toast.error("Please sign in first to purchase API access.");
       return;
     }
@@ -555,12 +595,23 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
       }
 
       if (data.url) {
+        // Fire the redirect event before assigning location.href — the
+        // assignment can interrupt in-flight GA4 beacons on slow networks.
+        track("checkout_redirected", {
+          placement,
+          product: "api_access_lifetime",
+        });
         window.location.href = data.url;
       }
     } catch (err) {
-      toast.error(
-        err instanceof Error ? err.message : "Failed to start checkout",
-      );
+      const message =
+        err instanceof Error ? err.message : "Failed to start checkout";
+      track("checkout_error", {
+        placement,
+        product: "api_access_lifetime",
+        reason: message,
+      });
+      toast.error(message);
     } finally {
       setLoading(false);
     }
@@ -630,7 +681,11 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
                         </Link>
                       </Button>
                     ) : (
-                      <PurchaseButton loading={loading} onClick={handlePurchase} />
+                      <PurchaseButton
+                        loading={loading}
+                        onClick={handlePurchase}
+                        placement="hero"
+                      />
                     )}
                     <Button variant="outline" size="lg" className="h-12" asChild>
                       <a href="#docs">
@@ -843,7 +898,11 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
                       </Link>
                     </Button>
                   ) : (
-                    <PurchaseButton loading={loading} onClick={handlePurchase} />
+                    <PurchaseButton
+                      loading={loading}
+                      onClick={handlePurchase}
+                      placement="pricing_card"
+                    />
                   )}
                   <p className="text-[11px] text-center text-muted-foreground">
                     Secure checkout via Stripe. No account required until payment.
@@ -912,7 +971,11 @@ export function ApiAccessContent({ hasPurchased }: ApiAccessContentProps) {
                     One API call. Tailwind config, CSS variables, and hex values for
                     any Pok&eacute;mon. Lifetime access for $29.
                   </p>
-                  <PurchaseButton loading={loading} onClick={handlePurchase} />
+                  <PurchaseButton
+                    loading={loading}
+                    onClick={handlePurchase}
+                    placement="bottom_cta"
+                  />
                 </div>
               </div>
             </section>

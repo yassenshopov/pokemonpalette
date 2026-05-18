@@ -4,6 +4,10 @@
     {
       "path": "/api/cron/prune-email-bodies",
       "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/indexnow-ping",
+      "schedule": "5 0 * * *"
     }
   ]
 }

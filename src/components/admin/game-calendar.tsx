@@ -23,10 +23,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { toIsoDate } from "@/lib/admin/range";
-import {
-  DAILY_POOL_SIZE,
-  getDailyPokemonIdForDate,
-} from "@/lib/game/similarity";
+import { pickDailyPokemonId } from "@/lib/game/daily-pool";
 import { getPokemonById } from "@/lib/pokemon";
 import type { ColorPalette } from "@/types/pokemon";
 import { DAILY_OVERRIDE_CHANGED_EVENT } from "@/components/admin/daily-puzzle-sheet";
@@ -214,7 +211,7 @@ export function GameCalendar({
       const id =
         data?.target_pokemon_id ??
         override?.pokemon_id ??
-        getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, false);
+        pickDailyPokemonId(date, false);
       map.set(iso, { id, shiny: override?.is_shiny ?? false });
     }
     return map;

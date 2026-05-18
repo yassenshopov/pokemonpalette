@@ -1,10 +1,10 @@
 import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
+import { getDailyShinyStatus } from "@/lib/game/similarity";
 import {
-  DAILY_POOL_SIZE,
-  getDailyPokemonIdForDate,
-  getDailyShinyStatus,
-} from "@/lib/game/similarity";
+  getDailyPoolForDate,
+  pickDailyPokemonId,
+} from "@/lib/game/daily-pool";
 import { logger } from "@/lib/logger";
 
 export const DAILY_TARGET_TAG = "daily-target";
@@ -18,6 +18,10 @@ export interface DailyTarget {
   isOverride: boolean;
   /** Optional admin note attached to the override (null when algorithmic). */
   note: string | null;
+  /** Short label for the active weekly pool ("Johto", "Hoenn", etc.). */
+  poolTheme: string;
+  /** Long label for the active weekly pool ("Johto week", "Original 151"). */
+  poolLabel: string;
 }
 
 function toIsoDate(date: Date): string {
@@ -29,12 +33,15 @@ function toIsoDate(date: Date): string {
 
 function algorithmicTarget(date: Date): DailyTarget {
   const isShiny = getDailyShinyStatus();
+  const pool = getDailyPoolForDate(date);
   return {
     date: toIsoDate(date),
-    pokemonId: getDailyPokemonIdForDate(date, DAILY_POOL_SIZE, isShiny),
+    pokemonId: pickDailyPokemonId(date, isShiny),
     isShiny,
     isOverride: false,
     note: null,
+    poolTheme: pool.theme,
+    poolLabel: pool.label,
   };
 }
 
@@ -55,12 +62,18 @@ const resolveDailyTargetCached = unstable_cache(
         select: { pokemonId: true, isShiny: true, note: true },
       });
       if (row) {
+        // Overrides keep the week's pool label so the player still sees
+        // "Johto week" even when an admin pins a specific Pokémon — the
+        // theme is a date property, not a target property.
+        const pool = getDailyPoolForDate(utcDate);
         return {
           date: isoDate,
           pokemonId: row.pokemonId,
           isShiny: row.isShiny,
           isOverride: true,
           note: row.note,
+          poolTheme: pool.theme,
+          poolLabel: pool.label,
         };
       }
     } catch (err) {
@@ -120,12 +133,15 @@ export async function resolveDailyTargets(
     });
     for (const row of rows) {
       const iso = toIsoDate(row.date);
+      const pool = getDailyPoolForDate(row.date);
       result.set(iso, {
         date: iso,
         pokemonId: row.pokemonId,
         isShiny: row.isShiny,
         isOverride: true,
         note: row.note,
+        poolTheme: pool.theme,
+        poolLabel: pool.label,
       });
     }
   } catch (err) {

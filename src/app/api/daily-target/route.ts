@@ -56,6 +56,10 @@ export async function GET(req: NextRequest) {
         pokemonId: target.pokemonId,
         isShiny: target.isShiny,
         isOverride: target.isOverride,
+        // Surface the active weekly pool so the game UI can display
+        // "This week: Johto" without re-deriving the cycle index client-side.
+        poolTheme: target.poolTheme,
+        poolLabel: target.poolLabel,
       },
       {
         // The daily target is identical for every visitor on a given UTC day.

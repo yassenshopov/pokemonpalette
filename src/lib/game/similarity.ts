@@ -11,24 +11,6 @@ export function hashString(str: string): number {
   return Math.abs(hash);
 }
 
-// Derive the deterministic daily Pokemon id for a specific calendar date.
-// `isShiny` is mixed into the seed so daily shiny mode can produce a
-// different pick than daily normal mode on the same day.
-//
-// IMPORTANT: uses UTC date components so the server and every client see
-// the same daily pick regardless of local timezone. Changing this would
-// split the leaderboard across timezones.
-export function getDailyPokemonIdForDate(
-  date: Date,
-  totalPokemon: number,
-  isShiny: boolean,
-): number {
-  const dateStr = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}-${
-    isShiny ? "shiny" : "normal"
-  }`;
-  return (hashString(dateStr) % totalPokemon) + 1;
-}
-
 // Today's UTC date as a YYYY-MM-DD string. Clients and the server use this
 // so the `date` column in daily_game_attempts is consistent everywhere.
 export function todayUtcDateString(): string {
@@ -50,17 +32,6 @@ export function parseUtcDate(dateStr: string): Date {
   const d = Number(m[3]);
   return new Date(Date.UTC(y, mo, d));
 }
-
-// Derive the deterministic daily Pokemon id from today's date. `isShiny` is
-// mixed into the seed so daily shiny mode can produce a different pick than
-// daily normal mode on the same day.
-export function getDailyPokemonId(totalPokemon: number, isShiny: boolean): number {
-  return getDailyPokemonIdForDate(new Date(), totalPokemon, isShiny);
-}
-
-/** Pool of Pokemon used by daily mode. Matches the hard-coded call sites in
- *  `src/app/game/page.tsx` (Gen 1 only, for now). */
-export const DAILY_POOL_SIZE = 151;
 
 // Daily mode is non-shiny only for now.
 export function getDailyShinyStatus(): boolean {

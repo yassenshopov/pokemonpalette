@@ -6,6 +6,7 @@ import { requireAdmin } from "@/lib/admin/auth";
 import { recordAudit } from "@/lib/admin/audit";
 import { parseUtcDate } from "@/lib/game/similarity";
 import { DAILY_TARGET_TAG } from "@/lib/game/daily-target";
+import { submitToIndexNowAsync } from "@/lib/indexnow";
 import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
@@ -176,6 +177,14 @@ export async function PUT(req: NextRequest) {
     // hourly revalidation window.
     revalidateTag(DAILY_TARGET_TAG);
 
+    // Tell Bing/Yandex/etc. to re-crawl the surfaces affected by this
+    // override. /game's meta + JSON-LD encode today's puzzle target, so
+    // the actual visible payload changes when an override moves. We
+    // also ping `/` because the home page links into /game with the
+    // same context. Fire-and-forget — admin save shouldn't wait on a
+    // third-party endpoint.
+    submitToIndexNowAsync(["/game", "/"]);
+
     void recordAudit({
       actorUserId: gate.adminUserId,
       action: "daily_override.upsert",
@@ -249,6 +258,10 @@ export async function DELETE(req: NextRequest) {
     });
     if (result.count > 0) {
       revalidateTag(DAILY_TARGET_TAG);
+      // Same rationale as the upsert handler — removing an override
+      // flips /game back to the algorithmic pick, which is a visible
+      // change to the puzzle target.
+      submitToIndexNowAsync(["/game", "/"]);
       void recordAudit({
         actorUserId: gate.adminUserId,
         action: "daily_override.delete",

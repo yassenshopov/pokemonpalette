@@ -14,6 +14,7 @@ import {
 import { GoogleAdSense } from "@/components/analytics/google-adsense";
 import { GeoCapture } from "@/components/analytics/geo-capture";
 import { SidebarStateProvider } from "@/components/sidebar-state-provider";
+import { PwaInstallPrompt } from "@/components/pwa-install-prompt";
 import {
   SIDEBAR_COOKIE_NAME,
   parseSidebarCookie,
@@ -214,6 +215,10 @@ export default async function RootLayout({
               {content}
             </SidebarStateProvider>
             <Toaster position="top-center" />
+            {/* PWA install prompt — silently waits for `beforeinstallprompt`
+                from the browser, then renders a dismissable banner. Only
+                effective on Chrome/Edge/Brave; iOS uses a different flow. */}
+            <PwaInstallPrompt />
           </ColorblindProvider>
         </ThemeProvider>
         <GoogleAnalytics measurementId={ga4Id} />

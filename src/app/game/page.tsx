@@ -19,11 +19,14 @@ import {
 import { Pokemon } from "@/types/pokemon";
 import {
   calculateSimilarity,
-  getDailyPokemonId,
   getDailyShinyStatus,
   getGuessToastMessage,
   todayUtcDateString,
 } from "@/lib/game/similarity";
+import {
+  getDailyPoolForDate,
+  pickDailyPokemonId,
+} from "@/lib/game/daily-pool";
 import {
   computeGuessRelatedness,
   type GuessRelatedness,
@@ -249,13 +252,20 @@ interface UnlimitedModeSettings {
  */
 async function fetchDailyTarget(
   fallbackShiny: boolean,
-): Promise<{ pokemonId: number; isShiny: boolean }> {
+): Promise<{
+  pokemonId: number;
+  isShiny: boolean;
+  poolTheme: string;
+  poolLabel: string;
+}> {
   try {
     const res = await fetch("/api/daily-target");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = (await res.json()) as {
       pokemonId: number;
       isShiny: boolean;
+      poolTheme?: string;
+      poolLabel?: string;
     };
     if (
       typeof data.pokemonId !== "number" ||
@@ -263,12 +273,24 @@ async function fetchDailyTarget(
     ) {
       throw new Error("Malformed daily-target response");
     }
-    return { pokemonId: data.pokemonId, isShiny: data.isShiny };
+    // Fallback to the client-side pool resolver if the server omits the
+    // theme fields (e.g. mid-deploy when an old function is still warm).
+    const fallbackPool = getDailyPoolForDate(new Date());
+    return {
+      pokemonId: data.pokemonId,
+      isShiny: data.isShiny,
+      poolTheme: data.poolTheme ?? fallbackPool.theme,
+      poolLabel: data.poolLabel ?? fallbackPool.label,
+    };
   } catch (err) {
     console.warn("daily-target fetch failed, using deterministic fallback", err);
+    const today = new Date();
+    const pool = getDailyPoolForDate(today);
     return {
-      pokemonId: getDailyPokemonId(151, fallbackShiny),
+      pokemonId: pickDailyPokemonId(today, fallbackShiny),
       isShiny: fallbackShiny,
+      poolTheme: pool.theme,
+      poolLabel: pool.label,
     };
   }
 }

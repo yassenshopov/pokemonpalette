@@ -39,6 +39,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      // Dedicated SEO landing for the "guess the pokemon" query — the
+      // single highest-impression keyword we rank on. Stable URL, high
+      // priority because it's a top funnel surface.
+      url: `${baseUrl}/guess-the-pokemon`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/explore`,
       lastModified,
       changeFrequency: "daily",

@@ -47,10 +47,7 @@ import {
   DailyOverrideDialog,
   type DailyOverrideValue,
 } from "@/components/admin/daily-override-dialog";
-import {
-  DAILY_POOL_SIZE,
-  getDailyPokemonIdForDate,
-} from "@/lib/game/similarity";
+import { pickDailyPokemonId } from "@/lib/game/daily-pool";
 
 interface DailyPuzzleSheetProps {
   /** ISO date (YYYY-MM-DD) to show, or null when closed. */
@@ -327,12 +324,7 @@ function SheetHeaderBlock({
   // Algorithmic pick — same formula every other consumer uses, surfaced
   // here so the dialog can show "matches algorithmic pick" hints.
   const algorithmicPokemonId = React.useMemo(
-    () =>
-      getDailyPokemonIdForDate(
-        new Date(`${date}T00:00:00Z`),
-        DAILY_POOL_SIZE,
-        false,
-      ),
+    () => pickDailyPokemonId(new Date(`${date}T00:00:00Z`), false),
     [date],
   );
 

@@ -4,6 +4,8 @@ import { unstable_cache } from "next/cache";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { AccountSettings } from "@/components/account-settings";
+import { BadgesSection } from "@/components/badges-section";
+import { PublicProfileCard } from "@/components/public-profile-card";
 import { SupportersDisplay } from "@/components/supporters-display";
 import { fetchSupporters } from "@/lib/buymeacoffee";
 import { Loader2 } from "lucide-react";
@@ -50,7 +52,7 @@ export default async function AccountPage() {
   const [user, apiCustomerActive, supporters] = await Promise.all([
     prisma.user.findFirst({
       where: { id: userId, isDeleted: false },
-      select: { isAdmin: true },
+      select: { isAdmin: true, username: true },
     }),
     isApiCustomerActive(userId),
     fetchSupporters(),
@@ -58,6 +60,7 @@ export default async function AccountPage() {
 
   const isAdmin = !!user?.isAdmin;
   const showApiKeys = apiCustomerActive || isAdmin;
+  const username = user?.username ?? null;
 
   return (
     <Suspense
@@ -68,6 +71,13 @@ export default async function AccountPage() {
       }
     >
       <AccountSettings showApiKeys={showApiKeys} isAdmin={isAdmin} />
+      {/* Public profile pointer — surfaces /u/[username] so the user can
+          share their Pokédex. If they haven't claimed a Clerk username
+          yet, the card explains how to do so. */}
+      <PublicProfileCard username={username} />
+      {/* Badge wall — server-rendered, derived from existing PokedexEntry /
+          DailyGameAttempt rows + the user_game_stats RPC. No new schema. */}
+      <BadgesSection userId={userId} />
       <SupportersDisplay
         // Amber + orange are the Buy Me a Coffee brand colors — using them
         // here ties this section visually to the existing CoffeeAsk and the
