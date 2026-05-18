@@ -1,7 +1,7 @@
 {
   "id": 10279,
   "name": "Victreebel-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Grass",
     "Poison"
@@ -30,16 +30,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#f6ed9a",
+    "secondary": "#edd473",
+    "accent": "#90c37f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
-    ]
+      "#f6ed9a",
+      "#edd473",
+      "#90c37f",
+      "#55a37c",
+      "#e99a59",
+      "#a27b39"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10279.png",

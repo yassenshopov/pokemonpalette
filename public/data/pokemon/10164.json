@@ -1,7 +1,7 @@
 {
   "id": 10164,
   "name": "Slowpoke-galar",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Psychic"
   ],
@@ -12,7 +12,7 @@
     }
   ],
   "height": 1.2,
-  "weight": 36.0,
+  "weight": 36,
   "abilities": [
     {
       "name": "Gluttony",
@@ -44,16 +44,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#f390af",
+    "secondary": "#d27096",
+    "accent": "#fefc54",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
-    ]
+      "#f390af",
+      "#d27096",
+      "#fefc54",
+      "#eacd61",
+      "#fee6b7",
+      "#dba468"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10164.png",

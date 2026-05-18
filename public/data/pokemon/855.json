@@ -48,15 +48,19 @@
   ],
   "colorPalette": {
     "primary": "#9aedea",
-    "secondary": "#c3bfe0",
-    "accent": "#4bb2af",
+    "secondary": "#4bb2af",
+    "accent": "#ab67c1",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#9aedea",
-      "#c3bfe0",
-      "#4bb2af"
-    ]
+      "#4bb2af",
+      "#ab67c1",
+      "#703d85",
+      "#f5f9fa",
+      "#fdd368"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/855.png",

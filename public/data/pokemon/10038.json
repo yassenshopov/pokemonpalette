@@ -1,7 +1,7 @@
 {
   "id": 10038,
   "name": "Gengar-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Ghost",
     "Poison"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#c62a5d",
+    "secondary": "#9e1138",
+    "accent": "#71659e",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#c62a5d",
+      "#9e1138",
+      "#71659e",
+      "#aa4c71",
+      "#674d6a",
+      "#f85f5f"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10038.png",

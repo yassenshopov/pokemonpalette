@@ -1,7 +1,7 @@
 {
   "id": 10090,
   "name": "Beedrill-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Bug",
     "Poison"
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#fccd59",
+    "secondary": "#eca855",
+    "accent": "#0c0c0c",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
-    ]
+      "#fccd59",
+      "#eca855",
+      "#0c0c0c",
+      "#303030",
+      "#f8f8f8",
+      "#ce2537"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png",

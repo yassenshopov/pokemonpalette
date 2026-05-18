@@ -1,7 +1,7 @@
 {
   "id": 10163,
   "name": "Rapidash-galar",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Psychic",
     "Fairy"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 1.7,
-  "weight": 80.0,
+  "weight": 80,
   "abilities": [
     {
       "name": "Run away",
@@ -49,16 +49,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F85888",
-    "secondary": "#6890F0",
-    "accent": "#F8F8F8",
+    "primary": "#fafafa",
+    "secondary": "#e9e7e9",
+    "accent": "#e5c4f1",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F85888",
-      "#6890F0",
-      "#F8F8F8"
-    ]
+      "#fafafa",
+      "#e9e7e9",
+      "#e5c4f1",
+      "#bd8cd6",
+      "#8ae5d7",
+      "#4dc1be"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10163.png",

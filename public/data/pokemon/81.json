@@ -70,16 +70,20 @@
     }
   ],
   "colorPalette": {
-    "primary": "#8bb4a4",
-    "secondary": "#524a4a",
+    "primary": "#b7d4be",
+    "secondary": "#8bb4a4",
     "accent": "#393131",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
+      "#b7d4be",
       "#8bb4a4",
-      "#524a4a",
-      "#393131"
-    ]
+      "#393131",
+      "#252222",
+      "#3583aa",
+      "#e7281d"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/81.png",

@@ -1,7 +1,7 @@
 {
   "id": 10060,
   "name": "Abomasnow-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Grass",
     "Ice"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.7,
-  "weight": 185.0,
+  "weight": 185,
   "abilities": [
     {
       "name": "Snow warning",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#fefefe",
+    "secondary": "#c6d5dd",
+    "accent": "#5ba394",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
-    ]
+      "#fefefe",
+      "#c6d5dd",
+      "#5ba394",
+      "#368273",
+      "#daa7f4",
+      "#6db0e3"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10060.png",

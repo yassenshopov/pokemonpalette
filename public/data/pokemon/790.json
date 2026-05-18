@@ -54,15 +54,19 @@
   ],
   "colorPalette": {
     "primary": "#e8a61e",
-    "secondary": "#8a5911",
-    "accent": "#faf54e",
+    "secondary": "#da9c3e",
+    "accent": "#3160a8",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#e8a61e",
-      "#8a5911",
-      "#faf54e"
-    ]
+      "#da9c3e",
+      "#3160a8",
+      "#309fd7",
+      "#101010",
+      "#734692"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/790.png",

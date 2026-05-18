@@ -72,14 +72,18 @@
   "colorPalette": {
     "primary": "#e6e6f6",
     "secondary": "#d5cdee",
-    "accent": "#415262",
+    "accent": "#cf312b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#e6e6f6",
       "#d5cdee",
-      "#415262"
-    ]
+      "#cf312b",
+      "#970f0f",
+      "#e6e6f5",
+      "#ffffff"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/87.png",

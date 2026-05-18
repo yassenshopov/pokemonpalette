@@ -1,7 +1,7 @@
 {
   "id": 10071,
   "name": "Slowbro-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 2.0,
-  "weight": 120.0,
+  "height": 2,
+  "weight": 120,
   "abilities": [
     {
       "name": "Shell armor",
@@ -37,16 +37,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#b5bdbd",
+    "secondary": "#8c9494",
+    "accent": "#e06d7d",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+      "#b5bdbd",
+      "#8c9494",
+      "#e06d7d",
+      "#fa9696",
+      "#edd489",
+      "#cba468"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10071.png",

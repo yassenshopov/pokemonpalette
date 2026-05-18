@@ -54,15 +54,19 @@
   ],
   "colorPalette": {
     "primary": "#c4501e",
-    "secondary": "#2e2e27",
+    "secondary": "#8a443a",
     "accent": "#0b0b0b",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#c4501e",
+      "#8a443a",
+      "#0b0b0b",
       "#2e2e27",
-      "#0b0b0b"
-    ]
+      "#dfdce3",
+      "#cfc9c9"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/828.png",

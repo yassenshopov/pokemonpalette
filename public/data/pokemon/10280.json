@@ -1,7 +1,7 @@
 {
   "id": 10280,
   "name": "Starmie-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Psychic"
@@ -17,7 +17,7 @@
     }
   ],
   "height": 2.3,
-  "weight": 80.0,
+  "weight": 80,
   "abilities": [],
   "baseStats": {
     "hp": 60,
@@ -30,16 +30,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#7361c3",
+    "secondary": "#9f79d9",
+    "accent": "#ecc457",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+      "#7361c3",
+      "#9f79d9",
+      "#ecc457",
+      "#c29431",
+      "#ef5875",
+      "#c72b5c"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10280.png",

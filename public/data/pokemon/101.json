@@ -66,15 +66,19 @@
   ],
   "colorPalette": {
     "primary": "#eeeeee",
-    "secondary": "#c52941",
-    "accent": "#cdcdde",
+    "secondary": "#cdcdde",
+    "accent": "#c52941",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#eeeeee",
+      "#cdcdde",
       "#c52941",
-      "#cdcdde"
-    ]
+      "#f85731",
+      "#df403a",
+      "#ffffff"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/101.png",

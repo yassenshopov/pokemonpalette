@@ -1,7 +1,7 @@
 {
   "id": 10092,
   "name": "Raticate-alola",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Dark",
     "Normal"
@@ -49,16 +49,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8A878",
-    "secondary": "#F8D030",
-    "accent": "#F8F8F8",
+    "primary": "#575856",
+    "secondary": "#41443c",
+    "accent": "#ecddce",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8A878",
-      "#F8D030",
-      "#F8F8F8"
-    ]
+      "#575856",
+      "#41443c",
+      "#ecddce",
+      "#b8a59a",
+      "#95625b",
+      "#744a4a"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10092.png",

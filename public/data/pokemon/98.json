@@ -66,15 +66,19 @@
   ],
   "colorPalette": {
     "primary": "#de524a",
-    "secondary": "#e6bd8b",
+    "secondary": "#f9763e",
     "accent": "#ffdebd",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#de524a",
-      "#e6bd8b",
-      "#ffdebd"
-    ]
+      "#f9763e",
+      "#ffdebd",
+      "#e4bd8f",
+      "#71521a",
+      "#ffffff"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/98.png",

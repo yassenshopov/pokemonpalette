@@ -1,7 +1,7 @@
 {
   "id": 10198,
   "name": "Butterfree-gmax",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Bug",
     "Flying"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 17.0,
-  "weight": 1000.0,
+  "height": 17,
+  "weight": 1000,
   "abilities": [
     {
       "name": "Compound eyes",
@@ -43,16 +43,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A8B820",
-    "secondary": "#78C850",
-    "accent": "#F8D030",
+    "primary": "#9be79a",
+    "secondary": "#92cdbc",
+    "accent": "#7264aa",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A8B820",
-      "#78C850",
-      "#F8D030"
-    ]
+      "#9be79a",
+      "#92cdbc",
+      "#7264aa",
+      "#594b72",
+      "#fafefe",
+      "#72bccc"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10198.png",

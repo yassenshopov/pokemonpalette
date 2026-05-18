@@ -1,7 +1,7 @@
 {
   "id": 10114,
   "name": "Exeggutor-alola",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Grass",
     "Dragon"
@@ -43,16 +43,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#78C850",
-    "secondary": "#A040A0",
-    "accent": "#F8D030",
+    "primary": "#9c6b45",
+    "secondary": "#6e4531",
+    "accent": "#fff593",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#78C850",
-      "#A040A0",
-      "#F8D030"
-    ]
+      "#9c6b45",
+      "#6e4531",
+      "#fff593",
+      "#e3ac62",
+      "#3f973b",
+      "#9fbb53"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10114.png",
