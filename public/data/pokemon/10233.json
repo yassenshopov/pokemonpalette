@@ -1,7 +1,7 @@
 {
   "id": 10233,
   "name": "Typhlosion-hisui",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Fire",
     "Ghost"
@@ -43,16 +43,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#F08030",
-    "secondary": "#6890F0",
-    "accent": "#F8D030",
+    "primary": "#feed9a",
+    "secondary": "#d4c479",
+    "accent": "#594c7f",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#F08030",
-      "#6890F0",
-      "#F8D030"
-    ]
+      "#feed9a",
+      "#d4c479",
+      "#594c7f",
+      "#3c2e5b",
+      "#d43d3d",
+      "#d24ae3"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png",

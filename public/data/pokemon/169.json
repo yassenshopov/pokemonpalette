@@ -66,14 +66,18 @@
   "colorPalette": {
     "primary": "#a45acd",
     "secondary": "#7b4a9c",
-    "accent": "#62187b",
+    "accent": "#2a6a92",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
       "#a45acd",
       "#7b4a9c",
-      "#62187b"
-    ]
+      "#2a6a92",
+      "#114168",
+      "#62187b",
+      "#fdd435"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/169.png",

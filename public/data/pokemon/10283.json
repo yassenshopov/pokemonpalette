@@ -1,7 +1,7 @@
 {
   "id": 10283,
   "name": "Feraligatr-mega",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Water",
     "Dragon"
@@ -30,16 +30,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#6890F0",
-    "secondary": "#F08030",
-    "accent": "#F8D030",
+    "primary": "#ef575e",
+    "secondary": "#a83e42",
+    "accent": "#63b4f3",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#6890F0",
-      "#F08030",
-      "#F8D030"
-    ]
+      "#ef575e",
+      "#a83e42",
+      "#63b4f3",
+      "#428cca",
+      "#fee592",
+      "#2b4b89"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "/pokemon/10283.png",
