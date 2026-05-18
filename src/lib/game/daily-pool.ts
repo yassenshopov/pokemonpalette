@@ -17,7 +17,12 @@
  * and streak records stay consistent.
  */
 
-import { hashString, type Difficulty } from "./similarity";
+import {
+  getDailyHardShinyStatus,
+  getDailyShinyStatus,
+  hashString,
+  type Difficulty,
+} from "./similarity";
 
 export interface DailyPool {
   /** Pokémon IDs in this pool (1-1025 from the National Pokédex). */
@@ -155,4 +160,31 @@ export function pickDailyPokemonId(
   }`;
   const index = hashString(dateStr) % pool.ids.length;
   return pool.ids[index] ?? pool.ids[0] ?? 1;
+}
+
+/**
+ * Single source of truth for the deterministic per-date pick, including
+ * the algorithmic shiny flag. Mirrors what the server-side
+ * `resolveDailyTarget` produces for the algorithmic (non-override) path
+ * so the admin calendar / sheet labels never disagree with what players
+ * actually receive from the API.
+ *
+ * The shiny flag is part of the `pickDailyPokemonId` hash seed, so any
+ * caller that wants "the algorithmic pick for this date" MUST resolve
+ * shiny first — otherwise hard-mode dates whose shiny rolls true
+ * produce a different ID locally than the one the server returns.
+ *
+ * Easy mode: never shiny (matches the historical default).
+ * Hard mode: deterministic per-date shiny via `getDailyHardShinyStatus`.
+ */
+export function pickAlgorithmicDailyTarget(
+  date: Date,
+  difficulty: Difficulty = "easy",
+): { pokemonId: number; isShiny: boolean } {
+  const isShiny =
+    difficulty === "hard" ? getDailyHardShinyStatus(date) : getDailyShinyStatus();
+  return {
+    pokemonId: pickDailyPokemonId(date, isShiny, difficulty),
+    isShiny,
+  };
 }

@@ -61,6 +61,13 @@ interface DailyOverrideDialogProps {
   current: DailyOverrideValue | null;
   /** The deterministic Pokemon id (shown for context — "today is normally X"). */
   algorithmicPokemonId: number;
+  /**
+   * Whether the deterministic pick is the shiny variant. Hard mode rolls
+   * a per-date shiny flag and that flag is part of the pick's hash seed,
+   * so a "matches algorithmic pick" comparison must also include shiny.
+   * Defaults to false to match easy-mode's historical never-shiny behavior.
+   */
+  algorithmicIsShiny?: boolean;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   /** Called with the new override (or null on clear) after a successful save. */
@@ -88,6 +95,7 @@ export function DailyOverrideDialog({
   difficulty = "easy",
   current,
   algorithmicPokemonId,
+  algorithmicIsShiny = false,
   open,
   onOpenChange,
   onChanged,
@@ -97,7 +105,13 @@ export function DailyOverrideDialog({
   const [pokemonId, setPokemonId] = React.useState<number>(
     current?.pokemonId ?? algorithmicPokemonId,
   );
-  const [isShiny, setIsShiny] = React.useState<boolean>(current?.isShiny ?? false);
+  // When seeding a brand-new override we mirror the algorithmic shiny
+  // flag — on hard-mode shiny days that means the form starts in the
+  // "matches algorithmic pick" state, so an admin who clicks Save
+  // without changes ends up at exactly today's deterministic schedule.
+  const [isShiny, setIsShiny] = React.useState<boolean>(
+    current?.isShiny ?? algorithmicIsShiny,
+  );
   const [note, setNote] = React.useState<string>(current?.note ?? "");
   const [saving, setSaving] = React.useState(false);
   const [clearing, setClearing] = React.useState(false);
@@ -110,10 +124,10 @@ export function DailyOverrideDialog({
   React.useEffect(() => {
     if (!open) return;
     setPokemonId(current?.pokemonId ?? algorithmicPokemonId);
-    setIsShiny(current?.isShiny ?? false);
+    setIsShiny(current?.isShiny ?? algorithmicIsShiny);
     setNote(current?.note ?? "");
     setError(null);
-  }, [open, current, algorithmicPokemonId]);
+  }, [open, current, algorithmicPokemonId, algorithmicIsShiny]);
 
   const selected = React.useMemo(
     () => all.find((p) => p.id === pokemonId) ?? null,
@@ -236,7 +250,9 @@ export function DailyOverrideDialog({
                 pokemon={selected}
                 shiny={isShiny}
                 isAlgorithmic={
-                  !current && pokemonId === algorithmicPokemonId && !isShiny
+                  !current &&
+                  pokemonId === algorithmicPokemonId &&
+                  isShiny === algorithmicIsShiny
                 }
               />
 

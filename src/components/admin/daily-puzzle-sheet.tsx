@@ -47,7 +47,7 @@ import {
   DailyOverrideDialog,
   type DailyOverrideValue,
 } from "@/components/admin/daily-override-dialog";
-import { pickDailyPokemonId } from "@/lib/game/daily-pool";
+import { pickAlgorithmicDailyTarget } from "@/lib/game/daily-pool";
 import type { Difficulty } from "@/lib/game/similarity";
 
 interface DailyPuzzleSheetProps {
@@ -346,13 +346,24 @@ function SheetHeaderBlock({
   const hasOverride = Boolean(data?.override);
   // Algorithmic pick — same formula every other consumer uses, surfaced
   // here so the dialog can show "matches algorithmic pick" hints. The
-  // difficulty seed is mixed into the hash on the easy/hard tracks so
-  // the two modes resolve to independent picks on the same date.
-  const algorithmicPokemonId = React.useMemo(
+  // difficulty seed is mixed into the hash on the easy/hard tracks AND
+  // the shiny flag (computed per-date for hard mode via
+  // `getDailyHardShinyStatus`) is part of the hash too, so we go
+  // through the same helper the server uses. Calling
+  // `pickDailyPokemonId(date, false, difficulty)` directly would
+  // produce a different ID on shiny-rolled hard days — that's the
+  // exact mismatch we hit between the calendar silhouette and the
+  // sheet body's "as players saw it" mock.
+  const algorithmic = React.useMemo(
     () =>
-      pickDailyPokemonId(new Date(`${date}T00:00:00Z`), false, difficulty),
+      pickAlgorithmicDailyTarget(
+        new Date(`${date}T00:00:00Z`),
+        difficulty,
+      ),
     [date, difficulty],
   );
+  const algorithmicPokemonId = algorithmic.pokemonId;
+  const algorithmicIsShiny = algorithmic.isShiny;
 
   return (
     <SheetHeader className="gap-2 border-b px-5 py-4">
@@ -447,6 +458,7 @@ function SheetHeaderBlock({
               <span className="font-mono tabular-nums" translate="no">
                 #{algorithmicPokemonId.toString().padStart(4, "0")}
               </span>
+              {algorithmicIsShiny ? " (shiny)" : ""}
             </span>
           )}
         </div>
@@ -483,6 +495,7 @@ function SheetHeaderBlock({
             : null
         }
         algorithmicPokemonId={algorithmicPokemonId}
+        algorithmicIsShiny={algorithmicIsShiny}
         open={overrideOpen}
         onOpenChange={setOverrideOpen}
         onChanged={onOverrideChanged}

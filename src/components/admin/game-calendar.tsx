@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { toIsoDate } from "@/lib/admin/range";
-import { pickDailyPokemonId } from "@/lib/game/daily-pool";
+import { pickAlgorithmicDailyTarget } from "@/lib/game/daily-pool";
 import { getPokemonById } from "@/lib/pokemon";
 import type { ColorPalette } from "@/types/pokemon";
 import type { Difficulty } from "@/lib/game/similarity";
@@ -215,20 +215,28 @@ export function GameCalendar({
 
   // Resolve the target Pokemon id for every visible cell up front, mirroring
   // the per-cell resolution order: recorded plays → admin override → deterministic.
-  // The deterministic fallback is seeded with `difficulty` because the easy
-  // and hard tracks pick from different pools (themed-week vs. full
-  // Pokédex) — rendering the easy pick on a hard cell would mislead admins.
+  //
+  // The deterministic fallback must use `pickAlgorithmicDailyTarget` —
+  // NOT `pickDailyPokemonId(date, false, …)` — because the hard track's
+  // shiny flag is mixed into the pick's hash seed. Forcing `false` here
+  // produces a different ID than the server returns whenever the date's
+  // hard-shiny rolls true, which is exactly the calendar↔sheet mismatch
+  // we hit at launch. Easy mode is unaffected (its shiny is always false).
   const targetByIso = React.useMemo(() => {
     const map = new Map<string, { id: number; shiny: boolean }>();
     for (const { date } of grid) {
       const iso = toIsoDate(date);
       const data = days.get(iso);
       const override = overrides.get(iso);
+      const algo = pickAlgorithmicDailyTarget(date, difficulty);
       const id =
-        data?.target_pokemon_id ??
-        override?.pokemon_id ??
-        pickDailyPokemonId(date, false, difficulty);
-      map.set(iso, { id, shiny: override?.is_shiny ?? false });
+        data?.target_pokemon_id ?? override?.pokemon_id ?? algo.pokemonId;
+      // Recorded plays don't carry a shiny flag in the calendar payload,
+      // so we fall through to the override's shiny if any, then to the
+      // algorithmic shiny — matching what the server's resolveDailyTarget
+      // computes for the same (date, difficulty) pair.
+      const shiny = override?.is_shiny ?? algo.isShiny;
+      map.set(iso, { id, shiny });
     }
     return map;
   }, [grid, days, overrides, difficulty]);

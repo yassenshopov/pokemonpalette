@@ -1,14 +1,12 @@
 import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import {
-  getDailyHardShinyStatus,
-  getDailyShinyStatus,
   normalizeDifficulty,
   type Difficulty,
 } from "@/lib/game/similarity";
 import {
   getDailyPoolForDate,
-  pickDailyPokemonId,
+  pickAlgorithmicDailyTarget,
 } from "@/lib/game/daily-pool";
 import { logger } from "@/lib/logger";
 
@@ -38,24 +36,16 @@ function toIsoDate(date: Date): string {
   return `${y}-${m}-${d}`;
 }
 
-/**
- * Algorithmic shiny pick per difficulty. Easy stays non-shiny (the
- * historical default — surface a normal Pokémon for the public daily
- * pool); hard rolls a deterministic per-date shiny so the harder track
- * uses the shiny variant on roughly half the days.
- */
-function algorithmicShiny(date: Date, difficulty: Difficulty): boolean {
-  if (difficulty === "hard") return getDailyHardShinyStatus(date);
-  return getDailyShinyStatus();
-}
-
 function algorithmicTarget(date: Date, difficulty: Difficulty): DailyTarget {
-  const isShiny = algorithmicShiny(date, difficulty);
+  // `pickAlgorithmicDailyTarget` mirrors this exact shiny + id resolution
+  // for client consumers (admin calendar, daily puzzle sheet, etc.) so
+  // both ends of the wire produce the same target for the same date.
+  const { pokemonId, isShiny } = pickAlgorithmicDailyTarget(date, difficulty);
   const pool = getDailyPoolForDate(date, difficulty);
   return {
     date: toIsoDate(date),
     difficulty,
-    pokemonId: pickDailyPokemonId(date, isShiny, difficulty),
+    pokemonId,
     isShiny,
     isOverride: false,
     note: null,
