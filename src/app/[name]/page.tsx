@@ -5,7 +5,7 @@ import {
   getPokemonById,
 } from "@/lib/pokemon";
 import { PokemonPageClient } from "@/components/pokemon-page-client";
-import { SEOContent } from "@/components/seo-content";
+import { PokemonInfoSection } from "@/components/pokemon-info-section";
 import { PokemonJsonLd } from "@/components/pokemon-json-ld";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
@@ -20,13 +20,13 @@ export async function generateStaticParams() {
   }));
 }
 
-// Server Component - fetches data on server for SEO.
-// All interactivity is handled by PokemonPageClient component, but we render
-// the Pokemon's real description, palette, abilities, etc. in the initial
-// HTML via SEOContent + PokemonJsonLd. Googlebot was previously seeing only
-// the templated boilerplate from those components (because every interactive
-// child is `ssr: false`), which is what put these pages in the "Crawled -
-// currently not indexed" bucket.
+// Server Component — fetches the Pokemon record server-side so the entire
+// info section (prose, palette breakdown, related-Pokémon links) ships in
+// the initial HTML. The interactive palette UI still lives in the client
+// component below, but Googlebot now has substantive, unique content per
+// page without needing to render JS. This replaces the older
+// `sr-only aria-hidden` SEO block that was getting discounted as hidden
+// content and keeping these pages in "Crawled - currently not indexed".
 export default async function PokemonPage({
   params,
 }: {
@@ -35,14 +35,10 @@ export default async function PokemonPage({
   const { name } = await params;
   const pokemonMetadata = getPokemonMetadataByName(name);
 
-  // Handle 404 on server side for better SEO
   if (!pokemonMetadata) {
     notFound();
   }
 
-  // Load the full Pokemon record. This is the same on-disk JSON the OG image
-  // route already reads at build / request time; with `revalidate = false`
-  // and `generateStaticParams`, the read happens once per Pokemon at build.
   const pokemon = await getPokemonById(pokemonMetadata.id);
 
   const breadcrumbs = [
@@ -53,23 +49,10 @@ export default async function PokemonPage({
   return (
     <>
       {pokemon && <PokemonJsonLd pokemon={pokemon} />}
-      <SEOContent
-        type="pokemon"
-        pokemonName={pokemonMetadata.name}
-        pokemonType={pokemonMetadata.type}
-        pokemonGeneration={pokemonMetadata.generation}
-        pokemonRarity={pokemonMetadata.rarity}
-        pokemonDescription={pokemon?.description}
-        pokemonAbilities={pokemon?.abilities}
-        pokemonHabitat={pokemon?.habitat}
-        pokemonHeight={pokemon?.height}
-        pokemonWeight={pokemon?.weight}
-        pokemonColors={pokemon?.colorPalette?.highlights}
-        pokemonShinyColors={pokemon?.shinyColorPalette?.highlights}
-      />
       <PokemonPageClient
         pokemonMetadata={pokemonMetadata}
         breadcrumbs={<Breadcrumbs items={breadcrumbs} />}
+        infoSection={pokemon ? <PokemonInfoSection pokemon={pokemon} /> : null}
       />
     </>
   );

@@ -44,9 +44,19 @@ const ThemeExporter = dynamic(
 interface PokemonPageClientProps {
   pokemonMetadata: PokemonMetadata;
   breadcrumbs?: ReactNode;
+  // Server-rendered, visible SEO content slot. Lives between the hero and
+  // the interactive palette UI so Googlebot finds substantive,
+  // per-Pokemon prose + internal links in the initial HTML (the previous
+  // sr-only block was getting discounted as hidden content). Visible to
+  // users too — it acts as a "more about this Pokémon" section.
+  infoSection?: ReactNode;
 }
 
-export function PokemonPageClient({ pokemonMetadata, breadcrumbs }: PokemonPageClientProps) {
+export function PokemonPageClient({
+  pokemonMetadata,
+  breadcrumbs,
+  infoSection,
+}: PokemonPageClientProps) {
   const [selectedPokemonId, setSelectedPokemonId] = useState<number | null>(
     pokemonMetadata?.id ?? null
   );
@@ -151,6 +161,7 @@ export function PokemonPageClient({ pokemonMetadata, breadcrumbs }: PokemonPageC
             varietyId={selectedVarietyId}
             formName={selectedFormName}
           />
+          {infoSection}
           {pokemonColors.length > 0 && (
             <>
               <PokemonPaletteDisplay colors={pokemonColors} />
