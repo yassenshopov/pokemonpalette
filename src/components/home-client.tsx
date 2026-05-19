@@ -98,10 +98,12 @@ export function HomeClient({ initialMenuCollapsed = false }: HomeClientProps) {
             any child overflowing its column let the menu scroll with the
             page.) */}
         <div className="flex-1 flex flex-col md:flex-row h-full overflow-y-auto overflow-x-hidden md:items-start">
-        {/* Pokemon Menu - Full width on mobile, sticky-left on desktop */}
+        {/* Pokemon Menu - Full width on mobile, sticky-left on desktop.
+            Collapsed width (md:w-16) matches the main navigation sidebar so
+            the two rails align into a single shell. */}
         <div className={`${
           isPokemonMenuCollapsed 
-            ? "hidden md:block md:w-auto" 
+            ? "hidden md:block md:w-16" 
             : "w-full md:w-1/4"
         } h-auto md:h-screen md:sticky md:top-0 md:self-start md:flex-shrink-0 flex flex-col md:flex-row transition-all duration-300`}>
           <PokemonMenu

@@ -35,8 +35,8 @@ import {
   Edit3,
   Lock,
   Unlock,
+  ChevronLeft,
   ChevronRight,
-  Palette,
   Sparkles,
 } from "lucide-react";
 import { DEFAULT_POKEMON_ID, POKEMON_CONSTANTS } from "@/constants/pokemon";
@@ -324,24 +324,15 @@ export function PokemonMenu({
         setLockedColors(new Array(paletteSize).fill(false));
         onColorsExtracted?.(displayed);
 
-        if (pokemonData && displayed.length > 0) {
-          const newPalette = {
-            ...pokemonData.colorPalette,
-            primary: displayed[0] || pokemonData.colorPalette.primary,
-            secondary: displayed[1] || pokemonData.colorPalette.secondary,
-            accent: displayed[2] || pokemonData.colorPalette.accent,
-            highlights: displayed,
-          };
-          if (
-            JSON.stringify(newPalette.highlights) !==
-            JSON.stringify(pokemonData.colorPalette.highlights)
-          ) {
-            setPokemonData({
-              ...pokemonData,
-              colorPalette: newPalette,
-            });
-          }
-        }
+        // NOTE: deliberately do NOT mutate `pokemonData.colorPalette` here.
+        // The `stored` lookup above keys off `pokemonData.colorPalette.highlights`
+        // to decide whether to use the admin-curated palette or fall back to
+        // live extraction. Overwriting `highlights` with the (potentially
+        // shorter) `displayed` slice would shrink it below `paletteSize` on
+        // the next re-run and force a permanent fall-through into this
+        // extraction branch — which is exactly the "sidebar palette differs
+        // from the SEO palette" dissonance we hit when paletteSize > the
+        // initial slice length.
       })
       .catch((error) => {
         logger.error("pokemon.color_extraction_failed", {
@@ -370,27 +361,21 @@ export function PokemonMenu({
     });
   }, [paletteSize]);
 
-  // Sync displayed colors (slice by paletteSize) to parent and palette when paletteSize or extractedColors change
+  // Sync displayed colors (slice by paletteSize) to parent when paletteSize
+  // or extractedColors change. We deliberately do NOT mutate
+  // `pokemonData.colorPalette.highlights` here: that field is the
+  // admin-curated source of truth read by the `stored` lookup in the
+  // extraction useEffect above, and shrinking it to the current paletteSize
+  // would poison subsequent re-runs and force the sidebar into live
+  // extraction even when a valid stored palette exists. The previous
+  // behaviour produced a visible dissonance between the sidebar palette
+  // (live extracted) and the SEO section palette (which reads
+  // `colorPalette.highlights` directly from the JSON).
   useEffect(() => {
     const displayed = extractedColors.slice(0, paletteSize);
     if (displayed.length === 0) return;
     onColorsExtracted?.(displayed);
-    if (pokemonData) {
-      setPokemonData((p) => {
-        if (!p) return p;
-        const newPalette = {
-          ...p.colorPalette,
-          primary: displayed[0] || p.colorPalette.primary,
-          secondary: displayed[1] || p.colorPalette.secondary,
-          accent: displayed[2] || p.colorPalette.accent,
-          highlights: displayed,
-        };
-        return JSON.stringify(newPalette.highlights) !== JSON.stringify(p.colorPalette.highlights)
-          ? { ...p, colorPalette: newPalette }
-          : p;
-      });
-    }
-  }, [paletteSize, extractedColors]); // eslint-disable-line react-hooks/exhaustive-deps -- onColorsExtracted, pokemonData omitted to avoid loops
+  }, [paletteSize, extractedColors]); // eslint-disable-line react-hooks/exhaustive-deps -- onColorsExtracted omitted to avoid loops
 
   const handleSelect = (pokemonId: number) => {
     // Clear any pending debounce timer to prevent race conditions
@@ -632,45 +617,109 @@ export function PokemonMenu({
     return null;
   };
 
-  // Collapsed state for desktop
+  // Collapsed state for desktop — mirrors the layout of the main navigation
+  // sidebar (w-16 vertical rail with a header toggle and stacked controls)
+  // so the two sidebars feel like a single coherent shell rather than a
+  // sidebar + floating button.
   if (isCollapsed) {
+    const primarySwatch =
+      extractedColors[0] || pokemonData?.colorPalette?.primary || "#6366f1";
     return (
-      <div className="hidden md:flex items-start justify-center p-4">
-        <Button
-          onClick={() => onToggleCollapse?.(false)}
-          className="p-4 rounded-full border-2 transition-all duration-300 hover:scale-105 relative overflow-hidden w-16 h-16 cursor-pointer"
-          style={{
-            background: `linear-gradient(135deg, ${
-              extractedColors[0] ||
-              pokemonData?.colorPalette?.primary ||
-              "#6366f1"
-            }20 0%, ${
-              extractedColors[1] ||
-              pokemonData?.colorPalette?.secondary ||
-              extractedColors[0] ||
-              pokemonData?.colorPalette?.primary ||
-              "#8b5cf6"
-            }10 100%)`,
-            borderColor: `${
-              extractedColors[0] ||
-              pokemonData?.colorPalette?.primary ||
-              "#6366f1"
-            }40`,
-            color:
-              extractedColors[0] ||
-              pokemonData?.colorPalette?.primary ||
-              "#6366f1",
-          }}
-          title={
-            pokemonData
-              ? `Click to expand Pokemon menu\nCurrent: ${pokemonData.name}${
-                  isShiny ? " (Shiny)" : ""
-                }\n#${pokemonData.id.toString().padStart(3, "0")}`
-              : "Click to expand Pokemon menu"
-          }
-        >
-          <Palette className="w-6 h-6" />
-        </Button>
+      <div className="hidden md:flex flex-col w-16 h-full bg-background border-r">
+        {/* Header with expand toggle (matches navigation sidebar header) */}
+        <div className="flex flex-col items-center pt-6 pb-2 px-2 border-b">
+          <Button
+            onClick={() => onToggleCollapse?.(false)}
+            variant="ghost"
+            size="sm"
+            aria-label="Expand Pokémon menu"
+            aria-expanded={false}
+            title="Expand Pokémon menu"
+          >
+            <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+          </Button>
+        </div>
+
+        {/* Stacked controls */}
+        <div className="flex-1 p-2 flex flex-col items-center gap-3 overflow-y-auto">
+          {/* Current Pokémon sprite — also acts as a click-to-expand affordance */}
+          {pokemonData && (
+            <button
+              onClick={() => onToggleCollapse?.(false)}
+              className="p-1 rounded-lg hover:bg-accent transition-colors cursor-pointer"
+              title={`${pokemonData.name}${
+                isShiny ? " (Shiny)" : ""
+              } #${pokemonData.id
+                .toString()
+                .padStart(3, "0")} — click to expand`}
+              aria-label={`Current Pokémon: ${pokemonData.name}. Click to expand menu`}
+            >
+              <Image
+                src={
+                  spriteImageError || !getSpriteUrl(pokemonData, isShiny)
+                    ? MISSINGNO_IMAGE_URL
+                    : getSpriteUrl(pokemonData, isShiny)!
+                }
+                alt={pokemonData.name}
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+                style={{
+                  imageRendering:
+                    spriteImageError || !getSpriteUrl(pokemonData, isShiny)
+                      ? "auto"
+                      : "pixelated",
+                }}
+                unoptimized
+                onError={() => setSpriteImageError(true)}
+              />
+            </button>
+          )}
+
+          {/* Randomize */}
+          <button
+            onClick={handleRandomize}
+            className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+            title="Randomize Pokémon"
+            aria-label="Randomize Pokémon"
+          >
+            <Shuffle className="h-4 w-4" aria-hidden="true" />
+          </button>
+
+          {/* Shiny toggle */}
+          <button
+            onClick={() => onShinyToggle(!isShiny)}
+            className="p-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+            title={isShiny ? "Disable shiny" : "Enable shiny"}
+            aria-label={isShiny ? "Disable shiny" : "Enable shiny"}
+            aria-pressed={isShiny}
+            style={isShiny ? { color: primarySwatch } : undefined}
+          >
+            <Sparkles
+              className={cn("h-4 w-4", !isShiny && "opacity-60")}
+              aria-hidden="true"
+            />
+          </button>
+
+          {/* Compact palette preview — only renders once colors are extracted */}
+          {extractedColors.length > 0 && (
+            <div
+              className="mt-1 flex flex-col items-center gap-1 p-1.5 rounded-md border"
+              title="Current palette — click to expand"
+              aria-label="Current palette preview"
+            >
+              {extractedColors
+                .slice(0, Math.min(paletteSize, 5))
+                .map((color, i) => (
+                  <div
+                    key={`${color}-${i}`}
+                    className="w-6 h-2 rounded-sm"
+                    style={{ backgroundColor: color }}
+                  />
+                ))}
+            </div>
+          )}
+        </div>
       </div>
     );
   }
