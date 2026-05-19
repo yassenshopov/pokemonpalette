@@ -1,7 +1,7 @@
 {
   "id": 10212,
   "name": "Corviknight-gmax",
-  "species": "Pok\u00e9mon",
+  "species": "Pokémon",
   "type": [
     "Flying",
     "Steel"
@@ -16,8 +16,8 @@
       "slot": 2
     }
   ],
-  "height": 14.0,
-  "weight": 1000.0,
+  "height": 14,
+  "weight": 1000,
   "abilities": [
     {
       "name": "Pressure",
@@ -49,16 +49,20 @@
   "description": "",
   "flavorTexts": [],
   "colorPalette": {
-    "primary": "#A890F0",
-    "secondary": "#E0C068",
-    "accent": "#F8F8F8",
+    "primary": "#434573",
+    "secondary": "#30345e",
+    "accent": "#d01a47",
     "background": "#F8F8F8",
     "text": "#2C2C2C",
     "highlights": [
-      "#A890F0",
-      "#E0C068",
-      "#F8F8F8"
-    ]
+      "#434573",
+      "#30345e",
+      "#d01a47",
+      "#241f4d",
+      "#4d4150",
+      "#932474"
+    ],
+    "locked": true
   },
   "artwork": {
     "official": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10212.png",
