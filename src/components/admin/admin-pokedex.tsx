@@ -721,9 +721,22 @@ export function AdminPokedex() {
                     <div className="min-w-0 flex-1">
                       <Link
                         href={`/admin/users/${c.user_id}`}
-                        className="block truncate text-sm font-medium hover:underline"
+                        className="flex items-center gap-1.5 truncate text-sm font-medium hover:underline"
                       >
-                        {displayName(c.user)}
+                        <Avatar className="size-5 shrink-0">
+                          <AvatarImage
+                            src={
+                              c.user?.image_url ??
+                              c.user?.profile_image_url ??
+                              undefined
+                            }
+                            alt=""
+                          />
+                          <AvatarFallback className="text-[9px]">
+                            {initials(c.user)}
+                          </AvatarFallback>
+                        </Avatar>
+                        <span className="truncate">{displayName(c.user)}</span>
                       </Link>
                       <p className="truncate text-xs text-muted-foreground tabular-nums">
                         caught {paddedDexNumber(c.pokemon_id)}
