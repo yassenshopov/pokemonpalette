@@ -3,7 +3,7 @@
  */
 
 // Default Pokemon to show on first load
-export const DEFAULT_POKEMON_ID = 60; // Poliwag
+export const DEFAULT_POKEMON_ID = 207; // Gligar
 
 // You can change this to any Pokemon ID you prefer:
 // 1 = Bulbasaur
@@ -13,6 +13,7 @@ export const DEFAULT_POKEMON_ID = 60; // Poliwag
 // 60 = Poliwag
 // 150 = Mewtwo
 // 151 = Mew
+// 207 = Gligar
 // etc.
 
 // First daily game date - used for calculating game numbers
