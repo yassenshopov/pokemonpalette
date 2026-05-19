@@ -1,16 +1,20 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import Image from "next/image";
 import Link from "next/link";
 import { useUser, SignInButton } from "@clerk/nextjs";
 import {
   BookMarked,
-  Filter,
   Loader2,
   LogIn,
-  Search,
   Sparkles,
   Gamepad2,
   HelpCircle,
@@ -18,18 +22,16 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
@@ -39,81 +41,98 @@ import {
 import { CollapsibleSidebar } from "@/components/collapsible-sidebar";
 import { Footer } from "@/components/footer";
 
-import { getAllPokemonMetadata } from "@/lib/pokemon";
+import { getAllPokemonMetadata, getPokemonById } from "@/lib/pokemon";
 import { usePokedex, type PokedexEntry } from "@/hooks/use-pokedex";
-import type { PokemonMetadata, PokemonType } from "@/types/pokemon";
+import type { Pokemon, PokemonMetadata } from "@/types/pokemon";
 
-// Sprite sources mirror the rest of the app — `public/pokemon/sprites/...`
-// is bundled at build time so the grid renders without external requests.
-function spriteUrl(id: number, isShiny: boolean): string {
+// Generation boundaries (national-dex IDs). The metadata index ships every
+// Pokémon with `generation: 1` upstream, so we derive the real generation
+// from the dex number — same trick the explore page uses.
+const GENERATION_RANGES: Array<{ gen: number; max: number }> = [
+  { gen: 1, max: 151 },
+  { gen: 2, max: 251 },
+  { gen: 3, max: 386 },
+  { gen: 4, max: 493 },
+  { gen: 5, max: 649 },
+  { gen: 6, max: 721 },
+  { gen: 7, max: 809 },
+  { gen: 8, max: 905 },
+  { gen: 9, max: 1025 },
+];
+
+function genFromId(id: number): number {
+  for (const { gen, max } of GENERATION_RANGES) {
+    if (id <= max) return gen;
+  }
+  return 9;
+}
+
+// Roman numerals for generation labels. Hard-coded for 1–9 since the
+// franchise has at most one generation we'd ever realistically need to
+// append, and the algorithm-driven version is overkill for nine values.
+const ROMAN_NUMERALS: Record<number, string> = {
+  1: "I",
+  2: "II",
+  3: "III",
+  4: "IV",
+  5: "V",
+  6: "VI",
+  7: "VII",
+  8: "VIII",
+  9: "IX",
+};
+
+type CatchFilter = "both" | "caught" | "uncaught";
+
+const CATCH_FILTER_LABELS: Record<CatchFilter, string> = {
+  both: "All entries",
+  caught: "Caught only",
+  uncaught: "Uncaught only",
+};
+
+// Sprite source for every cell — the bundled static PNGs under
+// `/public/pokemon/sprites/**`. We use the shiny folder for caught shiny
+// entries and the normal folder otherwise (including uncaught silhouettes,
+// which apply a brightness:0 filter so colors aren't spoiled).
+function spritePath(id: number, isShiny: boolean): string {
   return isShiny
     ? `/pokemon/sprites/shiny/${id}.png`
     : `/pokemon/sprites/${id}.png`;
 }
 
-// All 18 types — used to populate the type filter dropdown.
-const ALL_TYPES: PokemonType[] = [
-  "Normal",
-  "Fire",
-  "Water",
-  "Electric",
-  "Grass",
-  "Ice",
-  "Fighting",
-  "Poison",
-  "Ground",
-  "Flying",
-  "Psychic",
-  "Bug",
-  "Rock",
-  "Ghost",
-  "Dragon",
-  "Dark",
-  "Steel",
-  "Fairy",
-];
-
-type CaughtFilter =
-  | "all"
-  | "caught_any"
-  | "caught_normal"
-  | "caught_shiny"
-  | "uncaught"
-  | "missing_shiny";
-
 interface CaughtState {
   normal: boolean;
   shiny: boolean;
-  // Most recent catch across both variants, used for sort-by-recent.
+  // Most recent catch across both variants. Kept around so we could
+  // surface "newest catches" sorting in a future iteration without
+  // rebuilding the map.
   latestCatch?: PokedexEntry;
 }
+
+type GenTab = "all" | number;
 
 export function PokedexPageClient() {
   const { user, isLoaded } = useUser();
   const { entries, loading } = usePokedex();
   const allPokemon = getAllPokemonMetadata();
 
-  // UI filters
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedGenerations, setSelectedGenerations] = useState<Set<number>>(
-    new Set()
-  );
-  const [selectedTypes, setSelectedTypes] = useState<Set<PokemonType>>(
-    new Set()
-  );
-  const [caughtFilter, setCaughtFilter] = useState<CaughtFilter>("all");
-  // Show the shiny variant of caught Pokemon when toggled on. Doesn't
-  // affect uncaught silhouettes (no variant to choose from).
+  // The shiny toggle now switches between two complete dex lists: the
+  // normal-catch dex and the shiny-catch dex. Both lists render every
+  // Pokémon — what changes is which catches "unlock" each entry.
   const [shinyView, setShinyView] = useState(false);
+  // Generation filter via tabs (1–9 or "all").
+  const [genTab, setGenTab] = useState<GenTab>("all");
+  // Catch-state filter. "both" shows everything (default); the other two
+  // narrow to entries unlocked / locked in the current dex view.
+  const [catchFilter, setCatchFilter] = useState<CatchFilter>("both");
 
-  // Build a quick lookup from the user's catches: pokemonId -> {normal,shiny}
+  // Build a quick lookup from the user's catches: pokemonId -> {normal,shiny}.
   const caughtMap = useMemo<Map<number, CaughtState>>(() => {
     const map = new Map<number, CaughtState>();
     for (const e of entries) {
       const existing = map.get(e.pokemon_id) ?? { normal: false, shiny: false };
       if (e.is_shiny) existing.shiny = true;
       else existing.normal = true;
-      // Track the latest of either variant for sort-by-recent.
       if (
         !existing.latestCatch ||
         new Date(e.caught_at).getTime() >
@@ -148,108 +167,25 @@ export function PokedexPageClient() {
     };
   }, [allPokemon, caughtMap]);
 
-  const availableGenerations = useMemo(() => {
-    const gens = new Set<number>();
-    for (const p of allPokemon) gens.add(p.generation);
-    return Array.from(gens).sort((a, b) => a - b);
-  }, [allPokemon]);
-
-  // Apply filters.
+  // Filter by generation tab + catch state. The catch filter respects the
+  // current dex view: in shiny mode "caught" means shiny-caught, in normal
+  // mode it means normal-caught.
   const filteredPokemon = useMemo<PokemonMetadata[]>(() => {
-    const q = searchQuery.trim().toLowerCase();
     return allPokemon.filter((meta) => {
-      // Search by name or ID number.
-      if (q) {
-        const idStr = meta.id.toString();
-        const paddedId = meta.id.toString().padStart(3, "0");
-        if (
-          !meta.name.toLowerCase().includes(q) &&
-          !idStr.includes(q) &&
-          !paddedId.includes(q) &&
-          !meta.species.toLowerCase().includes(q)
-        ) {
-          return false;
-        }
+      if (genTab !== "all" && genFromId(meta.id) !== genTab) return false;
+      if (catchFilter !== "both") {
+        const state = caughtMap.get(meta.id);
+        const isCaught = shinyView ? !!state?.shiny : !!state?.normal;
+        if (catchFilter === "caught" && !isCaught) return false;
+        if (catchFilter === "uncaught" && isCaught) return false;
       }
-
-      if (
-        selectedGenerations.size > 0 &&
-        !selectedGenerations.has(meta.generation)
-      ) {
-        return false;
-      }
-
-      if (selectedTypes.size > 0) {
-        const hit = meta.type.some((t) => selectedTypes.has(t as PokemonType));
-        if (!hit) return false;
-      }
-
-      const state = caughtMap.get(meta.id);
-      switch (caughtFilter) {
-        case "caught_any":
-          if (!state || (!state.normal && !state.shiny)) return false;
-          break;
-        case "caught_normal":
-          if (!state?.normal) return false;
-          break;
-        case "caught_shiny":
-          if (!state?.shiny) return false;
-          break;
-        case "uncaught":
-          if (state && (state.normal || state.shiny)) return false;
-          break;
-        case "missing_shiny":
-          if (!state?.normal || state?.shiny) return false;
-          break;
-      }
-
       return true;
     });
-  }, [
-    allPokemon,
-    searchQuery,
-    selectedGenerations,
-    selectedTypes,
-    caughtFilter,
-    caughtMap,
-  ]);
-
-  const toggleGeneration = (gen: number) => {
-    setSelectedGenerations((prev) => {
-      const next = new Set(prev);
-      if (next.has(gen)) next.delete(gen);
-      else next.add(gen);
-      return next;
-    });
-  };
-
-  const toggleType = (type: PokemonType) => {
-    setSelectedTypes((prev) => {
-      const next = new Set(prev);
-      if (next.has(type)) next.delete(type);
-      else next.add(type);
-      return next;
-    });
-  };
-
-  const clearFilters = () => {
-    setSearchQuery("");
-    setSelectedGenerations(new Set());
-    setSelectedTypes(new Set());
-    setCaughtFilter("all");
-  };
-
-  const hasActiveFilters =
-    searchQuery.trim().length > 0 ||
-    selectedGenerations.size > 0 ||
-    selectedTypes.size > 0 ||
-    caughtFilter !== "all";
+  }, [allPokemon, genTab, catchFilter, caughtMap, shinyView]);
 
   // Scroll container for the virtualized grid. The page uses a fixed
-  // viewport-height frame (`h-screen overflow-hidden` on the root, with
-  // an inner `flex-1 overflow-auto`), so the virtualizer needs an
-  // element ref to attach its scroll listener — `useWindowVirtualizer`
-  // wouldn't fire because the window itself never scrolls.
+  // viewport-height frame, so the virtualizer needs an element ref to
+  // attach its scroll listener.
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -259,9 +195,6 @@ export function PokedexPageClient() {
         {/* Header */}
         <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-10">
           <div className="container mx-auto px-4 md:px-6 py-4 md:py-6">
-            {/* Back link — the Pokedex is a sub-route of /game, so a
-                quick path back to the active session is the most useful
-                affordance up here. */}
             <Link
               href="/game"
               className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors mb-2"
@@ -272,7 +205,7 @@ export function PokedexPageClient() {
             <div className="flex items-center gap-2">
               <BookMarked className="w-6 h-6 text-primary" />
               <h1 className="text-2xl md:text-3xl font-bold font-heading">
-                Pokedex
+                {shinyView ? "Shiny Pokedex" : "Pokedex"}
               </h1>
               <TooltipProvider>
                 <Tooltip>
@@ -286,8 +219,8 @@ export function PokedexPageClient() {
                   </TooltipTrigger>
                   <TooltipContent className="max-w-xs">
                     Every correct guess in Daily or Unlimited mode adds the
-                    Pokemon to your Pokedex. Catch them in normal and shiny
-                    forms to fill out both halves of each entry.
+                    Pokemon to your Pokedex. Toggle Shiny to view your shiny
+                    dex — entries unlock independently for each variant.
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -311,162 +244,82 @@ export function PokedexPageClient() {
               <SignedOutEmpty />
             ) : (
               <>
-                {/* Stats banner. Three small cards summarizing progress —
-                    keeps the headline number visible even after the user
-                    scrolls past the page header. */}
-                <StatsBanner stats={stats} />
+                {/* Generation tabs on their own row so all ten labels stay
+                    on a single line, then the catch-state filter and shiny
+                    switch on the row below. The two-row split keeps the
+                    tab list from collapsing into a ragged wrap when the
+                    viewport gets narrow or the trailing controls steal
+                    horizontal space. */}
+                <div className="mb-4 overflow-x-auto -mx-1 px-1">
+                  <Tabs
+                    value={String(genTab)}
+                    onValueChange={(v) =>
+                      setGenTab(v === "all" ? "all" : Number(v))
+                    }
+                  >
+                    <TabsList className="flex w-fit gap-1">
+                      <TabsTrigger value="all" className="px-3">
+                        All
+                      </TabsTrigger>
+                      {GENERATION_RANGES.map(({ gen }) => (
+                        <TabsTrigger
+                          key={gen}
+                          value={String(gen)}
+                          className="px-3"
+                        >
+                          Gen {ROMAN_NUMERALS[gen]}
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                  </Tabs>
+                </div>
 
-                {/* Search + filters */}
-                <div className="flex items-center gap-2 mb-6 flex-wrap">
-                  <div className="relative flex-1 min-w-[200px] max-w-xl">
-                    <Search
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4"
+                <div className="flex items-center gap-3 mb-6 flex-wrap">
+                  <Select
+                    value={catchFilter}
+                    onValueChange={(v) => setCatchFilter(v as CatchFilter)}
+                  >
+                    <SelectTrigger
+                      className="w-[160px]"
+                      aria-label="Filter by catch status"
+                    >
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="both">
+                        {CATCH_FILTER_LABELS.both}
+                      </SelectItem>
+                      <SelectItem value="caught">
+                        {CATCH_FILTER_LABELS.caught}
+                      </SelectItem>
+                      <SelectItem value="uncaught">
+                        {CATCH_FILTER_LABELS.uncaught}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+
+                  <div className="flex items-center gap-2 ml-auto">
+                    <Sparkles
+                      className={`w-4 h-4 ${
+                        shinyView
+                          ? "text-yellow-500"
+                          : "text-muted-foreground"
+                      }`}
                       aria-hidden="true"
                     />
-                    <Input
-                      placeholder="Search by name, number, or species..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-9"
-                      aria-label="Search Pokedex"
-                      type="search"
+                    <Label
+                      htmlFor="shiny-toggle"
+                      className="cursor-pointer text-sm font-medium"
+                    >
+                      Shiny
+                    </Label>
+                    <Switch
+                      id="shiny-toggle"
+                      checked={shinyView}
+                      onCheckedChange={setShinyView}
+                      aria-label="Toggle shiny Pokedex"
                     />
                   </div>
-
-                  {/* Generation filter */}
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className="flex items-center gap-2"
-                      >
-                        <Filter className="w-4 h-4" />
-                        Gen
-                        {selectedGenerations.size > 0 && (
-                          <Badge
-                            variant="secondary"
-                            className="ml-1 h-5 px-1.5 text-xs"
-                          >
-                            {selectedGenerations.size}
-                          </Badge>
-                        )}
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-44">
-                      <DropdownMenuLabel>Generation</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      {availableGenerations.map((gen) => (
-                        <DropdownMenuCheckboxItem
-                          key={gen}
-                          checked={selectedGenerations.has(gen)}
-                          onCheckedChange={() => toggleGeneration(gen)}
-                        >
-                          Generation {gen}
-                        </DropdownMenuCheckboxItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-
-                  {/* Type filter */}
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className="flex items-center gap-2"
-                      >
-                        <Filter className="w-4 h-4" />
-                        Type
-                        {selectedTypes.size > 0 && (
-                          <Badge
-                            variant="secondary"
-                            className="ml-1 h-5 px-1.5 text-xs"
-                          >
-                            {selectedTypes.size}
-                          </Badge>
-                        )}
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="end"
-                      className="w-44 max-h-72 overflow-y-auto"
-                    >
-                      <DropdownMenuLabel>Type</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      {ALL_TYPES.map((type) => (
-                        <DropdownMenuCheckboxItem
-                          key={type}
-                          checked={selectedTypes.has(type)}
-                          onCheckedChange={() => toggleType(type)}
-                        >
-                          {type}
-                        </DropdownMenuCheckboxItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-
-                  {/* Caught status filter */}
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className="flex items-center gap-2"
-                      >
-                        <Filter className="w-4 h-4" />
-                        {CAUGHT_FILTER_LABELS[caughtFilter]}
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-52">
-                      <DropdownMenuLabel>Catch status</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuRadioGroup
-                        value={caughtFilter}
-                        onValueChange={(v) =>
-                          setCaughtFilter(v as CaughtFilter)
-                        }
-                      >
-                        <DropdownMenuRadioItem value="all">
-                          All Pokemon
-                        </DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="caught_any">
-                          Caught (any variant)
-                        </DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="caught_normal">
-                          Caught — normal
-                        </DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="caught_shiny">
-                          Caught — shiny
-                        </DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="missing_shiny">
-                          Missing shiny
-                        </DropdownMenuRadioItem>
-                        <DropdownMenuRadioItem value="uncaught">
-                          Not yet caught
-                        </DropdownMenuRadioItem>
-                      </DropdownMenuRadioGroup>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-
-                  {/* Shiny toggle — flips the displayed sprite for caught
-                      entries that have a shiny variant recorded. */}
-                  <Button
-                    variant={shinyView ? "default" : "outline"}
-                    onClick={() => setShinyView((v) => !v)}
-                    aria-pressed={shinyView}
-                    className="flex items-center gap-2"
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Shiny view
-                  </Button>
-
-                  {hasActiveFilters && (
-                    <Button
-                      variant="ghost"
-                      onClick={clearFilters}
-                      className="text-muted-foreground"
-                    >
-                      Clear
-                    </Button>
-                  )}
                 </div>
 
                 {loading && entries.length === 0 ? (
@@ -477,7 +330,7 @@ export function PokedexPageClient() {
                     </span>
                   </div>
                 ) : filteredPokemon.length === 0 ? (
-                  <EmptyResults hasActiveFilters={hasActiveFilters} />
+                  <EmptyResults />
                 ) : (
                   <VirtualizedPokedexGrid
                     items={filteredPokemon}
@@ -496,31 +349,19 @@ export function PokedexPageClient() {
   );
 }
 
-const CAUGHT_FILTER_LABELS: Record<CaughtFilter, string> = {
-  all: "All",
-  caught_any: "Caught",
-  caught_normal: "Normal",
-  caught_shiny: "Shiny",
-  missing_shiny: "No shiny",
-  uncaught: "Uncaught",
-};
+// ----------------------------------------------------------------------------
+// Virtualized grid
+// ----------------------------------------------------------------------------
 
-// Virtualized grid for the Pokedex. The unvirtualized version mounted
-// every one of the 1,025 cells (each with its own `<Image>`) on every
-// render, which made initial paint and every filter change extremely
-// expensive. We chunk the flat metadata list into rows of N cells
-// (derived from the container width, matching the Tailwind breakpoints)
-// and let `@tanstack/react-virtual` render only the visible window plus
-// a small overscan buffer.
-//
-// The column count tracks the same breakpoints as the original
-// `grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8`
-// classes so the layout is visually identical to the static grid.
+// Compact cell layout — sprite ~80–96 px, single-line name, slim palette
+// strip — lets us pack more entries per row at every breakpoint.
 const POKEDEX_GRID_BREAKPOINTS: Array<{ minWidth: number; cols: number }> = [
-  { minWidth: 1280, cols: 8 }, // xl
+  { minWidth: 1536, cols: 8 }, // 2xl
+  { minWidth: 1280, cols: 7 }, // xl
   { minWidth: 1024, cols: 6 }, // lg
-  { minWidth: 768, cols: 4 }, // md
-  { minWidth: 640, cols: 3 }, // sm
+  { minWidth: 768, cols: 5 }, // md
+  { minWidth: 640, cols: 4 }, // sm
+  { minWidth: 480, cols: 3 }, // xs
   { minWidth: 0, cols: 2 }, // base
 ];
 
@@ -543,16 +384,11 @@ function VirtualizedPokedexGrid({
   scrollRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const gridRef = useRef<HTMLDivElement>(null);
-  // Default to 8 columns so SSR markup matches the most common
-  // desktop viewport — the ResizeObserver corrects this on first paint
-  // for narrower viewports without a visible layout flash because the
-  // virtualizer hasn't measured row sizes yet.
-  const [columns, setColumns] = useState(8);
+  const [columns, setColumns] = useState(7);
 
   useLayoutEffect(() => {
     const el = gridRef.current;
     if (!el) return;
-    // Initial measurement on mount.
     setColumns(columnsForWidth(el.clientWidth));
     if (typeof ResizeObserver === "undefined") return;
     const ro = new ResizeObserver((entries) => {
@@ -564,8 +400,6 @@ function VirtualizedPokedexGrid({
     return () => ro.disconnect();
   }, []);
 
-  // Group the flat list into rows so the virtualizer can treat each row
-  // as a single element. Recomputed only when `items` or `columns` change.
   const rows = useMemo(() => {
     const out: PokemonMetadata[][] = [];
     for (let i = 0; i < items.length; i += columns) {
@@ -574,21 +408,15 @@ function VirtualizedPokedexGrid({
     return out;
   }, [items, columns]);
 
-  // Estimated row height: 96px sprite + ~20px label + 12px gap. The
-  // virtualizer remeasures the actual height once the row paints, so
-  // an off-by-a-few estimate just means the scrollbar drift settles
-  // after the first pass.
+  // Row estimate: ~96px sprite area + ~38px name block + 16px palette + gap.
+  // The virtualizer re-measures after first paint, so a coarse estimate is fine.
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => scrollRef.current,
-    estimateSize: () => 132,
+    estimateSize: () => 200,
     overscan: 4,
   });
 
-  // When the column count changes (e.g. browser resize crosses a
-  // breakpoint), the row indices map to different cells, so the
-  // virtualizer's cached measurements are stale. `measure()` forces a
-  // re-measure; it's cheap because we only re-render visible rows.
   useEffect(() => {
     rowVirtualizer.measure();
   }, [columns, rowVirtualizer]);
@@ -616,11 +444,7 @@ function VirtualizedPokedexGrid({
               width: "100%",
               transform: `translateY(${virtualRow.start}px)`,
             }}
-            className="grid gap-3"
-            // Inline grid-template-columns over Tailwind classes so the
-            // count matches the runtime measurement exactly. Tailwind's
-            // breakpoint utilities would otherwise lag the JS-derived
-            // value by one frame during resize.
+            className="pb-3"
           >
             <div
               className="grid gap-3"
@@ -644,60 +468,9 @@ function VirtualizedPokedexGrid({
   );
 }
 
-function StatsBanner({
-  stats,
-}: {
-  stats: {
-    total: number;
-    anyCaught: number;
-    normalCaught: number;
-    shinyCaught: number;
-    completionPct: number;
-  };
-}) {
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-      <StatCard label="Caught" value={`${stats.anyCaught}/${stats.total}`} />
-      <StatCard
-        label="Completion"
-        value={`${stats.completionPct}%`}
-      />
-      <StatCard label="Normal" value={String(stats.normalCaught)} />
-      <StatCard
-        label="Shiny"
-        value={String(stats.shinyCaught)}
-        accent
-      />
-    </div>
-  );
-}
-
-function StatCard({
-  label,
-  value,
-  accent,
-}: {
-  label: string;
-  value: string;
-  accent?: boolean;
-}) {
-  return (
-    <div
-      className={`rounded-lg border bg-card p-3 ${
-        accent ? "border-yellow-500/40" : ""
-      }`}
-    >
-      <div className="text-xs text-muted-foreground">{label}</div>
-      <div
-        className={`text-xl font-bold font-heading mt-0.5 ${
-          accent ? "text-yellow-500" : ""
-        }`}
-      >
-        {value}
-      </div>
-    </div>
-  );
-}
+// ----------------------------------------------------------------------------
+// Cell
+// ----------------------------------------------------------------------------
 
 function PokedexCell({
   meta,
@@ -708,79 +481,81 @@ function PokedexCell({
   state: CaughtState | null;
   shinyView: boolean;
 }) {
-  const normalCaught = !!state?.normal;
-  const shinyCaught = !!state?.shiny;
-  const anyCaught = normalCaught || shinyCaught;
+  // The "unlocked" state depends on which dex is being viewed: shiny view
+  // only counts shiny catches, normal view only counts normal catches.
+  const isCaught = shinyView ? !!state?.shiny : !!state?.normal;
+  // Caught entries get the shiny sprite when in shiny view; uncaught entries
+  // always pull the normal sprite (rendered as a silhouette via CSS) so the
+  // species' colors aren't leaked through the shiny variant.
+  const spriteUrl = spritePath(meta.id, isCaught && shinyView);
 
-  // Choose which sprite to render. If the user has the shiny and shinyView
-  // is on, prefer it. Otherwise fall back to whichever variant they own.
-  // Uncaught Pokemon render the normal sprite as a silhouette so size and
-  // pose stay consistent.
-  const showShiny = shinyView && shinyCaught;
-  const url = spriteUrl(meta.id, showShiny);
-
-  const href = anyCaught
-    ? showShiny
+  // The detail route is only meaningful for caught entries — uncaught
+  // cells aren't interactive so we don't spoil the species.
+  const href = isCaught
+    ? shinyView
       ? `/shiny/${meta.name.toLowerCase()}`
       : `/${meta.name.toLowerCase()}`
     : null;
 
+  const paddedId = meta.id.toString().padStart(3, "0");
+
   const cellInner = (
     <>
-      <div className="relative aspect-square flex items-center justify-center">
-        {/* Shiny indicator — top-right when caught, gray when missing
-            (only on caught Pokemon to advertise the next milestone). */}
-        {anyCaught && (
-          <div className="absolute top-1 right-1 z-10">
+      {/* Sprite area */}
+      <div className="relative aspect-square flex items-center justify-center bg-muted/30">
+        {isCaught && shinyView && (
+          <div className="absolute top-1.5 right-1.5 z-10">
             <Sparkles
-              className={`w-3.5 h-3.5 ${
-                shinyCaught
-                  ? "text-yellow-500"
-                  : "text-muted-foreground/40"
-              }`}
-              aria-label={shinyCaught ? "Shiny caught" : "Shiny not caught"}
+              className="w-3.5 h-3.5 text-yellow-500"
+              aria-label="Shiny caught"
             />
           </div>
         )}
-        {/* The sprite. Uncaught Pokemon get a CSS silhouette via brightness:0
-            so we still show their shape (the classic Pokedex effect) without
-            spoiling color. The image is loaded eagerly only for caught
-            entries so we don't blow the budget on an uncaught player's
-            grid. */}
         <Image
-          src={url}
+          src={spriteUrl}
           alt={
-            anyCaught
+            isCaught
               ? meta.name
-              : `Uncaught silhouette (#${meta.id.toString().padStart(3, "0")})`
+              : `Uncaught silhouette (#${paddedId})`
           }
-          width={96}
-          height={96}
-          className={`w-16 h-16 sm:w-20 sm:h-20 object-contain transition-transform group-hover:scale-110 ${
-            anyCaught ? "" : "[filter:brightness(0)_opacity(0.55)]"
+          width={128}
+          height={128}
+          className={`w-20 h-20 sm:w-24 sm:h-24 object-contain ${
+            isCaught ? "" : "[filter:brightness(0)_opacity(0.55)]"
           }`}
           style={{ imageRendering: "pixelated" }}
           unoptimized
           loading="lazy"
         />
       </div>
-      <div className="px-2 pb-2 text-center">
-        <div className="text-[10px] text-muted-foreground tabular-nums">
-          #{meta.id.toString().padStart(3, "0")}
+
+      {/* Name + number */}
+      <div className="px-2 pt-2 pb-1.5 text-center">
+        <div className="font-heading text-[11px] font-semibold tabular-nums text-muted-foreground leading-tight">
+          #{paddedId}
         </div>
         <div
-          className={`text-xs font-medium truncate ${
-            anyCaught ? "" : "text-muted-foreground"
+          className={`font-heading text-base font-bold truncate leading-tight ${
+            isCaught ? "" : "text-muted-foreground"
           }`}
         >
-          {anyCaught ? meta.name : "???"}
+          {isCaught ? meta.name : "???"}
         </div>
       </div>
+
+      {/* Six-color palette swatch row. Real palette for caught entries
+          (loaded on demand), muted placeholders for uncaught so the
+          uncaught silhouette doesn't reveal the species colors. */}
+      <PaletteRow
+        pokemonId={meta.id}
+        unlocked={isCaught}
+        shiny={shinyView}
+      />
     </>
   );
 
-  const cellClass = `group relative rounded-lg border bg-card overflow-hidden transition-colors ${
-    anyCaught
+  const cellClass = `group relative rounded-xl border bg-card overflow-hidden transition-colors ${
+    isCaught
       ? "hover:bg-accent cursor-pointer"
       : "opacity-80 hover:opacity-100"
   }`;
@@ -797,7 +572,6 @@ function PokedexCell({
     );
   }
 
-  // Uncaught — non-interactive, but show the locked tooltip state.
   return (
     <div
       className={cellClass}
@@ -807,6 +581,85 @@ function PokedexCell({
     </div>
   );
 }
+
+// ----------------------------------------------------------------------------
+// Palette row — lazily loads each cell's full Pokemon record so we can
+// render the six-color highlight strip from the saved palette. The cache
+// in `getPokemonById` dedupes by id across the whole session, so virtual
+// rows re-mounting while scrolling never re-fetch.
+// ----------------------------------------------------------------------------
+
+// Up to six greyscale placeholder squares for locked entries. The slot count
+// is fixed for locked cells so the row height stays consistent; for unlocked
+// cells we render only the actual palette colors with no padding.
+const PLACEHOLDER_COLORS = Array.from({ length: 6 }, () => "#e5e5e5");
+
+function PaletteRow({
+  pokemonId,
+  unlocked,
+  shiny,
+}: {
+  pokemonId: number;
+  unlocked: boolean;
+  shiny: boolean;
+}) {
+  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+
+  useEffect(() => {
+    // Don't fetch palettes for uncaught entries — showing real colors
+    // there would spoil the guessing game. The placeholder swatch keeps
+    // the cell layout consistent until the user actually catches it.
+    if (!unlocked) {
+      setPokemon(null);
+      return;
+    }
+    let cancelled = false;
+    getPokemonById(pokemonId).then((p) => {
+      if (!cancelled && p) setPokemon(p);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [pokemonId, unlocked]);
+
+  // Pick the right palette: shiny view uses `shinyColorPalette` when
+  // present, otherwise we fall back to the normal palette so the row
+  // still renders something useful instead of an empty strip.
+  // We render only the colors that actually exist (capped at 6) — no
+  // padding-by-repeating-the-last-color, which made e.g. Bulbasaur's
+  // 3-color shiny palette look like a 6-color one.
+  const colors = useMemo<string[]>(() => {
+    if (!unlocked) return PLACEHOLDER_COLORS;
+    if (!pokemon) return [];
+    const source =
+      (shiny && pokemon.shinyColorPalette) || pokemon.colorPalette;
+    const highlights = source?.highlights ?? [];
+    return highlights.slice(0, 6);
+  }, [pokemon, shiny, unlocked]);
+
+  // Hide the strip entirely if a caught entry's palette hasn't loaded
+  // yet — better than flashing an empty bar with the wrong height.
+  if (colors.length === 0) {
+    return <div className="h-4 w-full border-t bg-muted/30" />;
+  }
+
+  return (
+    <div className="flex h-4 w-full border-t" aria-hidden={!unlocked}>
+      {colors.map((color, i) => (
+        <div
+          key={i}
+          className={`flex-1 ${unlocked ? "" : "opacity-40"}`}
+          style={{ backgroundColor: color }}
+          title={unlocked ? color : undefined}
+        />
+      ))}
+    </div>
+  );
+}
+
+// ----------------------------------------------------------------------------
+// Empty / signed-out states
+// ----------------------------------------------------------------------------
 
 function SignedOutEmpty() {
   return (
@@ -837,33 +690,22 @@ function SignedOutEmpty() {
   );
 }
 
-function EmptyResults({ hasActiveFilters }: { hasActiveFilters: boolean }) {
-  if (!hasActiveFilters) {
-    return (
-      <div className="text-center py-16 text-muted-foreground">
-        <BookMarked className="w-12 h-12 mx-auto mb-4 opacity-50" />
-        <p className="text-lg font-medium mb-2 text-foreground">
-          No Pokemon to show
-        </p>
-        <p className="text-sm mb-6">
-          Catch your first Pokemon by guessing it correctly in the game.
-        </p>
-        <Link href="/game">
-          <Button variant="outline" className="cursor-pointer">
-            <Gamepad2 className="w-4 h-4 mr-2" />
-            Play the game
-          </Button>
-        </Link>
-      </div>
-    );
-  }
+function EmptyResults() {
   return (
     <div className="text-center py-16 text-muted-foreground">
-      <Filter className="w-12 h-12 mx-auto mb-4 opacity-50" />
+      <BookMarked className="w-12 h-12 mx-auto mb-4 opacity-50" />
       <p className="text-lg font-medium mb-2 text-foreground">
-        No Pokemon match your filters
+        No Pokemon to show
       </p>
-      <p className="text-sm">Try adjusting your search or filter criteria.</p>
+      <p className="text-sm mb-6">
+        Catch your first Pokemon by guessing it correctly in the game.
+      </p>
+      <Link href="/game">
+        <Button variant="outline" className="cursor-pointer">
+          <Gamepad2 className="w-4 h-4 mr-2" />
+          Play the game
+        </Button>
+      </Link>
     </div>
   );
 }
