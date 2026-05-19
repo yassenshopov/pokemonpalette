@@ -113,10 +113,14 @@ export function PokemonPaletteExploreCard({
   ].filter(Boolean) || [];
 
   const primaryColor = palette?.primary || "#6366f1";
-  const officialArtwork =
-    pokemon && typeof pokemon.artwork === "object" && "official" in pokemon.artwork
-      ? pokemon.artwork.official
-      : pokemon?.artwork?.official || null;
+  // Explore cards intentionally render the 2D front-default sprite (not the
+  // official artwork) tinted to pure black so it reads as a silhouette over
+  // the color palette strip. The sprite's flat front-facing pose silhouettes
+  // far more legibly than the official 3/4-view artwork.
+  const spriteArtwork =
+    pokemon && typeof pokemon.artwork === "object" && "front" in pokemon.artwork
+      ? pokemon.artwork.front
+      : pokemon?.artwork?.front || null;
 
   return (
     <div ref={cardRef} className="w-full">
@@ -168,15 +172,20 @@ export function PokemonPaletteExploreCard({
           )}
         </div>
 
-        {/* Pokemon Image Overlay */}
-        {officialArtwork && !imageError && pokemon && (
+        {/* Pokemon Silhouette Overlay — uses the 2D front-default sprite
+            crushed to black via `brightness-0` so it reads as a clean
+            silhouette against the palette stripes. `image-rendering:pixelated`
+            preserves the chunky pixel-art edges when the 96px sprite is
+            scaled up. */}
+        {spriteArtwork && !imageError && pokemon && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="relative w-32 h-32 md:w-40 md:h-40 opacity-20 group-hover:opacity-30 transition-opacity">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 opacity-40 group-hover:opacity-60 transition-opacity">
               <Image
-                src={officialArtwork}
+                src={spriteArtwork}
                 alt={pokemon.name}
                 fill
-                className="object-contain"
+                className="object-contain brightness-0"
+                style={{ imageRendering: "pixelated" }}
                 onError={() => setImageError(true)}
                 unoptimized
               />
