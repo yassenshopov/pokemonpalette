@@ -7,14 +7,12 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock,
-  Copy,
   ExternalLink,
-  Flag,
   HelpCircle,
   Lightbulb,
   Pin,
-  Search,
   Sparkles,
+  Swords,
   Target,
   Trophy,
   User as UserIcon,
@@ -38,10 +36,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { formatAbsolute } from "@/lib/admin/format";
 import { RelativeTime } from "@/components/admin/relative-time";
-import {
-  getContrastHex,
-  getDimmedColor,
-} from "@/lib/game/colors";
+import { getContrastHex } from "@/lib/game/colors";
 import type { ColorPalette } from "@/types/pokemon";
 import {
   DailyOverrideDialog,
@@ -311,6 +306,7 @@ export function DailyPuzzleSheet({
                 ) : data ? (
                   <DailyPuzzleBody
                     data={data}
+                    difficulty={difficulty}
                     onOverrideChanged={handleOverrideChanged}
                   />
                 ) : null}
@@ -510,8 +506,10 @@ function SheetHeaderBlock({
 
 function DailyPuzzleBody({
   data,
+  difficulty,
 }: {
   data: DailyPuzzleResponse;
+  difficulty: Difficulty;
   // Keep the optional override-changed handler in the signature so future
   // body-level controls (e.g. an inline override card) can fan out to the
   // sheet's optimistic-update logic without restructuring.
@@ -520,12 +518,30 @@ function DailyPuzzleBody({
   const hasPlays = data.kpis.attempts > 0;
   const when = compareToToday(data.date);
 
+  // Mirrors the shiny resolution in `PlayerMockCard` so we can label the
+  // current track's artwork in the comparison row without re-computing
+  // downstream.
+  const currentIsShiny = React.useMemo(() => {
+    if (data.override) return data.override.is_shiny;
+    return pickAlgorithmicDailyTarget(
+      new Date(`${data.date}T00:00:00Z`),
+      difficulty,
+    ).isShiny;
+  }, [data.date, data.override, difficulty]);
+
   return (
     <>
-      <PlayerMockCard data={data} />
+      <PlayerMockCard data={data} difficulty={difficulty} />
       {hasPlays ? (
         <>
           <KpiGrid data={data} />
+          <DifficultyComparisonCard
+            date={data.date}
+            difficulty={difficulty}
+            currentKpis={data.kpis}
+            currentPokemon={data.pokemon}
+            currentIsShiny={currentIsShiny}
+          />
           <AttemptsHistogramCard data={data} />
           <TopGuessesCard data={data} />
           <RecentAttemptsCard data={data} />
@@ -533,7 +549,6 @@ function DailyPuzzleBody({
       ) : (
         <EmptyPuzzleState when={when} />
       )}
-      <ActionsFooter data={data} />
     </>
   );
 }
@@ -555,16 +570,32 @@ function weightedWidths(count: number): number[] {
   return raw.map((r) => (r / sum) * 100);
 }
 
-function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
-  const [shiny, setShiny] = React.useState(false);
-  const [revealed, setRevealed] = React.useState(false);
+function PlayerMockCard({
+  data,
+  difficulty,
+}: {
+  data: DailyPuzzleResponse;
+  difficulty: Difficulty;
+}) {
   const p = data.pokemon;
+
+  // Resolve the actual shiny status for this day on this track. Overrides
+  // win when present; otherwise we recompute the algorithmic shiny flag
+  // exactly the way the server resolved it so the preview matches what
+  // players actually saw — including the hard-mode shiny roll.
+  const isShiny = React.useMemo(() => {
+    if (data.override) return data.override.is_shiny;
+    return pickAlgorithmicDailyTarget(
+      new Date(`${data.date}T00:00:00Z`),
+      difficulty,
+    ).isShiny;
+  }, [data.date, data.override, difficulty]);
 
   const activePalette = React.useMemo<ColorPalette | null>(() => {
     if (!p) return null;
-    if (shiny && p.shinyColorPalette) return p.shinyColorPalette;
+    if (isShiny && p.shinyColorPalette) return p.shinyColorPalette;
     return p.colorPalette;
-  }, [p, shiny]);
+  }, [p, isShiny]);
 
   const swatches = React.useMemo<string[]>(() => {
     if (!activePalette) return [];
@@ -595,20 +626,6 @@ function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
   const primary = activePalette?.primary ?? swatches[0] ?? "#e5e7eb";
   const onPrimary = getContrastHex(primary);
 
-  // Faux hint lines — the real game shows vague/medium/specific hints. For
-  // the preview we render plausible stand-ins built from the Pokemon data so
-  // admins can see the exact layout players encounter.
-  const previewHints = React.useMemo(() => {
-    if (!p) return [] as string[];
-    const typeLine =
-      p.type.length === 1
-        ? `This Pokémon is a ${p.type[0]}-type Pokémon.`
-        : `This Pokémon is a part-${p.type[0]} type Pokémon.`;
-    const genLine = `Introduced in Generation ${p.generation}.`;
-    const idLine = `Pokédex #${p.id.toString().padStart(3, "0")}.`;
-    return [typeLine, genLine, idLine];
-  }, [p]);
-
   return (
     <Card className="overflow-hidden">
       <div className="flex items-center justify-between gap-2 border-b px-4 py-2">
@@ -624,39 +641,19 @@ function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
             Preview
           </Badge>
         </div>
-        <div className="flex items-center gap-1">
-          {p?.shinyColorPalette ? (
-            <Button
-              type="button"
-              size="sm"
-              variant={shiny ? "default" : "outline"}
-              className="h-7 gap-1 px-2 text-[11px]"
-              onClick={() => setShiny((s) => !s)}
-              aria-pressed={shiny}
-            >
-              <Sparkles className="size-3" aria-hidden="true" />
-              Shiny
-            </Button>
-          ) : null}
-          <Button
-            type="button"
-            size="sm"
-            variant="outline"
-            className="h-7 px-2 text-[11px]"
-            onClick={() => setRevealed((r) => !r)}
-            aria-pressed={revealed}
+        {isShiny ? (
+          <Badge
+            className="h-5 gap-1 border-transparent px-1.5 text-[10px]"
+            style={{ backgroundColor: primary, color: onPrimary }}
           >
-            {revealed ? "Hide answer" : "Reveal answer"}
-          </Button>
-        </div>
+            <Sparkles className="size-3" aria-hidden="true" />
+            Shiny
+          </Badge>
+        ) : null}
       </div>
 
-      {/* === The actual mock starts here === */}
-      {/* Mimics the "Target Palette Display" card from /game:
-          - weighted color bar at top
-          - padded content area with hints + search + action row         */}
       <div className="m-3 overflow-hidden rounded-lg border bg-card">
-        {/* Weighted color bar */}
+        {/* Weighted color bar — exactly what players see at game time. */}
         <div
           className="relative flex h-20 w-full overflow-hidden sm:h-24"
           aria-label="Color palette players see"
@@ -691,157 +688,54 @@ function PlayerMockCard({ data }: { data: DailyPuzzleResponse }) {
                   </span>
                 </button>
               ))}
-          {data.kpis.shiny_attempts > 0 || shiny ? (
-            <div className="absolute right-2 top-2 z-10 sm:right-3 sm:top-3">
-              <Badge
-                className="gap-1 border-transparent"
-                style={{ backgroundColor: primary, color: onPrimary }}
-              >
-                <Sparkles className="size-3" aria-hidden="true" />
-                Shiny
-              </Badge>
-            </div>
-          ) : null}
         </div>
 
-        {/* Content — padding matches /game's p-4 md:p-6 proportionally. */}
-        <div className="space-y-3 p-4">
-          {/* Hints row — three badges stacked in the real UI; kept compact here. */}
-          <div className="flex flex-wrap items-center justify-end gap-1.5">
-            {previewHints.map((hint, i) => (
-              <Badge
-                key={i}
-                variant="outline"
-                className="h-6 rounded-full border-2 px-2 text-[11px] font-normal"
-                style={{
-                  borderColor: primary,
-                  backgroundColor: getDimmedColor(primary, 0.12),
-                  color: primary,
-                }}
-              >
-                {hint}
-              </Badge>
-            ))}
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              disabled
-              className="h-6 px-2 text-[11px]"
-            >
-              <Lightbulb
-                className="mr-1 size-3"
-                aria-hidden="true"
+        {/* Resolved answer — always visible in admin view, with the
+            appropriate (shiny vs. regular) artwork. */}
+        {p ? (
+          <div className="flex flex-col items-center gap-3 p-4 sm:flex-row sm:items-start sm:gap-5">
+            <div className="relative size-28 shrink-0 sm:size-32">
+              <Image
+                src={officialArtworkUrl(p.id, isShiny)}
+                alt={`${p.name} artwork`}
+                fill
+                sizes="128px"
+                className="object-contain"
+                unoptimized
               />
-              All hints revealed
-            </Button>
+            </div>
+            <div className="min-w-0 flex-1 text-center sm:text-left">
+              <h4 className="text-xl font-bold" translate="no">
+                {p.name}
+              </h4>
+              <div className="mt-1.5 flex flex-wrap justify-center gap-1.5 sm:justify-start">
+                {p.type.map((t, i) => {
+                  const bg = swatches[i] ?? primary;
+                  return (
+                    <Badge
+                      key={t}
+                      className="font-medium"
+                      style={{
+                        backgroundColor: bg,
+                        color: getContrastHex(bg),
+                        borderColor: "transparent",
+                      }}
+                    >
+                      {t}
+                    </Badge>
+                  );
+                })}
+              </div>
+              <div
+                className="mt-2 text-xs text-muted-foreground tabular-nums"
+                translate="no"
+              >
+                #{p.id.toString().padStart(3, "0")} · Generation{" "}
+                {p.generation} · {p.rarity}
+              </div>
+            </div>
           </div>
-
-          {/* Artwork + info row — visible only once revealed, mirroring
-              the real game which only shows the Pokémon after a result. */}
-          {revealed && p ? (
-            <div className="flex flex-col items-center gap-3 border-t pt-3 sm:flex-row sm:items-start sm:gap-5">
-              <div className="relative size-32 shrink-0 sm:size-36">
-                <Image
-                  src={officialArtworkUrl(p.id, shiny)}
-                  alt={`${p.name} artwork`}
-                  fill
-                  sizes="144px"
-                  className="object-contain"
-                  unoptimized
-                />
-              </div>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <h4 className="text-xl font-bold" translate="no">
-                  {p.name}
-                </h4>
-                <div className="mt-1.5 flex flex-wrap justify-center gap-1.5 sm:justify-start">
-                  {p.type.map((t, i) => {
-                    const bg = swatches[i] ?? primary;
-                    return (
-                      <Badge
-                        key={t}
-                        className="font-medium"
-                        style={{
-                          backgroundColor: bg,
-                          color: getContrastHex(bg),
-                          borderColor: "transparent",
-                        }}
-                      >
-                        {t}
-                      </Badge>
-                    );
-                  })}
-                </div>
-                <div
-                  className="mt-2 text-xs text-muted-foreground tabular-nums"
-                  translate="no"
-                >
-                  #{p.id.toString().padStart(3, "0")} · Generation{" "}
-                  {p.generation} · {p.rarity}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-center justify-center gap-3 border-t py-4 text-sm text-muted-foreground">
-              <div className="relative size-16 shrink-0 opacity-80">
-                {p ? (
-                  <Image
-                    src={officialArtworkUrl(p.id, shiny)}
-                    alt=""
-                    aria-hidden="true"
-                    fill
-                    sizes="64px"
-                    className="object-contain brightness-0 dark:invert"
-                    unoptimized
-                  />
-                ) : null}
-              </div>
-              <span>Pokémon hidden while players are guessing.</span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Mock search + action row — placed outside the inner card to echo
-          the /game page structure where search lives below the target card. */}
-      <div className="space-y-2 border-t px-4 py-3">
-        <label
-          htmlFor="daily-puzzle-mock-search"
-          className="sr-only"
-        >
-          Search Pokémon (preview)
-        </label>
-        <div
-          id="daily-puzzle-mock-search"
-          className="flex h-10 items-center gap-2 rounded-md border bg-background px-3 text-sm text-muted-foreground shadow-sm"
-          role="presentation"
-        >
-          <Search className="size-4" aria-hidden="true" />
-          <span className="truncate">Enter Pokémon name or number…</span>
-          <span className="ml-auto rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px]">
-            Enter
-          </span>
-        </div>
-        <p className="text-[11px] text-muted-foreground">
-          Tip: Search works in multiple languages (日本語, Français, Deutsch,
-          Español, and more).
-        </p>
-        <div className="flex items-center justify-between gap-2 pt-1">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            disabled
-            className="h-7 border-red-300 px-2 text-[11px] text-red-600 dark:border-red-800 dark:text-red-400"
-          >
-            <Flag className="mr-1 size-3" aria-hidden="true" />
-            Give Up
-          </Button>
-          <span className="font-mono text-[10px] text-muted-foreground tabular-nums">
-            Read-only preview
-          </span>
-        </div>
+        ) : null}
       </div>
     </Card>
   );
@@ -943,16 +837,335 @@ function KpiGrid({ data }: { data: DailyPuzzleResponse }) {
 }
 
 // --------------------------------------------------------------------------
+// Difficulty comparison — easy vs. hard on the same date
+// --------------------------------------------------------------------------
+
+interface ComparisonKpis {
+  attempts: number;
+  unique_players: number;
+  wins: number;
+  win_rate: number;
+  avg_attempts: number;
+  avg_attempts_win: number;
+  avg_hints: number;
+  target_pokemon_id: number | null;
+  pokemon: PokemonSummary | null;
+  is_shiny: boolean;
+}
+
+/**
+ * Renders a side-by-side comparison of the current difficulty against the
+ * opposite track. Each (date, difficulty) row is its own dataset in the
+ * `daily_game_attempts` table, so the comparison fires a single extra
+ * request for the opposite track and stitches the two KPI blocks together.
+ * Both tracks render the target Pokémon's official artwork (shiny variant
+ * when the day rolled shiny) so admins can spot at a glance when the two
+ * difficulties land on different Pokémon — which happens routinely once
+ * the hard-mode shiny roll kicks in.
+ */
+function DifficultyComparisonCard({
+  date,
+  difficulty,
+  currentKpis,
+  currentPokemon,
+  currentIsShiny,
+}: {
+  date: string;
+  difficulty: Difficulty;
+  currentKpis: DailyPuzzleResponse["kpis"];
+  currentPokemon: PokemonSummary | null;
+  currentIsShiny: boolean;
+}) {
+  const otherDifficulty: Difficulty = difficulty === "easy" ? "hard" : "easy";
+  const [other, setOther] = React.useState<ComparisonKpis | null>(null);
+  const [loading, setLoading] = React.useState(true);
+  const [errored, setErrored] = React.useState(false);
+
+  React.useEffect(() => {
+    const ctrl = new AbortController();
+    setLoading(true);
+    setErrored(false);
+    fetch(
+      `/api/admin/game-data/daily/${date}?difficulty=${encodeURIComponent(
+        otherDifficulty,
+      )}`,
+      { signal: ctrl.signal, cache: "no-store" },
+    )
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`Failed (${res.status})`);
+        return (await res.json()) as DailyPuzzleResponse;
+      })
+      .then((d) => {
+        // Resolve the other track's shiny status using the same fallback
+        // chain we use for the current track: override wins, then the
+        // algorithmic roll. Keeps the two artworks honest about which
+        // variant players actually saw on that track.
+        const otherIsShiny = d.override
+          ? d.override.is_shiny
+          : pickAlgorithmicDailyTarget(
+              new Date(`${date}T00:00:00Z`),
+              otherDifficulty,
+            ).isShiny;
+        setOther({
+          attempts: d.kpis.attempts,
+          unique_players: d.kpis.unique_players,
+          wins: d.kpis.wins,
+          win_rate: d.kpis.win_rate,
+          avg_attempts: d.kpis.avg_attempts,
+          avg_attempts_win: d.kpis.avg_attempts_win,
+          avg_hints: d.kpis.avg_hints,
+          target_pokemon_id: d.kpis.target_pokemon_id ?? d.target_pokemon_id,
+          pokemon: d.pokemon,
+          is_shiny: otherIsShiny,
+        });
+        setLoading(false);
+      })
+      .catch((err) => {
+        if ((err as Error).name === "AbortError") return;
+        setErrored(true);
+        setLoading(false);
+      });
+    return () => ctrl.abort();
+  }, [date, otherDifficulty]);
+
+  const currentSide: ComparisonKpis = {
+    attempts: currentKpis.attempts,
+    unique_players: currentKpis.unique_players,
+    wins: currentKpis.wins,
+    win_rate: currentKpis.win_rate,
+    avg_attempts: currentKpis.avg_attempts,
+    avg_attempts_win: currentKpis.avg_attempts_win,
+    avg_hints: currentKpis.avg_hints,
+    target_pokemon_id: currentKpis.target_pokemon_id ?? null,
+    pokemon: currentPokemon,
+    is_shiny: currentIsShiny,
+  };
+
+  const emptySide: ComparisonKpis = {
+    attempts: 0,
+    unique_players: 0,
+    wins: 0,
+    win_rate: 0,
+    avg_attempts: 0,
+    avg_attempts_win: 0,
+    avg_hints: 0,
+    target_pokemon_id: null,
+    pokemon: null,
+    is_shiny: false,
+  };
+
+  const easy: ComparisonKpis =
+    difficulty === "easy" ? currentSide : other ?? emptySide;
+  const hard: ComparisonKpis =
+    difficulty === "hard" ? currentSide : other ?? emptySide;
+
+  const rows: Array<{
+    label: string;
+    fmt: (k: ComparisonKpis) => string;
+    higherIsBetter: boolean | null;
+  }> = [
+    {
+      label: "Attempts",
+      fmt: (k) => k.attempts.toLocaleString(),
+      higherIsBetter: null,
+    },
+    {
+      label: "Unique players",
+      fmt: (k) => k.unique_players.toLocaleString(),
+      higherIsBetter: null,
+    },
+    {
+      label: "Win rate",
+      fmt: (k) =>
+        k.attempts > 0 ? `${(k.win_rate * 100).toFixed(1)}%` : "—",
+      higherIsBetter: true,
+    },
+    {
+      label: "Avg guesses",
+      fmt: (k) =>
+        k.attempts > 0
+          ? Number(k.avg_attempts_win || k.avg_attempts || 0).toFixed(2)
+          : "—",
+      higherIsBetter: false,
+    },
+    {
+      label: "Avg hints",
+      fmt: (k) => Number(k.avg_hints || 0).toFixed(2),
+      higherIsBetter: false,
+    },
+  ];
+
+  const numericValue = (k: ComparisonKpis, label: string): number => {
+    switch (label) {
+      case "Attempts":
+        return k.attempts;
+      case "Unique players":
+        return k.unique_players;
+      case "Win rate":
+        return k.win_rate;
+      case "Avg guesses":
+        return k.avg_attempts_win || k.avg_attempts;
+      case "Avg hints":
+        return k.avg_hints;
+      default:
+        return 0;
+    }
+  };
+
+  return (
+    <Card>
+      <CardContent className="space-y-2 p-4">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="flex items-center gap-1.5 text-sm font-semibold">
+            <Swords className="size-3.5" aria-hidden="true" />
+            Easy vs. hard
+          </h3>
+          <span className="text-[11px] text-muted-foreground">
+            Same date, both tracks
+          </span>
+        </div>
+        {errored ? (
+          <p className="text-xs text-muted-foreground">
+            Couldn’t load {otherDifficulty} stats.
+          </p>
+        ) : (
+          <div className="overflow-hidden rounded-md border">
+            <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-3 px-3 py-2">
+              <span className="sr-only">Metric</span>
+              <ComparisonTargetCell
+                side={easy}
+                label="Easy"
+                loading={loading && difficulty === "hard"}
+              />
+              <ComparisonTargetCell
+                side={hard}
+                label="Hard"
+                loading={loading && difficulty === "easy"}
+              />
+            </div>
+            <ul className="divide-y border-t" role="list">
+              {rows.map((r) => {
+                const easyVal = numericValue(easy, r.label);
+                const hardVal = numericValue(hard, r.label);
+                const showWinner =
+                  r.higherIsBetter !== null &&
+                  easy.attempts > 0 &&
+                  hard.attempts > 0 &&
+                  easyVal !== hardVal;
+                const easyWins =
+                  showWinner &&
+                  (r.higherIsBetter ? easyVal > hardVal : easyVal < hardVal);
+                const hardWins = showWinner && !easyWins;
+                return (
+                  <li
+                    key={r.label}
+                    className="grid grid-cols-[1fr_auto_auto] items-center gap-x-3 px-3 py-1.5 text-xs"
+                  >
+                    <span className="text-muted-foreground">{r.label}</span>
+                    <span
+                      className={cn(
+                        "text-right tabular-nums",
+                        easyWins && "font-semibold text-emerald-600 dark:text-emerald-400",
+                      )}
+                    >
+                      {loading && difficulty === "hard" ? "…" : r.fmt(easy)}
+                    </span>
+                    <span
+                      className={cn(
+                        "text-right tabular-nums",
+                        hardWins && "font-semibold text-emerald-600 dark:text-emerald-400",
+                      )}
+                    >
+                      {loading && difficulty === "easy" ? "…" : r.fmt(hard)}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function ComparisonTargetCell({
+  side,
+  label,
+  loading,
+}: {
+  side: ComparisonKpis;
+  label: string;
+  loading: boolean;
+}) {
+  const id = side.target_pokemon_id;
+  return (
+    <div
+      className={cn(
+        "flex flex-col items-end gap-1 text-right",
+        label === "Easy" ? "col-start-2" : "col-start-3",
+      )}
+    >
+      <span className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+        {label}
+      </span>
+      <div className="flex items-center gap-1.5">
+        {side.is_shiny ? (
+          <Sparkles
+            className="size-3 text-amber-500"
+            aria-label="Shiny"
+          />
+        ) : null}
+        <span
+          className="font-mono text-[11px] tabular-nums text-muted-foreground"
+          translate="no"
+        >
+          {id !== null ? `#${id.toString().padStart(4, "0")}` : "—"}
+        </span>
+      </div>
+      <div className="relative size-12 overflow-hidden rounded bg-muted">
+        {loading ? (
+          <Skeleton className="size-full" />
+        ) : id !== null ? (
+          <Image
+            src={officialArtworkUrl(id, side.is_shiny)}
+            alt={
+              side.pokemon
+                ? `${label} target: ${side.pokemon.name}${side.is_shiny ? " (shiny)" : ""}`
+                : `${label} target #${id}`
+            }
+            fill
+            sizes="48px"
+            className="object-contain"
+            unoptimized
+          />
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+// --------------------------------------------------------------------------
 // Attempts histogram
 // --------------------------------------------------------------------------
 
+// The daily game caps players at 4 guesses (see MAX_ATTEMPTS in
+// `src/app/game/page.tsx`). The RPC clamps to 1..7 historically, but
+// in practice anything beyond 4 is impossible — so we collapse those
+// stragglers into the "4" bucket and only render 1..4 here.
+const MAX_DAILY_ATTEMPTS = 4;
+
 function AttemptsHistogramCard({ data }: { data: DailyPuzzleResponse }) {
-  // Normalize to buckets 1..7 so every day has the same x-axis.
   const raw = new Map<number, { count: number; wins: number }>();
   for (const row of data.attempts_histogram) {
-    raw.set(row.bucket, { count: row.count, wins: row.wins });
+    const clamped = Math.min(Math.max(row.bucket, 1), MAX_DAILY_ATTEMPTS);
+    const prev = raw.get(clamped) ?? { count: 0, wins: 0 };
+    raw.set(clamped, {
+      count: prev.count + row.count,
+      wins: prev.wins + row.wins,
+    });
   }
-  const buckets = Array.from({ length: 7 }, (_, i) => {
+  const buckets = Array.from({ length: MAX_DAILY_ATTEMPTS }, (_, i) => {
     const b = i + 1;
     const r = raw.get(b) ?? { count: 0, wins: 0 };
     return { bucket: b, ...r };
@@ -979,7 +1192,7 @@ function AttemptsHistogramCard({ data }: { data: DailyPuzzleResponse }) {
               <div
                 key={b.bucket}
                 className="flex min-w-0 flex-1 flex-col items-center gap-1"
-                aria-label={`${b.bucket === 7 ? "7+" : b.bucket} guesses: ${total}`}
+                aria-label={`${b.bucket} guesses: ${total}`}
               >
                 <div className="relative flex h-24 w-full items-end overflow-hidden rounded-sm border bg-muted/30">
                   {empty ? null : (
@@ -1003,7 +1216,7 @@ function AttemptsHistogramCard({ data }: { data: DailyPuzzleResponse }) {
                   ) : null}
                 </div>
                 <span className="text-[10px] tabular-nums text-muted-foreground">
-                  {b.bucket === 7 ? "7+" : b.bucket}
+                  {b.bucket}
                 </span>
               </div>
             );
@@ -1231,34 +1444,6 @@ function EmptyPuzzleState({
         </p>
       </CardContent>
     </Card>
-  );
-}
-
-function ActionsFooter({ data }: { data: DailyPuzzleResponse }) {
-  return (
-    <div className="flex flex-wrap items-center gap-2 pt-1">
-      <Button size="sm" variant="outline" asChild>
-        <Link
-          href={`/admin/game?view=attempts&date_from=${data.date}&date_to=${data.date}`}
-        >
-          <Target className="mr-1.5 size-4" aria-hidden="true" />
-          View all attempts
-        </Link>
-      </Button>
-      <Button size="sm" variant="outline" asChild>
-        <Link href={`/admin/game?view=daily`}>
-          Daily table
-        </Link>
-      </Button>
-      <Button
-        size="sm"
-        variant="ghost"
-        onClick={() => copy(data.date, "Date")}
-      >
-        <Copy className="mr-1.5 size-4" aria-hidden="true" />
-        Copy date
-      </Button>
-    </div>
   );
 }
 
