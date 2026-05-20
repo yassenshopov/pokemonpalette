@@ -261,7 +261,12 @@ function WorldMapBody({
     <TooltipProvider delayDuration={120}>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <div className="space-y-2">
-          <div className="overflow-hidden rounded-lg border p-2" style={{ background: "hsl(var(--primary) / 0.04)" }}>
+          <div
+            className="overflow-hidden rounded-lg border p-2"
+            style={{
+              background: "color-mix(in oklch, var(--primary) 4%, transparent)",
+            }}
+          >
             <svg
               role="img"
               aria-label="World map of user countries"
@@ -274,7 +279,7 @@ function WorldMapBody({
                 y={0}
                 width={world.projectionWidth}
                 height={world.projectionHeight}
-                style={{ fill: "hsl(var(--primary) / 0.06)" }}
+                style={{ fill: "var(--primary)", fillOpacity: 0.06 }}
               />
               {world.features.map((f) => {
                 const row = f.alpha2 ? byAlpha2.get(f.alpha2) : undefined;
@@ -365,8 +370,8 @@ function CountryShape({
   // bucket 1–5 = has users → primary-tinted heat.
   const fillStyle: React.CSSProperties =
     bucket === 0
-      ? { fill: "hsl(var(--muted-foreground) / 0.18)" }
-      : { fill: "hsl(var(--primary))", fillOpacity: HEAT_OPACITY[bucket] };
+      ? { fill: "var(--muted-foreground)", fillOpacity: 0.18 }
+      : { fill: "var(--primary)", fillOpacity: HEAT_OPACITY[bucket] };
 
   const path = (
     <path
@@ -375,7 +380,7 @@ function CountryShape({
       className={cn(
         "transition-[fill-opacity,fill] duration-200 cursor-pointer",
         bucket === 0
-          ? "stroke-background/80 hover:fill-[hsl(var(--muted-foreground)/0.3)]"
+          ? "stroke-background/80 hover:[fill-opacity:0.3]"
           : "stroke-background hover:[fill-opacity:1]",
       )}
       strokeWidth={0.5}
@@ -474,7 +479,10 @@ function MapLegend({ max }: { max: number }) {
         <span
           aria-hidden="true"
           className="inline-block size-3 rounded-sm"
-          style={{ backgroundColor: "hsl(var(--muted-foreground) / 0.18)" }}
+          style={{
+            backgroundColor:
+              "color-mix(in oklch, var(--muted-foreground) 18%, transparent)",
+          }}
         />
         {HEAT_OPACITY.slice(1).map((op, i) => (
           <span
@@ -482,7 +490,7 @@ function MapLegend({ max }: { max: number }) {
             aria-hidden="true"
             className="inline-block size-3 rounded-sm"
             style={{
-              backgroundColor: "hsl(var(--primary))",
+              backgroundColor: "var(--primary)",
               opacity: op,
             }}
           />

@@ -697,7 +697,7 @@ function CumulativeChart({
           <span className="inline-flex items-center gap-1.5">
             <span
               aria-hidden="true"
-              className="inline-block size-2.5 rounded-sm bg-[hsl(var(--primary))]"
+              className="inline-block size-2.5 rounded-sm bg-primary"
             />
             <span className="text-foreground">
               {numberFormatter.format(totalAttempts)}
@@ -734,12 +734,12 @@ function CumulativeChart({
               >
                 <stop
                   offset="0%"
-                  stopColor="hsl(var(--primary))"
+                  stopColor="var(--primary)"
                   stopOpacity={0.35}
                 />
                 <stop
                   offset="100%"
-                  stopColor="hsl(var(--primary))"
+                  stopColor="var(--primary)"
                   stopOpacity={0}
                 />
               </linearGradient>
@@ -769,24 +769,25 @@ function CumulativeChart({
                 return Number.isNaN(d.getTime()) ? v : dateShort.format(d);
               }}
               minTickGap={32}
-              tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fontSize: 11, fill: "var(--muted-foreground)" }}
             />
             <YAxis
               tickLine={false}
               axisLine={false}
               width={48}
-              tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fontSize: 11, fill: "var(--muted-foreground)" }}
               tickFormatter={(v: number) => compactFormatter.format(v)}
               allowDecimals={false}
             />
             <RechartsTooltip
               cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
               contentStyle={{
-                background: "hsl(var(--popover))",
-                border: "1px solid hsl(var(--border))",
+                background: "var(--popover)",
+                border: "1px solid var(--border)",
                 borderRadius: 8,
                 fontSize: 12,
                 padding: "6px 10px",
+                color: "var(--popover-foreground)",
               }}
               labelFormatter={(v: string) => {
                 const d = new Date(`${v}T00:00:00Z`);
@@ -801,7 +802,7 @@ function CumulativeChart({
               <Area
                 type="monotone"
                 dataKey="attempts"
-                stroke="hsl(var(--primary))"
+                stroke="var(--primary)"
                 strokeWidth={2}
                 fill={`url(#growthAttempts-${id})`}
                 isAnimationActive={!reducedMotion}

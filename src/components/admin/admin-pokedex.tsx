@@ -825,23 +825,24 @@ function CatchAreaChart({
               return Number.isNaN(d.getTime()) ? v : dateShort.format(d);
             }}
             minTickGap={24}
-            tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+            tick={{ fontSize: 11, fill: "var(--muted-foreground)" }}
           />
           <YAxis
             tickLine={false}
             axisLine={false}
             width={36}
-            tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+            tick={{ fontSize: 11, fill: "var(--muted-foreground)" }}
             allowDecimals={false}
           />
           <Tooltip
             cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
             contentStyle={{
-              background: "hsl(var(--popover))",
-              border: "1px solid hsl(var(--border))",
+              background: "var(--popover)",
+              border: "1px solid var(--border)",
               borderRadius: 8,
               fontSize: 12,
               padding: "6px 10px",
+              color: "var(--popover-foreground)",
             }}
             labelFormatter={(v: string) => {
               const d = new Date(`${v}T00:00:00Z`);

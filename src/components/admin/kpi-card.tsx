@@ -141,13 +141,14 @@ function Sparkline({ data, colorId }: { data: SparkPoint[]; colorId: string }) {
           <Tooltip
             cursor={{ stroke: "currentColor", strokeOpacity: 0.15 }}
             contentStyle={{
-              background: "hsl(var(--popover))",
-              border: "1px solid hsl(var(--border))",
+              background: "var(--popover)",
+              border: "1px solid var(--border)",
               borderRadius: 8,
               fontSize: 12,
               padding: "4px 8px",
+              color: "var(--popover-foreground)",
             }}
-            labelStyle={{ color: "hsl(var(--muted-foreground))" }}
+            labelStyle={{ color: "var(--muted-foreground)" }}
             formatter={(v: number) => [numberFormatter.format(v), "Count"]}
           />
           <Area

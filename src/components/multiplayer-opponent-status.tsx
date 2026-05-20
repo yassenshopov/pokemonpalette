@@ -60,8 +60,8 @@ function PlayerCard({
             style={{
               backgroundColor: primaryColor
                 ? `${primaryColor}20`
-                : "hsl(var(--muted))",
-              color: primaryColor || "hsl(var(--muted-foreground))",
+                : "var(--muted)",
+              color: primaryColor || "var(--muted-foreground)",
             }}
           >
             {player.imageUrl ? (
