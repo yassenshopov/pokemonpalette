@@ -1029,8 +1029,12 @@ function DifficultyComparisonCard({
             Couldn’t load {otherDifficulty} stats.
           </p>
         ) : (
-          <div className="overflow-hidden rounded-md border">
-            <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-3 px-3 py-2">
+          // Fixed column widths so the artwork tiles in the header row
+          // and the numeric cells in the KPI rows line up vertically.
+          // Each row is its own grid container, so `auto` would let the
+          // tracks resize per-row and the columns wouldn't align.
+          <div className="overflow-hidden rounded-md border [--col-w:5.5rem]">
+            <div className="grid grid-cols-[1fr_var(--col-w)_var(--col-w)] items-end gap-x-3 px-3 py-2">
               <span className="sr-only">Metric</span>
               <ComparisonTargetCell
                 side={easy}
@@ -1059,7 +1063,7 @@ function DifficultyComparisonCard({
                 return (
                   <li
                     key={r.label}
-                    className="grid grid-cols-[1fr_auto_auto] items-center gap-x-3 px-3 py-1.5 text-xs"
+                    className="grid grid-cols-[1fr_var(--col-w)_var(--col-w)] items-center gap-x-3 px-3 py-1.5 text-xs"
                   >
                     <span className="text-muted-foreground">{r.label}</span>
                     <span
@@ -1100,29 +1104,10 @@ function ComparisonTargetCell({
 }) {
   const id = side.target_pokemon_id;
   return (
-    <div
-      className={cn(
-        "flex flex-col items-end gap-1 text-right",
-        label === "Easy" ? "col-start-2" : "col-start-3",
-      )}
-    >
+    <div className="flex flex-col items-center gap-1">
       <span className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
         {label}
       </span>
-      <div className="flex items-center gap-1.5">
-        {side.is_shiny ? (
-          <Sparkles
-            className="size-3 text-amber-500"
-            aria-label="Shiny"
-          />
-        ) : null}
-        <span
-          className="font-mono text-[11px] tabular-nums text-muted-foreground"
-          translate="no"
-        >
-          {id !== null ? `#${id.toString().padStart(4, "0")}` : "—"}
-        </span>
-      </div>
       <div className="relative size-12 overflow-hidden rounded bg-muted">
         {loading ? (
           <Skeleton className="size-full" />
@@ -1140,6 +1125,20 @@ function ComparisonTargetCell({
             unoptimized
           />
         ) : null}
+      </div>
+      <div className="flex items-center gap-1">
+        {side.is_shiny ? (
+          <Sparkles
+            className="size-3 text-amber-500"
+            aria-label="Shiny"
+          />
+        ) : null}
+        <span
+          className="font-mono text-[10px] tabular-nums text-muted-foreground"
+          translate="no"
+        >
+          {id !== null ? `#${id.toString().padStart(4, "0")}` : "—"}
+        </span>
       </div>
     </div>
   );
