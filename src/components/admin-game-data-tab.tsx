@@ -6,12 +6,9 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   CalendarDays,
-  Calendar,
   Copy,
-  ExternalLink,
   Eye,
   Gamepad2,
-  LayoutGrid,
   Sparkles,
   Target,
   Trash2,
@@ -43,7 +40,7 @@ import type { BulkAction } from "@/components/admin/bulk-action-bar";
 import { AdminUserCell } from "@/components/admin/user-cell";
 import { useAdminTable } from "@/hooks/use-admin-table";
 
-type ViewId = "attempts" | "calendar" | "daily" | "by_user";
+type ViewId = "calendar" | "attempts";
 
 interface GameAttempt {
   id: string;
@@ -66,23 +63,6 @@ interface GameAttempt {
     image_url: string | null;
     profile_image_url: string | null;
   } | null;
-}
-
-interface DailyRow {
-  date: string;
-  target_pokemon_id: number;
-  attempts_count: number;
-  wins: number;
-  avg_attempts: number;
-  avg_hints: number;
-}
-
-interface ByUserRow {
-  user_id: string;
-  attempts_count: number;
-  wins: number;
-  last_played: string | null;
-  users?: GameAttempt["users"];
 }
 
 interface GameStats {
@@ -440,247 +420,6 @@ function AttemptsView() {
 }
 
 // ---------------------------------------------------------------------------
-// Daily puzzles view
-// ---------------------------------------------------------------------------
-
-function DailyView() {
-  const router = useRouter();
-  const table = useAdminTable<DailyRow>({
-    endpoint: "/api/admin/game-data",
-    filterKeys: [],
-    sortableFields: ["date"],
-    defaultSort: { field: "date", dir: "desc" },
-    extraParams: { view: "daily" },
-    getRowId: (row) => row.date,
-  });
-
-  const columns = useMemo<ColumnDef<DailyRow>[]>(
-    () => [
-      {
-        id: "date",
-        header: "Date",
-        cell: ({ row }) => (
-          <div className="flex items-center gap-2">
-            <Calendar
-              className="size-4 text-muted-foreground"
-              aria-hidden="true"
-            />
-            <span className="tabular-nums">
-              {formatAbsoluteDate(row.original.date)}
-            </span>
-          </div>
-        ),
-        meta: { label: "Date", sortField: "date" },
-      },
-      {
-        id: "target",
-        header: "Target",
-        cell: ({ row }) => (
-          <div className="flex items-center gap-2">
-            <PokemonBadge id={row.original.target_pokemon_id} />
-            <span className="font-mono text-xs tabular-nums text-muted-foreground">
-              #{row.original.target_pokemon_id.toString().padStart(4, "0")}
-            </span>
-          </div>
-        ),
-        meta: { label: "Target" },
-      },
-      {
-        id: "attempts_count",
-        header: "Attempts",
-        cell: ({ row }) => (
-          <span className="tabular-nums">
-            {row.original.attempts_count.toLocaleString()}
-          </span>
-        ),
-        meta: { label: "Attempts", align: "right" },
-      },
-      {
-        id: "win_rate",
-        header: "Win rate",
-        cell: ({ row }) => {
-          const rate =
-            row.original.attempts_count > 0
-              ? (row.original.wins / row.original.attempts_count) * 100
-              : 0;
-          return (
-            <span className="tabular-nums">
-              {rate.toFixed(1)}%
-              <span className="ml-2 text-xs text-muted-foreground">
-                ({row.original.wins.toLocaleString()}/
-                {row.original.attempts_count.toLocaleString()})
-              </span>
-            </span>
-          );
-        },
-        meta: { label: "Win rate", align: "right" },
-      },
-      {
-        id: "avg_attempts",
-        header: "Avg attempts",
-        cell: ({ row }) => (
-          <span className="tabular-nums">
-            {Number(row.original.avg_attempts).toFixed(2)}
-          </span>
-        ),
-        meta: { label: "Avg attempts", align: "right" },
-      },
-      {
-        id: "avg_hints",
-        header: "Avg hints",
-        cell: ({ row }) => (
-          <span className="tabular-nums">
-            {Number(row.original.avg_hints).toFixed(2)}
-          </span>
-        ),
-        meta: { label: "Avg hints", align: "right" },
-      },
-    ],
-    [],
-  );
-
-  const rowActions = (row: DailyRow): RowAction[] => [
-    {
-      id: "open-attempts",
-      label: "See all attempts",
-      icon: <ExternalLink className="size-4" aria-hidden="true" />,
-      onSelect: () =>
-        router.push(
-          `/admin/game?view=attempts&date_from=${row.date}&date_to=${row.date}`,
-        ),
-    },
-  ];
-
-  return (
-    <DataTable
-      table={table}
-      columns={columns}
-      getRowId={(row) => row.date}
-      resourceLabel="daily puzzles"
-      searchPlaceholder="Search by date (YYYY-MM-DD)…"
-      rowActions={rowActions}
-      onRowClick={(row) =>
-        router.push(
-          `/admin/game?view=attempts&date_from=${row.date}&date_to=${row.date}`,
-        )
-      }
-      storageKey="admin-game-daily"
-      exportEndpoint="/api/admin/game-data"
-      exportParams={{ view: "daily" }}
-      exportFilename="game-daily"
-    />
-  );
-}
-
-// ---------------------------------------------------------------------------
-// By-user view
-// ---------------------------------------------------------------------------
-
-function ByUserView() {
-  const router = useRouter();
-  const table = useAdminTable<ByUserRow>({
-    endpoint: "/api/admin/game-data",
-    filterKeys: [],
-    sortableFields: ["attempts_count"],
-    defaultSort: { field: "attempts_count", dir: "desc" },
-    extraParams: { view: "by_user" },
-    getRowId: (row) => row.user_id,
-  });
-
-  const columns = useMemo<ColumnDef<ByUserRow>[]>(
-    () => [
-      {
-        id: "user",
-        header: "Player",
-        cell: ({ row }) => (
-          <AdminUserCell
-            user={row.original.users ?? { id: row.original.user_id }}
-            fallbackId={row.original.user_id}
-          />
-        ),
-        meta: { label: "Player" },
-      },
-      {
-        id: "attempts_count",
-        header: "Attempts",
-        cell: ({ row }) => (
-          <span className="tabular-nums">
-            {row.original.attempts_count.toLocaleString()}
-          </span>
-        ),
-        meta: { label: "Attempts", align: "right", sortField: "attempts_count" },
-      },
-      {
-        id: "win_rate",
-        header: "Win rate",
-        cell: ({ row }) => {
-          const rate =
-            row.original.attempts_count > 0
-              ? (row.original.wins / row.original.attempts_count) * 100
-              : 0;
-          return (
-            <span className="tabular-nums">
-              {rate.toFixed(1)}%
-              <span className="ml-2 text-xs text-muted-foreground">
-                ({row.original.wins.toLocaleString()}/
-                {row.original.attempts_count.toLocaleString()})
-              </span>
-            </span>
-          );
-        },
-        meta: { label: "Win rate", align: "right" },
-      },
-      {
-        id: "last_played",
-        header: "Last played",
-        cell: ({ row }) => (
-          <RelativeTime
-            value={row.original.last_played}
-            className="text-xs text-muted-foreground"
-          />
-        ),
-        meta: { label: "Last played" },
-      },
-    ],
-    [],
-  );
-
-  const rowActions = (row: ByUserRow): RowAction[] => [
-    {
-      id: "open-user",
-      label: "View player",
-      icon: <UserIcon className="size-4" aria-hidden="true" />,
-      onSelect: () => router.push(`/admin/users/${row.user_id}`),
-    },
-    {
-      id: "open-attempts",
-      label: "See all attempts",
-      icon: <ExternalLink className="size-4" aria-hidden="true" />,
-      onSelect: () =>
-        router.push(`/admin/game?view=attempts&user_id=${row.user_id}`),
-    },
-  ];
-
-  return (
-    <DataTable
-      table={table}
-      columns={columns}
-      getRowId={(row) => row.user_id}
-      resourceLabel="players"
-      searchPlaceholder="Search players…"
-      rowActions={rowActions}
-      onRowClick={(row) =>
-        router.push(`/admin/game?view=attempts&user_id=${row.user_id}`)
-      }
-      storageKey="admin-game-by-user"
-      exportEndpoint="/api/admin/game-data"
-      exportParams={{ view: "by_user" }}
-      exportFilename="game-by-user"
-    />
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Tab container
 // ---------------------------------------------------------------------------
 
@@ -688,18 +427,17 @@ export function AdminGameDataTab() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const rawView = searchParams?.get("view");
-  const view: ViewId =
-    rawView === "daily" ||
-    rawView === "by_user" ||
-    rawView === "calendar"
-      ? rawView
-      : "attempts";
+  // Calendar is the canonical landing view; "attempts" is the only other
+  // explicit value we honor. Anything else (legacy `daily`, `by_user`,
+  // missing param) collapses back to calendar.
+  const view: ViewId = rawView === "attempts" ? "attempts" : "calendar";
 
   const handleViewChange = (nextView: ViewId) => {
     // Reset all other table params when switching view — their sort/filter
-    // fields are not shared between views.
+    // fields are not shared between views. Calendar is the default so we
+    // strip the query entirely; only "attempts" carries an explicit param.
     const params = new URLSearchParams();
-    if (nextView !== "attempts") params.set("view", nextView);
+    if (nextView === "attempts") params.set("view", "attempts");
     router.replace(params.toString() ? `?${params.toString()}` : "?", {
       scroll: false,
     });
@@ -714,31 +452,19 @@ export function AdminGameDataTab() {
         className="space-y-4"
       >
         <TabsList>
+          <TabsTrigger value="calendar">
+            <CalendarDays className="mr-1.5 size-4" aria-hidden="true" />
+            Calendar
+          </TabsTrigger>
           <TabsTrigger value="attempts">
             <Gamepad2 className="mr-1.5 size-4" aria-hidden="true" />
             Attempts
           </TabsTrigger>
-          <TabsTrigger value="calendar">
-            <LayoutGrid className="mr-1.5 size-4" aria-hidden="true" />
-            Calendar
-          </TabsTrigger>
-          <TabsTrigger value="daily">
-            <CalendarDays className="mr-1.5 size-4" aria-hidden="true" />
-            Daily puzzles
-          </TabsTrigger>
-          <TabsTrigger value="by_user">
-            <Users className="mr-1.5 size-4" aria-hidden="true" />
-            By user
-          </TabsTrigger>
         </TabsList>
-        {view === "attempts" ? (
-          <AttemptsView key="attempts" />
-        ) : view === "calendar" ? (
+        {view === "calendar" ? (
           <GameCalendarView key="calendar" />
-        ) : view === "daily" ? (
-          <DailyView key="daily" />
         ) : (
-          <ByUserView key="by_user" />
+          <AttemptsView key="attempts" />
         )}
       </Tabs>
       <noscript>

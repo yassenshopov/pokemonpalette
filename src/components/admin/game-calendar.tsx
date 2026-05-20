@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ChevronLeft,
   ChevronRight,
@@ -750,29 +749,24 @@ function PaletteSwatch({
 
 function CalendarLegend() {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 pt-1 text-[11px] text-muted-foreground">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-        <span className="inline-flex items-center gap-1">
-          <Users className="size-3" aria-hidden="true" />
-          Plays
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-1 text-[11px] text-muted-foreground">
+      <span className="inline-flex items-center gap-1">
+        <Users className="size-3" aria-hidden="true" />
+        Plays
+      </span>
+      <span className="inline-flex items-center gap-1">
+        <Trophy className="size-3" aria-hidden="true" />
+        Win rate
+      </span>
+      <span className="inline-flex items-center gap-1">
+        <span
+          className="inline-flex size-3.5 items-center justify-center rounded-full bg-amber-500 text-amber-50"
+          aria-hidden="true"
+        >
+          <Pin className="size-2" aria-hidden="true" />
         </span>
-        <span className="inline-flex items-center gap-1">
-          <Trophy className="size-3" aria-hidden="true" />
-          Win rate
-        </span>
-        <span className="inline-flex items-center gap-1">
-          <span
-            className="inline-flex size-3.5 items-center justify-center rounded-full bg-amber-500 text-amber-50"
-            aria-hidden="true"
-          >
-            <Pin className="size-2" aria-hidden="true" />
-          </span>
-          Override
-        </span>
-      </div>
-      <Link href="/admin/game?view=daily" className="hover:underline">
-        View daily table →
-      </Link>
+        Override
+      </span>
     </div>
   );
 }
