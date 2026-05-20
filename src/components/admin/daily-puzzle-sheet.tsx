@@ -5,12 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Calendar as CalendarIcon,
   CheckCircle2,
   Clock,
   ExternalLink,
   HelpCircle,
   Lightbulb,
   Pin,
+  Skull,
   Sparkles,
   Swords,
   Target,
@@ -27,6 +29,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -56,6 +59,13 @@ interface DailyPuzzleSheetProps {
    * single-track behavior.
    */
   difficulty?: Difficulty;
+  /**
+   * When provided, the sheet renders an Easy / Hard toggle in its header
+   * so admins can compare the same date across difficulty tracks without
+   * closing the sheet. The parent is expected to update the controlling
+   * URL param (or other source) so the change cascades to the calendar.
+   */
+  onDifficultyChange?: (next: Difficulty) => void;
   onOpenChange: (open: boolean) => void;
 }
 
@@ -198,6 +208,7 @@ async function copy(text: string, label: string) {
 export function DailyPuzzleSheet({
   date,
   difficulty = "easy",
+  onDifficultyChange,
   onOpenChange,
 }: DailyPuzzleSheetProps) {
   const [data, setData] = React.useState<DailyPuzzleResponse | null>(null);
@@ -286,6 +297,7 @@ export function DailyPuzzleSheet({
             <SheetHeaderBlock
               date={date}
               difficulty={difficulty}
+              onDifficultyChange={onDifficultyChange}
               data={data}
               loading={loading && !data}
               onOverrideChanged={handleOverrideChanged}
@@ -326,12 +338,14 @@ export function DailyPuzzleSheet({
 function SheetHeaderBlock({
   date,
   difficulty,
+  onDifficultyChange,
   data,
   loading,
   onOverrideChanged,
 }: {
   date: string;
   difficulty: Difficulty;
+  onDifficultyChange?: (next: Difficulty) => void;
   data: DailyPuzzleResponse | null;
   loading: boolean;
   onOverrideChanged: (next: DailyOverrideValue | null) => void;
@@ -388,21 +402,55 @@ function SheetHeaderBlock({
           </SheetDescription>
         </div>
         <div className="flex flex-wrap items-center gap-1.5 pr-7">
-          {/* Difficulty pill is always rendered so the sheet's track is
-              unambiguous — easy vs. hard rows are entirely separate in
-              the DB and the override action below would otherwise feel
-              identical between the two modes. */}
-          <Badge
-            variant={difficulty === "hard" ? "default" : "outline"}
-            className={cn(
-              "gap-1 uppercase tracking-wide",
-              difficulty === "hard" &&
-                "bg-rose-500 text-rose-50 hover:bg-rose-500/90",
-            )}
-            aria-label={`Difficulty: ${difficulty}`}
-          >
-            {difficulty}
-          </Badge>
+          {/* When the parent wires up `onDifficultyChange` (the admin
+              calendar does), expose a compact Easy/Hard toggle so admins
+              can compare the same date's stats across tracks without
+              closing the sheet. Falls back to a read-only pill for any
+              consumer that hasn't opted in. */}
+          {onDifficultyChange ? (
+            <Tabs
+              value={difficulty}
+              onValueChange={(v) => {
+                if (v === "easy" || v === "hard") onDifficultyChange(v);
+              }}
+              aria-label="Switch difficulty"
+            >
+              <TabsList className="h-7 p-0.5">
+                <TabsTrigger
+                  value="easy"
+                  className="h-6 cursor-pointer gap-1 px-2 text-[11px]"
+                  aria-label="Easy mode"
+                >
+                  <CalendarIcon className="size-3" aria-hidden="true" />
+                  Easy
+                </TabsTrigger>
+                <TabsTrigger
+                  value="hard"
+                  className={cn(
+                    "h-6 cursor-pointer gap-1 px-2 text-[11px]",
+                    difficulty === "hard" &&
+                      "data-[state=active]:bg-rose-500 data-[state=active]:text-rose-50",
+                  )}
+                  aria-label="Hard mode"
+                >
+                  <Skull className="size-3" aria-hidden="true" />
+                  Hard
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          ) : (
+            <Badge
+              variant={difficulty === "hard" ? "default" : "outline"}
+              className={cn(
+                "gap-1 uppercase tracking-wide",
+                difficulty === "hard" &&
+                  "bg-rose-500 text-rose-50 hover:bg-rose-500/90",
+              )}
+              aria-label={`Difficulty: ${difficulty}`}
+            >
+              {difficulty}
+            </Badge>
+          )}
           {when === "today" ? (
             <Badge variant="default" className="gap-1">
               <Clock className="size-3" aria-hidden="true" />

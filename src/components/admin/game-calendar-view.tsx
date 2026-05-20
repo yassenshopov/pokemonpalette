@@ -133,6 +133,7 @@ export function GameCalendarView() {
       <DailyPuzzleSheet
         date={openDate}
         difficulty={difficulty}
+        onDifficultyChange={(next) => pushParams({ difficulty: next })}
         onOpenChange={(open) => {
           if (!open) setOpenDate(null);
         }}
